@@ -1,0 +1,192 @@
+{
+ "college": "Porterville College",
+ "control_number": "31240",
+ "shape": "certificate",
+ "title": "Fire Technology Structural Firefighter",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=110",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7789,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7789,
+    "output_tokens": 1954,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1954,
+  "output_tokens_details": {
+   "thinking_tokens": 769
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.07024,
+ "ms": 16581,
+ "seconds": 16.9,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 3,
+   "listed": 3,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    24.5,
+    24.5
+   ],
+   "stated": [
+    24.5,
+    24.5
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 16,
+   "courses": 0,
+   "count": 16,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 2,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Fire Technology Structural Fire Fighter",
+   "measure": "units",
+   "total_units": {
+    "min": 24.5,
+    "max": 24.5
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Define fire department organization and culture and the expectations of entry-level fire department personnel",
+    "demonstrate knowledge of fire department equipment through the selection and application of equipment for given firefighting tasks",
+    "analyze and assess fire fighter hazards inherent to the profession",
+    "demonstrate the ability to communicate effectively through multiple methods of communication including: written, electronic, face to face, and radio transmitted messages",
+    "demonstrate knowledge of strategies, tactics and incident command through the selection and implementation of firefighting methods, and the application of the Emergency Command System",
+    "describe the history, purpose and scope of fire departments and their sub functions",
+    "describe the educational requirements, duties, and information sources for various occupations in fire protection",
+    "identify the basic components of fire as a chemical reaction, the major phases of fire, and the primary factors that influence fire behavior and fire spread",
+    "identify the types of common fire department apparatus, equipment, and personal safety equipment used for firefighting",
+    "identify the various organizations, codes, standards and ordinances, which regulate fire protection",
+    "identify the various types of public and private fire protection and water supply equipment and systems",
+    "describe the basic fire fighting strategies and tactics",
+    "describe the basic elements of fire fighter safety and survival",
+    "describe and demonstrate the proper patient assessment procedure for medical emergencies, trauma emergencies, airway management, breathing, and circulation interventions",
+    "describe and explain the patho-physiology of common diseases in the pre-hospital setting",
+    "describe the role and identify the responsibilities of the EMT-Basic."
+   ],
+   "careers": [
+    "fire service",
+    "public safety industry"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Core Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 24.5,
+     "max": 24.5
+    },
+    "courses": [
+     {
+      "code": "FIRE P101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FIRE P050",
+      "units": 13,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "EMTC P050",
+      "units": 8.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Catalog prints FIRE P050 at 13 units; the state closed list stores 14 units. Recorded the catalog's 13; 3 + 13 + 8.5 = 24.5 matches the printed total.",
+   "Outcomes are printed as one semicolon-separated run after the lead-in 'Upon completion of this program students will be able to:'; split at semicolons into one entry per outcome. The preceding 'goal' sentence was not recorded as an outcome. 'educa-tional' was a line-break hyphen and read as 'educational'.",
+   "Careers 'fire service' (from 'fire service employment opportunities') and 'public safety industry' (from 'employment in the public safety industry') are fields inferred from the description; reviewer may verify.",
+   "Effective-date lines are ambiguous in placement: 'Effective Fall 2023' appears just before this section's heading and 'Effective Summer 2021' just after its total; confirm which applies to this certificate. The section is printed in the 2026-2027 catalog."
+  ]
+ },
+ "extracted_run": "39046786897"
+}

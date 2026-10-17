@@ -1,0 +1,175 @@
+{
+ "college": "Porterville College",
+ "control_number": "42417",
+ "shape": "certificate",
+ "title": "Child Development Associate Teacher",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=84",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7918,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7918,
+    "output_tokens": 1193,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1193,
+  "output_tokens_details": {
+   "thinking_tokens": 347
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.05553,
+ "ms": 10817,
+ "seconds": 11.3,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 7,
+   "share": 0.0,
+   "missing": [
+    "CDEVC1000",
+    "CHDVP117",
+    "CHDVP119",
+    "CHDVP122",
+    "CHDVP143",
+    "CHDVP144",
+    "PSYCP223"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": true,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "CDEVC1000",
+    "why": "Associate Teacher Certificate section not in the text; named only in the A.A.-T section"
+   },
+   {
+    "code": "CHDV P117",
+    "why": "Associate Teacher Certificate section not in the text; named only in the Child Development A.A. section"
+   },
+   {
+    "code": "CHDV P119",
+    "why": "Associate Teacher Certificate section not in the text; named only in the Child Development A.A. section"
+   },
+   {
+    "code": "CHDV P122",
+    "why": "Associate Teacher Certificate section not in the text; named only in the A.A.-T and A.A. sections"
+   },
+   {
+    "code": "CHDV P143",
+    "why": "Associate Teacher Certificate section not in the text; named only in the Child Development A.A. section"
+   },
+   {
+    "code": "CHDV P144",
+    "why": "Associate Teacher Certificate section not in the text; named only in the Child Development A.A. section"
+   },
+   {
+    "code": "PSYC P223",
+    "why": "Associate Teacher Certificate section not in the text; named only in the A.A.-T section"
+   }
+  ],
+  "notes": [
+   "The supplied text (page 84) contains only the Associate in Arts in Child and Adolescent Development for Transfer section and the start of the Child Development Associate in Arts section. No section for the Associate Teacher Certificate of Achievement appears, so no blocks, totals, outcomes or careers were recorded; section_heading is left empty because no heading for this award is printed.",
+   "The Child Development A.A. description says students may earn an Associate Teacher Certificate, but its requirements are not printed in this excerpt; the certificate likely appears on a following page (e.g., page 85) and should be checked.",
+   "The Program Learning Outcomes printed are for the A.A. degree ('By the completion of the degree'), not stated as shared with this certificate, so they were not recorded.",
+   "The A.A. section lists permits (Associate Teacher, Teacher, Master Teacher, Site Supervisor); these belong to the degree description and were not recorded as careers for this certificate.",
+   "The A.A. core lists 'CHDV P223 - Child, Growth and Development', which may correspond to CDEV C1000/PSYC P223 in the closed list; reviewer should confirm when the certificate section is located."
+  ]
+ },
+ "extracted_run": "39046786897"
+}

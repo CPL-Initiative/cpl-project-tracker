@@ -1,0 +1,202 @@
+{
+ "college": "Porterville College",
+ "control_number": "45517",
+ "shape": "certificate",
+ "title": "User Experience Design",
+ "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+ "source_url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=117",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7419,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7419,
+    "output_tokens": 1265,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1265,
+  "output_tokens_details": {
+   "thinking_tokens": 443
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.05498,
+ "ms": 16522,
+ "seconds": 17.1,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 5,
+   "listed": 5,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    15.0,
+    15.0
+   ],
+   "stated": [
+    15.0,
+    15.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 9,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "User Experience Design",
+   "measure": "units",
+   "total_units": {
+    "min": 15,
+    "max": 15
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Apply basic design principles to UX designs",
+    "synthesize advanced multidisciplinary knowledge into a portfolio of work",
+    "identify, describe and analyze current design trends in the online market."
+   ],
+   "careers": [
+    "app design and development",
+    "Front-end Web Developer or Designer",
+    "Multimedia Artist",
+    "App Developer",
+    "UX/UI Designer",
+    "Graphic Designer",
+    "Interactive Media Designer",
+    "Digital and Social Marketer",
+    "Visual Designer"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 15,
+     "max": 15
+    },
+    "courses": [
+     {
+      "code": "CGRA P110",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CGRA P111",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CGRA P150",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CGRA P151",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CGRA P152",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The excerpt begins mid-description; the program heading is not printed in the text, so section_heading uses the program title 'User Experience Design'. Reviewer should confirm the heading on the preceding page.",
+   "Program Learning Outcomes are printed as a single sentence with three semicolon-separated outcomes; recorded as three entries with the printed wording and capitalization.",
+   "The description says 'Students completing the degree' although the award is a certificate; total recorded from 'Required Courses: (15 units)'.",
+   "'Effective Summer 2025' follows the course list, suggesting the requirements took effect in Summer 2025 despite the 2026-2027 catalog year.",
+   "Career 'Interactive Media Designer' was hyphenated across a line break ('Interac-tive') and is read as one word.",
+   "Text after the course list belongs to the Vocational Nursing program and was ignored."
+  ]
+ },
+ "extracted_run": "39046786897"
+}

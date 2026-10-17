@@ -1,0 +1,223 @@
+{
+ "college": "Porterville College",
+ "control_number": "35227",
+ "shape": "degree",
+ "title": "Business Management-Global Entrepreneurship",
+ "award": "A.S. Degree",
+ "source_url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=83",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7710,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7710,
+    "output_tokens": 1788,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1788,
+  "output_tokens_details": {
+   "thinking_tokens": 744
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.0666,
+ "ms": 14979,
+ "seconds": 15.5,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 7,
+   "listed": 7,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "INFSP100"
+   ],
+   "flagged": [
+    "INFSP100"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    21.0,
+    21.0
+   ],
+   "stated": [
+    21.0,
+    21.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Business Management - Global Entrepreneurship Associate in Science",
+   "measure": "units",
+   "total_units": {
+    "min": 21,
+    "max": 21
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "PC General Education Pattern or Cal-GETC General Education Pattern",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": true,
+   "outcomes": [
+    "Critique different theories, models, and concepts of social entrepreneurship to address wicked problems",
+    "apply written and verbal communication skills in a business relationship, teamwork setting, or a leadership position",
+    "apply the importance of ethical behavior in the business environment",
+    "formulate a framework to understand the political, economic, legal, cultural, and relational complexities needed for successful decision-making when working in entrepreneurship",
+    "demonstrate technological competency by using technology effectively in the business environment or workplace. effectively in the business environment or workplace."
+   ],
+   "careers": [
+    "entrepreneurship"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Core Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 21,
+     "max": 21
+    },
+    "courses": [
+     {
+      "code": "ACCT P110",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "INFS P100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BSAD P160",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BSAD P163",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BSAD P166",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BSAD P167",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "BSAD P168",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COMM C1004",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The page sets 'Effective Summer 2025' just above this heading. It labels the preceding business section, so it does not apply here. The 'Effective Summer 2026' after this section appears to label it; a reviewer should check which effective date belongs to this award.",
+   "The last program learning outcome is copied as printed. It repeats the fragment 'effectively in the business environment or workplace.', which looks like a catalog typo.",
+   "The page says 'Electives as needed to complete the 60 minimum units to complete the degree.' It prints no degree total for this award, so degree_total is null and electives_fill_degree is true.",
+   "The outcomes were printed as one semicolon-separated sentence; they are recorded here split at the semicolons.",
+   "The text immediately before this section (accounting emphasis, core 18-19 units) belongs to a different business program and was not used.",
+   "'job-makers' in the description was not recorded as a career; only 'entrepreneurship' ('a specific career in entrepreneurship') was taken."
+  ]
+ },
+ "extracted_run": "39046786897"
+}

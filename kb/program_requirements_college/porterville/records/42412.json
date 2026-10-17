@@ -1,0 +1,291 @@
+{
+ "college": "Porterville College",
+ "control_number": "42412",
+ "shape": "certificate",
+ "title": "Child Development Teacher Permit",
+ "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+ "source_url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=107",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7217,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7217,
+    "output_tokens": 2546,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2546,
+  "output_tokens_details": {
+   "thinking_tokens": 937
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.07979,
+ "ms": 21510,
+ "seconds": 22.1,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 9,
+   "listed": 15,
+   "share": 0.6,
+   "missing": [
+    "ARTP101",
+    "ENGLC1000",
+    "ERSCP110",
+    "POLSC1000",
+    "PSYCC1000",
+    "STATC1000"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    24.0,
+    24.0
+   ],
+   "stated": [
+    24.0,
+    24.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Child Development Teacher Permit",
+   "measure": "units",
+   "total_units": {
+    "min": 24,
+    "max": 24
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": 17,
+    "max": 17
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Supporting Early Learning and Development",
+    "planning and guiding early learning and development",
+    "creating and maintaining program policies and practices",
+    "advancing the early childhood profession"
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "DSS1 Child, Growth and Development",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "CDEV C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC P223",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "DSS2 Child, Family and Community",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "CHDV P122",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "DSS3 Program and Curriculum",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "CHDV P144",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHDV P143",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Support Courses",
+    "rule": "choose_units",
+    "minimum": 12,
+    "option_group": null,
+    "stated": {
+     "min": 12,
+     "max": 12
+    },
+    "courses": [
+     {
+      "code": "CHDV P117",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHDV P119",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHDV P142",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHDV P239",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ENGL C1000",
+    "why": "listed only under General Education (17 units); GE courses not placed in blocks"
+   },
+   {
+    "code": "POLS C1000",
+    "why": "listed only under General Education; GE courses not placed in blocks"
+   },
+   {
+    "code": "PSYC C1000",
+    "why": "listed only under General Education; GE courses not placed in blocks"
+   },
+   {
+    "code": "ART P101",
+    "why": "listed only under General Education; GE courses not placed in blocks"
+   },
+   {
+    "code": "ERSC P110",
+    "why": "listed only under General Education (as ERSC P110 OR STAT C1000); GE courses not placed in blocks"
+   },
+   {
+    "code": "STAT C1000",
+    "why": "listed only under General Education as alternative to ERSC P110; GE courses not placed in blocks"
+   }
+  ],
+  "notes": [
+   "The extracted text begins mid-section; no section heading is printed in it. section_heading uses the program title; the text opens with 'Child Development Permit at the Teacher level.' Reviewer should confirm the printed heading on the prior page.",
+   "The catalog groups DSS1, DSS2 and DSS3 under 'Required Courses: (12 units required)'; they are recorded as three blocks with their own printed totals (3, 3, 6). DSS1 lists CDEV C1000 and PSYC P223 with a 3-unit total, read as choose one.",
+   "CDEV C1000 is printed with a space; the closed list stores it as CDEVC1000 (no units stored). Treated as the same course, not a catalog addition.",
+   "Major total 24 units is stated ('completion of the major (24 units)'); 17 units of general education are also required. No combined total for the certificate is printed, so degree_total is null; the GE requirement is a selection list, not a named GE pattern, so ge_pattern is null and ge_units is 17.",
+   "Program Learning Outcomes are printed as one run-on line separated by semicolons; recorded as four outcomes split at the semicolons, words unchanged, final period dropped.",
+   "Text mentions the 'Child Development Permit: Teacher as required for employment in funded child care programs' and an experience requirement (three hours per day for 175 days in four years); no explicit career titles were named, so careers is empty.",
+   "CHDV P143 and CHDV P142 are marked '*Includes laboratory'.",
+   "'Effective Summer 2025' appears after this section, apparently heading the next program (Communication Studies); reviewer may check catalog-year alignment."
+  ]
+ },
+ "extracted_run": "39046786897"
+}

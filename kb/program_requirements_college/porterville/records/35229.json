@@ -1,0 +1,246 @@
+{
+ "college": "Porterville College",
+ "control_number": "35229",
+ "shape": "degree",
+ "title": "Business Management-Accounting",
+ "award": "A.S. Degree",
+ "source_url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=83",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 9771,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 9771,
+    "output_tokens": 1746,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1746,
+  "output_tokens_details": {
+   "thinking_tokens": 639
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.074,
+ "ms": 15112,
+ "seconds": 15.6,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 11,
+   "listed": 11,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    24.0,
+    26.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Business Management-Accounting",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "PC General Education Pattern or Cal-GETC General Education Pattern",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": true,
+   "outcomes": [
+    "Analyze business, economic, or financial principles and explain their application to the real-world",
+    "apply written and verbal communication skills in a business relationship, a teamwork setting or a leadership position",
+    "apply the importance of Ethical behavior in the business environment",
+    "demonstrate technological competency by using technology effectively in the business environment or workplace."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required Core Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 18,
+     "max": 19
+    },
+    "courses": [
+     {
+      "code": "ACCT P110",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BSAD P155",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "STAT C1000",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "BSAD P101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BSAD P160",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "BSAD P140",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "INFS P100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MKTG P124",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Accounting Emphasis",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 7
+    },
+    "courses": [
+     {
+      "code": "ACCT P120",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BSAD P150",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MATH P118",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The excerpt begins mid-section on page 83; the program heading, description and award line for Business Management-Accounting appear on the preceding page and are not in the text. section_heading is taken from the program name, not from printed text in the excerpt.",
+   "No total for the major is printed; the core (18-19 units) and Accounting Emphasis (6-7 units) block totals are recorded but not summed.",
+   "The page says 'Electives as needed to complete the 60 minimum units to complete the degree'; recorded as electives_fill_degree true. degree_total left null because 60 is stated as the general minimum rather than printed as this award's total; reviewer may wish to check.",
+   "The catalog prints BSAD P150 as 'Quantitative Methods in Business Decision Making'; the state file title uses 'for'.",
+   "Program Learning Outcomes are printed as one semicolon-separated paragraph; split into four outcomes at the semicolons.",
+   "No careers are named in the excerpted portion of this section; the program description may be on the preceding page."
+  ]
+ },
+ "extracted_run": "39046786897"
+}

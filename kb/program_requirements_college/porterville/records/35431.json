@@ -1,0 +1,240 @@
+{
+ "college": "Porterville College",
+ "control_number": "35431",
+ "shape": "degree",
+ "title": "Business Information Systems",
+ "award": "A.S. Degree",
+ "source_url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=82",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8701,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8701,
+    "output_tokens": 1860,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1860,
+  "output_tokens_details": {
+   "thinking_tokens": 679
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.072,
+ "ms": 16637,
+ "seconds": 17.1,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 7,
+   "listed": 7,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 3,
+   "codes": [
+    "BSADP101",
+    "BSADP132",
+    "INFSP100"
+   ],
+   "flagged": [
+    "BSADP101",
+    "BSADP132",
+    "INFSP100"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    28.0,
+    28.0
+   ],
+   "stated": [
+    28.0,
+    28.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Business Information Systems Associate of Science",
+   "measure": "units",
+   "total_units": {
+    "min": 28,
+    "max": 28
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "PC General Education Pattern or Cal-GETC General Education Pattern",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": true,
+   "outcomes": [
+    "Apply business-focused information systems skills—including office application software, accounting systems, programming fundamentals, and data management principles—to support everyday organizational operations and decision-making.",
+    "Analyze business requirements and implement practical information systems solutions by selecting, applying, and evaluating appropriate technologies, problem-solving techniques, and system design approaches in real-world business environments.",
+    "Communicate effectively and professionally with clients, users, and team members by translating business needs into technical solutions and explaining information systems concepts using appropriate written, verbal, and industry-standard terminology."
+   ],
+   "careers": [
+    "business information systems field"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Core Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 28,
+     "max": 28
+    },
+    "courses": [
+     {
+      "code": "INFS P100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "INFS P210",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "INFS P113",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "INFS P220",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "INFS P180",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "INFS P010",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "INFS P020",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACCT P110",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BSAD P132",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BSAD P101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The excerpt begins mid-section on page 82; the program heading itself is not printed in the text, so section_heading is taken from the description's wording ('Business Information Systems Associate of Science').",
+   "total_units 28 is taken from 'Required Core Courses: (28 units)', which is the only block in the major; the listed courses sum to 28.",
+   "The page says electives are needed 'to complete the 60 minimum units to complete the degree' (sentence printed twice); this was read as a generic minimum rather than a printed degree total, so degree_total is null and electives_fill_degree is true.",
+   "Program learning outcomes are printed as one run-on paragraph; split into three entries at sentence boundaries, rejoining words hyphenated across line breaks ('orga-nizational', 'Commu-nicate').",
+   "Career entry 'business information systems field' is taken from 'employment in the business information systems field'; the description also mentions 'career patterns of the business information systems industry'.",
+   "Text following this section (Business Management - Accounting, Global Entrepreneurship, Child and Adolescent Development) belongs to other programs and was not used."
+  ]
+ },
+ "extracted_run": "39046786897"
+}

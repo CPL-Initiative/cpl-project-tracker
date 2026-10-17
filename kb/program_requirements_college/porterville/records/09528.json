@@ -1,0 +1,276 @@
+{
+ "college": "Porterville College",
+ "control_number": "09528",
+ "shape": "degree",
+ "title": "Business",
+ "award": "A.A. Degree",
+ "source_url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=83",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7628,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7628,
+    "output_tokens": 2197,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2197,
+  "output_tokens_details": {
+   "thinking_tokens": 1053
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.07445,
+ "ms": 18238,
+ "seconds": 19.4,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 2,
+   "listed": 4,
+   "share": 0.5,
+   "missing": [
+    "BSADP120",
+    "OFFTP30"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 9,
+   "codes": [
+    "ACCTP120",
+    "BSADP101",
+    "BSADP140",
+    "BSADP150",
+    "BSADP155",
+    "INFSP100",
+    "MATHP118",
+    "MKTGP124",
+    "STATC1000"
+   ],
+   "flagged": [
+    "ACCTP120",
+    "BSADP101",
+    "BSADP140",
+    "BSADP150",
+    "BSADP155",
+    "INFSP100",
+    "MATHP118",
+    "MKTGP124",
+    "STATC1000"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    24.0,
+    26.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Business, Associate in Arts (heading not printed in the excerpt; section continues from the previous page)",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "PC General Education Pattern or Cal-GETC General Education Pattern",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": true,
+   "outcomes": [
+    "Analyze business, economic, or financial principles and explain their application to the real-world",
+    "apply written and verbal communication skills in a business relationship, a teamwork setting or a leadership position",
+    "apply the importance of Ethical behavior in the business environment",
+    "demonstrate technological competency by using technology effectively in the business environment or workplace."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required Core Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 18,
+     "max": 19
+    },
+    "courses": [
+     {
+      "code": "ACCT P110",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BSAD P155",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "STAT C1000",
+        "units": 4,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "BSAD P101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BSAD P160",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "BSAD P140",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "INFS P100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MKTG P124",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Accounting Emphasis",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 7
+    },
+    "courses": [
+     {
+      "code": "ACCT P120",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BSAD P150",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MATH P118",
+        "units": 4,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "BSAD P120",
+    "why": "not in the text excerpt; possibly in another emphasis on the previous page"
+   },
+   {
+    "code": "OFFT P030",
+    "why": "not in the text excerpt; possibly in another emphasis on the previous page"
+   }
+  ],
+  "notes": [
+   "The excerpt begins mid-section on page 83: the Business A.A. heading, description and any careers are not included, presumably on the previous page. The section read is the one before 'Business Management - Global Entrepreneurship, Associate in Science'.",
+   "Only an 'Accounting Emphasis' is visible; other emphases (which may hold BSAD P120 and OFFT P030) may be printed on the previous page, in which case the emphases would be alternative option blocks. Reviewer should check.",
+   "No major total is printed; core is 18-19 units and Accounting Emphasis 6-7 units. Degree requires 60 minimum units with electives as needed; recorded as electives_fill_degree, not a printed degree total.",
+   "Outcomes were printed as one semicolon-separated paragraph; split at semicolons."
+  ]
+ },
+ "extracted_run": "39046786897"
+}

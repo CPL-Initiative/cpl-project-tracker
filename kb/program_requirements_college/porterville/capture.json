@@ -5,7 +5,7 @@
  "catalog_year": "2026-2027",
  "programs": 91,
  "with_closed_list": 85,
- "started": "2026-10-17T15:48:58Z",
+ "started": "2026-10-17T15:51:20Z",
  "pdf": {
   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf",
   "access": "hand_filed",
@@ -1011,7 +1011,7 @@
   "unproven": []
  },
  "loads": 0,
- "seconds": 32.5,
+ "seconds": 31.9,
  "found": 82,
  "by_method": {
   "no_closed_list": 6,
@@ -1976,5 +1976,5 @@
    }
   ]
  },
- "run": "39046617778"
+ "run": "39046786897"
 }
