@@ -1,0 +1,2573 @@
+{
+ "college": "Santiago Canyon College",
+ "catalog_url": "https://sccollege.elumenapp.com/catalog/catalog/home",
+ "platform": "elumen",
+ "catalog_year": "2025-2026",
+ "programs": 260,
+ "with_closed_list": 230,
+ "started": "2026-10-17T03:32:03Z",
+ "elumen": {
+  "catalog": "catalog",
+  "read": "publish/content",
+  "menu_programs": 0,
+  "errors": [],
+  "menu_departments": 0,
+  "department_programs": 0,
+  "menu_hubs": [
+   "degrees-certificates",
+   "certificates-of-achievement",
+   "certificates-of-proficiency",
+   "programs"
+  ],
+  "hub_programs": 281,
+  "program_pages": 281
+ },
+ "pages_read": 281,
+ "banner_h1": null,
+ "loads": 286,
+ "seconds": 1176.1,
+ "found": 200,
+ "by_method": {
+  "no_closed_list": 30,
+  "not_found": 21,
+  "page_claimed": 9,
+  "sitemap_page": 200
+ },
+ "shared_pages": {},
+ "not_found": [
+  {
+   "control_number": "18117",
+   "title": "CSU General Education Breadth",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/california-state-university-general-education-breadth-csu-ca-spring-2019",
+    "label": {
+     "award": 0,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 272,
+    "why": "coarse net: the page's code tokens name 0 of 272 listed courses",
+    "error": null,
+    "chars": {
+     "body": 690,
+     "content": 690,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "18118",
+   "title": "IGETC",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/intersegmental-general-education-transfer-curriculum-igetc-ca-spring-2019",
+    "label": {
+     "award": 0,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 197,
+    "why": "coarse net: the page's code tokens name 0 of 197 listed courses",
+    "error": null,
+    "chars": {
+     "body": 700,
+     "content": 700,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "18790",
+   "title": "General Electrician, CA",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/general-electrician-ca-spring-2019",
+    "label": {
+     "award": 0,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 10,
+    "why": "coarse net: the page's code tokens name 0 of 10 listed courses",
+    "error": null,
+    "chars": {
+     "body": 969,
+     "content": 969,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "18791",
+   "title": "General Electrician, AS",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/general-electrician-as-spring-2019",
+    "label": {
+     "award": 0,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 10,
+    "why": "coarse net: the page's code tokens name 0 of 10 listed courses",
+    "error": null,
+    "chars": {
+     "body": 961,
+     "content": 961,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "24196",
+   "title": "ESL Intermediate Writing, COM",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/esl-intermediate-writing-com-spring-2025-cont-ed",
+    "label": {
+     "award": 0,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 2,
+    "why": "coarse net: the page's code tokens name 0 of 2 listed courses",
+    "error": null,
+    "chars": {
+     "body": 719,
+     "content": 719,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "24467",
+   "title": "Secondary Education/GED Preparation",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/secondary-education-ged-preparation-cc-spring-2019",
+    "label": {
+     "award": 0,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 2,
+    "why": "coarse net: the page's code tokens name 0 of 2 listed courses",
+    "error": null,
+    "chars": {
+     "body": 814,
+     "content": 814,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "37073",
+   "title": "Code Enforcement and Compliance",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/code-enforcement-and-compliance-as-fall-2023",
+    "label": {
+     "award": 0,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.353,
+    "body": 0.353,
+    "content": 0.353,
+    "net": 6,
+    "listed": 17,
+    "why": "coarse net: the page's code tokens name 6 of 17 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2022,
+     "content": 2022,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "38158",
+   "title": "Instructional Assistant: Special Education, CA",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/special-education-paraprofessional-ca-spring-2019",
+    "label": {
+     "award": 0,
+     "title": 0.6
+    },
+    "field": "innerText",
+    "coverage": 0.429,
+    "body": 0.429,
+    "content": 0.429,
+    "net": 3,
+    "listed": 7,
+    "why": "coverage 0.43 in innerText, below 0.50",
+    "error": null,
+    "chars": {
+     "body": 1821,
+     "content": 1821,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "45504",
+   "title": "Solar Installation Technician",
+   "award": "Noncredit program",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "45505",
+   "title": "Solar Sales Representative",
+   "award": "Noncredit program",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "45533",
+   "title": "Clinical Genetics and Molecular Biology Scientist (CGMBS) Training Program",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "45606",
+   "title": "ESL Advanced Writing",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/enhanced-advanced-esl-skills-com-summer-2025-cont-ed",
+    "label": {
+     "award": 0,
+     "title": 0.667
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 2,
+    "why": "coarse net: the page's code tokens name 0 of 2 listed courses",
+    "error": null,
+    "chars": {
+     "body": 731,
+     "content": 731,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "45609",
+   "title": "Digital Literacy for Online Learning Skills",
+   "award": "Noncredit program",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "45619",
+   "title": "Cal-GETC",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "45737",
+   "title": "Social Work and Human Services Assistant",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/social-work-and-human-services-aa-t-spring-intersession-2026",
+    "label": {
+     "award": 0,
+     "title": 0.8
+    },
+    "field": "innerText",
+    "coverage": 0.44,
+    "body": 0.44,
+    "content": 0.44,
+    "net": 11,
+    "listed": 25,
+    "why": "coverage 0.44 in innerText, below 0.50",
+    "error": null,
+    "chars": {
+     "body": 3778,
+     "content": 3778,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "45794",
+   "title": "California-specific Certified Community Association Management (CCAM)",
+   "award": "Noncredit program",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "45881",
+   "title": "Becoming a Social Media Influencer",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/social-media-as-spring-intersession-2026",
+    "label": {
+     "award": 0,
+     "title": 0.5
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 2,
+    "why": "coarse net: the page's code tokens name 0 of 2 listed courses",
+    "error": null,
+    "chars": {
+     "body": 1739,
+     "content": 1739,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "45985",
+   "title": "Healthcare Career Preparation, COM",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/adult-secondary-education-college-preparation-algebra-com-spring-2019",
+    "label": {
+     "award": 0,
+     "title": 0.5
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 2,
+    "why": "coarse net: the page's code tokens name 0 of 2 listed courses",
+    "error": null,
+    "chars": {
+     "body": 826,
+     "content": 826,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "46150",
+   "title": "Social Work and Human Services Assistant",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/social-work-and-human-services-aa-t-spring-intersession-2026",
+    "label": {
+     "award": 0,
+     "title": 0.8
+    },
+    "field": "innerText",
+    "coverage": 0.44,
+    "body": 0.44,
+    "content": 0.44,
+    "net": 11,
+    "listed": 25,
+    "why": "coverage 0.44 in innerText, below 0.50",
+    "error": null,
+    "chars": {
+     "body": 3778,
+     "content": 3778,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "46507",
+   "title": "Construction Management",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/construction-management-as-fall-2021",
+    "label": {
+     "award": 0,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 6,
+    "why": "coarse net: the page's code tokens name 0 of 6 listed courses",
+    "error": null,
+    "chars": {
+     "body": 1830,
+     "content": 1830,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "46508",
+   "title": "Construction Management",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/construction-management-as-fall-2021",
+    "label": {
+     "award": 0,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 6,
+    "why": "coarse net: the page's code tokens name 0 of 6 listed courses",
+    "error": null,
+    "chars": {
+     "body": 1830,
+     "content": 1830,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  }
+ ],
+ "page_claimed": [
+  {
+   "control_number": "21649",
+   "title": "Computer Science",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://sccollege.elumenapp.com/catalog/catalog/program/computer-science-as-fall-2019",
+    "https://sccollege.elumenapp.com/catalog/catalog/program/computer-science-as-t-fall-2023",
+    "https://sccollege.elumenapp.com/catalog/catalog/program/data-science-as-spring-intersession-2026",
+    "https://sccollege.elumenapp.com/catalog/catalog/program/data-science-ca-spring-intersession-2026"
+   ]
+  },
+  {
+   "control_number": "32044",
+   "title": "Geology",
+   "award": "A.S. T Degree",
+   "pages": [
+    "https://sccollege.elumenapp.com/catalog/catalog/program/biology-as-t-spring-2019",
+    "https://sccollege.elumenapp.com/catalog/catalog/program/liberal-arts-mathematics-and-sciences-as-fall-2023",
+    "https://sccollege.elumenapp.com/catalog/catalog/program/chemistry-as-summer-2020"
+   ]
+  },
+  {
+   "control_number": "36208",
+   "title": "General Medical Office Clerk",
+   "award": "Noncredit program",
+   "pages": [
+    "https://sccollege.elumenapp.com/catalog/catalog/program/effective-communication-skills-cc-summer-2020-continuing-ed"
+   ]
+  },
+  {
+   "control_number": "45580",
+   "title": "Apprenticeship Carpentry, General Carpenter",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://sccollege.elumenapp.com/catalog/catalog/program/apprenticeship-carpentry-concrete-as-spring-2019",
+    "https://sccollege.elumenapp.com/catalog/catalog/program/apprenticeship-carpentry-concrete-ca-spring-2019",
+    "https://sccollege.elumenapp.com/catalog/catalog/program/apprenticeship-carpentry-framing-as-spring-2019",
+    "https://sccollege.elumenapp.com/catalog/catalog/program/apprenticeship-carpentry-framing-ca-spring-2019"
+   ]
+  },
+  {
+   "control_number": "45581",
+   "title": "C++ Programming, CA",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "pages": [
+    "https://sccollege.elumenapp.com/catalog/catalog/program/data-science-ca-spring-intersession-2026",
+    "https://sccollege.elumenapp.com/catalog/catalog/program/data-science-as-spring-intersession-2026"
+   ]
+  },
+  {
+   "control_number": "45607",
+   "title": "Adult Secondary Education Foreign Language",
+   "award": "Noncredit program",
+   "pages": [
+    "https://sccollege.elumenapp.com/catalog/catalog/program/secondary-education-com-spring-2020"
+   ]
+  },
+  {
+   "control_number": "46019",
+   "title": "AI and Computer Literacy for ESL, COM",
+   "award": "Noncredit program",
+   "pages": [
+    "https://sccollege.elumenapp.com/catalog/catalog/program/esl-literacy-com-spring-2025-cont-ed"
+   ]
+  },
+  {
+   "control_number": "46027",
+   "title": "Adult Secondary Education Advanced Mathematical Concepts, COM",
+   "award": "Noncredit program",
+   "pages": [
+    "https://sccollege.elumenapp.com/catalog/catalog/program/secondary-education-com-spring-2020"
+   ]
+  },
+  {
+   "control_number": "46367",
+   "title": "Real Estate Career Preparation",
+   "award": "Noncredit program",
+   "pages": [
+    "https://sccollege.elumenapp.com/catalog/catalog/program/vocational-real-estate-salesperson-cc-spring-2025-cont-ed"
+   ]
+  }
+ ],
+ "coverage_bands": {
+  "0.5-0.8": 27,
+  "0.8-1.0": 36,
+  "1.0": 137
+ },
+ "would_extract": {
+  "against": null,
+  "kept": 0,
+  "programs": 200,
+  "list": [
+   {
+    "control_number": "11856",
+    "title": "Biology",
+    "award": "A.S. Degree",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/biology-as-summer-2020",
+    "coverage": 0.667,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "11857",
+    "title": "Business Administration",
+    "award": "A.S. Degree",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/business-management-cert-spring-2019",
+    "coverage": 0.545,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "11858",
+    "title": "Accounting",
+    "award": "A.S. Degree",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/accounting-as-spring-2019",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "11859",
+    "title": "Business Management",
+    "award": "A.S. Degree",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/business-management-as-spring-2019",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "11860",
+    "title": "Entrepreneurship",
+    "award": "A.S. Degree",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/entrepreneurship-as-spring-2019",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "11861",
+    "title": "Management",
+    "award": "A.S. Degree",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/management-as-spring-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "11866",
+    "title": "General Marketing",
+    "award": "A.S. Degree",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/general-marketing-as-spring-2019",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "11874",
+    "title": "Gemology",
+    "award": "A.S. Degree",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/gemology-as-spring-2019",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "11902",
+    "title": "Computer Information Systems",
+    "award": "A.S. Degree",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/computer-information-systems-as-spring-2019",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "11903",
+    "title": "Computer Science",
+    "award": "A.S. Degree",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/computer-science-as-fall-2019",
+    "coverage": 0.556,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "11905",
+    "title": "American Sign Language",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/american-sign-language-ca-spring-2019",
+    "coverage": 0.714,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "11906",
+    "title": "Land Surveying",
+    "award": "A.S. Degree",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/land-surveying-as-spring-2019",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "11907",
+    "title": "Water Distribution, AS",
+    "award": "A.S. Degree",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/water-distribution-as-fall-2024",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "11908",
+    "title": "Wastewater/Environmental Sanitation, AS",
+    "award": "A.S. Degree",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/wastewater-environmental-sanitation-as-fall-2024",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "11909",
+    "title": "Construction Management",
+    "award": "A.S. Degree",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/construction-management-as-fall-2021",
+    "coverage": 0.778,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "11910",
+    "title": "Construction Inspection for Public Works, CA",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/construction-inspection-ca-fall-2021",
+    "coverage": 0.692,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "11911",
+    "title": "Art",
+    "award": "A.A. Degree",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/art-aa-spring-2019",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "11921",
+    "title": "Graphic Design",
+    "award": "A.S. Degree",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/graphic-design-as-spring-2024",
+    "coverage": 0.966,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "11925",
+    "title": "Modern Languages",
+    "award": "A.A. Degree",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/modern-languages-aa-spring-intersession-2026",
+    "coverage": 0.932,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "11928",
+    "title": "English",
+    "award": "A.A. Degree",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/english-aa-spring-2019",
+    "coverage": 0.611,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "11929",
+    "title": "Communications",
+    "award": "A.A. Degree",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/communication-aa-fall-2025",
+    "coverage": 0.833,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "11933",
+    "title": "Chemistry",
+    "award": "A.S. Degree",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/chemistry-as-summer-2020",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "11938",
+    "title": "Gender, Sexuality, and Women's Studies",
+    "award": "A.A. Degree",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/gender-sexuality-and-women-s-studies-aa-fall-2024",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "11943",
+    "title": "Economics",
+    "award": "A.A. Degree",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/economics-aa-spring-intersession-2026",
+    "coverage": 0.75,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "11947",
+    "title": "Sociology",
+    "award": "A.A. Degree",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/sociology-aa-spring-intersession-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "11948",
+    "title": "Cosmetology",
+    "award": "A.S. Degree",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/cosmetology-as-summer-2024",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "11985",
+    "title": "Apprenticeship: Electricity, Industrial",
+    "award": "A.S. Degree",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/apprenticeship-electricity-industrial-ca-spring-2019",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "11986",
+    "title": "Apprenticeship Carpentry, Millwrighting",
+    "award": "A.S. Degree",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/apprenticeship-carpentry-millwrighting-as-spring-2023",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "11988",
+    "title": "Apprenticeship: Carpentry, Drywall/Lather",
+    "award": "A.S. Degree",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/apprenticeship-carpentry-drywall-lather-ca-spring-intersession-2021",
+    "coverage": 0.625,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "13230",
+    "title": "Apprenticeship: Surveying, Chainman",
+    "award": "A.S. Degree",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/apprenticeship-surveying-chainman-ca-spring-2019",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "13231",
+    "title": "Apprenticeship: Carpentry, Finish Carpentry",
+    "award": "A.S. Degree",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/apprenticeship-carpentry-finish-carpentry-as-spring-2019",
+    "coverage": 0.929,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "13232",
+    "title": "Apprenticeship: Carpentry, Framing",
+    "award": "A.S. Degree",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/apprenticeship-carpentry-framing-ca-spring-2019",
+    "coverage": 0.933,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "13234",
+    "title": "Apprenticeship Carpentry, Drywall Finisher, AS",
+    "award": "A.S. Degree",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/apprenticeship-carpentry-drywall-finisher-as-spring-intersession-2021",
+    "coverage": 0.667,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "17688",
+    "title": "Apprenticeship: Operating Engineers, Special Inspector",
+    "award": "A.S. Degree",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/apprenticeship-operating-engineers-special-inspector-as-spring-2019",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "17759",
+    "title": "Elementary Education",
+    "award": "A.A. Degree",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/elementary-education-aa-spring-2019",
+    "coverage": 0.833,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "18317",
+    "title": "Liberal Arts: Arts, Humanities, and Communication, AA",
+    "award": "A.A. Degree",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/liberal-arts-arts-humanities-and-communication-aa-fall-2023",
+    "coverage": 0.675,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "18318",
+    "title": "Liberal Arts: Mathematics and Sciences, AS",
+    "award": "A.S. Degree",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/liberal-arts-mathematics-and-sciences-as-fall-2023",
+    "coverage": 0.889,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "18319",
+    "title": "Liberal Arts: Multi-Cultural Studies",
+    "award": "A.A. Degree",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/liberal-arts-multi-cultural-studies-aa-fall-2023",
+    "coverage": 0.934,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "18320",
+    "title": "Liberal Arts: Social and Behavioral Sciences, AA",
+    "award": "A.A. Degree",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/liberal-arts-social-and-behavioral-sciences-aa-spring-intersession-2025",
+    "coverage": 0.737,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "19587",
+    "title": "Apprenticeship: Electricity, Sound Installer",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/apprenticeship-electricity-sound-installer-as-spring-2019",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "19588",
+    "title": "Apprenticeship: Electricity, Sound Installer",
+    "award": "A.S. Degree",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/apprenticeship-electricity-sound-installer-ca-spring-2019",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "19589",
+    "title": "Apprenticeship: Electricity, Sound Technician",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/apprenticeship-electricity-sound-technician-as-spring-2019",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "19590",
+    "title": "Apprenticeship: Electricity, Sound Technician",
+    "award": "A.S. Degree",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/apprenticeship-electricity-sound-technician-ca-spring-2019",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "19623",
+    "title": "Water Treatment, AS",
+    "award": "A.S. Degree",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/water-treatment-as-fall-2024",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "19624",
+    "title": "Water Treatment, CA",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/water-treatment-ca-fall-2024",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "19625",
+    "title": "Water Distribution, CA",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/water-distribution-ca-fall-2024",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21631",
+    "title": "Accounting",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/accounting-ca-spring-2019",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21635",
+    "title": "Entrepreneurship",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/entrepreneurship-ca-spring-2019",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21639",
+    "title": "Real Estate",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/real-estate-as-spring-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21644",
+    "title": "Gemology",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/gemology-ca-spring-2019",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21647",
+    "title": "Computer Information Systems",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/computer-information-systems-ca-spring-2019",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21657",
+    "title": "Apprenticeship: Carpentry, Concrete",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/apprenticeship-carpentry-concrete-as-spring-2019",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21658",
+    "title": "Apprenticeship: Carpentry, Finish Carpentry",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/apprenticeship-carpentry-finish-carpentry-ca-spring-2019",
+    "coverage": 0.929,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21659",
+    "title": "Apprenticeship: Carpentry, Framing",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/apprenticeship-carpentry-framing-as-spring-2019",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21660",
+    "title": "Apprenticeship: Carpentry, Tilt-Up",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/apprenticeship-carpentry-tilt-up-as-spring-2019",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21661",
+    "title": "Apprenticeship: Electricity, Industrial",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/apprenticeship-electricity-industrial-as-spring-2019",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21662",
+    "title": "Apprenticeship: Carpentry, Millwrighting",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/apprenticeship-carpentry-millwrighting-ca-spring-2023",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21663",
+    "title": "Apprenticeship: Carpentry, Drywall Finisher",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/apprenticeship-carpentry-drywall-finisher-ca-spring-intersession-2021",
+    "coverage": 0.667,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21664",
+    "title": "Apprenticeship: Carpentry, Drywall/Lather",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/apprenticeship-carpentry-drywall-lather-as-spring-intersession-2021",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21667",
+    "title": "Apprenticeship: Surveying, Chainman",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/apprenticeship-surveying-chainman-as-spring-2019",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21668",
+    "title": "Land Surveying",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/land-surveying-ca-spring-2019",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21669",
+    "title": "Wastewater/Environmental Sanitation, CA",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/wastewater-environmental-sanitation-ca-fall-2024",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21673",
+    "title": "Construction Management",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/construction-management-as-fall-2023",
+    "coverage": 0.778,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21674",
+    "title": "Cosmetology",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/cosmetology-ca-summer-2024",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22270",
+    "title": "Apprenticeship: Electricity, Intelligent Transportation Systems Electrician",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/apprenticeship-electricity-intelligent-transportation-systems-electrician-as-spring-2019",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22271",
+    "title": "Apprenticeship: Electricity, Intelligent Transportation Systems Electrician",
+    "award": "A.S. Degree",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/apprenticeship-electricity-intelligent-transportation-systems-electrician-ca-spring-2019",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "24037",
+    "title": "Construction Laborer",
+    "award": "Noncredit program",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/construction-laborer-cc-spring-2019",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "24052",
+    "title": "Medical Billing",
+    "award": "Noncredit program",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/medical-billing-cc-fall-2022-continuing-ed",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "24093",
+    "title": "Food Service Manager",
+    "award": "Noncredit program",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/food-service-manager-cc-spring-2023-continuing-ed",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "24095",
+    "title": "General Office Clerk",
+    "award": "Noncredit program",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/general-office-clerk-cc-spring-2019",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "24097",
+    "title": "Carpenter",
+    "award": "Noncredit program",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/carpenter-cc-spring-2019",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "24146",
+    "title": "Commercial Textile Worker",
+    "award": "Noncredit program",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/commercial-textile-worker-cc-spring-2019",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "24187",
+    "title": "First-Line Supervisor/Manager, Office & Administrative Support Workers",
+    "award": "Noncredit program",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/first-line-supervisor-manager-office-administrative-support-workers-cc-spring-2019",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "24191",
+    "title": "ESL for Citizenship",
+    "award": "Noncredit program",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/esl-for-citizenship-com-spring-2025-cont-ed",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "24195",
+    "title": "ESL Intermediate Communication",
+    "award": "Noncredit program",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/esl-intermediate-communication-com-spring-2025-cont-ed",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "24198",
+    "title": "Vocational ESL",
+    "award": "Noncredit program",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/vocational-esl-com-fall-2022-continuing-ed",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "24230",
+    "title": "ESL Literacy, COM",
+    "award": "Noncredit program",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/esl-literacy-com-spring-2025-cont-ed",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "24233",
+    "title": "ESL Beginning Multilevel",
+    "award": "Noncredit program",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/esl-beginning-multilevel-com-spring-2025-cont-ed",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "24234",
+    "title": "ESL Intermediate Multilevel, COM",
+    "award": "Noncredit program",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/esl-intermediate-multilevel-com-spring-2025-cont-ed",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "24285",
+    "title": "English as a Second Language Program",
+    "award": "Noncredit program",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/english-as-a-second-language-program-com-spring-2025-cont-ed",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "24420",
+    "title": "Web Associate",
+    "award": "Noncredit program",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/web-associate-cc-fall-2024-cont-ed",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "24426",
+    "title": "Executive Assistant",
+    "award": "Noncredit program",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/executive-secretary-administrative-assistant-cc-spring-2019",
+    "coverage": 0.75,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "24427",
+    "title": "Customer Service Representative",
+    "award": "Noncredit program",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/customer-service-representative-cc-spring-2024-cont-ed",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "30644",
+    "title": "ESL Beginning, COM",
+    "award": "Noncredit program",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/esl-beginning-com-spring-2025-cont-ed",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "30646",
+    "title": "ESL Intermediate, COM",
+    "award": "Noncredit program",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/esl-intermediate-com-spring-2025-cont-ed",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "30647",
+    "title": "Enhanced Intermediate ESL Skills",
+    "award": "Noncredit program",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/enhanced-intermediate-esl-skills-com-spring-2019",
+    "coverage": 0.5,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "30690",
+    "title": "Enhanced Beginning ESL Skills, COM",
+    "award": "Noncredit program",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/enhanced-beginning-esl-skills-com-summer-2023-continuing-ed",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "30985",
+    "title": "Receptionist/Information Clerk",
+    "award": "Noncredit program",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/receptionist-information-clerk-cc-summer-2024-cont-ed",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31039",
+    "title": "Physics",
+    "award": "A.S. T Degree",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/physics-as-t-spring-2019",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31040",
+    "title": "Mathematics",
+    "award": "A.S. T Degree",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/mathematics-as-t-fall-2024",
+    "coverage": 0.846,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31041",
+    "title": "Psychology",
+    "award": "A.A- T Degree",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/psychology-aa-t-fall-2024",
+    "coverage": 0.69,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31366",
+    "title": "English",
+    "award": "A.A- T Degree",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/english-aa-t-spring-2019",
+    "coverage": 0.688,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31574",
+    "title": "Apprenticeship: Operating Engineers, Construction Safety Inspector",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/apprenticeship-operating-engineers-construction-safety-inspector-as-spring-2019",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31588",
+    "title": "Apprenticeship: Carpentry, Pile Driver",
+    "award": "A.S. Degree",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/apprenticeship-carpentry-pile-driver-as-spring-2019",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31589",
+    "title": "Apprenticeship: Carpentry, Pile Driver",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/apprenticeship-carpentry-pile-driver-ca-spring-2019",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31601",
+    "title": "Adult High School Diploma",
+    "award": "Noncredit program",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/adult-high-school-diploma-dipl-spring-2020-continuing-ed",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31706",
+    "title": "Apprenticeship: Carpentry, Plastering",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/apprenticeship-carpentry-plastering-as-spring-intersession-2021",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31715",
+    "title": "Studio Arts",
+    "award": "A.A- T Degree",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/studio-arts-aa-t-spring-2019",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31720",
+    "title": "History",
+    "award": "A.A- T Degree",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/history-aa-t-fall-2025",
+    "coverage": 0.69,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31730",
+    "title": "Political Science",
+    "award": "A.A- T Degree",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/political-science-aa-t-spring-intersession-2026",
+    "coverage": 0.857,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31735",
+    "title": "Elementary Teacher Education",
+    "award": "A.A- T Degree",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/elementary-teacher-education-aa-t-spring-intersession-2026",
+    "coverage": 0.939,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31847",
+    "title": "Environmental Management",
+    "award": "A.S. Degree",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/environmental-management-as-fall-2021",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31848",
+    "title": "Environmental Management",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/environmental-management-ca-fall-2021",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32042",
+    "title": "Philosophy",
+    "award": "A.A- T Degree",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/philosophy-aa-t-spring-2019",
+    "coverage": 0.9,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32043",
+    "title": "Anthropology",
+    "award": "A.A- T Degree",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/anthropology-aa-t-spring-intersession-2026",
+    "coverage": 0.964,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32045",
+    "title": "Spanish",
+    "award": "A.A- T Degree",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/spanish-aa-t-fall-2020",
+    "coverage": 0.818,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32319",
+    "title": "Construction Inspection for Public Works, AS",
+    "award": "A.S. Degree",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/construction-inspection-as-fall-2021",
+    "coverage": 0.692,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32364",
+    "title": "Geography",
+    "award": "A.A- T Degree",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/geography-aa-t-spring-2019",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32434",
+    "title": "Kinesiology",
+    "award": "A.A- T Degree",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/kinesiology-aa-t-fall-2025",
+    "coverage": 0.882,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32599",
+    "title": "Biotechnology",
+    "award": "A.S. Degree",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/biotechnology-as-spring-intersession-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32602",
+    "title": "General Biotechnology Technician",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/general-biotechnology-technician-ca-fall-2024",
+    "coverage": 0.938,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32648",
+    "title": "Biotechnology Laboratory Technician: Food Safety",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/biotechnology-laboratory-technician-food-safety-ca-fall-2020",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32968",
+    "title": "Economics",
+    "award": "A.A- T Degree",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/economics-aa-t-spring-intersession-2026",
+    "coverage": 0.857,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33137",
+    "title": "ESL Advanced",
+    "award": "Noncredit program",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/esl-advanced-com-spring-2025-cont-ed",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33161",
+    "title": "Multi-Media Artists and Animators",
+    "award": "Noncredit program",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/multi-media-artists-and-animators-cc-spring-2019",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33379",
+    "title": "Computer Science",
+    "award": "A.S. T Degree",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/computer-science-as-t-fall-2023",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33422",
+    "title": "Adult Basic Education/Adult Secondary Education Mathematics",
+    "award": "Noncredit program",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/adult-basic-education-adult-secondary-education-mathematics-com-spring-2025-cont-ed",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33561",
+    "title": "Shelter Dog Training",
+    "award": "Noncredit program",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/shelter-dog-training-cc-spring-2019",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33562",
+    "title": "Warehousing",
+    "award": "Noncredit program",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/warehousing-cc-spring-2019",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33941",
+    "title": "High School Equivalency Test (HiSET)",
+    "award": "Noncredit program",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/high-school-equivalency-test-hiset-com-spring-2019",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35110",
+    "title": "Biology",
+    "award": "A.S. T Degree",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/biology-as-t-spring-2019",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35233",
+    "title": "Apprenticeship Carpentry, Insulator",
+    "award": "A.S. Degree",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/apprenticeship-carpentry-insulator-as-spring-intersession-2021",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35234",
+    "title": "Apprenticeship Carpentry, Insulator",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/apprenticeship-carpentry-insulator-ca-spring-intersession-2021",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35614",
+    "title": "Early Childhood Education",
+    "award": "A.S. T Degree",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/early-childhood-education-as-t-spring-2019",
+    "coverage": 0.875,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35735",
+    "title": "Nutrition and Dietetics",
+    "award": "A.S. T Degree",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/nutrition-and-dietetics-as-t-spring-intersession-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36209",
+    "title": "Adult Secondary Education, College Preparation Algebra",
+    "award": "Noncredit program",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/adult-secondary-education-college-preparation-algebra-com-spring-2019",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36210",
+    "title": "3D Printing, CC",
+    "award": "Noncredit program",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/3d-printing-cc-spring-2024-cont-ed",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36211",
+    "title": "Adult Secondary Education, College Preparatory Composition",
+    "award": "Noncredit program",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/adult-secondary-education-college-preparatory-composition-com-spring-2025-cont-ed",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36212",
+    "title": "Medical Assistant",
+    "award": "Noncredit program",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/medical-assistant-cc-spring-2019",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36213",
+    "title": "Nursing Assistant",
+    "award": "Noncredit program",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/nursing-assistant-cc-fall-2022-continuing-ed",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36214",
+    "title": "Effective Communication Skills",
+    "award": "Noncredit program",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/effective-communication-skills-cc-summer-2020-continuing-ed",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36215",
+    "title": "Employment Readiness",
+    "award": "Noncredit program",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/employment-readiness-cc-spring-2019",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36216",
+    "title": "Technical Skills for Higher Learning",
+    "award": "Noncredit program",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/technical-skills-for-higher-learning-cc-fall-2022-continuing-ed",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36217",
+    "title": "Transition to Higher Learning",
+    "award": "Noncredit program",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/transition-to-higher-learning-cc-spring-2019",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36304",
+    "title": "Computer Retail Sales and Support",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/computer-retail-sales-and-support-ca-spring-2019",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36370",
+    "title": "Basic Employment Skills",
+    "award": "Noncredit program",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/basic-employment-skills-cc-spring-2020-continuing-ed",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36371",
+    "title": "Home-Based Business",
+    "award": "Noncredit program",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/home-based-business-cc-fall-2024-cont-ed",
+    "coverage": 0.8,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36372",
+    "title": "College Readiness",
+    "award": "Noncredit program",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/college-readiness-com-spring-2023-continuing-ed",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36585",
+    "title": "Digital Marketing Specialist, CC",
+    "award": "Noncredit program",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/digital-marketing-specialist-cc-spring-2019",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36665",
+    "title": "ESL Communication",
+    "award": "Noncredit program",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/esl-communication-com-spring-2025-cont-ed",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36897",
+    "title": "College Preparation Mathematics",
+    "award": "Noncredit program",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/college-preparation-mathematics-com-spring-2019",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36898",
+    "title": "Essential Mathematics and Math Study Skills Support",
+    "award": "Noncredit program",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/essential-mathematics-and-math-study-skills-support-com-spring-2019",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36900",
+    "title": "Custodial Technician",
+    "award": "Noncredit program",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/custodial-technician-cc-spring-2019",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36901",
+    "title": "Caregiver / Personal Care Aide",
+    "award": "Noncredit program",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/caregiver-personal-care-aide-cc-fall-2024-cont-ed",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36914",
+    "title": "Secondary Education",
+    "award": "Noncredit program",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/secondary-education-com-spring-2020",
+    "coverage": 0.988,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37102",
+    "title": "Code Enforcement and Compliance, CA",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/code-enforcement-and-compliance-ca-fall-2023",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37132",
+    "title": "Social Justice Studies: Chicano",
+    "award": "A.A- T Degree",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/social-justice-studies-chicano-aa-t-fall-2021",
+    "coverage": 0.786,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37133",
+    "title": "Social Justice Studies: Gender",
+    "award": "A.A- T Degree",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/social-justice-studies-gender-aa-t-spring-intersession-2023",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37161",
+    "title": "Social Justice Studies: General",
+    "award": "A.A- T Degree",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/social-justice-studies-general-aa-t-spring-intersession-2026",
+    "coverage": 0.92,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37162",
+    "title": "Social Justice Studies: Ethnic",
+    "award": "A.A- T Degree",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/social-justice-studies-ethnic-aa-t-fall-2023",
+    "coverage": 0.882,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37164",
+    "title": "Social Work and Human Services",
+    "award": "A.A- T Degree",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/social-work-and-human-services-aa-t-spring-intersession-2026",
+    "coverage": 0.853,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37478",
+    "title": "American College English/ESL",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/american-college-english-esl-ca-fall-2020",
+    "coverage": 0.909,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37803",
+    "title": "Office Leadership Skills",
+    "award": "Noncredit program",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/office-leadership-skills-cc-summer-2020-continuing-ed",
+    "coverage": 0.75,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37805",
+    "title": "Nurse Assistant Acute Care",
+    "award": "Noncredit program",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/nurse-assistant-acute-care-cc-fall-2024-cont-ed",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37806",
+    "title": "Home Health Aide (HHA) for Certified Nurse Assistants (CNA)",
+    "award": "Noncredit program",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/home-health-aide-hha-for-certified-nurse-assistants-cna-cc-fall-2024-cont-ed",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37807",
+    "title": "Healthcare Support Worker",
+    "award": "Noncredit program",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/healthcare-support-worker-cc-spring-2019",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37825",
+    "title": "Workforce Skills",
+    "award": "Noncredit program",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/workforce-skills-cc-spring-2019",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37911",
+    "title": "After School Program Associate Teacher",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/after-school-program-associate-teacher-ca-spring-intersession-2026",
+    "coverage": 0.857,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37913",
+    "title": "Bilingual Instructional Aide: Spanish",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/bilingual-instructional-aide-spanish-ca-spring-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38157",
+    "title": "After School Program Assistant",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/after-school-program-assistant-ca-fall-2020",
+    "coverage": 0.6,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38281",
+    "title": "Food Handler",
+    "award": "Noncredit program",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/food-handler-cc-spring-2019",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38398",
+    "title": "Behavior Technician",
+    "award": "Noncredit program",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/behavior-technician-cc-spring-2025-cont-ed",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38399",
+    "title": "Office Technology",
+    "award": "Noncredit program",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/office-technology-cc-fall-2019-continuing-ed",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38400",
+    "title": "Working with Students with Disabilities",
+    "award": "Noncredit program",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/working-with-students-with-disabilities-cc-fall-2019-continuing-ed",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39807",
+    "title": "Global Studies",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/global-studies-ca-spring-2023",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39808",
+    "title": "Ethnic Studies",
+    "award": "A.A. Degree",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/ethnic-studies-aa-spring-2025",
+    "coverage": 0.824,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39916",
+    "title": "Kinesiology - Fitness and Active Lifestyle",
+    "award": "A.S. Degree",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/kinesiology-fitness-and-active-lifestyle-ca-spring-intersession-2026",
+    "coverage": 0.885,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39917",
+    "title": "Kinesiology - Fitness and Active Lifestyle",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/kinesiology-fitness-and-active-lifestyle-as-spring-intersession-2026",
+    "coverage": 0.903,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39918",
+    "title": "Kinesiology - Health Promotion",
+    "award": "A.S. Degree",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/kinesiology-health-promotion-ca-spring-intersession-2026",
+    "coverage": 0.903,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39919",
+    "title": "Kinesiology - Health Promotion",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/kinesiology-health-promotion-as-spring-intersession-2026",
+    "coverage": 0.908,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39920",
+    "title": "Kinesiology - Sport Studies",
+    "award": "A.S. Degree",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/kinesiology-sport-studies-as-spring-intersession-2026",
+    "coverage": 0.905,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39921",
+    "title": "Kinesiology - Sport Studies",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/kinesiology-sport-studies-ca-spring-intersession-2026",
+    "coverage": 0.889,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40510",
+    "title": "Enhanced Advanced ESL Skills",
+    "award": "Noncredit program",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/enhanced-advanced-esl-skills-com-summer-2025-cont-ed",
+    "coverage": 0.5,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40639",
+    "title": "Biotechnology Lab Assistant",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/biotechnology-lab-assistant-ca-fall-2023",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41165",
+    "title": "Financial Advisor Preparation",
+    "award": "Noncredit program",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/financial-advisor-preparation-cc-spring-2025-cont-ed",
+    "coverage": 0.5,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41770",
+    "title": "Pre-Nursing and Allied Health Science",
+    "award": "A.S. Degree",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/pre-nursing-and-allied-health-science-as-spring-intersession-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42027",
+    "title": "High School Equivalency Test Preparation in All Subject Areas",
+    "award": "Noncredit program",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/high-school-equivalency-test-preparation-in-all-subject-areas-com-summer-2025-cont-ed",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42317",
+    "title": "ESL for CNA and Caregiving",
+    "award": "Noncredit program",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/esl-for-cna-and-caregiving-com-spring-2025-cont-ed",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42387",
+    "title": "Lactation Educator Specialist",
+    "award": "Noncredit program",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/lactation-educator-specialist-cc-summer-2025-cont-ed",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42497",
+    "title": "Water System Automation, CA",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/water-system-automation-ca-spring-2025",
+    "coverage": 0.5,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42815",
+    "title": "Adult Secondary Education Visual and Performing Arts",
+    "award": "Noncredit program",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/adult-secondary-education-visual-and-performing-arts-com-spring-2023-continuing-ed",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42990",
+    "title": "Public Administration",
+    "award": "A.S. Degree",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/public-administration-as-spring-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42991",
+    "title": "Business Administration 2.0",
+    "award": "A.S. T Degree",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/business-administration-2-0-as-t-spring-intersession-2026",
+    "coverage": 0.833,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43227",
+    "title": "Diversity in the Workforce",
+    "award": "Noncredit program",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/diversity-in-the-workforce-cc-summer-2023-continuing-ed",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43259",
+    "title": "Making Remote Employment Work for You",
+    "award": "Noncredit program",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/making-remote-employment-work-for-you-cc-summer-2023-continuing-ed",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43319",
+    "title": "Vocational Real Estate Salesperson",
+    "award": "Noncredit program",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/vocational-real-estate-salesperson-cc-spring-2025-cont-ed",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43691",
+    "title": "Companion Animal Training, AA",
+    "award": "A.A. Degree",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/companion-animal-training-aa-spring-intersession-2026",
+    "coverage": 0.929,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43692",
+    "title": "Data Science, AS",
+    "award": "A.S. Degree",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/data-science-as-spring-intersession-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43876",
+    "title": "Drone Operation and Photography, CC",
+    "award": "Noncredit program",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/drone-operation-and-photography-cc-fall-2024-cont-ed",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43901",
+    "title": "Public Administration",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/public-administration-ca-spring-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44174",
+    "title": "Apprenticeship in Early Childhood, CA",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/apprenticeship-in-early-childhood-ca-spring-2024",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44233",
+    "title": "Introduction to Artificial Intelligence (AI) in the Workforce, CC",
+    "award": "Noncredit program",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/introduction-to-artificial-intelligence-ai-in-the-workforce-cc-summer-2024-cont-ed",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44319",
+    "title": "Data Science, CA",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/data-science-ca-spring-intersession-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44326",
+    "title": "Apprenticeship in Early Childhood, AS",
+    "award": "A.S. Degree",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/apprenticeship-in-early-childhood-as-spring-2024",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44436",
+    "title": "Water Utility Management",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/water-utility-management-ca-spring-intersession-2025",
+    "coverage": 0.9,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44459",
+    "title": "Water Utility Management",
+    "award": "A.S. Degree",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/water-utility-management-as-spring-intersession-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44797",
+    "title": "Social Media, AS",
+    "award": "A.S. Degree",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/social-media-as-spring-intersession-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44861",
+    "title": "Lactation Consultant Education",
+    "award": "Noncredit program",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/lactation-consultant-education-cc-summer-2025-cont-ed",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44862",
+    "title": "Unarmed Public Safety and Security Officer Program",
+    "award": "Noncredit program",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/unarmed-public-safety-and-security-officer-program-cc-spring-2025-cont-ed",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45579",
+    "title": "Apprenticeship Carpentry, General Carpenter",
+    "award": "A.S. Degree",
+    "url": "https://sccollege.elumenapp.com/catalog/catalog/program/apprenticeship-carpentry-concrete-ca-spring-2019",
+    "coverage": 0.571,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   }
+  ]
+ },
+ "run": "38999072436"
+}
