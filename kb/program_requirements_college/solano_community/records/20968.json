@@ -1,0 +1,235 @@
+{
+ "college": "Solano Community College",
+ "control_number": "20968",
+ "shape": "certificate",
+ "title": "Web Design and Development",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=210",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 12229,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 12229,
+    "output_tokens": 1687,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1687,
+  "output_tokens_details": {
+   "thinking_tokens": 639
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.08266,
+ "ms": 14950,
+ "seconds": 15.1,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 8,
+   "listed": 8,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    22.5,
+    22.5
+   ],
+   "stated": [
+    22.5,
+    22.5
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [
+    "Produce functional web pages replete with responsive web elements.",
+    "Properly use design elements and an HTML editor in creating web pages.",
+    "Develop a project incorporating CSS, search forms, tables, photo galleries, shared borders, themes, interactive components, dynamic web pages and publish to a server.",
+    "Create web elements for print design and production.",
+    "Create and edit production quality animation and video"
+   ],
+   "why": [
+    "not in the catalog text as printed: Produce functional web pages replete with responsive web elements.",
+    "not in the catalog text as printed: Properly use design elements and an HTML editor in creating web pages.",
+    "not in the catalog text as printed: Develop a project incorporating CSS, search forms, tables, photo galleries, shar",
+    "not in the catalog text as printed: Create web elements for print design and production.",
+    "not in the catalog text as printed: Create and edit production quality animation and video"
+   ],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": false
+  },
+  "careers": {
+   "count": 6,
+   "not_verbatim": [
+    "Motion Graphic/Animation Video Editor"
+   ],
+   "pass": false
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Web Design and Development Certificate of Achievement and Associate in Science",
+   "measure": "units",
+   "total_units": {
+    "min": 22.5,
+    "max": 22.5
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Produce functional web pages replete with responsive web elements.",
+    "Properly use design elements and an HTML editor in creating web pages.",
+    "Develop a project incorporating CSS, search forms, tables, photo galleries, shared borders, themes, interactive components, dynamic web pages and publish to a server.",
+    "Create web elements for print design and production.",
+    "Create and edit production quality animation and video"
+   ],
+   "careers": [
+    "website designer",
+    "developer",
+    "Web Designer",
+    "Web Development",
+    "Motion Graphic/Animation Video Editor",
+    "Print Designer"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 22.5,
+     "max": 22.5
+    },
+    "courses": [
+     {
+      "code": "CIS 001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS 061",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS 062",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS 069",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS 070",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS 085",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS 087",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 097",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The section covers both the Certificate of Achievement and the Associate in Science; the Program Outcomes list is shared by both awards and is recorded here for the certificate.",
+   "The certificate is earned by completing the 22.5-unit major; the A.S. adds General Education and electives to reach a minimum of 60 units, which is not recorded as this certificate's degree_total.",
+   "The PDF text has broken ligatures (e.g. 'CreaƟ ng'); outcomes and careers were transcribed with the intended characters.",
+   "Requirement list prints CIS 062 as 'Creating Web Interactivity with Flash', CIS 069 as 'Multimedia for the Web', CIS 087 as 'Adobe Illustrator for the Web', and BUS 097 as 'Work Readiness'; titles differ from the state file but codes match (CIS 001 = CIS 1, etc.).",
+   "Careers 'website designer' and 'developer' come from the description sentence 'employment as a website designer or developer'; the other four from 'Career Opportunities'."
+  ]
+ },
+ "extracted_run": "39035226783"
+}

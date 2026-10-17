@@ -1,0 +1,398 @@
+{
+ "college": "Solano Community College",
+ "control_number": "38652",
+ "shape": "adt",
+ "title": "Elementary Teacher Education",
+ "award": "A.A- T Degree",
+ "source_url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=257",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8545,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8545,
+    "output_tokens": 3112,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 3112,
+  "output_tokens_details": {
+   "thinking_tokens": 1078
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.09642,
+ "ms": 24258,
+ "seconds": 24.6,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 17,
+   "listed": 19,
+   "share": 0.895,
+   "missing": [
+    "ENGLC1001",
+    "GEOG4"
+   ],
+   "unexplained": [
+    "GEOG4"
+   ],
+   "none_placed": false,
+   "pass": false
+  },
+  "invented": {
+   "count": 4,
+   "codes": [
+    "COMMC1000",
+    "EDUC1",
+    "ENGL1E",
+    "PHSC12"
+   ],
+   "flagged": [
+    "COMMC1000",
+    "EDUC1",
+    "ENGL1E",
+    "PHSC12"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    45.0,
+    47.0
+   ],
+   "stated": [
+    60.0,
+    60.0
+   ],
+   "against": "degree",
+   "ge": null,
+   "why": [
+    "the record names the degree total and the Cal-GETC pattern, but no units for it"
+   ],
+   "major": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     45.0,
+     47.0
+    ],
+    "stated": [
+     45.0,
+     47.0
+    ],
+    "against": "program",
+    "why": []
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [
+    "Apply an understanding of how diverse cultural beliefs and social, political, and/or historical context impact forms of human expression.",
+    "Demonstrate quantitative reasoning skills and an understanding of the scientific method, consistent with elementary level standards.",
+    "Critically evaluate strategies and techniques for working with culturally, linguistically and ethnically diverse populations, including children with special education needs."
+   ],
+   "why": [
+    "not in the catalog text as printed: Apply an understanding of how diverse cultural beliefs and social, political, an",
+    "not in the catalog text as printed: Demonstrate quantitative reasoning skills and an understanding of the scientific",
+    "not in the catalog text as printed: Critically evaluate strategies and techniques for working with culturally, lingu"
+   ],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": false
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Associate in Arts in Elementary Teacher Education: Integrated Programs for Transfer (ADT: A.A.-T)",
+   "measure": "units",
+   "total_units": {
+    "min": 45,
+    "max": 47
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Apply an understanding of child development theories and ethical standards to the development of a personal teaching philosophy.",
+    "Apply an understanding of how diverse cultural beliefs and social, political, and/or historical context impact forms of human expression.",
+    "Demonstrate quantitative reasoning skills and an understanding of the scientific method, consistent with elementary level standards.",
+    "Critically evaluate strategies and techniques for working with culturally, linguistically and ethnically diverse populations, including children with special education needs."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "REQUIRED COURSES",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "BIOL C1000",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDEV C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COMM C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "EDUC 001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HIST C1001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "POLS C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDFS 053",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDFS 062",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDFS 064",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 055",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "College Composition (select one course)",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 4,
+     "max": 5
+    },
+    "courses": [
+     {
+      "code": "ENGL C1000",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL 001E",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "History or Literature (select one course)",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "HIST 002",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL C1003",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List A - Science: (Select 4 units)",
+    "rule": "choose_units",
+    "minimum": 4,
+    "option_group": null,
+    "stated": {
+     "min": 4,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "GEOL 006",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOL 006L",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHSC 012",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "List B - Arts: (Select one course)",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "ARTH 001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANC 004",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSC 008",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THEA 006",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ENGL C1001",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "The PDF text contains ligature artifacts (e.g. 'EducaƟ on', 'quanƟ taƟ ve', 'scienƟ ﬁ c'); the heading and outcomes were transcribed with these restored to ordinary letters (Education, quantitative, scientific, etc.). Reviewer may verify against the PDF.",
+   "degree_total 60 is taken from 'To earn the Associate in Arts in Elementary Teacher Education ... students must: 1. Complete 60 semester units that are eligible for transfer to the CSU, including ... Cal-GETC'; this is the standard ADT statement but is printed for this award. Reviewer may prefer null.",
+   "total_units 45-47 is the printed 'Required Major Total Units'. No Cal-GETC unit figure is printed, so ge_units is null.",
+   "Closed-list codes without spaces (BIOLC1000, CDEVC1000) and unpadded numbers (CDFS 53, MATH 55, GEOL 6, HIST 2, ARTH 1, DANC 4, MUSC 8, THEA 6) were matched to the catalog's codes (BIOL C1000, CDEV C1000, CDFS 053, etc.).",
+   "List A - Science: 'Select 4 units' — GEOL 006 (3) with GEOL 006L (1) or PHSC 012 (4).",
+   "The 'careers in elementary teacher education' phrase appears only in the EDUC 001 course description, so it was not recorded as a career."
+  ]
+ },
+ "extracted_run": "39035226783"
+}

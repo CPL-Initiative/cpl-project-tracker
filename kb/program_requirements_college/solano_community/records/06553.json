@@ -1,0 +1,230 @@
+{
+ "college": "Solano Community College",
+ "control_number": "06553",
+ "shape": "degree",
+ "title": "Fire Technology",
+ "award": "A.S. Degree",
+ "source_url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=283",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 9722,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 9722,
+    "output_tokens": 1881,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1881,
+  "output_tokens_details": {
+   "thinking_tokens": 738
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.07651,
+ "ms": 15921,
+ "seconds": 16.4,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 6,
+   "listed": 9,
+   "share": 0.667,
+   "missing": [
+    "EMS110",
+    "EMS112",
+    "FIRE140"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    18.0,
+    18.0
+   ],
+   "stated": [
+    18.0,
+    18.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [
+    "Identify and comprehend laws, regulations, codes and standards that influence fire department operations, and identify regulatory and advisory organizations that create and mandate them, especially in the areas of fire prevention, building codes and ordin",
+    "Analyze the causes of fire; determine extinguishing agents and methods; differentiate the stages of the fire and fire development; and compare methods of heat transfer .",
+    "Identify and describe common types of building construction and conditions associated with structural collapse and fire fighter safety.",
+    "Demonstrate the ability to analyze, appraise and evaluate fire and emergency incidents and identify components of emergency management and fire fighter safety."
+   ],
+   "why": [
+    "not in the catalog text as printed: Identify and comprehend laws, regulations, codes and standards that influence fi",
+    "not in the catalog text as printed: Analyze the causes of fire; determine extinguishing agents and methods; differen",
+    "not in the catalog text as printed: Identify and describe common types of building construction and conditions assoc",
+    "not in the catalog text as printed: Demonstrate the ability to analyze, appraise and evaluate fire and emergency inc"
+   ],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": false
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Fire Technology Certificate of Achievement/Associate in Science (heading not in extracted text; taken from outcomes lead-in)",
+   "measure": "units",
+   "total_units": {
+    "min": 18,
+    "max": 18
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Identify and comprehend laws, regulations, codes and standards that influence fire department operations, and identify regulatory and advisory organizations that create and mandate them, especially in the areas of fire prevention, building codes and ordin",
+    "Analyze the causes of fire; determine extinguishing agents and methods; differentiate the stages of the fire and fire development; and compare methods of heat transfer .",
+    "Identify and describe common types of building construction and conditions associated with structural collapse and fire fighter safety.",
+    "Demonstrate the ability to analyze, appraise and evaluate fire and emergency incidents and identify components of emergency management and fire fighter safety."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "REQUIRED COURSES",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 18,
+     "max": 18
+    },
+    "courses": [
+     {
+      "code": "FIRE 050",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FIRE 051",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FIRE 053",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FIRE 054",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FIRE 056",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FIRE 101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "EMS 110",
+    "why": "named only in the Firefighter 1 & 2 Certificate of Achievement section"
+   },
+   {
+    "code": "EMS 112",
+    "why": "named only in the Firefighter 1 & 2 Certificate of Achievement section"
+   },
+   {
+    "code": "FIRE 140",
+    "why": "named only in the Firefighter 1 & 2 Certificate of Achievement section and course descriptions"
+   }
+  ],
+  "notes": [
+   "The extracted text begins mid-section on page 283; the A.S. section's heading, program description and any degree total/GE information printed before it are not in the text. Reviewer should check the preceding page.",
+   "The outcomes list is printed for the Fire Technology Certificate of Achievement/Associate in Science jointly; the A.S. degree shares it.",
+   "Outcome 1 is cut off in the text ('building codes and ordin'); recorded as printed without completing it.",
+   "PDF ligature artifacts (e.g., 'IdenƟ fy', 'ﬁ re') were read as the printed words ('Identify', 'fire') in outcomes.",
+   "Catalog prints codes with leading zeros (FIRE 050, 051, 053, 054, 056); treated as the same courses as closed-list FIRE 50, 51, 53, 54, 56.",
+   "'Required Major Total Units 18' recorded as total_units; no degree total or GE pattern appears in the extracted text."
+  ]
+ },
+ "extracted_run": "39035226783"
+}

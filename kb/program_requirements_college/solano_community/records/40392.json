@@ -1,0 +1,209 @@
+{
+ "college": "Solano Community College",
+ "control_number": "40392",
+ "shape": "certificate",
+ "title": "Infant/Toddler Teacher",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=198",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 12201,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 12201,
+    "output_tokens": 1370,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1370,
+  "output_tokens_details": {
+   "thinking_tokens": 431
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.0762,
+ "ms": 14728,
+ "seconds": 15.1,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 6,
+   "listed": 6,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    18.0,
+    18.0
+   ],
+   "stated": [
+    18.0,
+    18.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [
+    "Understand and apply developmental theories from conception through adolescence.",
+    "Design a play based curriculum which supports children using developmental, inclusive and anti-bias principles.",
+    "Identify and analyze quality early childhood practices including professionalism, self-reflection, play-based holistic learning, multiculturalism, and relationship building to ascertain their impact on children’s development."
+   ],
+   "why": [
+    "not in the catalog text as printed: Understand and apply developmental theories from conception through adolescence.",
+    "not in the catalog text as printed: Design a play based curriculum which supports children using developmental, incl",
+    "not in the catalog text as printed: Identify and analyze quality early childhood practices including professionalism"
+   ],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": false
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Infant/Toddler Teacher Certificate of Achievement",
+   "measure": "units",
+   "total_units": {
+    "min": 18,
+    "max": 18
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Understand and apply developmental theories from conception through adolescence.",
+    "Design a play based curriculum which supports children using developmental, inclusive and anti-bias principles.",
+    "Identify and analyze quality early childhood practices including professionalism, self-reflection, play-based holistic learning, multiculturalism, and relationship building to ascertain their impact on children’s development.",
+    "Demonstrate the ability to access community resources which support and empower children and families."
+   ],
+   "careers": [
+    "associate teacher"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 18,
+     "max": 18
+    },
+    "courses": [
+     {
+      "code": "CDEV C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDFS 050",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDFS 062",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDFS 063",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDFS 075",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDFS 076",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The Program Outcomes lead-in under the Infant/Toddler Teacher section reads 'Students who complete the Associate Teacher Certificate of Achievement will be able to:'; the outcomes are recorded for this award since they are printed in its section, but the lead-in may be copied from the Associate Teacher program. Reviewer should check.",
+   "Outcome text was copied from a PDF extraction with ligature artifacts (e.g. 'Ɵ' for 'ti', 'ﬂ' for 'fl'); these were read as the intended letters.",
+   "Catalog prints codes with leading zeros (CDFS 050, 062, 063, 075, 076) and 'CDEV C1000' with a space; these match closed-list CDFS 50, 62, 63, 75, 76 and CDEVC1000.",
+   "Required Major Total Units printed as 18; the description also states an '18-unit major'.",
+   "Career 'associate teacher' taken from the description: 'meet the requirements to become a fully qualified associate teacher'."
+  ]
+ },
+ "extracted_run": "39035226783"
+}

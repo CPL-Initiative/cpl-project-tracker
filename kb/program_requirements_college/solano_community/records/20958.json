@@ -1,0 +1,234 @@
+{
+ "college": "Solano Community College",
+ "control_number": "20958",
+ "shape": "certificate",
+ "title": "Retail Management",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=177",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 10435,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 10435,
+    "output_tokens": 1663,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1663,
+  "output_tokens_details": {
+   "thinking_tokens": 553
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.075,
+ "ms": 14429,
+ "seconds": 15.0,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 8,
+   "listed": 8,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "ACCT1"
+   ],
+   "flagged": [
+    "ACCT1"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    25.0,
+    25.0
+   ],
+   "stated": [
+    25.0,
+    25.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 6,
+   "courses": 0,
+   "count": 6,
+   "not_verbatim": [
+    "Demonstrate oral and written skills unique in the business community.",
+    "Apply leadership, ethical standards, and team building skills necessary for managerial positions in the 21st century.",
+    "Use basic computation skills to analyze and solve business problems requiring the use of mathematics."
+   ],
+   "why": [
+    "not in the catalog text as printed: Demonstrate oral and written skills unique in the business community.",
+    "not in the catalog text as printed: Apply leadership, ethical standards, and team building skills necessary for mana",
+    "not in the catalog text as printed: Use basic computation skills to analyze and solve business problems requiring th"
+   ],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": false
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Management: Retail Management Certificate of Achievement and Associate in Science",
+   "measure": "units",
+   "total_units": {
+    "min": 25,
+    "max": 25
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Demonstrate oral and written skills unique in the business community.",
+    "Apply leadership, ethical standards, and team building skills necessary for managerial positions in the 21st century.",
+    "Conduct a personal SWOT analysis for a future small business venture.",
+    "Design a comprehensive business plan for a future small business venture.",
+    "Demonstrate the ability to use technology in analyzing and solving business problems.",
+    "Use basic computation skills to analyze and solve business problems requiring the use of mathematics."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 25,
+     "max": 25
+    },
+    "courses": [
+     {
+      "code": "BUS 092",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS 050",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACCT 001",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MKT 171",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MKT 174",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MGMT 191",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MGMT 193",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MGMT 050",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MGMT 055",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The section covers both the Certificate of Achievement and the Associate in Science; the certificate is the 25-unit major alone. The A.S. adds General Education and electives to reach 60 units, which does not apply to this certificate, so degree_total and ge fields are null.",
+   "The program outcomes list is shared by the Certificate of Achievement and the Associate in Science; recorded here for the certificate.",
+   "The PDF extraction shows ligature glyphs (e.g., 'wriƩen', 'posiƟons', 'computaƟon', 'mathemaƟcs'); outcomes were recorded with these rendered as the printed letters 'tt'/'ti'. A reviewer should verify.",
+   "ACCT 001 (Principles of Accounting - Financial, 4 units) is required in the catalog but is not in the closed list; recorded as a catalog addition.",
+   "Catalog prints codes with leading zeros (BUS 092, CIS 050, MGMT 050, MGMT 055), which match closed-list BUS 92, CIS 50, MGMT 50, MGMT 55.",
+   "The note about the Western Association of Food Chains (WAFC) Certificate is an industry approval, not a career listing."
+  ]
+ },
+ "extracted_run": "39035226783"
+}

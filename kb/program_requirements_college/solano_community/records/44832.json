@@ -1,0 +1,435 @@
+{
+ "college": "Solano Community College",
+ "control_number": "44832",
+ "shape": "certificate",
+ "title": "Multimedia Journalism",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=309",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 9927,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 9927,
+    "output_tokens": 3631,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 3631,
+  "output_tokens_details": {
+   "thinking_tokens": 1175
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.11233,
+ "ms": 28083,
+ "seconds": 28.6,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 26,
+   "listed": 26,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "DMA11"
+   ],
+   "flagged": [
+    "DMA11"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    24.0,
+    24.5
+   ],
+   "stated": [
+    24.0,
+    24.5
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [
+    "Understand and apply ethical principles and legal considerations specific to journalism to produce well-researched, compelling multimedia stories using a combination of text, images, audio, and video to effectively communicate information to diverse audiences, with an emphasis on clarity, accuracy, and journalistic style.",
+    "Demonstrate an understanding of the importance of diversity and inclusion in journalism, reflecting it in coverage and story selection to represent a broad range of perspectives, while working collaboratively in a newsroom setting and demonstrating effective communication and teamwork skills essential for the dynamic and fast-paced nature of journalism.",
+    "Compile a comprehensive and professional portfolio showcasing a range of journalistic work across different media formats and disciplines, including written copy, digital media, and photography, demonstrating growth and proficiency over the course of the program."
+   ],
+   "why": [
+    "not in the catalog text as printed: Understand and apply ethical principles and legal considerations specific to jou",
+    "not in the catalog text as printed: Demonstrate an understanding of the importance of diversity and inclusion in jou",
+    "not in the catalog text as printed: Compile a comprehensive and professional portfolio showcasing a range of journal"
+   ],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": false
+  },
+  "careers": {
+   "count": 7,
+   "not_verbatim": [
+    "sales representative"
+   ],
+   "pass": false
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Multimedia Journalism Certificate of Achievement",
+   "measure": "units",
+   "total_units": {
+    "min": 24,
+    "max": 24.5
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Understand and apply ethical principles and legal considerations specific to journalism to produce well-researched, compelling multimedia stories using a combination of text, images, audio, and video to effectively communicate information to diverse audiences, with an emphasis on clarity, accuracy, and journalistic style.",
+    "Demonstrate an understanding of the importance of diversity and inclusion in journalism, reflecting it in coverage and story selection to represent a broad range of perspectives, while working collaboratively in a newsroom setting and demonstrating effective communication and teamwork skills essential for the dynamic and fast-paced nature of journalism.",
+    "Compile a comprehensive and professional portfolio showcasing a range of journalistic work across different media formats and disciplines, including written copy, digital media, and photography, demonstrating growth and proficiency over the course of the program."
+   ],
+   "careers": [
+    "freelance journalist",
+    "reporter",
+    "photographer",
+    "assistant editor",
+    "website assistant",
+    "social media director",
+    "sales representative"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Journalism Coursres (Complete 9 units)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 9,
+     "max": 9
+    },
+    "courses": [
+     {
+      "code": "JOUR 001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "JOUR 011",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "JOUR 060",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Photography Courses (Complete 3 units)",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "PHOT 056",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHOT 029",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Digital Media Courses (Complete 3 units)",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "DMA 009",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DMA 010",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Skills and Strategies Courses (Complete 3-3.5 units)",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3.5
+    },
+    "courses": [
+     {
+      "code": "CIS 070",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS 085",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS 061",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL 006",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DMA 010",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DMA011",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "DMA 102",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DMA 101",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DMA 100",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHOT 163",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHOT 165",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "LR 011",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Production Courses (Complete 3 units)",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "ENGL 058",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL 059",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "JOUR 061",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FTV 055",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FTV056",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COMM 075A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COMM 075B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COMM 080A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COMM 080B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Electives (Complete 3 units)",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": []
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The Program Outcomes lead-in reads 'Students who complete the Associate in Arts in Journalism for Transfer will be able to:' although printed in the Multimedia Journalism certificate section; the outcomes were recorded for this certificate, but a reviewer should confirm they apply to it.",
+   "PDF extraction replaced 'ti'/'tt'/'ft' ligatures with glyphs (e.g. 'consideraƟ ons', 'por ƞ olio'); outcomes and careers were transcribed with those ligatures restored to normal letters, otherwise word for word.",
+   "Electives block: 'Select 1 additional course not used above' (3 units) restricts electives to courses listed in the certificate's other blocks, so it is recorded as a block with no separate course list rather than as open_elective_units.",
+   "The Skills and Strategies list is split by a page footer; DMA 100, PHOT 163, PHOT 165 and LR 011 printed after the footer were read as continuing that list (before the Production Courses heading).",
+   "DMA 010 appears in both the Digital Media and Skills and Strategies lists; recorded in each.",
+   "DMA011 (Graphic Design - Intermediate) is not in the closed list; recorded as a catalog addition.",
+   "Catalog codes use leading zeros (e.g. JOUR 001, PHOT 056) and were matched to the closed-list codes without them."
+  ]
+ },
+ "extracted_run": "39035226783"
+}

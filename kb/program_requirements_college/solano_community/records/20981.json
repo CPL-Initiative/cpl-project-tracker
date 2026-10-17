@@ -1,0 +1,355 @@
+{
+ "college": "Solano Community College",
+ "control_number": "20981",
+ "shape": "certificate",
+ "title": "Water & Wastewater Technology",
+ "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+ "source_url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=443",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 9584,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 9584,
+    "output_tokens": 3019,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 3019,
+  "output_tokens_details": {
+   "thinking_tokens": 1302
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.09872,
+ "ms": 37996,
+ "seconds": 38.3,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 13,
+   "listed": 14,
+   "share": 0.929,
+   "missing": [
+    "CHEM12"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 3,
+   "codes": [
+    "CHEM10",
+    "CHEM51",
+    "WATR102"
+   ],
+   "flagged": [
+    "CHEM10",
+    "CHEM51",
+    "WATR102"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    25.0,
+    28.0
+   ],
+   "stated": [
+    25.0,
+    32.0
+   ],
+   "against": "program",
+   "why": [
+    "the blocks sum to 25.0-28.0; the catalog states 25.0-32.0"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [
+    "Attain certification of plant operators.",
+    "Understand technology laws and regulations."
+   ],
+   "why": [
+    "not in the catalog text as printed: Attain certification of plant operators.",
+    "not in the catalog text as printed: Understand technology laws and regulations."
+   ],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": false
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Water and Wastewater Technology Certificate of Achievement and Associate in Science",
+   "measure": "units",
+   "total_units": {
+    "min": 25,
+    "max": 32
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Attain certification of plant operators.",
+    "Understand treatment methods and technology.",
+    "Understand technology laws and regulations."
+   ],
+   "careers": [
+    "water and wastewater treatment personnel"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Core Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "WATR 100",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WATR 101",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "WATR 102",
+        "units": 4,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "WATR 104",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WATR 106",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WATR 107",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Specialty Courses (select two courses)",
+    "rule": "choose_courses",
+    "minimum": 2,
+    "option_group": null,
+    "stated": {
+     "min": 4,
+     "max": 5
+    },
+    "courses": [
+     {
+      "code": "WATR 105",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WATR 108",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WATR 120",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WATR 121",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Option 1",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Option",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "BIOT 160",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Option 2",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Option",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "BIOL 014",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Option 2: One course from List A",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": "Option",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CHEM 010",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CHEM 051",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CHEM 001",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Option 3",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Option",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "WATR 103",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "CHEM 12",
+    "why": "not in the text; catalog lists CHEM 051 Chemistry for the Health Sciences instead"
+   }
+  ],
+  "notes": [
+   "The certificate and the A.S. share one section, one 25-32 unit major and one Program Outcomes list; this record reads that shared section for the Certificate of Achievement. The 60-unit minimum applies to the A.S. only, so degree_total is null.",
+   "Outcomes text was normalized from PDF ligature artifacts (e.g., 'AƩ ain cerƟ ﬁ caƟ on' read as 'Attain certification', 'tec hnology' as 'technology'); reviewer should confirm against the printed page.",
+   "The core list prints 'Select Option 1, 2 or 3 ... 3-9' as a combined total for the option choice; no per-option totals are printed.",
+   "List A is a nested choice inside Option 2 only; it carries option_group 'Option' but is part of Option 2, not a fourth option (Option 2 = BIOL 014 plus one List A course).",
+   "WATR 108 is printed as 2 units in the Specialty Courses list but 3.0 units in the course description; recorded as 2 as printed in the requirements.",
+   "BIOL 014 matched to closed-list BIOL014 and CHEM 001 matched to closed-list CHEM 1 (same courses, code formatting differs). CHEM 010 and CHEM 051 are not in the closed list.",
+   "WATR 121 is titled 'Collection Systems Maintenance' in the catalog vs 'Collective Systems Maintenance' in the state file; treated as the same course.",
+   "Career entry 'water and wastewater treatment personnel' is taken from the description's statement about certification requirements; reviewer may judge whether it counts as a career named."
+  ]
+ },
+ "extracted_run": "39035226783"
+}
