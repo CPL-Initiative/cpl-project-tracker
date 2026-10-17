@@ -1,0 +1,201 @@
+{
+ "college": "Antelope Valley College",
+ "control_number": "44644",
+ "shape": "certificate",
+ "title": "Geology Fundamentals",
+ "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+ "source_url": "https://avc.elumenapp.com/catalog/2026-27/program/geology-fundamentals-cert-fall-2025",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6896,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6896,
+    "output_tokens": 1260,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1260,
+  "output_tokens_details": {
+   "thinking_tokens": 450
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.05278,
+ "ms": 11594,
+ "seconds": 11.9,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 5,
+   "listed": 5,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    8.0,
+    8.0
+   ],
+   "stated": [
+    8.0,
+    8.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 2,
+   "courses": 0,
+   "count": 2,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Geology Fundamentals Cert",
+   "measure": "units",
+   "total_units": {
+    "min": 8,
+    "max": 8
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Students will understand the unifying principles of physical and historical geology and have a working knowledge of the discipline's diverse conceptual and methodological approaches.",
+    "Students will understand the relevance of the scientific method and have a working knowledge of how the scientific method applies to the study and evaluation of physical and historical geologic principles."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Physical Geology Lecture Honors Option",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "GEOL101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "GEOL101H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Core Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 5,
+     "max": 5
+    },
+    "courses": [
+     {
+      "code": "GEOL101L",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOL102",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOL102L",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The 'Physical Geology Lecture Honors Option' block ('Complete the following number of credits: 3'; pathway says 'Take one of the following') is recorded as one required entry, GEOL101, with honors twin GEOL101H as an alternative.",
+   "Catalog prints codes without a space (GEOL101); they match the closed list's GEOL 101 etc.",
+   "The Program Outcomes list is cut off: a third outcome begins with 'S' and the text ends there. Only the two complete outcomes are recorded.",
+   "The 'Program Goals and Objectives' section includes a goal statement ('Upon successful completion of this program a student will learn the fundamental principles...'). It is not recorded as a program learning outcome.",
+   "No careers are named; the description mentions only internships and transfer."
+  ]
+ },
+ "extracted_run": "38979725726"
+}

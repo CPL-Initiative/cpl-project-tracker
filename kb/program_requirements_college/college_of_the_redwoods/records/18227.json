@@ -1,0 +1,481 @@
+{
+ "college": "College of the Redwoods",
+ "control_number": "18227",
+ "shape": "degree",
+ "title": "Liberal Arts: Science",
+ "award": "A.A. Degree",
+ "source_url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/liberal-arts-science-fall-2019",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7923,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7923,
+    "output_tokens": 3932,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 3932,
+  "output_tokens_details": {
+   "thinking_tokens": 1292
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.11033,
+ "ms": 30853,
+ "seconds": 31.2,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 22,
+   "listed": 27,
+   "share": 0.815,
+   "missing": [
+    "BIOLC1000",
+    "MATHC2210",
+    "MATHC2220",
+    "OCEAN10L",
+    "STATC1000"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 7,
+   "codes": [
+    "BIOL1",
+    "BIOL3",
+    "CHEM8",
+    "MATH15",
+    "MATH50A",
+    "MATH50B",
+    "OCEAN11"
+   ],
+   "flagged": [
+    "BIOL1",
+    "BIOL3",
+    "CHEM8",
+    "MATH15",
+    "MATH50A",
+    "MATH50B",
+    "OCEAN11"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    17.0,
+    19.0
+   ],
+   "stated": [
+    17.0,
+    19.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 6,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Liberal Arts: Science",
+   "measure": "units",
+   "total_units": {
+    "min": 17,
+    "max": 19
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Apply methods of scientific inquiry, including hypothesis formation, appropriate data collection and analysis, and presentation of results.",
+    "Explain observable phenomena using concepts of mathematics, physics and chemistry.",
+    "Use numerical, graphical, and/or symbolic representation to solve problems and present results.",
+    "Communicate clearly about science, in speech and/or in writing, using technical language and a format appropriate to the discipline, as well as common language for the lay-public."
+   ],
+   "careers": [
+    "a scientific field",
+    "Biological Technicians",
+    "Clinical Laboratory Technologists and Technicians",
+    "Industrial Production Managers",
+    "Medical and Health Services Managers",
+    "Medical Assistants"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Core: one course each from two of the three core areas (Chemistry, Math, or Physics)",
+    "rule": "choose_units",
+    "minimum": 8,
+    "option_group": null,
+    "stated": {
+     "min": 8,
+     "max": 9
+    },
+    "courses": [
+     {
+      "code": "CHEM1A",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM2",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH15",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MATH25",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH30",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH50A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PHYS2A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS4A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Restricted Electives: 9-10 units from below, or Core courses not already used.",
+    "rule": "choose_units",
+    "minimum": 9,
+    "option_group": null,
+    "stated": {
+     "min": 9,
+     "max": 10
+    },
+    "courses": [
+     {
+      "code": "AG17",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL1",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BIOL3",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BIOL4",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL5",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL6",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL7",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL15",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM1A",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM1B",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM2",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM3",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM8",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "FNR1",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FNR51",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOL1",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOL2",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH15",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MATH25",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH30",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH50A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MATH50B",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "OCEAN10",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "OCEAN11",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PHYS2A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS2B",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS4A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS4B",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS4C",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "BIOL C1000",
+    "why": "not in the text; catalog prints BIOL1 General Biology instead (possible renumbering)"
+   },
+   {
+    "code": "MATH C2210",
+    "why": "not in the text; catalog prints MATH50A Differential Calculus (possible renumbering)"
+   },
+   {
+    "code": "MATH C2220",
+    "why": "not in the text; catalog prints MATH50B Integral Calculus (possible renumbering)"
+   },
+   {
+    "code": "OCEAN 10L",
+    "why": "not in the text; catalog prints OCEAN11 Laboratory in Oceanography (possible renumbering)"
+   },
+   {
+    "code": "STAT C1000",
+    "why": "not in the text; catalog prints MATH15 Introduction to Statistics (possible renumbering)"
+   }
+  ],
+  "notes": [
+   "Page header states 'A.A. Degree (18.0 Credits)' while Program Requirements print '(Total 17 - 19)'; total_units recorded as 17-19. Reviewer should check.",
+   "Required Core is recorded as one choose_units block (8-9 units); the catalog requires one course each from two of the three core areas: Chemistry (CHEM1A, CHEM2; sub-total 5-10), Math (MATH15, MATH25, MATH30, MATH50A; sub-total 4-16), Physics (PHYS2A, PHYS4A; sub-total 4-8).",
+   "Restricted Electives may also be filled with Core courses not already used; core courses already appear in the electives list.",
+   "No general education pattern or degree total is printed on the page.",
+   "Catalog codes printed without spaces (e.g., CHEM1A); several (MATH15, MATH50A/B, BIOL1, OCEAN11) appear to be pre-Common Course Numbering codes corresponding to closed-list courses STAT C1000, MATH C2210/C2220, BIOL C1000, OCEAN 10L; marked as catalog additions. URL slug suggests the page content may date from Fall 2019."
+  ]
+ },
+ "extracted_run": "38979396148"
+}

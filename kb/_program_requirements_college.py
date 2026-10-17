@@ -792,8 +792,47 @@ def cq_is_program(nav: dict) -> bool:
     text = nav.get("text") or ""
     if " - " in text and CQ_AWARD.search(text):
         return True
+    if cq_name_award(text)[1]:
+        return True
     head, colon, tail = text.rpartition(": ")
     return bool(colon and head.strip() and CQ_AWARD.search(tail))
+
+
+# Butte (S401, page reads 38977301962 and 38977912351) titles one program two
+# ways, once in each of its program sections: "AS Degree in Automotive
+# Technology" under Programs by Subject, "Automotive Technology (AS Degree)" under
+# Programs by Communities of Interest. Neither has a dash or a colon, so its walk
+# read 542 nodes and took 18 entries (those that happened to carry one) for 168
+# programs. The award leads before " in ", or closes the title in parentheses.
+# The award words are singular: "Degrees and Certificates in Business" is a list.
+CQ_AWARD_LEAD = re.compile(
+    r"^((?:[A-Z]{2}(?:-T)?|A\.[AS]\.(?:-T)?|associate(?: of \w+)?|noncredit)?\s*"
+    r"(?:degree|certificate)(?: of \w+)?(?: for transfer)?)\s+in\s+(\S.*)$", re.I)
+CQ_AWARD_PAREN = re.compile(r"^(\S.*?)\s*\(([^()]*\b(?:degree|certificate)\b[^()]*)\)\s*$", re.I)
+# Las Positas (S401, page read 38982439886) puts the award after the name's last
+# comma: "Liberal Arts & Sciences: Mathematics and Science, Associate of Arts (AA)".
+# Only the 20 whose names also carry a colon were taken (20 of 201 found, run
+# 38979338956). A name holds commas too ("Film, Television & Electronic Media"),
+# so the words after the last comma must open with an award.
+CQ_AWARD_COMMA = re.compile(
+    r"^(\S.*),\s+((?:associate|certificate|noncredit|bachelor)\b.*|(?-i:(?:A\.[AS]\.|A[AS])(?:-T)?)(?:\s.*)?)$", re.I)
+
+
+def cq_name_award(text: str) -> tuple[str, str | None]:
+    """(the program's name, its award) from a title that leads with its award
+    before " in ", closes with it in parentheses, or names it after its last
+    comma; else (the title, None)."""
+    text = (text or "").strip()
+    m = CQ_AWARD_LEAD.match(text)
+    if m:
+        return m.group(2).strip(), m.group(1).strip()
+    m = CQ_AWARD_PAREN.match(text)
+    if m:
+        return m.group(1).strip(), m.group(2).strip()
+    m = CQ_AWARD_COMMA.match(text)
+    if m:
+        return m.group(1).strip(), m.group(2).strip()
+    return text, None
 
 
 def cq_hidden(nav: dict) -> bool:
@@ -862,8 +901,11 @@ def cq_group(title: str, url: str) -> str:
 
 
 def cq_title_key(nav: dict) -> str:
-    """An entry's title as one key: case, spacing and dashes folded."""
-    return "title:" + re.sub(r"[\s\u2013\u2014-]+", " ", (nav.get("text") or "").lower()).strip()
+    """An entry's title as one key: case, spacing and dashes folded, and Butte's
+    two forms of one program ("AS Degree in X", "X (AS Degree)") one key."""
+    name, award = cq_name_award(nav.get("text") or "")
+    text = "%s (%s)" % (name, award) if award else name
+    return "title:" + re.sub(r"[\s\u2013\u2014-]+", " ", text.lower()).strip()
 
 
 def cq_distinct(entries: list[dict]) -> tuple[list[dict], int]:
@@ -1216,6 +1258,52 @@ def el_fetch(reader, url: str, errors: list) -> str | None:
         return None
 
 
+# Every source adds to the list. Lake Tahoe's menu links its 16 transfer degrees and,
+# beside them, its departments (2026-2027/department/program-art); the read stopped at
+# the menu's programs and found 16 of 83 (run 38978047103). Los Medanos's menu links
+# neither: its departments are pages one segment under the catalog (26-27/art), listed
+# on 26-27/degrees, and each links its programs; from the Art start page the read found
+# Art's 7 of 97 (run 38978063188; page reads 38978810670, 38979564864, S401). So when
+# the list still falls short of the programs the state file names, the read walks the
+# menu's other pages one segment under the catalog and the pages they link, three steps
+# deep (courses > degrees > art), taking every program each links, at most EL_WALK_CALLS
+# content calls.
+EL_WALK_SHORT = 0.8        # walk when fewer program pages than this share of the closed lists
+EL_WALK_CALLS = 250
+EL_WALK_DEPTH = 3          # menu page, its topic (26-27/degrees), the department it lists
+
+
+def el_page_slugs(html_text: str, catalog: str) -> list[str]:
+    """Every page a publish call links one segment under the catalog, each once, in
+    order: a subject (current/aj), a department listing (26-27/degrees), a policy."""
+    pat = re.compile(r'href="(?:/catalog/)?%s/([^"/?#]+)"' % re.escape(catalog or ""), re.I)
+    out = []
+    for slug in pat.findall(html_text or ""):
+        if slug not in out:
+            out.append(slug)
+    return out
+
+
+def el_walk(reader, start: str, shell: str, catalog: str, slugs: list[str], skip: set,
+            errors: list) -> dict:
+    """Adds to slugs every program the menu's one-segment pages link, and the pages
+    they link, EL_WALK_DEPTH steps deep; the account of the walk."""
+    queue = [(s, 1) for s in el_page_slugs(shell, catalog) if s not in skip]
+    seen = skip | {s for s, _ in queue}
+    calls, before = 0, len(slugs)
+    while queue and calls < EL_WALK_CALLS:
+        slug, depth = queue.pop(0)
+        page = el_html(el_fetch(reader, el_publish_url(start, [slug], content=True), errors))
+        calls += 1
+        slugs += [p for p in el_program_slugs(page, catalog) if p not in slugs]
+        if depth < EL_WALK_DEPTH:
+            for t in el_page_slugs(page, catalog):
+                if t not in seen:
+                    seen.add(t)
+                    queue.append((t, depth + 1))
+    return {"walk_pages": calls, "walk_programs": len(slugs) - before, "walk_stopped_at_cap": bool(queue)}
+
+
 def el_pages_fast(reader, start: str, report: dict) -> list[dict]:
     """The catalog's program pages from its own publish calls: the full call
     once for the menu, then the content call per program. An empty list sends
@@ -1226,20 +1314,22 @@ def el_pages_fast(reader, start: str, report: dict) -> list[dict]:
     slugs = el_program_slugs(shell, catalog)
     report["elumen"] = {"catalog": catalog, "read": "publish/content", "menu_programs": len(slugs),
                         "errors": errors}
-    if not slugs:
-        # A menu of departments (Cabrillo): each department's content call lists its programs.
-        depts = el_department_slugs(shell, catalog)
-        for d in depts:
-            page = el_html(el_fetch(reader, el_publish_url(start, ["department", d], content=True), errors))
-            slugs += [s for s in el_program_slugs(page, catalog) if s not in slugs]
-        report["elumen"].update(menu_departments=len(depts), department_programs=len(slugs))
-    if not slugs:
-        # A menu of program and award hubs (Modesto, Palo Verde): each hub's content call lists its programs.
-        hubs = el_hub_slugs(shell, catalog)
-        for h in hubs:
-            page = el_html(el_fetch(reader, el_publish_url(start, [h], content=True), errors))
-            slugs += [s for s in el_program_slugs(page, catalog) if s not in slugs]
-        report["elumen"].update(menu_hubs=hubs, hub_programs=len(slugs))
+    # A menu of departments (Cabrillo): each department's content call lists its programs.
+    depts = el_department_slugs(shell, catalog)
+    for d in depts:
+        page = el_html(el_fetch(reader, el_publish_url(start, ["department", d], content=True), errors))
+        slugs += [s for s in el_program_slugs(page, catalog) if s not in slugs]
+    report["elumen"].update(menu_departments=len(depts), department_programs=len(slugs))
+    # A menu of program and award hubs (Modesto, Palo Verde): each hub's content call lists its programs.
+    hubs = el_hub_slugs(shell, catalog)
+    for h in hubs:
+        page = el_html(el_fetch(reader, el_publish_url(start, [h], content=True), errors))
+        slugs += [s for s in el_program_slugs(page, catalog) if s not in slugs]
+    report["elumen"].update(menu_hubs=hubs, hub_programs=len(slugs))
+    want = report.get("with_closed_list") or 0
+    if want and len(slugs) < EL_WALK_SHORT * want:
+        report["elumen"].update(el_walk(reader, start, shell, catalog, slugs,
+                                        set(hubs) | set(el_start_parts(start)), errors))
     slugs = slugs[:MAX_PAGES]
     pages = []
     for i, slug in enumerate(slugs):

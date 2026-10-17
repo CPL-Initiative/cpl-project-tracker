@@ -1,0 +1,257 @@
+{
+ "college": "College of the Redwoods",
+ "control_number": "31796",
+ "shape": "certificate",
+ "title": "Electrician Trainee",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/electrician-trainee-ca-fall-2024",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7621,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7621,
+    "output_tokens": 1621,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1621,
+  "output_tokens_details": {
+   "thinking_tokens": 291
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.0629,
+ "ms": 18462,
+ "seconds": 18.7,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 11,
+   "listed": 11,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "CT32"
+   ],
+   "flagged": [
+    "CT32"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    26.0,
+    26.0
+   ],
+   "stated": [
+    26.0,
+    26.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 10,
+   "courses": 0,
+   "count": 10,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 5,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Electrician Trainee, CA Certificate of Achievement",
+   "measure": "units",
+   "total_units": {
+    "min": 26,
+    "max": 26
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Prepare to pass State of California certification examinations.",
+    "Prepared to pass State of California certification examinations.",
+    "Attain general electrical construction, maintenance and control knowledge.",
+    "Attain general electrical construction, maintenance, and control knowledge.",
+    "An understanding of maintenance and repair procedures of basic electrical systems.",
+    "Gain an understanding of maintenance and repair procedures of basic electrical systems.",
+    "Demonstrate the ability to perform basic code and trade standard duties to support the proper operation of electrical systems.",
+    "The ability to perform basic code and trade standard duties to support the proper operation of electrical systems.",
+    "An awareness of State and Federal regulations that drive the electrical industry, and the role of the electrician in protecting public safety and property from the hazards of electricity.",
+    "Demonstrate an awareness of State and Federal regulations that drive the electrical industry and the role of the electrician in protecting public safety and property from the hazards of electricity."
+   ],
+   "careers": [
+    "Electricians",
+    "First-Line Supervisors of Construction Trades and Extraction Workers",
+    "First-Line Supervisors of Mechanics, Installers, and Repairers",
+    "Helpers--Electricians",
+    "Security and Fire Alarm Systems Installers"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Electrician Trainee",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 26,
+     "max": 26
+    },
+    "courses": [
+     {
+      "code": "MATH10",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HE7",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DT23",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CT78D",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CT78C",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CT78B",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CT78A",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CT72",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CT32",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CT25",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CET10L",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CET10",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The Program Learning Outcomes list prints what appear to be two versions of each of five outcomes (e.g., 'Prepare to pass...' and 'Prepared to pass...'); all ten lines are recorded as printed. A reviewer may want to check whether one version is outdated.",
+   "CT32 - Photovoltaic Design and Installation (1 unit) is required in the catalog but not in the closed list; recorded as a catalog addition. The listed courses sum to the stated 26 credits.",
+   "Codes are printed without a space between subject and number (e.g., MATH10); recorded as printed.",
+   "The Recommended Sequence is a semester plan for the same required courses, not a list of recommended courses, so no recommended block was recorded.",
+   "Careers are taken from the Career Information headings (occupation titles with wage data)."
+  ]
+ },
+ "extracted_run": "38979396148"
+}

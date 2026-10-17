@@ -454,6 +454,89 @@ check(C.cq_is_program({"text": "Accounting: A.S. Degree", "haschildbodynavs": Tr
       and not C.cq_is_program({"text": "Degrees and Certificates: Explained"})
       and not C.cq_is_program({"text": ": A.S. Degree"}),
       "cq_is_program reads an award after the last colon (Santa Ana), never a department or an explainer")
+
+# Butte (S401, page reads 38977301962 and 38977912351): the award leads before " in "
+# under Programs by Subject and closes the title in parentheses under Programs by
+# Communities of Interest; its walk took 18 entries for 168 programs.
+BUTTE_ENTRIES = ["AS Degree in Automotive Technology", "Certificate of Achievement in Diesel Technology",
+                 "Registered Nursing (AS Degree)", "Kinesiology (AA-T Degree)", "Para Education (Certificate)",
+                 "Early Childhood Education (Noncredit Certificate of Completion)",
+                 "Film, Television & Electronic Media (AS-T Degree)",
+                 "Automotive Technology - Honda, Professional Automotive Career Training (PACT) (AS Degree)"]
+BUTTE_NAV = ["AUT-Automotive Technology", "Programs by Subject", "Programs by Communities of Interest",
+             "Health & Public Services", "Academic Program Types and Requirements", "General Studies",
+             "Degrees and Certificates in Business", "Associate Degree for Transfer (ADT)", "(AS Degree)"]
+check(all(C.cq_is_program({"text": t, "haschildbodynavs": True}) for t in BUTTE_ENTRIES)
+      and not any(C.cq_is_program({"text": t, "haschildbodynavs": True}) for t in BUTTE_NAV),
+      "cq_is_program reads an award before \" in \" or in closing parentheses (Butte), never a subject, "
+      "a community, a plural list or a bare award: %r"
+      % ([t for t in BUTTE_ENTRIES if not C.cq_is_program({"text": t})]
+         + [t for t in BUTTE_NAV if C.cq_is_program({"text": t})]))
+# Las Positas (S401, page read 38982439886): the award after the name's last comma;
+# only the 20 whose names also carry a colon were taken (20 of 201, run 38979338956).
+LPC_ENTRIES = ["Liberal Arts & Sciences: Mathematics and Science, Associate of Arts (AA)",
+               "Biology, Associate in Science for Transfer (AS-T)", "Accounting Technician, Certificate of Achievement",
+               "Welding Technology, AS", "Theatre Arts, AA-T", "Biology, A.S. Degree"]
+LPC_NAV = ["Film, Television & Electronic Media", "Business, General", "Degrees, Certificates & Programs of Study",
+           "Departments, Degrees & Certificates", "Programs of Study", "Art, Associated Students",
+           "Electives, as approved", "Spanish, AAA"]
+check(all(C.cq_is_program({"text": t}) for t in LPC_ENTRIES)
+      and not any(C.cq_is_program({"text": t}) for t in LPC_NAV),
+      "cq_is_program reads an award after the last comma (Las Positas), never a name's own comma or a plain word: %r"
+      % ([t for t in LPC_ENTRIES if not C.cq_is_program({"text": t})] + [t for t in LPC_NAV if C.cq_is_program({"text": t})]))
+check(C.cq_name_award("Liberal Arts & Sciences: Mathematics and Science, Associate of Arts (AA)")
+      == ("Liberal Arts & Sciences: Mathematics and Science", "Associate of Arts (AA)"),
+      "the comma form names the program and its award")
+check(C.cq_name_award("Automotive Technology - Honda, Professional Automotive Career Training (PACT) (AS Degree)")
+      == ("Automotive Technology - Honda, Professional Automotive Career Training (PACT)", "AS Degree")
+      and C.cq_name_award("Certificate of Achievement in Automotive Technology")
+      == ("Automotive Technology", "Certificate of Achievement"),
+      "the name keeps its own parentheses; the award is the last pair or the words before \" in \"")
+for a, b in (("AS Degree in Automotive Technology", "Automotive Technology (AS Degree)"),
+             ("AS Degree in Automotive Technology - Honda, Professional Automotive Career Training (PACT)",
+              "Automotive Technology - Honda, Professional Automotive Career Training (PACT) (AS Degree)"),
+             ("Certificate of Achievement in Diesel Technology", "Diesel Technology (Certificate of Achievement)")):
+    check(C.cq_title_key({"text": a}) == C.cq_title_key({"text": b}),
+          "one program's two Butte titles are one key: %r / %r" % (a, b))
+check(C.cq_title_key({"text": "AS Degree in Automotive Technology"})
+      != C.cq_title_key({"text": "Certificate of Achievement in Automotive Technology"}),
+      "a program's degree and certificate stay two keys")
+BUTTE = {
+    "top": {"navs": [{"id": 25391, "text": "Academic Program Types and Requirements"},
+                     {"id": 25398, "text": "Programs by Subject", "haschildbodynavs": True},
+                     {"id": 25399, "text": "Programs by Communities of Interest", "haschildbodynavs": True}]},
+    "page:25391": {"body": []},
+    "page:25398": {"body": [{"navlist": [{"id": 28408}]}]},
+    "nav:28408": {"navs": [{"id": 28086, "text": "AUT-Automotive Technology", "haschildbodynavs": True}]},
+    "page:28086": {"body": [{"navlist": [{"id": 28059}]}]},
+    "nav:28059": {"navs": [{"id": 28225, "text": "AS Degree in Automotive Technology", "haschildbodynavs": True},
+                           {"id": 28226, "text": "Certificate of Achievement in Automotive Technology",
+                            "haschildbodynavs": True}]},
+    "page:25399": {"body": [{"navlist": [{"id": 28409}]}]},
+    "nav:28409": {"navs": [{"id": 28167, "text": "Industrial Technologies & Agriculture", "haschildbodynavs": True}]},
+    "page:28167": {"body": [{"navlist": [{"id": 27290}]}]},
+    "nav:27290": {"navs": [{"id": 28019, "text": "Automotive & Diesel", "haschildbodynavs": True}]},
+    "page:28019": {"body": [{"navlist": [{"id": 27310}]}]},
+    "nav:27310": {"navs": [{"id": 27919, "text": "Automotive Technology (AS Degree)", "haschildbodynavs": True},
+                           {"id": 27923, "text": "Diesel Technology (AS Degree)", "haschildbodynavs": True}]},
+}
+
+
+def butte_get(url):
+    q = urllib.parse.parse_qs(urllib.parse.urlparse(url).query)
+    if "navigationtypeId" in q:
+        return BUTTE["top"]
+    if "parentId" in q:
+        return BUTTE.get("nav:" + q["parentId"][0])
+    return BUTTE.get("page:" + q["id"][0])
+
+
+bents, bacct = C.cq_index(butte_get, 14, "https://butte.curriqunet.com")
+bdist, bdrop = C.cq_distinct(bents)
+check(sorted(e["id"] for e in bents) == [27919, 27923, 28225, 28226] and bacct["nodes_read"] == 6
+      and sorted(e["id"] for e in bdist) == [27923, 28225, 28226] and bdrop == 1,
+      "Butte's walk takes the entries under both views and reads each program once, the subject view's "
+      "title first: %r %r" % ([e["id"] for e in bents], [e["id"] for e in bdist]))
 HIDE = json.dumps({"nodeConfig": {"excludeFromWebView": True}})
 
 check(C.cq_hidden({"text": " ", "config": HIDE}) and C.cq_hidden({"text": "Notes", "config": HIDE})
@@ -1179,6 +1262,83 @@ check([g["url"].rsplit("/", 1)[1] for g in got_pages] == ["agriculture-as-fall-2
       % ([g["url"] for g in got_pages], rep.get("elumen")))
 check(sum(1 for u in asked if ",programs?" in u or ",bytype?" in u) == 2 and sum(1 for u in asked if ",program," in u) == 3,
       "one call a hub and one a program, nothing more")
+
+# Lake Tahoe (S401): the menu links 16 transfer degrees AND its departments; the read
+# stopped at the menu's programs (16 of 83, run 38978047103). Every source adds now.
+LT = "https://ltcc.elumenapp.com/catalog/2026-2027/about-this-catalog"
+LT_MENU = ('<a href="2026-2027/program/sociology-aa-t-fall-2025">Sociology AA-T</a>'
+           '<a href="2026-2027/department/program-art">Art</a><a href="2026-2027/department/program-business">Business</a>'
+           '<a href="2026-2027/financial-aid">Financial Aid</a>')
+LT_DEPT = {"program-art": '<a href="2026-2027/program/studio-arts-aa-t-fall-2025">AA-T</a>'
+                          '<a href="2026-2027/program/art-aa-fall-2025">Art AA</a>',
+           "program-business": '<a href="2026-2027/program/accounting-coa-fall-2025">Accounting</a>'}
+asked = []
+
+
+def lt_fetch(reader, url, errors):
+    asked.append(url)
+    if ",department," in url:
+        return json.dumps({"html": LT_DEPT[url.split("department,")[1].split("?")[0]]})
+    if ",program," in url:
+        return json.dumps({"html": "<h1>x</h1><p>Program Requirements SOC 101</p>"})
+    return json.dumps({"html": LT_MENU})
+
+
+real_fetch, C.el_fetch = C.el_fetch, lt_fetch
+try:
+    rep = {"with_closed_list": 5}
+    got_pages = C.el_pages_fast(None, LT, rep)
+finally:
+    C.el_fetch = real_fetch
+check([g["url"].rsplit("/", 1)[1] for g in got_pages] == ["sociology-aa-t-fall-2025", "studio-arts-aa-t-fall-2025",
+                                                          "art-aa-fall-2025", "accounting-coa-fall-2025"]
+      and rep["elumen"]["menu_programs"] == 1 and rep["elumen"]["department_programs"] == 4
+      and "walk_pages" not in rep["elumen"],
+      "a menu's programs and its departments' programs both count, and 4 of 5 is no shortfall to walk: %s %s"
+      % ([g["url"] for g in got_pages], rep.get("elumen")))
+
+# Los Medanos (S401): departments are pages one segment under the catalog (26-27/art),
+# listed on 26-27/degrees; from the Art start page the read found Art's 7 of 97.
+LMC = "https://lmc.elumenapp.com/catalog/26-27/art"
+LMC_PAGES = {
+    "shell": '<a href="26-27/welcome">Welcome</a><a href="26-27/courses">Program Requirements</a>'
+             '<a href="26-27/art">Art</a><a href="26-27/program/fine-arts-aa-fall-2026">Fine Arts AA</a>'
+             '<a href="26-27/course/art003">ART 003</a>',
+    "welcome": "<p>Welcome to LMC</p>",
+    "courses": '<a href="26-27/understanding">Understanding</a><a href="26-27/degrees">Degrees, Certificates</a>',
+    "understanding": "<p>How to read a course</p>",
+    "degrees": '<a href="26-27/art">Art</a><a href="26-27/biology">Biology</a><a href="26-27/welding">Welding</a>',
+    "biology": '<a href="26-27/program/biology-as-t-fall-2026">AS-T</a><a href="/catalog/26-27/program/biology-as-fall-2026">AS</a>',
+    "welding": '<a href="26-27/program/welding-coa-fall-2026">COA</a><a href="26-27/metals">deeper</a>',
+}
+asked = []
+
+
+def lmc_fetch(reader, url, errors):
+    asked.append(url)
+    if ",program," in url:
+        return json.dumps({"html": "<h1>x</h1><p>Program Requirements BIOL 1</p>"})
+    if "publish/content/26-27," in url:
+        return json.dumps({"html": LMC_PAGES.get(url.split("26-27,")[1].split("?")[0], "")})
+    return json.dumps({"html": LMC_PAGES["shell"]})
+
+
+real_fetch, C.el_fetch = C.el_fetch, lmc_fetch
+try:
+    rep = {"with_closed_list": 6}
+    got_pages = C.el_pages_fast(None, LMC, rep)
+finally:
+    C.el_fetch = real_fetch
+walked = [u.split("26-27,")[1].split("?")[0] for u in asked if "publish/content/26-27," in u and ",program," not in u]
+check([g["url"].rsplit("/", 1)[1] for g in got_pages] == ["fine-arts-aa-fall-2026", "biology-as-t-fall-2026",
+                                                          "biology-as-fall-2026", "welding-coa-fall-2026"]
+      and rep["elumen"]["walk_programs"] == 3 and not rep["elumen"]["walk_stopped_at_cap"],
+      "short of the closed lists, the read walks the menu's one-segment pages and the departments they list: %s %s"
+      % ([g["url"] for g in got_pages], rep.get("elumen")))
+check(walked == ["welcome", "courses", "understanding", "degrees", "biology", "welding"],
+      "the walk reads each page once, breadth first, three steps deep: %r" % walked)
+check("art" not in walked and "metals" not in walked and not any("course," in w or "course/" in w for w in walked),
+      "the start page is never read again, a page four steps down is never read, nor a course: %r" % walked)
 
 sql = open(os.path.join(ROOT, "chatbox", "supabase_program_requirement_records_college_load.sql")).read()
 body = sql.split("as $$")[1].split("$$;")[0]

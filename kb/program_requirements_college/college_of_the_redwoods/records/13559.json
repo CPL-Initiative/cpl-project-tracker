@@ -1,0 +1,167 @@
+{
+ "college": "College of the Redwoods",
+ "control_number": "13559",
+ "shape": "certificate",
+ "title": "Early Childhood Education",
+ "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+ "source_url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/early-childhood-education-fall-2018",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7319,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7319,
+    "output_tokens": 1878,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1878,
+  "output_tokens_details": {
+   "thinking_tokens": 1070
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.06684,
+ "ms": 17802,
+ "seconds": 18.1,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 4,
+   "share": 0.0,
+   "missing": [
+    "CDEVC1000",
+    "ECE1",
+    "ECE5",
+    "ECE7"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": true,
+   "pass": true
+  },
+  "careers": {
+   "count": 5,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Early Childhood Education",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": [
+    "Child, Family, and School Social Workers",
+    "Childcare Workers",
+    "Education and Childcare Administrators, Preschool and Daycare",
+    "Farm and Home Management Educators",
+    "Preschool Teachers, Except Special Education"
+   ]
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "CDEVC1000",
+    "why": "not in the text by this code; the A.S. section lists ECE2 Child Growth and Development, and no Certificate of Achievement section is printed"
+   },
+   {
+    "code": "ECE 1",
+    "why": "named only in the A.S. Degree section; no Certificate of Achievement section in the text"
+   },
+   {
+    "code": "ECE 5",
+    "why": "named only in the A.S. Degree section; no Certificate of Achievement section in the text"
+   },
+   {
+    "code": "ECE 7",
+    "why": "named only in the A.S. Degree section; no Certificate of Achievement section in the text"
+   }
+  ],
+  "notes": [
+   "The requested award is a Certificate of Achievement, but the catalog text prints only an 'Early Childhood Education A.S. Degree (27.0 Credits)' section. No certificate section, total or requirement list appears, so no blocks are recorded for the certificate.",
+   "The A.S. section has a Required Core (Total 24) and Restricted Electives (Total 3). The core is ECE1, ECE2, ECE6, ECE5, ECE7, ECE9, ECE10 and ECE18, 3 units each. The restricted electives are ECE12 or ECE13, 3 units each. The A.S. total is 27. A reviewer should check whether the certificate shares these requirements.",
+   "The closed list has only 4 courses (CDEVC1000, ECE 1, ECE 5, ECE 7), which suggests the certificate differs from the 27-unit A.S. degree.",
+   "Program Learning Outcomes are printed under the A.S. Degree heading. They are not recorded for the certificate, since the text does not show that the certificate shares them.",
+   "Careers come from the program page's Career Information heading, which applies to the program as a whole.",
+   "The URL slug ('fall-2018') may point to an older program version listed under the 2026-2027 catalog."
+  ]
+ },
+ "extracted_run": "38979396148"
+}

@@ -1,0 +1,187 @@
+{
+ "college": "Contra Costa College",
+ "control_number": "42335",
+ "shape": "noncredit",
+ "title": "Biological Testing Technician",
+ "award": "Noncredit program",
+ "source_url": "https://ccc.elumenapp.com/catalog/ccc-2026-27/program/biological-testing-technician-spring-2023",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 9004,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 9004,
+    "output_tokens": 1642,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1642,
+  "output_tokens_details": {
+   "thinking_tokens": 737
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.06886,
+ "ms": 16062,
+ "seconds": 16.5,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 4,
+   "listed": 4,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    159.0,
+    252.0
+   ],
+   "stated": [
+    159.0,
+    252.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Biological Testing Technician Certificate",
+   "measure": "hours",
+   "total_units": {
+    "min": 159,
+    "max": 252
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Perform measurements, tests or assays and present data in an appropriate manner",
+    "Perform Mathematical manipulations, including accurate preparation solutions and dilutions",
+    "Maintain a safe and productive work environment",
+    "Comply with applicable Regulations and Standards, including good documentation and labeling"
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Biological Testing Technician Certificate",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "BIOSC875N",
+      "units": 15,
+      "units_max": 108,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOSC857N",
+      "units": 54,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOSC859N",
+      "units": 54,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOSC882N",
+      "units": 36,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Noncredit program counted in hours; total 159-252 Noncredit Hours is printed both in the header and in the Unit Summary (Major and Total Program).",
+   "Catalog prints codes without a space (e.g., BIOSC857N); matched to closed-list entries such as 'BIOSC 857N'.",
+   "The 'Program Outcomes' section prints four numbered outcomes, each listed under a course code (875N: 1, 857N: 2, 859N: 3, 882N: 4), in printed order 2, 3, 1, 4. They are recorded as program outcomes in their numbered order rather than as course outcomes; reviewer may check.",
+   "The Recommended Sequence lists only BIOSC875N (15.0-108.0 hours) for a one-semester Spring sequence; not treated as a separate block.",
+   "The development criteria text mentions BIOSC888N as a non-credit mirror course, apparently a typo for BIOSC882N, and for-credit courses BIOSC157/159/182; none are program requirements.",
+   "The description says the certificate prepares for work in certified testing labs (medical diagnostics, environmental monitoring, food nutrition and safety, cannabis). These are lab types rather than named careers, so careers is left empty; reviewer may check.",
+   "The URL slug references spring-2023 while the catalog is labeled 2026-27."
+  ]
+ },
+ "extracted_run": "38979730323"
+}

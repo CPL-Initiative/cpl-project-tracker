@@ -1,0 +1,268 @@
+{
+ "college": "Lemoore College",
+ "control_number": "35963",
+ "shape": "certificate",
+ "title": "Business Information Worker",
+ "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+ "source_url": "https://westhillslemoore.elumenapp.com/catalog/26-27/program/business-information-worker-coa-spring-2021",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7242,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7242,
+    "output_tokens": 1878,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1878,
+  "output_tokens_details": {
+   "thinking_tokens": 581
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.06653,
+ "ms": 15175,
+ "seconds": 16.7,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 9,
+   "listed": 9,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 3,
+   "codes": [
+    "BUS15X",
+    "BUS3",
+    "WE15XX"
+   ],
+   "flagged": [
+    "BUS15X",
+    "BUS3",
+    "WE15XX"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    25.0,
+    32.0
+   ],
+   "stated": [
+    25.0,
+    25.0
+   ],
+   "against": "program",
+   "why": [
+    "the blocks sum to 25.0-32.0; the catalog states 25.0-25.0"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 3,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Business Information Worker (COA)",
+   "measure": "units",
+   "total_units": {
+    "min": 25,
+    "max": 25
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Student will be able to demonstrate accurate text and data entry using a standard keyboard and/or numeric keypad at expected entry-level occupation production rate.",
+    "Student will be able to organize correspondence and locate business documents by applying the 12 alphabetic and numeric filing rules.",
+    "Student will be able to compose complex business letters, reports and employment applications choosing the appropriate delivery means.",
+    "Student will be able to demonstrate utilization of basic information systems and a variety of prevailing Microsoft Office applications such as Microsoft Word, Microsoft Excel, and Microsoft Outlook.",
+    "Student will be able to demonstrate proficiency in business communications and human relations/customer service."
+   ],
+   "careers": [
+    "business",
+    "government",
+    "office workers"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Core Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 25,
+     "max": 32
+    },
+    "courses": [
+     {
+      "code": "BUS002",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS003",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BUS013A",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS013B",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS028",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS035",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS067",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS007",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS008",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS034",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Complete the following number of rules: 1 (Take one of the following)",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 1,
+     "max": 8
+    },
+    "courses": [
+     {
+      "code": "BUS015X",
+      "units": 1,
+      "units_max": 8,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "WE015XX",
+      "units": 1,
+      "units_max": 6,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Catalog prints codes without spaces and with leading zeros (BUS002, CIS007); these match closed-list BUS 2, CIS 7, etc. BUS003, BUS015X and WE015XX are not in the closed list.",
+   "The 'Required Core Courses (Total 25 - 32)' figure appears to include the nested work experience choice (1-8 units); the 'all' courses alone sum to 24 units. Recorded 25-32 on the core block as printed and the nested choice as its own block with stated 1-8.",
+   "Program total printed as 25 units ('(25.0 units)', 'Complete the following number of credits: 25'), though the required courses plus the work experience choice can total 25-32.",
+   "Program outcomes are printed under 'Business Information Worker, Certificate of Achievement'; 'PSLO n:' labels omitted.",
+   "Careers 'business' and 'government' read from 'successful employment in business and government'; 'office workers' from the description."
+  ]
+ },
+ "extracted_run": "38979392604"
+}

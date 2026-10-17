@@ -1,0 +1,107 @@
+{
+ "college": "Lemoore College",
+ "programs": 90,
+ "with_closed_list": 82,
+ "found": 73,
+ "extracted": 73,
+ "errors": 0,
+ "passed_machine_checks": 63,
+ "failed": {
+  "coverage": 5,
+  "invented": 0,
+  "arithmetic": 10,
+  "repeated": 0,
+  "outcomes": 0
+ },
+ "cost_usd": 5.29,
+ "cost_per_program": 0.0724,
+ "not_found": [
+  {
+   "control_number": "37153",
+   "title": "Project Management",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://westhillslemoore.elumenapp.com/catalog/26-27/program/advanced-hospitality-management-coa-fall-2020",
+    "label": {
+     "award": 1,
+     "title": 0.5
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 1,
+    "why": "coarse net: the page's code tokens name 0 of 1 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2598,
+     "content": 2598,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "38655",
+   "title": "Academic Readiness",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "45614",
+   "title": "Agriculture Systems Basics",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://westhillslemoore.elumenapp.com/catalog/26-27/program/agriculture-systems-fundamentals-coa-fall-2025",
+    "label": {
+     "award": 0,
+     "title": 0.667
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 5,
+    "why": "coarse net: the page's code tokens name 0 of 5 listed courses",
+    "error": null,
+    "chars": {
+     "body": 1978,
+     "content": 1978,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "46271",
+   "title": "Hydraulic and Pneumatic Systems Technician 1",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://westhillslemoore.elumenapp.com/catalog/26-27/program/maintenance-electrical-systems-technician-1-coc-spring-2026",
+    "label": {
+     "award": 0,
+     "title": 0.5
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 2,
+    "why": "coarse net: the page's code tokens name 0 of 2 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2322,
+     "content": 2322,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  }
+ ],
+ "run": "38979392604"
+}
