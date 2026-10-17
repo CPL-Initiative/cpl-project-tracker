@@ -1,0 +1,5623 @@
+{
+ "college": "De Anza College",
+ "catalog_url": "https://www.deanza.edu/catalog/",
+ "platform": "custom_html",
+ "catalog_year": "2025-2026",
+ "programs": 248,
+ "with_closed_list": 243,
+ "started": "2026-10-17T15:49:00Z",
+ "pdf": {
+  "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf",
+  "access": "hand_filed",
+  "status": null,
+  "bytes": 25322171,
+  "pages_total": 337,
+  "error": null,
+  "chars_total": 2334245,
+  "pypdf_accepted": 227,
+  "sample": [
+   "p102: 'Health Technologies Degrees and Certificates\\nCertificate of Achievement (COA) \\xa0\\nBusiness Office Clerk\\nStudents in the Business Office Clerk Certificate of Achievement learn basic medical coding, health insurance claims\\nbilling, collections '",
+   "p203: 'ELIT 41 - Ethnic Literature of\\nthe United States\\n4.0 Units Credit - Degree Applicable\\nExamines significant authors, movements, and traditions (continuing as well as\\nemerging) in a diverse range of ethnic literature of the United States.\\nGen'"
+  ],
+  "extractor": "pypdf",
+  "hand_filed": {
+   "college": "De Anza College",
+   "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf",
+   "fetched_by": "Sam Lee",
+   "fetched_at": "2026-10-17",
+   "sha256": "32a2ef6b07e6bc2db2772201f7413da6b1aa23ac52218b9049e19cbe4fbd4f00",
+   "file": null,
+   "copy_url": "https://github.com/user-attachments/files/33599457/dac_catalog_2025-2026.pdf",
+   "note": "Sam downloaded it in a browser and posted it to the catalog-files release (2026-10-17); its host answers the reader with a Cloudflare 403. cpl_memory sam-hand-filed-catalog-pdf-links-2026-10-17. De Anza publishes its 2026-2027 catalog only as HTML, so this is the 2025-2026 catalog, read as a year-behind catalog (the Palo Verde precedent) until the district lets the reader in (cpl_memory sam-catalog-files-release-de-anza-2025-26-2026-10-17).",
+   "addenda": [
+    {
+     "title": "Spring 2026 addendum",
+     "url": "https://www.deanza.edu/catalog/documents/2025-2026/dac_catalog_2025-2026_spring_addendum.pdf",
+     "sha256": "6d8b21fa4cc789f7543004baf7972512a74531327602970f27ee3bbceccde6df"
+    }
+   ]
+  },
+  "picks": [
+   {
+    "control_number": "05951",
+    "pages": [
+     44,
+     45
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.952,
+    "opens": "[page 44] Accounting Degrees and Certificates Certificate of Achievement (COA) Accounting Online Option In this program Business students gain accounting knowledge needed for an entry-level accounting position. Program"
+   },
+   {
+    "control_number": "05952",
+    "pages": [
+     66,
+     67,
+     68,
+     69
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 66] The A.A. degree in Business Administration is a general business degree for those who want to pursue any of the numerous career possibilities in the field of business such as customer service/support representa"
+   },
+   {
+    "control_number": "05954",
+    "pages": [
+     143,
+     144
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 143] Additional California General Education Transfer Curriculum (Cal-GETC) AND CSU-transferable electives as needed to reach at least 90 units One course may be selected from MATH D001A, MATH D01AH or MATH D012. T"
+   },
+   {
+    "control_number": "05962",
+    "pages": [
+     63
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 63] This is an entry-level program for full-time day students. Recommended: One year of automotive educational experience (high school, ROP or De Anza’s AUTO 50 series). Additional completion of one of the followin"
+   },
+   {
+    "control_number": "05965",
+    "pages": [
+     50,
+     51,
+     52,
+     53
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 50] Completion of the Art History A.A. degree provides students with a broad overview of the discipline of Art History from a global perspective. The program emphasizes visual literacy and research skills necessary"
+   },
+   {
+    "control_number": "05966",
+    "pages": [
+     127
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.654,
+    "opens": "[page 127] Additional completion of one of the following general education patterns: De Anza General Education or California General Education Transfer Curriculum (Cal-GETC) AND electives as needed to reach at least 90 u"
+   },
+   {
+    "control_number": "05969",
+    "pages": [
+     140,
+     141
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.842,
+    "opens": "[page 140] Philosophy Degrees and Certificates Associate in Arts for Transfer (A.A.-T.) Degree Philosophy for Transfer The Philosophy major consists of courses appropriate for the Philosophy for Transfer degree, which "
+   },
+   {
+    "control_number": "05970",
+    "pages": [
+     141
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.882,
+    "opens": "[page 141] Additional completion of one of the following general education patterns: De Anza General Education or California General Education Transfer Curriculum (Cal-GETC) AND electives as needed to reach at least 90 u"
+   },
+   {
+    "control_number": "05971",
+    "pages": [
+     52,
+     53,
+     54,
+     55
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.952,
+    "opens": "[page 52] Upon completion, students will be able to Demonstrate awareness of the computer as an effective and important mode of visual communication used by artists and designers today Demonstrate the creative potential "
+   },
+   {
+    "control_number": "05980",
+    "pages": [
+     103,
+     104,
+     105,
+     106
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.969,
+    "opens": "[page 103] The Health Technologies Department developed the Medical Assisting A.S. degree to train students in the fundamental clinical skills of reading vital signs, assisting with minor surgery, performing routine lab "
+   },
+   {
+    "control_number": "05983",
+    "pages": [
+     73
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 73] De Anza’s A.A. degree in Communication Studies provides a foundational understanding of the discipline and a breadth of coursework that can transfer toward a bachelor's degree in Communication Studies. Students"
+   },
+   {
+    "control_number": "05992",
+    "pages": [
+     47,
+     48,
+     49
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 47] The A.A. degree in Law Enforcement provides the foundational education required for an individual’s career pathway into the criminal justice field with an emphasis on the administration of justice. The courses "
+   },
+   {
+    "control_number": "05993",
+    "pages": [
+     46,
+     47,
+     48,
+     49
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 46] The A.A. degree in Corrections/Probation provides the foundational education required for an individual’s career entry into the criminal justice field, specifically correctional operations and probation/parole "
+   },
+   {
+    "control_number": "05994",
+    "pages": [
+     70,
+     71
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 70] Program Learning Outcomes Upon completion, students will be able to Demonstrate the ability to work in a variety of settings with children and families with a commitment to uphold ethical standards Recognize th"
+   },
+   {
+    "control_number": "05996",
+    "pages": [
+     110,
+     111,
+     112
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 110] the A.A. degree in Intercultural Studies gain the knowledge and skills necessary for increasing their cultural sensitivity, cultural competence and social equity. This program enables them to work with confide"
+   },
+   {
+    "control_number": "06005",
+    "pages": [
+     69
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 69] Students pursuing an A.A. degree in Marketing Management prepare for a wide variety of marketing-related careers such as marketing events coordinator, retail sales manager, marketing communications associate, i"
+   },
+   {
+    "control_number": "06006",
+    "pages": [
+     74,
+     75,
+     76,
+     77
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 74] The Business Programming A.A. degree program creates programming- savvy entrepreneurs who can make decisions about finances and technology, and who understand how to run an enterprise from both the technology a"
+   },
+   {
+    "control_number": "07091",
+    "pages": [
+     60,
+     61,
+     62,
+     63
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 60] IMPORTANT NOTE: Some courses have prerequisites; see the college catalog for more information. IMPORTANT NOTE: Some courses have a cross-listed and/or honors version. Students will receive credit for only one v"
+   },
+   {
+    "control_number": "07099",
+    "pages": [
+     92,
+     93
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.938,
+    "opens": "[page 92] Additional completion of one of the following general education patterns: De Anza General Education or California General Education Transfer Curriculum (Cal-GETC) AND electives as needed to reach at least 90 un"
+   },
+   {
+    "control_number": "07101",
+    "pages": [
+     136,
+     137
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.975,
+    "opens": "[page 136] Additional A.S. Nursing De Anza general education requirements are required Mathematics: (5 Units) Course Title Units MATH 114 Intermediate Algebra 5 Complete MATH D114. or higher level mathematics, or get a q"
+   },
+   {
+    "control_number": "07102",
+    "pages": [
+     138,
+     139
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 138] The Paralegal Studies A.A. degree program prepares students to work in the legal field as paralegals under the supervision of attorneys. This program provides graduates with a well-rounded education in a range"
+   },
+   {
+    "control_number": "07103",
+    "pages": [
+     46,
+     47,
+     48,
+     49
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 46] Course Title Units ADMJ 1 / POLI 10 Introduction to Administration of Justice 4 ADMJ 3 / PARA 3 / POLI 13 Concepts of Criminal Law 4 ADMJ 5 Community Relations 4 ADMJ 56 Practical Writing for Administration of "
+   },
+   {
+    "control_number": "10108",
+    "pages": [
+     44,
+     45
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.957,
+    "opens": "[page 44] Accounting Degrees and Certificates Certificate of Achievement (COA) Accounting Online Option In this program Business students gain accounting knowledge needed for an entry-level accounting position. Program"
+   },
+   {
+    "control_number": "10112",
+    "pages": [
+     81,
+     82
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 81] Students pursuing the Systems Programming A.A. degree learn computer programming fundamentals of both low-level and high-level languages and gain computing experience on both Windows and Linux platforms. Progra"
+   },
+   {
+    "control_number": "10114",
+    "pages": [
+     77,
+     78,
+     79
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 77] Additional completion of one of the following general education patterns: De Anza General Education or California General Education Transfer Curriculum (Cal-GETC) AND electives as needed to reach at least 90 un"
+   },
+   {
+    "control_number": "10117",
+    "pages": [
+     59,
+     60,
+     61,
+     62
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 59] Associate in Science (A.S.) Degree Automotive Chassis Technology This A.S. degree prepares students with advanced skills for an entry-level position in the automotive repair industry in undercar inspection an"
+   },
+   {
+    "control_number": "10118",
+    "pages": [
+     58,
+     59,
+     60,
+     61
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 58] Certificate of Achievement-Advanced (COA-A) Advanced Engine Performance Technology This Certificate of Achievement-Advanced prepares students with advanced skills for an entry-level position in the automotive"
+   },
+   {
+    "control_number": "10121",
+    "pages": [
+     83,
+     84,
+     85,
+     86
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 83] Certificate of Achievement-Advanced (COA-A) Advanced Manufacturing and Prototyping Technician This Certificate of Achievement-Advanced covers the fundamentals of advanced manufacturing prototype and product d"
+   },
+   {
+    "control_number": "10122",
+    "pages": [
+     85,
+     86,
+     87
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 85] Additional completion of one of the following general education patterns: De Anza General Education or California General Education Transfer Curriculum (Cal-GETC) AND electives as needed to reach at least 90 un"
+   },
+   {
+    "control_number": "10124",
+    "pages": [
+     51,
+     52,
+     53,
+     54
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 51] to a particular CSU campus or to a university or college that is not part of the CSU system. In all cases, students should consult with a counselor for more information on university admission and transfer requ"
+   },
+   {
+    "control_number": "10125",
+    "pages": [
+     54,
+     55,
+     56,
+     57
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 54] This A.A. degree provides a comprehensive foundation in the areas of design, color theory, multiple painting processes, and professional software and hardware used by artists and designers. Students gain the sk"
+   },
+   {
+    "control_number": "10127",
+    "pages": [
+     55,
+     56,
+     57
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 55] Create a body of work or develop a portfolio which is reflective of their coursework in preparation for further studies Demonstrate advanced critical thinking and problem solving skills during each phase of the"
+   },
+   {
+    "control_number": "10132",
+    "pages": [
+     102,
+     103,
+     104,
+     105
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 102] Health Technologies Degrees and Certificates Certificate of Achievement (COA) Business Office Clerk Students in the Business Office Clerk Certificate of Achievement learn basic medical coding, health insuran"
+   },
+   {
+    "control_number": "10133",
+    "pages": [
+     105,
+     106
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 105] Additional completion of one of the following general education patterns: De Anza General Education or California General Education Transfer Curriculum (Cal-GETC) AND electives as needed to reach at least 90 u"
+   },
+   {
+    "control_number": "10134",
+    "pages": [
+     105,
+     106
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 105] Additional completion of one of the following general education patterns: De Anza General Education or California General Education Transfer Curriculum (Cal-GETC) AND electives as needed to reach at least 90 u"
+   },
+   {
+    "control_number": "10135",
+    "pages": [
+     106
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 106] Program Requirements IMPORTANT NOTE: Some courses have prerequisites; see the college catalog for more information. IMPORTANT NOTE: Some courses have a cross-listed and/or honors version. Students will receive"
+   },
+   {
+    "control_number": "10137",
+    "pages": [
+     90,
+     91,
+     92,
+     93
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 90] The A.S. degree in Energy Management and Building Science will prepare students for new and emerging career opportunities in energy management technology, building energy audit, facilities management, building "
+   },
+   {
+    "control_number": "10416",
+    "pages": [
+     104,
+     105,
+     106
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 104] Program Learning Outcomes Upon completion, students will be able to Be eligible to be employed in a medical facility, hospital, clinic or doctor’s office Program Requirements IMPORTANT NOTE: Some courses have "
+   },
+   {
+    "control_number": "10417",
+    "pages": [
+     105,
+     106
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 105] Additional completion of one of the following general education patterns: De Anza General Education or California General Education Transfer Curriculum (Cal-GETC) AND electives as needed to reach at least 90 u"
+   },
+   {
+    "control_number": "11040",
+    "pages": [
+     78,
+     79
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 78] Total Required: 40.5 - 41 Units Associate in Arts (A.A.) Degree Network Administration The A.A. degree program offer studies in overseeing and maintaining Windows systems as part of a network enterprise. Stud"
+   },
+   {
+    "control_number": "11778",
+    "pages": [
+     62,
+     63,
+     64
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.889,
+    "opens": "[page 62] Automotive Technology Degrees and Certificates Certificate of Achievement-Advanced (COA-A) Automotive Chassis and Powertrain This Certificate of Achievement-Advanced prepares students for an entry-level posit"
+   },
+   {
+    "control_number": "11779",
+    "pages": [
+     62,
+     63,
+     64
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.917,
+    "opens": "[page 62] Automotive Technology Degrees and Certificates Certificate of Achievement-Advanced (COA-A) Automotive Chassis and Powertrain This Certificate of Achievement-Advanced prepares students for an entry-level posit"
+   },
+   {
+    "control_number": "11784",
+    "pages": [
+     58,
+     59,
+     60,
+     61
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 58] Certificate of Achievement-Advanced (COA-A) Advanced Engine Performance Technology This Certificate of Achievement-Advanced prepares students with advanced skills for an entry-level position in the automotive"
+   },
+   {
+    "control_number": "12199",
+    "pages": [
+     77,
+     78,
+     79
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 77] Additional completion of one of the following general education patterns: De Anza General Education or California General Education Transfer Curriculum (Cal-GETC) AND electives as needed to reach at least 90 un"
+   },
+   {
+    "control_number": "12727",
+    "pages": [
+     65
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 65] The purpose of the Biological Sciences A.S. degree is to provide a lower-division science foundation for those interested in pursuing a bachelor's degree in Biology or Biological Sciences. This major prepares s"
+   },
+   {
+    "control_number": "12821",
+    "pages": [
+     135,
+     136,
+     137
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.962,
+    "opens": "[page 135] Additional completion of one of the following general education patterns: De Anza General Education or California General Education Transfer Curriculum (Cal-GETC) AND electives as needed to reach at least 90 u"
+   },
+   {
+    "control_number": "12827",
+    "pages": [
+     69,
+     70,
+     71
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 69] (Leadership Skills).” The Certificate of Achievement is designed to meet the Child Development course requirements for a Child Development Associate Teacher Permit. The permit requires 18 quarter units (equival"
+   },
+   {
+    "control_number": "12869",
+    "pages": [
+     102,
+     103,
+     104,
+     105
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 102] Students in the Business Office Clerk Certificate of Achievement learn basic medical coding, health insurance claims billing, collections and appeals processing, medical records management and keyboarding. Stu"
+   },
+   {
+    "control_number": "15181",
+    "pages": [
+     71
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 71] eligible for the Master Teacher and Site Supervisor levels of the California Child Development Permit, using the Alternative Qualifications category. The Associate in Science in Early Childhood Education for Tr"
+   },
+   {
+    "control_number": "15516",
+    "pages": [
+     129,
+     130,
+     131,
+     132
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.959,
+    "opens": "[page 129] Additional completion of one of the following general education patterns: De Anza General Education or California General Education Transfer Curriculum (Cal-GETC) AND electives as needed to reach at least 90 u"
+   },
+   {
+    "control_number": "15964",
+    "pages": [
+     131,
+     132,
+     133
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.97,
+    "opens": "[page 131] Additional completion of one of the following general education patterns: De Anza General Education or California General Education Transfer Curriculum (Cal-GETC) AND electives as needed to reach at least 90 u"
+   },
+   {
+    "control_number": "15965",
+    "pages": [
+     124,
+     125,
+     126,
+     127
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.895,
+    "opens": "[page 124] SOC 5 / INTL 8 Sociology of Globalization and Social Change 4 WMST 1 Introduction to Women's Studies 4 WMST 8 / CETH 8 Women of Color in the USA 4 WMST 24 Women and Gender in Global Perspectives 4 WMST 27 Wome"
+   },
+   {
+    "control_number": "16510",
+    "pages": [
+     100,
+     101
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.862,
+    "opens": "[page 100] One year (three quarters) of college-level world language or three years of high school world language or the equivalent. HNDI 2 Elementary Hindi (Second Quarter) 5 HNDI 3 Elementary Hindi (Third Quarter) 5 Op"
+   },
+   {
+    "control_number": "16757",
+    "pages": [
+     104,
+     105
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 104] Program Learning Outcomes Upon completion, students will be able to Be eligible to be employed in a medical facility, hospital, clinic or doctor’s office Program Requirements IMPORTANT NOTE: Some courses have "
+   },
+   {
+    "control_number": "16759",
+    "pages": [
+     84,
+     85,
+     86,
+     87
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 84] The Computer Numerical Control (CNC) Machinist Certificate of Achievement teaches students the fundamentals of conventional and CNC machine tools. Students learn how to set up safely and operate manual mills an"
+   },
+   {
+    "control_number": "16975",
+    "pages": [
+     75,
+     76,
+     77,
+     78
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 75] Additional California General Education Transfer Curriculum (Cal-GETC) AND CSU-transferable electives as needed to reach at least 90 units Course Title Units CIS 22A Beginning Programming Methodologies in C++ 4"
+   },
+   {
+    "control_number": "16977",
+    "pages": [
+     112,
+     113,
+     114
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.925,
+    "opens": "[page 112] The Journalism A.A. degree prepares students to transfer to a four-year university in journalism, mass communications, public relations, advertising or related disciplines and offers students sufficient traini"
+   },
+   {
+    "control_number": "18004",
+    "pages": [
+     68,
+     69
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 68] The A.A. degree in Management prepares students for a career managing and leading employees in positions such as service manager, retail sales manager, customer service supervisor, office manager, human resourc"
+   },
+   {
+    "control_number": "18850",
+    "pages": [
+     84,
+     85,
+     86,
+     87
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 84] Certificate of Achievement (COA) CNC Machinist The Computer Numerical Control (CNC) Machinist Certificate of Achievement teaches students the fundamentals of conventional and CNC machine tools. Students learn"
+   },
+   {
+    "control_number": "19291",
+    "pages": [
+     67,
+     68,
+     69
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 67] In the Certificate of Achievement in Management, students learn the fundamentals of general business administration, management, human resources and leadership, among other areas of study. Students develop prac"
+   },
+   {
+    "control_number": "19521",
+    "pages": [
+     91,
+     92,
+     93
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 91] Additional completion of one of the following general education patterns: De Anza General Education or California General Education Transfer Curriculum (Cal-GETC) AND electives as needed to reach at least 90 un"
+   },
+   {
+    "control_number": "19523",
+    "pages": [
+     67,
+     68,
+     69
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 67] Students pursuing the Certificate of Achievement in Entrepreneurship are taught the fundamentals of small business administration and business planning. The certificate is designed to prepare students for the c"
+   },
+   {
+    "control_number": "19530",
+    "pages": [
+     70,
+     71
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 70] Program Learning Outcomes Upon completion, students will be able to Demonstrate the ability to work in a variety of settings with children and families with a commitment to uphold ethical standards Recognize th"
+   },
+   {
+    "control_number": "19531",
+    "pages": [
+     90
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 90] The Certificate of Achievement in Energy Management and Building Science will prepare students for new and emerging career opportunities in energy management technology, building energy audit, facilities manage"
+   },
+   {
+    "control_number": "19532",
+    "pages": [
+     90
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 90] The Certificate of Achievement in Energy Management and Building Science will prepare students for new and emerging career opportunities in energy management technology, building energy audit, facilities manage"
+   },
+   {
+    "control_number": "19534",
+    "pages": [
+     103,
+     104,
+     105,
+     106
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.969,
+    "opens": "[page 103] The Health Technologies Department developed the Medical Assisting Certificate of Achievement-Advanced to train students in the fundamental clinical skills of reading vital signs, assisting with minor surgery,"
+   },
+   {
+    "control_number": "19536",
+    "pages": [
+     68,
+     69
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 68] Total Required: 25 Units Associate in Arts (A.A.) Degree Management Online Option The A.A. degree in Management prepares students for a career managing and leading employees in positions such as service manag"
+   },
+   {
+    "control_number": "19537",
+    "pages": [
+     80,
+     81
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 80] CIS 36B Intermediate Problem Solving in Java 4.5 CIS 64B Introduction to SQL 4.5 CIS 111X Support for Foundations of Data Science for All 2 Students taking CIS D011. must also take CIS D111X. Total Required: 18"
+   },
+   {
+    "control_number": "19540",
+    "pages": [
+     77,
+     78,
+     79
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 77] Additional completion of one of the following general education patterns: De Anza General Education or California General Education Transfer Curriculum (Cal-GETC) AND electives as needed to reach at least 90 un"
+   },
+   {
+    "control_number": "19846",
+    "pages": [
+     76,
+     77,
+     78,
+     79
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 76] The Database Development Practitioner Certificate of Achievement includes database management system fundamentals, SQL, PL/SQL, large scale data processing and big data and analytics. Students become proficient"
+   },
+   {
+    "control_number": "23063",
+    "pages": [
+     44,
+     45
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.957,
+    "opens": "[page 44] Accounting Degrees and Certificates Certificate of Achievement (COA) Accounting Online Option In this program Business students gain accounting knowledge needed for an entry-level accounting position. Program"
+   },
+   {
+    "control_number": "23065",
+    "pages": [
+     143,
+     144
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.947,
+    "opens": "[page 143] The Certificate of Achievement in Real Estate provides the student with a thorough understanding of the California residential real estate market from a buyer’s, seller’s and real estate professional’s perspec"
+   },
+   {
+    "control_number": "23070",
+    "pages": [
+     74,
+     75,
+     76,
+     77
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 74] The Business Programming Certificate of Achievement-Advanced program creates programming- savvy entrepreneurs who can make decisions about finances and technology, and who understand how to run an enterprise fr"
+   },
+   {
+    "control_number": "23071",
+    "pages": [
+     79,
+     80,
+     81,
+     82
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 79] Additional completion of one of the following general education patterns: De Anza General Education or California General Education Transfer Curriculum (Cal-GETC) AND electives as needed to reach at least 90 un"
+   },
+   {
+    "control_number": "23072",
+    "pages": [
+     78,
+     79
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 78] network technician. Students are introduced to programming, networking and Internet protocols. This certificate program also gives students a foundation for further study in either network administration or pro"
+   },
+   {
+    "control_number": "23073",
+    "pages": [
+     75,
+     76,
+     77,
+     78
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 75] This Certificate of Achievement prepares students to become cybersecurity technicians in a networking environment. In this program, students learn network security basics, security policies and procedures, netw"
+   },
+   {
+    "control_number": "23077",
+    "pages": [
+     58,
+     59,
+     60,
+     61
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 58] Certificate of Achievement-Advanced (COA-A) Advanced Engine Performance Technology This Certificate of Achievement-Advanced prepares students with advanced skills for an entry-level position in the automotive"
+   },
+   {
+    "control_number": "23078",
+    "pages": [
+     59,
+     60,
+     61,
+     62
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 59] Associate in Science (A.S.) Degree Automotive Chassis Technology This A.S. degree prepares students with advanced skills for an entry-level position in the automotive repair industry in undercar inspection an"
+   },
+   {
+    "control_number": "23079",
+    "pages": [
+     60,
+     61,
+     62,
+     63
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 60] IMPORTANT NOTE: Some courses have prerequisites; see the college catalog for more information. IMPORTANT NOTE: Some courses have a cross-listed and/or honors version. Students will receive credit for only one v"
+   },
+   {
+    "control_number": "23080",
+    "pages": [
+     62,
+     63,
+     64
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.917,
+    "opens": "[page 62] Automotive Technology Degrees and Certificates Certificate of Achievement-Advanced (COA-A) Automotive Chassis and Powertrain This Certificate of Achievement-Advanced prepares students for an entry-level posit"
+   },
+   {
+    "control_number": "23081",
+    "pages": [
+     62,
+     63,
+     64
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.889,
+    "opens": "[page 62] Automotive Technology Degrees and Certificates Certificate of Achievement-Advanced (COA-A) Automotive Chassis and Powertrain This Certificate of Achievement-Advanced prepares students for an entry-level posit"
+   },
+   {
+    "control_number": "23082",
+    "pages": [
+     63
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 63] This is an entry-level program for full-time day students. Recommended: One year of automotive educational experience (high school, ROP or De Anza’s AUTO 50 series). Additional completion of one of the followin"
+   },
+   {
+    "control_number": "23083",
+    "pages": [
+     86
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 86] Students pursuing De Anza College’s Computer Aided Design - Mechanical Certificate of Achievement will receive an education in the fundamentals of CAD that combines the use of two types of design graphic softwa"
+   },
+   {
+    "control_number": "23084",
+    "pages": [
+     83,
+     84,
+     85,
+     86
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 83] Certificate of Achievement-Advanced (COA-A) Advanced Manufacturing and Prototyping Technician This Certificate of Achievement-Advanced covers the fundamentals of advanced manufacturing prototype and product d"
+   },
+   {
+    "control_number": "23085",
+    "pages": [
+     85,
+     86,
+     87
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 85] Additional completion of one of the following general education patterns: De Anza General Education or California General Education Transfer Curriculum (Cal-GETC) AND electives as needed to reach at least 90 un"
+   },
+   {
+    "control_number": "23086",
+    "pages": [
+     50,
+     51,
+     52,
+     53
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 50] Completion of the Art History Certificate of Achievement-Advanced provides students with a broad overview of the discipline of Art History from a global perspective. The program emphasizes visual literacy and r"
+   },
+   {
+    "control_number": "23090",
+    "pages": [
+     52,
+     53,
+     54,
+     55
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.952,
+    "opens": "[page 52] Upon completion, students will be able to Demonstrate awareness of the computer as an effective and important mode of visual communication used by artists and designers today Demonstrate the creative potential "
+   },
+   {
+    "control_number": "23092",
+    "pages": [
+     104,
+     105
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 104] Note: To receive the Medical Laboratory Technology Certificate of Achievement-Advanced, students must have an A.A./A.S. degree or higher. The Medical Laboratory Technician (MLT) Certificate of Achievement-Adva"
+   },
+   {
+    "control_number": "23093",
+    "pages": [
+     69,
+     70,
+     71
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 69] Associate in Arts (A.A.) Degree Marketing Management Online Option Students pursuing an A.A. degree in Marketing Management prepare for a wide variety of marketing-related careers such as marketing events coo"
+   },
+   {
+    "control_number": "23094",
+    "pages": [
+     138,
+     139
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 138] ADMJ 84 Forensic Science 4 ADMJ 90A / PARA 90A Legal Aspects of Evidence (CP 4) 4 BUS 18 Business Law I 5 CETH 29 / ADMJ 29 Ethnic Studies, Cultural Pluralism, and American Law and Justice 4 E S 6 Introduction"
+   },
+   {
+    "control_number": "23095",
+    "pages": [
+     48,
+     49
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 48] The Certificate of Achievement-Advanced in Private Security provides a compressed, minimum foundational education required for an individual’s career pathway into the private security field. The emphasis is on "
+   },
+   {
+    "control_number": "23096",
+    "pages": [
+     109,
+     110,
+     111,
+     112
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 109] NAIS 12 Ethnic Studies and the Historical Experiences of Native Americans 4 List B - Complete from below or from List A (not already taken): (8 Units) Course Title Units AFAM 11 Sankofa: Roots of the African A"
+   },
+   {
+    "control_number": "23097",
+    "pages": [
+     99,
+     100,
+     101
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 99] HNDI 3 Elementary Hindi (Third Quarter) 5 Option 4: (15 Units) Course Title Units ITAL 1 Elementary Italian (First Quarter) 5 ITAL 2 Elementary Italian (Second Quarter) 5 ITAL 3 Elementary Italian (Third Quarte"
+   },
+   {
+    "control_number": "30618",
+    "pages": [
+     89
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.902,
+    "opens": "[page 89] Additional completion of one of the following general education patterns: De Anza General Education or California General Education Transfer Curriculum (Cal-GETC) AND electives as needed to reach at least 90 un"
+   },
+   {
+    "control_number": "30911",
+    "pages": [
+     134
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 134] Mathematics for Transfer The role of mathematics is vital and growing, providing solutions to problems in a wide range of sciences – social, biological, physical, behavioral and management. As a whole, mathema"
+   },
+   {
+    "control_number": "30931",
+    "pages": [
+     52,
+     53,
+     54,
+     55
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 52] Upon completion, students will be able to Demonstrate awareness of the computer as an effective and important mode of visual communication used by artists and designers today Demonstrate the creative potential "
+   },
+   {
+    "control_number": "30933",
+    "pages": [
+     141
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 141] Additional completion of one of the following general education patterns: De Anza General Education or California General Education Transfer Curriculum (Cal-GETC) AND electives as needed to reach at least 90 u"
+   },
+   {
+    "control_number": "30943",
+    "pages": [
+     61
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 61] Certificate of Achievement (COA) Autonomous and Electric Vehicle Technician (Level 2) This Certificate of Achievement prepares students for an entry-level position in the autonomous vehicle manufacturing and "
+   },
+   {
+    "control_number": "30944",
+    "pages": [
+     75,
+     76,
+     77,
+     78
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 75] This Certificate of Achievement prepares students to become cybersecurity technicians in a networking environment. In this program, students learn network security basics, security policies and procedures, netw"
+   },
+   {
+    "control_number": "30952",
+    "pages": [
+     57
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 57] your skills and knowledge to real-world projects, collaborating with peers to solve complex design challenges. From conceptualizing innovative product concepts to designing user-friendly interfaces, you'll gain"
+   },
+   {
+    "control_number": "30953",
+    "pages": [
+     59,
+     60
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 59] Associate in Science (A.S.) Degree Automotive Chassis Technology This A.S. degree prepares students with advanced skills for an entry-level position in the automotive repair industry in undercar inspection an"
+   },
+   {
+    "control_number": "30954",
+    "pages": [
+     72,
+     73
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 72] Students earning the communication studies certificate of achievement learn the fundamentals of the discipline, which includes public speaking, group communication, interpersonal communication, organizational c"
+   },
+   {
+    "control_number": "30955",
+    "pages": [
+     60
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 60] IMPORTANT NOTE: Some courses have prerequisites; see the college catalog for more information. IMPORTANT NOTE: Some courses have a cross-listed and/or honors version. Students will receive credit for only one v"
+   },
+   {
+    "control_number": "30956",
+    "pages": [
+     58,
+     59,
+     60
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 58] Certificate of Achievement-Advanced (COA-A) Advanced Engine Performance Technology This Certificate of Achievement-Advanced prepares students with advanced skills for an entry-level position in the automotive"
+   },
+   {
+    "control_number": "30958",
+    "pages": [
+     61
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 61] Certificate of Achievement (COA) Autonomous and Electric Vehicle Technician (Level 2) This Certificate of Achievement prepares students for an entry-level position in the autonomous vehicle manufacturing and "
+   },
+   {
+    "control_number": "30959",
+    "pages": [
+     58,
+     59,
+     60,
+     61
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 58] Certificate of Achievement-Advanced (COA-A) Advanced Engine Performance Technology This Certificate of Achievement-Advanced prepares students with advanced skills for an entry-level position in the automotive"
+   },
+   {
+    "control_number": "31272",
+    "pages": [
+     66,
+     67,
+     68,
+     69
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 66] The Business Administration Certificate of Achievement introduces the fundamental concepts and practices of business. Students obtain a basic understanding of the operation, methods and purpose of each of the m"
+   },
+   {
+    "control_number": "31293",
+    "pages": [
+     115,
+     116
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.772,
+    "opens": "[page 115] Additional California General Education Transfer Curriculum (Cal-GETC) AND CSU-transferable electives as needed to reach at least 90 units DANC 25B Theory and Technique of Salsa Dance II 1 DANC 37A Theory and "
+   },
+   {
+    "control_number": "31498",
+    "pages": [
+     79
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 79] Additional completion of one of the following general education patterns: De Anza General Education or California General Education Transfer Curriculum (Cal-GETC) AND electives as needed to reach at least 90 un"
+   },
+   {
+    "control_number": "31500",
+    "pages": [
+     81,
+     82
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 81] Students pursuing the UNIX/LINUX Operating System Certificate of Achievement learn the fundamentals of the UNIX/LINUX OS, ranging from text file manipulation, job control and communication to implementation of "
+   },
+   {
+    "control_number": "31502",
+    "pages": [
+     82
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 82] The Certificate of Achievement in Web Development certifies that the student can create web pages and client side programming for web pages. Program Learning Outcomes Upon completion, students will be able to C"
+   },
+   {
+    "control_number": "31511",
+    "pages": [
+     79
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 79] The C/C++ Certificate of Achievement prepares students for entry-level employment in computer programming, software testing and integration, software analysis or algorithm design. The curriculum offers students"
+   },
+   {
+    "control_number": "31549",
+    "pages": [
+     78,
+     79
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 78] The Network Basics Certificate of Achievement prepares students for entry-level employment as a computer support or network technician. Students are introduced to programming, networking and Internet protocols."
+   },
+   {
+    "control_number": "31805",
+    "pages": [
+     106,
+     107,
+     108,
+     109
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 106] History for Transfer The History major consists of courses appropriate for the Associate in Arts in History for Transfer degree, which provides a foundational understanding of the discipline, a breadth of cour"
+   },
+   {
+    "control_number": "31820",
+    "pages": [
+     142
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.943,
+    "opens": "[page 142] Political Science for Transfer The Political Science major consists of courses appropriate for the Associate in Arts in Political Science for Transfer degree, which provides a foundational understanding of the"
+   },
+   {
+    "control_number": "32006",
+    "pages": [
+     70,
+     71
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 70] Program Learning Outcomes Upon completion, students will be able to Demonstrate the ability to work in a variety of settings with children and families with a commitment to uphold ethical standards Recognize th"
+   },
+   {
+    "control_number": "33329",
+    "pages": [
+     85,
+     86
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 85] The CNC Programming - CAD/CAM Certificate of Achievement teaches students 2D, 3D, lathe and multi-axis machine tool programming. Students learn to construct geometry, select tools and produce and verify tool pa"
+   },
+   {
+    "control_number": "33330",
+    "pages": [
+     84,
+     85,
+     86,
+     87
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 84] The Computer Numerical Control (CNC) Machinist Certificate of Achievement teaches students the fundamentals of conventional and CNC machine tools. Students learn how to set up safely and operate manual mills an"
+   },
+   {
+    "control_number": "33336",
+    "pages": [
+     74,
+     75,
+     76,
+     77
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 74] Computer Science and Information Systems Degrees and Certificates Certificate of Achievement-Advanced (COA-A) Business Programming The Business Programming Certificate of Achievement-Advanced program creates "
+   },
+   {
+    "control_number": "33338",
+    "pages": [
+     113,
+     114,
+     115,
+     116
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.92,
+    "opens": "[page 113] Journalism for Transfer The Journalism major consists of courses appropriate for the Associate in Arts in Journalism for Transfer degree, which provides a foundational understanding of the discipline, a breadt"
+   },
+   {
+    "control_number": "33366",
+    "pages": [
+     119,
+     120,
+     121,
+     122
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 119] The Certificate of Achievement-Advanced in Mandarin Language and Culture is designed to open employment opportunities for local students because of the large number of Bay Area companies conducting business an"
+   },
+   {
+    "control_number": "33456",
+    "pages": [
+     118,
+     119,
+     120,
+     121
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 118] many Japanese-speaking immigrants. Many Japanese courses can also satisfy General Education (GE) requirements for an associate degree or transfer. Program Learning Outcomes Upon completion, students will be ab"
+   },
+   {
+    "control_number": "33800",
+    "pages": [
+     102
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 102] The Clinical Laboratory Assistant Certificate of Achievement is available to students who have successfully completed the four required courses of study. The Certificate of Achievement is a 12-month course of "
+   },
+   {
+    "control_number": "35500",
+    "pages": [
+     87,
+     88
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.931,
+    "opens": "[page 87] Economics for Transfer The Economics major consists of courses appropriate for the Associate in Arts in Economics for Transfer degree, which provides a foundational understanding of the discipline, a breadth of"
+   },
+   {
+    "control_number": "35605",
+    "pages": [
+     107
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 107] world and ourselves. The Certificate of Achievement in Humanities demonstrates the student’s solid background in the critical and empathetic thinking skills that mark the deliberate thought processes and forma"
+   },
+   {
+    "control_number": "35647",
+    "pages": [
+     128,
+     129,
+     130
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.867,
+    "opens": "[page 128] Total Required: 90 Units Associate in Arts (A.A.) Degree Liberal Arts (Business and Computer Information Systems Emphasis) Designed primarily for students who plan on transferring to the University of Califo"
+   },
+   {
+    "control_number": "35661",
+    "pages": [
+     145
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 145] The Certificate of Achievement in Women’s Studies prepares students to be well-informed community leaders, agents of change in the workplace, and responsible participants in civic life in general, especially i"
+   },
+   {
+    "control_number": "35730",
+    "pages": [
+     91,
+     92,
+     93
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 91] Additional completion of one of the following general education patterns: De Anza General Education or California General Education Transfer Curriculum (Cal-GETC) AND electives as needed to reach at least 90 un"
+   },
+   {
+    "control_number": "35776",
+    "pages": [
+     86,
+     87
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 86] Construct and inspect machined projects using conventional and CNC equipment using word address programs Apply geometric dimensioning and tolerance standards to inspect drawings and inspect parts using a coordi"
+   },
+   {
+    "control_number": "35828",
+    "pages": [
+     49
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 49] Anthropology for Transfer The Anthropology major consists of courses appropriate for the Associate in Arts in Anthropology for Transfer degree, which provides a foundational understanding of the discipline, a b"
+   },
+   {
+    "control_number": "35922",
+    "pages": [
+     93
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 93] The interdisciplinary Facility and Sustainable Building Management certificate aligns with the requirements set by the facility management industry for qualified facility management professionals. Students will"
+   },
+   {
+    "control_number": "35923",
+    "pages": [
+     93
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 93] The interdisciplinary Facility and Sustainable Building Management certificate aligns with the requirements set by the facility management industry for qualified facility management professionals. Students will"
+   },
+   {
+    "control_number": "35924",
+    "pages": [
+     93
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 93] BUS 56 Human Relations in the Workplace 5 BUS 65 Leadership 5 BUS 85 Business Communication 3 E S 58 Introduction to Green Building 1 E S 69A Introduction to Facilities Management 3 E S 70 Introduction to Energ"
+   },
+   {
+    "control_number": "36263",
+    "pages": [
+     123,
+     124,
+     125
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 123] The Leadership and Social Change Certificate of Achievement prepares students to be community leaders, agents of change in the workplace and responsible participants in civic life in general. Students completi"
+   },
+   {
+    "control_number": "36264",
+    "pages": [
+     128,
+     129,
+     130,
+     131
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.915,
+    "opens": "[page 128] Total Required: 90 Units Associate in Arts (A.A.) Degree Liberal Arts (Business and Computer Information Systems Emphasis) Designed primarily for students who plan on transferring to the University of Califo"
+   },
+   {
+    "control_number": "36775",
+    "pages": [
+     59,
+     60,
+     61
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 59] Associate in Science (A.S.) Degree Automotive Chassis Technology This A.S. degree prepares students with advanced skills for an entry-level position in the automotive repair industry in undercar inspection an"
+   },
+   {
+    "control_number": "36776",
+    "pages": [
+     46,
+     47,
+     48,
+     49
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 46] Course Title Units ADMJ 1 / POLI 10 Introduction to Administration of Justice 4 ADMJ 3 / PARA 3 / POLI 13 Concepts of Criminal Law 4 ADMJ 5 Community Relations 4 ADMJ 56 Practical Writing for Administration of "
+   },
+   {
+    "control_number": "36817",
+    "pages": [
+     55,
+     56,
+     57
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 55] Create a body of work or develop a portfolio which is reflective of their coursework in preparation for further studies Demonstrate advanced critical thinking and problem solving skills during each phase of the"
+   },
+   {
+    "control_number": "36818",
+    "pages": [
+     113,
+     114
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.882,
+    "opens": "[page 113] Additional completion of one of the following general education patterns: De Anza General Education or California General Education Transfer Curriculum (Cal-GETC) AND electives as needed to reach at least 90 u"
+   },
+   {
+    "control_number": "36854",
+    "pages": [
+     113,
+     114
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 113] The Certificate of Achievement in Public Relations meets the needs of community college students and working professionals in areas such as sales, fundraising or marketing who wish to expand their skill repert"
+   },
+   {
+    "control_number": "38149",
+    "pages": [
+     68,
+     69
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 68] Total Required: 25 Units Associate in Arts (A.A.) Degree Management Online Option The A.A. degree in Management prepares students for a career managing and leading employees in positions such as service manag"
+   },
+   {
+    "control_number": "38395",
+    "pages": [
+     142
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.9,
+    "opens": "[page 142] Psychology for Transfer The Psychology major consists of courses appropriate for the Associate in Arts in Psychology for Transfer degree, which provides a foundational understanding of the discipline, a breadt"
+   },
+   {
+    "control_number": "38397",
+    "pages": [
+     140
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 140] Philosophy for Transfer The Philosophy major consists of courses appropriate for the Philosophy for Transfer degree, which provides a foundational understanding of the discipline, a breadth of coursework in th"
+   },
+   {
+    "control_number": "39225",
+    "pages": [
+     108,
+     109,
+     110,
+     111
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.978,
+    "opens": "[page 108] The Certificate of Achievement in Asian American Studies prepares students to be historically informed and equity- minded participants and leaders in the multi-ethnic and multiracial communities in which they "
+   },
+   {
+    "control_number": "39283",
+    "pages": [
+     65
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 65] in pursuing a bachelor's degree in Biology or Biological Sciences. This major prepares students for transfer to any University of California or California State University campus. A major in Biological Sciences"
+   },
+   {
+    "control_number": "39288",
+    "pages": [
+     299,
+     300
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 299] Noncredit Certificates Automotive Technology Noncredit Certificates Certificate of Completion Advanced Engine Performance Technology Program Description The Certificate of Completion prepares students for an"
+   },
+   {
+    "control_number": "39304",
+    "pages": [
+     80,
+     81
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 80] CIS 36B Intermediate Problem Solving in Java 4.5 CIS 64B Introduction to SQL 4.5 CIS 111X Support for Foundations of Data Science for All 2 Students taking CIS D011. must also take CIS D111X. Total Required: 18"
+   },
+   {
+    "control_number": "39305",
+    "pages": [
+     120
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 120] Apply the appropriate use of sight translation in various settings Program Requirements IMPORTANT NOTE: Some courses have prerequisites; see the college catalog for more information. IMPORTANT NOTE: Some cours"
+   },
+   {
+    "control_number": "39307",
+    "pages": [
+     76,
+     77,
+     78,
+     79
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 76] The Database Development Practitioner Certificate of Achievement includes database management system fundamentals, SQL, PL/SQL, large scale data processing and big data and analytics. Students become proficient"
+   },
+   {
+    "control_number": "39308",
+    "pages": [
+     76,
+     77,
+     78,
+     79
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 76] Additional completion of one of the following general education patterns: De Anza General Education or California General Education Transfer Curriculum (Cal-GETC) AND electives as needed to reach at least 90 un"
+   },
+   {
+    "control_number": "39309",
+    "pages": [
+     80,
+     81
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 80] CIS 36B Intermediate Problem Solving in Java 4.5 CIS 64B Introduction to SQL 4.5 CIS 111X Support for Foundations of Data Science for All 2 Students taking CIS D011. must also take CIS D111X. Total Required: 18"
+   },
+   {
+    "control_number": "39310",
+    "pages": [
+     301
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 301] Certificate of Completion Basic Engine Performance Technology Program Description The Certificate of Completion prepares students to be successful as entry-level technicians in vehicle electrical systems rep"
+   },
+   {
+    "control_number": "39311",
+    "pages": [
+     302
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 302] Certificate of Completion Smog Technician Program Description This Certificate of Completion prepares students for an entry-level position in the automotive repair industry performing California state smog i"
+   },
+   {
+    "control_number": "39390",
+    "pages": [
+     48,
+     49
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.628,
+    "opens": "[page 48] Additional California General Education Transfer Curriculum (Cal-GETC) AND CSU-transferable electives as needed to reach at least 90 units COMM D008. or COMM D008H may not be selected if already taken from Requ"
+   },
+   {
+    "control_number": "39415",
+    "pages": [
+     110,
+     111,
+     112,
+     113
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 110] WMST 8 / CETH 8 Women of Color in the USA 4 Native American Area: (0 - 24 Units) Course Title Units NAIS 11 Ethnic Studies and Native American Contemporary Society 4 NAIS 12 Ethnic Studies and the Historical E"
+   },
+   {
+    "control_number": "41152",
+    "pages": [
+     299
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 299] Noncredit Certificates Automotive Technology Noncredit Certificates Certificate of Completion Advanced Engine Performance Technology Program Description The Certificate of Completion prepares students for an"
+   },
+   {
+    "control_number": "41153",
+    "pages": [
+     300
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 300] Certificate of Completion Automotive Machining and Engine Repair Technology Program Description The Certificate of Completion prepares students for an entry-level engine diagnostics technician position in th"
+   },
+   {
+    "control_number": "41154",
+    "pages": [
+     300
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 300] Certificate of Completion Automotive Machining and Engine Repair Technology Program Description The Certificate of Completion prepares students for an entry-level engine diagnostics technician position in th"
+   },
+   {
+    "control_number": "41155",
+    "pages": [
+     301
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 301] Certificate of Completion Basic Engine Performance Technology Program Description The Certificate of Completion prepares students to be successful as entry-level technicians in vehicle electrical systems rep"
+   },
+   {
+    "control_number": "41156",
+    "pages": [
+     301,
+     302
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 301] Certificate of Completion Basic Engine Performance Technology Program Description The Certificate of Completion prepares students to be successful as entry-level technicians in vehicle electrical systems rep"
+   },
+   {
+    "control_number": "41157",
+    "pages": [
+     302
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 302] Students pursuing the Business Software Applications Certificate of Completion will receive hands-on experience with the fundamentals of popular computer applications that are required by most business offices"
+   },
+   {
+    "control_number": "41158",
+    "pages": [
+     303
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 303] The Certificate of Completion in Introduction to Computer Science sequence prepares students to be academically successful in the coursework to enter a career in software engineering, computer science, data sc"
+   },
+   {
+    "control_number": "41159",
+    "pages": [
+     307
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.857,
+    "opens": "[page 307] The Real Estate Salesperson Certificate of Completion sequence provides students with the knowledge to buy and sell real estate in California. Students who have passed courses required for this certificate mee"
+   },
+   {
+    "control_number": "41160",
+    "pages": [
+     306
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 306] The Certificate of Completion in Commercial Lighting sequence provides a foundational education in photographic lighting, editing and business practices. Courses emphasize the skills and knowledge necessary fo"
+   },
+   {
+    "control_number": "41161",
+    "pages": [
+     306
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 306] Certificate of Competency Precalculus Bridge Program Description The Certificate of Competency in Precalculus Bridge sequence includes two courses. Students benefit from increased exposure to Algebra content"
+   },
+   {
+    "control_number": "41172",
+    "pages": [
+     306
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 306] The Certificate of Competency in Precalculus Bridge sequence includes two courses. Students benefit from increased exposure to Algebra content through a variety of strategies along with additional opportunitie"
+   },
+   {
+    "control_number": "41174",
+    "pages": [
+     305
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 305] The Certificate of Competency in Math Basic Skills sequence provides high-quality instructional materials and additional instructional time to help struggling students get on track. This certificate is part of"
+   },
+   {
+    "control_number": "41176",
+    "pages": [
+     304
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 304] The Certificate of Competency in English as a Second Language High Intermediate Level sequence prepares students for the high-intermediate level of English as a Second Language. The prerequisite is the demonst"
+   },
+   {
+    "control_number": "41326",
+    "pages": [
+     45,
+     46,
+     47,
+     48
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 45] Associate in Arts (A.A.) Degree Accounting This program prepares Business students for transfer to a four-year institution as Accounting majors. Students gain the skills needed for a professional job in accou"
+   },
+   {
+    "control_number": "41792",
+    "pages": [
+     67,
+     68,
+     69
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.882,
+    "opens": "[page 67] completing or have completed version 1.0 of the Business Administration A.S.-T. degree. Program Learning Outcomes Upon completion, students will be able to Explain the interactions among the primary functions w"
+   },
+   {
+    "control_number": "41793",
+    "pages": [
+     55,
+     56,
+     57
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 55] Create a body of work or develop a portfolio which is reflective of their coursework in preparation for further studies Demonstrate advanced critical thinking and problem solving skills during each phase of the"
+   },
+   {
+    "control_number": "41858",
+    "pages": [
+     116,
+     117,
+     118,
+     119
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.733,
+    "opens": "[page 116] The Certificate of Achievement in French Language and Culture is designed to offer students the opportunity to discover another culture and to help Francophile students broaden theirs. It is also suitable for "
+   },
+   {
+    "control_number": "41859",
+    "pages": [
+     117,
+     118,
+     119,
+     120
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.857,
+    "opens": "[page 117] Program Requirements IMPORTANT NOTE: Some courses have prerequisites; see the college catalog for more information. IMPORTANT NOTE: Some courses have a cross-listed and/or honors version. Students will receive"
+   },
+   {
+    "control_number": "41860",
+    "pages": [
+     117,
+     118,
+     119,
+     120
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.9,
+    "opens": "[page 117] The Certificate of Achievement in Italian Language and Culture offers opportunities to appreciate the Italian language and culture, as well as dig into the interconnections between Italian culture, Latin Ameri"
+   },
+   {
+    "control_number": "41861",
+    "pages": [
+     118,
+     119,
+     120,
+     121
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 118] The Certificate of Achievement in Korean Language and Culture provides opportunities to engage in the Korean and Korean American communities of the Bay Area or participate in business and trade with Korea. For"
+   },
+   {
+    "control_number": "41862",
+    "pages": [
+     120,
+     121,
+     122,
+     123
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.875,
+    "opens": "[page 120] The Certificate of Achievement in Russian Language and Culture provides opportunities to engage with Russian- speaking communities in the Bay Area, California and nationwide. Russia is the world’s largest coun"
+   },
+   {
+    "control_number": "41863",
+    "pages": [
+     121,
+     122,
+     123
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.917,
+    "opens": "[page 121] SPAN 2 Elementary Spanish (Second Quarter) 5 SPAN 3 Elementary Spanish (Third Quarter) 5 SPAN D001. need not be taken if students have completed these units in another college and are cleared into SPAN D002. b"
+   },
+   {
+    "control_number": "41864",
+    "pages": [
+     122,
+     123,
+     124,
+     125
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.9,
+    "opens": "[page 122] The Certificate of Achievement-Advanced in World Languages and Culture offers students the opportunity to develop their multilingual abilities and to understand multicultural perspectives, so they can engage w"
+   },
+   {
+    "control_number": "41885",
+    "pages": [
+     138,
+     139
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 138] The Paralegal Studies - Corporate Law Certificate of Achievement-Advanced sequence prepares students to work under the supervision of an attorney in a corporate law practice, including in-house legal departmen"
+   },
+   {
+    "control_number": "41886",
+    "pages": [
+     139
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 139] The Paralegal Studies - Intellectual Property Certificate of Achievement-Advanced sequence prepares students to work under the supervision of an attorney in an intellectual property law practice, including in-"
+   },
+   {
+    "control_number": "41887",
+    "pages": [
+     139
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 139] The Paralegal Studies - Litigation Certificate of Achievement-Advanced sequence prepares students to work under the supervision of an attorney in a litigation practice, in-house (corporate) legal department, g"
+   },
+   {
+    "control_number": "42012",
+    "pages": [
+     304
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 304] Students will receive the Certificate of Completion in American English Pronunciation by completing two pronunciation courses. The courses cover the study and practice of American English pronunciation feature"
+   },
+   {
+    "control_number": "42062",
+    "pages": [
+     303
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 303] Certificate of Completion Database Science Practitioner Program Description The Certificate of Completion prepares students for an entry-level position in the database field to work as a data analyst, busine"
+   },
+   {
+    "control_number": "42169",
+    "pages": [
+     77
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 77] Students earning the Information Technology Technical Support Certificate are able to apply fundamental concepts of IT support including networking, operating systems, system administration, troubleshooting and"
+   },
+   {
+    "control_number": "42171",
+    "pages": [
+     46,
+     47,
+     48,
+     49
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 46] Course Title Units ADMJ 1 / POLI 10 Introduction to Administration of Justice 4 ADMJ 3 / PARA 3 / POLI 13 Concepts of Criminal Law 4 ADMJ 5 Community Relations 4 ADMJ 56 Practical Writing for Administration of "
+   },
+   {
+    "control_number": "42186",
+    "pages": [
+     82,
+     83
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 82] The Certificate of Achievement in Additive Manufacturing Technology: 3D Design and Production provides knowledge of the fundamentals of computer-aided design (CAD), design for additive manufacturing (DfAM), rev"
+   },
+   {
+    "control_number": "43348",
+    "pages": [
+     305
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 305] Students will receive the advanced-level of Certificate of Competency in English Writing, Grammar and Proofreading by completing one advanced-level writing course and one grammar and proofreading course. The w"
+   },
+   {
+    "control_number": "43374",
+    "pages": [
+     299,
+     300
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 299] Noncredit Certificates Automotive Technology Noncredit Certificates Certificate of Completion Advanced Engine Performance Technology Program Description The Certificate of Completion prepares students for an"
+   },
+   {
+    "control_number": "43443",
+    "pages": [
+     73
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 73] of coursework that can transfer toward a bachelor's degree in Communication Studies. Students develop knowledge and skills in expressing ideas verbally and non-verbally; learn to interpret, advocate and critica"
+   },
+   {
+    "control_number": "44020",
+    "pages": [
+     305
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 305] The Certificate of Competency in English as a Second Language Low Advanced Level sequence prepares students for the low-advanced level of English as a Second Language. The prerequisite is the demonstrated Engl"
+   },
+   {
+    "control_number": "44021",
+    "pages": [
+     304
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 304] The Certificate of Competency in English as a Second Language High Intermediate Level sequence prepares students for the high-intermediate level of English as a Second Language. The prerequisite is the demonst"
+   },
+   {
+    "control_number": "44033",
+    "pages": [
+     305,
+     306
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 305] The Certificate of Competency in Math Skills for Business sequence provides extra support, time and enrichment for students to develop Algebra skills that are critical for success in Precalculus and Statistics"
+   },
+   {
+    "control_number": "44044",
+    "pages": [
+     303
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 303] Certificate of Completion Database Science Practitioner Program Description The Certificate of Completion prepares students for an entry-level position in the database field to work as a data analyst, busine"
+   },
+   {
+    "control_number": "44045",
+    "pages": [
+     303
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 303] Certificate of Completion Database Science Practitioner Program Description The Certificate of Completion prepares students for an entry-level position in the database field to work as a data analyst, busine"
+   },
+   {
+    "control_number": "44194",
+    "pages": [
+     61
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 61] Certificate of Achievement (COA) Autonomous and Electric Vehicle Technician (Level 2) This Certificate of Achievement prepares students for an entry-level position in the autonomous vehicle manufacturing and "
+   },
+   {
+    "control_number": "44239",
+    "pages": [
+     300,
+     301
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 300] Certificate of Completion Automotive Machining and Engine Repair Technology Program Description The Certificate of Completion prepares students for an entry-level engine diagnostics technician position in th"
+   },
+   {
+    "control_number": "44240",
+    "pages": [
+     300
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 300] Certificate of Completion Automotive Machining and Engine Repair Technology Program Description The Certificate of Completion prepares students for an entry-level engine diagnostics technician position in th"
+   },
+   {
+    "control_number": "44241",
+    "pages": [
+     299,
+     300,
+     301
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 299] Noncredit Certificates Automotive Technology Noncredit Certificates Certificate of Completion Advanced Engine Performance Technology Program Description The Certificate of Completion prepares students for an"
+   },
+   {
+    "control_number": "44242",
+    "pages": [
+     301
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 301] Certificate of Completion Basic Engine Performance Technology Program Description The Certificate of Completion prepares students to be successful as entry-level technicians in vehicle electrical systems rep"
+   },
+   {
+    "control_number": "44325",
+    "pages": [
+     101
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.931,
+    "opens": "[page 101] Global Studies for Transfer The Global Studies major consists of courses appropriate for the Associate in Arts in Global Studies for Transfer degree, which provides a foundational understanding of the discipli"
+   },
+   {
+    "control_number": "44377",
+    "pages": [
+     60,
+     61
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 60] IMPORTANT NOTE: Some courses have prerequisites; see the college catalog for more information. IMPORTANT NOTE: Some courses have a cross-listed and/or honors version. Students will receive credit for only one v"
+   },
+   {
+    "control_number": "44378",
+    "pages": [
+     64
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 64] Certificate of Achievement-Advanced (COA-A) Autonomous and Electric Vehicle Technology (Level 1) This Certificate of Achievement-Advanced prepares students for an entry-level position in the autonomous vehicl"
+   },
+   {
+    "control_number": "45128",
+    "pages": [
+     119,
+     120,
+     121,
+     122
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 119] The Associate in Arts degree in Mandarin Language and Culture is crafted to impart students with a thorough comprehension of the Mandarin language, coupled with valuable insights into the diverse cultural heri"
+   },
+   {
+    "control_number": "45186",
+    "pages": [
+     109,
+     110,
+     111,
+     112
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 109] NAIS 12 Ethnic Studies and the Historical Experiences of Native Americans 4 List B - Complete from below or from List A (not already taken): (8 Units) Course Title Units AFAM 11 Sankofa: Roots of the African A"
+   },
+   {
+    "control_number": "45187",
+    "pages": [
+     117,
+     118,
+     119,
+     120
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 117] The Certificate of Achievement in Hindi Language and Culture provides intensive language training to students, equipping them with practical skills essential for navigating the global marketplace. Designed to "
+   },
+   {
+    "control_number": "45188",
+    "pages": [
+     117,
+     118,
+     119,
+     120
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 117] Program Requirements IMPORTANT NOTE: Some courses have prerequisites; see the college catalog for more information. IMPORTANT NOTE: Some courses have a cross-listed and/or honors version. Students will receive"
+   },
+   {
+    "control_number": "45189",
+    "pages": [
+     121,
+     122,
+     123,
+     124
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 121] SPAN 2 Elementary Spanish (Second Quarter) 5 SPAN 3 Elementary Spanish (Third Quarter) 5 SPAN D001. need not be taken if students have completed these units in another college and are cleared into SPAN D002. b"
+   },
+   {
+    "control_number": "45492",
+    "pages": [
+     92
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.889,
+    "opens": "[page 92] Additional completion of one of the following general education patterns: De Anza General Education or California General Education Transfer Curriculum (Cal-GETC) AND electives as needed to reach at least 90 un"
+   },
+   {
+    "control_number": "45499",
+    "pages": [
+     64
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 64] The Bachelor of Science in Automotive Technology Management will offer students opportunities for employment and career growth within the automotive industry, by helping fill the entry-level management needs of"
+   },
+   {
+    "control_number": "45561",
+    "pages": [
+     53,
+     54,
+     55,
+     56
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.864,
+    "opens": "[page 53] Our Certificate of Achievement-Advanced in Illustration is meticulously designed to immerse you in the captivating world of visual storytelling. We recognize the intricate interplay between traditional and digi"
+   },
+   {
+    "control_number": "45562",
+    "pages": [
+     56,
+     57
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 56] Begin your education in the dynamic realm of User Interface (UI) and User Experience (UX) design with our Certificate of Achievement-Advanced program. Rooted in the fusion of innovative digital tools, design th"
+   },
+   {
+    "control_number": "45563",
+    "pages": [
+     53,
+     54,
+     55,
+     56
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.85,
+    "opens": "[page 53] Additional completion of one of the following general education patterns: De Anza General Education or California General Education Transfer Curriculum (Cal-GETC) AND electives as needed to reach at least 90 un"
+   },
+   {
+    "control_number": "45564",
+    "pages": [
+     56,
+     57
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 56] Additional California General Education Transfer Curriculum (Cal-GETC) AND CSU-transferable electives as needed to reach at least 90 units ARTS 2A History of Art: Europe from Prehistory through Early Christiani"
+   },
+   {
+    "control_number": "46178",
+    "pages": [
+     58,
+     59,
+     60,
+     61
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 58] Certificate of Achievement-Advanced (COA-A) Advanced Engine Performance Technology This Certificate of Achievement-Advanced prepares students with advanced skills for an entry-level position in the automotive"
+   },
+   {
+    "control_number": "46311",
+    "pages": [
+     129,
+     130
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.7,
+    "opens": "[page 129] Additional completion of one of the following general education patterns: De Anza General Education or California General Education Transfer Curriculum (Cal-GETC) AND electives as needed to reach at least 90 u"
+   },
+   {
+    "control_number": "46312",
+    "pages": [
+     130
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 130] CIS 18B Advanced UNIX/LINUX 4.5 CIS 18C Bash Scripting 4.5 CIS 21JA Introduction to x86 Processor Assembly Language and Computer Architecture 4.5 CIS 21JB Advanced x86 Processor Assembly Programming 4.5 CIS 22"
+   },
+   {
+    "control_number": "46313",
+    "pages": [
+     129,
+     130,
+     131,
+     132
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.6,
+    "opens": "[page 129] Additional completion of one of the following general education patterns: De Anza General Education or California General Education Transfer Curriculum (Cal-GETC) AND electives as needed to reach at least 90 u"
+   },
+   {
+    "control_number": "46315",
+    "pages": [
+     257,
+     258
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.556,
+    "opens": "[page 257] MATH 46 - Mathematics for Elementary Education 5.0 Units Credit - Degree Applicable This course is designed for prospective elementary and middle school teachers. It gives an introduction to the discipline of "
+   },
+   {
+    "control_number": "46316",
+    "pages": [
+     132,
+     133
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.533,
+    "opens": "[page 132] C D 64 Health, Safety, and Nutrition for the Young Child 4 C D 67 Supervision and Administration of Child Development Programs (Adult Supervision) 3 C D 68 Teaching in a Diverse Society 4 C D 70 Seminar in Par"
+   },
+   {
+    "control_number": "46339",
+    "pages": [
+     130
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": false,
+    "coverage": 0.895,
+    "opens": "[page 130] CIS 18B Advanced UNIX/LINUX 4.5 CIS 18C Bash Scripting 4.5 CIS 21JA Introduction to x86 Processor Assembly Language and Computer Architecture 4.5 CIS 21JB Advanced x86 Processor Assembly Programming 4.5 CIS 22"
+   },
+   {
+    "control_number": "46394",
+    "pages": [
+     210,
+     211
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": false,
+    "coverage": 0.667,
+    "opens": "[page 210] ESL - English as a Second Language Courses ESL 5 - Advanced Composition and Reading 5.0 Units Credit - Degree Applicable Close reading and analysis of a variety of societal, academic, and literary texts repres"
+   },
+   {
+    "control_number": "46413",
+    "pages": [
+     303
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 303] Certificate of Completion Database Science Practitioner Program Description The Certificate of Completion prepares students for an entry-level position in the database field to work as a data analyst, busine"
+   },
+   {
+    "control_number": "46510",
+    "pages": [
+     128,
+     129,
+     130
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": false,
+    "coverage": 0.522,
+    "opens": "[page 128] Total Required: 90 Units Associate in Arts (A.A.) Degree Liberal Arts (Business and Computer Information Systems Emphasis) Designed primarily for students who plan on transferring to the University of Califo"
+   },
+   {
+    "control_number": "46511",
+    "pages": [
+     178
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": false,
+    "coverage": 0.625,
+    "opens": "[page 178] CIS 9 - Introduction to Data Science for Programmers 4.5 Units Credit - Degree Applicable This course is an introduction to data science, which covers data analytics and machine learning. Topics covered includ"
+   },
+   {
+    "control_number": "46512",
+    "pages": [
+     128,
+     129,
+     130
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": false,
+    "coverage": 0.545,
+    "opens": "[page 128] Total Required: 90 Units Associate in Arts (A.A.) Degree Liberal Arts (Business and Computer Information Systems Emphasis) Designed primarily for students who plan on transferring to the University of Califo"
+   },
+   {
+    "control_number": "46513",
+    "pages": [
+     124,
+     125
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.571,
+    "opens": "[page 124] SOC 5 / INTL 8 Sociology of Globalization and Social Change 4 WMST 1 Introduction to Women's Studies 4 WMST 8 / CETH 8 Women of Color in the USA 4 WMST 24 Women and Gender in Global Perspectives 4 WMST 27 Wome"
+   },
+   {
+    "control_number": "46568",
+    "pages": [
+     128
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.6,
+    "opens": "[page 128] Total Required: 90 Units Associate in Arts (A.A.) Degree Liberal Arts (Business and Computer Information Systems Emphasis) Designed primarily for students who plan on transferring to the University of Califo"
+   }
+  ],
+  "unproven": []
+ },
+ "loads": 0,
+ "seconds": 143.8,
+ "found": 227,
+ "by_method": {
+  "no_closed_list": 5,
+  "not_found": 16,
+  "pdf_pages": 227
+ },
+ "shared_pages": {
+  "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=44": [
+   "05951",
+   "10108",
+   "23063"
+  ],
+  "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=66": [
+   "05952",
+   "31272"
+  ],
+  "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=143": [
+   "05954",
+   "23065"
+  ],
+  "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=63": [
+   "05962",
+   "23082"
+  ],
+  "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=50": [
+   "05965",
+   "23086"
+  ],
+  "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=140": [
+   "05969",
+   "38397"
+  ],
+  "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=141": [
+   "05970",
+   "30933"
+  ],
+  "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=52": [
+   "05971",
+   "23090",
+   "30931"
+  ],
+  "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=103": [
+   "05980",
+   "19534"
+  ],
+  "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=73": [
+   "05983",
+   "43443"
+  ],
+  "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=46": [
+   "05993",
+   "07103",
+   "36776",
+   "42171"
+  ],
+  "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=70": [
+   "05994",
+   "19530",
+   "32006"
+  ],
+  "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=110": [
+   "05996",
+   "39415"
+  ],
+  "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=69": [
+   "06005",
+   "12827",
+   "23093"
+  ],
+  "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=74": [
+   "06006",
+   "23070",
+   "33336"
+  ],
+  "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=60": [
+   "07091",
+   "23079",
+   "30955",
+   "44377"
+  ],
+  "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=92": [
+   "07099",
+   "45492"
+  ],
+  "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=138": [
+   "07102",
+   "23094",
+   "41885"
+  ],
+  "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=81": [
+   "10112",
+   "31500"
+  ],
+  "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=77": [
+   "10114",
+   "12199",
+   "19540",
+   "42169"
+  ],
+  "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=59": [
+   "10117",
+   "23078",
+   "30953",
+   "36775"
+  ],
+  "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=58": [
+   "10118",
+   "11784",
+   "23077",
+   "30956",
+   "30959",
+   "46178"
+  ],
+  "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=83": [
+   "10121",
+   "23084"
+  ],
+  "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=85": [
+   "10122",
+   "23085",
+   "33329"
+  ],
+  "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=55": [
+   "10127",
+   "36817",
+   "41793"
+  ],
+  "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=102": [
+   "10132",
+   "12869",
+   "33800"
+  ],
+  "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=105": [
+   "10133",
+   "10134",
+   "10417"
+  ],
+  "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=106": [
+   "10135",
+   "31805"
+  ],
+  "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=90": [
+   "10137",
+   "19531",
+   "19532"
+  ],
+  "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=104": [
+   "10416",
+   "16757",
+   "23092"
+  ],
+  "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=78": [
+   "11040",
+   "23072",
+   "31549"
+  ],
+  "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=62": [
+   "11778",
+   "11779",
+   "23080",
+   "23081"
+  ],
+  "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=65": [
+   "12727",
+   "39283"
+  ],
+  "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=129": [
+   "15516",
+   "46311",
+   "46313"
+  ],
+  "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=124": [
+   "15965",
+   "46513"
+  ],
+  "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=84": [
+   "16759",
+   "18850",
+   "33330"
+  ],
+  "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=75": [
+   "16975",
+   "23073",
+   "30944"
+  ],
+  "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=68": [
+   "18004",
+   "19536",
+   "38149"
+  ],
+  "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=67": [
+   "19291",
+   "19523",
+   "41792"
+  ],
+  "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=91": [
+   "19521",
+   "35730"
+  ],
+  "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=80": [
+   "19537",
+   "39304",
+   "39309"
+  ],
+  "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=76": [
+   "19846",
+   "39307",
+   "39308"
+  ],
+  "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=79": [
+   "23071",
+   "31498",
+   "31511"
+  ],
+  "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=86": [
+   "23083",
+   "35776"
+  ],
+  "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=48": [
+   "23095",
+   "39390"
+  ],
+  "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=109": [
+   "23096",
+   "45186"
+  ],
+  "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=61": [
+   "30943",
+   "30958",
+   "44194"
+  ],
+  "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=82": [
+   "31502",
+   "42186"
+  ],
+  "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=142": [
+   "31820",
+   "38395"
+  ],
+  "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=113": [
+   "33338",
+   "36818",
+   "36854"
+  ],
+  "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=119": [
+   "33366",
+   "45128"
+  ],
+  "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=118": [
+   "33456",
+   "41861"
+  ],
+  "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=128": [
+   "35647",
+   "36264",
+   "46510",
+   "46512",
+   "46568"
+  ],
+  "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=93": [
+   "35922",
+   "35923",
+   "35924"
+  ],
+  "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=299": [
+   "39288",
+   "41152",
+   "43374",
+   "44241"
+  ],
+  "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=120": [
+   "39305",
+   "41862"
+  ],
+  "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=301": [
+   "39310",
+   "41155",
+   "41156",
+   "44242"
+  ],
+  "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=302": [
+   "39311",
+   "41157"
+  ],
+  "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=300": [
+   "41153",
+   "41154",
+   "44239",
+   "44240"
+  ],
+  "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=303": [
+   "41158",
+   "42062",
+   "44044",
+   "44045",
+   "46413"
+  ],
+  "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=306": [
+   "41160",
+   "41161",
+   "41172"
+  ],
+  "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=305": [
+   "41174",
+   "43348",
+   "44020",
+   "44033"
+  ],
+  "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=304": [
+   "41176",
+   "42012",
+   "44021"
+  ],
+  "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=117": [
+   "41859",
+   "41860",
+   "45187",
+   "45188"
+  ],
+  "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=121": [
+   "41863",
+   "45189"
+  ],
+  "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=139": [
+   "41886",
+   "41887"
+  ],
+  "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=64": [
+   "44378",
+   "45499"
+  ],
+  "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=53": [
+   "45561",
+   "45563"
+  ],
+  "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=56": [
+   "45562",
+   "45564"
+  ],
+  "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=130": [
+   "46312",
+   "46339"
+  ]
+ },
+ "not_found": [
+  {
+   "control_number": "07090",
+   "title": "Film/TV: Production",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=96",
+    "coverage": 0.078
+   }
+  },
+  {
+   "control_number": "09226",
+   "title": "Film/TV: Animation",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=95",
+    "coverage": 0.283
+   }
+  },
+  {
+   "control_number": "23067",
+   "title": "Film/TV: Production",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=96",
+    "coverage": 0.078
+   }
+  },
+  {
+   "control_number": "31308",
+   "title": "Film/TV: Screenwriting",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=97",
+    "coverage": 0.132
+   }
+  },
+  {
+   "control_number": "31504",
+   "title": "Film/TV: Production",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "41327",
+   "title": "Film/TV: Animation",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "45279",
+   "title": "Cal-GETC",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=142",
+    "coverage": 0.148
+   }
+  },
+  {
+   "control_number": "45937",
+   "title": "Mandarin Translation and Interpretation Level One",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "45938",
+   "title": "Journalism and Media Practices",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=314",
+    "coverage": 0.25
+   }
+  },
+  {
+   "control_number": "45939",
+   "title": "Multimedia and Visual Communication",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=306",
+    "coverage": 0.444
+   }
+  },
+  {
+   "control_number": "45940",
+   "title": "Nonprofit Management",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "46314",
+   "title": "Pure Mathematics",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=257",
+    "coverage": 0.273
+   }
+  },
+  {
+   "control_number": "46395",
+   "title": "Writing and Reading Skills for Career and College Success",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "46411",
+   "title": "Applied Artificial Intelligence",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=303",
+    "coverage": 0.333
+   }
+  },
+  {
+   "control_number": "46412",
+   "title": "AI in Business",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "46414",
+   "title": "Professional Photography",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=306",
+    "coverage": 0.25
+   }
+  }
+ ],
+ "page_claimed": [],
+ "coverage_bands": {
+  "0.5-0.8": 14,
+  "0.8-1.0": 43,
+  "1.0": 170
+ },
+ "would_extract": {
+  "against": null,
+  "kept": 0,
+  "programs": 227,
+  "list": [
+   {
+    "control_number": "05951",
+    "title": "Accounting",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=44",
+    "coverage": 0.952,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "05952",
+    "title": "Business Administration",
+    "award": "A.A. Degree",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=66",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "05954",
+    "title": "Real Estate",
+    "award": "A.A. Degree",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=143",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "05962",
+    "title": "Automotive Machining and Engine Repair",
+    "award": "A.S. Degree",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=63",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "05965",
+    "title": "Art History",
+    "award": "A.A. Degree",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=50",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "05966",
+    "title": "Music",
+    "award": "A.A. Degree",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=127",
+    "coverage": 0.654,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "05969",
+    "title": "Photographic Arts (Film and Digital)",
+    "award": "A.A. Degree",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=140",
+    "coverage": 0.842,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "05970",
+    "title": "Professional Photography (Film and Digital)",
+    "award": "A.A. Degree",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=141",
+    "coverage": 0.882,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "05971",
+    "title": "Graphic Design",
+    "award": "A.A. Degree",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=52",
+    "coverage": 0.952,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "05980",
+    "title": "Medical Assisting",
+    "award": "A.S. Degree",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=103",
+    "coverage": 0.969,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "05983",
+    "title": "Communication Studies",
+    "award": "A.A. Degree",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=73",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "05992",
+    "title": "Law Enforcement",
+    "award": "A.A. Degree",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=47",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "05993",
+    "title": "Corrections/Probation",
+    "award": "A.A. Degree",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=46",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "05994",
+    "title": "Child Development",
+    "award": "A.A. Degree",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=70",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "05996",
+    "title": "Intercultural Studies",
+    "award": "A.A. Degree",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=110",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "06005",
+    "title": "Marketing Management",
+    "award": "A.A. Degree",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=69",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "06006",
+    "title": "Business Programming",
+    "award": "A.A. Degree",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=74",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "07091",
+    "title": "Automotive Powertrain Technology",
+    "award": "A.S. Degree",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=60",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "07099",
+    "title": "Environmental Resource Management and Pollution Prevention",
+    "award": "A.A. Degree",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=92",
+    "coverage": 0.938,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "07101",
+    "title": "Registered Nurse (RN)",
+    "award": "A.S. Degree",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=136",
+    "coverage": 0.975,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "07102",
+    "title": "Paralegal Studies",
+    "award": "A.A. Degree",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=138",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "07103",
+    "title": "Private Security",
+    "award": "A.A. Degree",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=46",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "10108",
+    "title": "Accounting",
+    "award": "A.A. Degree",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=44",
+    "coverage": 0.957,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "10112",
+    "title": "Systems Programming",
+    "award": "A.A. Degree",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=81",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "10114",
+    "title": "Network Administration",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=77",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "10117",
+    "title": "Automotive Machining and Engine Repair Technology",
+    "award": "A.S. Degree",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=59",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "10118",
+    "title": "Automotive Chassis Technology",
+    "award": "A.S. Degree",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=58",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "10121",
+    "title": "Advanced Manufacturing and Prototyping Technician",
+    "award": "A.S. Degree",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=83",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "10122",
+    "title": "CNC Research and Development Machinist",
+    "award": "A.S. Degree",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=85",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "10124",
+    "title": "Ceramics",
+    "award": "A.A. Degree",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=51",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "10125",
+    "title": "Painting",
+    "award": "A.A. Degree",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=54",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "10127",
+    "title": "Sculpture",
+    "award": "A.A. Degree",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=55",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "10132",
+    "title": "Lab Assisting",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=102",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "10133",
+    "title": "Medical Reception",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=105",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "10134",
+    "title": "Medical Transcribing with Editing",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=105",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "10135",
+    "title": "Phlebotomy Technician I",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=106",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "10137",
+    "title": "Energy Management and Building Science",
+    "award": "A.S. Degree",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=90",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "10416",
+    "title": "Medical File Clerk",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=104",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "10417",
+    "title": "Medical Records Clerk",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=105",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "11040",
+    "title": "Network Programming",
+    "award": "A.A. Degree",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=78",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "11778",
+    "title": "Automotive Engine Performance",
+    "award": "A.S. Degree",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=62",
+    "coverage": 0.889,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "11779",
+    "title": "Automotive Chassis and Powertrain",
+    "award": "A.S. Degree",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=62",
+    "coverage": 0.917,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "11784",
+    "title": "Advanced Engine Performance Technology",
+    "award": "A.S. Degree",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=58",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "12199",
+    "title": "Network Administration",
+    "award": "A.A. Degree",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=77",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "12727",
+    "title": "Biological Sciences",
+    "award": "A.S. Degree",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=65",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "12821",
+    "title": "LVN Transition to RN",
+    "award": "A.S. Degree",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=135",
+    "coverage": 0.962,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "12827",
+    "title": "Child Development",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=69",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "12869",
+    "title": "Business Office Clerk",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=102",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "15181",
+    "title": "Early Intervention/Special Education Assistant",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=71",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "15516",
+    "title": "Liberal Arts (Science, Math and Engineering Emphasis)",
+    "award": "A.A. Degree",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=129",
+    "coverage": 0.959,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "15964",
+    "title": "Liberal Arts (Social and Behavioral Sciences Emphasis)",
+    "award": "A.A. Degree",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=131",
+    "coverage": 0.97,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "15965",
+    "title": "Liberal Arts (Arts and Letters Emphasis)",
+    "award": "A.A. Degree",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=124",
+    "coverage": 0.895,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "16510",
+    "title": "Global Studies",
+    "award": "A.A. Degree",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=100",
+    "coverage": 0.862,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "16757",
+    "title": "Medical Laboratory Technology",
+    "award": "A.A. Degree",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=104",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "16759",
+    "title": "CNC Machinist",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=84",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "16975",
+    "title": "Cybersecurity",
+    "award": "A.A. Degree",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=75",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "16977",
+    "title": "Journalism",
+    "award": "A.A. Degree",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=112",
+    "coverage": 0.925,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "18004",
+    "title": "Management",
+    "award": "A.A. Degree",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=68",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "18850",
+    "title": "CNC Machinist",
+    "award": "A.S. Degree",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=84",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "19291",
+    "title": "Management",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=67",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "19521",
+    "title": "Environmental Resource Management and Pollution Prevention",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=91",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "19523",
+    "title": "Entrepreneurship",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=67",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "19530",
+    "title": "Early Childhood Mental Health",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=70",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "19531",
+    "title": "Energy Management and Building Science",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=90",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "19532",
+    "title": "Energy Management and Building Science",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=90",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "19534",
+    "title": "Medical Assisting",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=103",
+    "coverage": 0.969,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "19536",
+    "title": "Marketing Management",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=68",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "19537",
+    "title": "Project Management Practitioner",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=80",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "19540",
+    "title": "Network Administration",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=77",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "19846",
+    "title": "Database Development Practitioner",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=76",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "23063",
+    "title": "Accounting",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=44",
+    "coverage": 0.957,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "23065",
+    "title": "Real Estate",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=143",
+    "coverage": 0.947,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "23070",
+    "title": "Business Programming",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=74",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "23071",
+    "title": "Systems Programming",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=79",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "23072",
+    "title": "Network Programming",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=78",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "23073",
+    "title": "Cybersecurity",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=75",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "23077",
+    "title": "Advanced Engine Performance Technology",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=58",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "23078",
+    "title": "Automotive Machining and Engine Repair Technology",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=59",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "23079",
+    "title": "Automotive Powertrain Technology",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=60",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "23080",
+    "title": "Automotive Chassis and Powertrain",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=62",
+    "coverage": 0.917,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "23081",
+    "title": "Automotive Engine Performance",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=62",
+    "coverage": 0.889,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "23082",
+    "title": "Automotive Machining and Engine Repair",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=63",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "23083",
+    "title": "Computer Aided Design - Mechanical",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=86",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "23084",
+    "title": "Advanced Manufacturing and Prototyping Technician",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=83",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "23085",
+    "title": "CNC Research and Development Machinist",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=85",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "23086",
+    "title": "Art History",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=50",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "23090",
+    "title": "Graphic Design",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=52",
+    "coverage": 0.952,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "23092",
+    "title": "Medical Laboratory Technology",
+    "award": "Certificate of Achievement requiring 60+S/90+Q units",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=104",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "23093",
+    "title": "Child Development",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=69",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "23094",
+    "title": "Paralegal Studies",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=138",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "23095",
+    "title": "Private Security",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=48",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "23096",
+    "title": "Intercultural Studies",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=109",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "23097",
+    "title": "Global Studies",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=99",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "30618",
+    "title": "English",
+    "award": "A.A. Degree",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=89",
+    "coverage": 0.902,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "30911",
+    "title": "Mathematics",
+    "award": "A.S. T Degree",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=134",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "30931",
+    "title": "Graphic Design",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=52",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "30933",
+    "title": "Professional Photography (Film and Digital)",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=141",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "30943",
+    "title": "Smog Technician",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=61",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "30944",
+    "title": "Cybersecurity",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=75",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "30952",
+    "title": "Advanced Automotive Technology",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=57",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "30953",
+    "title": "Automotive Machining and Engine Repair Technology",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=59",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "30954",
+    "title": "Communication Studies",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=72",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "30955",
+    "title": "Automotive Powertrain Technology",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=60",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "30956",
+    "title": "Automotive Chassis Technology",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=58",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "30958",
+    "title": "Intermediate Engine Performance Technology",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=61",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "30959",
+    "title": "Basic Engine Performance Technology",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=58",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31272",
+    "title": "Business Administration",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=66",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31293",
+    "title": "Kinesiology",
+    "award": "A.A- T Degree",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=115",
+    "coverage": 0.772,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31498",
+    "title": "Programming in JAVA",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=79",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31500",
+    "title": "UNIX/LINUX Operating System",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=81",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31502",
+    "title": "Web Development",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=82",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31511",
+    "title": "Programming in C/C++",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=79",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31549",
+    "title": "Network Basics",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=78",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31805",
+    "title": "History",
+    "award": "A.A- T Degree",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=106",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31820",
+    "title": "Political Science",
+    "award": "A.A- T Degree",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=142",
+    "coverage": 0.943,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32006",
+    "title": "Early Childhood Education",
+    "award": "A.S. T Degree",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=70",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33329",
+    "title": "CNC Programming - CAD-CAM",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=85",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33330",
+    "title": "CNC Machinist",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=84",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33336",
+    "title": "Computer Science",
+    "award": "A.S. T Degree",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=74",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33338",
+    "title": "Journalism",
+    "award": "A.A- T Degree",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=113",
+    "coverage": 0.92,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33366",
+    "title": "Mandarin Language and Culture",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=119",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33456",
+    "title": "Mandarin Language and Culture",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=118",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33800",
+    "title": "Clinical Laboratory Assistant",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=102",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35500",
+    "title": "Economics",
+    "award": "A.A- T Degree",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=87",
+    "coverage": 0.931,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35605",
+    "title": "Humanities",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=107",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35647",
+    "title": "Programming in Python",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=128",
+    "coverage": 0.867,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35661",
+    "title": "Women's Studies",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=145",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35730",
+    "title": "Environmental Resource Management and Pollution Prevention",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=91",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35776",
+    "title": "Quality Control Technician",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=86",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35828",
+    "title": "Anthropology",
+    "award": "A.A- T Degree",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=49",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35922",
+    "title": "Facility and Sustainable Building Management",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=93",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35923",
+    "title": "Facility and Sustainable Building Management",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=93",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35924",
+    "title": "Facility and Sustainable Building Management",
+    "award": "A.S. Degree",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=93",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36263",
+    "title": "Leadership and Social Change",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=123",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36264",
+    "title": "Liberal Arts (Business and Computer Information Systems Emphasis)",
+    "award": "A.A. Degree",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=128",
+    "coverage": 0.915,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36775",
+    "title": "Automotive General Service Technician",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=59",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36776",
+    "title": "Cyber Forensics and Investigations",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=46",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36817",
+    "title": "Spatial Art",
+    "award": "A.A. Degree",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=55",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36818",
+    "title": "Public Relations",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=113",
+    "coverage": 0.882,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36854",
+    "title": "Public Relations",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=113",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38149",
+    "title": "Management Information Systems Support",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=68",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38395",
+    "title": "Psychology",
+    "award": "A.A- T Degree",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=142",
+    "coverage": 0.9,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38397",
+    "title": "Philosophy",
+    "award": "A.A- T Degree",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=140",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39225",
+    "title": "Asian American Studies",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=108",
+    "coverage": 0.978,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39283",
+    "title": "Biology",
+    "award": "A.S. T Degree",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=65",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39288",
+    "title": "Automotive Chassis Technology",
+    "award": "Noncredit program",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=299",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39304",
+    "title": "Project Management Practitioner",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=80",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39305",
+    "title": "Mandarin Translation and Interpretation",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=120",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39307",
+    "title": "Database Development Practitioner",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=76",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39308",
+    "title": "Database Development Practitioner",
+    "award": "A.A. Degree",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=76",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39309",
+    "title": "Project Management Practitioner",
+    "award": "A.A. Degree",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=80",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39310",
+    "title": "General Service Technician",
+    "award": "Noncredit program",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=301",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39311",
+    "title": "Smog Technician",
+    "award": "Noncredit program",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=302",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39390",
+    "title": "Law, Public Policy, and Society",
+    "award": "A.A- T Degree",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=48",
+    "coverage": 0.628,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39415",
+    "title": "Social Justice Studies: General Studies",
+    "award": "A.A- T Degree",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=110",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41152",
+    "title": "Advanced Engine Performance Technology",
+    "award": "Noncredit program",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=299",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41153",
+    "title": "Automotive Machining and Engine Repair Technology",
+    "award": "Noncredit program",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=300",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41154",
+    "title": "Automotive Powertrain Technology",
+    "award": "Noncredit program",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=300",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41155",
+    "title": "Basic Engine Performance Technology",
+    "award": "Noncredit program",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=301",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41156",
+    "title": "Intermediate Engine Performance Technology",
+    "award": "Noncredit program",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=301",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41157",
+    "title": "Business Software Applications",
+    "award": "Noncredit program",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=302",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41158",
+    "title": "Introduction to Computer Science",
+    "award": "Noncredit program",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=303",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41159",
+    "title": "Real Estate Salesperson",
+    "award": "Noncredit program",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=307",
+    "coverage": 0.857,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41160",
+    "title": "Commercial Lighting",
+    "award": "Noncredit program",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=306",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41161",
+    "title": "Photographic Retouching and Digital Post-Production",
+    "award": "Noncredit program",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=306",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41172",
+    "title": "Precalculus Bridge",
+    "award": "Noncredit program",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=306",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41174",
+    "title": "Math Basic Skills",
+    "award": "Noncredit program",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=305",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41176",
+    "title": "English as a Second Language Intermediate Level",
+    "award": "Noncredit program",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=304",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41326",
+    "title": "Community Service Officer",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=45",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41792",
+    "title": "Business Administration 2.0",
+    "award": "A.S. T Degree",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=67",
+    "coverage": 0.882,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41793",
+    "title": "Studio Arts",
+    "award": "A.A- T Degree",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=55",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41858",
+    "title": "French Language and Culture",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=116",
+    "coverage": 0.733,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41859",
+    "title": "German Language and Culture",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=117",
+    "coverage": 0.857,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41860",
+    "title": "Italian Language and Culture",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=117",
+    "coverage": 0.9,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41861",
+    "title": "Korean Language and Culture",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=118",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41862",
+    "title": "Russian Language and Culture",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=120",
+    "coverage": 0.875,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41863",
+    "title": "Spanish Language and Culture",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=121",
+    "coverage": 0.917,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41864",
+    "title": "World Languages and Culture",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=122",
+    "coverage": 0.9,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41885",
+    "title": "Paralegal Studies - Corporate Law",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=138",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41886",
+    "title": "Paralegal Studies - Intellectual Property",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=139",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41887",
+    "title": "Paralegal Studies - Litigation",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=139",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42012",
+    "title": "American English Pronunciation",
+    "award": "Noncredit program",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=304",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42062",
+    "title": "Information Technology Technical Support",
+    "award": "Noncredit program",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=303",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42169",
+    "title": "Information Technology Technical Support",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=77",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42171",
+    "title": "Forensic Criminal Investigation Technician",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=46",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42186",
+    "title": "Additive Manufacturing Technology: 3D Design and Production",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=82",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43348",
+    "title": "English Writing, Grammar and Proofreading",
+    "award": "Noncredit program",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=305",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43374",
+    "title": "Alternative Fuels Technology",
+    "award": "Noncredit program",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=299",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43443",
+    "title": "Communication Studies 2.0",
+    "award": "A.A- T Degree",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=73",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44020",
+    "title": "English as a Second Language Low Advanced Level",
+    "award": "Noncredit program",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=305",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44021",
+    "title": "English as a Second Language High Intermediate Level",
+    "award": "Noncredit program",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=304",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44033",
+    "title": "Math Skills for Business",
+    "award": "Noncredit program",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=305",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44044",
+    "title": "Project Management Practitioner",
+    "award": "Noncredit program",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=303",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44045",
+    "title": "Database Science Practitioner",
+    "award": "Noncredit program",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=303",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44194",
+    "title": "Autonomous and Electric Vehicle Technician (Level 2)",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=61",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44239",
+    "title": "Autonomous and Electric Vehicle Technician (Level 1)",
+    "award": "Noncredit program",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=300",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44240",
+    "title": "Autonomous and Electric Vehicle Technician (Level 2)",
+    "award": "Noncredit program",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=300",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44241",
+    "title": "Automotive Body Electrical",
+    "award": "Noncredit program",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=299",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44242",
+    "title": "EV and Fuel Vehicle Safety",
+    "award": "Noncredit program",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=301",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44325",
+    "title": "Global Studies",
+    "award": "A.A- T Degree",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=101",
+    "coverage": 0.931,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44377",
+    "title": "Autonomous and Electric Vehicle Technician (Level 1)",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=60",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44378",
+    "title": "Autonomous and Electric Vehicle Technology (Level 1)",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=64",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45128",
+    "title": "Mandarin Language and Culture",
+    "award": "A.A. Degree",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=119",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45186",
+    "title": "Ethnic Studies",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=109",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45187",
+    "title": "Hindi Language and Culture",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=117",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45188",
+    "title": "Japanese Language and Culture",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=117",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45189",
+    "title": "Vietnamese Language and Culture",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=121",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45492",
+    "title": "Environmental Science",
+    "award": "A.S. T Degree",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=92",
+    "coverage": 0.889,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45499",
+    "title": "Automotive Technology Management",
+    "award": "Baccalaureate of Science (B.S.) Degree.",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=64",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45561",
+    "title": "Illustration",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=53",
+    "coverage": 0.864,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45562",
+    "title": "UI/UX: User Interface/User Experience Design",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=56",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45563",
+    "title": "Illustration",
+    "award": "A.A. Degree",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=53",
+    "coverage": 0.85,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45564",
+    "title": "UI/UX: User Interface/User Experience Design",
+    "award": "A.A. Degree",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=56",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46178",
+    "title": "Automotive Service and Repair",
+    "award": "A.S. Degree",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=58",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46311",
+    "title": "Applied Mathematics",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=129",
+    "coverage": 0.7,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46312",
+    "title": "Elementary Mathematics Education",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=130",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46313",
+    "title": "Mathematics for Business and Social Sciences",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=129",
+    "coverage": 0.6,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46315",
+    "title": "Statistics",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=257",
+    "coverage": 0.556,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46316",
+    "title": "Community Impact",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=132",
+    "coverage": 0.533,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46339",
+    "title": "Engineering (Electrical Engineering Track)",
+    "award": "A.S. Degree",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=130",
+    "coverage": 0.895,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46394",
+    "title": "English as a Second Language Oral Communication",
+    "award": "Noncredit program",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=210",
+    "coverage": 0.667,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46413",
+    "title": "Foundations of Data Science",
+    "award": "Noncredit program",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=303",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46510",
+    "title": "Applied Artificial Intelligence",
+    "award": "A.S. Degree",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=128",
+    "coverage": 0.522,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46511",
+    "title": "Applied Artificial Intelligence",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=178",
+    "coverage": 0.625,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46512",
+    "title": "Applied Artificial Intelligence",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=128",
+    "coverage": 0.545,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46513",
+    "title": "Leadership and Social Change",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=124",
+    "coverage": 0.571,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46568",
+    "title": "Foundations of Data Science",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=128",
+    "coverage": 0.6,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   }
+  ]
+ },
+ "run": "39046619763"
+}

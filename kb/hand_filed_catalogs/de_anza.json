@@ -5,13 +5,18 @@
  "fetched_at": "2026-10-17",
  "catalog_year": "2025-2026",
  "copy_url": "https://github.com/user-attachments/files/33599457/dac_catalog_2025-2026.pdf",
- "sha256": "",
+ "sha256": "32a2ef6b07e6bc2db2772201f7413da6b1aa23ac52218b9049e19cbe4fbd4f00",
  "note": "Sam downloaded it in a browser and posted it to the catalog-files release (2026-10-17); its host answers the reader with a Cloudflare 403. cpl_memory sam-hand-filed-catalog-pdf-links-2026-10-17. De Anza publishes its 2026-2027 catalog only as HTML, so this is the 2025-2026 catalog, read as a year-behind catalog (the Palo Verde precedent) until the district lets the reader in (cpl_memory sam-catalog-files-release-de-anza-2025-26-2026-10-17).",
  "addenda": [
   {
    "title": "Spring 2026 addendum",
    "url": "https://www.deanza.edu/catalog/documents/2025-2026/dac_catalog_2025-2026_spring_addendum.pdf",
-   "copy_url": "https://github.com/user-attachments/files/33599455/dac_catalog_2025-2026_spring_addendum.pdf"
+   "copy_url": "https://github.com/user-attachments/files/33599455/dac_catalog_2025-2026_spring_addendum.pdf",
+   "sha256": "6d8b21fa4cc789f7543004baf7972512a74531327602970f27ee3bbceccde6df",
+   "bytes": 464575,
+   "pinned_run": "39046619763"
   }
- ]
+ ],
+ "bytes": 25322171,
+ "pinned_run": "39046619763"
 }
