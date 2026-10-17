@@ -1,0 +1,214 @@
+{
+ "college": "Sacramento City College",
+ "control_number": "23005",
+ "shape": "certificate",
+ "title": "Information Processing Specialist",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=265",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 12090,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 12090,
+    "output_tokens": 2050,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2050,
+  "output_tokens_details": {
+   "thinking_tokens": 880
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.08936,
+ "ms": 18572,
+ "seconds": 18.8,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 15,
+   "share": 0.0,
+   "missing": [
+    "CISA305",
+    "CISA306",
+    "CISA315",
+    "CISA316",
+    "CISA323",
+    "CISA340",
+    "CISC305",
+    "CISC310",
+    "CISC320",
+    "CISC351",
+    "CISC360",
+    "CISN340",
+    "CISS300",
+    "CISS310",
+    "CISW306"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": true,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Not found in the text: the Certificate of Achievement in Information Processing Specialist section is not included; the excerpt begins inside the A.S. in Information Processing section (Degree Requirements)",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "CISA 305",
+    "why": "named only in the A.S. Information Processing (and MIS) sections; certificate section not in text"
+   },
+   {
+    "code": "CISA 306",
+    "why": "named only in the A.S. Information Processing (and MIS) sections; certificate section not in text"
+   },
+   {
+    "code": "CISA 315",
+    "why": "named only in the A.S. Information Processing (and MIS) sections; certificate section not in text"
+   },
+   {
+    "code": "CISA 316",
+    "why": "named only in the A.S. Information Processing (and MIS) sections; certificate section not in text"
+   },
+   {
+    "code": "CISA 323",
+    "why": "named only in the A.S. Information Processing (and MIS) sections; certificate section not in text"
+   },
+   {
+    "code": "CISA 340",
+    "why": "named only in the A.S. Information Processing (and MIS) sections; certificate section not in text"
+   },
+   {
+    "code": "CISC 305",
+    "why": "named only in the A.S. Information Processing (and MIS) sections; certificate section not in text"
+   },
+   {
+    "code": "CISC 310",
+    "why": "named only in A.S. sections; certificate section not in text"
+   },
+   {
+    "code": "CISC 320",
+    "why": "named only in A.S. sections; certificate section not in text"
+   },
+   {
+    "code": "CISC 351",
+    "why": "named only in A.S. sections; certificate section not in text"
+   },
+   {
+    "code": "CISC360",
+    "why": "printed as CISC 360 only in A.S. sections; certificate section not in text"
+   },
+   {
+    "code": "CISN 340",
+    "why": "named only in A.S. sections; certificate section not in text"
+   },
+   {
+    "code": "CISS 300",
+    "why": "named only in A.S. sections; certificate section not in text"
+   },
+   {
+    "code": "CISS 310",
+    "why": "named only in A.S. sections; certificate section not in text"
+   },
+   {
+    "code": "CISW 306",
+    "why": "named only in the A.S. Web Developer section; certificate section not in text"
+   }
+  ],
+  "notes": [
+   "The catalog text does not contain the Information Processing Specialist Certificate of Achievement section. It begins mid-description of the A.S. in Information Processing, whose description says the Information Processing Technician and Information Processing Specialist certificates serve as major fields of study for that degree.",
+   "The A.S. in Information Processing requirements (CISA 305, 306, 315, 316, 323, 340; CISC 305, 310, 320; CISC 351 or CISN 340; CISC 360; CISS 300 or CISS 310; Total Units: 23 - 27.5) closely match the closed list. CISW 306 is the exception: it appears only in the A.S. Web Developer section.",
+   "These degree requirements were not recorded as the certificate's, because they belong to a different award and may differ from it. The certificate likely includes CISW 306. A reviewer should fetch the certificate's own section, likely on an adjacent page (around page 264), and complete the record.",
+   "Outcomes and careers printed in the A.S. Information Processing section were not recorded, because they are not printed for this certificate in the supplied text. The careers named there are office supervisors, office managers, computer support specialists and information processing specialists."
+  ]
+ },
+ "extracted_run": "39047070975"
+}

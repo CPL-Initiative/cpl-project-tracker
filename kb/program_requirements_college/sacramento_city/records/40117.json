@@ -1,0 +1,184 @@
+{
+ "college": "Sacramento City College",
+ "control_number": "40117",
+ "shape": "certificate",
+ "title": "iOS App Developer",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=277",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 9138,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 9138,
+    "output_tokens": 659,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 659,
+  "output_tokens_details": {
+   "thinking_tokens": 172
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.04973,
+ "ms": 7102,
+ "seconds": 7.4,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 10,
+   "share": 0.0,
+   "missing": [
+    "CISP301",
+    "CISP360",
+    "CISW306",
+    "CISW327",
+    "DDSN301",
+    "DDSN360",
+    "DDSN390",
+    "ENTR350",
+    "ENTR352",
+    "ENTR356"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": true,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Not found in provided text",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "CISP 301",
+    "why": "iOS App Developer section not in the text; appears only in the Programming and Web Developer certificates"
+   },
+   {
+    "code": "CISP 360",
+    "why": "iOS App Developer section not in the text; appears only in the Programming certificate"
+   },
+   {
+    "code": "CISW 306",
+    "why": "iOS App Developer section not in the text; appears only in the Web Developer and Web Production Specialist certificates"
+   },
+   {
+    "code": "CISW 327",
+    "why": "iOS App Developer section not in the text; appears only in the Web Developer and Web Production Specialist certificates"
+   },
+   {
+    "code": "DDSN 301",
+    "why": "not in the text"
+   },
+   {
+    "code": "DDSN 360",
+    "why": "iOS App Developer section not in the text; appears only in the Web Developer and Web Production Specialist certificates"
+   },
+   {
+    "code": "DDSN 390",
+    "why": "not in the text"
+   },
+   {
+    "code": "ENTR 350",
+    "why": "not in the text"
+   },
+   {
+    "code": "ENTR 352",
+    "why": "not in the text"
+   },
+   {
+    "code": "ENTR 356",
+    "why": "not in the text"
+   }
+  ],
+  "notes": []
+ },
+ "extracted_run": "39047070975"
+}

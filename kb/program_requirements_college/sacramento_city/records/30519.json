@@ -1,0 +1,179 @@
+{
+ "college": "Sacramento City College",
+ "control_number": "30519",
+ "shape": "certificate",
+ "title": "Aircraft Dispatcher",
+ "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+ "source_url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=182",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 10910,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 10910,
+    "output_tokens": 1359,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1359,
+  "output_tokens_details": {
+   "thinking_tokens": 884
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.07082,
+ "ms": 12576,
+ "seconds": 12.9,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 9,
+   "share": 0.0,
+   "missing": [
+    "ATCAD309",
+    "FLTEC302",
+    "FLTEC304",
+    "FLTEC306",
+    "FLTEC310",
+    "FLTEC312",
+    "FLTEC314",
+    "FLTEC321",
+    "FLTEC330"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": true,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Aircraft Dispatcher Certificate",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ATCAD 309",
+    "why": "named only in the A.S. section; certificate section not in the text"
+   },
+   {
+    "code": "FLTEC 302",
+    "why": "named only in the A.S. section; certificate section not in the text"
+   },
+   {
+    "code": "FLTEC 304",
+    "why": "named only in the A.S. section; certificate section not in the text"
+   },
+   {
+    "code": "FLTEC 306",
+    "why": "named only in the A.S. section; certificate section not in the text"
+   },
+   {
+    "code": "FLTEC 310",
+    "why": "named only in the A.S. section; certificate section not in the text"
+   },
+   {
+    "code": "FLTEC 312",
+    "why": "named only in the A.S. section; certificate section not in the text"
+   },
+   {
+    "code": "FLTEC 314",
+    "why": "named only in the A.S. section; certificate section not in the text"
+   },
+   {
+    "code": "FLTEC 321",
+    "why": "named only in the A.S. section; certificate section not in the text"
+   },
+   {
+    "code": "FLTEC 330",
+    "why": "named only in the A.S. section; certificate section not in the text"
+   }
+  ],
+  "notes": []
+ },
+ "extracted_run": "39047070975"
+}

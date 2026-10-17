@@ -1,0 +1,300 @@
+{
+ "college": "Sacramento City College",
+ "control_number": "23002",
+ "shape": "certificate",
+ "title": "Multimedia News Specialist",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=468",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 11947,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 11947,
+    "output_tokens": 1925,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1925,
+  "output_tokens_details": {
+   "thinking_tokens": 535
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.08629,
+ "ms": 16494,
+ "seconds": 16.9,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 14,
+   "listed": 16,
+   "share": 0.875,
+   "missing": [
+    "ENGWR330",
+    "ENGWR384"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 2,
+   "codes": [
+    "ENGL330",
+    "ENGL384"
+   ],
+   "flagged": [
+    "ENGL330",
+    "ENGL384"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    21.0,
+    21.0
+   ],
+   "stated": [
+    21.0,
+    21.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 7,
+   "courses": 0,
+   "count": 7,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 6,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Multimedia News Specialist Certificate",
+   "measure": "units",
+   "total_units": {
+    "min": 21,
+    "max": 21
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "analyze content of newspapers, magazines, and online media.",
+    "demonstrate an understanding of basic news, feature writing, and reporting in print and online media.",
+    "evaluate and critique their own journalistic work and the work of others.",
+    "apply knowledge of grammar and AP style to create mass media products that conform to journalistic conventions.",
+    "produce news and feature articles and news and feature photographs for publication in a newspaper, magazine, or online publication.",
+    "apply principles of audience and journalistic ethics to their writing and photography, especially as they relate to gender, ethnicity, and culture.",
+    "demonstrate understanding of the fundamentals of mass media theories, concepts, and practices as they relate to gender, ethnicities, and cultural constructs."
+   ],
+   "careers": [
+    "multimedia editors",
+    "writers",
+    "reporters",
+    "copy editors",
+    "photographers",
+    "designers"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Certificate Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "JOUR 300",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "JOUR 310",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ENGL 384",
+        "units": 3,
+        "catalog_addition": true
+       },
+       {
+        "code": "COMM 351",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "JOUR 360",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PHOTO 350",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "A minimum of 12 units from the following",
+    "rule": "choose_units",
+    "minimum": 12,
+    "option_group": null,
+    "stated": {
+     "min": 12,
+     "max": 12
+    },
+    "courses": [
+     {
+      "code": "DDSN 311",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DDSN 331",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PHOTO 400",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "JOUR 320",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "JOUR 340",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ENGL 330",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "JOUR 364",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PHOTO 380",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "JOUR 403",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WEXP 498",
+      "units": 0.5,
+      "units_max": 4,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ENGWR 330",
+    "why": "catalog requirement list prints ENGL 330 instead (likely renamed equivalent)"
+   },
+   {
+    "code": "ENGWR 384",
+    "why": "catalog requirement list prints ENGL 384 instead; ENGWR 384 named only in JOUR 310 course description"
+   }
+  ],
+  "notes": [
+   "The certificate requirements table continues across the page break from page 468 to 469; the elective list was read as one block of 12 units.",
+   "Catalog prints ENGL 384 and ENGL 330 as alternatives, while the closed list holds ENGWR 384 and ENGWR 330; course descriptions still reference ENGWR. Recorded ENGL codes as catalog additions; reviewer should confirm they are the same courses.",
+   "Career entries taken from the certificate's Career Information section; it also mentions job duties such as business newsletters, company websites, and public relations outreach, not recorded as careers."
+  ]
+ },
+ "extracted_run": "39047070975"
+}

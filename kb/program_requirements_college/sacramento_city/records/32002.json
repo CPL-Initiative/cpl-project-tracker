@@ -1,0 +1,322 @@
+{
+ "college": "Sacramento City College",
+ "control_number": "32002",
+ "shape": "adt",
+ "title": "Business Administration",
+ "award": "A.S. T Degree",
+ "source_url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=218",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 11661,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 11661,
+    "output_tokens": 2497,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2497,
+  "output_tokens_details": {
+   "thinking_tokens": 976
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.09658,
+ "ms": 19341,
+ "seconds": 19.6,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 7,
+   "listed": 13,
+   "share": 0.538,
+   "missing": [
+    "BUS345",
+    "CISA315",
+    "CISA340",
+    "CISC310",
+    "ECON302",
+    "ECON304"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 6,
+   "codes": [
+    "ECONC2001",
+    "ECONC2002",
+    "MATH340",
+    "MATH342",
+    "MATH400",
+    "MATH401"
+   ],
+   "flagged": [
+    "ECONC2001",
+    "ECONC2002",
+    "MATH340",
+    "MATH342",
+    "MATH400",
+    "MATH401"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    27.0,
+    29.0
+   ],
+   "stated": [
+    60.0,
+    60.0
+   ],
+   "against": "degree",
+   "ge": null,
+   "why": [
+    "the record names the degree total and the Cal-GETC pattern, but no units for it"
+   ],
+   "major": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     27.0,
+     29.0
+    ],
+    "stated": [
+     27.0,
+     29.0
+    ],
+    "against": "program",
+    "why": []
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 8,
+   "courses": 0,
+   "count": 8,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 14,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Degree Requirements (A.S.-T in Business Administration 2.0; program heading cut off before page 218)",
+   "measure": "units",
+   "total_units": {
+    "min": 27,
+    "max": 29
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "identify and explain the major functional areas of business organizations including management, marketing, finance, and accounting.",
+    "employ commonly used computer application programs to create relevant business documents.",
+    "apply accounting and mathematical concepts and principles in making decisions about business operations.",
+    "assess the relationships and inter-dependencies of economic, social, legal, and global environments in which businesses operate.",
+    "define terms and concepts used in macroeconomics and microeconomics.",
+    "compose effective oral and written communications in various business settings.",
+    "research, develop, evaluate, and test possible solutions using creativity, critical thinking, and technology skills.",
+    "utilize business as a tool of engagement in issues of sustainability, social responsibility, economic equality, and cultural understanding."
+   ],
+   "careers": [
+    "account executive",
+    "analyst",
+    "bank employee",
+    "manager",
+    "entrepreneur",
+    "financial planner",
+    "government service",
+    "insurance representative",
+    "investment counselor",
+    "public administration",
+    "product manager",
+    "purchasing agent",
+    "retail/industrial sales",
+    "stockbroker"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Degree Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ACCT 301",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACCT 311",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 300",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BUS 310",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 340",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECON C2002",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ECON C2001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MATH 340",
+      "units": 3,
+      "units_max": 5,
+      "alternatives": [
+       {
+        "code": "MATH 342",
+        "units": 3,
+        "catalog_addition": true
+       },
+       {
+        "code": "MATH 400",
+        "units": 5,
+        "catalog_addition": true
+       },
+       {
+        "code": "MATH 401",
+        "units": 5,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "STAT C1000",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "STAT C1000H",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "BUS 345",
+    "why": "not in the text"
+   },
+   {
+    "code": "CISA 315",
+    "why": "named only in the A.S. Accounting and A.S. Business, General sections"
+   },
+   {
+    "code": "CISA 340",
+    "why": "named only in the A.S. Marketing section"
+   },
+   {
+    "code": "CISC 310",
+    "why": "named only in the A.S. Accounting and A.S. Business, General sections"
+   },
+   {
+    "code": "ECON 302",
+    "why": "not in the text; catalog lists ECON C2002 Principles of Macroeconomics instead"
+   },
+   {
+    "code": "ECON 304",
+    "why": "not in the text; catalog lists ECON C2001 Principles of Microeconomics instead"
+   }
+  ],
+  "notes": [
+   "The text begins mid-section on page 218; the program heading and description for the AS-T are cut off, so the section heading is inferred from the degree statement ('Associate in Science in Business Administration 2.0 for Transfer (AS-T)').",
+   "MATH 340 row prints '3 - 5' as the range for the choice among MATH 340 (3), MATH 342 (3), MATH 400 (5), MATH 401 (5); recorded as units 3, units_max 5 on MATH 340.",
+   "ECON C2002 and ECON C2001 are recorded as catalog additions; they appear to be the common-course-numbered replacements for closed-list ECON 302 and ECON 304.",
+   "degree_total 60 taken from the prose statement that this AS-T 'may be obtained by completion of 60 transferable, semester units' including the major and Cal-GETC; reviewer should confirm this counts as a printed degree total. No units are printed for Cal-GETC."
+  ]
+ },
+ "extracted_run": "39047070975"
+}

@@ -1,0 +1,315 @@
+{
+ "college": "Sacramento City College",
+ "control_number": "41265",
+ "shape": "degree",
+ "title": "LVN-RN Transition to Registered Nursing",
+ "award": "A.S. Degree",
+ "source_url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=561",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 12023,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 12023,
+    "output_tokens": 2896,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2896,
+  "output_tokens_details": {
+   "thinking_tokens": 882
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.10601,
+ "ms": 23287,
+ "seconds": 23.6,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 21,
+   "listed": 22,
+   "share": 0.955,
+   "missing": [
+    "ENGWR488"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "ENGL488"
+   ],
+   "flagged": [
+    "ENGL488"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    55.0,
+    56.0
+   ],
+   "stated": [
+    55.0,
+    56.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 10,
+   "courses": 0,
+   "count": 10,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Degree Requirements",
+   "measure": "units",
+   "total_units": {
+    "min": 55,
+    "max": 56
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Local General Education Pattern or California General Education Transfer Curriculum (Cal-GETC)",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": true,
+   "outcomes": [
+    "integrate critical reasoning skills into the nursing process in direct and indirect nursing care to meet the patient’s developmental and basic human needs.",
+    "revise individualized nursing interventions to safely provide care to assist adult and older adult patients in need of preventative, restorative, or rehabilitative patient centered care.",
+    "incorporate evidence-based practice, patient care standards, informatics, and critical thinking skills to enhance safety, quality improvement, and effectiveness of nursing care.",
+    "generate therapeutic, respectful, and caring communication with patients and families, while promoting collegiality with peers and colleagues.",
+    "formulate accurate and timely documentation and reporting of patient assessments, interventions, progress, and outcomes of care in the written and electronic medical record.",
+    "design patient-centered teaching plans and assist patients and their families in developing self-advocacy skills necessary to maintain optimum levels of functioning and health.",
+    "manage the nursing care for a group of patients, utilizing leadership skills, collaboration, teamwork, resource utilization, and supervision of team members consistent with their scope of practice.",
+    "prioritize patient care needs, using critical thinking and time management skills, to organize and provide safe nursing care in a responsible and accountable manner.",
+    "integrate ethical principles, legal boundaries, and cultural competency in all areas of nursing practice.",
+    "assess learning needs through reflective thinking and use resources to engage in continuous improvement in skills and knowledge."
+   ],
+   "careers": [
+    "entry-level staff nurse"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Degree Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 55,
+     "max": 56
+    },
+    "courses": [
+     {
+      "code": "ANTH 310",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ANTH 481",
+        "units": 3,
+        "catalog_addition": false
+       },
+       {
+        "code": "ETHNS 300",
+        "units": 3,
+        "catalog_addition": false
+       },
+       {
+        "code": "ETHNS 320",
+        "units": 3,
+        "catalog_addition": false
+       },
+       {
+        "code": "ETHNS 330",
+        "units": 3,
+        "catalog_addition": false
+       },
+       {
+        "code": "ETHNS 350",
+        "units": 3,
+        "catalog_addition": false
+       },
+       {
+        "code": "ETHNS 360",
+        "units": 3,
+        "catalog_addition": false
+       },
+       {
+        "code": "SOC 300",
+        "units": 3,
+        "catalog_addition": false
+       },
+       {
+        "code": "SOC 321",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL 430",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL 431",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL 440",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COMM C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "COMM 331",
+        "units": 3,
+        "catalog_addition": false
+       },
+       {
+        "code": "COMM 481",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL C1000",
+      "units": 3,
+      "units_max": 4,
+      "alternatives": [
+       {
+        "code": "ENGL 488",
+        "units": 4,
+        "catalog_addition": true
+       },
+       {
+        "code": "ESLW 340",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NURSE 307",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NURSE 427",
+      "units": 12,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NURSE 437",
+      "units": 12,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ENGWR 488",
+    "why": "The requirements table prints this choice as 'ENGL 488 Honors College Composition and Research'. ENGWR 488 appears only in the enrollment eligibility list, so it is recorded under the printed code ENGL 488."
+   }
+  ],
+  "notes": [
+   "The excerpt begins mid-section on page 561. The LVN-RN Transition program heading is not in the text, so section_heading uses the requirements table heading 'Degree Requirements'.",
+   "The text on pages 562-563 under 'A.S. in Nursing, Registered' belongs to a different award (Total Units 74-75, adds NURSE 407/417) and was not used.",
+   "'ENGL 488' in the requirements table is likely a typo for ENGWR 488 (Honors College Composition and Research), which is in the closed list and named in the enrollment eligibility text. It is recorded as printed with catalog_addition true. Reviewer should check.",
+   "The degree statement reads 'plus sufficient electives for a total of at least 60 units'. This was read as boilerplate, not a printed degree total, so degree_total is null and electives_fill_degree is true.",
+   "The ge_pattern offers a choice: (a) the Local General Education Pattern or (b) Cal-GETC. No GE units are printed.",
+   "The block's stated value uses the printed 'Total Units: 55 - 56'.",
+   "Student Learning Outcomes are the list beginning on page 561 and continuing on page 562, before 'Career Information'. They are attributed to the LVN-RN Transition section by position.",
+   "The prerequisite courses (BIOL 430/431/440, PSYC, ENGL, COMM, ANTH/ETHNS/SOC) are listed as degree requirements and also as enrollment prerequisites."
+  ]
+ },
+ "extracted_run": "39047070975"
+}

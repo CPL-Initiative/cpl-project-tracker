@@ -1,0 +1,312 @@
+{
+ "college": "Sacramento City College",
+ "control_number": "32115",
+ "shape": "adt",
+ "title": "Geography",
+ "award": "A.A- T Degree",
+ "source_url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=412",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 12227,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 12227,
+    "output_tokens": 2567,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2567,
+  "output_tokens_details": {
+   "thinking_tokens": 904
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.10025,
+ "ms": 20884,
+ "seconds": 21.0,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 14,
+   "listed": 18,
+   "share": 0.778,
+   "missing": [
+    "GEOG300",
+    "GEOG301",
+    "GEOG310",
+    "GEOG320"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    6.0,
+    6.0
+   ],
+   "stated": [
+    19.0,
+    19.0
+   ],
+   "against": "program",
+   "why": [
+    "'List A' chooses units but names no minimum"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 6,
+   "courses": 0,
+   "count": 6,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 18,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Associate in Arts in Geography for Transfer (AA-T) degree",
+   "measure": "units",
+   "total_units": {
+    "min": 19,
+    "max": 19
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "understand the general content and scope of collegiate level geography studies.",
+    "compare and contrast the general biophysical and sociocultural differences and similarities among world regions.",
+    "interpret maps and mapped data utilizing basic map elements, including scales, common coordinate systems, and map symbols.",
+    "utilize geographic information technologies, such as Geographic Information Systems (GIS), Global Positioning Systems (GPS), and remote sensing in understanding environmental and human phenomena.",
+    "evaluate and analyze geographic problems and their solutions.",
+    "communicate geographic information effectively in oral, written, and graphic form."
+   ],
+   "careers": [
+    "natural resource management",
+    "environmental conservation",
+    "international development",
+    "urban and regional planning",
+    "education (K-12 through University)",
+    "tourism",
+    "cartography",
+    "climate science",
+    "park management",
+    "transportation planning and logistics",
+    "real estate",
+    "international business",
+    "marketing",
+    "land surveying",
+    "research science",
+    "remote sensing",
+    "demography",
+    "GIS analysis"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "List A",
+    "rule": "choose_units",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "GEOG 306",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOG 331",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOG 334",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOG 391",
+      "units": 1,
+      "units_max": 4,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOG 392",
+      "units": 1,
+      "units_max": 4,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOG 393",
+      "units": 1,
+      "units_max": 4,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOG 394",
+      "units": 1,
+      "units_max": 4,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List B",
+    "rule": "choose_units",
+    "minimum": 6,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "GEOG 302",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOG 305",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOG 308",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANTH 310",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ANTH 481",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOL 300",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOL 325",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "GEOG 300",
+    "why": "Required Program table not in the text (cut off before page 412); appears only in course descriptions"
+   },
+   {
+    "code": "GEOG 301",
+    "why": "Required Program table not in the text (cut off before page 412); appears only in course descriptions"
+   },
+   {
+    "code": "GEOG 310",
+    "why": "Required Program table not in the text; named only in footnote 1 ('strongly recommended that students take GEOG 310'), likely referring to a required choice"
+   },
+   {
+    "code": "GEOG 320",
+    "why": "Required Program table not in the text (cut off before page 412); appears only in course descriptions"
+   }
+  ],
+  "notes": [
+   "The excerpt begins mid-section on page 412: the section heading, the Required Program list, and the List A heading with its minimum are cut off. List A's name, rule (assumed choose_units) and minimum are not printed in the text; minimum left null. Section heading taken from the degree sentence on the page.",
+   "Footnote 1 says 'It is strongly recommended that students take GEOG 310'; the footnote marker's location is in the missing Required Program, likely a GEOG 310 or GEOG 320 choice. GEOG 310 not placed in a recommended block for that reason; reviewer should check.",
+   "Both lists allow substitution of courses from the Required Program (and List A for List B) not already counted.",
+   "degree_total 60 taken from the sentence that the AA-T may be obtained by completing 60 transferable semester units including the major and Cal-GETC; no GE units printed.",
+   "Student Learning Outcomes are printed for the program as a whole; the AA-T shares them.",
+   "GEOG 495 and GEOG 499 appear only in course descriptions, not in requirements."
+  ]
+ },
+ "extracted_run": "39047070975"
+}

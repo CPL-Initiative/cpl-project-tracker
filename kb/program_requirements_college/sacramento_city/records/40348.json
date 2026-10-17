@@ -1,0 +1,294 @@
+{
+ "college": "Sacramento City College",
+ "control_number": "40348",
+ "shape": "certificate",
+ "title": "Chemical Technician, Advanced",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=236",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 12103,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 12103,
+    "output_tokens": 1819,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1819,
+  "output_tokens_details": {
+   "thinking_tokens": 397
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.08479,
+ "ms": 15076,
+ "seconds": 15.4,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 14,
+   "listed": 15,
+   "share": 0.933,
+   "missing": [
+    "ENGWR488"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "ENGL488"
+   ],
+   "flagged": [
+    "ENGL488"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    17.0,
+    27.0
+   ],
+   "stated": [
+    17.0,
+    27.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 6,
+   "courses": 0,
+   "count": 6,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 3,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Chemical Technician, Advanced, Certificate of Achievement.",
+   "measure": "units",
+   "total_units": {
+    "min": 17,
+    "max": 27
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "apply advanced chemistry principles and laboratory skills needed to safely work in a commercial lab using chemical technology with minimal supervision.",
+    "apply problem-solving and analytical thinking skills in the planning, execution, and interpretation of chemistry lab work.",
+    "correctly use common and advanced chemistry laboratory instruments to process and analyze samples and collect data.",
+    "demonstrate advanced oral and written communication skills necessary to report and discuss chemistry laboratory processes and results with other scientifically trained personnel.",
+    "demonstrate appropriate safety practices, including proper chemical waste disposal procedures.",
+    "apply fundamental chemical principles to concrete issues affecting society."
+   ],
+   "careers": [
+    "environmental monitoring and pollution analysis",
+    "medical testing",
+    "quality control"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Certificate Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 12,
+     "max": 13
+    },
+    "courses": [
+     {
+      "code": "BUS 310",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEMT 201",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEMT 424",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEMT 429",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL C1000",
+      "units": 3,
+      "units_max": 4,
+      "alternatives": [
+       {
+        "code": "ENGL C1001",
+        "units": 3,
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGL C1001H",
+        "units": 3,
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGL 488",
+        "units": 4,
+        "catalog_addition": true
+       },
+       {
+        "code": "ESLW 340",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEMT 297",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Pathway 1 See Description",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Pathway",
+    "stated": {
+     "min": 5,
+     "max": 5
+    },
+    "courses": [
+     {
+      "code": "CHEM 410",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Pathway 2 See Description",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Pathway",
+    "stated": {
+     "min": 14,
+     "max": 14
+    },
+    "courses": [
+     {
+      "code": "CHEM 420",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 421",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "STAT C1000",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "STAT C1000H",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ENGWR 488",
+    "why": "catalog prints this course as ENGL 488 (Honors College Composition and Research); recorded as ENGL 488 alternative with catalog_addition true"
+   }
+  ],
+  "notes": [
+   "The catalog prints two totals: 'Total Units: 17 - 18' for Pathway 1 and 'Total Units: 26 - 27' for Pathway 2; total_units records the span 17-27 across both pathways. Reviewer should check.",
+   "Pathway 1 and Pathway 2 are treated as alternative options (option_group 'Pathway'); the pathway description referenced ('See Description') is not in the provided text for the Advanced certificate.",
+   "ENGL 488 printed in the catalog likely corresponds to ENGWR 488 in the closed list (same title, 4 units).",
+   "Text begins at the section heading; the Advanced certificate's program description is not included in the extract."
+  ]
+ },
+ "extracted_run": "39047070975"
+}

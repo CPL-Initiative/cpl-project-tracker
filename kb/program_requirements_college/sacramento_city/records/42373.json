@@ -1,0 +1,1826 @@
+{
+ "college": "Sacramento City College",
+ "control_number": "42373",
+ "shape": "certificate",
+ "title": "Intersegmental GE Transfer Curriculum (IGETC)",
+ "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+ "source_url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=81",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 39415,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "output_tokens": 15289
+ },
+ "cost_usd": 0.46344,
+ "ms": 59131,
+ "seconds": 59.6,
+ "parts": 2,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 342,
+   "share": 0.0,
+   "missing": [
+    "ADMJ300",
+    "ADMJ302",
+    "ADMJ304",
+    "ADMJ349",
+    "ANTH300",
+    "ANTH301",
+    "ANTH310",
+    "ANTH323",
+    "ANTH324",
+    "ANTH325",
+    "ANTH331",
+    "ANTH332",
+    "ANTH334",
+    "ANTH341",
+    "ANTH480",
+    "ANTH481",
+    "ARABIC401",
+    "ARABIC402",
+    "ART420",
+    "ARTH300",
+    "ARTH301",
+    "ARTH304",
+    "ARTH306",
+    "ARTH307",
+    "ARTH308",
+    "ARTH310",
+    "ARTH312",
+    "ARTH313",
+    "ARTH314",
+    "ARTH318",
+    "ARTH320",
+    "ARTH324",
+    "ARTH325",
+    "ARTH328",
+    "ARTH332",
+    "ARTH334",
+    "ARTH410",
+    "ARTH484",
+    "ARTH486",
+    "ARTH487",
+    "ARTH488",
+    "ASTR310",
+    "ASTR320",
+    "ASTR330",
+    "ASTR400",
+    "BIOL305",
+    "BIOL308",
+    "BIOL309",
+    "BIOL310",
+    "BIOL314",
+    "BIOL315",
+    "BIOL326",
+    "BIOL327",
+    "BIOL332",
+    "BIOL342",
+    "BIOL349",
+    "BIOL350",
+    "BIOL351",
+    "BIOL352",
+    "BIOL370",
+    "BIOL402",
+    "BIOL412",
+    "BIOL422",
+    "BIOL430",
+    "BIOL431",
+    "BIOL440",
+    "BIOLFS350",
+    "BUS345",
+    "CANT401",
+    "CANT402",
+    "CANT411",
+    "CANT412",
+    "CHEM300",
+    "CHEM305",
+    "CHEM306",
+    "CHEM309",
+    "CHEM320",
+    "CHEM330",
+    "CHEM333",
+    "CHEM336",
+    "CHEM400",
+    "CHEM401",
+    "CHEM410",
+    "CHEM420",
+    "CHEM421",
+    "CHEM423",
+    "CHEM425",
+    "CHEM426",
+    "CISP440",
+    "COMM303",
+    "COMM305",
+    "COMM311",
+    "COMM316",
+    "COMM321",
+    "COMM325",
+    "COMM331",
+    "COMM335",
+    "COMM351",
+    "COMM361",
+    "COMM481",
+    "COMMC1000",
+    "DDSN305",
+    "DEAF310",
+    "DEAF312",
+    "DEAF314",
+    "DEAF316",
+    "DEAF351",
+    "DEAF355",
+    "DEAF360",
+    "DEAF362",
+    "DEAF380",
+    "ECE312",
+    "ECE314",
+    "ECON302",
+    "ECON304",
+    "ECON310",
+    "ENGLC1000",
+    "ENGLC1001",
+    "ENGLC1001H",
+    "ENGLT301",
+    "ENGLT303",
+    "ENGLT304",
+    "ENGLT310",
+    "ENGLT311",
+    "ENGLT317",
+    "ENGLT320",
+    "ENGLT321",
+    "ENGLT327",
+    "ENGLT328",
+    "ENGLT331",
+    "ENGLT332",
+    "ENGLT334",
+    "ENGLT335",
+    "ENGLT345",
+    "ENGLT360",
+    "ENGLT365",
+    "ENGLT380",
+    "ENGLT392",
+    "ENGLT400",
+    "ENGLT401",
+    "ENGLT403",
+    "ENGLT404",
+    "ENGLT480",
+    "ENGLT481",
+    "ENGWR301",
+    "ENGWR303",
+    "ENGWR384",
+    "ENGWR488",
+    "ESLW340",
+    "ETHNS300",
+    "ETHNS320",
+    "ETHNS330",
+    "ETHNS341",
+    "ETHNS350",
+    "ETHNS351",
+    "ETHNS360",
+    "FASHN330",
+    "FREN401",
+    "FREN402",
+    "FREN411",
+    "FREN412",
+    "GEOG300",
+    "GEOG301",
+    "GEOG302",
+    "GEOG305",
+    "GEOG306",
+    "GEOG308",
+    "GEOG310",
+    "GEOG320",
+    "GEOL300",
+    "GEOL301",
+    "GEOL305",
+    "GEOL306",
+    "GEOL308",
+    "GEOL310",
+    "GEOL311",
+    "GEOL325",
+    "GEOL345",
+    "GERON300",
+    "GERON302",
+    "GLST301",
+    "GLST302",
+    "HIST300",
+    "HIST302",
+    "HIST307",
+    "HIST308",
+    "HIST310",
+    "HIST311",
+    "HIST320",
+    "HIST321",
+    "HIST327",
+    "HIST344",
+    "HIST360",
+    "HIST364",
+    "HIST365",
+    "HIST373",
+    "HIST375",
+    "HIST380",
+    "HIST381",
+    "HIST483",
+    "HIST484",
+    "HIST486",
+    "HIST487",
+    "HUM300",
+    "HUM310",
+    "HUM320",
+    "HUM332",
+    "HUM352",
+    "HUM370",
+    "ITAL401",
+    "ITAL402",
+    "JAPAN401",
+    "JAPAN402",
+    "JAPAN411",
+    "JAPAN412",
+    "JOUR310",
+    "JOUR320",
+    "KOREAN401",
+    "KOREAN402",
+    "MAND401",
+    "MAND402",
+    "MAND411",
+    "MAND412",
+    "MATH300",
+    "MATH340",
+    "MATH342",
+    "MATH355",
+    "MATH356",
+    "MATH372",
+    "MATH373",
+    "MATH400",
+    "MATH401",
+    "MATH402",
+    "MATH410",
+    "MATH420",
+    "MUFHL305",
+    "MUFHL309",
+    "MUFHL310",
+    "MUFHL311",
+    "MUFHL315",
+    "MUFHL320",
+    "MUFHL330",
+    "MUFHL400",
+    "MUFHL401",
+    "MUFHL410",
+    "MUFHL411",
+    "MUFHL481",
+    "MUFHL482",
+    "NUTRI310",
+    "PHIL300",
+    "PHIL306",
+    "PHIL310",
+    "PHIL330",
+    "PHIL331",
+    "PHIL338",
+    "PHIL352",
+    "PHIL368",
+    "PHIL480",
+    "PHIL481",
+    "PHYS310",
+    "PHYS350",
+    "PHYS360",
+    "PHYS410",
+    "PHYS420",
+    "PHYS430",
+    "PNJABI401",
+    "PNJABI402",
+    "POLS302",
+    "POLS304",
+    "POLS310",
+    "POLS320",
+    "POLS322",
+    "POLS340",
+    "POLS480",
+    "POLSC1000",
+    "POLSC1000H",
+    "PRSIAN401",
+    "PRSIAN402",
+    "PSYC310",
+    "PSYC311",
+    "PSYC316",
+    "PSYC320",
+    "PSYC330",
+    "PSYC335",
+    "PSYC340",
+    "PSYC356",
+    "PSYC360",
+    "PSYC364",
+    "PSYC367",
+    "PSYC370",
+    "PSYC374",
+    "PSYC390",
+    "PSYC480",
+    "PSYCC1000",
+    "RUSS401",
+    "RUSS402",
+    "RUSS411",
+    "RUSS412",
+    "SOC300",
+    "SOC301",
+    "SOC302",
+    "SOC305",
+    "SOC310",
+    "SOC318",
+    "SOC319",
+    "SOC321",
+    "SOC335",
+    "SOC341",
+    "SOC343",
+    "SOC344",
+    "SOC345",
+    "SOC347",
+    "SOC350",
+    "SOC482",
+    "SPAN401",
+    "SPAN402",
+    "SPAN411",
+    "SPAN412",
+    "SPAN413",
+    "SPAN415",
+    "SPAN425",
+    "SPAN427",
+    "STATC1000",
+    "STATC1000H",
+    "TA300",
+    "TA302",
+    "TA303",
+    "TA308",
+    "TA454",
+    "TAFILM300",
+    "TAFILM302",
+    "TAFILM303",
+    "TAFILM304",
+    "TAFILM307",
+    "TAFILM320",
+    "TGLG401",
+    "TGLG402",
+    "VIET401",
+    "VIET402",
+    "WGS300",
+    "WGS302",
+    "WGS304"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Graduation and Transfer – Local AA/AS Degree General Education Requirements",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ENGL C1000",
+    "why": "text is local AA/AS GE area L1A, not the IGETC section"
+   },
+   {
+    "code": "ENGWR 488",
+    "why": "text is local AA/AS GE area L1A (as ENGL 488 formerly ENGWR 488), not the IGETC section"
+   },
+   {
+    "code": "ESLW 340",
+    "why": "text is local AA/AS GE area L1A, not the IGETC section"
+   },
+   {
+    "code": "COMM C1000",
+    "why": "text is local AA/AS GE area L1B, not the IGETC section"
+   },
+   {
+    "code": "COMM 303",
+    "why": "text is local AA/AS GE area L1B, not the IGETC section"
+   },
+   {
+    "code": "COMM 311",
+    "why": "text is local AA/AS GE area L1B, not the IGETC section"
+   },
+   {
+    "code": "COMM 316",
+    "why": "text is local AA/AS GE area L1B, not the IGETC section"
+   },
+   {
+    "code": "COMM 331",
+    "why": "text is local AA/AS GE area L1B, not the IGETC section"
+   },
+   {
+    "code": "COMM 361",
+    "why": "text is local AA/AS GE area L1B, not the IGETC section"
+   },
+   {
+    "code": "COMM 481",
+    "why": "text is local AA/AS GE area L1B, not the IGETC section"
+   },
+   {
+    "code": "ENGL C1001",
+    "why": "text is local AA/AS GE area L1B, not the IGETC section"
+   },
+   {
+    "code": "ENGL C1001H",
+    "why": "text is local AA/AS GE area L1B, not the IGETC section"
+   },
+   {
+    "code": "ENGWR 303",
+    "why": "text is local AA/AS GE areas L1B/L3 (as ENGL C1003 formerly ENGWR 303), not the IGETC section"
+   },
+   {
+    "code": "ENGWR 301",
+    "why": "text is local AA/AS GE areas L1B/L3 (as ENGL 301 formerly ENGWR 301), not the IGETC section"
+   },
+   {
+    "code": "PHIL 300",
+    "why": "text is local AA/AS GE areas L1B/L3, not the IGETC section"
+   },
+   {
+    "code": "PSYC 335",
+    "why": "text is local AA/AS GE areas L1B/L4, not the IGETC section"
+   },
+   {
+    "code": "SOC 302",
+    "why": "text is local AA/AS GE areas L1B/L4, not the IGETC section"
+   },
+   {
+    "code": "SOC 305",
+    "why": "text is local AA/AS GE areas L1B/L4, not the IGETC section"
+   },
+   {
+    "code": "CISP 440",
+    "why": "text is local AA/AS GE area L2, not the IGETC section"
+   },
+   {
+    "code": "ECON 310",
+    "why": "text is local AA/AS GE area L2, not the IGETC section"
+   },
+   {
+    "code": "MATH 300",
+    "why": "text is local AA/AS GE area L2, not the IGETC section"
+   },
+   {
+    "code": "MATH 340",
+    "why": "text is local AA/AS GE area L2, not the IGETC section"
+   },
+   {
+    "code": "MATH 342",
+    "why": "text is local AA/AS GE area L2, not the IGETC section"
+   },
+   {
+    "code": "MATH 355",
+    "why": "text is local AA/AS GE area L2, not the IGETC section"
+   },
+   {
+    "code": "MATH 356",
+    "why": "text is local AA/AS GE area L2, not the IGETC section"
+   },
+   {
+    "code": "MATH 372",
+    "why": "text is local AA/AS GE area L2, not the IGETC section"
+   },
+   {
+    "code": "MATH 373",
+    "why": "text is local AA/AS GE area L2, not the IGETC section"
+   },
+   {
+    "code": "MATH 400",
+    "why": "text is local AA/AS GE area L2, not the IGETC section"
+   },
+   {
+    "code": "MATH 401",
+    "why": "text is local AA/AS GE area L2, not the IGETC section"
+   },
+   {
+    "code": "MATH 402",
+    "why": "text is local AA/AS GE area L2, not the IGETC section"
+   },
+   {
+    "code": "MATH 410",
+    "why": "text is local AA/AS GE area L2, not the IGETC section"
+   },
+   {
+    "code": "MATH 420",
+    "why": "text is local AA/AS GE area L2, not the IGETC section"
+   },
+   {
+    "code": "PSYC 330",
+    "why": "text is local AA/AS GE area L2, not the IGETC section"
+   },
+   {
+    "code": "STAT C1000",
+    "why": "text is local AA/AS GE area L2, not the IGETC section"
+   },
+   {
+    "code": "STAT C1000H",
+    "why": "text is local AA/AS GE area L2, not the IGETC section"
+   },
+   {
+    "code": "ANTH 331",
+    "why": "text is local AA/AS GE areas L3/L4, not the IGETC section"
+   },
+   {
+    "code": "ANTH 341",
+    "why": "text is local AA/AS GE areas L3/L4, not the IGETC section"
+   },
+   {
+    "code": "ARABIC 401",
+    "why": "text is local AA/AS GE area L3, not the IGETC section"
+   },
+   {
+    "code": "ARABIC 402",
+    "why": "text is local AA/AS GE area L3, not the IGETC section"
+   },
+   {
+    "code": "ARTH 300",
+    "why": "text is local AA/AS GE area L3, not the IGETC section"
+   },
+   {
+    "code": "ARTH 301",
+    "why": "text is local AA/AS GE area L3, not the IGETC section"
+   },
+   {
+    "code": "ARTH 304",
+    "why": "text is local AA/AS GE area L3, not the IGETC section"
+   },
+   {
+    "code": "ARTH 306",
+    "why": "text is local AA/AS GE area L3, not the IGETC section"
+   },
+   {
+    "code": "ARTH 307",
+    "why": "text is local AA/AS GE area L3, not the IGETC section"
+   },
+   {
+    "code": "ARTH 308",
+    "why": "text is local AA/AS GE area L3, not the IGETC section"
+   },
+   {
+    "code": "ARTH 310",
+    "why": "text is local AA/AS GE area L3, not the IGETC section"
+   },
+   {
+    "code": "ARTH 312",
+    "why": "text is local AA/AS GE area L3, not the IGETC section"
+   },
+   {
+    "code": "ARTH 313",
+    "why": "text is local AA/AS GE area L3, not the IGETC section"
+   },
+   {
+    "code": "ARTH 314",
+    "why": "text is local AA/AS GE area L3, not the IGETC section"
+   },
+   {
+    "code": "ARTH 318",
+    "why": "text is local AA/AS GE area L3, not the IGETC section"
+   },
+   {
+    "code": "ARTH 320",
+    "why": "text is local AA/AS GE area L3, not the IGETC section"
+   },
+   {
+    "code": "ARTH 324",
+    "why": "text is local AA/AS GE area L3, not the IGETC section"
+   },
+   {
+    "code": "ARTH 325",
+    "why": "text is local AA/AS GE area L3, not the IGETC section"
+   },
+   {
+    "code": "ARTH 328",
+    "why": "text is local AA/AS GE area L3, not the IGETC section"
+   },
+   {
+    "code": "ARTH 332",
+    "why": "text is local AA/AS GE area L3, not the IGETC section"
+   },
+   {
+    "code": "ARTH 334",
+    "why": "text is local AA/AS GE area L3, not the IGETC section"
+   },
+   {
+    "code": "ARTH 410",
+    "why": "text is local AA/AS GE area L3, not the IGETC section"
+   },
+   {
+    "code": "ARTH 484",
+    "why": "text is local AA/AS GE area L3, not the IGETC section"
+   },
+   {
+    "code": "ARTH 486",
+    "why": "text is local AA/AS GE area L3, not the IGETC section"
+   },
+   {
+    "code": "ARTH 487",
+    "why": "text is local AA/AS GE area L3, not the IGETC section"
+   },
+   {
+    "code": "ARTH 488",
+    "why": "text is local AA/AS GE area L3, not the IGETC section"
+   },
+   {
+    "code": "CANT 401",
+    "why": "text is local AA/AS GE area L3, not the IGETC section"
+   },
+   {
+    "code": "CANT 402",
+    "why": "text is local AA/AS GE area L3, not the IGETC section"
+   },
+   {
+    "code": "CANT 411",
+    "why": "text is local AA/AS GE area L3, not the IGETC section"
+   },
+   {
+    "code": "CANT 412",
+    "why": "text is local AA/AS GE area L3, not the IGETC section"
+   },
+   {
+    "code": "COMM 305",
+    "why": "text is local AA/AS GE area L3, not the IGETC section"
+   },
+   {
+    "code": "DDSN 305",
+    "why": "text is local AA/AS GE area L3, not the IGETC section"
+   },
+   {
+    "code": "DEAF 310",
+    "why": "text is local AA/AS GE area L3, not the IGETC section"
+   },
+   {
+    "code": "DEAF 312",
+    "why": "text is local AA/AS GE area L3, not the IGETC section"
+   },
+   {
+    "code": "DEAF 314",
+    "why": "text is local AA/AS GE area L3, not the IGETC section"
+   },
+   {
+    "code": "DEAF 316",
+    "why": "text is local AA/AS GE area L3, not the IGETC section"
+   },
+   {
+    "code": "DEAF 380",
+    "why": "text is local AA/AS GE area L3, not the IGETC section"
+   },
+   {
+    "code": "ENGLT 301",
+    "why": "text is local AA/AS GE area L3, not the IGETC section"
+   },
+   {
+    "code": "ENGLT 303",
+    "why": "text is local AA/AS GE area L3, not the IGETC section"
+   },
+   {
+    "code": "ENGLT 304",
+    "why": "text is local AA/AS GE area L3, not the IGETC section"
+   },
+   {
+    "code": "ENGLT 310",
+    "why": "text is local AA/AS GE area L3, not the IGETC section"
+   },
+   {
+    "code": "ENGLT 311",
+    "why": "text is local AA/AS GE area L3, not the IGETC section"
+   },
+   {
+    "code": "ENGLT 317",
+    "why": "text is local AA/AS GE area L3, not the IGETC section"
+   },
+   {
+    "code": "ENGLT 320",
+    "why": "text is local AA/AS GE area L3, not the IGETC section"
+   },
+   {
+    "code": "ENGLT 321",
+    "why": "text is local AA/AS GE area L3, not the IGETC section"
+   },
+   {
+    "code": "ENGLT 327",
+    "why": "text is local AA/AS GE area L3, not the IGETC section"
+   },
+   {
+    "code": "ENGLT 328",
+    "why": "text is local AA/AS GE area L3, not the IGETC section"
+   },
+   {
+    "code": "ENGLT 331",
+    "why": "text is local AA/AS GE area L3, not the IGETC section"
+   },
+   {
+    "code": "ENGLT 332",
+    "why": "text is local AA/AS GE area L3, not the IGETC section"
+   },
+   {
+    "code": "ENGLT 334",
+    "why": "text is local AA/AS GE area L3, not the IGETC section"
+   },
+   {
+    "code": "ENGLT 335",
+    "why": "text is local AA/AS GE area L3, not the IGETC section"
+   },
+   {
+    "code": "ENGLT 345",
+    "why": "text is local AA/AS GE area L3, not the IGETC section"
+   },
+   {
+    "code": "ENGLT 360",
+    "why": "text is local AA/AS GE area L3, not the IGETC section"
+   },
+   {
+    "code": "ENGLT 365",
+    "why": "text is local AA/AS GE area L3, not the IGETC section"
+   },
+   {
+    "code": "ENGLT 380",
+    "why": "text is local AA/AS GE area L3, not the IGETC section"
+   },
+   {
+    "code": "ENGLT 392",
+    "why": "text is local AA/AS GE area L3, not the IGETC section"
+   },
+   {
+    "code": "ENGLT 400",
+    "why": "text is local AA/AS GE area L3, not the IGETC section"
+   },
+   {
+    "code": "ENGLT 401",
+    "why": "text is local AA/AS GE area L3, not the IGETC section"
+   },
+   {
+    "code": "ENGLT 403",
+    "why": "text is local AA/AS GE area L3, not the IGETC section"
+   },
+   {
+    "code": "ENGLT 404",
+    "why": "text is local AA/AS GE area L3, not the IGETC section"
+   },
+   {
+    "code": "ENGLT 480",
+    "why": "text is local AA/AS GE area L3, not the IGETC section"
+   },
+   {
+    "code": "ENGLT 481",
+    "why": "text is local AA/AS GE area L3, not the IGETC section"
+   },
+   {
+    "code": "FASHN 330",
+    "why": "text is local AA/AS GE area L3, not the IGETC section"
+   },
+   {
+    "code": "FREN 401",
+    "why": "text is local AA/AS GE area L3, not the IGETC section"
+   },
+   {
+    "code": "FREN 402",
+    "why": "text is local AA/AS GE area L3, not the IGETC section"
+   },
+   {
+    "code": "FREN 411",
+    "why": "text is local AA/AS GE area L3, not the IGETC section"
+   },
+   {
+    "code": "FREN 412",
+    "why": "text is local AA/AS GE area L3, not the IGETC section"
+   },
+   {
+    "code": "HIST 300",
+    "why": "text is local AA/AS GE areas L3/L4, not the IGETC section"
+   },
+   {
+    "code": "HIST 302",
+    "why": "text is local AA/AS GE areas L3/L4, not the IGETC section"
+   },
+   {
+    "code": "HIST 307",
+    "why": "text is local AA/AS GE areas L3/L4, not the IGETC section"
+   },
+   {
+    "code": "HIST 308",
+    "why": "text is local AA/AS GE areas L3/L4, not the IGETC section"
+   },
+   {
+    "code": "HIST 344",
+    "why": "text is local AA/AS GE areas L3/L4, not the IGETC section"
+   },
+   {
+    "code": "HIST 364",
+    "why": "text is local AA/AS GE areas L3/L4, not the IGETC section"
+   },
+   {
+    "code": "HIST 373",
+    "why": "text is local AA/AS GE areas L3/L4, not the IGETC section"
+   },
+   {
+    "code": "HUM 300",
+    "why": "text is local AA/AS GE area L3, not the IGETC section"
+   },
+   {
+    "code": "HUM 310",
+    "why": "text is local AA/AS GE area L3, not the IGETC section"
+   },
+   {
+    "code": "HUM 320",
+    "why": "text is local AA/AS GE area L3, not the IGETC section"
+   },
+   {
+    "code": "HUM 332",
+    "why": "text is local AA/AS GE area L3, not the IGETC section"
+   },
+   {
+    "code": "HUM 370",
+    "why": "text is local AA/AS GE area L3, not the IGETC section"
+   },
+   {
+    "code": "JAPAN 401",
+    "why": "text is local AA/AS GE area L3, not the IGETC section"
+   },
+   {
+    "code": "JAPAN 402",
+    "why": "text is local AA/AS GE area L3, not the IGETC section"
+   },
+   {
+    "code": "JAPAN 411",
+    "why": "text is local AA/AS GE area L3, not the IGETC section"
+   },
+   {
+    "code": "JAPAN 412",
+    "why": "text is local AA/AS GE area L3, not the IGETC section"
+   },
+   {
+    "code": "KOREAN 401",
+    "why": "text is local AA/AS GE area L3, not the IGETC section"
+   },
+   {
+    "code": "KOREAN 402",
+    "why": "text is local AA/AS GE area L3, not the IGETC section"
+   },
+   {
+    "code": "MAND 401",
+    "why": "text is local AA/AS GE area L3, not the IGETC section"
+   },
+   {
+    "code": "MAND 402",
+    "why": "text is local AA/AS GE area L3, not the IGETC section"
+   },
+   {
+    "code": "MAND 411",
+    "why": "text is local AA/AS GE area L3, not the IGETC section"
+   },
+   {
+    "code": "MAND 412",
+    "why": "text is local AA/AS GE area L3, not the IGETC section"
+   },
+   {
+    "code": "MUFHL 305",
+    "why": "text is local AA/AS GE area L3, not the IGETC section"
+   },
+   {
+    "code": "MUFHL 309",
+    "why": "text is local AA/AS GE area L3, not the IGETC section"
+   },
+   {
+    "code": "MUFHL 310",
+    "why": "text is local AA/AS GE area L3, not the IGETC section"
+   },
+   {
+    "code": "MUFHL 311",
+    "why": "text is local AA/AS GE area L3, not the IGETC section"
+   },
+   {
+    "code": "MUFHL 315",
+    "why": "text is local AA/AS GE area L3, not the IGETC section"
+   },
+   {
+    "code": "MUFHL 320",
+    "why": "text is local AA/AS GE area L3, not the IGETC section"
+   },
+   {
+    "code": "MUFHL 330",
+    "why": "text is local AA/AS GE area L3, not the IGETC section"
+   },
+   {
+    "code": "MUFHL 400",
+    "why": "text is local AA/AS GE area L3, not the IGETC section"
+   },
+   {
+    "code": "MUFHL 401",
+    "why": "text is local AA/AS GE area L3, not the IGETC section"
+   },
+   {
+    "code": "MUFHL 410",
+    "why": "text is local AA/AS GE area L3, not the IGETC section"
+   },
+   {
+    "code": "MUFHL 411",
+    "why": "text is local AA/AS GE area L3, not the IGETC section"
+   },
+   {
+    "code": "MUFHL 481",
+    "why": "text is local AA/AS GE area L3, not the IGETC section"
+   },
+   {
+    "code": "MUFHL 482",
+    "why": "text is local AA/AS GE area L3, not the IGETC section"
+   },
+   {
+    "code": "PHIL 306",
+    "why": "text is local AA/AS GE area L3, not the IGETC section"
+   },
+   {
+    "code": "PHIL 310",
+    "why": "text is local AA/AS GE area L3, not the IGETC section"
+   },
+   {
+    "code": "PHIL 330",
+    "why": "text is local AA/AS GE area L3, not the IGETC section"
+   },
+   {
+    "code": "PHIL 331",
+    "why": "text is local AA/AS GE area L3, not the IGETC section"
+   },
+   {
+    "code": "PHIL 338",
+    "why": "text is local AA/AS GE area L3, not the IGETC section"
+   },
+   {
+    "code": "PHIL 352",
+    "why": "text is local AA/AS GE area L3, not the IGETC section"
+   },
+   {
+    "code": "PHIL 368",
+    "why": "text is local AA/AS GE areas L3/L4, not the IGETC section"
+   },
+   {
+    "code": "PHIL 480",
+    "why": "text is local AA/AS GE area L3, not the IGETC section"
+   },
+   {
+    "code": "PHIL 481",
+    "why": "text is local AA/AS GE area L3, not the IGETC section"
+   },
+   {
+    "code": "PNJABI 401",
+    "why": "text is local AA/AS GE area L3, not the IGETC section"
+   },
+   {
+    "code": "PNJABI 402",
+    "why": "text is local AA/AS GE area L3, not the IGETC section"
+   },
+   {
+    "code": "RUSS 401",
+    "why": "text is local AA/AS GE area L3, not the IGETC section"
+   },
+   {
+    "code": "RUSS 402",
+    "why": "text is local AA/AS GE area L3, not the IGETC section"
+   },
+   {
+    "code": "RUSS 411",
+    "why": "text is local AA/AS GE area L3, not the IGETC section"
+   },
+   {
+    "code": "RUSS 412",
+    "why": "text is local AA/AS GE area L3, not the IGETC section"
+   },
+   {
+    "code": "SPAN 401",
+    "why": "text is local AA/AS GE area L3, not the IGETC section"
+   },
+   {
+    "code": "SPAN 402",
+    "why": "text is local AA/AS GE area L3, not the IGETC section"
+   },
+   {
+    "code": "SPAN 411",
+    "why": "text is local AA/AS GE area L3, not the IGETC section"
+   },
+   {
+    "code": "SPAN 412",
+    "why": "text is local AA/AS GE area L3, not the IGETC section"
+   },
+   {
+    "code": "SPAN 413",
+    "why": "text is local AA/AS GE area L3, not the IGETC section"
+   },
+   {
+    "code": "SPAN 415",
+    "why": "text is local AA/AS GE area L3, not the IGETC section"
+   },
+   {
+    "code": "SPAN 425",
+    "why": "text is local AA/AS GE area L3, not the IGETC section"
+   },
+   {
+    "code": "SPAN 427",
+    "why": "text is local AA/AS GE area L3, not the IGETC section"
+   },
+   {
+    "code": "TA 300",
+    "why": "text is local AA/AS GE area L3, not the IGETC section"
+   },
+   {
+    "code": "TA 302",
+    "why": "text is local AA/AS GE area L3, not the IGETC section"
+   },
+   {
+    "code": "TA 303",
+    "why": "text is local AA/AS GE area L3, not the IGETC section"
+   },
+   {
+    "code": "TA 308",
+    "why": "text is local AA/AS GE area L3, not the IGETC section"
+   },
+   {
+    "code": "TA 454",
+    "why": "text is local AA/AS GE area L3, not the IGETC section"
+   },
+   {
+    "code": "TAFILM 300",
+    "why": "text is local AA/AS GE area L3, not the IGETC section"
+   },
+   {
+    "code": "TAFILM 302",
+    "why": "text is local AA/AS GE area L3, not the IGETC section"
+   },
+   {
+    "code": "TAFILM 303",
+    "why": "text is local AA/AS GE area L3, not the IGETC section"
+   },
+   {
+    "code": "TAFILM 304",
+    "why": "text is local AA/AS GE area L3, not the IGETC section"
+   },
+   {
+    "code": "TAFILM 307",
+    "why": "text is local AA/AS GE area L3, not the IGETC section"
+   },
+   {
+    "code": "TAFILM 320",
+    "why": "text is local AA/AS GE area L3, not the IGETC section"
+   },
+   {
+    "code": "TGLG 401",
+    "why": "IGETC section not in the text; text is local AA/AS GE"
+   },
+   {
+    "code": "TGLG 402",
+    "why": "IGETC section not in the text; text is local AA/AS GE"
+   },
+   {
+    "code": "VIET 401",
+    "why": "IGETC section not in the text; text is local AA/AS GE"
+   },
+   {
+    "code": "VIET 402",
+    "why": "IGETC section not in the text; text is local AA/AS GE"
+   },
+   {
+    "code": "ADMJ 300",
+    "why": "IGETC section not in the text; text is local AA/AS GE"
+   },
+   {
+    "code": "ADMJ 302",
+    "why": "IGETC section not in the text; text is local AA/AS GE"
+   },
+   {
+    "code": "ADMJ 304",
+    "why": "IGETC section not in the text; text is local AA/AS GE"
+   },
+   {
+    "code": "ADMJ 349",
+    "why": "IGETC section not in the text; text is local AA/AS GE"
+   },
+   {
+    "code": "ANTH 310",
+    "why": "IGETC section not in the text; text is local AA/AS GE"
+   },
+   {
+    "code": "ANTH 323",
+    "why": "IGETC section not in the text; text is local AA/AS GE"
+   },
+   {
+    "code": "ANTH 324",
+    "why": "IGETC section not in the text; text is local AA/AS GE"
+   },
+   {
+    "code": "ANTH 325",
+    "why": "IGETC section not in the text; text is local AA/AS GE"
+   },
+   {
+    "code": "ANTH 332",
+    "why": "IGETC section not in the text; text is local AA/AS GE"
+   },
+   {
+    "code": "ANTH 334",
+    "why": "IGETC section not in the text; text is local AA/AS GE"
+   },
+   {
+    "code": "ANTH 481",
+    "why": "IGETC section not in the text; text is local AA/AS GE"
+   },
+   {
+    "code": "BUS 345",
+    "why": "IGETC section not in the text; text is local AA/AS GE"
+   },
+   {
+    "code": "COMM 321",
+    "why": "IGETC section not in the text; text is local AA/AS GE"
+   },
+   {
+    "code": "COMM 325",
+    "why": "IGETC section not in the text; text is local AA/AS GE"
+   },
+   {
+    "code": "COMM 351",
+    "why": "IGETC section not in the text; text is local AA/AS GE"
+   },
+   {
+    "code": "DEAF 351",
+    "why": "IGETC section not in the text; text is local AA/AS GE"
+   },
+   {
+    "code": "DEAF 355",
+    "why": "IGETC section not in the text; text is local AA/AS GE"
+   },
+   {
+    "code": "ECE 312",
+    "why": "IGETC section not in the text; text is local AA/AS GE"
+   },
+   {
+    "code": "ECE 314",
+    "why": "IGETC section not in the text; text is local AA/AS GE"
+   },
+   {
+    "code": "ECON 304",
+    "why": "IGETC section not in the text; text is local AA/AS GE"
+   },
+   {
+    "code": "ECON 302",
+    "why": "IGETC section not in the text; text is local AA/AS GE"
+   },
+   {
+    "code": "ENGWR 384",
+    "why": "IGETC section not in the text; text is local AA/AS GE"
+   },
+   {
+    "code": "ETHNS 300",
+    "why": "IGETC section not in the text; text is local AA/AS GE"
+   },
+   {
+    "code": "ETHNS 320",
+    "why": "IGETC section not in the text; text is local AA/AS GE"
+   },
+   {
+    "code": "ETHNS 330",
+    "why": "IGETC section not in the text; text is local AA/AS GE"
+   },
+   {
+    "code": "ETHNS 341",
+    "why": "IGETC section not in the text; text is local AA/AS GE"
+   },
+   {
+    "code": "ETHNS 350",
+    "why": "IGETC section not in the text; text is local AA/AS GE"
+   },
+   {
+    "code": "ETHNS 351",
+    "why": "IGETC section not in the text; text is local AA/AS GE"
+   },
+   {
+    "code": "ETHNS 360",
+    "why": "IGETC section not in the text; text is local AA/AS GE"
+   },
+   {
+    "code": "GEOG 302",
+    "why": "IGETC section not in the text; text is local AA/AS GE"
+   },
+   {
+    "code": "GEOG 310",
+    "why": "IGETC section not in the text; text is local AA/AS GE"
+   },
+   {
+    "code": "GEOG 320",
+    "why": "IGETC section not in the text; text is local AA/AS GE"
+   },
+   {
+    "code": "GERON 300",
+    "why": "IGETC section not in the text; text is local AA/AS GE"
+   },
+   {
+    "code": "GERON 302",
+    "why": "IGETC section not in the text; text is local AA/AS GE"
+   },
+   {
+    "code": "GLST 301",
+    "why": "IGETC section not in the text; text is local AA/AS GE"
+   },
+   {
+    "code": "GLST 302",
+    "why": "IGETC section not in the text; text is local AA/AS GE"
+   },
+   {
+    "code": "HIST 310",
+    "why": "IGETC section not in the text; text is local AA/AS GE"
+   },
+   {
+    "code": "HIST 483",
+    "why": "IGETC section not in the text; text is local AA/AS GE"
+   },
+   {
+    "code": "HIST 311",
+    "why": "IGETC section not in the text; text is local AA/AS GE"
+   },
+   {
+    "code": "HIST 484",
+    "why": "IGETC section not in the text; text is local AA/AS GE"
+   },
+   {
+    "code": "HIST 320",
+    "why": "IGETC section not in the text; text is local AA/AS GE"
+   },
+   {
+    "code": "HIST 321",
+    "why": "IGETC section not in the text; text is local AA/AS GE"
+   },
+   {
+    "code": "HIST 327",
+    "why": "IGETC section not in the text; text is local AA/AS GE"
+   },
+   {
+    "code": "HIST 360",
+    "why": "IGETC section not in the text; text is local AA/AS GE"
+   },
+   {
+    "code": "HIST 365",
+    "why": "IGETC section not in the text; text is local AA/AS GE"
+   },
+   {
+    "code": "HIST 375",
+    "why": "IGETC section not in the text; text is local AA/AS GE"
+   },
+   {
+    "code": "HIST 380",
+    "why": "IGETC section not in the text; text is local AA/AS GE"
+   },
+   {
+    "code": "HIST 381",
+    "why": "IGETC section not in the text; text is local AA/AS GE"
+   },
+   {
+    "code": "HIST 486",
+    "why": "IGETC section not in the text; text is local AA/AS GE"
+   },
+   {
+    "code": "HIST 487",
+    "why": "IGETC section not in the text; text is local AA/AS GE"
+   },
+   {
+    "code": "JOUR 310",
+    "why": "IGETC section not in the text; text is local AA/AS GE"
+   },
+   {
+    "code": "JOUR 320",
+    "why": "IGETC section not in the text; text is local AA/AS GE"
+   },
+   {
+    "code": "NUTRI 310",
+    "why": "IGETC section not in the text; text is local AA/AS GE"
+   },
+   {
+    "code": "POLS C1000",
+    "why": "IGETC section not in the text; text is local AA/AS GE"
+   },
+   {
+    "code": "POLS C1000H",
+    "why": "IGETC section not in the text; text is local AA/AS GE"
+   },
+   {
+    "code": "POLS 302",
+    "why": "IGETC section not in the text; text is local AA/AS GE"
+   },
+   {
+    "code": "POLS 304",
+    "why": "IGETC section not in the text; text is local AA/AS GE"
+   },
+   {
+    "code": "POLS 310",
+    "why": "IGETC section not in the text; text is local AA/AS GE"
+   },
+   {
+    "code": "POLS 320",
+    "why": "IGETC section not in the text; text is local AA/AS GE"
+   },
+   {
+    "code": "POLS 322",
+    "why": "IGETC section not in the text; text is local AA/AS GE"
+   },
+   {
+    "code": "POLS 340",
+    "why": "IGETC section not in the text; text is local AA/AS GE"
+   },
+   {
+    "code": "POLS 480",
+    "why": "IGETC section not in the text; text is local AA/AS GE"
+   },
+   {
+    "code": "PSYC C1000",
+    "why": "IGETC section not in the text; text is local AA/AS GE"
+   },
+   {
+    "code": "PSYC 320",
+    "why": "IGETC section not in the text; text is local AA/AS GE"
+   },
+   {
+    "code": "PSYC 340",
+    "why": "IGETC section not in the text; text is local AA/AS GE"
+   },
+   {
+    "code": "PSYC 356",
+    "why": "IGETC section not in the text; text is local AA/AS GE"
+   },
+   {
+    "code": "PSYC 360",
+    "why": "IGETC section not in the text; text is local AA/AS GE"
+   },
+   {
+    "code": "PSYC 364",
+    "why": "IGETC section not in the text; text is local AA/AS GE"
+   },
+   {
+    "code": "PSYC 367",
+    "why": "IGETC section not in the text; text is local AA/AS GE"
+   },
+   {
+    "code": "PSYC 370",
+    "why": "IGETC section not in the text; text is local AA/AS GE"
+   },
+   {
+    "code": "PSYC 374",
+    "why": "IGETC section not in the text; text is local AA/AS GE"
+   },
+   {
+    "code": "PSYC 390",
+    "why": "IGETC section not in the text; text is local AA/AS GE"
+   },
+   {
+    "code": "SOC 300",
+    "why": "IGETC section not in the text; text is local AA/AS GE"
+   },
+   {
+    "code": "SOC 301",
+    "why": "IGETC section not in the text; text is local AA/AS GE"
+   },
+   {
+    "code": "SOC 310",
+    "why": "IGETC section not in the text; text is local AA/AS GE"
+   },
+   {
+    "code": "SOC 318",
+    "why": "IGETC section not in the text; text is local AA/AS GE"
+   },
+   {
+    "code": "SOC 319",
+    "why": "IGETC section not in the text; text is local AA/AS GE"
+   },
+   {
+    "code": "SOC 321",
+    "why": "IGETC section not in the text; text is local AA/AS GE"
+   },
+   {
+    "code": "SOC 335",
+    "why": "IGETC section not in the text; text is local AA/AS GE"
+   },
+   {
+    "code": "SOC 341",
+    "why": "IGETC section not in the text; text is local AA/AS GE"
+   },
+   {
+    "code": "SOC 343",
+    "why": "IGETC section not in the text; text is local AA/AS GE"
+   },
+   {
+    "code": "SOC 344",
+    "why": "IGETC section not in the text; text is local AA/AS GE"
+   },
+   {
+    "code": "SOC 345",
+    "why": "IGETC section not in the text; text is local AA/AS GE"
+   },
+   {
+    "code": "SOC 347",
+    "why": "IGETC section not in the text; text is local AA/AS GE"
+   },
+   {
+    "code": "SOC 350",
+    "why": "IGETC section not in the text; text is local AA/AS GE"
+   },
+   {
+    "code": "SOC 482",
+    "why": "IGETC section not in the text; text is local AA/AS GE"
+   },
+   {
+    "code": "WGS 300",
+    "why": "IGETC section not in the text; text is local AA/AS GE"
+   },
+   {
+    "code": "WGS 302",
+    "why": "IGETC section not in the text; text is local AA/AS GE"
+   },
+   {
+    "code": "WGS 304",
+    "why": "IGETC section not in the text; text is local AA/AS GE"
+   },
+   {
+    "code": "ANTH 300",
+    "why": "IGETC section not in the text; text is local AA/AS GE"
+   },
+   {
+    "code": "ANTH 480",
+    "why": "IGETC section not in the text; text is local AA/AS GE"
+   },
+   {
+    "code": "ASTR 310",
+    "why": "IGETC section not in the text; text is local AA/AS GE"
+   },
+   {
+    "code": "ASTR 320",
+    "why": "IGETC section not in the text; text is local AA/AS GE"
+   },
+   {
+    "code": "ASTR 330",
+    "why": "IGETC section not in the text; text is local AA/AS GE"
+   },
+   {
+    "code": "BIOL 308",
+    "why": "IGETC section not in the text; text is local AA/AS GE"
+   },
+   {
+    "code": "BIOL 305",
+    "why": "IGETC section not in the text; text is local AA/AS GE"
+   },
+   {
+    "code": "BIOL 314",
+    "why": "IGETC section not in the text; text is local AA/AS GE"
+   },
+   {
+    "code": "BIOL 326",
+    "why": "IGETC section not in the text; text is local AA/AS GE"
+   },
+   {
+    "code": "BIOL 332",
+    "why": "IGETC section not in the text; text is local AA/AS GE"
+   },
+   {
+    "code": "BIOL 342",
+    "why": "IGETC section not in the text; text is local AA/AS GE"
+   },
+   {
+    "code": "BIOL 349",
+    "why": "IGETC section not in the text; text is local AA/AS GE"
+   },
+   {
+    "code": "BIOL 350",
+    "why": "IGETC section not in the text; text is local AA/AS GE"
+   },
+   {
+    "code": "BIOL 351",
+    "why": "IGETC section not in the text; text is local AA/AS GE"
+   },
+   {
+    "code": "BIOL 352",
+    "why": "IGETC section not in the text; text is local AA/AS GE"
+   },
+   {
+    "code": "BIOL 370",
+    "why": "IGETC section not in the text; text is local AA/AS GE"
+   },
+   {
+    "code": "BIOL 402",
+    "why": "IGETC section not in the text; text is local AA/AS GE"
+   },
+   {
+    "code": "BIOL 412",
+    "why": "IGETC section not in the text; text is local AA/AS GE"
+   },
+   {
+    "code": "BIOL 422",
+    "why": "IGETC section not in the text; text is local AA/AS GE"
+   },
+   {
+    "code": "BIOL 430",
+    "why": "IGETC section not in the text; text is local AA/AS GE"
+   },
+   {
+    "code": "BIOL 431",
+    "why": "IGETC section not in the text; text is local AA/AS GE"
+   },
+   {
+    "code": "BIOL 440",
+    "why": "IGETC section not in the text; text is local AA/AS GE"
+   },
+   {
+    "code": "CHEM 300",
+    "why": "IGETC section not in the text; text is local AA/AS GE"
+   },
+   {
+    "code": "CHEM 305",
+    "why": "IGETC section not in the text; text is local AA/AS GE"
+   },
+   {
+    "code": "CHEM 306",
+    "why": "IGETC section not in the text; text is local AA/AS GE"
+   },
+   {
+    "code": "CHEM 309",
+    "why": "IGETC section not in the text; text is local AA/AS GE"
+   },
+   {
+    "code": "CHEM 320",
+    "why": "IGETC section not in the text; text is local AA/AS GE"
+   },
+   {
+    "code": "CHEM 330",
+    "why": "IGETC section not in the text; text is local AA/AS GE"
+   },
+   {
+    "code": "CHEM 333",
+    "why": "IGETC section not in the text; text is local AA/AS GE"
+   },
+   {
+    "code": "CHEM 336",
+    "why": "IGETC section not in the text; text is local AA/AS GE"
+   },
+   {
+    "code": "CHEM 400",
+    "why": "IGETC section not in the text; text is local AA/AS GE"
+   },
+   {
+    "code": "CHEM 401",
+    "why": "IGETC section not in the text; text is local AA/AS GE"
+   },
+   {
+    "code": "CHEM 410",
+    "why": "IGETC section not in the text; text is local AA/AS GE"
+   },
+   {
+    "code": "CHEM 420",
+    "why": "IGETC section not in the text; text is local AA/AS GE"
+   },
+   {
+    "code": "CHEM 421",
+    "why": "IGETC section not in the text; text is local AA/AS GE"
+   },
+   {
+    "code": "CHEM 423",
+    "why": "IGETC section not in the text; text is local AA/AS GE"
+   },
+   {
+    "code": "CHEM 425",
+    "why": "IGETC section not in the text; text is local AA/AS GE"
+   },
+   {
+    "code": "CHEM 426",
+    "why": "IGETC section not in the text; text is local AA/AS GE"
+   },
+   {
+    "code": "GEOG 300",
+    "why": "IGETC section not in the text; text is local AA/AS GE"
+   },
+   {
+    "code": "GEOG 305",
+    "why": "IGETC section not in the text; text is local AA/AS GE"
+   },
+   {
+    "code": "GEOG 306",
+    "why": "IGETC section not in the text; text is local AA/AS GE"
+   },
+   {
+    "code": "GEOG 308",
+    "why": "IGETC section not in the text; text is local AA/AS GE"
+   },
+   {
+    "code": "GEOL 300",
+    "why": "IGETC section not in the text; text is local AA/AS GE"
+   },
+   {
+    "code": "GEOL 305",
+    "why": "IGETC section not in the text; text is local AA/AS GE"
+   },
+   {
+    "code": "GEOL 308",
+    "why": "IGETC section not in the text; text is local AA/AS GE"
+   },
+   {
+    "code": "GEOL 310",
+    "why": "IGETC section not in the text; text is local AA/AS GE"
+   },
+   {
+    "code": "GEOL 325",
+    "why": "IGETC section not in the text; text is local AA/AS GE"
+   },
+   {
+    "code": "GEOL 345",
+    "why": "IGETC section not in the text; text is local AA/AS GE"
+   },
+   {
+    "code": "PHYS 310",
+    "why": "IGETC section not in the text; text is local AA/AS GE"
+   },
+   {
+    "code": "PHYS 350",
+    "why": "IGETC section not in the text; text is local AA/AS GE"
+   },
+   {
+    "code": "PHYS 360",
+    "why": "IGETC section not in the text; text is local AA/AS GE"
+   },
+   {
+    "code": "PHYS 410",
+    "why": "IGETC section not in the text; text is local AA/AS GE"
+   },
+   {
+    "code": "PHYS 420",
+    "why": "IGETC section not in the text; text is local AA/AS GE"
+   },
+   {
+    "code": "PHYS 430",
+    "why": "IGETC section not in the text; text is local AA/AS GE"
+   },
+   {
+    "code": "PSYC 310",
+    "why": "IGETC section not in the text; text is local AA/AS GE"
+   },
+   {
+    "code": "PSYC 316",
+    "why": "IGETC section not in the text; text is local AA/AS GE"
+   },
+   {
+    "code": "COMM 335",
+    "why": "IGETC section not in the text; text is local AA/AS GE"
+   },
+   {
+    "code": "ANTH 301",
+    "why": "not in the text"
+   },
+   {
+    "code": "ART 420",
+    "why": "not in the text"
+   },
+   {
+    "code": "ASTR 400",
+    "why": "not in the text"
+   },
+   {
+    "code": "BIOL 309",
+    "why": "not in the text"
+   },
+   {
+    "code": "BIOL 310",
+    "why": "not in the text"
+   },
+   {
+    "code": "BIOL 315",
+    "why": "not in the text"
+   },
+   {
+    "code": "BIOL 327",
+    "why": "not in the text"
+   },
+   {
+    "code": "BIOLFS 350",
+    "why": "not in the text"
+   },
+   {
+    "code": "DEAF 360",
+    "why": "not in the text"
+   },
+   {
+    "code": "DEAF 362",
+    "why": "not in the text"
+   },
+   {
+    "code": "GEOG 301",
+    "why": "not in the text"
+   },
+   {
+    "code": "GEOL 301",
+    "why": "not in the text"
+   },
+   {
+    "code": "GEOL 306",
+    "why": "not in the text"
+   },
+   {
+    "code": "GEOL 311",
+    "why": "not in the text"
+   },
+   {
+    "code": "HUM 352",
+    "why": "not in the text"
+   },
+   {
+    "code": "ITAL 401",
+    "why": "not in the text"
+   },
+   {
+    "code": "ITAL 402",
+    "why": "not in the text"
+   },
+   {
+    "code": "PRSIAN 401",
+    "why": "not in the text"
+   },
+   {
+    "code": "PRSIAN 402",
+    "why": "not in the text"
+   },
+   {
+    "code": "PSYC 311",
+    "why": "not in the text"
+   },
+   {
+    "code": "PSYC 480",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "The supplied text (catalog pp. 81-83) is the 'Graduation and Transfer – Local AA/AS Degree General Education Requirements' section (areas L1-L7 for the local associate degree), not the Intersegmental GE Transfer Curriculum (IGETC) Certificate of Achievement section. No IGETC heading, area list, unit total or rule appears in the text, so no blocks were recorded for this award; the local GE areas were not substituted as IGETC requirements.",
+   "A reviewer should fetch the IGETC section of the 2026-2027 SCC catalog (likely on nearby pages) to record this certificate's areas and courses.",
+   "The local GE text prints renamed codes such as 'ENGL C1003 (formerly ENGWR 303)', 'ENGL 301 (formerly ENGWR 301)' and 'ENGL 488 (formerly ENGWR 488)', which correspond to closed-list ENGWR 303, ENGWR 301 and ENGWR 488.",
+   "No program outcomes or careers are printed in the supplied text.",
+   "Read in 2 parts, because one reply could not hold the whole record."
+  ]
+ },
+ "extracted_run": "39047070975"
+}

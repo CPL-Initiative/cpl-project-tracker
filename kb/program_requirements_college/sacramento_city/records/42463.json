@@ -1,0 +1,206 @@
+{
+ "college": "Sacramento City College",
+ "control_number": "42463",
+ "shape": "certificate",
+ "title": "Gerontology Level 2 (Intermediate)",
+ "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+ "source_url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=419",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 11626,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 11626,
+    "output_tokens": 1058,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1058,
+  "output_tokens_details": {
+   "thinking_tokens": 254
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.06766,
+ "ms": 9485,
+ "seconds": 9.8,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 6,
+   "listed": 6,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    9.5,
+    13.0
+   ],
+   "stated": [
+    9.5,
+    13.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 10,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Gerontology Level 2 (Intermediate) Certificate",
+   "measure": "units",
+   "total_units": {
+    "min": 9.5,
+    "max": 13
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "evaluate thanatology as an interdisciplinary subject with psychological, spiritual, philosophical social, cultural, and historical aspects of death and dying.",
+    "analyze the values of different cohorts and how those values impact the aging experience.",
+    "compile a diversity of resources, local and otherwise, available to support successful aging.",
+    "explain normal age related changes and how they are influenced by lifestyle."
+   ],
+   "careers": [
+    "Advocate",
+    "Caseworker",
+    "Community Coordinator",
+    "Family Support Worker",
+    "Home Based Assistant",
+    "Program Specialist",
+    "Outreach Specialist",
+    "Social Services Assistant",
+    "Social Work Associate",
+    "Human Service Assistant"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Certificate Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "GERON 300",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "SOC 335",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "GERON 302",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PSYC 374",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC 390",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WEXP 498",
+      "units": 0.5,
+      "units_max": 4,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The Level 2 description says the certificate totals 12 units (and refers to 'Gerontology 498'), while the requirements table prints 'Total Units: 9.5 - 13' and lists WEXP 498 at 0.5-4 units; the printed table total was recorded.",
+   "WEXP 498 carries footnote 1: the work experience placement must be working with elders in some capacity.",
+   "The requirements table for this certificate breaks across pages 420-421 (the SOC 335 alternative to GERON 300 appears after the page break); read as continuous."
+  ]
+ },
+ "extracted_run": "39047070975"
+}

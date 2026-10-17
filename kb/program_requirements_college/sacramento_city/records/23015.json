@@ -1,0 +1,249 @@
+{
+ "college": "Sacramento City College",
+ "control_number": "23015",
+ "shape": "certificate",
+ "title": "Automated Systems Technician",
+ "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+ "source_url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=350",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 11632,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 11632,
+    "output_tokens": 1708,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1708,
+  "output_tokens_details": {
+   "thinking_tokens": 396
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.08069,
+ "ms": 13995,
+ "seconds": 14.4,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 12,
+   "listed": 12,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    36.0,
+    36.0
+   ],
+   "stated": [
+    36.0,
+    36.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 13,
+   "courses": 0,
+   "count": 13,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Automated Systems Technician Certificate",
+   "measure": "units",
+   "total_units": {
+    "min": 36,
+    "max": 36
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "demonstrate safe work practices for automated systems equipment.",
+    "demonstrate the proper use of basic test equipment to include digital multimeters, oscilloscopes, and digital or analog signal sources.",
+    "use a standard schematic diagram of an automated system to identify its digital or analog parts.",
+    "explain common automated systems terminology for digital and analog devices.",
+    "estimate automated system circuit performance using mathematical tools and simulation software.",
+    "analyze and compare calculated automated system circuit performance to actual performance.",
+    "measure common automated system parameters using appropriate test equipment.",
+    "set up and install basic automated system equipment.",
+    "design proper preventive maintenance, calibration, and system testing procedures for automated equipment.",
+    "perform proper preventive maintenance, calibration, and system testing on automated equipment.",
+    "diagnose common automated system failures down to the source of the problem.",
+    "solve automated system problems by replacing failed hardware or software parts.",
+    "install, operate, and maintain modern control equipment such as Programmable Logic Controllers (PLC) and robotic controllers."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Certificate Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 36,
+     "max": 36
+    },
+    "courses": [
+     {
+      "code": "CISC 310",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ET 192",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ET 305",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ET 306",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ET 314",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ET 322",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ET 335",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ET 340",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ET 362",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ET 390",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ET 491",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ET 492",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Read the Certificate of Achievement section (Certificates of Achievement > Automated Systems Technician Certificate, pp. 351-352), not the A.S. section on p. 350, which lists the same 12 courses and 36 units.",
+   "The block's stated value is the section's 'Total Units: 36'; the catalog prints no separate block total.",
+   "Certificate outcomes differ slightly from the A.S. outcomes: the fifth reads 'mathematical tools and simulation software' in the certificate section versus 'mathematical tools' in the A.S. section. The certificate wording was recorded.",
+   "Careers left empty: the text describes employment areas ('employment in the automated manufacture, assembly, and testing of electronic circuit devices'; 'employment in the programming, testing, repair, and maintenance of digital and analog computer controlled systems') but names no job titles. A reviewer may decide whether these count as career fields."
+  ]
+ },
+ "extracted_run": "39047070975"
+}
