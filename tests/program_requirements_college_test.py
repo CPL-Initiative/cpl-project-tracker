@@ -741,6 +741,11 @@ check("startsWith(github.event.head_commit.message, '[read]')" in read_job.split
 check("startsWith(github.event.head_commit.message, '[load]')" in load_job.split("runs-on:")[0]
       and "github.event.inputs.step == 'load'" in load_job.split("runs-on:")[0],
       "the load runs only on a dispatch with step=load or a commit whose message STARTS with [load]")
+# S402: a push carries no college input, and the Cerritos fallback read Cerritos on Los Medanos's
+# branch (run 38997845641); an [extract] push would have paid for it. Both jobs refuse a run naming none.
+check(all("COLLEGE: ${{ github.event.inputs.college }}\n" in j and "|| 'Cerritos College'" not in j
+          and j.index("The run names its college") < j.index("actions/checkout") for j in (read_job, load_job)),
+      "the read and load jobs name their college from the dispatch alone, and stop first when none is named")
 display_if = display_job.split("runs-on:")[0]
 check("github.event.inputs.step == 'display'" in display_if and "github.event_name == 'workflow_dispatch'" in display_if
       and "head_commit" not in display_if,
