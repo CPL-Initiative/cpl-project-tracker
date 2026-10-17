@@ -5,7 +5,7 @@
  "catalog_year": "2026-2027",
  "programs": 104,
  "with_closed_list": 94,
- "started": "2026-10-17T05:31:43Z",
+ "started": "2026-10-17T09:02:37Z",
  "pdf": {
   "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf",
   "access": "ok",
@@ -19,10 +19,1241 @@
    "p60: 'YUBA COLLEGE CATALOG 2026/2027\\n60\\nART \\nASSOCIATE IN ARTS\\nArt surrounds us every minute of each day. The AA in Art program \\ndevelops a student’s creative ability, independent thinking, and \\npotential to become a visual thinker and effective '",
    "p119: 'YUBA COLLEGE CATALOG 2026/2027\\n119\\n(CONT’D ON NEXT PAGE)\\nGEOG-6  3 UNITS\\nIntroduction to Weather and Climate\\nTRANSFERABLE TO CSU AND UC\\nC-ID: GEOG 130\\n54 LECTURE HOURS\\nIntroduction to the Earth’s atmosphere: topics include atmospheric \\nstru'"
   ],
-  "extractor": "pypdf"
+  "extractor": "pypdf",
+  "picks": [
+   {
+    "control_number": "07001",
+    "pages": [
+     57,
+     58,
+     59
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 57] YUBA COLLEGE CATALOG 2026/2027 57 (CONT’D FROM PREVIOUS PAGE) skills needed to develop and manage a profitable, environmentally sound and community-based small farm or agricultural business. Students use their"
+   },
+   {
+    "control_number": "07002",
+    "pages": [
+     172,
+     173,
+     174,
+     175
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 172] YUBA COLLEGE CATALOG 2026/2027 172 VETT 53A Vet Surgical Nursing and Anesthesia .................................................. 4 VETT 53B Veterinary Diagnostic Imaging .................................."
+   },
+   {
+    "control_number": "07007",
+    "pages": [
+     78,
+     79,
+     80,
+     81
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 78] YUBA COLLEGE CATALOG 2026/2027 78 REQUIRED COURSES UNITS ACCT 3 Computerized Accounting ........................................................ 3 ACCT 9 Business Payroll Procedures ..........................."
+   },
+   {
+    "control_number": "07014",
+    "pages": [
+     86,
+     87,
+     88
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 86] The AS Degree in Computer Science supports students transferring to CSU, UC and Private Institutions where course requirements do not align directly with the AS-T in Computer Science degree. The primary goal "
+   },
+   {
+    "control_number": "07023",
+    "pages": [
+     68,
+     69,
+     70,
+     71
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 68] YUBA COLLEGE CATALOG 2026/2027 68 AUTOMOTIVE TECHNOLOGY ASSOCIATE IN SCIENCE The Automotive Technology Degree prepares students with the knowledge and skills necessary to become skilled automotive technician"
+   },
+   {
+    "control_number": "07027",
+    "pages": [
+     175,
+     176,
+     177
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.923,
+    "opens": "[page 175] YUBA COLLEGE CATALOG 2026/2027 175 clinical pathology, and treatment of animals. Lectures demonstrate the importance of proper vocabulary usage in patient records. VETT -56 3 UNITS Shelter Medicine 54 LECTUR"
+   },
+   {
+    "control_number": "07028",
+    "pages": [
+     60,
+     61,
+     62,
+     63
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 60] YUBA COLLEGE CATALOG 2026/2027 60 ART ASSOCIATE IN ARTS Art surrounds us every minute of each day. The AA in Art program develops a student’s creative ability, independent thinking, and potential to become a"
+   },
+   {
+    "control_number": "07029",
+    "pages": [
+     137,
+     138,
+     139,
+     140
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 137] The Associate in Arts in Music for Transfer degree prepares students in basic freshman and sophomore level music study to transfer to a 4-year University to seek a Bachelor of Arts in General Music degree. "
+   },
+   {
+    "control_number": "07031",
+    "pages": [
+     61
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 61] YUBA COLLEGE CATALOG 2026/2027 61 PHOTO 35 Creative Photo Documentary ................................................... 3 PHOTO 36A Digital Photography ......................................................."
+   },
+   {
+    "control_number": "07035",
+    "pages": [
+     146
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 146] YUBA COLLEGE CATALOG 2026/2027 146 1. Completion of the latest edition of the Casper and Test of Essential Academic Skills (TEAS), developed by the Assessment Technologies Institute, LLC (ATI). A minimum com"
+   },
+   {
+    "control_number": "07043",
+    "pages": [
+     100,
+     101,
+     102
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 100] The Associate in Arts in English for Transfer degree gives students a broad background in writing, literature, and language analysis. It prepares students for the further study of English or a related field "
+   },
+   {
+    "control_number": "07048",
+    "pages": [
+     134,
+     135,
+     136
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.833,
+    "opens": "[page 134] The Associate in Science in Mathematics for Transfer is designed for students for transfer into the CSU system to complete a bachelor’s degree in Mathematics or similar major. Students who complete an Associ"
+   },
+   {
+    "control_number": "07053",
+    "pages": [
+     158,
+     159,
+     160
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 158] YUBA COLLEGE CATALOG 2026/2027 158 Entrance Requirement(s): Conform to clinical agency rules and regulations, such as passing a criminal background check and drug screen (specific regulations dependent on cl"
+   },
+   {
+    "control_number": "07054",
+    "pages": [
+     52,
+     53,
+     54
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 52] YUBA COLLEGE CATALOG 2026/2027 52 4. Articulate the differences between the major criminilogical theories of the causes of crime and how those theories relate to policies toward crime and criminal behavior. 5"
+   },
+   {
+    "control_number": "07057",
+    "pages": [
+     109,
+     110,
+     111,
+     112
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 109] YUBA COLLEGE CATALOG 2026/2027 109 well as entertainment and informational programming. A significant portion of the course takes place in real-world environments, where students gain hands-on experience in "
+   },
+   {
+    "control_number": "07062",
+    "pages": [
+     122,
+     123,
+     124,
+     125
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 122] YUBA COLLEGE CATALOG 2026/2027 122 future. Students of history study individuals, groups, communities, nations, people, and cultures from different times and places. Many different methods are applied to eff"
+   },
+   {
+    "control_number": "07146",
+    "pages": [
+     133,
+     134
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 133] YUBA COLLEGE CATALOG 2026/2027 133 Manufacturing Technology MANUFACTURING TECHNOLOGY/MACHINING ASSOCIATE IN SCIENCE The A.S. in Manufacturing Technology is a comprehensive program of instruction designed "
+   },
+   {
+    "control_number": "07147",
+    "pages": [
+     133,
+     134
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 133] YUBA COLLEGE CATALOG 2026/2027 133 Manufacturing Technology MANUFACTURING TECHNOLOGY/MACHINING ASSOCIATE IN SCIENCE The A.S. in Manufacturing Technology is a comprehensive program of instruction designed "
+   },
+   {
+    "control_number": "07154",
+    "pages": [
+     90,
+     91,
+     92,
+     93
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 90] The Associate in Science in Early Childhood Education (ECE) is designed for students desiring an occupational or transfer course of study, providing more depth than the ECE transfer degree (ADT). This occupa"
+   },
+   {
+    "control_number": "07159",
+    "pages": [
+     111,
+     112,
+     113,
+     114
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 111] and admission. Graduates of the Fire Fighter Academy Certificate of Achievement program will have a variety of employment opportunities in local, state, and federal firefighting positions. The courses which "
+   },
+   {
+    "control_number": "07162",
+    "pages": [
+     78,
+     79,
+     80,
+     81
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 78] YUBA COLLEGE CATALOG 2026/2027 78 REQUIRED COURSES UNITS ACCT 3 Computerized Accounting ........................................................ 3 ACCT 9 Business Payroll Procedures ..........................."
+   },
+   {
+    "control_number": "10173",
+    "pages": [
+     68,
+     69,
+     70,
+     71
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 68] YUBA COLLEGE CATALOG 2026/2027 68 AUTOMOTIVE TECHNOLOGY ASSOCIATE IN SCIENCE The Automotive Technology Degree prepares students with the knowledge and skills necessary to become skilled automotive technician"
+   },
+   {
+    "control_number": "10185",
+    "pages": [
+     91,
+     92,
+     93,
+     94
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 91] YUBA COLLEGE CATALOG 2026/2027 91 CHILD DEVELOPMENT TEACHER CERTIFICATE OF ACHIEVEMENT This certificate will prepare students to work in the early education and child care field, focusing on preschool age chi"
+   },
+   {
+    "control_number": "10186",
+    "pages": [
+     92,
+     93,
+     94,
+     95
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 92] YUBA COLLEGE CATALOG 2026/2027 92 ECE 18 Curriculum and Strategies for Children with Special Needs ............... 3 ECE 27 Teaching in a Diverse Society ........................................................"
+   },
+   {
+    "control_number": "10187",
+    "pages": [
+     92,
+     93,
+     94,
+     95
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 92] YUBA COLLEGE CATALOG 2026/2027 92 ECE 18 Curriculum and Strategies for Children with Special Needs ............... 3 ECE 27 Teaching in a Diverse Society ........................................................"
+   },
+   {
+    "control_number": "10189",
+    "pages": [
+     124,
+     125,
+     126,
+     127
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 124] YUBA COLLEGE CATALOG 2026/2027 124 and often resist such forces through political and creative means of expression. (L,C) Grades are P/NP Option. Limitations on Enrollment: Not open for credit to students wit"
+   },
+   {
+    "control_number": "11011",
+    "pages": [
+     107,
+     108,
+     109
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.889,
+    "opens": "[page 107] YUBA COLLEGE CATALOG 2026/2027 107 1. Resolve and execute standard pre-production skills including planning, script, script breakdown, budgeting, storyboard creation, and crew and equipment selection. 2. Uti"
+   },
+   {
+    "control_number": "13308",
+    "pages": [
+     80,
+     81,
+     82,
+     83
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 80] The Small Business Management certificate is designed for existing and potential small business managers or entrepreneurs. It provides an organized course of study that enables students to develop entrepren"
+   },
+   {
+    "control_number": "16183",
+    "pages": [
+     79,
+     80,
+     81,
+     82
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 79] The Accounting certificate provides occupational training for students seeking entry-level accounting positions. Successful completion of this certificate could lead to employment as an Account Clerk, Account"
+   },
+   {
+    "control_number": "16751",
+    "pages": [
+     78,
+     79,
+     80,
+     81
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 78] YUBA COLLEGE CATALOG 2026/2027 78 REQUIRED COURSES UNITS ACCT 3 Computerized Accounting ........................................................ 3 ACCT 9 Business Payroll Procedures ..........................."
+   },
+   {
+    "control_number": "16894",
+    "pages": [
+     53,
+     54,
+     55
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 53] YUBA COLLEGE CATALOG 2026/2027 53 to identify and apply the appropriate legal action, demonstrating sound judgment based upon a deductive and/or inductive analysis. 5. Demonstrate an understanding of the prote"
+   },
+   {
+    "control_number": "19425",
+    "pages": [
+     51,
+     52,
+     53,
+     54
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 51] YUBA COLLEGE CATALOG 2026/2027 51 (CONT’D ON NEXT PAGE) List B - Select 6-7 units from the following: Any List A course not already used PSYC C1000 Introduction to Psychology ..................................."
+   },
+   {
+    "control_number": "19522",
+    "pages": [
+     172,
+     173,
+     174,
+     175
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 172] YUBA COLLEGE CATALOG 2026/2027 172 VETT 53A Vet Surgical Nursing and Anesthesia .................................................. 4 VETT 53B Veterinary Diagnostic Imaging .................................."
+   },
+   {
+    "control_number": "19613",
+    "pages": [
+     53
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 53] provide students with a Level II Reserve Officer certificate that would allow them to seek entry level employment as a Level II Reserve Peace Officer. Students who complete the Reserve Officer Level II progr"
+   },
+   {
+    "control_number": "20164",
+    "pages": [
+     110,
+     111,
+     112,
+     113
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 110] The Fire Technology Certificate of Achievement program prepares students for a career in the fire service and provides educational training opportunities for employment with Career, Combination, and Volunte"
+   },
+   {
+    "control_number": "20167",
+    "pages": [
+     125,
+     126,
+     127
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 125] YUBA COLLEGE CATALOG 2026/2027 125 Students earning an AA/AS degree must complete a minimum of 21 units of General Graduation Education requirements and the health requirement, in addition to the program uni"
+   },
+   {
+    "control_number": "20180",
+    "pages": [
+     156,
+     157,
+     158
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 156] YUBA COLLEGE CATALOG 2026/2027 156 and ethnic background impact the domestic and foreign politics of their states, with emphasis on issues of human security: ethnic conflict, the global North and South econo"
+   },
+   {
+    "control_number": "20191",
+    "pages": [
+     64,
+     65
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 64] YUBA COLLEGE CATALOG 2026/2027 64 ART -42B 3 UNITS Individual Problems in Ceramics II TRANSFERABLE TO CSU AND UC 27 LECTURE HOURS 81 LAB HOURS Advanced techniques and processes in which students work on self "
+   },
+   {
+    "control_number": "20196",
+    "pages": [
+     175,
+     176,
+     177
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 175] YUBA COLLEGE CATALOG 2026/2027 175 clinical pathology, and treatment of animals. Lectures demonstrate the importance of proper vocabulary usage in patient records. VETT -56 3 UNITS Shelter Medicine 54 LECTUR"
+   },
+   {
+    "control_number": "20201",
+    "pages": [
+     69,
+     70,
+     71,
+     72
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 69] YUBA COLLEGE CATALOG 2026/2027 69 AUTOMOTIVE EMISSION TECHNICIAN CERTIFICATE OF ACHIEVEMENT The Automotive Emissions Technician Certificate prepares students with job skills needed to enter the automotive fie"
+   },
+   {
+    "control_number": "20208",
+    "pages": [
+     68,
+     69,
+     70,
+     71
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 68] The Automotive Drive Trains certificate is designed to prepare individuals for careers in the automotive industry as drivetrains technicians. The curriculum covers topics in gas, diesel, and hybrid engines. "
+   },
+   {
+    "control_number": "20209",
+    "pages": [
+     69,
+     70,
+     71,
+     72
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 69] The Automotive Technology Certificate prepares students with job skills needed to enter the automotive field. Emphasis is placed on brake systems, suspension and alignment, heating and air-conditioning, manu"
+   },
+   {
+    "control_number": "20210",
+    "pages": [
+     86,
+     87,
+     88
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 86] YUBA COLLEGE CATALOG 2026/2027 86 Computer Science COMPUTER SCIENCE ASSOCIATE IN SCIENCE FOR TRANSFER The Computer Science AS-T degree curriculum focuses on computer architecture and object oriented programmi"
+   },
+   {
+    "control_number": "20214",
+    "pages": [
+     80,
+     81,
+     82,
+     83
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 80] YUBA COLLEGE CATALOG 2026/2027 80 Students who complete this program should be able to: 1. Determine and use business software application tools to analyze quantitative data and interpret the results 2. Apply "
+   },
+   {
+    "control_number": "20216",
+    "pages": [
+     79,
+     80,
+     81,
+     82
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 79] YUBA COLLEGE CATALOG 2026/2027 79 cultural perspectives. 2. Demonstrate creative thinking skills by integrating and applying appropriate concepts, technologies and decision making techniques to effectively ev"
+   },
+   {
+    "control_number": "30173",
+    "pages": [
+     53
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 53] YUBA COLLEGE CATALOG 2026/2027 53 to identify and apply the appropriate legal action, demonstrating sound judgment based upon a deductive and/or inductive analysis. 5. Demonstrate an understanding of the prote"
+   },
+   {
+    "control_number": "30716",
+    "pages": [
+     164,
+     165,
+     166,
+     167
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 164] YUBA COLLEGE CATALOG 2026/2027 164 • Obtainment of a minimum grade point average (GPA) of at least 2.0 in all CSU-transferable coursework • Completion, with a grade of “C” or better OR “P” (Pass), of each co"
+   },
+   {
+    "control_number": "30875",
+    "pages": [
+     134,
+     135
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 134] The Associate in Science in Mathematics for Transfer is designed for students for transfer into the CSU system to complete a bachelor’s degree in Mathematics or similar major. Students who complete an Associ"
+   },
+   {
+    "control_number": "31044",
+    "pages": [
+     110,
+     111,
+     112,
+     113
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 110] YUBA COLLEGE CATALOG 2026/2027 110 with EMT 1 included, background checks will be required. All clinical agencies used in the EMT 1 programs require criminal background screening. Applicants who are found to"
+   },
+   {
+    "control_number": "31620",
+    "pages": [
+     84,
+     85,
+     86
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 84] The Associate in Science in Chemistry for Transfer is designed for students who wish to transfer into the California State University (CSU) system to complete a Bachelor’s Degree in Chemistry. The AS-T Degre"
+   },
+   {
+    "control_number": "31743",
+    "pages": [
+     74,
+     75
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 74] The Associate of Science Degree in Biology is designed to prepare students for transfer to four-year institutions for pre-professional studies in medical, dental and pharmacy programs. The Biology program at"
+   },
+   {
+    "control_number": "32296",
+    "pages": [
+     89,
+     90,
+     91,
+     92
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 89] The Associate in Science in Early Childhood Education for Transfer degree provides the opportunity for students to complete their freshman/sophomore level classes needed for a Bachelor’s degree in ECE with t"
+   },
+   {
+    "control_number": "32873",
+    "pages": [
+     158,
+     159,
+     160
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 158] The Associate in Arts in Psychology for Transfer degree is designed for students for transfer into the CSU system to complete a bachelors degree in Psychology. Psychology is the study of human thought, feel"
+   },
+   {
+    "control_number": "32888",
+    "pages": [
+     128,
+     129,
+     130,
+     131
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 128] YUBA COLLEGE CATALOG 2026/2027 128 after transfer to earn a bachelor's degree in the same major. Students should consult a counselor for more information on specific university admission and transfer require"
+   },
+   {
+    "control_number": "33035",
+    "pages": [
+     50,
+     51,
+     52,
+     53
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 50] The Associate of Science in Administration of Justice for Transfer degree prepares students for upper division coursework for a bachelor’s degree in criminal justice. By design of curriculum, students will b"
+   },
+   {
+    "control_number": "33108",
+    "pages": [
+     100,
+     101,
+     102
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 100] The Associate in Arts in English for Transfer degree gives students a broad background in writing, literature, and language analysis. It prepares students for the further study of English or a related field "
+   },
+   {
+    "control_number": "33124",
+    "pages": [
+     155
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 155] The Associates in Arts in Political Science for Transfer degree is designed for students to transfer into the CSU system to complete a bachelor's degree in Political Science or similar major. The degree pro"
+   },
+   {
+    "control_number": "33129",
+    "pages": [
+     137,
+     138,
+     139,
+     140
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 137] The Associate in Arts in Music for Transfer degree prepares students in basic freshman and sophomore level music study to transfer to a 4-year University to seek a Bachelor of Arts in General Music degree. "
+   },
+   {
+    "control_number": "33620",
+    "pages": [
+     59,
+     60,
+     61,
+     62
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 59] The Associate in Arts in Studio Arts for Transfer Degree provides students with the opportunity to complete the freshman/sophomore level classes needed for a Bachelor’s degree in Studio Arts within the Calif"
+   },
+   {
+    "control_number": "35801",
+    "pages": [
+     73,
+     74,
+     75
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 73] The Associate in Science in Biology for Transfer is designed to prepare students for the automatic transfer to California State University institutions with Biology degrees. The Biology program at Yuba Colleg"
+   },
+   {
+    "control_number": "35836",
+    "pages": [
+     84,
+     85,
+     86
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 84] The Associate in Science in Chemistry for Transfer is designed for students who wish to transfer into the California State University (CSU) system to complete a Bachelor’s Degree in Chemistry. The AS-T Degre"
+   },
+   {
+    "control_number": "35850",
+    "pages": [
+     86,
+     87,
+     88
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 86] The Computer Science AS-T degree curriculum focuses on computer architecture and object oriented programming fundamentals including algorithm design, problem analysis, system design, and testing. The Compute"
+   },
+   {
+    "control_number": "36014",
+    "pages": [
+     91,
+     92,
+     93,
+     94
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 91] YUBA COLLEGE CATALOG 2026/2027 91 CHILD DEVELOPMENT TEACHER CERTIFICATE OF ACHIEVEMENT This certificate will prepare students to work in the early education and child care field, focusing on preschool age chi"
+   },
+   {
+    "control_number": "36015",
+    "pages": [
+     91,
+     92,
+     93,
+     94
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 91] YUBA COLLEGE CATALOG 2026/2027 91 CHILD DEVELOPMENT TEACHER CERTIFICATE OF ACHIEVEMENT This certificate will prepare students to work in the early education and child care field, focusing on preschool age chi"
+   },
+   {
+    "control_number": "36035",
+    "pages": [
+     93,
+     94,
+     95,
+     96
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 93] YUBA COLLEGE CATALOG 2026/2027 93 SCHOOL AGE CHILDREN CERTIFICATE OF ACHIEVEMENT The coursework within this Certificate of Achievement is required to apply and possess the California Child and School Age Empha"
+   },
+   {
+    "control_number": "36247",
+    "pages": [
+     93,
+     94,
+     95,
+     96
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 93] YUBA COLLEGE CATALOG 2026/2027 93 SCHOOL AGE CHILDREN CERTIFICATE OF ACHIEVEMENT The coursework within this Certificate of Achievement is required to apply and possess the California Child and School Age Empha"
+   },
+   {
+    "control_number": "36780",
+    "pages": [
+     161,
+     162,
+     163
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 161] YUBA COLLEGE CATALOG 2026/2027 161 (CONT’D FROM PREVIOUS PAGE) (CONT’D ON NEXT PAGE) Second Fall Semester RADT 3C Radiographic Procedures 3 ................................................................. 4 "
+   },
+   {
+    "control_number": "36876",
+    "pages": [
+     103,
+     104,
+     105
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 103] YUBA COLLEGE CATALOG 2026/2027 103 Students who complete this program should be able to: 1. Demonstrate ability to write coherent expository essays and/or summary- responses at a level sufficient to transition"
+   },
+   {
+    "control_number": "37069",
+    "pages": [
+     128,
+     129,
+     130,
+     131
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 128] The Kinesiology Associate in Arts degree provides an opportunity for students to explore the areas of health, fitness, and kinesiology. This degree is designed to provide an introductory foundation in these"
+   },
+   {
+    "control_number": "37338",
+    "pages": [
+     120
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 120] YUBA COLLEGE CATALOG 2026/2027 120 may involve weekend trips or week-long expeditions, with potential camping in designated areas. Students will engage in identifying coastal features, interpreting processes"
+   },
+   {
+    "control_number": "37447",
+    "pages": [
+     167,
+     168,
+     169,
+     170
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 167] an opportunity to earn an AA transfer degree in Theatre. Courses are integrated around the central ideas of collaboration, individual responsibility, student-centered learning, open and respectful dialogue, "
+   },
+   {
+    "control_number": "37606",
+    "pages": [
+     92,
+     93,
+     94,
+     95
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 92] YUBA COLLEGE CATALOG 2026/2027 92 ECE 18 Curriculum and Strategies for Children with Special Needs ............... 3 ECE 27 Teaching in a Diverse Society ........................................................"
+   },
+   {
+    "control_number": "37615",
+    "pages": [
+     93,
+     94,
+     95,
+     96
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 93] YUBA COLLEGE CATALOG 2026/2027 93 SCHOOL AGE CHILDREN CERTIFICATE OF ACHIEVEMENT The coursework within this Certificate of Achievement is required to apply and possess the California Child and School Age Empha"
+   },
+   {
+    "control_number": "37616",
+    "pages": [
+     75,
+     76,
+     77
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.923,
+    "opens": "[page 75] YUBA COLLEGE CATALOG 2026/2027 75 (CONT’D FROM PREVIOUS PAGE) COMM C1000 Introduction to Public Speaking OR .........................................3 SPECH 7 Interpersonal Communication ................."
+   },
+   {
+    "control_number": "37946",
+    "pages": [
+     146
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 146] YUBA COLLEGE CATALOG 2026/2027 146 1. Completion of the latest edition of the Casper and Test of Essential Academic Skills (TEAS), developed by the Assessment Technologies Institute, LLC (ATI). A minimum com"
+   },
+   {
+    "control_number": "38009",
+    "pages": [
+     148,
+     149
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 148] YUBA COLLEGE CATALOG 2026/2027 148 basis using the Merit-Based-Tool and screening process. Note: Detailed information about program requirements, enrollment criteria, enrollment applications and deadlines are"
+   },
+   {
+    "control_number": "38100",
+    "pages": [
+     103,
+     104,
+     105,
+     106
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 103] The Certificate of Competency in Interpersonal Communication prepares students who have a low-intermediate background in English with the language skills required to function at a high-intermediate level in"
+   },
+   {
+    "control_number": "38148",
+    "pages": [
+     103
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 103] The Certificate of Competency in Life Skills prepares students with beginning academic background in English with life skills needed to function at a low-intermediate level in everyday situations at work, s"
+   },
+   {
+    "control_number": "38877",
+    "pages": [
+     175,
+     176,
+     177
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 175] YUBA COLLEGE CATALOG 2026/2027 175 clinical pathology, and treatment of animals. Lectures demonstrate the importance of proper vocabulary usage in patient records. VETT -56 3 UNITS Shelter Medicine 54 LECTUR"
+   },
+   {
+    "control_number": "39257",
+    "pages": [
+     70,
+     71,
+     72,
+     73
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 70] The Transportation Engine Repair and Machining certificate prepares students with job skills need to enter the Automotive, Bus, Train, and Marine Machining field. Emphasis will be placed on performing engine "
+   },
+   {
+    "control_number": "39385",
+    "pages": [
+     175,
+     176,
+     177
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 175] YUBA COLLEGE CATALOG 2026/2027 175 clinical pathology, and treatment of animals. Lectures demonstrate the importance of proper vocabulary usage in patient records. VETT -56 3 UNITS Shelter Medicine 54 LECTUR"
+   },
+   {
+    "control_number": "39447",
+    "pages": [
+     69,
+     70,
+     71,
+     72
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 69] YUBA COLLEGE CATALOG 2026/2027 69 AUTOMOTIVE EMISSION TECHNICIAN CERTIFICATE OF ACHIEVEMENT The Automotive Emissions Technician Certificate prepares students with job skills needed to enter the automotive fie"
+   },
+   {
+    "control_number": "39581",
+    "pages": [
+     68,
+     69,
+     70,
+     71
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 68] YUBA COLLEGE CATALOG 2026/2027 68 AUTOMOTIVE TECHNOLOGY ASSOCIATE IN SCIENCE The Automotive Technology Degree prepares students with the knowledge and skills necessary to become skilled automotive technician"
+   },
+   {
+    "control_number": "41308",
+    "pages": [
+     57,
+     58,
+     59
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 57] YUBA COLLEGE CATALOG 2026/2027 57 (CONT’D FROM PREVIOUS PAGE) skills needed to develop and manage a profitable, environmentally sound and community-based small farm or agricultural business. Students use their"
+   },
+   {
+    "control_number": "41475",
+    "pages": [
+     78,
+     79,
+     80,
+     81
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 78] YUBA COLLEGE CATALOG 2026/2027 78 REQUIRED COURSES UNITS ACCT 3 Computerized Accounting ........................................................ 3 ACCT 9 Business Payroll Procedures ..........................."
+   },
+   {
+    "control_number": "41502",
+    "pages": [
+     57,
+     58,
+     59
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 57] The agricultural technician certificate provides current students and graduates with the base knowledge and skills necessary to be successful in the evolving agriculture industry. The certificate will increa"
+   },
+   {
+    "control_number": "41568",
+    "pages": [
+     77,
+     78,
+     79,
+     80
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 77] The Associate in Science in Business Administration 2.0 for Transfer degree prepares students to transfer to a CSU institution by completing required major preparatory coursework in Business Administration. "
+   },
+   {
+    "control_number": "41769",
+    "pages": [
+     97,
+     98
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 97] The Associate in Science degree in Environmental Science for Transfer (AS-T) is intended to provide students with the first two years of core curriculum leading to a bachelor’s degree in Environmental Science"
+   },
+   {
+    "control_number": "42493",
+    "pages": [
+     98,
+     99
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 98] The Associate in Arts in Economics for Transfer is designed to prepare students for a seamless transfer into the California State University (CSU) system to complete a baccalaureate degree in Economics or sim"
+   },
+   {
+    "control_number": "42762",
+    "pages": [
+     165,
+     166
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 165] in Arts in Communication Studies for Transfer 2.0 degree provides a curriculum emphasizing the theory and practice of interpersonal, small group, public, and professional contexts of communication. The Asso"
+   },
+   {
+    "control_number": "43555",
+    "pages": [
+     144,
+     145
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 144] YUBA COLLEGE CATALOG 2026/2027 144 support of certified professionals. Students who complete this program may get entry-level jobs as field technicians in in a multitude of job settings, in government, agenci"
+   },
+   {
+    "control_number": "43557",
+    "pages": [
+     118,
+     119
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 118] YUBA COLLEGE CATALOG 2026/2027 118 methodology. 4. Demonstrate global awareness with an understanding of cultural pluralism. 5. Evaluate methods of inquiry and evidence used in the behavioral sciences. REQUI"
+   },
+   {
+    "control_number": "43558",
+    "pages": [
+     144,
+     145
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 144] The Soil Conservation Technician certificate provides students with the concepts, methods, and applications of field work in soil conservation. Emphasis is on techniques in data collection by following indu"
+   }
+  ],
+  "unproven": []
  },
  "loads": 1,
- "seconds": 177.9,
+ "seconds": 242.6,
  "found": 93,
  "by_method": {
   "no_closed_list": 10,
@@ -42,7 +1273,7 @@
   "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=78": [
    "07007",
    "07162",
-   "16183",
+   "16751",
    "41475"
   ],
   "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=86": [
@@ -53,9 +1284,7 @@
   "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=68": [
    "07023",
    "10173",
-   "20201",
    "20208",
-   "20209",
    "39581"
   ],
   "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=175": [
@@ -64,9 +1293,9 @@
    "38877",
    "39385"
   ],
-  "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=61": [
-   "07031",
-   "20191"
+  "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=137": [
+   "07029",
+   "33129"
   ],
   "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=146": [
    "07035",
@@ -76,28 +1305,17 @@
    "07043",
    "33108"
   ],
-  "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=98": [
+  "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=134": [
    "07048",
-   "42493"
+   "30875"
   ],
-  "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=52": [
-   "07054",
-   "19613",
-   "30173"
+  "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=158": [
+   "07053",
+   "32873"
   ],
   "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=133": [
    "07146",
    "07147"
-  ],
-  "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=90": [
-   "07154",
-   "10187",
-   "32296"
-  ],
-  "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=110": [
-   "07159",
-   "20164",
-   "31044"
   ],
   "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=91": [
    "10185",
@@ -106,6 +1324,7 @@
   ],
   "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=92": [
    "10186",
+   "10187",
    "37606"
   ],
   "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=80": [
@@ -113,18 +1332,33 @@
    "20214"
   ],
   "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=79": [
-   "16751",
+   "16183",
    "20216"
   ],
-  "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=51": [
+  "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=53": [
    "16894",
-   "19425"
+   "19613",
+   "30173"
+  ],
+  "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=110": [
+   "20164",
+   "31044"
+  ],
+  "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=69": [
+   "20201",
+   "20209",
+   "39447"
+  ],
+  "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=84": [
+   "31620",
+   "35836"
   ],
   "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=128": [
    "32888",
    "37069"
   ],
   "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=93": [
+   "36035",
    "36247",
    "37615"
   ],
@@ -156,941 +1390,171 @@
   "1.0": 89
  },
  "would_extract": {
-  "against": null,
-  "kept": 0,
-  "programs": 93,
+  "against": "kb/program_requirements_college/yuba",
+  "kept": 77,
+  "programs": 16,
   "list": [
-   {
-    "control_number": "07001",
-    "title": "Agriculture",
-    "award": "A.S. Degree",
-    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=57",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "07002",
-    "title": "Veterinary Technology",
-    "award": "A.S. Degree",
-    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=172",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "07007",
-    "title": "Accounting",
-    "award": "A.S. Degree",
-    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=78",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "07014",
-    "title": "Computer Science",
-    "award": "A.S. Degree",
-    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=86",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "07023",
-    "title": "Engine Performance/Drivability and Tune-Up",
-    "award": "A.S. Degree",
-    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=68",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "07027",
-    "title": "Welding Technologies",
-    "award": "A.S. Degree",
-    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=175",
-    "coverage": 0.923,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "07028",
-    "title": "Art",
-    "award": "A.A. Degree",
-    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=60",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
    {
     "control_number": "07029",
     "title": "Music",
     "award": "A.A. Degree",
-    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=138",
+    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=137",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "07031",
-    "title": "Photographic Imaging",
-    "award": "A.S. Degree",
-    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=61",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "07035",
-    "title": "Associate in Science Nursing (ASN)",
-    "award": "A.S. Degree",
-    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=146",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "07043",
-    "title": "English",
-    "award": "A.A. Degree",
-    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=100",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=138",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "07048",
     "title": "Mathematics",
     "award": "A.S. Degree",
-    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=98",
+    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=134",
     "coverage": 0.833,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=98",
+    "was_coverage": 0.833,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "07053",
     "title": "Psychology with a Focus on Social Services",
     "award": "A.A. Degree",
-    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=159",
+    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=158",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "07054",
-    "title": "Law Enforcement",
-    "award": "A.S. Degree",
-    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=52",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "07057",
-    "title": "Fire Technology",
-    "award": "A.S. Degree",
-    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=109",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "07062",
-    "title": "History",
-    "award": "A.A. Degree",
-    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=122",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "07146",
-    "title": "Manufacturing Technology/Machining",
-    "award": "A.S. Degree",
-    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=133",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "07147",
-    "title": "Manufacturing Technology/ Machining",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=133",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "07154",
-    "title": "Early Childhood Education",
-    "award": "A.S. Degree",
-    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=90",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=159",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "07159",
     "title": "Fire Fighter Academy",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=110",
+    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=111",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "07162",
-    "title": "General Business Management",
-    "award": "A.S. Degree",
-    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=78",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "10173",
-    "title": "Automotive Technology",
-    "award": "A.S. Degree",
-    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=68",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "10185",
-    "title": "Child Development Teacher",
-    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
-    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=91",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "10186",
-    "title": "Diversity in ECE Specialization",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=92",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=110",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "10187",
     "title": "Infant and Toddler",
     "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
-    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=90",
+    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=92",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "10189",
-    "title": "Chemical Dependency Counselor",
-    "award": "A.S. Degree",
-    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=124",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "11011",
-    "title": "Film, Television, and Electronic Media",
-    "award": "A.A. Degree",
-    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=107",
-    "coverage": 0.889,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "13308",
-    "title": "Small Business Management",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=80",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=90",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "16183",
     "title": "Accounting",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=78",
+    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=79",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=78",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "16751",
     "title": "Small Business Management",
     "award": "A.S. Degree",
-    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=79",
+    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=78",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=79",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "16894",
     "title": "Basic Police Academy",
     "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=51",
+    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=53",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "19425",
-    "title": "Basic Police Academy",
-    "award": "A.S. Degree",
-    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=51",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "19522",
-    "title": "Veterinary Assistant and Animal Care",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=172",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=51",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "19613",
     "title": "Reserve Officer Level II",
     "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=52",
+    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=53",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "20164",
-    "title": "Fire Technology",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=110",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "20167",
-    "title": "Chemical Dependency Counselor",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=125",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "20180",
-    "title": "Psychiatric Technician",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=156",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=52",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "20191",
     "title": "Photographic Imaging",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=61",
+    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=64",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "20196",
-    "title": "Advanced Welding Technologies",
-    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
-    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=175",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=61",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "20201",
     "title": "Engine Performance/Drivability and Tune-Up",
     "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=68",
+    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=69",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "20208",
-    "title": "Automotive Drive Trains",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=68",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=68",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "20209",
     "title": "Automotive Technology",
     "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=68",
+    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=69",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "20210",
-    "title": "Computer Science",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=86",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "20214",
-    "title": "General Business-Business Computer Applications",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=80",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "20216",
-    "title": "General Business Administrative Assistant",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=79",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=68",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "30173",
     "title": "Reserve Officer Level I",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=52",
+    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=53",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "30716",
-    "title": "Sociology",
-    "award": "A.A- T Degree",
-    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=164",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "30875",
-    "title": "Mathematics",
-    "award": "A.S. T Degree",
-    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=134",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "31044",
-    "title": "Fire Fighter Academy",
-    "award": "A.S. Degree",
-    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=110",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=52",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "31620",
     "title": "Chemistry",
     "award": "A.S. Degree",
-    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=85",
+    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=84",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "31743",
-    "title": "Biology",
-    "award": "A.S. Degree",
-    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=74",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=85",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "32296",
     "title": "Early Childhood Education",
     "award": "A.S. T Degree",
-    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=90",
+    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=89",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "32873",
-    "title": "Psychology",
-    "award": "A.A- T Degree",
-    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=158",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "32888",
-    "title": "Kinesiology",
-    "award": "A.A- T Degree",
-    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=128",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "33035",
-    "title": "Administration of Justice",
-    "award": "A.S. T Degree",
-    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=50",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "33108",
-    "title": "English",
-    "award": "A.A- T Degree",
-    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=100",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "33124",
-    "title": "Political Science",
-    "award": "A.A- T Degree",
-    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=155",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "33129",
-    "title": "Music",
-    "award": "A.A- T Degree",
-    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=137",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "33620",
-    "title": "Studio Arts",
-    "award": "A.A- T Degree",
-    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=59",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "35801",
-    "title": "Biology",
-    "award": "A.S. T Degree",
-    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=73",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "35836",
-    "title": "Chemistry",
-    "award": "A.S. T Degree",
-    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=84",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "35850",
-    "title": "Computer Science",
-    "award": "A.S. T Degree",
-    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=86",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "36014",
-    "title": "Arts Specialization",
-    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
-    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=91",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "36015",
-    "title": "Children with Special Needs Specialization",
-    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
-    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=91",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=90",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "36035",
     "title": "Transitional Kindergarten and Early Education",
     "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
-    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=94",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "36247",
-    "title": "Site Supervisor",
-    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
     "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=93",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "36780",
-    "title": "Radiologic Technology",
-    "award": "A.S. Degree",
-    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=161",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "36876",
-    "title": "Academic Preparedness and Career Development",
-    "award": "Noncredit program",
-    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=103",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37069",
-    "title": "Kinesiology",
-    "award": "A.A. Degree",
-    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=128",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37338",
-    "title": "Geology",
-    "award": "A.S. T Degree",
-    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=120",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37447",
-    "title": "Theatre",
-    "award": "A.A- T Degree",
-    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=167",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37606",
-    "title": "Language and Literacy Specialization",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=92",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37615",
-    "title": "Teacher/Family Relationships Specialization",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=93",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37616",
-    "title": "Biology-Allied Health",
-    "award": "A.S. Degree",
-    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=75",
-    "coverage": 0.923,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37946",
-    "title": "LVN to RN Career Mobility Program",
-    "award": "A.S. Degree",
-    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=146",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "38009",
-    "title": "LVN To RN 30-Unit Option",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=148",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "38100",
-    "title": "Interpersonal Communication",
-    "award": "Noncredit program",
-    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=103",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "38148",
-    "title": "Life Skills",
-    "award": "Noncredit program",
-    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=103",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "38877",
-    "title": "Introductory Welding Technologies",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=175",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "39257",
-    "title": "Transportation Engine Repair and Machining",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=70",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "39385",
-    "title": "Fabrication and Manufacturing Methods",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=175",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "39447",
-    "title": "Automotive Service Technician",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=69",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "39581",
-    "title": "Automotive Emission Technician",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=68",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "41308",
-    "title": "Agriculture Technology",
-    "award": "A.S. Degree",
-    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=57",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "41475",
-    "title": "Human Resources",
-    "award": "A.S. Degree",
-    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=78",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "41502",
-    "title": "Agricultural Technician",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=57",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "41568",
-    "title": "Business Administration 2.0",
-    "award": "A.S. T Degree",
-    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=77",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "41769",
-    "title": "Environmental Science",
-    "award": "A.S. T Degree",
-    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=97",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "42493",
-    "title": "Economics",
-    "award": "A.A- T Degree",
-    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=98",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "42762",
-    "title": "Communication Studies 2.0",
-    "award": "A.A- T Degree",
-    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=165",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "43555",
-    "title": "Field Technician - Watershed Management",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=144",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "43557",
-    "title": "Geographic Information Systems (GIS)",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=118",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "43558",
-    "title": "Soil Conservation Technician",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=144",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=94",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
    }
   ]
  },
- "run": "39006517642"
+ "run": "39019562186"
 }

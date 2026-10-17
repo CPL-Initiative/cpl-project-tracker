@@ -82,21 +82,34 @@
    "program": 7,
    "courses": 0,
    "count": 7,
-   "not_verbatim": [],
-   "why": [],
+   "not_verbatim": [
+    "Apply criminology and criminal justice theories, principles and concepts to address real-life situations in the field.",
+    "Demonstrate an understanding of local, state, and federal criminal justice agencies, describe their organizational structure, and recognize the role of each agency within the criminal justice system.",
+    "Describe law enforcement’s responsibilities to the community, factors in crime causation, the social implication of crime and communication barriers between the system and the community.",
+    "Demonstrate the ability to recognize criminal behavior and be able to identify and apply the appropriate legal action, demonstrating sound judgment based upon a deductive and/or inductive analysis."
+   ],
+   "why": [
+    "not in the catalog text as printed: Apply criminology and criminal justice theories, principles and concepts to addr",
+    "not in the catalog text as printed: Demonstrate an understanding of local, state, and federal criminal justice agenc",
+    "not in the catalog text as printed: Describe law enforcement's responsibilities to the community, factors in crime c",
+    "not in the catalog text as printed: Demonstrate the ability to recognize criminal behavior and be able to identify a"
+   ],
    "heading_printed": false,
    "heading_without_outcomes": false,
-   "pass": true
+   "pass": false
   },
   "careers": {
    "count": 4,
-   "not_verbatim": [],
-   "pass": true
+   "not_verbatim": [
+    "Level I Reserve Police Officer",
+    "Level I Reserve Peace Officer"
+   ],
+   "pass": false
   },
   "degree": {
    "status": "n/a"
   },
-  "pass": true
+  "pass": false
  },
  "record": {
   "program": {
@@ -165,5 +178,6 @@
    "Careers taken from the program description: 'full-time employment as a peace officer', 'Level I Reserve Police Officer', 'field of law enforcement', 'Level I Reserve Peace Officer'."
   ]
  },
- "extracted_run": "39006517642"
+ "extracted_run": 39019562186,
+ "read_run": "39006517642"
 }

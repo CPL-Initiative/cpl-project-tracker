@@ -94,8 +94,10 @@
   },
   "careers": {
    "count": 4,
-   "not_verbatim": [],
-   "pass": true
+   "not_verbatim": [
+    "Fire Fighters"
+   ],
+   "pass": false
   },
   "degree": {
    "status": "n/a"
@@ -338,5 +340,6 @@
    "Certificate total printed as 18-30 units; the four academy options plus 2-3.5 elective units do not all fall within this range (e.g., FIRTC 62 26.5 + 3.5 = 30; FIRTC 63 16 + 2 = 18)."
   ]
  },
- "extracted_run": "39006517642"
+ "extracted_run": 39019562186,
+ "read_run": "39006517642"
 }

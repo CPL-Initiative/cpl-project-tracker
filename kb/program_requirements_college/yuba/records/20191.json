@@ -82,11 +82,21 @@
    "program": 4,
    "courses": 0,
    "count": 4,
-   "not_verbatim": [],
-   "why": [],
+   "not_verbatim": [
+    "Effectively communicate using visual and technical language related to photography.",
+    "Demonstrate how to use photography equipment and software.",
+    "Describe photography’s place in Art History and the Contemporary Art world.",
+    "Will promote their work in both commercial and fine arts settings."
+   ],
+   "why": [
+    "not in the catalog text as printed: Effectively communicate using visual and technical language related to photograp",
+    "not in the catalog text as printed: Demonstrate how to use photography equipment and software.",
+    "not in the catalog text as printed: Describe photography's place in Art History and the Contemporary Art world.",
+    "not in the catalog text as printed: Will promote their work in both commercial and fine arts settings."
+   ],
    "heading_printed": false,
    "heading_without_outcomes": false,
-   "pass": true
+   "pass": false
   },
   "careers": {
    "count": 0,
@@ -96,7 +106,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": true
+  "pass": false
  },
  "record": {
   "program": {
@@ -212,5 +222,6 @@
    "Required courses (12 units) plus 2 courses at 3 units (6 units) agree with the printed certificate total of 18 units."
   ]
  },
- "extracted_run": "39006517642"
+ "extracted_run": 39019562186,
+ "read_run": "39006517642"
 }
