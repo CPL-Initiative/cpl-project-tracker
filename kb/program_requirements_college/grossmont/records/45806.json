@@ -1,0 +1,187 @@
+{
+ "college": "Grossmont College",
+ "control_number": "45806",
+ "shape": "noncredit",
+ "title": "Artificial Intelligence Developer",
+ "award": "Noncredit program",
+ "source_url": "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/stem/artificial-intelligence-developer-cert-completion/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6728,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6728,
+    "output_tokens": 987,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 987,
+  "output_tokens_details": {
+   "thinking_tokens": 247
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.04665,
+ "ms": 9076,
+ "seconds": 9.5,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 2,
+   "listed": 3,
+   "share": 0.667,
+   "missing": [
+    "CSIS94"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "CSIS92"
+   ],
+   "flagged": [
+    "CSIS92"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "unstated",
+   "computed": null,
+   "stated": null,
+   "against": null,
+   "why": [
+    "the catalog prints no total, no hours and no units"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 3,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Artificial Intelligence Developer Certificate of Completion",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Understand and implement foundational concepts of artificial intelligence, including generative AI, large language models, and their practical applications.",
+    "Build custom AI tools such as prompt and cloud based AI solutions, to solve real-world problems.",
+    "Demonstrate proficiency in developing AI tools to automate processes, analyze data, and enhance decision-making."
+   ],
+   "careers": [
+    "Junior AI/ML Developer",
+    "AI Tooling Specialist",
+    "AI Businesses Application Developer"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Certificate Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CSIS-092",
+      "units": 0,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CSIS-093",
+      "units": 0,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CSIS-095",
+      "units": 0,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "CSIS 94",
+    "why": "not in the text; the catalog's course list names CSIS-092, CSIS-093 and CSIS-095 only"
+   }
+  ],
+  "notes": [
+   "Noncredit program, but the catalog prints no hours for the courses or the certificate; the course list prints 0 in a Units column, recorded as printed with measure 'units'. No total is stated.",
+   "CSIS-092 (Better Prompt Design) is not in the closed list; CSIS 94 (Get Started with Large Language Models) is in the closed list but not in the catalog's course list. The catalog list may be out of sync with the state file.",
+   "The description paragraph calls the program a 'Certificate of Proficiency' while the heading and requirements say 'Certificate of Completion'.",
+   "Course titles in the list are truncated in the text ('What Is Generative Artificial Intell...')."
+  ]
+ },
+ "extracted_run": "39061728041"
+}

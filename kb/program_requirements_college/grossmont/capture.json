@@ -5,7 +5,7 @@
  "catalog_year": "2026-2027",
  "programs": 187,
  "with_closed_list": 154,
- "started": "2026-10-17T18:20:21Z",
+ "started": "2026-10-17T19:17:21Z",
  "scope": "/grossmont/",
  "sitemap": {
   "url": "https://catalog.gcccd.edu/sitemap.xml",
@@ -21,7 +21,7 @@
  "child_pages": 3,
  "banner_h1": "Academic Catalog",
  "loads": 162,
- "seconds": 785.6,
+ "seconds": 780.2,
  "found": 139,
  "by_method": {
   "no_closed_list": 33,
@@ -1665,5 +1665,5 @@
    }
   ]
  },
- "run": "39057575641"
+ "run": "39061728041"
 }
