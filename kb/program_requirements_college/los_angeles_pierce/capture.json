@@ -5,7 +5,7 @@
  "catalog_year": "2026-2027",
  "programs": 208,
  "with_closed_list": 196,
- "started": "2026-10-17T05:29:35Z",
+ "started": "2026-10-17T08:44:22Z",
  "pdf": {
   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf",
   "access": "ok",
@@ -14,41 +14,2394 @@
   "pages_total": 363,
   "error": null,
   "chars_total": 1997728,
-  "pypdf_accepted": 194,
+  "pypdf_accepted": 193,
   "sample": [
    "p109: '109\\nEducational Programs 2026-2027\\nGENERAL CATALOG 2026-2027\\nWORD PROCESSING: MICROSOFT \\nWORD FOR WINDOWS\\nCertificate of Achievement\\n(STATE CODE 15074)\\nPROGRAM INFORMATION\\nStudents may obtain a basic word processing certificate in Microsoft'",
    "p218: '218\\nCourse Descriptions\\n2026-2027 GENERAL CATALOG\\ninput and output control, interfacing, and machine language programming tech -\\nniques. Students will be expose to practice many programming examples and con -\\ntrol applications such as A/D a'"
   ],
-  "extractor": "pypdf"
+  "extractor": "pypdf",
+  "picks": [
+   {
+    "control_number": "02808",
+    "pages": [
+     75,
+     76,
+     77,
+     78
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.962,
+    "opens": "[page 75] 75 Educational Programs 2026-2027 GENERAL CATALOG 2026-2027 Associate Degrees & Certificate Programs Agriculture AGRICULTURE: GENERAL Associate of Science Degree (STATE CODE 02808) PROGRAM INFORMATION This prog"
+   },
+   {
+    "control_number": "02809",
+    "pages": [
+     77,
+     78,
+     79,
+     80
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.977,
+    "opens": "[page 77] Equine Science AS P002809C Cal-GETC (34 units)LACCD GE (21 units) ¹Credit is awarded for Spanish 002 or Spanish 035, but not for both. High Unit Major Waiver: Some students may be eligible for a high- unit waiv"
+   },
+   {
+    "control_number": "02810",
+    "pages": [
+     82
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.838,
+    "opens": "[page 82] 82 Educational Programs 2026-2027 2026-2027 GENERAL CATALOG See page 327 of this catalog for more information on transfer requirements and resources. PROGRAM LEARNING OUTCOMES Upon completion of this program, s"
+   },
+   {
+    "control_number": "02811",
+    "pages": [
+     79,
+     80
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 79] 79 Educational Programs 2026-2027 GENERAL CATALOG 2026-2027 PLNT SC 756 Gr eenhouse Plant Production ........................... 3 PLNT SC 800 P lant Identification and Use I ........................... 3 PLNT "
+   },
+   {
+    "control_number": "02814",
+    "pages": [
+     83,
+     84
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 83] 83 Educational Programs 2026-2027 GENERAL CATALOG 2026-2027 Art and Architecture ARCHITECTURAL TECHNOLOGY Associate of Arts Degree (STATE CODE 02814) PROGRAM INFORMATION This program is designed to prepare stud"
+   },
+   {
+    "control_number": "02816",
+    "pages": [
+     89,
+     90,
+     91,
+     92
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 89] 89 Educational Programs 2026-2027 GENERAL CATALOG 2026-2027 GENERAL BUSINESS Associate of Arts Degree (STATE CODE 02816) PROGRAM INFORMATION This program is designed to provide a broad formal business education"
+   },
+   {
+    "control_number": "02817",
+    "pages": [
+     88,
+     89,
+     90,
+     91
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 88] 88 Educational Programs 2026-2027 2026-2027 GENERAL CATALOG ART 204* L ife Drawing I ......................................... 3 ART 501 B eginning T wo-Dimensional Design .................... 3 ART 502 B eginn"
+   },
+   {
+    "control_number": "02818",
+    "pages": [
+     92,
+     93,
+     94
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 92] 92 Educational Programs 2026-2027 2026-2027 GENERAL CATALOG • Diagram the process of marketing a product. MAJOR - REQUIRED COURSES SUBJECT & NO. C OURSE U NITS ACCTG 001 I ntroductory Accounting I ..........."
+   },
+   {
+    "control_number": "02820",
+    "pages": [
+     101,
+     102,
+     103,
+     104
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 101] Administrative Professional AA P002820C Cal-GETC (34 units)LACCD GE (21 units) High Unit Major Waiver: Some students may be eligible for a high- unit waiver for LACCD GE Area 4 or 7 depending on the specific c"
+   },
+   {
+    "control_number": "02821",
+    "pages": [
+     106,
+     107,
+     108,
+     109
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.857,
+    "opens": "[page 106] Legal Office Procedures AA P002821C Cal-GETC (34 units)LACCD GE (21 units) 2Students may substitute Law 010 offered by other colleges in the Los Angeles Community College District. 3Students may substitute La"
+   },
+   {
+    "control_number": "02822",
+    "pages": [
+     131,
+     132,
+     133,
+     134
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 131] 131 Educational Programs 2026-2027 GENERAL CATALOG 2026-2027 JOURNAL 202* A dvanced Newswriting ................................. 3 JOURNAL 218* P ractical Editing ....................................... 3 JOU"
+   },
+   {
+    "control_number": "02824",
+    "pages": [
+     114,
+     115,
+     116
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 114] 114 Educational Programs 2026-2027 2026-2027 GENERAL CATALOG PROGRAMMING FOR BUSINESS Certificate of Achievement (STATE CODE 21810) PROGRAM INFORMATION The intent of this certificate program is to provide grad"
+   },
+   {
+    "control_number": "02826",
+    "pages": [
+     149,
+     150,
+     151
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 149] 149 Educational Programs 2026-2027 GENERAL CATALOG 2026-2027 • Read, analyze and interpret a dramatic text for production values, requirements and design challenges. • Identify the specific functions and cont"
+   },
+   {
+    "control_number": "02827",
+    "pages": [
+     123,
+     124
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 123] 123 Educational Programs 2026-2027 GENERAL CATALOG 2026-2027 A S T 005 S tandard T ransmissions, Clutches, Drive Lines & Differentials ......................................... 3 A S T 006 A utomatic T ransm"
+   },
+   {
+    "control_number": "02828",
+    "pages": [
+     122,
+     123
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 122] 122 Educational Programs 2026-2027 2026-2027 GENERAL CATALOG AUTOMOTIVE SERVICE TECHNOLOGY Associate of Science Degree (STATE CODE 02828) Faculty Advisor: Professor David Chhith PROGRAM INFORMATION The followi"
+   },
+   {
+    "control_number": "02831",
+    "pages": [
+     126
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 126] Numerical Control Programming AS P002831C Cal-GETC (34 units)LACCD GE (21 units) High Unit Major Waiver: This major qualifies for a waiver of either LACCD GE Area 4A and 7. The student may choose which area t"
+   },
+   {
+    "control_number": "02834",
+    "pages": [
+     84,
+     85,
+     86,
+     87
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.8,
+    "opens": "[page 84] 84 Educational Programs 2026-2027 2026-2027 GENERAL CATALOG CERTIFICATE - REQUIRED COURSES SUBJECT & NO. C OURSE U NITS ARC 110 I ntroduction to Architecture ............................ 1 ARC 111 M ethods of"
+   },
+   {
+    "control_number": "02835",
+    "pages": [
+     142,
+     143
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.87,
+    "opens": "[page 142] 142 Educational Programs 2026-2027 2026-2027 GENERAL CATALOG MUSIC 250-1 M usic Performance W orkshop I ......................... 1 OR MUSIC 250-2 M usic Performance W orkshop II ........................ 1 OR "
+   },
+   {
+    "control_number": "02836",
+    "pages": [
+     147,
+     148,
+     149
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 147] 147 Educational Programs 2026-2027 GENERAL CATALOG 2026-2027 • Research, identify, and describe major historical periods, cultural influences, notable figures, key terminology, and defining events in the dev"
+   },
+   {
+    "control_number": "02837",
+    "pages": [
+     149
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 149] 149 Educational Programs 2026-2027 GENERAL CATALOG 2026-2027 • Read, analyze and interpret a dramatic text for production values, requirements and design challenges. • Identify the specific functions and cont"
+   },
+   {
+    "control_number": "02838",
+    "pages": [
+     138
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 138] 138 Educational Programs 2026-2027 2026-2027 GENERAL CATALOG MAJOR - REQUIRED COURSES SUBJECT & NO. C OURSE U NITS FRENCH 002* E lementary French II ................................... 5 FRENCH 003* I nterme"
+   },
+   {
+    "control_number": "02839",
+    "pages": [
+     138
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 138] 138 Educational Programs 2026-2027 2026-2027 GENERAL CATALOG MAJOR - REQUIRED COURSES SUBJECT & NO. C OURSE U NITS FRENCH 002* E lementary French II ................................... 5 FRENCH 003* I nterme"
+   },
+   {
+    "control_number": "02841",
+    "pages": [
+     144
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 144] 144 Educational Programs 2026-2027 2026-2027 GENERAL CATALOG A cumulative grade point average (GPA) of 2.5 for all college course - work taken; an overall grade point average of 2.5 for the Human Anatomy, Hum"
+   },
+   {
+    "control_number": "08308",
+    "pages": [
+     81,
+     82
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.972,
+    "opens": "[page 81] 81 Educational Programs 2026-2027 GENERAL CATALOG 2026-2027 • Students will demonstrate a clear understanding in using com - mon SOAP protocol in the assessment, observations, diagnosis, treatment of very comm"
+   },
+   {
+    "control_number": "08311",
+    "pages": [
+     80
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 80] 80 Educational Programs 2026-2027 2026-2027 GENERAL CATALOG TRANSFER STUDENTS Completing the Associate Degree does not necessarily meet the university-admission requirements for transfer. An Associate Degree "
+   },
+   {
+    "control_number": "08315",
+    "pages": [
+     91,
+     92,
+     93,
+     94
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 91] 91 Educational Programs 2026-2027 GENERAL CATALOG 2026-2027 MANAGEMENT AND SUPERVISION Associate of Arts Degree (STATE CODE 08315) PROGRAM INFORMATION This program is designed to meet the needs of 1) employed p"
+   },
+   {
+    "control_number": "08316",
+    "pages": [
+     90,
+     91,
+     92,
+     93
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 90] 90 Educational Programs 2026-2027 2026-2027 GENERAL CATALOG CERTIFICATE - REQUIRED COURSES SUBJECT & NO. C OURSE U NITS BUS 001 I ntroduction to Business ................................ 3 BUS 005 B usiness L"
+   },
+   {
+    "control_number": "08318",
+    "pages": [
+     102,
+     103,
+     104,
+     105
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 102] 102 Educational Programs 2026-2027 2026-2027 GENERAL CATALOG • Basic computer application skills, including beginning Excel, Word, and Outlook. • The fundamentals of computer systems. • Critical thinking and "
+   },
+   {
+    "control_number": "08319",
+    "pages": [
+     108,
+     109
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 108] 108 Educational Programs 2026-2027 2026-2027 GENERAL CATALOG CAOT 114 A dobe Acrobat for the Office and the W eb ............... 2 CAOT 120 A dobe Illustrator for the Office and the W eb ............. 3 CERTIF"
+   },
+   {
+    "control_number": "08320",
+    "pages": [
+     104,
+     105,
+     106,
+     107
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 104] 104 Educational Programs 2026-2027 2026-2027 GENERAL CATALOG CERTIFICATE - REQUIRED COURSES CAOT 039 M icrosoft W ord: Basic to Intermediate ................... 3 CAOT 067 M icrosoft Outlook for the Office ..."
+   },
+   {
+    "control_number": "08321",
+    "pages": [
+     133,
+     134,
+     135
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.95,
+    "opens": "[page 133] 133 Educational Programs 2026-2027 GENERAL CATALOG 2026-2027 PROGRAM LEARNING OUTCOMES Upon completion of this program, students will: • Demonstrate the ability to conduct research, gather information, write "
+   },
+   {
+    "control_number": "08322",
+    "pages": [
+     113,
+     114,
+     115,
+     116
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 113] 113 Educational Programs 2026-2027 GENERAL CATALOG 2026-2027 PROGRAMMING FOR BUSINESS Associate of Arts Degree (STATE CODE 08322) PROGRAM INFORMATION The intent of this degree program is to provide graduates w"
+   },
+   {
+    "control_number": "08323",
+    "pages": [
+     112,
+     113
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 112] 112 Educational Programs 2026-2027 2026-2027 GENERAL CATALOG AWARD AWARD TYPE MAJOR CODE GE Cybersecurity Certificate P037976D N/A *See Catalog course descriptions for prerequisites and/or corequisites. CYBERS"
+   },
+   {
+    "control_number": "08325",
+    "pages": [
+     136,
+     137
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 136] 136 Educational Programs 2026-2027 2026-2027 GENERAL CATALOG AMERICAN SIGN LANGUAGE/ INTERPRETING Associate of Arts Degree (STATE CODE 08325) PROGRAM INFORMATION This program is designed to prepare for a caree"
+   },
+   {
+    "control_number": "08326",
+    "pages": [
+     111,
+     112,
+     113,
+     114
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 111] 111 Educational Programs 2026-2027 GENERAL CATALOG 2026-2027 goal achievable. You should meet with a counselor early in your studies to develop an Educational Plan that fulfills both transfer requirements an"
+   },
+   {
+    "control_number": "08327",
+    "pages": [
+     147,
+     148,
+     149
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 147] 147 Educational Programs 2026-2027 GENERAL CATALOG 2026-2027 • Research, identify, and describe major historical periods, cultural influences, notable figures, key terminology, and defining events in the dev"
+   },
+   {
+    "control_number": "08328",
+    "pages": [
+     86,
+     87,
+     88
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.895,
+    "opens": "[page 86] 86 Educational Programs 2026-2027 2026-2027 GENERAL CATALOG MAJOR - REQUIRED COURSES SUBJECT & NO. C OURSE U NITS ART 111 H istory of Contemporary Art ........................... 3 OR MULTIMD 110 V isual Comm"
+   },
+   {
+    "control_number": "08330",
+    "pages": [
+     97,
+     98,
+     99,
+     100
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.947,
+    "opens": "[page 97] Child Development AA P008330C Cal-GETC (34 units)LACCD GE (21 units) *See Catalog course description for prerequisites and/or corequisites. CHILD DEVELOPMENT: ASSOCIATE TEACHER Certificate of Achievement (STAT"
+   },
+   {
+    "control_number": "08333",
+    "pages": [
+     140
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 140] 140 Educational Programs 2026-2027 2026-2027 GENERAL CATALOG PROGRAM LEARNING OUTCOMES Upon completion of this program, students will: • Demonstrate Spanish language proficiency of at least Intermedi - ate MID"
+   },
+   {
+    "control_number": "10349",
+    "pages": [
+     99,
+     100
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 99] 99 Educational Programs 2026-2027 GENERAL CATALOG 2026-2027 • Apply evidence-based theoretical and practical concepts with typically and atypically developing young children and their families with a high lev"
+   },
+   {
+    "control_number": "10350",
+    "pages": [
+     97,
+     98,
+     99,
+     100
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 97] 97 Educational Programs 2026-2027 GENERAL CATALOG 2026-2027 CH DEV 046 S chool Age Programs I ................................. 3 MAJOR - TOTAL UNITS.................................................... 36 AWAR"
+   },
+   {
+    "control_number": "10726",
+    "pages": [
+     79,
+     80
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 79] 79 Educational Programs 2026-2027 GENERAL CATALOG 2026-2027 PLNT SC 756 Gr eenhouse Plant Production ........................... 3 PLNT SC 800 P lant Identification and Use I ........................... 3 PLNT "
+   },
+   {
+    "control_number": "10729",
+    "pages": [
+     124
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 124] 124 Educational Programs 2026-2027 2026-2027 GENERAL CATALOG CERTIFICATE PROGRAM CORE REQUIREMENTS SUBJECT & NO. C OURSE U NITS ELECTRN 004A* F undamentals of Electronics I ........................... 3 ELEC"
+   },
+   {
+    "control_number": "10730",
+    "pages": [
+     124
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 124] 124 Educational Programs 2026-2027 2026-2027 GENERAL CATALOG CERTIFICATE PROGRAM CORE REQUIREMENTS SUBJECT & NO. C OURSE U NITS ELECTRN 004A* F undamentals of Electronics I ........................... 3 ELEC"
+   },
+   {
+    "control_number": "10731",
+    "pages": [
+     124
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 124] 124 Educational Programs 2026-2027 2026-2027 GENERAL CATALOG CERTIFICATE PROGRAM CORE REQUIREMENTS SUBJECT & NO. C OURSE U NITS ELECTRN 004A* F undamentals of Electronics I ........................... 3 ELEC"
+   },
+   {
+    "control_number": "10733",
+    "pages": [
+     85,
+     86,
+     87,
+     88
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 85] 85 Educational Programs 2026-2027 GENERAL CATALOG 2026-2027 ART 201 D rawing I ............................................. 3 ART 202* D rawing II ............................................ 3 ART 501 B eginn"
+   },
+   {
+    "control_number": "10734",
+    "pages": [
+     87,
+     88
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 87] 87 Educational Programs 2026-2027 GENERAL CATALOG 2026-2027 MULTIMD 650 D esigning for the W eb .................................. 3 MULTIMD 651 A nimation for the W eb ................................. 3 CERTI"
+   },
+   {
+    "control_number": "10735",
+    "pages": [
+     88
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.583,
+    "opens": "[page 88] 88 Educational Programs 2026-2027 2026-2027 GENERAL CATALOG ART 204* L ife Drawing I ......................................... 3 ART 501 B eginning T wo-Dimensional Design .................... 3 ART 502 B eginn"
+   },
+   {
+    "control_number": "10736",
+    "pages": [
+     85,
+     86,
+     87,
+     88
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 85] 85 Educational Programs 2026-2027 GENERAL CATALOG 2026-2027 ART 201 D rawing I ............................................. 3 ART 202* D rawing II ............................................ 3 ART 501 B eginn"
+   },
+   {
+    "control_number": "11814",
+    "pages": [
+     107,
+     108,
+     109
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 107] Office Administration: Advanced Computer Applications certificate adds 11-12 units, which lay the foundation for obtaining additional knowledge and skills in advanced word processing functions and a choice "
+   },
+   {
+    "control_number": "12188",
+    "pages": [
+     155
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.786,
+    "opens": "[page 155] 155 Educational Programs 2026-2027 GENERAL CATALOG 2026-2027 PSYCH 041 L ife-Span Psychology: From Infancy to Old Age .......... 3 PSYCH 052 P sychological Aspects of Human Sexuality ............... 3 PSYCH 06"
+   },
+   {
+    "control_number": "14233",
+    "pages": [
+     93,
+     94
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 93] 93 Educational Programs 2026-2027 GENERAL CATALOG 2026-2027 RETAIL MANAGEMENT (WAFC) Certificate of Achievement (STATE CODE 14233) PROGRAM INFORMATION The completion of the Retail Management Certificate program"
+   },
+   {
+    "control_number": "15032",
+    "pages": [
+     98,
+     99,
+     100
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 98] 98 Educational Programs 2026-2027 2026-2027 GENERAL CATALOG AWARD AWARD TYPE MAJOR CODE GE Infant Care Teacher Certificate P015057D N/A PRESCHOOL Certificate of Achievement (STATE CODE 19008) PROGRAM INFORMATIO"
+   },
+   {
+    "control_number": "15057",
+    "pages": [
+     98,
+     99,
+     100
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 98] Infant Care Teacher Certificate P015057D N/A PRESCHOOL Certificate of Achievement (STATE CODE 19008) PROGRAM INFORMATION Completion of 12 units meets the State Department of Social Services minimum requirement"
+   },
+   {
+    "control_number": "15058",
+    "pages": [
+     99,
+     100
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 99] 99 Educational Programs 2026-2027 GENERAL CATALOG 2026-2027 • Apply evidence-based theoretical and practical concepts with typically and atypically developing young children and their families with a high lev"
+   },
+   {
+    "control_number": "15074",
+    "pages": [
+     109
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 109] 109 Educational Programs 2026-2027 GENERAL CATALOG 2026-2027 WORD PROCESSING: MICROSOFT WORD FOR WINDOWS Certificate of Achievement (STATE CODE 15074) PROGRAM INFORMATION Students may obtain a basic word proc"
+   },
+   {
+    "control_number": "15079",
+    "pages": [
+     112,
+     113,
+     114,
+     115
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 112] 112 Educational Programs 2026-2027 2026-2027 GENERAL CATALOG AWARD AWARD TYPE MAJOR CODE GE Cybersecurity Certificate P037976D N/A *See Catalog course descriptions for prerequisites and/or corequisites. CYBERS"
+   },
+   {
+    "control_number": "15084",
+    "pages": [
+     86,
+     87
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 86] 86 Educational Programs 2026-2027 2026-2027 GENERAL CATALOG MAJOR - REQUIRED COURSES SUBJECT & NO. C OURSE U NITS ART 111 H istory of Contemporary Art ........................... 3 OR MULTIMD 110 V isual Comm"
+   },
+   {
+    "control_number": "15085",
+    "pages": [
+     116
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 116] 116 Educational Programs 2026-2027 2026-2027 GENERAL CATALOG CERTIFICATE - REQUIRED COURSES SUBJECT & NO. C OURSE U NITS CIS 129 Dig ital Image Processing and Programming for the W eb ... 3 OR CIS 130 W eb D"
+   },
+   {
+    "control_number": "15092",
+    "pages": [
+     120,
+     121,
+     122,
+     123
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 120] 120 Educational Programs 2026-2027 2026-2027 GENERAL CATALOG units), 019 (3 units), 022 (3 units), 030 (3 units), 050 (3 units); POLS C1000 (3 units); PSYC C1000 (3 units); PSYCH 002 (3 units), 013 (3 units),"
+   },
+   {
+    "control_number": "15093",
+    "pages": [
+     121,
+     122,
+     123
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 121] 121 Educational Programs 2026-2027 GENERAL CATALOG 2026-2027 AUTOMOTIVE LIGHT SERVICE TECHNICIAN Certificate of Achievement (STATE CODE 15093) Faculty Advisor: Professor David Chhith PROGRAM INFORMATION This "
+   },
+   {
+    "control_number": "15094",
+    "pages": [
+     121,
+     122,
+     123
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 121] 121 Educational Programs 2026-2027 GENERAL CATALOG 2026-2027 AUTOMOTIVE LIGHT SERVICE TECHNICIAN Certificate of Achievement (STATE CODE 15093) Faculty Advisor: Professor David Chhith PROGRAM INFORMATION This "
+   },
+   {
+    "control_number": "15097",
+    "pages": [
+     92,
+     93
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 92] 92 Educational Programs 2026-2027 2026-2027 GENERAL CATALOG • Diagram the process of marketing a product. MAJOR - REQUIRED COURSES SUBJECT & NO. C OURSE U NITS ACCTG 001 I ntroductory Accounting I ..........."
+   },
+   {
+    "control_number": "15101",
+    "pages": [
+     94
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 94] 94 Educational Programs 2026-2027 2026-2027 GENERAL CATALOG TAX PREPARATION Certificate of Achievement (STATE CODE 15101) PROGRAM INFORMATION This certificate prepares students for basic entry-level bookkeeping"
+   },
+   {
+    "control_number": "16756",
+    "pages": [
+     153,
+     154
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 153] 153 Educational Programs 2026-2027 GENERAL CATALOG 2026-2027 CRIMINAL JUSTICE Associate of Arts Degree (STATE CODE 16756) PROGRAM INFORMATION Criminal Justice is a career-oriented liberal arts major focusing u"
+   },
+   {
+    "control_number": "17794",
+    "pages": [
+     104,
+     105,
+     106,
+     107
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 104] 104 Educational Programs 2026-2027 2026-2027 GENERAL CATALOG CERTIFICATE - REQUIRED COURSES CAOT 039 M icrosoft W ord: Basic to Intermediate ................... 3 CAOT 067 M icrosoft Outlook for the Office ..."
+   },
+   {
+    "control_number": "17797",
+    "pages": [
+     116
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 116] 116 Educational Programs 2026-2027 2026-2027 GENERAL CATALOG CERTIFICATE - REQUIRED COURSES SUBJECT & NO. C OURSE U NITS CIS 129 Dig ital Image Processing and Programming for the W eb ... 3 OR CIS 130 W eb D"
+   },
+   {
+    "control_number": "17800",
+    "pages": [
+     108,
+     109
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 108] 108 Educational Programs 2026-2027 2026-2027 GENERAL CATALOG CAOT 114 A dobe Acrobat for the Office and the W eb ............... 2 CAOT 120 A dobe Illustrator for the Office and the W eb ............. 3 CERTIF"
+   },
+   {
+    "control_number": "18837",
+    "pages": [
+     107,
+     108,
+     109
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.667,
+    "opens": "[page 107] 107 Educational Programs 2026-2027 GENERAL CATALOG 2026-2027 *See Catalog course description for prerequisites and/or corequisites. 2Students may substitute Law 010 offered by other colleges in the Los Angele"
+   },
+   {
+    "control_number": "19006",
+    "pages": [
+     105,
+     106,
+     107,
+     108
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 105] 105 Educational Programs 2026-2027 GENERAL CATALOG 2026-2027 CERTIFICATE - REQUIRED COURSES SUBJECT & NO. C OURSE U NITS ART 604 Gr aphic Design I ...................................... 3 CAOT 039 M icrosof"
+   },
+   {
+    "control_number": "19007",
+    "pages": [
+     121,
+     122,
+     123
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 121] 121 Educational Programs 2026-2027 GENERAL CATALOG 2026-2027 AUTOMOTIVE LIGHT SERVICE TECHNICIAN Certificate of Achievement (STATE CODE 15093) Faculty Advisor: Professor David Chhith PROGRAM INFORMATION This "
+   },
+   {
+    "control_number": "19008",
+    "pages": [
+     98,
+     99,
+     100
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 98] Preschool Certificate P019008D N/A PRESCHOOL DIRECTOR Certificate of Achievement (STATE CODE 15032) PROGRAM INFORMATION Completion of 15 units meets the State Department of Social Services minimum requirements"
+   },
+   {
+    "control_number": "19015",
+    "pages": [
+     146,
+     147,
+     148,
+     149
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 146] 146 Educational Programs 2026-2027 2026-2027 GENERAL CATALOG Electives - Select three courses from the following: .............................. 3 DANCEST 822 D ance Rehearsals and Performances I ............."
+   },
+   {
+    "control_number": "19183",
+    "pages": [
+     31,
+     32,
+     33
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.68,
+    "opens": "[page 31] Graduation Requirements for Degrees and Certificates GENERAL CATALOG 2026-2027 31 LACCD General Education Pattern 2026-2027 General Education Requirements: Minimum of 27 semester units. This plan may not be u"
+   },
+   {
+    "control_number": "21781",
+    "pages": [
+     77,
+     78,
+     79,
+     80
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 77] 77 Educational Programs 2026-2027 GENERAL CATALOG 2026-2027 ANML SC 512* A natomy and Physiology of Animals Laboratory. . . . . . . . . . 1 ANML SC 596A Ag ricultural Enterprise Projects ......................."
+   },
+   {
+    "control_number": "21800",
+    "pages": [
+     78,
+     79,
+     80
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 78] 78 Educational Programs 2026-2027 2026-2027 GENERAL CATALOG AWARD AWARD TYPE MAJOR CODE GE Equine Science Certificate P021781D N/A *See Catalog course description for prerequisites and/or corequisites. ¹Credit "
+   },
+   {
+    "control_number": "21801",
+    "pages": [
+     84
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 84] 84 Educational Programs 2026-2027 2026-2027 GENERAL CATALOG CERTIFICATE - REQUIRED COURSES SUBJECT & NO. C OURSE U NITS ARC 110 I ntroduction to Architecture ............................ 1 ARC 111 M ethods of"
+   },
+   {
+    "control_number": "21806",
+    "pages": [
+     101,
+     102,
+     103,
+     104
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 101] 101 Educational Programs 2026-2027 GENERAL CATALOG 2026-2027 CAOT 086 M icrosoft Access: Database ............................. 3 CAOT 110 M icrosoft PowerPoint: Presentation Design .............. 3 MAJOR - TO"
+   },
+   {
+    "control_number": "21807",
+    "pages": [
+     103,
+     104,
+     105,
+     106
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 103] 103 Educational Programs 2026-2027 GENERAL CATALOG 2026-2027 CAOT: GENERAL ADMINISTRATIVE Certificate of Achievement (STATE CODE 21807) PROGRAM INFORMATION The General Administrative Program prepares students "
+   },
+   {
+    "control_number": "21808",
+    "pages": [
+     106,
+     107,
+     108,
+     109
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.857,
+    "opens": "[page 106] 106 Educational Programs 2026-2027 2026-2027 GENERAL CATALOG • Demonstrate competence in the use of state-of-the-art busi - ness-related software to create documents, spreadsheets, presenta - tions, and databa"
+   },
+   {
+    "control_number": "21810",
+    "pages": [
+     114
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 114] 114 Educational Programs 2026-2027 2026-2027 GENERAL CATALOG PROGRAMMING FOR BUSINESS Certificate of Achievement (STATE CODE 21810) PROGRAM INFORMATION The intent of this certificate program is to provide grad"
+   },
+   {
+    "control_number": "21812",
+    "pages": [
+     123
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.765,
+    "opens": "[page 123] 123 Educational Programs 2026-2027 GENERAL CATALOG 2026-2027 A S T 005 S tandard T ransmissions, Clutches, Drive Lines & Differentials ......................................... 3 A S T 006 A utomatic T ransm"
+   },
+   {
+    "control_number": "21814",
+    "pages": [
+     126
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 126] 126 Educational Programs 2026-2027 2026-2027 GENERAL CATALOG TRANSFER STUDENTS Completing the Associate Degree does not necessarily meet the university-admission requirements for transfer. An Associate Degree"
+   },
+   {
+    "control_number": "21816",
+    "pages": [
+     86
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 86] 86 Educational Programs 2026-2027 2026-2027 GENERAL CATALOG MAJOR - REQUIRED COURSES SUBJECT & NO. C OURSE U NITS ART 111 H istory of Contemporary Art ........................... 3 OR MULTIMD 110 V isual Comm"
+   },
+   {
+    "control_number": "21817",
+    "pages": [
+     155
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 155] 155 Educational Programs 2026-2027 GENERAL CATALOG 2026-2027 PSYCH 041 L ife-Span Psychology: From Infancy to Old Age .......... 3 PSYCH 052 P sychological Aspects of Human Sexuality ............... 3 PSYCH 06"
+   },
+   {
+    "control_number": "22923",
+    "pages": [
+     130
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 130] 130 Educational Programs 2026-2027 2026-2027 GENERAL CATALOG Mathematics MATHEMATICS Associate of Arts Degree (STATE CODE 22923) PROGRAM INFORMATION A student may earn a Mathematics Associate Degree in Arts by"
+   },
+   {
+    "control_number": "30477",
+    "pages": [
+     119
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.6,
+    "opens": "[page 119] 119 Educational Programs 2026-2027 GENERAL CATALOG 2026-2027 units), 613 (2 units), 614 (2 units), 621 (2 units), 622 (2 units), 623 (2 units), 624 (2 units), 651 (2 units), 705 (1 unit), 721 (1 unit), 755 (1"
+   },
+   {
+    "control_number": "30908",
+    "pages": [
+     130
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.545,
+    "opens": "[page 130] 130 Educational Programs 2026-2027 2026-2027 GENERAL CATALOG Mathematics MATHEMATICS Associate of Arts Degree (STATE CODE 22923) PROGRAM INFORMATION A student may earn a Mathematics Associate Degree in Arts by"
+   },
+   {
+    "control_number": "32244",
+    "pages": [
+     134,
+     135
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.864,
+    "opens": "[page 134] 134 Educational Programs 2026-2027 2026-2027 GENERAL CATALOG JOURNAL 185 Di rected Study - Journalism ............................. 1 JOURNAL 202* A dvanced Newswriting ................................. 3 JOUR"
+   },
+   {
+    "control_number": "32318",
+    "pages": [
+     151
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.88,
+    "opens": "[page 151] 151 Educational Programs 2026-2027 GENERAL CATALOG 2026-2027 Select one course from the following: ....................................... 4-5 MA TH 240S* T rigonometry with Support ..........................."
+   },
+   {
+    "control_number": "32336",
+    "pages": [
+     151
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.857,
+    "opens": "[page 151] 151 Educational Programs 2026-2027 GENERAL CATALOG 2026-2027 Select one course from the following: ....................................... 4-5 MA TH 240S* T rigonometry with Support ..........................."
+   },
+   {
+    "control_number": "32408",
+    "pages": [
+     50
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 50] 50 Educational Programs 2026-2027 2026-2027 GENERAL CATALOG not to a particular campus or major. Students can use the website ADT Search by CSU Campus to find CSU campuses that accept ADT degrees as being sim"
+   },
+   {
+    "control_number": "32523",
+    "pages": [
+     42,
+     43,
+     44,
+     45
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 42] 42 Educational Programs 2026-2027 2026-2027 GENERAL CATALOG Associate Degrees for Transfer ADMINISTRATION OF JUSTICE Effective: Fall 2014 (Revised Fall 2020; Fall 2023; Fall 2026) Associate in Science for Trans"
+   },
+   {
+    "control_number": "32620",
+    "pages": [
+     72
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 72] 72 Educational Programs 2026-2027 2026-2027 GENERAL CATALOG MAJOR - REQUIRED COURSES SUBJECT & NO. C OURSE U NITS NON-NATIVE TRACK SPANISH 001 E lementary Spanish I ................................... 5 SPANI"
+   },
+   {
+    "control_number": "33036",
+    "pages": [
+     73,
+     74
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.714,
+    "opens": "[page 73] Students completing the Associate in Arts in Theatre Arts for Transfer will have satisfied the lower division major preparation for bachelor’s degrees in similar majors as determined by California State Unive"
+   },
+   {
+    "control_number": "33088",
+    "pages": [
+     55,
+     56,
+     57,
+     58
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.958,
+    "opens": "[page 55] 55 Educational Programs 2026-2027 GENERAL CATALOG 2026-2027 MEDIART 801 Dig ital Media Storytelling .............................. 3 MEDIART 802 I ntroduction to Podcast ................................ 3 MEDIA"
+   },
+   {
+    "control_number": "33110",
+    "pages": [
+     45
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 45] 45 Educational Programs 2026-2027 GENERAL CATALOG 2026-2027 MAJOR - REQUIRED COURSES SUBJECT & NO. C OURSE U NITS ANTHRO 101 H uman Biological Evolution ........................... 3 ANTHRO 102 H uman W ays "
+   },
+   {
+    "control_number": "33253",
+    "pages": [
+     134,
+     135
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 134] 134 Educational Programs 2026-2027 2026-2027 GENERAL CATALOG JOURNAL 185 Di rected Study - Journalism ............................. 1 JOURNAL 202* A dvanced Newswriting ................................. 3 JOUR"
+   },
+   {
+    "control_number": "35018",
+    "pages": [
+     115
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 115] 115 Educational Programs 2026-2027 GENERAL CATALOG 2026-2027 MA TH 262* C alculus II ............................................ 5 PHILOS 009 S ymbolic Logic I ....................................... 3 ST A "
+   },
+   {
+    "control_number": "35019",
+    "pages": [
+     82
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.545,
+    "opens": "[page 82] 82 Educational Programs 2026-2027 2026-2027 GENERAL CATALOG See page 327 of this catalog for more information on transfer requirements and resources. PROGRAM LEARNING OUTCOMES Upon completion of this program, s"
+   },
+   {
+    "control_number": "35196",
+    "pages": [
+     64
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 64] 64 Educational Programs 2026-2027 2026-2027 GENERAL CATALOG on which CSU campuses accept this degree can be found at https://icangotocollege.com / PROGRAM INFORMATION Students completing the Associate in Arts "
+   },
+   {
+    "control_number": "35282",
+    "pages": [
+     56
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 56] 56 Educational Programs 2026-2027 2026-2027 GENERAL CATALOG GEOLOGY Effective: Fall 2016 (Revised Fall 2020) Associate in Science for Transfer Degree (AS-T) (STATE CODE 35282) This degree is intended for studen"
+   },
+   {
+    "control_number": "35307",
+    "pages": [
+     44,
+     45,
+     46,
+     47
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 44] 44 Educational Programs 2026-2027 2026-2027 GENERAL CATALOG To earn an Associate Degree for Transfer, students must complete 60 semester units (or 90 quarter units) of coursework that is transferable to the Ca"
+   },
+   {
+    "control_number": "35334",
+    "pages": [
+     33
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 33] Graduation Requirements for Degrees and Certificates GENERAL CATALOG 2026-2027 33 Course Identification Numbering System (C-ID) The Course Identification Numbering System (C-ID) is a statewide numbering system"
+   },
+   {
+    "control_number": "35460",
+    "pages": [
+     60,
+     61
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.981,
+    "opens": "[page 60] Students completing the Associate in Arts in Kinesiology for Transfer will have satisfied the lower division major preparation for bachelor’s degrees in similar majors as determined by California State Univer"
+   },
+   {
+    "control_number": "35462",
+    "pages": [
+     54,
+     55
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 54] 54 Educational Programs 2026-2027 2026-2027 GENERAL CATALOG • Analyze conventional resource management strategies and current sustainable practices that promote the conservation of natural resources. MAJOR - "
+   },
+   {
+    "control_number": "35464",
+    "pages": [
+     52,
+     53
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.783,
+    "opens": "[page 52] 52 Educational Programs 2026-2027 2026-2027 GENERAL CATALOG as determined by California State University (CSU) campuses and are guaranteed admission with junior status to the California State University syste"
+   },
+   {
+    "control_number": "35897",
+    "pages": [
+     71
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 71] 71 Educational Programs 2026-2027 GENERAL CATALOG 2026-2027 State University with an overall GPA of 2.0 or higher, and also complete each of the following requirements: 1. Major/Area of Emphasis: A minimum of "
+   },
+   {
+    "control_number": "35898",
+    "pages": [
+     53
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 53] 53 Educational Programs 2026-2027 GENERAL CATALOG 2026-2027 PROGRAM LEARNING OUTCOMES Upon completion of this program, students will: • Apply active reading strategies in order to critically analyze rhetorical"
+   },
+   {
+    "control_number": "35975",
+    "pages": [
+     46
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 46] 46 Educational Programs 2026-2027 2026-2027 GENERAL CATALOG MAJOR - REQUIRED COURSES SUBJECT & NO. C OURSE U NITS ARTH C1100 S urvey of Art from Prehistory to the Medieval Era ........ 3 OR ARTH C1200 S urvey"
+   },
+   {
+    "control_number": "35979",
+    "pages": [
+     33
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.818,
+    "opens": "[page 33] Graduation Requirements for Degrees and Certificates GENERAL CATALOG 2026-2027 33 Course Identification Numbering System (C-ID) The Course Identification Numbering System (C-ID) is a statewide numbering system"
+   },
+   {
+    "control_number": "36039",
+    "pages": [
+     157
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 157] 157 Educational Programs 2026-2027 GENERAL CATALOG 2026-2027 ESSENTIAL ENGLISH COMMUNICATION SKILLS Certificate of Competency (STATE CODE 36039) PROGRAM INFORMATION This certificate of competency gives studen"
+   },
+   {
+    "control_number": "36040",
+    "pages": [
+     160
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 160] 160 Educational Programs 2026-2027 2026-2027 GENERAL CATALOG • Navigate the U.S. higher education system by identifying campus resources, setting career goals, and demonstrating the leadership skills necessa"
+   },
+   {
+    "control_number": "36044",
+    "pages": [
+     152
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 152] 152 Educational Programs 2026-2027 2026-2027 GENERAL CATALOG and earn an associate degree, early educational planning can make this goal achievable. You should meet with a counselor early in your studies to "
+   },
+   {
+    "control_number": "36137",
+    "pages": [
+     102,
+     103,
+     104,
+     105
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 102] 102 Educational Programs 2026-2027 2026-2027 GENERAL CATALOG • Basic computer application skills, including beginning Excel, Word, and Outlook. • The fundamentals of computer systems. • Critical thinking and "
+   },
+   {
+    "control_number": "36294",
+    "pages": [
+     66,
+     67,
+     68,
+     69
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 66] 66 Educational Programs 2026-2027 2026-2027 GENERAL CATALOG ECON 010 Ec onomic History of the United States .................. 3 HIST C1001 U nited States History to 1877 .......................... 3 HIST C100"
+   },
+   {
+    "control_number": "36613",
+    "pages": [
+     166
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 166] The Phlebotomy Technician I Certificate of Completion will prepare students with the hands-on skills and knowledge needed for an entry- level career as a Phlebotomy Technician I. Phlebotomy Technicians are a"
+   },
+   {
+    "control_number": "36785",
+    "pages": [
+     135,
+     136,
+     137
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 135] 135 Educational Programs 2026-2027 GENERAL CATALOG 2026-2027 • Students will develop a personal visual and writing style which will help them to create a portfolio and related materials for job preparation. "
+   },
+   {
+    "control_number": "36879",
+    "pages": [
+     164
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 164] 164 Educational Programs 2026-2027 2026-2027 GENERAL CATALOG CERTIFICATE - REQUIRED COURSES SUBJECT & NO. C OURSE HO URS VOC ED 565CE I ntroduction to Electric Zero Emissions V ehicle (ZEV) T echnology ....."
+   },
+   {
+    "control_number": "36910",
+    "pages": [
+     125
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 125] Gas and Electric Welding AS P036910C Cal-GETC (34 units)LACCD GE (21 units) *See Catalog course description for prerequisites and/or corequisites. GAS AND ELECTRIC WELDING Certificate of Achievement (STATE COD"
+   },
+   {
+    "control_number": "36911",
+    "pages": [
+     125
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 125] 125 Educational Programs 2026-2027 GENERAL CATALOG 2026-2027 • Work independently and interdependently to safely accomplish shared professional outcomes. • Students will be knowledgeable, and demonstrate weld"
+   },
+   {
+    "control_number": "36946",
+    "pages": [
+     132,
+     133,
+     134,
+     135
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 132] Photography AS P036946C Cal-GETC (34 units)LACCD GE (21 units) *See Catalog course description for prerequisites and/or corequisites. PHOTOGRAPHY Certificate of Achievement (STATE CODE 36947) PROGRAM INFORMATI"
+   },
+   {
+    "control_number": "36947",
+    "pages": [
+     132,
+     133,
+     134,
+     135
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 132] 132 Educational Programs 2026-2027 2026-2027 GENERAL CATALOG AWARD AWARD TYPE MAJOR CODE GE Photography AS P036946C Cal-GETC (34 units)LACCD GE (21 units) *See Catalog course description for prerequisites and/"
+   },
+   {
+    "control_number": "37084",
+    "pages": [
+     285
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 285] 285 Course Descriptions GENERAL CATALOG 2026-2027 VOC ED 372CE Fundamentals of Medical Assisting (0) (NDA) - RPT 9 Lecture 2 hours. Students are introduced to the role and responsibilities of the entry-level m"
+   },
+   {
+    "control_number": "37184",
+    "pages": [
+     163,
+     164
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 163] Earning an EKG Technician Certificate of Completion may be the start of a successful and meaningful career that can help make a difference in countless lives. Students enrolled in this program are trained t"
+   },
+   {
+    "control_number": "37217",
+    "pages": [
+     43,
+     44,
+     45,
+     46
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 43] 43 Educational Programs 2026-2027 GENERAL CATALOG 2026-2027 AGRICULTURE ANIMAL SCIENCES Effective: Spring 2015 (Revised Fall 2018; Fall 2019; Fall 2020; Fall 2021; Fall 2023; Fall 2025; Fall 2026) Associate in"
+   },
+   {
+    "control_number": "37234",
+    "pages": [
+     137
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 137] 137 Educational Programs 2026-2027 GENERAL CATALOG 2026-2027 GAINFUL EMPLOYMENT To find information about the careers for which this certificate prepares you, the costs associated with the program, median deb"
+   },
+   {
+    "control_number": "37835",
+    "pages": [
+     162
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 162] 162 Educational Programs 2026-2027 2026-2027 GENERAL CATALOG COLLEGE READINESS Certificate of Completion (STATE CODE 46407) PROGRAM INFORMATION The College Readiness Certificate of Completion is a comprehensiv"
+   },
+   {
+    "control_number": "37957",
+    "pages": [
+     139
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 139] 139 Educational Programs 2026-2027 GENERAL CATALOG 2026-2027 write on broader topics. Although not required in the degree, a conversation class is available for students who wish to increase their oral profi"
+   },
+   {
+    "control_number": "37976",
+    "pages": [
+     112,
+     113,
+     114,
+     115
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 112] Cybersecurity Certificate P037976D N/A *See Catalog course descriptions for prerequisites and/or corequisites. CYBERSECURITY & NETWORKING TECHNOLOGY Certificate of Achievement (STATE CODE 08323) PROGRAM INFO"
+   },
+   {
+    "control_number": "38338",
+    "pages": [
+     161,
+     162
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 161] 161 Educational Programs 2026-2027 GENERAL CATALOG 2026-2027 Noncredit Certificate of Completion BASIC GIS AND GPS SKILLS Certificate of Completion (STATE CODE 45703) PROGRAM INFORMATION This introductory non-"
+   },
+   {
+    "control_number": "38339",
+    "pages": [
+     162
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 162] 162 Educational Programs 2026-2027 2026-2027 GENERAL CATALOG COLLEGE READINESS Certificate of Completion (STATE CODE 46407) PROGRAM INFORMATION The College Readiness Certificate of Completion is a comprehensiv"
+   },
+   {
+    "control_number": "38606",
+    "pages": [
+     110,
+     111,
+     112,
+     113
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 110] 110 Educational Programs 2026-2027 2026-2027 GENERAL CATALOG • Collaborate in a team designing business solutions in an industry aligned project. CERTIFICATE - REQUIRED COURSES SUBJECT & NO. C OURSE U NITS "
+   },
+   {
+    "control_number": "38673",
+    "pages": [
+     58,
+     59,
+     60,
+     61
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.9,
+    "opens": "[page 58] 58 Educational Programs 2026-2027 2026-2027 GENERAL CATALOG HISTORY 044 The M exican American in the History of the United States II ............................................. 3 HISTORY 052 The R ole of W"
+   },
+   {
+    "control_number": "39277",
+    "pages": [
+     148,
+     149
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 148] 148 Educational Programs 2026-2027 2026-2027 GENERAL CATALOG THEATER: DANCE Associate of Arts Degree (STATE CODE 39277) PROGRAM INFORMATION The goal of the Associates in Arts in Theater: Dance at Los Angeles "
+   },
+   {
+    "control_number": "39501",
+    "pages": [
+     168
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 168] 168 Educational Programs 2026-2027 2026-2027 GENERAL CATALOG VOCATIONAL EDUCATION EXPLORATION AND FOUNDATIONAL SKILLS Certificate of Completion (STATE CODE 45608) PROGRAM INFORMATION The Vocational Education "
+   },
+   {
+    "control_number": "39954",
+    "pages": [
+     165
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 165] The Landscape Technician Certificate of Completion prepares students for a career in the Landscape Industry by building their technical knowledge in the areas of design and drafting, project management, bus"
+   },
+   {
+    "control_number": "39969",
+    "pages": [
+     110,
+     111,
+     112,
+     113
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 110] 110 Educational Programs 2026-2027 2026-2027 GENERAL CATALOG • Collaborate in a team designing business solutions in an industry aligned project. CERTIFICATE - REQUIRED COURSES SUBJECT & NO. C OURSE U NITS "
+   },
+   {
+    "control_number": "40273",
+    "pages": [
+     135
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 135] 135 Educational Programs 2026-2027 GENERAL CATALOG 2026-2027 • Students will develop a personal visual and writing style which will help them to create a portfolio and related materials for job preparation. "
+   },
+   {
+    "control_number": "40634",
+    "pages": [
+     100
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 100] 100 Educational Programs 2026-2027 2026-2027 GENERAL CATALOG GAINFUL EMPLOYMENT To find information about the careers for which this certificate prepares you, the costs associated with the program, median deb"
+   },
+   {
+    "control_number": "41088",
+    "pages": [
+     47,
+     48
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 47] 47 Educational Programs 2026-2027 GENERAL CATALOG 2026-2027 BUSINESS ADMINISTRATION 2.0 Effective: Fall 2021 (Revised Fall 2023; Fall 2026) Associate in Science for Transfer Degree (AS-T) (STATE CODE 41088) Thi"
+   },
+   {
+    "control_number": "41890",
+    "pages": [
+     92,
+     93,
+     94
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 92] 92 Educational Programs 2026-2027 2026-2027 GENERAL CATALOG • Diagram the process of marketing a product. MAJOR - REQUIRED COURSES SUBJECT & NO. C OURSE U NITS ACCTG 001 I ntroductory Accounting I ..........."
+   },
+   {
+    "control_number": "41891",
+    "pages": [
+     93,
+     94
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 93] 93 Educational Programs 2026-2027 GENERAL CATALOG 2026-2027 RETAIL MANAGEMENT (WAFC) Certificate of Achievement (STATE CODE 14233) PROGRAM INFORMATION The completion of the Retail Management Certificate program"
+   },
+   {
+    "control_number": "41946",
+    "pages": [
+     156
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 156] 156 Educational Programs 2026-2027 2026-2027 GENERAL CATALOG Noncredit Certificate of Competency ACADEMIC BRIDGE Certificate of Competency (STATE CODE 46408) PROGRAM INFORMATION This certificate prepares new s"
+   },
+   {
+    "control_number": "42018",
+    "pages": [
+     157,
+     158
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 157] 157 Educational Programs 2026-2027 GENERAL CATALOG 2026-2027 ESSENTIAL ENGLISH COMMUNICATION SKILLS Certificate of Competency (STATE CODE 36039) PROGRAM INFORMATION This certificate of competency gives studen"
+   },
+   {
+    "control_number": "42270",
+    "pages": [
+     228
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.5,
+    "opens": "[page 228] 228 Course Descriptions 2026-2027 GENERAL CATALOG ESL NC 015CE English as a Second Language - IV (0) (NDA) - RPT 9 Lecture 12 hours. This high-beginning ESL course focuses on English communication, reading, an"
+   },
+   {
+    "control_number": "42274",
+    "pages": [
+     227,
+     228,
+     229
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 227] 227 Course Descriptions GENERAL CATALOG 2026-2027 compositions and paragraphs based on advanced ESL reading, critical thinking, interpretation/analysis, and personal experience. Students will be introduced to"
+   },
+   {
+    "control_number": "42275",
+    "pages": [
+     227,
+     228
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 227] 227 Course Descriptions GENERAL CATALOG 2026-2027 compositions and paragraphs based on advanced ESL reading, critical thinking, interpretation/analysis, and personal experience. Students will be introduced to"
+   },
+   {
+    "control_number": "42276",
+    "pages": [
+     158
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 158] 158 Educational Programs 2026-2027 2026-2027 GENERAL CATALOG proficiency (TI-30XS), and expertise in a computer-based assessment environment. This certificate serves as a clear pathway to obtaining a high sc"
+   },
+   {
+    "control_number": "42404",
+    "pages": [
+     161
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 161] 161 Educational Programs 2026-2027 GENERAL CATALOG 2026-2027 Noncredit Certificate of Completion BASIC GIS AND GPS SKILLS Certificate of Completion (STATE CODE 45703) PROGRAM INFORMATION This introductory non-"
+   },
+   {
+    "control_number": "42426",
+    "pages": [
+     164
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 164] 164 Educational Programs 2026-2027 2026-2027 GENERAL CATALOG CERTIFICATE - REQUIRED COURSES SUBJECT & NO. C OURSE HO URS VOC ED 565CE I ntroduction to Electric Zero Emissions V ehicle (ZEV) T echnology ....."
+   },
+   {
+    "control_number": "42427",
+    "pages": [
+     167
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 167] The Tutor Training Leadership Certificate of Completion is designed to cultivate skilled and effective leaders within the tutoring commu - nity. This advanced program builds upon foundational and advanced tu"
+   },
+   {
+    "control_number": "42428",
+    "pages": [
+     166,
+     167,
+     168
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 166] The Medical Front Office Assistant Certificate of Completion trains students to oversee organizational tasks, such as scheduling, manag - ing records, medical billing, and checking in patients. The program p"
+   },
+   {
+    "control_number": "42439",
+    "pages": [
+     166
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 166] 166 Educational Programs 2026-2027 2026-2027 GENERAL CATALOG VOC ED 378CE E ssential Skills in Medical Insurance Coding and Billing for Medical Assistants ................................... 36 VOC ED 379CE B"
+   },
+   {
+    "control_number": "42512",
+    "pages": [
+     74
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 74] 74 Educational Programs 2026-2027 2026-2027 GENERAL CATALOG THEA TER 2921 R ehearsals and Performances II ......................... 2 THEA TER 2931 R ehearsals and Performances III ......................... 3"
+   },
+   {
+    "control_number": "42533",
+    "pages": [
+     74
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": false,
+    "coverage": 0.9,
+    "opens": "[page 74] 74 Educational Programs 2026-2027 2026-2027 GENERAL CATALOG THEA TER 2921 R ehearsals and Performances II ......................... 2 THEA TER 2931 R ehearsals and Performances III ......................... 3"
+   },
+   {
+    "control_number": "42945",
+    "pages": [
+     129
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 129] Biotechnology Lab Assistant Certificate P042945D N/A *See Catalog course description for prerequisites and/or corequisites. BIOTECHNOLOGY RESEARCH LAB ASSISTANT Certificate of Achievement (STATE CODE 43219) P"
+   },
+   {
+    "control_number": "43098",
+    "pages": [
+     128,
+     129,
+     130
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 128] 128 Educational Programs 2026-2027 2026-2027 GENERAL CATALOG CERTIFICATE - REQUIRED COURSES SUBJECT & NO. C OURSE U NITS BIOLOGY 006* G eneral Biology I ...................................... 5 BIOTECH 001 F"
+   },
+   {
+    "control_number": "43219",
+    "pages": [
+     129
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 129] 129 Educational Programs 2026-2027 GENERAL CATALOG 2026-2027 GAINFUL EMPLOYMENT To find information about the careers for which this certificate prepares you, the costs associated with the program, median deb"
+   },
+   {
+    "control_number": "43458",
+    "pages": [
+     49
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 49] 49 Educational Programs 2026-2027 GENERAL CATALOG 2026-2027 OR SOC 028 The F amily: A Sociological Approach .................... 3 BIOLOGY 003 I ntroduction to Biology ................................ 4 EDUC 2"
+   },
+   {
+    "control_number": "43510",
+    "pages": [
+     145,
+     146,
+     147,
+     148
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 145] 145 Educational Programs 2026-2027 GENERAL CATALOG 2026-2027 Performing Arts ACTING Certificate of Achievement (STATE CODE 43510) PROGRAM INFORMATION This certificate prepares students for careers in the perfo"
+   },
+   {
+    "control_number": "43713",
+    "pages": [
+     152,
+     153,
+     154
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 152] 152 Educational Programs 2026-2027 2026-2027 GENERAL CATALOG and earn an associate degree, early educational planning can make this goal achievable. You should meet with a counselor early in your studies to "
+   },
+   {
+    "control_number": "43745",
+    "pages": [
+     158
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 158] The GED Preparation for Spanish Speakers Certificate of completion prepares students to pass the four sections of the General Educational Development exam in Spanish: Razonamiento a Través de las Artes Del "
+   },
+   {
+    "control_number": "43746",
+    "pages": [
+     164
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 164] The Internship Workplace Support Certificate of Completion provides students with contextualized support while engaged in an internship or similar work-based learning experience. The coursework will provide"
+   },
+   {
+    "control_number": "43779",
+    "pages": [
+     164
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": false,
+    "coverage": 1.0,
+    "opens": "[page 164] 164 Educational Programs 2026-2027 2026-2027 GENERAL CATALOG CERTIFICATE - REQUIRED COURSES SUBJECT & NO. C OURSE HO URS VOC ED 565CE I ntroduction to Electric Zero Emissions V ehicle (ZEV) T echnology ....."
+   },
+   {
+    "control_number": "43780",
+    "pages": [
+     163
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 163] 163 Educational Programs 2026-2027 GENERAL CATALOG 2026-2027 PROGRAM LEARNING OUTCOMES Upon completion of this program, students will: • Demonstrate proper techniques in the use of cleaning materials and equi"
+   },
+   {
+    "control_number": "44966",
+    "pages": [
+     141,
+     142,
+     143
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 141] 141 Educational Programs 2026-2027 GENERAL CATALOG 2026-2027 AWARD AWARD TYPE MAJOR CODE GE Applied Music Certificate P045038D N/A *See Catalog course description for prerequisites and/or corequisites. COMMERC"
+   },
+   {
+    "control_number": "44998",
+    "pages": [
+     142,
+     143
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 142] 142 Educational Programs 2026-2027 2026-2027 GENERAL CATALOG MUSIC 250-1 M usic Performance W orkshop I ......................... 1 OR MUSIC 250-2 M usic Performance W orkshop II ........................ 1 OR "
+   },
+   {
+    "control_number": "45035",
+    "pages": [
+     31,
+     32,
+     33
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.596,
+    "opens": "[page 31] Graduation Requirements for Degrees and Certificates GENERAL CATALOG 2026-2027 31 LACCD General Education Pattern 2026-2027 General Education Requirements: Minimum of 27 semester units. This plan may not be u"
+   },
+   {
+    "control_number": "45038",
+    "pages": [
+     141,
+     142,
+     143
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 141] Applied Music Certificate P045038D N/A *See Catalog course description for prerequisites and/or corequisites. COMMERCIAL MUSIC Certificate of Achievement (STATE CODE 44966) PROGRAM INFORMATION The Certificate "
+   },
+   {
+    "control_number": "45475",
+    "pages": [
+     167,
+     168
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 167] 167 Educational Programs 2026-2027 GENERAL CATALOG 2026-2027 SUCCESS SKILLS FOR THE FIRST-TIME HOSPITALITY SUPERVISOR Certificate of Completion (STATE CODE 45475) PROGRAM INFORMATION The Success Skills for th"
+   },
+   {
+    "control_number": "45502",
+    "pages": [
+     146,
+     147,
+     148,
+     149
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.692,
+    "opens": "[page 146] 146 Educational Programs 2026-2027 2026-2027 GENERAL CATALOG Electives - Select three courses from the following: .............................. 3 DANCEST 822 D ance Rehearsals and Performances I ............."
+   },
+   {
+    "control_number": "45546",
+    "pages": [
+     142,
+     143
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 142] 142 Educational Programs 2026-2027 2026-2027 GENERAL CATALOG MUSIC 250-1 M usic Performance W orkshop I ......................... 1 OR MUSIC 250-2 M usic Performance W orkshop II ........................ 1 OR "
+   },
+   {
+    "control_number": "45551",
+    "pages": [
+     105,
+     106,
+     107,
+     108
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 105] 105 Educational Programs 2026-2027 GENERAL CATALOG 2026-2027 CERTIFICATE - REQUIRED COURSES SUBJECT & NO. C OURSE U NITS ART 604 Gr aphic Design I ...................................... 3 CAOT 039 M icrosof"
+   },
+   {
+    "control_number": "45552",
+    "pages": [
+     128,
+     129
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 128] 128 Educational Programs 2026-2027 2026-2027 GENERAL CATALOG CERTIFICATE - REQUIRED COURSES SUBJECT & NO. C OURSE U NITS BIOLOGY 006* G eneral Biology I ...................................... 5 BIOTECH 001 F"
+   },
+   {
+    "control_number": "45605",
+    "pages": [
+     156
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 156] 156 Educational Programs 2026-2027 2026-2027 GENERAL CATALOG Noncredit Certificate of Competency ACADEMIC BRIDGE Certificate of Competency (STATE CODE 46408) PROGRAM INFORMATION This certificate prepares new s"
+   },
+   {
+    "control_number": "45608",
+    "pages": [
+     168
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 168] 168 Educational Programs 2026-2027 2026-2027 GENERAL CATALOG VOCATIONAL EDUCATION EXPLORATION AND FOUNDATIONAL SKILLS Certificate of Completion (STATE CODE 45608) PROGRAM INFORMATION The Vocational Education "
+   },
+   {
+    "control_number": "45703",
+    "pages": [
+     161
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 161] 161 Educational Programs 2026-2027 GENERAL CATALOG 2026-2027 Noncredit Certificate of Completion BASIC GIS AND GPS SKILLS Certificate of Completion (STATE CODE 45703) PROGRAM INFORMATION This introductory non-"
+   },
+   {
+    "control_number": "45705",
+    "pages": [
+     167
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 167] 167 Educational Programs 2026-2027 GENERAL CATALOG 2026-2027 SUCCESS SKILLS FOR THE FIRST-TIME HOSPITALITY SUPERVISOR Certificate of Completion (STATE CODE 45475) PROGRAM INFORMATION The Success Skills for th"
+   },
+   {
+    "control_number": "45726",
+    "pages": [
+     120
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 120] 120 Educational Programs 2026-2027 2026-2027 GENERAL CATALOG units), 019 (3 units), 022 (3 units), 030 (3 units), 050 (3 units); POLS C1000 (3 units); PSYC C1000 (3 units); PSYCH 002 (3 units), 013 (3 units),"
+   },
+   {
+    "control_number": "46078",
+    "pages": [
+     50,
+     51
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 50] 50 Educational Programs 2026-2027 2026-2027 GENERAL CATALOG not to a particular campus or major. Students can use the website ADT Search by CSU Campus to find CSU campuses that accept ADT degrees as being sim"
+   },
+   {
+    "control_number": "46088",
+    "pages": [
+     62,
+     63
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 62] 62 Educational Programs 2026-2027 2026-2027 GENERAL CATALOG ECON C2002* P rinciples of Macroeconomics. . . . . . . . . . . . . . . . . . . . . . . . . . . 3 Area 4: Political Science POL SCI 002 I ntroduction t"
+   },
+   {
+    "control_number": "46089",
+    "pages": [
+     65
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 65] 65 Educational Programs 2026-2027 GENERAL CATALOG 2026-2027 3. Residency: A minimum of 12 semester units must be completed within the LACCD (Title 5 §55062). PROGRAM LEARNING OUTCOMES Upon completion of this p"
+   },
+   {
+    "control_number": "46100",
+    "pages": [
+     157
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 157] 157 Educational Programs 2026-2027 GENERAL CATALOG 2026-2027 ESSENTIAL ENGLISH COMMUNICATION SKILLS Certificate of Competency (STATE CODE 36039) PROGRAM INFORMATION This certificate of competency gives studen"
+   },
+   {
+    "control_number": "46329",
+    "pages": [
+     95,
+     96
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 95] 95 Educational Programs 2026-2027 GENERAL CATALOG 2026-2027 • Communicate technical information effectively in written and oral formats using appropriate chemical and biotechnology ter - minology, including pr"
+   },
+   {
+    "control_number": "46331",
+    "pages": [
+     96
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 96] 96 Educational Programs 2026-2027 2026-2027 GENERAL CATALOG through the Associate of Science Degree in Chemical Technology or transfer to four-year institutions pursuing bachelor’s degrees in chemistry, biote"
+   },
+   {
+    "control_number": "46335",
+    "pages": [
+     52,
+     53
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.85,
+    "opens": "[page 52] 52 Educational Programs 2026-2027 2026-2027 GENERAL CATALOG as determined by California State University (CSU) campuses and are guaranteed admission with junior status to the California State University syste"
+   },
+   {
+    "control_number": "46342",
+    "pages": [
+     67,
+     68,
+     69,
+     70
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 67] 67 Educational Programs 2026-2027 GENERAL CATALOG 2026-2027 Associate in Science for Transfer Degree (AS-T) (STATE CODE 46342) This degree is intended for students transferring to a California State University"
+   },
+   {
+    "control_number": "46407",
+    "pages": [
+     162
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 162] The College Readiness Certificate of Completion is a comprehensive preparatory sequence that empowers students to take control of their educational journey. The program begins with an in-depth focus on Foun"
+   },
+   {
+    "control_number": "46408",
+    "pages": [
+     156
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 156] 156 Educational Programs 2026-2027 2026-2027 GENERAL CATALOG Noncredit Certificate of Competency ACADEMIC BRIDGE Certificate of Competency (STATE CODE 46408) PROGRAM INFORMATION This certificate prepares new s"
+   },
+   {
+    "control_number": "46459",
+    "pages": [
+     41,
+     42,
+     43,
+     44
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.833,
+    "opens": "[page 41] 41 Educational Programs 2026-2027 GENERAL CATALOG 2026-2027 CHEM 060* I ntroduction to General Chemistry or higher ............. 5 ST A T C1000* I ntroduction to Statistics ............................... 4 Com"
+   },
+   {
+    "control_number": "46477",
+    "pages": [
+     154
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 154] 154 Educational Programs 2026-2027 2026-2027 GENERAL CATALOG • Promote ethical and legal awareness – ensure students understand legal frameworks, ethical considerations, and procedural require - ments related"
+   },
+   {
+    "control_number": "46549",
+    "pages": [
+     48
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 48] 48 Educational Programs 2026-2027 2026-2027 GENERAL CATALOG 3. Residency: A minimum of 12 semester units must be completed within the LACCD (Title 5 §55062). PROGRAM LEARNING OUTCOMES Upon completion of this p"
+   }
+  ],
+  "unproven": [
+   "42533",
+   "43779"
+  ]
  },
  "loads": 1,
- "seconds": 97.6,
- "found": 194,
+ "seconds": 104.0,
+ "found": 191,
  "by_method": {
   "no_closed_list": 12,
-  "not_found": 2,
-  "pdf_pages": 194
+  "not_found": 5,
+  "pdf_pages": 191
  },
  "shared_pages": {
   "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=77": [
    "02809",
    "21781"
   ],
+  "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=82": [
+   "02810",
+   "35019"
+  ],
   "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=79": [
    "02811",
    "10726"
   ],
-  "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=83": [
-   "02814",
-   "21801"
-  ],
   "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=88": [
    "02817",
-   "41890"
+   "10735"
   ],
   "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=92": [
    "02818",
-   "15097"
+   "15097",
+   "41890"
   ],
   "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=101": [
    "02820",
@@ -58,10 +2411,9 @@
    "02821",
    "21808"
   ],
-  "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=131": [
-   "02822",
-   "36946",
-   "36947"
+  "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=114": [
+   "02824",
+   "21810"
   ],
   "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=149": [
    "02826",
@@ -69,12 +2421,6 @@
   ],
   "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=123": [
    "02827",
-   "10729",
-   "10730",
-   "10731"
-  ],
-  "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=122": [
-   "02828",
    "21812"
   ],
   "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=126": [
@@ -83,13 +2429,12 @@
   ],
   "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=84": [
    "02834",
-   "10735"
+   "21801"
   ],
-  "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=33": [
+  "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=142": [
    "02835",
-   "35334",
-   "35979",
-   "46089"
+   "44998",
+   "45546"
   ],
   "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=147": [
    "02836",
@@ -101,25 +2446,19 @@
   ],
   "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=102": [
    "08318",
-   "08319",
-   "08320",
-   "21807",
    "36137"
   ],
-  "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=113": [
-   "08322",
-   "21810"
+  "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=108": [
+   "08319",
+   "17800"
+  ],
+  "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=104": [
+   "08320",
+   "17794"
   ],
   "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=112": [
    "08323",
-   "15079"
-  ],
-  "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=136": [
-   "08325",
-   "37234"
-  ],
-  "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=111": [
-   "08326",
+   "15079",
    "37976"
   ],
   "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=86": [
@@ -127,31 +2466,39 @@
    "15084",
    "21816"
   ],
-  "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=96": [
-   "08330",
-   "15057"
-  ],
-  "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=140": [
-   "08333",
-   "45038"
-  ],
   "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=97": [
-   "10350",
-   "15058",
-   "19008"
+   "08330",
+   "10350"
+  ],
+  "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=99": [
+   "10349",
+   "15058"
+  ],
+  "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=124": [
+   "10729",
+   "10730",
+   "10731"
   ],
   "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=85": [
    "10733",
    "10736"
   ],
-  "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=154": [
+  "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=107": [
+   "11814",
+   "18837"
+  ],
+  "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=155": [
    "12188",
-   "21817",
-   "46477"
+   "21817"
   ],
   "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=93": [
    "14233",
    "41891"
+  ],
+  "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=98": [
+   "15032",
+   "15057",
+   "19008"
   ],
   "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=116": [
    "15085",
@@ -166,14 +2513,13 @@
    "15094",
    "19007"
   ],
-  "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=42": [
-   "16756",
-   "32523",
-   "43713"
-  ],
   "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=105": [
    "19006",
    "45551"
+  ],
+  "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=146": [
+   "19015",
+   "45502"
   ],
   "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=31": [
    "19183",
@@ -187,18 +2533,17 @@
    "32244",
    "33253"
   ],
+  "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=151": [
+   "32318",
+   "32336"
+  ],
   "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=50": [
    "32408",
    "46078"
   ],
-  "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=145": [
-   "33036",
-   "43510",
-   "45502"
-  ],
-  "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=60": [
-   "35460",
-   "45479"
+  "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=33": [
+   "35334",
+   "35979"
   ],
   "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=52": [
    "35464",
@@ -208,6 +2553,10 @@
    "36039",
    "42018",
    "46100"
+  ],
+  "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=152": [
+   "36044",
+   "43713"
   ],
   "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=166": [
    "36613",
@@ -221,12 +2570,15 @@
   "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=164": [
    "36879",
    "42426",
-   "43746",
-   "43779"
+   "43746"
   ],
   "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=125": [
    "36910",
    "36911"
+  ],
+  "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=132": [
+   "36946",
+   "36947"
   ],
   "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=163": [
    "37184",
@@ -255,7 +2607,7 @@
    "45605",
    "46408"
   ],
-  "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=159": [
+  "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=227": [
    "42274",
    "42275"
   ],
@@ -268,23 +2620,17 @@
    "45475",
    "45705"
   ],
-  "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=74": [
-   "42512",
-   "42533"
+  "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=129": [
+   "42945",
+   "43219"
   ],
   "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=128": [
-   "42945",
    "43098",
-   "43219",
    "45552"
   ],
   "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=141": [
    "44966",
-   "45546"
-  ],
-  "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=95": [
-   "46329",
-   "46331"
+   "45038"
   ]
  },
  "not_found": [
@@ -305,1698 +2651,401 @@
     "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=119",
     "coverage": 0.264
    }
+  },
+  {
+   "control_number": "42533",
+   "title": "UCTP Physics",
+   "award": "A.S. T Degree",
+   "near_miss": {
+    "pages": [
+     74
+    ],
+    "coverage": 0.9,
+    "why": "the page prints neither the control number nor the title and award"
+   }
+  },
+  {
+   "control_number": "43779",
+   "title": "Electric Vehicle Services for Light-Duty Zero-Emission Vehicles",
+   "award": "Noncredit program",
+   "near_miss": {
+    "pages": [
+     164
+    ],
+    "coverage": 1.0,
+    "why": "the page prints neither the control number nor the title and award"
+   }
+  },
+  {
+   "control_number": "45479",
+   "title": "Health Science",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=127",
+    "coverage": 0.093
+   }
   }
  ],
  "page_claimed": [],
  "coverage_bands": {
-  "0.5-0.8": 9,
-  "0.8-1.0": 21,
-  "1.0": 164
+  "0.5-0.8": 13,
+  "0.8-1.0": 20,
+  "1.0": 158
  },
  "would_extract": {
-  "against": null,
-  "kept": 0,
-  "programs": 194,
+  "against": "kb/program_requirements_college/los_angeles_pierce",
+  "kept": 150,
+  "programs": 41,
   "list": [
-   {
-    "control_number": "02808",
-    "title": "Agriculture: General",
-    "award": "A.S. Degree",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=75",
-    "coverage": 0.962,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "02809",
-    "title": "Equine Science",
-    "award": "A.S. Degree",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=77",
-    "coverage": 0.977,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "02810",
-    "title": "Veterinary Technology",
-    "award": "A.S. Degree",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=82",
-    "coverage": 0.838,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "02811",
-    "title": "Horticulture: General",
-    "award": "A.S. Degree",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=79",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "02814",
-    "title": "Architectural Technology",
-    "award": "A.A. Degree",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=83",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "02816",
-    "title": "General Business",
-    "award": "A.A. Degree",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=89",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "02817",
-    "title": "Accounting",
-    "award": "A.A. Degree",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=88",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "02818",
-    "title": "Marketing",
-    "award": "A.A. Degree",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=92",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "02820",
-    "title": "Administrative Professional",
-    "award": "A.A. Degree",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=101",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "02821",
-    "title": "Legal Office Procedures",
-    "award": "A.A. Degree",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=106",
-    "coverage": 0.857,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "02822",
-    "title": "Journalism",
-    "award": "A.A. Degree",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=131",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "02824",
-    "title": "Programming for Computer Science",
-    "award": "A.S. Degree",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=114",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "02826",
-    "title": "Engineering",
-    "award": "A.S. Degree",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=149",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "02827",
-    "title": "Electronics and Electric Technology: Electronics",
-    "award": "A.S. Degree",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=123",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "02828",
-    "title": "Automotive Service Technology",
-    "award": "A.S. Degree",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=122",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "02831",
-    "title": "Numerical Control Programming",
-    "award": "A.S. Degree",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=126",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "02834",
-    "title": "Art",
-    "award": "A.A. Degree",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=84",
-    "coverage": 0.8,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
    {
     "control_number": "02835",
     "title": "Music",
     "award": "A.A. Degree",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=33",
-    "coverage": 0.783,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "02836",
-    "title": "Theater",
-    "award": "A.A. Degree",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=147",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "02837",
-    "title": "Theater: Technical",
-    "award": "A.A. Degree",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=149",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "02838",
-    "title": "French",
-    "award": "A.A. Degree",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=138",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "02839",
-    "title": "Italian",
-    "award": "A.A. Degree",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=138",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "02841",
-    "title": "Nursing",
-    "award": "A.S. Degree",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=144",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "08308",
-    "title": "Pre-Veterinary Medicine",
-    "award": "A.S. Degree",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=81",
-    "coverage": 0.972,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "08311",
-    "title": "Landscape Design and Management",
-    "award": "A.S. Degree",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=80",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "08315",
-    "title": "Management and Supervision",
-    "award": "A.A. Degree",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=91",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "08316",
-    "title": "International Business",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=90",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "08318",
-    "title": "CAOT: General Administrative",
-    "award": "A.A. Degree",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=102",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=142",
+    "coverage": 0.87,
+    "was_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=33",
+    "was_coverage": 0.783,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "08319",
     "title": "Office Communications",
     "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=102",
+    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=108",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=102",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "08320",
     "title": "Computer Applications",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=102",
+    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=104",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "08321",
-    "title": "Photojournalism",
-    "award": "A.A. Degree",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=133",
-    "coverage": 0.95,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "08322",
-    "title": "Programming for Business",
-    "award": "A.A. Degree",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=113",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "08323",
-    "title": "Cybersecurity & Networking Technology",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=112",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "08325",
-    "title": "American Sign Language/Interpreting",
-    "award": "A.A. Degree",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=136",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "08326",
-    "title": "Cloud, Networking, and Cybersecurity",
-    "award": "A.S. Degree",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=111",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "08327",
-    "title": "Theater: Costume",
-    "award": "A.A. Degree",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=147",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "08328",
-    "title": "Graphic Design",
-    "award": "A.A. Degree",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=86",
-    "coverage": 0.895,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=102",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "08330",
     "title": "Child Development",
     "award": "A.A. Degree",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=96",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "08333",
-    "title": "Latin American Studies",
-    "award": "A.A. Degree",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=140",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "10349",
-    "title": "Preschool Teacher",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=99",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "10350",
-    "title": "Child Development: Associate Teacher",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
     "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=97",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "10726",
-    "title": "Gardening: Advanced",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=79",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "coverage": 0.947,
+    "was_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=96",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "10729",
     "title": "Electronics: Digital",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=123",
+    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=124",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=123",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "10730",
     "title": "Electronics: Communications",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=123",
+    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=124",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=123",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "10731",
     "title": "Electronics: Analog",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=123",
+    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=124",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "10733",
-    "title": "Drawing",
-    "award": "A.A. Degree",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=85",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "10734",
-    "title": "Painting",
-    "award": "A.A. Degree",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=87",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=123",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "10735",
     "title": "Sculpture",
     "award": "A.A. Degree",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=84",
-    "coverage": 0.75,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "10736",
-    "title": "Ceramic Design",
-    "award": "A.A. Degree",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=85",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "11814",
-    "title": "Office Administration: Advanced Computer Applications",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=107",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=88",
+    "coverage": 0.583,
+    "was_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=84",
+    "was_coverage": 0.75,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "12188",
     "title": "Addiction Studies",
     "award": "A.A. Degree",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=154",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "14233",
-    "title": "Retail Management (WAFC)",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=93",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "15032",
-    "title": "Preschool Director",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=98",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=155",
+    "coverage": 0.786,
+    "was_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=154",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "15057",
     "title": "Infant Care Teacher",
     "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=96",
+    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=98",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=96",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "15058",
     "title": "School Age Child Care Teacher",
     "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=97",
+    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=99",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "15074",
-    "title": "Word Processing: Microsoft Word for Windows",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=109",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "15079",
-    "title": "Personal Computer Service Technology",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=112",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "15084",
-    "title": "Graphic Design for the Web",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=86",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "15085",
-    "title": "Web Development, Programming and Scripting",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=116",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "15092",
-    "title": "Automotive Emission Specialist",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=120",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "15093",
-    "title": "Automotive Light Service Technician",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=121",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "15094",
-    "title": "Automotive Powertrain Specialist",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=121",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "15097",
-    "title": "Marketing",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=92",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "15101",
-    "title": "Tax Preparation",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=94",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=97",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "16756",
     "title": "Criminal Justice",
     "award": "A.A. Degree",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=42",
+    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=153",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=42",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "17794",
     "title": "Computerized Accounting",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=103",
+    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=104",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "17797",
-    "title": "Website Development",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=116",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "17800",
-    "title": "Office Clerical",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=108",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=103",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "18837",
     "title": "Legal Office Skills",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=200",
-    "coverage": 0.833,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "19006",
-    "title": "Desktop Publishing",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=105",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "19007",
-    "title": "Automotive Performance Applications",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=121",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=107",
+    "coverage": 0.667,
+    "was_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=200",
+    "was_coverage": 0.833,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "19008",
     "title": "Preschool",
     "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=97",
+    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=98",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "19015",
-    "title": "Technical Theatre",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=146",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "19183",
-    "title": "General Studies: Social and Behavioral Sciences",
-    "award": "A.A. Degree",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=31",
-    "coverage": 0.68,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "21781",
-    "title": "Equine Science",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=77",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "21800",
-    "title": "Floral Design and Management",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=78",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=97",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "21801",
     "title": "Architectural Technology",
     "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=83",
+    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=84",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "21806",
-    "title": "Administrative Professional",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=101",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=83",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "21807",
     "title": "CAOT: General Administrative",
     "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=102",
+    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=103",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "21808",
-    "title": "Legal Office Procedures",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=106",
-    "coverage": 0.857,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=102",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "21810",
     "title": "Programming for Business",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=113",
+    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=114",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=113",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "21812",
     "title": "Automotive Service Technology",
     "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=122",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "21814",
-    "title": "Numerical Control Programming",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=126",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "21816",
-    "title": "Graphic Design",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=86",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=123",
+    "coverage": 0.765,
+    "was_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=122",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "21817",
     "title": "Addiction Studies",
     "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=154",
+    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=155",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "22923",
-    "title": "Mathematics",
-    "award": "A.A. Degree",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=130",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=154",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "30477",
     "title": "General Studies: Gender Studies",
     "award": "A.A. Degree",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=69",
-    "coverage": 0.933,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "30908",
-    "title": "Mathematics",
-    "award": "A.S. T Degree",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=130",
-    "coverage": 0.545,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "32244",
-    "title": "Public Relations",
-    "award": "A.A. Degree",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=134",
-    "coverage": 0.864,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "32318",
-    "title": "Engineering Graphics and Design Technology",
-    "award": "A.S. Degree",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=151",
-    "coverage": 0.88,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=119",
+    "coverage": 0.6,
+    "was_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=69",
+    "was_coverage": 0.933,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "32336",
     "title": "Engineering Graphics and Design Technology",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=150",
+    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=151",
     "coverage": 0.857,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "32408",
-    "title": "Early Childhood Education",
-    "award": "A.S. T Degree",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=50",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "32523",
-    "title": "Administration of Justice",
-    "award": "A.S. T Degree",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=42",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "32620",
-    "title": "Spanish",
-    "award": "A.A- T Degree",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=72",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=150",
+    "was_coverage": 0.857,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "33036",
     "title": "Theatre Arts",
     "award": "A.A- T Degree",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=145",
+    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=73",
     "coverage": 0.714,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "33088",
-    "title": "Geography",
-    "award": "A.A- T Degree",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=55",
-    "coverage": 0.958,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "33110",
-    "title": "Anthropology",
-    "award": "A.A- T Degree",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=45",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "33253",
-    "title": "Public Relations",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=134",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "35018",
-    "title": "Routing Technology",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=115",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=145",
+    "was_coverage": 0.714,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "35019",
     "title": "Geographic Information Systems",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=231",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "35196",
-    "title": "Philosophy",
-    "award": "A.A- T Degree",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=64",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "35282",
-    "title": "Geology",
-    "award": "A.S. T Degree",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=56",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "35307",
-    "title": "Agriculture Plant Science",
-    "award": "A.S. T Degree",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=44",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "35334",
-    "title": "Physics",
-    "award": "A.S. T Degree",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=33",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "35460",
-    "title": "Kinesiology",
-    "award": "A.A- T Degree",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=60",
-    "coverage": 0.981,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "35462",
-    "title": "Film, Television, and Electronic Media",
-    "award": "A.S. T Degree",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=54",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "35464",
-    "title": "Elementary Teacher Education",
-    "award": "A.A- T Degree",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=52",
-    "coverage": 0.783,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "35897",
-    "title": "Sociology",
-    "award": "A.A- T Degree",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=71",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "35898",
-    "title": "English",
-    "award": "A.A- T Degree",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=53",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "35975",
-    "title": "Art History",
-    "award": "A.A- T Degree",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=46",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "35979",
-    "title": "Biology",
-    "award": "A.S. T Degree",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=33",
-    "coverage": 0.818,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "36039",
-    "title": "Essential English Communication Skills",
-    "award": "Noncredit program",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=157",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "36040",
-    "title": "Speaking English as a Second Language",
-    "award": "Noncredit program",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=160",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "36044",
-    "title": "Chicana and Chicano Studies",
-    "award": "A.A. Degree",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=152",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "36137",
-    "title": "Business Information Worker",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=102",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "36294",
-    "title": "Psychology",
-    "award": "A.A- T Degree",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=66",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "36613",
-    "title": "Phlebotomy Technician I",
-    "award": "Noncredit program",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=166",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "36785",
-    "title": "American Sign Language Studies",
-    "award": "A.A. Degree",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=135",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "36879",
-    "title": "Geriatric Caregiver",
-    "award": "Noncredit program",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=164",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "36910",
-    "title": "Gas and Electric Welding",
-    "award": "A.S. Degree",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=125",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "36911",
-    "title": "Gas and Electric Welding",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=125",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=82",
+    "coverage": 0.545,
+    "was_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=231",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "36946",
     "title": "Photography",
     "award": "A.S. Degree",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=131",
+    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=132",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=131",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "36947",
     "title": "Photography",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=131",
+    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=132",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37084",
-    "title": "Medical Assistant: Front and Back Office",
-    "award": "Noncredit program",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=285",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37184",
-    "title": "EKG Technician",
-    "award": "Noncredit program",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=163",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37217",
-    "title": "Agriculture Animal Sciences",
-    "award": "A.S. T Degree",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=43",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=131",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "37234",
     "title": "American Sign Language/Interpreting",
     "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=136",
+    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=137",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37835",
-    "title": "Custodial Scheduling Supervisor Training",
-    "award": "Noncredit program",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=162",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37957",
-    "title": "Japanese",
-    "award": "A.A. Degree",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=139",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=136",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "37976",
     "title": "Cybersecurity",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=111",
+    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=112",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "38338",
-    "title": "Bookkeeper",
-    "award": "Noncredit program",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=161",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "38339",
-    "title": "Community Health Worker",
-    "award": "Noncredit program",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=162",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "38606",
-    "title": "Cloud Computing and Networking for Amazon Web Services",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=110",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "38673",
-    "title": "Hospitality Management",
-    "award": "A.S. T Degree",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=58",
-    "coverage": 0.9,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "39277",
-    "title": "Theater: Dance",
-    "award": "A.A. Degree",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=148",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "39501",
-    "title": "Workplace Success: Managing Anger",
-    "award": "Noncredit program",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=168",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "39954",
-    "title": "Landscape Technician",
-    "award": "Noncredit program",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=165",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "39969",
-    "title": "Cloud Computing Fundamentals for Amazon Web Services",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=110",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "40273",
-    "title": "Social Media",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=135",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "40634",
-    "title": "Teacher Assistant Paraprofessional",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=100",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "41088",
-    "title": "Business Administration 2.0",
-    "award": "A.S. T Degree",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=47",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=111",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "41890",
     "title": "Payroll Accounting",
     "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=88",
+    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=92",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "41891",
-    "title": "Small Business Accounting",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=93",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "41946",
-    "title": "Citizenship",
-    "award": "Noncredit program",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=156",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "42018",
-    "title": "GED Preparation and Foundational Skills",
-    "award": "Noncredit program",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=157",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "42270",
-    "title": "Level 4 - English as a Second Language for Life Skills",
-    "award": "Noncredit program",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=228",
-    "coverage": 0.5,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=88",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "42274",
     "title": "Level 2 - English as a Second Language for Life Skills",
     "award": "Noncredit program",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=159",
+    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=227",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=159",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "42275",
     "title": "Level 3 - English as a Second Language for Life Skills",
     "award": "Noncredit program",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=159",
+    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=227",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "42276",
-    "title": "Level 1 - English as a Second Language for Life Skills",
-    "award": "Noncredit program",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=158",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "42404",
-    "title": "Career Exploration: Biotechnology Careers",
-    "award": "Noncredit program",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=161",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "42426",
-    "title": "Integrated Education Training for Community Health Worker",
-    "award": "Noncredit program",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=164",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "42427",
-    "title": "Tutor Training",
-    "award": "Noncredit program",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=167",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "42428",
-    "title": "Medical Front Office Assistant",
-    "award": "Noncredit program",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=166",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "42439",
-    "title": "Real Estate Fundamentals",
-    "award": "Noncredit program",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=166",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "42512",
-    "title": "UCTP Chemistry",
-    "award": "A.S. T Degree",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=74",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "42533",
-    "title": "UCTP Physics",
-    "award": "A.S. T Degree",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=74",
-    "coverage": 0.9,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=159",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "42945",
     "title": "Biotechnology Lab Assistant",
     "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=128",
+    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=129",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "43098",
-    "title": "Biotechnology",
-    "award": "A.S. Degree",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=128",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=128",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "43219",
     "title": "Biotechnology Research Lab Assistant",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=128",
+    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=129",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "43458",
-    "title": "Communication Studies 2.0",
-    "award": "A.A- T Degree",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=49",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "43510",
-    "title": "Acting",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=145",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=128",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "43713",
     "title": "Crime and Intelligence Analysis",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=42",
+    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=152",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "43745",
-    "title": "GED Preparation for Spanish Speakers",
-    "award": "Noncredit program",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=158",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "43746",
-    "title": "Internship Workplace Support",
-    "award": "Noncredit program",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=164",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "43779",
-    "title": "Electric Vehicle Services for Light-Duty Zero-Emission Vehicles",
-    "award": "Noncredit program",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=164",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "43780",
-    "title": "Early Childhood Fundamentals for Success",
-    "award": "Noncredit program",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=163",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "44966",
-    "title": "Commercial Music",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=141",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=42",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "44998",
     "title": "Music Theory and Musicianship",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=63",
+    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=142",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=63",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "45035",
@@ -2004,261 +3053,61 @@
     "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
     "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=31",
     "coverage": 0.596,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=31",
+    "was_coverage": 0.596,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "45038",
     "title": "Applied Music",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=140",
+    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=141",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "45475",
-    "title": "Success Skills for the First-Time Hospitality Supervisor",
-    "award": "Noncredit program",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=167",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "45479",
-    "title": "Health Science",
-    "award": "A.S. Degree",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=60",
-    "coverage": 0.556,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=140",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "45502",
     "title": "Dance Studio Management",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=145",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=146",
+    "coverage": 0.692,
+    "was_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=145",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "45546",
     "title": "Recording Arts",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=141",
+    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=142",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "45551",
-    "title": "Hospitality Management",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=105",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "45552",
-    "title": "Biomanufacturing Technician",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=128",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "45605",
-    "title": "English Pronunciation for the English Language Learner",
-    "award": "Noncredit program",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=156",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "45608",
-    "title": "Vocational Education Exploration and Foundational Skills",
-    "award": "Noncredit program",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=168",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "45703",
-    "title": "Basic GIS and GPS Skills",
-    "award": "Noncredit program",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=161",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "45705",
-    "title": "Tutor Leadership Skills",
-    "award": "Noncredit program",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=167",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "45726",
-    "title": "Automotive Electric Vehicle Technician",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=120",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "46078",
-    "title": "Computer Science",
-    "award": "A.S. T Degree",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=50",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "46088",
-    "title": "Mathematics 2.0",
-    "award": "A.S. T Degree",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=62",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=141",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "46089",
     "title": "Physics 2.0",
     "award": "A.S. T Degree",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=33",
+    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=65",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "46100",
-    "title": "Everyday English Conversation for ESL Students",
-    "award": "Noncredit program",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=157",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "46329",
-    "title": "Chemical Technology",
-    "award": "A.S. Degree",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=95",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=33",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "46331",
     "title": "Chemical Technology",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=95",
+    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=96",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "46335",
-    "title": "Elementary Teacher Education: Integrated Programs",
-    "award": "A.A- T Degree",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=52",
-    "coverage": 0.85,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "46342",
-    "title": "Public Health",
-    "award": "A.S. T Degree",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=67",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "46407",
-    "title": "College Readiness",
-    "award": "Noncredit program",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=162",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "46408",
-    "title": "Academic Bridge",
-    "award": "Noncredit program",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=156",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "46459",
-    "title": "Biomanufacturing",
-    "award": "Baccalaureate of Science (B.S.) Degree.",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=41",
-    "coverage": 0.833,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "46477",
-    "title": "Forensics, Evidence and Investigation",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=154",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "46549",
-    "title": "Chicana/o Studies, Latina/o Studies",
-    "award": "A.A- T Degree",
-    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=48",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=95",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
    }
   ]
  },
- "run": "39006383070"
+ "run": "39018421038"
 }

@@ -90,31 +90,21 @@
    "program": 6,
    "courses": 0,
    "count": 6,
-   "not_verbatim": [
-    "Apply a range of business concepts to the management of office operations, including employee supervision, administrative support, financial statements, and customer service.",
-    "Demonstrate competence in the use of state-of-the-art business-related software to create documents, spreadsheets, presentations, databases, and financial records.",
-    "Compose and create business documents—such as letters, memos, e-mail messages, reports, graphs and charts—using correct grammar, spelling, punctuation, language style, and formats."
-   ],
-   "why": [
-    "not in the catalog text as printed: Apply a range of business concepts to the management of office operations, inclu",
-    "not in the catalog text as printed: Demonstrate competence in the use of state-of-the-art business-related software ",
-    "not in the catalog text as printed: Compose and create business documents-such as letters, memos, e-mail messages, r"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 1,
-   "not_verbatim": [
-    "supervisorial and managerial positions in business offices"
-   ],
-   "pass": false
+   "not_verbatim": [],
+   "pass": true
   },
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -310,5 +300,6 @@
    "CAOT 032 is marked with an asterisk for prerequisites/corequisites."
   ]
  },
- "extracted_run": "39006383070"
+ "extracted_run": 39018421038,
+ "read_run": "39006383070"
 }

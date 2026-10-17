@@ -61,8 +61,8 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=75",
-   "title": null,
-   "h1": null,
+   "title": "75",
+   "h1": "75",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -71,7 +71,8 @@
     77,
     78
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 53,
   "text_chars": 16000
@@ -130,8 +131,8 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=77",
-   "title": null,
-   "h1": null,
+   "title": "Equine Science AS P002809C Cal-GETC (34 units)LACCD GE (21 units)",
+   "h1": "Equine Science AS P002809C Cal-GETC (34 units)LACCD GE (21 units)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -140,7 +141,8 @@
     79,
     80
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 44,
   "text_chars": 16000
@@ -187,14 +189,15 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=82",
-   "title": null,
-   "h1": null,
+   "title": "82",
+   "h1": "82",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     82
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 37,
   "text_chars": 5583
@@ -230,15 +233,16 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=79",
-   "title": null,
-   "h1": null,
+   "title": "79",
+   "h1": "79",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     79,
     80
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 20,
   "text_chars": 11856
@@ -268,15 +272,16 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=83",
-   "title": null,
-   "h1": null,
+   "title": "83",
+   "h1": "83",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     83,
     84
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 14,
   "text_chars": 10679
@@ -310,8 +315,8 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=89",
-   "title": null,
-   "h1": null,
+   "title": "89",
+   "h1": "89",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -320,7 +325,8 @@
     91,
     92
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 18,
   "text_chars": 16000
@@ -354,8 +360,8 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=88",
-   "title": null,
-   "h1": null,
+   "title": "88",
+   "h1": "88",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -364,7 +370,8 @@
     90,
     91
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 18,
   "text_chars": 16000
@@ -394,8 +401,8 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=92",
-   "title": null,
-   "h1": null,
+   "title": "92",
+   "h1": "92",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -403,7 +410,8 @@
     93,
     94
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 14,
   "text_chars": 15298
@@ -432,8 +440,8 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=101",
-   "title": null,
-   "h1": null,
+   "title": "Administrative Professional AA P002820C Cal-GETC (34 units)LACCD GE (21 units)",
+   "h1": "Administrative Professional AA P002820C Cal-GETC (34 units)LACCD GE (21 units)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -442,7 +450,8 @@
     103,
     104
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 13,
   "text_chars": 16000
@@ -470,8 +479,8 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=106",
-   "title": null,
-   "h1": null,
+   "title": "Legal Office Procedures AA P002821C Cal-GETC (34 units)LACCD GE (21 units)",
+   "h1": "Legal Office Procedures AA P002821C Cal-GETC (34 units)LACCD GE (21 units)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -480,7 +489,8 @@
     108,
     109
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 14,
   "text_chars": 16000
@@ -515,8 +525,8 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=131",
-   "title": null,
-   "h1": null,
+   "title": "131",
+   "h1": "131",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -525,7 +535,8 @@
     133,
     134
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 19,
   "text_chars": 16000
@@ -557,8 +568,8 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=114",
-   "title": null,
-   "h1": null,
+   "title": "114",
+   "h1": "114",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -566,7 +577,8 @@
     115,
     116
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 16,
   "text_chars": 15313
@@ -613,8 +625,8 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=149",
-   "title": null,
-   "h1": null,
+   "title": "149",
+   "h1": "149",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -622,7 +634,8 @@
     150,
     151
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 31,
   "text_chars": 16000
@@ -657,15 +670,16 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=123",
-   "title": null,
-   "h1": null,
+   "title": "123",
+   "h1": "123",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     123,
     124
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 19,
   "text_chars": 10683
@@ -700,15 +714,16 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=122",
-   "title": null,
-   "h1": null,
+   "title": "122",
+   "h1": "122",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     122,
     123
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 19,
   "text_chars": 11536
@@ -736,17 +751,18 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=126",
-   "title": null,
-   "h1": null,
+   "title": "Numerical Control Programming AS P002831C Cal-GETC (34 units)LACCD GE (21 units)",
+   "h1": "Numerical Control Programming AS P002831C Cal-GETC (34 units)LACCD GE (21 units)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     126
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 12,
-  "text_chars": 5491
+  "text_chars": 3344
  },
  {
   "control_number": "02834",
@@ -767,8 +783,8 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=84",
-   "title": null,
-   "h1": null,
+   "title": "84",
+   "h1": "84",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -777,7 +793,8 @@
     86,
     87
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 10,
   "text_chars": 16000
@@ -788,19 +805,21 @@
   "award": "A.A. Degree",
   "shape": "degree",
   "method": "pdf_pages",
-  "coverage": 0.783,
+  "coverage": 0.87,
   "codes_found": [
    "MUSIC121",
    "MUSIC122",
-   "MUSIC181",
-   "MUSIC182",
-   "MUSIC183",
+   "MUSIC161",
    "MUSIC2161",
    "MUSIC2162",
    "MUSIC2163",
    "MUSIC2171",
    "MUSIC2172",
    "MUSIC2173",
+   "MUSIC2501",
+   "MUSIC2502",
+   "MUSIC2503",
+   "MUSIC2504",
    "MUSIC321",
    "MUSIC501",
    "MUSIC705",
@@ -810,18 +829,20 @@
    "MUSIC781"
   ],
   "source": {
-   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=33",
-   "title": null,
-   "h1": null,
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=142",
+   "title": "142",
+   "h1": "142",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    33
+    142,
+    143
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 23,
-  "text_chars": 6589
+  "text_chars": 11338
  },
  {
   "control_number": "02836",
@@ -843,8 +864,8 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=147",
-   "title": null,
-   "h1": null,
+   "title": "147",
+   "h1": "147",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -852,7 +873,8 @@
     148,
     149
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 9,
   "text_chars": 16000
@@ -876,14 +898,15 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=149",
-   "title": null,
-   "h1": null,
+   "title": "149",
+   "h1": "149",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     149
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 8,
   "text_chars": 6197
@@ -903,14 +926,15 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=138",
-   "title": null,
-   "h1": null,
+   "title": "138",
+   "h1": "138",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     138
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 4,
   "text_chars": 5506
@@ -933,14 +957,15 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=138",
-   "title": null,
-   "h1": null,
+   "title": "138",
+   "h1": "138",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     138
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 7,
   "text_chars": 5506
@@ -966,14 +991,15 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=144",
-   "title": null,
-   "h1": null,
+   "title": "144",
+   "h1": "144",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     144
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 10,
   "text_chars": 5833
@@ -1024,15 +1050,16 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=81",
-   "title": null,
-   "h1": null,
+   "title": "81",
+   "h1": "81",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     81,
     82
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 36,
   "text_chars": 11591
@@ -1061,14 +1088,15 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=80",
-   "title": null,
-   "h1": null,
+   "title": "80",
+   "h1": "80",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     80
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 13,
   "text_chars": 6067
@@ -1101,8 +1129,8 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=91",
-   "title": null,
-   "h1": null,
+   "title": "91",
+   "h1": "91",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -1111,7 +1139,8 @@
     93,
     94
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 17,
   "text_chars": 16000
@@ -1134,8 +1163,8 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=90",
-   "title": null,
-   "h1": null,
+   "title": "90",
+   "h1": "90",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -1144,7 +1173,8 @@
     92,
     93
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 7,
   "text_chars": 16000
@@ -1176,8 +1206,8 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=102",
-   "title": null,
-   "h1": null,
+   "title": "102",
+   "h1": "102",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -1186,7 +1216,8 @@
     104,
     105
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 16,
   "text_chars": 16000
@@ -1207,21 +1238,20 @@
    "CAOT39"
   ],
   "source": {
-   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=102",
-   "title": null,
-   "h1": null,
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=108",
+   "title": "108",
+   "h1": "108",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    102,
-    103,
-    104,
-    105
+    108,
+    109
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 6,
-  "text_chars": 16000
+  "text_chars": 9603
  },
  {
   "control_number": "08320",
@@ -1241,18 +1271,19 @@
    "CAOT92"
   ],
   "source": {
-   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=102",
-   "title": null,
-   "h1": null,
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=104",
+   "title": "104",
+   "h1": "104",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    102,
-    103,
     104,
-    105
+    105,
+    106,
+    107
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 8,
   "text_chars": 16000
@@ -1287,8 +1318,8 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=133",
-   "title": null,
-   "h1": null,
+   "title": "133",
+   "h1": "133",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -1296,7 +1327,8 @@
     134,
     135
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 20,
   "text_chars": 16000
@@ -1356,8 +1388,8 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=113",
-   "title": null,
-   "h1": null,
+   "title": "113",
+   "h1": "113",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -1366,7 +1398,8 @@
     115,
     116
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 44,
   "text_chars": 16000
@@ -1386,15 +1419,16 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=112",
-   "title": null,
-   "h1": null,
+   "title": "112",
+   "h1": "112",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     112,
     113
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 4,
   "text_chars": 9836
@@ -1419,15 +1453,16 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=136",
-   "title": null,
-   "h1": null,
+   "title": "136",
+   "h1": "136",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     136,
     137
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 9,
   "text_chars": 11203
@@ -1462,8 +1497,8 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=111",
-   "title": null,
-   "h1": null,
+   "title": "111",
+   "h1": "111",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -1472,7 +1507,8 @@
     113,
     114
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 19,
   "text_chars": 16000
@@ -1494,8 +1530,8 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=147",
-   "title": null,
-   "h1": null,
+   "title": "147",
+   "h1": "147",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -1503,7 +1539,8 @@
     148,
     149
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 6,
   "text_chars": 16000
@@ -1536,8 +1573,8 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=86",
-   "title": null,
-   "h1": null,
+   "title": "86",
+   "h1": "86",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -1545,7 +1582,8 @@
     87,
     88
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 19,
   "text_chars": 16000
@@ -1556,7 +1594,7 @@
   "award": "A.A. Degree",
   "shape": "degree",
   "method": "pdf_pages",
-  "coverage": 1.0,
+  "coverage": 0.947,
   "codes_found": [
    "CHDEV1",
    "CHDEV10",
@@ -1574,23 +1612,23 @@
    "CHDEV44",
    "CHDEV45",
    "CHDEV46",
-   "CHDEV65",
    "CHDEV7",
    "CHDEV9"
   ],
   "source": {
-   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=96",
-   "title": null,
-   "h1": null,
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=97",
+   "title": "Child Development AA P008330C Cal-GETC (34 units)LACCD GE (21 units)",
+   "h1": "Child Development AA P008330C Cal-GETC (34 units)LACCD GE (21 units)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    96,
     97,
     98,
-    99
+    99,
+    100
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 19,
   "text_chars": 16000
@@ -1626,14 +1664,15 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=140",
-   "title": null,
-   "h1": null,
+   "title": "140",
+   "h1": "140",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     140
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 20,
   "text_chars": 5804
@@ -1664,15 +1703,16 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=99",
-   "title": null,
-   "h1": null,
+   "title": "99",
+   "h1": "99",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     99,
     100
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 15,
   "text_chars": 11164
@@ -1701,8 +1741,8 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=97",
-   "title": null,
-   "h1": null,
+   "title": "97",
+   "h1": "97",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -1711,7 +1751,8 @@
     99,
     100
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 13,
   "text_chars": 16000
@@ -1743,15 +1784,16 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=79",
-   "title": null,
-   "h1": null,
+   "title": "79",
+   "h1": "79",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     79,
     80
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 16,
   "text_chars": 11856
@@ -1776,19 +1818,19 @@
    "ELECTRN8B"
   ],
   "source": {
-   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=123",
-   "title": null,
-   "h1": null,
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=124",
+   "title": "124",
+   "h1": "124",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    123,
     124
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 10,
-  "text_chars": 10683
+  "text_chars": 4967
  },
  {
   "control_number": "10730",
@@ -1810,19 +1852,19 @@
    "ELECTRN8B"
   ],
   "source": {
-   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=123",
-   "title": null,
-   "h1": null,
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=124",
+   "title": "124",
+   "h1": "124",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    123,
     124
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 10,
-  "text_chars": 10683
+  "text_chars": 4967
  },
  {
   "control_number": "10731",
@@ -1844,19 +1886,19 @@
    "ELECTRN8B"
   ],
   "source": {
-   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=123",
-   "title": null,
-   "h1": null,
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=124",
+   "title": "124",
+   "h1": "124",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    123,
     124
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 10,
-  "text_chars": 10683
+  "text_chars": 4967
  },
  {
   "control_number": "10733",
@@ -1882,8 +1924,8 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=85",
-   "title": null,
-   "h1": null,
+   "title": "85",
+   "h1": "85",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -1892,7 +1934,8 @@
     87,
     88
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 13,
   "text_chars": 16000
@@ -1922,15 +1965,16 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=87",
-   "title": null,
-   "h1": null,
+   "title": "87",
+   "h1": "87",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     87,
     88
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 14,
   "text_chars": 10651
@@ -1941,34 +1985,30 @@
   "award": "A.A. Degree",
   "shape": "degree",
   "method": "pdf_pages",
-  "coverage": 0.75,
+  "coverage": 0.583,
   "codes_found": [
-   "ART111",
-   "ART201",
-   "ART202",
    "ART204",
    "ART501",
    "ART502",
    "ART700",
-   "ARTHC1100",
-   "ARTHC1200"
+   "ART701",
+   "ART702",
+   "ART703"
   ],
   "source": {
-   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=84",
-   "title": null,
-   "h1": null,
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=88",
+   "title": "88",
+   "h1": "88",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    84,
-    85,
-    86,
-    87
+    88
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 12,
-  "text_chars": 16000
+  "text_chars": 5405
  },
  {
   "control_number": "10736",
@@ -1993,8 +2033,8 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=85",
-   "title": null,
-   "h1": null,
+   "title": "85",
+   "h1": "85",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -2003,7 +2043,8 @@
     87,
     88
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 12,
   "text_chars": 16000
@@ -2034,8 +2075,8 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=107",
-   "title": null,
-   "h1": null,
+   "title": "Office Administration: Advanced Computer Applications certificate",
+   "h1": "Office Administration: Advanced Computer Applications certificate",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -2043,10 +2084,11 @@
     108,
     109
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 15,
-  "text_chars": 15206
+  "text_chars": 12290
  },
  {
   "control_number": "12188",
@@ -2054,7 +2096,7 @@
   "award": "A.A. Degree",
   "shape": "degree",
   "method": "pdf_pages",
-  "coverage": 1.0,
+  "coverage": 0.786,
   "codes_found": [
    "ADDICST1",
    "ADDICST10",
@@ -2074,31 +2116,25 @@
    "ADDICST7",
    "ADDICST9",
    "ADDICST91",
-   "PSYCC1000",
-   "PSYCH13",
-   "PSYCH14",
-   "PSYCH16",
-   "PSYCH2",
-   "PSYCH32",
    "PSYCH41",
    "PSYCH52",
    "PSYCH60",
    "PSYCH66"
   ],
   "source": {
-   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=154",
-   "title": null,
-   "h1": null,
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=155",
+   "title": "155",
+   "h1": "155",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    154,
     155
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 28,
-  "text_chars": 11072
+  "text_chars": 4953
  },
  {
   "control_number": "14233",
@@ -2119,15 +2155,16 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=93",
-   "title": null,
-   "h1": null,
+   "title": "93",
+   "h1": "93",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     93,
     94
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 8,
   "text_chars": 10109
@@ -2150,8 +2187,8 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=98",
-   "title": null,
-   "h1": null,
+   "title": "98",
+   "h1": "98",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -2159,7 +2196,8 @@
     99,
     100
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 7,
   "text_chars": 15869
@@ -2180,21 +2218,21 @@
    "CHDEV42"
   ],
   "source": {
-   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=96",
-   "title": null,
-   "h1": null,
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=98",
+   "title": "Infant Care Teacher Certificate P015057D N/A",
+   "h1": "Infant Care Teacher Certificate P015057D N/A",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    96,
-    97,
     98,
-    99
+    99,
+    100
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 6,
-  "text_chars": 16000
+  "text_chars": 15778
  },
  {
   "control_number": "15058",
@@ -2212,21 +2250,20 @@
    "CHDEV7"
   ],
   "source": {
-   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=97",
-   "title": null,
-   "h1": null,
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=99",
+   "title": "99",
+   "h1": "99",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    97,
-    98,
     99,
     100
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 6,
-  "text_chars": 16000
+  "text_chars": 11164
  },
  {
   "control_number": "15074",
@@ -2245,14 +2282,15 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=109",
-   "title": null,
-   "h1": null,
+   "title": "109",
+   "h1": "109",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     109
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 6,
   "text_chars": 4668
@@ -2274,8 +2312,8 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=112",
-   "title": null,
-   "h1": null,
+   "title": "112",
+   "h1": "112",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -2284,7 +2322,8 @@
     114,
     115
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 6,
   "text_chars": 16000
@@ -2308,15 +2347,16 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=86",
-   "title": null,
-   "h1": null,
+   "title": "86",
+   "h1": "86",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     86,
     87
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 8,
   "text_chars": 10722
@@ -2347,14 +2387,15 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=116",
-   "title": null,
-   "h1": null,
+   "title": "116",
+   "h1": "116",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     116
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 15,
   "text_chars": 4775
@@ -2374,8 +2415,8 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=120",
-   "title": null,
-   "h1": null,
+   "title": "120",
+   "h1": "120",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -2384,7 +2425,8 @@
     122,
     123
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 4,
   "text_chars": 16000
@@ -2403,8 +2445,8 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=121",
-   "title": null,
-   "h1": null,
+   "title": "121",
+   "h1": "121",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -2412,7 +2454,8 @@
     122,
     123
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 3,
   "text_chars": 15580
@@ -2431,8 +2474,8 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=121",
-   "title": null,
-   "h1": null,
+   "title": "121",
+   "h1": "121",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -2440,7 +2483,8 @@
     122,
     123
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 3,
   "text_chars": 15580
@@ -2461,15 +2505,16 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=92",
-   "title": null,
-   "h1": null,
+   "title": "92",
+   "h1": "92",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     92,
     93
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 5,
   "text_chars": 9777
@@ -2489,14 +2534,15 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=94",
-   "title": null,
-   "h1": null,
+   "title": "94",
+   "h1": "94",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     94
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 4,
   "text_chars": 5519
@@ -2517,18 +2563,20 @@
    "ADMJUS8"
   ],
   "source": {
-   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=42",
-   "title": null,
-   "h1": null,
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=153",
+   "title": "153",
+   "h1": "153",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    42
+    153,
+    154
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 6,
-  "text_chars": 5821
+  "text_chars": 11643
  },
  {
   "control_number": "17794",
@@ -2546,18 +2594,19 @@
    "CAOT92"
   ],
   "source": {
-   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=103",
-   "title": null,
-   "h1": null,
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=104",
+   "title": "104",
+   "h1": "104",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    103,
     104,
     105,
-    106
+    106,
+    107
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 6,
   "text_chars": 16000
@@ -2585,14 +2634,15 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=116",
-   "title": null,
-   "h1": null,
+   "title": "116",
+   "h1": "116",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     116
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 12,
   "text_chars": 4775
@@ -2612,15 +2662,16 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=108",
-   "title": null,
-   "h1": null,
+   "title": "108",
+   "h1": "108",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     108,
     109
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 4,
   "text_chars": 9603
@@ -2631,27 +2682,29 @@
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
   "method": "pdf_pages",
-  "coverage": 0.833,
+  "coverage": 0.667,
   "codes_found": [
-   "CAOT23F",
-   "CAOT23G",
+   "CAOT2",
    "CAOT31",
    "CAOT32",
    "CAOT39"
   ],
   "source": {
-   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=200",
-   "title": null,
-   "h1": null,
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=107",
+   "title": "107",
+   "h1": "107",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    200
+    107,
+    108,
+    109
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 6,
-  "text_chars": 6511
+  "text_chars": 15206
  },
  {
   "control_number": "19006",
@@ -2672,8 +2725,8 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=105",
-   "title": null,
-   "h1": null,
+   "title": "105",
+   "h1": "105",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -2682,7 +2735,8 @@
     107,
     108
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 8,
   "text_chars": 16000
@@ -2703,8 +2757,8 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=121",
-   "title": null,
-   "h1": null,
+   "title": "121",
+   "h1": "121",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -2712,7 +2766,8 @@
     122,
     123
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 5,
   "text_chars": 15580
@@ -2730,21 +2785,21 @@
    "CHDEV7"
   ],
   "source": {
-   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=97",
-   "title": null,
-   "h1": null,
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=98",
+   "title": "Preschool Certificate P019008D N/A",
+   "h1": "Preschool Certificate P019008D N/A",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    97,
     98,
     99,
     100
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 3,
-  "text_chars": 16000
+  "text_chars": 14010
  },
  {
   "control_number": "19015",
@@ -2764,8 +2819,8 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=146",
-   "title": null,
-   "h1": null,
+   "title": "146",
+   "h1": "146",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -2774,7 +2829,8 @@
     148,
     149
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 7,
   "text_chars": 16000
@@ -2916,8 +2972,8 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=31",
-   "title": null,
-   "h1": null,
+   "title": "Graduation Requirements for Degrees and Certificates",
+   "h1": "Graduation Requirements for Degrees and Certificates",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -2925,7 +2981,8 @@
     32,
     33
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 150,
   "text_chars": 16000
@@ -2984,8 +3041,8 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=77",
-   "title": null,
-   "h1": null,
+   "title": "77",
+   "h1": "77",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -2994,7 +3051,8 @@
     79,
     80
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 43,
   "text_chars": 16000
@@ -3021,8 +3079,8 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=78",
-   "title": null,
-   "h1": null,
+   "title": "78",
+   "h1": "78",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -3030,7 +3088,8 @@
     79,
     80
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 11,
   "text_chars": 16000
@@ -3058,19 +3117,19 @@
    "ENV101"
   ],
   "source": {
-   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=83",
-   "title": null,
-   "h1": null,
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=84",
+   "title": "84",
+   "h1": "84",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    83,
     84
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 13,
-  "text_chars": 10679
+  "text_chars": 5448
  },
  {
   "control_number": "21806",
@@ -3096,8 +3155,8 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=101",
-   "title": null,
-   "h1": null,
+   "title": "101",
+   "h1": "101",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -3106,7 +3165,8 @@
     103,
     104
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 13,
   "text_chars": 16000
@@ -3137,18 +3197,19 @@
    "CAOT96"
   ],
   "source": {
-   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=102",
-   "title": null,
-   "h1": null,
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=103",
+   "title": "103",
+   "h1": "103",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    102,
     103,
     104,
-    105
+    105,
+    106
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 16,
   "text_chars": 16000
@@ -3176,8 +3237,8 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=106",
-   "title": null,
-   "h1": null,
+   "title": "106",
+   "h1": "106",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -3186,7 +3247,8 @@
     108,
     109
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 14,
   "text_chars": 16000
@@ -3219,19 +3281,19 @@
    "ECONC2001"
   ],
   "source": {
-   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=113",
-   "title": null,
-   "h1": null,
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=114",
+   "title": "114",
+   "h1": "114",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    113,
     114
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 18,
-  "text_chars": 11466
+  "text_chars": 5466
  },
  {
   "control_number": "21812",
@@ -3239,15 +3301,11 @@
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
   "method": "pdf_pages",
-  "coverage": 1.0,
+  "coverage": 0.765,
   "codes_found": [
-   "AST1",
-   "AST2",
    "AST20",
    "AST23",
    "AST25",
-   "AST3",
-   "AST4",
    "AST41",
    "AST42",
    "AST43",
@@ -3260,19 +3318,19 @@
    "AST9"
   ],
   "source": {
-   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=122",
-   "title": null,
-   "h1": null,
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=123",
+   "title": "123",
+   "h1": "123",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    122,
     123
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 17,
-  "text_chars": 11536
+  "text_chars": 5714
  },
  {
   "control_number": "21814",
@@ -3297,14 +3355,15 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=126",
-   "title": null,
-   "h1": null,
+   "title": "126",
+   "h1": "126",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     126
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 12,
   "text_chars": 5491
@@ -3327,14 +3386,15 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=86",
-   "title": null,
-   "h1": null,
+   "title": "86",
+   "h1": "86",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     86
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 7,
   "text_chars": 5476
@@ -3367,19 +3427,19 @@
    "ADDICST91"
   ],
   "source": {
-   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=154",
-   "title": null,
-   "h1": null,
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=155",
+   "title": "155",
+   "h1": "155",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    154,
     155
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 18,
-  "text_chars": 11072
+  "text_chars": 4953
  },
  {
   "control_number": "22923",
@@ -3398,14 +3458,15 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=130",
-   "title": null,
-   "h1": null,
+   "title": "130",
+   "h1": "130",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     130
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 6,
   "text_chars": 5320
@@ -3416,38 +3477,32 @@
   "award": "A.A. Degree",
   "shape": "degree",
   "method": "pdf_pages",
-  "coverage": 0.933,
+  "coverage": 0.6,
   "codes_found": [
    "ANTHRO109",
    "ART116",
    "CHICANO47",
    "ENGLISH239",
-   "ENGLISH245",
    "HEALTH8",
    "HISTORY52",
    "POLSCI19",
    "PSYCH16",
-   "PSYCH32",
-   "PSYCH52",
-   "SOC21",
-   "SOC28",
-   "SOC31"
+   "SOC21"
   ],
   "source": {
-   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=69",
-   "title": null,
-   "h1": null,
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=119",
+   "title": "119",
+   "h1": "119",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    69,
-    70,
-    71
+    119
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 15,
-  "text_chars": 16000
+  "text_chars": 7463
  },
  {
   "control_number": "30908",
@@ -3466,14 +3521,15 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=130",
-   "title": null,
-   "h1": null,
+   "title": "130",
+   "h1": "130",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     130
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 11,
   "text_chars": 5320
@@ -3508,15 +3564,16 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=134",
-   "title": null,
-   "h1": null,
+   "title": "134",
+   "h1": "134",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     134,
     135
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 22,
   "text_chars": 10720
@@ -3554,14 +3611,15 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=151",
-   "title": null,
-   "h1": null,
+   "title": "151",
+   "h1": "151",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     151
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 25,
   "text_chars": 5261
@@ -3582,19 +3640,19 @@
    "INDTEK130"
   ],
   "source": {
-   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=150",
-   "title": null,
-   "h1": null,
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=151",
+   "title": "151",
+   "h1": "151",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    150,
     151
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 7,
-  "text_chars": 11518
+  "text_chars": 5261
  },
  {
   "control_number": "32408",
@@ -3614,14 +3672,15 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=50",
-   "title": null,
-   "h1": null,
+   "title": "50",
+   "h1": "50",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     50
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 7,
   "text_chars": 6011
@@ -3685,8 +3744,8 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=42",
-   "title": null,
-   "h1": null,
+   "title": "42",
+   "h1": "42",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -3695,7 +3754,8 @@
     44,
     45
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 24,
   "text_chars": 16000
@@ -3737,14 +3797,15 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=72",
-   "title": null,
-   "h1": null,
+   "title": "72",
+   "h1": "72",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     72
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 26,
   "text_chars": 5989
@@ -3770,32 +3831,31 @@
   "coverage": 0.714,
   "codes_found": [
    "THEATER100",
+   "THEATER110",
+   "THEATER114",
    "THEATER270",
    "THEATER271",
-   "THEATER291",
-   "THEATER292",
-   "THEATER293",
+   "THEATER280",
    "THEATER300",
    "THEATER342",
    "THEATER411",
    "THEATER450"
   ],
   "source": {
-   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=145",
-   "title": null,
-   "h1": null,
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=73",
+   "title": "Students completing the Associate in Arts in Theatre Arts for Transfer",
+   "h1": "Students completing the Associate in Arts in Theatre Arts for Transfer",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    145,
-    146,
-    147,
-    148
+    73,
+    74
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 14,
-  "text_chars": 16000
+  "text_chars": 8901
  },
  {
   "control_number": "33055",
@@ -3843,8 +3903,8 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=55",
-   "title": null,
-   "h1": null,
+   "title": "55",
+   "h1": "55",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -3853,7 +3913,8 @@
     57,
     58
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 24,
   "text_chars": 16000
@@ -3904,14 +3965,15 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=45",
-   "title": null,
-   "h1": null,
+   "title": "45",
+   "h1": "45",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     45
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 35,
   "text_chars": 6217
@@ -3936,15 +3998,16 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=134",
-   "title": null,
-   "h1": null,
+   "title": "134",
+   "h1": "134",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     134,
     135
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 9,
   "text_chars": 10720
@@ -3991,14 +4054,15 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=115",
-   "title": null,
-   "h1": null,
+   "title": "115",
+   "h1": "115",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     115
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 7,
   "text_chars": 5068
@@ -4009,35 +4073,29 @@
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
   "method": "pdf_pages",
-  "coverage": 1.0,
+  "coverage": 0.545,
   "codes_found": [
    "GEOG25",
    "GEOG33",
    "GEOG36",
    "GEOG37",
    "GEOG38",
-   "GIS25",
-   "GIS33",
-   "GIS36",
-   "GIS37",
-   "GIS38",
    "GIS40"
   ],
   "source": {
-   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=231",
-   "title": null,
-   "h1": null,
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=82",
+   "title": "82",
+   "h1": "82",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    231,
-    232,
-    233
+    82
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 11,
-  "text_chars": 16000
+  "text_chars": 5583
  },
  {
   "control_number": "35196",
@@ -4067,14 +4125,15 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=64",
-   "title": null,
-   "h1": null,
+   "title": "64",
+   "h1": "64",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     64
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 17,
   "text_chars": 6063
@@ -4098,14 +4157,15 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=56",
-   "title": null,
-   "h1": null,
+   "title": "56",
+   "h1": "56",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     56
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 8,
   "text_chars": 5648
@@ -4133,8 +4193,8 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=44",
-   "title": null,
-   "h1": null,
+   "title": "44",
+   "h1": "44",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -4143,7 +4203,8 @@
     46,
     47
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 12,
   "text_chars": 16000
@@ -4165,14 +4226,15 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=33",
-   "title": null,
-   "h1": null,
+   "title": "Graduation Requirements for Degrees and Certificates",
+   "h1": "Graduation Requirements for Degrees and Certificates",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     33
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 6,
   "text_chars": 6589
@@ -4241,18 +4303,19 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=60",
-   "title": null,
-   "h1": null,
+   "title": "Students completing the Associate in Arts in Kinesiology for Transfer",
+   "h1": "Students completing the Associate in Arts in Kinesiology for Transfer",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     60,
     61
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 54,
-  "text_chars": 12420
+  "text_chars": 11676
  },
  {
   "control_number": "35462",
@@ -4300,15 +4363,16 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=54",
-   "title": null,
-   "h1": null,
+   "title": "54",
+   "h1": "54",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     54,
     55
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 35,
   "text_chars": 12418
@@ -4342,15 +4406,16 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=52",
-   "title": null,
-   "h1": null,
+   "title": "52",
+   "h1": "52",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     52,
     53
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 23,
   "text_chars": 12631
@@ -4385,14 +4450,15 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=71",
-   "title": null,
-   "h1": null,
+   "title": "71",
+   "h1": "71",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     71
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 19,
   "text_chars": 6102
@@ -4441,14 +4507,15 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=53",
-   "title": null,
-   "h1": null,
+   "title": "53",
+   "h1": "53",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     53
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 33,
   "text_chars": 6466
@@ -4483,14 +4550,15 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=46",
-   "title": null,
-   "h1": null,
+   "title": "46",
+   "h1": "46",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     46
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 19,
   "text_chars": 5115
@@ -4515,14 +4583,15 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=33",
-   "title": null,
-   "h1": null,
+   "title": "Graduation Requirements for Degrees and Certificates",
+   "h1": "Graduation Requirements for Degrees and Certificates",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     33
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 11,
   "text_chars": 6589
@@ -4564,14 +4633,15 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=157",
-   "title": null,
-   "h1": null,
+   "title": "157",
+   "h1": "157",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     157
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 2,
   "text_chars": 4935
@@ -4589,14 +4659,15 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=160",
-   "title": null,
-   "h1": null,
+   "title": "160",
+   "h1": "160",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     160
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 2,
   "text_chars": 1590
@@ -4624,14 +4695,15 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=152",
-   "title": null,
-   "h1": null,
+   "title": "152",
+   "h1": "152",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     152
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 12,
   "text_chars": 5853
@@ -4659,8 +4731,8 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=102",
-   "title": null,
-   "h1": null,
+   "title": "102",
+   "h1": "102",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -4669,7 +4741,8 @@
     104,
     105
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 12,
   "text_chars": 16000
@@ -4697,8 +4770,8 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=66",
-   "title": null,
-   "h1": null,
+   "title": "66",
+   "h1": "66",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -4707,7 +4780,8 @@
     68,
     69
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 12,
   "text_chars": 16000
@@ -4737,17 +4811,18 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=166",
-   "title": null,
-   "h1": null,
+   "title": "The Phlebotomy Technician I Certificate of Completion will prepare",
+   "h1": "The Phlebotomy Technician I Certificate of Completion will prepare",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     166
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 2,
-  "text_chars": 5251
+  "text_chars": 2624
  },
  {
   "control_number": "36785",
@@ -4765,8 +4840,8 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=135",
-   "title": null,
-   "h1": null,
+   "title": "135",
+   "h1": "135",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -4774,7 +4849,8 @@
     136,
     137
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 5,
   "text_chars": 16000
@@ -4793,14 +4869,15 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=164",
-   "title": null,
-   "h1": null,
+   "title": "164",
+   "h1": "164",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     164
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 3,
   "text_chars": 4946
@@ -4824,17 +4901,18 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=125",
-   "title": null,
-   "h1": null,
+   "title": "Gas and Electric Welding AS P036910C Cal-GETC (34 units)LACCD GE (21 units)",
+   "h1": "Gas and Electric Welding AS P036910C Cal-GETC (34 units)LACCD GE (21 units)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     125
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 8,
-  "text_chars": 5331
+  "text_chars": 3796
  },
  {
   "control_number": "36911",
@@ -4855,14 +4933,15 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=125",
-   "title": null,
-   "h1": null,
+   "title": "125",
+   "h1": "125",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     125
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 8,
   "text_chars": 5331
@@ -4890,18 +4969,19 @@
    "PHOTO9"
   ],
   "source": {
-   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=131",
-   "title": null,
-   "h1": null,
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=132",
+   "title": "Photography AS P036946C Cal-GETC (34 units)LACCD GE (21 units)",
+   "h1": "Photography AS P036946C Cal-GETC (34 units)LACCD GE (21 units)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    131,
     132,
     133,
-    134
+    134,
+    135
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 13,
   "text_chars": 16000
@@ -4929,18 +5009,19 @@
    "PHOTO9"
   ],
   "source": {
-   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=131",
-   "title": null,
-   "h1": null,
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=132",
+   "title": "132",
+   "h1": "132",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    131,
     132,
     133,
-    134
+    134,
+    135
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 13,
   "text_chars": 16000
@@ -4964,14 +5045,15 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=285",
-   "title": null,
-   "h1": null,
+   "title": "285",
+   "h1": "285",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     285
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 8,
   "text_chars": 7304
@@ -4989,18 +5071,19 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=163",
-   "title": null,
-   "h1": null,
+   "title": "Earning an EKG Technician Certificate of Completion may be the",
+   "h1": "Earning an EKG Technician Certificate of Completion may be the",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     163,
     164
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 2,
-  "text_chars": 9729
+  "text_chars": 7352
  },
  {
   "control_number": "37217",
@@ -5028,8 +5111,8 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=43",
-   "title": null,
-   "h1": null,
+   "title": "43",
+   "h1": "43",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -5038,7 +5121,8 @@
     45,
     46
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 15,
   "text_chars": 16000
@@ -5062,19 +5146,19 @@
    "ASL5"
   ],
   "source": {
-   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=136",
-   "title": null,
-   "h1": null,
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=137",
+   "title": "137",
+   "h1": "137",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    136,
     137
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 9,
-  "text_chars": 11203
+  "text_chars": 5559
  },
  {
   "control_number": "37835",
@@ -5089,14 +5173,15 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=162",
-   "title": null,
-   "h1": null,
+   "title": "162",
+   "h1": "162",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     162
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 2,
   "text_chars": 5188
@@ -5116,14 +5201,15 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=139",
-   "title": null,
-   "h1": null,
+   "title": "139",
+   "h1": "139",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     139
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 4,
   "text_chars": 5253
@@ -5151,18 +5237,19 @@
    "CIS241"
   ],
   "source": {
-   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=111",
-   "title": null,
-   "h1": null,
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=112",
+   "title": "Cybersecurity Certificate P037976D N/A",
+   "h1": "Cybersecurity Certificate P037976D N/A",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    111,
     112,
     113,
-    114
+    114,
+    115
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 13,
   "text_chars": 16000
@@ -5180,15 +5267,16 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=161",
-   "title": null,
-   "h1": null,
+   "title": "161",
+   "h1": "161",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     161,
     162
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 2,
   "text_chars": 10123
@@ -5206,14 +5294,15 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=162",
-   "title": null,
-   "h1": null,
+   "title": "162",
+   "h1": "162",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     162
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 2,
   "text_chars": 5188
@@ -5238,8 +5327,8 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=110",
-   "title": null,
-   "h1": null,
+   "title": "110",
+   "h1": "110",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -5248,7 +5337,8 @@
     112,
     113
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 9,
   "text_chars": 16000
@@ -5273,8 +5363,8 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=58",
-   "title": null,
-   "h1": null,
+   "title": "58",
+   "h1": "58",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -5283,7 +5373,8 @@
     60,
     61
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 10,
   "text_chars": 16000
@@ -5319,15 +5410,16 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=148",
-   "title": null,
-   "h1": null,
+   "title": "148",
+   "h1": "148",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     148,
     149
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 20,
   "text_chars": 12463
@@ -5344,14 +5436,15 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=168",
-   "title": null,
-   "h1": null,
+   "title": "168",
+   "h1": "168",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     168
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 1,
   "text_chars": 3608
@@ -5371,17 +5464,18 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=165",
-   "title": null,
-   "h1": null,
+   "title": "The Landscape Technician Certificate of Completion prepares students",
+   "h1": "The Landscape Technician Certificate of Completion prepares students",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     165
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 4,
-  "text_chars": 5655
+  "text_chars": 5508
  },
  {
   "control_number": "39969",
@@ -5399,8 +5493,8 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=110",
-   "title": null,
-   "h1": null,
+   "title": "110",
+   "h1": "110",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -5409,7 +5503,8 @@
     112,
     113
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 5,
   "text_chars": 16000
@@ -5433,14 +5528,15 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=135",
-   "title": null,
-   "h1": null,
+   "title": "135",
+   "h1": "135",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     135
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 8,
   "text_chars": 5070
@@ -5460,14 +5556,15 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=100",
-   "title": null,
-   "h1": null,
+   "title": "100",
+   "h1": "100",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     100
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 4,
   "text_chars": 5781
@@ -5496,15 +5593,16 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=47",
-   "title": null,
-   "h1": null,
+   "title": "47",
+   "h1": "47",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     47,
     48
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 13,
   "text_chars": 11770
@@ -5534,19 +5632,21 @@
    "ACCTG2"
   ],
   "source": {
-   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=88",
-   "title": null,
-   "h1": null,
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=92",
+   "title": "92",
+   "h1": "92",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    88,
-    89
+    92,
+    93,
+    94
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 3,
-  "text_chars": 10763
+  "text_chars": 15298
  },
  {
   "control_number": "41891",
@@ -5562,15 +5662,16 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=93",
-   "title": null,
-   "h1": null,
+   "title": "93",
+   "h1": "93",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     93,
     94
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 3,
   "text_chars": 10109
@@ -5599,14 +5700,15 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=156",
-   "title": null,
-   "h1": null,
+   "title": "156",
+   "h1": "156",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     156
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 1,
   "text_chars": 4566
@@ -5624,15 +5726,16 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=157",
-   "title": null,
-   "h1": null,
+   "title": "157",
+   "h1": "157",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     157,
     158
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 2,
   "text_chars": 10312
@@ -5649,14 +5752,15 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=228",
-   "title": null,
-   "h1": null,
+   "title": "228",
+   "h1": "228",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     228
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 2,
   "text_chars": 6613
@@ -5673,18 +5777,21 @@
    "ESLNC8CE"
   ],
   "source": {
-   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=159",
-   "title": null,
-   "h1": null,
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=227",
+   "title": "227",
+   "h1": "227",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    159
+    227,
+    228,
+    229
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 2,
-  "text_chars": 5900
+  "text_chars": 16000
  },
  {
   "control_number": "42275",
@@ -5698,18 +5805,20 @@
    "ESLNC9CE"
   ],
   "source": {
-   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=159",
-   "title": null,
-   "h1": null,
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=227",
+   "title": "227",
+   "h1": "227",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    159
+    227,
+    228
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 2,
-  "text_chars": 5900
+  "text_chars": 13214
  },
  {
   "control_number": "42276",
@@ -5724,14 +5833,15 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=158",
-   "title": null,
-   "h1": null,
+   "title": "158",
+   "h1": "158",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     158
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 2,
   "text_chars": 5375
@@ -5749,14 +5859,15 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=161",
-   "title": null,
-   "h1": null,
+   "title": "161",
+   "h1": "161",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     161
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 2,
   "text_chars": 4933
@@ -5774,14 +5885,15 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=164",
-   "title": null,
-   "h1": null,
+   "title": "164",
+   "h1": "164",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     164
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 2,
   "text_chars": 4946
@@ -5798,17 +5910,18 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=167",
-   "title": null,
-   "h1": null,
+   "title": "The Tutor Training Leadership Certificate of Completion is designed",
+   "h1": "The Tutor Training Leadership Certificate of Completion is designed",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     167
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 1,
-  "text_chars": 5121
+  "text_chars": 2905
  },
  {
   "control_number": "42428",
@@ -5828,8 +5941,8 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=166",
-   "title": null,
-   "h1": null,
+   "title": "The Medical Front Office Assistant Certificate of Completion trains",
+   "h1": "The Medical Front Office Assistant Certificate of Completion trains",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -5837,10 +5950,11 @@
     167,
     168
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 7,
-  "text_chars": 13984
+  "text_chars": 13540
  },
  {
   "control_number": "42439",
@@ -5855,14 +5969,15 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=166",
-   "title": null,
-   "h1": null,
+   "title": "166",
+   "h1": "166",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     166
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 2,
   "text_chars": 5251
@@ -5889,14 +6004,15 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=74",
-   "title": null,
-   "h1": null,
+   "title": "74",
+   "h1": "74",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     74
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 11,
   "text_chars": 5614
@@ -5906,32 +6022,12 @@
   "title": "UCTP Physics",
   "award": "A.S. T Degree",
   "shape": "adt",
-  "method": "pdf_pages",
-  "coverage": 0.9,
-  "codes_found": [
-   "CHEM101",
-   "CHEM102",
-   "MATH261",
-   "MATH262",
-   "MATH263",
-   "MATH275",
-   "PHYSICS101",
-   "PHYSICS102",
-   "PHYSICS103"
-  ],
-  "source": {
-   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=74",
-   "title": null,
-   "h1": null,
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    74
-   ],
-   "extractor": "pypdf"
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 10,
-  "text_chars": 5614
+  "text_chars": 0
  },
  {
   "control_number": "42945",
@@ -5947,19 +6043,19 @@
    "CHEM60"
   ],
   "source": {
-   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=128",
-   "title": null,
-   "h1": null,
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=129",
+   "title": "Biotechnology Lab Assistant Certificate P042945D N/A",
+   "h1": "Biotechnology Lab Assistant Certificate P042945D N/A",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    128,
     129
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 4,
-  "text_chars": 10178
+  "text_chars": 2892
  },
  {
   "control_number": "43098",
@@ -5984,8 +6080,8 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=128",
-   "title": null,
-   "h1": null,
+   "title": "128",
+   "h1": "128",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -5993,7 +6089,8 @@
     129,
     130
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 12,
   "text_chars": 15500
@@ -6014,19 +6111,19 @@
    "MICRO20"
   ],
   "source": {
-   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=128",
-   "title": null,
-   "h1": null,
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=129",
+   "title": "129",
+   "h1": "129",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    128,
     129
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 6,
-  "text_chars": 10178
+  "text_chars": 4320
  },
  {
   "control_number": "43458",
@@ -6053,14 +6150,15 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=49",
-   "title": null,
-   "h1": null,
+   "title": "49",
+   "h1": "49",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     49
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 14,
   "text_chars": 5871
@@ -6092,8 +6190,8 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=145",
-   "title": null,
-   "h1": null,
+   "title": "145",
+   "h1": "145",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -6102,7 +6200,8 @@
     147,
     148
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 16,
   "text_chars": 16000
@@ -6122,18 +6221,21 @@
    "ADMJUS5"
   ],
   "source": {
-   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=42",
-   "title": null,
-   "h1": null,
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=152",
+   "title": "152",
+   "h1": "152",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    42
+    152,
+    153,
+    154
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 5,
-  "text_chars": 5821
+  "text_chars": 16000
  },
  {
   "control_number": "43745",
@@ -6148,17 +6250,18 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=158",
-   "title": null,
-   "h1": null,
+   "title": "The GED Preparation for Spanish Speakers Certificate of completion",
+   "h1": "The GED Preparation for Spanish Speakers Certificate of completion",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     158
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 2,
-  "text_chars": 5375
+  "text_chars": 4192
  },
  {
   "control_number": "43746",
@@ -6173,42 +6276,30 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=164",
-   "title": null,
-   "h1": null,
+   "title": "The Internship Workplace Support Certificate of Completion",
+   "h1": "The Internship Workplace Support Certificate of Completion",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     164
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 2,
-  "text_chars": 4946
+  "text_chars": 1435
  },
  {
   "control_number": "43779",
   "title": "Electric Vehicle Services for Light-Duty Zero-Emission Vehicles",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "pdf_pages",
-  "coverage": 1.0,
-  "codes_found": [
-   "VOCED565CE",
-   "VOCED566CE"
-  ],
-  "source": {
-   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=164",
-   "title": null,
-   "h1": null,
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    164
-   ],
-   "extractor": "pypdf"
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 2,
-  "text_chars": 4946
+  "text_chars": 0
  },
  {
   "control_number": "43780",
@@ -6224,14 +6315,15 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=163",
-   "title": null,
-   "h1": null,
+   "title": "163",
+   "h1": "163",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     163
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 3,
   "text_chars": 4781
@@ -6273,8 +6365,8 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=141",
-   "title": null,
-   "h1": null,
+   "title": "141",
+   "h1": "141",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -6282,7 +6374,8 @@
     142,
     143
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 14,
   "text_chars": 16000
@@ -6305,18 +6398,20 @@
    "MUSIC2174"
   ],
   "source": {
-   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=63",
-   "title": null,
-   "h1": null,
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=142",
+   "title": "142",
+   "h1": "142",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    63
+    142,
+    143
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 8,
-  "text_chars": 6053
+  "text_chars": 11338
  },
  {
   "control_number": "45035",
@@ -6491,8 +6586,8 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=31",
-   "title": null,
-   "h1": null,
+   "title": "Graduation Requirements for Degrees and Certificates",
+   "h1": "Graduation Requirements for Degrees and Certificates",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -6500,7 +6595,8 @@
     32,
     33
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 272,
   "text_chars": 16000
@@ -6530,18 +6626,18 @@
    "MUSIC781"
   ],
   "source": {
-   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=140",
-   "title": null,
-   "h1": null,
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=141",
+   "title": "Applied Music Certificate P045038D N/A",
+   "h1": "Applied Music Certificate P045038D N/A",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    140,
     141,
     142,
     143
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 15,
   "text_chars": 16000
@@ -6559,15 +6655,16 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=167",
-   "title": null,
-   "h1": null,
+   "title": "167",
+   "h1": "167",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     167,
     168
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 2,
   "text_chars": 8731
@@ -6577,54 +6674,12 @@
   "title": "Health Science",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "pdf_pages",
-  "coverage": 0.556,
-  "codes_found": [
-   "ANATOMY1",
-   "HEALTH11",
-   "KIN201",
-   "KIN2171",
-   "KIN229",
-   "KIN250",
-   "KIN251",
-   "KIN266",
-   "KIN268",
-   "KIN271",
-   "KIN287",
-   "KIN289",
-   "KIN2911",
-   "KIN3011",
-   "KIN3031",
-   "KIN316",
-   "KIN327",
-   "KIN329",
-   "KIN332",
-   "KIN3341",
-   "KIN3401",
-   "KIN347",
-   "KIN350",
-   "KIN351",
-   "KIN3521",
-   "KIN3711",
-   "KIN3871",
-   "PSYCC1000",
-   "STAT101",
-   "STATC1000"
-  ],
-  "source": {
-   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=60",
-   "title": null,
-   "h1": null,
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    60,
-    61
-   ],
-   "extractor": "pypdf"
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 54,
-  "text_chars": 12420
+  "text_chars": 0
  },
  {
   "control_number": "45502",
@@ -6632,35 +6687,32 @@
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
   "method": "pdf_pages",
-  "coverage": 1.0,
+  "coverage": 0.692,
   "codes_found": [
-   "ACCTG1",
-   "BUS1",
    "DANCEST801",
    "DANCEST806",
-   "DANCEST820",
    "DANCEST822",
    "DANCETQ121",
    "DANCETQ231",
    "DNCESPC171",
    "DNCESPC331",
    "DNCESPC441",
-   "MGMT13",
    "THEATER411"
   ],
   "source": {
-   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=145",
-   "title": null,
-   "h1": null,
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=146",
+   "title": "146",
+   "h1": "146",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    145,
     146,
     147,
-    148
+    148,
+    149
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 13,
   "text_chars": 16000
@@ -6692,20 +6744,20 @@
    "MUSIC781"
   ],
   "source": {
-   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=141",
-   "title": null,
-   "h1": null,
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=142",
+   "title": "142",
+   "h1": "142",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    141,
     142,
     143
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 17,
-  "text_chars": 16000
+  "text_chars": 11338
  },
  {
   "control_number": "45551",
@@ -6725,8 +6777,8 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=105",
-   "title": null,
-   "h1": null,
+   "title": "105",
+   "h1": "105",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -6735,7 +6787,8 @@
     107,
     108
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 7,
   "text_chars": 16000
@@ -6758,15 +6811,16 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=128",
-   "title": null,
-   "h1": null,
+   "title": "128",
+   "h1": "128",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     128,
     129
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 7,
   "text_chars": 10178
@@ -6784,14 +6838,15 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=156",
-   "title": null,
-   "h1": null,
+   "title": "156",
+   "h1": "156",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     156
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 2,
   "text_chars": 4566
@@ -6809,14 +6864,15 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=168",
-   "title": null,
-   "h1": null,
+   "title": "168",
+   "h1": "168",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     168
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 2,
   "text_chars": 3608
@@ -6834,14 +6890,15 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=161",
-   "title": null,
-   "h1": null,
+   "title": "161",
+   "h1": "161",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     161
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 2,
   "text_chars": 4933
@@ -6860,14 +6917,15 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=167",
-   "title": null,
-   "h1": null,
+   "title": "167",
+   "h1": "167",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     167
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 3,
   "text_chars": 5121
@@ -6887,14 +6945,15 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=120",
-   "title": null,
-   "h1": null,
+   "title": "120",
+   "h1": "120",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     120
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 4,
   "text_chars": 4416
@@ -6921,15 +6980,16 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=50",
-   "title": null,
-   "h1": null,
+   "title": "50",
+   "h1": "50",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     50,
     51
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 11,
   "text_chars": 11832
@@ -6953,15 +7013,16 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=62",
-   "title": null,
-   "h1": null,
+   "title": "62",
+   "h1": "62",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     62,
     63
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 8,
   "text_chars": 11663
@@ -6985,18 +7046,19 @@
    "PHYSICS103"
   ],
   "source": {
-   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=33",
-   "title": null,
-   "h1": null,
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=65",
+   "title": "65",
+   "h1": "65",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    33
+    65
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 9,
-  "text_chars": 6589
+  "text_chars": 6050
  },
  {
   "control_number": "46100",
@@ -7011,14 +7073,15 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=157",
-   "title": null,
-   "h1": null,
+   "title": "157",
+   "h1": "157",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     157
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 2,
   "text_chars": 4935
@@ -7042,15 +7105,16 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=95",
-   "title": null,
-   "h1": null,
+   "title": "95",
+   "h1": "95",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     95,
     96
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 8,
   "text_chars": 12212
@@ -7070,19 +7134,19 @@
    "PLNTSC103"
   ],
   "source": {
-   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=95",
-   "title": null,
-   "h1": null,
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=96",
+   "title": "96",
+   "h1": "96",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    95,
     96
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 5,
-  "text_chars": 12212
+  "text_chars": 6048
  },
  {
   "control_number": "46335",
@@ -7112,15 +7176,16 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=52",
-   "title": null,
-   "h1": null,
+   "title": "52",
+   "h1": "52",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     52,
     53
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 20,
   "text_chars": 12631
@@ -7152,8 +7217,8 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=67",
-   "title": null,
-   "h1": null,
+   "title": "67",
+   "h1": "67",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -7162,7 +7227,8 @@
     69,
     70
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 16,
   "text_chars": 16000
@@ -7180,17 +7246,18 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=162",
-   "title": null,
-   "h1": null,
+   "title": "The College Readiness Certificate of Completion is a comprehensive",
+   "h1": "The College Readiness Certificate of Completion is a comprehensive",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     162
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 2,
-  "text_chars": 5188
+  "text_chars": 5044
  },
  {
   "control_number": "46408",
@@ -7206,14 +7273,15 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=156",
-   "title": null,
-   "h1": null,
+   "title": "156",
+   "h1": "156",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     156
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 3,
   "text_chars": 4566
@@ -7254,8 +7322,8 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=41",
-   "title": null,
-   "h1": null,
+   "title": "41",
+   "h1": "41",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -7264,7 +7332,8 @@
     43,
     44
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 30,
   "text_chars": 16000
@@ -7286,14 +7355,15 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=154",
-   "title": null,
-   "h1": null,
+   "title": "154",
+   "h1": "154",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     154
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 6,
   "text_chars": 6117
@@ -7321,14 +7391,15 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=48",
-   "title": null,
-   "h1": null,
+   "title": "48",
+   "h1": "48",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     48
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 12,
   "text_chars": 5927

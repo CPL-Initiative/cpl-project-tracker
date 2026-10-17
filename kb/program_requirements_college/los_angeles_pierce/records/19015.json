@@ -86,15 +86,11 @@
    "program": 6,
    "courses": 0,
    "count": 6,
-   "not_verbatim": [
-    "Develop and demonstrate a basic level of competency in stagecraft, scenic design, computer aided drafting, stage production, stage lighting and stage management or costuming and makeup for the theatre."
-   ],
-   "why": [
-    "not in the catalog text as printed: Develop and demonstrate a basic level of competency in stagecraft, scenic design"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 8,
@@ -104,7 +100,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -227,5 +223,6 @@
    "Sum of required units (3+3+3+3+3+2) matches printed total of 17."
   ]
  },
- "extracted_run": "39006383070"
+ "extracted_run": 39018421038,
+ "read_run": "39006383070"
 }

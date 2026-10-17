@@ -82,17 +82,11 @@
    "program": 4,
    "courses": 0,
    "count": 4,
-   "not_verbatim": [
-    "Using the elements and principles of floral design and basic color theory as well as industry standards, create basic floral arrangements and corsages.",
-    "Create industry-standard floral designs for categories of special events, such as wedding décor, sympathy tributes, window displays, permanent botanicals, and event designs."
-   ],
-   "why": [
-    "not in the catalog text as printed: Using the elements and principles of floral design and basic color theory as wel",
-    "not in the catalog text as printed: Create industry-standard floral designs for categories of special events, such a"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 0,
@@ -102,7 +96,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -248,5 +242,6 @@
    "Award table lists Floral Design and Management Certificate, major code P021800D, GE N/A."
   ]
  },
- "extracted_run": "39006383070"
+ "extracted_run": 39018421038,
+ "read_run": "39006383070"
 }

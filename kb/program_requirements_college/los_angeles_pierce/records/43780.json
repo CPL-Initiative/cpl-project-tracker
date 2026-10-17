@@ -82,17 +82,11 @@
    "program": 3,
    "courses": 0,
    "count": 3,
-   "not_verbatim": [
-    "Demonstrate ability to narrate a child’s play for content vocabulary, and concept development.",
-    "Demonstrate Mindfulness exercises that can be shared with children, and employed in stressful situations (breathing, interception, etc.)."
-   ],
-   "why": [
-    "not in the catalog text as printed: Demonstrate ability to narrate a child's play for content vocabulary, and concep",
-    "not in the catalog text as printed: Demonstrate Mindfulness exercises that can be shared with children, and employed"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 2,
@@ -102,7 +96,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -181,5 +175,6 @@
    "Page also prints the end of a custodial program and the EKG Technician and Electric Vehicle programs; those were ignored."
   ]
  },
- "extracted_run": "39006383070"
+ "extracted_run": 39018421038,
+ "read_run": "39006383070"
 }

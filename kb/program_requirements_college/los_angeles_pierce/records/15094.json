@@ -90,10 +90,8 @@
   },
   "careers": {
    "count": 1,
-   "not_verbatim": [
-    "Automotive Heavy Line Technician"
-   ],
-   "pass": false
+   "not_verbatim": [],
+   "pass": true
   },
   "degree": {
    "status": "n/a"
@@ -172,5 +170,6 @@
    "Certificate total of 13 units is printed as 'CERTIFICATE - TOTAL UNITS' and matches the sum of the three required courses."
   ]
  },
- "extracted_run": "39006383070"
+ "extracted_run": 39018421038,
+ "read_run": "39006383070"
 }

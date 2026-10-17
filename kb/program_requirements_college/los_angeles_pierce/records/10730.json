@@ -82,15 +82,11 @@
    "program": 3,
    "courses": 0,
    "count": 3,
-   "not_verbatim": [
-    "Provides the student knowledge of communication and microwave electronics."
-   ],
-   "why": [
-    "not in the catalog text as printed: Provides the student knowledge of communication and microwave electronics."
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 0,
@@ -100,7 +96,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -237,5 +233,6 @@
    "No careers were recorded. The A.S. degree section names 'electronics technician', but the certificate section names no career; it only refers to the Gainful Employment website."
   ]
  },
- "extracted_run": "39006383070"
+ "extracted_run": 39018421038,
+ "read_run": "39006383070"
 }

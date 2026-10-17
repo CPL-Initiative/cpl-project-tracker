@@ -82,11 +82,15 @@
    "program": 3,
    "courses": 0,
    "count": 3,
-   "not_verbatim": [],
-   "why": [],
+   "not_verbatim": [
+    "Ability to work independently or as a team member."
+   ],
+   "why": [
+    "not in the catalog text as printed: Ability to work independently or as a team member."
+   ],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": true
+   "pass": false
   },
   "careers": {
    "count": 0,
@@ -99,7 +103,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": true
+  "pass": false
  },
  "record": {
   "program": {
@@ -240,5 +244,6 @@
    "The Certificate of Achievement section that follows lists the same 12 courses (36 units) but was not used for this record."
   ]
  },
- "extracted_run": "39006383070"
+ "extracted_run": 39018421038,
+ "read_run": "39006383070"
 }

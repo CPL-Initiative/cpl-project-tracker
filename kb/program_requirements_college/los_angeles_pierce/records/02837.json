@@ -87,14 +87,10 @@
    "courses": 0,
    "count": 4,
    "not_verbatim": [
-    "Identify the specific functions and contributions of every artist involved in the creative process of theatre including actors, writers, directors, producers, designers and stage technicians.",
-    "Develop and demonstrate a basic level of competency in stagecraft, scenic design, stage production, makeup, stage lighting and/or costuming for the theatre.",
-    "Identify and safely operate the most commonly used tools, materials and equipment, both hand and power, utilized in all areas of stage production."
+    "Develop and demonstrate a basic level of competency in stagecraft, scenic design, stage production, makeup, stage lighting and/or costuming for the theatre."
    ],
    "why": [
-    "not in the catalog text as printed: Identify the specific functions and contributions of every artist involved in th",
-    "not in the catalog text as printed: Develop and demonstrate a basic level of competency in stagecraft, scenic design",
-    "not in the catalog text as printed: Identify and safely operate the most commonly used tools, materials and equipmen"
+    "not in the catalog text as printed: Develop and demonstrate a basic level of competency in stagecraft, scenic design"
    ],
    "heading_printed": true,
    "heading_without_outcomes": false,
@@ -243,5 +239,6 @@
    "The Engineering A.S. section that follows belongs to a different program and was not read."
   ]
  },
- "extracted_run": "39006383070"
+ "extracted_run": 39018421038,
+ "read_run": "39006383070"
 }

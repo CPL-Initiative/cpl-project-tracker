@@ -87,9 +87,15 @@
    "courses": 0,
    "count": 4,
    "not_verbatim": [
+    "Examine general security concepts and communication security.",
+    "Harden networks against reconnaissance and penetration.",
+    "Set up and construct a secure peer-to-peer and client server network.",
     "Identify the risks and threats to an organization’s data and provide a structured way to address how to safeguard these areas."
    ],
    "why": [
+    "not in the catalog text as printed: Examine general security concepts and communication security.",
+    "not in the catalog text as printed: Harden networks against reconnaissance and penetration.",
+    "not in the catalog text as printed: Set up and construct a secure peer-to-peer and client server network.",
     "not in the catalog text as printed: Identify the risks and threats to an organization's data and provide a structure"
    ],
    "heading_printed": true,
@@ -98,8 +104,12 @@
   },
   "careers": {
    "count": 3,
-   "not_verbatim": [],
-   "pass": true
+   "not_verbatim": [
+    "security analyst",
+    "network systems security administrator",
+    "security policy analyst"
+   ],
+   "pass": false
   },
   "degree": {
    "status": "n/a"
@@ -280,5 +290,6 @@
    "The preceding section (Cloud, Networking, and Cybersecurity AS) and following certificates were not used."
   ]
  },
- "extracted_run": "39006383070"
+ "extracted_run": 39018421038,
+ "read_run": "39006383070"
 }

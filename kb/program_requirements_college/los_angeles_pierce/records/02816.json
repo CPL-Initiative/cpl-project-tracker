@@ -92,15 +92,11 @@
    "program": 4,
    "courses": 0,
    "count": 4,
-   "not_verbatim": [
-    "Demonstrate how the integration of technology into an organization can affect the success of a business."
-   ],
-   "why": [
-    "not in the catalog text as printed: Demonstrate how the integration of technology into an organization can affect th"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 0,
@@ -113,7 +109,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -336,5 +332,6 @@
    "GEOG/GIS 025 is printed as a cross-listed code; recorded as printed."
   ]
  },
- "extracted_run": "39006383070"
+ "extracted_run": 39018421038,
+ "read_run": "39006383070"
 }

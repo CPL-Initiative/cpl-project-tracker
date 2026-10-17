@@ -86,15 +86,11 @@
    "program": 3,
    "courses": 0,
    "count": 3,
-   "not_verbatim": [
-    "Be able to develop computer programs in at least 3 programming languages with an emphasis on programming for technical, scientific, and engineering environments."
-   ],
-   "why": [
-    "not in the catalog text as printed: Be able to develop computer programs in at least 3 programming languages with an"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 0,
@@ -107,7 +103,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -296,5 +292,6 @@
    "No careers named in the section."
   ]
  },
- "extracted_run": "39006383070"
+ "extracted_run": 39018421038,
+ "read_run": "39006383070"
 }

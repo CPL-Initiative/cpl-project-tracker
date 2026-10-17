@@ -82,15 +82,11 @@
    "program": 6,
    "courses": 0,
    "count": 6,
-   "not_verbatim": [
-    "Demonstrate an understanding of three-dimensional design concepts, vocabulary, materials and processes through the construction of two and/or three-dimensional objects."
-   ],
-   "why": [
-    "not in the catalog text as printed: Demonstrate an understanding of three-dimensional design concepts, vocabulary, m"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 0,
@@ -103,7 +99,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -249,5 +245,6 @@
    "Outcomes: PDF hyphenation breaks ('con - cepts', 'construc - tion') were rejoined into single words."
   ]
  },
- "extracted_run": "39006383070"
+ "extracted_run": 39018421038,
+ "read_run": "39006383070"
 }

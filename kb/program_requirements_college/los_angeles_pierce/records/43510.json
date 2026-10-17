@@ -82,17 +82,11 @@
    "program": 4,
    "courses": 0,
    "count": 4,
-   "not_verbatim": [
-    "Develop and exemplify the requisite skills, disciplined work habits, confidence, and commitment to their craft that will enhance their opportunities for successful careers in the performing arts.",
-    "Analyze a dramatic text using the basic principles of given circumstances, character, relationship, objective, obstacle, tactics, and beats in preparation for creating a role and performing onstage."
-   ],
-   "why": [
-    "not in the catalog text as printed: Develop and exemplify the requisite skills, disciplined work habits, confidence,",
-    "not in the catalog text as printed: Analyze a dramatic text using the basic principles of given circumstances, chara"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 1,
@@ -102,7 +96,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -278,5 +272,6 @@
    "Description also mentions 'a successful stage or film career'; only 'performing arts' recorded as a named career field. Gainful Employment section refers to an external website for careers."
   ]
  },
- "extracted_run": "39006383070"
+ "extracted_run": 39018421038,
+ "read_run": "39006383070"
 }

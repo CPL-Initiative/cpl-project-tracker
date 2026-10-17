@@ -82,27 +82,21 @@
    "program": 4,
    "courses": 0,
    "count": 4,
-   "not_verbatim": [
-    "Identify various industry subsectors—including biomanufacturing, synthetic biology, and cell therapy—and examine the educational transitions and professional certifications required to navigate the California biotechnology workforce."
-   ],
-   "why": [
-    "not in the catalog text as printed: Identify various industry subsectors-including biomanufacturing, synthetic biolo"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 1,
-   "not_verbatim": [
-    "biotechnology field"
-   ],
-   "pass": false
+   "not_verbatim": [],
+   "pass": true
   },
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -173,5 +167,6 @@
    "Career field taken from 'pursue a career in the biotechnology field' in the program description."
   ]
  },
- "extracted_run": "39006383070"
+ "extracted_run": 39018421038,
+ "read_run": "39006383070"
 }

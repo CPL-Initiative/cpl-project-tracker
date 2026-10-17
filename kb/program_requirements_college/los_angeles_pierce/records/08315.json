@@ -90,17 +90,11 @@
    "program": 6,
    "courses": 0,
    "count": 6,
-   "not_verbatim": [
-    "Explain the importance of managing in today’s business environment and the necessary skills needed by effective managers.",
-    "Analyze a company’s strengths and weaknesses against the opportunities and threats in the outside environment."
-   ],
-   "why": [
-    "not in the catalog text as printed: Explain the importance of managing in today's business environment and the neces",
-    "not in the catalog text as printed: Analyze a company's strengths and weaknesses against the opportunities and threa"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 2,
@@ -113,7 +107,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -328,5 +322,6 @@
    "High Unit Major Waiver note: some students may be eligible for a waiver of LACCD GE Area 4 or 7."
   ]
  },
- "extracted_run": "39006383070"
+ "extracted_run": 39018421038,
+ "read_run": "39006383070"
 }

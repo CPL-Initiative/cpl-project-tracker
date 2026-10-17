@@ -90,10 +90,8 @@
   },
   "careers": {
    "count": 2,
-   "not_verbatim": [
-    "basic bookkeeping"
-   ],
-   "pass": false
+   "not_verbatim": [],
+   "pass": true
   },
   "degree": {
    "status": "n/a"
@@ -168,5 +166,6 @@
    "Careers: the description says the program prepares students 'for a career in basic bookkeeping' and names 'Bookkeepers' as a middle-skill occupation."
   ]
  },
- "extracted_run": "39006383070"
+ "extracted_run": 39018421038,
+ "read_run": "39006383070"
 }
