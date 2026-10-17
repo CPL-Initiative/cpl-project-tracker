@@ -1,0 +1,212 @@
+{
+ "college": "Mendocino College",
+ "control_number": "43158",
+ "shape": "noncredit",
+ "title": "Intermediate ESL Preparation",
+ "award": "Noncredit program",
+ "source_url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=154",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6546,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6546,
+    "output_tokens": 1171,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1171,
+  "output_tokens_details": {
+   "thinking_tokens": 266
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.0496,
+ "ms": 10280,
+ "seconds": 10.4,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 6,
+   "listed": 6,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    136.0,
+    136.0
+   ],
+   "stated": [
+    136.0,
+    408.0
+   ],
+   "against": "program",
+   "why": [
+    "the blocks sum to 136.0-136.0; the catalog states 136.0-408.0"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "INTERMEDIATE ESL PREPARATION CERTIFICATE OF COMPLETION",
+   "measure": "hours",
+   "total_units": {
+    "min": 136,
+    "max": 408
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Communicate with intermediate level accuracy in English speaking college and career settings.",
+    "Organize, draft, and revise academic written texts, including paragraphs.",
+    "Develop vocabulary and fluency needed to comprehend and respond to intermediate level academic texts.",
+    "Utilize English grammar structures at an intermediate level of language proficiency."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ESL 509A",
+      "units": 68,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ESL 509B",
+      "units": 68,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Based on appropriate guided self-placement, students can complete a minimum of 68 hours from the following ESL noncredit courses",
+    "rule": "recommended",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ESL 500A",
+      "units": 68,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ESL 500B",
+      "units": 68,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ESL 507A",
+      "units": 68,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ESL 507B",
+      "units": 68,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Program is noncredit and counted in hours; all units fields hold hours.",
+   "The second list says students 'can complete a minimum of 68 hours' based on guided self-placement. The printed total of 136-408 hours implies this list is optional: the minimum of 136 equals the two required courses alone, and the maximum of 408 adds all four optional courses. It is recorded as 'recommended'. A reviewer may prefer choose_units with a minimum of 68, but that would conflict with the printed 136-hour minimum.",
+   "The completion statement requires one semester each of ESL 509A and ESL 509B with a noncredit grade of P.",
+   "The 'Career Opportunities in ESL' section names no specific careers, only transition to advanced ESL coursework and work settings, so careers is empty."
+  ]
+ },
+ "extracted_run": "39006339282"
+}

@@ -1,0 +1,66 @@
+{
+ "college": "Mendocino College",
+ "programs": 125,
+ "with_closed_list": 123,
+ "found": 118,
+ "extracted": 118,
+ "errors": 0,
+ "passed_machine_checks": 73,
+ "failed": {
+  "coverage": 26,
+  "invented": 1,
+  "arithmetic": 44,
+  "repeated": 0,
+  "outcomes": 0
+ },
+ "cost_usd": 7.4,
+ "cost_per_program": 0.0627,
+ "not_found": [
+  {
+   "control_number": "03440",
+   "title": "Art - Textiles",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=98",
+    "coverage": 0.429
+   }
+  },
+  {
+   "control_number": "07782",
+   "title": "Ceramics - Master Technician",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=104",
+    "coverage": 0.455
+   }
+  },
+  {
+   "control_number": "10592",
+   "title": "Art - Ceramics",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=102",
+    "coverage": 0.333
+   }
+  },
+  {
+   "control_number": "32049",
+   "title": "History",
+   "award": "A.A- T Degree",
+   "near_miss": {
+    "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=79",
+    "coverage": 0.409
+   }
+  },
+  {
+   "control_number": "33096",
+   "title": "Elementary Teacher Education",
+   "award": "A.A- T Degree",
+   "near_miss": {
+    "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=260",
+    "coverage": 0.077
+   }
+  }
+ ],
+ "run": "39006339282"
+}

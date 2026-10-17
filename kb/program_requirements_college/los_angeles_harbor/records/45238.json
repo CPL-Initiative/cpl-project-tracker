@@ -1,0 +1,173 @@
+{
+ "college": "Los Angeles Harbor College",
+ "control_number": "45238",
+ "shape": "noncredit",
+ "title": "Basic Barista Skill II",
+ "award": "Noncredit program",
+ "source_url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=94",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6850,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6850,
+    "output_tokens": 1525,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1525,
+  "output_tokens_details": {
+   "thinking_tokens": 663
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.0579,
+ "ms": 12148,
+ "seconds": 12.5,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 2,
+   "listed": 2,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    96.0,
+    96.0
+   ],
+   "stated": [
+    96.0,
+    96.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 3,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Basic Barista Skill II - Certificate of Completion (CN)",
+   "measure": "hours",
+   "total_units": {
+    "min": 96,
+    "max": 96
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Demonstrate a working knowledge of a general overview of the specialty coffee supply chain and explore topics such as history and cultivation, variables that affect coffee quality, basics of sensory analysis, fundamentals of roasting, factors of coffee freshness, and principles of Brewing.",
+    "Demonstrate knowledge and understanding of the essential practical skills of an espresso bar, required to process customer orders within limited-service times. While working as a barista in class, you will learn techniques such as effectively setting up the grinder, making espresso, frothing milk with proper texture and temperature for milk-based coffee drinks, and creating latte art.",
+    "Presentations – Demonstrate the ability to use critical thinking skills through various experience in difference customer experience various Demonstrate the proper presentation and service to the customers for different types of coffee: portion sizes, display, and garnishment.",
+    "Demonstrate the ability to apply communication skills in the workplace and to cooperate with the workflow with other team members during the shift and communicate effectively with team members."
+   ],
+   "careers": [
+    "barista",
+    "entry-level management positions",
+    "professional coffee service industry"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "COMPLETE THE FOLLOWING 2 REQUIRED COURSES",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "VOC ED 705CE",
+      "units": 48,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VOC ED 706CE",
+      "units": 48,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Noncredit certificate of completion counted in hours; course values are the hours printed (48 each) and 'Total Hours 96' is recorded as total_units.",
+   "Careers are drawn from the program description: 'barista' (customer service essentials required of a barista), 'entry-level management positions', and the 'professional coffee service industry'. The text also mentions generic 'entry-level positions'. Reviewer may wish to confirm which of these count as careers.",
+   "The third outcome's wording is garbled in the source ('various experience in difference customer experience various Demonstrate'). It is copied as printed."
+  ]
+ },
+ "extracted_run": "39006381839"
+}

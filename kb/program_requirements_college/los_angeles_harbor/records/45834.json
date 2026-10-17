@@ -1,0 +1,217 @@
+{
+ "college": "Los Angeles Harbor College",
+ "control_number": "45834",
+ "shape": "certificate",
+ "title": "Cybersecurity Analyst",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=85",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6899,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6899,
+    "output_tokens": 1280,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1280,
+  "output_tokens_details": {
+   "thinking_tokens": 357
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.0532,
+ "ms": 10526,
+ "seconds": 10.9,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 5,
+   "listed": 5,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "CIS210"
+   ],
+   "flagged": [
+    "CIS210"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    18.0,
+    18.0
+   ],
+   "stated": [
+    18.0,
+    18.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 14,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Cybersecurity Analyst - Certificate of Achievement (CA)",
+   "measure": "units",
+   "total_units": {
+    "min": 18,
+    "max": 18
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Apply security concepts to mitigate risk and utilize wireless and cloud assessment tools to assess vulnerabilities of a system.",
+    "Set up a virtual private cloud including IAM user accounts using one of the major cloud service providers.",
+    "Install, set up, and configure a network based on the Microsoft Windows operating systems on a virtual computer.",
+    "Configure a sniffer (e.g. Wireshark, AirSnort) and analyze data collected from multiple target systems and perform a session hijack between a target and a server.",
+    "Access a vulnerable virtual private network (VPN) and patch the vulnerability."
+   ],
+   "careers": [
+    "computer internetwork systems security",
+    "Computer Network Support Specialist",
+    "IT Consultant",
+    "Network Technical Analyst",
+    "Network Technician",
+    "Personal Computer Network Analyst",
+    "Systems Specialist",
+    "Information Security Officer",
+    "Information Security Specialist",
+    "Information Systems Security Analyst",
+    "Information Technology Security Analyst",
+    "Network Security Analyst",
+    "Systems Analyst",
+    "Penetration Testers"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "REQUIRED UNITS",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 18,
+     "max": 18
+    },
+    "courses": [
+     {
+      "code": "CIS 111",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS 162",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS 170",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS 191",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS 210",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CIS 211",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Asterisks after course codes (* prerequisite, ** course advisory) are footnote marks and were dropped from the codes.",
+   "CIS 210 Introduction to Computer Networking is required in the catalog but is not in the closed list; recorded as a catalog addition.",
+   "'computer internetwork systems security' is recorded as a career field from the description ('entry level position in the field of ...'); reviewer may confirm."
+  ]
+ },
+ "extracted_run": "39006381839"
+}

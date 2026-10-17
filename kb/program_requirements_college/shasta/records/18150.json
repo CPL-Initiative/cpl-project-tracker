@@ -1,0 +1,247 @@
+{
+ "college": "Shasta College",
+ "control_number": "18150",
+ "shape": "degree",
+ "title": "General Studies - Fire - Wildland Fire Behavior",
+ "award": "A.S. Degree",
+ "source_url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=44",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8177,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8177,
+    "output_tokens": 1412,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1412,
+  "output_tokens_details": {
+   "thinking_tokens": 345
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.06095,
+ "ms": 12789,
+ "seconds": 13.1,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 21,
+   "share": 0.0,
+   "missing": [
+    "CHEM10",
+    "CHEM11",
+    "CHEM1A",
+    "CHEM1B",
+    "CHEM2A",
+    "CHEM2B",
+    "CHEM70",
+    "CHEM70A",
+    "CHEM71",
+    "CHEM71A",
+    "ESCI14",
+    "FTWO111",
+    "FTWO112",
+    "FTWO113",
+    "FTWO114",
+    "FTWO116",
+    "FTWO125",
+    "FTWO128",
+    "FTWO132",
+    "FTWO144",
+    "MATH110"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Chapter 3: Programs of Study",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "CHEM 10",
+    "why": "appears only in a Cal-GETC Area 5A general education list, not in a program section"
+   },
+   {
+    "code": "CHEM 11",
+    "why": "appears only in a Cal-GETC Area 5A general education list, not in a program section"
+   },
+   {
+    "code": "CHEM 1A",
+    "why": "appears only in a Cal-GETC Area 5A general education list, not in a program section"
+   },
+   {
+    "code": "CHEM 1B",
+    "why": "appears only in a Cal-GETC Area 5A general education list, not in a program section"
+   },
+   {
+    "code": "CHEM 2A",
+    "why": "appears only in a Cal-GETC Area 5A general education list, not in a program section"
+   },
+   {
+    "code": "CHEM 2B",
+    "why": "appears only in a Cal-GETC Area 5A general education list, not in a program section"
+   },
+   {
+    "code": "CHEM 70",
+    "why": "appears only in a Cal-GETC Area 5A general education list, not in a program section"
+   },
+   {
+    "code": "CHEM 70A",
+    "why": "appears only in a Cal-GETC Area 5A general education list, not in a program section"
+   },
+   {
+    "code": "CHEM 71",
+    "why": "appears only in a Cal-GETC Area 5A general education list, not in a program section"
+   },
+   {
+    "code": "CHEM 71A",
+    "why": "appears only in a Cal-GETC Area 5A general education list, not in a program section"
+   },
+   {
+    "code": "ESCI 14",
+    "why": "appears only in a Cal-GETC Area 5A general education list, not in a program section"
+   },
+   {
+    "code": "FTWO 111",
+    "why": "not in the text"
+   },
+   {
+    "code": "FTWO 112",
+    "why": "not in the text"
+   },
+   {
+    "code": "FTWO 113",
+    "why": "not in the text"
+   },
+   {
+    "code": "FTWO 114",
+    "why": "not in the text"
+   },
+   {
+    "code": "FTWO 116",
+    "why": "not in the text"
+   },
+   {
+    "code": "FTWO 125",
+    "why": "not in the text"
+   },
+   {
+    "code": "FTWO 128",
+    "why": "not in the text"
+   },
+   {
+    "code": "FTWO 132",
+    "why": "not in the text"
+   },
+   {
+    "code": "FTWO 144",
+    "why": "not in the text"
+   },
+   {
+    "code": "MATH110",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "The supplied text (catalog page 44, printed page 36) is part of a Cal-GETC general education pattern listing (Areas 4, 5 and 6), not the General Studies - Fire - Wildland Fire Behavior A.S. section. No program requirements, totals, outcomes or careers for this award appear in the text.",
+   "The section_heading records only the running chapter header printed on the page; the actual program section was not found in the supplied text.",
+   "The CHEM and ESCI 14 closed-list courses appear only as Cal-GETC Area 5A options; GE courses are not placed in blocks.",
+   "A reviewer should locate the correct catalog page for this program (likely elsewhere in Chapter 3) to extract its requirements."
+  ]
+ },
+ "extracted_run": "39006384701"
+}

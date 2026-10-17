@@ -1,0 +1,383 @@
+{
+ "college": "Compton College",
+ "control_number": "38070",
+ "shape": "degree",
+ "title": "Computer Information Systems",
+ "award": "A.S. Degree",
+ "source_url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=84",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 10112,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 10112,
+    "output_tokens": 3410,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 3410,
+  "output_tokens_details": {
+   "thinking_tokens": 1229
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.10865,
+ "ms": 26481,
+ "seconds": 26.8,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 14,
+   "listed": 14,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 3,
+   "codes": [
+    "BUS127",
+    "CIS120",
+    "CIS176"
+   ],
+   "flagged": [
+    "BUS127",
+    "CIS120",
+    "CIS176"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    23.0,
+    30.0
+   ],
+   "stated": [
+    23.0,
+    30.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 6,
+   "courses": 0,
+   "count": 6,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 5,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "COMPUTER INFORMATION SYSTEMS — Program Requirements for A.S. degree",
+   "measure": "units",
+   "total_units": {
+    "min": 23,
+    "max": 30
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Explain ethical, legal, and societal implications inherent in information technology and understand the professional responsibilities of a computer professional.",
+    "Demonstrate proficiency in common industry software applications, cyber applications, and Network security to effectively analyze business problems and communicate decisions.",
+    "Demonstrate the ability to use computer information concepts and critical thinking skills to analyze business problems, and design, develop and implement appropriate software solutions, using a variety of software tools and computer languages.",
+    "Professional Awareness: Explain ethical, legal and societal implications inherent in information technology and understand the professional responsibilities of a computer professional.",
+    "Business Communication: Demonstrate proficiency in common industry software applications, cyber applications and Network security to effectively analyze business problems and communicate decisions",
+    "Skill Development: Demonstrate the ability to use computer information concepts and critical thinking skills to analyze business problems, and design, develop and implement appropriate software solutions, using a variety of software tools and computer languages."
+   ],
+   "careers": [
+    "software specialists",
+    "web programmers",
+    "database developers",
+    "systems analysts",
+    "network administrators"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Core",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 10,
+     "max": 10
+    },
+    "courses": [
+     {
+      "code": "CIS 113",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS 120",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CIS 126",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select one of the following groups of courses (6 units): CIS 116 and CIS 119",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Group A (6 units)",
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "CIS 116",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS 119",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select one of the following groups of courses (6 units): CIS 140 and CIS 141",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Group A (6 units)",
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "CIS 140",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS 141",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Advanced Applications",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Group B (7-14 units)",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CIS 180",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS 182",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Programming",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Group B (7-14 units)",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CIS 160",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS 170",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS 174",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Help Desk",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Group B (7-14 units)",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "BUS 127",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CIS 131",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS 132",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Mobile and Web Programming",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Group B (7-14 units)",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CIS 124",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS 170",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS 174",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS 176",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The PDF text prints codes with a stray space (e.g., 'CIS 1 13', 'CIS 1 16', 'CIS 1 19'); recorded as CIS 113, CIS 116, CIS 119.",
+   "The first 'Select one of the following groups of courses: 6 units' is read as two whole sequences (CIS 116 and CIS 119, or CIS 140 and CIS 141); the 6 units printed for the choice is recorded as stated on each option since each totals 6.",
+   "The second group choice prints only a combined range of 7-14 units for the four groups (Advanced Applications 7, Programming 11, Help Desk 9, Mobile and Web Programming 14); each group read as all courses required; no per-group totals printed, so stated is null.",
+   "The program learning outcomes list is printed once for 'the degree or certificate program' and is shared by the A.S. degree and the certificate; it appears to repeat three outcomes, once without and once with labels (Professional Awareness, Business Communication, Skill Development). All six bullets are recorded as printed.",
+   "Careers are taken from the program description shared with the Computer Systems Applications certificate.",
+   "CIS 120, BUS 127 and CIS 176 are not on the closed list and are marked as catalog additions.",
+   "Catalog prints CIS 124 as 'Introduction to Electronic Commerce' and CIS 182 as 'Advanced Database Application', slightly different from the state file titles."
+  ]
+ },
+ "extracted_run": "39006336111"
+}

@@ -1,0 +1,168 @@
+{
+ "college": "Shasta College",
+ "control_number": "39409",
+ "shape": "certificate",
+ "title": "Smog Inspection and Repair Technician",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=125",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8913,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8913,
+    "output_tokens": 844,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 844,
+  "output_tokens_details": {
+   "thinking_tokens": 186
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.05253,
+ "ms": 7956,
+ "seconds": 8.4,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 6,
+   "share": 0.0,
+   "missing": [
+    "AUTO1",
+    "AUTO11",
+    "AUTO176",
+    "AUTO20",
+    "AUTO21",
+    "AUTO94"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Chapter 4: Courses and Competencies",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "AUTO 1",
+    "why": "not in the text; the excerpt holds only course descriptions, not the certificate's requirements"
+   },
+   {
+    "code": "AUTO 11",
+    "why": "named only as an advisory in the AUTO 176 course description; no program requirements in the text"
+   },
+   {
+    "code": "AUTO 176",
+    "why": "only its course description is in the text; no program requirements printed"
+   },
+   {
+    "code": "AUTO 20",
+    "why": "only its course description is in the text; no program requirements printed"
+   },
+   {
+    "code": "AUTO 21",
+    "why": "only its course description is in the text; no program requirements printed"
+   },
+   {
+    "code": "AUTO 94",
+    "why": "only its course description is in the text; no program requirements printed"
+   }
+  ],
+  "notes": [
+   "The supplied text (catalog page 125, printed page 117) comes from Chapter 4: Courses and Competencies. It contains only Automotive Technology course descriptions, then the start of Biological Sciences. It does not include the Smog Inspection and Repair Technician Certificate of Achievement requirements, so no blocks, total, outcomes or careers could be recorded.",
+   "The program section is probably elsewhere in the catalog, likely in the programs chapter. A reviewer should locate that page and re-extract from it.",
+   "Course descriptions printed here: AUTO 20 (4 units), AUTO 21 (3 units), AUTO 94 (1-14 units), AUTO 176 (1 unit). The AUTO 21 description says that, together with Level 2 Smog Technician Training, it qualifies students to sit for the Bureau of Automotive Repair Smog Inspector License."
+  ]
+ },
+ "extracted_run": "39006384701"
+}

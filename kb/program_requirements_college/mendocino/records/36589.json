@@ -1,0 +1,199 @@
+{
+ "college": "Mendocino College",
+ "control_number": "36589",
+ "shape": "noncredit",
+ "title": "Employment Work Skills",
+ "award": "Noncredit program",
+ "source_url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=174",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6522,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6522,
+    "output_tokens": 1055,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1055,
+  "output_tokens_details": {
+   "thinking_tokens": 294
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.04719,
+ "ms": 8260,
+ "seconds": 8.6,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 6,
+   "listed": 6,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    127.5,
+    127.5
+   ],
+   "stated": [
+    127.5,
+    127.5
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "EMPLOYMENT WORK SKILLS CERTIFICATE OF COMPLETION",
+   "measure": "hours",
+   "total_units": {
+    "min": 127.5,
+    "max": 127.5
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Develop basic computer skills in aiding with the exploration of career as well as for use in a job setting.",
+    "Learn and demonstrate interview skills as well as job application and resume completion.",
+    "Explore and practice needed work skills within an office setting as well employment-specific communication needs.",
+    "Develop and practice appropriate skills with customers and a supervisor."
+   ],
+   "careers": [
+    "entry level positions in supported employment environments in the retail and service industries"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "LRS 531",
+      "units": 21.25,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "LRS 532",
+      "units": 21.25,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "LRS 533",
+      "units": 21.25,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "LRS 534",
+      "units": 21.25,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "LRS 535",
+      "units": 21.25,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "LRS 536",
+      "units": 21.25,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Award is a noncredit Certificate of Completion counted in hours; total_units holds the printed 'Total hours 127.50'.",
+   "The career sentence names a single phrase ('possible entry level positions in supported employment environments in the retail and service industries'); recorded as one entry without the qualifier 'possible'. Reviewer may prefer splitting into retail and service industries.",
+   "Outcome 3 copied as printed, including 'as well employment-specific' (apparent missing word 'as')."
+  ]
+ },
+ "extracted_run": "39006339282"
+}

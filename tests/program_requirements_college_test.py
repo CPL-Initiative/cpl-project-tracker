@@ -1553,12 +1553,42 @@ for final in (FlakyResp(404, None), Exception("Timeout 60000ms exceeded")):
     check(C.cq_json(fr, "https://x.curriqunet.com/b", ferr) is None and fr.loads == 1,
           "an HTTP status or another error is final, never retried: %r" % ferr)
 
-# ── a whole-catalog PDF (S403): the program's own page, never the course descriptions ──
+# ── a whole-catalog PDF (S403): the program's own page, not its course descriptions ──
+# Sixteen colleges publish one PDF. A one-subject program's codes fill the
+# course-description pages too, often more of them than the program page names;
+# the page that carries the program's title words wins, and the pages after it
+# join while they still name its codes.
+PDF_COURSES = [{"code": "WELD 101"}, {"code": "WELD 102"}, {"code": "WELD 150"}, {"code": "WELD 201"}]
+PDF_PAGES = [
+    "Welcome to the college. Table of contents.",
+    "Welding Technology\nCertificate of Achievement\nRequired courses WELD 101 Intro WELD 102 Gas",
+    "WELD 150 Blueprint reading\nTotal units 18",
+    "General education requirements",
+    "Course descriptions\nWELD 101 Intro 3 units WELD 102 Gas 3 units WELD 150 Blueprint 2 units WELD 201 Pipe 3 units",
+]
+prog = {"title": "Welding Technology", "award": "Certificate of Achievement"}
+check(C.pdf_program_pages(PDF_PAGES, prog, PDF_COURSES) == [1, 2],
+      "the titled program page and the page its table runs onto, never the description page: %r"
+      % C.pdf_program_pages(PDF_PAGES, prog, PDF_COURSES))
+b = C.pdf_best("https://x.edu/catalog.pdf", PDF_PAGES, prog, PDF_COURSES, "pypdf")
+check(b and b["url"] == "https://x.edu/catalog.pdf#page=2" and b["pages"] == [2, 3]
+      and abs(b["coverage"] - 0.75) < 1e-9 and "[page 2]" in b["text"],
+      "a PDF source names its first page in the address and every page it read: %r" % (b and b["url"]))
+check(C.pdf_program_pages(PDF_PAGES, {"title": "Pipe Fitting", "award": None}, PDF_COURSES) == [4],
+      "with no page carrying the title words, the pilot's picker reads the most codes")
+check(C.pdf_best("https://x.edu/c.pdf", ["no codes here"], prog, PDF_COURSES, None) is None,
+      "a PDF naming no listed course gives no source")
+check(C.is_pdf_catalog({"catalog_format": "single_pdf", "catalog_url": "https://x.edu/Cat%202026.PDF"})
+      and not C.is_pdf_catalog({"catalog_format": "single_pdf", "catalog_url": "https://www.ccsf.edu/catalog"})
+      and not C.is_pdf_catalog({"catalog_format": "pdf_by_section", "catalog_url": "https://x.edu/a.pdf"}),
+      "only a registry row naming one PDF file reads as a whole-catalog PDF")
+
+# ── the East LA session's signals, folded into #2189's reader (S403) ──
 # A catalog PDF prints each subject's course descriptions, which name an A.S.'s
 # courses too, and prints the certificate after the A.S. with the same list. The
 # heading that names the title and the award decides; the text opens on it.
-PDF_COURSES = [{"code": c} for c in ("ACCT 101", "ACCT 102", "ACCT 210", "BUS 120")]
-PDF_PAGES = [
+AC_COURSES = [{"code": c} for c in ("ACCT 101", "ACCT 102", "ACCT 210", "BUS 120")]
+AC_PAGES = [
     "Course Descriptions\nAccounting\nACCT 101 Financial Accounting 4 units\nACCT 102 Managerial "
     "Accounting 4 units\nACCT 210 Cost Accounting 3 units\nACCT 220 Tax 3 units",
     "Welcome to the college",
@@ -1567,24 +1597,15 @@ PDF_PAGES = [
     "ACCT 102 Managerial Accounting 4\nACCT 210 Cost Accounting 3\nBUS 120 Business Law 3\nTotal 14",
     "Accounting Certificate of Achievement\nACCT 101 4\nACCT 102 4\nACCT 210 3\nBUS 120 3",
 ]
-as_ = C.pdf_program_pages(PDF_PAGES, {"title": "Accounting", "award": "A.S. Degree"}, PDF_COURSES)
+as_ = C.pdf_best("https://x.edu/c.pdf", AC_PAGES, {"title": "Accounting", "award": "A.S. Degree"}, AC_COURSES, "pypdf")
 check(as_ and as_["pages"][0] == 4 and as_["named"] and as_["coverage"] == 1.0
       and as_["text"].startswith("[page 4]\nAccounting, Associate in Science"),
       "the A.S. opens on its own heading, not the course descriptions: %r" % (as_ and as_["pages"]))
-coa = C.pdf_program_pages(PDF_PAGES, {"title": "Accounting", "award": "Certificate of Achievement"}, PDF_COURSES)
-check(coa and coa["pages"] == [5] and coa["named"],
-      "the certificate printed after the A.S. takes its own page: %r" % (coa and coa["pages"]))
-check(C.pdf_program_pages(PDF_PAGES, {"title": "Welding", "award": "A.S. Degree"},
-                          [{"code": "WELD 101"}]) is None,
-      "a program the PDF does not name finds no pages")
-check(C.is_pdf_catalog({"catalog_platform": "pdf"}) and C.is_pdf_catalog({"catalog_url": "https://x.edu/c.PDF?v=2"})
-      and not C.is_pdf_catalog({"catalog_platform": "courseleaf", "catalog_url": "https://x.edu/catalog/"}),
-      "a PDF catalog is known by its platform, its format or its address")
-
-
-toc = ["Contents\nAccounting, Associate in Science ........ 4\nACCT 101 ACCT 102 ACCT 210 BUS 120"] + PDF_PAGES[1:]
-got = C.pdf_program_pages(toc, {"title": "Accounting", "award": "A.S. Degree"}, PDF_COURSES)
-check(got and got["pages"][0] == 4, "a contents line with a dot leader is no heading: %r" % (got and got["pages"]))
+check(C.pdf_program_pages(AC_PAGES, {"title": "Accounting", "award": "Certificate of Achievement"}, AC_COURSES) == [4],
+      "the certificate printed after the A.S. takes its own page")
+toc = ["Contents\nAccounting, Associate in Science ........ 4\nACCT 101 ACCT 102 ACCT 210 BUS 120"] + AC_PAGES[1:]
+check(C.pdf_program_pages(toc, {"title": "Accounting", "award": "A.S. Degree"}, AC_COURSES)[0] == 3,
+      "a contents line with a dot leader names no program")
 
 # East LA prints the control number in each heading, and lists every online course on pages up front.
 EL = ["Online courses\nACCT 101 ACCT 102 ACCT 210 BUS 120 BUS 001 ENGLISH 101",
@@ -1592,8 +1613,8 @@ EL = ["Online courses\nACCT 101 ACCT 102 ACCT 210 BUS 120 BUS 001 ENGLISH 101",
       "in an accounting office and runs well past the heading's length on one line as pypdf prints it.\n"
       "ACCT 101 4\nACCT 102 4\nACCT 210 3",
       "Accountancy (Academic Plan E013344D)\nACCT 101 4\nACCT 102 4\nACCT 210 3\nBUS 120 3"]
-got = C.pdf_program_pages(EL, {"title": "Accounting", "award": "Certificate of Achievement",
-                               "control_number": "13343"}, PDF_COURSES)
+got = C.pdf_best("https://x.edu/c.pdf", EL, {"title": "Accounting", "award": "Certificate of Achievement",
+                                              "control_number": "13343"}, AC_COURSES, "pypdf")
 check(got and got["pages"][0] == 2 and got["control_number_printed"]
       and got["text"].startswith("[page 2]\nAccounting (Academic Plan E013343D)"),
       "the page printing the program's control number wins over a course list and a fuller page: %r"
@@ -1601,9 +1622,9 @@ check(got and got["pages"][0] == 2 and got["control_number_printed"]
 check(C.pdf_control_number("Plan E013344D", "13343") == -1 and C.pdf_control_number("call 133430", "13343") == -1
       and C.pdf_control_number("(Academic Plan E013343D)", "13343") > 0,
       "a control number matches whole, never inside another number")
-long_head = ["Medical Assistant, Associate in Science Degree (Academic Plan X) A medical assistant interacts with "
-             "doctors, nurses and technicians in a long run-on line as pypdf prints it\nACCT 101 ACCT 102"]
-check(C.pdf_heading(long_head[0], {"title": "Medical Assistant", "award": "A.S. Degree"})[:2] == (1.0, True),
+long_head = "Medical Assistant, Associate in Science Degree (Academic Plan X) A medical assistant interacts with " \
+            "doctors, nurses and technicians in a long run-on line as pypdf prints it\nACCT 101 ACCT 102"
+check(C.pdf_heading(long_head, {"title": "Medical Assistant", "award": "A.S. Degree"})[:2] == (1.0, True),
       "a heading run into its paragraph is read from the line's opening")
 
 picks = [{"control_number": "1", "cn_printed": True, "named": False},
@@ -1613,6 +1634,9 @@ picks = [{"control_number": "1", "cn_printed": True, "named": False},
 check(C.pdf_unproven(picks) == {"4"}, "where the catalog prints control numbers, an unnamed page is no proof")
 check(C.pdf_unproven([dict(p, cn_printed=False) for p in picks]) == set(),
       "a catalog that prints no control numbers keeps its coverage picks")
+check(C.reads_as_pdf({"procedure": {"catalog": {"start": "https://x.edu/catalog", "follow": "2026", "format": "pdf"}}})
+      and not C.reads_as_pdf({"catalog_format": "single_pdf", "catalog_url": "https://www.ccsf.edu/catalog"}),
+      "a procedure record whose catalog step is a PDF reads as one")
 
 
 class StepReader:
@@ -1628,9 +1652,8 @@ def _step_load(reader, url, cache, late):
 _real_load = P.load
 P.load = _step_load
 try:
-    rep = {}
     url, wait = C.pdf_start(StepReader(), {"procedure": {"catalog": {
-        "start": "https://www.elac.edu/academic-resources/catalog", "follow": "2026 - 2027", "format": "pdf"}}}, {}, rep)
+        "start": "https://www.elac.edu/academic-resources/catalog", "follow": "2026 - 2027", "format": "pdf"}}}, {}, {})
 finally:
     P.load = _real_load
 check(url and url.endswith("2026%202027.pdf"),

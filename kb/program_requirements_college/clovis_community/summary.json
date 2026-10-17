@@ -1,0 +1,69 @@
+{
+ "college": "Clovis Community College",
+ "programs": 129,
+ "with_closed_list": 121,
+ "found": 115,
+ "extracted": 115,
+ "errors": 0,
+ "passed_machine_checks": 65,
+ "failed": {
+  "coverage": 21,
+  "invented": 6,
+  "arithmetic": 45,
+  "repeated": 0,
+  "outcomes": 5
+ },
+ "cost_usd": 8.34,
+ "cost_per_program": 0.0725,
+ "not_found": [
+  {
+   "control_number": "33496",
+   "title": "Communication Studies",
+   "award": "A.A- T Degree",
+   "near_miss": {
+    "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=111",
+    "coverage": 0.471
+   }
+  },
+  {
+   "control_number": "35845",
+   "title": "Food Safety and Quality Technician",
+   "award": "Certificate of Achievement: 12 to fewer than 18 semester(or 18 to fewer than 27 ",
+   "near_miss": {
+    "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=149",
+    "coverage": 0.125
+   }
+  },
+  {
+   "control_number": "37081",
+   "title": "Cyber Security",
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+   "near_miss": {
+    "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=247",
+    "coverage": 0.143
+   }
+  },
+  {
+   "control_number": "42839",
+   "title": "Communication Studies 2.0",
+   "award": "A.A- T Degree",
+   "near_miss": {
+    "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=111",
+    "coverage": 0.444
+   }
+  },
+  {
+   "control_number": "44163",
+   "title": "Preparation for Career",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "44164",
+   "title": "Preparation for College",
+   "award": "Noncredit program",
+   "near_miss": null
+  }
+ ],
+ "run": "39006155986"
+}

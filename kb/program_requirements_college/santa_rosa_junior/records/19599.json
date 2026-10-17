@@ -1,0 +1,716 @@
+{
+ "college": "Santa Rosa Junior College",
+ "control_number": "19599",
+ "shape": "degree",
+ "title": "Music: Instrumental",
+ "award": "A.A. Degree",
+ "source_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=176",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 11942,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 11942,
+    "output_tokens": 4697,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 4697,
+  "output_tokens_details": {
+   "thinking_tokens": 1086
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.14171,
+ "ms": 33413,
+ "seconds": 33.8,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 19,
+   "listed": 22,
+   "share": 0.864,
+   "missing": [
+    "LIR10",
+    "MUSC5C",
+    "MUSC5D"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 36,
+   "codes": [
+    "MUSC10",
+    "MUSC3A",
+    "MUSC3B",
+    "MUSC3C",
+    "MUSC3D",
+    "MUSC7",
+    "MUSC8",
+    "MUSC9",
+    "MUSP19A",
+    "MUSP19B",
+    "MUSP21A",
+    "MUSP21B",
+    "MUSP21C",
+    "MUSP21D",
+    "MUSP30A",
+    "MUSP30B",
+    "MUSP30C",
+    "MUSP30D",
+    "MUSP32A",
+    "MUSP32B",
+    "MUSP32C",
+    "MUSP32D",
+    "MUSP33A",
+    "MUSP33B",
+    "MUSP33C",
+    "MUSP33D",
+    "MUSP401",
+    "MUSP403",
+    "MUSP404",
+    "MUSP405",
+    "MUSP406",
+    "MUSP407",
+    "MUSP42A",
+    "MUSP42B",
+    "MUSP42C",
+    "MUSP42D"
+   ],
+   "flagged": [
+    "MUSC10",
+    "MUSC3A",
+    "MUSC3B",
+    "MUSC3C",
+    "MUSC3D",
+    "MUSC7",
+    "MUSC8",
+    "MUSC9",
+    "MUSP19A",
+    "MUSP19B",
+    "MUSP21A",
+    "MUSP21B",
+    "MUSP21C",
+    "MUSP21D",
+    "MUSP30A",
+    "MUSP30B",
+    "MUSP30C",
+    "MUSP30D",
+    "MUSP32A",
+    "MUSP32B",
+    "MUSP32C",
+    "MUSP32D",
+    "MUSP33A",
+    "MUSP33B",
+    "MUSP33C",
+    "MUSP33D",
+    "MUSP401",
+    "MUSP403",
+    "MUSP404",
+    "MUSP405",
+    "MUSP406",
+    "MUSP407",
+    "MUSP42A",
+    "MUSP42B",
+    "MUSP42C",
+    "MUSP42D"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    19.0,
+    19.0
+   ],
+   "stated": [
+    35.0,
+    35.0
+   ],
+   "against": "program",
+   "why": [
+    "a required course in 'Instrumental Concentration: Theory and Musicianship (4 courses)' has no units",
+    "'Instrumental Concentration: Performance Ensemble (4 semesters)' chooses 4 courses but 0 carry units",
+    "'Instrumental Concentration: Applied Music (4 semesters)' chooses 4 courses but 0 carry units"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 6,
+   "courses": 0,
+   "count": 6,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "music (AA) requirements - 35 units",
+   "measure": "units",
+   "total_units": {
+    "min": 35,
+    "max": 35
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "demonstrate an understanding of the fundamental melodic, harmonic, and rhythmic structure of music.",
+    "demonstrate fluency with the language of music in written and aural form.",
+    "perform on their instrument (or voice) at college sophomore level.",
+    "perform effectively in a musical ensemble.",
+    "utilize the piano keyboard to demonstrate and apply musical concepts.",
+    "demonstrate a broad-based understanding of the historical and aesthetic development of music."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Music AA Requirement - complete 15 units",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "MUSC 2A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSC 2B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSC 3A",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MUSC 3B",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Music Survey (one course)",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "MUSC 6.1",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSC 6.2",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSC 7",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MUSC 8",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MUSC 9",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MUSC 10",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Piano Proficiency (two courses)",
+    "rule": "choose_units",
+    "minimum": 4,
+    "option_group": null,
+    "stated": {
+     "min": 4,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "MUSP 11A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSP 11B",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSP 11C",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSP 11D",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Instrumental Concentration: Theory and Musicianship (4 courses)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "MUSC 2C",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSC 2D",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSC 3C",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MUSC 3D",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Instrumental Concentration: Performance Ensemble (4 semesters)",
+    "rule": "choose_courses",
+    "minimum": 4,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "MUSP 21A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MUSP 21B",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MUSP 21C",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MUSP 21D",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MUSP 30A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MUSP 30B",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MUSP 30C",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MUSP 30D",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MUSP 33A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MUSP 33B",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MUSP 33C",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MUSP 33D",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Instrumental Concentration: Applied Music (4 semesters)",
+    "rule": "choose_courses",
+    "minimum": 4,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "MUSP 40.1",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MUSP 40.3",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MUSP 40.4",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MUSP 40.5",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MUSP 40.6",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MUSP 40.7",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Instrumental Concentration: Instrumental Electives (4 unit minimum)",
+    "rule": "choose_units",
+    "minimum": 4,
+    "option_group": null,
+    "stated": {
+     "min": 4,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "MUSC 4A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSC 4B",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSC 5A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSC 5B",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSC 50",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSP 17A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSP 17B",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSP 19A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MUSP 19B",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MUSP 19.1A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSP 19.1B",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSP 32A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MUSP 32B",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MUSP 32C",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MUSP 32D",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MUSP 42A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MUSP 42B",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MUSP 42C",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MUSP 42D",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "LIR 10",
+    "why": "not in the text"
+   },
+   {
+    "code": "MUSC 5C",
+    "why": "named only in the Jazz Studies Concentration, not the Instrumental Concentration"
+   },
+   {
+    "code": "MUSC 5D",
+    "why": "named only in the Jazz Studies Concentration, not the Instrumental Concentration"
+   }
+  ],
+  "notes": [
+   "The award is the Music (AA) with the Instrumental Concentration; only the shared Music AA requirements and the Instrumental Concentration blocks were recorded. Vocal and Jazz Studies concentrations were omitted.",
+   "'Music AA Requirement - complete 15 units' covers the required core (8 units) plus Music Survey (3) and Piano Proficiency (4); the 15 was not recorded as stated on the core block alone.",
+   "'Instrumental Concentration (20.00 units)' is printed for the whole concentration; individual concentration blocks print no unit totals except the electives' 4-unit minimum. Units are not printed beside concentration, survey, or piano courses.",
+   "Performance Ensemble and Applied Music are read as choose 4 courses/semesters from the list.",
+   "The section includes boilerplate stating 60 CSU-transferable units with Cal-GETC and 18 units in a major, followed by 'ADTs also require'; this appears to be ADT text and was not recorded as this AA's degree total or GE pattern. Reviewer should check.",
+   "The section's description (before page 176) is not in the text, so no careers were recorded; the careers named in the Music (AA-T) description belong to another award.",
+   "The Program Student Learning Outcomes are printed for the Music (AA) as a whole and shared by the Instrumental Concentration."
+  ]
+ },
+ "extracted_run": "39006464249"
+}

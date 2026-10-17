@@ -1,0 +1,215 @@
+{
+ "college": "Mendocino College",
+ "load_run": "39007622077",
+ "function": "program_requirement_records_college_load",
+ "at": "2026-10-17T05:49:21Z",
+ "records": 118,
+ "posted": 93,
+ "batches": 4,
+ "inserted": 93,
+ "kept": 0,
+ "skipped": [
+  {
+   "control_number": "03442",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "03444",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "03454",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "03458",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "03461",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "07783",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "10587",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "12278",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "18732",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "21969",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "21973",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "30601",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "30677",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "31446",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "32077",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "32708",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "33812",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "35224",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "36788",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "38656",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "38659",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "43277",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "43366",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "43563",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "46569",
+   "why": "places none of its listed courses (another program's page)"
+  }
+ ],
+ "error": null,
+ "extracted_runs": [
+  "39006339282"
+ ],
+ "machine_pass": 73,
+ "inserted_keys": [
+  "03424",
+  "03425",
+  "03426",
+  "03428",
+  "03429",
+  "03433",
+  "03447",
+  "03455",
+  "03457",
+  "03462",
+  "07775",
+  "07776",
+  "07780",
+  "10578",
+  "10588",
+  "10589",
+  "10590",
+  "10591",
+  "10593",
+  "12660",
+  "12876",
+  "15174",
+  "15513",
+  "16539",
+  "16540",
+  "18733",
+  "21968",
+  "21971",
+  "21972",
+  "30501",
+  "30672",
+  "30693",
+  "30857",
+  "30858",
+  "30859",
+  "31067",
+  "31424",
+  "31425",
+  "31447",
+  "31465",
+  "31957",
+  "31958",
+  "31959",
+  "31960",
+  "31969",
+  "32084",
+  "32085",
+  "32089",
+  "32095",
+  "32678",
+  "32680",
+  "32788",
+  "32803",
+  "32985",
+  "32986",
+  "32988",
+  "33016",
+  "33148",
+  "33595",
+  "33597",
+  "33796",
+  "33886",
+  "35137",
+  "35138",
+  "35168",
+  "35331",
+  "36053",
+  "36246",
+  "36290",
+  "36589",
+  "36789",
+  "37283",
+  "39213",
+  "40466",
+  "40730",
+  "41091",
+  "41511",
+  "42202",
+  "42219",
+  "42220",
+  "42496",
+  "42666",
+  "42667",
+  "42668",
+  "42863",
+  "43158",
+  "43562",
+  "43564",
+  "43565",
+  "43585",
+  "45263",
+  "45314",
+  "46062"
+ ],
+ "kept_keys": [],
+ "rollback": "delete from public.program_requirement_records where college = 'Mendocino College' and checked = false and control_number in ('03424', '03425', '03426', '03428', '03429', '03433', '03447', '03455', '03457', '03462', '07775', '07776', '07780', '10578', '10588', '10589', '10590', '10591', '10593', '12660', '12876', '15174', '15513', '16539', '16540', '18733', '21968', '21971', '21972', '30501', '30672', '30693', '30857', '30858', '30859', '31067', '31424', '31425', '31447', '31465', '31957', '31958', '31959', '31960', '31969', '32084', '32085', '32089', '32095', '32678', '32680', '32788', '32803', '32985', '32986', '32988', '33016', '33148', '33595', '33597', '33796', '33886', '35137', '35138', '35168', '35331', '36053', '36246', '36290', '36589', '36789', '37283', '39213', '40466', '40730', '41091', '41511', '42202', '42219', '42220', '42496', '42666', '42667', '42668', '42863', '43158', '43562', '43564', '43565', '43585', '45263', '45314', '46062');"
+}

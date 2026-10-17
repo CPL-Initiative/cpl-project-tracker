@@ -1,0 +1,376 @@
+{
+ "college": "Santa Rosa Junior College",
+ "control_number": "33166",
+ "shape": "adt",
+ "title": "Anthropology",
+ "award": "A.A- T Degree",
+ "source_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=113",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7933,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7933,
+    "output_tokens": 3120,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 3120,
+  "output_tokens_details": {
+   "thinking_tokens": 1042
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.09413,
+ "ms": 24892,
+ "seconds": 25.2,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 15,
+   "listed": 21,
+   "share": 0.714,
+   "missing": [
+    "ANTH2",
+    "ANTH3",
+    "ANTHC1001",
+    "ANTHC1001L",
+    "PSYC1B",
+    "SOC5"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "ANTH1L"
+   ],
+   "flagged": [
+    "ANTH1L"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    6.0,
+    6.0
+   ],
+   "stated": [
+    18.0,
+    18.0
+   ],
+   "against": "program",
+   "why": [
+    "the blocks sum to 6.0-6.0; the catalog states 18.0-18.0"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 6,
+   "courses": 0,
+   "count": 6,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Anthropology for Transfer List C Requirements",
+   "measure": "units",
+   "total_units": {
+    "min": 18,
+    "max": 18
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Identify the major theoretical approaches, theorists, and historical trends in anthropology;",
+    "Understand and use basic research methods in archaeology, cultural and biological anthropology, including design, data analysis and interpretation;",
+    "Apply anthropological knowledge to understanding human diversity;",
+    "Develop an understanding of self and others in diverse biological and cultural contexts;",
+    "Apply critical thinking to anthropological theories and data; and",
+    "Demonstrate effective written and oral communication using anthropological concepts."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Select any combination totaling at least 3.00 units from the following",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "ANAT 1",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANTH 32",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANTH 43",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOL 1",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOL 1L",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "STAT C1000",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHSC 21",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Anthropology for Transfer List C Requirements",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "ANAT 1",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANTH 1L",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ANTH 4",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANTH 5",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANTH 19",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANTH 21",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANTH 30",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANTH 31",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANTH 32",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANTH 34",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANTH 42",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANTH 43",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "STAT C1000",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHSC 21",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOL 1",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOL 1L",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ANTH 2",
+    "why": "not in the text; likely in List A/B on the preceding page, which is cut off"
+   },
+   {
+    "code": "ANTH 3",
+    "why": "not in the text; likely in List A/B on the preceding page, which is cut off"
+   },
+   {
+    "code": "ANTH C1001",
+    "why": "not in the text; likely in List A on the preceding page, which is cut off"
+   },
+   {
+    "code": "PSYC 1B",
+    "why": "not in the text; likely in List B on the preceding page, which is cut off"
+   },
+   {
+    "code": "SOC 5",
+    "why": "not in the text; likely in List B on the preceding page, which is cut off"
+   },
+   {
+    "code": "ANTH C1001L",
+    "why": "not printed under this code; catalog prints ANTH 1L Biological Anthropology Lab in List C, likely the same course"
+   }
+  ],
+  "notes": [
+   "The text begins mid-section on page 113: the program heading (Anthropology AA-T), description, degree requirements text and List A, plus the heading of the first list shown (likely List B), are on the preceding page and not in the text. The first block's name uses its printed selection sentence since its heading is cut off.",
+   "No units are printed beside individual courses; all course units are null.",
+   "GEOL 1 & 1L is printed as one combined entry (The Earth and Geology Lab); recorded as two entries GEOL 1 and GEOL 1L that are taken together.",
+   "STAT C1000 is printed as 'STAT 1000 (STAT C1000)'; recorded under the common course number.",
+   "ANTH 1L (Biological Anthropology Lab) is not in the closed list and is flagged as a catalog addition; it likely corresponds to ANTH C1001L.",
+   "Catalog note: a course used to satisfy one category (List A, B, or C) cannot also satisfy another.",
+   "Total Hours/Units 18 recorded as total_units. The 60-unit/Cal-GETC text visible on the page belongs to the Architecture (AS) section, so degree_total and ge_pattern are left null for this award.",
+   "Program Student Learning Outcomes recorded from the outcomes list printed at the end of the Anthropology section."
+  ]
+ },
+ "extracted_run": "39006464249"
+}

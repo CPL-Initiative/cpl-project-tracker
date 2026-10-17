@@ -1,0 +1,332 @@
+{
+ "college": "Mendocino College",
+ "control_number": "03442",
+ "shape": "degree",
+ "title": "Theatre Arts",
+ "award": "A.A. Degree",
+ "source_url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=333",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 12219,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 12219,
+    "output_tokens": 1365,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1365,
+  "output_tokens_details": {
+   "thinking_tokens": 107
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.07618,
+ "ms": 10729,
+ "seconds": 11.0,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 39,
+   "share": 0.0,
+   "missing": [
+    "MUS200",
+    "THE105A",
+    "THE105B",
+    "THE105C",
+    "THE105D",
+    "THE160",
+    "THE200",
+    "THE202",
+    "THE208A",
+    "THE208B",
+    "THE210A",
+    "THE210B",
+    "THE210C",
+    "THE210D",
+    "THE212A",
+    "THE212B",
+    "THE212C",
+    "THE216A",
+    "THE216B",
+    "THE217A",
+    "THE217B",
+    "THE217C",
+    "THE217D",
+    "THE219",
+    "THE220A",
+    "THE220C",
+    "THE220D",
+    "THE224",
+    "THE225A",
+    "THE225B",
+    "THE225C",
+    "THE230A",
+    "THE230B",
+    "THE230C",
+    "THE230D",
+    "THE260",
+    "THE262",
+    "THE265A",
+    "THE265B"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "THEATRE ARTS",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "MUS 200",
+    "why": "not in the text; text holds only Theatre course descriptions, no A.A. requirements"
+   },
+   {
+    "code": "THE 105A",
+    "why": "course description only; no program requirements in text"
+   },
+   {
+    "code": "THE 105B",
+    "why": "course description only; no program requirements in text"
+   },
+   {
+    "code": "THE 105C",
+    "why": "course description only; no program requirements in text"
+   },
+   {
+    "code": "THE 105D",
+    "why": "course description only; no program requirements in text"
+   },
+   {
+    "code": "THE 160",
+    "why": "course description only; no program requirements in text"
+   },
+   {
+    "code": "THE 200",
+    "why": "course description only; no program requirements in text"
+   },
+   {
+    "code": "THE 202",
+    "why": "course description only; no program requirements in text"
+   },
+   {
+    "code": "THE 208A",
+    "why": "course description only; no program requirements in text"
+   },
+   {
+    "code": "THE 208B",
+    "why": "course description only; no program requirements in text"
+   },
+   {
+    "code": "THE 210A",
+    "why": "course description only; no program requirements in text"
+   },
+   {
+    "code": "THE 210B",
+    "why": "course description only; no program requirements in text"
+   },
+   {
+    "code": "THE 210C",
+    "why": "course description only; no program requirements in text"
+   },
+   {
+    "code": "THE 210D",
+    "why": "course description only; no program requirements in text"
+   },
+   {
+    "code": "THE 212A",
+    "why": "course description only; no program requirements in text"
+   },
+   {
+    "code": "THE 212B",
+    "why": "course description only; no program requirements in text"
+   },
+   {
+    "code": "THE 212C",
+    "why": "course description only; no program requirements in text"
+   },
+   {
+    "code": "THE 216A",
+    "why": "named only in course family list; no program requirements in text"
+   },
+   {
+    "code": "THE 216B",
+    "why": "named only in course family list; no program requirements in text"
+   },
+   {
+    "code": "THE 217A",
+    "why": "named only in course family list; no program requirements in text"
+   },
+   {
+    "code": "THE 217B",
+    "why": "named only in course family list; no program requirements in text"
+   },
+   {
+    "code": "THE 217D",
+    "why": "named only in course family list; no program requirements in text"
+   },
+   {
+    "code": "THE 219",
+    "why": "not in the text"
+   },
+   {
+    "code": "THE 220A",
+    "why": "named only in course family list; no program requirements in text"
+   },
+   {
+    "code": "THE 220C",
+    "why": "named only in course family list; no program requirements in text"
+   },
+   {
+    "code": "THE 220D",
+    "why": "named only in course family list; no program requirements in text"
+   },
+   {
+    "code": "THE 224",
+    "why": "not in the text"
+   },
+   {
+    "code": "THE 225A",
+    "why": "named only in course family list; no program requirements in text"
+   },
+   {
+    "code": "THE 225B",
+    "why": "named only in course family list; no program requirements in text"
+   },
+   {
+    "code": "THE 225C",
+    "why": "named only in course family list; no program requirements in text"
+   },
+   {
+    "code": "THE 230A",
+    "why": "named only in course family list; no program requirements in text"
+   },
+   {
+    "code": "THE 230B",
+    "why": "named only in course family list; no program requirements in text"
+   },
+   {
+    "code": "THE 230C",
+    "why": "named only in course family list; no program requirements in text"
+   },
+   {
+    "code": "THE 230D",
+    "why": "named only in course family list; no program requirements in text"
+   },
+   {
+    "code": "THE 260",
+    "why": "named only in course family list; no program requirements in text"
+   },
+   {
+    "code": "THE 262",
+    "why": "named only in course family list; no program requirements in text"
+   },
+   {
+    "code": "THE 265A",
+    "why": "named only in course family list; no program requirements in text"
+   },
+   {
+    "code": "THE 265B",
+    "why": "named only in course family list; no program requirements in text"
+   },
+   {
+    "code": "THE217C",
+    "why": "named only in course family list (as THE 217C); no program requirements in text"
+   }
+  ],
+  "notes": []
+ },
+ "extracted_run": "39006339282"
+}

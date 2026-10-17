@@ -1,0 +1,265 @@
+{
+ "college": "Yuba College",
+ "control_number": "07035",
+ "shape": "degree",
+ "title": "Associate in Science Nursing (ASN)",
+ "award": "A.S. Degree",
+ "source_url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=146",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8233,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8233,
+    "output_tokens": 2019,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2019,
+  "output_tokens_details": {
+   "thinking_tokens": 545
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.07331,
+ "ms": 16200,
+ "seconds": 16.5,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 9,
+   "listed": 9,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    48.0,
+    48.0
+   ],
+   "stated": [
+    48.0,
+    48.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 9,
+   "courses": 0,
+   "count": 9,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "REQUIRED COURSES:",
+   "measure": "units",
+   "total_units": {
+    "min": 48,
+    "max": 48
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Evaluate nursing care provided to clients, families, groups, populations, and communities from diverse backgrounds in a variety of settings to ensure that it is compassionate, age and culturally appropriate and based on a client's preferences, values and needs.",
+    "Collaborate with members of the interprofessional healthcare team to manage and coordinate client care.",
+    "Demonstrate use of current evidence and clinical expertise when making clinical decisions.",
+    "Integrate technologies into practice that support clinical judgment in the management of client care.",
+    "Use quality improvement strategies to effect change in the delivery of client care.",
+    "Evaluate effectiveness of strategies used to support a culture of safety that reduces the risk of injury to patients, self and others.",
+    "Integrate accountable and responsible behaviors that uphold established regulatory, legal, and ethical principles.",
+    "Use leadership, management and priority-setting skills in the provision and management of safe, quality client-centered care.",
+    "Use communication skills that promote an effective exchange of information, development of therapeutic relationships, and shared decision making."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "First Semester",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "NURS 11A",
+      "units": 9,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NURS 11B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Second Semester",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "NURS 12A",
+      "units": 8,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NURS 12B",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Third Semester",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "NURS 13A",
+      "units": 8,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NURS 13B",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Fourth Semester",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "NURS 14A",
+      "units": 6.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NURS 14B",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NURS 14C",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The text begins mid-section (CONT'D FROM PREVIOUS PAGE); the program's own heading is on the previous page and not in the text, so section_heading uses the requirements heading 'REQUIRED COURSES:'.",
+   "Catalog prints 'TOTAL UNITS REQUIRED FOR DEGREE MAJOR 48', recorded as total_units; printed course units sum to 48.",
+   "NURS 14A is titled 'Adult Health III with Leadership' at 6.5 units in the catalog, vs. 'Nursing Care of Clients with Multisystem Disorders' at 4 units in the state file; NURS 14B is 'Integrated Nursing Concepts: NCLEX-RN Readiness' at 1.5 units vs. 'Transition to professional practice' at 4 units. Catalog units recorded.",
+   "The 21-unit minimum General Education and 60 total degree-applicable units are generic statements for all AA/AS degrees, not printed as this award's totals; degree_total and ge_units left null and no GE pattern is named.",
+   "Outcomes printed for the nursing program ('Students who complete this program should be able to:') recorded for this ASN award.",
+   "'Registered Nurse (RN)' appears only in the separate LVN to RN Career Mobility Program section, so no careers were recorded for this award."
+  ]
+ },
+ "extracted_run": "39006517642"
+}

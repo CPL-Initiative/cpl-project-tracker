@@ -1,0 +1,290 @@
+{
+ "college": "Los Angeles City College",
+ "control_number": "02730",
+ "shape": "degree",
+ "title": "COMPUTER INFORMATION SYSTEMS (CIS)",
+ "award": "A.A. Degree",
+ "source_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=144",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 12477,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 12477,
+    "output_tokens": 2186,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2186,
+  "output_tokens_details": {
+   "thinking_tokens": 811
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.09363,
+ "ms": 17973,
+ "seconds": 18.5,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 11,
+   "listed": 11,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 2,
+   "codes": [
+    "CS101",
+    "CS119"
+   ],
+   "flagged": [
+    "CS101",
+    "CS119"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    33.0,
+    33.0
+   ],
+   "stated": [
+    60.0,
+    60.0
+   ],
+   "against": "degree",
+   "ge": null,
+   "why": [
+    "the blocks and general education sum to 33.0-33.0; the catalog prints 60.0-60.0 for the degree"
+   ],
+   "major": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     33.0,
+     33.0
+    ],
+    "stated": [
+     33.0,
+     33.0
+    ],
+    "against": "program",
+    "why": []
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 10,
+   "courses": 0,
+   "count": 10,
+   "not_verbatim": [
+    "Gain appropriate skills in computer literacy, computer applications, and programming to enable efficient use of computers and their applications.",
+    "Create a fully documented modular design with correct mathematical and logical operations suitable for implementation from a given program specification.",
+    "Employ complex data structures and algorithms, including sorting, searching, and recursion, to design and implement solutions to advanced computer science problems.",
+    "Gain an understanding of computer architecture and organization and apply this understanding to develop low-level code in assembly-language to solve a given problem."
+   ],
+   "why": [
+    "not in the catalog text as printed: Gain appropriate skills in computer literacy, computer applications, and program",
+    "not in the catalog text as printed: Create a fully documented modular design with correct mathematical and logical o",
+    "not in the catalog text as printed: Employ complex data structures and algorithms, including sorting, searching, and",
+    "not in the catalog text as printed: Gain an understanding of computer architecture and organization and apply this u"
+   ],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": false
+  },
+  "careers": {
+   "count": 3,
+   "not_verbatim": [
+    "database application developers"
+   ],
+   "pass": false
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Computer Information Systems (CIS) Associate of Arts (AA) Degree",
+   "measure": "units",
+   "total_units": {
+    "min": 33,
+    "max": 33
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Gain appropriate skills in computer literacy, computer applications, and programming to enable efficient use of computers and their applications.",
+    "Create a fully documented modular design with correct mathematical and logical operations suitable for implementation from a given program specification.",
+    "Gain knowledge in basic mathematics as it relates to Computer Science including number systems, Sets & Venn Diagrams, boolean logic, truth tables, and circuit gates.",
+    "Install, configure, and troubleshoot given problems for Linux, Windows, or other operating systems.",
+    "Design, create, update, and query a relational database using entity-relationship diagrams, normalization, and SQL.",
+    "Design and implement solutions to general purpose problems using a programming language such as C++, Java, and Python.",
+    "Gain skills in the use of client-side web technologies, such as HTML and CSS, for the design and development of interactive websites.",
+    "Employ complex data structures and algorithms, including sorting, searching, and recursion, to design and implement solutions to advanced computer science problems.",
+    "Gain an understanding of computer architecture and organization and apply this understanding to develop low-level code in assembly-language to solve a given problem.",
+    "Use advanced programming constructs to solve problems related to recursion, object-oriented programming, dynamic data types, networking, and/or multithreading."
+   ],
+   "careers": [
+    "entry-level programmers",
+    "database application developers",
+    "Web application developers"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "MAJOR CORE COURSES (SELECT 33 UNITS)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 33,
+     "max": 33
+    },
+    "courses": [
+     {
+      "code": "CS 101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CS 102",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CS 103",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CS 116",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CS 113",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "CS 119",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CS 130",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CS 136",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CS 216",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CS 213",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS 112",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS 148",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS 219",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The block heading reads 'SELECT 33 UNITS', but the eleven entries (two of them 'or' pairs) total exactly 33 units, so it is recorded as an 'all' block with stated 33.",
+   "The header prints 'Total Units: Minimum of 60' for this award; it is recorded as degree_total 60. No general education pattern or GE units are named in the section.",
+   "Line-break hyphenation in the outcomes and careers (e.g. 'applica - tions', 'data - base') was joined into single words.",
+   "Visual Basic, JavaScript and Python are named in the description, but no courses for them other than CS 119 appear in the requirements."
+  ]
+ },
+ "extracted_run": "39006380342"
+}

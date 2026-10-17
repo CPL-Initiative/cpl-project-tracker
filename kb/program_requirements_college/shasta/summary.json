@@ -1,0 +1,138 @@
+{
+ "college": "Shasta College",
+ "programs": 150,
+ "with_closed_list": 137,
+ "found": 124,
+ "extracted": 124,
+ "errors": 0,
+ "passed_machine_checks": 50,
+ "failed": {
+  "coverage": 21,
+  "invented": 0,
+  "arithmetic": 72,
+  "repeated": 0,
+  "outcomes": 5
+ },
+ "cost_usd": 11.12,
+ "cost_per_program": 0.0897,
+ "not_found": [
+  {
+   "control_number": "06454",
+   "title": "Fire Technology",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=80",
+    "coverage": 0.379
+   }
+  },
+  {
+   "control_number": "18092",
+   "title": "University Studies - Multicultural Studies",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=89",
+    "coverage": 0.15
+   }
+  },
+  {
+   "control_number": "18093",
+   "title": "University Studies - Natural Sciences",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=97",
+    "coverage": 0.368
+   }
+  },
+  {
+   "control_number": "18144",
+   "title": "General Studies - Office and Computer Technologies",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=68",
+    "coverage": 0.237
+   }
+  },
+  {
+   "control_number": "18146",
+   "title": "General Studies - Fire - Fire Investigation",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=80",
+    "coverage": 0.417
+   }
+  },
+  {
+   "control_number": "18147",
+   "title": "General Studies - Fire - Fire Service Command, Company Officer",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=160",
+    "coverage": 0.333
+   }
+  },
+  {
+   "control_number": "18152",
+   "title": "General Studies - Health",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=144",
+    "coverage": 0.078
+   }
+  },
+  {
+   "control_number": "18153",
+   "title": "General Studies: Food & Beverage & Lodging Management",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=69",
+    "coverage": 0.463
+   }
+  },
+  {
+   "control_number": "18155",
+   "title": "General Studies - Humanities",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=41",
+    "coverage": 0.462
+   }
+  },
+  {
+   "control_number": "18156",
+   "title": "General Studies - Industrial Technologies",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=93",
+    "coverage": 0.478
+   }
+  },
+  {
+   "control_number": "18655",
+   "title": "University Studies - Earth Sciences",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=78",
+    "coverage": 0.44
+   }
+  },
+  {
+   "control_number": "19643",
+   "title": "Computer and Information Systems - Network Administration",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=139",
+    "coverage": 0.4
+   }
+  },
+  {
+   "control_number": "39382",
+   "title": "Web Master",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=139",
+    "coverage": 0.462
+   }
+  }
+ ],
+ "run": "39006384701"
+}

@@ -1,0 +1,241 @@
+{
+ "college": "College of the Canyons",
+ "control_number": "18021",
+ "shape": "degree",
+ "title": "Psychology",
+ "award": "A.A. Degree",
+ "source_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=265",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 9483,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 9483,
+    "output_tokens": 1381,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1381,
+  "output_tokens_details": {
+   "thinking_tokens": 176
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.06555,
+ "ms": 11462,
+ "seconds": 11.7,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 20,
+   "share": 0.0,
+   "missing": [
+    "PSYCC1000",
+    "PSYCC1000H",
+    "PSYCH102",
+    "PSYCH103",
+    "PSYCH104",
+    "PSYCH105",
+    "PSYCH109",
+    "PSYCH110",
+    "PSYCH126",
+    "PSYCH167",
+    "PSYCH172",
+    "PSYCH172H",
+    "PSYCH180",
+    "PSYCH225",
+    "PSYCH230",
+    "PSYCH235",
+    "PSYCH240",
+    "STATC1000",
+    "STATC1000E",
+    "STATC1000H"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "PSYCHOLOGY (CREDIT PROGRAMS / COURSE DESCRIPTIONS)",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "PSYC C1000",
+    "why": "not in the text; no A.A. requirements printed"
+   },
+   {
+    "code": "PSYC C1000H",
+    "why": "not in the text; no A.A. requirements printed"
+   },
+   {
+    "code": "PSYCH 102",
+    "why": "only a course description (PSYC 102); no A.A. requirements printed"
+   },
+   {
+    "code": "PSYCH 103",
+    "why": "only a course description (PSYC 103); no A.A. requirements printed"
+   },
+   {
+    "code": "PSYCH 104",
+    "why": "only a course description (PSYC 104); no A.A. requirements printed"
+   },
+   {
+    "code": "PSYCH 105",
+    "why": "only a course description (PSYC 105); no A.A. requirements printed"
+   },
+   {
+    "code": "PSYCH 109",
+    "why": "only a course description (PSYC 109); no A.A. requirements printed"
+   },
+   {
+    "code": "PSYCH 110",
+    "why": "only a course description; no A.A. requirements printed"
+   },
+   {
+    "code": "PSYCH 126",
+    "why": "only a course description (PSYC 126); no A.A. requirements printed"
+   },
+   {
+    "code": "PSYCH 167",
+    "why": "only a course description (PSYC 167); no A.A. requirements printed"
+   },
+   {
+    "code": "PSYCH 172",
+    "why": "only a course description (PSYC 172); no A.A. requirements printed"
+   },
+   {
+    "code": "PSYCH 172H",
+    "why": "only a course description (PSYC 172H); no A.A. requirements printed"
+   },
+   {
+    "code": "PSYCH 180",
+    "why": "only a course description (PSYC 180); no A.A. requirements printed"
+   },
+   {
+    "code": "PSYCH 225",
+    "why": "only a course description (PSYC 225); no A.A. requirements printed"
+   },
+   {
+    "code": "PSYCH 230",
+    "why": "only a course description (PSYC 230); no A.A. requirements printed"
+   },
+   {
+    "code": "PSYCH 235",
+    "why": "only a course description (PSYC 235); no A.A. requirements printed"
+   },
+   {
+    "code": "PSYCH 240",
+    "why": "only a course description (PSYC 240); no A.A. requirements printed"
+   },
+   {
+    "code": "STAT C1000",
+    "why": "named only in a prerequisite/credit-limit note; no A.A. requirements printed"
+   },
+   {
+    "code": "STAT C1000E",
+    "why": "named only in a prerequisite/credit-limit note; no A.A. requirements printed"
+   },
+   {
+    "code": "STAT C1000H",
+    "why": "named only in a prerequisite/credit-limit note; no A.A. requirements printed"
+   }
+  ],
+  "notes": [
+   "The supplied text (catalog pages 265-266) contains only Psychology course descriptions, not the Psychology A.A. degree requirements; the program requirements section appears to be elsewhere in the catalog and should be retrieved.",
+   "No program learning outcomes, totals, GE pattern, or careers for the A.A. are printed in the text. PSYCH 110's description mentions 'careers in the field', but careers are not taken from course descriptions.",
+   "Course descriptions print codes as 'PSYC' (e.g., PSYC 102) with 'Formerly PSYCH-102', while the closed list uses 'PSYCH'; the PSYC C1000 description appears to precede this excerpt (text begins at PSYC 102)."
+  ]
+ },
+ "extracted_run": "39006378829"
+}

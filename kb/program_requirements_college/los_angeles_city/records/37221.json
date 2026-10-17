@@ -1,0 +1,921 @@
+{
+ "college": "Los Angeles City College",
+ "control_number": "37221",
+ "shape": "adt",
+ "title": "FILM, TELEVISION, AND ELECTRONIC MEDIA",
+ "award": "A.S. T Degree",
+ "source_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=125",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 17181,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 17181,
+    "output_tokens": 6503,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 6503,
+  "output_tokens_details": {
+   "thinking_tokens": 1947
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.19878,
+ "ms": 46614,
+ "seconds": 47.0,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 156,
+   "share": 0.0,
+   "missing": [
+    "AFROAM20",
+    "ANIMATN218",
+    "ANIMATN225",
+    "ARMEN1",
+    "ARMEN11",
+    "ARMEN12",
+    "ARMEN2",
+    "ARMEN35",
+    "ARMEN36",
+    "ART201",
+    "ART209",
+    "ART501",
+    "ARTHC1100",
+    "ARTHC1200",
+    "ARTHIST103",
+    "ARTHIST130",
+    "ARTHIST139",
+    "ARTHIST140",
+    "ARTHIST151",
+    "ARTHIST171",
+    "ASIAN1",
+    "ASL1",
+    "ASL2",
+    "ASL3",
+    "CHICANO4",
+    "CHICANO44",
+    "CHICANO47",
+    "CHICANO7",
+    "CHICANO8",
+    "CHINESE1",
+    "CHINESE10",
+    "CHINESE2",
+    "CHINESE3",
+    "CHINESE4",
+    "CINEMA10",
+    "CINEMA103",
+    "CINEMA17",
+    "CINEMA18",
+    "CINEMA20",
+    "CINEMA25",
+    "CINEMA321",
+    "CINEMA322",
+    "CINEMA381",
+    "CINEMA382",
+    "CINEMA4",
+    "CINEMA5",
+    "CINEMA6",
+    "CINEMA60",
+    "CINEMA7",
+    "CINEMA91",
+    "CINEMA911",
+    "CINEMA92",
+    "CINEMA921",
+    "CINEMA931",
+    "CINEMA941",
+    "COMM130",
+    "DANCEST805",
+    "ENGLISH102",
+    "ENGLISH203",
+    "ENGLISH204",
+    "ENGLISH205",
+    "ENGLISH206",
+    "ENGLISH207",
+    "ENGLISH208",
+    "ENGLISH211",
+    "ENGLISH212",
+    "ENGLISH214",
+    "ENGLISH215",
+    "ENGLISH216",
+    "ENGLISH218",
+    "ENGLISH219",
+    "ENGLISH239",
+    "ENGLISH240",
+    "ENGLISH252",
+    "ENGLISH255",
+    "ENGLISH270",
+    "FRENCH1",
+    "FRENCH10",
+    "FRENCH2",
+    "FRENCH3",
+    "FRENCH4",
+    "GAD101",
+    "GAD102",
+    "GAD103",
+    "HISTC1001",
+    "HISTC1002",
+    "HISTORY6",
+    "HISTORY7",
+    "HISTORY86",
+    "HISTORY87",
+    "HUMAN30",
+    "HUMAN31",
+    "HUMAN6",
+    "HUMAN61",
+    "HUMAN8",
+    "JAPAN1",
+    "JAPAN2",
+    "JAPAN3",
+    "JAPAN4",
+    "JAPAN9",
+    "KOREAN1",
+    "KOREAN10",
+    "KOREAN13",
+    "KOREAN2",
+    "KOREAN21",
+    "KOREAN22",
+    "KOREAN26",
+    "KOREAN3",
+    "KOREAN4",
+    "LING1",
+    "MUSIC101",
+    "MUSIC111",
+    "MUSIC121",
+    "MUSIC122",
+    "MUSIC135",
+    "MUSIC136",
+    "MUSIC141",
+    "MUSIC200",
+    "PHILOS1",
+    "PHILOS14",
+    "PHILOS20",
+    "PHILOS30",
+    "PHILOS32",
+    "PHILOS40",
+    "PHOTO501",
+    "POLSCI5",
+    "RUSSIAN1",
+    "RUSSIAN10",
+    "RUSSIAN2",
+    "RUSSIAN3",
+    "RUSSIAN4",
+    "SPANISH1",
+    "SPANISH10",
+    "SPANISH11",
+    "SPANISH15",
+    "SPANISH2",
+    "SPANISH21",
+    "SPANISH22",
+    "SPANISH3",
+    "SPANISH35",
+    "SPANISH36",
+    "SPANISH4",
+    "SPANISH6",
+    "SPANISH9",
+    "THEATER100",
+    "THEATER110",
+    "THEATER338",
+    "TV1",
+    "TV251",
+    "TV252",
+    "TV46",
+    "TV48",
+    "TV49",
+    "TV55",
+    "TV6",
+    "TV7"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": true,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Not found: the text holds no Film, Television, and Electronic Media A.S.-T section",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "AFRO AM 20",
+    "why": "not in the text"
+   },
+   {
+    "code": "ANIMATN 218",
+    "why": "not in the text"
+   },
+   {
+    "code": "ANIMATN 225",
+    "why": "not in the text"
+   },
+   {
+    "code": "ARMEN 1",
+    "why": "named only in Armenian certificate section"
+   },
+   {
+    "code": "ARMEN 11",
+    "why": "named only in Armenian certificate section"
+   },
+   {
+    "code": "ARMEN 12",
+    "why": "named only in Armenian certificate section"
+   },
+   {
+    "code": "ARMEN 2",
+    "why": "named only in Armenian certificate section"
+   },
+   {
+    "code": "ARMEN 35",
+    "why": "named only in Armenian certificate section"
+   },
+   {
+    "code": "ARMEN 36",
+    "why": "named only in Armenian certificate section"
+   },
+   {
+    "code": "ART 201",
+    "why": "not in the text"
+   },
+   {
+    "code": "ART 209",
+    "why": "not in the text"
+   },
+   {
+    "code": "ART 501",
+    "why": "not in the text"
+   },
+   {
+    "code": "ARTHC1100",
+    "why": "not in the text"
+   },
+   {
+    "code": "ARTHC1200",
+    "why": "not in the text"
+   },
+   {
+    "code": "ARTHIST 103",
+    "why": "not in the text"
+   },
+   {
+    "code": "ARTHIST 130",
+    "why": "named only in Chinese AA section"
+   },
+   {
+    "code": "ARTHIST 139",
+    "why": "not in the text"
+   },
+   {
+    "code": "ARTHIST 140",
+    "why": "not in the text"
+   },
+   {
+    "code": "ARTHIST 151",
+    "why": "not in the text"
+   },
+   {
+    "code": "ARTHIST 171",
+    "why": "not in the text"
+   },
+   {
+    "code": "ASIAN 1",
+    "why": "not in the text"
+   },
+   {
+    "code": "ASL001",
+    "why": "named only in ASL certificate section"
+   },
+   {
+    "code": "ASL002",
+    "why": "named only in ASL certificate section"
+   },
+   {
+    "code": "ASL003",
+    "why": "named only in ASL certificate section"
+   },
+   {
+    "code": "CHICANO 4",
+    "why": "not in the text"
+   },
+   {
+    "code": "CHICANO 44",
+    "why": "not in the text"
+   },
+   {
+    "code": "CHICANO 47",
+    "why": "not in the text"
+   },
+   {
+    "code": "CHICANO 7",
+    "why": "not in the text"
+   },
+   {
+    "code": "CHICANO 8",
+    "why": "not in the text"
+   },
+   {
+    "code": "CHINESE 1",
+    "why": "named only in Chinese sections"
+   },
+   {
+    "code": "CHINESE 10",
+    "why": "named only in Chinese sections"
+   },
+   {
+    "code": "CHINESE 2",
+    "why": "named only in Chinese sections"
+   },
+   {
+    "code": "CHINESE 3",
+    "why": "named only in Chinese AA section"
+   },
+   {
+    "code": "CHINESE 4",
+    "why": "named only in Chinese AA section"
+   },
+   {
+    "code": "CINEMA 009-1",
+    "why": "not in the text"
+   },
+   {
+    "code": "CINEMA 009-2",
+    "why": "not in the text"
+   },
+   {
+    "code": "CINEMA 032-1",
+    "why": "not in the text"
+   },
+   {
+    "code": "CINEMA 032-2",
+    "why": "not in the text"
+   },
+   {
+    "code": "CINEMA 038-1",
+    "why": "not in the text"
+   },
+   {
+    "code": "CINEMA 038-2",
+    "why": "not in the text"
+   },
+   {
+    "code": "CINEMA 10",
+    "why": "not in the text"
+   },
+   {
+    "code": "CINEMA 103",
+    "why": "not in the text"
+   },
+   {
+    "code": "CINEMA 17",
+    "why": "not in the text"
+   },
+   {
+    "code": "CINEMA 18",
+    "why": "not in the text"
+   },
+   {
+    "code": "CINEMA 20",
+    "why": "not in the text"
+   },
+   {
+    "code": "CINEMA 25",
+    "why": "not in the text"
+   },
+   {
+    "code": "CINEMA 4",
+    "why": "not in the text"
+   },
+   {
+    "code": "CINEMA 5",
+    "why": "not in the text"
+   },
+   {
+    "code": "CINEMA 6",
+    "why": "not in the text"
+   },
+   {
+    "code": "CINEMA 60",
+    "why": "not in the text"
+   },
+   {
+    "code": "CINEMA 7",
+    "why": "not in the text"
+   },
+   {
+    "code": "CINEMA 911",
+    "why": "not in the text"
+   },
+   {
+    "code": "CINEMA 921",
+    "why": "not in the text"
+   },
+   {
+    "code": "CINEMA 931",
+    "why": "not in the text"
+   },
+   {
+    "code": "CINEMA 941",
+    "why": "not in the text"
+   },
+   {
+    "code": "COMM 130",
+    "why": "not in the text"
+   },
+   {
+    "code": "DANCEST 805",
+    "why": "not in the text"
+   },
+   {
+    "code": "ENGLISH 102",
+    "why": "not in the text"
+   },
+   {
+    "code": "ENGLISH 203",
+    "why": "not in the text"
+   },
+   {
+    "code": "ENGLISH 204",
+    "why": "not in the text"
+   },
+   {
+    "code": "ENGLISH 205",
+    "why": "not in the text"
+   },
+   {
+    "code": "ENGLISH 206",
+    "why": "not in the text"
+   },
+   {
+    "code": "ENGLISH 207",
+    "why": "not in the text"
+   },
+   {
+    "code": "ENGLISH 208",
+    "why": "not in the text"
+   },
+   {
+    "code": "ENGLISH 211",
+    "why": "not in the text"
+   },
+   {
+    "code": "ENGLISH 212",
+    "why": "not in the text"
+   },
+   {
+    "code": "ENGLISH 214",
+    "why": "only in unidentified list on page 125"
+   },
+   {
+    "code": "ENGLISH 215",
+    "why": "only in unidentified list on page 125"
+   },
+   {
+    "code": "ENGLISH 216",
+    "why": "not in the text"
+   },
+   {
+    "code": "ENGLISH 218",
+    "why": "only in unidentified list on page 125"
+   },
+   {
+    "code": "ENGLISH 219",
+    "why": "not in the text"
+   },
+   {
+    "code": "ENGLISH 239",
+    "why": "only in unidentified list on page 125"
+   },
+   {
+    "code": "ENGLISH 240",
+    "why": "only in unidentified list on page 125"
+   },
+   {
+    "code": "ENGLISH 252",
+    "why": "not in the text"
+   },
+   {
+    "code": "ENGLISH 255",
+    "why": "only in unidentified list on page 125"
+   },
+   {
+    "code": "ENGLISH 270",
+    "why": "only in unidentified list on page 125"
+   },
+   {
+    "code": "FRENCH 1",
+    "why": "only in unidentified list on page 125"
+   },
+   {
+    "code": "FRENCH 10",
+    "why": "only in unidentified list on page 125"
+   },
+   {
+    "code": "FRENCH 2",
+    "why": "only in unidentified list on page 125"
+   },
+   {
+    "code": "FRENCH 3",
+    "why": "only in unidentified list on page 125"
+   },
+   {
+    "code": "FRENCH 4",
+    "why": "only in unidentified list on page 125"
+   },
+   {
+    "code": "GAD 101",
+    "why": "not in the text"
+   },
+   {
+    "code": "GAD 102",
+    "why": "not in the text"
+   },
+   {
+    "code": "GAD 103",
+    "why": "not in the text"
+   },
+   {
+    "code": "HISTC1001",
+    "why": "only in unidentified list on page 125"
+   },
+   {
+    "code": "HISTC1002",
+    "why": "only in unidentified list on page 125"
+   },
+   {
+    "code": "HISTORY 6",
+    "why": "only in unidentified list on page 125"
+   },
+   {
+    "code": "HISTORY 7",
+    "why": "only in unidentified list on page 125"
+   },
+   {
+    "code": "HISTORY 86",
+    "why": "only in unidentified list on page 125"
+   },
+   {
+    "code": "HISTORY 87",
+    "why": "only in unidentified list on page 125"
+   },
+   {
+    "code": "HUMAN 30",
+    "why": "only in unidentified list on page 125"
+   },
+   {
+    "code": "HUMAN 31",
+    "why": "only in unidentified list on page 125"
+   },
+   {
+    "code": "HUMAN 6",
+    "why": "only in unidentified list on page 125"
+   },
+   {
+    "code": "HUMAN 61",
+    "why": "only in unidentified list on page 125"
+   },
+   {
+    "code": "HUMAN 8",
+    "why": "only in unidentified list on page 125"
+   },
+   {
+    "code": "JAPAN 1",
+    "why": "only in unidentified list on page 125"
+   },
+   {
+    "code": "JAPAN 2",
+    "why": "only in unidentified list on page 125"
+   },
+   {
+    "code": "JAPAN 3",
+    "why": "only in unidentified list on page 125"
+   },
+   {
+    "code": "JAPAN 4",
+    "why": "only in unidentified list on page 125"
+   },
+   {
+    "code": "JAPAN 9",
+    "why": "only in unidentified list on page 125 and Chinese AA section"
+   },
+   {
+    "code": "KOREAN 1",
+    "why": "only in unidentified list on page 125"
+   },
+   {
+    "code": "KOREAN 10",
+    "why": "only in unidentified list on page 125 and Chinese AA section"
+   },
+   {
+    "code": "KOREAN 13",
+    "why": "only in unidentified list on page 125"
+   },
+   {
+    "code": "KOREAN 2",
+    "why": "only in unidentified list on page 125"
+   },
+   {
+    "code": "KOREAN 21",
+    "why": "only in unidentified list on page 125"
+   },
+   {
+    "code": "KOREAN 22",
+    "why": "only in unidentified list on page 125"
+   },
+   {
+    "code": "KOREAN 26",
+    "why": "only in unidentified list on page 125"
+   },
+   {
+    "code": "KOREAN 3",
+    "why": "only in unidentified list on page 125"
+   },
+   {
+    "code": "KOREAN 4",
+    "why": "only in unidentified list on page 125"
+   },
+   {
+    "code": "LING 1",
+    "why": "only in unidentified list on page 125 and Chinese AA section"
+   },
+   {
+    "code": "MUSIC 101",
+    "why": "only in unidentified list on page 125"
+   },
+   {
+    "code": "MUSIC 111",
+    "why": "only in unidentified list on page 125"
+   },
+   {
+    "code": "MUSIC 121",
+    "why": "only in unidentified list on page 125"
+   },
+   {
+    "code": "MUSIC 122",
+    "why": "only in unidentified list on page 125"
+   },
+   {
+    "code": "MUSIC 135",
+    "why": "only in unidentified list on page 125"
+   },
+   {
+    "code": "MUSIC 136",
+    "why": "only in unidentified list on page 125"
+   },
+   {
+    "code": "MUSIC 141",
+    "why": "only in unidentified list on page 125"
+   },
+   {
+    "code": "MUSIC 200",
+    "why": "only in unidentified list on page 125"
+   },
+   {
+    "code": "PHILOS 1",
+    "why": "only in unidentified list on page 125"
+   },
+   {
+    "code": "PHILOS 14",
+    "why": "only in unidentified list on page 125"
+   },
+   {
+    "code": "PHILOS 20",
+    "why": "only in unidentified list on page 125"
+   },
+   {
+    "code": "PHILOS 30",
+    "why": "only in unidentified list on page 125 and Chinese AA section"
+   },
+   {
+    "code": "PHILOS 32",
+    "why": "only in unidentified list on page 125"
+   },
+   {
+    "code": "PHILOS 40",
+    "why": "only in unidentified list on page 125"
+   },
+   {
+    "code": "PHOTO 501",
+    "why": "only in unidentified list on page 125"
+   },
+   {
+    "code": "POL SCI 5",
+    "why": "only in unidentified list on page 125"
+   },
+   {
+    "code": "RUSSIAN 1",
+    "why": "only in unidentified list on page 125"
+   },
+   {
+    "code": "RUSSIAN 10",
+    "why": "only in unidentified list on page 125"
+   },
+   {
+    "code": "RUSSIAN 2",
+    "why": "only in unidentified list on page 125"
+   },
+   {
+    "code": "RUSSIAN 3",
+    "why": "only in unidentified list on page 125"
+   },
+   {
+    "code": "RUSSIAN 4",
+    "why": "only in unidentified list on page 125"
+   },
+   {
+    "code": "SPANISH 1",
+    "why": "only in unidentified list on page 125"
+   },
+   {
+    "code": "SPANISH 10",
+    "why": "only in unidentified list on page 125"
+   },
+   {
+    "code": "SPANISH 11",
+    "why": "not in the text"
+   },
+   {
+    "code": "SPANISH 15",
+    "why": "not in the text"
+   },
+   {
+    "code": "SPANISH 2",
+    "why": "only in unidentified list on page 125"
+   },
+   {
+    "code": "SPANISH 21",
+    "why": "only in unidentified list on page 125"
+   },
+   {
+    "code": "SPANISH 22",
+    "why": "only in unidentified list on page 125"
+   },
+   {
+    "code": "SPANISH 3",
+    "why": "only in unidentified list on page 125"
+   },
+   {
+    "code": "SPANISH 35",
+    "why": "not in the text"
+   },
+   {
+    "code": "SPANISH 36",
+    "why": "not in the text"
+   },
+   {
+    "code": "SPANISH 4",
+    "why": "only in unidentified list on page 125"
+   },
+   {
+    "code": "SPANISH 6",
+    "why": "not in the text"
+   },
+   {
+    "code": "SPANISH 9",
+    "why": "only in unidentified list on page 125"
+   },
+   {
+    "code": "T V 025-1",
+    "why": "not in the text"
+   },
+   {
+    "code": "T V 025-2",
+    "why": "not in the text"
+   },
+   {
+    "code": "T V 1",
+    "why": "not in the text"
+   },
+   {
+    "code": "T V 46",
+    "why": "not in the text"
+   },
+   {
+    "code": "T V 48",
+    "why": "not in the text"
+   },
+   {
+    "code": "T V 49",
+    "why": "not in the text"
+   },
+   {
+    "code": "T V 55",
+    "why": "not in the text"
+   },
+   {
+    "code": "T V 6",
+    "why": "not in the text"
+   },
+   {
+    "code": "T V 7",
+    "why": "not in the text"
+   },
+   {
+    "code": "THEATER 100",
+    "why": "only in unidentified list on page 125"
+   },
+   {
+    "code": "THEATER 110",
+    "why": "only in unidentified list on page 125"
+   },
+   {
+    "code": "THEATER 338",
+    "why": "only in unidentified list on page 125"
+   }
+  ],
+  "notes": [
+   "The supplied text (catalog pages 125-128) does not contain the Film, Television, and Electronic Media A.S.-T section. It holds the tail of an unnamed course list, then the American Sign Language, Armenian and Chinese sections of Modern Languages & Civilizations.",
+   "Page 125 begins mid-list with humanities and language courses, including ENGLISH 240, KOREAN 026, PHOTO 501 and THEATER 338. It ends with 'OR ANY COURSES NOT LISTED ABOVE APPROVED FOR LACCD GE AREA 3; CAL-GETC AREA 3A, 3B; CSU GE-BREADTH AREA C1, C2; IGETC AREA 3A, 3B.' This may be the end of this AS-T's List C, or of another program's list, but its heading and rule are on a page not supplied. It was therefore not recorded as a block. A reviewer should fetch the preceding page(s) to confirm.",
+   "No total, GE pattern, outcomes or careers for this award appear in the supplied text."
+  ]
+ },
+ "extracted_run": "39006380342"
+}

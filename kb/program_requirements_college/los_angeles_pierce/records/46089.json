@@ -1,0 +1,185 @@
+{
+ "college": "Los Angeles Pierce College",
+ "control_number": "46089",
+ "shape": "adt",
+ "title": "Physics 2.0",
+ "award": "A.S. T Degree",
+ "source_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=33",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 10073,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 10073,
+    "output_tokens": 992,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 992,
+  "output_tokens_details": {
+   "thinking_tokens": 153
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.06013,
+ "ms": 8011,
+ "seconds": 8.3,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 9,
+   "share": 0.0,
+   "missing": [
+    "CS116",
+    "MATH261",
+    "MATH262",
+    "MATH263",
+    "MATH270",
+    "MATH275",
+    "PHYSICS101",
+    "PHYSICS102",
+    "PHYSICS103"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Course Identification Numbering System (C-ID)",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "CS 116",
+    "why": "appears only in the C-ID cross-reference table (COMP 122), not in a Physics A.S.-T requirements section"
+   },
+   {
+    "code": "MATH 261",
+    "why": "appears only in the C-ID cross-reference table, not in a Physics A.S.-T requirements section"
+   },
+   {
+    "code": "MATH 262",
+    "why": "appears only in the C-ID cross-reference table, not in a Physics A.S.-T requirements section"
+   },
+   {
+    "code": "MATH 263",
+    "why": "appears only in the C-ID cross-reference table, not in a Physics A.S.-T requirements section"
+   },
+   {
+    "code": "MATH 270",
+    "why": "appears only in the C-ID cross-reference table, not in a Physics A.S.-T requirements section"
+   },
+   {
+    "code": "MATH 275",
+    "why": "appears only in the C-ID cross-reference table, not in a Physics A.S.-T requirements section"
+   },
+   {
+    "code": "PHYSICS 101",
+    "why": "appears only in the C-ID cross-reference table, not in a Physics A.S.-T requirements section"
+   },
+   {
+    "code": "PHYSICS 102",
+    "why": "appears only in the C-ID cross-reference table, not in a Physics A.S.-T requirements section"
+   },
+   {
+    "code": "PHYSICS 103",
+    "why": "appears only in the C-ID cross-reference table, not in a Physics A.S.-T requirements section"
+   }
+  ],
+  "notes": [
+   "The supplied text (catalog page 33) is the general 'Course Identification Numbering System (C-ID)' explanation and C-ID-to-LAPC course table under 'Graduation Requirements for Degrees and Certificates'; it does not contain the Physics A.S.-T (Physics 2.0) program section. No requirements, totals, outcomes or careers could be recorded.",
+   "The C-ID table lists all closed-list courses (e.g., PHYS 205 = PHYSICS 101, MATH 210/211 = MATH 261, COMP 122 = CS 116), but a cross-reference table is not a statement of program requirements. A reviewer should locate the correct page for the Physics A.S.-T in the 2026-2027 catalog."
+  ]
+ },
+ "extracted_run": "39006383070"
+}

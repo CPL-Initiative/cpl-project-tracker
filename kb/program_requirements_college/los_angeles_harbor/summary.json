@@ -1,0 +1,48 @@
+{
+ "college": "Los Angeles Harbor College",
+ "programs": 124,
+ "with_closed_list": 121,
+ "found": 118,
+ "extracted": 118,
+ "errors": 0,
+ "passed_machine_checks": 86,
+ "failed": {
+  "coverage": 15,
+  "invented": 4,
+  "arithmetic": 29,
+  "repeated": 0,
+  "outcomes": 1
+ },
+ "cost_usd": 8.94,
+ "cost_per_program": 0.0758,
+ "not_found": [
+  {
+   "control_number": "33797",
+   "title": "CSU General Education",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=147",
+    "coverage": 0.382
+   }
+  },
+  {
+   "control_number": "44947",
+   "title": "California General Education Transfer Curriculum (Cal-GETC)",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=147",
+    "coverage": 0.364
+   }
+  },
+  {
+   "control_number": "46494",
+   "title": "Banking and Finance",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=246",
+    "coverage": 0.182
+   }
+  }
+ ],
+ "run": "39006381839"
+}

@@ -1,0 +1,557 @@
+{
+ "college": "Santa Rosa Junior College",
+ "control_number": "35738",
+ "shape": "degree",
+ "title": "Music: Vocal",
+ "award": "A.A. Degree",
+ "source_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=176",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 12035,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 12035,
+    "output_tokens": 4294,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 4294,
+  "output_tokens_details": {
+   "thinking_tokens": 1425
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.13402,
+ "ms": 32797,
+ "seconds": 33.1,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 14,
+   "listed": 26,
+   "share": 0.538,
+   "missing": [
+    "LIR10",
+    "MUSC4A",
+    "MUSC4B",
+    "MUSC50",
+    "MUSC5A",
+    "MUSC5B",
+    "MUSC5C",
+    "MUSC5D",
+    "MUSP17A",
+    "MUSP17B",
+    "MUSP191A",
+    "MUSP191B"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 17,
+   "codes": [
+    "MUSC10",
+    "MUSC3A",
+    "MUSC3B",
+    "MUSC3C",
+    "MUSC3D",
+    "MUSC7",
+    "MUSC8",
+    "MUSC9",
+    "MUSP21A",
+    "MUSP21B",
+    "MUSP21C",
+    "MUSP21D",
+    "MUSP23A",
+    "MUSP23B",
+    "MUSP23C",
+    "MUSP23D",
+    "MUSP402"
+   ],
+   "flagged": [
+    "MUSC10",
+    "MUSC3A",
+    "MUSC3B",
+    "MUSC3C",
+    "MUSC3D",
+    "MUSC7",
+    "MUSC8",
+    "MUSC9",
+    "MUSP21A",
+    "MUSP21B",
+    "MUSP21C",
+    "MUSP21D",
+    "MUSP23A",
+    "MUSP23B",
+    "MUSP23C",
+    "MUSP23D",
+    "MUSP402"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    15.0,
+    15.0
+   ],
+   "stated": [
+    35.0,
+    35.0
+   ],
+   "against": "program",
+   "why": [
+    "a required course in 'Vocal Concentration: Theory and Musicianship (4 courses)' has no units",
+    "'Vocal Concentration: Performance Ensemble (4 semesters)' chooses 4 courses but 0 carry units",
+    "a required course in 'Vocal Concentration: Applied Music (4 semesters)' has no units",
+    "a required course in 'Vocal Concentration: Diction and Repertoire (take all 4 courses)' has no units"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 6,
+   "courses": 0,
+   "count": 6,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "music (AA) requirements - 35 units",
+   "measure": "units",
+   "total_units": {
+    "min": 35,
+    "max": 35
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "demonstrate an understanding of the fundamental melodic, harmonic, and rhythmic structure of music.",
+    "demonstrate fluency with the language of music in written and aural form.",
+    "perform on their instrument (or voice) at college sophomore level.",
+    "perform effectively in a musical ensemble.",
+    "utilize the piano keyboard to demonstrate and apply musical concepts.",
+    "demonstrate a broad-based understanding of the historical and aesthetic development of music."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Music AA Requirement - complete 15 units",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "MUSC 2A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSC 2B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSC 3A",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MUSC 3B",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Music Survey (one course)",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "MUSC 6.1",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSC 6.2",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSC 7",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MUSC 8",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MUSC 9",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MUSC 10",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Piano Proficiency (two courses)",
+    "rule": "choose_units",
+    "minimum": 4,
+    "option_group": null,
+    "stated": {
+     "min": 4,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "MUSP 11A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSP 11B",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSP 11C",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSP 11D",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Vocal Concentration: Theory and Musicianship (4 courses)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "MUSC 2C",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSC 2D",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSC 3C",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MUSC 3D",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Vocal Concentration: Performance Ensemble (4 semesters)",
+    "rule": "choose_courses",
+    "minimum": 4,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "MUSP 21A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MUSP 21B",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MUSP 21C",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MUSP 21D",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MUSP 23A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MUSP 23B",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MUSP 23C",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MUSP 23D",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Vocal Concentration: Applied Music (4 semesters)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "MUSP 40.2",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Vocal Concentration: Diction and Repertoire (take all 4 courses)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "MUSC 18.1",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSC 18.2",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSC 18.3",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSC 18.4",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "LIR 10",
+    "why": "not in the text"
+   },
+   {
+    "code": "MUSC 4A",
+    "why": "named only in the Instrumental and Jazz Studies concentrations"
+   },
+   {
+    "code": "MUSC 4B",
+    "why": "named only in the Instrumental and Jazz Studies concentrations"
+   },
+   {
+    "code": "MUSC 5A",
+    "why": "named only in the Instrumental and Jazz Studies concentrations"
+   },
+   {
+    "code": "MUSC 5B",
+    "why": "named only in the Instrumental and Jazz Studies concentrations"
+   },
+   {
+    "code": "MUSC 5C",
+    "why": "named only in the Jazz Studies concentration"
+   },
+   {
+    "code": "MUSC 5D",
+    "why": "named only in the Jazz Studies concentration"
+   },
+   {
+    "code": "MUSC 50",
+    "why": "named only in the Instrumental concentration electives"
+   },
+   {
+    "code": "MUSP 17A",
+    "why": "named only in the Instrumental concentration electives"
+   },
+   {
+    "code": "MUSP 17B",
+    "why": "named only in the Instrumental concentration electives"
+   },
+   {
+    "code": "MUSP 19.1A",
+    "why": "named only in the Instrumental concentration electives"
+   },
+   {
+    "code": "MUSP 19.1B",
+    "why": "named only in the Instrumental concentration electives"
+   }
+  ],
+  "notes": [
+   "The catalog prints one Music (AA) degree with Instrumental, Vocal and Jazz Studies concentrations; this record covers the shared core plus the Vocal Concentration (printed as 20.00 units) only.",
+   "The 'complete 15 units' heading covers the first four required courses plus the Music Survey (3) and Piano Proficiency (4) blocks, so it is not recorded as the first block's stated total.",
+   "Closed-list codes MUSC181 and MUSC183 were matched to catalog MUSC 18.1 and MUSC 18.3 (Italian and German diction).",
+   "No units are printed beside courses in the survey, piano or concentration lists.",
+   "Applied Music: MUSP 40.2 is taken for 4 semesters (repeated course); Performance Ensemble requires 4 semesters chosen from Concert Choir/Chamber Singers, read as choose 4 courses.",
+   "The general-education text (Cal-GETC, 60 transferable units, 18-unit major) is ADT boilerplate printed in the AA section; no degree total or GE units are printed for this award.",
+   "The program student learning outcomes are printed once for the Music (AA) degree as a whole and shared by the Vocal concentration.",
+   "Careers named in the following Music (AA-T) description were not recorded, since they belong to another award."
+  ]
+ },
+ "extracted_run": "39006464249"
+}

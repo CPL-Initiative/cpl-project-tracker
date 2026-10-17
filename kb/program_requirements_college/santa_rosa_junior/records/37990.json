@@ -1,0 +1,210 @@
+{
+ "college": "Santa Rosa Junior College",
+ "control_number": "37990",
+ "shape": "noncredit",
+ "title": "AE: Intro to Landscape Maint",
+ "award": "Noncredit program",
+ "source_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=227",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 11317,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 11317,
+    "output_tokens": 1404,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1404,
+  "output_tokens_details": {
+   "thinking_tokens": 529
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.07335,
+ "ms": 13415,
+ "seconds": 13.8,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 6,
+   "listed": 6,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    96.0,
+    152.0
+   ],
+   "stated": [
+    96.0,
+    96.0
+   ],
+   "against": "program",
+   "why": [
+    "the blocks sum to 96.0-152.0; the catalog states 96.0-96.0"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 2,
+   "courses": 0,
+   "count": 2,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "AE: Intro to Landscape Maint (Certificate of Completion)",
+   "measure": "hours",
+   "total_units": {
+    "min": 96,
+    "max": 96
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Demonstrate a basic knowledge of key aspects of landscape maintenance including lawn care, pruning and maintaining trees and shrubs, safely using and maintaining landscaping tools and equipment, and basic sprinkler repair;",
+    "Prepare for a position in the landscaping industry."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Complete 4 core courses (88 hours)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 88,
+     "max": 88
+    },
+    "courses": [
+     {
+      "code": "ADED 748.3",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADED 748.4",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADED 748.5",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADED 740",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Complete 1 elective course (8-64 hours)",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 8,
+     "max": 64
+    },
+    "courses": [
+     {
+      "code": "ADED 730",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADED 745",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Award is a noncredit Certificate of Completion counted in hours: 'Complete 96.00 Hours'. The Hours/Units column prints 0 beside each course (the noncredit unit value), not hours, so per-course hours are left null; only block totals (88 hours core, 8-64 hours elective) are printed.",
+   "Elective block printed as 'ADED 730 ... or ADED 745'; recorded as a choose-1 list of two courses.",
+   "The program description names work settings ('commercial landscaping businesses and municipal settings') rather than specific job titles; careers left empty for reviewer check.",
+   "Following sections (AE: Intro to Landscaping I, II, Personal Care Attendant) belong to other programs and were not read."
+  ]
+ },
+ "extracted_run": "39006464249"
+}

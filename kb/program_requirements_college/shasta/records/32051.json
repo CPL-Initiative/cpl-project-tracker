@@ -1,0 +1,310 @@
+{
+ "college": "Shasta College",
+ "control_number": "32051",
+ "shape": "adt",
+ "title": "Theatre Arts",
+ "award": "A.A- T Degree",
+ "source_url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=57",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 10932,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 10932,
+    "output_tokens": 2636,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2636,
+  "output_tokens_details": {
+   "thinking_tokens": 891
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.09645,
+ "ms": 21472,
+ "seconds": 21.9,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 15,
+   "listed": 15,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    18.0,
+    18.0
+   ],
+   "stated": [
+    18.0,
+    18.0
+   ],
+   "against": "program",
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     63.0,
+     63.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     34.0,
+     34.0
+    ],
+    "why": [],
+    "overlap": true
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 8,
+   "courses": 0,
+   "count": 8,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Theatre Arts Associate in Arts for Transfer: SC Program: AA-T.1004",
+   "measure": "units",
+   "total_units": {
+    "min": 18,
+    "max": 18
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": 11,
+    "max": 11
+   },
+   "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": 34,
+    "max": 34
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Describe the basic elements of dramatic structure and analyze the dramatic components in a theatrical production.",
+    "Select appropriate monologues and prepare them as audition pieces.",
+    "Investigate the themes and dramaturgy of the Greek, Roman, Medieval, Renaissance, Elizabethan, Jacobean and Restoration periods of Theatre history and compare and contrast those periods through discussion, papers, and performance analysis.",
+    "Identify and apply the major components of stagecraft in the implementation of scenery, lighting, costume, make- up, special effects, and production management.",
+    "Investigate the social, political, and spiritual objectives of theatrical performance through discussions and papers that deal with gender, politics and religion.",
+    "Evaluate dramatic scripts relative to historical context and contemporary relevance.",
+    "Develop cooperation skills in working with people from diverse cultures.",
+    "Transfer to a California State University with a major in Theatre Arts."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "REQUIRED CORE",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "THTR 1",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "THTR 8",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "THTR 12",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Three units from the following",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "THTR 23",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THTR 26",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THTR 41",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THTR 42",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THTR 50",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THTR 70",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THTR 74",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "LIST A",
+    "rule": "choose_units",
+    "minimum": 9,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "THTR 13",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THTR 30",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THTR 34",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THTR 38",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THTR 81",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The '3' in the 'Three units from the following' list is printed on the THTR 23 line; read as the block total (3 units), not as THTR 23's units. No per-course units are printed in that list (state file lists 1 unit each).",
+   "List A reads 'Choose at least three courses for a minimum of 9 units'; recorded as choose_units 9, with the additional requirement of at least three courses.",
+   "List A prints 'THTR 34 Makeup (2) AND THTR 38 Makeup Lab (1)' as a paired choice; recorded as two entries that should be taken together.",
+   "List A also allows 'Any Rehearsal and Performance or Technical Theatre Practicum course listed in Core but not used for Core requirements (1-3)' (THTR 23, 26, 41, 42, 50, 70, 74); not duplicated in the List A block. 3-unit maximum each in Rehearsal and Performance and in Technical Theatre Practicum courses across core and List A.",
+   "Degree requirements table: Major 18, General Education 34, Additional Electives 11 (marked 'Number will vary depending on units that double count'), 'Degree Total Will Not Exceed 60 Units'; 60 recorded as degree_total.",
+   "Requirements text says '34-unit general education pattern or Cal-GETC'; recorded ge_pattern as Cal-GETC.",
+   "The page also contains the Studio Arts AA-T and Accounting certificates; only the Theatre Arts AA-T section was read. The section continues across a page break (pages 57-58)."
+  ]
+ },
+ "extracted_run": "39006384701"
+}

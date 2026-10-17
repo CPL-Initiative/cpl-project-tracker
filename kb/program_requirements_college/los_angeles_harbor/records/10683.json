@@ -1,0 +1,203 @@
+{
+ "college": "Los Angeles Harbor College",
+ "control_number": "10683",
+ "shape": "certificate",
+ "title": "Accounting",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=28",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 9125,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 9125,
+    "output_tokens": 1450,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1450,
+  "output_tokens_details": {
+   "thinking_tokens": 389
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.0655,
+ "ms": 11880,
+ "seconds": 12.4,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 6,
+   "listed": 6,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    22.0,
+    22.0
+   ],
+   "stated": [
+    22.0,
+    22.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 6,
+   "courses": 0,
+   "count": 6,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Accounting - Certificate of Achievement (CA)",
+   "measure": "units",
+   "total_units": {
+    "min": 22,
+    "max": 22
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "demonstrate a firm understanding and working knowledge of basic accounting terminology and the process by which transactions are analyzed and transformed into financial statements.",
+    "demonstrate the ability to identify key issues, select relevant data, and think critically and analytically about the possible solutions for the financial problem encountered.",
+    "receive and process written and oral financial information and prepare an appropriate response for management, investor, clients, or other fellow professionals.",
+    "demonstrate effective use of technology applicable to accounting practice and procedures.",
+    "analyze and interpret financial activities to identify and anticipate problems and find acceptable solutions for the individual or organization served.",
+    "demonstrate the ability to act with integrity and honesty and choose an ethical course of action in all contacts with employers, clients, co- workers, and general public."
+   ],
+   "careers": [
+    "entry-level accounting positions"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "REQUIRED COURSES (22 UNITS)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 22,
+     "max": 22
+    },
+    "courses": [
+     {
+      "code": "ACCTG 001",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACCTG 002",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACCTG 003",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACCTG 011",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACCTG 015",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACCTG 016",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The catalog prints codes with leading zeros (ACCTG 001, 002, 003, 011, 015, 016); these were matched to closed-list ACCTG 1, 2, 3, 11, 15, 16 and not flagged as catalog additions.",
+   "The same six Program Learning Outcomes are printed for the AS degree, this Certificate of Achievement, and the Skills Certificates; recorded here from the Certificate of Achievement section.",
+   "Only the Certificate of Achievement section (page 29, Academic Plan H010683D) was read; the AS degree and Accounting/Taxation Skills Certificates were ignored.",
+   "ACCTG 003 is titled 'Intermediate Accounting' in this section, matching closed-list 'INTERMEDIATE ACCOUNTING I'.",
+   "Careers: the description names 'entry-level accounting positions in business and other organizations such as government agencies, education and industry'; the organizations were read as employers rather than careers and not recorded separately."
+  ]
+ },
+ "extracted_run": "39006381839"
+}

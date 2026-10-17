@@ -1,0 +1,555 @@
+{
+ "college": "Santa Rosa Junior College",
+ "control_number": "19600",
+ "shape": "degree",
+ "title": "Music: Jazz Studies",
+ "award": "A.A. Degree",
+ "source_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=176",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 11871,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 11871,
+    "output_tokens": 4238,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 4238,
+  "output_tokens_details": {
+   "thinking_tokens": 1231
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.13224,
+ "ms": 34369,
+ "seconds": 34.7,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 13,
+   "listed": 19,
+   "share": 0.684,
+   "missing": [
+    "LIR10",
+    "MUSC50",
+    "MUSP17A",
+    "MUSP17B",
+    "MUSP191A",
+    "MUSP191B"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 21,
+   "codes": [
+    "MUSC10",
+    "MUSC3A",
+    "MUSC3B",
+    "MUSC61",
+    "MUSC62",
+    "MUSC7",
+    "MUSC8",
+    "MUSP32A",
+    "MUSP32B",
+    "MUSP32C",
+    "MUSP32D",
+    "MUSP401",
+    "MUSP403",
+    "MUSP404",
+    "MUSP405",
+    "MUSP406",
+    "MUSP407",
+    "MUSP42A",
+    "MUSP42B",
+    "MUSP42C",
+    "MUSP42D"
+   ],
+   "flagged": [
+    "MUSC10",
+    "MUSC3A",
+    "MUSC3B",
+    "MUSC61",
+    "MUSC62",
+    "MUSC7",
+    "MUSC8",
+    "MUSP32A",
+    "MUSP32B",
+    "MUSP32C",
+    "MUSP32D",
+    "MUSP401",
+    "MUSP403",
+    "MUSP404",
+    "MUSP405",
+    "MUSP406",
+    "MUSP407",
+    "MUSP42A",
+    "MUSP42B",
+    "MUSP42C",
+    "MUSP42D"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    27.0,
+    27.0
+   ],
+   "stated": [
+    35.0,
+    35.0
+   ],
+   "against": "program",
+   "why": [
+    "'Jazz Studies Concentration: Performance Ensemble (4 semesters)' chooses 4 courses but 0 carry units",
+    "'Jazz Studies Concentration: Applied Music (4 semesters)' chooses 4 courses but 0 carry units"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 6,
+   "courses": 0,
+   "count": 6,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Music (AA) — Jazz Studies Concentration",
+   "measure": "units",
+   "total_units": {
+    "min": 35,
+    "max": 35
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "demonstrate an understanding of the fundamental melodic, harmonic, and rhythmic structure of music.",
+    "demonstrate fluency with the language of music in written and aural form.",
+    "perform on their instrument (or voice) at college sophomore level.",
+    "perform effectively in a musical ensemble.",
+    "utilize the piano keyboard to demonstrate and apply musical concepts.",
+    "demonstrate a broad-based understanding of the historical and aesthetic development of music."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Music AA Requirement",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "MUSC 2A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSC 2B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSC 3A",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MUSC 3B",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Music Survey (one course)",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "MUSC 6.1",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MUSC 6.2",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MUSC 7",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MUSC 8",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MUSC 9",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSC 10",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Piano Proficiency (two courses)",
+    "rule": "choose_units",
+    "minimum": 4,
+    "option_group": null,
+    "stated": {
+     "min": 4,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "MUSP 11A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSP 11B",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSP 11C",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSP 11D",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Jazz Studies Concentration: Jazz Theory (take both courses)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "MUSC 4A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSC 4B",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Jazz Studies Concentration: Performance Ensemble (4 semesters)",
+    "rule": "choose_courses",
+    "minimum": 4,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "MUSP 32A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MUSP 32B",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MUSP 32C",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MUSP 32D",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MUSP 42A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MUSP 42B",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MUSP 42C",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MUSP 42D",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Jazz Studies Concentration: Applied Music (4 semesters)",
+    "rule": "choose_courses",
+    "minimum": 4,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "MUSP 40.1",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MUSP 40.3",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MUSP 40.4",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MUSP 40.5",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MUSP 40.6",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MUSP 40.7",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Jazz Studies Concentration: Jazz Improvisation (2 semesters)",
+    "rule": "choose_courses",
+    "minimum": 2,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "MUSC 5A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSC 5B",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSC 5C",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSC 5D",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "LIR 10",
+    "why": "not in the text"
+   },
+   {
+    "code": "MUSC 50",
+    "why": "named only in the Instrumental Concentration electives, not the Jazz Studies Concentration"
+   },
+   {
+    "code": "MUSP 17A",
+    "why": "named only in the Instrumental Concentration electives, not the Jazz Studies Concentration"
+   },
+   {
+    "code": "MUSP 17B",
+    "why": "named only in the Instrumental Concentration electives, not the Jazz Studies Concentration"
+   },
+   {
+    "code": "MUSP 19.1A",
+    "why": "named only in the Instrumental Concentration electives, not the Jazz Studies Concentration"
+   },
+   {
+    "code": "MUSP 19.1B",
+    "why": "named only in the Instrumental Concentration electives, not the Jazz Studies Concentration"
+   }
+  ],
+  "notes": [
+   "The catalog prints this program as the Music (AA) degree (35 units) with a Jazz Studies Concentration; recorded the shared Music AA core plus the Jazz Studies Concentration blocks only. Instrumental and Vocal Concentration blocks were omitted.",
+   "'Music AA Requirement - complete 15 units' covers the four required courses (8 units) plus Music Survey (3) and Piano Proficiency (4); the 15-unit total is not placed on any single block.",
+   "'Music AA Concentrations - complete 20.00 units' / 'Jazz Studies Concentration (20.00 units)': the 20-unit concentration total is spread across the four Jazz Studies blocks, none of which prints its own total.",
+   "Units are printed beside only MUSC 2A, 2B, 3A, 3B; other course units are null.",
+   "Performance Ensemble and Applied Music are stated as '4 semesters' and Jazz Improvisation as '2 semesters'; recorded as choose_courses 4 and 2. Applied Music courses may be repeatable rather than distinct picks; reviewer should check.",
+   "Catalog advises Jazz Studies students to take MUSC 9 within the Music Survey block.",
+   "The degree requirements text includes ADT-style boilerplate (60 CSU-transferable units, Cal-GETC, 18-unit major minimum) apparently copied into the AA section; not recorded as a degree total or GE pattern for this local AA.",
+   "The Program Student Learning Outcomes are printed once for the Music (AA) program as a whole (identical list also appears under Music AA-T); the Jazz Studies concentration shares them.",
+   "No careers are named in the Music (AA) section; the career list on the page belongs to the Music (AA-T) description."
+  ]
+ },
+ "extracted_run": "39006464249"
+}

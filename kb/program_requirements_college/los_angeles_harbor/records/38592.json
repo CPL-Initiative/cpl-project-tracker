@@ -1,0 +1,251 @@
+{
+ "college": "Los Angeles Harbor College",
+ "control_number": "38592",
+ "shape": "degree",
+ "title": "Biotechnology",
+ "award": "A.S. Degree",
+ "source_url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=49",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 10423,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 10423,
+    "output_tokens": 1766,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1766,
+  "output_tokens_details": {
+   "thinking_tokens": 563
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.07701,
+ "ms": 22628,
+ "seconds": 23.0,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 8,
+   "listed": 8,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 2,
+   "codes": [
+    "STAT1",
+    "STAT1S"
+   ],
+   "flagged": [
+    "STAT1",
+    "STAT1S"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    22.0,
+    23.0
+   ],
+   "stated": [
+    22.0,
+    23.0
+   ],
+   "against": "program",
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     59.0,
+     61.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     21.0,
+     21.0
+    ],
+    "why": [],
+    "within": true
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 8,
+   "courses": 0,
+   "count": 8,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Biotechnology - Associate in Science (AS) Degree",
+   "measure": "units",
+   "total_units": {
+    "min": 22,
+    "max": 23
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": 16,
+    "max": 17
+   },
+   "ge_pattern": "LACCD GE",
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": 21,
+    "max": 21
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Master and employ the principles of Standard Operating Procedures (SOPs) for accurate documentation and recordkeeping, including the creation of SOPs.",
+    "Perform precise weighing, expert liquid handling, and buffer formulation with accuracy and consistency.",
+    "Apply aseptic techniques and maintain a sterile laboratory environment.",
+    "Operate and maintain biotechnology lab equipment, ensuring reliability, and accuracy in experiments.",
+    "Execute small-scale protein expression and purification methods, contributing to the development of biotechnology products.",
+    "Understand and apply current Good Manufacturing Practices (cGMP) in laboratory settings.",
+    "Demonstrate expertise in Quality Assurance/Quality Control (QA/QC) practices, ensuring the integrity and quality of biotechnological products.",
+    "Analyze and present biotechnology data clearly and effectively in both oral and written forms."
+   ],
+   "careers": [
+    "biotechnology research"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "CORE COURSE REQUIREMENTS",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 22,
+     "max": 23
+    },
+    "courses": [
+     {
+      "code": "BIOTECH 002",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOTECH 003",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOTECH 006",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MICRO 020",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 051",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CHEM 065",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "STAT C1000",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "STAT C1000E",
+        "units": 4,
+        "catalog_addition": false
+       },
+       {
+        "code": "STAT 001",
+        "units": null,
+        "catalog_addition": true
+       },
+       {
+        "code": "STAT 001S",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "STAT 001 and STAT 001S appear only in a footnote saying they can be substituted for STAT C1000 or STAT C1000E; recorded as alternatives with catalog_addition true and no printed units.",
+   "Degree summary: Major Core 22-23, Additional LACCD GE Requirements 21 (not including 6 double-countable major units), Additional Degree-applicable Requirements 16-17, Total Units 60. GE pattern recorded as LACCD GE; the page advises transfer students to use Cal-GETC instead.",
+   "Career field read from 'prepare students for employment in biotechnology research and related fields'; the description also mentions roles in academic and industrial laboratories.",
+   "The pages that follow print two certificates of achievement (Biotechnology Lab Assistant, Biotechnology Research Lab Assistant) and a Business AS-T; those were not read for this record."
+  ]
+ },
+ "extracted_run": "39006381839"
+}

@@ -1,0 +1,241 @@
+{
+ "college": "Los Angeles City College",
+ "control_number": "02756",
+ "shape": "degree",
+ "title": "CHEMISTRY",
+ "award": "A.S. Degree",
+ "source_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=140",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 9619,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 9619,
+    "output_tokens": 1433,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1433,
+  "output_tokens_details": {
+   "thinking_tokens": 448
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.06714,
+ "ms": 11363,
+ "seconds": 11.7,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 8,
+   "listed": 8,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    40.0,
+    40.0
+   ],
+   "stated": [
+    60.0,
+    60.0
+   ],
+   "against": "degree",
+   "ge": null,
+   "why": [
+    "the blocks and general education sum to 40.0-40.0; the catalog prints 60.0-60.0 for the degree"
+   ],
+   "major": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     40.0,
+     40.0
+    ],
+    "stated": [
+     40.0,
+     40.0
+    ],
+    "against": "program",
+    "why": []
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 6,
+   "courses": 0,
+   "count": 6,
+   "not_verbatim": [
+    "Solve problems using algebra, analyze graphical data, and convert between scientific units.",
+    "Communicate scientific processes by writing laboratory reports that include data in tabular and graphical format and summarize results to explain the phenomena studied."
+   ],
+   "why": [
+    "not in the catalog text as printed: Solve problems using algebra, analyze graphical data, and convert between scient",
+    "not in the catalog text as printed: Communicate scientific processes by writing laboratory reports that include data"
+   ],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": false
+  },
+  "careers": {
+   "count": 2,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Chemistry Associate of Science (AS) Degree",
+   "measure": "units",
+   "total_units": {
+    "min": 40,
+    "max": 40
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Describe chemical and physical structures, reactions, and mechanisms of that will lead to synthesis of desired compounds.",
+    "Solve problems using algebra, analyze graphical data, and convert between scientific units.",
+    "Apply the scientific method.",
+    "Design and implement simple experiments, work independently, and draw reasonable conclusions.",
+    "Communicate scientific processes by writing laboratory reports that include data in tabular and graphical format and summarize results to explain the phenomena studied.",
+    "Design a synthesis of complex molecules from simple starting materials."
+   ],
+   "careers": [
+    "chemistry",
+    "manufacturing"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "MAJOR CORE COURSES (40 UNITS)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 40,
+     "max": 40
+    },
+    "courses": [
+     {
+      "code": "CHEM 101",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 102",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 211",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 212",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 261",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 262",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYSICS 101",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYSICS 102",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Degree total taken from the header 'Total Units: Minimum of 60' printed for this award; Major Units: 40 recorded as total_units.",
+   "No general education pattern or GE units are named in this section.",
+   "Footnotes name CHEM 060 (or high school chemistry) as prerequisite for CHEM 101 and MATH 260 or MATH 260S as prerequisite for MATH 261; these are prerequisites, not requirements, and were not placed in a block.",
+   "Text at the top of page 140 (PHYSICS 102, PHYSICS 103 and footnotes) belongs to the preceding program and was not read.",
+   "Careers recorded from 'entry-level jobs in chemistry and manufacturing' in the program description."
+  ]
+ },
+ "extracted_run": "39006380342"
+}

@@ -1,0 +1,182 @@
+{
+ "college": "Mendocino College",
+ "control_number": "38656",
+ "shape": "adt",
+ "title": "Social Justice: General Studies",
+ "award": "A.A- T Degree",
+ "source_url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=81",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 10484,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 10484,
+    "output_tokens": 773,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 773,
+  "output_tokens_details": {
+   "thinking_tokens": 223
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.0574,
+ "ms": 7621,
+ "seconds": 7.9,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 9,
+   "share": 0.0,
+   "missing": [
+    "COMM211",
+    "ETH202",
+    "HST207",
+    "HST208",
+    "HST222",
+    "SOC200",
+    "SOC201",
+    "SOC203",
+    "STATC1000"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "California General Education Transfer Curriculum 2026-2027",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "COMM 211",
+    "why": "program section not in the text; named only on the Cal-GETC Area 4 list"
+   },
+   {
+    "code": "ETH 202",
+    "why": "program section not in the text; named only on the Cal-GETC Area 4 and Area 6 lists"
+   },
+   {
+    "code": "HST 207",
+    "why": "program section not in the text; printed as HIST 207 only on the Cal-GETC Area 3/4 lists"
+   },
+   {
+    "code": "HST 208",
+    "why": "program section not in the text; printed as HIST 208 only on the Cal-GETC lists"
+   },
+   {
+    "code": "HST 222",
+    "why": "program section not in the text; printed as HIST 222 only on the Cal-GETC lists"
+   },
+   {
+    "code": "SOC 200",
+    "why": "program section not in the text; named only on the Cal-GETC Area 4 list"
+   },
+   {
+    "code": "SOC 201",
+    "why": "program section not in the text; named only on the Cal-GETC Area 4 list"
+   },
+   {
+    "code": "SOC 203",
+    "why": "program section not in the text; named only on the Cal-GETC Area 4 list"
+   },
+   {
+    "code": "STAT C1000",
+    "why": "program section not in the text; printed as 'ST AT C1000' only on the Cal-GETC Area 2 list"
+   }
+  ],
+  "notes": []
+ },
+ "extracted_run": "39006339282"
+}

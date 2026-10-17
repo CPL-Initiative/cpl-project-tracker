@@ -1557,13 +1557,16 @@ def ac_urls(reader, start: str, cache: dict, report: dict) -> list[str]:
     return urls
 
 
-# ── A whole-catalog PDF (S403) ──────────────────────────────────────────────
-# 21 colleges publish the catalog as one PDF. The pilot read West LA's one
-# program at a time (pick_pdf_pages); here the file is read once and every
-# program finds its own run of pages in it. A catalog PDF also prints each
-# subject's course descriptions, which name a program's courses too, so the
-# page that names the most listed codes is not enough: the page whose heading
-# line names the program's title and award is its own page.
+# ── A whole-catalog PDF (S403) ─────────────────────────────────────────────
+# Sixteen colleges publish the catalog as one PDF and nothing else (the
+# registry's single_pdf rows). The pilot read West LA's one program at a time
+# (pick_pdf_pages); a college is the same read with the file fetched once.
+# A catalog's course descriptions name a subject's codes page after page, so a
+# page counts toward a program only when it names the program's title words
+# (outside a contents line) or prints its control number: the program's own
+# page does, and the description pages of a one-subject program, which can
+# name more of its codes, mostly do not. Two S403 sessions wrote a reader
+# each; this one is #2189's with the East LA session's signals folded in.
 PDF_HEADING_CHARS = 120   # a line this long or shorter can be a program's heading
 PDF_HEADING_BONUS = 5     # codes a heading naming title and award is worth
 PDF_RUN_PAGES = 3         # pages after the start a program's list may continue onto
@@ -1602,45 +1605,74 @@ def pdf_control_number(text: str, cn: str | None) -> int:
     return m.start() if m else -1
 
 
-def pdf_program_pages(pages: list[str], program: dict, courses: list[dict]) -> dict | None:
-    """The program's run of pages in a whole-catalog PDF: the page naming the
-    most listed codes, worth PDF_HEADING_BONUS more when a heading line names
-    the whole title and the award, then the pages after it while they still
-    name listed codes. The text starts at that heading, so an A.S. and the
-    certificate printed after it each open on their own name."""
-    best, best_score, best_head, best_cn = None, 0.0, (0.0, False, -1), -1
+def _titled(text: str, pats: list) -> bool:
+    """Every title word on the page, outside its contents lines."""
+    low = "\n".join(ln for ln in (text or "").lower().split("\n") if not PDF_LEADER.search(ln))
+    return all(pt.search(low) for pt in pats)
+
+
+def _pdf_pick(pages: list[str], program: dict, courses: list[dict]) -> tuple[list[int], int, tuple]:
+    """(run of page indexes, where the first prints the control number, its
+    heading) for the program, or an empty run."""
+    tokens = P.title_tokens(program.get("title") or "")
+    pats = [re.compile(r"\b" + re.escape(w) + r"\b") for w in tokens]
+    cn = program.get("control_number")
+    best, best_score, best_cn, best_head = None, 0, -1, (0.0, False, -1)
     for i, txt in enumerate(pages):
-        found = P.find_codes(txt, courses)
-        if not found:
+        at = pdf_control_number(txt, cn)
+        if at < 0 and not (pats and _titled(txt, pats)):
+            continue
+        n = len(P.find_codes(txt, courses))
+        if not n:
             continue
         head = pdf_heading(txt, program)
-        at = pdf_control_number(txt, program.get("control_number"))
-        s = (len(found) + (PDF_HEADING_BONUS if head[0] == 1.0 and head[1] else 0)
-             + (PDF_CN_BONUS if at >= 0 else 0))
+        s = n + (PDF_HEADING_BONUS if head[0] == 1.0 and head[1] else 0) + (PDF_CN_BONUS if at >= 0 else 0)
         if s > best_score:
-            best, best_score, best_head, best_cn = i, s, head, at
+            best, best_score, best_cn, best_head = i, s, at, head
     if best is None:
-        return None
+        return list(P.pick_pdf_pages(pages, program, courses) or []), -1, (0.0, False, -1)
     run = [best]
     for j in range(best + 1, min(best + 1 + PDF_RUN_PAGES, len(pages))):
         if not P.find_codes(pages[j], courses):
             break
         run.append(j)
+    return run, best_cn, best_head
+
+
+def pdf_program_pages(pages: list[str], program: dict, courses: list[dict]) -> list[int]:
+    """The run of PDF pages holding the program: among the pages that carry
+    every title word or print its control number, the one naming the most
+    listed codes (a heading naming title and award, and the control number,
+    count extra), then the pages after it while they still name listed codes
+    (a table across pages). When no page qualifies, the pilot's picker."""
+    return _pdf_pick(pages, program, courses)[0]
+
+
+def pdf_best(url: str, pages: list[str], program: dict, courses: list[dict], extractor: str | None) -> dict | None:
+    """The program's pages as a source the extraction reads, in the shape
+    source_record() takes: None when no page names a listed course. The text
+    opens on the program's heading, so an A.S. and the certificate printed
+    after it each open on their own name."""
+    run, cn_at, head = _pdf_pick(pages, program, courses)
+    if not run:
+        return None
     parts = []
     for n, i in enumerate(run):
         txt = pages[i]
-        if n == 0 and best_cn >= 0:
+        if n == 0 and cn_at >= 0:
             # From the start of the line that prints the control number: the heading.
-            txt = txt[txt.rfind("\n", 0, best_cn) + 1:]
-        elif n == 0 and best_head[0] == 1.0 and best_head[2] > 0:
-            txt = txt[best_head[2]:]
+            txt = txt[txt.rfind("\n", 0, cn_at) + 1:]
+        elif n == 0 and head[0] == 1.0 and head[1] and head[2] > 0:
+            txt = txt[head[2]:]
         parts.append("[page %d]\n%s" % (i + 1, txt))
-    text = "\n\n".join(parts)[:P.TEXT_CAP]
+    text = "\n\n".join(parts)
     found = P.find_codes(text, courses)
     first = (text.split("\n", 2) + ["", ""])[1].strip()
-    return {"pages": [i + 1 for i in run], "text": text, "found": found,
-            "coverage": P.coverage(found, courses), "heading": first[:PDF_HEADING_CHARS],
-            "named": bool(best_head[0] == 1.0 and best_head[1]), "control_number_printed": best_cn >= 0}
+    return {"url": "%s#page=%d" % (url, run[0] + 1), "field": "pdf_pages", "found": found,
+            "coverage": P.coverage(found, courses), "text": text,
+            "pages": [i + 1 for i in run], "extractor": extractor,
+            "named": bool(head[0] == 1.0 and head[1]), "control_number_printed": cn_at >= 0,
+            "got": {"title": first[:PDF_HEADING_CHARS], "h1": first[:PDF_HEADING_CHARS]}}
 
 
 PDF_CN_SHARE = 0.5        # a catalog printing this share of its programs' control numbers prints them all
@@ -1658,8 +1690,8 @@ def pdf_unproven(picks: list[dict]) -> set[str]:
 
 
 def pdf_start(reader, reg: dict, cache: dict, report: dict) -> tuple[str | None, int]:
-    """The catalog PDF's address and how long to wait for it: the registry's,
-    or the link its procedure record says to follow."""
+    """The catalog PDF's address and how long to wait for it: the link its
+    procedure record says to follow, or the registry's."""
     step = P.procedure_catalog(reg.get("procedure"))
     if step and step["format"] == "pdf":
         got = P.load(reader, step["start"], cache, False)
@@ -1674,50 +1706,69 @@ def pdf_start(reader, reg: dict, cache: dict, report: dict) -> tuple[str | None,
 
 
 def is_pdf_catalog(reg: dict) -> bool:
-    return (reg.get("catalog_platform") == "pdf" or reg.get("catalog_format") == "single_pdf"
-            or (reg.get("catalog_url") or "").lower().split("?")[0].endswith(".pdf"))
+    url = (reg.get("catalog_url") or "").lower().split("#")[0].split("?")[0]
+    return reg.get("catalog_format") == "single_pdf" and url.endswith(".pdf")
 
 
-def pdf_records(reader, college: str, programs: list[dict], reg: dict, cache: dict,
-                report: dict, out_dir: str) -> list[dict]:
-    """Every program's source from the one PDF, pypdf first and pdfminer for a
-    program whose pages pypdf's text cannot find."""
-    url, wait = pdf_start(reader, reg, cache, report)
-    pdf = P.read_pdf(reader, url, cache, timeout_ms=wait) if url else {"access": "no_address", "pages": []}
-    pages = pdf.get("pages") or []
-    report["pdf"] = {"url": url, "access": pdf.get("access"), "status": pdf.get("status"),
-                     "bytes": pdf.get("bytes"), "pages": len(pages), "error": pdf.get("error"),
-                     "chars": sum(len(x) for x in pages), "pdfminer_used": 0}
-    print("%s: %d programs, PDF %s pages %d (%s)" % (college, len(programs), url, len(pages),
-                                                    pdf.get("access")), flush=True)
+def reads_as_pdf(reg: dict) -> bool:
+    """A registry row naming one PDF file, or a procedure record whose catalog step is a PDF."""
+    return is_pdf_catalog(reg) or (P.procedure_catalog(reg.get("procedure")) or {}).get("format") == "pdf"
+
+
+def capture_pdf(college: str, out_dir: str, programs: list[dict], reg: dict, report: dict) -> list[dict]:
+    """Every program at a college whose catalog is one PDF: the file read once
+    (pypdf, then pdfminer when pypdf's text names few listed codes), each
+    program given its run of pages."""
+    delay = int(os.environ.get("CENSUS_DELAY_MS", "4000"))
+    pw, browser, reader = P.open_reader(delay)
+    try:
+        start, wait = pdf_start(reader, reg, {}, report)
+        pdf = (P.read_pdf(reader, start, {}, timeout_ms=wait) if start
+               else {"access": "no_address", "pages": []})
+    finally:
+        browser.close()
+        pw.stop()
+    pages, extractor = pdf.get("pages") or [], pdf.get("extractor")
+    listed = [p for p in programs if p["closed_list"]]
+
+    def accepted(pg: list[str]) -> int:
+        return sum(1 for p in listed
+                   if (lambda b: b and b["coverage"] >= P.ACCEPT_SHARE)(pdf_best(start, pg, p, p["closed_list"], None)))
+    n = accepted(pages)
+    report["pdf"] = {"url": start, "access": pdf.get("access"), "status": pdf.get("status"),
+                     "bytes": pdf.get("bytes"), "pages_total": len(pages), "error": pdf.get("error"),
+                     "chars_total": sum(len(t) for t in pages), "pypdf_accepted": n,
+                     "sample": P.text_sample(pages)}
+    if pdf.get("data") and n < 0.5 * len(listed):
+        alt = P.pdfminer_pages(pdf)
+        m = accepted(alt["pages"]) if alt["pages"] else 0
+        report["pdf"].update(pdfminer_accepted=m, pdfminer_error=alt.get("error"))
+        if m > n:
+            pages, extractor = alt["pages"], alt["extractor"]
+    report["pdf"]["extractor"] = extractor
+    report["loads"] = reader.loads
+    print("%s: %d programs (%d with a course list), PDF %s pages by %s, %s"
+          % (college, len(programs), len(listed), len(pages), extractor, pdf.get("access")), flush=True)
     recs = []
     for prog in programs:
         if not prog["closed_list"]:
             rec = source_record(college, prog, reg, None, "no_closed_list")
         else:
-            got, extractor = pdf_program_pages(pages, prog, prog["closed_list"]), "pypdf"
-            if (not got or got["coverage"] < P.ACCEPT_SHARE) and pdf.get("data"):
-                alt = P.pdfminer_pages(pdf)
-                again = pdf_program_pages(alt.get("pages") or [], prog, prog["closed_list"])
-                if again and again["coverage"] > (got or {}).get("coverage", 0.0):
-                    got, extractor = again, "pdfminer"
-                    report["pdf"]["pdfminer_used"] += 1
-            if got and got["coverage"] >= P.ACCEPT_SHARE:
-                best = {"url": "%s#page=%d" % (url, got["pages"][0]), "coverage": got["coverage"],
-                        "found": got["found"], "text": got["text"], "field": "pdf_pages",
-                        "label": None, "got": {"title": got["heading"], "h1": got["heading"]}}
+            best = pdf_best(start, pages, prog, prog["closed_list"], extractor)
+            if best and best["coverage"] >= P.ACCEPT_SHARE:
                 rec = source_record(college, prog, reg, best, "pdf_pages")
-                rec["source"].update(pages=got["pages"], extractor=extractor, heading_named=got["named"])
+                rec["source"].update(pages=best["pages"], extractor=extractor, heading_named=best["named"])
+                # The pages are the program's own: keep their text whole, not a window around the codes.
+                rec["text"] = best["text"][:P.TEXT_CAP]
                 # A capture-only read files the preview alone: each pick's opening shows whether it is the program's page.
                 report["pdf"].setdefault("picks", []).append(
-                    {"control_number": prog["control_number"], "pages": got["pages"], "named": got["named"],
-                     "cn_printed": got["control_number_printed"],
-                     "coverage": round(got["coverage"], 3), "opens": re.sub(r"\s+", " ", got["text"][:220])})
+                    {"control_number": prog["control_number"], "pages": best["pages"], "named": best["named"],
+                     "cn_printed": best["control_number_printed"],
+                     "coverage": round(best["coverage"], 3), "opens": re.sub(r"\s+", " ", best["text"][:220])})
             else:
                 rec = source_record(college, prog, reg, None, "not_found")
-                if got:
-                    rec["near_miss"] = {"pages": got["pages"], "coverage": round(got["coverage"], 3),
-                                        "heading": got["heading"]}
+                if best:
+                    rec["near_miss"] = {"url": best["url"], "coverage": round(best["coverage"], 3)}
         recs.append(rec)
     picks = {p["control_number"]: p for p in report["pdf"].get("picks") or []}
     drop = pdf_unproven(list(picks.values()))
@@ -1729,8 +1780,8 @@ def pdf_records(reader, college: str, programs: list[dict], reg: dict, cache: di
             recs[i] = rec = source_record(college, byc[cn], reg, None, "not_found")
             rec["near_miss"] = {"pages": picks[cn]["pages"], "coverage": picks[cn]["coverage"],
                                 "why": "the page prints neither the control number nor the title and award"}
-        _write(os.path.join(out_dir, "sources", rec["control_number"] + ".json"), rec)
-        print("%-6s %-12s cov %-5s %s" % (rec["control_number"], rec["method"][:12], rec["coverage"],
+        _write(os.path.join(out_dir, "sources", cn + ".json"), rec)
+        print("%-6s %-12s cov %-5s %s" % (cn, rec["method"][:12], rec["coverage"],
                                           (rec.get("source") or {}).get("url") or ""), flush=True)
     return recs
 
@@ -1748,10 +1799,12 @@ def capture(college: str, out_dir: str, limit: int = 0) -> int:
               "started": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())}
     os.makedirs(os.path.join(out_dir, "sources"), exist_ok=True)
     platform = reg.get("catalog_platform")
-    as_pdf = is_pdf_catalog(reg) or (P.procedure_catalog(reg.get("procedure")) or {}).get("format") == "pdf"
-    if not start or (platform not in ("courseleaf", "curriqunet", "elumen", "acalog") and not as_pdf):
+    if reads_as_pdf(reg) and (start or reg.get("procedure")):
+        recs = capture_pdf(college, out_dir, programs, reg, report)
+        return finish_capture(college, out_dir, recs, report, t0)
+    if not start or platform not in ("courseleaf", "curriqunet", "elumen", "acalog"):
         # Phase 2 opens on CourseLeaf (Cerritos), curriQunet (S357), eLumen (S380) and Acalog (S389); another platform names its own enumeration first.
-        report["stopped"] = "this pass enumerates CourseLeaf, curriQunet, eLumen and Acalog catalogs and whole-catalog PDFs; %s reads %s" % (college, platform)
+        report["stopped"] = "this pass enumerates CourseLeaf, curriQunet, eLumen and Acalog catalogs; %s reads %s" % (college, platform)
         _write(os.path.join(out_dir, "capture.json"), report)
         print(report["stopped"])
         return 1
@@ -1760,9 +1813,7 @@ def capture(college: str, out_dir: str, limit: int = 0) -> int:
     cache: dict = {}
     try:
         scope = None
-        if as_pdf:
-            recs = pdf_records(reader, college, programs, reg, cache, report, out_dir)
-        elif platform == "curriqunet":
+        if platform == "curriqunet":
             urls = []
             pages = cq_pages(reader, start, report)
             print("%s: %d programs (%d with a course list), %d curriQunet program pages, %.1f s between loads"
@@ -1803,74 +1854,79 @@ def capture(college: str, out_dir: str, limit: int = 0) -> int:
             pages = []
             print("%s: %d programs (%d with a course list), %d candidate pages, %.1f s between loads"
                   % (college, len(programs), report["with_closed_list"], len(urls), delay / 1000), flush=True)
-        if not as_pdf:
-            # A page's own program pages beneath it are read too (child_pages()), once each.
-            queue, seen, i = list(urls), set(urls), 0
-            while i < len(queue):
-                u = queue[i]
-                i += 1
-                got = P.load(reader, u, cache, platform == "elumen")   # an eLumen view fills in late
-                if got.get("access") != "ok":
-                    continue
-                if platform not in ("curriqunet", "elumen", "acalog"):
-                    for kid in child_pages(got.get("final_url") or u, got.get("links"), start, scope):
-                        if kid not in seen and len(queue) < MAX_PAGES:
-                            seen.add(kid)
-                            queue.append(kid)
-                got["links"] = (got.get("links") or [])[:300]   # a program page's menus need not ride in memory
-                pages.append({"url": got.get("final_url") or u, "title": got.get("title"), "h1": got.get("h1"),
-                              "body": got.get("body"), "content": got.get("content"), "got": got,
-                              "codes": page_net(got)})
-                if i % 50 == 0:
-                    print("  read %d of %d pages" % (i, len(queue)), flush=True)
-            report["pages_read"] = len(pages)
+        # A page's own program pages beneath it are read too (child_pages()), once each.
+        queue, seen, i = list(urls), set(urls), 0
+        while i < len(queue):
+            u = queue[i]
+            i += 1
+            got = P.load(reader, u, cache, platform == "elumen")   # an eLumen view fills in late
+            if got.get("access") != "ok":
+                continue
             if platform not in ("curriqunet", "elumen", "acalog"):
-                report["child_pages"] = len(queue) - len(urls)
-            report["banner_h1"] = drop_banner_h1(pages)
-            recs, fallback = [], 0
-            P.MAX_LOADS = FALLBACK_LOADS      # the link search, shorter here: most programs already have a page
-            given = assign(programs, pages)
-            for prog in programs:
-                if not prog["closed_list"]:
-                    rec = source_record(college, prog, reg, None, "no_closed_list")
-                else:
-                    g = given.get(prog["control_number"]) or {}
-                    best, method = g.get("best"), "sitemap_page"
-                    if best is None and g.get("lost"):
-                        # Its pages went to programs they name more fully; the link
-                        # search would only find one of them again.
-                        rec = source_record(college, prog, reg, None, "page_claimed")
-                        rec["lost_pages"] = g["lost"]
-                        recs.append(rec)
-                        _write(os.path.join(out_dir, "sources", prog["control_number"] + ".json"), rec)
-                        print("%-6s page_claimed %s" % (prog["control_number"], g["lost"][0]), flush=True)
-                        continue
-                    # A curriQunet catalog has no links to search: its index is the whole list.
-                    # An eLumen catalog's menu is the whole list too; its links would find it again,
-                    # and so would an Acalog catalog's site map or program pages.
-                    if best is None and fallback < MAX_FALLBACKS and platform not in ("curriqunet", "elumen", "acalog"):
-                        fallback += 1
-                        res = P.locate_html(reader, {"title": prog["title"], "award": prog["award"]},
-                                            prog["closed_list"], start, cache, False)
-                        b = res["best"] or {}
-                        if b.get("coverage", 0.0) >= P.ACCEPT_SHARE and link_page_ok(b.get("url") or "", scope):
-                            best, method = dict(b, label=None), "link_search"
-                    rec = source_record(college, prog, reg, best, method if best else "not_found")
-                    if not best:
-                        rec["near_miss"] = near_miss(prog, pages)
-                recs.append(rec)
-                _write(os.path.join(out_dir, "sources", prog["control_number"] + ".json"), rec)
-                print("%-6s %-12s cov %-5s %s" % (prog["control_number"], rec["method"][:12], rec["coverage"],
-                                                  (rec.get("source") or {}).get("url") or ""), flush=True)
+                for kid in child_pages(got.get("final_url") or u, got.get("links"), start, scope):
+                    if kid not in seen and len(queue) < MAX_PAGES:
+                        seen.add(kid)
+                        queue.append(kid)
+            got["links"] = (got.get("links") or [])[:300]   # a program page's menus need not ride in memory
+            pages.append({"url": got.get("final_url") or u, "title": got.get("title"), "h1": got.get("h1"),
+                          "body": got.get("body"), "content": got.get("content"), "got": got,
+                          "codes": page_net(got)})
+            if i % 50 == 0:
+                print("  read %d of %d pages" % (i, len(queue)), flush=True)
+        report["pages_read"] = len(pages)
+        if platform not in ("curriqunet", "elumen", "acalog"):
+            report["child_pages"] = len(queue) - len(urls)
+        report["banner_h1"] = drop_banner_h1(pages)
+        recs, fallback = [], 0
+        P.MAX_LOADS = FALLBACK_LOADS      # the link search, shorter here: most programs already have a page
+        given = assign(programs, pages)
+        for prog in programs:
+            if not prog["closed_list"]:
+                rec = source_record(college, prog, reg, None, "no_closed_list")
+            else:
+                g = given.get(prog["control_number"]) or {}
+                best, method = g.get("best"), "sitemap_page"
+                if best is None and g.get("lost"):
+                    # Its pages went to programs they name more fully; the link
+                    # search would only find one of them again.
+                    rec = source_record(college, prog, reg, None, "page_claimed")
+                    rec["lost_pages"] = g["lost"]
+                    recs.append(rec)
+                    _write(os.path.join(out_dir, "sources", prog["control_number"] + ".json"), rec)
+                    print("%-6s page_claimed %s" % (prog["control_number"], g["lost"][0]), flush=True)
+                    continue
+                # A curriQunet catalog has no links to search: its index is the whole list.
+                # An eLumen catalog's menu is the whole list too; its links would find it again,
+                # and so would an Acalog catalog's site map or program pages.
+                if best is None and fallback < MAX_FALLBACKS and platform not in ("curriqunet", "elumen", "acalog"):
+                    fallback += 1
+                    res = P.locate_html(reader, {"title": prog["title"], "award": prog["award"]},
+                                        prog["closed_list"], start, cache, False)
+                    b = res["best"] or {}
+                    if b.get("coverage", 0.0) >= P.ACCEPT_SHARE and link_page_ok(b.get("url") or "", scope):
+                        best, method = dict(b, label=None), "link_search"
+                rec = source_record(college, prog, reg, best, method if best else "not_found")
+                if not best:
+                    rec["near_miss"] = near_miss(prog, pages)
+            recs.append(rec)
+            _write(os.path.join(out_dir, "sources", prog["control_number"] + ".json"), rec)
+            print("%-6s %-12s cov %-5s %s" % (prog["control_number"], rec["method"][:12], rec["coverage"],
+                                              (rec.get("source") or {}).get("url") or ""), flush=True)
     finally:
         browser.close()
         pw.stop()
+    report["loads"] = reader.loads
+    return finish_capture(college, out_dir, recs, report, t0)
+
+
+def finish_capture(college: str, out_dir: str, recs: list[dict], report: dict, t0: float) -> int:
+    """The run's account, written as capture.json, whichever reader found the pages."""
     urls_used: dict[str, list[str]] = {}
     for r in recs:
         if r.get("source"):
             urls_used.setdefault(r["source"]["url"], []).append(r["control_number"])
     report.update(
-        loads=reader.loads, seconds=round(time.time() - t0, 1),
+        seconds=round(time.time() - t0, 1),
         found=sum(1 for r in recs if r.get("source")),
         by_method={m: sum(1 for r in recs if r["method"] == m)
                    for m in sorted({r["method"] for r in recs})},

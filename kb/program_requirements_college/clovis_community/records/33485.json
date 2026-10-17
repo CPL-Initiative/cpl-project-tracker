@@ -1,0 +1,146 @@
+{
+ "college": "Clovis Community College",
+ "control_number": "33485",
+ "shape": "degree",
+ "title": "Liberal Arts & Sciences: Natural Sciences",
+ "award": "A.A. Degree",
+ "source_url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=122",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7046,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7046,
+    "output_tokens": 651,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 651,
+  "output_tokens_details": {
+   "thinking_tokens": 168
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.0412,
+ "ms": 6622,
+ "seconds": 7.1,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 1,
+   "share": 0.0,
+   "missing": [
+    "GEOL9"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Liberal Arts & Sciences: Natural Sciences A.A. Degree (section not found in the provided text)",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "GEOL 9",
+    "why": "Named only in an Elementary Teacher certificate's core courses on this page; the Natural Sciences A.A. section is not in the text."
+   }
+  ],
+  "notes": [
+   "The provided page (catalog page 117/PDF page 122) contains only Elementary Teacher Certificate of Achievement sections (the end of one certificate, heading not shown, totaling 16 units, and Elementary Teacher Level 3, totaling 20 units). It does not contain the Liberal Arts & Sciences: Natural Sciences A.A. Degree section, so no blocks, totals, outcomes or careers were recorded.",
+   "Careers named on the page (teacher assistants, instructional aides, afterschool program teachers, tutors) belong to the Elementary Teacher Level 3 certificate and were not recorded for this award.",
+   "A reviewer should locate the correct catalog page for the Liberal Arts & Sciences: Natural Sciences A.A. Degree."
+  ]
+ },
+ "extracted_run": "39006155986"
+}

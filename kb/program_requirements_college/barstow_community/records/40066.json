@@ -1,0 +1,155 @@
+{
+ "college": "Barstow Community College",
+ "control_number": "40066",
+ "shape": "certificate",
+ "title": "Warehousing & Logistics Level I",
+ "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+ "source_url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=73",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6815,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6815,
+    "output_tokens": 840,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 840,
+  "output_tokens_details": {
+   "thinking_tokens": 239
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.04406,
+ "ms": 7724,
+ "seconds": 8.1,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 3,
+   "share": 0.0,
+   "missing": [
+    "WARE52",
+    "WARE54",
+    "WARE55"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Not found in the supplied text",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "WARE 52",
+    "why": "Named only in a degree section (60-unit total with GE), not the Level I certificate section, which is not in the text"
+   },
+   {
+    "code": "WARE 54",
+    "why": "Named only in a degree section (60-unit total with GE), not the Level I certificate section, which is not in the text"
+   },
+   {
+    "code": "WARE 55",
+    "why": "Named only in a degree section (60-unit total with GE), not the Level I certificate section, which is not in the text"
+   }
+  ],
+  "notes": [
+   "The supplied text (page 73) does not contain a section for the Certificate of Achievement, Warehousing & Logistics Level I. It begins mid-section with outcomes and a course table whose heading is cut off at the page break.",
+   "That table lists Major Units Required 19.0, General Education Coursework 20.0-39.0, Electives Required 2.0-21.0 and Total Units Required 60.0. It therefore appears to be a warehousing/logistics associate degree, not the Level I certificate, and was not recorded.",
+   "That degree table requires WARE 51, WARE 52, WARE 54, WARE 55, WARE 59 and CBIS 1.",
+   "The remaining sections are the Certificate of Achievement, Accounting and the Certificate of Achievement, Entrepreneurship and Innovation, which belong to other programs.",
+   "A reviewer should check the neighboring catalog pages (likely page 72 or 74) for the Level I certificate section."
+  ]
+ },
+ "extracted_run": "39006332820"
+}

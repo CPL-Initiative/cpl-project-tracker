@@ -1,0 +1,172 @@
+{
+ "college": "Los Angeles Harbor College",
+ "control_number": "46354",
+ "shape": "certificate",
+ "title": "Entrepreneurial Management",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=55",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 10305,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 10305,
+    "output_tokens": 717,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 717,
+  "output_tokens_details": {
+   "thinking_tokens": 150
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.05556,
+ "ms": 6956,
+ "seconds": 7.4,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 7,
+   "share": 0.0,
+   "missing": [
+    "BUS1",
+    "BUS5",
+    "FINANCE1",
+    "FINANCE8",
+    "MARKET21",
+    "MGMT13",
+    "MGMT15"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": true,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Entrepreneurial Management section not found in the provided text",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "BUS 1",
+    "why": "not in the text; appears only in Business Administration and Business Data Analytics sections"
+   },
+   {
+    "code": "BUS 5",
+    "why": "not in the text; appears only in Business Administration and Business Data Analytics sections"
+   },
+   {
+    "code": "FINANCE 1",
+    "why": "not in the text; appears only in other programs' sections"
+   },
+   {
+    "code": "FINANCE 8",
+    "why": "not in the text; appears only in Business Administration sections"
+   },
+   {
+    "code": "MARKET 21",
+    "why": "not in the text; appears only in Business Administration sections"
+   },
+   {
+    "code": "MGMT 13",
+    "why": "not in the text; appears only in Business Administration sections"
+   },
+   {
+    "code": "MGMT 15",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "The provided catalog text (PDF pages 55-58) contains only Business Administration AA, Business Administration AS, Business Administration Certificate of Achievement, and Business Data Analytics Certificate of Achievement. No Entrepreneurial Management Certificate of Achievement section appears, so no requirements, totals, outcomes or careers were recorded.",
+   "The page link may point to the wrong page; the Entrepreneurial Management section is likely elsewhere in the Business pages of the 2026-2027 catalog and should be checked by a reviewer."
+  ]
+ },
+ "extracted_run": "39006381839"
+}

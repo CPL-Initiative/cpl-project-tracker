@@ -1,0 +1,194 @@
+{
+ "college": "Los Angeles Pierce College",
+ "control_number": "19008",
+ "shape": "certificate",
+ "title": "Preschool",
+ "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+ "source_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=97",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 11737,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 11737,
+    "output_tokens": 1183,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1183,
+  "output_tokens_details": {
+   "thinking_tokens": 344
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.07061,
+ "ms": 10981,
+ "seconds": 11.3,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 3,
+   "listed": 3,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "CHDEV11"
+   ],
+   "flagged": [
+    "CHDEV11"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    12.0,
+    12.0
+   ],
+   "stated": [
+    12.0,
+    12.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [
+    "Apply evidence-based theoretical and practical concepts with typically and atypically developing young children and their families in the field of early care and education."
+   ],
+   "why": [
+    "not in the catalog text as printed: Apply evidence-based theoretical and practical concepts with typically and atypi"
+   ],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": false
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "PRESCHOOL Certificate of Achievement (STATE CODE 19008)",
+   "measure": "units",
+   "total_units": {
+    "min": 12,
+    "max": 12
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Demonstrate competence in facilitating the development of young children as unique individuals through the use of developmentally appropriate curriculum that promotes physical, cognitive and socio-emotional development.",
+    "Apply evidence-based theoretical and practical concepts with typically and atypically developing young children and their families in the field of early care and education.",
+    "Organize and develop resources and materials for implementing creative experiences for children with varying abilities in groups and on an individual basis."
+   ],
+   "careers": [
+    "Child Care Center fully qualified teacher"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "CERTIFICATE - REQUIRED COURSES",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CH DEV 001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CH DEV 002",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CH DEV 007",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CH DEV 011",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Read only the PRESCHOOL Certificate of Achievement section (page 98); adjacent sections for Associate Teacher, Infant Care Teacher, Preschool Director, Preschool Teacher and School Age Child Care Teacher were ignored.",
+   "Catalog prints codes with leading zeros (CH DEV 001, 002, 007), matching closed-list CH DEV 1, 2, 7.",
+   "CH DEV 011 (Child, Family, and Community) is not in the closed list; recorded as a catalog addition.",
+   "Second outcome's line-break hyphenation 'typ - ically' read as 'typically'.",
+   "Career entry taken from program information: 'meets the State Department of Social Services minimum requirements for Child Care Center fully qualified teacher'; reviewer may check whether this counts as a job title. Gainful Employment text only refers to an external website for careers."
+  ]
+ },
+ "extracted_run": "39006383070"
+}

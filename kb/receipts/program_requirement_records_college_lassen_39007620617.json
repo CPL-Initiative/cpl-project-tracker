@@ -1,0 +1,101 @@
+{
+ "college": "Lassen College",
+ "load_run": "39007620617",
+ "function": "program_requirement_records_college_load",
+ "at": "2026-10-17T05:49:18Z",
+ "records": 64,
+ "posted": 59,
+ "batches": 3,
+ "inserted": 59,
+ "kept": 0,
+ "skipped": [
+  {
+   "control_number": "09316",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "17742",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "31178",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "43938",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "44495",
+   "why": "places none of its listed courses (another program's page)"
+  }
+ ],
+ "error": null,
+ "extracted_runs": [
+  "39006337658"
+ ],
+ "machine_pass": 35,
+ "inserted_keys": [
+  "02121",
+  "02133",
+  "02134",
+  "09308",
+  "12201",
+  "18751",
+  "18752",
+  "18753",
+  "18754",
+  "18756",
+  "18758",
+  "18848",
+  "19321",
+  "19375",
+  "19377",
+  "21595",
+  "21602",
+  "21606",
+  "30947",
+  "31015",
+  "31037",
+  "31132",
+  "31297",
+  "31379",
+  "32083",
+  "33263",
+  "33322",
+  "33323",
+  "33388",
+  "33661",
+  "33729",
+  "33730",
+  "35106",
+  "36554",
+  "36681",
+  "37760",
+  "40089",
+  "40731",
+  "41739",
+  "41912",
+  "42300",
+  "42798",
+  "42929",
+  "43471",
+  "43543",
+  "43544",
+  "43571",
+  "44266",
+  "44457",
+  "45318",
+  "45344",
+  "45346",
+  "45524",
+  "45525",
+  "45611",
+  "45924",
+  "45926",
+  "45927",
+  "46345"
+ ],
+ "kept_keys": [],
+ "rollback": "delete from public.program_requirement_records where college = 'Lassen College' and checked = false and control_number in ('02121', '02133', '02134', '09308', '12201', '18751', '18752', '18753', '18754', '18756', '18758', '18848', '19321', '19375', '19377', '21595', '21602', '21606', '30947', '31015', '31037', '31132', '31297', '31379', '32083', '33263', '33322', '33323', '33388', '33661', '33729', '33730', '35106', '36554', '36681', '37760', '40089', '40731', '41739', '41912', '42300', '42798', '42929', '43471', '43543', '43544', '43571', '44266', '44457', '45318', '45344', '45346', '45524', '45525', '45611', '45924', '45926', '45927', '46345');"
+}

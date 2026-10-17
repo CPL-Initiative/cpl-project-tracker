@@ -1,0 +1,176 @@
+{
+ "college": "Lassen College",
+ "control_number": "44266",
+ "shape": "noncredit",
+ "title": "Commercial Driver's Training",
+ "award": "Noncredit program",
+ "source_url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=63",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6414,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6414,
+    "output_tokens": 916,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 916,
+  "output_tokens_details": {
+   "thinking_tokens": 310
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.04398,
+ "ms": 7612,
+ "seconds": 7.9,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 3,
+   "listed": 3,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    180.0,
+    180.0
+   ],
+   "stated": [
+    180.0,
+    180.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Commercial Driver's Training",
+   "measure": "hours",
+   "total_units": {
+    "min": 180,
+    "max": 180
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Students will obtain the knowledge necessary to successfully pass the California DMV Learner’s Permit Written Exam.",
+    "Students will obtain the skills necessary to pass the California DMV Commercial Driver’s License Pre-trip inspection and basic skills test.",
+    "Students will obtain the skills necessary to pass the California DMV Commercial Driver’s License Road test."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Certificate of Completion in Commercial Driver's Training",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 180,
+     "max": 180
+    },
+    "courses": [
+     {
+      "code": "CDL 150",
+      "units": 36,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDL 151",
+      "units": 72,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDL 152",
+      "units": 72,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Noncredit Certificate of Completion counted in hours; total 180 hours as printed.",
+   "Hours for CDL 151 (72) and CDL 152 (72) were read from a table whose rows were run together in the extracted text; the order matches the course order.",
+   "Extra spaces in outcome 2 ('Commercial    Driver’s') were collapsed to one space.",
+   "The description mentions entering 'the workforce' but names no specific career, so careers is empty."
+  ]
+ },
+ "extracted_run": "39006337658"
+}

@@ -1,0 +1,173 @@
+{
+ "college": "Santa Rosa Junior College",
+ "control_number": "42626",
+ "shape": "noncredit",
+ "title": "AE: Tax Preparation",
+ "award": "Noncredit program",
+ "source_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=232",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7589,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7589,
+    "output_tokens": 1051,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1051,
+  "output_tokens_details": {
+   "thinking_tokens": 424
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.05138,
+ "ms": 9620,
+ "seconds": 10.0,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 2,
+   "listed": 2,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    48.0,
+    48.0
+   ],
+   "stated": [
+    48.0,
+    48.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 2,
+   "courses": 0,
+   "count": 2,
+   "not_verbatim": [
+    "Complete and file state and federal income tax forms electronically."
+   ],
+   "why": [
+    "not in the catalog text as printed: Complete and file state and federal income tax forms electronically."
+   ],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": false
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "AE: Tax Preparation (Certificate of Completion)",
+   "measure": "hours",
+   "total_units": {
+    "min": 48,
+    "max": 48
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Demonstrate a basic knowledge of tax law.",
+    "Complete and file state and federal income tax forms electronically."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Complete 2 courses (48 hours)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 48,
+     "max": 48
+    },
+    "courses": [
+     {
+      "code": "ADED 754.1",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADED 754.2",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The award is counted in hours: 'Adult Ed: Tax Preparation - Complete 48.00 Hours' and 'Complete 2 courses (48 hours)'.",
+   "The catalog prints 0 in the 'Hours/Units' column beside each course. That is the noncredit unit value, not hours. The hours for each course are not printed, so the course units are left null.",
+   "The block lists exactly two courses and requires both, so it is recorded with rule 'all'.",
+   "The outcomes printed at the top of page 232 (business plan) and the ADED 762.x/764.x rows belong to the preceding program and were ignored. The careers list under 'AE: Web-Based Tools & Appls' belongs to the following program and was not used.",
+   "The PDF prints a 'ﬁ' ligature in 'ﬁle'. It is transcribed as 'fi' in the outcomes."
+  ]
+ },
+ "extracted_run": "39006464249"
+}

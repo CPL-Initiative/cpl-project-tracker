@@ -1,0 +1,260 @@
+{
+ "college": "Woodland Community College",
+ "control_number": "41416",
+ "shape": "adt",
+ "title": "Business Administration 2.0",
+ "award": "A.S. T Degree",
+ "source_url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=120",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 9787,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 9787,
+    "output_tokens": 1867,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1867,
+  "output_tokens_details": {
+   "thinking_tokens": 597
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.07649,
+ "ms": 15000,
+ "seconds": 15.4,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 6,
+   "listed": 9,
+   "share": 0.667,
+   "missing": [
+    "ECON1A",
+    "ECON1B",
+    "MATH1A"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 3,
+   "codes": [
+    "ECONC2001",
+    "ECONC2002",
+    "MATHC2210"
+   ],
+   "flagged": [
+    "ECONC2001",
+    "ECONC2002",
+    "MATHC2210"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    28.0,
+    28.0
+   ],
+   "stated": [
+    28.0,
+    28.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "BUSINESS ADMINISTRATION 2.0 (A.S.-T)",
+   "measure": "units",
+   "total_units": {
+    "min": 28,
+    "max": 28
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Communication Understand business terms and concepts, and effectively communicate using the language of business.",
+    "Computation Use specific problem-solving tools to make informed decisions when assessing alternative courses of action.",
+    "Critical Thinking Apply concepts and processes to analyze and evaluate various business situations/actions.",
+    "T echnological Awareness Understand information technologies as they influence the structure and process of organizations and economies, and as they influence the roles and techniques of management."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required Courses for Major",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ACCT1",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACCT2",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECONC2002",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ECONC2001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "GNBUS10",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GNBUS18",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "STATC1000",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Calculus Option - Choose 1",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 4,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "MATH9",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATHC2210",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ECON 1A",
+    "why": "not in the text; catalog lists ECONC2002 Principles of Macroeconomics instead (likely common course numbering renumber)"
+   },
+   {
+    "code": "ECON 1B",
+    "why": "not in the text; catalog lists ECONC2001 Principles of Microeconomics instead (likely common course numbering renumber)"
+   },
+   {
+    "code": "MATH 1A",
+    "why": "not in the text; catalog lists MATHC2210 Calculus I: Early Transcendentals instead (likely common course numbering renumber)"
+   }
+  ],
+  "notes": [
+   "Catalog prints codes without spaces (ACCT1, GNBUS10, STATC1000); these match closed-list ACCT 1, GNBUS 10, STAT C1000 etc. and are marked catalog_addition false.",
+   "ECONC2002, ECONC2001 and MATHC2210 are not on the closed list; they appear to be common-course-numbering replacements for ECON 1A, ECON 1B and MATH 1A.",
+   "The 'Minimum of 60 CSU transferable semester units' statement applies to all AA-T/AS-T degrees and is not recorded as a degree total; no GE unit figure is printed.",
+   "Fourth outcome is printed as 'T echnological Awareness' (PDF spacing artifact), copied as printed.",
+   "Outcomes begin with a category label (Communication, Computation, Critical Thinking, Technological Awareness) printed inline; kept as part of each outcome."
+  ]
+ },
+ "extracted_run": "39006340803"
+}

@@ -1,0 +1,202 @@
+{
+ "college": "Compton College",
+ "control_number": "41599",
+ "shape": "noncredit",
+ "title": "ESL Level 1",
+ "award": "Noncredit program",
+ "source_url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=89",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 9582,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 9582,
+    "output_tokens": 1759,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1759,
+  "output_tokens_details": {
+   "thinking_tokens": 379
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.07351,
+ "ms": 14134,
+ "seconds": 14.4,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 3,
+   "listed": 3,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "unstated",
+   "computed": null,
+   "stated": null,
+   "against": null,
+   "why": [
+    "the catalog prints no total, no hours and no units"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 31,
+   "courses": 0,
+   "count": 31,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "ESL Level 1 - Certificate of Completion",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Write letters given visual or aural input.",
+    "Produce phonetic sounds orally for individual letters.",
+    "Write numerals and their corresponding English words.",
+    "Respond appropriately to directions and commands given in class.",
+    "Use phrases appropriately to convey and obtain basic information in the classroom.",
+    "Identify pictures of basic vocabulary with spoken words.",
+    "Arrange letters to form familiar vocabulary acquisition with regularity.",
+    "Write simple sentences using the verb “to be” about personal information or pictures.",
+    "Complete cloze activities with correct vocabulary.",
+    "Use correct word order to write simple sentences.",
+    "Place days of the week in the correct order.",
+    "Match vocabulary words to their corresponding pictures.",
+    "Write sentences with the verb “to be” using correct subject-verb agreement.",
+    "Respond to high-frequency commands and social expressions and attempt to reproduce what is heard.",
+    "Sustain a brief 3 to 5-minute conversation on a familiar topic using simple questions and respond accurately with yes or no answers, single words, and short phrases.",
+    "Ask and respond to simple questions and requests related to personal information and needs.",
+    "Identify basic information from charts and use prepositions of time to describe or organize temporal information.",
+    "Accurately produce statements using simple present, simple past, and present continuous verb tenses in conversation.",
+    "Accurately formulate yes or no questions, wh-questions, and affirmative and negative statements in speaking and writing.",
+    "Identify nouns in speaking and in writing using determiners and pronouns.",
+    "Write simple and compound sentences using coordinating conjunctions.",
+    "Match phonological sounds to letters and clusters of letters in verb tenses and produce proper question intonation.",
+    "Read and complete simple forms and personal information.",
+    "Make statements related to basic daily needs, preferences, and familiar activities with limited attention to stress and intonation.",
+    "Identify the main topic of conversation or short paragraph of a familiar topic.",
+    "Some basic texts for key information and define the sequence of a simple narrative passage.",
+    "Use predicting or decoding strategies to interpret new words in familiar contexts.",
+    "Accurately produce affirmative and negative statements in writing.",
+    "Compose a short paragraph of related sentences including compound sentences.",
+    "Accurately use future tense, verbs followed by gerunds and infinitives, modals, frequency adverbs, quantifiers, and comparatives and superlatives in speaking and writing.",
+    "Respond appropriately to oral instructions in academic and workplace settings."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Program Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ESL 11",
+      "units": 0,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ESL 12",
+      "units": 0,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ESL 13",
+      "units": 0,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The catalog prints ESL 11 as \"ESL 1 1\" (a typesetting space); recorded as ESL 11.",
+   "The catalog prints \"(0)\" beside each course and states no hours or total for this noncredit certificate, so measure is units with 0 as printed and total_units is null.",
+   "Printed course titles differ from the state file: ESL 12 is printed \"Level 1\" and ESL 13 \"Level 2\".",
+   "The description mentions a \"7-course sequence\", but only ESL 11, ESL 12 and ESL 13 are listed as requirements for Level 1.",
+   "Outcome \"Some basic texts for key information...\" appears to be a typo (likely \"Scan\"); copied as printed.",
+   "The Program Requirements list continues across the page break from page 89 to page 90."
+  ]
+ },
+ "extracted_run": "39006336111"
+}

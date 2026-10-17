@@ -1,0 +1,322 @@
+{
+ "college": "Santa Rosa Junior College",
+ "control_number": "44295",
+ "shape": "degree",
+ "title": "Automotive Diagnostics",
+ "award": "A.S. Degree",
+ "source_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=118",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 10151,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 10151,
+    "output_tokens": 3036,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 3036,
+  "output_tokens_details": {
+   "thinking_tokens": 579
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.10132,
+ "ms": 23235,
+ "seconds": 23.6,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 13,
+   "listed": 14,
+   "share": 0.929,
+   "missing": [
+    "CS8141A"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 2,
+   "codes": [
+    "ATL111",
+    "CS8141"
+   ],
+   "flagged": [
+    "ATL111",
+    "CS8141"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    38.0,
+    38.0
+   ],
+   "stated": [
+    38.0,
+    38.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 34,
+   "courses": 0,
+   "count": 34,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Automotive Diagnostic Technician Major",
+   "measure": "units",
+   "total_units": {
+    "min": 38,
+    "max": 38
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Demonstrate the correct use of safety procedures utilized by a mobile equipment repair technician.",
+    "Locate and interpret technical manuals from online computerized databases.",
+    "Demonstrate the appropriate use and maintenance of hand, shop, and precision tools.",
+    "Prepare initial, revised, and ﬁnal repair orders in compliance with California law (BAR).",
+    "Identify engine block assembly components and conﬁgurations.",
+    "Demonstrate the proper steps to remove a cylinder head; inspect gasket condition; install cylinder head and gasket; tighten according to manufacturer's speciﬁcation and procedure.",
+    "Demonstrate the proper steps for performing a timing belt replacement and setting the timing belt, crankshaft, and camshafts in proper positions.",
+    "Demonstrate the precautions (personal and shop safety procedures) needed to safely work with high voltage systems.",
+    "Demonstrate acquired knowledge related to the components used of modern Hybrid/ Electronic vehicles.",
+    "Demonstrate familiarity with reference materials such as schematics, flow charts, logic trees, and workshop manuals to aid in battery system troubleshooting.",
+    "Demonstrate how to perform basic maintenance related to hybrid and electric vehicles.",
+    "Demonstrate how to diagnose a basic hybrid or electric vehicle fault using standard diagnostic equipment.",
+    "Research and identify correct procedures and speciﬁcations for maintenance and repair of automatic transmissions and transaxle systems.",
+    "Research and identify correct procedures and speciﬁcations for maintenance and repair of suspension and steering systems.",
+    "Demonstrate the proper use of a Digital Multimeter (DMM) during diagnosis of electrical circuit problems, including: source voltage, voltage drop, current flow, and resistance.",
+    "Analyze and diagnose a mobile equipment charging system using appropriate electrical tools and equipment.",
+    "Analyze and diagnose a mobile equipment starting system using appropriate electrical tools and equipment.",
+    "Analyze and diagnose a mobile equipment low-voltage battery system using appropriate electrical tools and equipment.",
+    "Test the Controller Area Network (CAN) BUS system signal with a Digital Storage Oscilloscope (DSO). Set up the DSO to capture the CAN hi (+) and CAN lo (-) signals.",
+    "Identify and describe the theory, service, and repair of common types of automotive heating and air conditioning systems.",
+    "Use industry standard recovery, recycling, and recharging equipment to diagnose and service automotive air conditioning systems.",
+    "Explain the operation, troubleshooting and repair of the ignition, fuel and emission control systems of late model automobiles.",
+    "Demonstrate repair of automotive ignition, fuel, and integrated electronic engine controls.",
+    "Perform diagnosis, service, and maintenance procedures in a timely manner to industry standards.",
+    "Describe the principles of structured programming and be able to describe, design, implement, and test structured programs using currently accepted methodology.",
+    "Troubleshoot and repair system components.",
+    "Establish electronic communication between a programmable logic controller (PLC) and a personal computer.",
+    "Identify and correct Virtual Instruments program errors.",
+    "Demonstrate proper methods for high voltage glove testing.",
+    "Demonstrate the proper use of a voltmeter in performing high voltage battery testing.",
+    "Demonstrate the proper use of ohm meters for motor testing.",
+    "Demonstrate the calibration process for Advanced Driver Assistance Systems (ADAS).",
+    "Demonstrate a scope capture of a specialized internal communications network BUS signal.",
+    "Access and interpret module data on ADAS."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Automotive Diagnostic Technician Major",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ATL 101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ATL 105",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ATL 110",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ATL 111",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ATL 120",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ATL 140",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ATL 161",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ATL 162",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ATL 170",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ATL 180",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select any combination totaling at least 9.00 units from the following:",
+    "rule": "choose_units",
+    "minimum": 9,
+    "option_group": null,
+    "stated": {
+     "min": 9,
+     "max": 9
+    },
+    "courses": [
+     {
+      "code": "ATL 163",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CS 81.41",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ELEC 88",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ELEC 153",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ELEC 180",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "CS 81.41A",
+    "why": "catalog prints CS 81.41 (Programming Essentials in Python for Networking) instead; recorded as printed with catalog_addition true"
+   }
+  ],
+  "notes": [
+   "The excerpt begins mid-section: the program's own heading (Automotive Diagnostics A.S.) is not in the text; the page header 'Automotive Technology (AS)' belongs to the next program. Section heading recorded from the major block heading 'Automotive Diagnostic Technician Major'.",
+   "The elective block prints no units beside its courses; units left null.",
+   "CS 81.41 in the catalog differs in code and title from closed-list CS 81.41A; reviewer should confirm whether they are the same course.",
+   "ATL 111 is required but not in the closed list.",
+   "The program description and career statement ('advanced entry-level apprentice automotive technicians') shown belong to the Automotive Technology (AS) section, so no careers recorded for this award.",
+   "The Automotive Technology (AS) major requirements and outcomes on page 119 belong to a different program and were not used.",
+   "No degree total or GE units printed for this award in the excerpt."
+  ]
+ },
+ "extracted_run": "39006464249"
+}

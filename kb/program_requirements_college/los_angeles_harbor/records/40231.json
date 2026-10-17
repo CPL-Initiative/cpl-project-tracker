@@ -1,0 +1,262 @@
+{
+ "college": "Los Angeles Harbor College",
+ "control_number": "40231",
+ "shape": "adt",
+ "title": "Sociology",
+ "award": "A.A- T Degree",
+ "source_url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=128",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7843,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7843,
+    "output_tokens": 1490,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1490,
+  "output_tokens_details": {
+   "thinking_tokens": 287
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.06117,
+ "ms": 11638,
+ "seconds": 12.9,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 25,
+   "share": 0.0,
+   "missing": [
+    "ANTHRO102",
+    "HISTC1001",
+    "HISTC1002",
+    "HISTORY1",
+    "HISTORY2",
+    "HISTORY41",
+    "HISTORY42",
+    "HISTORY43",
+    "HISTORY44",
+    "HISTORY52",
+    "HISTORY86",
+    "HISTORY87",
+    "POLSCI4",
+    "SOC1",
+    "SOC11",
+    "SOC12",
+    "SOC2",
+    "SOC21",
+    "SOC3",
+    "SOC31",
+    "SOC4",
+    "STAT1",
+    "STAT1S",
+    "STATC1000",
+    "STATC1000E"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Degrees and Certificates – LIBERAL ARTS AND SCIENCES",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ANTHRO 102",
+    "why": "Sociology A.A.-T section not in the text"
+   },
+   {
+    "code": "HISTC1001",
+    "why": "Sociology A.A.-T section not in the text; appears only in a Liberal Arts list"
+   },
+   {
+    "code": "HISTC1002",
+    "why": "Sociology A.A.-T section not in the text; appears only in a Liberal Arts list"
+   },
+   {
+    "code": "HISTORY 1",
+    "why": "Sociology A.A.-T section not in the text; appears only in a Liberal Arts list"
+   },
+   {
+    "code": "HISTORY 2",
+    "why": "Sociology A.A.-T section not in the text; appears only in a Liberal Arts list"
+   },
+   {
+    "code": "HISTORY 41",
+    "why": "Sociology A.A.-T section not in the text; appears only in a Liberal Arts list"
+   },
+   {
+    "code": "HISTORY 42",
+    "why": "Sociology A.A.-T section not in the text; appears only in a Liberal Arts list"
+   },
+   {
+    "code": "HISTORY 43",
+    "why": "Sociology A.A.-T section not in the text; appears only in a Liberal Arts list"
+   },
+   {
+    "code": "HISTORY 44",
+    "why": "Sociology A.A.-T section not in the text; appears only in a Liberal Arts list"
+   },
+   {
+    "code": "HISTORY 52",
+    "why": "Sociology A.A.-T section not in the text; appears only in a Liberal Arts list"
+   },
+   {
+    "code": "HISTORY 86",
+    "why": "Sociology A.A.-T section not in the text; appears only in a Liberal Arts list"
+   },
+   {
+    "code": "HISTORY 87",
+    "why": "Sociology A.A.-T section not in the text; appears only in a Liberal Arts list"
+   },
+   {
+    "code": "POL SCI 4",
+    "why": "Sociology A.A.-T section not in the text; appears only in a Liberal Arts list"
+   },
+   {
+    "code": "SOC 1",
+    "why": "Sociology A.A.-T section not in the text; appears only in a Liberal Arts list"
+   },
+   {
+    "code": "SOC 11",
+    "why": "not in the text"
+   },
+   {
+    "code": "SOC 12",
+    "why": "Sociology A.A.-T section not in the text; appears only in a Liberal Arts list"
+   },
+   {
+    "code": "SOC 2",
+    "why": "Sociology A.A.-T section not in the text; appears only in a Liberal Arts list"
+   },
+   {
+    "code": "SOC 21",
+    "why": "Sociology A.A.-T section not in the text; appears only in a Liberal Arts list"
+   },
+   {
+    "code": "SOC 3",
+    "why": "not in the text"
+   },
+   {
+    "code": "SOC 31",
+    "why": "not in the text"
+   },
+   {
+    "code": "SOC 4",
+    "why": "Sociology A.A.-T section not in the text; appears only in a Liberal Arts list"
+   },
+   {
+    "code": "STAT 001S",
+    "why": "not in the text"
+   },
+   {
+    "code": "STAT 1",
+    "why": "Sociology A.A.-T section not in the text; appears only in a Liberal Arts list"
+   },
+   {
+    "code": "STAT C1000",
+    "why": "Sociology A.A.-T section not in the text; appears only in a Liberal Arts list"
+   },
+   {
+    "code": "STAT C1000E",
+    "why": "Sociology A.A.-T section not in the text; appears only in a Liberal Arts list"
+   }
+  ],
+  "notes": []
+ },
+ "extracted_run": "39006381839"
+}

@@ -1,0 +1,381 @@
+{
+ "college": "Shasta College",
+ "control_number": "18097",
+ "shape": "degree",
+ "title": "University Studies - Social Sciences",
+ "award": "A.A. Degree",
+ "source_url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=45",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 13878,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 13878,
+    "output_tokens": 3224,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 3224,
+  "output_tokens_details": {
+   "thinking_tokens": 827
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.11999,
+ "ms": 24537,
+ "seconds": 24.9,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 48,
+   "share": 0.0,
+   "missing": [
+    "ANTH14",
+    "ANTH2",
+    "ANTH25",
+    "ANTHC1001",
+    "ARCH3",
+    "ARCH4A",
+    "ECE1",
+    "ECE2",
+    "ECE9",
+    "ECONC2001",
+    "ECONC2002",
+    "GEOG1A",
+    "GEOG1AL",
+    "GEOG1B",
+    "GEOG5",
+    "GEOG7",
+    "GEOG8",
+    "HIST1A",
+    "HIST1B",
+    "HIST2",
+    "HIST25",
+    "HIST3",
+    "HIST35",
+    "HIST38",
+    "HIST40",
+    "HISTC1001",
+    "HISTC1002",
+    "HUSV16",
+    "HUSV18",
+    "HUSV70",
+    "POLS1",
+    "POLS25",
+    "POLSC1000",
+    "PSYC14",
+    "PSYC15",
+    "PSYC17",
+    "PSYC20",
+    "PSYC25",
+    "PSYC41",
+    "PSYC46",
+    "PSYC5",
+    "PSYCC1000",
+    "SOC15",
+    "SOC2",
+    "SOC25",
+    "SOC30",
+    "SOCIC1000",
+    "STATC1000"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": true,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "University Studies – GE Option 3",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ANTH 14",
+    "why": "Social Sciences section not in text; appears only in GE Option 3 Area 4 list"
+   },
+   {
+    "code": "ANTH 2",
+    "why": "Social Sciences section not in text; appears only in GE Option 3 Area 4 list"
+   },
+   {
+    "code": "ANTH 25",
+    "why": "Social Sciences section not in text; appears only in GE Option 3 Area 4 list"
+   },
+   {
+    "code": "ANTH C1001",
+    "why": "Social Sciences section not in text; appears only in GE Option 3 Area 5B list"
+   },
+   {
+    "code": "ARCH 3",
+    "why": "Social Sciences section not in text; appears only in GE Option 3 Area 4 list"
+   },
+   {
+    "code": "ARCH 4A",
+    "why": "not in the text"
+   },
+   {
+    "code": "ECE 1",
+    "why": "Social Sciences section not in text; appears only in GE Option 3 Area 4 list"
+   },
+   {
+    "code": "ECE 2",
+    "why": "not in the text"
+   },
+   {
+    "code": "ECE 9",
+    "why": "Social Sciences section not in text; appears only in GE Option 3 Area 4 list"
+   },
+   {
+    "code": "ECON C2001",
+    "why": "Social Sciences section not in text; appears only in GE Option 3 Area 4 list"
+   },
+   {
+    "code": "ECON C2002",
+    "why": "Social Sciences section not in text; appears only in GE Option 3 Area 4 list"
+   },
+   {
+    "code": "GEOG 1A",
+    "why": "Social Sciences section not in text; appears only in GE Option 3 Area 5A list"
+   },
+   {
+    "code": "GEOG 1AL",
+    "why": "Social Sciences section not in text; appears only in GE Option 3 Area 5A list"
+   },
+   {
+    "code": "GEOG 1B",
+    "why": "Social Sciences section not in text; appears only in GE Option 3 Area 4 list"
+   },
+   {
+    "code": "GEOG 5",
+    "why": "not in the text"
+   },
+   {
+    "code": "GEOG 7",
+    "why": "Social Sciences section not in text; appears only in GE Option 3 Area 4 list"
+   },
+   {
+    "code": "GEOG 8",
+    "why": "Social Sciences section not in text; appears only in GE Option 3 Area 4 list"
+   },
+   {
+    "code": "HIST 1A",
+    "why": "Social Sciences section not in text; appears only in GE Option 3 Area 4 list"
+   },
+   {
+    "code": "HIST 1B",
+    "why": "Social Sciences section not in text; appears only in GE Option 3 Area 4 list"
+   },
+   {
+    "code": "HIST 2",
+    "why": "Social Sciences section not in text; appears only in GE Option 3 lists"
+   },
+   {
+    "code": "HIST 25",
+    "why": "Social Sciences section not in text; appears only in GE Option 3 lists"
+   },
+   {
+    "code": "HIST 3",
+    "why": "Social Sciences section not in text; appears only in GE Option 3 lists"
+   },
+   {
+    "code": "HIST 35",
+    "why": "Social Sciences section not in text; appears only in GE Option 3 Area 4 list"
+   },
+   {
+    "code": "HIST 38",
+    "why": "Social Sciences section not in text; appears only in GE Option 3 Area 4 list"
+   },
+   {
+    "code": "HIST 40",
+    "why": "Social Sciences section not in text; appears only in GE Option 3 Area 4 list"
+   },
+   {
+    "code": "HIST C1001",
+    "why": "Social Sciences section not in text; appears only in GE Option 3 Area 4 list"
+   },
+   {
+    "code": "HIST C1002",
+    "why": "Social Sciences section not in text; appears only in GE Option 3 Area 4 list"
+   },
+   {
+    "code": "HUSV 16",
+    "why": "not in the text"
+   },
+   {
+    "code": "HUSV 18",
+    "why": "not in the text"
+   },
+   {
+    "code": "HUSV 70",
+    "why": "Social Sciences section not in text; appears only in GE Option 3 list and Administration of Justice AS-T section"
+   },
+   {
+    "code": "POLS 1",
+    "why": "Social Sciences section not in text; appears only in GE Option 3 Area 4 list"
+   },
+   {
+    "code": "POLS 25",
+    "why": "Social Sciences section not in text; appears only in GE Option 3 Area 4 list"
+   },
+   {
+    "code": "POLS C1000",
+    "why": "Social Sciences section not in text; appears only in GE Option 3 Area 4 list"
+   },
+   {
+    "code": "PSYC 14",
+    "why": "Social Sciences section not in text; appears only in GE Option 3 Area 4 list"
+   },
+   {
+    "code": "PSYC 15",
+    "why": "Social Sciences section not in text; appears only in GE Option 3 Area 4 list"
+   },
+   {
+    "code": "PSYC 17",
+    "why": "Social Sciences section not in text; appears only in GE Option 3 Area 4 list"
+   },
+   {
+    "code": "PSYC 20",
+    "why": "Social Sciences section not in text; appears only in GE Option 3 Area 4 list"
+   },
+   {
+    "code": "PSYC 25",
+    "why": "not in the text"
+   },
+   {
+    "code": "PSYC 41",
+    "why": "Social Sciences section not in text; appears only in GE Option 3 Area 4 list"
+   },
+   {
+    "code": "PSYC 46",
+    "why": "Social Sciences section not in text; appears only in GE Option 3 Area 4 list"
+   },
+   {
+    "code": "PSYC 5",
+    "why": "Social Sciences section not in text; appears only in GE Option 3 Area 4 list"
+   },
+   {
+    "code": "PSYC C1000",
+    "why": "Social Sciences section not in text; appears only in GE Option 3 list and Administration of Justice AS-T section"
+   },
+   {
+    "code": "SOC 15",
+    "why": "Social Sciences section not in text; appears only in GE Option 3 Area 4 list"
+   },
+   {
+    "code": "SOC 2",
+    "why": "Social Sciences section not in text; appears only in GE Option 3 list and Administration of Justice AS section"
+   },
+   {
+    "code": "SOC 25",
+    "why": "Social Sciences section not in text; appears only in GE Option 3 Area 4 list"
+   },
+   {
+    "code": "SOC 30",
+    "why": "Social Sciences section not in text; appears only in GE Option 3 Area 4 list"
+   },
+   {
+    "code": "SOCIC1000",
+    "why": "Social Sciences section not in text; printed as SOCI C1000 only in GE Option 3 list and Administration of Justice AS-T section"
+   },
+   {
+    "code": "STAT C1000",
+    "why": "Social Sciences section not in text; appears only in GE Option 3 Area 2 list and Administration of Justice AS-T section"
+   }
+  ],
+  "notes": [
+   "The supplied text (catalog pages 45-48) does not contain the University Studies - Social Sciences A.A. section. It contains the 'University Studies – GE Option 3' general education pattern (a GE course list, which never goes in blocks) and the Administration of Justice AS-T and AS sections, which belong to other programs.",
+   "section_heading records the only University Studies heading in the text; it is a GE pattern page, not the Social Sciences emphasis requirements. A reviewer should locate the correct page for the Social Sciences emphasis.",
+   "No blocks, totals, outcomes or careers were recorded because the award's own section is absent."
+  ]
+ },
+ "extracted_run": "39006384701"
+}
