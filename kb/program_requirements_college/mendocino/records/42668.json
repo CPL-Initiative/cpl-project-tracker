@@ -1,0 +1,169 @@
+{
+ "college": "Mendocino College",
+ "control_number": "42668",
+ "shape": "noncredit",
+ "title": "Advanced Automotive Chassis Specialist",
+ "award": "Noncredit program",
+ "source_url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=109",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6349,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6349,
+    "output_tokens": 871,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 871,
+  "output_tokens_details": {
+   "thinking_tokens": 213
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.04282,
+ "ms": 8106,
+ "seconds": 8.4,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 2,
+   "listed": 2,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    255.0,
+    255.0
+   ],
+   "stated": [
+    255.0,
+    255.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "ADVANCED AUTOMOTIVE CHASSIS SPECIALIST CERTIFICATE OF COMPLETION",
+   "measure": "hours",
+   "total_units": {
+    "min": 255,
+    "max": 255
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Locate service information from available sources, determine specifications, locate procedures, determine parts and labor charges and accurately complete a repair order on chassis, transmission, and transaxles.",
+    "Describe the theory and operation of automotive brakes, chassis, transmissions, and drivetrain.",
+    "Demonstrate competency in service and repair by being able to test, adjust, diagnose, repair, calibrate, and validate repairs on a variety of chassis, braking systems, drivetrains, and transmissions.",
+    "Demonstrate knowledge of safe working habits in an automotive repair facility for removing sub frames, transmissions, and differentials."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "AUT 544",
+      "units": 119,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUT 545",
+      "units": 136,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Noncredit certificate of completion counted in hours; course hours (119, 136) and total hours (255) recorded in units fields.",
+   "The description mentions 'entry-level positions' and 'career progression within the automotive industry' but names no specific job title; careers left empty. A reviewer may consider 'automotive industry' a career field.",
+   "Catalog course titles print 'Transmission' (singular) versus 'Transmissions' in the state file; codes match."
+  ]
+ },
+ "extracted_run": "39006339282"
+}

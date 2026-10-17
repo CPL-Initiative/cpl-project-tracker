@@ -1,0 +1,184 @@
+{
+ "college": "Mendocino College",
+ "control_number": "21973",
+ "shape": "certificate",
+ "title": "Administration of Justice",
+ "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+ "source_url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=89",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6949,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6949,
+    "output_tokens": 818,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 818,
+  "output_tokens_details": {
+   "thinking_tokens": 296
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.04416,
+ "ms": 7890,
+ "seconds": 8.2,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 10,
+   "share": 0.0,
+   "missing": [
+    "ADJ104",
+    "ADJ106",
+    "ADJ108",
+    "ADJ109",
+    "ADJ150",
+    "ADJ200",
+    "ADJ202",
+    "ADJ204",
+    "ADJ206",
+    "ADJ207"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": true,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "ADMINISTRATION OF JUSTICE",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ADJ 104",
+    "why": "named only in the A.S.-T section; certificate section not in the text"
+   },
+   {
+    "code": "ADJ 106",
+    "why": "named only in the A.S.-T section; certificate section not in the text"
+   },
+   {
+    "code": "ADJ 108",
+    "why": "named only in the A.S.-T section; certificate section not in the text"
+   },
+   {
+    "code": "ADJ 109",
+    "why": "named only in the A.S.-T section; certificate section not in the text"
+   },
+   {
+    "code": "ADJ 150",
+    "why": "named only in the A.S.-T section; certificate section not in the text"
+   },
+   {
+    "code": "ADJ 200",
+    "why": "named only in the A.S.-T section; certificate section not in the text"
+   },
+   {
+    "code": "ADJ 202",
+    "why": "named only in the A.S.-T section; certificate section not in the text"
+   },
+   {
+    "code": "ADJ 204",
+    "why": "named only in the A.S.-T section; certificate section not in the text"
+   },
+   {
+    "code": "ADJ 206",
+    "why": "named only in the A.S.-T section; certificate section not in the text"
+   },
+   {
+    "code": "ADJ 207",
+    "why": "named only in the A.S.-T section; certificate section not in the text"
+   }
+  ],
+  "notes": []
+ },
+ "extracted_run": "39006339282"
+}

@@ -1,0 +1,295 @@
+{
+ "college": "Mendocino College",
+ "control_number": "15174",
+ "shape": "degree",
+ "title": "Health Sciences",
+ "award": "A.S. Degree",
+ "source_url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=161",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8153,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8153,
+    "output_tokens": 1810,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1810,
+  "output_tokens_details": {
+   "thinking_tokens": 444
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.06881,
+ "ms": 14547,
+ "seconds": 15.0,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 3,
+   "listed": 12,
+   "share": 0.25,
+   "missing": [
+    "BIO202",
+    "CHM200",
+    "COMM211",
+    "CSC104",
+    "HLH214",
+    "HLH215",
+    "PSYC210",
+    "PSYC216",
+    "PSYCC1000"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 5,
+   "codes": [
+    "BIO250",
+    "CHM250",
+    "CHM251",
+    "CHM255",
+    "STATC1000"
+   ],
+   "flagged": [
+    "BIO250",
+    "CHM250",
+    "CHM251",
+    "CHM255",
+    "STATC1000"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    28.0,
+    28.0
+   ],
+   "stated": [
+    28.0,
+    28.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 7,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "HEALTH SCIENCES ASSOCIATE OF SCIENCE",
+   "measure": "units",
+   "total_units": {
+    "min": 28,
+    "max": 28
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Mendocino College General Education or Cal-GETC",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Demonstrate critical thinking skills in interpreting scientific data.",
+    "Describe and explain the structure and function of the various organ systems of the body.",
+    "Work safely and effectively in a laboratory setting.",
+    "Employ modern microbiological laboratory techniques to effectively isolate individual pathogens.",
+    "Apply formulas and/or dimensional analysis to solve word problems involving concepts in chemistry."
+   ],
+   "careers": [
+    "medical technology",
+    "nutrition",
+    "medicine",
+    "dentistry",
+    "pharmacy",
+    "physical therapy",
+    "veterinary science"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses – Major",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "BIO 231",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIO 250",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CHM 250",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CHM 251",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "STAT C1000",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Plus 5 additional units selected from the following",
+    "rule": "choose_units",
+    "minimum": 5,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "BIO 230",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIO 259",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHM 255",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "BIO 202",
+    "why": "named only in the Allied Health A.S. section"
+   },
+   {
+    "code": "CHM 200",
+    "why": "named only in the Allied Health A.S. section"
+   },
+   {
+    "code": "COMM 211",
+    "why": "named only in the Allied Health A.S. section"
+   },
+   {
+    "code": "CSC 104",
+    "why": "named only in the Allied Health A.S. section"
+   },
+   {
+    "code": "HLH 214",
+    "why": "named only in the Allied Health A.S. section"
+   },
+   {
+    "code": "HLH 215",
+    "why": "named only in the Allied Health A.S. section"
+   },
+   {
+    "code": "PSYC 210",
+    "why": "named only in the Allied Health A.S. section"
+   },
+   {
+    "code": "PSYC 216",
+    "why": "named only in the Allied Health A.S. section"
+   },
+   {
+    "code": "PSYC C1000",
+    "why": "named only in the Allied Health A.S. section"
+   }
+  ],
+  "notes": [
+   "The closed list closely matches the Allied Health A.S. section (BIO 230, BIO 231 plus 9 units from BIO 202, BIO 259, CHM 200, COMM 211, CSC 104, HLH 214, HLH 215, PSYC courses), not the Health Sciences A.S. section; the state Program Course File may be attached to the wrong program. This record reads the Health Sciences A.S. section as named.",
+   "Total Major Units 28 recorded as total_units. The generic 'minimum of 60 semester units' associate degree requirement is not recorded as a degree total.",
+   "Careers recorded are the health professions the description names for baccalaureate/master's study ('such as medical technology, nutrition, medicine, dentistry, pharmacy, physical therapy, veterinary science, etc.').",
+   "The Health Sciences outcomes list is nearly identical to the Allied Health one (differs only by 'the' in outcome 2); the Health Sciences version is recorded."
+  ]
+ },
+ "extracted_run": "39006339282"
+}

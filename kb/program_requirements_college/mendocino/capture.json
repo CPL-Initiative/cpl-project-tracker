@@ -5,7 +5,7 @@
  "catalog_year": "2026-2027",
  "programs": 125,
  "with_closed_list": 123,
- "started": "2026-10-17T05:26:27Z",
+ "started": "2026-10-17T05:28:48Z",
  "pdf": {
   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf",
   "access": "ok",
@@ -22,7 +22,7 @@
   "extractor": "pypdf"
  },
  "loads": 1,
- "seconds": 25.5,
+ "seconds": 29.7,
  "found": 118,
  "by_method": {
   "no_closed_list": 2,
@@ -1372,5 +1372,5 @@
    }
   ]
  },
- "run": "39006202207"
+ "run": "39006339282"
 }

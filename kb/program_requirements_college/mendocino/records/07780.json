@@ -1,0 +1,258 @@
+{
+ "college": "Mendocino College",
+ "control_number": "07780",
+ "shape": "degree",
+ "title": "Computer Applications and Office Administration",
+ "award": "A.S. Degree",
+ "source_url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=130",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 10333,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 10333,
+    "output_tokens": 1624,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1624,
+  "output_tokens_details": {
+   "thinking_tokens": 449
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.07381,
+ "ms": 12950,
+ "seconds": 13.3,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 10,
+   "listed": 10,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 2,
+   "codes": [
+    "CSC141",
+    "CSC164"
+   ],
+   "flagged": [
+    "CSC141",
+    "CSC164"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    36.5,
+    36.5
+   ],
+   "stated": [
+    36.5,
+    36.5
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 6,
+   "courses": 0,
+   "count": 6,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 5,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "COMPUTER APPLICATIONS AND OFFICE ADMINISTRATION ASSOCIATE OF SCIENCE",
+   "measure": "units",
+   "total_units": {
+    "min": 36.5,
+    "max": 36.5
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Mendocino College General Education or Cal-GETC",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Design, compose, edit and maintain office-related documents and data.",
+    "Understand the basic functionality of computer systems and networks, at a high level.",
+    "Use a variety of applications and tools to gather, process, analyze, and archive data.",
+    "Communicate effectively using various relevant technologies and methods in the business environment.",
+    "Analyze communication and information technology to increase sales, target marketing, and improve customer experience.",
+    "Demonstrate basic management principles for effectively managing records in a small office scenario."
+   ],
+   "careers": [
+    "design, implementation, and maintenance/management of IT systems",
+    "office support",
+    "computer support",
+    "records management",
+    "administrative support positions"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses – Major",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 36.5,
+     "max": 36.5
+    },
+    "courses": [
+     {
+      "code": "BUS 107",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 108",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 134",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 170",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CSC 104",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CSC 105",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CSC 116",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CSC 130",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CSC 141",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CSC 164",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CSC 166",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CSC 220",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The 36.5 'Total Major Units' is recorded both as total_units and as the block's stated total, since the single required list is the whole major.",
+   "The 60-unit figure is the generic associate degree minimum, not a printed total for this award, so degree_total is null.",
+   "Careers taken from the 'Career Opportunities' heading; the program description lists the same career areas with slightly different punctuation ('design, implementation and maintenance/management of IT systems').",
+   "A separate Certificate of Achievement section with the same courses and outcomes appears on page 131 (catalog page) and was not used.",
+   "CSC 141 (AI Literacy) and CSC 164 (Electronic Spreadsheets) are not in the closed list and are marked as catalog additions."
+  ]
+ },
+ "extracted_run": "39006339282"
+}

@@ -1,0 +1,361 @@
+{
+ "college": "Mendocino College",
+ "control_number": "31425",
+ "shape": "adt",
+ "title": "Political Science",
+ "award": "A.A- T Degree",
+ "source_url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=201",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6928,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6928,
+    "output_tokens": 2021,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2021,
+  "output_tokens_details": {
+   "thinking_tokens": 354
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.06813,
+ "ms": 15087,
+ "seconds": 15.4,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 10,
+   "listed": 16,
+   "share": 0.625,
+   "missing": [
+    "ECO200",
+    "HST202",
+    "HST203",
+    "HST206",
+    "HST221",
+    "HST250"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 6,
+   "codes": [
+    "ECONC2002",
+    "HIST206",
+    "HIST221",
+    "HIST250",
+    "HISTC1001",
+    "HISTC1002"
+   ],
+   "flagged": [
+    "ECONC2002",
+    "HIST206",
+    "HIST221",
+    "HIST250",
+    "HISTC1001",
+    "HISTC1002"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    18.0,
+    18.0
+   ],
+   "stated": [
+    18.0,
+    19.0
+   ],
+   "against": "program",
+   "why": [
+    "the blocks sum to 18.0-18.0; the catalog states 18.0-19.0"
+   ],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     18.0,
+     18.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": null,
+    "why": [],
+    "transfer": true,
+    "fill": [
+     42.0,
+     42.0
+    ]
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "ASSOCIATE IN ARTS IN POLITICAL SCIENCE FOR TRANSFER",
+   "measure": "units",
+   "total_units": {
+    "min": 18,
+    "max": 19
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Describe the structure, role, and processes of key U.S. and international political entities and institutions.",
+    "Explain and critically evaluate various theoretical approaches to understanding politics and government.",
+    "Identify and discuss the most significant people and events in the history of U.S. and international politics.",
+    "Recognize and examine the influence of race, ethnicity and gender, as well as cultural, socio-economic, and cross-national contexts on political process and outcomes.",
+    "Collect, organize and evaluate information to describe and debate important political issues and events."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required Courses – Major",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "POLS C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "POLS 201",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "POLS 202",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Plus 6 additional units selected from the following",
+    "rule": "choose_units",
+    "minimum": 6,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "POLS 203",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "POLS 205",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "POLS 206",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "STAT C1000",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Plus 3 additional units selected from the following, or any course not used above",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ECON C2002",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HIST C1001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HIST C1002",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HIST 206",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HIST 221",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HIST 250",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "POLS 197",
+      "units": 1,
+      "units_max": 8,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC 250",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC 201",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ECO 200",
+    "why": "not in the text; catalog prints ECON C2002 Principles of Macroeconomics instead (likely renumbered)"
+   },
+   {
+    "code": "HST 202",
+    "why": "not in the text; catalog prints HIST C1001 United States History to 1877 instead (likely renumbered)"
+   },
+   {
+    "code": "HST 203",
+    "why": "not in the text; catalog prints HIST C1002 United States History since 1865 (likely replacement)"
+   },
+   {
+    "code": "HST 206",
+    "why": "not in the text as printed; catalog prints HIST 206 World History Since 1500 (different subject prefix)"
+   },
+   {
+    "code": "HST 221",
+    "why": "not in the text as printed; catalog prints HIST 221 California History (different subject prefix)"
+   },
+   {
+    "code": "HST 250",
+    "why": "not in the text as printed; catalog prints HIST 250 Contemporary America (different subject prefix)"
+   }
+  ],
+  "notes": [
+   "The third block also allows 'any course not used above', meaning any unused course from the 6-unit list may satisfy the 3 units.",
+   "Catalog uses HIST/ECON prefixes and C-ID numbers (ECON C2002, HIST C1001, HIST C1002) where the closed list has ECO 200, HST 202, HST 203, HST 206, HST 221, HST 250; these were recorded as printed with catalog_addition true. Reviewer should confirm equivalence.",
+   "Total Degree Units 60 is printed for this award; no GE pattern is named in the section.",
+   "POLS 197 printed as 1 - 8 units; closed list stores 1."
+  ]
+ },
+ "extracted_run": "39006339282"
+}
