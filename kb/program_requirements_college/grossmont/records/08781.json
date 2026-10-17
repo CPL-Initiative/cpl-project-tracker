@@ -1,0 +1,286 @@
+{
+ "college": "Grossmont College",
+ "control_number": "08781",
+ "shape": "degree",
+ "title": "Cardiovascular Technology: Vascular Technology",
+ "award": "A.S. Degree",
+ "source_url": "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/health-sciences/cardiovascular-technology-as/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7707,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7707,
+    "output_tokens": 2482,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2482,
+  "output_tokens_details": {
+   "thinking_tokens": 578
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.08047,
+ "ms": 19204,
+ "seconds": 19.6,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 14,
+   "listed": 14,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    47.0,
+    47.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 7,
+   "courses": 0,
+   "count": 7,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 12,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Associate Degree Major Requirements (Core Curriculum and Vascular Technology Area of Emphasis)",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Develop and maintain professional behaviors such as, striving for excellence in skills and knowledge, sharing knowledge and skills with others, caring for self, caring for and supporting patients, and protecting patients’ rights, privacy and dignity. Continue life-long learning habits and professional growth.",
+    "Students of Invasive Cardiology will apply principles of cardiovascular anatomy, physiology, pathophysiology and medical instrumentation to perform and interpret diagnostic and interventional studies in the cardiac catheterization laboratory.",
+    "Students of Invasive Cardiology will set up, calibrate and operate diagnostic and interventional instrumentation in the Cardiac Catheterization Laboratory.",
+    "Students of Adult Echocardiography will apply principles of cardiovascular anatomy, physiology, pathophysiology and medical instrumentation to perform, analyze and interpret diagnostic studies.",
+    "Students of Adult Echocardiography will perform diagnostic cardiac ultrasound studies using standard and Doppler ultrasound instruments equipped with surface and transesophageal transducers. Calculate prescribed hemodynamic function indices for interpretation by the physician.",
+    "Students of Vascular Technology will apply principles of vascular anatomy, physiology, pathophysiology and medical instrumentation to perform and interpret diagnostic studies.",
+    "Students of Vascular Technology will perform vascular diagnostic studies using duplex ultrasound, continuous-wave Doppler, arterial and venous plethysmography and photoplethysmography."
+   ],
+   "careers": [
+    "Cardiac Sonographer",
+    "Coronary Interventional Specialist",
+    "Cath Lab Specialist",
+    "Vascular Technologist Sonographer",
+    "Peripheral Vascular Specialist",
+    "Department Lead, Supervisor, or Manager",
+    "Equipment Sales Representative",
+    "Pacemaker Representative",
+    "Surgical and Endovascular Equipment Sales",
+    "Nursing",
+    "Physicians Assistant",
+    "Surgical Assistant"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Core Curriculum",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 18,
+     "max": 18
+    },
+    "courses": [
+     {
+      "code": "CVTE-100",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CVTE-101",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CVTE-102",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CVTE-103",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CVTE-111",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CVTE-113",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CVTE-114",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Vascular Technology Area of Emphasis",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 29,
+     "max": 29
+    },
+    "courses": [
+     {
+      "code": "CVTE-110",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CVTE-117",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CVTE-130",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CVTE-220",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CVTE-223",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CVTE-250",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CVTE-253",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The page prints one A.S. with three areas of emphasis (Invasive, Adult Echocardiography, Vascular Technology); this record reads the shared Core Curriculum and the Vascular Technology Area of Emphasis only. Invasive and Adult Echocardiography emphasis courses (e.g., CVTE-109, 116, 222, 252, 115, 221, 251) are omitted as belonging to other awards.",
+   "No total for the major is printed; core (18) plus Vascular emphasis (29) would be 47 but this is not stated, so total_units is null.",
+   "CVTE-102 is printed at 3 units in the catalog; the state file stores 4 units.",
+   "Program learning outcomes are printed once for the whole Cardiovascular Technology program, covering all three emphases; this award shares that list and all outcomes were recorded.",
+   "'Plus General Education and Elective Requirements' is printed without naming a GE pattern or giving units; no degree total is printed.",
+   "The career heading is truncated at the start of the text ('areer Opportunities'). The last career line reads 'With additional training, Nursing, Physicians Assistant or Surgical Assistant'; recorded as three careers without the lead-in."
+  ]
+ },
+ "extracted_run": "39061728041"
+}
