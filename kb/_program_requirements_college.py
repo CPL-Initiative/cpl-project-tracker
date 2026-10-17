@@ -1639,13 +1639,43 @@ def _titled(text: str, pats: list) -> bool:
     return all(pt.search(low) for pt in pats)
 
 
+# A course description's entry line: code, a dash, its title, its units in parentheses
+# ("OLAD 7320 - Art for People with Memory Loss (0.0)", "TH A 170C - Advanced Shakespeare for Actors (3.0)").
+PDF_DESC_ENTRY = re.compile(r"^\s*[A-Z]{1,6}(?: [A-Z]{1,3})?\s?[A-Z]?\d{1,4}[A-Z]{0,3}\s+[-–—]\s+\S.{1,110}?"
+                            r"\(\d+(?:\.\d+)?(?:\s*[-–]\s*\d+(?:\.\d+)?)?\)", re.M)
+PDF_DESC_ENTRIES = 2      # a page printing this many entry lines is course descriptions
+
+
+def _descriptions(text: str) -> bool:
+    """A page of course descriptions: it prints two or more entry lines."""
+    return len(PDF_DESC_ENTRY.findall(text or "")) >= PDF_DESC_ENTRIES
+
+
+def _clean_heading(text: str, head: tuple, courses: list[dict]) -> bool:
+    """A heading naming title and award on a line that names none of the listed
+    codes. A transfer degree's award words include a bare "transfer", so a course
+    description line ("PHYS 4A General Physics ... Transfer: CSU, UC") reads as
+    its heading; the program's own heading names no course (S407)."""
+    if not (head[0] == 1.0 and head[1] and head[2] >= 0):
+        return False
+    line = text[head[2]:].split("\n", 1)[0][:PDF_HEADING_CHARS]
+    return not P.find_codes(line, courses)
+
+
 def _pdf_pick(pages: list[str], program: dict, courses: list[dict]) -> tuple[list[int], int, tuple, bool]:
     """(run of page indexes, where the first prints the control number, its
     heading, whether it passed the title gate) for the program, or an empty
     run. The highest-scoring page whose run covers the list wins; a page that
     scores high on a printed control number but names too few listed codes
     gives way. Pierce prints numbers away from the program's page, and the
-    bonus alone took 80 of its 194 picks to pages that fail the share (S403)."""
+    bonus alone took 80 of its 194 picks to pages that fail the share (S403).
+    Among pages whose run covers the list, one whose clean heading names the
+    title and award, or that prints the control number, comes first; then one
+    that is not course descriptions; then the rest. A one-subject program's
+    course descriptions name more of its codes than its own page does. At City
+    College of San Francisco 53 of 55 picks placing no listed course had no
+    heading, against 2 of 183 that had one, and most opened on description
+    entries (S407)."""
     tokens = P.title_tokens(program.get("title") or "")
     pats = [re.compile(r"\b" + re.escape(w) + r"\b") for w in tokens]
     cn = program.get("control_number")
@@ -1660,7 +1690,8 @@ def _pdf_pick(pages: list[str], program: dict, courses: list[dict]) -> tuple[lis
             continue
         head = pdf_heading(txt, program)
         s = n + (PDF_HEADING_BONUS if head[0] == 1.0 and head[1] else 0) + (PDF_CN_BONUS if at >= 0 else 0)
-        cands.append((s, -i, i, at, head, titled))
+        clean = _clean_heading(txt, head, courses) or at >= 0
+        cands.append((s, -i, i, at, head, titled, 0 if clean else 1 if not _descriptions(txt) else 2))
     if not cands:
         return list(P.pick_pdf_pages(pages, program, courses) or []), -1, (0.0, False, -1), False
     cands.sort(reverse=True)
@@ -1672,11 +1703,14 @@ def _pdf_pick(pages: list[str], program: dict, courses: list[dict]) -> tuple[lis
                 break
             run.append(j)
         return run
-    for _, _, i, at, head, titled in cands:
-        run = run_from(i)
-        if P.coverage(P.find_codes("\n".join(pages[k] for k in run), courses), courses) >= P.ACCEPT_SHARE:
-            return run, at, head, titled
-    _, _, i, at, head, titled = cands[0]
+    for worst in (0, 1, 2):
+        for _, _, i, at, head, titled, rank in cands:
+            if rank > worst:
+                continue
+            run = run_from(i)
+            if P.coverage(P.find_codes("\n".join(pages[k] for k in run), courses), courses) >= P.ACCEPT_SHARE:
+                return run, at, head, titled
+    _, _, i, at, head, titled, _ = cands[0]
     return run_from(i), at, head, titled
 
 
