@@ -1,7 +1,7 @@
 {
  "_about": "Identity-anchored title suggestions for the CER unclassified-triage worklist (kb/_suggest_unclassified.py). Precedence per skill Rule 5c: CCN > C-ID > (M-ID once stable) > modal local course title; plus CareerOneStop authority matches when the registry is synced. One-click FILL chips — the curator always confirms; never auto-applied.",
- "_generated_at": "2026-10-15T17:13:43Z",
- "count": 209,
+ "_generated_at": "2026-10-17T10:52:30Z",
+ "count": 212,
  "suggestions": {
   "ACTG-51 APPLIED ACCOUNTING": [
    {
@@ -169,6 +169,36 @@
     "id": "SOCI 160",
     "title": "Introduction to Crime",
     "code": "AOJ 29"
+   }
+  ],
+  "ARCH 101 Portfolio review": [
+   {
+    "kind": "course",
+    "title": "Architectural Design Fundamentals 1",
+    "code": "ARCH 101",
+    "share": 1.0,
+    "colleges": 11,
+    "scoped": true
+   }
+  ],
+  "ARCH 102 Portfolio review": [
+   {
+    "kind": "course",
+    "title": "Architectural Design Fundamentals 2",
+    "code": "ARCH 102",
+    "share": 1.0,
+    "colleges": 7,
+    "scoped": true
+   }
+  ],
+  "ARCH 201 Portfolio review": [
+   {
+    "kind": "course",
+    "title": "Architectural Design Fundamentals 3",
+    "code": "ARCH 201",
+    "share": 1.0,
+    "colleges": 4,
+    "scoped": true
    }
   ],
   "ARMEN 1: Beginning Armenian": [

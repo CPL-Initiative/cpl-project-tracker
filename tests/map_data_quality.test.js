@@ -1,4 +1,4 @@
-// 🩺 MAP Data Quality register — map_data_quality.js.
+// MAP Data Quality register — map_data_quality.js.
 //   Team-gated tab: an issue list (cards) with status/severity/category chips,
 //   status/category/college/search filters, add/edit form (querySelector field
 //   access — never form.<name>, per the p8/title-collision lesson), a status
@@ -145,6 +145,21 @@ function boot(dom, withPhrase) {
   const eform = root.querySelector("form.mdq-form");
   check("edit form pre-fills the title via querySelector (no form.title collision)",
     eform.querySelector('[name="title"]').value === "Chaffey batch blanks (Cx & exams)");
+
+  // ── the S404 UI pass: First Light tokens, controls as words, toggles by weight ──
+  const css = win.document.getElementById("cpl-mdq-css").textContent;
+  check("no raw hex: the tab names First Light's tokens, so dark follows cpl_theme",
+    !/#[0-9a-fA-F]{3,6}\b/.test(src));
+  check("no filled control: the lead action is a word, not a primary button",
+    !/mdq-btn-primary/.test(src) && /\.mdq-btn\{[^}]*text-decoration:underline/.test(css) && /\.mdq-btn\{[^}]*min-height:24px/.test(css));
+  check("no label on decoration-only --text-faint", !/var\(--text-faint\)/.test(src));
+  api._setFilter("status", "open");
+  const pressed = [...root.querySelectorAll(".mdq-chip")].filter((c) => c.getAttribute("aria-pressed") === "true");
+  check("the status toggles mark the selected one with aria-pressed, never color alone",
+    pressed.length === 1 && /^Open/.test(pressed[0].textContent) && /\.mdq-chip\.on\{[^}]*font-weight:700/.test(css));
+  api._setFilter("status", "");
+  check("labels are words: no emoji or status glyph rendered",
+    !/[\u{1F300}-\u{1FAFF}\u25CB\u25D0\u2713\u2933\u29C9\u270F]/u.test(root.textContent));
 
   let pass = 0;
   for (const [n, ok] of results) { console.log((ok ? "PASS" : "FAIL") + "  " + n); if (ok) pass++; }
