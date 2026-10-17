@@ -1,0 +1,53 @@
+{
+ "college": "West Valley College",
+ "programs": 145,
+ "with_closed_list": 142,
+ "found": 134,
+ "extracted": 134,
+ "errors": 1,
+ "passed_machine_checks": 90,
+ "failed": {
+  "coverage": 0,
+  "invented": 0,
+  "arithmetic": 43,
+  "repeated": 0,
+  "outcomes": 0
+ },
+ "cost_usd": 11.19,
+ "cost_per_program": 0.0835,
+ "not_found": [
+  {
+   "control_number": "06276",
+   "title": "Administration of Justice: Law Enforcement",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "40773",
+   "title": "Communication, Digital Skills and Leadership for the Workplace",
+   "award": "Noncredit program",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "44070",
+   "title": "iOS App Development with Swift",
+   "award": "Noncredit program",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "44126",
+   "title": "Web Programming",
+   "award": "Noncredit program",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  }
+ ],
+ "run": "39035604333"
+}

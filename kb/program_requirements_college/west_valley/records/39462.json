@@ -1,0 +1,207 @@
+{
+ "college": "West Valley College",
+ "control_number": "39462",
+ "shape": "noncredit",
+ "title": "Proofreading",
+ "award": "Noncredit program",
+ "source_url": "https://www.westvalley.edu/catalog/programs/proofreading-certificate-of-completion.html",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6808,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6808,
+    "output_tokens": 1307,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1307,
+  "output_tokens_details": {
+   "thinking_tokens": 492
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.05337,
+ "ms": 10859,
+ "seconds": 11.4,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 5,
+   "listed": 5,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "NCCC21"
+   ],
+   "flagged": [
+    "NCCC21"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    298.0,
+    324.0
+   ],
+   "stated": [
+    298.0,
+    324.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 4,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Proofreading",
+   "measure": "hours",
+   "total_units": {
+    "min": 298,
+    "max": 324
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Identify errors in written text and apply correct punctuation, spelling, and formatting to correct or record omissions, errors, or inconsistencies found.",
+    "Define and explain traditional proofreading marks and relevant software proofreading functions, such as the \"track changes\" function in Microsoft Word.",
+    "Identify homonyms and apply correct spelling within context."
+   ],
+   "careers": [
+    "Proofreader for Court Reporters",
+    "Proofreader (general)",
+    "Copy Marker",
+    "Technical Writer"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Program Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 298,
+     "max": 324
+    },
+    "courses": [
+     {
+      "code": "NCCC007",
+      "units": 48,
+      "units_max": 54,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NCCC021",
+      "units": 50,
+      "units_max": 54,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "NCCC024",
+      "units": 50,
+      "units_max": 54,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NCCC025",
+      "units": 50,
+      "units_max": 54,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NCCC026",
+      "units": 50,
+      "units_max": 54,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NCCC033",
+      "units": 50,
+      "units_max": 54,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Award is a noncredit Certificate of Completion counted in hours; all unit fields hold hours.",
+   "Catalog prints codes zero-padded (NCCC007, NCCC024, etc.); these match closed-list NCCC 7, 24, 25, 26, 33.",
+   "NCCC021 Legal Terminology is not in the closed list; recorded as a catalog addition.",
+   "Catalog prints 'Technical Writer*' with footnote '(*with additional training)'; recorded as 'Technical Writer'.",
+   "Description also says the certificate prepares students for 'careers in proofreading verbatim transcripts of legal and other proceedings and general English text'; not recorded as a separate career entry."
+  ]
+ },
+ "extracted_run": "39035604333"
+}

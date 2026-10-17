@@ -1,0 +1,25 @@
+{
+ "college": "West Valley College",
+ "control_number": "35588",
+ "shape": "degree",
+ "title": "Liberal Arts",
+ "award": "A.A. Degree",
+ "source_url": "https://www.westvalley.edu/catalog/programs/liberal-arts-associate-in-arts-degree.html",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "max_tokens",
+ "usage": {
+  "input_tokens": 47906,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "output_tokens": 29882
+ },
+ "cost_usd": 0.78926,
+ "ms": 117994,
+ "seconds": 118.7,
+ "parts": 2,
+ "error": "part 1 of 2: the record ran past max_tokens",
+ "score": null,
+ "record": null,
+ "extracted_run": "39035604333"
+}

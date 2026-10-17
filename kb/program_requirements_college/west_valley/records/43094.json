@@ -1,0 +1,179 @@
+{
+ "college": "West Valley College",
+ "control_number": "43094",
+ "shape": "noncredit",
+ "title": "Google IT Support",
+ "award": "Noncredit program",
+ "source_url": "https://www.westvalley.edu/catalog/programs/google-it-support-certificate-of-completion.html",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6636,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6636,
+    "output_tokens": 900,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 900,
+  "output_tokens_details": {
+   "thinking_tokens": 264
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.04454,
+ "ms": 8076,
+ "seconds": 8.5,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 2,
+   "listed": 2,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    44.0,
+    49.5
+   ],
+   "stated": [
+    44.0,
+    49.5
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 10,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Google IT Support Certificate of Completion",
+   "measure": "hours",
+   "total_units": {
+    "min": 44,
+    "max": 49.5
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Provide end-to-end customer support, ranging from identifying problems to troubleshooting and debugging.",
+    "Perform day-to-day IT support tasks including computer assembly, wireless networking, installing programs, and customer service.",
+    "Demonstrate effective navigation of Google Certificate courses."
+   ],
+   "careers": [
+    "Database Administrator",
+    "IT Specialist",
+    "Tech Support Specialist",
+    "Systems Analyst",
+    "Network Engineer",
+    "Help Desk Technician",
+    "IT Support Specialist",
+    "IT Technician",
+    "Computer User Specialist",
+    "IT Assistant"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Program Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 44,
+     "max": 49.5
+    },
+    "courses": [
+     {
+      "code": "NCGO001",
+      "units": 4,
+      "units_max": 4.5,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NCGO002",
+      "units": 40,
+      "units_max": 45,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The catalog prints NCGO001 while the closed list stores NCGO 1 (Introduction to Google Certificates); same title, so it is treated as the same closed-list course, not a catalog addition. Reviewer should confirm.",
+   "Hours are recorded as printed ranges (4-4.5 and 40-45 hours); total 44-49.5 hours as printed.",
+   "Program learning outcomes were taken from the page's outcomes tab, which follows the page footer in the extracted text; they appear to belong to this certificate."
+  ]
+ },
+ "extracted_run": "39035604333"
+}
