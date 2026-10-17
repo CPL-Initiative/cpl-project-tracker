@@ -5,7 +5,7 @@
  "catalog_year": "2026-2027",
  "programs": 136,
  "with_closed_list": 96,
- "started": "2026-10-17T18:20:32Z",
+ "started": "2026-10-17T19:17:43Z",
  "pdf": {
   "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf",
   "access": "ok",
@@ -1109,7 +1109,7 @@
   "unproven": []
  },
  "loads": 1,
- "seconds": 78.9,
+ "seconds": 62.0,
  "found": 94,
  "by_method": {
   "no_closed_list": 40,
@@ -2227,5 +2227,5 @@
    }
   ]
  },
- "run": "39057602129"
+ "run": "39061735776"
 }

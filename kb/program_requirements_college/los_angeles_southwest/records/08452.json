@@ -1,0 +1,210 @@
+{
+ "college": "Los Angeles Southwest College",
+ "control_number": "08452",
+ "shape": "degree",
+ "title": "Geography",
+ "award": "A.S. Degree",
+ "source_url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=141",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8433,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8433,
+    "output_tokens": 1117,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1117,
+  "output_tokens_details": {
+   "thinking_tokens": 192
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.05607,
+ "ms": 9174,
+ "seconds": 11.2,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 2,
+   "listed": 3,
+   "share": 0.667,
+   "missing": [
+    "BIOLOGY5"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 3,
+   "codes": [
+    "BIOLC1000",
+    "CHEM101",
+    "STATC1000"
+   ],
+   "flagged": [
+    "BIOLC1000",
+    "CHEM101",
+    "STATC1000"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    19.0,
+    19.0
+   ],
+   "stated": [
+    19.0,
+    19.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Geography ASSOCIATE IN SCIENCE GEOGRAPHY",
+   "measure": "units",
+   "total_units": {
+    "min": 19,
+    "max": 19
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Spatial Analysis Skills: Students will develop the ability to analyze and interpret spatial patterns and processes, applying geographic concepts to real-world scenarios.",
+    "Cartographic Proficiency: Students will acquire skills in map-making, utilizing Geographic Information Systems (GIS) and other tools to represent geographic data effectively.",
+    "Understanding of Physical and Human Geography: Students will gain knowledge of both physical geography (e.g., landforms, climate, ecosystems) and human geography (e.g., population, culture, urbanization), and how these elements interact.",
+    "Research and Analytical Thinking: Students will learn to conduct geographic research, formulating questions, collecting data, and analyzing results to draw informed conclusions.",
+    "Communication Skills: Students will enhance their ability to communicate geographic information effectively, both orally and in writing, to diverse audiences."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 19,
+     "max": 19
+    },
+    "courses": [
+     {
+      "code": "BIOL C1000",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CHEM 101",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "GEOG 001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOG 002",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "STAT C1000",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "BIOLOGY 5",
+    "why": "not in the text; the Geography section lists BIOL C1000 Introduction to Biology with Lab instead"
+   }
+  ],
+  "notes": [
+   "GEOG 001 and GEOG 002 are read as the closed list's GEOG 1 and GEOG 2 (zero-padded numbering).",
+   "BIOL C1000 (Common Course Numbering) appears in place of the closed list's BIOLOGY 5; it is recorded as a catalog addition.",
+   "The section lists no general education pattern or degree total; only the major total of 19 units is printed.",
+   "The text ends at the start of the Geology section; the Geography section appears complete."
+  ]
+ },
+ "extracted_run": "39061735776"
+}

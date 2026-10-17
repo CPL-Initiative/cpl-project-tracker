@@ -1,0 +1,207 @@
+{
+ "college": "Los Angeles Southwest College",
+ "control_number": "33170",
+ "shape": "certificate",
+ "title": "Computer Science: Homeland Security Network Administrator",
+ "award": "Certificate of Achievement: 12 to fewer than 18 semester(or 18 to fewer than 27 ",
+ "source_url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=135",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 10693,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 10693,
+    "output_tokens": 1473,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1473,
+  "output_tokens_details": {
+   "thinking_tokens": 604
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.07223,
+ "ms": 12174,
+ "seconds": 13.0,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 2,
+   "listed": 3,
+   "share": 0.667,
+   "missing": [
+    "COSCI682"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 3,
+   "codes": [
+    "CIS100",
+    "CIS210",
+    "CIS227"
+   ],
+   "flagged": [
+    "CIS100",
+    "CIS210",
+    "CIS227"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    13.0,
+    13.0
+   ],
+   "stated": [
+    13.0,
+    13.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 2,
+   "courses": 0,
+   "count": 2,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "CERTIFICATE OF ACHIEVEMENT COMPUTER SCIENCE: HOMELAND SECURITY NETWORK ADMINISTRATOR",
+   "measure": "units",
+   "total_units": {
+    "min": 13,
+    "max": 13
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Understand fundamental networking technologies, including topologies, Open System Interconnection (OSI), network architecture, simple and complex network operations, and protocols and apply knowledge to case studies relevant to real-life situations.",
+    "Plan for server deployment and installation and configuration. Set up Active Directory and accounts management and prepare for management, monitoring and maintaining the server’s security and policies. Secure remote access, wireless, and virtual private networks (VPN) against hackers’ attacks."
+   ],
+   "careers": [
+    "homeland security"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 13,
+     "max": 13
+    },
+    "courses": [
+     {
+      "code": "CIS 100",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CIS 101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS 104",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS 210",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CIS 227",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "CO SCI 682",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "The page also prints a separate Certificate of Achievement 'Homeland Security and Computer Network' (19 units) just before this section; only the Network Administrator section was read.",
+   "CIS 210 is printed at 3 units in this section but at 4 units in the Recommended Electives of the preceding program; recorded as printed here (3).",
+   "CIS 101 title printed as 'Introduction to Computers and Their Users' in this section (likely a typo for 'Uses').",
+   "Printed course units sum to 13, matching the printed TOTAL UNITS 13.",
+   "The career entry 'homeland security' is taken from 'enter the dynamic and rewarding field of homeland security'; the text names no specific job titles beyond the program title."
+  ]
+ },
+ "extracted_run": "39061735776"
+}

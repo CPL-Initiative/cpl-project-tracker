@@ -1,0 +1,257 @@
+{
+ "college": "Los Angeles Southwest College",
+ "control_number": "33604",
+ "shape": "adt",
+ "title": "Theatre Arts",
+ "award": "A.A- T Degree",
+ "source_url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=160",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7643,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7643,
+    "output_tokens": 1668,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1668,
+  "output_tokens_details": {
+   "thinking_tokens": 395
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.06393,
+ "ms": 13781,
+ "seconds": 14.3,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 7,
+   "listed": 7,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 3,
+   "codes": [
+    "THEATER271",
+    "THEATER342",
+    "THEATER405"
+   ],
+   "flagged": [
+    "THEATER271",
+    "THEATER342",
+    "THEATER405"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    18.0,
+    18.0
+   ],
+   "stated": [
+    18.0,
+    18.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 8,
+   "courses": 0,
+   "count": 8,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 3,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Associate in Arts in Theatre Arts Degree for Transfer (no separate heading printed; section begins with the program description)",
+   "measure": "units",
+   "total_units": {
+    "min": 18,
+    "max": 18
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Examine dramatic texts within any given genre and analyze them for meaning, themes, and social context.",
+    "Compare and contrast theories and techniques of acting through analysis of their historical and contemporary perspectives.",
+    "Analyze texts and scripts as they pertain to performance.",
+    "Skillfully use physical, vocal, emotional, and imaginative acting techniques, in performance.",
+    "Recognize standard practices of ensemble playing in a rehearsal/performance environment.",
+    "Compare and contrast theatrical periods and styles in terms of acting, directing, playwriting, and technical elements.",
+    "Apply technical processes, including lighting, set, costume, and/or stage make-up design, as they pertain to a given dramatic script.",
+    "Explore the impacts of dramatic performance and discuss the potential for theater to serve as an agent of social change."
+   ],
+   "careers": [
+    "performance",
+    "technical theater",
+    "arts organizations"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 9,
+     "max": 9
+    },
+    "courses": [
+     {
+      "code": "THEATER 100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "THEATER 110",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "THEATER 270",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THEATER 291",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "THEATER 342",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List A: Select Three",
+    "rule": "choose_courses",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "THEATER 114",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THEATER 271",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "THEATER 310",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THEATER 315",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THEATER 405",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "No distinct heading is printed for the Theatre Arts AA-T section in the extracted text; the section heading is taken from the description's first sentence.",
+   "The SB 1440 paragraph names 'Associate in Arts in Sociology for Transfer Degree' — apparently a copy-paste error in the catalog draft; the 60-unit figure is the generic ADT requirement and was not recorded as degree_total.",
+   "THEATER 291 is printed at 3 units in the catalog but the state file stores 1 unit; recorded as printed.",
+   "THEATER 114 is titled 'Script Analysis' in the catalog vs. 'Script Study for Theatre Performance, Production, and Appreciation' in the state file.",
+   "Careers read from the description's 'entry-level opportunities in performance, technical theater, or arts organizations'; reviewer may judge whether these count as career fields.",
+   "Text following the TOTAL UNITS line belongs to the noncredit Academic Success Certificate of Competency and was ignored."
+  ]
+ },
+ "extracted_run": "39061735776"
+}

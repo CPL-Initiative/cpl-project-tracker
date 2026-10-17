@@ -1,0 +1,3275 @@
+[
+ {
+  "control_number": "02862",
+  "title": "Management/Supervision",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "MGMT13",
+   "MGMT2",
+   "MGMT31",
+   "MGMT33"
+  ],
+  "source": {
+   "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=210",
+   "title": "",
+   "h1": "",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    210
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 4,
+  "text_chars": 5999
+ },
+ {
+  "control_number": "02863",
+  "title": "Real Estate Broker",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "REALES11",
+   "REALES14",
+   "REALES21",
+   "REALES5"
+  ],
+  "source": {
+   "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=157",
+   "title": "The Real Estate Broker Certificate of Achievement is designed to prepare",
+   "h1": "The Real Estate Broker Certificate of Achievement is designed to prepare",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    157
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 4,
+  "text_chars": 8145
+ },
+ {
+  "control_number": "02865",
+  "title": "Journalism",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "02866",
+  "title": "Computer Science: Information Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.909,
+  "codes_found": [
+   "CIS101",
+   "CIS104",
+   "CIS120",
+   "CIS140",
+   "CIS141",
+   "CIS142",
+   "CIS171",
+   "CS101",
+   "CS118",
+   "CS290"
+  ],
+  "source": {
+   "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=135",
+   "title": "134 | Page",
+   "h1": "134 | Page",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    135,
+    136,
+    137,
+    138
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 11,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "02873",
+  "title": "Art",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART104",
+   "ART202",
+   "ART204",
+   "ART300",
+   "ART501",
+   "ART502"
+  ],
+  "source": {
+   "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=126",
+   "title": "The Art History Associate in Arts degree aligns with specific lower-division major",
+   "h1": "The Art History Associate in Arts degree aligns with specific lower-division major",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    126
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 6,
+  "text_chars": 7770
+ },
+ {
+  "control_number": "02874",
+  "title": "Music",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.769,
+  "codes_found": [
+   "MUSIC101",
+   "MUSIC111",
+   "MUSIC321",
+   "MUSIC322",
+   "MUSIC323",
+   "MUSIC324",
+   "MUSIC411",
+   "MUSIC412",
+   "MUSIC413",
+   "MUSIC414"
+  ],
+  "source": {
+   "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=151",
+   "title": "The Music Associate of Arts degree provides the student with practical skills in",
+   "h1": "The Music Associate of Arts degree provides the student with practical skills in",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    151
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 13,
+  "text_chars": 8216
+ },
+ {
+  "control_number": "02875",
+  "title": "Theater",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "THEATER100",
+   "THEATER110",
+   "THEATER130",
+   "THEATER233",
+   "THEATER270",
+   "THEATER291"
+  ],
+  "source": {
+   "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=160",
+   "title": "The Associate in Arts in Theater Degree provides students with a comprehensive",
+   "h1": "The Associate in Arts in Theater Degree provides students with a comprehensive",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    160
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 6,
+  "text_chars": 7152
+ },
+ {
+  "control_number": "02876",
+  "title": "Spanish",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "02877",
+  "title": "Nursing",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "NURSING503A",
+   "NURSING503B",
+   "NURSING506B"
+  ],
+  "source": {
+   "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=215",
+   "title": "214 | Page",
+   "h1": "214 | Page",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    215
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 3,
+  "text_chars": 7299
+ },
+ {
+  "control_number": "02879",
+  "title": "English",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.727,
+  "codes_found": [
+   "ENGLC1000",
+   "ENGLC1001",
+   "ENGLISH102",
+   "ENGLISH127",
+   "ENGLISH211",
+   "ENGLISH212",
+   "ENGLISH213",
+   "ENGLISH234"
+  ],
+  "source": {
+   "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=147",
+   "title": "The Associate in Arts (AA) in Liberal Arts (English) is designed for students",
+   "h1": "The Associate in Arts (AA) in Liberal Arts (English) is designed for students",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    147
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 11,
+  "text_chars": 2233
+ },
+ {
+  "control_number": "02882",
+  "title": "Mathematics: General",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.5,
+  "codes_found": [
+   "MATH215",
+   "MATH216",
+   "MATH265",
+   "MATH266",
+   "MATH267",
+   "MATH270",
+   "MATH275",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=149",
+   "title": "148 | Page",
+   "h1": "148 | Page",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    149,
+    150,
+    151
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 16,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "02883",
+  "title": "Physics",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "PHYSICS37",
+   "PHYSICS38",
+   "PHYSICS39"
+  ],
+  "source": {
+   "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=154",
+   "title": "The Associate in Science in Physics for Transfer Degree is intended for students",
+   "h1": "The Associate in Science in Physics for Transfer Degree is intended for students",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    154
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 3,
+  "text_chars": 7270
+ },
+ {
+  "control_number": "02885",
+  "title": "Psychology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "PSYCC1000",
+   "PSYCH11",
+   "PSYCH14",
+   "PSYCH2",
+   "PSYCH3",
+   "PSYCH37",
+   "PSYCH41",
+   "PSYCH43",
+   "PSYCH63",
+   "PSYCH64",
+   "PSYCH65",
+   "PSYCH67"
+  ],
+  "source": {
+   "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=156",
+   "title": "The Associate of Science degree in Psychology will give students a foundation",
+   "h1": "The Associate of Science degree in Psychology will give students a foundation",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    156
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 12,
+  "text_chars": 6818
+ },
+ {
+  "control_number": "02886",
+  "title": "Administration of Justice",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ADMJUS1",
+   "ADMJUS14",
+   "ADMJUS2",
+   "ADMJUS3",
+   "ADMJUS6",
+   "ADMJUS62",
+   "ADMJUS63",
+   "ADMJUS67",
+   "ADMJUS73"
+  ],
+  "source": {
+   "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=123",
+   "title": "The Associate of Arts in Administration of Justice is designed to address the",
+   "h1": "The Associate of Arts in Administration of Justice is designed to address the",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    123,
+    124
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 9,
+  "text_chars": 11956
+ },
+ {
+  "control_number": "02887",
+  "title": "History",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.818,
+  "codes_found": [
+   "HISTC1001",
+   "HISTC1002",
+   "HISTORY1",
+   "HISTORY2",
+   "HISTORY41",
+   "HISTORY42",
+   "HISTORY43",
+   "HISTORY5",
+   "HISTORY52"
+  ],
+  "source": {
+   "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=143",
+   "title": "The Associate of Arts degree in History includes coursework that aligns with",
+   "h1": "The Associate of Arts degree in History includes coursework that aligns with",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    143
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 11,
+  "text_chars": 5618
+ },
+ {
+  "control_number": "02888",
+  "title": "Sociology",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.833,
+  "codes_found": [
+   "SOC11",
+   "SOC12",
+   "SOC2",
+   "SOC20",
+   "SOC23"
+  ],
+  "source": {
+   "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=158",
+   "title": "The Associate of Arts degree in Sociology includes coursework that aligns with",
+   "h1": "The Associate of Arts degree in Sociology includes coursework that aligns with",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    158,
+    159
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 6,
+  "text_chars": 13730
+ },
+ {
+  "control_number": "08442",
+  "title": "Biology",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOLOGY6",
+   "CHEM101",
+   "CHEM102",
+   "CHEM211",
+   "CHEM212",
+   "MICRO1",
+   "PHYSICS6",
+   "PHYSICS7"
+  ],
+  "source": {
+   "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=126",
+   "title": "",
+   "h1": "",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    126
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 8,
+  "text_chars": 7788
+ },
+ {
+  "control_number": "08446",
+  "title": "Art History",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ARTHC1100",
+   "ARTHC1200"
+  ],
+  "source": {
+   "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=126",
+   "title": "The Art History Associate in Arts degree aligns with specific lower-division major",
+   "h1": "The Art History Associate in Arts degree aligns with specific lower-division major",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    126
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 2,
+  "text_chars": 7770
+ },
+ {
+  "control_number": "08449",
+  "title": "Child Development",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHDEV1",
+   "CHDEV11",
+   "CHDEV12",
+   "CHDEV2",
+   "CHDEV22",
+   "CHDEV30",
+   "CHDEV31",
+   "CHDEV35",
+   "CHDEV36",
+   "CHDEV39",
+   "CHDEV42",
+   "CHDEV44",
+   "CHDEV45",
+   "CHDEV46",
+   "CHDEV47",
+   "CHDEV48",
+   "CHDEV65"
+  ],
+  "source": {
+   "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=130",
+   "title": "The Associate in Arts Child Development (AA) pathway includes Child",
+   "h1": "The Associate in Arts Child Development (AA) pathway includes Child",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    130,
+    131,
+    132,
+    133
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 17,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "08450",
+  "title": "Mathematics: Computer Science",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "08451",
+  "title": "Anthropology",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTHRO102",
+   "ANTHRO133"
+  ],
+  "source": {
+   "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=125",
+   "title": "The Associate of Arts degree in Anthropology includes foundational coursework",
+   "h1": "The Associate of Arts degree in Anthropology includes foundational coursework",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    125
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 2,
+  "text_chars": 7949
+ },
+ {
+  "control_number": "08452",
+  "title": "Geography",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.667,
+  "codes_found": [
+   "GEOG1",
+   "GEOG2"
+  ],
+  "source": {
+   "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=141",
+   "title": "140 | Page",
+   "h1": "140 | Page",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    141
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 3,
+  "text_chars": 8036
+ },
+ {
+  "control_number": "08453",
+  "title": "Political Science",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "POLSC1000",
+   "POLSCI2",
+   "POLSCI7",
+   "POLSCI9"
+  ],
+  "source": {
+   "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=154",
+   "title": "The Associate of Arts degree in Political Science includes coursework that aligns",
+   "h1": "The Associate of Arts degree in Political Science includes coursework that aligns",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    154,
+    155
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 4,
+  "text_chars": 11935
+ },
+ {
+  "control_number": "08455",
+  "title": "Interdisciplinary Studies",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "10738",
+  "title": "Geology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "GEOLOGY1"
+  ],
+  "source": {
+   "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=99",
+   "title": "98 | Page",
+   "h1": "98 | Page",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    99
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 1,
+  "text_chars": 3570
+ },
+ {
+  "control_number": "11795",
+  "title": "Chemical Dependency Counselor Program",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ADDICST1",
+   "ADDICST4",
+   "ADDICST7",
+   "PSYCC1000",
+   "PSYCH14",
+   "PSYCH2",
+   "PSYCH41",
+   "PSYCH63"
+  ],
+  "source": {
+   "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=156",
+   "title": "",
+   "h1": "",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    156
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 8,
+  "text_chars": 7089
+ },
+ {
+  "control_number": "18795",
+  "title": "Interdisciplinary Studies: Arts & Humanities",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "18796",
+  "title": "Interdisciplinary Studies: Arts & Humanities II",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "HUMAN1",
+   "HUMAN2",
+   "HUMAN31",
+   "HUMAN6"
+  ],
+  "source": {
+   "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=144",
+   "title": "",
+   "h1": "",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    144
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 4,
+  "text_chars": 9595
+ },
+ {
+  "control_number": "18797",
+  "title": "Interdisc. Studies (Opt. 1): Social and Behavioral Sciences",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "18798",
+  "title": "Interdisciplinary Studies: Social And Behavioral Science",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 30,
+  "text_chars": 0
+ },
+ {
+  "control_number": "18903",
+  "title": "CSU General Education",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 0.5,
+  "codes_found": [
+   "SPANISH1",
+   "SPANISH2",
+   "SPANISH3",
+   "SPANISH4"
+  ],
+  "source": {
+   "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=159",
+   "title": "158 | Page",
+   "h1": "158 | Page",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    159
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 8,
+  "text_chars": 7797
+ },
+ {
+  "control_number": "18904",
+  "title": "IGETC",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "19063",
+  "title": "Liberal Arts: Child Development",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "19064",
+  "title": "Liberal Arts: Natural Sciences",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.929,
+  "codes_found": [
+   "BIOLOGY20",
+   "BIOLOGY5",
+   "BIOLOGY6",
+   "BIOLOGY7",
+   "CHEM101",
+   "CHEM102",
+   "CHEM51",
+   "GEOLOGY1",
+   "MICRO1",
+   "PHYSICS6",
+   "PHYSICS7",
+   "PHYSSC1",
+   "PHYSSC14"
+  ],
+  "source": {
+   "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=148",
+   "title": "",
+   "h1": "",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    148,
+    149
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 14,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "19065",
+  "title": "Liberal Arts: Administration of Justice",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "19066",
+  "title": "Liberal Arts: Psychology of Substance Abuse",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "19067",
+  "title": "Liberal Arts: Real Estate",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "19071",
+  "title": "Liberal Arts: English",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "19186",
+  "title": "Liberal Studies (teaching preparation)",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "EDUC1",
+   "EDUC6",
+   "EDUC931"
+  ],
+  "source": {
+   "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=194",
+   "title": "",
+   "h1": "",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    194
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 3,
+  "text_chars": 6751
+ },
+ {
+  "control_number": "24039",
+  "title": "English Literacy and Civics",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "24186",
+  "title": "Vocational ESL",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "24277",
+  "title": "Job Training Preparation",
+  "award": null,
+  "shape": "other",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BSICSKL2CE"
+  ],
+  "source": {
+   "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=175",
+   "title": "174 | Page",
+   "h1": "174 | Page",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    175
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 1,
+  "text_chars": 5555
+ },
+ {
+  "control_number": "31022",
+  "title": "Administration of Justice",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 0.833,
+  "codes_found": [
+   "ADMJUS1",
+   "ADMJUS2",
+   "ADMJUS3",
+   "PSYCC1000",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=123",
+   "title": "122 | Page",
+   "h1": "122 | Page",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    123,
+    124,
+    125,
+    126
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 6,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "31027",
+  "title": "Early Childhood Education",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHDEV1",
+   "CHDEV11",
+   "CHDEV2",
+   "CHDEV22",
+   "CHDEV42"
+  ],
+  "source": {
+   "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=130",
+   "title": "AST in Early AST in Early Childhood Education (transfer degree) may be",
+   "h1": "AST in Early AST in Early Childhood Education (transfer degree) may be",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    130,
+    131,
+    132,
+    133
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 5,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "33167",
+  "title": "Computer Science: Homeland Security and Computer Network",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 0.5,
+  "codes_found": [
+   "CIS101",
+   "CIS104"
+  ],
+  "source": {
+   "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=135",
+   "title": "134 | Page",
+   "h1": "134 | Page",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    135,
+    136
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 4,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "33170",
+  "title": "Computer Science: Homeland Security Network Administrator",
+  "award": "Certificate of Achievement: 12 to fewer than 18 semester(or 18 to fewer than 27 ",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 0.667,
+  "codes_found": [
+   "CIS101",
+   "CIS104"
+  ],
+  "source": {
+   "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=135",
+   "title": "134 | Page",
+   "h1": "134 | Page",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    135,
+    136
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 3,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "33604",
+  "title": "Theatre Arts",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "THEATER100",
+   "THEATER110",
+   "THEATER114",
+   "THEATER270",
+   "THEATER291",
+   "THEATER310",
+   "THEATER315"
+  ],
+  "source": {
+   "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=160",
+   "title": "The Associate in Arts in Theatre Arts Degree for Transfer provides students with",
+   "h1": "The Associate in Arts in Theatre Arts Degree for Transfer provides students with",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    160
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 7,
+  "text_chars": 5193
+ },
+ {
+  "control_number": "33632",
+  "title": "History",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "HISTC1001",
+   "HISTC1002",
+   "HISTORY2",
+   "HISTORY5",
+   "HISTORY52",
+   "SPANISH1",
+   "SPANISH2"
+  ],
+  "source": {
+   "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=143",
+   "title": "The Associate in Arts in History for Transfer is intended for students who are",
+   "h1": "The Associate in Arts in History for Transfer is intended for students who are",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    143,
+    144,
+    145
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 7,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "33635",
+  "title": "Political Science",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "POLSC1000",
+   "POLSCI2",
+   "POLSCI20",
+   "POLSCI5",
+   "POLSCI50",
+   "POLSCI7"
+  ],
+  "source": {
+   "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=154",
+   "title": "",
+   "h1": "",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    154,
+    155
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 6,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "33636",
+  "title": "Sociology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 0.857,
+  "codes_found": [
+   "SOC11",
+   "SOC12",
+   "SOC2",
+   "SOC4",
+   "SOC45",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=158",
+   "title": "The Associate in Arts in Sociology for Transfer Degree is intended for students",
+   "h1": "The Associate in Arts in Sociology for Transfer Degree is intended for students",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    158,
+    159
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 7,
+  "text_chars": 11544
+ },
+ {
+  "control_number": "33638",
+  "title": "Psychology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "33640",
+  "title": "Physics",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "MATH265",
+   "MATH266",
+   "PHYSICS37",
+   "PHYSICS38",
+   "PHYSICS39"
+  ],
+  "source": {
+   "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=154",
+   "title": "The Associate in Science in Physics for Transfer Degree is intended for students",
+   "h1": "The Associate in Science in Physics for Transfer Degree is intended for students",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    154
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 5,
+  "text_chars": 7270
+ },
+ {
+  "control_number": "33648",
+  "title": "Mathematics",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "MATH265",
+   "MATH266",
+   "MATH267",
+   "MATH270",
+   "MATH275",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=149",
+   "title": "148 | Page",
+   "h1": "148 | Page",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    149,
+    150,
+    151
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 6,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "33658",
+  "title": "Spanish",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "SPANISH1",
+   "SPANISH2",
+   "SPANISH3",
+   "SPANISH4"
+  ],
+  "source": {
+   "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=159",
+   "title": "The Associate in Arts in Spanish for Transfer Degree is intended for students",
+   "h1": "The Associate in Arts in Spanish for Transfer Degree is intended for students",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    159
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 4,
+  "text_chars": 4049
+ },
+ {
+  "control_number": "33659",
+  "title": "English",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ENGLC1001",
+   "ENGLISH102",
+   "ENGLISH127",
+   "ENGLISH207",
+   "ENGLISH208",
+   "ENGLISH211",
+   "ENGLISH212"
+  ],
+  "source": {
+   "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=140",
+   "title": "The Associate in Arts in English for Transfer Degree is intended for students who",
+   "h1": "The Associate in Arts in English for Transfer Degree is intended for students who",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    140
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 7,
+  "text_chars": 3279
+ },
+ {
+  "control_number": "33816",
+  "title": "Certified Nursing Assistant/Home Health Aide",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 0.5,
+  "codes_found": [
+   "HLTHOCC62"
+  ],
+  "source": {
+   "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=153",
+   "title": "152 | Page",
+   "h1": "152 | Page",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    153
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 2,
+  "text_chars": 8043
+ },
+ {
+  "control_number": "33832",
+  "title": "Studio Arts",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART201",
+   "ART202",
+   "ART204",
+   "ART300",
+   "ART501",
+   "ART502",
+   "ARTHC1100",
+   "ARTHC1200",
+   "ARTHIST130",
+   "ARTHIST140"
+  ],
+  "source": {
+   "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=126",
+   "title": "The Associate in Arts in Studio Arts for Transfer Degree is intended for  students",
+   "h1": "The Associate in Arts in Studio Arts for Transfer Degree is intended for  students",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    126
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 10,
+  "text_chars": 5681
+ },
+ {
+  "control_number": "33868",
+  "title": "Workforce Preparation",
+  "award": null,
+  "shape": "other",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BSICSKL2CE"
+  ],
+  "source": {
+   "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=175",
+   "title": "174 | Page",
+   "h1": "174 | Page",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    175
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 1,
+  "text_chars": 5555
+ },
+ {
+  "control_number": "33881",
+  "title": "Journalism",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ECONC2001",
+   "ECONC2002",
+   "ENGLC1001",
+   "POLSC1000",
+   "POLSCI2",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=145",
+   "title": "144 | Page",
+   "h1": "144 | Page",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    145,
+    146,
+    147
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 6,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "33882",
+  "title": "Anthropology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 0.778,
+  "codes_found": [
+   "ANTHRO102",
+   "ANTHRO121",
+   "GEOLOGY1",
+   "PSYCH92",
+   "SOC11",
+   "SOC4",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=125",
+   "title": "the Anthropology AA-T), this sequence of courses aligns with lower-division",
+   "h1": "the Anthropology AA-T), this sequence of courses aligns with lower-division",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    125,
+    126,
+    127
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 9,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "36962",
+  "title": "Kinesiology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 0.818,
+  "codes_found": [
+   "BIOLOGY20",
+   "CHEM101",
+   "KIN180",
+   "KIN2291",
+   "KIN2341",
+   "KIN245",
+   "KIN250",
+   "KINMAJ100",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=146",
+   "title": "The Associate in Arts in Kinesiology for Transfer is intended for students who",
+   "h1": "The Associate in Arts in Kinesiology for Transfer is intended for students who",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    146,
+    147,
+    148,
+    149
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 11,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "36991",
+  "title": "Nutrition and Dietetics",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 0.833,
+  "codes_found": [
+   "CHEM101",
+   "COMMC1000",
+   "MICRO1",
+   "PSYCC1000",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=142",
+   "title": "The Associate of Science in Nutrition and Dietetics Transfer Degree is",
+   "h1": "The Associate of Science in Nutrition and Dietetics Transfer Degree is",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    142,
+    143
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 6,
+  "text_chars": 12314
+ },
+ {
+  "control_number": "36992",
+  "title": "Social Justice Studies",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "AFROAM7",
+   "CHICANO4",
+   "HISTC1001",
+   "HISTC1002",
+   "HISTORY41",
+   "HISTORY43",
+   "SOC11",
+   "SOC4",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=157",
+   "title": "the Social Justice Studies degree, students will be prepared for transfer to the",
+   "h1": "the Social Justice Studies degree, students will be prepared for transfer to the",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    157,
+    158
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 9,
+  "text_chars": 10937
+ },
+ {
+  "control_number": "37821",
+  "title": "Custodial Technician Preparation",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED60CE"
+  ],
+  "source": {
+   "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=162",
+   "title": "The Custodial Technician Preparation Certificate of Completion will prepare",
+   "h1": "The Custodial Technician Preparation Certificate of Completion will prepare",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    162
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 1,
+  "text_chars": 3467
+ },
+ {
+  "control_number": "37822",
+  "title": "Introduction to Building and Construction Trades",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "37823",
+  "title": "ESL Transition",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "37874",
+  "title": "Personal Trainer",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 0.889,
+  "codes_found": [
+   "HEALTH2",
+   "KIN217",
+   "KIN2291",
+   "KIN245",
+   "KIN250",
+   "KIN251",
+   "KIN345",
+   "KINMAJ100"
+  ],
+  "source": {
+   "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=146",
+   "title": "",
+   "h1": "",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    146,
+    147
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 9,
+  "text_chars": 15877
+ },
+ {
+  "control_number": "37988",
+  "title": "Public Health Science",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 0.818,
+  "codes_found": [
+   "BIOLOGY20",
+   "CHEM101",
+   "ECONC2001",
+   "ECONC2002",
+   "HEALTH101",
+   "HEALTH11",
+   "HEALTH21",
+   "PSYCC1000",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=142",
+   "title": "",
+   "h1": "",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    142,
+    143
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 11,
+  "text_chars": 14943
+ },
+ {
+  "control_number": "37997",
+  "title": "Academic Success",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BSICSKL5CE"
+  ],
+  "source": {
+   "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=161",
+   "title": "160 | Page",
+   "h1": "160 | Page",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    161
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 1,
+  "text_chars": 5205
+ },
+ {
+  "control_number": "38279",
+  "title": "Phlebotomy Technician I",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "38280",
+  "title": "In-Home Supportive Services (IHSS)",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED408CE"
+  ],
+  "source": {
+   "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=165",
+   "title": "164 | Page",
+   "h1": "164 | Page",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    165
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 1,
+  "text_chars": 5288
+ },
+ {
+  "control_number": "38545",
+  "title": "Global Entrepreneur I",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ENTREP601",
+   "ENTREP602",
+   "ENTREP603",
+   "ENTREP604"
+  ],
+  "source": {
+   "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=128",
+   "title": "",
+   "h1": "",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    128
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 4,
+  "text_chars": 7936
+ },
+ {
+  "control_number": "38546",
+  "title": "Global Entrepreneur II",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 0.6,
+  "codes_found": [
+   "ENTREP605",
+   "ENTREP606",
+   "ENTREP607"
+  ],
+  "source": {
+   "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=128",
+   "title": "Global Entrepreneur II Certificate of Achievement spans all stages of small",
+   "h1": "Global Entrepreneur II Certificate of Achievement spans all stages of small",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    128
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 5,
+  "text_chars": 2770
+ },
+ {
+  "control_number": "38597",
+  "title": "DANCE",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.625,
+  "codes_found": [
+   "DANCEST302",
+   "DANCEST805",
+   "DANCEST814",
+   "DANCEST815",
+   "DANCETQ142"
+  ],
+  "source": {
+   "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=192",
+   "title": "",
+   "h1": "",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    192,
+    193
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 8,
+  "text_chars": 13305
+ },
+ {
+  "control_number": "38683",
+  "title": "ESL Life Skills",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "39630",
+  "title": "ESL for Citizenship",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "39631",
+  "title": "Advanced ESL",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "39632",
+  "title": "ESL Communication Skills",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESLNC44CE"
+  ],
+  "source": {
+   "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=163",
+   "title": "The ESL Communication Skills Certificate of Competency will prepare students",
+   "h1": "The ESL Communication Skills Certificate of Competency will prepare students",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    163
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 1,
+  "text_chars": 5060
+ },
+ {
+  "control_number": "39633",
+  "title": "High School Equiv Test Preparation",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "39634",
+  "title": "CTE Career Exploration for ESL Students",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED96CE"
+  ],
+  "source": {
+   "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=162",
+   "title": "The CTE Career Exploration for ESL Students Certificate of Completion prepares",
+   "h1": "The CTE Career Exploration for ESL Students Certificate of Completion prepares",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    162
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 1,
+  "text_chars": 4323
+ },
+ {
+  "control_number": "39635",
+  "title": "College and Career Success",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "39648",
+  "title": "CTE Career Exploration",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED96CE"
+  ],
+  "source": {
+   "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=162",
+   "title": "The CTE Career Exploration Certificate of Completion prepares students to",
+   "h1": "The CTE Career Exploration Certificate of Completion prepares students to",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    162
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 1,
+  "text_chars": 5092
+ },
+ {
+  "control_number": "39760",
+  "title": "Basic Computer Literacy for College and Career&nbsp;",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED3CE"
+  ],
+  "source": {
+   "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=161",
+   "title": "160 | Page",
+   "h1": "160 | Page",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    161
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 1,
+  "text_chars": 5205
+ },
+ {
+  "control_number": "39766",
+  "title": "Photovoltaics",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED426CE",
+   "VOCED427CE",
+   "VOCED428CE"
+  ],
+  "source": {
+   "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=168",
+   "title": "The Photovoltaics Certificate of Completion courses prepare students for work in",
+   "h1": "The Photovoltaics Certificate of Completion courses prepare students for work in",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    168
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 3,
+  "text_chars": 4791
+ },
+ {
+  "control_number": "40092",
+  "title": "Cloud Computing",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CIS140",
+   "CIS192",
+   "CIS194"
+  ],
+  "source": {
+   "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=135",
+   "title": "134 | Page",
+   "h1": "134 | Page",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    135,
+    136,
+    137
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 3,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "40233",
+  "title": "Beginning Low ESL",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "40234",
+  "title": "Intermediate Low ESL",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "40235",
+  "title": "Intermediate High ESL",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "40236",
+  "title": "Beginning High ESL",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "40275",
+  "title": "Social Justice Studies",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 0.75,
+  "codes_found": [
+   "POLSC1000",
+   "SOC11",
+   "SOC2"
+  ],
+  "source": {
+   "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=141",
+   "title": "140 | Page",
+   "h1": "140 | Page",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    141
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 4,
+  "text_chars": 8036
+ },
+ {
+  "control_number": "40375",
+  "title": "Ethnic Studies: African American Studies",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.85,
+  "codes_found": [
+   "ANTHRO102",
+   "ENGLISH234",
+   "GEOG2",
+   "HISTC1001",
+   "HISTC1002",
+   "HISTORY41",
+   "HISTORY42",
+   "HUMAN2",
+   "LAW3",
+   "LIBSCI101",
+   "MUSIC141",
+   "POLSC1000",
+   "POLSCI20",
+   "POLSCI9",
+   "SOC11",
+   "SOC2",
+   "SOC45"
+  ],
+  "source": {
+   "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=141",
+   "title": "140 | Page",
+   "h1": "140 | Page",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    141
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 20,
+  "text_chars": 8036
+ },
+ {
+  "control_number": "40376",
+  "title": "Ethnic Studies: Chicano Studies",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.933,
+  "codes_found": [
+   "ANTHRO102",
+   "CHICANO2",
+   "CHICANO4",
+   "GEOG2",
+   "HISTC1001",
+   "HISTC1002",
+   "HISTORY43",
+   "HUMAN2",
+   "LAW3",
+   "LIBSCI101",
+   "POLSC1000",
+   "POLSCI20",
+   "SOC11",
+   "SOC2"
+  ],
+  "source": {
+   "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=141",
+   "title": "140 | Page",
+   "h1": "140 | Page",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    141
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 15,
+  "text_chars": 8036
+ },
+ {
+  "control_number": "40377",
+  "title": "Ethnic Studies: Native American Studies AA",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.929,
+  "codes_found": [
+   "ANTHRO102",
+   "ANTHRO104",
+   "ANTHRO132",
+   "GEOG2",
+   "HISTC1001",
+   "HISTC1002",
+   "HUMAN2",
+   "LAW3",
+   "LIBSCI101",
+   "POLSC1000",
+   "POLSCI20",
+   "SOC11",
+   "SOC2"
+  ],
+  "source": {
+   "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=141",
+   "title": "140 | Page",
+   "h1": "140 | Page",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    141
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 14,
+  "text_chars": 8036
+ },
+ {
+  "control_number": "40378",
+  "title": "Ethnic Studies: American Cultures Studies",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.84,
+  "codes_found": [
+   "ANTHRO102",
+   "ANTHRO104",
+   "ANTHRO132",
+   "CHICANO2",
+   "CHICANO4",
+   "ENGLISH234",
+   "GEOG2",
+   "HISTC1001",
+   "HISTC1002",
+   "HISTORY41",
+   "HISTORY42",
+   "HISTORY43",
+   "HUMAN2",
+   "LAW3",
+   "LIBSCI101",
+   "MUSIC141",
+   "POLSC1000",
+   "POLSCI20",
+   "SOC11",
+   "SOC2",
+   "SOC45"
+  ],
+  "source": {
+   "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=141",
+   "title": "140 | Page",
+   "h1": "140 | Page",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    141
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 25,
+  "text_chars": 8036
+ },
+ {
+  "control_number": "40626",
+  "title": "Introduction to Apple World and Ecosystem",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED286CE"
+  ],
+  "source": {
+   "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=165",
+   "title": "The Introduction to Apple World and Ecosystem Certificate of Completion",
+   "h1": "The Introduction to Apple World and Ecosystem Certificate of Completion",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    165
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 1,
+  "text_chars": 2346
+ },
+ {
+  "control_number": "40818",
+  "title": "ICT - Cyber Security Technology Essentials",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CIS111",
+   "CIS163",
+   "CIS164"
+  ],
+  "source": {
+   "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=136",
+   "title": "",
+   "h1": "",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    136
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 3,
+  "text_chars": 8134
+ },
+ {
+  "control_number": "40819",
+  "title": "ICT Media Technology Essentials",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CIS141",
+   "CIS144",
+   "CS170"
+  ],
+  "source": {
+   "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=137",
+   "title": "136 | Page",
+   "h1": "136 | Page",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    137
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 3,
+  "text_chars": 8122
+ },
+ {
+  "control_number": "40855",
+  "title": "Fundamentals of Robotics",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED292CE"
+  ],
+  "source": {
+   "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=164",
+   "title": "",
+   "h1": "",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    164
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 1,
+  "text_chars": 5366
+ },
+ {
+  "control_number": "40918",
+  "title": "ICT - Communications Technology Essentials",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CIS120",
+   "CIS140",
+   "CIS141",
+   "CIS160"
+  ],
+  "source": {
+   "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=136",
+   "title": "",
+   "h1": "",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    136,
+    137
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 4,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "40919",
+  "title": "ICT - Information Technology Essentials",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 0.667,
+  "codes_found": [
+   "CIS101",
+   "CIS171"
+  ],
+  "source": {
+   "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=136",
+   "title": "",
+   "h1": "",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    136
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 3,
+  "text_chars": 8134
+ },
+ {
+  "control_number": "40947",
+  "title": "Workplace Safety I",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED612CE"
+  ],
+  "source": {
+   "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=229",
+   "title": "228 | Page",
+   "h1": "228 | Page",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    229
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 1,
+  "text_chars": 6267
+ },
+ {
+  "control_number": "41108",
+  "title": "New World of Work I",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "41162",
+  "title": "OSHA for the Construction Industry",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "41163",
+  "title": "OSHA for General Industry",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "41386",
+  "title": "Apple Coding Developer",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CS170",
+   "CS244",
+   "CS292"
+  ],
+  "source": {
+   "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=137",
+   "title": "Apple Coding Developer - Certificate of Achievement is designed to teach",
+   "h1": "Apple Coding Developer - Certificate of Achievement is designed to teach",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    137
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 3,
+  "text_chars": 4480
+ },
+ {
+  "control_number": "41444",
+  "title": "HSE Language Arts",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 0.667,
+  "codes_found": [
+   "BSICSKL5CE",
+   "BSICSKL87CE"
+  ],
+  "source": {
+   "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=164",
+   "title": "",
+   "h1": "",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    164,
+    165
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 3,
+  "text_chars": 10656
+ },
+ {
+  "control_number": "41445",
+  "title": "HSE Math",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BSICSKL5CE",
+   "BSICSKL84CE"
+  ],
+  "source": {
+   "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=164",
+   "title": "",
+   "h1": "",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    164,
+    165
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 2,
+  "text_chars": 10656
+ },
+ {
+  "control_number": "41449",
+  "title": "Customer Service",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BSICSKL42CE",
+   "VOCED97CE"
+  ],
+  "source": {
+   "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=162",
+   "title": "The Customer Service Certificate of Completion program introduces students to",
+   "h1": "The Customer Service Certificate of Completion program introduces students to",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    162
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 2,
+  "text_chars": 2610
+ },
+ {
+  "control_number": "41453",
+  "title": "Introduction to Drywall Lathing",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BSICSKL42CE",
+   "VOCED96CE"
+  ],
+  "source": {
+   "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=166",
+   "title": "",
+   "h1": "",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    166
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 2,
+  "text_chars": 5044
+ },
+ {
+  "control_number": "41454",
+  "title": "Introduction to Carpentry",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BSICSKL42CE",
+   "VOCED96CE"
+  ],
+  "source": {
+   "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=165",
+   "title": "164 | Page",
+   "h1": "164 | Page",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    165,
+    166
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 2,
+  "text_chars": 10334
+ },
+ {
+  "control_number": "41455",
+  "title": "Introduction to Hospitality",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "41456",
+  "title": "EMT Preparation",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "41457",
+  "title": "Building and Grounds Worker",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BSICSKL42CE",
+   "VOCED206CE",
+   "VOCED96CE"
+  ],
+  "source": {
+   "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=161",
+   "title": "160 | Page",
+   "h1": "160 | Page",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    161,
+    162
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 3,
+  "text_chars": 10510
+ },
+ {
+  "control_number": "41458",
+  "title": "Workplace Readiness – Allied Health",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 0.5,
+  "codes_found": [
+   "VOCED430CE"
+  ],
+  "source": {
+   "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=168",
+   "title": "The Workplace Readiness - Allied Health Certificate of Completion program is",
+   "h1": "The Workplace Readiness - Allied Health Certificate of Completion program is",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    168
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 2,
+  "text_chars": 2516
+ },
+ {
+  "control_number": "41459",
+  "title": "New World of Work IV",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "41460",
+  "title": "New World of Work III",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "41461",
+  "title": "New World of Work II",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "41462",
+  "title": "Facilities Maintenance Attendant",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED248CE"
+  ],
+  "source": {
+   "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=164",
+   "title": "",
+   "h1": "",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    164
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 1,
+  "text_chars": 5366
+ },
+ {
+  "control_number": "41590",
+  "title": "Forklift Safety",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "41758",
+  "title": "Apple Coding Foundations",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CIS101",
+   "CIS104",
+   "CIS116",
+   "CS101",
+   "CS102",
+   "CS144"
+  ],
+  "source": {
+   "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=138",
+   "title": "",
+   "h1": "",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    138
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 6,
+  "text_chars": 7650
+ },
+ {
+  "control_number": "42123",
+  "title": "Workplace Safety III",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "42124",
+  "title": "Workplace Safety IV",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "42618",
+  "title": "ESL Literacy",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "42619",
+  "title": "Workplace Safety II",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "42658",
+  "title": "Pathway to  Success",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BSICSKL133CE"
+  ],
+  "source": {
+   "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=167",
+   "title": "The courses in the Pathway to Success Certificate of Competency provide",
+   "h1": "The courses in the Pathway to Success Certificate of Competency provide",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    167
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 1,
+  "text_chars": 1409
+ },
+ {
+  "control_number": "42910",
+  "title": "Family Child Care",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHDEV11",
+   "CHDEV16",
+   "CHDEV17",
+   "CHDEV48",
+   "CHDEV60",
+   "CHDEV61",
+   "CHDEV62",
+   "CHDEV63"
+  ],
+  "source": {
+   "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=131",
+   "title": "130 | Page",
+   "h1": "130 | Page",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    131,
+    132,
+    133,
+    134
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 8,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "43834",
+  "title": "Medical Assistant",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED372CE",
+   "VOCED373CE",
+   "VOCED375CE",
+   "VOCED380CE",
+   "VOCED430CE"
+  ],
+  "source": {
+   "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=166",
+   "title": "",
+   "h1": "",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    166
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 5,
+  "text_chars": 5044
+ },
+ {
+  "control_number": "44057",
+  "title": "Introduction to Community Health Workers",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED554CE",
+   "VOCED96CE"
+  ],
+  "source": {
+   "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=166",
+   "title": "",
+   "h1": "",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    166
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 2,
+  "text_chars": 5044
+ },
+ {
+  "control_number": "45368",
+  "title": "Business Administration 2.0",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCTG1",
+   "ECONC2001",
+   "ECONC2002",
+   "MATH236",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=127",
+   "title": "An Associate in Science in Business Administration 2.0 for Transfer (AS-T) from",
+   "h1": "An Associate in Science in Business Administration 2.0 for Transfer (AS-T) from",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    127,
+    128,
+    129
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 5,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "45576",
+  "title": "Cal-GETC",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 114,
+  "text_chars": 0
+ },
+ {
+  "control_number": "45700",
+  "title": "ESL Conversation",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESLNC50CE",
+   "ESLNC51CE"
+  ],
+  "source": {
+   "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=163",
+   "title": "The ESL Conversation Certificate of Competency is designed for students to use",
+   "h1": "The ESL Conversation Certificate of Competency is designed for students to use",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    163
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 2,
+  "text_chars": 4284
+ },
+ {
+  "control_number": "45701",
+  "title": "ESL Pronunciation",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESLNC48CE",
+   "ESLNC49CE"
+  ],
+  "source": {
+   "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=163",
+   "title": "The ESL Pronunciation Certificate of Competency is designed for students to",
+   "h1": "The ESL Pronunciation Certificate of Competency is designed for students to",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    163
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 2,
+  "text_chars": 820
+ },
+ {
+  "control_number": "45739",
+  "title": "Small Business Entrepreneurship Level I",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CIS104",
+   "MARKET23",
+   "MGMT13"
+  ],
+  "source": {
+   "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=129",
+   "title": "128 | Page",
+   "h1": "128 | Page",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    129
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 3,
+  "text_chars": 8267
+ },
+ {
+  "control_number": "45740",
+  "title": "Small Business Entrepreneurship Level II",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCTG1",
+   "BUS22",
+   "MARKET1"
+  ],
+  "source": {
+   "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=129",
+   "title": "128 | Page",
+   "h1": "128 | Page",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    129
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 3,
+  "text_chars": 8267
+ },
+ {
+  "control_number": "45742",
+  "title": "Artificial Intelligence Foundations",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CS101",
+   "CS102",
+   "CS160",
+   "CS161",
+   "CS162",
+   "CS163"
+  ],
+  "source": {
+   "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=138",
+   "title": "Upon completing the Artificial Intelligence (AI) Foundations - Certificate of",
+   "h1": "Upon completing the Artificial Intelligence (AI) Foundations - Certificate of",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    138
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 6,
+  "text_chars": 5543
+ },
+ {
+  "control_number": "45883",
+  "title": "Stand-up Forklift Safety",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED634CE"
+  ],
+  "source": {
+   "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=168",
+   "title": "Courses in the Stand-up Forklift Safety Certificate of Completion will provide",
+   "h1": "Courses in the Stand-up Forklift Safety Certificate of Completion will provide",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    168
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 1,
+  "text_chars": 4115
+ }
+]
