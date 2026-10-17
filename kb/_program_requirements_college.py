@@ -1966,6 +1966,11 @@ def capture(college: str, out_dir: str, limit: int = 0) -> int:
         recs = capture_pdf(college, out_dir, programs, reg, report, hf)
         return finish_capture(college, out_dir, recs, report, t0)
     if reads_as_pdf(reg) and (start or reg.get("procedure")):
+        year = (P.procedure_catalog(reg.get("procedure")) or {}).get("catalog_year")
+        if year and not reg.get("catalog_year"):
+            # A row naming the catalog's page names no year; the step that names its file does (S407).
+            reg = dict(reg, catalog_year=year)
+            report.update(catalog_year=year, catalog_year_from="the procedure record's catalog step")
         recs = capture_pdf(college, out_dir, programs, reg, report)
         return finish_capture(college, out_dir, recs, report, t0)
     # A college's own HTML catalog (custom_html, S404) takes CourseLeaf's road: its

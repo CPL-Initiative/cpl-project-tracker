@@ -421,7 +421,14 @@ def procedure_catalog(procedure) -> dict | None:
     # waits 600 s unless its record says otherwise (30 s to 1,500 s).
     wait = step.get("timeout_s")
     wait = wait if isinstance(wait, int) and 30 <= wait <= 1500 else CATALOG_PDF_WAIT_S
-    return {"start": start, "follow": follow.strip(), "format": fmt, "timeout_s": wait}
+    out = {"start": start, "follow": follow.strip(), "format": fmt, "timeout_s": wait}
+    # The year of the file the step names, when the record names it ("2026-2027"):
+    # a row naming the catalog's page names none (East LA, S403; S407).
+    year = step.get("catalog_year")
+    m = re.fullmatch(r"(20\d\d)-(20\d\d)", year) if isinstance(year, str) else None
+    if m and int(m.group(2)) == int(m.group(1)) + 1:
+        out["catalog_year"] = year
+    return out
 
 
 def follow_link(links: list[dict], follow: str) -> str | None:
