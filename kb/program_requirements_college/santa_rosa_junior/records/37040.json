@@ -82,21 +82,11 @@
    "program": 5,
    "courses": 0,
    "count": 5,
-   "not_verbatim": [
-    "Describe fire department organization and the expectations of entry level firefighters;",
-    "Differentiate types of fire behavior and its impact on structural and wildland situations;",
-    "Demonstrate and apply the use of fire department equipment through its selection for given firefighting tasks;",
-    "Demonstrate and apply knowledge of strategies, tactics and incident command through the selection and implementation of firefighting methods and the application of the Incident Command System (ICS); and"
-   ],
-   "why": [
-    "not in the catalog text as printed: Describe fire department organization and the expectations of entry level firefi",
-    "not in the catalog text as printed: Differentiate types of fire behavior and its impact on structural and wildland s",
-    "not in the catalog text as printed: Demonstrate and apply the use of fire department equipment through its selection",
-    "not in the catalog text as printed: Demonstrate and apply knowledge of strategies, tactics and incident command thro"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 0,
@@ -106,7 +96,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -210,5 +200,6 @@
    "The text following the outcomes (Fitness and Health Coach certificate) belongs to a different program and was ignored."
   ]
  },
- "extracted_run": "39006464249"
+ "extracted_run": 39037637820,
+ "read_run": "39006464249"
 }

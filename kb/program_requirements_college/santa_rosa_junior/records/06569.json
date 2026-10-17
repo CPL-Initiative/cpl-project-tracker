@@ -82,15 +82,11 @@
    "program": 6,
    "courses": 0,
    "count": 6,
-   "not_verbatim": [
-    "Analyze, record, summarize, and report the effects of transactions in financial, managerial and tax reports and interpret the accounting information for internal or external decision making purposes;"
-   ],
-   "why": [
-    "not in the catalog text as printed: Analyze, record, summarize, and report the effects of transactions in financial,"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 12,
@@ -103,7 +99,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -256,5 +252,6 @@
    "The description recommends the fund accounting class (BAD 156) for government service and cost accounting (BAD 57) for private industry/CPA; both remain in the elective choose block, as they are listed there."
   ]
  },
- "extracted_run": "39006464249"
+ "extracted_run": 39037637820,
+ "read_run": "39006464249"
 }

@@ -88,15 +88,11 @@
    "program": 20,
    "courses": 0,
    "count": 20,
-   "not_verbatim": [
-    "Prepare initial, revised, and final repair orders in compliance with California law (BAR)."
-   ],
-   "why": [
-    "not in the catalog text as printed: Prepare initial, revised, and final repair orders in compliance with California "
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 1,
@@ -106,7 +102,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -268,5 +264,6 @@
    "The following MHT Foundation Tech section was ignored."
   ]
  },
- "extracted_run": "39006464249"
+ "extracted_run": 39037637820,
+ "read_run": "39006464249"
 }

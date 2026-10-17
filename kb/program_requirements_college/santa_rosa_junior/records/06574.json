@@ -86,17 +86,11 @@
    "program": 5,
    "courses": 0,
    "count": 5,
-   "not_verbatim": [
-    "Apply time management, project management, records management, and organizational skills to complete office tasks, projects, and operations;",
-    "Evaluate, analyze, and use appropriate technology to complete tasks and documents productively and efficiently; and"
-   ],
-   "why": [
-    "not in the catalog text as printed: Apply time management, project management, records management, and organizationa",
-    "not in the catalog text as printed: Evaluate, analyze, and use appropriate technology to complete tasks and document"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 1,
@@ -106,7 +100,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -306,5 +300,6 @@
    "Career entry 'Administrative Assistants' is taken from the description ('key responsibilities expected of Administrative Assistants'); reviewer may confirm it counts as a named job title."
   ]
  },
- "extracted_run": "39006464249"
+ "extracted_run": 39037637820,
+ "read_run": "39006464249"
 }

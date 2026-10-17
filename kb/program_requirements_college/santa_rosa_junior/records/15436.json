@@ -124,17 +124,11 @@
    "program": 3,
    "courses": 0,
    "count": 3,
-   "not_verbatim": [
-    "Outline the scientific method and describe how this method is used to study the natural world; and",
-    "Apply critical thinking skills and knowledge of the scientific method to the observation and exploration of natural phenomena."
-   ],
-   "why": [
-    "not in the catalog text as printed: Outline the scientific method and describe how this method is used to study the ",
-    "not in the catalog text as printed: Apply critical thinking skills and knowledge of the scientific method to the obs"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 0,
@@ -147,7 +141,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -750,5 +744,6 @@
    "Program Student Learning Outcomes are printed for the program as a whole; recorded for this A.S. award."
   ]
  },
- "extracted_run": "39006464249"
+ "extracted_run": 39037637820,
+ "read_run": "39006464249"
 }

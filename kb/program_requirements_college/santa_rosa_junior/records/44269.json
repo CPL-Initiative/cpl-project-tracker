@@ -82,19 +82,11 @@
    "program": 11,
    "courses": 0,
    "count": 11,
-   "not_verbatim": [
-    "Prepare initial, revised, and final repair orders in compliance with California law (BAR).",
-    "Research and identify correct procedures and specifications for maintenance and repair of suspension and steering systems.",
-    "Research and identify correct procedures and specifications for maintenance and repair of braking systems."
-   ],
-   "why": [
-    "not in the catalog text as printed: Prepare initial, revised, and final repair orders in compliance with California ",
-    "not in the catalog text as printed: Research and identify correct procedures and specifications for maintenance and ",
-    "not in the catalog text as printed: Research and identify correct procedures and specifications for maintenance and "
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 1,
@@ -104,7 +96,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -209,5 +201,6 @@
    "Total of 17 units is printed both in the block heading ('Complete 17.00 Units') and as 'Total Hours/Units 17'."
   ]
  },
- "extracted_run": "39006464249"
+ "extracted_run": 39037637820,
+ "read_run": "39006464249"
 }

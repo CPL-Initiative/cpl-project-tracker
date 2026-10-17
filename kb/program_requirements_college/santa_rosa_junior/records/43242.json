@@ -82,15 +82,11 @@
    "program": 4,
    "courses": 0,
    "count": 4,
-   "not_verbatim": [
-    "Recognize and apply appropriate management and leadership principles needed to efficiently and effectively meet objectives in a diverse and fast-changing organizational setting."
-   ],
-   "why": [
-    "not in the catalog text as printed: Recognize and apply appropriate management and leadership principles needed to e"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 3,
@@ -100,7 +96,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -269,5 +265,6 @@
    "The 'Hours/Units' column label refers to credit units; total recorded as 12 units."
   ]
  },
- "extracted_run": "39006464249"
+ "extracted_run": 39037637820,
+ "read_run": "39006464249"
 }

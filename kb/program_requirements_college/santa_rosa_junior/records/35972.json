@@ -82,15 +82,11 @@
    "program": 4,
    "courses": 0,
    "count": 4,
-   "not_verbatim": [
-    "Implement the filing requirements, and documentation needed by the IRS for different entities."
-   ],
-   "why": [
-    "not in the catalog text as printed: Implement the filing requirements, and documentation needed by the IRS for diffe"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 2,
@@ -100,7 +96,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -186,5 +182,6 @@
    "The catalog's column header reads 'Hours/Units', but this is a credit certificate, so it is recorded in units."
   ]
  },
- "extracted_run": "39006464249"
+ "extracted_run": 39037637820,
+ "read_run": "39006464249"
 }

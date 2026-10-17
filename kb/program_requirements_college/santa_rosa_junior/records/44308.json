@@ -82,19 +82,11 @@
    "program": 21,
    "courses": 0,
    "count": 21,
-   "not_verbatim": [
-    "Prepare initial, revised, and final repair orders in compliance with California law (BAR).",
-    "Perform arc weld from the flat, fillet weld position per American Welding Society (AWS) standards.",
-    "Perform oxy-acetylene weld on a butt joint, lap joint, fillet joint, and brazing fillet joint per AWS standards."
-   ],
-   "why": [
-    "not in the catalog text as printed: Prepare initial, revised, and final repair orders in compliance with California ",
-    "not in the catalog text as printed: Perform arc weld from the flat, fillet weld position per American Welding Societ",
-    "not in the catalog text as printed: Perform oxy-acetylene weld on a butt joint, lap joint, fillet joint, and brazing"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 0,
@@ -104,7 +96,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -240,5 +232,6 @@
    "The text that follows on pages 341-343 belongs to the MHT Diagnostic Tech and MHT Foundation Tech certificates and was not used."
   ]
  },
- "extracted_run": "39006464249"
+ "extracted_run": 39037637820,
+ "read_run": "39006464249"
 }

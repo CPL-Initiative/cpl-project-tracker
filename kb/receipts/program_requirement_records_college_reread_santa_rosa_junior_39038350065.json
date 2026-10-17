@@ -1,0 +1,6649 @@
+{
+ "college": "Santa Rosa Junior College",
+ "reread_run": "39038350065",
+ "function": "program_requirement_records_college_reread",
+ "extracted_run": "39037637820",
+ "at": "2026-10-17T13:53:00Z",
+ "posted": 37,
+ "batches": 2,
+ "skipped": [
+  {
+   "control_number": "06606",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "06623",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "06626",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "09605",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "09616",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "13898",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "14704",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "15434",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "15494",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "16937",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "19287",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "19328",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "19329",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "21706",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "21709",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "21710",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "21719",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "21722",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "21724",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "21734",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "21737",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "21742",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "30732",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "30923",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "31201",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "31378",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "32253",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "32301",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "32328",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "32330",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "35252",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "37016",
+   "why": "extraction error: part 1 of 3: the record ran past max_tokens"
+  },
+  {
+   "control_number": "37254",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "39418",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "39901",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "39902",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "39903",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "39904",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "39939",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "39940",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "39941",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "39942",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "43236",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "44248",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "44303",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "44304",
+   "why": "places none of its listed courses (another program's page)"
+  }
+ ],
+ "error": null,
+ "replaced": 37,
+ "absent": 0,
+ "held": 0,
+ "kept": 0,
+ "carried": 0,
+ "replaced_keys": [
+  "06566",
+  "06569",
+  "06572",
+  "06574",
+  "06587",
+  "06610",
+  "09694",
+  "14402",
+  "15403",
+  "15436",
+  "16867",
+  "16965",
+  "17969",
+  "18922",
+  "21718",
+  "21740",
+  "21743",
+  "21747",
+  "30569",
+  "35972",
+  "36114",
+  "37040",
+  "38025",
+  "38721",
+  "38722",
+  "39244",
+  "41631",
+  "42626",
+  "43237",
+  "43242",
+  "43387",
+  "44201",
+  "44269",
+  "44277",
+  "44293",
+  "44308",
+  "45234"
+ ],
+ "absent_keys": [],
+ "held_keys": [],
+ "kept_keys": [],
+ "carried_keys": [],
+ "machine_pass": 33,
+ "rollback": "update public.program_requirement_records r set program_title = b.program_title, award = b.award, catalog_year = b.catalog_year, source_url = b.source_url, measure = b.measure, total_min = b.total_min, total_max = b.total_max, record = b.record, checks = b.checks, extracted_run = b.extracted_run, checked = false, checked_by = null, checked_at = null from jsonb_to_recordset(<before>) as b(control_number text, program_title text, award text, catalog_year text, source_url text, measure text, total_min numeric, total_max numeric, record jsonb, checks jsonb, extracted_run bigint) where r.college = 'Santa Rosa Junior College' and r.control_number = b.control_number and r.checked = false and r.extracted_run = 39037637820;  -- <before> is this receipt's before, as a jsonb literal",
+ "before": [
+  {
+   "award": "A.S. Degree",
+   "checks": {
+    "listed": 26,
+    "placed": 18,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "incomplete"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Natural Resources Core Requirements",
+      "rule": "choose_units",
+      "stated": {
+       "max": 20,
+       "min": 20
+      },
+      "courses": [
+       {
+        "code": "AGRI 20",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "AGRI 30",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HORT 70",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HORT 72",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "HORT 184",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "NRM 12",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "NRM 51",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "NRM 70",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "NRM 80",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "NRM 84",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "NRM 86",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "NRM 87",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "NRM 88",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "NRM 91",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "NRM 99I",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "NRM 132",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "NRM 133",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "NRM 145A",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "NRM 145B",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "NRM 173",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 20,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [],
+     "measure": "units",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "Identify and discuss historical approaches to Natural Resource Management in the U.S.;",
+      "Develop and use vocabulary for the protection, cultivation and management of wildlands;",
+      "Discuss economic benefits to protecting healthy watershed characteristics including: recreation opportunities, biological diversity, species richness and clean water;",
+      "Critically analyze and apply research and extension work in the field of watershed, park management, and forestry; and",
+      "Identify best management practices strategies for managing land and recreational areas."
+     ],
+     "ge_pattern": null,
+     "total_units": {
+      "max": null,
+      "min": null
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "Natural Resources Core Requirements - Complete 20.00 Units",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": null,
+   "total_min": null,
+   "source_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=345",
+   "catalog_year": "2026-2027",
+   "extracted_run": 39006464249,
+   "program_title": "Natural Resources",
+   "control_number": "06566"
+  },
+  {
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "checks": {
+    "listed": 10,
+    "placed": 10,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "equal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Requirements - complete 17.00 units",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "BAD 1",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BAD 2",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BAD 53",
+        "units": 1.5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BAD 55",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "Select any combination totaling at least 4.50 units from the following",
+      "rule": "choose_units",
+      "stated": {
+       "max": 4.5,
+       "min": 4.5
+      },
+      "courses": [
+       {
+        "code": "BAD 57",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BAD 59",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BAD 120",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BAD 156",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BBK 53.1",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BBK 53.2",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 4.5,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [
+      "staff accountant",
+      "accounting clerk",
+      "accounts payable clerk",
+      "accounts receivable clerk",
+      "cost accounting clerk",
+      "fixed asset clerk",
+      "junior accountant",
+      "data processing clerk",
+      "bookkeeper",
+      "office manager",
+      "tax clerk",
+      "payroll clerk"
+     ],
+     "measure": "units",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "Complete the steps in the accounting cycle and know generally accepted accounting principles that determine how transactions are recorded and reported;",
+      "Analyze, record, summarize, and report the effects of transactions in financial, managerial and tax reports and interpret the accounting information for internal or external decision making purposes;",
+      "Complete and use managerial and cost accounting documents and reports to plan, evaluate, and control the operations of a company and interpret those reports for management;",
+      "Prepare personal tax returns demonstrating knowledge of tax rules, tax research sources, and tax forms;",
+      "Complete professional assignments using computer technology in such applications as word, excel, power point, general ledger software and tax preparation software; and",
+      "Demonstrate critical thinking skills, analytical ability, interpersonal and collaborative skills, and the ability to write business reports."
+     ],
+     "ge_pattern": null,
+     "total_units": {
+      "max": 17,
+      "min": 17
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "Business: Accountant Assistant (Certificate of Achievement)",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": 17,
+   "total_min": 17,
+   "source_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=260",
+   "catalog_year": "2026-2027",
+   "extracted_run": 39006464249,
+   "program_title": "Business: Accountant Assistant",
+   "control_number": "06569"
+  },
+  {
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "checks": {
+    "listed": 13,
+    "placed": 13,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "equal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Business: Marketing Requirements",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "BMK 50",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BMK 57",
+        "units": 1.5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BMK 59",
+        "units": 1.5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BMK 155",
+        "units": 1.5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "Complete any combination totaling at least 4.50 units from the following",
+      "rule": "choose_units",
+      "stated": {
+       "max": 4.5,
+       "min": 4.5
+      },
+      "courses": [
+       {
+        "code": "ART 82",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BAD 53",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BMK 51",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BMK 54",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "COMM 2",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "FMA 4",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "FMA 18",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "FMA 20",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "JOUR 1",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 4.5,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [],
+     "measure": "units",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "Design and develop a strategic marketing plan that can be used to launch a new business, enter new markets, or grow an existing business or nonprofit;",
+      "Understand how to use a broad range of marketing tactics to build and promote a successful business or nonprofit;",
+      "Relate current trends, buying behaviors, and social responsibility to effective market planning functions within an organization. And",
+      "Demonstrate specific marketable skills such as advertising campaign development, basic graphic design competency, or spreadsheet usage that will enhance business success and employment opportunities."
+     ],
+     "ge_pattern": null,
+     "total_units": {
+      "max": 12,
+      "min": 12
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "Business: Marketing Requirements",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": 12,
+   "total_min": 12,
+   "source_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=267",
+   "catalog_year": "2026-2027",
+   "extracted_run": 39006464249,
+   "program_title": "Business: Marketing",
+   "control_number": "06572"
+  },
+  {
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "checks": {
+    "listed": 14,
+    "placed": 14,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "equal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Administrative Assistant Requirements",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "BAD 52",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BGN 110",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BGN 154",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "Select any combination totaling at least 3.00 units from the following",
+      "rule": "choose_units",
+      "stated": {
+       "max": 3,
+       "min": 3
+      },
+      "courses": [
+       {
+        "code": "BBK 50",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BGN 81",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BMG 55",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 3,
+      "option_group": null
+     },
+     {
+      "name": "Select any combination totaling at least 3.00 units from the following",
+      "rule": "choose_units",
+      "stated": {
+       "max": 3,
+       "min": 3
+      },
+      "courses": [
+       {
+        "code": "BAD 53",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "CS 5",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CS 60.1A",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CS 60.1B",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CS 61.1A",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CS 61.1B",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 3,
+      "option_group": null
+     },
+     {
+      "name": "Select any combination totaling at least 3.00 units from the following",
+      "rule": "choose_units",
+      "stated": {
+       "max": 3,
+       "min": 3
+      },
+      "courses": [
+       {
+        "code": "BGN 71",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BGN 100",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BMG 52",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 3,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [
+      "Administrative Assistants"
+     ],
+     "measure": "units",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "Compose and prepare business documents and correspondence demonstrating appropriate communication techniques and integration of appropriate software and other technology tools;",
+      "Apply time management, project management, records management, and organizational skills to complete office tasks, projects, and operations;",
+      "Use critical thinking, problem solving, interpersonal, and collaborative skills to complete work independently or in a team in an ethical and professional manner;",
+      "Evaluate, analyze, and use appropriate technology to complete tasks and documents productively and efficiently; and",
+      "Use integrated math computational skills to solve a variety of business applications such as inventory, payroll, calculating interest, and budget monitoring."
+     ],
+     "ge_pattern": null,
+     "total_units": {
+      "max": 16,
+      "min": 16
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "Administrative Assistant (Certificate of Achievement)",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": 16,
+   "total_min": 16,
+   "source_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=220",
+   "catalog_year": "2026-2027",
+   "extracted_run": 39006464249,
+   "program_title": "Administrative Assistant",
+   "control_number": "06574"
+  },
+  {
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "checks": {
+    "listed": 10,
+    "placed": 10,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "equal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Apprenticeship: Plumbing & Pipe Fitting",
+      "rule": "all",
+      "stated": {
+       "max": 20,
+       "min": 20
+      },
+      "courses": [
+       {
+        "code": "APED 345",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "APED 346",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "APED 347",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "APED 348",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "APED 349",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "APED 355",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "APED 356",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "APED 357",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "APED 358",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "APED 359",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [
+      "plumbers",
+      "steam fitters",
+      "refrigeration and air conditioning mechanics"
+     ],
+     "measure": "units",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "Describe and demonstrate plumbing principles and regulations related to the plumbing and pipefitting trade.",
+      "Demonstrate knowledge of theory and regulations of plumbers and pipefitters' trade.",
+      "Apply best practices in practical environment related to the plumbing and pipefitting trade."
+     ],
+     "ge_pattern": null,
+     "total_units": {
+      "max": 20,
+      "min": 20
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "Apprenticeship: Plumbing & Pipe Fitting",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": 20,
+   "total_min": 20,
+   "source_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=354",
+   "catalog_year": "2026-2027",
+   "extracted_run": 39006464249,
+   "program_title": "Plumbing & Pipe Fit Apprentice",
+   "control_number": "06587"
+  },
+  {
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "checks": {
+    "listed": 9,
+    "placed": 9,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "equal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Dietary Service Supervisor Requirements",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "DIET 50",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "DIET 52",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "DIET 55",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "FDNT 10",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "DIET 176",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "DIET 176L",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "Select any combination totaling at least 1.00 unit from the following",
+      "rule": "choose_units",
+      "stated": {
+       "max": 1,
+       "min": 1
+      },
+      "courses": [
+       {
+        "code": "DIET 107",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "DIET 107L",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "DIET 108",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "DIET 108L",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "WEE 99I",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       }
+      ],
+      "minimum": 1,
+      "option_group": null
+     },
+     {
+      "name": "Select any combination totaling at least 1.00 unit from the following",
+      "rule": "choose_units",
+      "stated": {
+       "max": 1,
+       "min": 1
+      },
+      "courses": [
+       {
+        "code": "DIET 70",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "FDNT 70",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 1,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [],
+     "measure": "units",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "Communicate clearly and professionally as a Dietary Manager;",
+      "Interview clients to obtain relevant nutrition information, and follow diet orders to provide nutritious meals for a variety of clients and medical conditions;",
+      "Manage cost control, purchasing, inventory, meal production, employee scheduling and supervision of foodservice workers for safe and sanitary commercial food production; and",
+      "Use leadership skills to motivate foodservice employees to work as a team in an efficient and effective manner that meets or exceeds client expectations."
+     ],
+     "ge_pattern": null,
+     "total_units": {
+      "max": 16,
+      "min": 16
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "Dietary Service Supervisor Requirements",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": 16,
+   "total_min": 16,
+   "source_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=304",
+   "catalog_year": "2026-2027",
+   "extracted_run": 39006464249,
+   "program_title": "Dietary Manager",
+   "control_number": "06610"
+  },
+  {
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "checks": {
+    "listed": 21,
+    "placed": 20,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "equal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Theatre Arts Core Requirements",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "THAR 1",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "THAR 10A",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "Theatre Management Emphasis Requirements",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "THAR 20",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "THAR 25.1",
+        "units": 1.5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "THAR 25.2",
+        "units": 1.5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "THAR 27",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "THAR 29",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "THAR 29L",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "Select any combination totaling at least 3.00 units from the following (Design requirement)",
+      "rule": "choose_units",
+      "stated": {
+       "max": 3,
+       "min": 3
+      },
+      "courses": [
+       {
+        "code": "THAR 23",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "THAR 24",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "THAR 26",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 3,
+      "option_group": null
+     },
+     {
+      "name": "Select any combination totaling at least 8.00 units from the following (Additional Skills requirement)",
+      "rule": "choose_units",
+      "stated": {
+       "max": 8,
+       "min": 8
+      },
+      "courses": [
+       {
+        "code": "BAD 2",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "COMM 5",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "COMM 6",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "COMM 10",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CS 60.1A",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CS 61.1A",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "THAR 21A",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "THAR 23",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "THAR 24",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "THAR 25",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "THAR 25.3",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "THAR 25.5",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "THAR 26",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 8,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [
+      "professional stage managers",
+      "assistant directors",
+      "box office personnel",
+      "various administrative and marketing positions in the stage, film or television environments",
+      "Stage Managers",
+      "Assistant Directors",
+      "Production Managers",
+      "Production Stage Managers"
+     ],
+     "measure": "units",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "Apply basic skills in one or more of the following areas of specialization: stage management, assistant stage management, house management, production management, box office management, theatre management;",
+      "Apply fundamental techniques of theatrical management when participating in the backstage or front of house functions of a performance;",
+      "Apply fundamental techniques of stagecraft and costuming when participating in the backstage functions of a performance;",
+      "Integrate knowledge of theatre history and literature when managing theatrical performances; and",
+      "Perform for the stage at a beginning level using fundamental techniques of voice, movement, and the actor's craft."
+     ],
+     "ge_pattern": null,
+     "total_units": {
+      "max": 31,
+      "min": 31
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "THAR: Theatre Mgmt (Certificate of Achievement)",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": 31,
+   "total_min": 31,
+   "source_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=366",
+   "catalog_year": "2026-2027",
+   "extracted_run": 39006464249,
+   "program_title": "THAR: Theatre Mgmt",
+   "control_number": "09694"
+  },
+  {
+   "award": "A.A. Degree",
+   "checks": {
+    "listed": 21,
+    "placed": 21,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "equal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Art Major Requirements",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "ART 3",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ART 7A",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "Complete any combination totaling at least 3.00 units from the following",
+      "rule": "choose_units",
+      "stated": {
+       "max": 3,
+       "min": 3
+      },
+      "courses": [
+       {
+        "code": "ART 4",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ART 5",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 3,
+      "option_group": null
+     },
+     {
+      "name": "Complete any combination totaling at least 6.00 units from the following",
+      "rule": "choose_units",
+      "stated": {
+       "max": 6,
+       "min": 6
+      },
+      "courses": [
+       {
+        "code": "ARTH 1.1",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ARTH 1.2",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ARTH 1.3",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ARTH 1.4",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ARTH C1100",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ARTH C1200",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 6,
+      "option_group": null
+     },
+     {
+      "name": "Select any combination totaling at least 9.00 units from the following",
+      "rule": "choose_units",
+      "stated": {
+       "max": 9,
+       "min": 9
+      },
+      "courses": [
+       {
+        "code": "ART 2.3",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ARTH 2.5",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ART 7B",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ART 12",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ART 14A",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ART 19",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ART 24",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ART 31A",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ART 33A",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ART 53",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ART 69",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 9,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [],
+     "measure": "units",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "Synthesize and apply visual principles in creating works of art;",
+      "Articulate perception and awareness of fine art and applied design concept;",
+      "Develop a vocabulary to discuss art in aesthetic terms;",
+      "Demonstrate skills in visual analysis by identifying specific formal elements in works of art;",
+      "Demonstrate appropriate use of art tools, materials and processes;",
+      "Achieve greater awareness of global and cultural traditions; and",
+      "Create a portfolio of fine art and designs."
+     ],
+     "ge_pattern": "Cal-GETC",
+     "total_units": {
+      "max": 24,
+      "min": 24
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "Art Major Requirements",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": 24,
+   "total_min": 24,
+   "source_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=115",
+   "catalog_year": "2026-2027",
+   "extracted_run": 39006464249,
+   "program_title": "Art",
+   "control_number": "14402"
+  },
+  {
+   "award": "A.A. Degree",
+   "checks": {
+    "listed": 19,
+    "placed": 18,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "equal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Latin American Studies Major Requirements",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "HUM 23",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "SPAN 1",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "SPAN 2",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "Select any combination totaling at least 3.00 units from the following",
+      "rule": "choose_units",
+      "stated": {
+       "max": 3,
+       "min": 3
+      },
+      "courses": [
+       {
+        "code": "ANTH 2",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ANTH 30",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "GEOG 7",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 3,
+      "option_group": null
+     },
+     {
+      "name": "Select any combination totaling at least 4.00 units from the following",
+      "rule": "choose_units",
+      "stated": {
+       "max": 4,
+       "min": 4
+      },
+      "courses": [
+       {
+        "code": "ANTH 2",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ANTH 30",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ANTH 31",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "ECON C2002",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGL 33",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "GEOG 7",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HIST 8.1",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HIST 8.2",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HIST 33",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "LIR 10",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "POLS 2",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "SOC 1",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "SOC 30",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "SPAN 3",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "SPAN 4",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "SPAN 40",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "SPAN 41",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 4,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [],
+     "measure": "units",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "Demonstrate beginning level Spanish language skills with the ability to read and communicate basic ideas and concepts in Spanish;",
+      "Analyze and critique the interaction between the dominant Spanish culture and the cultures it encountered in Latin America and the Caribbean;",
+      "Analyze works of visual art, film, drama, music, literature, philosophy, and religion from culturally diverse groups within Latin America and the Caribbean in their historical and cultural context; and",
+      "Utilize appropriate library and online resource to research topics relevant to Latin America and the Caribbean."
+     ],
+     "ge_pattern": null,
+     "total_units": {
+      "max": 18,
+      "min": 18
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "Latin American Studies (AA)",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": 18,
+   "total_min": 18,
+   "source_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=170",
+   "catalog_year": "2026-2027",
+   "extracted_run": 39006464249,
+   "program_title": "Latin American Studies",
+   "control_number": "15403"
+  },
+  {
+   "award": "A.S. Degree",
+   "checks": {
+    "listed": 71,
+    "placed": 58,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "equal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Area Disciplines 1-5 (Chemistry, Earth and Space Science, Life Science, Mathematics, Physics)",
+      "rule": "choose_units",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "CHEM 60",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ASTR 3",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ASTR 3L",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ASTR 4",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ASTR 4L",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ASTR 12",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ASTR 42",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENVS 8",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENVS 12",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "GEOG 4",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "GEOG 4L",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "GEOG 10",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "GEOG 10L",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "GEOL 1",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "GEOL 1L",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "GEOL 11",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "GEOL 20",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MTER 10",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MTER 10L",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "NRM 12",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PHSC 21",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "AGRI 20",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "AGRI 30",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "ANAT 1",
+        "units": 5,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "ANAT 40",
+          "units": null,
+          "catalog_addition": true
+         },
+         {
+          "code": "ANAT 58",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "ANSC 20",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "ANTH 1",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "ANTH 1L",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "ANTH 19",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BIO 2.1",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BIO 2.2",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BIO 2.3",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BIO 10",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BIO 12",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BIO 13",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BIO 14",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BIO 16",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "BIO 20",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "BIO 25",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BIO 27",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BIO 31",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BTNY 10",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BTNY 40",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "FDNT 10",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MICR 5",
+        "units": 5,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "MICR 60",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "PHYZ 1",
+        "units": 5,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "PHYZ 58",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "NRM 51",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "SUAG 5",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MATH 1A",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "MATH 1B",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "MATH 4",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MATH 9",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MATH 10",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "STAT C1000",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MATH 16",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MATH 25",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "MATH 27",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MATH 58",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MATH 74",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PSYC 9",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PHYS 1",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PHYS 11",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PHYS 20A",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "PHYS 20B",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "PHYS 40",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PHYS 41",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PHYS 42",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PHYS 43",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 18,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [],
+     "measure": "units",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "Describe the facts and principles that form the basis of one discipline within the natural sciences;",
+      "Outline the scientific method and describe how this method is used to study the natural world; and",
+      "Apply critical thinking skills and knowledge of the scientific method to the observation and exploration of natural phenomena."
+     ],
+     "ge_pattern": null,
+     "total_units": {
+      "max": 18,
+      "min": 18
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "Natural Sciences (AS)",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": 18,
+   "total_min": 18,
+   "source_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=181",
+   "catalog_year": "2026-2027",
+   "extracted_run": 39006464249,
+   "program_title": "Natural Sciences",
+   "control_number": "15436"
+  },
+  {
+   "award": "A.A. Degree",
+   "checks": {
+    "listed": 11,
+    "placed": 11,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "equal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Business: Real Estate Major Requirements",
+      "rule": "choose_units",
+      "stated": {
+       "max": 18,
+       "min": 18
+      },
+      "courses": [
+       {
+        "code": "RE 50",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "RE 51",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "RE 52",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "RE 53",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "RE 54",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "RE 55",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "RE 56",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "RE 57",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "RE 58",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "RE 59",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "RE 61",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "RE 62",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 18,
+      "option_group": null
+     },
+     {
+      "name": "Information Learning Resources Requirement",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "LIR 10",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [
+      "real estate"
+     ],
+     "measure": "units",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "Apply an in-depth knowledge of California Real estate principles and laws to successfully complete licensure requirements for licensee and broker;",
+      "Satisfy Department of Real Estate and Office of Real Estate Appraisers educational requirements for state licensing;",
+      "Apply necessary skills required for marketing and negotiating real estate transaction;",
+      "Demonstrate the ability to communicate effectively and ethically with the principals involved in a real property transaction; and",
+      "Interpret and apply California real estate laws to a variety of real property transactions."
+     ],
+     "ge_pattern": "Cal-GETC",
+     "total_units": {
+      "max": 19,
+      "min": 19
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "Business: Real Estate (AA)",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": 19,
+   "total_min": 19,
+   "source_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=124",
+   "catalog_year": "2026-2027",
+   "extracted_run": 39006464249,
+   "program_title": "Business: Real Estate",
+   "control_number": "16867"
+  },
+  {
+   "award": "A.S. Degree",
+   "checks": {
+    "listed": 16,
+    "placed": 15,
+    "coverage": false,
+    "invented": false,
+    "arithmetic": "equal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Medical Assisting Core Requirements",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "ANAT 140",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HLC 140",
+        "units": 1.5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HLC 160",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "LIR 10",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MA 160",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MA 161",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MA 162",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MA 168",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "Medical Assisting: Administrative and Clinical",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "MA 163",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MA 164",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MA 165",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MA 167",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MA 169",
+        "units": 2.5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MA 174",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MA 176",
+        "units": 4.5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PSYC 1000 (PSYC C1000)",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [],
+     "measure": "units",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "Demonstrate ability to greet patients, answer telephones, schedule appointments, maintain and filing client medical records, complete insurance forms, arrange hospital admissions and laboratory services, handle billing, bookkeeping, and physician correspondence;",
+      "Demonstrate ability to perform clinical tasks such as taking and recording vital signs and medical histories, explaining treatment procedures to clients, preparing clients for examinations, and assisting during examinations;",
+      "Collect and prepare laboratory specimens and perform basic laboratory tests on the premises, dispose of contaminated supplies, and sterilize medical instruments;",
+      "Present in an instructional manner information about medication and special diets;",
+      "Demonstrate ability to perform other clinical tasks such as preparing and administering medications as directed by a physician, authorizing drug refills as directed, telephoning prescriptions to a pharmacy, preparing clients for x-rays, taking EKG's, removing sutures and changing dressings; and",
+      "Arrange examining room instruments and equipment, purchase and maintain supplies and equipment, and keep waiting and examining rooms neat and clean."
+     ],
+     "ge_pattern": null,
+     "total_units": {
+      "max": 40.5,
+      "min": 40.5
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "Major Requirements (Medical Assisting A.S.; program heading falls on the preceding page)",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": 40.5,
+   "total_min": 40.5,
+   "source_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=174",
+   "catalog_year": "2026-2027",
+   "extracted_run": 39006464249,
+   "program_title": "Medical Assisting",
+   "control_number": "16965"
+  },
+  {
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "checks": {
+    "listed": 14,
+    "placed": 14,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "equal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Social Work and Human Services Core Requirements",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "COUN 7",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "SWHS 80",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "SWHS 83",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "SWHS 87",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "SWHS 88",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "SWHS 90",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "SWHS 91",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "SWHS 92",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "SWHS 93",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "SWHS 96",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "SWHS 99I",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "Addiction Studies Requirements",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "SWHS 81",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "SWHS 82",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "SWHS 86",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "Information Learning Resources Requirement",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "LIR 10",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [
+      "Registered Alcohol and Drug Technician (RADT)",
+      "Certified Addiction Treatment Specialist",
+      "addiction counseling and treatment"
+     ],
+     "measure": "units",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "Demonstrate an understanding of the social work and human services field and its operational function in relation to client services;",
+      "Examine and perform various social work and human service roles within the profession incorporating counseling skills, ethical principles and sensitivity to diversity;",
+      "Demonstrate ability to use research tools to locate and evaluate information that can be applied to the social work and human services field;",
+      "Demonstrate an understanding of theoretical principles in the behavioral sciences to help address the needs of social work and human services clients; and",
+      "Identify the essential components of alcohol and drug addiction and employ the tools and skills needed to work with clients in treatment centers."
+     ],
+     "ge_pattern": null,
+     "total_units": {
+      "max": 42,
+      "min": 42
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "SWHS: Addiction Studies (AA)",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": 42,
+   "total_min": 42,
+   "source_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=210",
+   "catalog_year": "2026-2027",
+   "extracted_run": 39006464249,
+   "program_title": "SWHS: Addiction Studies",
+   "control_number": "17969"
+  },
+  {
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "checks": {
+    "listed": 32,
+    "placed": 31,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "equal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required courses",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "ANSC 2",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ANSC 20",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ANSC 61",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ANSC 134",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "Select any combination totaling at least 9.00 units from the following",
+      "rule": "choose_units",
+      "stated": {
+       "max": 9,
+       "min": 9
+      },
+      "courses": [
+       {
+        "code": "ANSC 27",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ANSC 29",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ANSC 91",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ANSC 153",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ANSC 171",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "EQSC 25",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "EQSC 60",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "EQSC 80",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "EQSC 110",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "EQSC 170",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "SUAG 103",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "VETT 50",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "VETT 101",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ANSC 173",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "NRM 173",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 9,
+      "option_group": null
+     },
+     {
+      "name": "Select any combination totaling at least 3.00 units from the following",
+      "rule": "choose_units",
+      "stated": {
+       "max": 3,
+       "min": 3
+      },
+      "courses": [
+       {
+        "code": "AGBU 2",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "AGBU 151A",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "AGME 50",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "AGRI 30",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "AGRI 98",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "AGRI 99I",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BBK 53.1",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BBK 53.2",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CS 50A",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "NRM 51",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "SPAN 50A",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "SUAG 5",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "VIT 55",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 3,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [],
+     "measure": "units",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "Identify best management practices strategies for managing horses and/or livestock that will improve animal quality, protect the natural resources and ensure economic viability of the livestock and equine industry; and",
+      "Define nutritional needs and demonstrate proper feeding techniques; and",
+      "List common infectious diseases and parasites and explain the role of preventative health and considerations in developing a herd health management plan; and",
+      "Demonstrate knowledge of practical reproductive management of livestock and/or horses."
+     ],
+     "ge_pattern": null,
+     "total_units": {
+      "max": 24,
+      "min": 24
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "Animal Science: Livestock and Equine Management - Complete 24.00 Units",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": 24,
+   "total_min": 24,
+   "source_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=236",
+   "catalog_year": "2026-2027",
+   "extracted_run": 39006464249,
+   "program_title": "AGAS: Livestock & Equine Mgmt",
+   "control_number": "18922"
+  },
+  {
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "checks": {
+    "listed": 18,
+    "placed": 18,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "equal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Natural Resources Core Requirements",
+      "rule": "choose_units",
+      "stated": {
+       "max": 20,
+       "min": 20
+      },
+      "courses": [
+       {
+        "code": "AGRI 20",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "AGRI 30",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HORT 70",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HORT 72",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "HORT 184",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "NRM 12",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "NRM 51",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "NRM 70",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "NRM 80",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "NRM 84",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "NRM 86",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "NRM 87",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "NRM 88",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "NRM 91",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "NRM 99I",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "NRM 132",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "NRM 133",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "NRM 145A",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "NRM 145B",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "NRM 173",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 20,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [],
+     "measure": "units",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "Identify and discuss historical approaches to Natural Resource Management in the U.S.;",
+      "Develop and use vocabulary for the protection, cultivation and management of wildlands;",
+      "Discuss economic benefits to protecting healthy watershed characteristics including: recreation opportunities, biological diversity, species richness and clean water;",
+      "Critically analyze and apply research and extension work in the field of watershed, park management, and forestry; and",
+      "Identify best management practices strategies for managing land and recreational areas."
+     ],
+     "ge_pattern": null,
+     "total_units": {
+      "max": 20,
+      "min": 20
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "Natural Resources Core Requirements - Complete 20.00 Units",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": 20,
+   "total_min": 20,
+   "source_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=345",
+   "catalog_year": "2026-2027",
+   "extracted_run": 39006464249,
+   "program_title": "Natural Resources",
+   "control_number": "21718"
+  },
+  {
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "checks": {
+    "listed": 8,
+    "placed": 8,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "equal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Fashion Fundamentals Requirements - Complete 16.50 Units",
+      "rule": "all",
+      "stated": {
+       "max": 16.5,
+       "min": 16.5
+      },
+      "courses": [
+       {
+        "code": "FASH 8",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "FASH 52.2",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "FASH 70A",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "FASH 70B",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "FASH 112",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "FASH 141",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "FASH 152",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "FASH 152L",
+        "units": 0.5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [
+      "fashion industry",
+      "design assistant",
+      "visual merchandiser",
+      "sample sewer"
+     ],
+     "measure": "units",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "Execute industry standard garment construction techniques.",
+      "Select appropriate fabrics for apparel based on fiber content, fabric construction, and environmental impact.",
+      "Relate the history and social context of fashion to current industry trends.",
+      "Apply technical and professional skills expected in the fashion industry as both an employee and entrepreneur."
+     ],
+     "ge_pattern": null,
+     "total_units": {
+      "max": 16.5,
+      "min": 16.5
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "Fashion Fundamentals (Certificate of Achievement)",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": 16.5,
+   "total_min": 16.5,
+   "source_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=318",
+   "catalog_year": "2026-2027",
+   "extracted_run": 39006464249,
+   "program_title": "Fashion Fundamentals",
+   "control_number": "21740"
+  },
+  {
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "checks": {
+    "listed": 7,
+    "placed": 7,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "equal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Culinary Arts Certificate Requirements",
+      "rule": "all",
+      "stated": {
+       "max": 22.5,
+       "min": 22.5
+      },
+      "courses": [
+       {
+        "code": "CUL 230",
+        "units": 1.5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CUL 251A",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CUL 251B",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CUL 251C",
+        "units": 1.5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CUL 253.8",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CUL 254",
+        "units": 3.5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "CUL 254.5",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "CUL 255.2",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "CUL 258.1",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CUL 258.2",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [],
+     "measure": "units",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "Demonstrate station organization, purchasing, storage, menu writing, and sanitation principles as they apply to food handling;",
+      "Define and use the basic terminology and techniques of the culinary professional;",
+      "Demonstrate skill and apply professional industry standards in food handling, beverage service, baking, and food service;",
+      "Demonstrate the importance of local and seasonal products in professional cooking;",
+      "Demonstrate responsibility and team skills for the food service industry;",
+      "Determine and appraise career opportunities within the food industry;",
+      "Critique, assess, and improve performance, listening and communication skills; and",
+      "Employ the diversity of cultural influences and values related to a professional culinary environment."
+     ],
+     "ge_pattern": null,
+     "total_units": {
+      "max": 22.5,
+      "min": 22.5
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "Culinary Arts Certificate Requirements - Complete 22.50 Units",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": 22.5,
+   "total_min": 22.5,
+   "source_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=271",
+   "catalog_year": "2026-2027",
+   "extracted_run": 39006464249,
+   "program_title": "CA: Culinary Arts",
+   "control_number": "21743"
+  },
+  {
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "checks": {
+    "listed": 29,
+    "placed": 29,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "equal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Fire Technology Requirements - Complete 30.00 Units",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "FIRE 71",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "FIRE 72",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "FIRE 73",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "FIRE 74",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "FIRE 76",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "FIRE 78",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "Select any combination totaling at least 12.00 units from the following",
+      "rule": "choose_units",
+      "stated": {
+       "max": 12,
+       "min": 12
+      },
+      "courses": [
+       {
+        "code": "EMC 100",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "EMC 103",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "FIRE 50",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "FIRE 61",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "FIRE 69",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "FIRE 77",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "FIRE 80",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "FIRE 81",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "FIRE 82",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "FIRE 83",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "FIRE 84",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "FIRE 85",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "FIRE 86A",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "FIRE 86B",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "FIRE 86C",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "FIRE 107.1",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "FIRE 107.2",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "FIRE 206",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "FIRE 208",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "FIRE 208.5",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "FIRE 241",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "FIRE 258",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "FIRE 284.1",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "FIRE 290",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 12,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [
+      "fire service"
+     ],
+     "measure": "units",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "Describe all elements of the fire service including: fire service history, culture and diversity; minimum qualifications and entry level skills; and all elements of the application, hiring and probationary process.",
+      "Analyze, appraise and evaluate fire and emergency incidents and identify components of emergency management and firefighter safety.",
+      "Identify and comprehend laws, regulations, codes and standards that influence fire department operations and identify regulatory and advisory organizations that create and mandate them, especially in the areas of fire prevention, building codes and ordinances and firefighter health and safety;",
+      "Analyze the causes of fire, determine extinguishing agents and methods; differentiate the stages of the fire and fire development, and compare methods of heat transfer;",
+      "Identify and describe the equipment and apparatus used in the fire service and the maintenance of said equipment and apparatus;",
+      "Identify and describe common types of building construction and conditions associated with structural collapse and firefighter safety; and",
+      "Differentiate between fire detection and alarm systems and identify common health and safety concerns of firefighters and first responders."
+     ],
+     "ge_pattern": null,
+     "total_units": {
+      "max": 30,
+      "min": 30
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "Fire Technology (Certificate of Achievement)",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": 30,
+   "total_min": 30,
+   "source_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=321",
+   "catalog_year": "2026-2027",
+   "extracted_run": 39006464249,
+   "program_title": "Fire Technology",
+   "control_number": "21747"
+  },
+  {
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "checks": {
+    "listed": 2,
+    "placed": 2,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "unequal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Basic Police Officer Academy Core",
+      "rule": "all",
+      "stated": {
+       "max": 22.5,
+       "min": 22.5
+      },
+      "courses": [
+       {
+        "code": "AJ 223",
+        "units": 0.25,
+        "units_max": 22,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "AJ 380.1",
+        "units": 0.25,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [
+      "peace officer"
+     ],
+     "measure": "units",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "Identify, define and demonstrate basic tasks of peace officers;",
+      "Identify, classify, and apply appropriate provisions of federal and state law related to peace officers;",
+      "Perform and document complete preliminary investigations assigned to peace officers; and",
+      "Demonstrate the physical skills needed to perform the tasks of a peace officer in the areas of driving, shooting, defensive tactics, and first aid."
+     ],
+     "ge_pattern": null,
+     "total_units": {
+      "max": 22.5,
+      "min": 22.5
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "Basic Police Officer Academy (Certificate of Achievement)",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": 22.5,
+   "total_min": 22.5,
+   "source_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=258",
+   "catalog_year": "2026-2027",
+   "extracted_run": 39006464249,
+   "program_title": "Basic Police Officer Academy",
+   "control_number": "30569"
+  },
+  {
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "checks": {
+    "listed": 4,
+    "placed": 4,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "equal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Requirements - Complete 12.00 Units",
+      "rule": "all",
+      "stated": {
+       "max": 12,
+       "min": 12
+      },
+      "courses": [
+       {
+        "code": "BAD 101",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BAD 102",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BAD 103",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BAD 104",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [
+      "taxation",
+      "Enrolled Agent"
+     ],
+     "measure": "units",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "Prepare tax returns for individuals, businesses and partnerships.",
+      "Apply IRS (Internal Revenue Service) code to determine income, expenses and other credits/deductions.",
+      "Implement the filing requirements, and documentation needed by the IRS for different entities.",
+      "Utilize the proper authority, responsibility and due diligence of an Enrolled Agent."
+     ],
+     "ge_pattern": null,
+     "total_units": {
+      "max": 12,
+      "min": 12
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "Business: Enrolled Agent (Tax) (Certificate of Achievement)",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": 12,
+   "total_min": 12,
+   "source_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=263",
+   "catalog_year": "2026-2027",
+   "extracted_run": 39006464249,
+   "program_title": "Business: Enrolled Agent (Tax)",
+   "control_number": "35972"
+  },
+  {
+   "award": "Noncredit program",
+   "checks": {
+    "listed": 2,
+    "placed": 2,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "equal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Complete 2 courses (42 hours):",
+      "rule": "all",
+      "stated": {
+       "max": 42,
+       "min": 42
+      },
+      "courses": [
+       {
+        "code": "ADED 791",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ADED 792",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [],
+     "measure": "hours",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "Create a personal budget of income and expenses;",
+      "Explain how credit works and how to use credit responsibly;",
+      "Describe available banking and loan services;",
+      "Describe basic characteristics of consumer installment and real estate loans;",
+      "Describe a workable set of financial goals;",
+      "Create a long-term financial plan leading to retirement."
+     ],
+     "ge_pattern": null,
+     "total_units": {
+      "max": 42,
+      "min": 42
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "Adult Ed: Financial Literacy - Complete",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "hours",
+   "total_max": 42,
+   "total_min": 42,
+   "source_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=225",
+   "catalog_year": "2026-2027",
+   "extracted_run": 39006464249,
+   "program_title": "AE: Financial Literacy",
+   "control_number": "36114"
+  },
+  {
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "checks": {
+    "listed": 5,
+    "placed": 5,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "equal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Firefighter Academy Requirements",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "FIRE 71",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "FIRE 208",
+        "units": 1.5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "FIRE 290",
+        "units": 17.5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "Select any combination totaling at least 2.00 units from the following",
+      "rule": "choose_units",
+      "stated": {
+       "max": 2,
+       "min": 2
+      },
+      "courses": [
+       {
+        "code": "EMC 100",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "EMC 103",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 2,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [],
+     "measure": "units",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "Describe fire department organization and the expectations of entry level firefighters;",
+      "Differentiate types of fire behavior and its impact on structural and wildland situations;",
+      "Demonstrate and apply the use of fire department equipment through its selection for given firefighting tasks;",
+      "Demonstrate and apply knowledge of strategies, tactics and incident command through the selection and implementation of firefighting methods and the application of the Incident Command System (ICS); and",
+      "Demonstrate safe practices by using minimum standard safety procedures."
+     ],
+     "ge_pattern": null,
+     "total_units": {
+      "max": 24,
+      "min": 24
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "Firefighter Academy Requirements - Complete 24.00 Units",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": 24,
+   "total_min": 24,
+   "source_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=323",
+   "catalog_year": "2026-2027",
+   "extracted_run": 39006464249,
+   "program_title": "Firefighter Academy",
+   "control_number": "37040"
+  },
+  {
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "checks": {
+    "listed": 6,
+    "placed": 6,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "equal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Adobe Applications Specialist Requirements - Complete 15.00 Units",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "CS 70.1",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CS 71.11",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CS 72.1A",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "Select any combination totaling at least 6.00 units from the following",
+      "rule": "choose_units",
+      "stated": {
+       "max": 6,
+       "min": 6
+      },
+      "courses": [
+       {
+        "code": "CS 70.2",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CS 72.1B",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "GD 53",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 6,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [],
+     "measure": "units",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "Demonstrate proficiency in image editing skills using Photoshop;",
+      "Demonstrate proficiency in vector skills using Illustrator;",
+      "Demonstrate proficiency in desktop publishing skills using InDesign; and",
+      "Use critical thinking skills to formulate, apply and integrate assets in a workflow environment for PDF , screen or web using Adobe Creative Suite software."
+     ],
+     "ge_pattern": null,
+     "total_units": {
+      "max": 15,
+      "min": 15
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "CS Adobe Apps Specialist (Certificate of Achievement)",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": 15,
+   "total_min": 15,
+   "source_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=281",
+   "catalog_year": "2026-2027",
+   "extracted_run": 39006464249,
+   "program_title": "CS Adobe Apps Specialist",
+   "control_number": "38025"
+  },
+  {
+   "award": "Noncredit program",
+   "checks": {
+    "listed": 2,
+    "placed": 2,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "equal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Complete 2 courses (40 hours):",
+      "rule": "all",
+      "stated": {
+       "max": 40,
+       "min": 40
+      },
+      "courses": [
+       {
+        "code": "ADED 740",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ADED 748.3",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [],
+     "measure": "hours",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "Explain how buildings ignite during a wildfire;",
+      "Discuss the prioritization and importance of various structure hardening and defensible space activities;",
+      "Safely perform a variety of fire risk reduction and mitigation activities using appropriate tools and techniques;",
+      "Demonstrate an understanding of safety in the workplace;"
+     ],
+     "ge_pattern": null,
+     "total_units": {
+      "max": 40,
+      "min": 40
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "Adult Ed: Fire Resilient Landscaping - Complete 40.00 Hours",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "hours",
+   "total_max": 40,
+   "total_min": 40,
+   "source_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=226",
+   "catalog_year": "2026-2027",
+   "extracted_run": 39006464249,
+   "program_title": "AE: Fire Resilient Landscaping",
+   "control_number": "38721"
+  },
+  {
+   "award": "Noncredit program",
+   "checks": {
+    "listed": 7,
+    "placed": 7,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "unequal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Complete 3 core courses (94 hours)",
+      "rule": "all",
+      "stated": {
+       "max": 94,
+       "min": 94
+      },
+      "courses": [
+       {
+        "code": "ADED 740",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ADED 742.1",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ADED 742.2",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "Complete 1 elective course (18.00-48.00 hours)",
+      "rule": "choose_courses",
+      "stated": {
+       "max": 48,
+       "min": 18
+      },
+      "courses": [
+       {
+        "code": "ADED 721",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CSKL 722",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ADED 748.5",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ADED 748.6",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 1,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [],
+     "measure": "hours",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "Describe a variety of jobs in the landscaping industry and the associated job duties;",
+      "Discuss the advantages and disadvantages of various irrigation systems;",
+      "Describe a range of hardscaping features including the types of materials needed for specific projects and the environment in which they are used;",
+      "Demonstrate an understanding of the safety in the workplace;",
+      "Effectively use correct terminology to explain tasks, materials, and standards in the industry."
+     ],
+     "ge_pattern": null,
+     "total_units": {
+      "max": 112,
+      "min": 112
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "AE: Intro to Landscaping II (Certificate of Completion)",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "hours",
+   "total_max": 112,
+   "total_min": 112,
+   "source_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=228",
+   "catalog_year": "2026-2027",
+   "extracted_run": 39006464249,
+   "program_title": "AE: Intro to Landscaping II",
+   "control_number": "38722"
+  },
+  {
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "checks": {
+    "listed": 8,
+    "placed": 8,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "equal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Fire Science - Company Officer Requirements",
+      "rule": "all",
+      "stated": {
+       "max": 19.5,
+       "min": 19.5
+      },
+      "courses": [
+       {
+        "code": "FIRE 50",
+        "units": 0.5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "FIRE 69",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "FIRE 80",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "FIRE 81",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "FIRE 82",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "FIRE 83",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "FIRE 84",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "FIRE 85",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "FIRE 86A",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "FIRE 90",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "FIRE 91",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [],
+     "measure": "units",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "Demonstrate strong interpersonal and communication skills;",
+      "Apply necessary skills to be a successful Company Officer;",
+      "Understand and apply foundational knowledge as a Company Officer supervisor."
+     ],
+     "ge_pattern": null,
+     "total_units": {
+      "max": 19.5,
+      "min": 19.5
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "Fire Science - Company Officer Requirements",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": 19.5,
+   "total_min": 19.5,
+   "source_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=151",
+   "catalog_year": "2026-2027",
+   "extracted_run": 39006464249,
+   "program_title": "Fire Science - Company Officer",
+   "control_number": "39244"
+  },
+  {
+   "award": "A.S. T Degree",
+   "checks": {
+    "listed": 14,
+    "placed": 12,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "equal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Film, Television, and Electronic Media Requirements",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "CS 74.22",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "FMA 18",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "Select any combination totaling at least 6.00 units from the following",
+      "rule": "choose_units",
+      "stated": {
+       "max": 6,
+       "min": 6
+      },
+      "courses": [
+       {
+        "code": "FMA 4",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "FMA 10",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "FMA 22",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 6,
+      "option_group": null
+     },
+     {
+      "name": "Select any combination totaling at least 4.00 units from the following",
+      "rule": "choose_units",
+      "stated": {
+       "max": 4,
+       "min": 4
+      },
+      "courses": [
+       {
+        "code": "FMA 20",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "FMA 19",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 4,
+      "option_group": null
+     },
+     {
+      "name": "Select any combination totaling at least 4.00 units from the following",
+      "rule": "choose_units",
+      "stated": {
+       "max": 4,
+       "min": 4
+      },
+      "courses": [
+       {
+        "code": "JOUR 5",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "FMA 14",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "FMA 15",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "FMA 17",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "FMA 21",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 4,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [
+      "film and television industries"
+     ],
+     "measure": "units",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "Analyze visual media from a technical, aesthetic, historical, and cultural point of view;",
+      "Demonstrate fluency in the language of film production and criticism;",
+      "Structure and develop a narrative into a properly formatted screenplay;",
+      "Plan, organize, and execute the production of digital media projects;",
+      "Collaborate effectively in production teams."
+     ],
+     "ge_pattern": "Cal-GETC",
+     "total_units": {
+      "max": 20,
+      "min": 20
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "Film, Television, and Electronic Media Requirements",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": 20,
+   "total_min": 20,
+   "source_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=150",
+   "catalog_year": "2026-2027",
+   "extracted_run": 39006464249,
+   "program_title": "Film, Television, and Electronic Media",
+   "control_number": "41631"
+  },
+  {
+   "award": "Noncredit program",
+   "checks": {
+    "listed": 2,
+    "placed": 2,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "equal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Complete 2 courses (48 hours)",
+      "rule": "all",
+      "stated": {
+       "max": 48,
+       "min": 48
+      },
+      "courses": [
+       {
+        "code": "ADED 754.1",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ADED 754.2",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [],
+     "measure": "hours",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "Demonstrate a basic knowledge of tax law.",
+      "Complete and file state and federal income tax forms electronically."
+     ],
+     "ge_pattern": null,
+     "total_units": {
+      "max": 48,
+      "min": 48
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "AE: Tax Preparation (Certificate of Completion)",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "hours",
+   "total_max": 48,
+   "total_min": 48,
+   "source_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=232",
+   "catalog_year": "2026-2027",
+   "extracted_run": 39006464249,
+   "program_title": "AE: Tax Preparation",
+   "control_number": "42626"
+  },
+  {
+   "award": "A.S. Degree",
+   "checks": {
+    "listed": 9,
+    "placed": 9,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "equal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Aerial Remote Sensing and Photogrammetry Core Courses",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "CEST 85",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "GIS 40",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "SURV 56",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "SURV 60",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "SURV 62",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "SURV 63",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "APTE 191",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CEST 51",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "Information Learning Resources Requirement",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "LIR 10",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [],
+     "measure": "units",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "Plan aerial remote sensing missions.",
+      "Gain familiarity with the concept of ground control for aerial photogrammetry and remote sensing.",
+      "Gain familiarity with the least squares statistical method relating to aero triangulation and aerial survey control.",
+      "Gain a basic proficiency in photogrammetric and remote sensing data processing and preparation."
+     ],
+     "ge_pattern": null,
+     "total_units": {
+      "max": 28,
+      "min": 28
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "ArlRmotSnsng&Photogrammtry (AS)",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": 28,
+   "total_min": 28,
+   "source_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=114",
+   "catalog_year": "2026-2027",
+   "extracted_run": 39006464249,
+   "program_title": "ArlRmotSnsng&Photogrammtry",
+   "control_number": "43237"
+  },
+  {
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "checks": {
+    "listed": 14,
+    "placed": 14,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "equal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Requirements - Complete 12.00 Units",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "BMG 50",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BMG 52",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BMG 53",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "Select any combination totaling at least 3.00 units from the following",
+      "rule": "choose_units",
+      "stated": {
+       "max": 3,
+       "min": 3
+      },
+      "courses": [
+       {
+        "code": "BGN 100",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BMG 55",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BMG 61",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BMG 62.1",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BMG 62.4",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BMG 63.1",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BMG 63.4",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BMG 66.1",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BMG 66.4",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BMG 67.4",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ESHP 115",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 3,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [
+      "Retail Store Manager",
+      "Restaurant Manager",
+      "Manufacturing Supervisor"
+     ],
+     "measure": "units",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "Apply necessary skills required for managing the complex human interactions and employee performance issues required of supervisors and managers;",
+      "Demonstrate analytical, quantitative, and decision-making skills necessary to manage a complex organizational setting;",
+      "Demonstrate communication and presentation skills, both in written and oral formats, required of supervisors and managers; and",
+      "Recognize and apply appropriate management and leadership principles needed to efficiently and effectively meet objectives in a diverse and fast-changing organizational setting."
+     ],
+     "ge_pattern": null,
+     "total_units": {
+      "max": 12,
+      "min": 12
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "Business Management Certificate",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": 12,
+   "total_min": 12,
+   "source_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=266",
+   "catalog_year": "2026-2027",
+   "extracted_run": 39006464249,
+   "program_title": "Business: Management",
+   "control_number": "43242"
+  },
+  {
+   "award": "Noncredit program",
+   "checks": {
+    "listed": 3,
+    "placed": 3,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "equal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Complete 1 core course (48.125 hours)",
+      "rule": "all",
+      "stated": {
+       "max": 48.125,
+       "min": 48.125
+      },
+      "courses": [
+       {
+        "code": "CSKL 403",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "Complete 1 elective course (48.125 hours)",
+      "rule": "choose_courses",
+      "stated": {
+       "max": 48.125,
+       "min": 48.125
+      },
+      "courses": [
+       {
+        "code": "CSKL 401",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CSKL 402",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 1,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [],
+     "measure": "hours",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "Evaluate and/or interpret mathematical information, relationships, and/or concepts related to pre-algebra.",
+      "Apply the mathematical skills required in performing operations and/or problem-solving related to pre-algebra.",
+      "Communicate mathematical information symbolically, visually and/or numerically using appropriate terminology related to pre-algebra.",
+      "Evaluate and/or interpret mathematical information, relationships, and/or concepts related to beginning algebra."
+     ],
+     "ge_pattern": null,
+     "total_units": {
+      "max": 96.25,
+      "min": 96.25
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "Academic Prep: Math (Certificate of Competency)",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "hours",
+   "total_max": 96.25,
+   "total_min": 96.25,
+   "source_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=218",
+   "catalog_year": "2026-2027",
+   "extracted_run": 39006464249,
+   "program_title": "Academic Prep: Math",
+   "control_number": "43387"
+  },
+  {
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "checks": {
+    "listed": 11,
+    "placed": 11,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "equal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Automotive Maintenance and Light Repair - Complete 32 Units",
+      "rule": "all",
+      "stated": {
+       "max": 32,
+       "min": 32
+      },
+      "courses": [
+       {
+        "code": "ATL 101",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ATL 105",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ATL 110",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ATL 120",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ATL 130",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ATL 140",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ATL 150",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ATL 161",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ATL 162",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ATL 170",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ATL 180",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [
+      "advanced entry-level apprentice automotive technicians"
+     ],
+     "measure": "units",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "Demonstrate the correct use of safety procedures utilized by a mobile equipment repair technician.",
+      "Locate and interpret technical manuals from online computerized databases.",
+      "Demonstrate the appropriate use and maintenance of hand, shop, and precision tools.",
+      "Prepare initial, revised, and final repair orders in compliance with California law (BAR).",
+      "Identify engine block assembly components and configurations.",
+      "Demonstrate the proper steps to remove a cylinder head; inspect gasket condition; install cylinder head and gasket; tighten according to manufacturer's specification and procedure.",
+      "Demonstrate the proper steps for performing a timing belt replacement and setting the timing belt, crankshaft, and camshafts in proper positions.",
+      "Research and identify correct procedures and specifications for maintenance and repair of automatic transmissions and transaxle systems.",
+      "Research and identify correct procedures and specifications for maintenance and repair of manual transmission and drive train systems.",
+      "Research and identify correct procedures and specifications for maintenance and repair of suspension and steering systems.",
+      "Research and identify correct procedures and specifications for maintenance and repair of braking systems.",
+      "Demonstrate the proper use of a Digital Multimeter (DMM) during diagnosis of electrical circuit problems, including: source voltage, voltage drop, current flow, and resistance.",
+      "Analyze and diagnose a mobile equipment charging system using appropriate electrical tools and equipment.",
+      "Analyze and diagnose a mobile equipment starting system using appropriate electrical tools and equipment.",
+      "Analyze and diagnose a mobile equipment low-voltage battery system using appropriate electrical tools and equipment.",
+      "Test the Controller Area Network (CAN) BUS system signal with a Digital Storage Oscilloscope (DSO). Set up the DSO to capture the CAN hi (+) and CAN lo (-) signals.",
+      "Identify and describe the theory, service, and repair of common types of automotive heating and air conditioning systems.",
+      "Use industry standard recovery, recycling, and recharging equipment to diagnose and service automotive air conditioning systems.",
+      "Explain the operation, troubleshooting and repair of the ignition, fuel and emission control systems of late model automobiles.",
+      "Demonstrate repair of automotive ignition, fuel, and integrated electronic engine controls.",
+      "Perform diagnosis, service, and maintenance procedures in a timely manner to industry standards."
+     ],
+     "ge_pattern": null,
+     "total_units": {
+      "max": 32,
+      "min": 32
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "Automotive MLR Tech (Certificate of Achievement)",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": 32,
+   "total_min": 32,
+   "source_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=252",
+   "catalog_year": "2026-2027",
+   "extracted_run": 39006464249,
+   "program_title": "Automotive MLR Tech",
+   "control_number": "44201"
+  },
+  {
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "checks": {
+    "listed": 6,
+    "placed": 6,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "equal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Automotive Brakes and Chassis - Complete 17.00 Units",
+      "rule": "all",
+      "stated": {
+       "max": 17,
+       "min": 17
+      },
+      "courses": [
+       {
+        "code": "ATL 101",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ATL 105",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ATL 140",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ATL 150",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ATL 161",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ATL 162",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [
+      "advanced entry-level apprentice automotive technicians"
+     ],
+     "measure": "units",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "Demonstrate the correct use of safety procedures utilized by a mobile equipment repair technician.",
+      "Locate and interpret technical manuals from online computerized databases.",
+      "Demonstrate the appropriate use and maintenance of hand, shop, and precision tools.",
+      "Prepare initial, revised, and final repair orders in compliance with California law (BAR).",
+      "Research and identify correct procedures and specifications for maintenance and repair of suspension and steering systems.",
+      "Research and identify correct procedures and specifications for maintenance and repair of braking systems.",
+      "Demonstrate the proper use of a Digital Multimeter (DMM) during diagnosis of electrical circuit problems, including: source voltage, voltage drop, current flow, and resistance.",
+      "Analyze and diagnose a mobile equipment charging system using appropriate electrical tools and equipment.",
+      "Analyze and diagnose a mobile equipment starting system using appropriate electrical tools and equipment.",
+      "Analyze and diagnose a mobile equipment low-voltage battery system using appropriate electrical tools and equipment.",
+      "Test the Controller Area Network (CAN) BUS system signal with a Digital Storage Oscilloscope (DSO). Set up the DSO to capture the CAN hi (+) and CAN lo (-) signals."
+     ],
+     "ge_pattern": null,
+     "total_units": {
+      "max": 17,
+      "min": 17
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "Automotive Brakes and Chassis (Certificate of Achievement)",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": 17,
+   "total_min": 17,
+   "source_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=249",
+   "catalog_year": "2026-2027",
+   "extracted_run": 39006464249,
+   "program_title": "Automotive Brakes and Chassis",
+   "control_number": "44269"
+  },
+  {
+   "award": "A.S. Degree",
+   "checks": {
+    "listed": 12,
+    "placed": 12,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "equal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Medium Heavy Truck Technology Requirements",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "ATL 101",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ATL 105",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ATL 110",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ATL 161",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ATL 162",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ATL 170",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ATL 220",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ATL 230",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ATL 240",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ATL 290",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MACH 51.1A",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "WELD 170",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "Select any combination totaling at least 3.00 units from the following",
+      "rule": "choose_units",
+      "stated": {
+       "max": 3,
+       "min": 3
+      },
+      "courses": [
+       {
+        "code": "ATL 280",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "WEOC 99",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       }
+      ],
+      "minimum": 3,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [],
+     "measure": "units",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "Demonstrate the correct use of safety procedures utilized by a mobile equipment repair technician.",
+      "Locate and interpret technical manuals from online computerized databases.",
+      "Demonstrate the appropriate use and maintenance of hand, shop, and precision tools.",
+      "Prepare initial, revised, and final repair orders in compliance with California law (BAR).",
+      "Identify engine block assembly components and configurations.",
+      "Demonstrate the proper steps to remove a cylinder head; inspect gasket condition; install cylinder head and gasket; tighten according to manufacturer's specification and procedure.",
+      "Demonstrate the proper steps for performing a timing belt replacement and setting the timing belt, crankshaft, and camshafts in proper positions.",
+      "Demonstrate the proper use of a Digital Multimeter (DMM) during diagnosis of electrical circuit problems, including: source voltage, voltage drop, current flow, and resistance.",
+      "Analyze and diagnose a mobile equipment charging system using appropriate electrical tools and equipment.",
+      "Analyze and diagnose a mobile equipment starting system using appropriate electrical tools and equipment.",
+      "Analyze and diagnose a mobile equipment low-voltage battery system using appropriate electrical tools and equipment.",
+      "Test the Controller Area Network (CAN) BUS system signal with a Digital Storage Oscilloscope (DSO). Set up the DSO to capture the CAN hi (+) and CAN lo (-) signals.",
+      "Identify and describe the theory, service, and repair of common types of automotive heating and air conditioning systems.",
+      "Use industry standard recovery, recycling, and recharging equipment to diagnose and service automotive air conditioning systems.",
+      "Identify the basic principles of the modern diesel engine.",
+      "Define the basic troubleshooting of diesel electronic fuel control systems.",
+      "Inspect, diagnose, and repair heavy duty drivetrain components.",
+      "Interpret and understand repair manuals for repair of drivetrain components.",
+      "Evaluate and diagnose medium heavy-duty brake components/ system malfunctions.",
+      "Evaluate and diagnose medium heavy-duty steering systems.",
+      "Evaluate and diagnose medium heavy-duty suspension systems.",
+      "Perform maintenance inspections on agricultural, construction, public transportation, and trucking equipment.",
+      "Evaluate equipment condition and determine repair options.",
+      "Describe and interpret hydraulic schematics and repair manuals in relation to hydraulic systems.",
+      "Demonstrate ability to diagnose and repair hydraulic systems on agricultural and instruction equipment.",
+      "Demonstrate knowledge of the theory of machining as applied to machine tool techniques.",
+      "Demonstrate use of tools and equipment in a welding shop per American National Standards Institute (ANSI) safety standards Z49.",
+      "Perform arc weld from the flat, fillet weld position per American Welding Society (AWS) standards.",
+      "Perform oxy-acetylene weld on a butt joint, lap joint, fillet joint, and brazing fillet joint per AWS standards.",
+      "Demonstrate ability to safely use oxy-acetylene cutting torch per AWS standards."
+     ],
+     "ge_pattern": null,
+     "total_units": {
+      "max": 37,
+      "min": 37
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "Medium Heavy Truck Technology Requirements",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": 37,
+   "total_min": 37,
+   "source_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=175",
+   "catalog_year": "2026-2027",
+   "extracted_run": 39006464249,
+   "program_title": "Medium Heavy Truck Technology",
+   "control_number": "44277"
+  },
+  {
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "checks": {
+    "listed": 10,
+    "placed": 9,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "equal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Medium Heavy Truck Diagnostic Technician - Complete 26.00 Units",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "ATL 101",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ATL 105",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ATL 111",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ATL 161",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ATL 162",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ATL 290",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "Select any combination totaling at least 9.00 units from the following:",
+      "rule": "choose_units",
+      "stated": {
+       "max": 9,
+       "min": 9
+      },
+      "courses": [
+       {
+        "code": "CS 81.41",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "ELEC 88",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ELEC 153",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ELEC 180",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 9,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [
+      "advanced entry-level apprentice Medium Heavy Truck technicians"
+     ],
+     "measure": "units",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "Demonstrate the correct use of safety procedures utilized by a mobile equipment repair technician.",
+      "Locate and interpret technical manuals from online computerized databases.",
+      "Demonstrate the appropriate use and maintenance of hand, shop, and precision tools.",
+      "Prepare initial, revised, and final repair orders in compliance with California law (BAR).",
+      "Demonstrate the precautions (personal and shop safety procedures) needed to safely work with high voltage systems.",
+      "Demonstrate acquired knowledge related to the components used of modern Hybrid/ Electronic vehicles.",
+      "Demonstrate familiarity with reference materials such as schematics, flow charts, logic trees, and workshop manuals to aid in battery system troubleshooting.",
+      "Demonstrate how to perform basic maintenance related to hybrid and electric vehicles.",
+      "Demonstrate how to diagnose a basic hybrid or electric vehicle fault using standard diagnostic equipment.",
+      "Demonstrate the proper use of a Digital Multimeter (DMM) during diagnosis of electrical circuit problems, including: source voltage, voltage drop, current flow, and resistance.",
+      "Analyze and diagnose a mobile equipment charging system using appropriate electrical tools and equipment.",
+      "Analyze and diagnose a mobile equipment starting system using appropriate electrical tools and equipment.",
+      "Analyze and diagnose a mobile equipment low-voltage battery system using appropriate electrical tools and equipment.",
+      "Test the Controller Area Network (CAN) BUS system signal with a Digital Storage Oscilloscope (DSO). Set up the DSO to capture the CAN hi (+) and CAN lo (-) signals.",
+      "Describe and interpret hydraulic schematics and repair manuals in relation to hydraulic systems.",
+      "Demonstrate ability to diagnose and repair hydraulic systems on agricultural and instruction equipment.",
+      "Describe the principles of structured programming and be able to describe, design, implement, and test structured programs using currently accepted methodology.",
+      "Troubleshoot and repair system components.",
+      "Establish electronic communication between a programmable logic controller (PLC) and a personal computer.",
+      "Identify and correct Virtual Instruments program errors."
+     ],
+     "ge_pattern": null,
+     "total_units": {
+      "max": 26,
+      "min": 26
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "MHT Diagnostic Tech (Certificate of Achievement)",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": 26,
+   "total_min": 26,
+   "source_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=342",
+   "catalog_year": "2026-2027",
+   "extracted_run": 39006464249,
+   "program_title": "MHT Diagnostic Tech",
+   "control_number": "44293"
+  },
+  {
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "checks": {
+    "listed": 9,
+    "placed": 9,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "equal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Medium Heavy Truck Brakes and Chassis Technology",
+      "rule": "all",
+      "stated": {
+       "max": 25,
+       "min": 25
+      },
+      "courses": [
+       {
+        "code": "ATL 101",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ATL 105",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ATL 161",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ATL 162",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ATL 230",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ATL 240",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ATL 290",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MACH 51.1A",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "WELD 170",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [],
+     "measure": "units",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "Demonstrate the correct use of safety procedures utilized by a mobile equipment repair technician.",
+      "Locate and interpret technical manuals from online computerized databases.",
+      "Demonstrate the appropriate use and maintenance of hand, shop, and precision tools.",
+      "Prepare initial, revised, and final repair orders in compliance with California law (BAR).",
+      "Demonstrate the proper use of a Digital Multimeter (DMM) during diagnosis of electrical circuit problems, including: source voltage, voltage drop, current flow, and resistance.",
+      "Analyze and diagnose a mobile equipment charging system using appropriate electrical tools and equipment.",
+      "Analyze and diagnose a mobile equipment starting system using appropriate electrical tools and equipment.",
+      "Analyze and diagnose a mobile equipment low-voltage battery system using appropriate electrical tools and equipment.",
+      "Test the Controller Area Network (CAN) BUS system signal with a Digital Storage Oscilloscope (DSO). Set up the DSO to capture the CAN hi (+) and CAN lo (-) signals.",
+      "Inspect, diagnose, and repair heavy duty drivetrain components.",
+      "Interpret and understand repair manuals for repair of drivetrain components.",
+      "Evaluate and diagnose medium heavy-duty brake components/ system malfunctions.",
+      "Evaluate and diagnose medium heavy-duty steering systems.",
+      "Evaluate and diagnose medium heavy-duty suspension systems.",
+      "Describe and interpret hydraulic schematics and repair manuals in relation to hydraulic systems.",
+      "Demonstrate ability to diagnose and repair hydraulic systems on agricultural and instruction equipment.",
+      "Demonstrate knowledge of the theory of machining as applied to machine tool techniques.",
+      "Demonstrate use of tools and equipment in a welding shop per American National Standards Institute (ANSI) safety standards Z49.",
+      "Perform arc weld from the flat, fillet weld position per American Welding Society (AWS) standards.",
+      "Perform oxy-acetylene weld on a butt joint, lap joint, fillet joint, and brazing fillet joint per AWS standards.",
+      "Demonstrate ability to safely use oxy-acetylene cutting torch per AWS standards."
+     ],
+     "ge_pattern": null,
+     "total_units": {
+      "max": 25,
+      "min": 25
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "Medium Heavy Truck Brakes and Chassis Technology - complete 25.00 units",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": 25,
+   "total_min": 25,
+   "source_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=341",
+   "catalog_year": "2026-2027",
+   "extracted_run": 39006464249,
+   "program_title": "MHT Chassis Tech",
+   "control_number": "44308"
+  },
+  {
+   "award": "Noncredit program",
+   "checks": {
+    "listed": 3,
+    "placed": 3,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "equal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Complete 3 courses (157.50 hours)",
+      "rule": "all",
+      "stated": {
+       "max": 157.5,
+       "min": 157.5
+      },
+      "courses": [
+       {
+        "code": "CS 750A",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CS 750B",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CS 750C",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [
+      "Website Designers/ Developers",
+      "Desktop Publishing Specialists",
+      "Desktop Publishers",
+      "Graphic Designers",
+      "Web Production Specialist",
+      "Web Developer",
+      "Internet Developer",
+      "JavaScript Coder",
+      "HTML Developer"
+     ],
+     "measure": "hours",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "Develop competency in specific web development skills in the area of coding, validation and user interface;",
+      "Apply the skills of effective communication, time management, problem solving, and client management as they plan and produce a website; and",
+      "Evaluate the numerous tools available to create a website and select the appropriate tools for the specific situation"
+     ],
+     "ge_pattern": null,
+     "total_units": {
+      "max": 157.5,
+      "min": 157.5
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "CS Web and Mobile Front-End NC",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "hours",
+   "total_max": 157.5,
+   "total_min": 157.5,
+   "source_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=298",
+   "catalog_year": "2026-2027",
+   "extracted_run": 39006464249,
+   "program_title": "CS Web and Mobile Front-End NC​",
+   "control_number": "45234"
+  }
+ ]
+}

@@ -82,19 +82,11 @@
    "program": 7,
    "courses": 0,
    "count": 7,
-   "not_verbatim": [
-    "Articulate perception and awareness of fine art and applied design concept;",
-    "Demonstrate skills in visual analysis by identifying specific formal elements in works of art;",
-    "Create a portfolio of fine art and designs."
-   ],
-   "why": [
-    "not in the catalog text as printed: Articulate perception and awareness of fine art and applied design concept;",
-    "not in the catalog text as printed: Demonstrate skills in visual analysis by identifying specific formal elements in",
-    "not in the catalog text as printed: Create a portfolio of fine art and designs."
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 0,
@@ -107,7 +99,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -351,5 +343,6 @@
    "Course descriptions in the choose lists have line-break characters (e.g., 'Photography--Darkroom') that were not affected."
   ]
  },
- "extracted_run": "39006464249"
+ "extracted_run": 39037637820,
+ "read_run": "39006464249"
 }
