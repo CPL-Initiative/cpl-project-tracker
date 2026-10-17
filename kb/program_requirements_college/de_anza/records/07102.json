@@ -1,0 +1,574 @@
+{
+ "college": "De Anza College",
+ "control_number": "07102",
+ "shape": "degree",
+ "title": "Paralegal Studies",
+ "award": "A.A. Degree",
+ "source_url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=138",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 10667,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 10667,
+    "output_tokens": 4020,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 4020,
+  "output_tokens_details": {
+   "thinking_tokens": 1182
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.12307,
+ "ms": 29299,
+ "seconds": 29.7,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 49,
+   "listed": 49,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 7,
+   "codes": [
+    "PARA54",
+    "PARA65W",
+    "PARA65X",
+    "PARA65Y",
+    "PARA69",
+    "PARA93",
+    "SOC54"
+   ],
+   "flagged": [
+    "PARA54",
+    "PARA65W",
+    "PARA65X",
+    "PARA65Y",
+    "PARA69",
+    "PARA93",
+    "SOC54"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    48.0,
+    48.0
+   ],
+   "stated": [
+    90.0,
+    90.0
+   ],
+   "against": "degree",
+   "ge": null,
+   "why": [
+    "the record names the degree total and the De Anza General Education or California General Education Transfer Curriculum (Cal-GETC) pattern, but no units for it"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Paralegal Studies A.A. degree",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "De Anza General Education or California General Education Transfer Curriculum (Cal-GETC)",
+   "degree_total": {
+    "min": 90,
+    "max": 90
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": true,
+   "outcomes": [
+    "Evaluate, critique and analyze legal and factual information",
+    "Synthesize and analyze legal and factual information through effective written and oral communication",
+    "Compare and contrast the American and California legal systems within a global legal environment",
+    "Research legally relevant facts from diverse source materials",
+    "Assess the quality of information and utilize appropriate informational resources to evaluate a legal issue"
+   ],
+   "careers": [
+    "paralegals"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Core",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 32,
+     "max": 32
+    },
+    "courses": [
+     {
+      "code": "PARA 9",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ADMJ 9",
+        "units": 4,
+        "catalog_addition": false
+       },
+       {
+        "code": "POLI 9",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "PARA 67",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PARA 86",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PARA 88",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PARA 92A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PARA 94",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PARA 96A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PARA 97A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PARA 97B",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List A",
+    "rule": "choose_units",
+    "minimum": 12,
+    "option_group": null,
+    "stated": {
+     "min": 12,
+     "max": 12
+    },
+    "courses": [
+     {
+      "code": "PARA 65W",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PARA 65X",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PARA 65Y",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PARA 65Z",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PARA 72",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PARA 85",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PARA 87",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PARA 89",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PARA 91A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PARA 92B",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PARA 93",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PARA 96C",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PARA 98",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PARA 99",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List B - Complete from below or from List A (not already taken)",
+    "rule": "choose_units",
+    "minimum": 4,
+    "option_group": null,
+    "stated": {
+     "min": 4,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "ADMJ 3",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PARA 3",
+        "units": 4,
+        "catalog_addition": false
+       },
+       {
+        "code": "POLI 13",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADMJ 11",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PARA 11",
+        "units": 4,
+        "catalog_addition": false
+       },
+       {
+        "code": "POLI 11",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADMJ 25",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PARA 25",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADMJ 54",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PARA 54",
+        "units": 4,
+        "catalog_addition": true
+       },
+       {
+        "code": "SOC 54",
+        "units": 4,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADMJ 61",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADMJ 74A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PARA 74A",
+        "units": 4,
+        "catalog_addition": false
+       },
+       {
+        "code": "PSYC 74A",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADMJ 75",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PARA 75",
+        "units": 4,
+        "catalog_addition": false
+       },
+       {
+        "code": "POLI 75",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADMJ 84",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADMJ 90A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PARA 90A",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 18",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CETH 29",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ADMJ 29",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "E S 6",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PARA 64",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PARA 64X",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PARA 64Y",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PARA 64Z",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PARA 69",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "REST 52A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The extracted text begins mid-section on page 138; the section's printed heading is not in the extract, so section_heading is taken from the description ('The Paralegal Studies A.A. degree program').",
+   "De Anza counts quarter units; 'Total Required: 90 Units' is the whole degree with GE and electives ('electives as needed to reach at least 90 units'), so it is recorded as degree_total; no separate major total is printed (block totals 32 + 12 + 4).",
+   "List B may also be satisfied with List A courses not already taken.",
+   "Catalog codes without leading zeros (e.g., PARA 92A, PARA 64X, REST 52A) were matched to closed-list codes with leading zeros (PARA 092A, PARA 064X, REST 052A).",
+   "Cross-listed codes (e.g., PARA 9 / ADMJ 9 / POLI 9) are recorded as alternatives; students receive credit for only one version."
+  ]
+ },
+ "extracted_run": "39046890834"
+}

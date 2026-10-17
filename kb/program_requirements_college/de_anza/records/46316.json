@@ -1,0 +1,663 @@
+{
+ "college": "De Anza College",
+ "control_number": "46316",
+ "shape": "certificate",
+ "title": "Community Impact",
+ "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+ "source_url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=132",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 12605,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 12605,
+    "output_tokens": 4334,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 4334,
+  "output_tokens_details": {
+   "thinking_tokens": 1161
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.1371,
+ "ms": 32188,
+ "seconds": 32.9,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 105,
+   "share": 0.0,
+   "missing": [
+    "ADMJ29",
+    "AFAM10",
+    "AFAM11",
+    "AFAM12A",
+    "AFAM12B",
+    "AFAM25",
+    "ARTS2F",
+    "ASAM1",
+    "ASAM10",
+    "ASAM11",
+    "ASAM12",
+    "ASAM13",
+    "ASAM20",
+    "ASAM21",
+    "ASAM22",
+    "ASAM30",
+    "ASAM32",
+    "BIOL10",
+    "BIOL10H",
+    "BIOL11",
+    "BIOL13",
+    "BIOL6C",
+    "BIOL6CH",
+    "CETH10",
+    "CETH11",
+    "CETH13",
+    "CETH19",
+    "CETH29",
+    "CETH50",
+    "CETH8",
+    "CHLX10",
+    "CHLX11",
+    "CHLX12",
+    "CHLX13",
+    "CHLX26",
+    "CHLX35",
+    "COMM7",
+    "COMM7H",
+    "COMM8",
+    "COMM8H",
+    "ECON3",
+    "ECON3H",
+    "ECONC2001",
+    "ECONC2001H",
+    "ELIT24",
+    "ES1",
+    "ES2",
+    "ES3",
+    "ES4",
+    "ES50",
+    "ESCI1",
+    "ESCI19",
+    "ESCI1L",
+    "ESL5",
+    "ESL6",
+    "GEO1",
+    "GEO10",
+    "GEO4",
+    "HIST16A",
+    "HIST16B",
+    "HIST7A",
+    "HIST7B",
+    "HUMI1",
+    "HUMI15",
+    "HUMI1H",
+    "ICS17",
+    "ICS17H",
+    "ICS19",
+    "ICS25",
+    "ICS27",
+    "ICS27H",
+    "ICS2A",
+    "ICS2B",
+    "ICS36",
+    "INTL1",
+    "INTL33",
+    "INTL5",
+    "KNES45",
+    "NAIS11",
+    "NAIS12",
+    "NAIS13",
+    "NAIS14",
+    "NAIS15",
+    "NAIS16",
+    "NAIS31",
+    "PHIL3",
+    "POLI15",
+    "POLI16",
+    "POLI17",
+    "POLI17H",
+    "POLI2",
+    "POLI3",
+    "POLI5",
+    "POLSC1000",
+    "POLSC1000H",
+    "SOC5",
+    "WMST1",
+    "WMST22",
+    "WMST24",
+    "WMST25",
+    "WMST26",
+    "WMST27",
+    "WMST29",
+    "WMST31",
+    "WMST8"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Not found: the text holds no Community Impact section, only the end of another program's discipline elective lists ending 'Total Required: 90 Units'",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ADMJ 29",
+    "why": "not in the text"
+   },
+   {
+    "code": "AFAM 012A",
+    "why": "not in the text"
+   },
+   {
+    "code": "AFAM 012B",
+    "why": "not in the text"
+   },
+   {
+    "code": "AFAM 10",
+    "why": "not in the text"
+   },
+   {
+    "code": "AFAM 11",
+    "why": "not in the text"
+   },
+   {
+    "code": "AFAM 25",
+    "why": "not in the text"
+   },
+   {
+    "code": "ARTS 002F",
+    "why": "not in the text"
+   },
+   {
+    "code": "ASAM 1",
+    "why": "not in the text"
+   },
+   {
+    "code": "ASAM 10",
+    "why": "not in the text"
+   },
+   {
+    "code": "ASAM 11",
+    "why": "not in the text"
+   },
+   {
+    "code": "ASAM 12",
+    "why": "not in the text"
+   },
+   {
+    "code": "ASAM 13",
+    "why": "not in the text"
+   },
+   {
+    "code": "ASAM 20",
+    "why": "not in the text"
+   },
+   {
+    "code": "ASAM 21",
+    "why": "not in the text"
+   },
+   {
+    "code": "ASAM 22",
+    "why": "not in the text"
+   },
+   {
+    "code": "ASAM 32",
+    "why": "not in the text"
+   },
+   {
+    "code": "ASAM030",
+    "why": "not in the text"
+   },
+   {
+    "code": "BIOL 006C",
+    "why": "not in the text"
+   },
+   {
+    "code": "BIOL 010H",
+    "why": "not in the text"
+   },
+   {
+    "code": "BIOL 06CH",
+    "why": "not in the text"
+   },
+   {
+    "code": "BIOL 10",
+    "why": "not in the text"
+   },
+   {
+    "code": "BIOL 11",
+    "why": "not in the text"
+   },
+   {
+    "code": "BIOL 13",
+    "why": "not in the text"
+   },
+   {
+    "code": "CETH 10",
+    "why": "listed only under another program's 90-unit degree"
+   },
+   {
+    "code": "CETH 11",
+    "why": "listed only under another program's 90-unit degree"
+   },
+   {
+    "code": "CETH 13",
+    "why": "not in the text"
+   },
+   {
+    "code": "CETH 19",
+    "why": "listed only under another program's 90-unit degree"
+   },
+   {
+    "code": "CETH 29",
+    "why": "listed only under another program's 90-unit degree"
+   },
+   {
+    "code": "CETH 50",
+    "why": "listed only under another program's 90-unit degree"
+   },
+   {
+    "code": "CETH 8",
+    "why": "listed only under another program's 90-unit degree"
+   },
+   {
+    "code": "CHLX 10",
+    "why": "not in the text"
+   },
+   {
+    "code": "CHLX 11",
+    "why": "not in the text"
+   },
+   {
+    "code": "CHLX 12",
+    "why": "not in the text"
+   },
+   {
+    "code": "CHLX 13",
+    "why": "not in the text"
+   },
+   {
+    "code": "CHLX 26",
+    "why": "not in the text"
+   },
+   {
+    "code": "CHLX 35",
+    "why": "not in the text"
+   },
+   {
+    "code": "COMM 007H",
+    "why": "listed only under another program's 90-unit degree"
+   },
+   {
+    "code": "COMM 008H",
+    "why": "not in the text"
+   },
+   {
+    "code": "COMM 7",
+    "why": "listed only under another program's 90-unit degree"
+   },
+   {
+    "code": "COMM 8",
+    "why": "not in the text"
+   },
+   {
+    "code": "E S 1",
+    "why": "listed only under another program's 90-unit degree"
+   },
+   {
+    "code": "E S 2",
+    "why": "listed only under another program's 90-unit degree"
+   },
+   {
+    "code": "E S 3",
+    "why": "listed only under another program's 90-unit degree"
+   },
+   {
+    "code": "E S 4",
+    "why": "listed only under another program's 90-unit degree"
+   },
+   {
+    "code": "E S 50",
+    "why": "not in the text"
+   },
+   {
+    "code": "ECON 003H",
+    "why": "listed only under another program's 90-unit degree"
+   },
+   {
+    "code": "ECON 3",
+    "why": "listed only under another program's 90-unit degree"
+   },
+   {
+    "code": "ECON C2001",
+    "why": "not in the text (another program lists ECON 2)"
+   },
+   {
+    "code": "ECON C2001H",
+    "why": "not in the text (another program lists ECON 2H)"
+   },
+   {
+    "code": "ELIT 24",
+    "why": "not in the text"
+   },
+   {
+    "code": "ESCI 001L",
+    "why": "not in the text"
+   },
+   {
+    "code": "ESCI 1",
+    "why": "not in the text"
+   },
+   {
+    "code": "ESCI 19",
+    "why": "not in the text"
+   },
+   {
+    "code": "ESL 5",
+    "why": "not in the text"
+   },
+   {
+    "code": "ESL 6",
+    "why": "not in the text"
+   },
+   {
+    "code": "GEO 1",
+    "why": "listed only under another program's 90-unit degree"
+   },
+   {
+    "code": "GEO 10",
+    "why": "listed only under another program's 90-unit degree"
+   },
+   {
+    "code": "GEO 4",
+    "why": "listed only under another program's 90-unit degree"
+   },
+   {
+    "code": "HIST 007A",
+    "why": "listed only under another program's 90-unit degree"
+   },
+   {
+    "code": "HIST 007B",
+    "why": "listed only under another program's 90-unit degree"
+   },
+   {
+    "code": "HIST 016A",
+    "why": "listed only under another program's 90-unit degree"
+   },
+   {
+    "code": "HIST 016B",
+    "why": "listed only under another program's 90-unit degree"
+   },
+   {
+    "code": "HUMI 001H",
+    "why": "not in the text"
+   },
+   {
+    "code": "HUMI 1",
+    "why": "not in the text"
+   },
+   {
+    "code": "HUMI 15",
+    "why": "not in the text"
+   },
+   {
+    "code": "ICS 002A",
+    "why": "listed only under another program's 90-unit degree"
+   },
+   {
+    "code": "ICS 002B",
+    "why": "not in the text"
+   },
+   {
+    "code": "ICS 017H",
+    "why": "listed only under another program's 90-unit degree"
+   },
+   {
+    "code": "ICS 027H",
+    "why": "listed only under another program's 90-unit degree"
+   },
+   {
+    "code": "ICS 17",
+    "why": "listed only under another program's 90-unit degree"
+   },
+   {
+    "code": "ICS 19",
+    "why": "listed only under another program's 90-unit degree"
+   },
+   {
+    "code": "ICS 25",
+    "why": "listed only under another program's 90-unit degree"
+   },
+   {
+    "code": "ICS 27",
+    "why": "listed only under another program's 90-unit degree"
+   },
+   {
+    "code": "ICS 36",
+    "why": "listed only under another program's 90-unit degree"
+   },
+   {
+    "code": "INTL 1",
+    "why": "listed only under another program's 90-unit degree"
+   },
+   {
+    "code": "INTL 33",
+    "why": "listed only under another program's 90-unit degree"
+   },
+   {
+    "code": "INTL 5",
+    "why": "listed only under another program's 90-unit degree"
+   },
+   {
+    "code": "KNES 45",
+    "why": "not in the text"
+   },
+   {
+    "code": "NAIS 11",
+    "why": "listed only under another program's 90-unit degree"
+   },
+   {
+    "code": "NAIS 12",
+    "why": "listed only under another program's 90-unit degree"
+   },
+   {
+    "code": "NAIS 13",
+    "why": "not in the text"
+   },
+   {
+    "code": "NAIS 14",
+    "why": "listed only under another program's 90-unit degree"
+   },
+   {
+    "code": "NAIS 15",
+    "why": "not in the text"
+   },
+   {
+    "code": "NAIS 16",
+    "why": "listed only under another program's 90-unit degree"
+   },
+   {
+    "code": "NAIS 31",
+    "why": "listed only under another program's 90-unit degree"
+   },
+   {
+    "code": "PHIL 3",
+    "why": "not in the text"
+   },
+   {
+    "code": "POLI 017H",
+    "why": "listed only under another program's 90-unit degree"
+   },
+   {
+    "code": "POLI 15",
+    "why": "listed only under another program's 90-unit degree"
+   },
+   {
+    "code": "POLI 16",
+    "why": "listed only under another program's 90-unit degree"
+   },
+   {
+    "code": "POLI 17",
+    "why": "listed only under another program's 90-unit degree"
+   },
+   {
+    "code": "POLI 2",
+    "why": "listed only under another program's 90-unit degree"
+   },
+   {
+    "code": "POLI 3",
+    "why": "listed only under another program's 90-unit degree"
+   },
+   {
+    "code": "POLI 5",
+    "why": "listed only under another program's 90-unit degree"
+   },
+   {
+    "code": "POLS C1000",
+    "why": "listed only under another program's 90-unit degree"
+   },
+   {
+    "code": "POLS C1000H",
+    "why": "listed only under another program's 90-unit degree"
+   },
+   {
+    "code": "SOC 5",
+    "why": "listed only under another program's 90-unit degree"
+   },
+   {
+    "code": "WMST 1",
+    "why": "listed only under another program's 90-unit degree"
+   },
+   {
+    "code": "WMST 22",
+    "why": "listed only under another program's 90-unit degree"
+   },
+   {
+    "code": "WMST 24",
+    "why": "listed only under another program's 90-unit degree"
+   },
+   {
+    "code": "WMST 25",
+    "why": "listed only under another program's 90-unit degree"
+   },
+   {
+    "code": "WMST 26",
+    "why": "listed only under another program's 90-unit degree"
+   },
+   {
+    "code": "WMST 27",
+    "why": "listed only under another program's 90-unit degree"
+   },
+   {
+    "code": "WMST 29",
+    "why": "listed only under another program's 90-unit degree"
+   },
+   {
+    "code": "WMST 31",
+    "why": "listed only under another program's 90-unit degree"
+   },
+   {
+    "code": "WMST 8",
+    "why": "listed only under another program's 90-unit degree"
+   }
+  ],
+  "notes": [
+   "The supplied text (catalog pages 132-133) does not contain the Community Impact Certificate of Achievement. It shows the tail of another program's elective lists grouped by discipline (each headed '(0 Units)'), followed by a GE requirement (De Anza GE or Cal-GETC, electives to reach at least 90 units) and 'Total Required: 90 Units'. That is a quarter-unit associate degree, not a certificate of 12 to fewer than 24 quarter units, so nothing was recorded from it.",
+   "The program heading for the listed courses is cut off before page 132; a reviewer should fetch the actual Community Impact certificate section, which is likely on another page of the PDF.",
+   "No outcomes or careers for Community Impact appear in the text."
+  ]
+ },
+ "extracted_run": "39046890834"
+}

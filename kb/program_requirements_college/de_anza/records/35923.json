@@ -1,0 +1,241 @@
+{
+ "college": "De Anza College",
+ "control_number": "35923",
+ "shape": "certificate",
+ "title": "Facility and Sustainable Building Management",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=93",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8254,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8254,
+    "output_tokens": 3034,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 3034,
+  "output_tokens_details": {
+   "thinking_tokens": 1798
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.0937,
+ "ms": 26109,
+ "seconds": 26.6,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 9,
+   "listed": 11,
+   "share": 0.818,
+   "missing": [
+    "ES81",
+    "ES83"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    25.0,
+    25.0
+   ],
+   "stated": [
+    25.0,
+    25.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 2,
+   "courses": 0,
+   "count": 2,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 11,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Required Core - Certificate of Achievement: (25 Units)",
+   "measure": "units",
+   "total_units": {
+    "min": 25,
+    "max": 25
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Assess the roles and responsibilities of Facility Managers and understand the technical and business skills required in the Facility Management profession",
+    "Analyze and understand the basics of building management and energy efficiency systems"
+   ],
+   "careers": [
+    "building sustainability",
+    "space planning",
+    "environmental health and safety",
+    "energy efficiency",
+    "sustainable landscaping",
+    "real estate",
+    "property management",
+    "human resources",
+    "marketing",
+    "sales",
+    "accounting"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Core - Certificate of Achievement",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 25,
+     "max": 25
+    },
+    "courses": [
+     {
+      "code": "BUS 56",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 65",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 85",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "E S 58",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "E S 69A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "E S 70",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "E S 71",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "E S 78",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "E S 82",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "E S 81",
+    "why": "listed only in the additional 15-unit Required Core of the 40-unit certificate section (apparently the Certificate of Achievement-Advanced) and the A.S."
+   },
+   {
+    "code": "E S 83",
+    "why": "listed only in the additional 15-unit Required Core of the 40-unit certificate section (apparently the Certificate of Achievement-Advanced) and the A.S."
+   }
+  ],
+  "notes": [
+   "The excerpt starts mid-section on page 93 with no award heading. That section prints 'Required Core - Certificate of Achievement: (25 Units)' followed by 'Required Core: (15 Units)' (ACCT 1A/1AH, BUS 10, E S 81, E S 83) and 'Total Required: 40 Units'; this layout matches a Certificate of Achievement-Advanced building on the Certificate of Achievement. The separate Certificate of Achievement section (likely on page 92) is not in the text.",
+   "I recorded the block the catalog explicitly labels 'Certificate of Achievement' (25 quarter units) as this award's requirements. A reviewer should check: the 40-unit certificate also falls under 45 quarter units, and the closed list includes E S 81 and E S 83 (30 units total) but not ACCT 1A or BUS 10. That suggests the state file may reflect a different version of the certificate.",
+   "The catalog prints E S 69A; the closed list stores it as E S 069A. These are treated as the same course.",
+   "The program learning outcomes recorded (two items) are printed in the certificate section at the top of page 93, which may be the Advanced certificate's section. The A.S. section prints a different, longer list."
+  ]
+ },
+ "extracted_run": "39046890834"
+}

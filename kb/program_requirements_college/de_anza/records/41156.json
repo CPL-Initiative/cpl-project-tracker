@@ -1,0 +1,175 @@
+{
+ "college": "De Anza College",
+ "control_number": "41156",
+ "shape": "noncredit",
+ "title": "Intermediate Engine Performance Technology",
+ "award": "Noncredit program",
+ "source_url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=301",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7785,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7785,
+    "output_tokens": 717,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 717,
+  "output_tokens_details": {
+   "thinking_tokens": 165
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.04548,
+ "ms": 7159,
+ "seconds": 7.8,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 3,
+   "listed": 3,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    216.0,
+    216.0
+   ],
+   "stated": [
+    216.0,
+    216.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 1,
+   "courses": 0,
+   "count": 1,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Certificate of Completion Intermediate Engine Performance Technology",
+   "measure": "hours",
+   "total_units": {
+    "min": 216,
+    "max": 216
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Interpret and analyze automotive ignition, fuel and ignition systems"
+   ],
+   "careers": [
+    "entry-level technician in vehicle ignition, fuel and ignition systems"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Core",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 216,
+     "max": 216
+    },
+    "courses": [
+     {
+      "code": "AUTO 360C",
+      "units": 108,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUTO 360D",
+      "units": 54,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUTO 360E",
+      "units": 54,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Noncredit Certificate of Completion counted in hours; course hours and 'Total Required: 216 Hours' recorded in units fields.",
+   "The description and outcome both print 'ignition, fuel and ignition systems' (ignition repeated, possibly meant 'emission'); copied as printed.",
+   "Career recorded as the role named in the program description ('entry-level technician in vehicle ignition, fuel and ignition systems'); reviewer may prefer the shorter 'entry-level technician'."
+  ]
+ },
+ "extracted_run": "39046890834"
+}

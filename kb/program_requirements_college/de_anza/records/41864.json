@@ -1,0 +1,850 @@
+{
+ "college": "De Anza College",
+ "control_number": "41864",
+ "shape": "certificate",
+ "title": "World Languages and Culture",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=122",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 13871,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 13871,
+    "output_tokens": 6337,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 6337,
+  "output_tokens_details": {
+   "thinking_tokens": 1805
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.18222,
+ "ms": 48873,
+ "seconds": 49.3,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 54,
+   "listed": 60,
+   "share": 0.9,
+   "missing": [
+    "FTV2A",
+    "FTV2AH",
+    "FTV2B",
+    "FTV2BH",
+    "MAND4",
+    "SIGN3"
+   ],
+   "unexplained": [
+    "FTV2A",
+    "FTV2AH",
+    "FTV2B",
+    "FTV2BH"
+   ],
+   "none_placed": false,
+   "pass": false
+  },
+  "invented": {
+   "count": 17,
+   "codes": [
+    "F/TV2A",
+    "F/TV2AH",
+    "F/TV2B",
+    "F/TV2BH",
+    "FREN1",
+    "GERM1",
+    "HNDI1",
+    "INTL16",
+    "ITAL1",
+    "KORE1",
+    "MAND1",
+    "PERS1",
+    "PERS2",
+    "PERS3",
+    "RUSS1",
+    "SIGN1",
+    "VIET1"
+   ],
+   "flagged": [
+    "FREN1",
+    "GERM1",
+    "HNDI1",
+    "INTL16",
+    "ITAL1",
+    "KORE1",
+    "MAND1",
+    "PERS1",
+    "PERS2",
+    "PERS3",
+    "RUSS1",
+    "SIGN1",
+    "VIET1"
+   ],
+   "pass": false
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    14.0,
+    20.0
+   ],
+   "stated": [
+    32.0,
+    35.0
+   ],
+   "against": "program",
+   "why": [
+    "the blocks sum to 14.0-20.0; the catalog states 32.0-35.0"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 2,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Certificate of Achievement-Advanced in World Languages and Culture",
+   "measure": "units",
+   "total_units": {
+    "min": 32,
+    "max": 35
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Engage in communicative tasks that require describing personal experiences in the present with some references to the past; expressing basic opinions about issues of relevance in one´s life; understanding main ideas and supporting details in aural and written discourse; producing discourse-level writing related to one ´s life experiences",
+    "Demonstrate an understanding of the diversity of cultural, historical, and regional contexts of the peoples and cultures of the world",
+    "Engage critically with constructions of cultural and social differences (as expressed through language) while examining one´s own cultural positionings and assumptions"
+   ],
+   "careers": [
+    "civil service",
+    "the private sector"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Option 1",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Required Core",
+    "stated": {
+     "min": 10,
+     "max": 15
+    },
+    "courses": [
+     {
+      "code": "FREN 1",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "FREN 2",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FREN 3",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Option 2",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Required Core",
+    "stated": {
+     "min": 10,
+     "max": 15
+    },
+    "courses": [
+     {
+      "code": "GERM 1",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "GERM 2",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GERM 3",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Option 3",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Required Core",
+    "stated": {
+     "min": 10,
+     "max": 15
+    },
+    "courses": [
+     {
+      "code": "HNDI 1",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HNDI 2",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HNDI 3",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Option 4",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Required Core",
+    "stated": {
+     "min": 10,
+     "max": 15
+    },
+    "courses": [
+     {
+      "code": "ITAL 1",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ITAL 2",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ITAL 3",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Option 5",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Required Core",
+    "stated": {
+     "min": 10,
+     "max": 15
+    },
+    "courses": [
+     {
+      "code": "JAPN 1",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "JAPN 2",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "JAPN 3",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Option 6",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Required Core",
+    "stated": {
+     "min": 15,
+     "max": 15
+    },
+    "courses": [
+     {
+      "code": "KORE 1",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "KORE 2",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KORE 3",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Option 7",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Required Core",
+    "stated": {
+     "min": 10,
+     "max": 15
+    },
+    "courses": [
+     {
+      "code": "MAND 1",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MAND 2",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MAND 3",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Option 8",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Required Core",
+    "stated": {
+     "min": 10,
+     "max": 15
+    },
+    "courses": [
+     {
+      "code": "PERS 1",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PERS 2",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PERS 3",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Option 9",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Required Core",
+    "stated": {
+     "min": 10,
+     "max": 15
+    },
+    "courses": [
+     {
+      "code": "RUSS 1",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "RUSS 2",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "RUSS 3",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Option 10",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Required Core",
+    "stated": {
+     "min": 5,
+     "max": 10
+    },
+    "courses": [
+     {
+      "code": "SIGN 1",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "SIGN 2",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Option 11",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Required Core",
+    "stated": {
+     "min": 10,
+     "max": 15
+    },
+    "courses": [
+     {
+      "code": "SPAN 1",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPAN 2",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPAN 3",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Option 12",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Required Core",
+    "stated": {
+     "min": 10,
+     "max": 15
+    },
+    "courses": [
+     {
+      "code": "VIET 1",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "VIET 2",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VIET 3",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List A",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 4,
+     "max": 15
+    },
+    "courses": [
+     {
+      "code": "ANTH 2",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ANTH 2H",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANTH 6",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARTS 2B",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARTS 2C",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ASAM 1",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ASAM 13",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ASAM 40",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ARTS 2G",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ASAM 41",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HUMI 13",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHLX 10",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHLX 11",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHLX 12",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHLX 13",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHLX 26",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "WMST 26",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHLX 35",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COMM 7",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "COMM 7H",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "COMM 16",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "COMM 16H",
+        "units": 5,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "F/TV 2A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "F/TV 2AH",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "F/TV 2B",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "F/TV 2BH",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEO 4",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 6C",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HIST 6CH",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 19A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 19B",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "INTL 5",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "INTL 16",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "JOUR 2",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "LING 1",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPAN 4",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "MAND 4",
+    "why": "not in the text"
+   },
+   {
+    "code": "SIGN 3",
+    "why": "not in the text; Option 10 lists only SIGN 1 and SIGN 2"
+   }
+  ],
+  "notes": [
+   "The text begins mid-section on page 122; no section heading is printed. The heading recorded is taken from the description's own name for the award ('Certificate of Achievement-Advanced in World Languages and Culture').",
+   "The catalog total (32-35 units) exceeds the 16-<30 unit range of the named award type; the catalog calls it a Certificate of Achievement-Advanced. Reviewer should confirm the award match.",
+   "Required Core says 'Complete two options: (20 - 30 Units)': the student completes TWO of the twelve option blocks (not one); all share option_group 'Required Core'. 'Level 1 courses need not be taken if students are cleared into level 2', so each option's level-1 course may be skipped (hence 10-15 stated).",
+   "List A rule depends on core units: one course if 30 core units, two if 25, three if 20 ('below or from above (not already taken)'). Recorded as choose_courses minimum 1 with stated 4-15. The lists 'below' those three lines appear empty in the text; possibly cut off or none printed.",
+   "List A codes ANTH 2H, ARTS 2B/2C/2G, COMM 7H/16H, F/TV 2A/2AH/2B/2BH, HIST 6C/6CH/19A/19B treated as the closed-list entries written with leading zeros (ANTH 002H, ARTS 002B, etc.). 'F / TV' printed with spaces; recorded as 'F/TV'.",
+   "LING 1 and SPAN 4 continue List A after the page break on page 123.",
+   "Note on page 123: 'This certificate can also be earned by completing at least two language-specific certificates of achievement.'",
+   "First outcome: the word 'one´s' is broken across a line ('one' / '´s'); per the rule the line break is read as a space, giving 'one ´s'.",
+   "Careers recorded from 'future study or work in civil service or the private sector'; the description also mentions engaging with travel, law, business and nongovernmental organizations, not recorded as careers."
+  ]
+ },
+ "extracted_run": "39046890834"
+}

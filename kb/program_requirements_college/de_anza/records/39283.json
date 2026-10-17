@@ -1,0 +1,327 @@
+{
+ "college": "De Anza College",
+ "control_number": "39283",
+ "shape": "adt",
+ "title": "Biology",
+ "award": "A.S. T Degree",
+ "source_url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=65",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8330,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8330,
+    "output_tokens": 2374,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2374,
+  "output_tokens_details": {
+   "thinking_tokens": 776
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.0808,
+ "ms": 19504,
+ "seconds": 19.8,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 20,
+   "listed": 20,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    55.0,
+    58.0
+   ],
+   "stated": [
+    90.0,
+    90.0
+   ],
+   "against": "degree",
+   "ge": null,
+   "why": [
+    "the record names the degree total and the Cal-GETC pattern, but no units for it"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 2,
+   "courses": 0,
+   "count": 2,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Associate in Science for Transfer (A.S.-T.) Degree Biology for Transfer",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": 90,
+    "max": 90
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": true,
+   "outcomes": [
+    "Use the scientific process to formulate questions, design experiments to test hypotheses, interpret experimental results to draw conclusions, communicate results both orally and in writing, and critically evaluate the use of the scientific method from published sources",
+    "Apply evolutionary theory at the molecular, cellular, organismal and population levels to explain the unity and diversity of living things"
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required Core",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 18,
+     "max": 18
+    },
+    "courses": [
+     {
+      "code": "BIOL 6A",
+      "units": 6,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BIOL 6AH",
+        "units": 6,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL 6B",
+      "units": 6,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL 6C",
+      "units": 6,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BIOL 6CH",
+        "units": 6,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List A",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 37,
+     "max": 40
+    },
+    "courses": [
+     {
+      "code": "CHEM 1A",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CHEM 1AH",
+        "units": 5,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 1B",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CHEM 1BH",
+        "units": 5,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 1C",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CHEM 1CH",
+        "units": 5,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 1A",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MATH 1AH",
+        "units": 5,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 1B",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MATH 1BH",
+        "units": 5,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Physics Option 1",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Physics",
+    "stated": {
+     "min": 15,
+     "max": 15
+    },
+    "courses": [
+     {
+      "code": "PHYS 2A",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS 2B",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS 2C",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Physics Option 2",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Physics",
+    "stated": {
+     "min": 12,
+     "max": 12
+    },
+    "courses": [
+     {
+      "code": "PHYS 4A",
+      "units": 6,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS 4B",
+      "units": 6,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "De Anza uses quarter units; 'Total Required: 90 Units' is the whole-degree total including Cal-GETC and electives, recorded as degree_total. No major total is printed (core 18 + List A 37-40 would be 55-58, not recorded).",
+   "The printed 'List A: (37 - 40 Units)' covers the CHEM/MATH courses (25 units) plus the nested 'Complete one Physics option: (12 - 15 Units)' choice; the physics options are recorded as separate blocks in option_group 'Physics'.",
+   "The preceding section (A.S. Biology, with Option 1-3 including CHEM 12A-C and PHYS 4C) belongs to a different award and was not read; its career statements (civil service, industry, teaching) are not attributed to this A.S.-T.",
+   "Electives: 'CSU-transferable electives as needed to reach at least 90 units' — no units printed, so electives_fill_degree is true.",
+   "Catalog codes (e.g., BIOL 6A) correspond to closed-list codes (BIOL 006A); not treated as additions."
+  ]
+ },
+ "extracted_run": "39046890834"
+}

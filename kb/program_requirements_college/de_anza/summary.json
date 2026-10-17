@@ -1,0 +1,147 @@
+{
+ "college": "De Anza College",
+ "programs": 248,
+ "with_closed_list": 243,
+ "found": 227,
+ "extracted": 227,
+ "errors": 0,
+ "passed_machine_checks": 123,
+ "failed": {
+  "coverage": 33,
+  "invented": 16,
+  "arithmetic": 98,
+  "repeated": 0,
+  "outcomes": 0
+ },
+ "cost_usd": 19.66,
+ "cost_per_program": 0.0866,
+ "not_found": [
+  {
+   "control_number": "07090",
+   "title": "Film/TV: Production",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=96",
+    "coverage": 0.078
+   }
+  },
+  {
+   "control_number": "09226",
+   "title": "Film/TV: Animation",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=95",
+    "coverage": 0.283
+   }
+  },
+  {
+   "control_number": "23067",
+   "title": "Film/TV: Production",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=96",
+    "coverage": 0.078
+   }
+  },
+  {
+   "control_number": "31308",
+   "title": "Film/TV: Screenwriting",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=97",
+    "coverage": 0.132
+   }
+  },
+  {
+   "control_number": "31504",
+   "title": "Film/TV: Production",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "41327",
+   "title": "Film/TV: Animation",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "45279",
+   "title": "Cal-GETC",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=142",
+    "coverage": 0.148
+   }
+  },
+  {
+   "control_number": "45937",
+   "title": "Mandarin Translation and Interpretation Level One",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "45938",
+   "title": "Journalism and Media Practices",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=314",
+    "coverage": 0.25
+   }
+  },
+  {
+   "control_number": "45939",
+   "title": "Multimedia and Visual Communication",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=306",
+    "coverage": 0.444
+   }
+  },
+  {
+   "control_number": "45940",
+   "title": "Nonprofit Management",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "46314",
+   "title": "Pure Mathematics",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=257",
+    "coverage": 0.273
+   }
+  },
+  {
+   "control_number": "46395",
+   "title": "Writing and Reading Skills for Career and College Success",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "46411",
+   "title": "Applied Artificial Intelligence",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=303",
+    "coverage": 0.333
+   }
+  },
+  {
+   "control_number": "46412",
+   "title": "AI in Business",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "46414",
+   "title": "Professional Photography",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=306",
+    "coverage": 0.25
+   }
+  }
+ ],
+ "run": "39046890834"
+}

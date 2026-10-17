@@ -1,0 +1,457 @@
+{
+ "college": "De Anza College",
+ "control_number": "05993",
+ "shape": "degree",
+ "title": "Corrections/Probation",
+ "award": "A.A. Degree",
+ "source_url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=46",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 13004,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 13004,
+    "output_tokens": 3277,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 3277,
+  "output_tokens_details": {
+   "thinking_tokens": 1008
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.11756,
+ "ms": 24172,
+ "seconds": 24.6,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 41,
+   "listed": 41,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 2,
+   "codes": [
+    "PARA54",
+    "SOC54"
+   ],
+   "flagged": [
+    "PARA54",
+    "SOC54"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    46.0,
+    52.0
+   ],
+   "stated": [
+    90.0,
+    90.0
+   ],
+   "against": "degree",
+   "ge": null,
+   "why": [
+    "the record names the degree total and the De Anza General Education or California General Education Transfer Curriculum (Cal-GETC) pattern, but no units for it"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 3,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Corrections/Probation",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "De Anza General Education or California General Education Transfer Curriculum (Cal-GETC)",
+   "degree_total": {
+    "min": 90,
+    "max": 90
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": true,
+   "outcomes": [
+    "Identify and discuss the legal and sociological approaches to correctional theories and practices",
+    "Analyze the current correctional system and alternative sentencing solutions",
+    "Analyze and evaluate the current theories and concepts that attribute social deviations to juvenile delinquency"
+   ],
+   "careers": [
+    "criminal justice field",
+    "correctional operations",
+    "probation/parole case investigations"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Core",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 32,
+     "max": 32
+    },
+    "courses": [
+     {
+      "code": "ADMJ 1",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "POLI 10",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADMJ 4",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADMJ 6",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADMJ 10",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "SOC 10",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADMJ 54",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PARA 54",
+        "units": 4,
+        "catalog_addition": true
+       },
+       {
+        "code": "SOC 54",
+        "units": 4,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADMJ 74A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PARA 74A",
+        "units": 4,
+        "catalog_addition": false
+       },
+       {
+        "code": "PSYC 74A",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADMJ 75",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PARA 75",
+        "units": 4,
+        "catalog_addition": false
+       },
+       {
+        "code": "POLI 75",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADMJ 78",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List A",
+    "rule": "choose_units",
+    "minimum": 14,
+    "option_group": null,
+    "stated": {
+     "min": 14,
+     "max": 20
+    },
+    "courses": [
+     {
+      "code": "ADMJ 3",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PARA 3",
+        "units": 4,
+        "catalog_addition": false
+       },
+       {
+        "code": "POLI 13",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADMJ 11",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PARA 11",
+        "units": 4,
+        "catalog_addition": false
+       },
+       {
+        "code": "POLI 11",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADMJ 25",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PARA 25",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADMJ 51",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "SOC 51",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADMJ 55",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADMJ 56",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADMJ 62",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PSYC 63",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADMJ 64",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADMJ 64X",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADMJ 64Y",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADMJ 64Z",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADMJ 69",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADMJ 84",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADMJ 90A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PARA 90A",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "CETH 29",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ADMJ 29",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "PARA 9",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ADMJ 9",
+        "units": 4,
+        "catalog_addition": false
+       },
+       {
+        "code": "POLI 9",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The section heading for this degree (e.g. 'Associate in Arts (A.A.) Degree Corrections/Probation') is not in the extracted text, which begins with the program description on page 46; the program title is used as section_heading.",
+   "De Anza uses quarter units. 'Total Required: 90 Units' is printed after the major lists, but the page also says GE (De Anza GE or Cal-GETC) plus electives 'as needed to reach at least 90 units' are required, and the major lists sum to 46-52 units, so 90 is recorded as degree_total, not total_units; no major total is printed.",
+   "Catalog codes ADMJ 74A, PARA 74A, PSYC 74A, ADMJ 90A, PARA 90A, ADMJ 64X/64Y/64Z were matched to closed-list codes with zero-padding (ADMJ 074A, ADMJ 090A, ADMJ 064X, etc.).",
+   "PARA 54 and SOC 54 (cross-listed with ADMJ 54) are not in the closed list and are marked catalog additions.",
+   "Cross-listed codes are recorded as alternatives; the catalog notes students receive credit for only one version."
+  ]
+ },
+ "extracted_run": "39046890834"
+}

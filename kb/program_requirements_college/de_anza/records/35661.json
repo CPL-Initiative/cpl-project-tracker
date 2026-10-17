@@ -1,0 +1,358 @@
+{
+ "college": "De Anza College",
+ "control_number": "35661",
+ "shape": "certificate",
+ "title": "Women's Studies",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=145",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7402,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7402,
+    "output_tokens": 2350,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2350,
+  "output_tokens_details": {
+   "thinking_tokens": 656
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.07661,
+ "ms": 17409,
+ "seconds": 17.8,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 29,
+   "listed": 29,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    24.0,
+    24.0
+   ],
+   "stated": [
+    24.0,
+    24.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 2,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Certificate of Achievement in Women's Studies",
+   "measure": "units",
+   "total_units": {
+    "min": 24,
+    "max": 24
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Analyze the social processes that foster inequality and disempowerment for women, women of color, and members of the LGBTQ community, as well as those social processes that challenge inequality and lead to empowerment of those same populations",
+    "Analyze the ways that social processes are amenable to transformation through strategic planning and constituent mobilization",
+    "Apply leadership skills, such as group facilitation, strategic planning, consensus-building and generating buy-in from community stakeholders, with the aim of fostering social justice and empowerment, particularly for women and members of the LGBTQ commun"
+   ],
+   "careers": [
+    "entry-level community organizer",
+    "staff person at a nonprofit organization that serves women or members of the LGBTQ community"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Core",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 8,
+     "max": 8
+    },
+    "courses": [
+     {
+      "code": "WMST 1",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WMST 8",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CETH 8",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List A",
+    "rule": "choose_units",
+    "minimum": 16,
+    "option_group": null,
+    "stated": {
+     "min": 16,
+     "max": 16
+    },
+    "courses": [
+     {
+      "code": "AFAM 25",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "WMST 25",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARTS 3TC",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "WMST 3C",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ASAM 22",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "WMST 22",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHLX 26",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "WMST 26",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ELIT 21",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "WMST 21",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 9",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "WMST 9",
+        "units": 4,
+        "catalog_addition": false
+       },
+       {
+        "code": "HIST 9H",
+        "units": 4,
+        "catalog_addition": false
+       },
+       {
+        "code": "WMST 9H",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ICS 26",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHIL 49",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "WMST 49",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC 12",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "WMST 12",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC 28",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "WMST 28",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "WMST 24",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WMST 27",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WMST 29",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CETH 19",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "WMST 31",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The catalog prints ARTS 3TC, WMST 3C, HIST 9H and WMST 9H; the closed list stores them as ARTS 03TC, WMST 003C, HIST 009H and WMST 009H. Treated as the same courses (zero-padding difference), so catalog_addition is false.",
+   "List A prints only '(16 Units)' with no explicit selection wording; read as choose 16 units from the list.",
+   "Cross-listed courses (e.g., AFAM 25 / WMST 25) are recorded as one entry with the cross-listed twin as an alternative; the catalog notes students receive credit for only one version.",
+   "The third program learning outcome is cut off in the source text ('LGBTQ commun'); copied as printed."
+  ]
+ },
+ "extracted_run": "39046890834"
+}

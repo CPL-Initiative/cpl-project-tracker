@@ -1,0 +1,212 @@
+{
+ "college": "De Anza College",
+ "control_number": "41160",
+ "shape": "noncredit",
+ "title": "Commercial Lighting",
+ "award": "Noncredit program",
+ "source_url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=306",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6621,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6621,
+    "output_tokens": 1129,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1129,
+  "output_tokens_details": {
+   "thinking_tokens": 370
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.04906,
+ "ms": 10341,
+ "seconds": 10.8,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 3,
+   "listed": 3,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 2,
+   "codes": [
+    "PHTG301",
+    "PHTG357B"
+   ],
+   "flagged": [
+    "PHTG301",
+    "PHTG357B"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    240.0,
+    240.0
+   ],
+   "stated": [
+    240.0,
+    240.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 2,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Commercial Lighting",
+   "measure": "hours",
+   "total_units": {
+    "min": 240,
+    "max": 240
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Apply photographic lighting and editing techniques in the creation of a portfolio of images",
+    "Create a professional assisting resume and business plan",
+    "Demonstrate a foundational understanding of the operation of off- camera flashes"
+   ],
+   "careers": [
+    "photographer’s assistant",
+    "commercial photographer"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Core",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 180,
+     "max": 180
+    },
+    "courses": [
+     {
+      "code": "PHTG 357A",
+      "units": 60,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHTG 357B",
+      "units": 60,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PHTG 358A",
+      "units": 60,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List A",
+    "rule": "choose_units",
+    "minimum": 60,
+    "option_group": null,
+    "stated": {
+     "min": 60,
+     "max": 60
+    },
+    "courses": [
+     {
+      "code": "PHTG 301",
+      "units": 60,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PHTG 304",
+      "units": 60,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The excerpt begins mid-section; the Commercial Lighting heading itself is not printed in the text (likely on the prior page), so section_heading is taken from the program title and the description's 'Certificate of Completion in Commercial Lighting'.",
+   "Award is counted in hours; all values are hours as printed.",
+   "List A (60 Hours) has no explicit selection instruction; read as choose 60 hours (one course) since Required Core 180 + List A 60 = 240 total.",
+   "The following Photographic Retouching and Digital Post-Production certificate section was not used.",
+   "Careers 'commercial photographer' read from 'starting a small business as a commercial photographer'."
+  ]
+ },
+ "extracted_run": "39046890834"
+}
