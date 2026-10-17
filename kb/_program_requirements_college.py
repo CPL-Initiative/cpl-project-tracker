@@ -1171,10 +1171,26 @@ def el_html(body: str | None) -> str:
     return data if isinstance(data, str) else ""
 
 
-def el_program_slugs(html_text: str, catalog: str) -> list[str]:
+# Los Medanos (S402, page read 38997368468): the menu writes its links relative
+# (href="26-27/courses"), but a page's own topic list writes them whole, with the
+# host and a fragment: href="https://lmc.elumenapp.com/catalog/26-27/degrees#mainContent".
+# The relative-only pattern never saw degrees, so the walk stopped at 7 of 97
+# (run 38986123746). A link to this catalog may be relative, rooted at /catalog/, or
+# whole on the catalog's own host, and may end in a query or a fragment.
+EL_HREF_END = r'(?:[?#][^"]*)?"'
+
+
+def el_href(catalog: str, host: str = "") -> str:
+    """The start of an href into this catalog, as a pattern: href="26-27/,
+    href="/catalog/26-27/ or href="https://<host>/catalog/26-27/."""
+    whole = r"(?:https?://%s)?" % re.escape(host) if host else ""
+    return r'href="(?:%s/catalog/)?%s/' % (whole, re.escape(catalog or ""))
+
+
+def el_program_slugs(html_text: str, catalog: str, host: str = "") -> list[str]:
     """The program slugs a publish call's menu links, each once, in order. The
     menu writes them relative to /catalog/: href="2026-2027-Catalog/program/<slug>"."""
-    pat = re.compile(r'href="(?:/catalog/)?%s/program/([^"/?#]+)"' % re.escape(catalog or ""), re.I)
+    pat = re.compile(el_href(catalog, host) + r'program/([^"/?#]+)' + EL_HREF_END, re.I)
     out = []
     for slug in pat.findall(html_text or ""):
         if slug not in out:
@@ -1182,12 +1198,12 @@ def el_program_slugs(html_text: str, catalog: str) -> list[str]:
     return out
 
 
-def el_department_slugs(html_text: str, catalog: str) -> list[str]:
+def el_department_slugs(html_text: str, catalog: str, host: str = "") -> list[str]:
     """The department slugs a publish call's menu links, each once, in order.
     Cabrillo's menu links departments (href="2026-2027/department/accounting"), not
     programs; each department's content call links its programs at
     2026-2027/program/<slug> (reads 38433649784, 38437381277, S381)."""
-    pat = re.compile(r'href="(?:/catalog/)?%s/department/([^"/?#]+)"' % re.escape(catalog or ""), re.I)
+    pat = re.compile(el_href(catalog, host) + r'department/([^"/?#]+)' + EL_HREF_END, re.I)
     out = []
     for slug in pat.findall(html_text or ""):
         if slug not in out:
@@ -1207,10 +1223,10 @@ EL_HUB_SLUG = re.compile(
 EL_MAX_MENU_HUBS = 12
 
 
-def el_hub_slugs(html_text: str, catalog: str) -> list[str]:
+def el_hub_slugs(html_text: str, catalog: str, host: str = "") -> list[str]:
     """The program and award hubs a publish call's menu links, one segment under
     the catalog, each once, in order, at most EL_MAX_MENU_HUBS."""
-    pat = re.compile(r'href="(?:/catalog/)?%s/([^"/?#]+)"' % re.escape(catalog or ""), re.I)
+    pat = re.compile(el_href(catalog, host) + r'([^"/?#]+)' + EL_HREF_END, re.I)
     out = []
     for slug in pat.findall(html_text or ""):
         if EL_HUB_SLUG.match(slug) and slug not in out:
@@ -1287,13 +1303,13 @@ EL_HUB_LIKE = re.compile(r"program|degree|certificate|major|department|disciplin
 EL_NOT_PAGE = re.compile(r"^(?:program|course|department|search)(?:/|$)", re.I)
 
 
-def el_page_links(html_text: str, catalog: str) -> list[tuple[str, str]]:
+def el_page_links(html_text: str, catalog: str, host: str = "") -> list[tuple[str, str]]:
     """Every page a publish call links one or two segments under the catalog, as
     (path, link text), each once, in order: a subject (current/aj), a department
     listing (26-27/degrees), a department two down, a policy. A program, course or
     department page is never one."""
-    pat = re.compile(r'<a\b[^>]*?href="(?:/catalog/)?%s/([^"/?#]+(?:/[^"/?#]+)?)"[^>]*>(.*?)</a\s*>'
-                     % re.escape(catalog or ""), re.I | re.S)
+    pat = re.compile(r'<a\b[^>]*?' + el_href(catalog, host) + r'([^"/?#]+(?:/[^"/?#]+)?)' + EL_HREF_END +
+                     r'[^>]*>(.*?)</a\s*>', re.I | re.S)
     out, seen = [], set()
     for path, text in pat.findall(html_text or ""):
         if path in seen or EL_NOT_PAGE.match(path):
@@ -1313,7 +1329,8 @@ def el_walk(reader, start: str, shell: str, catalog: str, slugs: list[str], skip
             errors: list) -> dict:
     """Adds to slugs every program the menu's pages link, and the pages they link,
     EL_WALK_DEPTH steps deep, hub-like pages first; the account of the walk."""
-    links = el_page_links(shell, catalog)
+    host = urllib.parse.urlparse(start).netloc
+    links = el_page_links(shell, catalog, host)
     hubs = {p for p, t in links if EL_HUB_LIKE.search(p) or EL_HUB_LIKE.search(t)}
     queue = [(p, d) for p, d in el_hub_first(links, 1) if p not in skip]
     seen = skip | {p for p, _ in queue}
@@ -1322,17 +1339,17 @@ def el_walk(reader, start: str, shell: str, catalog: str, slugs: list[str], skip
         path, depth = queue.pop(0)
         page = el_html(el_fetch(reader, el_publish_url(start, path.split("/"), content=True), errors))
         calls += 1
-        found = [p for p in el_program_slugs(page, catalog) if p not in slugs]
+        found = [p for p in el_program_slugs(page, catalog, host) if p not in slugs]
         slugs += found
         if depth >= EL_WALK_DEPTH:
             continue
-        more = [(p, t) for p, t in el_page_links(page, catalog) if p not in seen]
+        more = [(p, t) for p, t in el_page_links(page, catalog, host) if p not in seen]
         if not found and not more and path in hubs and calls < EL_WALK_CALLS:
             # The page's own full call: the menu opened around it (Los Medanos's courses).
             page = el_html(el_fetch(reader, el_publish_url(start, path.split("/")), errors))
             calls += 1
             menus += 1
-            more = [(p, t) for p, t in el_page_links(page, catalog) if p not in seen]
+            more = [(p, t) for p, t in el_page_links(page, catalog, host) if p not in seen]
         for p, t in more:
             if EL_HUB_LIKE.search(p) or EL_HUB_LIKE.search(t):
                 hubs.add(p)
@@ -1352,20 +1369,21 @@ def el_pages_fast(reader, start: str, report: dict) -> list[dict]:
     errors: list = []
     catalog = el_catalog(start)
     shell = el_html(el_fetch(reader, el_publish_url(start, el_start_parts(start)), errors))
-    slugs = el_program_slugs(shell, catalog)
+    host = urllib.parse.urlparse(start).netloc
+    slugs = el_program_slugs(shell, catalog, host)
     report["elumen"] = {"catalog": catalog, "read": "publish/content", "menu_programs": len(slugs),
                         "errors": errors}
     # A menu of departments (Cabrillo): each department's content call lists its programs.
-    depts = el_department_slugs(shell, catalog)
+    depts = el_department_slugs(shell, catalog, host)
     for d in depts:
         page = el_html(el_fetch(reader, el_publish_url(start, ["department", d], content=True), errors))
-        slugs += [s for s in el_program_slugs(page, catalog) if s not in slugs]
+        slugs += [s for s in el_program_slugs(page, catalog, host) if s not in slugs]
     report["elumen"].update(menu_departments=len(depts), department_programs=len(slugs))
     # A menu of program and award hubs (Modesto, Palo Verde): each hub's content call lists its programs.
-    hubs = el_hub_slugs(shell, catalog)
+    hubs = el_hub_slugs(shell, catalog, host)
     for h in hubs:
         page = el_html(el_fetch(reader, el_publish_url(start, [h], content=True), errors))
-        slugs += [s for s in el_program_slugs(page, catalog) if s not in slugs]
+        slugs += [s for s in el_program_slugs(page, catalog, host) if s not in slugs]
     report["elumen"].update(menu_hubs=hubs, hub_programs=len(slugs))
     want = report.get("with_closed_list") or 0
     if want and len(slugs) < EL_WALK_SHORT * want:
