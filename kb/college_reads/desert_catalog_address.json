@@ -1,0 +1,22 @@
+{
+ "_readme": "S407 SkyMesquite, 2026-10-17. Its registry row names the college's catalog-and-schedule page, platform custom_html, format unknown. This read lists the page's catalog and PDF links (shown, not followed) so a session can tell which file or host holds the 2026-2027 catalog before any capture. One load, no model call.",
+ "college": "College of the Desert",
+ "questions": {
+  "catalog_address": "Every link the catalog page shows to a catalog or a PDF: its words and address, and which is the 2026-2027 catalog."
+ },
+ "keywords": [
+  "2026",
+  "2027",
+  "[Cc]atalog",
+  "pdf"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "catalog_address"
+   ],
+   "url": "https://collegeofthedesert.edu/students/catalog-schedule/default.php",
+   "links": "catalog|\\.pdf"
+  }
+ ]
+}
