@@ -1,0 +1,179 @@
+{
+ "college": "College of Marin",
+ "control_number": "42783",
+ "shape": "noncredit",
+ "title": "Listening/Speaking Skills A",
+ "award": "Noncredit program",
+ "source_url": "https://marin.elumenapp.com/catalog/current/program/6-certificate-of-competency-listening-speaking-skills-a-fall-2020-credit-noncredit",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6110,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6110,
+    "output_tokens": 940,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 940,
+  "output_tokens_details": {
+   "thinking_tokens": 264
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.04324,
+ "ms": 9010,
+ "seconds": 9.4,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 3,
+   "listed": 3,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": [
+    0.0,
+    0.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "6. Certificate of Competency, Listening/Speaking Skills A",
+   "measure": "units",
+   "total_units": {
+    "min": 0,
+    "max": 0
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Speak with pronunciation and intonation generally comprehensible to native speakers.",
+    "Successfully participate in pair and group discussions.",
+    "Give and follow instructions and ask for opinions and clarification.",
+    "Develop note-taking skills.",
+    "Make short presentations."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Complete all of the following",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ESLN020LS",
+      "units": 0,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ESLN040LS",
+      "units": 0,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ESLNPRON",
+      "units": 0,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The catalog prints the codes without spaces (ESLN020LS, ESLN040LS, ESLNPRON); they match closed-list ESLN 020LS, ESLN 040LS and ESLN PRON.",
+   "This is a noncredit program, but the catalog prints no hours; it shows 'Total 0 Units' and 0 beside each course, so measure is 'units' and those 0 values are recorded as printed.",
+   "The section heading reads 'Certificate of Competency', while the requirements heading reads 'Certificate of Completion, Listening/Speaking Skills A'. The two names differ.",
+   "The source URL references 'fall-2020', which may not match the 2026-2027 catalog year. A reviewer should check this.",
+   "The program learning outcomes are printed for this certificate; no careers are named."
+  ]
+ },
+ "extracted_run": "38984695817"
+}

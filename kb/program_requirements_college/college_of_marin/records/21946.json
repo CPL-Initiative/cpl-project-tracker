@@ -1,0 +1,327 @@
+{
+ "college": "College of Marin",
+ "control_number": "21946",
+ "shape": "certificate",
+ "title": "Computer Information Systems",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://marin.elumenapp.com/catalog/current/program/certificate-of-achievement-computer-information-systems-fall-2019-credit-noncredit",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7120,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7120,
+    "output_tokens": 2504,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2504,
+  "output_tokens_details": {
+   "thinking_tokens": 804
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.07856,
+ "ms": 19255,
+ "seconds": 19.7,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 18,
+   "listed": 19,
+   "share": 0.947,
+   "missing": [
+    "CIS249C"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 2,
+   "codes": [
+    "CIS103",
+    "CIS111"
+   ],
+   "flagged": [
+    "CIS103",
+    "CIS111"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    21.0,
+    21.0
+   ],
+   "stated": [
+    21.0,
+    21.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 2,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Certificate of Achievement, Computer Information Systems",
+   "measure": "units",
+   "total_units": {
+    "min": 21,
+    "max": 21
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Perform the duties typically assigned an entry-level computer programmer position in a business or non-profit organization.",
+    "Use object oriented programming, database, and Web programming software to support business information needs.",
+    "Analyze a problem, and identify and define the computing requirements appropriate to its solution.",
+    "Design, implement, and evaluate a computer-based system, process, component, or program to meet desired needs.",
+    "Use best practices and standards to integrate computer-based solutions into the user environment, with particular concern for systems and data security and integrity."
+   ],
+   "careers": [
+    "microcomputer manager",
+    "microcomputer programmer"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "1. Required Core",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 13.5,
+     "max": 13.5
+    },
+    "courses": [
+     {
+      "code": "CIS102",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS103",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CIS110",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS113",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS117",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS118",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS127",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS128",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "2. Electives",
+    "rule": "choose_units",
+    "minimum": 7.5,
+    "option_group": null,
+    "stated": {
+     "min": 7.5,
+     "max": 7.5
+    },
+    "courses": [
+     {
+      "code": "CIS100",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS101",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS111",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CIS120",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS126",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS137",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS141",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS142",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS155A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS215",
+      "units": 3.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS237",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS275",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "CIS 249C",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "The description says the certificate is the core program (18 units) plus 3 elective units, but the requirements table prints Required Core 13.5 units and Electives 7.5 units; both total 21. Recorded the table's figures.",
+   "Catalog prints codes without a space (e.g., CIS102); matched to closed-list codes with a space. The closed list has both 'CIS 120' and 'CIS120' (IT Essentials / Information & Communication Technology Essentials); the catalog's CIS120 IT Essentials (4 units) is matched to both.",
+   "Catalog units differ from the state file for some courses: CIS101 1.5 (file 0.5), CIS120 4 (file 3.5), CIS141 1.5 (file 0.5). Recorded catalog units.",
+   "CIS103 Intermediate MS Word and CIS111 Google Apps for Business and Personal Use are not in the closed list.",
+   "Careers taken from 'Program specialties include ... microcomputer manager, and microcomputer programmer'; 'desktop network' and 'desktop publishing' read as specialties rather than careers, and the description's 'computer-related careers' is generic.",
+   "The source URL references 'fall-2019'; reviewer may confirm the page reflects the 2026-2027 catalog year."
+  ]
+ },
+ "extracted_run": "38984695817"
+}
