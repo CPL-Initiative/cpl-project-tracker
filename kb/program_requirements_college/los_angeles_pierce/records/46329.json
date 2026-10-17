@@ -1,0 +1,225 @@
+{
+ "college": "Los Angeles Pierce College",
+ "control_number": "46329",
+ "shape": "degree",
+ "title": "Chemical Technology",
+ "award": "A.S. Degree",
+ "source_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=95",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 10130,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 10130,
+    "output_tokens": 1818,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1818,
+  "output_tokens_details": {
+   "thinking_tokens": 666
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.07688,
+ "ms": 15529,
+ "seconds": 15.7,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 8,
+   "listed": 8,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    34.0,
+    34.0
+   ],
+   "stated": [
+    34.0,
+    34.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [
+    "Communicate technical information effectively in written and oral formats using appropriate chemical and biotechnology terminology, including preparation of laboratory reports, standard operating procedures, and documentation meeting industry standards.",
+    "Possess foundational skills, knowledge, and laboratory competencies needed for entry-level employment as Industrial Quality Control Technicians and for continued academic advancement through transfer to four-year institutions pursuing bachelor's degrees in chemistry, biotechnology, or related fields."
+   ],
+   "why": [
+    "not in the catalog text as printed: Communicate technical information effectively in written and oral formats using ",
+    "not in the catalog text as printed: Possess foundational skills, knowledge, and laboratory competencies needed for e"
+   ],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": false
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "MAJOR - REQUIRED COURSES",
+   "measure": "units",
+   "total_units": {
+    "min": 34,
+    "max": 34
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Cal-GETC or LACCD GE",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Communicate technical information effectively in written and oral formats using appropriate chemical and biotechnology terminology, including preparation of laboratory reports, standard operating procedures, and documentation meeting industry standards.",
+    "Conduct technical research by performing literature searches and gathering information related to quality control methods, analytical procedures, validation protocols, and biotechnology applications relevant to pharmaceutical, food, agricultural, and chemical industries.",
+    "Possess foundational skills, knowledge, and laboratory competencies needed for entry-level employment as Industrial Quality Control Technicians and for continued academic advancement through transfer to four-year institutions pursuing bachelor's degrees in chemistry, biotechnology, or related fields."
+   ],
+   "careers": [
+    "Industrial Quality Control Technicians"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "MAJOR - REQUIRED COURSES",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 34,
+     "max": 34
+    },
+    "courses": [
+     {
+      "code": "BIOTECH 002",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOTECH 006",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 101",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 102",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 211",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 212",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PLNT SC 103",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "STAT C1000",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The excerpt begins mid-section on page 95: the A.S. degree's heading, program description and the first program learning outcomes are on the preceding page and not in the text. Only the last three outcomes printed on page 95 are recorded; the full list should be checked against page 94.",
+   "section_heading uses the course table heading because the award's own heading is not in the text; the award table identifies it as 'Chemical Technology AS P046329C'.",
+   "The award table lists two GE options: 'Cal-GETC (34 units)' and 'LACCD GE (21 units)'. ge_units is left null because two different patterns and unit figures are printed.",
+   "No degree total is printed for this award; only the major total of 34 units.",
+   "The Certificate of Achievement (state code 46331, 20 units) printed after the degree section was not used.",
+   "'Industrial Quality Control Technicians' is taken from the degree's program learning outcomes; any careers named in the missing description on the prior page are not captured.",
+   "Courses are marked with * in the catalog for prerequisites/corequisites."
+  ]
+ },
+ "extracted_run": "39006383070"
+}

@@ -1,0 +1,179 @@
+{
+ "college": "Los Angeles Pierce College",
+ "control_number": "42427",
+ "shape": "noncredit",
+ "title": "Tutor Training",
+ "award": "Noncredit program",
+ "source_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=167",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7673,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7673,
+    "output_tokens": 950,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 950,
+  "output_tokens_details": {
+   "thinking_tokens": 340
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.04969,
+ "ms": 8361,
+ "seconds": 8.7,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 1,
+   "listed": 1,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "VOCED89CE"
+   ],
+   "flagged": [
+    "VOCED89CE"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    36.0,
+    36.0
+   ],
+   "stated": [
+    36.0,
+    36.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 2,
+   "courses": 0,
+   "count": 2,
+   "not_verbatim": [
+    "Demonstrate knowledge of policies, procedures, and ethics necessary to work in the Center for Academic Success."
+   ],
+   "why": [
+    "not in the catalog text as printed: Demonstrate knowledge of policies, procedures, and ethics necessary to work in t"
+   ],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": false
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "TUTOR TRAINING Certificate of Completion (STATE CODE 42427)",
+   "measure": "hours",
+   "total_units": {
+    "min": 36,
+    "max": 36
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Apply key concepts in pedagogy in the context of learning support.",
+    "Demonstrate knowledge of policies, procedures, and ethics necessary to work in the Center for Academic Success."
+   ],
+   "careers": [
+    "tutors"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "CERTIFICATE - REQUIRED COURSES",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 36,
+     "max": 36
+    },
+    "courses": [
+     {
+      "code": "VOC ED 088CE",
+      "units": 18,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VOC ED 089CE",
+      "units": 18,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Program is noncredit; values are hours as printed (18 hours per course, certificate total 36 hours).",
+   "VOC ED 089CE (Advanced Tutor Training) is required in the catalog but absent from the closed list; recorded as a catalog addition.",
+   "The page also prints Tutor Leadership Skills (state code 45705) and a hospitality supervisor certificate; only the Tutor Training section (state code 42427) was read.",
+   "The 'CERTIFICATE - TOTAL HOURS 36' line is recorded as both total_units and the block's stated total.",
+   "Line-break hyphenation in the outcomes ('neces -sary') was rejoined as 'necessary'."
+  ]
+ },
+ "extracted_run": "39006383070"
+}

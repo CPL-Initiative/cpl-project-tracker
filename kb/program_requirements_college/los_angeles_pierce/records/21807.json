@@ -1,0 +1,335 @@
+{
+ "college": "Los Angeles Pierce College",
+ "control_number": "21807",
+ "shape": "certificate",
+ "title": "CAOT: General Administrative",
+ "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+ "source_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=102",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 12009,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 12009,
+    "output_tokens": 2324,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2324,
+  "output_tokens_details": {
+   "thinking_tokens": 686
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.09452,
+ "ms": 17709,
+ "seconds": 18.0,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 16,
+   "listed": 16,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 2,
+   "codes": [
+    "CAOT110",
+    "CAOT48"
+   ],
+   "flagged": [
+    "CAOT110",
+    "CAOT48"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    41.0,
+    41.0
+   ],
+   "stated": [
+    41.0,
+    41.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [
+    "Demonstrate competence in the use of state-of-the-art business-related software to create documents, spreadsheets, presentations, databases, and financial records.",
+    "Compose and create business documents—such as letters, memos, e-mail messages, reports, graphs and charts—using correct grammar, spelling, punctuation, language style, and formats."
+   ],
+   "why": [
+    "not in the catalog text as printed: Demonstrate competence in the use of state-of-the-art business-related software ",
+    "not in the catalog text as printed: Compose and create business documents-such as letters, memos, e-mail messages, r"
+   ],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": false
+  },
+  "careers": {
+   "count": 2,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "CAOT: GENERAL ADMINISTRATIVE Certificate of Achievement (STATE CODE 21807)",
+   "measure": "units",
+   "total_units": {
+    "min": 41,
+    "max": 41
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Develop methods for retaining information about computer software applications so that the information may be applied in practical situations and in solving challenging problems.",
+    "Demonstrate competence in the use of state-of-the-art business-related software to create documents, spreadsheets, presentations, databases, and financial records.",
+    "Demonstrate efficiently the use of the Internet to complete the following business-related activities: communication, research, and e-commerce.",
+    "Develop a proficiency level in the operation of the computer and other office technologies that will ensure a smooth transition into learning new applications and devices.",
+    "Compose and create business documents—such as letters, memos, e-mail messages, reports, graphs and charts—using correct grammar, spelling, punctuation, language style, and formats."
+   ],
+   "careers": [
+    "intermediate office positions",
+    "office management positions"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "ENTRY-LEVEL COURSES",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CAOT 002",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CAOT 031",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CAOT 034",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CAOT 082",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "CERTIFICATE - REQUIRED COURSES",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ACCTG 001",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CAOT 039",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CAOT 067",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CAOT 078",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CAOT 085",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CAOT 092",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "CAPSTONE COURSES",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CAOT 032",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CAOT 079",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CAOT 086",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select 3 semester units from the following",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "CAOT 048",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CAOT 088",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CAOT 096",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CAOT 110",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CAOT 113",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Read the Certificate of Achievement section (state code 21807) on page 103; the A.A. section on page 102 prints the same course list and the same outcomes with a major total of 41.",
+   "The catalog prints codes with leading zeros (CAOT 002, ACCTG 001); these match closed-list codes CAOT 2, ACCTG 1, etc., so they are not marked as catalog additions.",
+   "CAOT 032 is marked with an asterisk referring to prerequisites/corequisites in the course description.",
+   "Block units sum to the printed total: 11 + 18 + 9 + 3 = 41.",
+   "Careers drawn from the program description ('qualify for intermediate office positions and lays the foundation for entry into office management positions'); the Gainful Employment section only refers to an external website."
+  ]
+ },
+ "extracted_run": "39006383070"
+}

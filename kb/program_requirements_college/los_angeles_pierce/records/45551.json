@@ -1,0 +1,219 @@
+{
+ "college": "Los Angeles Pierce College",
+ "control_number": "45551",
+ "shape": "certificate",
+ "title": "Hospitality Management",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=105",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 11731,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 11731,
+    "output_tokens": 1661,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1661,
+  "output_tokens_details": {
+   "thinking_tokens": 591
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.08014,
+ "ms": 19934,
+ "seconds": 20.2,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 7,
+   "listed": 7,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    18.0,
+    18.0
+   ],
+   "stated": [
+    18.0,
+    18.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [
+    "Define the goals of various hospitality elements and related products and services.",
+    "Describe opportunities for entry and advancement in the hospitality field. Identify key qualities, philosophies, or experiences associated with success in the field."
+   ],
+   "why": [
+    "not in the catalog text as printed: Define the goals of various hospitality elements and related products and servic",
+    "not in the catalog text as printed: Describe opportunities for entry and advancement in the hospitality field. Ident"
+   ],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": false
+  },
+  "careers": {
+   "count": 4,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "HOSPITALITY MANAGEMENT Certificate of Achievement (STATE CODE 45551)",
+   "measure": "units",
+   "total_units": {
+    "min": 18,
+    "max": 18
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Describe the relationship of human/social need for hospitality services.",
+    "Define the goals of various hospitality elements and related products and services.",
+    "Describe the service relationship in terms of psychological needs and social-psychological experiences.",
+    "Define the basic role of business in the field of hospitality. Identify major challenges to the hospitality industry.",
+    "Describe opportunities for entry and advancement in the hospitality field. Identify key qualities, philosophies, or experiences associated with success in the field."
+   ],
+   "careers": [
+    "hotel/lodging management",
+    "food and beverage management",
+    "entertainment and recreation management",
+    "meeting, convention, and event management"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "CERTIFICATE - REQUIRED COURSES",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CAOT 048",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ECON C2001",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "CAOT 082",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HOSPT 100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HOSPT 120",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HOSPT 136",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HOSPT 140",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Catalog prints CAOT 048 and CAOT 082 with leading zeros; these match closed-list CAOT 48 and CAOT 82.",
+   "CAOT 048 OR ECON C2001 recorded as one choice with ECON C2001 as the alternative.",
+   "Certificate total of 18 units is printed both as 'CERTIFICATE - TOTAL UNITS 18' and in the program information ('all required courses (18 units)').",
+   "Outcomes copied with PDF line-break hyphenation removed (e.g., 'prod -ucts' read as 'products', 'hos -pitality' as 'hospitality').",
+   "The description also names areas within the hospitality sectors (reservations, front office, purchasing, lodging, event planning, tourism services); recorded only the named sectors as career fields. Description also mentions entry- to mid-level positions in the Hospitality Industry and entrepreneur opportunities.",
+   "Careers information otherwise deferred to the Gainful Employment Disclosure website.",
+   "Page also contains Desktop Publishing, Legal Office Procedures, Legal Office Skills and Office Administration sections, which were ignored."
+  ]
+ },
+ "extracted_run": "39006383070"
+}

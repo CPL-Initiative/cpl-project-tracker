@@ -1,0 +1,237 @@
+{
+ "college": "Los Angeles Pierce College",
+ "control_number": "10736",
+ "shape": "degree",
+ "title": "Ceramic Design",
+ "award": "A.A. Degree",
+ "source_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=85",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 11851,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 11851,
+    "output_tokens": 1609,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1609,
+  "output_tokens_details": {
+   "thinking_tokens": 541
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.07958,
+ "ms": 13499,
+ "seconds": 13.8,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 9,
+   "listed": 12,
+   "share": 0.75,
+   "missing": [
+    "ART111",
+    "ARTHC1100",
+    "ARTHC1200"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    27.0,
+    27.0
+   ],
+   "stated": [
+    36.0,
+    36.0
+   ],
+   "against": "program",
+   "why": [
+    "the blocks sum to 27.0-27.0; the catalog states 36.0-36.0"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": true,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Ceramic Design",
+   "measure": "units",
+   "total_units": {
+    "min": 36,
+    "max": 36
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Cal-GETC or LACCD GE",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "MAJOR - REQUIRED COURSES",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ART 201",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 202",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 501",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 502",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 700",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 708",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 709",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 710",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 711",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ART 111",
+    "why": "not in the text; the start of the Ceramic Design section is on the previous page (84), not included"
+   },
+   {
+    "code": "ARTHC1100",
+    "why": "not in the Ceramic Design text provided; likely on page 84 (excerpt begins mid-list)"
+   },
+   {
+    "code": "ARTHC1200",
+    "why": "not in the Ceramic Design text provided; likely on page 84 (excerpt begins mid-list)"
+   }
+  ],
+  "notes": [
+   "The excerpt begins mid-section on page 85: the Ceramic Design heading, program information, outcomes and the start of the required-course list are on page 84 and not included. Section heading taken from the award table row 'Ceramic Design AA P010736C'; block name 'MAJOR - REQUIRED COURSES' assumed from the pattern of sibling programs, not printed in the excerpt.",
+   "Visible courses total 27 units against the printed MAJOR - TOTAL UNITS of 36; the missing 9 units are likely ARTH C1100, ARTH C1200 and ART 111 on page 84. Reviewer should check page 84 for those courses and for any 'or' options.",
+   "No program learning outcomes or careers appear in the excerpt for Ceramic Design; they are likely on page 84.",
+   "The award table lists GE as 'Cal-GETC (34 units)' or 'LACCD GE (21 units)'; two patterns with different units, so ge_units left null. No degree total is printed.",
+   "ART 202, 709, 710, 711 are marked * for prerequisites/corequisites."
+  ]
+ },
+ "extracted_run": "39006383070"
+}

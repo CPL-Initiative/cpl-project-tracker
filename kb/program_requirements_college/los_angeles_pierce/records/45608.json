@@ -1,0 +1,176 @@
+{
+ "college": "Los Angeles Pierce College",
+ "control_number": "45608",
+ "shape": "noncredit",
+ "title": "Vocational Education Exploration and Foundational Skills",
+ "award": "Noncredit program",
+ "source_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=168",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7181,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7181,
+    "output_tokens": 1167,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1167,
+  "output_tokens_details": {
+   "thinking_tokens": 391
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.05206,
+ "ms": 9471,
+ "seconds": 9.8,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 2,
+   "listed": 2,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    112.5,
+    112.5
+   ],
+   "stated": [
+    112.5,
+    112.5
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [
+    "Implement the ability to use reading comprehension skills to decipher and interpret a variety of textual materials and sources."
+   ],
+   "why": [
+    "not in the catalog text as printed: Implement the ability to use reading comprehension skills to decipher and interp"
+   ],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": false
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "VOCATIONAL EDUCATION EXPLORATION AND FOUNDATIONAL SKILLS Certificate of Completion",
+   "measure": "hours",
+   "total_units": {
+    "min": 112.5,
+    "max": 112.5
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Differentiate the benefits of noncredit vocational programs.",
+    "List the available noncredit vocational program opportunities available at targeted colleges.",
+    "Implement the ability to use reading comprehension skills to decipher and interpret a variety of textual materials and sources.",
+    "Implement the ability to use of Math Skills and Calculations: (A) Use addition, subtraction, multiplication and division functions to solve computational and real-world solving problems in whole numbers, fractions, mixed numbers, and decimals."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "CERTIFICATE - REQUIRED COURSES",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "BSICSKL 023CE",
+      "units": 108,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VOC ED 383CE",
+      "units": 4.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Award is a noncredit Certificate of Completion (State Code 45608); all figures are hours. Total 112.5 hours from 'CERTIFICATE - TOTAL HOURS'.",
+   "Catalog prints 'BSICSKL 023CE' with a space; closed list stores 'BSICSKL023CE' — treated as the same course.",
+   "In the third outcome, the PDF line-break hyphenation 'deci -pher' was rejoined as 'decipher'.",
+   "The fourth outcome's wording ('use of Math Skills', 'real-world solving problems') is copied as printed.",
+   "The page also prints Workplace Success and Workplace Success: Managing Anger certificates; those sections were not read for this record.",
+   "Program information text uses the name 'Vocational Education and Foundations Skills Certificate of Completion', slightly different from the heading."
+  ]
+ },
+ "extracted_run": "39006383070"
+}
