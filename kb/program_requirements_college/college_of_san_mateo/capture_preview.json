@@ -1,0 +1,752 @@
+{
+ "college": "College of San Mateo",
+ "catalog_url": "https://catalog.collegeofsanmateo.edu/current/",
+ "platform": "custom_html",
+ "catalog_year": "2026-2027",
+ "programs": 98,
+ "with_closed_list": 64,
+ "started": "2026-10-17T10:18:00Z",
+ "scope": null,
+ "sitemap": {
+  "url": "https://catalog.collegeofsanmateo.edu/sitemap.xml",
+  "status": 200,
+  "listed": 1165,
+  "nested": 0,
+  "program_pages": 195,
+  "refused": null,
+  "errors": null
+ },
+ "pages_read": 238,
+ "child_pages": 79,
+ "banner_h1": null,
+ "loads": 292,
+ "seconds": 1365.5,
+ "found": 60,
+ "by_method": {
+  "link_search": 5,
+  "no_closed_list": 34,
+  "not_found": 3,
+  "page_claimed": 1,
+  "sitemap_page": 55
+ },
+ "shared_pages": {
+  "http://catalog.collegeofsanmateo.edu/current/programs/biology-as-t.php": [
+   "05745",
+   "33912"
+  ],
+  "http://catalog.collegeofsanmateo.edu/current/programs/business-administration-2-0-as-t.php": [
+   "10927",
+   "41976"
+  ],
+  "http://catalog.collegeofsanmateo.edu/current/programs/university-transfer-option-a-california-general-education-transfer-curriculum-cal-getc-ca.php": [
+   "30818",
+   "31255",
+   "31435"
+  ]
+ },
+ "not_found": [
+  {
+   "control_number": "10926",
+   "title": "Addiction Studies",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "url": "http://catalog.collegeofsanmateo.edu/current/programs/addiction-studies-aa.php",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.143,
+    "body": 0.143,
+    "content": 0.143,
+    "net": 2,
+    "listed": 14,
+    "why": "coarse net: the page's code tokens name 2 of 14 listed courses",
+    "error": null,
+    "chars": {
+     "body": 6886,
+     "content": 21516,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "41970",
+   "title": "International Business",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "http://catalog.collegeofsanmateo.edu/current/programs/international-business-ca.php",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.2,
+    "body": 0.2,
+    "content": 0.2,
+    "net": 0,
+    "listed": 10,
+    "why": "coarse net: the page's code tokens name 0 of 10 listed courses",
+    "error": null,
+    "chars": {
+     "body": 3437,
+     "content": 14577,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "42023",
+   "title": "International Business",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "http://catalog.collegeofsanmateo.edu/current/programs/international-business-as.php",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.462,
+    "body": 0.462,
+    "content": 0.462,
+    "net": 5,
+    "listed": 13,
+    "why": "coarse net: the page's code tokens name 5 of 13 listed courses",
+    "error": null,
+    "chars": {
+     "body": 3711,
+     "content": 15523,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  }
+ ],
+ "page_claimed": [
+  {
+   "control_number": "31224",
+   "title": "Administration of Justice",
+   "award": "A.S. T Degree",
+   "pages": [
+    "http://catalog.collegeofsanmateo.edu/current/programs/law-public-policy-and-society-aa-t.php",
+    "http://catalog.collegeofsanmateo.edu/current/programs/modern-policing-as.php",
+    "http://catalog.collegeofsanmateo.edu/current/programs/interdisciplinary-studies-business-and-public-service-aa.php"
+   ]
+  }
+ ],
+ "coverage_bands": {
+  "0.5-0.8": 11,
+  "0.8-1.0": 12,
+  "1.0": 37
+ },
+ "would_extract": {
+  "against": null,
+  "kept": 0,
+  "programs": 60,
+  "list": [
+   {
+    "control_number": "05744",
+    "title": "Architecture",
+    "award": "A.S. Degree",
+    "url": "http://catalog.collegeofsanmateo.edu/current/programs/architecture-as.php",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "05745",
+    "title": "Biology",
+    "award": "A.S. Degree",
+    "url": "http://catalog.collegeofsanmateo.edu/current/programs/biology-as-t.php",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "05756",
+    "title": "CIS: Applications and Development AS",
+    "award": "A.S. Degree",
+    "url": "http://catalog.collegeofsanmateo.edu/current/programs/computer-science-applications-and-development-as.php",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "05766",
+    "title": "Computer Aided Drafting",
+    "award": "A.S. Degree",
+    "url": "http://catalog.collegeofsanmateo.edu/current/programs/computer-aided-design-cs.php",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "05773",
+    "title": "Art: Photography",
+    "award": "A.A. Degree",
+    "url": "http://catalog.collegeofsanmateo.edu/current/programs/art-photography-aa.php",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "05779",
+    "title": "Nursing",
+    "award": "A.S. Degree",
+    "url": "http://catalog.collegeofsanmateo.edu/current/programs/nursing-as.php",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "05785",
+    "title": "Communication Studies",
+    "award": "A.A. Degree",
+    "url": "http://catalog.collegeofsanmateo.edu/current/programs/communication-studies-aa.php",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "05805",
+    "title": "Cosmetology",
+    "award": "A.A. Degree",
+    "url": "http://catalog.collegeofsanmateo.edu/current/programs/cosmetology-aa.php",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "09079",
+    "title": "Biology:Pre-Nursing",
+    "award": "A.S. Degree",
+    "url": "http://catalog.collegeofsanmateo.edu/current/programs/biology-pre-nursing-as.php",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "10927",
+    "title": "Business Administration",
+    "award": "A.S. Degree",
+    "url": "http://catalog.collegeofsanmateo.edu/current/programs/business-administration-2-0-as-t.php",
+    "coverage": 0.5,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "19394",
+    "title": "Cosmetology",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "http://catalog.collegeofsanmateo.edu/current/programs/cosmetology-ca.php",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "30446",
+    "title": "Art: Art History",
+    "award": "A.A. Degree",
+    "url": "http://catalog.collegeofsanmateo.edu/current/programs/art-art-history-aa.php",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "30460",
+    "title": "Art History",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "http://catalog.collegeofsanmateo.edu/current/programs/art-history-ca.php",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "30817",
+    "title": "Sociology",
+    "award": "A.A- T Degree",
+    "url": "http://catalog.collegeofsanmateo.edu/current/programs/sociology-aa-t.php",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "30818",
+    "title": "Mathematics",
+    "award": "A.S. T Degree",
+    "url": "http://catalog.collegeofsanmateo.edu/current/programs/university-transfer-option-a-california-general-education-transfer-curriculum-cal-getc-ca.php",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31254",
+    "title": "Geology",
+    "award": "A.S. T Degree",
+    "url": "http://catalog.collegeofsanmateo.edu/current/programs/geology-as-t.php",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31255",
+    "title": "Physics",
+    "award": "A.S. T Degree",
+    "url": "http://catalog.collegeofsanmateo.edu/current/programs/university-transfer-option-a-california-general-education-transfer-curriculum-cal-getc-ca.php",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31269",
+    "title": "Psychology",
+    "award": "A.A- T Degree",
+    "url": "http://catalog.collegeofsanmateo.edu/current/programs/psychology-aa-t.php",
+    "coverage": 0.923,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31360",
+    "title": "Studio Arts",
+    "award": "A.A- T Degree",
+    "url": "http://catalog.collegeofsanmateo.edu/current/programs/studio-art-aa-t.php",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31435",
+    "title": "History",
+    "award": "A.A- T Degree",
+    "url": "http://catalog.collegeofsanmateo.edu/current/programs/university-transfer-option-a-california-general-education-transfer-curriculum-cal-getc-ca.php",
+    "coverage": 0.767,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31554",
+    "title": "Digital Media: Broadcast and Electronic Media",
+    "award": "A.A. Degree",
+    "url": "http://catalog.collegeofsanmateo.edu/current/programs/digital-media-broadcast-and-electronic-media-aa.php",
+    "coverage": 0.75,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31558",
+    "title": "Digital Media: Web Design/Multimedia",
+    "award": "A.A. Degree",
+    "url": "http://catalog.collegeofsanmateo.edu/current/programs/digital-media-mobile-app-and-web-design-aa.php",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31564",
+    "title": "Digital Media: Mobile App and Web Design",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "http://catalog.collegeofsanmateo.edu/current/programs/digital-media-mobile-app-and-web-design-ca.php",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31576",
+    "title": "Digital Media: Graphic Design",
+    "award": "A.A. Degree",
+    "url": "http://catalog.collegeofsanmateo.edu/current/programs/digital-media-graphic-design-aa.php",
+    "coverage": 0.833,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31577",
+    "title": "Digital Media: Graphic Production",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "http://catalog.collegeofsanmateo.edu/current/programs/digital-media-graphic-production-ca.php",
+    "coverage": 0.8,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32203",
+    "title": "English",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.collegeofsanmateo.edu/current/programs/english-aa.php",
+    "coverage": 0.846,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33042",
+    "title": "Web and Mobile Application Development",
+    "award": "A.S. Degree",
+    "url": "http://catalog.collegeofsanmateo.edu/current/programs/web-and-mobile-application-development-as.php",
+    "coverage": 0.769,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33267",
+    "title": "Art History",
+    "award": "A.A- T Degree",
+    "url": "http://catalog.collegeofsanmateo.edu/current/programs/art-history-aa-t.php",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33348",
+    "title": "Web and Mobile Application Development",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "http://catalog.collegeofsanmateo.edu/current/programs/web-and-mobile-application-development-ca.php",
+    "coverage": 0.769,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33393",
+    "title": "Music",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.collegeofsanmateo.edu/current/programs/electronic-music-aa.php",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33860",
+    "title": "Dance",
+    "award": "A.A. Degree",
+    "url": "http://catalog.collegeofsanmateo.edu/current/programs/dance-aa.php",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33879",
+    "title": "Anthropology",
+    "award": "A.A- T Degree",
+    "url": "http://catalog.collegeofsanmateo.edu/current/programs/anthropology-aa-t.php",
+    "coverage": 0.688,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33912",
+    "title": "Biology",
+    "award": "A.S. T Degree",
+    "url": "http://catalog.collegeofsanmateo.edu/current/programs/biology-as-t.php",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35024",
+    "title": "Nutrition and Dietetics",
+    "award": "A.S. T Degree",
+    "url": "http://catalog.collegeofsanmateo.edu/current/programs/nutrition-and-dietetics-as-t.php",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35574",
+    "title": "Political Science",
+    "award": "A.A- T Degree",
+    "url": "http://catalog.collegeofsanmateo.edu/current/programs/political-science-aa-t.php",
+    "coverage": 0.9,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35666",
+    "title": "Philosophy",
+    "award": "A.A- T Degree",
+    "url": "http://catalog.collegeofsanmateo.edu/current/programs/philosophy-aa-t.php",
+    "coverage": 0.667,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35881",
+    "title": "Critical Pacific Islands & Oceania Studies",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "http://catalog.collegeofsanmateo.edu/current/programs/critical-pacific-islands-and-oceania-studies-ca.php",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37013",
+    "title": "Kinesiology",
+    "award": "A.A. Degree",
+    "url": "http://catalog.collegeofsanmateo.edu/current/programs/kinesiology-aa.php",
+    "coverage": 0.947,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38487",
+    "title": "Law, Public Policy, and Society",
+    "award": "A.A- T Degree",
+    "url": "http://catalog.collegeofsanmateo.edu/current/programs/law-public-policy-and-society-aa-t.php",
+    "coverage": 0.97,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39408",
+    "title": "Astronomy",
+    "award": "A.S. Degree",
+    "url": "http://catalog.collegeofsanmateo.edu/current/programs/astronomy-as.php",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41976",
+    "title": "Business Administration 2.0",
+    "award": "A.S. T Degree",
+    "url": "http://catalog.collegeofsanmateo.edu/current/programs/business-administration-2-0-as-t.php",
+    "coverage": 0.818,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42094",
+    "title": "Entrepreneurship and Small Business Management",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.collegeofsanmateo.edu/current/programs/entrepreneurship-and-small-business-management-ca.php",
+    "coverage": 0.524,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42137",
+    "title": "Business Analytics",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.collegeofsanmateo.edu/current/programs/business-analytics-as.php",
+    "coverage": 0.571,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42139",
+    "title": "Business Analytics",
+    "award": "A.S. Degree",
+    "url": "http://catalog.collegeofsanmateo.edu/current/programs/business-analytics-as.php",
+    "coverage": 0.667,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42996",
+    "title": "Leadership",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "http://catalog.collegeofsanmateo.edu/current/programs/leadership-ca.php",
+    "coverage": 0.857,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43063",
+    "title": "Creative Writing",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.collegeofsanmateo.edu/current/programs/creative-writing-ca.php",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43071",
+    "title": "Public and Non-Profit Administration",
+    "award": "A.S. Degree",
+    "url": "http://catalog.collegeofsanmateo.edu/current/programs/public-and-non-profit-administration-as.php",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43072",
+    "title": "Public and Non-Profit Administration",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "http://catalog.collegeofsanmateo.edu/current/programs/public-and-non-profit-administration-ca.php",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43193",
+    "title": "Communication Studies 2.0",
+    "award": "A.A- T Degree",
+    "url": "http://catalog.collegeofsanmateo.edu/current/programs/communication-studies-2-0-aa-t.php",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43844",
+    "title": "Music and Technology",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "http://catalog.collegeofsanmateo.edu/current/programs/music-and-technology-ca.php",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44067",
+    "title": "Music and Technology",
+    "award": "A.A. Degree",
+    "url": "http://catalog.collegeofsanmateo.edu/current/programs/music-and-technology-aa.php",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44288",
+    "title": "Esthetics",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "http://catalog.collegeofsanmateo.edu/current/programs/esthetics-ca.php",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45220",
+    "title": "Interdisciplinary Studies: Business and Public Service",
+    "award": "A.A. Degree",
+    "url": "http://catalog.collegeofsanmateo.edu/current/programs/interdisciplinary-studies-business-and-public-service-aa.php",
+    "coverage": 0.736,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45244",
+    "title": "Interdisciplinary Studies: STEM",
+    "award": "A.A. Degree",
+    "url": "http://catalog.collegeofsanmateo.edu/current/programs/interdisciplinary-studies-stem-aa.php",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45245",
+    "title": "Interdisciplinary Studies: Arts and Media",
+    "award": "A.A. Degree",
+    "url": "http://catalog.collegeofsanmateo.edu/current/programs/interdisciplinary-studies-arts-and-media-aa.php",
+    "coverage": 0.973,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45246",
+    "title": "Interdisciplinary Studies: Language Arts and Social Science",
+    "award": "A.A. Degree",
+    "url": "http://catalog.collegeofsanmateo.edu/current/programs/interdisciplinary-studies-language-arts-and-social-sciences-aa.php",
+    "coverage": 0.967,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45291",
+    "title": "Interdisciplinary Studies: Health and Wellness",
+    "award": "A.A. Degree",
+    "url": "http://catalog.collegeofsanmateo.edu/current/programs/interdisciplinary-studies-health-and-wellness-aa.php",
+    "coverage": 0.989,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45506",
+    "title": "Modern Policing",
+    "award": "A.S. Degree",
+    "url": "http://catalog.collegeofsanmateo.edu/current/programs/modern-policing-as.php",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45547",
+    "title": "Mental Imagery",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "http://catalog.collegeofsanmateo.edu/current/programs/mental-imagery-ca.php",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45948",
+    "title": "Proficiency in English for Academic and Career Success (PEACS)",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "http://catalog.collegeofsanmateo.edu/current/programs/proficiency-in-english-for-academic-and-career-success-peacs-ca.php",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   }
+  ]
+ },
+ "run": "39024297472"
+}
