@@ -1,0 +1,200 @@
+{
+ "college": "Woodland Community College",
+ "control_number": "46380",
+ "shape": "certificate",
+ "title": "Community Health Worker Certification (CHW)",
+ "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+ "source_url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=177",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 11656,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 11656,
+    "output_tokens": 1209,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1209,
+  "output_tokens_details": {
+   "thinking_tokens": 382
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.0708,
+ "ms": 10879,
+ "seconds": 11.3,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 5,
+   "listed": 5,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    15.0,
+    15.0
+   ],
+   "stated": [
+    15.0,
+    15.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [
+    "Demonstrate respect and inclusivity with people from diverse backgrounds and communities, including, but not limited to, cultural elements, gender, race and ethnicity, sexual orientation/identification, religion, ability/disability, and socio-economic status."
+   ],
+   "why": [
+    "not in the catalog text as printed: Demonstrate respect and inclusivity with people from diverse backgrounds and com"
+   ],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": false
+  },
+  "careers": {
+   "count": 3,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "COMMUNITY HEALTH WORKER CERTIFICATION (CHW)",
+   "measure": "units",
+   "total_units": {
+    "min": 15,
+    "max": 15
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Demonstrate communications skills [verbal, non-verbal, and written] that insure they can work effectively with clients and other professionals within the community.",
+    "Demonstrate ethical behavior in a variety of challenging situations.",
+    "Demonstrate respect and inclusivity with people from diverse backgrounds and communities, including, but not limited to, cultural elements, gender, race and ethnicity, sexual orientation/identification, religion, ability/disability, and socio-economic status.",
+    "Demonstrate skills and abilities and appropriately apply knowledge to work settings and situations."
+   ],
+   "careers": [
+    "public health",
+    "health care",
+    "social services"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses for Major",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 15,
+     "max": 15
+    },
+    "courses": [
+     {
+      "code": "HUSEV10",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HUSEV11",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HUSEV24",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HUSEV40",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HUSEV43",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Catalog prints codes without a space (HUSEV10); these match closed-list codes HUSEV 10, 11, 24, 40, 43.",
+   "The 15-unit total is printed on the program's requirement header line and is recorded both as total_units and as the single block's stated total.",
+   "Description mentions a 108-hour internship with a community-based healthcare agency, presumably within HUSEV43; units remain as printed.",
+   "Careers are the fields named in the description ('the highly demanding field of public health, health care, and social services').",
+   "The same four outcomes are printed separately under the Human Services (A.S.) section; recorded here from the CHW section itself."
+  ]
+ },
+ "extracted_run": "39006340803"
+}
