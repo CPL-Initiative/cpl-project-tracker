@@ -1,0 +1,390 @@
+{
+ "college": "Compton College",
+ "control_number": "38424",
+ "shape": "adt",
+ "title": "Elementary Teacher Education",
+ "award": "A.A- T Degree",
+ "source_url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=98",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 10134,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 10134,
+    "output_tokens": 3123,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 3123,
+  "output_tokens_details": {
+   "thinking_tokens": 1244
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.103,
+ "ms": 25149,
+ "seconds": 25.5,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 13,
+   "listed": 17,
+   "share": 0.765,
+   "missing": [
+    "ENGLC1001",
+    "GEOG105",
+    "MATH110",
+    "PHIL105"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 11,
+   "codes": [
+    "BIOL100H",
+    "DANC101",
+    "EDUC201",
+    "ENGL227",
+    "ENGLC1000E",
+    "ENGLC1000H",
+    "ENGLC1002H",
+    "GEOL101",
+    "GEOL103",
+    "HISTC1001H",
+    "POLSC1000H"
+   ],
+   "flagged": [
+    "BIOL100H",
+    "DANC101",
+    "EDUC201",
+    "ENGL227",
+    "ENGLC1000E",
+    "ENGLC1000H",
+    "ENGLC1002H",
+    "GEOL101",
+    "GEOL103",
+    "HISTC1001H",
+    "POLSC1000H"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    30.0,
+    34.0
+   ],
+   "stated": [
+    32.0,
+    34.0
+   ],
+   "against": "program",
+   "why": [
+    "the blocks sum to 30.0-34.0; the catalog states 32.0-34.0"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "ELEMENTARY TEACHER EDUCATION: INTEGRATED PROGRAMS",
+   "measure": "units",
+   "total_units": {
+    "min": 32,
+    "max": 34
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Develop a career path in education and gain experience in working in TK-8th grade school settings.",
+    "Demonstrate reading, writing, and critical thinking skills, specifically in relation to liberal arts and education.",
+    "Demonstrate competence of disciplines taught in elementary schools."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required Core",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 26,
+     "max": 27
+    },
+    "courses": [
+     {
+      "code": "BIOL 100",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BIOL 100H",
+        "units": 4,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDEV 103",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COMM C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "EDUC 201",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ENGL C1002",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ENGL C1002H",
+        "units": 3,
+        "catalog_addition": true
+       },
+       {
+        "code": "ENGL 227",
+        "units": null,
+        "catalog_addition": true
+       },
+       {
+        "code": "HIST 140",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL C1000",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ENGL C1000E",
+        "units": 5,
+        "catalog_addition": true
+       },
+       {
+        "code": "ENGL C1000H",
+        "units": 4,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST C1001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HIST C1001H",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "POLS C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "POLS C1000H",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List A",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "GEOL 101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "GEOL 103",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "GEOL 106",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSCI 125",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List B",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "ART 101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANC 101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MUSI 111",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THEA 103",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ENGL C1001",
+    "why": "named only in the Liberal Studies A.A. (Teacher Preparation Option) section"
+   },
+   {
+    "code": "GEOG 105",
+    "why": "named only in the Liberal Studies A.A. (Teacher Preparation Option) section"
+   },
+   {
+    "code": "MATH 110",
+    "why": "named only in the Liberal Studies A.A. section (printed as MATH 1 10)"
+   },
+   {
+    "code": "PHIL 105",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "List A prints 'GEOL 101 Physical Geology (3) and GEOL 103 Physical Geology Laboratory (1)' as a single option; GEOL 101 and GEOL 103 must be taken together as one choice (4 units). Recorded as separate entries in a choose-one block; reviewer should check.",
+   "List A and List B rules read as 'choose one course' from the printed unit ranges (3-4 and 3 units); the catalog prints no explicit selection wording.",
+   "ENGL 227 Children's Literature is printed without units.",
+   "MUSI 111 is printed as 'MUSI 1 1 1' (PDF spacing artifact).",
+   "The 60-unit requirement is the generic AA-T rule, not recorded as degree_total. A note says the AA-T requires additional major prep courses per transfer institution and to meet 60 CSU transferable units; no elective units printed, electives_fill_degree left false.",
+   "The Program Learning Outcomes printed under LIBERAL STUDIES on page 98 belong to the A.A. Teacher Preparation Option section and were not used; the AA-T outcomes are those printed after the AA-T description, continuing on page 99.",
+   "Required Core includes ENGL C1002 or ENGL C1002H or ENGL 227 or HIST 140 as one choice."
+  ]
+ },
+ "extracted_run": "39006336111"
+}

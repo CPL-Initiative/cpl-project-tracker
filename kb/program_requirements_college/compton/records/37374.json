@@ -1,0 +1,158 @@
+{
+ "college": "Compton College",
+ "control_number": "37374",
+ "shape": "certificate",
+ "title": "Cosmetology Level II",
+ "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+ "source_url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=162",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 9140,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 9140,
+    "output_tokens": 829,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 829,
+  "output_tokens_details": {
+   "thinking_tokens": 290
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.05314,
+ "ms": 8310,
+ "seconds": 8.5,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 4,
+   "share": 0.0,
+   "missing": [
+    "COSM104",
+    "COSM105",
+    "COSM110",
+    "COSM112"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "COSM 104",
+    "why": "only its course description is in the text; no program requirements section printed"
+   },
+   {
+    "code": "COSM 105",
+    "why": "only its course description is in the text; no program requirements section printed"
+   },
+   {
+    "code": "COSM 110",
+    "why": "only its course description (printed 'COSM 1 10') is in the text; no program requirements section printed"
+   },
+   {
+    "code": "COSM 112",
+    "why": "only its course description (printed 'COSM 1 12') is in the text; no program requirements section printed"
+   }
+  ],
+  "notes": [
+   "The supplied text (catalog pages 162-163) contains only course descriptions for COSM and CA courses. It has no program section for the Cosmetology Level II Certificate of Achievement: no heading, requirement list, total units, outcomes or careers. No blocks were recorded. A reviewer should find the program requirements page elsewhere in the 2026-2027 catalog.",
+   "Course codes in the PDF text show stray spaces ('COSM 1 10', 'COSM 1 12', 'COSM 1 14', 'COSM 1 16'). These are likely COSM 110, 112, 114 and 116.",
+   "The course descriptions mention preparation for the State Board of Cosmetology examination and employment. No career titles are named, and none were taken from course descriptions."
+  ]
+ },
+ "extracted_run": "39006336111"
+}
