@@ -15203,7 +15203,7 @@
      ],
      "title": "Program requirements harvest \u2014 lane state",
      "type": null,
-     "updated": "2026-10-16"
+     "updated": "2026-10-17"
     },
     {
      "created": "2026-08-28",
@@ -15619,8 +15619,26 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 373,
+   "count": 374,
    "docs": [
+    {
+     "created": "2026-10-17",
+     "governs": [],
+     "n": 403,
+     "path": "docs/session_403_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "program-requirements",
+      "catalog-sweep",
+      "elumen",
+      "display-build",
+      "decision-sheet"
+     ],
+     "title": "Session 403 handoff: eLumen links written whole, six colleges loaded in two waves, Sheet 87 open",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-10-17",
      "governs": [],
@@ -22034,5 +22052,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1156
+ "total": 1157
 }
