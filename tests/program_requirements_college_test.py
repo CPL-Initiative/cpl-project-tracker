@@ -119,6 +119,31 @@ try:
           "a refused hand-filed file reads as no pages")
     json.dump({k: v for k, v in meta.items() if k != "fetched_by"}, open(os.path.join(_hf, "de_anza.json"), "w"))
     check("fetched_by" in C.hand_filed("De Anza College").get("error", ""), "a record must say who fetched the file")
+    # A release copy (S406): the session cannot fetch it, so the runner's first read pins its hash.
+    os.remove(os.path.join(_hf, "de_anza.pdf.gz"))
+    copies = {"https://github.com/user-attachments/files/1/dac.pdf": body,
+              "https://github.com/user-attachments/files/2/add.pdf": b"%PDF-1.4 an addendum"}
+    _fetch = C.fetch_copy
+    C.fetch_copy = lambda u: copies[u]
+    rel = {k: v for k, v in meta.items() if k not in ("file", "sha256")}
+    rel.update(copy_url="https://github.com/user-attachments/files/1/dac.pdf",
+               addenda=[{"title": "Spring 2026 addendum", "url": "https://www.deanza.edu/catalog/add.pdf",
+                         "copy_url": "https://github.com/user-attachments/files/2/add.pdf"}])
+    json.dump(rel, open(os.path.join(_hf, "de_anza.json"), "w"))
+    check("sha256" in C.hand_filed("De Anza College").get("error", ""), "an unpinned copy is not read")
+    check(C.pin("De Anza College", "123") == 0, "pin fetches the copy and its addenda")
+    pinned = json.load(open(os.path.join(_hf, "de_anza.json")))
+    check(pinned["sha256"] == hashlib.sha256(body).hexdigest() and pinned["pinned_run"] == "123"
+          and pinned["addenda"][0]["sha256"] == hashlib.sha256(copies["https://github.com/user-attachments/files/2/add.pdf"]).hexdigest(),
+          "the pin records each copy's sha256 and the run that fixed it")
+    got = C.hand_filed("De Anza College")
+    check(got and got.get("data") == body, "a pinned copy reads from its copy_url")
+    copies["https://github.com/user-attachments/files/1/dac.pdf"] = b"%PDF-1.4 another file"
+    check(C.pin("De Anza College", "124") == 0 and json.load(open(os.path.join(_hf, "de_anza.json")))["pinned_run"] == "123",
+          "a pinned hash is never re-pinned")
+    check("sha256" in C.hand_filed("De Anza College").get("error", ""), "a copy that changed after its pin is refused")
+    C.fetch_copy = _fetch
+    check(C.pin("Nowhere College", None) == 0, "pin is a no-op without a record")
 finally:
     C.HAND_FILED_DIR = _was
     shutil.rmtree(_hf)

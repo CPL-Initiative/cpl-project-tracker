@@ -1,0 +1,22 @@
+{
+ "college": "Porterville College",
+ "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf",
+ "fetched_by": "Sam Lee",
+ "fetched_at": "2026-10-17",
+ "catalog_year": "2026-2027",
+ "copy_url": "https://github.com/user-attachments/files/33599443/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf",
+ "sha256": "",
+ "note": "Sam downloaded it in a browser and posted it to the catalog-files release (2026-10-17); its robots.txt disallows the catalog PDF to readers. cpl_memory sam-hand-filed-catalog-pdf-links-2026-10-17.",
+ "addenda": [
+  {
+   "title": "Addendum 1 (2026-09-10)",
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_Catalog_Addendum_1_FINAL_09102026.pdf",
+   "copy_url": "https://github.com/user-attachments/files/33599442/Porterville_College_Catalog_Addendum_1_FINAL_09102026.pdf"
+  },
+  {
+   "title": "Addendum 2 (2026-09-22)",
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_Catalog_Addendum_version2_formatted_09222026.pdf",
+   "copy_url": "https://github.com/user-attachments/files/33599440/Porterville_College_Catalog_Addendum_version2_formatted_09222026.pdf"
+  }
+ ]
+}

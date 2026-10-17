@@ -134,6 +134,8 @@ jobs:
         run: |
           pip install --quiet playwright pypdf pdfminer.six
           python -m playwright install --with-deps chromium
+      - name: Pin a hand-filed copy's hash (kb/hand_filed_catalogs/; a no-op without a record)
+        run: python3 kb/_program_requirements_college.py pin --college "$COLLEGE"
       - name: Capture
         env:
           CENSUS_DELAY_MS: '4000'
@@ -153,7 +155,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add kb/program_requirements_college
+          git add kb/program_requirements_college kb/hand_filed_catalogs
           if git diff --cached --quiet; then echo "nothing to file"; exit 0; fi
           git commit -m "File the program requirements read of $COLLEGE (run ${{ github.run_id }})"
           for i in 1 2 3 4; do

@@ -76,7 +76,11 @@ MAX_FALLBACKS = 40        # programs given that search in one run (160 loads at 
 SMALL_LIST = 3            # below this many listed courses, coverage alone cannot pick a page
 COLLEGE_DIR = os.path.join(HERE, "program_requirements_college")
 HAND_FILED_DIR = os.path.join(HERE, "hand_filed_catalogs")
-HAND_FILED_KEYS = ("college", "url", "fetched_by", "fetched_at", "sha256", "file")
+HAND_FILED_KEYS = ("college", "url", "fetched_by", "fetched_at", "sha256", "file", "copy_url")
+# A copy a person posted where the session cannot fetch it but the runner can (the
+# catalog-files release's attachments, S406): the read fetches it from there, and
+# `pin` fixes its sha256 on the record the first time a runner reads it.
+COPY_UA = "CPL Initiative program requirements harvest (a hand-filed copy; cpl-initiative.github.io)"
 
 # A sitemap address names the program pages by their path. These words mark a
 # catalog's program sections; these mark everything else it lists.
@@ -1761,29 +1765,83 @@ def reads_as_pdf(reg: dict) -> bool:
     return is_pdf_catalog(reg) or (P.procedure_catalog(reg.get("procedure")) or {}).get("format") == "pdf"
 
 
+def hand_filed_meta(college: str) -> tuple[str, dict] | None:
+    meta_path = os.path.join(HAND_FILED_DIR, slug_of(college) + ".json")
+    return (meta_path, json.load(open(meta_path))) if os.path.isfile(meta_path) else None
+
+
+def fetch_copy(url: str) -> bytes:
+    """A hand-filed copy from where the person posted it (a GitHub release
+    attachment), never from the college's host."""
+    import urllib.request
+    req = urllib.request.Request(url, headers={"User-Agent": COPY_UA})
+    with urllib.request.urlopen(req, timeout=300) as r:
+        return r.read()
+
+
+def copy_bytes(meta: dict) -> tuple[bytes | None, str | None]:
+    """The file beside the record, or else the copy at its copy_url; gzip undone."""
+    path = os.path.join(HAND_FILED_DIR, os.path.basename(meta.get("file") or "")) if meta.get("file") else None
+    if path and os.path.isfile(path):
+        data = open(path, "rb").read()
+    elif meta.get("copy_url"):
+        try:
+            data = fetch_copy(meta["copy_url"])
+        except Exception as exc:
+            return None, "the copy at %s did not fetch: %s" % (meta["copy_url"], str(exc).splitlines()[0][:160])
+    else:
+        return None, "no file at " + (os.path.relpath(path, HERE) if path else "the record (neither file nor copy_url)")
+    return (gzip.decompress(data) if data[:2] == b"\x1f\x8b" else data), None
+
+
 def hand_filed(college: str) -> dict | None:
     """A catalog a person fetched by hand for the pipeline, where the college's host
     refuses the reader (Sam, 2026-10-17, ruling 2 on the blocked colleges: automated
     reads still name the CPL Initiative and respect blocks and robots.txt; a person
     may fetch a public file by hand). kb/hand_filed_catalogs/<slug>.json records who
     fetched it, when and from what address, and the file's sha256; the file sits
-    beside it (.pdf, or .pdf.gz under GitHub's size limits). None when no record."""
-    meta_path = os.path.join(HAND_FILED_DIR, slug_of(college) + ".json")
-    if not os.path.isfile(meta_path):
+    beside it (.pdf, or .pdf.gz under GitHub's size limits) or at its copy_url. None
+    when no record."""
+    found = hand_filed_meta(college)
+    if not found:
         return None
-    meta = json.load(open(meta_path))
-    missing = [k for k in HAND_FILED_KEYS if not meta.get(k)]
+    meta = found[1]
+    missing = [k for k in HAND_FILED_KEYS if k not in ("file", "copy_url") and not meta.get(k)]
+    if not (meta.get("file") or meta.get("copy_url")):
+        missing.append("file or copy_url")
     if missing:
         return {"meta": meta, "error": "the provenance record lacks " + ", ".join(missing)}
-    path = os.path.join(HAND_FILED_DIR, os.path.basename(meta["file"]))
-    if not os.path.isfile(path):
-        return {"meta": meta, "error": "no file at " + os.path.relpath(path, HERE)}
-    data = open(path, "rb").read()
-    if path.endswith(".gz"):
-        data = gzip.decompress(data)
+    data, err = copy_bytes(meta)
+    if err:
+        return {"meta": meta, "error": err}
     if hashlib.sha256(data).hexdigest() != meta["sha256"].lower():
         return {"meta": meta, "error": "the file's sha256 differs from its provenance record"}
     return {"meta": meta, "data": data}
+
+
+def pin(college: str, run: str | None) -> int:
+    """Fix the sha256 of a hand-filed copy, and of each addendum filed with it, the
+    first time a runner fetches it (the session that files a release copy cannot
+    fetch it). A pinned hash is never changed: a copy that differs later is refused."""
+    found = hand_filed_meta(college)
+    if not found:
+        print("%s: no hand-filed record" % college)
+        return 0
+    meta_path, meta = found
+    changed = False
+    for entry in [meta] + list(meta.get("addenda") or []):
+        if entry.get("sha256") or not entry.get("copy_url"):
+            continue
+        data, err = copy_bytes(entry)
+        if err:
+            print("::error::%s: %s" % (college, err))
+            return 1
+        entry.update(sha256=hashlib.sha256(data).hexdigest(), bytes=len(data), pinned_run=run)
+        changed = True
+        print("%s: pinned %s (%d bytes) %s" % (college, entry["copy_url"], len(data), entry["sha256"]))
+    if changed:
+        _write(meta_path, meta)
+    return 0
 
 
 def read_hand_filed(hf: dict) -> dict:
@@ -1841,6 +1899,9 @@ def capture_pdf(college: str, out_dir: str, programs: list[dict], reg: dict, rep
     report["pdf"]["extractor"] = extractor
     if hf:
         report["pdf"]["hand_filed"] = {k: hf["meta"].get(k) for k in HAND_FILED_KEYS + ("note",)}
+        # Addenda filed with the catalog keep their provenance; the reader does not read them.
+        report["pdf"]["hand_filed"]["addenda"] = [{k: a.get(k) for k in ("title", "url", "sha256")}
+                                                  for a in hf["meta"].get("addenda") or []]
     report["loads"] = reader.loads
     print("%s: %d programs (%d with a course list), PDF %s pages by %s, %s"
           % (college, len(programs), len(listed), len(pages), extractor, pdf.get("access")), flush=True)
@@ -2528,7 +2589,7 @@ def _write(path: str, obj) -> None:
 
 def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser(description=__doc__.splitlines()[0])
-    ap.add_argument("step", choices=["capture", "extract", "reconcile", "file", "load", "reread"])
+    ap.add_argument("step", choices=["pin", "capture", "extract", "reconcile", "file", "load", "reread"])
     ap.add_argument("--college", default="Cerritos College")
     ap.add_argument("--out", default="out")
     ap.add_argument("--shard", type=int, default=0)
@@ -2541,6 +2602,8 @@ def main(argv: list[str] | None = None) -> int:
                                                 "record whose arithmetic is incomplete")
     ap.add_argument("--run", default=os.environ.get("GITHUB_RUN_ID"))
     args = ap.parse_args(argv)
+    if args.step == "pin":
+        return pin(args.college, args.run)
     if args.step == "capture":
         return capture(args.college, args.out, args.limit)
     if args.step == "load":
