@@ -1,0 +1,356 @@
+{
+ "college": "Lake Tahoe Community College",
+ "control_number": "35531",
+ "shape": "adt",
+ "title": "Elementary Teacher Education",
+ "award": "A.A- T Degree",
+ "source_url": "https://ltcc.elumenapp.com/catalog/2026-2027/program/elementary-teacher-education-aa-t-fall-2025",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7439,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7439,
+    "output_tokens": 2803,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2803,
+  "output_tokens_details": {
+   "thinking_tokens": 899
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.08582,
+ "ms": 22811,
+ "seconds": 23.4,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 18,
+   "listed": 19,
+   "share": 0.947,
+   "missing": [
+    "ENGLC1002"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "ENG102"
+   ],
+   "flagged": [
+    "ENG102"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    75.25,
+    75.25
+   ],
+   "stated": [
+    90.0,
+    90.0
+   ],
+   "against": "degree",
+   "ge": null,
+   "why": [
+    "the record names the degree total and the Cal-GETC (The California General Education Transfer Curriculum - Breadth Requirements) pattern, but no units for it"
+   ],
+   "major": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     75.25,
+     75.25
+    ],
+    "stated": [
+     75.25,
+     75.25
+    ],
+    "against": "program",
+    "why": []
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 7,
+   "courses": 0,
+   "count": 7,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 6,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Elementary Teacher Education AA-T",
+   "measure": "units",
+   "total_units": {
+    "min": 75.25,
+    "max": 75.25
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Cal-GETC (The California General Education Transfer Curriculum - Breadth Requirements)",
+   "degree_total": {
+    "min": 90,
+    "max": 90
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": true,
+   "outcomes": [
+    "Apply the scientific method using inquiry, data collection, quantitative reasoning, and basic mathematical concepts to analyze results.",
+    "Assess teaching practices and learning conditions through application of child development theories",
+    "Evaluate attitudes, actions, and behaviors indicative of a professional educator.",
+    "Apply analytical reading and writing, research, and critical thinking essential for completing assigned tasks.",
+    "Explain relationships and interactions between humans and the earth.",
+    "Apply knowledge of world history and cultures to identify the values of a culture and work with others of diverse cultures.",
+    "Present information effectively to an intended audience."
+   ],
+   "careers": [
+    "credentialed teacher grades K-12",
+    "public or private instructional assistant",
+    "classroom aide (grades K-8)",
+    "private tutor",
+    "publishing and textbook salesperson",
+    "curriculum and test developer"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "B.1. All courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 67.25,
+     "max": 67.25
+    },
+    "courses": [
+     {
+      "code": "BIO 110",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COMM C1000",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "EDU 100",
+      "units": 5.25,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL C1000",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENG 102",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ENGL C1001",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEG 103",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEL 114",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIS 111",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIS 112",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIS 127A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIS 127B",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MAT 109",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHS 102",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "POLS C1000",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "B.2. Choose one course (cross-listed courses)",
+    "rule": "choose_units",
+    "minimum": 4,
+    "option_group": null,
+    "stated": {
+     "min": 4,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "ECE 102",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSY 102",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "B.3. Choose one course",
+    "rule": "choose_units",
+    "minimum": 4,
+    "option_group": null,
+    "stated": {
+     "min": 4,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "THE 101",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS 101",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ENGL C1002",
+    "why": "not in the text; the catalog prints ENG102 Introduction to Literature in its place (likely the same course under an older code)"
+   }
+  ],
+  "notes": [
+   "Units are quarter units (Lake Tahoe CC is on the quarter system).",
+   "Catalog prints codes without spaces (e.g., BIO110); recorded with a space between subject and number to match the closed list format.",
+   "ENG102 'Introduction to Literature' is printed where the closed list has ENGL C1002 with the same title; recorded as a catalog addition. Reviewer should confirm.",
+   "degree_total 90 taken from 'C. ELECTIVE UNITS to bring the total to 90.'; no unit figure printed for electives, so electives_fill_degree is true. The generic statement '60 semester units or 90 quarter units' also appears in the transfer degree requirements.",
+   "B.2 and B.3 each say 'Choose one course' and 'Complete the following number of credits: 4'; recorded as choose_units 4 (equivalent to one course).",
+   "The page's 'A minimum of 18 semester units or 27 quarter units in a major' is a generic AA-T rule, not this award's total; total_units uses the printed 'Total 75.25'.",
+   "EDU 100 printed as 5.25 units; closed list stores 5.3.",
+   "The program learning outcomes are printed for the program as a whole on this AA-T page and recorded for this award.",
+   "Catalog URL references 'fall-2025' while the requested catalog year is 2026-2027."
+  ]
+ },
+ "extracted_run": "38984692790"
+}

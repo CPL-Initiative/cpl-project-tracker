@@ -1,0 +1,53 @@
+{
+ "college": "Lake Tahoe Community College",
+ "programs": 87,
+ "with_closed_list": 83,
+ "found": 78,
+ "extracted": 78,
+ "errors": 0,
+ "passed_machine_checks": 57,
+ "failed": {
+  "coverage": 0,
+  "invented": 0,
+  "arithmetic": 21,
+  "repeated": 0,
+  "outcomes": 0
+ },
+ "cost_usd": 4.95,
+ "cost_per_program": 0.0634,
+ "not_found": [
+  {
+   "control_number": "40529",
+   "title": "California State University General Education Certification (CSUGE)",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "40530",
+   "title": "Intersegmental General Education Transfer Curriculum (IGETC) for Transfer to California State University (IGETC/CSU)",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "40531",
+   "title": "Intersegmental General Education Transfer Curriculum for Transfer to University of California (IGETC/UC)",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "45577",
+   "title": "California General Education Transfer Curriculum - CalGETC",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  }
+ ],
+ "run": "38984692790"
+}

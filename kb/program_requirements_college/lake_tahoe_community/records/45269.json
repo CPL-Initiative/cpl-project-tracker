@@ -1,0 +1,175 @@
+{
+ "college": "Lake Tahoe Community College",
+ "control_number": "45269",
+ "shape": "certificate",
+ "title": "Outdoor Foundational Skills-Wilderness Medicine",
+ "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+ "source_url": "https://ltcc.elumenapp.com/catalog/2026-2027/program/outdoor-foundational-skills-wilderness-medicine-summer-2026",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6466,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6466,
+    "output_tokens": 1078,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1078,
+  "output_tokens_details": {
+   "thinking_tokens": 274
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.04742,
+ "ms": 9073,
+ "seconds": 9.5,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 2,
+   "listed": 2,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    16.75,
+    16.75
+   ],
+   "stated": [
+    16.75,
+    16.75
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 6,
+   "courses": 0,
+   "count": 6,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 2,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Outdoor Foundational Skills- Wilderness Medicine Certificate of Achievement",
+   "measure": "units",
+   "total_units": {
+    "min": 16.75,
+    "max": 16.75
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Develop, evaluate and apply appropriate leadership and communication styles, experiential learning, leading, guiding and coaching, and mental performance.",
+    "Differentiate between various land management organizations, protocols for use, and implement appropriate sustainability principles.",
+    "Identify and engage with the various historical and contemporary organizations that have influenced wilderness education and the outdoor adventure industry.",
+    "Demonstrate a mastery of skills to include efficient movement skills, effective application of technical equipment, and safe implementation of systems.",
+    "Apply critical thinking, good judgment, and sound decision-making when managing risk and assessing legal implications of wilderness activities.",
+    "Understand and apply operational management and entrepreneurial methods as they apply to the wilderness education and outdoor adventure industry."
+   ],
+   "careers": [
+    "Ski Patrollers",
+    "wilderness and outdoor recreation professionals"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 16.75,
+     "max": 16.75
+    },
+    "courses": [
+     {
+      "code": "HEA140E",
+      "units": 12.25,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WLD107B",
+      "units": 4.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Catalog prints codes without a space (HEA140E, WLD107B); these match closed-list HEA 140E and WLD 107B.",
+   "HEA 140E is printed as 12.25 units; the state file stores 12.3.",
+   "The catalog total of 16.75 units exceeds the award band stated for this program (8 to fewer than 16 semester units); reviewer may want to check the award classification.",
+   "The program learning outcomes printed appear to be general Outdoor/Wilderness Education outcomes (leadership, land management, entrepreneurship) rather than specific to wilderness medicine; they may be a shared list for the outdoor program family. Recorded as printed."
+  ]
+ },
+ "extracted_run": "38984692790"
+}
