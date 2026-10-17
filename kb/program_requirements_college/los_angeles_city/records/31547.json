@@ -92,10 +92,12 @@
    "courses": 0,
    "count": 3,
    "not_verbatim": [
-    "Demonstrate advanced competency using technical theater systems for scenery, lights, and sound in the production and realization of scenery, lighting plans, and/or audio plans for live events."
+    "Demonstrate advanced competency using technical theater systems for scenery, lights, and sound in the production and realization of scenery, lighting plans, and/or audio plans for live events.",
+    "Identify theater literature and visual styles practices, systems, and historical context used within the realization of theater events."
    ],
    "why": [
-    "not in the catalog text as printed: Demonstrate advanced competency using technical theater systems for scenery, lig"
+    "not in the catalog text as printed: Demonstrate advanced competency using technical theater systems for scenery, lig",
+    "not in the catalog text as printed: Identify theater literature and visual styles practices, systems, and historical"
    ],
    "heading_printed": true,
    "heading_without_outcomes": false,
@@ -104,7 +106,9 @@
   "careers": {
    "count": 9,
    "not_verbatim": [
-    "audio technician"
+    "audio technician",
+    "lighting technician/electrician",
+    "ushers"
    ],
    "pass": false
   },
@@ -300,6 +304,5 @@
    "PDF text contained spacing artifacts (e.g., 'T heatre', 'li terature'); outcomes and careers were copied with those artifacts removed."
   ]
  },
- "extracted_run": 39018419466,
- "read_run": "39006380342"
+ "extracted_run": "39006380342"
 }

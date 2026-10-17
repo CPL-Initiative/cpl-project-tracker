@@ -82,11 +82,19 @@
    "program": 5,
    "courses": 0,
    "count": 5,
-   "not_verbatim": [],
-   "why": [],
+   "not_verbatim": [
+    "Speak at the ACTFL (American Council on the Teaching of Foreign Languages) Proficiency Intermediate High Level.",
+    "Listen and comprehend spoken discourse at the ACTFL Proficiency Intermediate High Level.",
+    "Read and comprehend written discourse at the ACTFL Proficiency Intermediate High Level."
+   ],
+   "why": [
+    "not in the catalog text as printed: Speak at the ACTFL (American Council on the Teaching of Foreign Languages) Profi",
+    "not in the catalog text as printed: Listen and comprehend spoken discourse at the ACTFL Proficiency Intermediate Hig",
+    "not in the catalog text as printed: Read and comprehend written discourse at the ACTFL Proficiency Intermediate High"
+   ],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": true
+   "pass": false
   },
   "careers": {
    "count": 0,
@@ -96,7 +104,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": true
+  "pass": false
  },
  "record": {
   "program": {
@@ -188,6 +196,5 @@
    "The description mentions 'employment, and professional advancement' but names no specific career, so careers is empty."
   ]
  },
- "extracted_run": 39018419466,
- "read_run": "39006380342"
+ "extracted_run": "39006380342"
 }

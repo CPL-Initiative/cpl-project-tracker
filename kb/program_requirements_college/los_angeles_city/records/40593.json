@@ -82,11 +82,15 @@
    "program": 4,
    "courses": 0,
    "count": 4,
-   "not_verbatim": [],
-   "why": [],
+   "not_verbatim": [
+    "Develop competency of intermediate acting skills and techniques in the areas of physical and vocal characterization."
+   ],
+   "why": [
+    "not in the catalog text as printed: Develop competency of intermediate acting skills and techniques in the areas of "
+   ],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": true
+   "pass": false
   },
   "careers": {
    "count": 4,
@@ -96,7 +100,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": true
+  "pass": false
  },
  "record": {
   "program": {
@@ -280,6 +284,5 @@
    "Hyphenation artifacts from the PDF line breaks (e.g., 'tech -niques') were joined into single words in the outcomes."
   ]
  },
- "extracted_run": 39018419466,
- "read_run": "39006380342"
+ "extracted_run": "39006380342"
 }

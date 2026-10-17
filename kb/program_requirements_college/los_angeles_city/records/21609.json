@@ -82,25 +82,29 @@
    "program": 3,
    "courses": 0,
    "count": 3,
-   "not_verbatim": [],
-   "why": [],
+   "not_verbatim": [
+    "Identify how business operates in an international/global environment including legal, social, cultural, and interdependence and integrated financial markets.",
+    "Perform statistical calculations based on business scenarios involving sample space, probability descriptive statistics, frequency distribution, sampling distribution, estimation, and significance tests."
+   ],
+   "why": [
+    "not in the catalog text as printed: Identify how business operates in an international/global environment including ",
+    "not in the catalog text as printed: Perform statistical calculations based on business scenarios involving sample sp"
+   ],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": true
+   "pass": false
   },
   "careers": {
    "count": 5,
    "not_verbatim": [
-    "business commerce",
-    "international business management",
-    "marketing"
+    "international business management"
    ],
    "pass": false
   },
   "degree": {
    "status": "n/a"
   },
-  "pass": true
+  "pass": false
  },
  "record": {
   "program": {
@@ -209,6 +213,5 @@
    "Careers are career fields taken from the Business Administration OVERVIEW ('entry-level positions in general areas of business commerce, finance, economics, international business management, and marketing'), which describes all Business Administration programs including the certificate; the job titles listed in the AA section (administrative services managers, etc.) were not included since they belong to the AA degree section. Reviewer may wish to check."
   ]
  },
- "extracted_run": 39018419466,
- "read_run": "39006380342"
+ "extracted_run": "39006380342"
 }

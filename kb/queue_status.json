@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "written_at": "2026-10-17T04:41:59Z",
+  "written_at": "2026-10-17T09:13:07Z",
   "session": 403,
   "moniker": "SkyYarrow",
   "run": "the CPL Queue routine",
@@ -81976,19 +81976,866 @@
       "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
       "control_number": "43558",
       "loaded": "2026-10-17"
+    },
+    {
+      "college": "East Los Angeles College",
+      "program": "Architectural Design",
+      "award": "A.A. Degree",
+      "control_number": "02430",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "East Los Angeles College",
+      "program": "Medical Assistant",
+      "award": "A.S. Degree",
+      "control_number": "02456",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "East Los Angeles College",
+      "program": "Architectural Technology",
+      "award": "A.A. Degree",
+      "control_number": "08252",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "East Los Angeles College",
+      "program": "Forensic Crime Scene Investigation",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "13340",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "East Los Angeles College",
+      "program": "Chemical Dependency Specialist in Criminal Justice",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "13341",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "East Los Angeles College",
+      "program": "Basic Police Academy Preparation",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "13343",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "East Los Angeles College",
+      "program": "Stage Management and Production",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "14869",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "East Los Angeles College",
+      "program": "Architectural Technology",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "21157",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "East Los Angeles College",
+      "program": "Engineering Graphics & Design Technology",
+      "award": "A.S. Degree",
+      "control_number": "21174",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "East Los Angeles College",
+      "program": "Basic Writing Success",
+      "award": "Noncredit program",
+      "control_number": "24040",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "East Los Angeles College",
+      "program": "Kinesiology",
+      "award": "A.A- T Degree",
+      "control_number": "31017",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "East Los Angeles College",
+      "program": "Communication Studies",
+      "award": "A.A- T Degree",
+      "control_number": "32154",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "East Los Angeles College",
+      "program": "Sociology",
+      "award": "A.A- T Degree",
+      "control_number": "32170",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "East Los Angeles College",
+      "program": "Technology and Logistics",
+      "award": "A.S. Degree",
+      "control_number": "32193",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "East Los Angeles College",
+      "program": "Technology and Logistics",
+      "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+      "control_number": "32194",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "East Los Angeles College",
+      "program": "Administration of Justice",
+      "award": "A.S. T Degree",
+      "control_number": "32902",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "East Los Angeles College",
+      "program": "Journalism",
+      "award": "A.A- T Degree",
+      "control_number": "32980",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "East Los Angeles College",
+      "program": "Anthropology",
+      "award": "A.A- T Degree",
+      "control_number": "33013",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "East Los Angeles College",
+      "program": "Music",
+      "award": "A.A- T Degree",
+      "control_number": "33382",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "East Los Angeles College",
+      "program": "Theatre Arts",
+      "award": "A.A- T Degree",
+      "control_number": "33641",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "East Los Angeles College",
+      "program": "Mathematics",
+      "award": "A.S. T Degree",
+      "control_number": "33681",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "East Los Angeles College",
+      "program": "Gerontology - Health",
+      "award": "Certificate of Achievement: 12 to fewer than 18 semester(or 18 to fewer than 27 ",
+      "control_number": "33915",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "East Los Angeles College",
+      "program": "Environmental Studies: Physical Sciences",
+      "award": "A.A. Degree",
+      "control_number": "35088",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "East Los Angeles College",
+      "program": "Environmental Studies- Biology",
+      "award": "A.A. Degree",
+      "control_number": "35309",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "East Los Angeles College",
+      "program": "Programming and Apps",
+      "award": null,
+      "control_number": "35757",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "East Los Angeles College",
+      "program": "English as a Second Language Communication Competency",
+      "award": "Noncredit program",
+      "control_number": "35758",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "East Los Angeles College",
+      "program": "Reading and Writing Foundations",
+      "award": null,
+      "control_number": "35759",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "East Los Angeles College",
+      "program": "Technology for E-Commerce & Entrepreneurs",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "35771",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "East Los Angeles College",
+      "program": "Business Information Worker I",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "35798",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "East Los Angeles College",
+      "program": "Women/Gender Studies",
+      "award": "A.A. Degree",
+      "control_number": "35888",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "East Los Angeles College",
+      "program": "Interventional Radiology Coding",
+      "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+      "control_number": "35902",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "East Los Angeles College",
+      "program": "Geology",
+      "award": "A.S. T Degree",
+      "control_number": "36177",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "East Los Angeles College",
+      "program": "Economics",
+      "award": "A.A- T Degree",
+      "control_number": "36345",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "East Los Angeles College",
+      "program": "Nutrition for a Healthy Lifestyle",
+      "award": "Noncredit program",
+      "control_number": "36377",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "East Los Angeles College",
+      "program": "Workplace Skills",
+      "award": "Noncredit program",
+      "control_number": "36378",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "East Los Angeles College",
+      "program": "Non-Medical In-Home Health Care Aide",
+      "award": "Noncredit program",
+      "control_number": "37391",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "East Los Angeles College",
+      "program": "Automotive Fundamentals",
+      "award": "Noncredit program",
+      "control_number": "37510",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "East Los Angeles College",
+      "program": "Biology",
+      "award": "A.S. T Degree",
+      "control_number": "37923",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "East Los Angeles College",
+      "program": "Chemistry Technician",
+      "award": "A.S. Degree",
+      "control_number": "37956",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "East Los Angeles College",
+      "program": "Commercial Music and Recording Arts",
+      "award": "A.A. Degree",
+      "control_number": "37965",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "East Los Angeles College",
+      "program": "Interpreter Education",
+      "award": "A.A. Degree",
+      "control_number": "37969",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "East Los Angeles College",
+      "program": "Physics",
+      "award": "A.S. T Degree",
+      "control_number": "38093",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "East Los Angeles College",
+      "program": "Administration of Justice, Law Emphasis",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "38159",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "East Los Angeles College",
+      "program": "Substance Abuse Assessor",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "38163",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "East Los Angeles College",
+      "program": "Theatre in the Community",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "38166",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "East Los Angeles College",
+      "program": "Commercial Music: Jazz Studies",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "38169",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "East Los Angeles College",
+      "program": "Costume Design and Technology",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "38170",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "East Los Angeles College",
+      "program": "Commercial Music: Music Arranging",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "38205",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "East Los Angeles College",
+      "program": "Commercial Music: Music Technology",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "38206",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "East Los Angeles College",
+      "program": "Business Information Worker II",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "38234",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "East Los Angeles College",
+      "program": "Executive Legal Assistant",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "38333",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "East Los Angeles College",
+      "program": "International Law and Public Policy Administration",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "38334",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "East Los Angeles College",
+      "program": "Chemistry Technician",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "38336",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "East Los Angeles College",
+      "program": "Technical Theatre and Entertainment Technology",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "38373",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "East Los Angeles College",
+      "program": "Phlebotomy Technician",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "38374",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "East Los Angeles College",
+      "program": "IT Technician Pathway:  Stage I Computer Retail Sales and Support",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "38507",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "East Los Angeles College",
+      "program": "Physical Therapy Aide",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "38704",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "East Los Angeles College",
+      "program": "Industry Safety Standards",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "38778",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "East Los Angeles College",
+      "program": "Legal Support Professional",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "39523",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "East Los Angeles College",
+      "program": "Fire Academy Training",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "39601",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "East Los Angeles College",
+      "program": "Police Academy Extended",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "39608",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "East Los Angeles College",
+      "program": "Juvenile Corrections Officer Core",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "39649",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "East Los Angeles College",
+      "program": "Field Probation Officer Core (FPOC)",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "39711",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "East Los Angeles College",
+      "program": "Advanced Manufacturing Engineering Technician",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "39795",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "East Los Angeles College",
+      "program": "Administrative Medical Assistant",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "39796",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "East Los Angeles College",
+      "program": "IT Technician Pathway",
+      "award": "A.S. Degree",
+      "control_number": "39823",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "East Los Angeles College",
+      "program": "IT Technician Pathway: Stage III IT Technician",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "39824",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "East Los Angeles College",
+      "program": "IT Technician Pathway: Stage II Help Desk User Support",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "39881",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "East Los Angeles College",
+      "program": "Museum Studies",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "39970",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "East Los Angeles College",
+      "program": "Engineering Technology: Advanced Manufacturing",
+      "award": "A.S. Degree",
+      "control_number": "40042",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "East Los Angeles College",
+      "program": "Administrative Medical Assistant",
+      "award": "Noncredit program",
+      "control_number": "40598",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "East Los Angeles College",
+      "program": "Emergency First Responder Basic Training",
+      "award": "Noncredit program",
+      "control_number": "40599",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "East Los Angeles College",
+      "program": "Phlebotomy Technician",
+      "award": "Noncredit program",
+      "control_number": "40601",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "East Los Angeles College",
+      "program": "Physical Therapist Aide",
+      "award": "Noncredit program",
+      "control_number": "40602",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "East Los Angeles College",
+      "program": "Clinical Medical Assistant",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "40899",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "East Los Angeles College",
+      "program": "Forensic Crime Scene Investigation",
+      "award": "A.S. Degree",
+      "control_number": "41132",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "East Los Angeles College",
+      "program": "Custody Assistant Training",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "41139",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "East Los Angeles College",
+      "program": "Health Sciences",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "41218",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "East Los Angeles College",
+      "program": "Environmental Science",
+      "award": "A.S. T Degree",
+      "control_number": "41231",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "East Los Angeles College",
+      "program": "English as a Second Language Academic Bridge",
+      "award": "Noncredit program",
+      "control_number": "42013",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "East Los Angeles College",
+      "program": "English for Citizenship",
+      "award": "Noncredit program",
+      "control_number": "42014",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "East Los Angeles College",
+      "program": "High School Equivalency Test Preparation",
+      "award": "Noncredit program",
+      "control_number": "42017",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "East Los Angeles College",
+      "program": "Healthcare Professions Preparation",
+      "award": "Noncredit program",
+      "control_number": "42065",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "East Los Angeles College",
+      "program": "Pathway to Law School",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "42174",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "East Los Angeles College",
+      "program": "Communication Studies 2.0",
+      "award": "A.A- T Degree",
+      "control_number": "42672",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "East Los Angeles College",
+      "program": "Central American Studies",
+      "award": "A.A. Degree",
+      "control_number": "43039",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "East Los Angeles College",
+      "program": "Makeup for Fashion and Entertainment",
+      "award": "Noncredit program",
+      "control_number": "43152",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "East Los Angeles College",
+      "program": "Child Development STEAM",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "43634",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "East Los Angeles College",
+      "program": "Paralegal Studies",
+      "award": "A.A. Degree",
+      "control_number": "43649",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "East Los Angeles College",
+      "program": "Acting for Stage and Screen",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "44329",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "East Los Angeles College",
+      "program": "Child Development Assessment in ECE",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "44368",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "East Los Angeles College",
+      "program": "Data Analytics",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "44375",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "East Los Angeles College",
+      "program": "Equity and Social Justice in Early Education",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "44539",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "East Los Angeles College",
+      "program": "Animation and VFX Apprenticeship",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "44540",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "East Los Angeles College",
+      "program": "Entertainment Craft",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "44541",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "East Los Angeles College",
+      "program": "Digital Film Production",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "44624",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "East Los Angeles College",
+      "program": "Paralegal",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "44840",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "East Los Angeles College",
+      "program": "English Through Cultural Awareness",
+      "award": "Noncredit program",
+      "control_number": "44913",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "East Los Angeles College",
+      "program": "Yoga Teacher Training",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "45406",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "East Los Angeles College",
+      "program": "Equity-Minded Education in Early Childhood Classroom",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "45413",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "East Los Angeles College",
+      "program": "Recreation Specialist",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "45414",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "East Los Angeles College",
+      "program": "Character Animation",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "45491",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "East Los Angeles College",
+      "program": "Entertainment Technology and VFX",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "45587",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "East Los Angeles College",
+      "program": "Visual Development for Animation",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "45588",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "East Los Angeles College",
+      "program": "Social Work and Human Services",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "45589",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "East Los Angeles College",
+      "program": "Wildland Firefighting",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "45591",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "East Los Angeles College",
+      "program": "Recording and Sound Design",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "45602",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "East Los Angeles College",
+      "program": "Paramedic",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "45715",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "East Los Angeles College",
+      "program": "Field Training Officer",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "45716",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "East Los Angeles College",
+      "program": "Criminal Investigations",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "45717",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "East Los Angeles College",
+      "program": "Patrol Procedures",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "45718",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "East Los Angeles College",
+      "program": "Supervision",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "45752",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "East Los Angeles College",
+      "program": "Traffic Investigations",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "45753",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "East Los Angeles College",
+      "program": "Sports Medicine",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "45986",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "East Los Angeles College",
+      "program": "Sports Medicine",
+      "award": "A.A. Degree",
+      "control_number": "45987",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "East Los Angeles College",
+      "program": "AI Essentials for College and Career",
+      "award": "Noncredit program",
+      "control_number": "46264",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "East Los Angeles College",
+      "program": "Emergency Medical Awareness and Response",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "46328",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "East Los Angeles College",
+      "program": "Mathematics 2.0",
+      "award": "A.S. T Degree",
+      "control_number": "46343",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "East Los Angeles College",
+      "program": "Physics 2.0",
+      "award": "A.S. T Degree",
+      "control_number": "46348",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "East Los Angeles College",
+      "program": "Animation",
+      "award": "A.S. Degree",
+      "control_number": "46461",
+      "loaded": "2026-10-17"
     }
   ],
   "next_step": {
-    "title": "Fix the outcomes check on PDF text, then read the own-HTML catalogs",
-    "text": "Print one failing outcome beside its PDF page on a runner and, if spacing is the cause, read outcomes without spacing; then build a reader for the 20 colleges that print their own catalog pages."
+    "title": "Merge the one PDF reader and apply its display build, then read the own-HTML catalogs",
+    "text": "Merge the PR that joins the two PDF readers, apply display build 726bde512dfa from main, then build a reader for the 20 colleges that print their own catalog pages."
   },
   "calls": [
     {
       "title": "Correct five registry rows to the catalogs the colleges name",
       "text": "Copper Mountain, San Diego Continuing Education, Porterville and Solano publish PDF catalogs, and West Valley its own pages, where the registry names another platform. A row changes only through a correction Sam approves.",
       "if_no_reply": "The five rows stay as filed and no read of those colleges starts.",
-      "link": "https://claude.ai/artifact/2MXnDExf1kzV3F8XpH2YUj",
-      "link_text": "Open Asks Sheet 87, card 1"
+      "link": "https://claude.ai/artifact/WkqwWZTrLCXffyzrNihLfG",
+      "link_text": "Open Asks Sheet 88, card 1"
+    },
+    {
+      "title": "Undo the checks on 49 rows scored against the wrong page",
+      "text": "A free rescore at Los Angeles City and Pierce read 29 and 20 programs from a page other than the one they were extracted from. Their requirements are unchanged; the paste restores their checks.",
+      "if_no_reply": "The 49 rows keep checks scored against another page until a person reads them; nothing gates on the checks.",
+      "link": "https://claude.ai/artifact/WkqwWZTrLCXffyzrNihLfG",
+      "link_text": "Open Asks Sheet 88, card 2"
     }
   ],
   "notes": {
@@ -82018,6 +82865,18 @@
     {
       "at": "2026-10-17T07:40:00Z",
       "text": "Fifteen colleges gained a procedure record naming their catalog and each read."
+    },
+    {
+      "at": "2026-10-17T07:13:00Z",
+      "text": "East Los Angeles joined the harvest from its PDF catalog: 120 records, unchecked."
+    },
+    {
+      "at": "2026-10-17T08:25:00Z",
+      "text": "The two PDF readers written the same morning became one, and display build 726bde512dfa covers 11,862 programs once applied."
+    },
+    {
+      "at": "2026-10-17T08:47:00Z",
+      "text": "Los Angeles City and Pierce were scored again with no model call: outcome check failures fell from 145 to 12 and from 85 to 15."
     }
   ],
   "headline": [
@@ -82085,11 +82944,11 @@
   "next_run": {
     "name": "CPL Queue",
     "every_hours": 24,
-    "at": "2026-10-17T05:12:00Z"
+    "at": "2026-10-17T10:12:00Z"
   },
   "harvest": {
     "day": "2026-10-17",
-    "gaps": 2493,
+    "gaps": 2930,
     "parts": {
       "links": {
         "catalog": [
@@ -82106,11 +82965,11 @@
         ]
       },
       "roep": [
-        11485,
+        13726,
         20282
       ],
       "coci": [
-        9158,
+        10913,
         20282
       ],
       "outcomes": {
@@ -82119,12 +82978,12 @@
           89192
         ],
         "plo": [
-          9158,
+          10913,
           20282
         ]
       },
       "careers": [
-        8108,
+        9863,
         20282
       ]
     }

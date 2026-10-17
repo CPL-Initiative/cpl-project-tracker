@@ -83,16 +83,12 @@
    "courses": 0,
    "count": 3,
    "not_verbatim": [
-    "Compose written sentences about biographical information, daily life, and work situations with increasing complexity of grammatical form and usage.",
-    "Employ basic communication skills and conversation strategies to express personal narratives, career goals, and essential life-skill needs.",
-    "Demonstrate the ability to respond to everyday topics and interpret spoken discussions related to occupational settings at a beginning level."
+    "Compose written sentences about biographical information, daily life, and work situations with increasing complexity of grammatical form and usage."
    ],
    "why": [
-    "not in the catalog text as printed: Compose written sentences about biographical information, daily life, and work s",
-    "not in the catalog text as printed: Employ basic communication skills and conversation strategies to express persona",
-    "not in the catalog text as printed: Demonstrate the ability to respond to everyday topics and interpret spoken discu"
+    "not in the catalog text as printed: Compose written sentences about biographical information, daily life, and work s"
    ],
-   "heading_printed": false,
+   "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": false
   },
@@ -174,6 +170,5 @@
    "The partial description names no specific careers, so careers is empty."
   ]
  },
- "extracted_run": 39018421038,
- "read_run": "39006383070"
+ "extracted_run": "39006383070"
 }

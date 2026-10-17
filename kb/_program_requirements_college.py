@@ -2127,12 +2127,19 @@ def reconcile_filed(college: str, out_dir: str, run_id: str | None, keep_from: s
         if src.get("text"):
             sources[src["control_number"]] = src
     os.makedirs(os.path.join(out_dir, "records"), exist_ok=True)
-    changed, unread, rescored = [], 0, 0
+    changed, unread, rescored, moved = [], 0, 0, 0
     for path in sorted(glob.glob(os.path.join(keep_from, "records", "*.json"))):
         with open(path) as fh:
             filed = json.load(fh)
         src = sources.get(filed.get("control_number"))
         rec = filed.get("record")
+        if src and filed.get("source_url") and (src.get("source") or {}).get("url") \
+                and (src.get("source") or {}).get("url") != filed.get("source_url"):
+            # The capture took the program to another page than the one it was extracted
+            # from: that text says nothing about this record. LA City and Pierce rescored 49
+            # records on a moved PDF page before this guard (S403).
+            src = None
+            moved += 1
         if src and isinstance(rec, dict):
             new, notes = R.reconcile(rec, src["text"], college, filed.get("award") or src.get("award"))
             if notes:
@@ -2156,8 +2163,8 @@ def reconcile_filed(college: str, out_dir: str, run_id: str | None, keep_from: s
         elif not src:
             unread += 1
         _write(os.path.join(out_dir, "records", os.path.basename(path)), filed)
-    print("reconcile: %d filed records changed, %d rescored, %d had no fresh page"
-          % (len(changed), rescored, unread), flush=True)
+    print("reconcile: %d filed records changed, %d rescored, %d had no fresh page (%d of them on another page)"
+          % (len(changed), rescored, unread, moved), flush=True)
     return 0
 
 

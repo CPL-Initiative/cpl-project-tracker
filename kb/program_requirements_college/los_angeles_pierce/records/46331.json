@@ -86,18 +86,14 @@
     "Demonstrate professional workplace competencies including reliability, punctuality, organizational skills, attention to detail, and professional attitudes consistent with quality control laboratory environments.",
     "Collaborate effectively as contributing members of laboratory teams by communicating clearly, sharing responsibilities, following protocols, and supporting collaborative problem-solving in quality control operations.",
     "Apply analytical and problem-solving skills by performing quality control testing, designing and conducting experiments, interpreting analytical results, executing chemical calculations, utilizing laboratory information management systems (LIMS), and applying appropriate analytical techniques including spectrophotometric, gravimetric, and volumetric methods.",
-    "Maintain safe laboratory practices and compliance by identifying chemical hazards, assessing and mitigating risks, properly using Safety Data Sheets, selecting appropriate personal protective equipment, implementing engineering controls, and responding appropriately to laboratory emergencies in accordance with good manufacturing practices (GMP).",
     "Communicate technical information effectively in written and oral formats using appropriate chemical and biotechnology terminology, including preparation of laboratory reports, standard operating procedures, and documentation meeting industry standards.",
-    "Conduct technical research by performing literature searches and gathering information related to quality control methods, analytical procedures, validation protocols, and biotechnology applications relevant to pharmaceutical, food, agricultural, and chemical industries.",
     "Possess foundational skills, knowledge, and laboratory competencies needed for entry-level employment as chemical technology laboratory technicians and for continued academic advancement through the Associate of Science Degree in Chemical Technology or transfer to four-year institutions pursuing bachelor’s degrees in chemistry, biotechnology, or related fields."
    ],
    "why": [
     "not in the catalog text as printed: Demonstrate professional workplace competencies including reliability, punctuali",
     "not in the catalog text as printed: Collaborate effectively as contributing members of laboratory teams by communica",
     "not in the catalog text as printed: Apply analytical and problem-solving skills by performing quality control testin",
-    "not in the catalog text as printed: Maintain safe laboratory practices and compliance by identifying chemical hazard",
     "not in the catalog text as printed: Communicate technical information effectively in written and oral formats using ",
-    "not in the catalog text as printed: Conduct technical research by performing literature searches and gathering infor",
     "not in the catalog text as printed: Possess foundational skills, knowledge, and laboratory competencies needed for e"
    ],
    "heading_printed": true,
@@ -106,10 +102,8 @@
   },
   "careers": {
    "count": 1,
-   "not_verbatim": [
-    "laboratory technicians"
-   ],
-   "pass": false
+   "not_verbatim": [],
+   "pass": true
   },
   "degree": {
    "status": "n/a"
@@ -210,6 +204,5 @@
    "Career taken from the program description ('entry-level employment as laboratory technicians in pharmaceutical, biotechnology, food, agricultural, and chemical industries'); the last outcome also mentions 'chemical technology laboratory technicians'. Gainful Employment section refers to an external website for careers."
   ]
  },
- "extracted_run": 39018421038,
- "read_run": "39006383070"
+ "extracted_run": "39006383070"
 }

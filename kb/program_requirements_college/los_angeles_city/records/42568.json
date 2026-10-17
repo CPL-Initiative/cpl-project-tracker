@@ -82,11 +82,15 @@
    "program": 4,
    "courses": 0,
    "count": 4,
-   "not_verbatim": [],
-   "why": [],
+   "not_verbatim": [
+    "Develop written content for inclusion in business presentations using correct grammar and relying on appropriate communication approaches that are tailored to the audience and purpose."
+   ],
+   "why": [
+    "not in the catalog text as printed: Develop written content for inclusion in business presentations using correct gr"
+   ],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": true
+   "pass": false
   },
   "careers": {
    "count": 5,
@@ -96,7 +100,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": true
+  "pass": false
  },
  "record": {
   "program": {
@@ -220,6 +224,5 @@
    "Other sections on these pages (Business Information Worker 39 units, Level I skills certificate, Administrative Office Assistant, Clerical Office Assistant, and a preceding program on page 83) were not used."
   ]
  },
- "extracted_run": 39018419466,
- "read_run": "39006380342"
+ "extracted_run": "39006380342"
 }

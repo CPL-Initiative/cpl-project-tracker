@@ -82,11 +82,15 @@
    "program": 4,
    "courses": 0,
    "count": 4,
-   "not_verbatim": [],
-   "why": [],
+   "not_verbatim": [
+    "Students will evaluate current audio recording and sound reinforcement equipment."
+   ],
+   "why": [
+    "not in the catalog text as printed: Students will evaluate current audio recording and sound reinforcement equipment"
+   ],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": true
+   "pass": false
   },
   "careers": {
    "count": 3,
@@ -96,7 +100,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": true
+  "pass": false
  },
  "record": {
   "program": {
@@ -285,6 +289,5 @@
    "Careers recorded are the fields named for entry-level positions in the program description; the description also mentions 'other developing music technology fields such as AI'. Careers detail is otherwise deferred to the Gainful Employment website."
   ]
  },
- "extracted_run": 39018421038,
- "read_run": "39006383070"
+ "extracted_run": "39006383070"
 }

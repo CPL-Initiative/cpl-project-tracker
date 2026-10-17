@@ -82,29 +82,21 @@
    "program": 4,
    "courses": 0,
    "count": 4,
-   "not_verbatim": [
-    "Demonstrate intermediate to advanced competence in the use of state-of-the-art business-related software to create documents, spreadsheets, presentations, graphics, and databases.",
-    "Create, revise, and evaluate verbal and written business messages demonstrating correct grammar, spelling, punctuation, and language style."
-   ],
-   "why": [
-    "not in the catalog text as printed: Demonstrate intermediate to advanced competence in the use of state-of-the-art b",
-    "not in the catalog text as printed: Create, revise, and evaluate verbal and written business messages demonstrating "
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 1,
-   "not_verbatim": [
-    "entry-level positions in an automated office"
-   ],
-   "pass": false
+   "not_verbatim": [],
+   "pass": true
   },
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -230,6 +222,5 @@
    "Career entry taken from the program description ('qualify for entry-level positions in an automated office'); the Gainful Employment paragraph names no specific careers."
   ]
  },
- "extracted_run": 39018421038,
- "read_run": "39006383070"
+ "extracted_run": "39006383070"
 }

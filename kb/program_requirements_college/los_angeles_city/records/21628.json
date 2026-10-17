@@ -82,21 +82,31 @@
    "program": 3,
    "courses": 0,
    "count": 3,
-   "not_verbatim": [],
-   "why": [],
+   "not_verbatim": [
+    "Demonstrate effective communication skills such as active listening, reflection, and asking Socratic open-ended questions.",
+    "Demonstrate competency in foundational courses, including General Psychology, Developmental Psychology, Social Psychology and Personality.",
+    "Demonstrate competency in the 12 core functions including, screening intake, assessment, treatment planning, counseling, case management, crisis management, client education, referral, report and record keeping, and consultation with other professionals in the field of Human Services."
+   ],
+   "why": [
+    "not in the catalog text as printed: Demonstrate effective communication skills such as active listening, reflection,",
+    "not in the catalog text as printed: Demonstrate competency in foundational courses, including General Psychology, De",
+    "not in the catalog text as printed: Demonstrate competency in the 12 core functions including, screening intake, ass"
+   ],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": true
+   "pass": false
   },
   "careers": {
    "count": 6,
-   "not_verbatim": [],
-   "pass": true
+   "not_verbatim": [
+    "community outreach worker"
+   ],
+   "pass": false
   },
   "degree": {
    "status": "n/a"
   },
-  "pass": true
+  "pass": false
  },
  "record": {
   "program": {
@@ -236,6 +246,5 @@
    "PSYCH 043 is titled 'PRINCIPLES OF GROUP DYNAMICS I' in the catalog; closed list title lacks 'I'."
   ]
  },
- "extracted_run": 39018419466,
- "read_run": "39006380342"
+ "extracted_run": "39006380342"
 }

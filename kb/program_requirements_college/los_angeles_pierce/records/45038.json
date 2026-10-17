@@ -82,30 +82,21 @@
    "program": 3,
    "courses": 0,
    "count": 3,
-   "not_verbatim": [
-    "Students will demonstrate basic knowledge of music theory and aural skills such as interval identification, melodic, rhythmic and harmonic dictation and musical analysis.",
-    "Students will demonstrate the ability to apply instrumental, or vocal technique, musicianship and theoretical and aesthetic awareness to the preparation of expressive musical performances."
-   ],
-   "why": [
-    "not in the catalog text as printed: Students will demonstrate basic knowledge of music theory and aural skills such ",
-    "not in the catalog text as printed: Students will demonstrate the ability to apply instrumental, or vocal technique,"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 2,
-   "not_verbatim": [
-    "music performance",
-    "studio teaching"
-   ],
-   "pass": false
+   "not_verbatim": [],
+   "pass": true
   },
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -279,6 +270,5 @@
    "Required courses sum to 14 units plus 2 ensemble units, matching the printed certificate total of 16."
   ]
  },
- "extracted_run": 39018421038,
- "read_run": "39006383070"
+ "extracted_run": "39006383070"
 }

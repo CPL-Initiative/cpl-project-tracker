@@ -83,14 +83,10 @@
    "courses": 0,
    "count": 4,
    "not_verbatim": [
-    "Students will demonstrate the competency to start-up and maintain a successful dance studio, including fiduciary and legal responsibilities.",
-    "Students will embody the knowledge of basic dance technique forms across different genres of dance that will allow them to teach beginning and intermediate levels of dance.",
     "Students will demonstrate appropriate pedagogical practices across a variety of dance disciplines, focusing on proper alignment, terminology, and injury prevention techniques.",
     "Students will demonstrate the process and procedures that go into dance production: including dance creation, space rental, marketing, costuming, time scheduling, and balancing a production budget."
    ],
    "why": [
-    "not in the catalog text as printed: Students will demonstrate the competency to start-up and maintain a successful d",
-    "not in the catalog text as printed: Students will embody the knowledge of basic dance technique forms across differe",
     "not in the catalog text as printed: Students will demonstrate appropriate pedagogical practices across a variety of ",
     "not in the catalog text as printed: Students will demonstrate the process and procedures that go into dance producti"
    ],
@@ -266,6 +262,5 @@
    "The description mentions working in 'commercial areas of the dance field, including studios and/or competitions'; not recorded as named careers. Careers are deferred to the Gainful Employment website."
   ]
  },
- "extracted_run": 39018421038,
- "read_run": "39006383070"
+ "extracted_run": "39006383070"
 }

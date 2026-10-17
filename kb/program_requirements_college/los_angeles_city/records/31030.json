@@ -81,11 +81,17 @@
    "program": 3,
    "courses": 0,
    "count": 3,
-   "not_verbatim": [],
-   "why": [],
+   "not_verbatim": [
+    "Integrate understanding of the needs, characteristics, and multiple influences on all areas of development of children birth to age eight that support optimal development.",
+    "Design, implement, and evaluate developmentally appropriate environments, curriculum, and teacher/child interactions, applying the skills of observation and assessment."
+   ],
+   "why": [
+    "not in the catalog text as printed: Integrate understanding of the needs, characteristics, and multiple influences o",
+    "not in the catalog text as printed: Design, implement, and evaluate developmentally appropriate environments, curric"
+   ],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": true
+   "pass": false
   },
   "careers": {
    "count": 0,
@@ -250,6 +256,5 @@
    "Sections that follow (Child Development AA, Associate Teacher, Master Teacher, Site Supervisor, Teacher certificates) belong to other awards and were not recorded."
   ]
  },
- "extracted_run": 39018419466,
- "read_run": "39006380342"
+ "extracted_run": "39006380342"
 }

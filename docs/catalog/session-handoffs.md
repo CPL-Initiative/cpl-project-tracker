@@ -19,7 +19,7 @@ One per session, newest first. **Only the highest-numbered handoff is authoritat
 
 | N | Handoff | Created |
 |---|---|---|
-| 404 | [Session 404 handoff: a whole-catalog PDF reader, fifteen colleges loaded, Sheet 87 open](../session_404_handoff.md) | 2026-10-17 |
+| 404 | [Session 404 handoff: one PDF reader from two, LA City and Pierce rescored, Sheet 88 open](../session_404_handoff.md) | 2026-10-17 |
 | 403 | [Session 403 handoff: eLumen links written whole, six colleges loaded in two waves, Sheet 87 open](../session_403_handoff.md) | 2026-10-17 |
 | 402 | [Session 402 handoff: five catalog readers fixed from the hosts' own outlines, the eLumen wave loaded](../session_402_handoff.md) | 2026-10-17 |
 | 401 | [Session 401 handoff: Sierra AI's format in My College, the program search's no-match path, wave 5 closed](../session_401_handoff.md) | 2026-10-16 |

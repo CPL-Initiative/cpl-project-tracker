@@ -88,11 +88,15 @@
    "program": 4,
    "courses": 0,
    "count": 4,
-   "not_verbatim": [],
-   "why": [],
+   "not_verbatim": [
+    "Evaluate and apply knowledge of the engineering design process, manufacturing processes, and materials to design and/or manufacturing projects."
+   ],
+   "why": [
+    "not in the catalog text as printed: Evaluate and apply knowledge of the engineering design process, manufacturing pr"
+   ],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": true
+   "pass": false
   },
   "careers": {
    "count": 0,
@@ -102,7 +106,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": true
+  "pass": false
  },
  "record": {
   "program": {
@@ -214,6 +218,5 @@
    "The certificate prints its own four program learning outcomes (a subset of the A.S. degree's six)."
   ]
  },
- "extracted_run": 39018421038,
- "read_run": "39006383070"
+ "extracted_run": "39006383070"
 }

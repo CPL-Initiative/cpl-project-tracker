@@ -82,16 +82,27 @@
    "program": 4,
    "courses": 0,
    "count": 4,
-   "not_verbatim": [],
-   "why": [],
+   "not_verbatim": [
+    "Using various photographic tools students will be able to produce photographs using various digital camera types and apply a variety of lighting techniques to the production of photographs. Students will also be able to produce photographs using various photographic papers and digital output.",
+    "Students will have sufficient mastery of one or more media to complete the technical and formal challenges pertinent to a body of original work and will be able to clearly communicate the content and context of their work visually, orally and in writing."
+   ],
+   "why": [
+    "not in the catalog text as printed: Using various photographic tools students will be able to produce photographs us",
+    "not in the catalog text as printed: Students will have sufficient mastery of one or more media to complete the techn"
+   ],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": true
+   "pass": false
   },
   "careers": {
    "count": 26,
-   "not_verbatim": [],
-   "pass": true
+   "not_verbatim": [
+    "commercial and advertising photography",
+    "other photography businesses",
+    "Advertising Photographer",
+    "Visual Merchandiser"
+   ],
+   "pass": false
   },
   "degree": {
    "status": "major only",
@@ -99,7 +110,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": true
+  "pass": false
  },
  "record": {
   "program": {
@@ -298,6 +309,5 @@
    "Careers list taken from the A.S. section's program information; 'journalism fields', 'film', 'television', 'electronic media' are fields where the text says the skills apply."
   ]
  },
- "extracted_run": 39018421038,
- "read_run": "39006383070"
+ "extracted_run": "39006383070"
 }

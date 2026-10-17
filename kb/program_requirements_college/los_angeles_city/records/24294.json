@@ -86,19 +86,11 @@
    "program": 3,
    "courses": 0,
    "count": 3,
-   "not_verbatim": [
-    "Identify a career field of choice.",
-    "Develop an effective resume and interviewing skills.",
-    "Employ basic customer service techniques including strategies for remaining positive on the job."
-   ],
-   "why": [
-    "not in the catalog text as printed: Identify a career field of choice.",
-    "not in the catalog text as printed: Develop an effective resume and interviewing skills.",
-    "not in the catalog text as printed: Employ basic customer service techniques including strategies for remaining posi"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 0,
@@ -108,7 +100,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -192,6 +184,5 @@
    "The description calls the award 'Job Readiness Skills certificate of completion' while the heading reads 'Job Readiness'."
   ]
  },
- "extracted_run": 39018419466,
- "read_run": "39006380342"
+ "extracted_run": "39006380342"
 }

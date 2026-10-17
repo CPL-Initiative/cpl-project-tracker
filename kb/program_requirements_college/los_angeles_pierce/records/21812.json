@@ -82,23 +82,11 @@
    "program": 5,
    "courses": 0,
    "count": 5,
-   "not_verbatim": [
-    "Basic knowledge and skills for maintenance and repair of brakes and suspension systems.",
-    "Knowledge and skills for maintenance and repair of electrical and electronic systems.",
-    "Knowledge and skills for maintenance and repair of Powertrain and drive line systems.",
-    "Knowledge and skills for maintenance and repair of Emission systems and Climate-comfort control systems.",
-    "Knowledge of automotive technician performance applications."
-   ],
-   "why": [
-    "not in the catalog text as printed: Basic knowledge and skills for maintenance and repair of brakes and suspension s",
-    "not in the catalog text as printed: Knowledge and skills for maintenance and repair of electrical and electronic sys",
-    "not in the catalog text as printed: Knowledge and skills for maintenance and repair of Powertrain and drive line sys",
-    "not in the catalog text as printed: Knowledge and skills for maintenance and repair of Emission systems and Climate-",
-    "not in the catalog text as printed: Knowledge of automotive technician performance applications."
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 0,
@@ -108,7 +96,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -298,6 +286,5 @@
    "Certificate GE column reads N/A; no degree total or GE pattern applies."
   ]
  },
- "extracted_run": 39018421038,
- "read_run": "39006383070"
+ "extracted_run": "39006383070"
 }

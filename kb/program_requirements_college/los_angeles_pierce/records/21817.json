@@ -82,11 +82,19 @@
    "program": 5,
    "courses": 0,
    "count": 5,
-   "not_verbatim": [],
-   "why": [],
+   "not_verbatim": [
+    "Utilize a variety of area-specific counseling skills; e.g., family, couples, skills training, adolescent, etc. concerning addiction studies.",
+    "Demonstrate a basic set of helping skills (warmth, empathy, reflective listening) needed for entry employment in the addictions field.",
+    "Practice professional workforce behaviors (e.g., be on time, meet deadlines, have appropriate boundaries, etc.) concerning addiction studies."
+   ],
+   "why": [
+    "not in the catalog text as printed: Utilize a variety of area-specific counseling skills; e.g., family, couples, ski",
+    "not in the catalog text as printed: Demonstrate a basic set of helping skills (warmth, empathy, reflective listening",
+    "not in the catalog text as printed: Practice professional workforce behaviors (e.g., be on time, meet deadlines, hav"
+   ],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": true
+   "pass": false
   },
   "careers": {
    "count": 0,
@@ -96,7 +104,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": true
+  "pass": false
  },
  "record": {
   "program": {
@@ -292,6 +300,5 @@
    "Elective block reads 'Select 6 semester units from the following: 6'."
   ]
  },
- "extracted_run": 39018421038,
- "read_run": "39006383070"
+ "extracted_run": "39006383070"
 }

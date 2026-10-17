@@ -92,23 +92,27 @@
    "program": 4,
    "courses": 0,
    "count": 4,
-   "not_verbatim": [],
-   "why": [],
+   "not_verbatim": [
+    "Develop receptive and expressive skills in American Sign Language and Fingerspelling.",
+    "Develop knowledge and awareness of the similarities and differences between the Deaf Culture/Deaf community and the hearing community."
+   ],
+   "why": [
+    "not in the catalog text as printed: Develop receptive and expressive skills in American Sign Language and Fingerspel",
+    "not in the catalog text as printed: Develop knowledge and awareness of the similarities and differences between the "
+   ],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": true
+   "pass": false
   },
   "careers": {
    "count": 1,
-   "not_verbatim": [
-    "ASL/English interpreter"
-   ],
-   "pass": false
+   "not_verbatim": [],
+   "pass": true
   },
   "degree": {
    "status": "n/a"
   },
-  "pass": true
+  "pass": false
  },
  "record": {
   "program": {
@@ -258,6 +262,5 @@
    "Career taken from the program description ('entry level employment as an ASL/English interpreter'); the listed work settings (college & university level, video relay service, etc.) were not recorded as careers."
   ]
  },
- "extracted_run": 39018421038,
- "read_run": "39006383070"
+ "extracted_run": "39006383070"
 }

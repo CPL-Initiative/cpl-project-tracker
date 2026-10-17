@@ -975,6 +975,16 @@ try:
     check("reconciled" not in rs and rs["score"] != other["score"] and rs["extracted_run"] == 38700000001
           and rs["read_run"] == 38442109713,
           "reconcile: a record rescored with no reconcile step is stamped with the run, so step=reread posts it")
+    # A fresh page other than the one the record was extracted from says nothing about it (S403).
+    json.dump(dict(other, source_url="https://x.edu/c.pdf#page=4"),
+              open(os.path.join(keep, "records", "06999.json"), "w"))
+    json.dump({"control_number": "06999", "award": "A.S. Degree", "closed_list": [{"code": "ASTRO 3", "units": 30}],
+               "source": {"url": "https://x.edu/c.pdf#page=9"}, "text": "Astronomy\nASTRO 3 Stars 30"},
+              open(os.path.join(outd, "sources", "06999.json"), "w"))
+    C.reconcile_filed("Cabrillo College", outd, "38700000002", keep)
+    mv = json.load(open(os.path.join(outd, "records", "06999.json")))
+    check(mv["score"] == other["score"] and mv["extracted_run"] == 38442109713,
+          "reconcile: a record whose fresh page moved is filed again as it was, never rescored on the other page")
 finally:
     shutil.rmtree(rcd, ignore_errors=True)
 

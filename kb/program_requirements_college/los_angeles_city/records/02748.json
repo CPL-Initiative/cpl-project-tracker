@@ -82,11 +82,17 @@
    "program": 5,
    "courses": 0,
    "count": 5,
-   "not_verbatim": [],
-   "why": [],
+   "not_verbatim": [
+    "Design and construct basic orthodontic restorations, and partial and full removable dental prosthesis.",
+    "Design and construct fixed dental prosthesis single and multiple units."
+   ],
+   "why": [
+    "not in the catalog text as printed: Design and construct basic orthodontic restorations, and partial and full remova",
+    "not in the catalog text as printed: Design and construct fixed dental prosthesis single and multiple units."
+   ],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": true
+   "pass": false
   },
   "careers": {
    "count": 0,
@@ -99,7 +105,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": true
+  "pass": false
  },
  "record": {
   "program": {
@@ -283,6 +289,5 @@
    "No careers named in the visible A.S. section; the following Certificate of Achievement section mentions becoming a 'dental technologist', not recorded since it belongs to a different award section."
   ]
  },
- "extracted_run": 39018419466,
- "read_run": "39006380342"
+ "extracted_run": "39006380342"
 }

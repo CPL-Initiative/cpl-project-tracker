@@ -82,11 +82,15 @@
    "program": 3,
    "courses": 0,
    "count": 3,
-   "not_verbatim": [],
-   "why": [],
+   "not_verbatim": [
+    "Design and construct basic orthodontic restorations, and partial and full removable dental prosthesis."
+   ],
+   "why": [
+    "not in the catalog text as printed: Design and construct basic orthodontic restorations, and partial and full remova"
+   ],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": true
+   "pass": false
   },
   "careers": {
    "count": 0,
@@ -96,7 +100,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": true
+  "pass": false
  },
  "record": {
   "program": {
@@ -222,6 +226,5 @@
    "No careers are named in this section."
   ]
  },
- "extracted_run": 39018419466,
- "read_run": "39006380342"
+ "extracted_run": "39006380342"
 }

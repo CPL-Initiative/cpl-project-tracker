@@ -82,11 +82,15 @@
    "program": 2,
    "courses": 0,
    "count": 2,
-   "not_verbatim": [],
-   "why": [],
+   "not_verbatim": [
+    "Recognize and produce rhythm and intonation patterns appropriate to a given situation."
+   ],
+   "why": [
+    "not in the catalog text as printed: Recognize and produce rhythm and intonation patterns appropriate to a given situ"
+   ],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": true
+   "pass": false
   },
   "careers": {
    "count": 0,
@@ -96,7 +100,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": true
+  "pass": false
  },
  "record": {
   "program": {
@@ -164,6 +168,5 @@
    "The description mentions 'employment' as a general goal but names no specific career, so careers is empty."
   ]
  },
- "extracted_run": 39018419466,
- "read_run": "39006380342"
+ "extracted_run": "39006380342"
 }
