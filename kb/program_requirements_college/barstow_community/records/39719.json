@@ -1,0 +1,281 @@
+{
+ "college": "Barstow Community College",
+ "control_number": "39719",
+ "shape": "degree",
+ "title": "Industrial Maintenance Mechanic Technology",
+ "award": "A.S. Degree",
+ "source_url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=92",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 10119,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 10119,
+    "output_tokens": 1655,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1655,
+  "output_tokens_details": {
+   "thinking_tokens": 424
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.07358,
+ "ms": 12269,
+ "seconds": 12.6,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 15,
+   "listed": 15,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    20.0,
+    20.0
+   ],
+   "stated": [
+    20.0,
+    20.0
+   ],
+   "against": "program",
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     41.0,
+     79.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     20.0,
+     39.0
+    ],
+    "why": [],
+    "within": true
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Associate of Science Degree, Industrial Maintenance Mechanic Technology",
+   "measure": "units",
+   "total_units": {
+    "min": 20,
+    "max": 20
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": 1,
+    "max": 20
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": 20,
+    "max": 39
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Use tools safely and equipment commonly used in the trade.",
+    "Do basic layout on a jobsite using scribing and quantitative skills.",
+    "Work with various types of piping on the jobsite.",
+    "Work with various types of valves and perform hydrostatic and pneumatic testing on the jobsite."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required Core Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "BCTT 54",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "IMMT 60",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "IMMT 62",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "IMMT 64",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "IMMT 66",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "IMMT 68",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "IMMT 69",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "IMMT 70",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "IMMT 71",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "IMMT 73",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "IMMT 74",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "IMMT 75",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "IMMT 76",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "IMMT 77",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WELD 50A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The page prints 'Major Units Required 20.0' (recorded as total_units), 'General Education Coursework 20.0-39.0' (ge_units), 'Electives Required 1.0-20.0' (degree_elective_units) and 'Total Units Required 60.0' (degree_total).",
+   "The page does not name a specific general education pattern (only 'General Education Coursework'), so ge_pattern is null.",
+   "The description mentions 'entry level positions in industry and service occupations requiring skills in Industrial Maintenance Mechanics' without naming specific job titles; careers left empty — reviewer may wish to check.",
+   "The text begins mid-section with the tail of a preceding program (IMEI/WELD courses and a 60-unit summary) on page 92; that section was not read for this award.",
+   "Required core courses sum to 20.0 units, matching the printed major total."
+  ]
+ },
+ "extracted_run": "39006332820"
+}

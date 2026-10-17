@@ -1,0 +1,2643 @@
+[
+ {
+  "control_number": "04736",
+  "title": "Diesel Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "DESL63",
+   "DESL64",
+   "DESL65",
+   "DESL67",
+   "DESL70"
+  ],
+  "source": {
+   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=89",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    89,
+    90
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 5,
+  "text_chars": 4882
+ },
+ {
+  "control_number": "04750",
+  "title": "Child Development Level II",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 8,
+  "text_chars": 0
+ },
+ {
+  "control_number": "09688",
+  "title": "Family Daycare",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHLD12A",
+   "CHLD14",
+   "CHLD15",
+   "CHLD25",
+   "CHLD61",
+   "CHLD9"
+  ],
+  "source": {
+   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=133",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    133,
+    134,
+    135,
+    136
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 6,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "17763",
+  "title": "Management Information Systems",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CBIS1",
+   "CBIS13",
+   "CBIS15",
+   "CBIS17",
+   "CBIS19"
+  ],
+  "source": {
+   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=76",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    76,
+    77
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 5,
+  "text_chars": 6010
+ },
+ {
+  "control_number": "18206",
+  "title": "Automotive Technology",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "AUTO51A",
+   "AUTO52",
+   "AUTO53",
+   "AUTO54",
+   "AUTO55",
+   "AUTO56"
+  ],
+  "source": {
+   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=88",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    88,
+    89
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 6,
+  "text_chars": 3365
+ },
+ {
+  "control_number": "18482",
+  "title": "Accounting",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT1",
+   "ACCT4",
+   "ACCT5",
+   "ACCT68",
+   "BADM1",
+   "BADM19",
+   "CBIS1",
+   "ECONC2001",
+   "ECONC2002"
+  ],
+  "source": {
+   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=71",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    71,
+    72,
+    73,
+    74
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 9,
+  "text_chars": 10392
+ },
+ {
+  "control_number": "18483",
+  "title": "Administration of Justice",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ADJU1",
+   "ADJU14",
+   "ADJU15",
+   "ADJU16",
+   "ADJU17",
+   "ADJU18",
+   "ADJU2",
+   "ADJU3",
+   "ADJU4",
+   "ADJU5",
+   "ADJU6",
+   "ADJU7",
+   "ADJU8"
+  ],
+  "source": {
+   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=109",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    109,
+    110,
+    111,
+    112
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 13,
+  "text_chars": 9748
+ },
+ {
+  "control_number": "18487",
+  "title": "Automotive Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "AUTO51A",
+   "AUTO52",
+   "AUTO52A",
+   "AUTO53",
+   "AUTO54",
+   "AUTO55",
+   "AUTO56",
+   "AUTO57"
+  ],
+  "source": {
+   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=88",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    88,
+    89
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 8,
+  "text_chars": 3365
+ },
+ {
+  "control_number": "18488",
+  "title": "Business",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT1",
+   "ACCT4",
+   "ACCT5",
+   "ACCT68",
+   "BADM1",
+   "BADM19",
+   "BADM5",
+   "BADM6",
+   "ECONC2001",
+   "ECONC2002",
+   "ENTR1",
+   "ENTR2",
+   "ENTR3",
+   "ENTR4",
+   "MGMT1",
+   "MGMT3",
+   "MGMT5",
+   "MGMT7"
+  ],
+  "source": {
+   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=72",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    72,
+    73,
+    74
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 18,
+  "text_chars": 7709
+ },
+ {
+  "control_number": "18489",
+  "title": "Child Development",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.857,
+  "codes_found": [
+   "CDEVC1000",
+   "CHLD15",
+   "CHLD15A",
+   "CHLD17",
+   "CHLD17A",
+   "CHLD19A",
+   "CHLD19B",
+   "CHLD19C",
+   "CHLD20",
+   "CHLD25",
+   "CHLD30",
+   "CHLD30A",
+   "CHLD35",
+   "CHLD35A",
+   "CHLD49",
+   "CHLD6",
+   "CHLD61",
+   "CHLD9"
+  ],
+  "source": {
+   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=134",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    134,
+    135,
+    136,
+    137
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 21,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "18490",
+  "title": "Cosmetology",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "COSM50A",
+   "COSM50B",
+   "COSM50C",
+   "COSM51A",
+   "COSM51B",
+   "COSM51C",
+   "COSM52"
+  ],
+  "source": {
+   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=90",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    90,
+    91
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 7,
+  "text_chars": 5598
+ },
+ {
+  "control_number": "18491",
+  "title": "Cosmetology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "COSM50A",
+   "COSM50B",
+   "COSM50C",
+   "COSM51A",
+   "COSM51B",
+   "COSM51C",
+   "COSM52"
+  ],
+  "source": {
+   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=90",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    90,
+    91
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 7,
+  "text_chars": 5598
+ },
+ {
+  "control_number": "18494",
+  "title": "Management",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT1",
+   "BADM19",
+   "ENTR1",
+   "MGMT1",
+   "MGMT3",
+   "MGMT5"
+  ],
+  "source": {
+   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=72",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    72,
+    73,
+    74
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 6,
+  "text_chars": 7709
+ },
+ {
+  "control_number": "18500",
+  "title": "Welding Technology",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "WELD50A",
+   "WELD51",
+   "WELD52",
+   "WELD54A",
+   "WELD54B",
+   "WELD55A",
+   "WELD55B",
+   "WELD56",
+   "WELD57A",
+   "WELD57B"
+  ],
+  "source": {
+   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=96",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    96,
+    97,
+    98,
+    99
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 10,
+  "text_chars": 10316
+ },
+ {
+  "control_number": "18501",
+  "title": "Welding Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "WELD50A",
+   "WELD51",
+   "WELD52",
+   "WELD54A",
+   "WELD54B",
+   "WELD55A",
+   "WELD55B",
+   "WELD56",
+   "WELD57A",
+   "WELD57B"
+  ],
+  "source": {
+   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=96",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    96,
+    97,
+    98,
+    99
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 10,
+  "text_chars": 10316
+ },
+ {
+  "control_number": "18503",
+  "title": "Humanities",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.988,
+  "codes_found": [
+   "ARTHC1100",
+   "ARTHC1200",
+   "ARTS10A",
+   "ARTS13A",
+   "ARTS16",
+   "ARTS17",
+   "ARTS18A",
+   "ARTS18B",
+   "ARTS18C",
+   "ARTS19",
+   "ARTS3",
+   "ARTS5",
+   "ARTS7",
+   "COMM2",
+   "COMM4",
+   "COMM5",
+   "COMM6",
+   "COMMC1000",
+   "COMMC1004",
+   "ENGL11",
+   "ENGL12",
+   "ENGL12B",
+   "ENGL13A",
+   "ENGL2",
+   "ENGL3",
+   "ENGL4",
+   "ENGL5",
+   "ENGL7",
+   "ENGLC1000",
+   "ENGLC1001",
+   "ENGLC1002",
+   "HIST1A",
+   "HIST1B",
+   "HIST4",
+   "HIST5",
+   "HIST8A",
+   "HIST8B",
+   "HISTC1001",
+   "HISTC1002",
+   "HUMA1",
+   "HUMA2",
+   "HUMA3",
+   "HUMA4",
+   "HUMA5",
+   "MUSI12A",
+   "MUSI12B",
+   "MUSI12C",
+   "MUSI2",
+   "MUSI3",
+   "MUSI4A",
+   "MUSI4B",
+   "MUSI4C",
+   "MUSI4D",
+   "MUSI5A",
+   "MUSI5B",
+   "MUSI5C",
+   "MUSI5D",
+   "MUSI6A",
+   "MUSI6B",
+   "MUSI6C",
+   "MUSI7A",
+   "MUSI7B",
+   "MUSI7C",
+   "MUSI7D",
+   "MUSI8A",
+   "MUSI8B",
+   "MUSI8C",
+   "MUSI8D",
+   "PHIL1",
+   "PHIL1C",
+   "PHIL3",
+   "PHIL4",
+   "PHIL5",
+   "PHIL6",
+   "PHIL7",
+   "PHIL8",
+   "TART1",
+   "TART24A",
+   "TART3",
+   "TART4A",
+   "TART4B",
+   "TART4C",
+   "TART4D"
+  ],
+  "source": {
+   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=65",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    65,
+    66,
+    67,
+    68
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 84,
+  "text_chars": 10209
+ },
+ {
+  "control_number": "18588",
+  "title": "Administration of Justice",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ADJU1",
+   "ADJU14",
+   "ADJU15",
+   "ADJU16",
+   "ADJU17",
+   "ADJU18",
+   "ADJU2",
+   "ADJU3",
+   "ADJU4",
+   "ADJU5",
+   "ADJU6",
+   "ADJU7",
+   "ADJU8"
+  ],
+  "source": {
+   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=109",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    109,
+    110,
+    111,
+    112
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 13,
+  "text_chars": 9748
+ },
+ {
+  "control_number": "18589",
+  "title": "Accounting",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT1",
+   "ACCT4",
+   "ACCT68",
+   "BADM1",
+   "BADM2",
+   "ENTR1"
+  ],
+  "source": {
+   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=73",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    73,
+    74
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 6,
+  "text_chars": 5334
+ },
+ {
+  "control_number": "19967",
+  "title": "Diesel Technology",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "DESL63",
+   "DESL64",
+   "DESL65",
+   "DESL67",
+   "DESL70"
+  ],
+  "source": {
+   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=89",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    89,
+    90
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 5,
+  "text_chars": 4882
+ },
+ {
+  "control_number": "30562",
+  "title": "Warehousing and Logistics, Level 2",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CBIS1",
+   "WARE51",
+   "WARE52",
+   "WARE54",
+   "WARE55",
+   "WARE59"
+  ],
+  "source": {
+   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=73",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    73,
+    74,
+    75,
+    76
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 6,
+  "text_chars": 11620
+ },
+ {
+  "control_number": "30733",
+  "title": "Warehousing & Logistics",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CBIS1",
+   "WARE51",
+   "WARE52",
+   "WARE54",
+   "WARE55",
+   "WARE59"
+  ],
+  "source": {
+   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=73",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    73,
+    74,
+    75,
+    76
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 6,
+  "text_chars": 11620
+ },
+ {
+  "control_number": "31034",
+  "title": "Sociology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ADJU1",
+   "ANTH1",
+   "PSYCC1000",
+   "SOCI10",
+   "SOCI12",
+   "SOCI2",
+   "SOCI25",
+   "SOCI3",
+   "SOCI7",
+   "SOCI9",
+   "SOCIC1000",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=107",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    107,
+    108,
+    109,
+    110
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 12,
+  "text_chars": 10311
+ },
+ {
+  "control_number": "31051",
+  "title": "Psychology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOLC1000",
+   "PSYC11",
+   "PSYC12",
+   "PSYC14",
+   "PSYC15",
+   "PSYC2",
+   "PSYCC1000",
+   "SOCIC1000",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=106",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    106,
+    107,
+    108,
+    109
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 9,
+  "text_chars": 11559
+ },
+ {
+  "control_number": "33065",
+  "title": "Early Childhood Education",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 0.5,
+  "codes_found": [
+   "CDEVC1000",
+   "CHLD49",
+   "CHLD6",
+   "CHLD9"
+  ],
+  "source": {
+   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=136",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    136,
+    137
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 8,
+  "text_chars": 9270
+ },
+ {
+  "control_number": "33066",
+  "title": "Political Science",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 0.727,
+  "codes_found": [
+   "ADJU1",
+   "HISTC1001",
+   "HISTC1002",
+   "POLSC1000",
+   "PSYCC1000",
+   "SOCI12",
+   "SOCIC1000",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=105",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    105,
+    106,
+    107,
+    108
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 11,
+  "text_chars": 12230
+ },
+ {
+  "control_number": "33067",
+  "title": "History",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 0.917,
+  "codes_found": [
+   "HIST1A",
+   "HIST1B",
+   "HIST4",
+   "HIST5",
+   "HIST8A",
+   "HIST8B",
+   "HISTC1001",
+   "HISTC1002",
+   "POLSC1000",
+   "PSYCC1000",
+   "SOCIC1000"
+  ],
+  "source": {
+   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=83",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    83,
+    84
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 12,
+  "text_chars": 5124
+ },
+ {
+  "control_number": "33070",
+  "title": "Art History",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ARTHC1100",
+   "ARTHC1200",
+   "ARTS10A",
+   "ARTS13A",
+   "ARTS18A",
+   "ARTS19",
+   "ARTS3",
+   "ARTS5",
+   "ARTS7",
+   "HIST8B",
+   "HUMA4",
+   "PHIL1",
+   "PHIL3",
+   "PHIL4",
+   "PHIL5",
+   "PHIL6",
+   "PHIL7",
+   "PHIL8"
+  ],
+  "source": {
+   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=60",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    60,
+    61
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 18,
+  "text_chars": 5387
+ },
+ {
+  "control_number": "33071",
+  "title": "Business Administration",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT1",
+   "ACCT4",
+   "BADM1",
+   "BADM5",
+   "BADM6",
+   "CBIS1",
+   "ECONC2001",
+   "ECONC2002",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=70",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    70,
+    71,
+    72,
+    73
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 9,
+  "text_chars": 10881
+ },
+ {
+  "control_number": "33076",
+  "title": "Administration of Justice",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ADJU1",
+   "ADJU14",
+   "ADJU15",
+   "ADJU16",
+   "ADJU17",
+   "ADJU18",
+   "ADJU2",
+   "ADJU3",
+   "ADJU4",
+   "ADJU5",
+   "ADJU6",
+   "ADJU7",
+   "ADJU8",
+   "PSYCC1000",
+   "SOCI12",
+   "SOCIC1000",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=109",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    109,
+    110,
+    111,
+    112
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 17,
+  "text_chars": 9748
+ },
+ {
+  "control_number": "33083",
+  "title": "English",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ENGL11",
+   "ENGL12",
+   "ENGL12B",
+   "ENGL13A",
+   "ENGL2",
+   "ENGL3",
+   "ENGL5",
+   "ENGL7",
+   "ENGLC1001",
+   "ENGLC1002"
+  ],
+  "source": {
+   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=65",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    65
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 10,
+  "text_chars": 2426
+ },
+ {
+  "control_number": "35100",
+  "title": "Industrial Maintenance Mechanic Technology, Level 3",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "IMMT60",
+   "IMMT62",
+   "IMMT64",
+   "IMMT66",
+   "IMMT68",
+   "IMMT69",
+   "IMMT70",
+   "IMMT71",
+   "IMMT73",
+   "IMMT74",
+   "IMMT75",
+   "IMMT76",
+   "IMMT77"
+  ],
+  "source": {
+   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=92",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    92
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 13,
+  "text_chars": 2005
+ },
+ {
+  "control_number": "35346",
+  "title": "Industrial Maintenance Electrical and Instrumentation, Level 3",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BCTT54",
+   "ELCT70A",
+   "ELCT70B",
+   "ELCT70C",
+   "ELCT70D",
+   "ELCT70E",
+   "IMEI80A",
+   "IMEI80B",
+   "IMEI80C",
+   "IMEI80D",
+   "IMEI80E",
+   "IMEI80F"
+  ],
+  "source": {
+   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=93",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    93,
+    94
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 12,
+  "text_chars": 5078
+ },
+ {
+  "control_number": "35710",
+  "title": "Child Development Level III",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 17,
+  "text_chars": 0
+ },
+ {
+  "control_number": "35769",
+  "title": "Child Development Level IV",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 11,
+  "text_chars": 0
+ },
+ {
+  "control_number": "35770",
+  "title": "Child Development Level I",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 0.667,
+  "codes_found": [
+   "CDEVC1000",
+   "CHLD11A",
+   "CHLD12A",
+   "CHLD14"
+  ],
+  "source": {
+   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=133",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    133,
+    134
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 6,
+  "text_chars": 9397
+ },
+ {
+  "control_number": "39136",
+  "title": "Corrections",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ADJU1",
+   "ADJU14",
+   "ADJU15",
+   "ADJU16",
+   "ADJU17",
+   "ADJU18"
+  ],
+  "source": {
+   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=102",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    102
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 6,
+  "text_chars": 2852
+ },
+ {
+  "control_number": "39150",
+  "title": "Cyber Security Specialist",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ADJU1",
+   "CBIS1",
+   "CBIS14",
+   "CBIS15",
+   "CBIS17"
+  ],
+  "source": {
+   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=76",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    76,
+    77
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 5,
+  "text_chars": 6010
+ },
+ {
+  "control_number": "39151",
+  "title": "Computer and Network Specialist (Network+)",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 0.75,
+  "codes_found": [
+   "CBIS1",
+   "CBIS13",
+   "CBIS15"
+  ],
+  "source": {
+   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=76",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    76,
+    77
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 4,
+  "text_chars": 6010
+ },
+ {
+  "control_number": "39360",
+  "title": "Computer Science",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEM2A",
+   "CSIS10",
+   "CSIS18",
+   "CSIS33",
+   "CSIS35",
+   "MATHC2210",
+   "MATHC2220",
+   "PHYS2A"
+  ],
+  "source": {
+   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=119",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    119,
+    120
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 8,
+  "text_chars": 5535
+ },
+ {
+  "control_number": "39436",
+  "title": "Kinesiology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL4",
+   "BIOL5",
+   "CHEM2A",
+   "KINA16A",
+   "KINA17A",
+   "KINA18A",
+   "KINA21A",
+   "KINA22A",
+   "KINA23A",
+   "KINA24A",
+   "KINA30A",
+   "KINA31A",
+   "KINA3A",
+   "KINA4A",
+   "KINA5A",
+   "KINA6A",
+   "KINL1",
+   "KINL23",
+   "PHYS2A",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=116",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    116,
+    117,
+    118,
+    119
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 20,
+  "text_chars": 10445
+ },
+ {
+  "control_number": "39522",
+  "title": "Elementary Teacher Education",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 0.867,
+  "codes_found": [
+   "BIOLC1000",
+   "CDEVC1000",
+   "CHEM10",
+   "COMMC1000",
+   "EDUC1",
+   "ENGLC1000",
+   "ENGLC1002",
+   "HIST8A",
+   "HISTC1001",
+   "MUSI2",
+   "PHSC2",
+   "POLSC1000",
+   "TART3"
+  ],
+  "source": {
+   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=78",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    78,
+    79,
+    80
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 15,
+  "text_chars": 8880
+ },
+ {
+  "control_number": "39588",
+  "title": "Philosophy",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "HIST1A",
+   "HIST1B",
+   "HUMA1",
+   "HUMA2",
+   "HUMA3",
+   "HUMA4",
+   "HUMA5",
+   "PHIL1",
+   "PHIL10",
+   "PHIL3",
+   "PHIL4",
+   "PHIL5",
+   "PHIL6",
+   "PHIL7",
+   "PHIL8",
+   "PHIL9"
+  ],
+  "source": {
+   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=101",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    101
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 16,
+  "text_chars": 2423
+ },
+ {
+  "control_number": "39655",
+  "title": "Computer Business Information Systems",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ADJU1",
+   "ADJU3",
+   "CBIS1",
+   "CBIS13",
+   "CBIS14",
+   "CBIS15",
+   "CBIS17",
+   "CBIS19"
+  ],
+  "source": {
+   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=76",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    76,
+    77
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 8,
+  "text_chars": 6010
+ },
+ {
+  "control_number": "39670",
+  "title": "Studio Arts",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ARTHC1100",
+   "ARTHC1200",
+   "ARTS10A",
+   "ARTS13A",
+   "ARTS16",
+   "ARTS17",
+   "ARTS18A",
+   "ARTS19",
+   "ARTS3",
+   "ARTS5",
+   "ARTS7"
+  ],
+  "source": {
+   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=67",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    67
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 11,
+  "text_chars": 3123
+ },
+ {
+  "control_number": "39718",
+  "title": "Industrial Maintenance Electrical and Instrumentation",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.923,
+  "codes_found": [
+   "BCTT54",
+   "ELCT70A",
+   "ELCT70B",
+   "ELCT70C",
+   "ELCT70D",
+   "ELCT70E",
+   "IMEI80A",
+   "IMEI80B",
+   "IMEI80C",
+   "IMEI80D",
+   "IMEI80E",
+   "IMEI80F"
+  ],
+  "source": {
+   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=93",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    93,
+    94
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 13,
+  "text_chars": 5078
+ },
+ {
+  "control_number": "39719",
+  "title": "Industrial Maintenance Mechanic Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BCTT54",
+   "IMMT60",
+   "IMMT62",
+   "IMMT64",
+   "IMMT66",
+   "IMMT68",
+   "IMMT69",
+   "IMMT70",
+   "IMMT71",
+   "IMMT73",
+   "IMMT74",
+   "IMMT75",
+   "IMMT76",
+   "IMMT77",
+   "WELD50A"
+  ],
+  "source": {
+   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=92",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    92,
+    93,
+    94,
+    95
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 15,
+  "text_chars": 9324
+ },
+ {
+  "control_number": "39906",
+  "title": "Entrepreneurship and Innovation",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BADM5",
+   "CBIS1",
+   "ENTR1",
+   "ENTR2",
+   "ENTR3",
+   "ENTR4"
+  ],
+  "source": {
+   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=73",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    73,
+    74,
+    75,
+    76
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 6,
+  "text_chars": 11620
+ },
+ {
+  "control_number": "40021",
+  "title": "Biology",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL20A",
+   "BIOL20B",
+   "CHEM2A",
+   "CHEM2B",
+   "MATHC2210",
+   "PHYS2A",
+   "PHYS2B"
+  ],
+  "source": {
+   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=114",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    114,
+    115
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 7,
+  "text_chars": 4989
+ },
+ {
+  "control_number": "40024",
+  "title": "Social Justice",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 0.846,
+  "codes_found": [
+   "ETHN1",
+   "HISTC1001",
+   "PSYCC1000",
+   "SOCI10",
+   "SOCI12",
+   "SOCI2",
+   "SOCI20",
+   "SOCI22",
+   "SOCI7",
+   "SOCI9",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=103",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    103,
+    104,
+    105,
+    106
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 13,
+  "text_chars": 12046
+ },
+ {
+  "control_number": "40065",
+  "title": "Industrial Maintenance Electrical and Instrumentation, Level 2",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "IMEI80A",
+   "IMEI80B",
+   "IMEI80C",
+   "IMEI80D",
+   "IMEI80E",
+   "IMEI80F"
+  ],
+  "source": {
+   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=93",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    93
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 6,
+  "text_chars": 2592
+ },
+ {
+  "control_number": "40066",
+  "title": "Warehousing & Logistics Level I",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "WARE52",
+   "WARE54",
+   "WARE55"
+  ],
+  "source": {
+   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=73",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    73
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 3,
+  "text_chars": 2798
+ },
+ {
+  "control_number": "40067",
+  "title": "Industrial Maintenance Mechanic Technology, Level 2",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "IMMT70",
+   "IMMT71",
+   "IMMT73",
+   "IMMT74",
+   "IMMT75",
+   "IMMT76",
+   "IMMT77"
+  ],
+  "source": {
+   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=92",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    92
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 7,
+  "text_chars": 2005
+ },
+ {
+  "control_number": "40088",
+  "title": "Welding Technology-Gas Tungsten Arc Welding (GTAW)",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "WELD50A",
+   "WELD55A",
+   "WELD55B",
+   "WELD56"
+  ],
+  "source": {
+   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=96",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    96,
+    97,
+    98,
+    99
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 4,
+  "text_chars": 10316
+ },
+ {
+  "control_number": "40097",
+  "title": "Chemistry",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEM2A",
+   "CHEM2B",
+   "CHEM3A",
+   "CHEM3B",
+   "MATHC2210",
+   "MATHC2220",
+   "PHYS2A",
+   "PHYS2B"
+  ],
+  "source": {
+   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=120",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    120
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 8,
+  "text_chars": 2782
+ },
+ {
+  "control_number": "40101",
+  "title": "Welding Technology- Semi-Automatic Arc Welding (GMAW/FCAW)",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "WELD50A",
+   "WELD54A",
+   "WELD54B",
+   "WELD56"
+  ],
+  "source": {
+   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=96",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    96,
+    97,
+    98,
+    99
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 4,
+  "text_chars": 10316
+ },
+ {
+  "control_number": "40102",
+  "title": "Welding Technology-Shielded Metal Arc Welding (SMAW)",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "WELD50A",
+   "WELD51",
+   "WELD52",
+   "WELD56"
+  ],
+  "source": {
+   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=96",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    96,
+    97,
+    98,
+    99
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 4,
+  "text_chars": 10316
+ },
+ {
+  "control_number": "40103",
+  "title": "Welding Technology- Welding Fabrication",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "WELD50A",
+   "WELD56",
+   "WELD57A",
+   "WELD57B"
+  ],
+  "source": {
+   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=96",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    96,
+    97,
+    98,
+    99
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 4,
+  "text_chars": 10316
+ },
+ {
+  "control_number": "40633",
+  "title": "Mathematics",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 0.857,
+  "codes_found": [
+   "MATH4C",
+   "MATH9",
+   "MATHC2210",
+   "MATHC2220",
+   "PHYS2A",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=119",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    119,
+    120
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 7,
+  "text_chars": 5535
+ },
+ {
+  "control_number": "40827",
+  "title": "Customer Service and Digital Literacy",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CBIS101",
+   "CUST100",
+   "CUST110"
+  ],
+  "source": {
+   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=121",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    121,
+    122
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 3,
+  "text_chars": 6053
+ },
+ {
+  "control_number": "40830",
+  "title": "Trades Technician",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CUST100",
+   "CUST110",
+   "IMMT100"
+  ],
+  "source": {
+   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=122",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    122
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 3,
+  "text_chars": 3052
+ },
+ {
+  "control_number": "41033",
+  "title": "Kinesiology, Professional Preparation",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "AHLT51",
+   "AHLT63",
+   "HEAL2",
+   "KINA16A",
+   "KINA17A",
+   "KINA18A",
+   "KINA21A",
+   "KINA22A",
+   "KINA23A",
+   "KINA30A",
+   "KINA31A",
+   "KINA3A",
+   "KINA4A",
+   "KINA5A",
+   "KINA6A",
+   "KINL1",
+   "KINL2",
+   "KINL23",
+   "KINL3",
+   "KINL4",
+   "KINL5",
+   "KINL6"
+  ],
+  "source": {
+   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=117",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    117,
+    118
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 22,
+  "text_chars": 4732
+ },
+ {
+  "control_number": "41079",
+  "title": "Emergency Medical Technician",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ADJU1",
+   "ADJU5",
+   "ADJU8",
+   "AHLT51",
+   "AHLT55A",
+   "AHLT63",
+   "COMMC1000",
+   "COMMC1004",
+   "PSYC14",
+   "PSYCC1000",
+   "SOCI2",
+   "SOCIC1000"
+  ],
+  "source": {
+   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=113",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    113
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 12,
+  "text_chars": 2038
+ },
+ {
+  "control_number": "41081",
+  "title": "Forklift Professional",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CBIS101",
+   "CUST100",
+   "WARE100"
+  ],
+  "source": {
+   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=121",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    121,
+    122
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 3,
+  "text_chars": 6053
+ },
+ {
+  "control_number": "41251",
+  "title": "Liberal Arts",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.857,
+  "codes_found": [
+   "ADJU1",
+   "ADJU14",
+   "ADJU15",
+   "ADJU16",
+   "ADJU17",
+   "ADJU18",
+   "ADJU2",
+   "ADJU3",
+   "ADJU4",
+   "ADJU6",
+   "ADJU7",
+   "ADJU8",
+   "ANTH1",
+   "ARTHC1100",
+   "ARTHC1200",
+   "ARTS10A",
+   "ARTS10B",
+   "ARTS13A",
+   "ARTS16",
+   "ARTS17",
+   "ARTS18A",
+   "ARTS18B",
+   "ARTS18C",
+   "ARTS19",
+   "ARTS3",
+   "ARTS5",
+   "ARTS7",
+   "ASTRC1000",
+   "BADM1",
+   "BADM19",
+   "BADM2",
+   "BADM5",
+   "BADM6",
+   "BIOL1",
+   "BIOL20A",
+   "BIOL20B",
+   "BIOL4",
+   "BIOL5",
+   "BIOL8",
+   "BIOLC1000",
+   "CDEVC1000",
+   "CHEM10",
+   "CHEM1A",
+   "CHEM1B",
+   "CHEM2A",
+   "CHEM2B",
+   "CHLD17A",
+   "CHLD19B",
+   "COMM2",
+   "COMM4",
+   "COMM5",
+   "COMM6",
+   "COMMC1000",
+   "COMMC1004",
+   "COUN5",
+   "ECONC2001",
+   "ECONC2002",
+   "ENGL11",
+   "ENGL12",
+   "ENGL12B",
+   "ENGL13A",
+   "ENGL2",
+   "ENGL3",
+   "ENGL4",
+   "ENGL5",
+   "ENGL7",
+   "ENGLC1000",
+   "ENGLC1001",
+   "ENGLC1002",
+   "ETHN1",
+   "ETHN5",
+   "ETHN6",
+   "GEOG3",
+   "GEOL1L",
+   "GEOL4",
+   "HIST1A",
+   "HIST1B",
+   "HIST4",
+   "HIST5",
+   "HIST8A",
+   "HIST8B",
+   "HISTC1001",
+   "HISTC1002",
+   "MATH4C",
+   "MATH5",
+   "MATH6",
+   "MATH9",
+   "MATHC2220",
+   "MUSI12A",
+   "MUSI12B",
+   "MUSI12C",
+   "MUSI2",
+   "MUSI3",
+   "MUSI4A",
+   "MUSI4B",
+   "MUSI4C",
+   "MUSI4D",
+   "MUSI5A",
+   "MUSI5B",
+   "MUSI5C",
+   "MUSI5D",
+   "MUSI6A",
+   "MUSI6B",
+   "MUSI6C",
+   "MUSI7A",
+   "MUSI7B",
+   "MUSI7C",
+   "MUSI7D",
+   "MUSI8A",
+   "MUSI8B",
+   "MUSI8C",
+   "MUSI8D",
+   "OCEA1",
+   "PHIL1",
+   "PHIL10",
+   "PHIL1C",
+   "PHIL3",
+   "PHIL4",
+   "PHIL5",
+   "PHIL6",
+   "PHIL7",
+   "PHIL8",
+   "PHIL9",
+   "PHSC2",
+   "PHYS2A",
+   "PHYS2B",
+   "POLSC1000",
+   "PSYC11",
+   "PSYC12",
+   "PSYC14",
+   "PSYC15",
+   "PSYC2",
+   "PSYC6",
+   "PSYCC1000",
+   "SOCI10",
+   "SOCI12",
+   "SOCI2",
+   "SOCI20",
+   "SOCI22",
+   "SOCI25",
+   "SOCI3",
+   "SOCI7",
+   "SOCI9",
+   "SOCIC1000",
+   "TART1",
+   "TART13A",
+   "TART13B",
+   "TART13C",
+   "TART13D",
+   "TART24A",
+   "TART3",
+   "TART4A",
+   "TART4B",
+   "TART4C",
+   "TART4D",
+   "TART6"
+  ],
+  "source": {
+   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=100",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    100,
+    101,
+    102,
+    103
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 182,
+  "text_chars": 10625
+ },
+ {
+  "control_number": "41261",
+  "title": "Pre-Allied Health Sciences",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL4",
+   "BIOL5",
+   "BIOL8",
+   "CHEM1A",
+   "CHEM1B",
+   "HEAL1",
+   "HEAL2",
+   "MATH3",
+   "PSYC2",
+   "PSYCC1000",
+   "SOCIC1000",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=112",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    112,
+    113
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 12,
+  "text_chars": 4231
+ },
+ {
+  "control_number": "41556",
+  "title": "Business Administration 2.0",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT1",
+   "ACCT4",
+   "BADM1",
+   "BADM5",
+   "BADM6",
+   "ECONC2001",
+   "ECONC2002",
+   "MATH3",
+   "MATH4D",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=70",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    70,
+    71,
+    72,
+    73
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 10,
+  "text_chars": 10881
+ },
+ {
+  "control_number": "42255",
+  "title": "Basic Skills Education Program",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "SDEV161",
+   "SDEV162"
+  ],
+  "source": {
+   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=121",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    121
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 2,
+  "text_chars": 2999
+ },
+ {
+  "control_number": "42759",
+  "title": "Theatre Arts",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 17,
+  "text_chars": 0
+ },
+ {
+  "control_number": "43165",
+  "title": "Communication Studies 2.0",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTH1",
+   "COMM2",
+   "COMM4",
+   "COMM5",
+   "COMM6",
+   "COMMC1000",
+   "COMMC1004",
+   "PSYCC1000",
+   "SOCIC1000"
+  ],
+  "source": {
+   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=61",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    61,
+    62
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 9,
+  "text_chars": 5935
+ },
+ {
+  "control_number": "43495",
+  "title": "Beginning ESL",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESL190",
+   "ESL192"
+  ],
+  "source": {
+   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=123",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    123
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 2,
+  "text_chars": 3055
+ },
+ {
+  "control_number": "43650",
+  "title": "Technical Theatre",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "TART10",
+   "TART15",
+   "TART16",
+   "TART17",
+   "TART18",
+   "TART19"
+  ],
+  "source": {
+   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=68",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    68,
+    69
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 6,
+  "text_chars": 3231
+ },
+ {
+  "control_number": "43659",
+  "title": "Certified Nursing Assistant",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 0.786,
+  "codes_found": [
+   "ADJU1",
+   "ADJU5",
+   "ADJU8",
+   "AHLT51",
+   "AHLT63",
+   "COMMC1000",
+   "COMMC1004",
+   "PSYC14",
+   "PSYCC1000",
+   "SOCI2",
+   "SOCIC1000"
+  ],
+  "source": {
+   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=112",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    112,
+    113
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 14,
+  "text_chars": 4231
+ },
+ {
+  "control_number": "44290",
+  "title": "Intermediate English as a Second Language (ESL)",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESL150",
+   "ESL155",
+   "ESL156",
+   "ESL157",
+   "ESL158"
+  ],
+  "source": {
+   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=123",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    123,
+    124
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 5,
+  "text_chars": 5394
+ },
+ {
+  "control_number": "44292",
+  "title": "High Intermediate English as a Second Language (ESL)",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESL155",
+   "ESL157",
+   "ESL160",
+   "ESL166",
+   "ESL168"
+  ],
+  "source": {
+   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=124",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    124
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 5,
+  "text_chars": 2337
+ },
+ {
+  "control_number": "45801",
+  "title": "Elementary Teacher Education: Integrated Programs",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOLC1000",
+   "CDEVC1000",
+   "CHEM10",
+   "COMMC1000",
+   "EDUC1",
+   "ENGLC1000",
+   "ENGLC1002",
+   "HEAL1",
+   "HIST5",
+   "HIST8A",
+   "HISTC1001",
+   "MUSI2",
+   "PHSC2",
+   "POLSC1000",
+   "TART3"
+  ],
+  "source": {
+   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=78",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    78,
+    79,
+    80
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 15,
+  "text_chars": 8880
+ },
+ {
+  "control_number": "46575",
+  "title": "Cal-GETC",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 96,
+  "text_chars": 0
+ }
+]

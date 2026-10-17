@@ -1,0 +1,276 @@
+{
+ "college": "Barstow Community College",
+ "control_number": "39655",
+ "shape": "degree",
+ "title": "Computer Business Information Systems",
+ "award": "A.S. Degree",
+ "source_url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=76",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7890,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7890,
+    "output_tokens": 1796,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1796,
+  "output_tokens_details": {
+   "thinking_tokens": 527
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.06748,
+ "ms": 13964,
+ "seconds": 14.5,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 8,
+   "listed": 8,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    20.0,
+    22.0
+   ],
+   "stated": [
+    20.0,
+    22.0
+   ],
+   "against": "program",
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     40.0,
+     81.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     20.0,
+     39.0
+    ],
+    "why": [],
+    "within": true
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 5,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Computer Business Information Systems, A.S. Degree",
+   "measure": "units",
+   "total_units": {
+    "min": 20,
+    "max": 22
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": 0,
+    "max": 20
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": 20,
+    "max": 39
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Demonstrate the use, synthesis, and application of computer and business information technology skills required to assume an entry-level position in all sizes and types of organizations.",
+    "Apply the use, knowledge, and application of computer and business information technology skills required to upgrade current skills to assume greater responsibility in a current or new employment position.",
+    "Demonstrate the use and application of computer and business information technology skills required to transfer to a four-year college or university program in Computer Information Systems or related majors in Information Technology."
+   ],
+   "careers": [
+    "networking",
+    "hardware support",
+    "cyber security",
+    "Internet and Web development",
+    "other emerging technologies"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Core Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 10,
+     "max": 10
+    },
+    "courses": [
+     {
+      "code": "CBIS 1",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADJU 1",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADJU 3",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Track 1: Cyber Security Specialist",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Select 1 Track",
+    "stated": {
+     "min": 10,
+     "max": 10
+    },
+    "courses": [
+     {
+      "code": "CBIS 14",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CBIS 15",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CBIS 17",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Track 2: Management Information Systems",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Select 1 Track",
+    "stated": {
+     "min": 12,
+     "max": 12
+    },
+    "courses": [
+     {
+      "code": "CBIS 13",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CBIS 15",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CBIS 17",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CBIS 19",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The excerpt begins mid-description on page 76; the A.S. degree's own heading is not in the text, so section_heading is reconstructed from the program title and award.",
+   "Degree section read only (ends at 'Total Units Required 60.0'); the following Cyber Security Specialist and Management Information Systems certificates are separate awards and were not used.",
+   "Major Units Required 20.0-22.0 matches core subtotal 10.0 plus Track 1 (10.0) or Track 2 (12.0).",
+   "General Education Coursework 20.0-39.0 is recorded as ge_units; no GE pattern is named. Electives Required 0-20.0 recorded as degree_elective_units.",
+   "Required core for the degree lists ADJU 1 and ADJU 3 (Administration of Justice courses), as printed; reviewer may wish to confirm this is intended.",
+   "CBIS 15 and CBIS 17 appear in both track blocks."
+  ]
+ },
+ "extracted_run": "39006332820"
+}

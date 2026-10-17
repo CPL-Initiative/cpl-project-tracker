@@ -1,0 +1,181 @@
+{
+ "college": "Barstow Community College",
+ "control_number": "33065",
+ "shape": "adt",
+ "title": "Early Childhood Education",
+ "award": "A.S. T Degree",
+ "source_url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=136",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 9586,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 9586,
+    "output_tokens": 972,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 972,
+  "output_tokens_details": {
+   "thinking_tokens": 315
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.05778,
+ "ms": 9612,
+ "seconds": 10.1,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 8,
+   "share": 0.0,
+   "missing": [
+    "CDEVC1000",
+    "CHLD11A",
+    "CHLD14",
+    "CHLD20",
+    "CHLD25",
+    "CHLD49",
+    "CHLD6",
+    "CHLD9"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "No program section in text (pages 136-137 hold course descriptions only)",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "CDEVC1000",
+    "why": "appears only as course description CDEV C1000; no requirements list in text"
+   },
+   {
+    "code": "CHLD 11A",
+    "why": "not in the text"
+   },
+   {
+    "code": "CHLD 14",
+    "why": "not in the text"
+   },
+   {
+    "code": "CHLD 20",
+    "why": "not in the text"
+   },
+   {
+    "code": "CHLD 25",
+    "why": "not in the text"
+   },
+   {
+    "code": "CHLD 49",
+    "why": "named only as former code of CDEV 49 in a course description; no requirements list in text"
+   },
+   {
+    "code": "CHLD 6",
+    "why": "named only as former code of CDEV 6 in a course description; no requirements list in text"
+   },
+   {
+    "code": "CHLD 9",
+    "why": "named only as former code of CDEV 9 in a course description; no requirements list in text"
+   }
+  ],
+  "notes": [
+   "The supplied text (catalog pages 136-137) contains only course descriptions (CDEV, CHLD, CBIS courses), not the Early Childhood Education A.S.-T requirements section; the page link likely points to the wrong page. A reviewer should locate the program section elsewhere in the catalog.",
+   "The course descriptions show CHLD courses were renamed: CHLD 49 -> CDEV 49 (4 units), CHLD 6 -> CDEV 6 (3 units), CHLD 9 -> CDEV 9 (3 units), CHLD 4 -> CDEV C1000 (3 units). Closed-list CHLD codes may correspond to these CDEV codes.",
+   "No program learning outcomes or careers appear in the text; nothing recorded."
+  ]
+ },
+ "extracted_run": "39006332820"
+}
