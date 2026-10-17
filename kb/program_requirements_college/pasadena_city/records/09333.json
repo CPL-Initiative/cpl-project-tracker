@@ -1,0 +1,267 @@
+{
+ "college": "Pasadena City College",
+ "control_number": "09333",
+ "shape": "degree",
+ "title": "BUSINESS INFORMATION TECHNOLOGY - OFFICE ASSISTANT",
+ "award": "A.S. Degree",
+ "source_url": "https://curriculum.pasadena.edu/academic-programs/business-information-technology/business-information-technology-office-assistant-as-cert-achievement/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7179,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7179,
+    "output_tokens": 1527,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1527,
+  "output_tokens_details": {
+   "thinking_tokens": 418
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.05926,
+ "ms": 12385,
+ "seconds": 12.7,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 1,
+   "listed": 1,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 9,
+   "codes": [
+    "BIT106",
+    "BIT107",
+    "BIT108",
+    "BIT11",
+    "BIT115",
+    "BIT117",
+    "BIT122",
+    "BIT25",
+    "BUS112"
+   ],
+   "flagged": [
+    "BIT106",
+    "BIT107",
+    "BIT108",
+    "BIT11",
+    "BIT115",
+    "BIT117",
+    "BIT122",
+    "BIT25",
+    "BUS112"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    18.0,
+    18.0
+   ],
+   "stated": [
+    18.0,
+    18.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 3,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Requirements for the Certificate of Achievement",
+   "measure": "units",
+   "total_units": {
+    "min": 18,
+    "max": 18
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "PCC Local Gen Ed or Cal-GETC",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Perform a variety of tasks in a business office setting including document processing, greeting visitors, handling telephone calls, using computer systems, and managing business records.",
+    "Apply appropriate business software to complete tasks.",
+    "Compute, record, and proofread records and reports; review files, records and other documents to obtain information.",
+    "Function effectively as a team member using collaborative web-based workspaces."
+   ],
+   "careers": [
+    "receptionists",
+    "virtual receptionists",
+    "information clerks"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Semester I",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "BIT 011",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BIT 025",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BIT 106",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BIT 107",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Semester II",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "BIT 108",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BIT 115",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BIT 117",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BIT 122",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BIT 128",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 112",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The page prints a single requirements list headed 'Requirements for the Certificate of Achievement' (Total Units 18) and a separate 'General Education Requirements for the Associate in Science Degree' section; no separate major list for the A.S. is printed. The certificate list is recorded as the A.S. major requirements; reviewer should confirm.",
+   "The total of 18 units is printed for the Certificate of Achievement list; it is recorded as total_units on the assumption the A.S. major is the same list.",
+   "The page prints no total for the whole A.S. degree and no GE unit count; degree_total and ge_units are null.",
+   "GE section names PCC Local Gen Ed and Cal-GETC (with IGETC or CSU GE allowed for students with catalog rights to former patterns).",
+   "The program outcomes list is printed once for the program as a whole; the A.S. degree is taken to share it.",
+   "Semester I / Semester II headings are a suggested sequence within the required list; all courses are required."
+  ]
+ },
+ "extracted_run": "39061730187"
+}

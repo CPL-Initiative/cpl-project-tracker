@@ -1,0 +1,347 @@
+{
+ "college": "Pasadena City College",
+ "control_number": "30915",
+ "shape": "adt",
+ "title": "Mathematics",
+ "award": "A.S. T Degree",
+ "source_url": "https://curriculum.pasadena.edu/academic-programs/mathematics/mathematics2-ast/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8049,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8049,
+    "output_tokens": 1919,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1919,
+  "output_tokens_details": {
+   "thinking_tokens": 510
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.07058,
+ "ms": 16326,
+ "seconds": 16.6,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 15,
+   "listed": 20,
+   "share": 0.75,
+   "missing": [
+    "MATH22",
+    "STAT15",
+    "STAT18",
+    "STATC1000",
+    "STATC1000H"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 2,
+   "codes": [
+    "MATH5AE",
+    "MATH5BE"
+   ],
+   "flagged": [
+    "MATH5AE",
+    "MATH5BE"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    26.0,
+    28.0
+   ],
+   "stated": [
+    26.0,
+    29.0
+   ],
+   "against": "program",
+   "why": [
+    "the blocks sum to 26.0-28.0; the catalog states 26.0-29.0"
+   ],
+   "degree": {
+    "pass": false,
+    "status": "unequal",
+    "computed": [
+     60.0,
+     62.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     34.0,
+     34.0
+    ],
+    "why": [
+     "the blocks and general education come to 60.0-62.0, past the 60.0-60.0 the catalog prints for the degree"
+    ],
+    "fill": null
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 9,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Associate in Science in Mathematics 2.0 for Transfer Degree",
+   "measure": "units",
+   "total_units": {
+    "min": 26,
+    "max": 29
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": 34,
+    "max": 34
+   },
+   "electives_fill_degree": true,
+   "outcomes": [
+    "Develop critical thinking and problem solving skills.",
+    "Increase the ability to read, write and discuss mathematics.",
+    "Develop an understanding of the usefulness of mathematics to other disciplines and life."
+   ],
+   "careers": [
+    "science",
+    "technology",
+    "engineering",
+    "computer science",
+    "business",
+    "industry",
+    "medicine",
+    "education",
+    "government"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "REQUIRED CORE",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "MATH 005A",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MATH 005AH",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "MATH 005AE",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 005B",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MATH 005BH",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "MATH 005BE",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 005C",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MATH 005CH",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 010",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MATH 010H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 055",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MATH 055H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "LIST A - SELECT ONE COURSE",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 5
+    },
+    "courses": [
+     {
+      "code": "CS 002",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CS 003A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CS 003B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CS 003C",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS 008A",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "MATH 22",
+    "why": "not in the text"
+   },
+   {
+    "code": "STAT 15",
+    "why": "not in the text"
+   },
+   {
+    "code": "STAT 18",
+    "why": "not in the text"
+   },
+   {
+    "code": "STAT C1000",
+    "why": "not in the text"
+   },
+   {
+    "code": "STAT C1000H",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "Closed-list codes MATH 10, MATH 55, CS 2, CS003B and CS003C were matched to the catalog's MATH 010, MATH 055, CS 002, CS 003B and CS 003C.",
+   "MATH 005AE and MATH 005BE are not in the closed list and are marked as catalog additions.",
+   "The catalog prints no units beside the 'or' alternative courses, so their units are null.",
+   "CS 003A is printed at 3 units in the catalog; the state file stores 4.",
+   "total_units is the printed 'Required Subtotal 26-29'. The ADT sentence 'minimum of 18 semester units in the major' is a general rule, not this award's total.",
+   "Transferable electives fill the rest of the 60 units; no units are printed for them.",
+   "The page prints one Program Outcomes list for the program page, recorded here as shared by this award.",
+   "Course titles in the catalog (e.g., 'Calculus I: Late Transcendentals') differ from the closed-list titles."
+  ]
+ },
+ "extracted_run": "39061730187"
+}

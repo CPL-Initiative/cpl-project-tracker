@@ -1,0 +1,375 @@
+{
+ "college": "Pasadena City College",
+ "control_number": "10562",
+ "shape": "degree",
+ "title": "Speech-Language Pathology Assistant",
+ "award": "A.S. Degree",
+ "source_url": "https://curriculum.pasadena.edu/academic-programs/speech-language-pathology/speech-language-pathology-assistant-as/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 10796,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 10796,
+    "output_tokens": 3332,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 3332,
+  "output_tokens_details": {
+   "thinking_tokens": 1173
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.10982,
+ "ms": 26944,
+ "seconds": 27.5,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 24,
+   "listed": 24,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    50.0,
+    53.0
+   ],
+   "stated": [
+    60.0,
+    60.0
+   ],
+   "against": "degree",
+   "ge": null,
+   "why": [
+    "the record names the degree total and the CSU GE, IGETC, or PCC Local GE (Cal-GETC also named) pattern, but no units for it"
+   ],
+   "major": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     50.0,
+     53.0
+    ],
+    "stated": [
+     50.0,
+     53.0
+    ],
+    "against": "program",
+    "why": []
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Speech-Language Pathology Assistant – Associate in Science Degree",
+   "measure": "units",
+   "total_units": {
+    "min": 50,
+    "max": 53
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "CSU GE, IGETC, or PCC Local GE (Cal-GETC also named)",
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Recognize and explain the Laws and Regulations pertaining to state registration as a Speech-Language Pathology Assistant.",
+    "Demonstrate skills to provide direct treatment assistance to diverse clients/patients in multiple settings, under the supervision of a Speech-Language Pathologist, by implementing treatment plans, conducting screenings without interpretation, assisting with assessment, and documenting client/patient progress.",
+    "Demonstrate appropriate workplace behaviors as a paraprofessional team member, under the supervision of a Speech-Language Pathologist, by responding appropriately to supervisory feedback, assisting with clerical and operational tasks, and supporting the prevention and advocacy efforts of the agency."
+   ],
+   "careers": [
+    "Speech-Language Pathology Assistant"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "SLPA-designated Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "SLPA 018",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SLPA 107",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SLPA 115",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SLPA 119",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SLPA 123A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SLPA 123B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SLPA 126",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SLPA 126S",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Other Major Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ASL 001",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPCH 010",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "LING 012",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ENGL 012",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHDV 010",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHDV 030",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHDV 105",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHDV 122",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHDV 122F",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL 011",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BIOL 011H",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "BIOL 003",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "PSYC 024 (Lifespan Developmental Psychology)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Developmental Psychology",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "PSYC 024",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "PSYC 021 (or PSYC 021H) and PSYC 022 may be taken in place of PSYC 024",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Developmental Psychology",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "PSYC 021",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PSYC 021H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC 022",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Catalog prints codes with leading zeros (SLPA 018, ASL 001, SPCH 010, LING 012, ENGL 012, CHDV 010, CHDV 030, BIOL 011, BIOL 003, PSYC 024, PSYC 021, PSYC 022); matched to closed-list codes without zeros (SLPA 18, ASL 1, etc.), so catalog_addition is false.",
+   "The PSYC requirement prints a combined range of 3-6 units for the choice between PSYC 024 and PSYC 021 (or 021H) & PSYC 022; no units are printed beside the individual PSYC courses, so their units are null and the 3-6 range is not attached to either option block.",
+   "Units are printed only beside the first course of 'or' rows (LING 012, BIOL 011); alternatives' units left null.",
+   "Catalog titles BIOL 011 'Introduction to Biology with Lab' while the closed list titles BIOL 11 'General Biology'; narrative text calls it General Biology.",
+   "Degree total of 60 units is taken from the Requirements narrative stating this degree requires a total of 60 units including 21 SLPA-designated units, 29-32 'Other' major units, and GE; major total 50-53 from the course list. No GE unit count printed.",
+   "Narrative names CSU GE, IGETC, or PCC Local GE; the GE section names PCC Local Gen Ed and Cal-GETC, with IGETC/CSU GE for students with prior rights. A note says bachelor's degree holders are deemed to have fulfilled GE and elective requirements, but no elective units are stated."
+  ]
+ },
+ "extracted_run": "39061730187"
+}

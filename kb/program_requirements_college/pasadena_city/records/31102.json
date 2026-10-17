@@ -1,0 +1,384 @@
+{
+ "college": "Pasadena City College",
+ "control_number": "31102",
+ "shape": "adt",
+ "title": "Studio Arts",
+ "award": "A.A- T Degree",
+ "source_url": "https://curriculum.pasadena.edu/academic-programs/art/studio-arts-aat/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8282,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8282,
+    "output_tokens": 3322,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 3322,
+  "output_tokens_details": {
+   "thinking_tokens": 1163
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.09957,
+ "ms": 26722,
+ "seconds": 27.1,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 21,
+   "listed": 23,
+   "share": 0.913,
+   "missing": [
+    "ART1A",
+    "ART1B"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 2,
+   "codes": [
+    "ARTHC1100",
+    "ARTHC1200"
+   ],
+   "flagged": [
+    "ARTHC1100",
+    "ARTHC1200"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    58.0,
+    61.0
+   ],
+   "stated": [
+    60.0,
+    60.0
+   ],
+   "against": "degree",
+   "ge": [
+    34.0,
+    34.0
+   ],
+   "why": [
+    "the blocks and general education come to 58.0-61.0, past the 60.0-60.0 the catalog prints for the degree"
+   ],
+   "fill": null,
+   "major": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     24.0,
+     27.0
+    ],
+    "stated": [
+     24.0,
+     27.0
+    ],
+    "against": "program",
+    "why": []
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Associate in Arts Degree in Studio Arts for Transfer Degree",
+   "measure": "units",
+   "total_units": {
+    "min": 24,
+    "max": 27
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": 34,
+    "max": 34
+   },
+   "electives_fill_degree": true,
+   "outcomes": [
+    "Display competence in the use of tools, materials and concepts by completing a portfolio of original art and design projects.",
+    "Evaluate works of art and design through critical discussion and written assignments.",
+    "Demonstrate, through the analysis of aesthetic and cultural values, an understanding of the contribution of art and design to human experience."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "REQUIRED CORE",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ARTH C1200",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ART 011A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 031A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 032A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "LIST A - SELECT ONE OF THE FOLLOWING",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "ARTH C1100",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ART 003A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 003B",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 001C",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 004D",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "LIST B - SELECT THREE COURSES",
+    "rule": "choose_courses",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 9,
+     "max": 9
+    },
+    "courses": [
+     {
+      "code": "ART 011B",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 012A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 020A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 020B",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 023A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 025",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 026",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 031B",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 034A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 036A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 038A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DMA 010",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DMA 012",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHOT 021",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ART 001A",
+    "why": "not in the text; the catalog lists ARTH C1100 (Survey of Art from Prehistory to the Medieval Era) in List A instead"
+   },
+   {
+    "code": "ART 001B",
+    "why": "not in the text; the catalog lists ARTH C1200 (Survey of Art from the Renaissance to Contemporary) in the required core instead"
+   }
+  ],
+  "notes": [
+   "Program Outcomes are printed once on the page for the program; this A.A.-T degree is the award on the page and they are recorded here.",
+   "List A: ART 003A & ART 003B are printed as one combined selection ('ART 003A & ART 003B'); footnote 1 says students who complete ART 003A and ART 003B for List A must complete a third course in List A (hence the 3-6 unit range). Recorded as separate entries in the choose-one block.",
+   "List A and List B print no units beside individual courses; units left null (closed list stores 3 units for each).",
+   "List B prints odd 'or' rows that duplicate courses already listed alone: 'ART 012A or ART 011B', 'ART 020B or ART 026', 'ART 034A or ART 036A', 'DMA 010 or DMA 012'. Since ART 011B, ART 026, ART 036A and DMA 012 also appear as standalone choices, each course is listed once without alternatives; reviewer should check whether these 'or' rows carry any meaning (likely a rendering artifact).",
+   "Catalog codes ART 025, ART 026, DMA 010, DMA 012, PHOT 021 correspond to closed-list ART 25, ART 26, DMA 10, DMA 12, PHOT 21 (zero-padded numbering); treated as the same courses.",
+   "ARTH C1200 and ARTH C1100 are not in the closed list (common course numbering replacements for ART 001B and ART 001A).",
+   "Total units taken from 'Required Subtotal 24-27'; degree total 60 and Cal-GETC 34 as printed; transferable electives 'as needed to reach 60 transferable units' with no units printed.",
+   "The general statement 'A minimum of 18 semester ... units in the major' is a generic ADT requirement, not this award's total.",
+   "CSU GE-Breadth or IGETC-CSU may be used in lieu of Cal-GETC by students with rights to former patterns."
+  ]
+ },
+ "extracted_run": "39061730187"
+}
