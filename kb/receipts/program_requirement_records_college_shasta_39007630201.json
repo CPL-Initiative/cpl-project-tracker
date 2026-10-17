@@ -1,0 +1,209 @@
+{
+ "college": "Shasta College",
+ "load_run": "39007630201",
+ "function": "program_requirement_records_college_load",
+ "at": "2026-10-17T05:49:29Z",
+ "records": 124,
+ "posted": 103,
+ "batches": 5,
+ "inserted": 103,
+ "kept": 0,
+ "skipped": [
+  {
+   "control_number": "06441",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "13483",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "18082",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "18083",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "18088",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "18089",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "18096",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "18097",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "18142",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "18150",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "18157",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "18158",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "18160",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "18624",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "18657",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "19640",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "30486",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "32486",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "35921",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "36060",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "39409",
+   "why": "places none of its listed courses (another program's page)"
+  }
+ ],
+ "error": null,
+ "extracted_runs": [
+  "39006384701"
+ ],
+ "machine_pass": 57,
+ "inserted_keys": [
+  "06409",
+  "06412",
+  "06423",
+  "06424",
+  "06430",
+  "06433",
+  "06434",
+  "06440",
+  "06444",
+  "06453",
+  "06457",
+  "09113",
+  "09115",
+  "09477",
+  "09478",
+  "09485",
+  "09497",
+  "09501",
+  "09505",
+  "09506",
+  "09513",
+  "10718",
+  "11074",
+  "13196",
+  "17479",
+  "17964",
+  "17965",
+  "18063",
+  "18064",
+  "18065",
+  "18080",
+  "18081",
+  "18084",
+  "18087",
+  "18090",
+  "18094",
+  "18095",
+  "18098",
+  "18143",
+  "18145",
+  "18154",
+  "18159",
+  "18625",
+  "18626",
+  "18658",
+  "18659",
+  "19642",
+  "19647",
+  "19650",
+  "30491",
+  "30579",
+  "30580",
+  "31130",
+  "31267",
+  "31844",
+  "31845",
+  "31846",
+  "31988",
+  "32039",
+  "32051",
+  "32162",
+  "32173",
+  "32213",
+  "32493",
+  "32573",
+  "32755",
+  "33268",
+  "33929",
+  "34005",
+  "35160",
+  "35244",
+  "35407",
+  "35606",
+  "35607",
+  "35817",
+  "35896",
+  "35929",
+  "37749",
+  "37774",
+  "38138",
+  "39682",
+  "39683",
+  "39957",
+  "41382",
+  "41514",
+  "41515",
+  "41811",
+  "42267",
+  "42346",
+  "42367",
+  "43618",
+  "43879",
+  "43880",
+  "43972",
+  "44358",
+  "44492",
+  "44718",
+  "45111",
+  "45360",
+  "45747",
+  "45839",
+  "45847",
+  "46491"
+ ],
+ "kept_keys": [],
+ "rollback": "delete from public.program_requirement_records where college = 'Shasta College' and checked = false and control_number in ('06409', '06412', '06423', '06424', '06430', '06433', '06434', '06440', '06444', '06453', '06457', '09113', '09115', '09477', '09478', '09485', '09497', '09501', '09505', '09506', '09513', '10718', '11074', '13196', '17479', '17964', '17965', '18063', '18064', '18065', '18080', '18081', '18084', '18087', '18090', '18094', '18095', '18098', '18143', '18145', '18154', '18159', '18625', '18626', '18658', '18659', '19642', '19647', '19650', '30491', '30579', '30580', '31130', '31267', '31844', '31845', '31846', '31988', '32039', '32051', '32162', '32173', '32213', '32493', '32573', '32755', '33268', '33929', '34005', '35160', '35244', '35407', '35606', '35607', '35817', '35896', '35929', '37749', '37774', '38138', '39682', '39683', '39957', '41382', '41514', '41515', '41811', '42267', '42346', '42367', '43618', '43879', '43880', '43972', '44358', '44492', '44718', '45111', '45360', '45747', '45839', '45847', '46491');"
+}
