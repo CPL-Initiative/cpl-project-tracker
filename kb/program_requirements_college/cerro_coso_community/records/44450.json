@@ -1,0 +1,372 @@
+{
+ "college": "Cerro Coso Community College",
+ "control_number": "44450",
+ "shape": "degree",
+ "title": "Registered Nursing",
+ "award": "A.S. Degree",
+ "source_url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=110",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 9695,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 9695,
+    "output_tokens": 3148,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 3148,
+  "output_tokens_details": {
+   "thinking_tokens": 1136
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.10174,
+ "ms": 24997,
+ "seconds": 25.3,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 17,
+   "listed": 28,
+   "share": 0.607,
+   "missing": [
+    "BIOLC251",
+    "BIOLC255",
+    "BIOLC262",
+    "CHEMC101",
+    "CHEMC111",
+    "ENGLC1000",
+    "HISTC1001",
+    "PSYCC1000",
+    "PSYCC1000H",
+    "STATC1000",
+    "STATC1000H"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "HISTC131"
+   ],
+   "flagged": [
+    "HISTC131"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    56.0,
+    56.0
+   ],
+   "stated": [
+    53.0,
+    53.0
+   ],
+   "against": "program",
+   "why": [
+    "the blocks sum to 56.0-56.0; the catalog states 53.0-53.0"
+   ],
+   "degree": {
+    "pass": false,
+    "status": "incomplete",
+    "computed": [
+     56.0,
+     56.0
+    ],
+    "stated": [
+     79.0,
+     79.0
+    ],
+    "against": "degree",
+    "ge": null,
+    "why": [
+     "the record names the degree total and the Cerro Coso Local General Education Pattern or Cal-GETC – California General Education Transfer Curriculum pattern, but no units for it"
+    ]
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 6,
+   "courses": 0,
+   "count": 6,
+   "not_verbatim": [
+    "Provide safe, quality, and evidence-based patient-centered nursing care to diverse populations across the lifespan in a variety of healthcare settings.",
+    "Effectively use information management systems and patient care technologies to communicate, manage knowledge, mitigate error, and support decision making processes."
+   ],
+   "why": [
+    "not in the catalog text as printed: Provide safe, quality, and evidence-based patient-centered nursing care to diver",
+    "not in the catalog text as printed: Effectively use information management systems and patient care technologies to "
+   ],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": false
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Registered Nursing Associate in Science Degree (ADN)",
+   "measure": "units",
+   "total_units": {
+    "min": 53,
+    "max": 53
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Cerro Coso Local General Education Pattern or Cal-GETC – California General Education Transfer Curriculum",
+   "degree_total": {
+    "min": 79,
+    "max": 79
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Provide safe, quality, and evidence-based patient-centered nursing care to diverse populations across the lifespan in a variety of healthcare settings.",
+    "Participate in quality improvement processes to improve patient care outcomes.",
+    "Effectively participate in teamwork and collaborate with members of the interprofessional team, the patient, and the patient’s support system.",
+    "Effectively use information management systems and patient care technologies to communicate, manage knowledge, mitigate error, and support decision making processes.",
+    "Implement leadership, management, legal, and ethical principles to guide practice as a registered nurse.",
+    "Promote a culture of caring in all healthcare environments."
+   ],
+   "careers": [
+    "registered nurses"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Core: Complete all of the following courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ANTH C141",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ETHN C141",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "COMM C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST C131",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HIST C1002",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "NURS C150",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NURS C151",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NURS C152",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NURS C153",
+      "units": 6,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NURS C154",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NURS C250",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NURS C251",
+      "units": 6,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NURS C252",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NURS C253",
+      "units": 6,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NURS C254",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHIL C141",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOCI C210",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ETHN C210",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "BIOL C251",
+    "why": "not in the Registered Nursing section; appears only in the Nutrition and Dietetics AS-T section"
+   },
+   {
+    "code": "BIOL C255",
+    "why": "not in the Registered Nursing section; appears only in the Nutrition and Dietetics AS-T section"
+   },
+   {
+    "code": "BIOL C262",
+    "why": "not in the Registered Nursing section; appears only in the Nutrition and Dietetics AS-T section"
+   },
+   {
+    "code": "CHEM C101",
+    "why": "not in the text"
+   },
+   {
+    "code": "CHEM C111",
+    "why": "not in the Registered Nursing section; appears only in the Nutrition and Dietetics AS-T section"
+   },
+   {
+    "code": "ENGL C1000",
+    "why": "not in the text"
+   },
+   {
+    "code": "HIST C1001",
+    "why": "not in the text; the section lists HIST C131 instead"
+   },
+   {
+    "code": "PSYC C1000",
+    "why": "not in the Registered Nursing section; appears only in the Nutrition and Dietetics AS-T section"
+   },
+   {
+    "code": "PSYC C1000H",
+    "why": "not in the Registered Nursing section; appears only in the Nutrition and Dietetics AS-T section"
+   },
+   {
+    "code": "STAT C1000",
+    "why": "not in the Registered Nursing section; appears only in the Nutrition and Dietetics AS-T section"
+   },
+   {
+    "code": "STAT C1000H",
+    "why": "not in the Registered Nursing section; appears only in the Nutrition and Dietetics AS-T section"
+   }
+  ],
+  "notes": [
+   "The section heading itself is not printed in the extracted text; the heading was taken from the opening sentence 'The Registered Nursing Associate in Science Degree (ADN)'.",
+   "The catalog states 79 units total and 53 units in the major, but the printed required core sums to 56 units (counting one option of each 'or' pair). Reviewer should check.",
+   "Prerequisite science courses (e.g., BIOL C251, C255, C262) are not printed in this section; the note only mentions that some major courses have prerequisites.",
+   "IT C101, C121, C123, C125, C127 lines are interleaved within the outcomes list from another column/program and were ignored; the fourth outcome was rejoined across that interruption.",
+   "PDF ligature artifacts (e.g., 'Ɵ' for 'ti', 'ﬀ' for 'ff') were decoded in the outcomes.",
+   "HIST C131 is printed with alternative HIST C1002; HIST C131 is not in the closed list (closed list has HIST C1001).",
+   "Students choose one of two GE patterns: Option A Cerro Coso Local GE or Option B Cal-GETC; no GE units are printed."
+  ]
+ },
+ "extracted_run": "39046789844"
+}

@@ -1,0 +1,222 @@
+{
+ "college": "Cerro Coso Community College",
+ "control_number": "38666",
+ "shape": "adt",
+ "title": "Political Science",
+ "award": "A.A- T Degree",
+ "source_url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=99",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 11969,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 11969,
+    "output_tokens": 1733,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1733,
+  "output_tokens_details": {
+   "thinking_tokens": 551
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.08254,
+ "ms": 14677,
+ "seconds": 15.2,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 16,
+   "share": 0.0,
+   "missing": [
+    "ANTHC111",
+    "ECONC101",
+    "ECONC2002",
+    "HISTC1001",
+    "HISTC1002",
+    "HISTC131H",
+    "HISTC132H",
+    "POLSC1000",
+    "POLSC1000H",
+    "POLSC102",
+    "POLSC103",
+    "SOCIC1000",
+    "SOCIC161",
+    "SOSCC271",
+    "STATC1000",
+    "STATC1000H"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": true,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ANTH C111",
+    "why": "Political Science AA-T section not in text; appears only in Law, Public Policy, and Society AA-T List A"
+   },
+   {
+    "code": "ECON C101",
+    "why": "not in the text"
+   },
+   {
+    "code": "ECON C2002",
+    "why": "Political Science AA-T section not in text; appears only in Law, Public Policy, and Society AA-T List A"
+   },
+   {
+    "code": "HIST C1001",
+    "why": "not in the text"
+   },
+   {
+    "code": "HIST C1002",
+    "why": "Political Science AA-T section not in text; appears only in Law, Public Policy, and Society AA-T and Liberal Arts: Arts & Humanities sections"
+   },
+   {
+    "code": "HIST C131H",
+    "why": "Political Science AA-T section not in text; appears only in Liberal Arts: Arts & Humanities AA List A"
+   },
+   {
+    "code": "HIST C132H",
+    "why": "not in the text"
+   },
+   {
+    "code": "POLS C1000",
+    "why": "Political Science AA-T section not in text; appears only in Law, Public Policy, and Society AA-T required courses"
+   },
+   {
+    "code": "POLS C1000H",
+    "why": "Political Science AA-T section not in text; appears only in Law, Public Policy, and Society AA-T required courses"
+   },
+   {
+    "code": "POLS C102",
+    "why": "Political Science AA-T section not in text; appears only in Law, Public Policy, and Society AA-T List A"
+   },
+   {
+    "code": "POLSC 103",
+    "why": "Political Science AA-T section not in text; POLS C103 appears only in Law, Public Policy, and Society AA-T List A"
+   },
+   {
+    "code": "SOCI C1000",
+    "why": "Political Science AA-T section not in text; appears only in a preceding program's List A on page 99"
+   },
+   {
+    "code": "SOCI C161",
+    "why": "Political Science AA-T section not in text; appears only in Law, Public Policy, and Society AA-T List A"
+   },
+   {
+    "code": "SOSC C271",
+    "why": "not in the text"
+   },
+   {
+    "code": "STAT C1000",
+    "why": "Political Science AA-T section not in text; appears only in Law, Public Policy, and Society AA-T and a preceding program's sections"
+   },
+   {
+    "code": "STAT C1000H",
+    "why": "Political Science AA-T section not in text; appears only in Law, Public Policy, and Society AA-T and a preceding program's sections"
+   }
+  ],
+  "notes": [
+   "The supplied catalog text (pages 99-101) does not contain the Political Science Associate in Arts Degree for Transfer section. It covers the end of a preceding program, the Law, Public Policy, and Society AA-T, the Liberal Arts: Arts & Humanities AA, and the start of the Liberal Arts: Mathematics & Science AA. No blocks, totals, outcomes or careers were recorded because none belong to the named award.",
+   "section_heading is left empty because no heading for this award appears in the text. 'Political Science' appears only as an area heading inside List A of the Law, Public Policy, and Society AA-T.",
+   "A reviewer should check other pages of the 2026-2027 catalog for the Political Science AA-T requirements. The linked page anchor (#page=99) may point to the wrong page.",
+   "The closed-list code 'POLSC 103' appears to be a variant of 'POLS C103' as printed in the catalog."
+  ]
+ },
+ "extracted_run": "39046789844"
+}

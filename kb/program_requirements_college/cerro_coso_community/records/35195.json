@@ -1,0 +1,282 @@
+{
+ "college": "Cerro Coso Community College",
+ "control_number": "35195",
+ "shape": "degree",
+ "title": "Cyber Security Technology",
+ "award": "A.S. Degree",
+ "source_url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=88",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 10883,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 10883,
+    "output_tokens": 2774,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2774,
+  "output_tokens_details": {
+   "thinking_tokens": 1344
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.09901,
+ "ms": 22693,
+ "seconds": 23.1,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 7,
+   "listed": 11,
+   "share": 0.636,
+   "missing": [
+    "MATHC130",
+    "MATHC131",
+    "STATC1000",
+    "STATC1000H"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 3,
+   "codes": [
+    "ITC146",
+    "ITC257",
+    "ITC260X"
+   ],
+   "flagged": [
+    "ITC146",
+    "ITC257",
+    "ITC260X"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    31.0,
+    31.0
+   ],
+   "stated": [
+    60.0,
+    60.0
+   ],
+   "against": "degree",
+   "ge": null,
+   "why": [
+    "the record names the degree total and the Cerro Coso Local General Education Pattern (Option A) or Cal-GETC – California General Education Transfer Curriculum (Option B) pattern, but no units for it"
+   ],
+   "major": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     31.0,
+     31.0
+    ],
+    "stated": [
+     31.0,
+     31.0
+    ],
+    "against": "program",
+    "why": []
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 6,
+   "courses": 0,
+   "count": 6,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 4,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Cyber Security Technology Associate in Science",
+   "measure": "units",
+   "total_units": {
+    "min": 31,
+    "max": 31
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Cerro Coso Local General Education Pattern (Option A) or Cal-GETC – California General Education Transfer Curriculum (Option B)",
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Configure, install, diagnose, and support hardware and software issues.",
+    "Utilize identifying tools and methodologies that hackers use to break into a network computer and defend a computer and local area network against a variety of different types of security attacks using a number of hands-on techniques.",
+    "Design, analyze, and support computer networks.",
+    "Apply problem-solving, programming, and application development including the ability to design, test, debug, and implement complex computer programs.",
+    "Operate servers, storage, and virtualization including implementing and evaluating network security solutions.",
+    "Read and interpret technical information, as well as communicate with and write clearly for wide ranges of audiences."
+   ],
+   "careers": [
+    "information assurance technicians",
+    "information security analysts",
+    "network security professionals",
+    "cyber security technicians"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Complete all the following courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "IT C101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "IT C142",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "IT C143",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "IT C146",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "IT C248",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "IT C251",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "IT C255",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "IT C257",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "IT C259",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "IT C260X",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "MATH C130",
+    "why": "not in the text (likely satisfies GE, which is not listed by course)"
+   },
+   {
+    "code": "MATH C131",
+    "why": "not in the text (likely satisfies GE, which is not listed by course)"
+   },
+   {
+    "code": "STAT C1000",
+    "why": "not in the text (likely satisfies GE, which is not listed by course)"
+   },
+   {
+    "code": "STAT C1000H",
+    "why": "not in the text (likely satisfies GE, which is not listed by course)"
+   }
+  ],
+  "notes": [
+   "Page 88 is a two-column layout extracted with columns interleaved; the A.S. section was reconstructed from the left column (description, first three PLOs) and right column (remaining three PLOs, course list).",
+   "Degree total (60) and major total (31) are both printed in the description: '(60 units total, 31 units in the major)'. The listed courses sum to 31.",
+   "The sixth outcome ('Read and interpret technical information...') appears in the right column of page 88 before 'Courses' and is read as belonging to the A.S.; the Certificate of Achievement on page 89 lists only the first five. The same sentence also appears interleaved in the Data Analyst I certificate section on page 89; reviewer should verify placement.",
+   "Outcome text was copied with PDF ligature artifacts (e.g., 'Ɵ' for 'ti', 'ﬁ' for 'fi', 'Ō' for 'ft', 'Ʃ' for 'tt') rendered as normal letters.",
+   "Student chooses one GE pattern: Option A Cerro Coso Local GE or Option B Cal-GETC; no GE units are printed.",
+   "IT C146, IT C257 and IT C260X are required in the catalog but not on the closed list."
+  ]
+ },
+ "extracted_run": "39046789844"
+}

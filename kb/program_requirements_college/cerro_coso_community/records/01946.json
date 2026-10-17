@@ -1,0 +1,261 @@
+{
+ "college": "Cerro Coso Community College",
+ "control_number": "01946",
+ "shape": "degree",
+ "title": "Welding Technology",
+ "award": "A.S. Degree",
+ "source_url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=125",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 9581,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 9581,
+    "output_tokens": 1850,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1850,
+  "output_tokens_details": {
+   "thinking_tokens": 714
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.07532,
+ "ms": 15637,
+ "seconds": 16.1,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 6,
+   "listed": 6,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 3,
+   "codes": [
+    "WELDC200",
+    "WELDC203",
+    "WELDC210"
+   ],
+   "flagged": [
+    "WELDC200",
+    "WELDC203",
+    "WELDC210"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    23.0,
+    23.0
+   ],
+   "stated": [
+    60.0,
+    60.0
+   ],
+   "against": "degree",
+   "ge": null,
+   "why": [
+    "the record names the degree total and the Cerro Coso Local General Education Pattern (Option A) or Cal-GETC (Option B) pattern, but no units for it"
+   ],
+   "major": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     23.0,
+     23.0
+    ],
+    "stated": [
+     23.0,
+     23.0
+    ],
+    "against": "program",
+    "why": []
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 13,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Welding Technology Associate in Science Degree",
+   "measure": "units",
+   "total_units": {
+    "min": 23,
+    "max": 23
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Cerro Coso Local General Education Pattern (Option A) or Cal-GETC (Option B)",
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Demonstrate competency in major welding processes used in industry.",
+    "Apply welding processes and the use of hand tools and shop equipment to fabricate projects.",
+    "Accurately fabricate items from technical drawings using appropriate math skills.",
+    "Apply and practice workplace safety policies and procedures while learning welding and related skills."
+   ],
+   "careers": [
+    "entry-level welding position",
+    "mining",
+    "manufacturing",
+    "marine welding",
+    "ship building",
+    "metal art sculpting",
+    "machine shops",
+    "construction",
+    "railroads",
+    "automotive",
+    "aircraft",
+    "aerospace",
+    "renewable energy industries"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Complete all of the following courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "DRFT C108",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "INDE C060",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MCTL C107",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WELD C101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WELD C102",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WELD C200",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "WELD C203",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "WELD C204",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WELD C210",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The A.S. description states '60 units total, 23 units in the major'; 60 recorded as degree_total and 23 as total_units. The nine required courses sum to 23 units.",
+   "The PDF text interleaves two columns in the A.S. description (grade and residency sentences are split); content read accordingly.",
+   "Students complete one of two GE patterns: Option A Cerro Coso Local GE Pattern or Option B Cal-GETC; no GE units printed.",
+   "The same four program learning outcomes are printed for the Welding Processes Certificate, the A.S. degree and the Welding Technology Certificate; recorded from the A.S. section.",
+   "Outcome text 'pracƟce' in the PDF is a ligature extraction artifact for 'practice'; reviewer may wish to confirm.",
+   "Catalog prints WELD C204 as 'Pipe Welding'; the closed list titles it 'Pipe and Tube Welding'.",
+   "Career areas taken from the A.S. description sentence 'Career areas in which welders work include ...'; the final item was split into aircraft, aerospace and renewable energy industries."
+  ]
+ },
+ "extracted_run": "39046789844"
+}

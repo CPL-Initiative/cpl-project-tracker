@@ -5,7 +5,7 @@
  "catalog_year": "2026-2027",
  "programs": 80,
  "with_closed_list": 74,
- "started": "2026-10-17T15:49:03Z",
+ "started": "2026-10-17T15:51:20Z",
  "pdf": {
   "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf",
   "access": "hand_filed",
@@ -829,7 +829,7 @@
   "unproven": []
  },
  "loads": 0,
- "seconds": 33.3,
+ "seconds": 33.6,
  "found": 65,
  "by_method": {
   "no_closed_list": 6,
@@ -1659,5 +1659,5 @@
    }
   ]
  },
- "run": "39046621621"
+ "run": "39046789844"
 }
