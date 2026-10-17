@@ -2,10 +2,11 @@
  "college": "Los Angeles Trade Technical College",
  "catalog_url": "https://www.lattc.edu/academic-resources/catalog",
  "platform": "custom_html",
- "catalog_year": null,
+ "catalog_year": "2026-2027",
  "programs": 211,
  "with_closed_list": 188,
- "started": "2026-10-17T17:26:03Z",
+ "started": "2026-10-17T17:40:38Z",
+ "catalog_year_from": "the procedure record's catalog step",
  "procedure_step": {
   "start": "https://www.lattc.edu/academic-resources/catalog",
   "follow": "2026-2027 LATTC Catalog.pdf",
@@ -2216,7 +2217,7 @@
   ]
  },
  "loads": 2,
- "seconds": 138.4,
+ "seconds": 141.7,
  "found": 172,
  "by_method": {
   "no_closed_list": 23,
@@ -4329,5 +4330,5 @@
    }
   ]
  },
- "run": "39053645881"
+ "run": "39054673977"
 }

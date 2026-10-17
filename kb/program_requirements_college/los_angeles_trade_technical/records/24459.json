@@ -1,0 +1,150 @@
+{
+ "college": "Los Angeles Trade Technical College",
+ "control_number": "24459",
+ "shape": "noncredit",
+ "title": "English as a Second Language (ESL): Beginning",
+ "award": "Noncredit program",
+ "source_url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=350",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8103,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8103,
+    "output_tokens": 807,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 807,
+  "output_tokens_details": {
+   "thinking_tokens": 269
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.04855,
+ "ms": 7585,
+ "seconds": 8.1,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 0,
+   "listed": 3,
+   "share": 0.0,
+   "missing": [
+    "ESLNC50CE",
+    "ESLNC6CE",
+    "ESLNC7CE"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unstated",
+   "computed": null,
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record states no figure, but the catalog text names 2 hours, 3 hours, 3 hours, 3 hours"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "ENGLISH AS A SECOND LANGUAGE - NONCREDIT",
+   "measure": "hours",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ESL NC 006CE",
+    "why": "appears only in course descriptions; the text prints no program requirements for this award"
+   },
+   {
+    "code": "ESL NC 007CE",
+    "why": "appears only in course descriptions; the text prints no program requirements for this award"
+   },
+   {
+    "code": "ESL NC 050CE",
+    "why": "appears only in course descriptions; the text prints no program requirements for this award"
+   }
+  ],
+  "notes": [
+   "The supplied text (catalog page 350) is the noncredit course descriptions section, not the program-of-study page for the ESL: Beginning noncredit program. It prints no requirements, total hours, outcomes or careers for the award, so no blocks were recorded. A reviewer should locate the program's own section elsewhere in the catalog.",
+   "The course descriptions print weekly lecture hours (ESL NC 006CE: 6 hours, ESL NC 007CE: 6 hours, ESL NC 050CE: 3 hours). These are not program completion hours, so they were not recorded as requirements.",
+   "The catalog titles ESL NC 007CE 'ENGLISH AS A SECOND LANGUAGE - I'; the closed list stores it as '- 1'."
+  ]
+ },
+ "extracted_run": "39054673977"
+}

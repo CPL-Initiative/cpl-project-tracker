@@ -1,0 +1,297 @@
+{
+ "college": "Los Angeles Trade Technical College",
+ "control_number": "02894",
+ "shape": "degree",
+ "title": "Marketing and Public Relations",
+ "award": "A.A. Degree",
+ "source_url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=122",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7181,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7181,
+    "output_tokens": 1805,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1805,
+  "output_tokens_details": {
+   "thinking_tokens": 559
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.06482,
+ "ms": 14806,
+ "seconds": 15.5,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 1,
+   "listed": 1,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 14,
+   "codes": [
+    "ACCTG1",
+    "BUS1",
+    "BUS32",
+    "BUS33",
+    "BUS38",
+    "BUS5",
+    "CAOT82",
+    "ECONC2002",
+    "MARKET11",
+    "MARKET21",
+    "PUBREL1",
+    "PUBREL2",
+    "PUBREL3",
+    "SUPV11"
+   ],
+   "flagged": [
+    "ACCTG1",
+    "BUS1",
+    "BUS32",
+    "BUS33",
+    "BUS38",
+    "BUS5",
+    "CAOT82",
+    "ECONC2002",
+    "MARKET11",
+    "MARKET21",
+    "PUBREL1",
+    "PUBREL2",
+    "PUBREL3",
+    "SUPV11"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    44.0,
+    44.0
+   ],
+   "stated": [
+    44.0,
+    44.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 2,
+   "courses": 0,
+   "count": 2,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 6,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "MARKETING AND PUBLIC RELATIONS ▌ Associate in Arts Degree",
+   "measure": "units",
+   "total_units": {
+    "min": 44,
+    "max": 44
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": 21,
+    "max": 21
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Understand and communicate the stakeholder point of view in order to develop long range company strategies.",
+    "Analyse consumer trends and development tactical marketing solutions."
+   ],
+   "careers": [
+    "marketing director",
+    "public relations representative",
+    "corporate consultant",
+    "political campaign advisor",
+    "small business owner",
+    "marketing and non profit communications consultants"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 44,
+     "max": 44
+    },
+    "courses": [
+     {
+      "code": "BUS 001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BUS 032",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BUS 033",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "BUS 038",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CAOT 082",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "SUPV 011",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ACCTG 001",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ECON C2002",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MARKET 001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PUB REL 001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BUS 005",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MARKET 021",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PUB REL 002",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MARKET 011",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PUB REL 003",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The A.A. section states 'Major Units: 44' and '44 units of Required Courses'; the listed courses sum to 44.",
+   "Courses are printed as a suggested sequence by semester (I-IV); recorded as one 'all' block since all are Required Courses.",
+   "MARKET 001 in the catalog corresponds to closed-list MARKET 1.",
+   "ge_units 21 is read from a cut-off program table row ('Relations T002894C A.A. 21* 44 - 44') whose column headers are not in the text; the footnote says GE units may be fulfilled by any General Education Pattern. Reviewer should verify the column meanings; no degree total recorded since '44 - 44' appears to be the major units and the 60-unit sentence is generic.",
+   "The PLO list is printed once for the 'Degree/Certificate program' and shared by the A.A. and the Certificate of Achievement; recorded verbatim here.",
+   "The Certificate of Achievement section (33 units) was not used."
+  ]
+ },
+ "extracted_run": "39054673977"
+}

@@ -1,0 +1,305 @@
+{
+ "college": "Los Angeles Trade Technical College",
+ "control_number": "21840",
+ "shape": "certificate",
+ "title": "Information Technology",
+ "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+ "source_url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=82",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7606,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7606,
+    "output_tokens": 2307,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2307,
+  "output_tokens_details": {
+   "thinking_tokens": 1018
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.07656,
+ "ms": 20673,
+ "seconds": 21.9,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 11,
+   "listed": 13,
+   "share": 0.846,
+   "missing": [
+    "MICROTK80",
+    "PHYSICS11"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 7,
+   "codes": [
+    "IT160",
+    "IT162",
+    "IT164",
+    "IT165",
+    "IT77",
+    "IT78",
+    "IT79"
+   ],
+   "flagged": [
+    "IT160",
+    "IT162",
+    "IT164",
+    "IT165",
+    "IT77",
+    "IT78",
+    "IT79"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    35.0,
+    35.0
+   ],
+   "stated": [
+    35.0,
+    35.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "INFORMATION TECHNOLOGY Certificate of Achievement",
+   "measure": "units",
+   "total_units": {
+    "min": 35,
+    "max": 35
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Install, configure, and add auxiliary equipment for microcomputers.",
+    "Set up computers to certain specifications.",
+    "Configure and create network systems consisting of a number of computers."
+   ],
+   "careers": [
+    "information technician"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "REQUIRED COURSES",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "IT 160",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MICROTK 160",
+        "units": 2,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "IT 162",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MICROTK 162",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "IT 164",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MICROTK 164",
+        "units": 5,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "IT 077",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MICROTK 077",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "IT 078",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MICROTK 078",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "ETNTLGY 252",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ETNTLGY 253",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ELECTRN 002",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "IT 079",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MICROTK 079",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "IT 165",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MICROTK 165",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "ETNTLGY 254",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "MICROTK 80",
+    "why": "not in the text"
+   },
+   {
+    "code": "PHYSICS 11",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "The Certificate of Achievement section states it is earned by completing the 35 units of Required Courses listed under the Associate degree; the block is read from the A.S. Required Courses list (Semesters I-III), which sums to 35 units.",
+   "Courses printed as IT 160, IT 162, IT 164, IT 077, IT 078, IT 079, IT 165 are marked '(formerly MICROTK ...)'. The new IT codes are not in the closed list (catalog_addition true); the former MICROTK codes are recorded as alternatives to map them to the closed list. Reviewer should confirm these are renumbered versions of the same courses rather than true alternatives.",
+   "The PLO list is printed once for the 'Degree/Certificate program' and is shared by this certificate.",
+   "Course list is printed by semester (I, II, III); recorded as one 'all' block since every course is required.",
+   "A NOTE requires students to provide hand tools, a 'Transportation Technology uniform' and safety equipment, which may be a carry-over from another program's text."
+  ]
+ },
+ "extracted_run": "39054673977"
+}

@@ -1,0 +1,247 @@
+{
+ "college": "Los Angeles Trade Technical College",
+ "control_number": "31081",
+ "shape": "certificate",
+ "title": "Solar PV Installation and Maintenance Technician",
+ "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+ "source_url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=148",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 11014,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 11014,
+    "output_tokens": 1914,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1914,
+  "output_tokens_details": {
+   "thinking_tokens": 765
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.08234,
+ "ms": 16696,
+ "seconds": 17.1,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 9,
+   "listed": 9,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 3,
+   "codes": [
+    "BLDGCTQ10",
+    "ECONMT105",
+    "MATH115"
+   ],
+   "flagged": [
+    "BLDGCTQ10",
+    "ECONMT105",
+    "MATH115"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    26.0,
+    26.0
+   ],
+   "stated": [
+    26.0,
+    28.0
+   ],
+   "against": "program",
+   "why": [
+    "the blocks sum to 26.0-26.0; the catalog states 26.0-28.0"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 2,
+   "courses": 0,
+   "count": 2,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "SOLAR PV INSTALLATION AND MAINTENANCE TECHNICIAN ▌ Certificate of Achievement",
+   "measure": "units",
+   "total_units": {
+    "min": 26,
+    "max": 28
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Use electrical drawings and other related documents and graphics to communicate information effectively.",
+    "Perform basic solar (PV) installation and maintenance work utilizing hand and power tools, testing equipment, and other P.P.E. in accordance to industry standards."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "REQUIRED COURSE",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ECONMT 119",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ECONMT 173",
+        "units": 3,
+        "catalog_addition": false
+       },
+       {
+        "code": "MATH 115",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECONMT 115",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECONMT 116",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECONMT 129",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CRPNTRY 111A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CRPNTRY 111B",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECONMT 100",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BLDGCTQ 010",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ECONMT 105",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ECONMT 205",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The catalog prints the MATH 115 alternative as 'MATH 115 or higher Elementary Algebra (3-5)'; recorded with 3 units (low end), and 'or higher' means any higher math course may substitute. This range accounts for the 26-28 unit total.",
+   "Courses are printed under Semester I-III headings as a recommended sequence; all are required, so they were recorded as one 'all' block.",
+   "The overview paragraph 'Program outcomes include; the use of hand and power tools...' is descriptive prose, not the PLO list; only the two bulleted PLOs were recorded as outcomes.",
+   "The table fragment at the top of page 148 ('T031081D C 26-28 - 26-28') appears to be this certificate's row in the program summary table.",
+   "No specific job titles are named; the text mentions employment with contractors, facilities management companies and agencies (employers) and 'entry level laborer work', so careers was left empty for reviewer check.",
+   "The A.S. degree section (Photo Voltaic (PV) Solar Installation & Maintenance) on page 148 was not used."
+  ]
+ },
+ "extracted_run": "39054673977"
+}

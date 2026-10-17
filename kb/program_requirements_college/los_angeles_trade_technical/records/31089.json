@@ -1,0 +1,352 @@
+{
+ "college": "Los Angeles Trade Technical College",
+ "control_number": "31089",
+ "shape": "degree",
+ "title": "Solar Thermal Installation & Maintenance",
+ "award": "A.S. Degree",
+ "source_url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=150",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8739,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8739,
+    "output_tokens": 3427,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 3427,
+  "output_tokens_details": {
+   "thinking_tokens": 1520
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.1035,
+ "ms": 26771,
+ "seconds": 27.3,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 16,
+   "listed": 23,
+   "share": 0.696,
+   "missing": [
+    "BLDGCTQ7",
+    "BLDGCTQ8",
+    "BLDGCTQ9",
+    "ECONMT110",
+    "PLUMBNG28",
+    "REFAC100",
+    "REFAC105"
+   ],
+   "unexplained": [
+    "BLDGCTQ7",
+    "BLDGCTQ8",
+    "BLDGCTQ9",
+    "PLUMBNG28"
+   ],
+   "none_placed": false,
+   "pass": false
+  },
+  "invented": {
+   "count": 4,
+   "codes": [
+    "BLDGTCQ7",
+    "BLDGTCQ8",
+    "BLDGTCQ9",
+    "PLUMBING28"
+   ],
+   "flagged": [],
+   "pass": false
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    37.0,
+    38.0
+   ],
+   "stated": [
+    42.0,
+    42.0
+   ],
+   "against": "program",
+   "why": [
+    "the blocks sum to 37.0-38.0; the catalog states 42.0-42.0"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 3,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "SOLAR THERMAL INSTALLATION & MAINTENANCE ▌ Associate in Science Degree",
+   "measure": "units",
+   "total_units": {
+    "min": 42,
+    "max": 42
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": 21,
+    "max": 21
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Perform solar thermal installations and maintenance work utilizing hand and power tools.",
+    "Certify the proper and safe operation of solar thermal systems utilizing proper test equipment.",
+    "Calculate solar thermal system efficiency, performance, and installation costs."
+   ],
+   "careers": [
+    "solar thermal installation and maintenance entry-level occupations",
+    "renewable energy and/or energy efficiency occupations",
+    "residential and commercial solar thermal and renewable energy-related occupations"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "REQUIRED COURSES",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 38,
+     "max": 38
+    },
+    "courses": [
+     {
+      "code": "ECONMT 115",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECONMT 116",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECONMT 119",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ECONMT 173",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECONMT 129",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECONMT 100",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PLUMBING 028",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "BLDGCTQ 010",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CRPNTRY 111B",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "REF A/C 100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "REF A/C 110",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "REF A/C 165",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CRPNTRY 148",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECONMT 171",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "ELECTIVE COURSES",
+    "rule": "choose_units",
+    "minimum": 4,
+    "option_group": null,
+    "stated": {
+     "min": 4,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "REF A/C 100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECONMT 205",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BLDGTCQ 007",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BLDGTCQ 008",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BLDGTCQ 009",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BLDGCTQ 012",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CRPNTRY 111A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ECONMT 110",
+    "why": "not in the text"
+   },
+   {
+    "code": "REFAC100",
+    "why": "duplicate closed-list entry of REF A/C 100, placed under that code"
+   },
+   {
+    "code": "REFAC105",
+    "why": "REF A/C 105 named only in the Certificate of Achievement section"
+   }
+  ],
+  "notes": [
+   "Required courses listed in the semester sequence sum to 33 units, not the stated 38; the 'Electives 2' rows in Semesters I and III (4 units) are read as the 4 units of Major Electives. Reviewer should check the discrepancy.",
+   "PLUMBING 028 (Plumbing Code I, 3) is printed as an 'or' option both to ECONMT 100 and to ECONMT 171; it is recorded once, as an alternative to ECONMT 100. It is also an alternative to ECONMT 171.",
+   "Catalog codes PLUMBING 028, BLDGCTQ 010, BLDGTCQ 007/008/009 are read as closed-list PLUMBNG 28, BLDGCTQ 10, BLDGCTQ 7/8/9 (zero-padding and 'BLDGTCQ' typo), so catalog_addition is false.",
+   "REF A/C 100 appears both as a required course and in the elective list (as 'Project Management').",
+   "ge_units 21 is read from the summary table row 'T031089C A.S. 21* 38 4 42' whose column headers are cut off at the page start; footnote says GE may be met by any General Education Pattern, so ge_pattern is null.",
+   "Page states 'At least 60 degree applicable units are required to earn an Associate degree' as a generic rule; not recorded as degree_total.",
+   "Careers are taken from the shared PROGRAM OVERVIEW printed before the A.S. heading."
+  ]
+ },
+ "extracted_run": "39054673977"
+}
