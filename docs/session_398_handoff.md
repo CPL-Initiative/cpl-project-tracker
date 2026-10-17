@@ -4,6 +4,8 @@ date: 2026-10-16
 session: 397 (SkyCatalpa)
 tags: [handoff, program-requirements, catalog-sweep, reconcile, curriqunet]
 status: current
+superseded: true
+superseded_by: session_402_handoff.md
 ---
 
 # You are Session 398

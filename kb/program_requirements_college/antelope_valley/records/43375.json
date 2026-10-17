@@ -1,0 +1,268 @@
+{
+ "college": "Antelope Valley College",
+ "control_number": "43375",
+ "shape": "certificate",
+ "title": "Licensed Vocational Nursing",
+ "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+ "source_url": "https://avc.elumenapp.com/catalog/2026-27/program/licensed-vocational-nursing-cert-spring-2025",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8274,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8274,
+    "output_tokens": 2130,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2130,
+  "output_tokens_details": {
+   "thinking_tokens": 815
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.0757,
+ "ms": 17894,
+ "seconds": 18.2,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 5,
+   "listed": 7,
+   "share": 0.714,
+   "missing": [
+    "PSYCC1000",
+    "PSYCC1000H"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 4,
+   "codes": [
+    "BIOL100",
+    "PSY101",
+    "PSY101H",
+    "VN121"
+   ],
+   "flagged": [
+    "BIOL100",
+    "PSY101",
+    "PSY101H",
+    "VN121"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    51.0,
+    51.0
+   ],
+   "stated": [
+    51.0,
+    51.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 2,
+   "courses": 0,
+   "count": 2,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Licensed Vocational Nursing Cert",
+   "measure": "units",
+   "total_units": {
+    "min": 51,
+    "max": 51
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Utilize critical thinking for clinical decision making for the hospitalized patient.",
+    "Implements nursing skills for the hospitalized patient."
+   ],
+   "careers": [
+    "Licensed Vocational Nurse"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Prerequisite Course",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "NF100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Core Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 45,
+     "max": 45
+    },
+    "courses": [
+     {
+      "code": "BIOL100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "VN119",
+      "units": 2.25,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VN120",
+      "units": 12.25,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VN121",
+      "units": 15.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "VN122",
+      "units": 5.25,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VN123",
+      "units": 6.75,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Core Course - Choose one",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "PSY101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PSY101H",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "PSYC C1000",
+    "why": "not in the text; the catalog prints PSY101 - General Psychology instead (likely the pre-common-numbering code)"
+   },
+   {
+    "code": "PSYC C1000H",
+    "why": "not in the text; the catalog prints PSY101H - General Psychology Honors instead (likely the pre-common-numbering code)"
+   }
+  ],
+  "notes": [
+   "Catalog prints 'Required Courses (Total 51)' and later 'Required Major Total 51 Units' and 'Total Degree Units 51 Units'; recorded 51 as total_units. The 'Total Degree Units' line refers to this certificate, not a degree with GE, so degree_total left null.",
+   "The Core Courses block total (45) appears to exclude the separate 'Core Course - Choose one' psychology block (3); 3 + 45 + 3 = 51.",
+   "Catalog codes are printed without spaces (NF100, VN119, etc.); treated as matching closed-list codes NF 100, VN 119, VN 120, VN 122, VN 123.",
+   "BIOL100 and VN121 are required in the catalog but absent from the closed list; recorded as catalog additions.",
+   "PSY101/PSY101H appear where the closed list has PSYC C1000/C1000H; they may be the same courses under renumbering—reviewer should verify.",
+   "Closed-list units (2.3, 12.3, 5.3, 6.8) are rounded versions of the catalog's 2.25, 12.25, 5.25, 6.75; catalog values recorded.",
+   "The text includes curriculum-proposal form content (Program Goals and Objectives, Checklist, Workflow Agreement), which repeats the same requirements; the later requirements table lists PSY 101 without the honors option.",
+   "Program Outcomes section is printed for this certificate and recorded as program outcomes."
+  ]
+ },
+ "extracted_run": "38979725726"
+}

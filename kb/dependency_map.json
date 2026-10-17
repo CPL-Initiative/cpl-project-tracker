@@ -341,7 +341,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 1130
+     "line": 1141
     }
    ],
    "main_committers": []
@@ -513,7 +513,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 1069
+     "line": 1080
     }
    ],
    "main_committers": []
@@ -1008,7 +1008,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 4227,
+     "line": 4261,
      "tabs": [
       "credential-reference"
      ]
@@ -2820,7 +2820,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 4247,
+     "line": 4281,
      "tabs": [
       "credential-reference"
      ]
@@ -5837,7 +5837,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 5821,
+     "line": 5861,
      "tabs": [
       "credential-reference"
      ]
@@ -10529,7 +10529,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 5423,
+     "line": 5457,
      "tabs": [
       "credential-reference"
      ]
@@ -11971,7 +11971,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 5446,
+     "line": 5480,
      "tabs": [
       "credential-reference"
      ]
@@ -19796,7 +19796,7 @@
      "kind": "script",
      "direction": "call",
      "how": "literal",
-     "line": 1889
+     "line": 1941
     }
    ],
    "main_committers": []
@@ -19808,7 +19808,7 @@
      "kind": "script",
      "direction": "call",
      "how": "literal",
-     "line": 1976
+     "line": 2028
     }
    ],
    "main_committers": []

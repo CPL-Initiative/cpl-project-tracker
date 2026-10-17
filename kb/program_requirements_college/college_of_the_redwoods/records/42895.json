@@ -1,0 +1,400 @@
+{
+ "college": "College of the Redwoods",
+ "control_number": "42895",
+ "shape": "certificate",
+ "title": "Aquaculture Technology",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/aquaculture-technology-fall-2023",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8377,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8377,
+    "output_tokens": 3728,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 3728,
+  "output_tokens_details": {
+   "thinking_tokens": 1521
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.10807,
+ "ms": 30255,
+ "seconds": 30.6,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 17,
+   "listed": 19,
+   "share": 0.895,
+   "missing": [
+    "STATC1000",
+    "STATC1000E"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 3,
+   "codes": [
+    "MATH15",
+    "MATH16",
+    "MATH50A"
+   ],
+   "flagged": [
+    "MATH15",
+    "MATH16",
+    "MATH50A"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    29.0,
+    35.0
+   ],
+   "stated": [
+    25.0,
+    28.0
+   ],
+   "against": "program",
+   "why": [
+    "the blocks sum to 29.0-35.0; the catalog states 25.0-28.0"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 4,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "AQUA Tech A.S.",
+   "measure": "units",
+   "total_units": {
+    "min": 25,
+    "max": 28
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Evaluate the historical and current state of aquaculture in the world within legal, social, economic, and environmental contexts.",
+    "Apply aquaculture techniques to breed, grow, and harvest high-quality finfish and shellfish while considering physiological needs, water quality parameters, and environmental conditions for optimal rearing and growth.",
+    "Understand business and entrepreneurial concepts to contribute to the successful operation of an aquaculture enterprise.",
+    "Exhibit professional work habits that promote a safe, productive, and environmentally conscious work environment."
+   ],
+   "careers": [
+    "aquaculture",
+    "management of aquatic ecosystems",
+    "Environmental Science and Protection Technicians, Including Health",
+    "Life, Physical, and Social Science Technicians, All Other"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "AQUA Core",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 10,
+     "max": 10
+    },
+    "courses": [
+     {
+      "code": "AQUA1",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AQUA2",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AQUA3",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Bio Core",
+    "rule": "choose_units",
+    "minimum": 4,
+    "option_group": null,
+    "stated": {
+     "min": 4,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "BIOL3",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL4",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "MATH Core",
+    "rule": "choose_units",
+    "minimum": 4,
+    "option_group": null,
+    "stated": {
+     "min": 4,
+     "max": 5
+    },
+    "courses": [
+     {
+      "code": "MATH15",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MATH16",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MATH50A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MATH25",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH30",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Restricted Electives",
+    "rule": "choose_units",
+    "minimum": 7,
+    "option_group": null,
+    "stated": {
+     "min": 7,
+     "max": 9
+    },
+    "courses": [
+     {
+      "code": "BIOL3",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL4",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM2",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM3",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOL1",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS2A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Or both of the following towards the restricted elective total:",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 4,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "OCEAN10",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "OCEAN10L",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Optional Employment-based Focus: Take up to 3 units below towards the restricted elective total:",
+    "rule": "choose_units",
+    "minimum": 0,
+    "option_group": null,
+    "stated": {
+     "min": 0,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "AG32",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AQUA4",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS10",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CE41",
+      "units": 0.5,
+      "units_max": 3,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "STAT C1000",
+    "why": "not in the text; catalog lists MATH15 - Introduction to Statistics instead (likely the same course under an older number)"
+   },
+   {
+    "code": "STAT C1000E",
+    "why": "not in the text; catalog lists MATH16 - Introduction to Statistics with Support instead (likely the same course under an older number)"
+   }
+  ],
+  "notes": [
+   "The catalog text prints only an A.S. Degree (60.0 Credits) section headed 'AQUA Tech A.S.'; no Certificate of Achievement section appears. The requirements recorded are the A.S. major requirements (Total 25 - 28), which match the closed list and fall within the certificate's 16-30 unit range. A reviewer should confirm the certificate uses the same requirements.",
+   "The page's 60.0-credit figure is the A.S. degree total and was not recorded as degree_total because the named award is a certificate; no GE pattern is named on the page.",
+   "The 'Or both of the following' OCEAN10/OCEAN10L block (4 units) and the 'Optional Employment-based Focus' block (0-3 units) count toward the Restricted Electives total of 7-9; they are not additional to it.",
+   "BIOL3 and BIOL4 appear in both Bio Core and Restricted Electives as printed; presumably the course used for Bio Core cannot also count toward Restricted Electives.",
+   "Program Learning Outcomes are printed for the A.S. program as a whole; recorded here as the program's outcomes.",
+   "Source URL slug references 'fall-2023' although the catalog year is 2026-2027.",
+   "MATH15, MATH16 and MATH50A are not in the closed list and are marked catalog additions; the closed list's STAT C1000/C1000E likely correspond to MATH15/MATH16."
+  ]
+ },
+ "extracted_run": "38979396148"
+}

@@ -11,7 +11,7 @@
   },
   "summary": {
     "files": 1168,
-    "bytes": 12017705,
+    "bytes": 12019178,
     "over_budget": 7,
     "handoff_max": 401,
     "always_loaded_files": 1,
@@ -26,7 +26,7 @@
       },
       "other": {
         "files": 121,
-        "bytes": 3641563,
+        "bytes": 3642146,
         "over": 3
       },
       "index": {
@@ -46,7 +46,7 @@
       },
       "roadmap_lane": {
         "files": 37,
-        "bytes": 351765,
+        "bytes": 352655,
         "over": 2
       },
       "handoff": {
@@ -59,13 +59,14 @@
       "house_voice": 23,
       "oversized_doc": 7,
       "kb_note_dialect": 1,
-      "vault_heavy_path": 62
+      "vault_heavy_path": 62,
+      "checkpoint_overdue": 1
     },
     "vault": {
-      "files": 14420,
-      "bytes": 2782507414,
-      "heavy_bytes": 1723683766,
-      "heavy_share": 0.619,
+      "files": 15036,
+      "bytes": 2796483875,
+      "heavy_bytes": 1737589135,
+      "heavy_share": 0.621,
       "ignore_filters": [
         "cpl-project-tracker/kb/receipts",
         "cpl-project-tracker/kb/regional_cpl_out",
@@ -404,13 +405,13 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 20094,
+        "bytes": 20328,
         "limit": 20000,
         "lane": "roadmap_lane",
-        "over_by": 94,
-        "ratio": 1.0
+        "over_by": 328,
+        "ratio": 1.02
       },
-      "message": "20,094 B is 1.0× the roadmap_lane budget (20,000 B) — candidate for compaction",
+      "message": "20,328 B is 1.0× the roadmap_lane budget (20,000 B) — candidate for compaction",
       "path": "docs/reference/lanes/cobi-dark-mode.md"
     },
     {
@@ -516,10 +517,10 @@
       "fixable": false,
       "path": "kb/receipts",
       "detail": {
-        "bytes": 819769021,
+        "bytes": 829151488,
         "kind": "dir"
       },
-      "message": "directory totals 819,769,021 B inside the vault"
+      "message": "directory totals 829,151,488 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -536,20 +537,20 @@
       "fixable": false,
       "path": "kb/reference",
       "detail": {
-        "bytes": 82362522,
+        "bytes": 82370794,
         "kind": "dir"
       },
-      "message": "directory totals 82,362,522 B inside the vault"
+      "message": "directory totals 82,370,794 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
       "fixable": false,
       "path": "kb/program_requirements_college",
       "detail": {
-        "bytes": 72815946,
+        "bytes": 77330576,
         "kind": "dir"
       },
-      "message": "directory totals 72,815,946 B inside the vault"
+      "message": "directory totals 77,330,576 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -1130,6 +1131,17 @@
         "kind": "file"
       },
       "message": "2,038,305 B single file inside the vault"
+    },
+    {
+      "rule": "checkpoint_overdue",
+      "fixable": false,
+      "path": "docs/session_401_handoff.md",
+      "detail": {
+        "commits_since": 7,
+        "budget": 6,
+        "handoff": "session_401_handoff.md"
+      },
+      "message": "7 commit(s) have landed since `docs/session_401_handoff.md` was last written (budget 6), which is Rule 9's trigger. Run `/checkpoint`: improvising one from memory is how nine of its thirteen artifacts go missing."
     }
   ]
 }

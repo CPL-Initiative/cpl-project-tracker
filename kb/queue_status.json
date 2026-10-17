@@ -1,11 +1,11 @@
 {
   "schema": 1,
-  "written_at": "2026-10-16T21:38:43Z",
-  "session": 400,
-  "moniker": "SkyBirch",
+  "written_at": "2026-10-17T00:02:36Z",
+  "session": 401,
+  "moniker": "SkyManzanita",
   "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_401_handoff.md",
+  "handoff": "docs/session_402_handoff.md",
   "unchecked": [
     {
       "college": "Cerritos College",
@@ -61284,11 +61284,3882 @@
       "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
       "control_number": "43187",
       "loaded": "2026-10-16"
+    },
+    {
+      "college": "Columbia College",
+      "program": "Child Development",
+      "award": "A.S. Degree",
+      "control_number": "06815",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Columbia College",
+      "program": "Natural Resources",
+      "award": "A.S. Degree",
+      "control_number": "06817",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Columbia College",
+      "program": "Business Management",
+      "award": "A.S. Degree",
+      "control_number": "06819",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Columbia College",
+      "program": "Computer Programming",
+      "award": "A.S. Degree",
+      "control_number": "06823",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Columbia College",
+      "program": "Fine Arts: Emphasis in Art",
+      "award": "A.A. Degree",
+      "control_number": "06828",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Columbia College",
+      "program": "Music",
+      "award": "A.A. Degree",
+      "control_number": "06829",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Columbia College",
+      "program": "Allied Health",
+      "award": "A.S. Degree",
+      "control_number": "06831",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Columbia College",
+      "program": "Emergency Medical Services",
+      "award": "A.S. Degree",
+      "control_number": "06832",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Columbia College",
+      "program": "Foodservice Management",
+      "award": "A.S. Degree",
+      "control_number": "06833",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Columbia College",
+      "program": "Fire Technology",
+      "award": "A.S. Degree",
+      "control_number": "06839",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Columbia College",
+      "program": "Watershed Management",
+      "award": "A.S. Degree",
+      "control_number": "07552",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Columbia College",
+      "program": "Accounting",
+      "award": "A.S. Degree",
+      "control_number": "07553",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Columbia College",
+      "program": "Automotive Service Technician",
+      "award": "A.S. Degree",
+      "control_number": "07577",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Columbia College",
+      "program": "Fine Arts: Emphasis in Photography",
+      "award": "A.A. Degree",
+      "control_number": "07578",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Columbia College",
+      "program": "Culinary Arts",
+      "award": "A.S. Degree",
+      "control_number": "07580",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Columbia College",
+      "program": "Baking and Pastry Arts",
+      "award": "A.S. Degree",
+      "control_number": "07583",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Columbia College",
+      "program": "Geographic Information Systems",
+      "award": "A.S. Degree",
+      "control_number": "08637",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Columbia College",
+      "program": "Associate Child Development Teacher/Future Educators",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "12023",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Columbia College",
+      "program": "Ecological Forestry",
+      "award": "A.S. Degree",
+      "control_number": "12031",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Columbia College",
+      "program": "Engine Performance",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "17213",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Columbia College",
+      "program": "Under Vehicle Service",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "17215",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Columbia College",
+      "program": "Organizational Behavior",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "17217",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Columbia College",
+      "program": "Arts and Humanities",
+      "award": "A.A. Degree",
+      "control_number": "18784",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Columbia College",
+      "program": "Social and Behavioral Sciences",
+      "award": "A.A. Degree",
+      "control_number": "18785",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Columbia College",
+      "program": "Ecological Forestry",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "20769",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Columbia College",
+      "program": "Natural Resources",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "20770",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Columbia College",
+      "program": "Watershed Management",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "20771",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Columbia College",
+      "program": "Accounting",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "20772",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Columbia College",
+      "program": "Management",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "20773",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Columbia College",
+      "program": "Automotive Service Technician",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "20781",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Columbia College",
+      "program": "Emergency Medical Services",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "20782",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Columbia College",
+      "program": "Culinary Arts",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "20784",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Columbia College",
+      "program": "Baking and Pastry Arts",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "20786",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Columbia College",
+      "program": "Foodservice Management",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "20787",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Columbia College",
+      "program": "Fire Technology",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "20790",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Columbia College",
+      "program": "Geographic Information Systems",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "20791",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Columbia College",
+      "program": "Sociology",
+      "award": "A.A- T Degree",
+      "control_number": "30798",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Columbia College",
+      "program": "Entrepreneurship",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "31184",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Columbia College",
+      "program": "Welding Technology",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "31203",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Columbia College",
+      "program": "Entrepreneurship",
+      "award": "A.S. Degree",
+      "control_number": "31206",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Columbia College",
+      "program": "Sport Science",
+      "award": "A.A. Degree",
+      "control_number": "31244",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Columbia College",
+      "program": "Media and Design",
+      "award": "A.S. Degree",
+      "control_number": "31806",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Columbia College",
+      "program": "Early Childhood Education",
+      "award": "A.S. T Degree",
+      "control_number": "31824",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Columbia College",
+      "program": "Psychology",
+      "award": "A.A- T Degree",
+      "control_number": "31825",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Columbia College",
+      "program": "English",
+      "award": "A.A- T Degree",
+      "control_number": "31839",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Columbia College",
+      "program": "Anthropology",
+      "award": "A.A- T Degree",
+      "control_number": "32348",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Columbia College",
+      "program": "Kinesiology",
+      "award": "A.A- T Degree",
+      "control_number": "32444",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Columbia College",
+      "program": "Political Science",
+      "award": "A.A- T Degree",
+      "control_number": "32470",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Columbia College",
+      "program": "History",
+      "award": "A.A- T Degree",
+      "control_number": "32641",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Columbia College",
+      "program": "Studio Arts",
+      "award": "A.A- T Degree",
+      "control_number": "33376",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Columbia College",
+      "program": "Geology",
+      "award": "A.S. T Degree",
+      "control_number": "33535",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Columbia College",
+      "program": "Music",
+      "award": "A.A- T Degree",
+      "control_number": "33543",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Columbia College",
+      "program": "Associate Infant/Toddler Teacher",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "33959",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Columbia College",
+      "program": "Biology",
+      "award": "A.S. T Degree",
+      "control_number": "35150",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Columbia College",
+      "program": "Fire Science",
+      "award": "A.S. Degree",
+      "control_number": "35870",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Columbia College",
+      "program": "Media and Design",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "36046",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Columbia College",
+      "program": "Payroll Clerk",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "36236",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Columbia College",
+      "program": "Economics",
+      "award": "A.A- T Degree",
+      "control_number": "36637",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Columbia College",
+      "program": "Drive Train Technician",
+      "award": "A.S. Degree",
+      "control_number": "36997",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Columbia College",
+      "program": "Engineering Fundamentals",
+      "award": "A.S. Degree",
+      "control_number": "37233",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Columbia College",
+      "program": "Hospitality Supervision",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "38328",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Columbia College",
+      "program": "Management & Restoration of Fire-Adapted Ecosystems",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "38870",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Columbia College",
+      "program": "General Science",
+      "award": "A.S. Degree",
+      "control_number": "38891",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Columbia College",
+      "program": "Nutrition and Dietetics",
+      "award": "A.S. T Degree",
+      "control_number": "38901",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Columbia College",
+      "program": "Media for Entrepreneurs",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "38954",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Columbia College",
+      "program": "Social Work and Human Services",
+      "award": "A.A- T Degree",
+      "control_number": "40892",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Columbia College",
+      "program": "Business Administration 2.0",
+      "award": "A.S. T Degree",
+      "control_number": "41581",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Columbia College",
+      "program": "Hospitality Management",
+      "award": "A.S. T Degree",
+      "control_number": "41640",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Columbia College",
+      "program": "Social Work and Human Services",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "41963",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Columbia College",
+      "program": "Archaeological Technician",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "42743",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Columbia College",
+      "program": "River Ecology and Management",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "42905",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Columbia College",
+      "program": "English Language Proficiency",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "43629",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Columbia College",
+      "program": "Communication Studies 2.0",
+      "award": "A.A- T Degree",
+      "control_number": "43773",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Columbia College",
+      "program": "Google IT Support Professional",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "44622",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Columbia College",
+      "program": "Wildland Fire",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "44767",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Columbia College",
+      "program": "Education Foundations",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "45074",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Columbia College",
+      "program": "Paraprofessional Educator",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "45075",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Columbia College",
+      "program": "Public Health",
+      "award": "A.S. T Degree",
+      "control_number": "45076",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Columbia College",
+      "program": "Google IT Support Professional",
+      "award": "Noncredit program",
+      "control_number": "45118",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Columbia College",
+      "program": "Elementary Teacher Education: Integrated Programs",
+      "award": "A.A- T Degree",
+      "control_number": "45599",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Columbia College",
+      "program": "Mathematics 2.0",
+      "award": "A.S. T Degree",
+      "control_number": "46240",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Columbia College",
+      "program": "Physics 2.0",
+      "award": "A.S. T Degree",
+      "control_number": "46241",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Lemoore College",
+      "program": "Administration of Justice: Law Enforcement",
+      "award": "A.A. Degree",
+      "control_number": "10945",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Lemoore College",
+      "program": "Child Development",
+      "award": "A.A. Degree",
+      "control_number": "10963",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Lemoore College",
+      "program": "Business Administration",
+      "award": "A.S. Degree",
+      "control_number": "15268",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Lemoore College",
+      "program": "Business: Business Management",
+      "award": "A.S. Degree",
+      "control_number": "15270",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Lemoore College",
+      "program": "Engineering",
+      "award": "A.S. Degree",
+      "control_number": "15277",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Lemoore College",
+      "program": "Health Science, General",
+      "award": "A.S. Degree",
+      "control_number": "15280",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Lemoore College",
+      "program": "Hotel, Restaurant,  and Casino Management",
+      "award": "A.A. Degree",
+      "control_number": "15284",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Lemoore College",
+      "program": "Introduction to Hotel Operations",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "15285",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Lemoore College",
+      "program": "LVN to ADN",
+      "award": "A.S. Degree",
+      "control_number": "17832",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Lemoore College",
+      "program": "30-unit LVN to RN",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "17833",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Lemoore College",
+      "program": "Liberal Arts: Arts & Humanities",
+      "award": "A.A. Degree",
+      "control_number": "19303",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Lemoore College",
+      "program": "Liberal Arts: Math & Science",
+      "award": "A.A. Degree",
+      "control_number": "19306",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Lemoore College",
+      "program": "Liberal Arts: Social Science",
+      "award": "A.A. Degree",
+      "control_number": "19307",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Lemoore College",
+      "program": "Business: Retail Business Management",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "20343",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Lemoore College",
+      "program": "Child Development Teacher Level",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "20349",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Lemoore College",
+      "program": "Mathematics",
+      "award": "A.S. T Degree",
+      "control_number": "30832",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Lemoore College",
+      "program": "Administration of Justice",
+      "award": "A.S. T Degree",
+      "control_number": "30833",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Lemoore College",
+      "program": "Physics",
+      "award": "A.S. T Degree",
+      "control_number": "31225",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Lemoore College",
+      "program": "Chef Apprentice",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "31235",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Lemoore College",
+      "program": "Paramedic",
+      "award": "A.S. Degree",
+      "control_number": "31883",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Lemoore College",
+      "program": "Business Administration",
+      "award": "A.S. T Degree",
+      "control_number": "32842",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Lemoore College",
+      "program": "Communication Studies",
+      "award": "A.A- T Degree",
+      "control_number": "32899",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Lemoore College",
+      "program": "Geology",
+      "award": "A.S. T Degree",
+      "control_number": "32900",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Lemoore College",
+      "program": "Early Childhood Education",
+      "award": "A.S. T Degree",
+      "control_number": "32908",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Lemoore College",
+      "program": "Sociology",
+      "award": "A.A- T Degree",
+      "control_number": "32909",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Lemoore College",
+      "program": "Geography",
+      "award": "A.A- T Degree",
+      "control_number": "32911",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Lemoore College",
+      "program": "Political Science",
+      "award": "A.A- T Degree",
+      "control_number": "32926",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Lemoore College",
+      "program": "Elementary Teacher Education",
+      "award": "A.A- T Degree",
+      "control_number": "32933",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Lemoore College",
+      "program": "Psychology",
+      "award": "A.A- T Degree",
+      "control_number": "33656",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Lemoore College",
+      "program": "History",
+      "award": "A.A- T Degree",
+      "control_number": "35960",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Lemoore College",
+      "program": "Business Information Worker",
+      "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+      "control_number": "35963",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Lemoore College",
+      "program": "Correctional Rehabilitation",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "36295",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Lemoore College",
+      "program": "Introduction to Cybersecurity",
+      "award": "Certificate of Achievement: 12 to fewer than 18 semester(or 18 to fewer than 27 ",
+      "control_number": "37123",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Lemoore College",
+      "program": "Introduction to Industrial Automation",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "37129",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Lemoore College",
+      "program": "English",
+      "award": "A.A- T Degree",
+      "control_number": "37134",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Lemoore College",
+      "program": "Agriculture Sales and Marketing",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "37155",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Lemoore College",
+      "program": "Kinesiology",
+      "award": "A.A- T Degree",
+      "control_number": "37364",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Lemoore College",
+      "program": "ESL",
+      "award": "Noncredit program",
+      "control_number": "38698",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Lemoore College",
+      "program": "Industrial Mechanic I",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "38740",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Lemoore College",
+      "program": "Manufacturing Automation",
+      "award": "A.S. Degree",
+      "control_number": "39698",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Lemoore College",
+      "program": "Nursing",
+      "award": "A.S. Degree",
+      "control_number": "39699",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Lemoore College",
+      "program": "Biology",
+      "award": "A.S. T Degree",
+      "control_number": "40166",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Lemoore College",
+      "program": "Introduction to Culinary Arts",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "40265",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Lemoore College",
+      "program": "Introduction to Hospitality Management",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "40269",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Lemoore College",
+      "program": "Hospitality Management",
+      "award": "A.S. T Degree",
+      "control_number": "40321",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Lemoore College",
+      "program": "Advanced Culinary Arts",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "40340",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Lemoore College",
+      "program": "Beverage Management",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "40379",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Lemoore College",
+      "program": "Advanced Hospitality Management",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "40429",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Lemoore College",
+      "program": "Pastry and Baking Arts",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "40430",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Lemoore College",
+      "program": "Full-Stack Web Development",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "42096",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Lemoore College",
+      "program": "Human Resources (COA)",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "42551",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Lemoore College",
+      "program": "Economics",
+      "award": "A.A- T Degree",
+      "control_number": "42563",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Lemoore College",
+      "program": "Information Technology",
+      "award": "A.A. Degree",
+      "control_number": "42593",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Lemoore College",
+      "program": "User Experience (UX) Design (COA)",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "42893",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Lemoore College",
+      "program": "Agriculture",
+      "award": "A.S. Degree",
+      "control_number": "43051",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Lemoore College",
+      "program": "Business Administration 2.0",
+      "award": "A.S. T Degree",
+      "control_number": "43103",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Lemoore College",
+      "program": "Business Information Systems",
+      "award": "A.A. Degree",
+      "control_number": "43429",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Lemoore College",
+      "program": "Information Technology Specialist",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "43533",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Lemoore College",
+      "program": "Communication Studies 2.0",
+      "award": "A.A- T Degree",
+      "control_number": "44247",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Lemoore College",
+      "program": "Public Health",
+      "award": "A.S. T Degree",
+      "control_number": "44549",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Lemoore College",
+      "program": "Transfer studies - Cal GETC",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "45494",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Lemoore College",
+      "program": "Maintenance Electrical Systems Technician 1",
+      "award": "Noncredit program",
+      "control_number": "45632",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Lemoore College",
+      "program": "Agriculture Business",
+      "award": "A.S. T Degree",
+      "control_number": "45802",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Lemoore College",
+      "program": "Elementary Teacher Education: Integrated Programs",
+      "award": "A.A- T Degree",
+      "control_number": "45975",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Lemoore College",
+      "program": "Mechanical Systems 1",
+      "award": "Noncredit program",
+      "control_number": "46268",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Lemoore College",
+      "program": "Community Health Worker",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "46390",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Lemoore College",
+      "program": "Process Control Systems Technician Level 1",
+      "award": "Noncredit program",
+      "control_number": "46558",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Lemoore College",
+      "program": "Mathematics 2.0",
+      "award": "A.S. T Degree",
+      "control_number": "46578",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of the Redwoods",
+      "program": "Agriculture, General",
+      "award": "A.S. Degree",
+      "control_number": "01793",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of the Redwoods",
+      "program": "Forestry and Natural Resource Technology",
+      "award": "A.S. Degree",
+      "control_number": "01796",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of the Redwoods",
+      "program": "General Business",
+      "award": "A.S. Degree",
+      "control_number": "01802",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of the Redwoods",
+      "program": "Construction Technology",
+      "award": "A.S. Degree",
+      "control_number": "01818",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of the Redwoods",
+      "program": "Welding Technology",
+      "award": "A.S. Degree",
+      "control_number": "01821",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of the Redwoods",
+      "program": "Registered Nursing",
+      "award": "A.S. Degree",
+      "control_number": "01831",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of the Redwoods",
+      "program": "Licensed Vocational Nursing",
+      "award": "A.S. Degree",
+      "control_number": "01832",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of the Redwoods",
+      "program": "Dental Assisting",
+      "award": "A.S. Degree",
+      "control_number": "01835",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of the Redwoods",
+      "program": "CIS Networking",
+      "award": "A.S. Degree",
+      "control_number": "08380",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of the Redwoods",
+      "program": "LVN or Paramedic to RN - Career Mobility",
+      "award": "A.S. Degree",
+      "control_number": "08393",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of the Redwoods",
+      "program": "Basic Law Enforcement Academy",
+      "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+      "control_number": "10849",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of the Redwoods",
+      "program": "Addiction Studies",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "16505",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of the Redwoods",
+      "program": "Liberal Arts: Science Exploration",
+      "award": "A.A. Degree",
+      "control_number": "18225",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of the Redwoods",
+      "program": "Liberal Arts: Science",
+      "award": "A.A. Degree",
+      "control_number": "18227",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of the Redwoods",
+      "program": "Liberal Arts: Fine Arts",
+      "award": "A.A. Degree",
+      "control_number": "18228",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of the Redwoods",
+      "program": "Liberal Arts: Behavioral and Social Science",
+      "award": "A.A. Degree",
+      "control_number": "18229",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of the Redwoods",
+      "program": "Liberal Arts: Humanities, Language, and Communication",
+      "award": "A.A. Degree",
+      "control_number": "18230",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of the Redwoods",
+      "program": "Liberal Arts: Business",
+      "award": "A.A. Degree",
+      "control_number": "18231",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of the Redwoods",
+      "program": "Residential Construction I",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "18387",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of the Redwoods",
+      "program": "Residential Construction II",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "18388",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of the Redwoods",
+      "program": "Cabinetmaking & Millwork",
+      "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+      "control_number": "18389",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of the Redwoods",
+      "program": "Forestry and Natural Resources",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "22657",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of the Redwoods",
+      "program": "Small Business Management",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "22658",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of the Redwoods",
+      "program": "CIS Networking",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "22663",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of the Redwoods",
+      "program": "Welding Technology",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "22673",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of the Redwoods",
+      "program": "LVN to RN 30 Unit Option",
+      "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+      "control_number": "22676",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of the Redwoods",
+      "program": "Licensed Vocational Nursing",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "22677",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of the Redwoods",
+      "program": "Dental Assisting",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "22678",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of the Redwoods",
+      "program": "Psychology",
+      "award": "A.A- T Degree",
+      "control_number": "31004",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of the Redwoods",
+      "program": "Mathematics",
+      "award": "A.S. T Degree",
+      "control_number": "31005",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of the Redwoods",
+      "program": "Early  Childhood Education",
+      "award": "A.S. T Degree",
+      "control_number": "31662",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of the Redwoods",
+      "program": "Electrician Trainee",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "31796",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of the Redwoods",
+      "program": "Studio Arts",
+      "award": "A.A- T Degree",
+      "control_number": "31934",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of the Redwoods",
+      "program": "History",
+      "award": "A.A- T Degree",
+      "control_number": "32556",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of the Redwoods",
+      "program": "Political Science",
+      "award": "A.A- T Degree",
+      "control_number": "32808",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of the Redwoods",
+      "program": "Physics",
+      "award": "A.S. T Degree",
+      "control_number": "32809",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of the Redwoods",
+      "program": "English",
+      "award": "A.A- T Degree",
+      "control_number": "32932",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of the Redwoods",
+      "program": "Geology",
+      "award": "A.S. T Degree",
+      "control_number": "32947",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of the Redwoods",
+      "program": "Sociology",
+      "award": "A.A- T Degree",
+      "control_number": "33040",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of the Redwoods",
+      "program": "Administration of Justice",
+      "award": "A.S. T Degree",
+      "control_number": "33200",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of the Redwoods",
+      "program": "Kinesiology",
+      "award": "A.A- T Degree",
+      "control_number": "33282",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of the Redwoods",
+      "program": "Anthropology",
+      "award": "A.A- T Degree",
+      "control_number": "33284",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of the Redwoods",
+      "program": "Personal and Academic English as a Second Language",
+      "award": "Noncredit program",
+      "control_number": "33453",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of the Redwoods",
+      "program": "Agriculture Plant Science",
+      "award": "A.S. T Degree",
+      "control_number": "35147",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of the Redwoods",
+      "program": "Philosophy",
+      "award": "A.A- T Degree",
+      "control_number": "35445",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of the Redwoods",
+      "program": "Biology",
+      "award": "A.S. T Degree",
+      "control_number": "35895",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of the Redwoods",
+      "program": "Police Science",
+      "award": "A.S. Degree",
+      "control_number": "36425",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of the Redwoods",
+      "program": "Horticulture & Landscape Practices",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "38708",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of the Redwoods",
+      "program": "Organic/Sustainable Agriculture",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "38709",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of the Redwoods",
+      "program": "Automotive Maintenance & Light Repair",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "38710",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of the Redwoods",
+      "program": "Graphic Design & Visual Communication",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "39158",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of the Redwoods",
+      "program": "CIS Cybersecurity",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "39210",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of the Redwoods",
+      "program": "Social Work and Human Services",
+      "award": "A.S. Degree",
+      "control_number": "39513",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of the Redwoods",
+      "program": "Social Justice Studies: General",
+      "award": "A.A- T Degree",
+      "control_number": "39540",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of the Redwoods",
+      "program": "Bookkeeping",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "41291",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of the Redwoods",
+      "program": "Business Administration 2.0",
+      "award": "A.S. T Degree",
+      "control_number": "42575",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of the Redwoods",
+      "program": "Geomatics",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "42648",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of the Redwoods",
+      "program": "Aquaculture Technology",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "42895",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of the Redwoods",
+      "program": "Communication Studies 2.0",
+      "award": "A.A- T Degree",
+      "control_number": "44179",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of the Redwoods",
+      "program": "Personal Wellness Trainer",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "44399",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of the Redwoods",
+      "program": "Personal Wellness",
+      "award": "A.S. Degree",
+      "control_number": "44463",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of the Redwoods",
+      "program": "Social Work and Human Services",
+      "award": "A.S. T Degree",
+      "control_number": "44697",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of the Redwoods",
+      "program": "Psychiatric Technician",
+      "award": "Certificate of Achievement requiring 60+S/90+Q units",
+      "control_number": "45557",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of the Redwoods",
+      "program": "Psychiatric Technician",
+      "award": "A.S. Degree",
+      "control_number": "45595",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of the Redwoods",
+      "program": "Agriculture Business",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "45727",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of the Redwoods",
+      "program": "Physics 2.0",
+      "award": "A.S. T Degree",
+      "control_number": "46085",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of the Redwoods",
+      "program": "Mathematics 2.0",
+      "award": "A.S. T Degree",
+      "control_number": "46245",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of the Redwoods",
+      "program": "Agriculture Business",
+      "award": "A.S. T Degree",
+      "control_number": "46247",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of the Siskiyous",
+      "program": "Business Administration",
+      "award": "A.A. Degree",
+      "control_number": "06465",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of the Siskiyous",
+      "program": "Engineering",
+      "award": "A.S. Degree",
+      "control_number": "06473",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of the Siskiyous",
+      "program": "Welding",
+      "award": "A.S. Degree",
+      "control_number": "06477",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of the Siskiyous",
+      "program": "Art",
+      "award": "A.A. Degree",
+      "control_number": "06480",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of the Siskiyous",
+      "program": "Musical Theatre",
+      "award": "A.A. Degree",
+      "control_number": "06481",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of the Siskiyous",
+      "program": "Theatre Performance",
+      "award": "A.A. Degree",
+      "control_number": "06482",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of the Siskiyous",
+      "program": "Vocational Nursing",
+      "award": "A.S. Degree",
+      "control_number": "06487",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of the Siskiyous",
+      "program": "Emergency Medical Technology: Paramedic",
+      "award": "A.S. Degree",
+      "control_number": "06488",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of the Siskiyous",
+      "program": "Mathematics",
+      "award": "A.S. Degree",
+      "control_number": "06493",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of the Siskiyous",
+      "program": "Physical Science",
+      "award": "A.S. Degree",
+      "control_number": "06494",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of the Siskiyous",
+      "program": "Physics",
+      "award": "A.S. Degree",
+      "control_number": "06495",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of the Siskiyous",
+      "program": "Administration of Justice",
+      "award": "A.A. Degree",
+      "control_number": "06499",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of the Siskiyous",
+      "program": "Fire Technology",
+      "award": "A.S. Degree",
+      "control_number": "06500",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of the Siskiyous",
+      "program": "Social Science",
+      "award": "A.A. Degree",
+      "control_number": "06501",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of the Siskiyous",
+      "program": "History",
+      "award": "A.A. Degree",
+      "control_number": "06502",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of the Siskiyous",
+      "program": "Early Childhood Education",
+      "award": "A.A. Degree",
+      "control_number": "07898",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of the Siskiyous",
+      "program": "Accounting",
+      "award": "A.A. Degree",
+      "control_number": "07901",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of the Siskiyous",
+      "program": "Humanities",
+      "award": "A.A. Degree",
+      "control_number": "07903",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of the Siskiyous",
+      "program": "Computer Science",
+      "award": "A.S. Degree",
+      "control_number": "10946",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of the Siskiyous",
+      "program": "Music: Vocal Performance",
+      "award": "A.A. Degree",
+      "control_number": "10948",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of the Siskiyous",
+      "program": "Music: Instrumental Performance",
+      "award": "A.A. Degree",
+      "control_number": "10949",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of the Siskiyous",
+      "program": "Alcohol and Drug/ Human Services",
+      "award": "A.A. Degree",
+      "control_number": "11350",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of the Siskiyous",
+      "program": "Communication Studies",
+      "award": "A.A. Degree",
+      "control_number": "14693",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of the Siskiyous",
+      "program": "Psychology",
+      "award": "A.A. Degree",
+      "control_number": "17045",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of the Siskiyous",
+      "program": "LVN to RN Step-Up",
+      "award": "A.S. Degree",
+      "control_number": "17596",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of the Siskiyous",
+      "program": "Athletic Training",
+      "award": "A.S. Degree",
+      "control_number": "18470",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of the Siskiyous",
+      "program": "Liberal Arts & Sciences: Humanities",
+      "award": "A.A. Degree",
+      "control_number": "18590",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of the Siskiyous",
+      "program": "Liberal Arts & Sciences: Multicultural Studies",
+      "award": "A.A. Degree",
+      "control_number": "18591",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of the Siskiyous",
+      "program": "Liberal Arts & Sciences: Natural Science",
+      "award": "A.S. Degree",
+      "control_number": "18592",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of the Siskiyous",
+      "program": "Liberal Arts & Sciences: Social Science",
+      "award": "A.A. Degree",
+      "control_number": "18593",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of the Siskiyous",
+      "program": "Welding: Advanced Level",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "19362",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of the Siskiyous",
+      "program": "Alcohol and Drug/Human Services",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "20793",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of the Siskiyous",
+      "program": "Vocational Nursing",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "21512",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of the Siskiyous",
+      "program": "Emergency Medical Services: Paramedic",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "21513",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of the Siskiyous",
+      "program": "Welding: Basic Level",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "30236",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of the Siskiyous",
+      "program": "Firefighter I Academy",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "30254",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of the Siskiyous",
+      "program": "Creative Writing",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "30447",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of the Siskiyous",
+      "program": "Mathematics",
+      "award": "A.S. T Degree",
+      "control_number": "30645",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of the Siskiyous",
+      "program": "Environmental Science",
+      "award": "A.S. Degree",
+      "control_number": "30696",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of the Siskiyous",
+      "program": "Early Childhood Education",
+      "award": "A.S. T Degree",
+      "control_number": "30982",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of the Siskiyous",
+      "program": "Physics",
+      "award": "A.S. T Degree",
+      "control_number": "30983",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of the Siskiyous",
+      "program": "Administration of Justice",
+      "award": "A.S. T Degree",
+      "control_number": "31043",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of the Siskiyous",
+      "program": "English",
+      "award": "A.A- T Degree",
+      "control_number": "31078",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of the Siskiyous",
+      "program": "Business Administration",
+      "award": "A.S. T Degree",
+      "control_number": "31083",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of the Siskiyous",
+      "program": "Theatre Arts",
+      "award": "A.A- T Degree",
+      "control_number": "31119",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of the Siskiyous",
+      "program": "Music",
+      "award": "A.A- T Degree",
+      "control_number": "33573",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of the Siskiyous",
+      "program": "Sociology",
+      "award": "A.A- T Degree",
+      "control_number": "33574",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of the Siskiyous",
+      "program": "History",
+      "award": "A.A- T Degree",
+      "control_number": "33575",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of the Siskiyous",
+      "program": "Psychology",
+      "award": "A.A- T Degree",
+      "control_number": "35430",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of the Siskiyous",
+      "program": "Geology",
+      "award": "A.S. T Degree",
+      "control_number": "35892",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of the Siskiyous",
+      "program": "Small Business Startup, Marketing & Media",
+      "award": "Noncredit program",
+      "control_number": "37786",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of the Siskiyous",
+      "program": "Physical Education - Kinesiology",
+      "award": "A.A. Degree",
+      "control_number": "38657",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of the Siskiyous",
+      "program": "Small Business Startup, Marketing, and Media II",
+      "award": "Noncredit program",
+      "control_number": "39645",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of the Siskiyous",
+      "program": "Administration of Justice",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "40086",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of the Siskiyous",
+      "program": "Computer Science",
+      "award": "A.S. T Degree",
+      "control_number": "42474",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of the Siskiyous",
+      "program": "Business Administration 2.0",
+      "award": "A.S. T Degree",
+      "control_number": "42804",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of the Siskiyous",
+      "program": "Communication Studies 2.0",
+      "award": "A.A- T Degree",
+      "control_number": "43412",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of the Siskiyous",
+      "program": "Cal-GETC: California General Education Transfer Curriculum",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "45356",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of the Siskiyous",
+      "program": "Communication Studies: Social Media",
+      "award": "A.A. Degree",
+      "control_number": "45945",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of the Siskiyous",
+      "program": "Biological Science",
+      "award": "A.S. Degree",
+      "control_number": "46169",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of the Siskiyous",
+      "program": "Pre-Allied Health",
+      "award": "A.S. Degree",
+      "control_number": "46170",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of the Siskiyous",
+      "program": "Pre-Allied Health",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "46190",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of the Siskiyous",
+      "program": "Artificial Intelligence Skill Building",
+      "award": "Noncredit program",
+      "control_number": "46406",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of the Siskiyous",
+      "program": "Modern Policing",
+      "award": "A.S. Degree",
+      "control_number": "46468",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of the Siskiyous",
+      "program": "Mathematics 2.0",
+      "award": "A.S. T Degree",
+      "control_number": "46528",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Antelope Valley College",
+      "program": "Registered Nursing",
+      "award": "A.S. Degree",
+      "control_number": "02138",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Antelope Valley College",
+      "program": "General Business",
+      "award": "A.S. Degree",
+      "control_number": "02139",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Antelope Valley College",
+      "program": "Real Estate",
+      "award": "A.S. Degree",
+      "control_number": "02140",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Antelope Valley College",
+      "program": "Mechanical Engineering",
+      "award": "A.S. Degree",
+      "control_number": "02147",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Antelope Valley College",
+      "program": "Air Conditioning & Refrigeration Specialist",
+      "award": "A.S. Degree",
+      "control_number": "02150",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Antelope Valley College",
+      "program": "Automotive Collision Repair Specialist",
+      "award": "A.S. Degree",
+      "control_number": "02152",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Antelope Valley College",
+      "program": "Welding",
+      "award": "A.S. Degree",
+      "control_number": "02155",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Antelope Valley College",
+      "program": "Music",
+      "award": "A.A. Degree",
+      "control_number": "02157",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Antelope Valley College",
+      "program": "Commercial Music: Level I",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "02158",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Antelope Valley College",
+      "program": "Commercial Photography",
+      "award": "A.A. Degree",
+      "control_number": "02160",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Antelope Valley College",
+      "program": "Medical Assistant",
+      "award": "A.S. Degree",
+      "control_number": "02167",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Antelope Valley College",
+      "program": "Administration of Justice",
+      "award": "A.A. Degree",
+      "control_number": "02182",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Antelope Valley College",
+      "program": "Child and Family Education",
+      "award": "A.A. Degree",
+      "control_number": "02183",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Antelope Valley College",
+      "program": "Instructional Aide",
+      "award": "A.A. Degree",
+      "control_number": "02184",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Antelope Valley College",
+      "program": "Fire Technology",
+      "award": "A.S. Degree",
+      "control_number": "02185",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Antelope Valley College",
+      "program": "Biology",
+      "award": "A.S. Degree",
+      "control_number": "02197",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Antelope Valley College",
+      "program": "School-Aged Child Care",
+      "award": "A.A. Degree",
+      "control_number": "07242",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Antelope Valley College",
+      "program": "Video Design and Production",
+      "award": "A.A. Degree",
+      "control_number": "07246",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Antelope Valley College",
+      "program": "Interactive Media-Web Design",
+      "award": "A.A. Degree",
+      "control_number": "07247",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Antelope Valley College",
+      "program": "Deaf Studies: American Sign Language",
+      "award": "A.A. Degree",
+      "control_number": "07248",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Antelope Valley College",
+      "program": "Refrigeration Specialist",
+      "award": "A.S. Degree",
+      "control_number": "10234",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Antelope Valley College",
+      "program": "Air Conditioning Specialist",
+      "award": "A.S. Degree",
+      "control_number": "10235",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Antelope Valley College",
+      "program": "Automotive Refinishing Specialist",
+      "award": "A.S. Degree",
+      "control_number": "10237",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Antelope Valley College",
+      "program": "Automotive Collision Repair and Refinishing Specialist",
+      "award": "A.S. Degree",
+      "control_number": "10238",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Antelope Valley College",
+      "program": "Commercial Music: Level II",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "10239",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Antelope Valley College",
+      "program": "Graphic Design",
+      "award": "A.A. Degree",
+      "control_number": "10241",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Antelope Valley College",
+      "program": "Deaf Studies: Interpreter Training",
+      "award": "A.A. Degree",
+      "control_number": "12137",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Antelope Valley College",
+      "program": "Geographic Information Systems",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "13167",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Antelope Valley College",
+      "program": "Real Estate Salesperson",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "13260",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Antelope Valley College",
+      "program": "Computer Networking Multi-Platform",
+      "award": "A.S. Degree",
+      "control_number": "14790",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Antelope Valley College",
+      "program": "Computer Networking",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "14791",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Antelope Valley College",
+      "program": "Professional Bookkeeping",
+      "award": "A.S. Degree",
+      "control_number": "16468",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Antelope Valley College",
+      "program": "Wildland Fire Technology",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "16508",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Antelope Valley College",
+      "program": "Wildland Fire Technology",
+      "award": "A.S. Degree",
+      "control_number": "16569",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Antelope Valley College",
+      "program": "Respiratory Care/Therapy",
+      "award": "A.S. Degree",
+      "control_number": "16876",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Antelope Valley College",
+      "program": "Firefighter I Academy",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "17571",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Antelope Valley College",
+      "program": "Radiologic Technology",
+      "award": "A.S. Degree",
+      "control_number": "17750",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Antelope Valley College",
+      "program": "Arts and Humanities - Option III",
+      "award": "A.A. Degree",
+      "control_number": "18018",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Antelope Valley College",
+      "program": "Math and Science - Option I",
+      "award": "A.A. Degree",
+      "control_number": "18019",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Antelope Valley College",
+      "program": "Social and Behavioral Sciences - Option II",
+      "award": "A.A. Degree",
+      "control_number": "18020",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Antelope Valley College",
+      "program": "Electronics Technology",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "19460",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Antelope Valley College",
+      "program": "Deaf Studies: American Sign Language",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "19463",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Antelope Valley College",
+      "program": "Deaf Studies: Interpreting Training",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "19464",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Antelope Valley College",
+      "program": "Commercial Photography",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "19465",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Antelope Valley College",
+      "program": "Computer Animation",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "19467",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Antelope Valley College",
+      "program": "Graphic Design",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "19469",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Antelope Valley College",
+      "program": "Interactive Media- Web Design",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "19470",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Antelope Valley College",
+      "program": "Video Design and Production",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "19471",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Antelope Valley College",
+      "program": "General Business",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "20148",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Antelope Valley College",
+      "program": "Professional Bookkeeping",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "20149",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Antelope Valley College",
+      "program": "Real Estate Broker's",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "20152",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Antelope Valley College",
+      "program": "Computer Applications",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "20159",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Antelope Valley College",
+      "program": "Computer Networking Multi-Platform",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "20162",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Antelope Valley College",
+      "program": "Instructional Aide",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "20163",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Antelope Valley College",
+      "program": "Air Conditioning Specialist",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "20165",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Antelope Valley College",
+      "program": "Refrigeration Specialist",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "20168",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Antelope Valley College",
+      "program": "Automotive Collision Repair Specialist",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "20171",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Antelope Valley College",
+      "program": "Automotive Refinishing Specialist",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "20172",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Antelope Valley College",
+      "program": "Automotive Collision Repair and Refinishing Specialist",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "20174",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Antelope Valley College",
+      "program": "General Aircraft Maintenance",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "20175",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Antelope Valley College",
+      "program": "Aircraft Airframe",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "20177",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Antelope Valley College",
+      "program": "Aircraft Powerplant",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "20179",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Antelope Valley College",
+      "program": "Aircraft Fabrication and Assembly Technician",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "20181",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Antelope Valley College",
+      "program": "Medical Assistant",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "20189",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Antelope Valley College",
+      "program": "Child and Family Education",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "20198",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Antelope Valley College",
+      "program": "School-Aged Child Care",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "20202",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Antelope Valley College",
+      "program": "Fire Technology",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "20203",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Antelope Valley College",
+      "program": "Mathematics",
+      "award": "A.S. T Degree",
+      "control_number": "30661",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Antelope Valley College",
+      "program": "Art History",
+      "award": "A.A- T Degree",
+      "control_number": "32137",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Antelope Valley College",
+      "program": "Sociology",
+      "award": "A.A- T Degree",
+      "control_number": "32150",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Antelope Valley College",
+      "program": "Political Science",
+      "award": "A.A- T Degree",
+      "control_number": "32151",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Antelope Valley College",
+      "program": "Studio Arts",
+      "award": "A.A- T Degree",
+      "control_number": "32204",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Antelope Valley College",
+      "program": "Psychology",
+      "award": "A.A- T Degree",
+      "control_number": "32805",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Antelope Valley College",
+      "program": "Administration of Justice",
+      "award": "A.S. T Degree",
+      "control_number": "32844",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Antelope Valley College",
+      "program": "Anthropology",
+      "award": "A.A- T Degree",
+      "control_number": "32859",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Antelope Valley College",
+      "program": "Geography",
+      "award": "A.A- T Degree",
+      "control_number": "32864",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Antelope Valley College",
+      "program": "English",
+      "award": "A.A- T Degree",
+      "control_number": "33006",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Antelope Valley College",
+      "program": "History",
+      "award": "A.A- T Degree",
+      "control_number": "33007",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Antelope Valley College",
+      "program": "Early Childhood Education",
+      "award": "A.S. T Degree",
+      "control_number": "33008",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Antelope Valley College",
+      "program": "Geology AS-T",
+      "award": "A.S. T Degree",
+      "control_number": "33009",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Antelope Valley College",
+      "program": "Physics",
+      "award": "A.S. T Degree",
+      "control_number": "33010",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Antelope Valley College",
+      "program": "Philosophy",
+      "award": "A.A- T Degree",
+      "control_number": "33011",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Antelope Valley College",
+      "program": "Music",
+      "award": "A.A- T Degree",
+      "control_number": "33020",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Antelope Valley College",
+      "program": "Kinesiology",
+      "award": "A.A- T Degree",
+      "control_number": "33028",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Antelope Valley College",
+      "program": "Theatre Arts",
+      "award": "A.A- T Degree",
+      "control_number": "33163",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Antelope Valley College",
+      "program": "Economics",
+      "award": "A.A- T Degree",
+      "control_number": "33228",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Antelope Valley College",
+      "program": "Spanish",
+      "award": "A.A- T Degree",
+      "control_number": "33261",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Antelope Valley College",
+      "program": "Airframe Manufacturing Technology",
+      "award": "Baccalaureate of Science (B.S.) Degree.",
+      "control_number": "34002",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Antelope Valley College",
+      "program": "Biology",
+      "award": "A.S. T Degree",
+      "control_number": "35809",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Antelope Valley College",
+      "program": "Electrical Engineering",
+      "award": "A.S. Degree",
+      "control_number": "36519",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Antelope Valley College",
+      "program": "Film, Television, and Electronic Media",
+      "award": "A.S. T Degree",
+      "control_number": "36538",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Antelope Valley College",
+      "program": "Commercial Music",
+      "award": "A.A. Degree",
+      "control_number": "36852",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Antelope Valley College",
+      "program": "Alcohol and Other Drug Studies (AODS)",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "37725",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Antelope Valley College",
+      "program": "Computer Engineering",
+      "award": "A.S. Degree",
+      "control_number": "37888",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Antelope Valley College",
+      "program": "Industrial Manufacturing Technician Apprentice",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "37982",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Antelope Valley College",
+      "program": "Nursing Skills Lab",
+      "award": "Noncredit program",
+      "control_number": "38016",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Antelope Valley College",
+      "program": "IT Cybersecurity",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "38386",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Antelope Valley College",
+      "program": "Avionics Technology",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "38483",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Antelope Valley College",
+      "program": "Computer Aided Drafting and Manufacturing",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "38593",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Antelope Valley College",
+      "program": "Dance",
+      "award": "A.A. Degree",
+      "control_number": "39295",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Antelope Valley College",
+      "program": "Business Information Professional",
+      "award": "A.S. Degree",
+      "control_number": "39337",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Antelope Valley College",
+      "program": "IT Cybersecurity",
+      "award": "A.S. Degree",
+      "control_number": "40870",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Antelope Valley College",
+      "program": "BIP Level I - Business Information Professional Quick Start",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "41246",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Antelope Valley College",
+      "program": "BIP Level III - Business Information Professional Three",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "41247",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Antelope Valley College",
+      "program": "Business Administration 2.0",
+      "award": "A.S. T Degree",
+      "control_number": "41303",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Antelope Valley College",
+      "program": "Computer Science",
+      "award": "A.S. T Degree",
+      "control_number": "41407",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Antelope Valley College",
+      "program": "BIP Level II - Business Information Professional Two",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "41432",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Antelope Valley College",
+      "program": "Advanced Aircraft Structures",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "41814",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Antelope Valley College",
+      "program": "Metrology Sciences for Aerospace Manufacturing",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "41820",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Antelope Valley College",
+      "program": "Aerospace Leadership and Management",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "41821",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Antelope Valley College",
+      "program": "Law, Public Policy, and Society",
+      "award": "A.A- T Degree",
+      "control_number": "41823",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Antelope Valley College",
+      "program": "Advanced ESL",
+      "award": "Noncredit program",
+      "control_number": "41924",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Antelope Valley College",
+      "program": "Aeronautical Non-Destructive Inspection",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "41969",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Antelope Valley College",
+      "program": "Engineering Fundamentals",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "42778",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Antelope Valley College",
+      "program": "Human Services",
+      "award": "A.A. Degree",
+      "control_number": "42853",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Antelope Valley College",
+      "program": "Programming Fundamentals",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "42854",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Antelope Valley College",
+      "program": "Computer Science",
+      "award": "A.S. Degree",
+      "control_number": "42913",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Antelope Valley College",
+      "program": "Communication Studies 2.0",
+      "award": "A.A- T Degree",
+      "control_number": "43028",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Antelope Valley College",
+      "program": "Aerospace Welding",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "43077",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Antelope Valley College",
+      "program": "Digital Marketing",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "43078",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Antelope Valley College",
+      "program": "All Automotive Systems",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "43151",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Antelope Valley College",
+      "program": "Licensed Vocational Nursing",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "43375",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Antelope Valley College",
+      "program": "Personal Business Ownership",
+      "award": "Noncredit program",
+      "control_number": "43400",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Antelope Valley College",
+      "program": "Computer and Workplace Fundamentals",
+      "award": "Noncredit program",
+      "control_number": "43402",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Antelope Valley College",
+      "program": "College Readiness - Reading and Writing",
+      "award": "Noncredit program",
+      "control_number": "43419",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Antelope Valley College",
+      "program": "Chicana and Chicano Studies",
+      "award": "A.A. Degree",
+      "control_number": "43686",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Antelope Valley College",
+      "program": "Chemistry",
+      "award": "A.S. Degree",
+      "control_number": "43722",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Antelope Valley College",
+      "program": "Recreation and Leisure Studies",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "43727",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Antelope Valley College",
+      "program": "Health and Fitness for First Responders",
+      "award": "Noncredit program",
+      "control_number": "43798",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Antelope Valley College",
+      "program": "Child and Family Education Specialization with Core 8 Option (24 Unit)",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "43840",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Antelope Valley College",
+      "program": "Child and Family Education Associate Teacher (12 Unit)",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "43841",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Antelope Valley College",
+      "program": "Skilled Parenting",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "43842",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Antelope Valley College",
+      "program": "Paramedic",
+      "award": "A.S. Degree",
+      "control_number": "43843",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Antelope Valley College",
+      "program": "AVC Tutor (Noncredit)",
+      "award": "Noncredit program",
+      "control_number": "43845",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Antelope Valley College",
+      "program": "Nutrition and Dietetics",
+      "award": "A.S. T Degree",
+      "control_number": "43908",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Antelope Valley College",
+      "program": "Network System Administrator I",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "43923",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Antelope Valley College",
+      "program": "Network System Administrator II",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "43924",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Antelope Valley College",
+      "program": "Elementary Teacher Education",
+      "award": "A.A- T Degree",
+      "control_number": "43964",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Antelope Valley College",
+      "program": "Human Resources Professional II",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "43969",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Antelope Valley College",
+      "program": "Management",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "43970",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Antelope Valley College",
+      "program": "Human Resources Professional I",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "43971",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Antelope Valley College",
+      "program": "Respiratory Care",
+      "award": "Baccalaureate of Science (B.S.) Degree.",
+      "control_number": "44060",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Antelope Valley College",
+      "program": "Computational Biology",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "44641",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Antelope Valley College",
+      "program": "Human Biology and Wellness",
+      "award": "A.S. Degree",
+      "control_number": "44642",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Antelope Valley College",
+      "program": "Software Development Essentials",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "44643",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Antelope Valley College",
+      "program": "Geology Fundamentals",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "44644",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Antelope Valley College",
+      "program": "Case Management Work Readiness",
+      "award": "Noncredit program",
+      "control_number": "44647",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Antelope Valley College",
+      "program": "Modern Policing",
+      "award": "A.S. Degree",
+      "control_number": "44789",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Antelope Valley College",
+      "program": "Customer Service Essentials",
+      "award": "Noncredit program",
+      "control_number": "44808",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Antelope Valley College",
+      "program": "Logistics, Transportation and Distribution",
+      "award": "Noncredit program",
+      "control_number": "44809",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Antelope Valley College",
+      "program": "Supply Chain Warehouse Essentials",
+      "award": "Noncredit program",
+      "control_number": "44810",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Antelope Valley College",
+      "program": "Paralegal Studies",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "44828",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Antelope Valley College",
+      "program": "Technical Theatre",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "44829",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Antelope Valley College",
+      "program": "Music Performance & Education",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "44830",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Antelope Valley College",
+      "program": "Music Technology, Production, & Management",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "44831",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Antelope Valley College",
+      "program": "Music Composition & Songwriting",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "44834",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Antelope Valley College",
+      "program": "Music Industry Studies",
+      "award": "A.A. Degree",
+      "control_number": "44835",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Antelope Valley College",
+      "program": "Site Supervisor I",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "45124",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Antelope Valley College",
+      "program": "Site Supervisor II",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "45125",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Antelope Valley College",
+      "program": "Practical Microcontrollers",
+      "award": "Noncredit program",
+      "control_number": "45146",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Antelope Valley College",
+      "program": "Practical Robotics",
+      "award": "Noncredit program",
+      "control_number": "45147",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Antelope Valley College",
+      "program": "Practical 3D Printing",
+      "award": "Noncredit program",
+      "control_number": "45149",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Antelope Valley College",
+      "program": "Paramedic",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "45151",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Antelope Valley College",
+      "program": "Paralegal Studies",
+      "award": "A.A. Degree",
+      "control_number": "45152",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Antelope Valley College",
+      "program": "Chicana/o Studies, Latina/o Studies",
+      "award": "A.A- T Degree",
+      "control_number": "45248",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Antelope Valley College",
+      "program": "Elementary Teacher Education: Integrated Programs",
+      "award": "A.A- T Degree",
+      "control_number": "45736",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Antelope Valley College",
+      "program": "AI Strategies for Entrepreneurs, Small Business Owners, and Employees",
+      "award": "Noncredit program",
+      "control_number": "45773",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Antelope Valley College",
+      "program": "Artificial Intelligence Education",
+      "award": "Noncredit program",
+      "control_number": "45775",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Antelope Valley College",
+      "program": "Career and College Success",
+      "award": "Noncredit program",
+      "control_number": "45776",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Antelope Valley College",
+      "program": "Emergency Cardiac Care Provider",
+      "award": "Noncredit program",
+      "control_number": "45777",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Antelope Valley College",
+      "program": "Real Estate Salesperson",
+      "award": "Noncredit program",
+      "control_number": "45778",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Antelope Valley College",
+      "program": "Structural Steel Welding Performance",
+      "award": "Noncredit program",
+      "control_number": "45779",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Antelope Valley College",
+      "program": "Yoga Instructor",
+      "award": "Noncredit program",
+      "control_number": "45780",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Antelope Valley College",
+      "program": "Wildland Firefighting",
+      "award": "Noncredit program",
+      "control_number": "45781",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Antelope Valley College",
+      "program": "Health and Fitness for First Responders",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "45838",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Antelope Valley College",
+      "program": "Home Visitor",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "45846",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Antelope Valley College",
+      "program": "Research Fundamentals Skills",
+      "award": "Noncredit program",
+      "control_number": "45885",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Antelope Valley College",
+      "program": "Pathway to Law School, Pre-Law and Legal Careers",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "45918",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Antelope Valley College",
+      "program": "Nutrition and Disease",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "45922",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Antelope Valley College",
+      "program": "General Engineering",
+      "award": "A.S. Degree",
+      "control_number": "45923",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Antelope Valley College",
+      "program": "Mathematics 2.0",
+      "award": "A.S. T Degree",
+      "control_number": "46238",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Antelope Valley College",
+      "program": "Physics 2.0",
+      "award": "A.S. T Degree",
+      "control_number": "46295",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Contra Costa College",
+      "program": "Biological Science",
+      "award": "A.S. Degree",
+      "control_number": "01381",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Contra Costa College",
+      "program": "Accounting Technician",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "01383",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Contra Costa College",
+      "program": "Business Management",
+      "award": "A.S. Degree",
+      "control_number": "01384",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Contra Costa College",
+      "program": "Business Office Technology: General Office",
+      "award": "A.S. Degree",
+      "control_number": "01387",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Contra Costa College",
+      "program": "Journalism",
+      "award": "A.A. Degree",
+      "control_number": "01388",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Contra Costa College",
+      "program": "Engineering",
+      "award": "A.S. Degree",
+      "control_number": "01393",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Contra Costa College",
+      "program": "Studio Arts",
+      "award": "A.A. Degree",
+      "control_number": "01408",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Contra Costa College",
+      "program": "Spanish",
+      "award": "A.A. Degree",
+      "control_number": "01415",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Contra Costa College",
+      "program": "Registered Nursing",
+      "award": "A.S. Degree",
+      "control_number": "01417",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Contra Costa College",
+      "program": "Early Childhood Education",
+      "award": "A.S. Degree",
+      "control_number": "01423",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Contra Costa College",
+      "program": "Psychology",
+      "award": "A.A. Degree",
+      "control_number": "01434",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Contra Costa College",
+      "program": "Law Enforcement",
+      "award": "A.S. Degree",
+      "control_number": "01437",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Contra Costa College",
+      "program": "African American Studies",
+      "award": "A.A. Degree",
+      "control_number": "01443",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Contra Costa College",
+      "program": "Political Science",
+      "award": "A.A. Degree",
+      "control_number": "01447",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Contra Costa College",
+      "program": "Sociology",
+      "award": "A.A. Degree",
+      "control_number": "01448",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Contra Costa College",
+      "program": "Biotechnology",
+      "award": "A.S. Degree",
+      "control_number": "07598",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Contra Costa College",
+      "program": "Real Estate",
+      "award": "A.A. Degree",
+      "control_number": "07602",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Contra Costa College",
+      "program": "Business Office Technology: Administrative Assistant",
+      "award": "A.S. Degree",
+      "control_number": "07603",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Contra Costa College",
+      "program": "Medical Assisting",
+      "award": "A.S. Degree",
+      "control_number": "07613",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Contra Costa College",
+      "program": "Early Childhood Education: Montessori Education Preschool Teacher",
+      "award": "A.S. Degree",
+      "control_number": "07614",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Contra Costa College",
+      "program": "La Raza Studies",
+      "award": "A.A. Degree",
+      "control_number": "07616",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Contra Costa College",
+      "program": "Business Administration",
+      "award": "A.S. Degree",
+      "control_number": "11702",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Contra Costa College",
+      "program": "Liberal Arts: Arts & Humanities",
+      "award": "A.A. Degree",
+      "control_number": "18981",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Contra Costa College",
+      "program": "Liberal Arts: Communication in the English Language",
+      "award": "A.A. Degree",
+      "control_number": "18982",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Contra Costa College",
+      "program": "Liberal Arts: Math & Science",
+      "award": "A.A. Degree",
+      "control_number": "18983",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Contra Costa College",
+      "program": "Liberal Arts: Social & Behavioral Sciences",
+      "award": "A.A. Degree",
+      "control_number": "18984",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Contra Costa College",
+      "program": "Biotechnology Technician",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "20821",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Contra Costa College",
+      "program": "Business Management",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "20837",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Contra Costa College",
+      "program": "Real Estate",
+      "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+      "control_number": "20839",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Contra Costa College",
+      "program": "Business Office Technology: General Office",
+      "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+      "control_number": "20842",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Contra Costa College",
+      "program": "Medical Assisting",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "20857",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Contra Costa College",
+      "program": "Early Childhood Education: Montessori Education Preschool Teacher",
+      "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+      "control_number": "20860",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Contra Costa College",
+      "program": "Early Childhood Education",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "20862",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Contra Costa College",
+      "program": "Culinary Arts: Classical/Modern Food Preparation & Restaurant Training",
+      "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+      "control_number": "20864",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Contra Costa College",
+      "program": "Administration of Justice: Correctional Specialist",
+      "award": "Certificate of Achievement: 12 to fewer than 18 semester(or 18 to fewer than 27 ",
+      "control_number": "30249",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Contra Costa College",
+      "program": "Administration of Justice: Police Records and Services Technician",
+      "award": "Certificate of Achievement: 12 to fewer than 18 semester(or 18 to fewer than 27 ",
+      "control_number": "30250",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Contra Costa College",
+      "program": "Engineering",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "31965",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Contra Costa College",
+      "program": "Physics",
+      "award": "A.S. T Degree",
+      "control_number": "32320",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Contra Costa College",
+      "program": "Biotechnology Assistant",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "32767",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Contra Costa College",
+      "program": "English",
+      "award": "A.A- T Degree",
+      "control_number": "32819",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Contra Costa College",
+      "program": "Sociology",
+      "award": "A.A- T Degree",
+      "control_number": "32920",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Contra Costa College",
+      "program": "Political Science",
+      "award": "A.A- T Degree",
+      "control_number": "32921",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Contra Costa College",
+      "program": "Psychology",
+      "award": "A.A- T Degree",
+      "control_number": "32922",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Contra Costa College",
+      "program": "Kinesiology",
+      "award": "A.A- T Degree",
+      "control_number": "32925",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Contra Costa College",
+      "program": "MUSIC",
+      "award": "A.A- T Degree",
+      "control_number": "33019",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Contra Costa College",
+      "program": "Early Childhood Education",
+      "award": "A.S. T Degree",
+      "control_number": "33097",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Contra Costa College",
+      "program": "Pre-Allied Health",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "33184",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Contra Costa College",
+      "program": "Journalism",
+      "award": "A.A- T Degree",
+      "control_number": "33209",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Contra Costa College",
+      "program": "Automotive Hybrid Technician",
+      "award": "Certificate of Achievement: 12 to fewer than 18 semester(or 18 to fewer than 27 ",
+      "control_number": "33324",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Contra Costa College",
+      "program": "Chassis Level I Technician",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "33325",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Contra Costa College",
+      "program": "Powertrains Level I Technician",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "33326",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Contra Costa College",
+      "program": "Emergency Medical Services",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "33353",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Contra Costa College",
+      "program": "Music",
+      "award": "A.A. Degree",
+      "control_number": "33370",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Contra Costa College",
+      "program": "Geography",
+      "award": "A.A- T Degree",
+      "control_number": "33383",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Contra Costa College",
+      "program": "Spanish",
+      "award": "A.A- T Degree",
+      "control_number": "33550",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Contra Costa College",
+      "program": "History",
+      "award": "A.A- T Degree",
+      "control_number": "33551",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Contra Costa College",
+      "program": "Anthropology",
+      "award": "A.A- T Degree",
+      "control_number": "33576",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Contra Costa College",
+      "program": "Economics",
+      "award": "A.A- T Degree",
+      "control_number": "33578",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Contra Costa College",
+      "program": "Physical Education/Kinesiology",
+      "award": "A.S. Degree",
+      "control_number": "33660",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Contra Costa College",
+      "program": "Biology",
+      "award": "A.S. T Degree",
+      "control_number": "35208",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Contra Costa College",
+      "program": "Pre Law Studies",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "35882",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Contra Costa College",
+      "program": "EMED: Paramedic Studies",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "36157",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Contra Costa College",
+      "program": "Philosophy",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "36158",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Contra Costa College",
+      "program": "Business Office Technology: Business Information Worker",
+      "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+      "control_number": "36230",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Contra Costa College",
+      "program": "Philosophy",
+      "award": "A.A- T Degree",
+      "control_number": "36244",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Contra Costa College",
+      "program": "Chemistry",
+      "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+      "control_number": "36316",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Contra Costa College",
+      "program": "Social Justice: Latino and Chicano Studies",
+      "award": "A.A- T Degree",
+      "control_number": "37157",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Contra Costa College",
+      "program": "Beginning ESL",
+      "award": "Noncredit program",
+      "control_number": "39028",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Contra Costa College",
+      "program": "High-Beginning ESL",
+      "award": "Noncredit program",
+      "control_number": "39029",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Contra Costa College",
+      "program": "Intermediate ESL",
+      "award": "Noncredit program",
+      "control_number": "39030",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Contra Costa College",
+      "program": "High-Intermediate ESL",
+      "award": "Noncredit program",
+      "control_number": "39032",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Contra Costa College",
+      "program": "ESL Pronunciation",
+      "award": "Noncredit program",
+      "control_number": "39048",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Contra Costa College",
+      "program": "Computer User Support Specialist",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "40216",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Contra Costa College",
+      "program": "Network and Security Specialist",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "40217",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Contra Costa College",
+      "program": "College Level Reading and Writing Proficiency",
+      "award": "Noncredit program",
+      "control_number": "40260",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Contra Costa College",
+      "program": "Business Administration 2.0",
+      "award": "A.S. T Degree",
+      "control_number": "41346",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Contra Costa College",
+      "program": "Ethnic Studies",
+      "award": "A.A. Degree",
+      "control_number": "42085",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Contra Costa College",
+      "program": "Biological Testing Technician",
+      "award": "Noncredit program",
+      "control_number": "42335",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Contra Costa College",
+      "program": "Project Management",
+      "award": "Noncredit program",
+      "control_number": "42384",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Contra Costa College",
+      "program": "Laboratory Professional I",
+      "award": "Noncredit program",
+      "control_number": "42406",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Contra Costa College",
+      "program": "Humanities",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "42741",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Contra Costa College",
+      "program": "Early Childhood Education: Associate Teacher Infant and Toddler",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "44411",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Contra Costa College",
+      "program": "Studio Arts",
+      "award": "A.A- T Degree",
+      "control_number": "44526",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Contra Costa College",
+      "program": "Theatre Arts",
+      "award": "A.A- T Degree",
+      "control_number": "44782",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Contra Costa College",
+      "program": "Biological Manufacturing Technician",
+      "award": "Noncredit program",
+      "control_number": "45158",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Contra Costa College",
+      "program": "Communication Studies 2.0",
+      "award": "A.A- T Degree",
+      "control_number": "45537",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Contra Costa College",
+      "program": "Public Health",
+      "award": "A.S. T Degree",
+      "control_number": "46301",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Contra Costa College",
+      "program": "Art History",
+      "award": "A.A- T Degree",
+      "control_number": "46421",
+      "loaded": "2026-10-16"
     }
   ],
   "next_step": {
-    "title": "Butte's reader, then the next wave",
-    "text": "Read Butte's catalog navigation on a runner to see how it titles program pages, fix the reader and read Butte again; then read Las Positas again and start the eLumen colleges."
+    "title": "Finish the readers' rereads, then a second wave build",
+    "text": "Merge the Las Positas and Los Medanos reader fixes, load Butte's reread, extract Lake Tahoe, Marin, Las Positas and Los Medanos once their reads find most programs, then build their display in one wave."
   },
   "calls": [],
   "notes": {
@@ -61300,24 +65171,24 @@
   },
   "changes": [
     {
-      "at": "2026-10-16T20:37:00Z",
-      "text": "My College's Sierra now has Sierra AI's format: one frame, her name and Full screen on one bar, and Sam's note under the box, on his ask."
+      "at": "2026-10-16T23:01:00Z",
+      "text": "The curriQunet reader now tries a dropped call again, at most twice, after a longer wait."
     },
     {
-      "at": "2026-10-16T20:49:00Z",
-      "text": "Merritt, Berkeley City and Gavilan loaded, 248 records unchecked; the display build of 8,772 programs applied at 21:29."
+      "at": "2026-10-16T23:21:00Z",
+      "text": "The curriQunet reader now reads Butte's two title forms, award first and award in parentheses, as one program."
     },
     {
-      "at": "2026-10-16T20:39:00Z",
-      "text": "Procedure records written for Alameda, Feather River, Laney, Imperial Valley, Madera and Las Positas."
+      "at": "2026-10-16T23:37:00Z",
+      "text": "The eLumen reader now takes every menu source and walks the menu's pages when it finds too few programs."
     },
     {
-      "at": "2026-10-16T21:07:00Z",
-      "text": "Sierra's program search reads one college by its index when nothing matches: the failing call went from 2.7 seconds to 0.2."
+      "at": "2026-10-16T23:40:00Z",
+      "text": "Antelope Valley, Columbia, Contra Costa, Lemoore, Redwoods and Siskiyous loaded, 553 records unchecked."
     },
     {
-      "at": "2026-10-16T21:33:00Z",
-      "text": "Procedure records written for Merritt, Berkeley City and Gavilan; Butte loaded 19 of 168 programs and waits for its reader."
+      "at": "2026-10-16T23:58:00Z",
+      "text": "The display build of 9,325 programs merged and its apply started from main."
     }
   ],
   "headline": [
@@ -61374,6 +65245,12 @@
       "active": 20282,
       "checked": 32,
       "colleges": 7
+    },
+    {
+      "day": "2026-10-17",
+      "active": 20282,
+      "checked": 32,
+      "colleges": 7
     }
   ],
   "next_run": {
@@ -61382,8 +65259,8 @@
     "at": "2026-10-17T05:12:00Z"
   },
   "harvest": {
-    "day": "2026-10-16",
-    "gaps": 2489,
+    "day": "2026-10-17",
+    "gaps": 2566,
     "parts": {
       "links": {
         "catalog": [
@@ -61400,11 +65277,11 @@
         ]
       },
       "roep": [
-        10602,
+        10749,
         20282
       ],
       "coci": [
-        8127,
+        8548,
         20282
       ],
       "outcomes": {
@@ -61413,12 +65290,12 @@
           89192
         ],
         "plo": [
-          8127,
+          8548,
           20282
         ]
       },
       "careers": [
-        7077,
+        7498,
         20282
       ]
     }

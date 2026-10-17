@@ -1,7 +1,7 @@
 ---
 title: cpl-project-tracker docs — Index
 created: 2026-05-27
-updated: 2026-10-16
+updated: 2026-10-17
 tags: [meta, index, obsidian-target]
 kb-status: internal
 obsidian-folder: cpl-project-tracker
@@ -70,8 +70,8 @@ Every document in `docs/`, by lane. Rebuild with `python3 kb/_build_docs_index.p
 | Lessons docs | 87 | [`catalog/lessons.md`](catalog/lessons.md) |
 | Workstream docs | 83 | [`catalog/workstream-docs.md`](catalog/workstream-docs.md) |
 | Reference (pull-side) | 56 | [`catalog/reference.md`](catalog/reference.md) |
-| Session handoffs | 372 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
-| **total** | **1155** | |
+| Session handoffs | 373 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
+| **total** | **1156** | |
 <!-- /generated:corpus -->
 
 Not covered by a lane catalog:
@@ -122,6 +122,7 @@ Authoritative external sources we've cached:
 - [`reference/`](reference/) — ASCCC / COCI / CCN-CID source documents
 
 ## Update history
+- 2026-10-17 (S401 SkyManzanita, Sam's session): five catalog-reader faults read from the hosts' own outlines (#2177 curriQunet retry, #2178 Butte's two title forms, #2179 and #2183 the eLumen menu walk, #2182 Las Positas's comma); the eLumen wave, six colleges loaded, build `d4ac5009f5aa` (#2181); handoff 402 names SkyToyon.
 - 2026-10-16 (S400 SkyBirch, Sam's session): My College's Sierra in Sierra AI's format on Sam's ask (#2171); the program search's no-match path fixed after the smoke's 7l timeout (#2173, applied, 2,742 to 204 ms); wave 5's second half loaded, build `9237d2cbf931` applied (#2170); nine procedure records (#2172, #2174); Butte parked for its reader; handoff 401 names SkyManzanita.
 - 2026-10-16 (S399 SkyRowan, Sam's session): Sierra's statewide catalog A/B'd, put to Sam (Open Asks Sheet 85) and deployed (smoke green); Sheet 85 answered, no card open; wave 5, ten curriQunet colleges, six loaded (#2168, build `9c74da80bad7`); #2167 fixes the curriQunet catalog choice; the Sierra lessons doc compacted (#2165); handoff 400 names SkyBirch.
 - 2026-10-16 (S398 SkyLinden, Sam's session): wave 4 finished (Santa Ana, Rio Hondo, Saddleback loaded; builds `66b50c86891e` and `fa8ee2a84935` applied; nine procedure records, #2161); the display job's 120 minutes and gzipped receipts (#2159); the Memory tab's UI pass (#2160); Sierra: one assistant in COBI and her statewide catalog, on Sam's words of the day.
@@ -129,4 +130,3 @@ Authoritative external sources we've cached:
 - 2026-10-16 (S396 SkyJacaranda): wave 4 read, nine colleges, five loaded; Orange Coast and Monterey Peninsula's reconcile steps; #2148 and #2151 merged; handoff 397.
 - 2026-10-15 (S395 SkyHawthorn): wave 2's procedure records and their generator (#2146); staff email off the public dashboard (#2147); Santa Ana's colon titles in the curriQunet reader (#2148); the catalog sweep's wave 3, ten colleges, 1,132 records (#2149); handoff 396.
 - 2026-10-15 (S394 SkyMadrone): extraction v10 (#2141); UI pass GR Priorities (#2142); the catalog sweep, waves 1 and 2, eight colleges (#2143, #2144) with the NOCCCD campus-letter and curriQunet cap fixes; procedure records v1 for wave 1; lessons archive 2; handoff 395 (SkyHawthorn).
-- 2026-10-15 (S393 SkySycamore): Sheet 82 carried out (#2136); extraction v9 (#2138; v8 failed every call); Cerritos's reconcile steps (#2139); the overnight schedule and the $40 go (#2134); Open Asks Sheet 83; handoff 394.

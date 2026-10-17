@@ -1,0 +1,55 @@
+{
+ "college": "College of the Redwoods",
+ "programs": 79,
+ "with_closed_list": 76,
+ "found": 73,
+ "extracted": 73,
+ "errors": 0,
+ "passed_machine_checks": 38,
+ "failed": {
+  "coverage": 7,
+  "invented": 1,
+  "arithmetic": 34,
+  "repeated": 0,
+  "outcomes": 0
+ },
+ "cost_usd": 5.41,
+ "cost_per_program": 0.0741,
+ "not_found": [
+  {
+   "control_number": "46337",
+   "title": "Surgical Technology",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/aquaculture-technology-fall-2023",
+    "label": {
+     "award": 0,
+     "title": 0.5
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 11,
+    "why": "coarse net: the page's code tokens name 0 of 11 listed courses",
+    "error": null,
+    "chars": {
+     "body": 5009,
+     "content": 5009,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "46338",
+   "title": "Respiratory Care",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  }
+ ],
+ "run": "38979396148"
+}

@@ -1,0 +1,181 @@
+{
+ "college": "Antelope Valley College",
+ "control_number": "45838",
+ "shape": "certificate",
+ "title": "Health and Fitness for First Responders",
+ "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+ "source_url": "https://avc.elumenapp.com/catalog/2026-27/program/health-and-fitness-for-first-responders-certificate-fall-2026",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8127,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8127,
+    "output_tokens": 1584,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1584,
+  "output_tokens_details": {
+   "thinking_tokens": 601
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.06419,
+ "ms": 13733,
+ "seconds": 14.1,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 3,
+   "listed": 3,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    9.0,
+    9.0
+   ],
+   "stated": [
+    9.0,
+    9.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 6,
+   "courses": 0,
+   "count": 6,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Health and Fitness for First Responders Certificate",
+   "measure": "units",
+   "total_units": {
+    "min": 9,
+    "max": 9
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Select and apply strategies for health and wellness as they apply to preparation for Public Safety careers.",
+    "Students will be able to demonstrate the basic physical fitness requirements for law enforcement officers.",
+    "Students will be able to demonstrate the basic physical fitness requirements for law enforcement officers and display marked personal improvement on PAT tests.",
+    "Select and apply strategies for health and wellness promotion in preparation for Physical Ability Tests (PAT).",
+    "Students will be able to perform the basic physical fitness requirements for law enforcement officers and display marked personal improvement from previous PAT tests.",
+    "Select and apply strategies for health and wellness promotion in preparation and for the successful completion of the Physical Ability Tests (PAT) to meet Federal, State, County and Local hiring standards."
+   ],
+   "careers": [
+    "public safety"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 9,
+     "max": 9
+    },
+    "courses": [
+     {
+      "code": "AJ 111",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AJ 112",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AJ 113",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The page prints the requirements twice: as 'AJ111/AJ112/AJ113' under Program Requirements (Total 9) and as 'AJ 111/AJ 112/AJ 113' under 'Required Courses (9 units)' with 'Required Major Total 9' and 'TOTAL Units 9'. Codes recorded with the space; AJ 112 matches closed-list 'AJ112' (formatting difference only).",
+   "The 'Program Outcomes' section is cut off mid-sentence at Level 3; the six Level 1-3 outcomes were copied from the complete versions printed under 'Program Goals and Objectives', which match the truncated Program Outcomes text.",
+   "Under 'Program Goals and Objectives' the page also prints a 'Successful participants will:' list of seven objectives (e.g., 'Outline and demonstrate success from a personal fitness program'); these were not recorded as program outcomes because the Program Outcomes heading lists only the Level 1-3 outcomes. Reviewer may wish to check whether they should be included.",
+   "Page includes internal eLumen workflow/checklist text (Workflow Agreement, CTE checklist) that is not part of the requirements."
+  ]
+ },
+ "extracted_run": "38979725726"
+}

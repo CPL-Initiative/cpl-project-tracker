@@ -1,0 +1,173 @@
+{
+ "college": "Contra Costa College",
+ "control_number": "42384",
+ "shape": "noncredit",
+ "title": "Project Management",
+ "award": "Noncredit program",
+ "source_url": "https://ccc.elumenapp.com/catalog/ccc-2026-27/program/project-management-spring-2023",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6477,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6477,
+    "output_tokens": 1091,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1091,
+  "output_tokens_details": {
+   "thinking_tokens": 475
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.04773,
+ "ms": 9945,
+ "seconds": 10.5,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 2,
+   "listed": 2,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    108.0,
+    108.0
+   ],
+   "stated": [
+    108.0,
+    108.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Project Management - Non Credit Certificate of Completion",
+   "measure": "hours",
+   "total_units": {
+    "min": 108,
+    "max": 108
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Demonstrate knowledge of Project Management methodology",
+    "Demonstrate Project Management practices, tools, and concepts.",
+    "Demonstrate the ability to use easily available software to manage a project, create presentations, and documents.",
+    "Learn the aspects of Project Management, including scheduling, presentation, charting, and planning."
+   ],
+   "careers": [
+    "Project Management"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Project Management - Non Credit Certificate of Completion",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CIS898N",
+      "units": 54,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS899N",
+      "units": 54,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Noncredit program counted in hours; total of 108 Noncredit Hours is printed both as the major and as the total program.",
+   "Codes are printed without a space (CIS898N, CIS899N); they match closed-list CIS 898N and CIS 899N.",
+   "Outcomes are printed inline in the program description after 'Students completing this program will be able to:'; the first outcome ends with a comma in the text (dropped as a separator). A reviewer may want to check the split.",
+   "The career field 'Project Management' is taken from 'employable with the field of Project Management' in the description.",
+   "The catalog text is cut off at the end (Development Criteria section); this does not affect the requirements."
+  ]
+ },
+ "extracted_run": "38979730323"
+}

@@ -1,0 +1,168 @@
+{
+ "college": "Antelope Valley College",
+ "control_number": "15404",
+ "shape": "degree",
+ "title": "Aircraft Fabrication and Assembly Technician",
+ "award": "A.S. Degree",
+ "source_url": "https://avc.elumenapp.com/catalog/2026-27/program/aircraft-fabrication-assembly-technician-cert-fall-2026",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7735,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7735,
+    "output_tokens": 1347,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1347,
+  "output_tokens_details": {
+   "thinking_tokens": 564
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.05788,
+ "ms": 12962,
+ "seconds": 13.3,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 5,
+   "share": 0.0,
+   "missing": [
+    "AFAB110",
+    "AFAB115",
+    "AFAB120",
+    "AFAB130",
+    "AFAB210"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": true,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Aircraft Fabrication & Assembly Technician Cert",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "AFAB 110",
+    "why": "named only in the certificate section; no A.S. Degree section in the text"
+   },
+   {
+    "code": "AFAB 115",
+    "why": "named only in the certificate section; no A.S. Degree section in the text"
+   },
+   {
+    "code": "AFAB 210",
+    "why": "named only in the certificate section; no A.S. Degree section in the text"
+   },
+   {
+    "code": "AFAB120",
+    "why": "named only in the certificate section; no A.S. Degree section in the text"
+   },
+   {
+    "code": "AFAB130",
+    "why": "named only in the certificate section; no A.S. Degree section in the text"
+   }
+  ],
+  "notes": [
+   "The requested award is the A.S. Degree, but the source page (URL ending '-cert-fall-2026') prints only the 'Aircraft Fabrication & Assembly Technician Cert' requirements. No A.S. Degree section, major total, GE pattern or degree total appears in the text, so no blocks or totals were recorded for the degree.",
+   "The certificate section reads: Complete all of the following, Total 26: AFAB110 (3), AFAB115 (8), AFAB120 (7), AFAB130 (4), AFAB210 (4); 'Required Major Total 26 units'. A reviewer should check whether a separate A.S. Degree page exists and whether the degree uses these same courses.",
+   "The description mentions that 'The Associate Degree is designed to prepare students for the Aircraft Manufacturing Technology (AFMT) Bachelor's Degree of Science' but gives no degree requirements.",
+   "Program Outcomes (4 items) are printed under the heading 'Aircraft Fabrication & Assembly Technician Cert' and were not recorded for the A.S. Degree. The certificate's Program Goals also name the role 'entry-level structural and/or composite technician'. Neither was attributed to the degree.",
+   "The closed list stores no units for AFAB120 and AFAB130. The certificate section prints 7 and 4 units for them."
+  ]
+ },
+ "extracted_run": "38979725726"
+}

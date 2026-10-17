@@ -1,0 +1,983 @@
+{
+ "college": "College of the Siskiyous",
+ "catalog_url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/2026-27cataloghomepage",
+ "platform": "elumen",
+ "catalog_year": "2026-2027",
+ "programs": 80,
+ "with_closed_list": 77,
+ "started": "2026-10-16T23:05:47Z",
+ "elumen": {
+  "catalog": "cos26-27catalog",
+  "start_status": 200,
+  "from_start": 0,
+  "hubs": [
+   "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/associatedegreeandcertificateprograms",
+   "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/degreesandcertificatesa-z"
+  ],
+  "program_pages": 85
+ },
+ "pages_read": 85,
+ "banner_h1": "College of the Siskiyous 2026-27 Catalog",
+ "loads": 89,
+ "seconds": 675.3,
+ "found": 65,
+ "by_method": {
+  "no_closed_list": 3,
+  "not_found": 11,
+  "page_claimed": 1,
+  "sitemap_page": 65
+ },
+ "shared_pages": {
+  "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/program/mathematics-2-0-as-t-fall-2026": [
+   "30645",
+   "46528"
+  ],
+  "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/program/business-administration-2-0-as-t-fall-2026": [
+   "31083",
+   "42804"
+  ]
+ },
+ "not_found": [
+  {
+   "control_number": "19000",
+   "title": "CSU General Education Breadth",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/program/cal-getc-california-general-education-transfer-curriculum-coa-fall-2026",
+    "label": {
+     "award": 1,
+     "title": 0.5
+    },
+    "field": "textContent",
+    "coverage": 0.804,
+    "body": 0.0,
+    "content": 0.804,
+    "net": 86,
+    "listed": 107,
+    "why": "hidden text only, and the heading does not name the program",
+    "error": null,
+    "chars": {
+     "body": 1448,
+     "content": 278671,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "19001",
+   "title": "Intersegmental General Education Transfer Curriculum (IGETC)",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/program/cal-getc-california-general-education-transfer-curriculum-coa-fall-2026",
+    "label": {
+     "award": 1,
+     "title": 0.667
+    },
+    "field": "textContent",
+    "coverage": 0.975,
+    "body": 0.0,
+    "content": 0.975,
+    "net": 78,
+    "listed": 80,
+    "why": "hidden text only, and the heading does not name the program",
+    "error": null,
+    "chars": {
+     "body": 1448,
+     "content": 278671,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "19812",
+   "title": "Philosophy",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "32263",
+   "title": "English as a Second Language (ESL)",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/program/english-as-a-second-language-esl-non-credit-coc-fall-2021",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "textContent",
+    "coverage": 1.0,
+    "body": 0.0,
+    "content": 1.0,
+    "net": 3,
+    "listed": 3,
+    "why": "hidden text only, and the heading does not name the program",
+    "error": null,
+    "chars": {
+     "body": 1588,
+     "content": 209686,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "37783",
+   "title": "Administrative Assistant and Office Aide",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/program/administrative-assistant-and-office-aide-non-credit-coc-fall-2021",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "textContent",
+    "coverage": 1.0,
+    "body": 0.0,
+    "content": 1.0,
+    "net": 1,
+    "listed": 1,
+    "why": "hidden text only, and the heading does not name the program",
+    "error": null,
+    "chars": {
+     "body": 1333,
+     "content": 209536,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "37784",
+   "title": "Culinary and Hospitality Service Skills",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/program/culinary-and-hospitality-service-skills-non-credit-coc-fall-2021",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "textContent",
+    "coverage": 1.0,
+    "body": 0.0,
+    "content": 1.0,
+    "net": 1,
+    "listed": 1,
+    "why": "hidden text only, and the heading does not name the program",
+    "error": null,
+    "chars": {
+     "body": 1331,
+     "content": 209907,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "37785",
+   "title": "Media and Web Development",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/program/media-and-web-development-non-credit-coc-winter-2023-intersession",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "textContent",
+    "coverage": 1.0,
+    "body": 0.0,
+    "content": 1.0,
+    "net": 2,
+    "listed": 2,
+    "why": "hidden text only, and the heading does not name the program",
+    "error": null,
+    "chars": {
+     "body": 1248,
+     "content": 209635,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "38692",
+   "title": "Workforce Readiness",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/program/workforce-readiness-non-credit-coc-winter-2023-intersession",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "textContent",
+    "coverage": 1.0,
+    "body": 0.0,
+    "content": 1.0,
+    "net": 2,
+    "listed": 2,
+    "why": "hidden text only, and the heading does not name the program",
+    "error": null,
+    "chars": {
+     "body": 1233,
+     "content": 212437,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "39644",
+   "title": "Firefighting I",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/program/firefighting-i-non-credit-coc-fall-2021",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "textContent",
+    "coverage": 1.0,
+    "body": 0.0,
+    "content": 1.0,
+    "net": 2,
+    "listed": 2,
+    "why": "hidden text only, and the heading does not name the program",
+    "error": null,
+    "chars": {
+     "body": 1173,
+     "content": 205513,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "40253",
+   "title": "Political Science",
+   "award": "A.A- T Degree",
+   "near_miss": {
+    "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/program/computer-science-as-t-fall-2025",
+    "label": {
+     "award": 1,
+     "title": 0.5
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 11,
+    "why": "coarse net: the page's code tokens name 0 of 11 listed courses",
+    "error": null,
+    "chars": {
+     "body": 1628,
+     "content": 218868,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "43283",
+   "title": "Foundations for Academic Success",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/program/foundations-for-academic-success-non-credit-coc-cdcp-fall-2026",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "textContent",
+    "coverage": 1.0,
+    "body": 0.0,
+    "content": 1.0,
+    "net": 4,
+    "listed": 4,
+    "why": "hidden text only, and the heading does not name the program",
+    "error": null,
+    "chars": {
+     "body": 1547,
+     "content": 215488,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  }
+ ],
+ "page_claimed": [
+  {
+   "control_number": "19374",
+   "title": "Accounting",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/program/accounting-aa-fall-2026"
+   ]
+  }
+ ],
+ "coverage_bands": {
+  "0.5-0.8": 0,
+  "0.8-1.0": 7,
+  "1.0": 58
+ },
+ "would_extract": {
+  "against": null,
+  "kept": 0,
+  "programs": 65,
+  "list": [
+   {
+    "control_number": "06465",
+    "title": "Business Administration",
+    "award": "A.A. Degree",
+    "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/program/business-administration-aa-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "06473",
+    "title": "Engineering",
+    "award": "A.S. Degree",
+    "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/program/engineering-as-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "06477",
+    "title": "Welding",
+    "award": "A.S. Degree",
+    "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/program/welding-as-winter-2023-intersession",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "06480",
+    "title": "Art",
+    "award": "A.A. Degree",
+    "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/program/art-aa-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "06481",
+    "title": "Musical Theatre",
+    "award": "A.A. Degree",
+    "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/program/musical-theatre-aa-winter-2023-intersession",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "06482",
+    "title": "Theatre Performance",
+    "award": "A.A. Degree",
+    "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/program/theatre-performance-aa-winter-2023-intersession",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "06487",
+    "title": "Vocational Nursing",
+    "award": "A.S. Degree",
+    "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/program/vocational-nursing-as-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "06488",
+    "title": "Emergency Medical Technology: Paramedic",
+    "award": "A.S. Degree",
+    "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/program/emergency-medical-services-paramedic-as-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "06493",
+    "title": "Mathematics",
+    "award": "A.S. Degree",
+    "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/program/mathematics-as-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "06494",
+    "title": "Physical Science",
+    "award": "A.S. Degree",
+    "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/program/physical-science-as-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "06495",
+    "title": "Physics",
+    "award": "A.S. Degree",
+    "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/program/physics-as-winter-2023-intersession",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "06499",
+    "title": "Administration of Justice",
+    "award": "A.A. Degree",
+    "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/program/administration-of-justice-aa-fall-2025",
+    "coverage": 0.917,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "06500",
+    "title": "Fire Technology",
+    "award": "A.S. Degree",
+    "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/program/fire-technology-as-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "06501",
+    "title": "Social Science",
+    "award": "A.A. Degree",
+    "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/program/social-science-aa-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "06502",
+    "title": "History",
+    "award": "A.A. Degree",
+    "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/program/history-aa-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "07898",
+    "title": "Early Childhood Education",
+    "award": "A.A. Degree",
+    "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/program/early-childhood-education-aa-winter-2023-intersession",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "07901",
+    "title": "Accounting",
+    "award": "A.A. Degree",
+    "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/program/accounting-aa-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "07903",
+    "title": "Humanities",
+    "award": "A.A. Degree",
+    "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/program/humanities-aa-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "10946",
+    "title": "Computer Science",
+    "award": "A.S. Degree",
+    "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/program/computer-science-as-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "10948",
+    "title": "Music: Vocal Performance",
+    "award": "A.A. Degree",
+    "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/program/music-vocal-performance-aa-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "10949",
+    "title": "Music: Instrumental Performance",
+    "award": "A.A. Degree",
+    "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/program/music-instrumental-performance-aa-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "11350",
+    "title": "Alcohol and Drug/ Human Services",
+    "award": "A.A. Degree",
+    "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/program/alcohol-and-drug-human-services-aa-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "14693",
+    "title": "Communication Studies",
+    "award": "A.A. Degree",
+    "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/program/communication-studies-aa-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "17045",
+    "title": "Psychology",
+    "award": "A.A. Degree",
+    "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/program/psychology-aa-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "17596",
+    "title": "LVN to RN Step-Up",
+    "award": "A.S. Degree",
+    "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/program/lvn-to-rn-step-up-adn-as-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "18470",
+    "title": "Athletic Training",
+    "award": "A.S. Degree",
+    "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/program/athletic-training-as-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "18590",
+    "title": "Liberal Arts & Sciences: Humanities",
+    "award": "A.A. Degree",
+    "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/program/liberal-arts-sciences-las-humanities-aa-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "18591",
+    "title": "Liberal Arts & Sciences: Multicultural Studies",
+    "award": "A.A. Degree",
+    "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/program/liberal-arts-sciences-las-multicultural-studies-aa-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "18592",
+    "title": "Liberal Arts & Sciences: Natural Science",
+    "award": "A.S. Degree",
+    "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/program/liberal-arts-sciences-las-natural-science-as-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "18593",
+    "title": "Liberal Arts & Sciences: Social Science",
+    "award": "A.A. Degree",
+    "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/program/liberal-arts-sciences-las-social-science-aa-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "19362",
+    "title": "Welding: Advanced Level",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/program/welding-advanced-level-coa-summer-2024",
+    "coverage": 0.9,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20793",
+    "title": "Alcohol and Drug/Human Services",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/program/alcohol-and-drug-human-services-coa-winter-2023-intersession",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21512",
+    "title": "Vocational Nursing",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/program/vocational-nursing-coa-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21513",
+    "title": "Emergency Medical Services: Paramedic",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/program/emergency-medical-services-paramedic-coa-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "30236",
+    "title": "Welding: Basic Level",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/program/welding-basic-level-coa-summer-2024",
+    "coverage": 0.857,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "30254",
+    "title": "Firefighter I Academy",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/program/firefighter-i-academy-coa-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "30447",
+    "title": "Creative Writing",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/program/creative-writing-coa-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "30645",
+    "title": "Mathematics",
+    "award": "A.S. T Degree",
+    "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/program/mathematics-2-0-as-t-fall-2026",
+    "coverage": 0.889,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "30696",
+    "title": "Environmental Science",
+    "award": "A.S. Degree",
+    "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/program/environmental-science-as-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "30982",
+    "title": "Early Childhood Education",
+    "award": "A.S. T Degree",
+    "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/program/early-childhood-education-as-t-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "30983",
+    "title": "Physics",
+    "award": "A.S. T Degree",
+    "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/program/physics-2-0-as-t-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31043",
+    "title": "Administration of Justice",
+    "award": "A.S. T Degree",
+    "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/program/administration-of-justice-as-t-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31078",
+    "title": "English",
+    "award": "A.A- T Degree",
+    "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/program/english-aa-t-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31083",
+    "title": "Business Administration",
+    "award": "A.S. T Degree",
+    "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/program/business-administration-2-0-as-t-fall-2026",
+    "coverage": 0.875,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31119",
+    "title": "Theatre Arts",
+    "award": "A.A- T Degree",
+    "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/program/theatre-arts-aa-t-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33573",
+    "title": "Music",
+    "award": "A.A- T Degree",
+    "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/program/music-aa-t-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33574",
+    "title": "Sociology",
+    "award": "A.A- T Degree",
+    "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/program/sociology-aa-t-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33575",
+    "title": "History",
+    "award": "A.A- T Degree",
+    "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/program/history-aa-t-fall-2026",
+    "coverage": 0.933,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35430",
+    "title": "Psychology",
+    "award": "A.A- T Degree",
+    "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/program/psychology-aa-t-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35892",
+    "title": "Geology",
+    "award": "A.S. T Degree",
+    "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/program/geology-as-t-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37786",
+    "title": "Small Business Startup, Marketing & Media",
+    "award": "Noncredit program",
+    "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/program/small-business-startup-marketing-media-non-credit-coc-winter-2023-intersession",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38657",
+    "title": "Physical Education - Kinesiology",
+    "award": "A.A. Degree",
+    "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/program/physical-education-kinesiology-aa-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39645",
+    "title": "Small Business Startup, Marketing, and Media II",
+    "award": "Noncredit program",
+    "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/program/small-business-startup-marketing-and-media-ii-non-credit-coc-winter-2023-intersession",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40086",
+    "title": "Administration of Justice",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/program/administration-of-justice-coa-fall-2021",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42474",
+    "title": "Computer Science",
+    "award": "A.S. T Degree",
+    "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/program/computer-science-as-t-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42804",
+    "title": "Business Administration 2.0",
+    "award": "A.S. T Degree",
+    "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/program/business-administration-2-0-as-t-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43412",
+    "title": "Communication Studies 2.0",
+    "award": "A.A- T Degree",
+    "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/program/communication-studies-2-0-aa-t-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45356",
+    "title": "Cal-GETC: California General Education Transfer Curriculum",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/program/cal-getc-california-general-education-transfer-curriculum-coa-fall-2026",
+    "coverage": 0.989,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45945",
+    "title": "Communication Studies: Social Media",
+    "award": "A.A. Degree",
+    "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/program/communication-studies-social-media-aa-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46169",
+    "title": "Biological Science",
+    "award": "A.S. Degree",
+    "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/program/biological-science-as-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46170",
+    "title": "Pre-Allied Health",
+    "award": "A.S. Degree",
+    "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/program/pre-allied-health-as-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46190",
+    "title": "Pre-Allied Health",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/program/pre-allied-health-coa-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46406",
+    "title": "Artificial Intelligence Skill Building",
+    "award": "Noncredit program",
+    "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/program/artificial-intelligence-skill-building-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46468",
+    "title": "Modern Policing",
+    "award": "A.S. Degree",
+    "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/program/modern-policing-as-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46528",
+    "title": "Mathematics 2.0",
+    "award": "A.S. T Degree",
+    "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/program/mathematics-2-0-as-t-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   }
+  ]
+ },
+ "run": "38979399672"
+}

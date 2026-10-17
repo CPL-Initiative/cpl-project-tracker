@@ -472,6 +472,21 @@ check(all(C.cq_is_program({"text": t, "haschildbodynavs": True}) for t in BUTTE_
       "a community, a plural list or a bare award: %r"
       % ([t for t in BUTTE_ENTRIES if not C.cq_is_program({"text": t})]
          + [t for t in BUTTE_NAV if C.cq_is_program({"text": t})]))
+# Las Positas (S401, page read 38982439886): the award after the name's last comma;
+# only the 20 whose names also carry a colon were taken (20 of 201, run 38979338956).
+LPC_ENTRIES = ["Liberal Arts & Sciences: Mathematics and Science, Associate of Arts (AA)",
+               "Biology, Associate in Science for Transfer (AS-T)", "Accounting Technician, Certificate of Achievement",
+               "Welding Technology, AS", "Theatre Arts, AA-T", "Biology, A.S. Degree"]
+LPC_NAV = ["Film, Television & Electronic Media", "Business, General", "Degrees, Certificates & Programs of Study",
+           "Departments, Degrees & Certificates", "Programs of Study", "Art, Associated Students",
+           "Electives, as approved", "Spanish, AAA"]
+check(all(C.cq_is_program({"text": t}) for t in LPC_ENTRIES)
+      and not any(C.cq_is_program({"text": t}) for t in LPC_NAV),
+      "cq_is_program reads an award after the last comma (Las Positas), never a name's own comma or a plain word: %r"
+      % ([t for t in LPC_ENTRIES if not C.cq_is_program({"text": t})] + [t for t in LPC_NAV if C.cq_is_program({"text": t})]))
+check(C.cq_name_award("Liberal Arts & Sciences: Mathematics and Science, Associate of Arts (AA)")
+      == ("Liberal Arts & Sciences: Mathematics and Science", "Associate of Arts (AA)"),
+      "the comma form names the program and its award")
 check(C.cq_name_award("Automotive Technology - Honda, Professional Automotive Career Training (PACT) (AS Degree)")
       == ("Automotive Technology - Honda, Professional Automotive Career Training (PACT)", "AS Degree")
       and C.cq_name_award("Certificate of Achievement in Automotive Technology")
@@ -1282,20 +1297,26 @@ check([g["url"].rsplit("/", 1)[1] for g in got_pages] == ["sociology-aa-t-fall-2
       "a menu's programs and its departments' programs both count, and 4 of 5 is no shortfall to walk: %s %s"
       % ([g["url"] for g in got_pages], rep.get("elumen")))
 
-# Los Medanos (S401): departments are pages one segment under the catalog (26-27/art),
-# listed on 26-27/degrees; from the Art start page the read found Art's 7 of 97.
+# Los Medanos (S401): departments are pages under the catalog (26-27/art, and two down,
+# 26-27/childdevelopment/earlychildhoodeducation), listed on 26-27/degrees, which only
+# courses's own full call names (its menu opened around it; its content call holds no
+# link). From the Art start page the read found Art's 7 of 97 (run 38982485062).
 LMC = "https://lmc.elumenapp.com/catalog/26-27/art"
+LMC_SHELL = ('<a href="26-27/welcome">Welcome</a><a class="x" href="26-27/courses"><span>Program Requirements, '
+             'Courses</span></a><a href="26-27/art">Art</a><a href="26-27/program/fine-arts-aa-fall-2026">Fine Arts AA</a>'
+             '<a href="26-27/course/art003">ART 003</a>')
 LMC_PAGES = {
-    "shell": '<a href="26-27/welcome">Welcome</a><a href="26-27/courses">Program Requirements</a>'
-             '<a href="26-27/art">Art</a><a href="26-27/program/fine-arts-aa-fall-2026">Fine Arts AA</a>'
-             '<a href="26-27/course/art003">ART 003</a>',
     "welcome": "<p>Welcome to LMC</p>",
-    "courses": '<a href="26-27/understanding">Understanding</a><a href="26-27/degrees">Degrees, Certificates</a>',
+    "courses": "<p>Topics in this section</p>",
     "understanding": "<p>How to read a course</p>",
-    "degrees": '<a href="26-27/art">Art</a><a href="26-27/biology">Biology</a><a href="26-27/welding">Welding</a>',
+    "degrees": '<a href="26-27/art">Art</a><a href="26-27/biology">Biology</a>'
+               '<a href="26-27/childdevelopment/earlychildhoodeducation">ECE</a><a href="26-27/welding">Welding</a>',
     "biology": '<a href="26-27/program/biology-as-t-fall-2026">AS-T</a><a href="/catalog/26-27/program/biology-as-fall-2026">AS</a>',
+    "childdevelopment,earlychildhoodeducation": '<a href="26-27/program/ece-ca-fall-2026">CA</a>',
     "welding": '<a href="26-27/program/welding-coa-fall-2026">COA</a><a href="26-27/metals">deeper</a>',
 }
+LMC_COURSES_MENU = LMC_SHELL + ('<a href="26-27/understanding">Understanding Course Descriptions</a>'
+                                '<a href="26-27/degrees">Degrees, Certificates &amp; Programs of Study</a>')
 asked = []
 
 
@@ -1304,8 +1325,10 @@ def lmc_fetch(reader, url, errors):
     if ",program," in url:
         return json.dumps({"html": "<h1>x</h1><p>Program Requirements BIOL 1</p>"})
     if "publish/content/26-27," in url:
-        return json.dumps({"html": LMC_PAGES.get(url.split("26-27,")[1].split("?")[0], "")})
-    return json.dumps({"html": LMC_PAGES["shell"]})
+        return json.dumps({"html": LMC_PAGES.get(url.split("26-27,", 1)[1].split("?")[0], "")})
+    if "publish/26-27,courses?" in url:
+        return json.dumps({"html": LMC_COURSES_MENU})
+    return json.dumps({"html": LMC_SHELL})
 
 
 real_fetch, C.el_fetch = C.el_fetch, lmc_fetch
@@ -1314,16 +1337,24 @@ try:
     got_pages = C.el_pages_fast(None, LMC, rep)
 finally:
     C.el_fetch = real_fetch
-walked = [u.split("26-27,")[1].split("?")[0] for u in asked if "publish/content/26-27," in u and ",program," not in u]
-check([g["url"].rsplit("/", 1)[1] for g in got_pages] == ["fine-arts-aa-fall-2026", "biology-as-t-fall-2026",
-                                                          "biology-as-fall-2026", "welding-coa-fall-2026"]
-      and rep["elumen"]["walk_programs"] == 3 and not rep["elumen"]["walk_stopped_at_cap"],
-      "short of the closed lists, the read walks the menu's one-segment pages and the departments they list: %s %s"
+walked = [u.split("26-27,", 1)[1].split("?")[0] for u in asked if "publish/content/26-27," in u and ",program," not in u]
+menus = [u.split("26-27,", 1)[1].split("?")[0] for u in asked if "/publish/26-27," in u and ",art?" not in u]
+check(sorted(g["url"].rsplit("/", 1)[1] for g in got_pages) == sorted(["fine-arts-aa-fall-2026", "biology-as-t-fall-2026",
+                                                                       "biology-as-fall-2026", "ece-ca-fall-2026",
+                                                                       "welding-coa-fall-2026"])
+      and rep["elumen"]["walk_programs"] == 4 and rep["elumen"]["walk_menus"] == 1 and not rep["elumen"]["walk_stopped_at_cap"],
+      "short of the closed lists, the walk reads a hub's own menu and the departments its topic lists: %s %s"
       % ([g["url"] for g in got_pages], rep.get("elumen")))
-check(walked == ["welcome", "courses", "understanding", "degrees", "biology", "welding"],
-      "the walk reads each page once, breadth first, three steps deep: %r" % walked)
+check(walked == ["courses", "degrees", "welcome", "understanding", "biology", "childdevelopment,earlychildhoodeducation", "welding"]
+      and menus == ["courses"],
+      "hub-like pages go first, a hub that names nothing in its content is read once more through its full call, "
+      "and a department two segments down is read: %r %r" % (walked, menus))
 check("art" not in walked and "metals" not in walked and not any("course," in w or "course/" in w for w in walked),
       "the start page is never read again, a page four steps down is never read, nor a course: %r" % walked)
+check(C.el_page_links('<a href="2026-2027/program/x">P</a><a href="2026-2027/course/y">C</a>'
+                      '<a href="2026-2027/department/z">D</a><a href="2026-2027/a/b/c">Deep</a><a href="2026-2027/ok">Ok</a>',
+                      "2026-2027") == [("ok", "Ok")],
+      "a program, course or department page is never a page to walk, nor one three segments down")
 
 sql = open(os.path.join(ROOT, "chatbox", "supabase_program_requirement_records_college_load.sql")).read()
 body = sql.split("as $$")[1].split("$$;")[0]

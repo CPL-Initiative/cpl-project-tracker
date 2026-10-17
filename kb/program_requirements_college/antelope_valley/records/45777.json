@@ -1,0 +1,181 @@
+{
+ "college": "Antelope Valley College",
+ "control_number": "45777",
+ "shape": "noncredit",
+ "title": "Emergency Cardiac Care Provider",
+ "award": "Noncredit program",
+ "source_url": "https://avc.elumenapp.com/catalog/2026-27/program/emergency-cardiac-care-provider-certificate-noncredit-fall-2026",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7858,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7858,
+    "output_tokens": 2169,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2169,
+  "output_tokens_details": {
+   "thinking_tokens": 1110
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.07481,
+ "ms": 17662,
+ "seconds": 17.9,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 3,
+   "listed": 3,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    45.0,
+    45.0
+   ],
+   "stated": [
+    45.0,
+    45.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 3,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Emergency Cardiac Care Provider Certificate (Noncredit)",
+   "measure": "hours",
+   "total_units": {
+    "min": 45,
+    "max": 45
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Demonstrate the ability to recognize life-threatening emergencies and perform high-quality cardiopulmonary resuscitation (CPR) and automated external defibrillation (AED) on adult, child, and infant patients in accordance with current American Heart Association (AHA) Basic Life Support guidelines.",
+    "Apply Advanced Cardiac Life Support (ACLS) algorithms to assess and manage adult patients experiencing cardiac arrest, bradyarrhythmias, tachyarrhythmias, stroke, and acute coronary syndromes using effective airway management, pharmacological interventions, electrical therapy, and team-based resuscitation strategies.",
+    "Utilize Pediatric Advanced Life Support (PALS) protocols to assess, triage, and treat critically ill or injured pediatric patients by identifying signs of respiratory distress, shock, and cardiac arrest, while demonstrating effective communication, rapid decision-making, and leadership within a pediatric resuscitation team."
+   ],
+   "careers": [
+    "EMTs",
+    "nurses",
+    "allied health professionals"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Complete all of the following",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 45,
+     "max": 45
+    },
+    "courses": [
+     {
+      "code": "EMT900",
+      "units": 9,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "EMT901",
+      "units": 18,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "EMT902",
+      "units": 18,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Noncredit program counted in hours: 'Total 45' in Program Requirements and 'Total Hours 45.0' in the Recommended Pathway; course figures (9, 18, 18) are hours.",
+   "Catalog prints EMT901 and EMT902 without a space; closed list stores them as 'EMT 901' and 'EMT 902'. Treated as the same courses (catalog_addition false).",
+   "program.outcomes holds the three items under the 'Program Outcomes' heading; each is printed under a course subheading (EMT900, EMT901, EMT902) and numbered 2, 3, 1. Reviewer may consider whether these belong in course_outcomes instead.",
+   "The 'Program Goals and Objectives' section also lists five 'Upon completion of the program, students will be able to:' statements (e.g., 'Demonstrate proficiency in performing high-quality CPR and basic life support interventions...'); these were treated as goals/objectives and not recorded as outcomes. Reviewer should check whether they should be counted as program outcomes.",
+   "Page includes curriculum workflow/checklist boilerplate (eLumen) that was ignored."
+  ]
+ },
+ "extracted_run": "38979725726"
+}
