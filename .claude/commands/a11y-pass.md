@@ -70,6 +70,12 @@ Per class:
 - **Mobile** — single column below ~560px, `clamp()` type, no fixed widths, and
   wide content scrolls **inside its own container** so the body never scrolls
   sideways.
+- **Focus rings** — a "no ring" finding on a control whose `:focus-visible`
+  rule exists is often a `transition: all` on the control: the outline's width
+  animates up from 0px, so the ring is absent at the moment focus lands, for the
+  sweep and for a quick keyboard user alike. Set `transition: none` (or name
+  only the properties that should move). Found S409 on Exhibit Adoption's
+  `#sw-handout`, whose rule had been in place since 2026-09-24.
 - **Keyboard scrollers** — an overflowing region needs `tabindex="0"` *and* an
   accessible name. ⚠️ Chromium 127+ focuses an overflowing div with no tabindex
   at all, so **the measuring browser hides this defect**; the explicit fix is

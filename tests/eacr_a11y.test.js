@@ -184,8 +184,10 @@ function run() {
     /Already teaches a matching course/i.test(val(() => couldCell().textContent) || ""));
   check("...and the TOP/C-ID lead list is gone from the column entirely",
     !/Same TOP code or C-ID/.test(val(() => couldCell().textContent) || ""));
-  check("the matrix's selected cell-contents option is not signalled by background-colour alone",
-    /\.mx-seg input:checked \+ label\{[^}]*box-shadow/.test(src));
+  // Since S409 the options are underlined words (Sam, 2026-10-09): the choice
+  // in use is heavier, darker and more thickly underlined, and paints no fill.
+  check("the matrix's selected cell-contents option is not signaled by color alone",
+    /\.mx-seg input:checked \+ label\{color:var\(--text-strong\);font-weight:700;text-decoration-thickness:2px;\}/.test(src));
   check("forced-colours keeps the selected/active distinction",
     /@media \(forced-colors: active\)/.test(src));
   check("...and gives the cell panel a border it can keep",
