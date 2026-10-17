@@ -1,0 +1,162 @@
+{
+ "college": "Los Angeles Trade Technical College",
+ "control_number": "24136",
+ "shape": "other",
+ "title": "Bank Teller",
+ "award": null,
+ "source_url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=352",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 10671,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 10671,
+    "output_tokens": 1091,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1091,
+  "output_tokens_details": {
+   "thinking_tokens": 393
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.0645,
+ "ms": 10248,
+ "seconds": 10.8,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 0,
+   "listed": 5,
+   "share": 0.0,
+   "missing": [
+    "VOCED191CE",
+    "VOCED193CE",
+    "VOCED252CE",
+    "VOCED311CE",
+    "VOCED312CE"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unstated",
+   "computed": null,
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record states no figure, but the catalog text names 4 hours, 1 hour, 3 hours, 1 hour"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Course Descriptions - Non-Credit Courses",
+   "measure": "hours",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "VOC ED 191CE",
+    "why": "appears only as a course description (tied to Sustainable Small Business Development); no Bank Teller program requirements in the text"
+   },
+   {
+    "code": "VOC ED 312CE",
+    "why": "appears only as a course description; no Bank Teller program requirements in the text"
+   },
+   {
+    "code": "VOCED193CE",
+    "why": "catalog's VOC ED 193CE is titled Marketing and Sales for Small Business, not the closed list's title, and appears only as a course description; no program requirements in the text"
+   },
+   {
+    "code": "VOCED252CE",
+    "why": "appears only as a course description; no Bank Teller program requirements in the text"
+   },
+   {
+    "code": "VOCED311CE",
+    "why": "appears only as a course description; no Bank Teller program requirements in the text"
+   }
+  ],
+  "notes": [
+   "The supplied text (catalog pages 352-353) contains only noncredit course descriptions; it prints no program section, requirements list, total hours, outcomes or careers for a Bank Teller award. No blocks were recorded.",
+   "VOC ED 080CE BANK TELLER TRAINING (Lecture: 4 hours) is the only Bank Teller course in the text, but it is not in the closed list and the text does not state that it constitutes or belongs to a Bank Teller certificate; a reviewer should locate the actual program page.",
+   "The closed list (small business, workplace safety, construction careers courses) does not appear to match a Bank Teller program; the Program Course File link may be wrong.",
+   "Award is null in the input; measure set to hours because the program is noncredit.",
+   "The course description for VOC ED 080CE mentions an entry-level bank teller position, but careers were not recorded because it comes from a course description, not a program section."
+  ]
+ },
+ "extracted_run": "39054673977"
+}

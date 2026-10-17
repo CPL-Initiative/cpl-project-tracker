@@ -1,0 +1,7233 @@
+[
+ {
+  "control_number": "02891",
+  "title": "Accounting",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCTG1",
+   "ACCTG11",
+   "ACCTG2",
+   "ACCTG3"
+  ],
+  "source": {
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=100",
+   "title": "Accounting T002891C A.A. 21* 47 - 47",
+   "h1": "Accounting T002891C A.A. 21* 47 - 47",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    100,
+    101
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 4,
+  "text_chars": 5477
+ },
+ {
+  "control_number": "02892",
+  "title": "Management/Supervision",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.75,
+  "codes_found": [
+   "MGMT13",
+   "MGMT2",
+   "MGMT33"
+  ],
+  "source": {
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=121",
+   "title": "Requirements for the Associate in Arts degree in Management/Supervision may be met by",
+   "h1": "Requirements for the Associate in Arts degree in Management/Supervision may be met by",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    121
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 4,
+  "text_chars": 1772
+ },
+ {
+  "control_number": "02893",
+  "title": "Governmental Supervision",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "02894",
+  "title": "Marketing and Public Relations",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "MARKET1"
+  ],
+  "source": {
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=122",
+   "title": "Relations T002894C A.A. 21* 44 - 44",
+   "h1": "Relations T002894C A.A. 21* 44 - 44",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    122
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 1,
+  "text_chars": 3710
+ },
+ {
+  "control_number": "02895",
+  "title": "Retail Management",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.955,
+  "codes_found": [
+   "ACCTG1",
+   "ACCTG18",
+   "BUS1",
+   "BUS32",
+   "BUS33",
+   "BUS38",
+   "BUS5",
+   "CAOT82",
+   "CAOT85",
+   "COMMC1000",
+   "ENGLC1000",
+   "MARKET1",
+   "MARKET11",
+   "MARKET21",
+   "MARKET40",
+   "MGMT13",
+   "MGMT2",
+   "MGMT33",
+   "SUPV1",
+   "SUPV11",
+   "SUPV3"
+  ],
+  "source": {
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=126",
+   "title": "Retail Management T002895C A.A. 21* 41 6 47",
+   "h1": "Retail Management T002895C A.A. 21* 41 6 47",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    126,
+    127,
+    128
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 22,
+  "text_chars": 8739
+ },
+ {
+  "control_number": "02896",
+  "title": "Real Estate",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "MARKET21",
+   "REALES1",
+   "REALES14",
+   "REALES3",
+   "REALES5",
+   "REALES7",
+   "REALES9"
+  ],
+  "source": {
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=125",
+   "title": "Real Estate T002896C A.A. 21* 45 - 45",
+   "h1": "Real Estate T002896C A.A. 21* 45 - 45",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    125,
+    126,
+    127,
+    128
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 7,
+  "text_chars": 12324
+ },
+ {
+  "control_number": "02897",
+  "title": "Computer App & Office Tech: Administrative Asst",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.737,
+  "codes_found": [
+   "CAOT1",
+   "CAOT101",
+   "CAOT2",
+   "CAOT30",
+   "CAOT31",
+   "CAOT33",
+   "CAOT34",
+   "CAOT7",
+   "CAOT82",
+   "CAOT84",
+   "CAOT85",
+   "CAOT86",
+   "CAOT88",
+   "CAOT98"
+  ],
+  "source": {
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=113",
+   "title": "Administrative Assistant T002897C A.A. 21* 32 12 44",
+   "h1": "Administrative Assistant T002897C A.A. 21* 32 12 44",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    113,
+    114,
+    115,
+    116
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 19,
+  "text_chars": 15320
+ },
+ {
+  "control_number": "02898",
+  "title": "Labor Studies",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "LABRST1",
+   "LABRST10",
+   "LABRST101",
+   "LABRST102",
+   "LABRST104",
+   "LABRST105",
+   "LABRST106",
+   "LABRST107",
+   "LABRST108",
+   "LABRST109",
+   "LABRST11",
+   "LABRST113",
+   "LABRST114",
+   "LABRST115",
+   "LABRST118",
+   "LABRST12",
+   "LABRST121",
+   "LABRST122",
+   "LABRST123",
+   "LABRST125",
+   "LABRST126",
+   "LABRST127",
+   "LABRST128",
+   "LABRST13",
+   "LABRST132",
+   "LABRST134",
+   "LABRST136",
+   "LABRST2",
+   "LABRST20",
+   "LABRST21",
+   "LABRST24",
+   "LABRST3",
+   "LABRST4",
+   "LABRST5",
+   "LABRST7",
+   "LABRST8",
+   "LABRST9"
+  ],
+  "source": {
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=119",
+   "title": "Labor Studies T002898C A.A. 21* 18 18 36",
+   "h1": "Labor Studies T002898C A.A. 21* 18 18 36",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    119,
+    120
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 37,
+  "text_chars": 9872
+ },
+ {
+  "control_number": "02900",
+  "title": "Computer Information Systems",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CIS101",
+   "CIS112",
+   "CIS120",
+   "CIS126",
+   "CIS146",
+   "CIS148",
+   "CIS149",
+   "CIS165",
+   "CIS192",
+   "CIS210",
+   "CIS215",
+   "CS101",
+   "CS111",
+   "CS112",
+   "CS113",
+   "CS115",
+   "CS116",
+   "CS119",
+   "CS143",
+   "CS170",
+   "CS171",
+   "CS216"
+  ],
+  "source": {
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=117",
+   "title": "Requirements for the Associate in Science degree in Computer Information Systems may",
+   "h1": "Requirements for the Associate in Science degree in Computer Information Systems may",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    117
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 22,
+  "text_chars": 2182
+ },
+ {
+  "control_number": "02902",
+  "title": "Electronics Communications",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 5,
+  "text_chars": 0
+ },
+ {
+  "control_number": "02904",
+  "title": "Heating, Ventilating, Air Conditioning (HVAC) & Refrigeration",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 27,
+  "text_chars": 0
+ },
+ {
+  "control_number": "02905",
+  "title": "Heavy Truck, Transit, and Equipment Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "DIESLTK112",
+   "DIESLTK112A",
+   "DIESLTK112B",
+   "DIESLTK112C",
+   "DIESLTK122",
+   "DIESLTK122A",
+   "DIESLTK122B",
+   "DIESLTK122C",
+   "DIESLTK132",
+   "DIESLTK132A",
+   "DIESLTK132B",
+   "DIESLTK132C",
+   "DIESLTK142",
+   "DIESLTK142A",
+   "DIESLTK142B",
+   "DIESLTK142C"
+  ],
+  "source": {
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=79",
+   "title": "T002905C A.S. 21* 48 - 48",
+   "h1": "T002905C A.S. 21* 48 - 48",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    79,
+    80
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 16,
+  "text_chars": 6282
+ },
+ {
+  "control_number": "02906",
+  "title": "Automotive and Related Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "02907",
+  "title": "Automotive Collision Repair",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.545,
+  "codes_found": [
+   "AUTOCOR285",
+   "AUTOCOR385",
+   "AUTOCOR911",
+   "AUTOCOR921",
+   "AUTOCOR931",
+   "AUTOCOR941"
+  ],
+  "source": {
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=246",
+   "title": "Los Angeles Trade-Technical College 2026 - 2027 GENERAL CATALOG",
+   "h1": "Los Angeles Trade-Technical College 2026 - 2027 GENERAL CATALOG",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    246
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 11,
+  "text_chars": 5914
+ },
+ {
+  "control_number": "02908",
+  "title": "Motorcycle Repair Mechanics",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 0.8,
+  "codes_found": [
+   "MCYCMEK210",
+   "MCYCMEK212",
+   "MCYCMEK214",
+   "MCYCMEK216"
+  ],
+  "source": {
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=84",
+   "title": "Mechanics T002908D C 16 7 23",
+   "h1": "Mechanics T002908D C 16 7 23",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    84
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 5,
+  "text_chars": 1787
+ },
+ {
+  "control_number": "02909",
+  "title": "Carpentry",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.812,
+  "codes_found": [
+   "BLDGCTQ102",
+   "BLDGCTQ12",
+   "BLDGCTQ14",
+   "BLDGCTQ2",
+   "BLDGCTQ7",
+   "BLDGCTQ8",
+   "BLDGCTQ9",
+   "BLDGCTQ921",
+   "BLDGCTQ931",
+   "BLDGCTQ941",
+   "CRPNTRY105",
+   "CRPNTRY111",
+   "CRPNTRY114",
+   "CRPNTRY115",
+   "CRPNTRY117",
+   "CRPNTRY123",
+   "CRPNTRY124",
+   "CRPNTRY126",
+   "CRPNTRY130",
+   "CRPNTRY148",
+   "CRPNTRY149",
+   "CRPNTRY170",
+   "CRPNTRY243",
+   "CRPNTRY247",
+   "CRPNTRY941",
+   "ECONMT100"
+  ],
+  "source": {
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=132",
+   "title": "T002909C A.S. 21* 42 6 48",
+   "h1": "T002909C A.S. 21* 42 6 48",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    132,
+    133,
+    134,
+    135
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 32,
+  "text_chars": 15727
+ },
+ {
+  "control_number": "02910",
+  "title": "Electrical Construction and Maintenance:  Electrician",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ECONMT1",
+   "ECONMT100",
+   "ECONMT101",
+   "ECONMT105",
+   "ECONMT110",
+   "ECONMT115",
+   "ECONMT116",
+   "ECONMT117",
+   "ECONMT119",
+   "ECONMT120",
+   "ECONMT128",
+   "ECONMT129",
+   "ECONMT130",
+   "ECONMT136",
+   "ECONMT137",
+   "ECONMT138",
+   "ECONMT140",
+   "ECONMT142",
+   "ECONMT150",
+   "ECONMT159",
+   "ECONMT164",
+   "ECONMT167",
+   "ECONMT168",
+   "ECONMT169",
+   "ECONMT171",
+   "ECONMT172",
+   "ECONMT173",
+   "ECONMT174",
+   "ECONMT177",
+   "ECONMT178",
+   "ECONMT181",
+   "ECONMT182",
+   "ECONMT183",
+   "ECONMT184",
+   "ECONMT185",
+   "ECONMT185L",
+   "ECONMT186",
+   "ECONMT187",
+   "ECONMT190",
+   "ECONMT191",
+   "ECONMT192",
+   "ECONMT193",
+   "ECONMT193A",
+   "ECONMT195",
+   "ECONMT196",
+   "ECONMT197",
+   "ECONMT199",
+   "ECONMT205",
+   "ECONMT212",
+   "ECONMT215",
+   "ECONMT285",
+   "ECONMT285L",
+   "ECONMT385",
+   "ECONMT385L",
+   "ECONMT6",
+   "ECONMT7",
+   "ECONMT941"
+  ],
+  "source": {
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=137",
+   "title": "Los Angeles Trade-Technical College 2026 - 2027 GENERAL CATALOG",
+   "h1": "Los Angeles Trade-Technical College 2026 - 2027 GENERAL CATALOG",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    137,
+    138,
+    139,
+    140
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 57,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "02911",
+  "title": "Plumbing",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BLDGCTQ101",
+   "ECONMT100",
+   "PLUMBNG111",
+   "PLUMBNG112",
+   "PLUMBNG113",
+   "PLUMBNG121",
+   "PLUMBNG122",
+   "PLUMBNG123",
+   "PLUMBNG131",
+   "PLUMBNG132",
+   "PLUMBNG133",
+   "PLUMBNG141",
+   "PLUMBNG142",
+   "PLUMBNG143",
+   "PLUMBNG144",
+   "PLUMBNG26",
+   "PLUMBNG27",
+   "PLUMBNG28",
+   "PLUMBNG29",
+   "PLUMBNG31",
+   "PLUMBNG33",
+   "PLUMBNG941"
+  ],
+  "source": {
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=144",
+   "title": "Plumbing —(day only) T002911C A.S. 21* 45 3 48",
+   "h1": "Plumbing —(day only) T002911C A.S. 21* 45 3 48",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    144,
+    145,
+    146,
+    147
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 22,
+  "text_chars": 12378
+ },
+ {
+  "control_number": "02913",
+  "title": "Chemical Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOLOGY3",
+   "BIOLOGY5",
+   "BIOTECH10",
+   "CHEM51",
+   "CHEMT132",
+   "CHEMT133",
+   "CHEMT142",
+   "CHEMT143",
+   "PRPLTEK104",
+   "PRPLTEK214"
+  ],
+  "source": {
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=88",
+   "title": "Chemical Technology T002913C A.S. 21* 38 - 38",
+   "h1": "Chemical Technology T002913C A.S. 21* 38 - 38",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    88
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 10,
+  "text_chars": 3031
+ },
+ {
+  "control_number": "02914",
+  "title": "Machine Shop: CNC",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.826,
+  "codes_found": [
+   "MSCNC111",
+   "MSCNC112A",
+   "MSCNC112B",
+   "MSCNC114",
+   "MSCNC115",
+   "MSCNC121",
+   "MSCNC122B",
+   "MSCNC124",
+   "MSCNC125",
+   "MSCNC131A",
+   "MSCNC131B",
+   "MSCNC132A",
+   "MSCNC132B",
+   "MSCNC135",
+   "MSCNC141",
+   "MSCNC142A",
+   "MSCNC142B",
+   "MSCNC161A",
+   "MSCNC161B"
+  ],
+  "source": {
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=83",
+   "title": "Machine Shop CNC T002914C A.S. 21* 48 - 48",
+   "h1": "Machine Shop CNC T002914C A.S. 21* 48 - 48",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    83
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 23,
+  "text_chars": 3953
+ },
+ {
+  "control_number": "02916",
+  "title": "Welding, Gas and Electric",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 21,
+  "text_chars": 0
+ },
+ {
+  "control_number": "02917",
+  "title": "Water Systems Technology: Supply Water Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS32",
+   "BUS33",
+   "LABRST2",
+   "LABRST3",
+   "SWMTEK101",
+   "WASTE12",
+   "WASTE16",
+   "WASTE17",
+   "WASTE18",
+   "WATER1",
+   "WATER101",
+   "WATER102",
+   "WATER2",
+   "WATER4",
+   "WATER5"
+  ],
+  "source": {
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=154",
+   "title": "T002917C A.S. 21* 21 9 30",
+   "h1": "T002917C A.S. 21* 21 9 30",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    154,
+    155
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 15,
+  "text_chars": 5778
+ },
+ {
+  "control_number": "02921",
+  "title": "Sign Graphics",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "SGNGRPH101",
+   "SGNGRPH102",
+   "SGNGRPH103",
+   "SGNGRPH104",
+   "SGNGRPH201",
+   "SGNGRPH203",
+   "SGNGRPH205",
+   "SGNGRPH212"
+  ],
+  "source": {
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=186",
+   "title": "Sign Graphics T002921C AA 21* 40 4 44",
+   "h1": "Sign Graphics T002921C AA 21* 40 4 44",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    186,
+    187
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 8,
+  "text_chars": 6616
+ },
+ {
+  "control_number": "02922",
+  "title": "Nursing, Registered",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.842,
+  "codes_found": [
+   "ANATOMY1",
+   "ENGLC1000",
+   "MICRO20",
+   "PHYSIOL1",
+   "PSYCC1000",
+   "PSYCH41",
+   "REGNRSG169",
+   "REGNRSG170A",
+   "REGNRSG170B",
+   "REGNRSG172",
+   "REGNRSG173",
+   "REGNRSG175",
+   "REGNRSG176",
+   "REGNRSG178",
+   "REGNRSG179",
+   "REGNRSG180"
+  ],
+  "source": {
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=196",
+   "title": "Nursing, Registered T002922C A.S. 21* 38 - 38",
+   "h1": "Nursing, Registered T002922C A.S. 21* 38 - 38",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    196,
+    197,
+    198,
+    199
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 19,
+  "text_chars": 15337
+ },
+ {
+  "control_number": "02925",
+  "title": "Fashion Design",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "FASHDSN111",
+   "FASHDSN112",
+   "FASHDSN118",
+   "FASHDSN119A",
+   "FASHDSN119B",
+   "FASHDSN120",
+   "FASHDSN122",
+   "FASHDSN125A",
+   "FASHDSN125B",
+   "FASHDSN126",
+   "FASHDSN130",
+   "FASHDSN132",
+   "FASHDSN137",
+   "FASHDSN139",
+   "FASHDSN140",
+   "FASHDSN141",
+   "FASHDSN142",
+   "FASHDSN147",
+   "FASHDSN148",
+   "FASHDSN151",
+   "FASHDSN264",
+   "FASHDSN941",
+   "FASHMER1",
+   "FASHMER20",
+   "FASHMER25",
+   "FASHMER50"
+  ],
+  "source": {
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=179",
+   "title": "Requirements for the Associate in Arts degree in Fashion Design may be met by",
+   "h1": "Requirements for the Associate in Arts degree in Fashion Design may be met by",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    179,
+    180,
+    181,
+    182
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 26,
+  "text_chars": 14152
+ },
+ {
+  "control_number": "02926",
+  "title": "Tailoring",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "TAILRNG185"
+  ],
+  "source": {
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=339",
+   "title": "Los Angeles Trade-Technical College 2026 - 2027 GENERAL CATALOG",
+   "h1": "Los Angeles Trade-Technical College 2026 - 2027 GENERAL CATALOG",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    339
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 1,
+  "text_chars": 5538
+ },
+ {
+  "control_number": "02927",
+  "title": "English",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.75,
+  "codes_found": [
+   "ENGLC1001",
+   "ENGLISH102",
+   "ENGLISH127"
+  ],
+  "source": {
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=206",
+   "title": "The Associate in Arts Degree in English for Transfer (AA-T) is for students who",
+   "h1": "The Associate in Arts Degree in English for Transfer (AA-T) is for students who",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    206
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 4,
+  "text_chars": 3599
+ },
+ {
+  "control_number": "02938",
+  "title": "Culinary Arts",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.833,
+  "codes_found": [
+   "CLNART121",
+   "CLNART122",
+   "CLNART131",
+   "CLNART132",
+   "CLNART141"
+  ],
+  "source": {
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=168",
+   "title": "Culinary Arts* T002938C A.A. 21* 48 - 48",
+   "h1": "Culinary Arts* T002938C A.A. 21* 48 - 48",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    168
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 6,
+  "text_chars": 3712
+ },
+ {
+  "control_number": "02939",
+  "title": "Restaurant Management",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "RESTMGT100"
+  ],
+  "source": {
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=171",
+   "title": "ment* T002939C A.A. 21* 42 - 42",
+   "h1": "ment* T002939C A.A. 21* 42 - 42",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    171
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 1,
+  "text_chars": 2614
+ },
+ {
+  "control_number": "02940",
+  "title": "Cosmetology",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CSMTLGY101",
+   "CSMTLGY111",
+   "CSMTLGY121",
+   "CSMTLGY131",
+   "CSMTLGY141",
+   "CSMTLGY142",
+   "CSMTLGY210",
+   "CSMTLGY211",
+   "CSMTLGY214",
+   "CSMTLGY215",
+   "CSMTLGY217",
+   "CSMTLGY218",
+   "CSMTLGY221",
+   "CSMTLGY223"
+  ],
+  "source": {
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=164",
+   "title": "Cosmetology T002940C A.A. 21* 30 6 36",
+   "h1": "Cosmetology T002940C A.A. 21* 30 6 36",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    164
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 14,
+  "text_chars": 3904
+ },
+ {
+  "control_number": "08467",
+  "title": "Architectural Technology and Environmental Design",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.842,
+  "codes_found": [
+   "ARC130",
+   "ARC131",
+   "ARC151",
+   "ARC152",
+   "ARC160",
+   "ARC172",
+   "ARC173",
+   "ARC201",
+   "ARC202",
+   "ARC261",
+   "ARC271",
+   "ARC341",
+   "ARC385",
+   "DRAFT62",
+   "DRAFT63",
+   "INT200"
+  ],
+  "source": {
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=131",
+   "title": "and Environmental Design T008467C A.A. 21* 43 6 49",
+   "h1": "and Environmental Design T008467C A.A. 21* 43 6 49",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    131
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 19,
+  "text_chars": 4973
+ },
+ {
+  "control_number": "08469",
+  "title": "Small Business Entrepreneurship",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 0.611,
+  "codes_found": [
+   "BUS1",
+   "BUS32",
+   "BUS33",
+   "BUS38",
+   "BUS40",
+   "BUS5",
+   "BUS6",
+   "LAW18",
+   "SUPV1",
+   "SUPV11",
+   "SUPV3"
+  ],
+  "source": {
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=121",
+   "title": "Los Angeles Trade-Technical College 2026 - 2027 GENERAL CATALOG",
+   "h1": "Los Angeles Trade-Technical College 2026 - 2027 GENERAL CATALOG",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    121,
+    122,
+    123,
+    124
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 18,
+  "text_chars": 14098
+ },
+ {
+  "control_number": "08470",
+  "title": "Comp App & Office Tech: Information Processing Specialist",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "08471",
+  "title": "Comp App & Office Tech: Office Assistant-Clerical",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS1",
+   "BUS32",
+   "BUS38",
+   "CAOT1",
+   "CAOT101",
+   "CAOT2",
+   "CAOT30",
+   "CAOT31",
+   "CAOT33",
+   "CAOT34",
+   "CAOT37",
+   "CAOT82",
+   "CAOT84",
+   "CAOT85",
+   "CAOT86",
+   "CAOT88",
+   "CAOT98",
+   "SUPV1"
+  ],
+  "source": {
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=113",
+   "title": "Office Assistant-Clerical T008471C A.A. 21* 32 7 39",
+   "h1": "Office Assistant-Clerical T008471C A.A. 21* 32 7 39",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    113,
+    114,
+    115,
+    116
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 18,
+  "text_chars": 14995
+ },
+ {
+  "control_number": "08473",
+  "title": "Information Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.846,
+  "codes_found": [
+   "ELECTRN2",
+   "ETNTLGY252",
+   "ETNTLGY253",
+   "ETNTLGY254",
+   "MICROTK160",
+   "MICROTK162",
+   "MICROTK164",
+   "MICROTK165",
+   "MICROTK77",
+   "MICROTK78",
+   "MICROTK79"
+  ],
+  "source": {
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=82",
+   "title": "Technology T008473C A.S. 24* 35 - 35",
+   "h1": "Technology T008473C A.S. 24* 35 - 35",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    82
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 13,
+  "text_chars": 4108
+ },
+ {
+  "control_number": "08474",
+  "title": "Operation & Maintenance Engineering: Steam Plant",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 0.5,
+  "codes_found": [
+   "BLDGCTQ101",
+   "BLDGCTQ102",
+   "BLDGCTQ14",
+   "BLDGCTQ7",
+   "BLDGCTQ8",
+   "BLDGCTQ9",
+   "ECONMT119",
+   "ECONMT173",
+   "ECONMT174",
+   "OPMAINT228",
+   "OPMAINT229"
+  ],
+  "source": {
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=142",
+   "title": "Engineering: Steam Plant T008474D C 12 24 36",
+   "h1": "Engineering: Steam Plant T008474D C 12 24 36",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    142,
+    143,
+    144,
+    145
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 22,
+  "text_chars": 13791
+ },
+ {
+  "control_number": "08476",
+  "title": "Truck and Transit Preventive Maintenance",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "DIESLTK112",
+   "DIESLTK112A",
+   "DIESLTK112B",
+   "DIESLTK112C",
+   "DIESLTK122",
+   "DIESLTK122A",
+   "DIESLTK122B",
+   "DIESLTK122C"
+  ],
+  "source": {
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=79",
+   "title": "T008476D C 24 - 24",
+   "h1": "T008476D C 24 - 24",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    79,
+    80
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 8,
+  "text_chars": 6144
+ },
+ {
+  "control_number": "08478",
+  "title": "Hybrid & Electric Vehicle Technology",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "DIESLTK301",
+   "DIESLTK302",
+   "DIESLTK303"
+  ],
+  "source": {
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=81",
+   "title": "Vehicle Technology T008478D C 14 - 14",
+   "h1": "Vehicle Technology T008478D C 14 - 14",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    81
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 3,
+  "text_chars": 1612
+ },
+ {
+  "control_number": "08479",
+  "title": "Carpentry - Construction Technologies",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.967,
+  "codes_found": [
+   "BLDGCTQ102",
+   "BLDGCTQ12",
+   "BLDGCTQ14",
+   "BLDGCTQ2",
+   "BLDGCTQ7",
+   "BLDGCTQ8",
+   "BLDGCTQ9",
+   "BLDGCTQ921",
+   "BLDGCTQ931",
+   "BLDGCTQ941",
+   "CRPNTRY105",
+   "CRPNTRY111A",
+   "CRPNTRY111B",
+   "CRPNTRY111C",
+   "CRPNTRY114",
+   "CRPNTRY115",
+   "CRPNTRY117",
+   "CRPNTRY126",
+   "CRPNTRY130",
+   "CRPNTRY148",
+   "CRPNTRY149",
+   "CRPNTRY170",
+   "CRPNTRY240",
+   "CRPNTRY241",
+   "CRPNTRY243",
+   "CRPNTRY247",
+   "CRPNTRY251",
+   "CRPNTRY941",
+   "ECONMT100"
+  ],
+  "source": {
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=132",
+   "title": "T008479C A.A. 21* 40 8 48",
+   "h1": "T008479C A.A. 21* 40 8 48",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    132,
+    133,
+    134,
+    135
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 30,
+  "text_chars": 15607
+ },
+ {
+  "control_number": "08481",
+  "title": "Electrical Construction & Maintenance: Construction Technician",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ECONMT1",
+   "ECONMT100",
+   "ECONMT101",
+   "ECONMT110",
+   "ECONMT115",
+   "ECONMT116",
+   "ECONMT117",
+   "ECONMT119",
+   "ECONMT120",
+   "ECONMT128",
+   "ECONMT128A",
+   "ECONMT128B",
+   "ECONMT128C",
+   "ECONMT129",
+   "ECONMT130",
+   "ECONMT136",
+   "ECONMT137",
+   "ECONMT138",
+   "ECONMT140",
+   "ECONMT142",
+   "ECONMT150",
+   "ECONMT159",
+   "ECONMT164",
+   "ECONMT167",
+   "ECONMT168",
+   "ECONMT169",
+   "ECONMT171",
+   "ECONMT172",
+   "ECONMT173",
+   "ECONMT174",
+   "ECONMT177",
+   "ECONMT178",
+   "ECONMT181",
+   "ECONMT182",
+   "ECONMT183",
+   "ECONMT184",
+   "ECONMT185",
+   "ECONMT186",
+   "ECONMT187",
+   "ECONMT190",
+   "ECONMT191",
+   "ECONMT192",
+   "ECONMT193",
+   "ECONMT193A",
+   "ECONMT195",
+   "ECONMT196",
+   "ECONMT197",
+   "ECONMT199",
+   "ECONMT205",
+   "ECONMT212",
+   "ECONMT285",
+   "ECONMT285L",
+   "ECONMT385",
+   "ECONMT385L",
+   "ECONMT6",
+   "ECONMT941"
+  ],
+  "source": {
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=137",
+   "title": "Los Angeles Trade-Technical College 2026 - 2027 GENERAL CATALOG",
+   "h1": "Los Angeles Trade-Technical College 2026 - 2027 GENERAL CATALOG",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    137,
+    138,
+    139,
+    140
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 56,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "08482",
+  "title": "Electrical Lineman Apprenticeship",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ELECLNM701A",
+   "ELECLNM701B",
+   "ELECLNM702A",
+   "ELECLNM702B",
+   "ELECLNM703A"
+  ],
+  "source": {
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=159",
+   "title": "Los Angeles Trade-Technical College 2026 - 2027 GENERAL CATALOG",
+   "h1": "Los Angeles Trade-Technical College 2026 - 2027 GENERAL CATALOG",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    159
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 5,
+  "text_chars": 1903
+ },
+ {
+  "control_number": "08484",
+  "title": "Plumbing: Construction Technician",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.941,
+  "codes_found": [
+   "BLDGCTQ101",
+   "BLDGCTQ102",
+   "ECONMT181",
+   "LABRST115",
+   "MARKET21",
+   "OPMAINT228",
+   "OPMAINT229",
+   "PLUMBNG112",
+   "PLUMBNG246",
+   "PLUMBNG26",
+   "PLUMBNG27",
+   "PLUMBNG28",
+   "PLUMBNG29",
+   "PLUMBNG31",
+   "PLUMBNG33",
+   "PLUMBNG941"
+  ],
+  "source": {
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=144",
+   "title": "T008484C A.A. 21* 37 8 45",
+   "h1": "T008484C A.A. 21* 37 8 45",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    144,
+    145,
+    146
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 17,
+  "text_chars": 10226
+ },
+ {
+  "control_number": "08486",
+  "title": "Machine Shop: CNC-Adjunct",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "08488",
+  "title": "Street Maintenance Technology",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "STMAIN103",
+   "STMAIN200",
+   "STMAIN201",
+   "STMAIN202",
+   "STMAIN203",
+   "STMAIN204",
+   "STMAIN205",
+   "STMAIN206",
+   "STMAIN207",
+   "STMAIN208",
+   "STMAIN210",
+   "STMAIN242",
+   "STMAIN252"
+  ],
+  "source": {
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=153",
+   "title": "Technology T008488C AA 21* 30 6 36",
+   "h1": "Technology T008488C AA 21* 30 6 36",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    153
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 13,
+  "text_chars": 3863
+ },
+ {
+  "control_number": "08489",
+  "title": "Solid Waste Management Technology",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS32",
+   "BUS33",
+   "CHEM51",
+   "GEOLOGY1",
+   "LABRST2",
+   "LABRST3",
+   "MGMT2",
+   "MGMT33",
+   "MICRO20",
+   "SWMTEK101",
+   "SWMTEK102",
+   "SWMTEK107",
+   "SWMTEK108",
+   "WASTE12",
+   "WATER4"
+  ],
+  "source": {
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=152",
+   "title": "ment Technology T008489D C 12 12 24",
+   "h1": "ment Technology T008489D C 12 12 24",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    152
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 15,
+  "text_chars": 2373
+ },
+ {
+  "control_number": "08493",
+  "title": "Visual Communications",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.583,
+  "codes_found": [
+   "VISCOM124",
+   "VISCOM126",
+   "VISCOM127",
+   "VISCOM128",
+   "VISCOM129",
+   "VISCOM130",
+   "VISCOM131",
+   "VISCOM132",
+   "VISCOM133",
+   "VISCOM134",
+   "VISCOM135",
+   "VISCOM185",
+   "VISCOM285",
+   "VISCOM385"
+  ],
+  "source": {
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=342",
+   "title": "Los Angeles Trade-Technical College 2026 - 2027 GENERAL CATALOG",
+   "h1": "Los Angeles Trade-Technical College 2026 - 2027 GENERAL CATALOG",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    342,
+    343
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 24,
+  "text_chars": 10516
+ },
+ {
+  "control_number": "08498",
+  "title": "Nursing Science LVN-RN",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "08501",
+  "title": "Fashion Technology",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "08503",
+  "title": "Baking Professional",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.833,
+  "codes_found": [
+   "PROFBKG121",
+   "PROFBKG122",
+   "PROFBKG131",
+   "PROFBKG132",
+   "PROFBKG141"
+  ],
+  "source": {
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=167",
+   "title": "Baking Professional T008503C A.A. 21* 48 - 48",
+   "h1": "Baking Professional T008503C A.A. 21* 48 - 48",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    167
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 6,
+  "text_chars": 3344
+ },
+ {
+  "control_number": "08653",
+  "title": "Fashion Merchandising",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.87,
+  "codes_found": [
+   "COMMC1000",
+   "DIGLMD100",
+   "DIGLMD101",
+   "FASHDSN222",
+   "FASHDSN244",
+   "FASHDSN270",
+   "FASHMER1",
+   "FASHMER10",
+   "FASHMER15",
+   "FASHMER20",
+   "FASHMER21",
+   "FASHMER25",
+   "FASHMER30",
+   "FASHMER35",
+   "FASHMER40",
+   "FASHMER41",
+   "FASHMER45",
+   "FASHMER50",
+   "FASHMER941",
+   "VISCOM129"
+  ],
+  "source": {
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=182",
+   "title": "Fashion Merchandising T008653C A.S. 21* 33 5 38",
+   "h1": "Fashion Merchandising T008653C A.S. 21* 33 5 38",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    182,
+    183
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 23,
+  "text_chars": 8503
+ },
+ {
+  "control_number": "09266",
+  "title": "Community Planning & Economic Development",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "COMPLAN1",
+   "COMPLAN10",
+   "COMPLAN100",
+   "COMPLAN101",
+   "COMPLAN102",
+   "COMPLAN105",
+   "COMPLAN106",
+   "COMPLAN11",
+   "COMPLAN12",
+   "COMPLAN15",
+   "COMPLAN17",
+   "COMPLAN2",
+   "COMPLAN200",
+   "COMPLAN201",
+   "COMPLAN202",
+   "COMPLAN203",
+   "COMPLAN22",
+   "COMPLAN3",
+   "COMPLAN30",
+   "COMPLAN32",
+   "COMPLAN33",
+   "COMPLAN35",
+   "COMPLAN36",
+   "COMPLAN38",
+   "COMPLAN40",
+   "COMPLAN42",
+   "COMPLAN5",
+   "COMPLAN6",
+   "COMPLAN65",
+   "COMPLAN7",
+   "COMPLAN9"
+  ],
+  "source": {
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=111",
+   "title": "T009266C AA 21* 9 27 36",
+   "h1": "T009266C AA 21* 9 27 36",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    111,
+    112
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 31,
+  "text_chars": 8586
+ },
+ {
+  "control_number": "10403",
+  "title": "Child Development",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.957,
+  "codes_found": [
+   "CHDEV1",
+   "CHDEV10",
+   "CHDEV11",
+   "CHDEV2",
+   "CHDEV22",
+   "CHDEV23",
+   "CHDEV30",
+   "CHDEV31",
+   "CHDEV34",
+   "CHDEV36",
+   "CHDEV37",
+   "CHDEV38",
+   "CHDEV39",
+   "CHDEV42",
+   "CHDEV44",
+   "CHDEV45",
+   "CHDEV46",
+   "CHDEV47",
+   "CHDEV48",
+   "CHDEV55",
+   "CHDEV7",
+   "CHDEV8"
+  ],
+  "source": {
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=106",
+   "title": "Child Development T010403C A.A. 21* 38 9 47",
+   "h1": "Child Development T010403C A.A. 21* 38 9 47",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    106,
+    107,
+    108,
+    109
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 23,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "10404",
+  "title": "Specializing in Preschool Teaching",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHDEV1",
+   "CHDEV10",
+   "CHDEV11",
+   "CHDEV2",
+   "CHDEV22",
+   "CHDEV23",
+   "CHDEV34",
+   "CHDEV36",
+   "CHDEV42",
+   "CHDEV45",
+   "CHDEV48",
+   "CHDEV7",
+   "CHDEV8"
+  ],
+  "source": {
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=108",
+   "title": "Preschool Teaching T010404D C 39 39",
+   "h1": "Preschool Teaching T010404D C 39 39",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    108,
+    109,
+    110
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 13,
+  "text_chars": 9409
+ },
+ {
+  "control_number": "10405",
+  "title": "Specializing in Children with Special Needs",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHDEV1",
+   "CHDEV10",
+   "CHDEV11",
+   "CHDEV2",
+   "CHDEV30",
+   "CHDEV31",
+   "CHDEV34",
+   "CHDEV42",
+   "CHDEV44",
+   "CHDEV45",
+   "CHDEV48",
+   "CHDEV55"
+  ],
+  "source": {
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=110",
+   "title": "Los Angeles Trade-Technical College 2026 - 2027 GENERAL CATALOG",
+   "h1": "Los Angeles Trade-Technical College 2026 - 2027 GENERAL CATALOG",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    110
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 12,
+  "text_chars": 1962
+ },
+ {
+  "control_number": "10750",
+  "title": "Medical Administrative Assistant",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 0.889,
+  "codes_found": [
+   "CAOT2",
+   "CAOT20",
+   "CAOT33",
+   "CAOT37",
+   "CAOT44",
+   "CAOT45",
+   "CAOT82",
+   "CAOT84"
+  ],
+  "source": {
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=123",
+   "title": "T010750D C 29 - 29",
+   "h1": "T010750D C 29 - 29",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    123,
+    124,
+    125,
+    126
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 9,
+  "text_chars": 15017
+ },
+ {
+  "control_number": "10751",
+  "title": "Auto & Related Technology: Transmission Repair",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "AUTORTK100",
+   "AUTORTK113",
+   "AUTORTK114",
+   "AUTORTK121",
+   "AUTORTK122",
+   "AUTORTK123"
+  ],
+  "source": {
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=75",
+   "title": "T010751D C 18 - 18",
+   "h1": "T010751D C 18 - 18",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    75,
+    76
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 6,
+  "text_chars": 6079
+ },
+ {
+  "control_number": "10752",
+  "title": "Auto & Related Technology: Tune-Up",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "AUTORTK100",
+   "AUTORTK121",
+   "AUTORTK122",
+   "AUTORTK123",
+   "AUTORTK131",
+   "AUTORTK135"
+  ],
+  "source": {
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=75",
+   "title": "T010752D C 18 - 18",
+   "h1": "T010752D C 18 - 18",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    75,
+    76
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 6,
+  "text_chars": 6024
+ },
+ {
+  "control_number": "10754",
+  "title": "Supply Water Systems Technology",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS32",
+   "BUS33",
+   "LABRST2",
+   "LABRST3",
+   "SWMTEK101",
+   "WASTE12",
+   "WASTE16",
+   "WASTE17",
+   "WASTE18",
+   "WATER1",
+   "WATER101",
+   "WATER102",
+   "WATER2",
+   "WATER4",
+   "WATER5"
+  ],
+  "source": {
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=154",
+   "title": "Technology T010754D C 21 9 30",
+   "h1": "Technology T010754D C 21 9 30",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    154,
+    155
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 15,
+  "text_chars": 5730
+ },
+ {
+  "control_number": "10755",
+  "title": "Water Systems Technology--Wastewater Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS32",
+   "BUS33",
+   "LABRST2",
+   "LABRST3",
+   "SWMTEK101",
+   "WASTE12",
+   "WASTE13",
+   "WASTE14",
+   "WASTE16",
+   "WASTE17",
+   "WASTE18",
+   "WATER1",
+   "WATER101",
+   "WATER102",
+   "WATER4"
+  ],
+  "source": {
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=154",
+   "title": "T010755C A.S. 21* 21 9 30",
+   "h1": "T010755C A.S. 21* 21 9 30",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    154,
+    155
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 15,
+  "text_chars": 5856
+ },
+ {
+  "control_number": "12068",
+  "title": "Electronics Engineering Technician",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 17,
+  "text_chars": 0
+ },
+ {
+  "control_number": "18856",
+  "title": "Interdisciplinary Studies: Arts and Sciences",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.994,
+  "codes_found": [
+   "ADMJUS4",
+   "ADMJUS67",
+   "AFROAM19",
+   "AFROAM2",
+   "AFROAM4",
+   "AFROAM5",
+   "AFROAM60",
+   "ANATOMY1",
+   "ANTHRO101",
+   "ANTHRO102",
+   "ANTHRO103",
+   "ANTHRO104",
+   "ANTHRO151",
+   "ARC130",
+   "ARC131",
+   "ART101",
+   "ART102",
+   "ART103",
+   "ART201",
+   "ART300",
+   "ASL1",
+   "ASL2",
+   "ASL3",
+   "ASL4",
+   "ASTRON1",
+   "ASTRON5",
+   "BIOLOGY3",
+   "BIOLOGY5",
+   "BIOLOGY6",
+   "BIOLOGY7",
+   "BUS1",
+   "BUS5",
+   "CHDEV1",
+   "CHDEV10",
+   "CHDEV11",
+   "CHDEV2",
+   "CHDEV42",
+   "CHDEV46",
+   "CHEM101",
+   "CHEM102",
+   "CHEM211",
+   "CHEM212",
+   "CHEM221",
+   "CHEM51",
+   "CHEM70",
+   "CHICANO37",
+   "EARTH1",
+   "ECON1",
+   "ECON2",
+   "EDUC1",
+   "ELECTRN2",
+   "ENGGEN151",
+   "ENGGEN220",
+   "ENGGEN231",
+   "ENGLC1001",
+   "ENGLISH102",
+   "ENGLISH127",
+   "ENGLISH203",
+   "ENGLISH205",
+   "ENGLISH206",
+   "ENGLISH207",
+   "ENGLISH208",
+   "ENGLISH212",
+   "ENGLISH215",
+   "ENGLISH240",
+   "ENVSCI1",
+   "FASHDSN119A",
+   "FASHDSN119B",
+   "FRENCH1",
+   "FRENCH2",
+   "GEOG1",
+   "GEOG2",
+   "GEOLOGY1",
+   "GEOLOGY6",
+   "HEALTH101",
+   "HISTORY11",
+   "HISTORY12",
+   "HISTORY2",
+   "HISTORY41",
+   "HISTORY42",
+   "HISTORY43",
+   "HISTORY44",
+   "HISTORY52",
+   "HISTORY86",
+   "HISTORY87",
+   "HUMAN1",
+   "HUMAN2",
+   "HUMAN60",
+   "KINMAJ106",
+   "KINMAJ108",
+   "KINMAJ109",
+   "KINMAJ120",
+   "LABRST1",
+   "LABRST21",
+   "LABRST4",
+   "MATH215",
+   "MATH230",
+   "MATH235",
+   "MATH236",
+   "MATH241",
+   "MATH241S",
+   "MATH245",
+   "MATH260",
+   "MATH260S",
+   "MATH261",
+   "MATH262",
+   "MATH263",
+   "MATH265",
+   "MATH267",
+   "MATH270",
+   "MATH272",
+   "MATH275",
+   "MICRO20",
+   "MUSIC101",
+   "MUSIC116",
+   "MUSIC141",
+   "MUSIC650",
+   "PHILOS1",
+   "PHILOS20",
+   "PHYSICS101",
+   "PHYSICS102",
+   "PHYSICS103",
+   "PHYSICS11",
+   "PHYSICS12",
+   "PHYSICS14",
+   "PHYSICS6",
+   "PHYSICS7",
+   "PHYSIOL1",
+   "POLSC1000",
+   "POLSCI2",
+   "POLSCI7",
+   "PSYCC1000",
+   "PSYCH13",
+   "PSYCH14",
+   "PSYCH2",
+   "PSYCH32",
+   "PSYCH41",
+   "PSYCH69",
+   "PSYCH74",
+   "SOC1",
+   "SOC11",
+   "SOC2",
+   "SOC21",
+   "SOC28",
+   "SOC31",
+   "SOC4",
+   "SOC50",
+   "SPANISH1",
+   "SPANISH2",
+   "SPANISH35",
+   "SPANISH36",
+   "STATC1000",
+   "STATC1000E",
+   "THEATER100",
+   "VISCOM106",
+   "VISCOM108",
+   "VISCOM120",
+   "VISCOM130"
+  ],
+  "source": {
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=209",
+   "title": "Los Angeles Trade-Technical College 2026 - 2027 GENERAL CATALOG",
+   "h1": "Los Angeles Trade-Technical College 2026 - 2027 GENERAL CATALOG",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    209,
+    210,
+    211,
+    212
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 159,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "18857",
+  "title": "Liberal Arts & Sciences:  Emphasis in Mathematics, Physical and Natural Sciences",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANATOMY1",
+   "ANTHRO101",
+   "ASTRON1",
+   "ASTRON5",
+   "BIOLOGY3",
+   "BIOLOGY5",
+   "BIOLOGY6",
+   "BIOLOGY7",
+   "CHEM101",
+   "CHEM102",
+   "CHEM211",
+   "CHEM212",
+   "CHEM51",
+   "CHEM70",
+   "ELECTRN2",
+   "ENVSCI1",
+   "GEOG1",
+   "GEOLOGY1",
+   "GEOLOGY6",
+   "MATH215",
+   "MATH230",
+   "MATH235",
+   "MATH236",
+   "MATH241",
+   "MATH241S",
+   "MATH245",
+   "MATH260",
+   "MATH260S",
+   "MATH261",
+   "MATH262",
+   "MATH263",
+   "MATH270",
+   "MATH272",
+   "MATH275",
+   "MICRO20",
+   "PHYSICS101",
+   "PHYSICS102",
+   "PHYSICS103",
+   "PHYSICS11",
+   "PHYSICS12",
+   "PHYSICS14",
+   "PHYSICS6",
+   "PHYSICS7",
+   "PHYSIOL1",
+   "PSYCH2",
+   "STATC1000",
+   "STATC1000E"
+  ],
+  "source": {
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=95",
+   "title": "T018857C A.A. 21* 18 - 18",
+   "h1": "T018857C A.A. 21* 18 - 18",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    95,
+    96,
+    97
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 47,
+  "text_chars": 11158
+ },
+ {
+  "control_number": "19108",
+  "title": "Process Technology",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOLOGY3",
+   "BIOLOGY5",
+   "BIOTECH10",
+   "CHEM51",
+   "PHYSICS11",
+   "PRPLTEK102",
+   "PRPLTEK103",
+   "PRPLTEK104",
+   "PRPLTEK200",
+   "PRPLTEK202",
+   "PRPLTEK204",
+   "PRPLTEK214"
+  ],
+  "source": {
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=97",
+   "title": "Process Technology T019108D C 38 - 38",
+   "h1": "Process Technology T019108D C 38 - 38",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    97
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 12,
+  "text_chars": 3671
+ },
+ {
+  "control_number": "19109",
+  "title": "Process Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOLOGY3",
+   "BIOLOGY5",
+   "BIOTECH10",
+   "CHEM51",
+   "PHYSICS11",
+   "PRPLTEK102",
+   "PRPLTEK103",
+   "PRPLTEK104",
+   "PRPLTEK200",
+   "PRPLTEK202",
+   "PRPLTEK204",
+   "PRPLTEK214"
+  ],
+  "source": {
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=97",
+   "title": "Process Technology T019109C A.S. 21* 38 - 38",
+   "h1": "Process Technology T019109C A.S. 21* 38 - 38",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    97
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 12,
+  "text_chars": 3716
+ },
+ {
+  "control_number": "21825",
+  "title": "Architectural Technology and Environmental Design",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ARC130",
+   "ARC131",
+   "ARC151",
+   "ARC152",
+   "ARC160",
+   "ARC172",
+   "ARC173",
+   "ARC201",
+   "ARC202",
+   "ARC261",
+   "ARC271",
+   "ARC341",
+   "ARC385",
+   "DRAFT10",
+   "DRAFT62",
+   "DRAFT63",
+   "ENV101",
+   "INT200"
+  ],
+  "source": {
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=131",
+   "title": "and Environmental Design T021825D C 43 6 49",
+   "h1": "and Environmental Design T021825D C 43 6 49",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    131
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 18,
+  "text_chars": 4896
+ },
+ {
+  "control_number": "21826",
+  "title": "Accounting Clerk",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "21829",
+  "title": "Management/Supervision",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "21831",
+  "title": "Marketing and Public Relations",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "21832",
+  "title": "Real Estate",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "21833",
+  "title": "Comp App & Office Tech: Information Processing Specialist",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "21834",
+  "title": "Comp App & Office Tech: Office Assistant-Clerical",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS1",
+   "BUS32",
+   "BUS38",
+   "CAOT1",
+   "CAOT101",
+   "CAOT2",
+   "CAOT30",
+   "CAOT31",
+   "CAOT33",
+   "CAOT34",
+   "CAOT37",
+   "CAOT82",
+   "CAOT84",
+   "CAOT85",
+   "CAOT86",
+   "CAOT88",
+   "CAOT98",
+   "SUPV1"
+  ],
+  "source": {
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=113",
+   "title": "Office Assistant-Clerical T021834D C 35 35",
+   "h1": "Office Assistant-Clerical T021834D C 35 35",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    113,
+    114,
+    115,
+    116
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 18,
+  "text_chars": 14913
+ },
+ {
+  "control_number": "21835",
+  "title": "Computer App & Office Tech: Administrative Asst",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "21836",
+  "title": "Labor Studies",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "LABRST1",
+   "LABRST10",
+   "LABRST101",
+   "LABRST102",
+   "LABRST104",
+   "LABRST105",
+   "LABRST106",
+   "LABRST107",
+   "LABRST108",
+   "LABRST109",
+   "LABRST11",
+   "LABRST113",
+   "LABRST114",
+   "LABRST115",
+   "LABRST118",
+   "LABRST12",
+   "LABRST121",
+   "LABRST122",
+   "LABRST123",
+   "LABRST125",
+   "LABRST126",
+   "LABRST127",
+   "LABRST128",
+   "LABRST13",
+   "LABRST132",
+   "LABRST134",
+   "LABRST136",
+   "LABRST2",
+   "LABRST20",
+   "LABRST21",
+   "LABRST24",
+   "LABRST3",
+   "LABRST4",
+   "LABRST5",
+   "LABRST7",
+   "LABRST8",
+   "LABRST9"
+  ],
+  "source": {
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=119",
+   "title": "Labor Studies T021836D C 15 9 24",
+   "h1": "Labor Studies T021836D C 15 9 24",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    119,
+    120
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 37,
+  "text_chars": 9831
+ },
+ {
+  "control_number": "21839",
+  "title": "Computer Information Systems",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CIS101",
+   "CIS112",
+   "CIS120",
+   "CIS126",
+   "CIS146",
+   "CIS148",
+   "CIS149",
+   "CIS165",
+   "CIS192",
+   "CIS210",
+   "CIS215",
+   "CS101",
+   "CS111",
+   "CS112",
+   "CS113",
+   "CS115",
+   "CS116",
+   "CS119",
+   "CS143",
+   "CS170",
+   "CS171",
+   "CS216"
+  ],
+  "source": {
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=117",
+   "title": "Los Angeles Trade-Technical College 2026 - 2027 GENERAL CATALOG",
+   "h1": "Los Angeles Trade-Technical College 2026 - 2027 GENERAL CATALOG",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    117
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 22,
+  "text_chars": 2427
+ },
+ {
+  "control_number": "21840",
+  "title": "Information Technology",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 0.846,
+  "codes_found": [
+   "ELECTRN2",
+   "ETNTLGY252",
+   "ETNTLGY253",
+   "ETNTLGY254",
+   "MICROTK160",
+   "MICROTK162",
+   "MICROTK164",
+   "MICROTK165",
+   "MICROTK77",
+   "MICROTK78",
+   "MICROTK79"
+  ],
+  "source": {
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=82",
+   "title": "Technology T021840D C 35 - 35",
+   "h1": "Technology T021840D C 35 - 35",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    82
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 13,
+  "text_chars": 4058
+ },
+ {
+  "control_number": "21841",
+  "title": "Electronics Communications",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "21842",
+  "title": "Heating, Ventilating, Air Conditioning (HVAC) & Refrigeration",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 27,
+  "text_chars": 0
+ },
+ {
+  "control_number": "21844",
+  "title": "Heavy Truck, Transit, and Equipment Technology",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "DIESLTK112",
+   "DIESLTK112A",
+   "DIESLTK112B",
+   "DIESLTK112C",
+   "DIESLTK122",
+   "DIESLTK122A",
+   "DIESLTK122B",
+   "DIESLTK122C",
+   "DIESLTK132",
+   "DIESLTK132A",
+   "DIESLTK132B",
+   "DIESLTK132C",
+   "DIESLTK142",
+   "DIESLTK142A",
+   "DIESLTK142B",
+   "DIESLTK142C"
+  ],
+  "source": {
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=79",
+   "title": "T021844D C 48 - 48",
+   "h1": "T021844D C 48 - 48",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    79,
+    80
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 16,
+  "text_chars": 6208
+ },
+ {
+  "control_number": "21845",
+  "title": "Automotive and Related Technology",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "AUTORTK100",
+   "AUTORTK113",
+   "AUTORTK114",
+   "AUTORTK121",
+   "AUTORTK122",
+   "AUTORTK123",
+   "AUTORTK130",
+   "AUTORTK131",
+   "AUTORTK135",
+   "AUTORTK140",
+   "AUTORTK141",
+   "AUTORTK142"
+  ],
+  "source": {
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=75",
+   "title": "T021845D C 36 - 36",
+   "h1": "T021845D C 36 - 36",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    75,
+    76
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 12,
+  "text_chars": 6146
+ },
+ {
+  "control_number": "21846",
+  "title": "Automotive Collision Repair",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "21848",
+  "title": "Carpentry",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 0.793,
+  "codes_found": [
+   "BLDGCTQ102",
+   "BLDGCTQ12",
+   "BLDGCTQ14",
+   "BLDGCTQ2",
+   "BLDGCTQ7",
+   "BLDGCTQ8",
+   "BLDGCTQ9",
+   "CRPNTRY105",
+   "CRPNTRY111",
+   "CRPNTRY114",
+   "CRPNTRY115",
+   "CRPNTRY117",
+   "CRPNTRY123",
+   "CRPNTRY124",
+   "CRPNTRY126",
+   "CRPNTRY130",
+   "CRPNTRY148",
+   "CRPNTRY149",
+   "CRPNTRY170",
+   "CRPNTRY243",
+   "CRPNTRY247",
+   "CRPNTRY941",
+   "ECONMT100"
+  ],
+  "source": {
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=132",
+   "title": "T021848D C 42 6 48",
+   "h1": "T021848D C 42 6 48",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    132,
+    133,
+    134,
+    135
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 29,
+  "text_chars": 15679
+ },
+ {
+  "control_number": "21849",
+  "title": "Carpentry - Construction Technologies",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 0.967,
+  "codes_found": [
+   "BLDGCTQ102",
+   "BLDGCTQ12",
+   "BLDGCTQ14",
+   "BLDGCTQ2",
+   "BLDGCTQ7",
+   "BLDGCTQ8",
+   "BLDGCTQ9",
+   "BLDGCTQ921",
+   "BLDGCTQ931",
+   "BLDGCTQ941",
+   "CRPNTRY105",
+   "CRPNTRY111A",
+   "CRPNTRY111B",
+   "CRPNTRY111C",
+   "CRPNTRY114",
+   "CRPNTRY115",
+   "CRPNTRY117",
+   "CRPNTRY126",
+   "CRPNTRY130",
+   "CRPNTRY148",
+   "CRPNTRY149",
+   "CRPNTRY170",
+   "CRPNTRY240",
+   "CRPNTRY241",
+   "CRPNTRY243",
+   "CRPNTRY247",
+   "CRPNTRY251",
+   "CRPNTRY941",
+   "ECONMT100"
+  ],
+  "source": {
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=132",
+   "title": "T021849D C 40 8 48",
+   "h1": "T021849D C 40 8 48",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    132,
+    133,
+    134,
+    135
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 30,
+  "text_chars": 15527
+ },
+ {
+  "control_number": "21852",
+  "title": "Electrical Construction & Maintenance: Construction Technician",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BLDGCTQ102",
+   "ECONMT1",
+   "ECONMT100",
+   "ECONMT101",
+   "ECONMT105",
+   "ECONMT110",
+   "ECONMT115",
+   "ECONMT116",
+   "ECONMT117",
+   "ECONMT119",
+   "ECONMT120",
+   "ECONMT128",
+   "ECONMT128A",
+   "ECONMT128B",
+   "ECONMT128C",
+   "ECONMT129",
+   "ECONMT130",
+   "ECONMT136",
+   "ECONMT137",
+   "ECONMT138",
+   "ECONMT140",
+   "ECONMT142",
+   "ECONMT150",
+   "ECONMT159",
+   "ECONMT164",
+   "ECONMT167",
+   "ECONMT168",
+   "ECONMT169",
+   "ECONMT171",
+   "ECONMT172",
+   "ECONMT173",
+   "ECONMT174",
+   "ECONMT177",
+   "ECONMT178",
+   "ECONMT181",
+   "ECONMT182",
+   "ECONMT183",
+   "ECONMT184",
+   "ECONMT185",
+   "ECONMT185L",
+   "ECONMT186",
+   "ECONMT187",
+   "ECONMT190",
+   "ECONMT191",
+   "ECONMT192",
+   "ECONMT193",
+   "ECONMT193A",
+   "ECONMT195",
+   "ECONMT196",
+   "ECONMT197",
+   "ECONMT199",
+   "ECONMT205",
+   "ECONMT212",
+   "ECONMT215",
+   "ECONMT285",
+   "ECONMT285L",
+   "ECONMT385",
+   "ECONMT385L",
+   "ECONMT6",
+   "ECONMT7",
+   "ECONMT941"
+  ],
+  "source": {
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=137",
+   "title": "Los Angeles Trade-Technical College 2026 - 2027 GENERAL CATALOG",
+   "h1": "Los Angeles Trade-Technical College 2026 - 2027 GENERAL CATALOG",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    137,
+    138,
+    139,
+    140
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 61,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "21853",
+  "title": "Electrical Construction and Maintenance:  Electrician",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ECONMT1",
+   "ECONMT100",
+   "ECONMT101",
+   "ECONMT105",
+   "ECONMT110",
+   "ECONMT115",
+   "ECONMT116",
+   "ECONMT117",
+   "ECONMT119",
+   "ECONMT120",
+   "ECONMT128",
+   "ECONMT129",
+   "ECONMT130",
+   "ECONMT136",
+   "ECONMT137",
+   "ECONMT138",
+   "ECONMT140",
+   "ECONMT142",
+   "ECONMT150",
+   "ECONMT159",
+   "ECONMT164",
+   "ECONMT167",
+   "ECONMT168",
+   "ECONMT169",
+   "ECONMT171",
+   "ECONMT172",
+   "ECONMT173",
+   "ECONMT174",
+   "ECONMT177",
+   "ECONMT178",
+   "ECONMT181",
+   "ECONMT182",
+   "ECONMT183",
+   "ECONMT184",
+   "ECONMT185",
+   "ECONMT185L",
+   "ECONMT186",
+   "ECONMT187",
+   "ECONMT190",
+   "ECONMT191",
+   "ECONMT192",
+   "ECONMT193",
+   "ECONMT193A",
+   "ECONMT195",
+   "ECONMT196",
+   "ECONMT197",
+   "ECONMT199",
+   "ECONMT205",
+   "ECONMT212",
+   "ECONMT215",
+   "ECONMT285",
+   "ECONMT285L",
+   "ECONMT385",
+   "ECONMT385L",
+   "ECONMT6",
+   "ECONMT7",
+   "ECONMT941"
+  ],
+  "source": {
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=137",
+   "title": "Los Angeles Trade-Technical College 2026 - 2027 GENERAL CATALOG",
+   "h1": "Los Angeles Trade-Technical College 2026 - 2027 GENERAL CATALOG",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    137,
+    138,
+    139,
+    140
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 57,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "21855",
+  "title": "Plumbing",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BLDGCTQ101",
+   "ECONMT100",
+   "PLUMBNG111",
+   "PLUMBNG112",
+   "PLUMBNG113",
+   "PLUMBNG121",
+   "PLUMBNG122",
+   "PLUMBNG123",
+   "PLUMBNG131",
+   "PLUMBNG132",
+   "PLUMBNG133",
+   "PLUMBNG141",
+   "PLUMBNG142",
+   "PLUMBNG143",
+   "PLUMBNG144",
+   "PLUMBNG26",
+   "PLUMBNG27",
+   "PLUMBNG28",
+   "PLUMBNG29",
+   "PLUMBNG31",
+   "PLUMBNG33",
+   "PLUMBNG941"
+  ],
+  "source": {
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=144",
+   "title": "Plumbing —(day only) T021855D C 45 3 48",
+   "h1": "Plumbing —(day only) T021855D C 45 3 48",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    144,
+    145,
+    146,
+    147
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 22,
+  "text_chars": 12331
+ },
+ {
+  "control_number": "21856",
+  "title": "Plumbing: Construction Technician",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 0.941,
+  "codes_found": [
+   "BLDGCTQ101",
+   "BLDGCTQ102",
+   "ECONMT181",
+   "LABRST115",
+   "MARKET21",
+   "OPMAINT228",
+   "OPMAINT229",
+   "PLUMBNG112",
+   "PLUMBNG246",
+   "PLUMBNG26",
+   "PLUMBNG27",
+   "PLUMBNG28",
+   "PLUMBNG29",
+   "PLUMBNG31",
+   "PLUMBNG33",
+   "PLUMBNG941"
+  ],
+  "source": {
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=145",
+   "title": "Los Angeles Trade-Technical College 2026 - 2027 GENERAL CATALOG",
+   "h1": "Los Angeles Trade-Technical College 2026 - 2027 GENERAL CATALOG",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    145,
+    146
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 17,
+  "text_chars": 6211
+ },
+ {
+  "control_number": "21859",
+  "title": "Chemical Technology",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOLOGY3",
+   "BIOLOGY5",
+   "BIOTECH10",
+   "CHEM51",
+   "CHEMT132",
+   "CHEMT133",
+   "CHEMT142",
+   "CHEMT143",
+   "PRPLTEK104",
+   "PRPLTEK214"
+  ],
+  "source": {
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=88",
+   "title": "Chemical Technology T021859D C 38 - 38",
+   "h1": "Chemical Technology T021859D C 38 - 38",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    88
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 10,
+  "text_chars": 2985
+ },
+ {
+  "control_number": "21860",
+  "title": "Machine Shop: CNC",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "21861",
+  "title": "Welding, Gas and Electric",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 21,
+  "text_chars": 0
+ },
+ {
+  "control_number": "21862",
+  "title": "Sign Graphics",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "SGNGRPH101",
+   "SGNGRPH102",
+   "SGNGRPH103",
+   "SGNGRPH104",
+   "SGNGRPH201",
+   "SGNGRPH203",
+   "SGNGRPH205",
+   "SGNGRPH212"
+  ],
+  "source": {
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=186",
+   "title": "Sign Graphics T021862D C 40 4 44",
+   "h1": "Sign Graphics T021862D C 40 4 44",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    186,
+    187
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 8,
+  "text_chars": 6578
+ },
+ {
+  "control_number": "21863",
+  "title": "Visual Communications",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "DIGLMD101"
+  ],
+  "source": {
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=183",
+   "title": "Los Angeles Trade-Technical College 2026 - 2027 GENERAL CATALOG",
+   "h1": "Los Angeles Trade-Technical College 2026 - 2027 GENERAL CATALOG",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    183
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 1,
+  "text_chars": 4107
+ },
+ {
+  "control_number": "21865",
+  "title": "Fashion Design",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "FASHDSN111",
+   "FASHDSN112",
+   "FASHDSN118",
+   "FASHDSN119A",
+   "FASHDSN119B",
+   "FASHDSN120",
+   "FASHDSN122",
+   "FASHDSN125A",
+   "FASHDSN125B",
+   "FASHDSN126",
+   "FASHDSN130",
+   "FASHDSN132",
+   "FASHDSN137",
+   "FASHDSN139",
+   "FASHDSN140",
+   "FASHDSN141",
+   "FASHDSN142",
+   "FASHDSN147",
+   "FASHDSN148",
+   "FASHDSN151",
+   "FASHDSN264",
+   "FASHDSN941",
+   "FASHMER1",
+   "FASHMER20",
+   "FASHMER25",
+   "FASHMER50"
+  ],
+  "source": {
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=179",
+   "title": "Los Angeles Trade-Technical College 2026 - 2027 GENERAL CATALOG",
+   "h1": "Los Angeles Trade-Technical College 2026 - 2027 GENERAL CATALOG",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    179,
+    180,
+    181,
+    182
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 26,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "21866",
+  "title": "Fashion Technology",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "21867",
+  "title": "Fashion Merchandising",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 0.826,
+  "codes_found": [
+   "COMMC1000",
+   "DIGLMD100",
+   "DIGLMD101",
+   "FASHDSN222",
+   "FASHDSN244",
+   "FASHDSN270",
+   "FASHMER1",
+   "FASHMER10",
+   "FASHMER15",
+   "FASHMER20",
+   "FASHMER21",
+   "FASHMER30",
+   "FASHMER35",
+   "FASHMER40",
+   "FASHMER41",
+   "FASHMER45",
+   "FASHMER50",
+   "FASHMER941",
+   "VISCOM129"
+  ],
+  "source": {
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=183",
+   "title": "Los Angeles Trade-Technical College 2026 - 2027 GENERAL CATALOG",
+   "h1": "Los Angeles Trade-Technical College 2026 - 2027 GENERAL CATALOG",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    183
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 23,
+  "text_chars": 4107
+ },
+ {
+  "control_number": "21868",
+  "title": "Baking Professional",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "21869",
+  "title": "Culinary Arts",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "21870",
+  "title": "Street Maintenance Technology",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "STMAIN103",
+   "STMAIN200",
+   "STMAIN201",
+   "STMAIN202",
+   "STMAIN203",
+   "STMAIN204",
+   "STMAIN205",
+   "STMAIN206",
+   "STMAIN207",
+   "STMAIN208",
+   "STMAIN210",
+   "STMAIN242",
+   "STMAIN252"
+  ],
+  "source": {
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=153",
+   "title": "Technology T021870D C 30 6 36",
+   "h1": "Technology T021870D C 30 6 36",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    153
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 13,
+  "text_chars": 3808
+ },
+ {
+  "control_number": "21871",
+  "title": "Community Planning & Economic Development",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "21873",
+  "title": "Cosmetology",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CSMTLGY101",
+   "CSMTLGY111",
+   "CSMTLGY121",
+   "CSMTLGY131",
+   "CSMTLGY141",
+   "CSMTLGY142",
+   "CSMTLGY210",
+   "CSMTLGY211",
+   "CSMTLGY214",
+   "CSMTLGY215",
+   "CSMTLGY217",
+   "CSMTLGY218",
+   "CSMTLGY221",
+   "CSMTLGY223"
+  ],
+  "source": {
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=164",
+   "title": "Cosmetology T021873D C 30 6 36",
+   "h1": "Cosmetology T021873D C 30 6 36",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    164
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 14,
+  "text_chars": 3866
+ },
+ {
+  "control_number": "24048",
+  "title": "Recreation and Community Services Assistant",
+  "award": null,
+  "shape": "other",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED311CE",
+   "VOCED312CE"
+  ],
+  "source": {
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=233",
+   "title": "Recreation and Community Services Assistant T024048E",
+   "h1": "Recreation and Community Services Assistant T024048E",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    233
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 2,
+  "text_chars": 754
+ },
+ {
+  "control_number": "24132",
+  "title": "Utilities and Construction Preparation",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BSICSKL74CE",
+   "VOCED252CE",
+   "VOCED259CE",
+   "VOCED316CE",
+   "VOCED317CE",
+   "VOCED450CE"
+  ],
+  "source": {
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=235",
+   "title": "Utilities and Construction Preparation T024132E",
+   "h1": "Utilities and Construction Preparation T024132E",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    235
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 6,
+  "text_chars": 1643
+ },
+ {
+  "control_number": "24136",
+  "title": "Bank Teller",
+  "award": null,
+  "shape": "other",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED191CE",
+   "VOCED193CE",
+   "VOCED252CE",
+   "VOCED311CE",
+   "VOCED312CE"
+  ],
+  "source": {
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=352",
+   "title": "Los Angeles Trade-Technical College 2026 - 2027 GENERAL CATALOG",
+   "h1": "Los Angeles Trade-Technical College 2026 - 2027 GENERAL CATALOG",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    352,
+    353
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 5,
+  "text_chars": 13250
+ },
+ {
+  "control_number": "24169",
+  "title": "Workplace Readiness Certificate of Completion",
+  "award": null,
+  "shape": "other",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 4,
+  "text_chars": 0
+ },
+ {
+  "control_number": "24459",
+  "title": "English as a Second Language (ESL): Beginning",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESLNC50CE",
+   "ESLNC6CE",
+   "ESLNC7CE"
+  ],
+  "source": {
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=350",
+   "title": "Los Angeles Trade-Technical College 2026 - 2027 GENERAL CATALOG",
+   "h1": "Los Angeles Trade-Technical College 2026 - 2027 GENERAL CATALOG",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    350
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 3,
+  "text_chars": 6067
+ },
+ {
+  "control_number": "30001",
+  "title": "Correctional Science",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "30002",
+  "title": "Correctional Science",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 8,
+  "text_chars": 0
+ },
+ {
+  "control_number": "30210",
+  "title": "Weatherization and Energy Auditor",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BLDGCTQ12",
+   "BLDGCTQ14",
+   "BLDGCTQ7",
+   "BLDGCTQ8",
+   "BLDGCTQ9",
+   "ECONMT100"
+  ],
+  "source": {
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=138",
+   "title": "Energy Auditor T030210D C 14 - 14",
+   "h1": "Energy Auditor T030210D C 14 - 14",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    138,
+    139
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 6,
+  "text_chars": 8281
+ },
+ {
+  "control_number": "30904",
+  "title": "Utility Industry Fundamentals",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BLDGCTQ10",
+   "ECONMT100",
+   "ECONMT115",
+   "ECONMT116",
+   "ECONMT119",
+   "ECONMT129",
+   "ECONMT130",
+   "ECONMT173"
+  ],
+  "source": {
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=146",
+   "title": "Fundamentals T030904D C 19-21 - 19-21",
+   "h1": "Fundamentals T030904D C 19-21 - 19-21",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    146,
+    147,
+    148,
+    149
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 8,
+  "text_chars": 11253
+ },
+ {
+  "control_number": "30905",
+  "title": "Powerline Worker: Pole Climbing",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ECONMT119",
+   "ECONMT173",
+   "ELECL601"
+  ],
+  "source": {
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=146",
+   "title": "Pole Climbing T030905D C 18-20 - 18-20",
+   "h1": "Pole Climbing T030905D C 18-20 - 18-20",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    146,
+    147,
+    148,
+    149
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 3,
+  "text_chars": 11310
+ },
+ {
+  "control_number": "30906",
+  "title": "Energy Systems Technology Fundamentals",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BLDGCTQ10",
+   "BLDGCTQ102",
+   "ECONMT100",
+   "ECONMT115",
+   "ECONMT116",
+   "ECONMT119",
+   "ECONMT129",
+   "ECONMT173"
+  ],
+  "source": {
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=138",
+   "title": "Technology Fundamentals T030906D C 16 - 16",
+   "h1": "Technology Fundamentals T030906D C 16 - 16",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    138,
+    139,
+    140,
+    141
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 8,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "30963",
+  "title": "Powerline Mechanic",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.812,
+  "codes_found": [
+   "BLDGCTQ10",
+   "ECONMT100",
+   "ECONMT105",
+   "ECONMT110",
+   "ECONMT115",
+   "ECONMT116",
+   "ECONMT119",
+   "ECONMT129",
+   "ECONMT130",
+   "ECONMT173",
+   "ECONMT205",
+   "ECONMT215",
+   "ELECL601"
+  ],
+  "source": {
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=146",
+   "title": "Powerline Worker T030963C A.S. 21* 34-36 6-7 40-43",
+   "h1": "Powerline Worker T030963C A.S. 21* 34-36 6-7 40-43",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    146,
+    147,
+    148,
+    149
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 16,
+  "text_chars": 11380
+ },
+ {
+  "control_number": "31018",
+  "title": "Early Childhood Education",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHDEV1",
+   "CHDEV10",
+   "CHDEV11",
+   "CHDEV2",
+   "CHDEV22",
+   "CHDEV34",
+   "CHDEV7"
+  ],
+  "source": {
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=106",
+   "title": "T031018H AS-T Cal-GETC 25 - 25",
+   "h1": "T031018H AS-T Cal-GETC 25 - 25",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    106,
+    107,
+    108,
+    109
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 7,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "31059",
+  "title": "Specializing in Children with Special Needs",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHDEV1",
+   "CHDEV10",
+   "CHDEV11",
+   "CHDEV2",
+   "CHDEV30",
+   "CHDEV31",
+   "CHDEV34",
+   "CHDEV42",
+   "CHDEV44",
+   "CHDEV45",
+   "CHDEV48",
+   "CHDEV55"
+  ],
+  "source": {
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=108",
+   "title": "T031059D C 36 36",
+   "h1": "T031059D C 36 36",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    108,
+    109,
+    110
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 12,
+  "text_chars": 9175
+ },
+ {
+  "control_number": "31060",
+  "title": "Specializing in Associate Preschool Teaching",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHDEV1",
+   "CHDEV11",
+   "CHDEV2",
+   "CHDEV34",
+   "CHDEV7"
+  ],
+  "source": {
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=108",
+   "title": "T031060D C 15 15",
+   "h1": "T031060D C 15 15",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    108,
+    109,
+    110
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 5,
+  "text_chars": 9505
+ },
+ {
+  "control_number": "31061",
+  "title": "Specializing in Infant and Toddler Teaching",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHDEV1",
+   "CHDEV10",
+   "CHDEV11",
+   "CHDEV2",
+   "CHDEV30",
+   "CHDEV31",
+   "CHDEV34",
+   "CHDEV42",
+   "CHDEV44"
+  ],
+  "source": {
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=108",
+   "title": "and Toddler Teaching T031061D C 27 27",
+   "h1": "and Toddler Teaching T031061D C 27 27",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    108,
+    109,
+    110
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 9,
+  "text_chars": 9464
+ },
+ {
+  "control_number": "31062",
+  "title": "Specializing in School Age Programs",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHDEV1",
+   "CHDEV10",
+   "CHDEV11",
+   "CHDEV2",
+   "CHDEV34",
+   "CHDEV37",
+   "CHDEV42",
+   "CHDEV45",
+   "CHDEV46",
+   "CHDEV47",
+   "CHDEV48"
+  ],
+  "source": {
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=110",
+   "title": "A Certificate of Achievement in Specializing in School Age Programs may be earned",
+   "h1": "A Certificate of Achievement in Specializing in School Age Programs may be earned",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    110
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 11,
+  "text_chars": 1710
+ },
+ {
+  "control_number": "31063",
+  "title": "Specializing in Program Administration",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHDEV1",
+   "CHDEV10",
+   "CHDEV11",
+   "CHDEV2",
+   "CHDEV22",
+   "CHDEV23",
+   "CHDEV34",
+   "CHDEV38",
+   "CHDEV39",
+   "CHDEV42",
+   "CHDEV45",
+   "CHDEV65",
+   "CHDEV7",
+   "CHDEV8"
+  ],
+  "source": {
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=109",
+   "title": "A Certificate of Achievement in Specializing in Program Administration may be",
+   "h1": "A Certificate of Achievement in Specializing in Program Administration may be",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    109,
+    110
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 14,
+  "text_chars": 3041
+ },
+ {
+  "control_number": "31081",
+  "title": "Solar PV Installation and Maintenance Technician",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CRPNTRY111A",
+   "CRPNTRY111B",
+   "ECONMT100",
+   "ECONMT115",
+   "ECONMT116",
+   "ECONMT119",
+   "ECONMT129",
+   "ECONMT173",
+   "ECONMT205"
+  ],
+  "source": {
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=148",
+   "title": "T031081D C 26-28 - 26-28",
+   "h1": "T031081D C 26-28 - 26-28",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    148,
+    149,
+    150,
+    151
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 9,
+  "text_chars": 12004
+ },
+ {
+  "control_number": "31082",
+  "title": "Solar Thermal Installation and Maintenance",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 0.75,
+  "codes_found": [
+   "BLDGCTQ10",
+   "CRPNTRY111A",
+   "CRPNTRY111B",
+   "ECONMT100",
+   "ECONMT115",
+   "ECONMT116",
+   "ECONMT119",
+   "ECONMT129",
+   "ECONMT173"
+  ],
+  "source": {
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=150",
+   "title": "and Maintenance T031082D C 30 - 30",
+   "h1": "and Maintenance T031082D C 30 - 30",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    150,
+    151
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 12,
+  "text_chars": 5645
+ },
+ {
+  "control_number": "31089",
+  "title": "Solar Thermal Installation & Maintenance",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.565,
+  "codes_found": [
+   "BLDGCTQ10",
+   "BLDGCTQ12",
+   "CRPNTRY111A",
+   "CRPNTRY111B",
+   "CRPNTRY148",
+   "ECONMT100",
+   "ECONMT115",
+   "ECONMT116",
+   "ECONMT119",
+   "ECONMT129",
+   "ECONMT171",
+   "ECONMT173",
+   "ECONMT205"
+  ],
+  "source": {
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=150",
+   "title": "and Maintenance T031089C A.S. 21* 38 4 42",
+   "h1": "and Maintenance T031089C A.S. 21* 38 4 42",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    150,
+    151
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 23,
+  "text_chars": 5715
+ },
+ {
+  "control_number": "31090",
+  "title": "Energy Efficiency Technician",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.762,
+  "codes_found": [
+   "BLDGCTQ10",
+   "BLDGCTQ12",
+   "BLDGCTQ7",
+   "BLDGCTQ9",
+   "BLDGCTQ921",
+   "CRPNTRY148",
+   "ECONMT100",
+   "ECONMT105",
+   "ECONMT110",
+   "ECONMT115",
+   "ECONMT116",
+   "ECONMT119",
+   "ECONMT129",
+   "ECONMT171",
+   "ECONMT173",
+   "ECONMT205"
+  ],
+  "source": {
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=138",
+   "title": "Technician T031090C A.S. 21* 36-38 4 40-42",
+   "h1": "Technician T031090C A.S. 21* 36-38 4 40-42",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    138,
+    139,
+    140,
+    141
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 21,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "31182",
+  "title": "Paralegal Studies",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 0.944,
+  "codes_found": [
+   "BUS5",
+   "BUS6",
+   "CAOT84",
+   "COMMC1000",
+   "ENGLC1001",
+   "LAW18",
+   "LAW38",
+   "LIBSCI101",
+   "PALEGAL10",
+   "PALEGAL11",
+   "PALEGAL12",
+   "PALEGAL13",
+   "PALEGAL14",
+   "PALEGAL16",
+   "PALEGAL17",
+   "PALEGAL19",
+   "PALEGAL3"
+  ],
+  "source": {
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=124",
+   "title": "Paralegal Studies T031182D C 40 3 43",
+   "h1": "Paralegal Studies T031182D C 40 3 43",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    124,
+    125,
+    126,
+    127
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 18,
+  "text_chars": 15236
+ },
+ {
+  "control_number": "31207",
+  "title": "Chemistry",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEM101",
+   "CHEM102",
+   "CHEM211",
+   "CHEM212",
+   "CHEM221",
+   "MATH261",
+   "MATH262",
+   "PHYSICS101",
+   "PHYSICS102",
+   "PHYSICS6",
+   "PHYSICS7"
+  ],
+  "source": {
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=89",
+   "title": "Chemistry T031207C A.S. 21* 40 - 40",
+   "h1": "Chemistry T031207C A.S. 21* 40 - 40",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    89,
+    90,
+    91,
+    92
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 11,
+  "text_chars": 11636
+ },
+ {
+  "control_number": "31262",
+  "title": "Paralegal Studies",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.933,
+  "codes_found": [
+   "BUS5",
+   "BUS6",
+   "CAOT84",
+   "COMMC1000",
+   "LAW18",
+   "LIBSCI101",
+   "PALEGAL10",
+   "PALEGAL11",
+   "PALEGAL12",
+   "PALEGAL13",
+   "PALEGAL14",
+   "PALEGAL17",
+   "PALEGAL19",
+   "PALEGAL3"
+  ],
+  "source": {
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=124",
+   "title": "Paralegal Studies T031262C A.A. 21* 40 3 43",
+   "h1": "Paralegal Studies T031262C A.A. 21* 40 3 43",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    124,
+    125,
+    126,
+    127
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 15,
+  "text_chars": 15280
+ },
+ {
+  "control_number": "31280",
+  "title": "Photo Voltaic (PV) Solar Installation & Maintenance",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.6,
+  "codes_found": [
+   "BLDGCTQ10",
+   "BLDGCTQ12",
+   "CRPNTRY111A",
+   "CRPNTRY111B",
+   "CRPNTRY148",
+   "ECONMT100",
+   "ECONMT105",
+   "ECONMT110",
+   "ECONMT115",
+   "ECONMT116",
+   "ECONMT119",
+   "ECONMT129",
+   "ECONMT171",
+   "ECONMT173",
+   "ECONMT205"
+  ],
+  "source": {
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=148",
+   "title": "T031280C A.S. 21* 36-38 4 40-42",
+   "h1": "T031280C A.S. 21* 36-38 4 40-42",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    148,
+    149,
+    150,
+    151
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 25,
+  "text_chars": 12087
+ },
+ {
+  "control_number": "31396",
+  "title": "Skin Therapy",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CSMTLGY35",
+   "CSMTLGY36",
+   "CSMTLGY37",
+   "CSMTLGY38"
+  ],
+  "source": {
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=165",
+   "title": "Skin Therapy T031396D C 24 - 24",
+   "h1": "Skin Therapy T031396D C 24 - 24",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    165
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 4,
+  "text_chars": 1737
+ },
+ {
+  "control_number": "32703",
+  "title": "Barbering",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BAR113",
+   "BAR123",
+   "BAR133",
+   "BAR143",
+   "BAR144",
+   "CSMTLGY101",
+   "CSMTLGY210",
+   "CSMTLGY211",
+   "CSMTLGY214",
+   "CSMTLGY215",
+   "CSMTLGY217",
+   "CSMTLGY218",
+   "CSMTLGY221",
+   "CSMTLGY223"
+  ],
+  "source": {
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=163",
+   "title": "Barbering T032703D C 30 6 36",
+   "h1": "Barbering T032703D C 30 6 36",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    163,
+    164
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 14,
+  "text_chars": 7481
+ },
+ {
+  "control_number": "32905",
+  "title": "English",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ENGLC1001",
+   "ENGLISH102",
+   "ENGLISH127",
+   "ENGLISH203",
+   "ENGLISH205",
+   "ENGLISH206",
+   "ENGLISH207",
+   "ENGLISH208",
+   "ENGLISH212",
+   "ENGLISH215"
+  ],
+  "source": {
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=206",
+   "title": "English T032905G AA-T Cal-GETC 6 12 18",
+   "h1": "English T032905G AA-T Cal-GETC 6 12 18",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    206
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 10,
+  "text_chars": 3773
+ },
+ {
+  "control_number": "32910",
+  "title": "Administration of Justice",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ADMJUS2",
+   "ADMJUS3",
+   "ADMJUS4",
+   "ADMJUS5",
+   "ADMJUS67",
+   "ADMJUS75",
+   "ADMJUS8",
+   "PSYCC1000",
+   "SOC1"
+  ],
+  "source": {
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=102",
+   "title": "T032910H AS-T Cal-",
+   "h1": "T032910H AS-T Cal-",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    102
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 9,
+  "text_chars": 3955
+ },
+ {
+  "control_number": "32948",
+  "title": "Kinesiology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANATOMY1",
+   "CHEM101",
+   "CHEM51",
+   "HEALTH11",
+   "HEALTH12",
+   "KIN180",
+   "KIN237",
+   "KIN3001",
+   "KIN3002",
+   "KIN3003",
+   "KIN3011",
+   "KIN3012",
+   "KIN3013",
+   "KIN3031",
+   "KIN3032",
+   "KIN3033",
+   "KIN3034",
+   "KIN3071",
+   "KIN3072",
+   "KIN3291",
+   "KIN3292",
+   "KIN3293",
+   "KIN3301",
+   "KIN3302",
+   "KIN3303",
+   "KIN3321",
+   "KIN3341",
+   "KIN3342",
+   "KIN337",
+   "KIN3501",
+   "KIN3502",
+   "KIN3511",
+   "KIN3512",
+   "KIN3513",
+   "KIN3661",
+   "KIN3662",
+   "KIN387",
+   "KIN3911",
+   "KIN47",
+   "KINATH504",
+   "KINATH516",
+   "KINMAJ100",
+   "KINMAJ101",
+   "PHYSICS101",
+   "PHYSICS6",
+   "PHYSIOL1",
+   "PSYCC1000",
+   "PSYCH91",
+   "SOC1",
+   "STATC1000",
+   "STATC1000E"
+  ],
+  "source": {
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=62",
+   "title": "Los Angeles Trade-Technical College 2026 - 2027 GENERAL CATALOG",
+   "h1": "Los Angeles Trade-Technical College 2026 - 2027 GENERAL CATALOG",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    62,
+    63,
+    64,
+    65
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 51,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "33225",
+  "title": "Biotechnology",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOLOGY3",
+   "BIOLOGY5",
+   "BIOTECH10",
+   "BIOTECH12",
+   "CHEM51",
+   "MICRO20",
+   "PRPLTEK102",
+   "PRPLTEK103",
+   "PRPLTEK104",
+   "PRPLTEK214"
+  ],
+  "source": {
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=87",
+   "title": "Los Angeles Trade-Technical College 2026 - 2027 GENERAL CATALOG",
+   "h1": "Los Angeles Trade-Technical College 2026 - 2027 GENERAL CATALOG",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    87,
+    88
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 10,
+  "text_chars": 7066
+ },
+ {
+  "control_number": "33682",
+  "title": "Biotechnology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOLOGY3",
+   "BIOLOGY5",
+   "BIOTECH10",
+   "BIOTECH12",
+   "CHEM51",
+   "MICRO20",
+   "PRPLTEK102",
+   "PRPLTEK103",
+   "PRPLTEK104",
+   "PRPLTEK214"
+  ],
+  "source": {
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=87",
+   "title": "Los Angeles Trade-Technical College 2026 - 2027 GENERAL CATALOG",
+   "h1": "Los Angeles Trade-Technical College 2026 - 2027 GENERAL CATALOG",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    87,
+    88
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 10,
+  "text_chars": 7066
+ },
+ {
+  "control_number": "33802",
+  "title": "Personal Care Aide",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "HEALTH46",
+   "HLTHOCC49",
+   "HLTHOCC62",
+   "HLTHOCC63",
+   "HLTHOCC65",
+   "PSYCC1000"
+  ],
+  "source": {
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=202",
+   "title": "Personal Care Aide T033802D C 16.5 - 16.5",
+   "h1": "Personal Care Aide T033802D C 16.5 - 16.5",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    202,
+    203
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 6,
+  "text_chars": 6241
+ },
+ {
+  "control_number": "33813",
+  "title": "Small Business Entrepreneurship",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCTG1",
+   "BUS22",
+   "BUS32",
+   "BUS38",
+   "BUS5",
+   "CAOT82",
+   "CAOT85",
+   "FINANCE8",
+   "MARKET1",
+   "MARKET21",
+   "MARKET25",
+   "MGMT13",
+   "SUPV1"
+  ],
+  "source": {
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=127",
+   "title": "Entrepreneurship T033813C A.A. 21* 41 - 41",
+   "h1": "Entrepreneurship T033813C A.A. 21* 41 - 41",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    127,
+    128
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 13,
+  "text_chars": 4965
+ },
+ {
+  "control_number": "33815",
+  "title": "Liberal Arts: Behavioral and Social Sciences",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.984,
+  "codes_found": [
+   "ADMJUS2",
+   "ADMJUS4",
+   "ADMJUS67",
+   "AFROAM19",
+   "AFROAM2",
+   "AFROAM4",
+   "AFROAM5",
+   "AFROAM60",
+   "ANTHRO102",
+   "ANTHRO103",
+   "ANTHRO104",
+   "ANTHRO151",
+   "BUS1",
+   "BUS5",
+   "CHDEV1",
+   "CHDEV10",
+   "CHDEV11",
+   "CHDEV2",
+   "CHDEV42",
+   "CHDEV46",
+   "CHICANO4",
+   "ECON1",
+   "ECON2",
+   "EDUC1",
+   "GEOG2",
+   "GEOG7",
+   "HEALTH101",
+   "HISTORY11",
+   "HISTORY12",
+   "HISTORY2",
+   "HISTORY41",
+   "HISTORY42",
+   "HISTORY43",
+   "HISTORY44",
+   "HISTORY52",
+   "HISTORY86",
+   "HISTORY87",
+   "KINMAJ109",
+   "KINMAJ120",
+   "LABRST1",
+   "LABRST4",
+   "POLSC1000",
+   "POLSCI2",
+   "POLSCI7",
+   "PSYCC1000",
+   "PSYCH10",
+   "PSYCH13",
+   "PSYCH14",
+   "PSYCH29",
+   "PSYCH32",
+   "PSYCH41",
+   "PSYCH69",
+   "PSYCH74",
+   "SOC1",
+   "SOC11",
+   "SOC2",
+   "SOC21",
+   "SOC28",
+   "SOC31",
+   "SOC4",
+   "SOC50"
+  ],
+  "source": {
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=210",
+   "title": "Los Angeles Trade-Technical College 2026 - 2027 GENERAL CATALOG",
+   "h1": "Los Angeles Trade-Technical College 2026 - 2027 GENERAL CATALOG",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    210,
+    211,
+    212,
+    213
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 62,
+  "text_chars": 15062
+ },
+ {
+  "control_number": "35202",
+  "title": "Digital Media",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "DIGLMD100",
+   "DIGLMD101",
+   "DIGLMD103",
+   "DIGLMD104",
+   "DIGLMD105",
+   "DIGLMD152"
+  ],
+  "source": {
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=175",
+   "title": "Digital Media T035202D C - 18 - 18",
+   "h1": "Digital Media T035202D C - 18 - 18",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    175,
+    176,
+    177
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 6,
+  "text_chars": 8239
+ },
+ {
+  "control_number": "35215",
+  "title": "Digital Media",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "DIGLMD100",
+   "DIGLMD101",
+   "DIGLMD103",
+   "DIGLMD104",
+   "DIGLMD105",
+   "DIGLMD152",
+   "VISCOM103",
+   "VISCOM129",
+   "VISCOM133",
+   "VISCOM135"
+  ],
+  "source": {
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=175",
+   "title": "Digital Media T035215C A.S. 21* 18 10 28",
+   "h1": "Digital Media T035215C A.S. 21* 18 10 28",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    175,
+    176,
+    177
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 10,
+  "text_chars": 8280
+ },
+ {
+  "control_number": "35275",
+  "title": "Digital Media Mobile Application and Web Design",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CIS148",
+   "CS171",
+   "DIGLMD100",
+   "DIGLMD101",
+   "DIGLMD103",
+   "DIGLMD104",
+   "DIGLMD105",
+   "DIGLMD116",
+   "DIGLMD117",
+   "DIGLMD118",
+   "DIGLMD150",
+   "DIGLMD151",
+   "DIGLMD152",
+   "DIGLMD153",
+   "DIGLMD155"
+  ],
+  "source": {
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=177",
+   "title": "T035275C A.S. 21* 45 - 45",
+   "h1": "T035275C A.S. 21* 45 - 45",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    177
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 16,
+  "text_chars": 2605
+ },
+ {
+  "control_number": "35278",
+  "title": "Digital Media Mobile Application and Web Design",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CIS148",
+   "CS171",
+   "DIGLMD100",
+   "DIGLMD101",
+   "DIGLMD103",
+   "DIGLMD104",
+   "DIGLMD105",
+   "DIGLMD116",
+   "DIGLMD117",
+   "DIGLMD118",
+   "DIGLMD150",
+   "DIGLMD151",
+   "DIGLMD152",
+   "DIGLMD153",
+   "DIGLMD155"
+  ],
+  "source": {
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=177",
+   "title": "T035278D C - 45",
+   "h1": "T035278D C - 45",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    177
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 15,
+  "text_chars": 2529
+ },
+ {
+  "control_number": "35286",
+  "title": "Retail Management",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS32",
+   "BUS38",
+   "CAOT82",
+   "MARKET21",
+   "MARKET40",
+   "MGMT2",
+   "MGMT33",
+   "SUPV3"
+  ],
+  "source": {
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=126",
+   "title": "Retail Management T035286D C 24 24",
+   "h1": "Retail Management T035286D C 24 24",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    126,
+    127,
+    128
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 8,
+  "text_chars": 8695
+ },
+ {
+  "control_number": "35292",
+  "title": "Digital Media: Digital Video and Audio",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "DIGLMD100",
+   "DIGLMD101",
+   "DIGLMD103",
+   "DIGLMD104",
+   "DIGLMD105",
+   "DIGLMD106",
+   "DIGLMD107",
+   "DIGLMD110",
+   "DIGLMD115",
+   "DIGLMD152"
+  ],
+  "source": {
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=176",
+   "title": "Video and Audio T035292D C 30 - 30",
+   "h1": "Video and Audio T035292D C 30 - 30",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    176,
+    177
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 10,
+  "text_chars": 5159
+ },
+ {
+  "control_number": "35296",
+  "title": "Digital Media: Digital Video and Audio",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "DIGLMD100",
+   "DIGLMD101",
+   "DIGLMD103",
+   "DIGLMD104",
+   "DIGLMD105",
+   "DIGLMD106",
+   "DIGLMD107",
+   "DIGLMD110",
+   "DIGLMD115",
+   "DIGLMD152"
+  ],
+  "source": {
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=176",
+   "title": "Video and Audio T035296C A.S. 21* 30 - 30",
+   "h1": "Video and Audio T035296C A.S. 21* 30 - 30",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    176,
+    177
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 10,
+  "text_chars": 5225
+ },
+ {
+  "control_number": "35618",
+  "title": "Rail Vehicle Maintenance",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "DIESLTK401",
+   "DIESLTK401A",
+   "DIESLTK401B",
+   "DIESLTK402",
+   "DIESLTK402A",
+   "DIESLTK402B",
+   "DIESLTK403",
+   "DIESLTK403A",
+   "DIESLTK403B",
+   "DIESLTK404",
+   "DIESLTK404A",
+   "DIESLTK404B"
+  ],
+  "source": {
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=85",
+   "title": "Rail Vehicle Maintenance T035618D C 40 - 40",
+   "h1": "Rail Vehicle Maintenance T035618D C 40 - 40",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    85
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 12,
+  "text_chars": 3899
+ },
+ {
+  "control_number": "35649",
+  "title": "Rail Vehicle Maintenance",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "DIESLTK401",
+   "DIESLTK401A",
+   "DIESLTK401B",
+   "DIESLTK402",
+   "DIESLTK402A",
+   "DIESLTK402B",
+   "DIESLTK403",
+   "DIESLTK403A",
+   "DIESLTK403B",
+   "DIESLTK404",
+   "DIESLTK404A",
+   "DIESLTK404B"
+  ],
+  "source": {
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=85",
+   "title": "Rail Vehicle Maintenance T035649C AS 21* 40 - 40",
+   "h1": "Rail Vehicle Maintenance T035649C AS 21* 40 - 40",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    85
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 12,
+  "text_chars": 3948
+ },
+ {
+  "control_number": "36134",
+  "title": "CSU General Education (CSU-GE-Breadth)",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 128,
+  "text_chars": 0
+ },
+ {
+  "control_number": "36231",
+  "title": "IGETC",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 0.622,
+  "codes_found": [
+   "ANTHRO101",
+   "ASTRON1",
+   "ASTRON5",
+   "BIOLOGY3",
+   "BIOLOGY6",
+   "BIOLOGY7",
+   "CHEM101",
+   "CHEM102",
+   "CHEM211",
+   "CHEM212",
+   "CHEM221",
+   "CHEM51",
+   "CHEM70",
+   "ECON1",
+   "ECON2",
+   "ENVSCI1",
+   "GEOG1",
+   "GEOG2",
+   "GEOLOGY1",
+   "GEOLOGY6",
+   "HISTORY11",
+   "HISTORY12",
+   "HISTORY41",
+   "HISTORY42",
+   "HISTORY43",
+   "HISTORY44",
+   "HISTORY52",
+   "HISTORY86",
+   "HISTORY87",
+   "LABRST1",
+   "LABRST4",
+   "MATH235",
+   "MATH236",
+   "MATH245",
+   "MATH260",
+   "MATH265",
+   "MATH266",
+   "MATH267",
+   "MATH270",
+   "MATH275",
+   "MICRO20",
+   "PHYSICS101",
+   "PHYSICS102",
+   "PHYSICS103",
+   "PHYSICS11",
+   "PHYSICS12",
+   "PHYSICS14",
+   "PHYSICS6",
+   "PHYSICS7",
+   "POLSC1000",
+   "POLSCI2",
+   "POLSCI7",
+   "PSYCC1000",
+   "PSYCH14",
+   "PSYCH2",
+   "PSYCH32",
+   "PSYCH69",
+   "SOC1",
+   "SOC2",
+   "SOC28",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=212",
+   "title": "Los Angeles Trade-Technical College 2026 - 2027 GENERAL CATALOG",
+   "h1": "Los Angeles Trade-Technical College 2026 - 2027 GENERAL CATALOG",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    212,
+    213,
+    214,
+    215
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 98,
+  "text_chars": 11260
+ },
+ {
+  "control_number": "36614",
+  "title": "Entry Level Laborer for the Energy & Construction Sectors",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BSICSKL73CE",
+   "BSICSKL77CE",
+   "VOCED255CE",
+   "VOCED257CE",
+   "VOCED259CE"
+  ],
+  "source": {
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=230",
+   "title": "Entry Level Laborer for the Energy & Construction Sectors T036614E",
+   "h1": "Entry Level Laborer for the Energy & Construction Sectors T036614E",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    230
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 5,
+  "text_chars": 816
+ },
+ {
+  "control_number": "36615",
+  "title": "Sewing Operator",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED504CE",
+   "VOCED506CE"
+  ],
+  "source": {
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=234",
+   "title": "Sewing Operator T036615E",
+   "h1": "Sewing Operator T036615E",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    234
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 2,
+  "text_chars": 1611
+ },
+ {
+  "control_number": "36617",
+  "title": "Lifeguard Training",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED311CE",
+   "VOCED312CE"
+  ],
+  "source": {
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=232",
+   "title": "Lifeguard Training T036617E",
+   "h1": "Lifeguard Training T036617E",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    232,
+    233
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 2,
+  "text_chars": 2799
+ },
+ {
+  "control_number": "36686",
+  "title": "Water Safety Instructor",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED311CE",
+   "VOCED312CE",
+   "VOCED314CE"
+  ],
+  "source": {
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=235",
+   "title": "Water Safety Instructor T036686E",
+   "h1": "Water Safety Instructor T036686E",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    235
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 3,
+  "text_chars": 928
+ },
+ {
+  "control_number": "36814",
+  "title": "Lube Technician",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BSICSKL78CE",
+   "VOCED325CE",
+   "VOCED326CE"
+  ],
+  "source": {
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=233",
+   "title": "Lube Technician T036814E",
+   "h1": "Lube Technician T036814E",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    233
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 3,
+  "text_chars": 1643
+ },
+ {
+  "control_number": "36965",
+  "title": "Custodial Technician Training",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 0.5,
+  "codes_found": [
+   "VOCED60CE"
+  ],
+  "source": {
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=351",
+   "title": "Los Angeles Trade-Technical College 2026 - 2027 GENERAL CATALOG",
+   "h1": "Los Angeles Trade-Technical College 2026 - 2027 GENERAL CATALOG",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    351
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 2,
+  "text_chars": 6114
+ },
+ {
+  "control_number": "37088",
+  "title": "Sustainable Small Business Development",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED190CE",
+   "VOCED191CE",
+   "VOCED192CE",
+   "VOCED193CE",
+   "VOCED194CE",
+   "VOCED195CE"
+  ],
+  "source": {
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=234",
+   "title": "Sustainable Small Business Development T037088E",
+   "h1": "Sustainable Small Business Development T037088E",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    234
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 6,
+  "text_chars": 1063
+ },
+ {
+  "control_number": "37706",
+  "title": "Pre-Health Professions II",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEM101",
+   "CHEM51",
+   "MATH215",
+   "PHYSIOL1"
+  ],
+  "source": {
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=200",
+   "title": "Professions II T037706D C 16-19 - 16-19",
+   "h1": "Professions II T037706D C 16-19 - 16-19",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    200,
+    201
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 4,
+  "text_chars": 6649
+ },
+ {
+  "control_number": "38452",
+  "title": "Pre-Health Professions I",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANATOMY1",
+   "ENGLC1000",
+   "PSYCC1000"
+  ],
+  "source": {
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=200",
+   "title": "Professions I* T038452D C 10 - 10",
+   "h1": "Professions I* T038452D C 10 - 10",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    200,
+    201,
+    202
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 3,
+  "text_chars": 9992
+ },
+ {
+  "control_number": "38461",
+  "title": "Child and Adolescent Development",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 0.941,
+  "codes_found": [
+   "ANTHRO102",
+   "CHDEV1",
+   "CHDEV10",
+   "CHDEV11",
+   "CHDEV2",
+   "CHDEV22",
+   "CHDEV30",
+   "CHDEV34",
+   "CHDEV42",
+   "CHDEV7",
+   "PSYCC1000",
+   "PSYCH41",
+   "SOC1",
+   "SOC28",
+   "STATC1000",
+   "STATC1000E"
+  ],
+  "source": {
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=105",
+   "title": "Development T038461G AA-T Cal-GETC 10 9-10 19-20",
+   "h1": "Development T038461G AA-T Cal-GETC 10 9-10 19-20",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    105,
+    106,
+    107,
+    108
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 17,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "38533",
+  "title": "Senior Exercise Leader, Land & Aquatics Programming",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "COOPED195",
+   "HEALTH46",
+   "HLTHOCC62",
+   "HLTHOCC63",
+   "HLTHOCC64",
+   "HLTHOCC65",
+   "KIN3031",
+   "KIN47",
+   "KINMAJ134",
+   "KINMAJ135",
+   "KINMAJ150",
+   "KINMAJ151"
+  ],
+  "source": {
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=203",
+   "title": "T038533D C - 15.5 1 16.5",
+   "h1": "T038533D C - 15.5 1 16.5",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    203
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 12,
+  "text_chars": 2831
+ },
+ {
+  "control_number": "38588",
+  "title": "Engineering - Electrical Track",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEM101",
+   "ENGGEN101",
+   "ENGGEN122",
+   "ENGGEN131",
+   "ENGGEN151",
+   "ENGGEN220",
+   "MATH261",
+   "MATH262",
+   "MATH263",
+   "MATH275",
+   "PHYSICS101",
+   "PHYSICS102",
+   "PHYSICS103"
+  ],
+  "source": {
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=91",
+   "title": "Electrical Track T038588C A.S. 18 56 - 56",
+   "h1": "Electrical Track T038588C A.S. 18 56 - 56",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    91,
+    92
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 13,
+  "text_chars": 5109
+ },
+ {
+  "control_number": "38589",
+  "title": "Engineering - Mechanical, Aerospace, Manufacturing Track",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEM101",
+   "EGDTEK101",
+   "ENGGEN101",
+   "ENGGEN122",
+   "ENGGEN131",
+   "ENGGEN151",
+   "ENGGEN220",
+   "ENGGEN231",
+   "ENGGEN241",
+   "MATH261",
+   "MATH262",
+   "MATH263",
+   "MATH275",
+   "PHYSICS101",
+   "PHYSICS102",
+   "PHYSICS103"
+  ],
+  "source": {
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=92",
+   "title": "T038589C A.S. 18 62 - 62",
+   "h1": "T038589C A.S. 18 62 - 62",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    92
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 16,
+  "text_chars": 2354
+ },
+ {
+  "control_number": "38590",
+  "title": "Engineering - Civil Engineering Track",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOLOGY3",
+   "CHEM101",
+   "EGDTEK101",
+   "ENGGEN101",
+   "ENGGEN122",
+   "ENGGEN131",
+   "ENGGEN151",
+   "ENGGEN220",
+   "ENGGEN231",
+   "ENGGEN241",
+   "GEOLOGY1",
+   "GEOLOGY6",
+   "MATH261",
+   "MATH262",
+   "MATH263",
+   "MATH275",
+   "MICRO20",
+   "PHYSICS101",
+   "PHYSICS102",
+   "PHYSICS103"
+  ],
+  "source": {
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=90",
+   "title": "Engineering Track T038590C A.S. 18 66 - 66",
+   "h1": "Engineering Track T038590C A.S. 18 66 - 66",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    90,
+    91,
+    92,
+    93
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 20,
+  "text_chars": 11065
+ },
+ {
+  "control_number": "38703",
+  "title": "Industrial Applied Science - Core Competencies",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOLOGY3",
+   "BIOLOGY5",
+   "BIOTECH10",
+   "CHEM51",
+   "PRPLTEK104",
+   "PRPLTEK214"
+  ],
+  "source": {
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=93",
+   "title": "T038703D C - 20 - 20",
+   "h1": "T038703D C - 20 - 20",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    93,
+    94,
+    95
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 6,
+  "text_chars": 9501
+ },
+ {
+  "control_number": "38737",
+  "title": "Industrial Safety, Regulatory and Biomanufacturing",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOTECH10",
+   "PRPLTEK104",
+   "PRPLTEK214"
+  ],
+  "source": {
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=94",
+   "title": "T038737D C - 11 - 11",
+   "h1": "T038737D C - 11 - 11",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    94
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 3,
+  "text_chars": 1951
+ },
+ {
+  "control_number": "38883",
+  "title": "Psychology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOLOGY3",
+   "PSYCC1000",
+   "PSYCH13",
+   "PSYCH14",
+   "PSYCH2",
+   "PSYCH32",
+   "PSYCH41",
+   "PSYCH69",
+   "PSYCH74",
+   "STATC1000",
+   "STATC1000E"
+  ],
+  "source": {
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=217",
+   "title": "Psychology T038883G AST Cal-GETC 20 - 20",
+   "h1": "Psychology T038883G AST Cal-GETC 20 - 20",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    217,
+    218,
+    219,
+    220
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 11,
+  "text_chars": 12621
+ },
+ {
+  "control_number": "38910",
+  "title": "Business Administration",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 0.667,
+  "codes_found": [
+   "ACCTG1",
+   "ACCTG2",
+   "BUS1",
+   "BUS5",
+   "MATH235",
+   "MATH236",
+   "STATC1000",
+   "STATC1000E"
+  ],
+  "source": {
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=104",
+   "title": "The Associate in Science in Business Administration 2.0 for Transfer degree",
+   "h1": "The Associate in Science in Business Administration 2.0 for Transfer degree",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    104,
+    105
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 12,
+  "text_chars": 6878
+ },
+ {
+  "control_number": "38947",
+  "title": "Operating Engineer",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "OPMAAP100",
+   "OPMAAP703",
+   "OPMAAP704",
+   "OPMAAP720",
+   "OPMAAP724",
+   "OPMAAP727",
+   "OPMAAP739",
+   "OPMAAP740",
+   "OPMAAP744",
+   "OPMAAP745",
+   "OPMAAP746",
+   "OPMAAP747",
+   "OPMAAP748",
+   "OPMAAP749",
+   "OPMAAP750",
+   "OPMAAP751",
+   "OPMAAP753",
+   "OPMAAP760",
+   "OPMAAP770",
+   "OPMAAP780"
+  ],
+  "source": {
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=161",
+   "title": "Los Angeles Trade-Technical College 2026 - 2027 GENERAL CATALOG",
+   "h1": "Los Angeles Trade-Technical College 2026 - 2027 GENERAL CATALOG",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    161
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 20,
+  "text_chars": 2214
+ },
+ {
+  "control_number": "38966",
+  "title": "History",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 0.833,
+  "codes_found": [
+   "ART101",
+   "ART102",
+   "HISTORY11",
+   "HISTORY12",
+   "HISTORY2",
+   "HISTORY41",
+   "HISTORY42",
+   "HISTORY43",
+   "HISTORY44",
+   "HISTORY52",
+   "HISTORY86",
+   "HISTORY87",
+   "LABRST1",
+   "LABRST4",
+   "POLSC1000"
+  ],
+  "source": {
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=207",
+   "title": "History T038966G AA-T Cal-GETC 18 - 18",
+   "h1": "History T038966G AA-T Cal-GETC 18 - 18",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    207
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 18,
+  "text_chars": 3669
+ },
+ {
+  "control_number": "39133",
+  "title": "Costume Technology",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 0.923,
+  "codes_found": [
+   "FASHDSN137",
+   "FASHDSN207",
+   "FASHDSN208",
+   "FASHDSN210",
+   "FASHDSN211",
+   "FASHDSN212",
+   "FASHDSN213",
+   "FASHDSN214",
+   "FASHDSN215",
+   "FASHDSN216",
+   "FASHDSN217",
+   "FASHDSN218"
+  ],
+  "source": {
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=174",
+   "title": "T039133D C 20-21 12 32-33",
+   "h1": "T039133D C 20-21 12 32-33",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    174
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 13,
+  "text_chars": 1935
+ },
+ {
+  "control_number": "39216",
+  "title": "Political Science",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 0.818,
+  "codes_found": [
+   "ADMJUS1",
+   "POLSC1000",
+   "POLSCI2",
+   "POLSCI7",
+   "PSYCC1000",
+   "PSYCH91",
+   "SOC1",
+   "STATC1000",
+   "STATC1000E"
+  ],
+  "source": {
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=216",
+   "title": "Political Science T039216G AST Cal-GETC 19 - 19",
+   "h1": "Political Science T039216G AST Cal-GETC 19 - 19",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    216,
+    217,
+    218,
+    219
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 11,
+  "text_chars": 12692
+ },
+ {
+  "control_number": "39228",
+  "title": "Operating Engineer",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.889,
+  "codes_found": [
+   "ENGLC1000",
+   "HEALTH2",
+   "HEALTH6",
+   "LABRST21",
+   "OPMAAP100",
+   "OPMAAP703",
+   "OPMAAP704",
+   "OPMAAP720",
+   "OPMAAP724",
+   "OPMAAP727",
+   "OPMAAP739",
+   "OPMAAP740",
+   "OPMAAP744",
+   "OPMAAP745",
+   "OPMAAP746",
+   "OPMAAP747",
+   "OPMAAP748",
+   "OPMAAP749",
+   "OPMAAP750",
+   "OPMAAP751",
+   "OPMAAP753",
+   "OPMAAP760",
+   "OPMAAP770",
+   "OPMAAP780"
+  ],
+  "source": {
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=161",
+   "title": "Los Angeles Trade-Technical College 2026 - 2027 GENERAL CATALOG",
+   "h1": "Los Angeles Trade-Technical College 2026 - 2027 GENERAL CATALOG",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    161
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 27,
+  "text_chars": 2214
+ },
+ {
+  "control_number": "39531",
+  "title": "Public Health Science",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 0.867,
+  "codes_found": [
+   "ANATOMY1",
+   "BIOLOGY5",
+   "CHEM101",
+   "HEALTH101",
+   "HEALTH11",
+   "HEALTH21",
+   "HEALTH51",
+   "HEALTH6",
+   "PHYSIOL1",
+   "PSYCC1000",
+   "SOC1",
+   "STATC1000",
+   "STATC1000E"
+  ],
+  "source": {
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=201",
+   "title": "The Associate in Science in Public Health Science for Transfer Degree AS-T prepares",
+   "h1": "The Associate in Science in Public Health Science for Transfer Degree AS-T prepares",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    201,
+    202
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 15,
+  "text_chars": 7160
+ },
+ {
+  "control_number": "39546",
+  "title": "Social Justice Studies - Gender Studies",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTHRO102",
+   "HEALTH8",
+   "HISTORY41",
+   "HISTORY42",
+   "HISTORY43",
+   "HISTORY44",
+   "HISTORY52",
+   "LABRST21",
+   "PSYCH13",
+   "PSYCH32",
+   "PSYCH74",
+   "SOC11",
+   "SOC2",
+   "SOC28",
+   "SOC31",
+   "STATC1000",
+   "STATC1000E"
+  ],
+  "source": {
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=218",
+   "title": "T039546G AAT Cal-GETC 18-19 - 18-19",
+   "h1": "T039546G AAT Cal-GETC 18-19 - 18-19",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    218,
+    219,
+    220
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 17,
+  "text_chars": 9183
+ },
+ {
+  "control_number": "40026",
+  "title": "Nutrition and Dietetics",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANATOMY1",
+   "ANTHRO102",
+   "CHEM101",
+   "CHEM102",
+   "CHEM211",
+   "HEALTH6",
+   "MATH245",
+   "MICRO20",
+   "PHYSIOL1",
+   "PSYCC1000",
+   "SOC1",
+   "STATC1000",
+   "STATC1000E"
+  ],
+  "source": {
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=199",
+   "title": "Dietetics T040026H AST Cal-GETC 15 11-13 26-28",
+   "h1": "Dietetics T040026H AST Cal-GETC 15 11-13 26-28",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    199,
+    200,
+    201,
+    202
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 13,
+  "text_chars": 13446
+ },
+ {
+  "control_number": "40283",
+  "title": "Amazon Web Services",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CIS192",
+   "CIS193",
+   "CIS194",
+   "CIS195"
+  ],
+  "source": {
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=103",
+   "title": "Amazon Web Services T040283D C - 12 - 12",
+   "h1": "Amazon Web Services T040283D C - 12 - 12",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    103
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 4,
+  "text_chars": 1629
+ },
+ {
+  "control_number": "40323",
+  "title": "Wholesale Merchandising",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 0.8,
+  "codes_found": [
+   "FASHDSN222",
+   "FASHDSN244",
+   "FASHDSN270",
+   "FASHMER20",
+   "FASHMER30",
+   "FASHMER40",
+   "FASHMER50",
+   "VISCOM129"
+  ],
+  "source": {
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=182",
+   "title": "Merchandising T040323D C - 19 - 19",
+   "h1": "Merchandising T040323D C - 19 - 19",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    182,
+    183
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 10,
+  "text_chars": 8345
+ },
+ {
+  "control_number": "40330",
+  "title": "Retail Merchandising",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "FASHMER1",
+   "FASHMER10",
+   "FASHMER15",
+   "FASHMER20",
+   "FASHMER35",
+   "FASHMER41",
+   "FASHMER45"
+  ],
+  "source": {
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=182",
+   "title": "Retail Merchandising T040330D C - 21 - 21",
+   "h1": "Retail Merchandising T040330D C - 21 - 21",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    182,
+    183
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 7,
+  "text_chars": 8412
+ },
+ {
+  "control_number": "40965",
+  "title": "Drive Train Technician (ASE A2 & A3 Test Prep)",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED452",
+   "VOCED453"
+  ],
+  "source": {
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=228",
+   "title": "Test Prep) T040965E",
+   "h1": "Test Prep) T040965E",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    228
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 2,
+  "text_chars": 2193
+ },
+ {
+  "control_number": "40966",
+  "title": "AC Technician (ASE A6 & A7 Test Prep)",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED456",
+   "VOCED457"
+  ],
+  "source": {
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=224",
+   "title": "AC Technician T040966E",
+   "h1": "AC Technician T040966E",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    224,
+    225
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 2,
+  "text_chars": 5764
+ },
+ {
+  "control_number": "40967",
+  "title": "Basic Automotive Chassis Tech",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BSICSKL78CE",
+   "VOCED327CE",
+   "VOCED328CE"
+  ],
+  "source": {
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=226",
+   "title": "Basic Automotive Chassis Tech  T040967E",
+   "h1": "Basic Automotive Chassis Tech  T040967E",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    226
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 3,
+  "text_chars": 888
+ },
+ {
+  "control_number": "41010",
+  "title": "Advanced Engine Performance (ASE A6, A8 & L1 Test Prep)",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 0.667,
+  "codes_found": [
+   "VOCED456",
+   "VOCED458"
+  ],
+  "source": {
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=224",
+   "title": "T041010E",
+   "h1": "T041010E",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    224,
+    225
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 3,
+  "text_chars": 4587
+ },
+ {
+  "control_number": "41011",
+  "title": "Advanced Master Auto Technician (ASE A1-8 & L1 Test Prep)",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 0.7,
+  "codes_found": [
+   "VOCED451",
+   "VOCED452",
+   "VOCED453",
+   "VOCED456",
+   "VOCED457",
+   "VOCED458",
+   "VOCED459"
+  ],
+  "source": {
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=225",
+   "title": "(ASE A1-8 & L1 Test Prep) T041011E",
+   "h1": "(ASE A1-8 & L1 Test Prep) T041011E",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    225
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 10,
+  "text_chars": 3045
+ },
+ {
+  "control_number": "41012",
+  "title": "Auto Technician (ASE A1 & A8 Test Prep)",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED451",
+   "VOCED458",
+   "VOCED459"
+  ],
+  "source": {
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=225",
+   "title": "Prep) T041012E",
+   "h1": "Prep) T041012E",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    225
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 3,
+  "text_chars": 1167
+ },
+ {
+  "control_number": "41013",
+  "title": "Chassis Technician (ASE A4 & A5 Test Prep)",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 2,
+  "text_chars": 0
+ },
+ {
+  "control_number": "41014",
+  "title": "Master Auto Technician (ASE 1-8 Test Prep)",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 0.75,
+  "codes_found": [
+   "VOCED451",
+   "VOCED452",
+   "VOCED453",
+   "VOCED456",
+   "VOCED457",
+   "VOCED458"
+  ],
+  "source": {
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=225",
+   "title": "Los Angeles Trade-Technical College 2026 - 2027 GENERAL CATALOG",
+   "h1": "Los Angeles Trade-Technical College 2026 - 2027 GENERAL CATALOG",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    225
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 8,
+  "text_chars": 3344
+ },
+ {
+  "control_number": "41150",
+  "title": "Fashion Media",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 0.9,
+  "codes_found": [
+   "DIGLMD100",
+   "DIGLMD101",
+   "FASHDSN147",
+   "FASHDSN244",
+   "FASHDSN270",
+   "FASHMER1",
+   "FASHMER35",
+   "FASHMER45",
+   "VISCOM129"
+  ],
+  "source": {
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=182",
+   "title": "Fashion Media T041150D C - 19 - 19",
+   "h1": "Fashion Media T041150D C - 19 - 19",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    182,
+    183
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 10,
+  "text_chars": 8538
+ },
+ {
+  "control_number": "41754",
+  "title": "Gas Tungsten Arc Welding (GTAW) Ferrous and Non-Ferrous Metals",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 6,
+  "text_chars": 0
+ },
+ {
+  "control_number": "41759",
+  "title": "Shielded Metal Arc Welding (SMAW) Structural Steel",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 6,
+  "text_chars": 0
+ },
+ {
+  "control_number": "42144",
+  "title": "Residential/Commercial Framing Helper",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BLDGCTQ102",
+   "CRPNTRY111A",
+   "CRPNTRY111B",
+   "CRPNTRY111C",
+   "CRPNTRY114"
+  ],
+  "source": {
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=132",
+   "title": "Framing Helper T042144D C 8-10 - 8-10",
+   "h1": "Framing Helper T042144D C 8-10 - 8-10",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    132,
+    133,
+    134
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 5,
+  "text_chars": 10351
+ },
+ {
+  "control_number": "42296",
+  "title": "Health Foundation Career Program",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "HEALTH46",
+   "HLTHOCC62",
+   "HLTHOCC63",
+   "HLTHOCC64",
+   "HLTHOCC65"
+  ],
+  "source": {
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=192",
+   "title": "T042296D C 8.5 - 8.5",
+   "h1": "T042296D C 8.5 - 8.5",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    192
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 5,
+  "text_chars": 1909
+ },
+ {
+  "control_number": "42785",
+  "title": "Business Administration 2.0",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 0.8,
+  "codes_found": [
+   "ACCTG1",
+   "ACCTG2",
+   "BUS1",
+   "BUS5",
+   "MATH235",
+   "MATH236",
+   "STATC1000",
+   "STATC1000E"
+  ],
+  "source": {
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=104",
+   "title": "Administration 2.0 T042785H AS-T Cal-GETC 31 - 31",
+   "h1": "Administration 2.0 T042785H AS-T Cal-GETC 31 - 31",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    104,
+    105
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 10,
+  "text_chars": 7220
+ },
+ {
+  "control_number": "44055",
+  "title": "English as a Second Language (ESL): Intermediate",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESLNC51CE",
+   "ESLNC8CE",
+   "ESLNC9CE"
+  ],
+  "source": {
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=350",
+   "title": "Los Angeles Trade-Technical College 2026 - 2027 GENERAL CATALOG",
+   "h1": "Los Angeles Trade-Technical College 2026 - 2027 GENERAL CATALOG",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    350,
+    351
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 3,
+  "text_chars": 12183
+ },
+ {
+  "control_number": "44170",
+  "title": "Fashion Retail First Time Manager",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED386CE",
+   "VOCED387CE",
+   "VOCED388CE",
+   "VOCED389CE"
+  ],
+  "source": {
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=231",
+   "title": "Fashion Retail First Time Manager T044170E",
+   "h1": "Fashion Retail First Time Manager T044170E",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    231
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 4,
+  "text_chars": 2196
+ },
+ {
+  "control_number": "44291",
+  "title": "English as a Second Language (ESL): Advanced Grammar and Composition",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 2,
+  "text_chars": 0
+ },
+ {
+  "control_number": "44344",
+  "title": "Game Art & Design Foundation",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "DIGLMD118",
+   "DIGLMD153",
+   "GAD101",
+   "GAD102",
+   "GAD103",
+   "GAD2101",
+   "VISCOM100",
+   "VISCOM124",
+   "VISCOM131"
+  ],
+  "source": {
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=184",
+   "title": "T044344C AS 21* 23 - 23",
+   "h1": "T044344C AS 21* 23 - 23",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    184,
+    185,
+    186
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 9,
+  "text_chars": 10523
+ },
+ {
+  "control_number": "44345",
+  "title": "Game Art & Design Foundation",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "DIGLMD118",
+   "DIGLMD153",
+   "GAD101",
+   "GAD102",
+   "GAD103",
+   "GAD2101",
+   "VISCOM100",
+   "VISCOM124",
+   "VISCOM131"
+  ],
+  "source": {
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=184",
+   "title": "T044345D C 23 - 23",
+   "h1": "T044345D C 23 - 23",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    184,
+    185,
+    186
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 9,
+  "text_chars": 10467
+ },
+ {
+  "control_number": "44561",
+  "title": "UCTP Physics",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 10,
+  "text_chars": 0
+ },
+ {
+  "control_number": "44562",
+  "title": "Peer Support Specialist Certification Training",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 4,
+  "text_chars": 0
+ },
+ {
+  "control_number": "45285",
+  "title": "Cal-GETC",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 0.535,
+  "codes_found": [
+   "AFROAM4",
+   "AFROAM5",
+   "ANATOMY1",
+   "ANTHRO101",
+   "ANTHRO111",
+   "ASTRON1",
+   "BIOLOGY3",
+   "BIOLOGY5",
+   "BIOLOGY6",
+   "BIOLOGY7",
+   "CHEM101",
+   "CHEM102",
+   "CHEM211",
+   "CHEM212",
+   "CHEM221",
+   "CHEM51",
+   "CHEM70",
+   "CHICANO4",
+   "CHICANO7",
+   "CHICANO8",
+   "EARTH1",
+   "ENVSCI1",
+   "GEOG1",
+   "GEOLOGY1",
+   "GEOLOGY6",
+   "HISTORY2",
+   "MICRO20",
+   "PHYSICS101",
+   "PHYSICS102",
+   "PHYSICS103",
+   "PHYSICS11",
+   "PHYSICS12",
+   "PHYSICS6",
+   "PHYSICS7",
+   "PHYSIOL1",
+   "POLSC1000",
+   "POLSCI2",
+   "POLSCI7",
+   "PSYCC1000",
+   "PSYCH13",
+   "PSYCH14",
+   "PSYCH2",
+   "PSYCH29",
+   "PSYCH32",
+   "PSYCH41",
+   "PSYCH69",
+   "PSYCH74",
+   "SOC1",
+   "SOC11",
+   "SOC2",
+   "SOC28",
+   "SOC31",
+   "SOC4"
+  ],
+  "source": {
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=65",
+   "title": "Los Angeles Trade-Technical College 2026 - 2027 GENERAL CATALOG",
+   "h1": "Los Angeles Trade-Technical College 2026 - 2027 GENERAL CATALOG",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    65
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 99,
+  "text_chars": 4152
+ },
+ {
+  "control_number": "45321",
+  "title": "Screen Printing Fundamentals",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "SGNGRPH201",
+   "SGNGRPH203",
+   "SGNGRPH204",
+   "SGNGRPH205",
+   "SGNGRPH213",
+   "SGNGRPH921",
+   "SGNGRPH931",
+   "SGNGRPH941",
+   "VISCOM100",
+   "VISCOM106",
+   "VISCOM129"
+  ],
+  "source": {
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=186",
+   "title": "T045321D C  6 6 12",
+   "h1": "T045321D C  6 6 12",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    186,
+    187
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 11,
+  "text_chars": 6636
+ },
+ {
+  "control_number": "45377",
+  "title": "Plant-Based Culinary & Nutrition",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CLNART110",
+   "CLNART112",
+   "CLNART118",
+   "CLNART119",
+   "PROFBKG102"
+  ],
+  "source": {
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=169",
+   "title": "& Nutrition* T045377D C 15",
+   "h1": "& Nutrition* T045377D C 15",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    169,
+    170,
+    171
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 5,
+  "text_chars": 5878
+ },
+ {
+  "control_number": "45459",
+  "title": "Transportation Workforce Readiness",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 2,
+  "text_chars": 0
+ },
+ {
+  "control_number": "45629",
+  "title": "Advanced Graphic Design",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VISCOM100",
+   "VISCOM112",
+   "VISCOM114",
+   "VISCOM115",
+   "VISCOM116",
+   "VISCOM118",
+   "VISCOM119",
+   "VISCOM126",
+   "VISCOM129",
+   "VISCOM132",
+   "VISCOM135"
+  ],
+  "source": {
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=173",
+   "title": "T045629C A.A. 33 - 33",
+   "h1": "T045629C A.A. 33 - 33",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    173
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 11,
+  "text_chars": 2837
+ },
+ {
+  "control_number": "45630",
+  "title": "Advanced Graphic Design",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VISCOM100",
+   "VISCOM112",
+   "VISCOM114",
+   "VISCOM115",
+   "VISCOM116",
+   "VISCOM118",
+   "VISCOM119",
+   "VISCOM126",
+   "VISCOM129",
+   "VISCOM132",
+   "VISCOM135"
+  ],
+  "source": {
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=173",
+   "title": "T045630D C 33 - 33",
+   "h1": "T045630D C 33 - 33",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    173
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 11,
+  "text_chars": 2790
+ },
+ {
+  "control_number": "45640",
+  "title": "Advanced Fashion Design",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "45670",
+  "title": "Mobile Food Truck Operations",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS1",
+   "CLNART112",
+   "CLNART180",
+   "MARKET1",
+   "MGMT13"
+  ],
+  "source": {
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=170",
+   "title": "Operations T045670D C 17",
+   "h1": "Operations T045670D C 17",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    170,
+    171
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 5,
+  "text_chars": 4300
+ },
+ {
+  "control_number": "45674",
+  "title": "Fundamentals of Fashion Design",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "45676",
+  "title": "EV Charging Station Installation, Maintenance, and Repair",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ECONMT115",
+   "ECONMT116",
+   "ECONMT181",
+   "ECONMT182",
+   "ECONMT20",
+   "ECONMT25",
+   "ECONMT30"
+  ],
+  "source": {
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=139",
+   "title": "T045676D C  19  19",
+   "h1": "T045676D C  19  19",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    139
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 7,
+  "text_chars": 1386
+ },
+ {
+  "control_number": "45680",
+  "title": "Advanced Fashion Design",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "46397",
+  "title": "Career Foundations for English Language Learners I",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BSICSKL75CE",
+   "BSICSKL78CE",
+   "ESLNC10CE",
+   "ESLNC113CE"
+  ],
+  "source": {
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=226",
+   "title": "Language Learners     T046397E",
+   "h1": "Language Learners     T046397E",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    226
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 4,
+  "text_chars": 2419
+ },
+ {
+  "control_number": "46398",
+  "title": "High School Equivalency Bilingual Preparation I",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BSICSKL129CE",
+   "BSICSKL131CE",
+   "BSICSKL75CE"
+  ],
+  "source": {
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=231",
+   "title": "Los Angeles Trade-Technical College 2026 - 2027 GENERAL CATALOG",
+   "h1": "Los Angeles Trade-Technical College 2026 - 2027 GENERAL CATALOG",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    231
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 3,
+  "text_chars": 2437
+ },
+ {
+  "control_number": "46399",
+  "title": "High School Equivalency Bilingual Preparation II",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BSICSKL130CE",
+   "BSICSKL132CE"
+  ],
+  "source": {
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=232",
+   "title": "Los Angeles Trade-Technical College 2026 - 2027 GENERAL CATALOG",
+   "h1": "Los Angeles Trade-Technical College 2026 - 2027 GENERAL CATALOG",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    232
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 2,
+  "text_chars": 2151
+ },
+ {
+  "control_number": "46498",
+  "title": "Graphic Design Fundamentals",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VISCOM100",
+   "VISCOM112",
+   "VISCOM114",
+   "VISCOM118",
+   "VISCOM126",
+   "VISCOM129"
+  ],
+  "source": {
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=185",
+   "title": "T046498D   C  18 - 18",
+   "h1": "T046498D   C  18 - 18",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    185,
+    186
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 6,
+  "text_chars": 7422
+ }
+]

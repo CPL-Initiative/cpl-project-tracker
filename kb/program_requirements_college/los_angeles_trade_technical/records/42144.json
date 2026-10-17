@@ -1,0 +1,241 @@
+{
+ "college": "Los Angeles Trade Technical College",
+ "control_number": "42144",
+ "shape": "certificate",
+ "title": "Residential/Commercial Framing Helper",
+ "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+ "source_url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=132",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 10244,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 10244,
+    "output_tokens": 2128,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2128,
+  "output_tokens_details": {
+   "thinking_tokens": 901
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.08354,
+ "ms": 17663,
+ "seconds": 18.0,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 5,
+   "listed": 5,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    8.0,
+    10.0
+   ],
+   "stated": [
+    8.0,
+    10.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "RESIDENTIAL/COMMERCIAL FRAMING HELPER Certificate of Achievement",
+   "measure": "units",
+   "total_units": {
+    "min": 8,
+    "max": 10
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Demonstrate safe use of hand and power tools while performing basic framing operations",
+    "Build small to medium scale structures in accordance with industry regulations and codes using appropriate calculations, materials, techniques, and tools",
+    "Interpret blueprints to perform framing operations and construct projects."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Semester I (CRPNTRY 114)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Semester I",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CRPNTRY 114",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Semester I (CRPNTRY 111A and CRPNTRY 111B)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Semester I",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CRPNTRY 111A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CRPNTRY 111B",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Semester II",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "BLDGCTQ 102",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Semester II (one of CRPNTRY 111A, 111B, 111C)",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CRPNTRY 111A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CRPNTRY 111B",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CRPNTRY 111C",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Required-course layout is ambiguous: Semester I reads 'CRPNTRY 114 -OR- CRPNTRY 111A -AND- CRPNTRY 111B'; recorded as two option blocks. Semester II reads 'BLDGCTQ 102 -AND- CRPNTRY 111A -OR- CRPNTRY 111B -OR- CRPNTRY 111C'; recorded as BLDGCTQ 102 required plus choose one of 111A/111B/111C. Presumably a student who took 111A and 111B in Semester I would take 111C in Semester II, but the catalog does not say so explicitly; reviewer should check.",
+   "Major Units printed as 8-10, and the page 132 summary table lists Framing Helper T042144D C 8-10.",
+   "The page 132 program overview lists careers (Carpenters, Helpers-Carpenters, Cement Masons, Entry Level Estimators) for 'The Carpentry Degree and Certificate'; not recorded for this certificate since its own section names only employment/entry level job in the construction industry.",
+   "Catalog notes this certificate is not Financial Aid Eligible.",
+   "Description paragraph in the section repeats sentences verbatim (apparent catalog duplication)."
+  ]
+ },
+ "extracted_run": "39054673977"
+}
