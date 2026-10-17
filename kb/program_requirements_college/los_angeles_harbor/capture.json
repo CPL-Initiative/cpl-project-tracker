@@ -5,7 +5,7 @@
  "catalog_year": "2026-2027",
  "programs": 124,
  "with_closed_list": 121,
- "started": "2026-10-17T05:29:31Z",
+ "started": "2026-10-17T09:02:58Z",
  "pdf": {
   "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf",
   "access": "ok",
@@ -14,65 +14,1496 @@
   "pages_total": 454,
   "error": null,
   "chars_total": 1423360,
-  "pypdf_accepted": 118,
+  "pypdf_accepted": 119,
   "sample": [
    "p137: 'Degrees and Certificates – NURSING AND HEALTH PROFESSIONS \\n \\nLAHC Catalog 2026-2027 Enroll now at www.lahc.edu. 136 \\nRegistered Nurse even though they may have successfully \\ncompleted the NCLEX-RN examination. (Students pursuing \\nthis optio'",
    "p273: ' \\n \\nLAHC Catalog 2026-2027 Enroll now at www.lahc.edu. 272 \\nMATH 265: Calculus With Analytic Geometry I \\n- Pre: MATH 240, 241, or 241S; and MATH 260; or placement \\n- Total Hours: 90 Lec; DE \\n- 5 units; Letter Grade \\n- Maj; LACCDGE 2; C-ID M'"
   ],
-  "extractor": "pypdf"
+  "extractor": "pypdf",
+  "picks": [
+   {
+    "control_number": "02768",
+    "pages": [
+     39,
+     40,
+     41,
+     42
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 39] Academic Plan: H002768C This program is a great fit for students interested in design, drawing/drafting, 3D modeling/printing or creating solutions for the built environment. Upon completion, students will"
+   },
+   {
+    "control_number": "02770",
+    "pages": [
+     56,
+     57,
+     58,
+     59
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.944,
+    "opens": "[page 56] Academic Plan: H002770C The Associate in Science Degree in Business Administration is designed to meet the educational needs of employees, managers and business owners. This program qualifies the student "
+   },
+   {
+    "control_number": "02775",
+    "pages": [
+     54,
+     55,
+     56,
+     57
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 54] Academic Plan: H002775C This degree prepares students for positions in a variety of offices including business, aerospace, education, government, health care and industry. Program Learning Outcomes Upon"
+   },
+   {
+    "control_number": "02790",
+    "pages": [
+     139
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.9,
+    "opens": "[page 139] Degrees and Certificates – NURSING AND HEALTH PROFESSIONS LAHC Catalog 2026-2027 Enroll now at www.lahc.edu. 138 Eligible applications are kept on file for two consecutive application periods. All app"
+   },
+   {
+    "control_number": "02797",
+    "pages": [
+     70
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 70] Academic Plan: H002797C The Associate in Science degree in Chemistry is designed for students who either intend to transfer to the UC or CSU as Chemistry majors, or who want to prepare for work as a Physi"
+   },
+   {
+    "control_number": "02799",
+    "pages": [
+     35,
+     36
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 35] Academic Plan: H002799C Students wanting a transfer major must see a counselor for requirements. The Administration of Justice program prepares students for entry level positions in a variety field of crim"
+   },
+   {
+    "control_number": "02800",
+    "pages": [
+     104,
+     105
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 104] Academic Plan: H002800C The Fire Technology Program is designed to prepare persons for positions in the various branches of the firefighting industry, to upgrade the competency of those already employed "
+   },
+   {
+    "control_number": "08298",
+    "pages": [
+     97
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 97] Academic Plan: H008298C The Associate in Science degree in Engineering Program introduces students to the high-demand fields of Engineering including, but not limited to Aerospace, Chemical, Civil, Electri"
+   },
+   {
+    "control_number": "08303",
+    "pages": [
+     134
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 134] Academic Plan: H008303D This program provides students with classroom and hands-on experience studying the various technologies available to musicians. Depending on the electives chosen, students will en"
+   },
+   {
+    "control_number": "08304",
+    "pages": [
+     142,
+     143,
+     144,
+     145
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.955,
+    "opens": "[page 142] Degrees and Certificates – NURSING AND HEALTH PROFESSIONS LAHC Catalog 2026-2027 Enroll now at www.lahc.edu. 141 Graduation Please refer to the LACCD GE Plan in this catalog. Only students who meet deg"
+   },
+   {
+    "control_number": "08305",
+    "pages": [
+     76,
+     77,
+     78,
+     79
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.96,
+    "opens": "[page 76] Academic Plan: H008305C The Child Development program is designed to help students qualify for employment in occupations involving- groups of young children who are under the guidance of public and private"
+   },
+   {
+    "control_number": "10683",
+    "pages": [
+     29,
+     30
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 29] Academic Plan: H010683D This Certificate provides the student with training necessary for entry-level accounting positions in business and other organizations such as government agencies, education and in"
+   },
+   {
+    "control_number": "10686",
+    "pages": [
+     83,
+     84,
+     85,
+     86
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 83] Academic Plan: H010686C This certificate program provides the student with minimum skills necessary for entry level positions. Program Learning Outcomes: Upon successful completion of the program, stude"
+   },
+   {
+    "control_number": "10693",
+    "pages": [
+     132,
+     133,
+     134
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 132] Academic Plan: H010693D This program provides students with classroom and one-on-one instruction (depending on course options chosen) as well as solo and ensemble performance experience. Students develop "
+   },
+   {
+    "control_number": "10694",
+    "pages": [
+     131,
+     132,
+     133,
+     134
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 131] Academic Plan: H010694D This program provides an opportunity for students to acquire breadth of knowledge and introductory skills in music. It is designed for students considering a career in music but wh"
+   },
+   {
+    "control_number": "10698",
+    "pages": [
+     133,
+     134
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 133] Academic Plan: H010698D This program helps students develop skills in Commercial Songwriting. Basic to advance songwriting skills are introduced, explored and developed. Techniques of creating original m"
+   },
+   {
+    "control_number": "17778",
+    "pages": [
+     55,
+     56,
+     57,
+     58
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 55] Academic Plan: H017778C This degree program is designed to prepare students for transfer to a four-year university business program. Program Learning Outcomes: Upon successful completion of the program,"
+   },
+   {
+    "control_number": "18706",
+    "pages": [
+     122,
+     123,
+     124,
+     125
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.739,
+    "opens": "[page 122] Degrees and Certificates – LIBERAL ARTS AND SCIENCES LAHC Catalog 2026-2027 Enroll now at www.lahc.edu. 121 ENGLISH 212 Poetry (3) ENGLISH 213 Dramatic Literature (3) ENGLISH 214 Contemporary Literat"
+   },
+   {
+    "control_number": "18707",
+    "pages": [
+     123,
+     124,
+     125,
+     126
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.694,
+    "opens": "[page 123] Academic Plan: H018707C The Associate in Arts in Liberal Arts & Sciences degrees are designed for students who desire a broad base of knowledge in the liberal arts and sciences. An emphasis in this "
+   },
+   {
+    "control_number": "18708",
+    "pages": [
+     125,
+     126,
+     127,
+     128
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.935,
+    "opens": "[page 125] Academic Plan: H018708C The Associate in Arts in Liberal Arts & Sciences degrees are designed for students who desire a broad base of knowledge in the liberal arts and sciences. This emphasis provid"
+   },
+   {
+    "control_number": "18709",
+    "pages": [
+     127,
+     128
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 127] Academic Plan: H018709C The Associate in Arts in Liberal Arts & Sciences degrees are designed for students who desire a broad base of knowledge in the liberal arts and sciences. These courses focus "
+   },
+   {
+    "control_number": "19343",
+    "pages": [
+     90,
+     91,
+     92
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 90] Academic Plan: H019343D The intense hands-on curriculum is paired with management practice and concepts to complete the Certificate of Achievement in Culinary Arts. The students manage and operate the mar"
+   },
+   {
+    "control_number": "19344",
+    "pages": [
+     89,
+     90,
+     91,
+     92
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 89] Academic Plan: H019344C The Associate in Science degree in Culinary Arts is designed to qualify students for employment in occupations in the growing food industry. The program provides students with theo"
+   },
+   {
+    "control_number": "19850",
+    "pages": [
+     44
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 44] Academic Plan: H019850C The Associate in Arts degree in Art is intended for students who wish to prepare for employment or further studies as a studio artist. Program Learning Outcomes: Upon successful"
+   },
+   {
+    "control_number": "21630",
+    "pages": [
+     40,
+     41,
+     42
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 40] Academic Plan: H021630D This program is for students interested in the technical side of architecture, including building technology, drawing/drafting, CAD, BIM and documenting designs for the built enviro"
+   },
+   {
+    "control_number": "21632",
+    "pages": [
+     57,
+     58,
+     59
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.941,
+    "opens": "[page 57] Academic Plan: H021632D The Business Administration Certificate of Achievement Program provides the student with a strong technical foundation for a wide variety of general entry level positions in the re"
+   },
+   {
+    "control_number": "21633",
+    "pages": [
+     155,
+     156
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 155] Academic Plan: H021633D The Certificate of Achievement in Real Estate granted in conjunction with the California Division of Real Estate and the California Real Estate Association, may be earned by compl"
+   },
+   {
+    "control_number": "21645",
+    "pages": [
+     78,
+     79
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 78] Academic Plan: H021645D Program Learning Outcomes: Upon successful completion of the program, students will have achieved the following outcomes: the ability to: • demonstrate the use of developmentally a"
+   },
+   {
+    "control_number": "21646",
+    "pages": [
+     36
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 36] Academic Plan: H021646D A Certificate of Achievement in Administration of Justice is awarded upon completion of 27 units of technical coursework in Administration of Justice and Communications. Program "
+   },
+   {
+    "control_number": "21648",
+    "pages": [
+     105
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 105] Academic Plan: H021648D The Fire Technology Program is designed to prepare persons for positions in the various branches of the firefighting industry, to upgrade the competency of those already employed "
+   },
+   {
+    "control_number": "22949",
+    "pages": [
+     118
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 118] Academic Plan: H022949D Program Learning Outcomes: Upon successful completion of the program, students will be able to: • Demonstrate the principles and skills to develop a curriculum for the discipline "
+   },
+   {
+    "control_number": "22950",
+    "pages": [
+     77,
+     78,
+     79
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 77] Academic Plan: H022950C The Associate in Arts in Liberal Studies Degree provides breadth studies similar to that required for the elementary education major at some four-year institutions. Students planni"
+   },
+   {
+    "control_number": "30026",
+    "pages": [
+     82,
+     83,
+     84
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 82] Academic Plan: H030026C The Associate in Science in Computer Science and Engineering (A.S.) Degree is intended for students who are seeking employment as Computer Systems Analysts, Software Developers, We"
+   },
+   {
+    "control_number": "30319",
+    "pages": [
+     152,
+     153,
+     154
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 152] Academic Plan: H030319C The Associate of Arts degree in Psychology will give students a foundation for more advanced psychology courses and a foundation for optimal human interaction in the workplace and"
+   },
+   {
+    "control_number": "31028",
+    "pages": [
+     116,
+     117,
+     118,
+     119
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 116] Academic Plan: H031028G Student completing the Associate in Arts in Kinesiology for Transfer degree will have satisfied the lower division major preparation for bachelor’s degrees in similar majors as de"
+   },
+   {
+    "control_number": "31029",
+    "pages": [
+     43,
+     44
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 43] Academic Plan: H031029G Student completing the Associate in Arts in Studio Arts for Transfer degree will have satisfied the lower division major preparation for bachelor’s degrees in similar majors as det"
+   },
+   {
+    "control_number": "31221",
+    "pages": [
+     109
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 109] Academic Plan: H031221G Student completing the Associate in Arts in History for Transfer degree will have satisfied the lower division major preparation for bachelor’s degrees in similar majors as determi"
+   },
+   {
+    "control_number": "32099",
+    "pages": [
+     130,
+     131,
+     132,
+     133
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 130] Academic Plan: H032099G Student completing the Associate in Arts in Music for Transfer degree will have satisfied the lower division major preparation for bachelor’s degrees in similar majors as determine"
+   },
+   {
+    "control_number": "32613",
+    "pages": [
+     151,
+     152,
+     153,
+     154
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 151] Academic Plan: H032613G Student completing the Associate in Arts in Psychology for Transfer degree will have satisfied the lower division major preparation for bachelor’s degrees in similar majors as dete"
+   },
+   {
+    "control_number": "32673",
+    "pages": [
+     98,
+     99
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 98] Academic Plan: H032673G Student completing the Associate in Arts in English for Transfer degree will have satisfied the lower division major preparation for bachelor’s degrees in similar majors as determin"
+   },
+   {
+    "control_number": "32688",
+    "pages": [
+     129
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.857,
+    "opens": "[page 129] Mathematics - Associate in Science for Transfer (AS-T) Degree 2.0 Academic Plan: H046138H Student completing the Associate in Science in Mathematics 2.0 for Transfer degree will have satisfied the lower d"
+   },
+   {
+    "control_number": "32690",
+    "pages": [
+     73,
+     74
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 73] Academic Plan: H032690H Student completing the Associate in Science in Early Childhood Education for Transfer degree will have satisfied the lower division major preparation for bachelor’s degrees in simi"
+   },
+   {
+    "control_number": "32810",
+    "pages": [
+     149
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 149] Physics - Associate in Science for Transfer (AS-T) Degree 2.0 Academic Plan: H046129H Student completing the Associate in Science in Physics 2.0 in for Transfer degree will have satisfied the lower divisi"
+   },
+   {
+    "control_number": "33087",
+    "pages": [
+     34,
+     35,
+     36,
+     37
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 34] Academic Plan: H033087H Student completing the Associate in Science in Administration of Justice for Transfer degree will have satisfied the lower division major preparation for bachelor’s degrees in simil"
+   },
+   {
+    "control_number": "33285",
+    "pages": [
+     37,
+     38
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.96,
+    "opens": "[page 37] Academic Plan: H033285G Student completing the Associate in Arts in Anthropology for Transfer degree will have satisfied the lower division major preparation for bachelor’s degrees in similar majors as de"
+   },
+   {
+    "control_number": "33509",
+    "pages": [
+     122,
+     123,
+     124,
+     125
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": false,
+    "coverage": 0.528,
+    "opens": "[page 122] Degrees and Certificates – LIBERAL ARTS AND SCIENCES LAHC Catalog 2026-2027 Enroll now at www.lahc.edu. 121 ENGLISH 212 Poetry (3) ENGLISH 213 Dramatic Literature (3) ENGLISH 214 Contemporary Literat"
+   },
+   {
+    "control_number": "35548",
+    "pages": [
+     59,
+     60,
+     61,
+     62
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 59] Academic Plan: H035548D This certificate of achievement is designed for students who want a fast-track course of study that will provide them with a solid foundation in Microsoft Windows and Office as well"
+   },
+   {
+    "control_number": "36644",
+    "pages": [
+     61
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 61] Academic Plan: H036644D The Certificate of Achievement in Global Trade and Logistics builds a foundation for careers in foreign trade business management and logistics. The program is designed for studen"
+   },
+   {
+    "control_number": "36919",
+    "pages": [
+     108
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 108] Academic Plan: H036919F The General Education Diploma (GED) Certificate of Competency is designed to measure the skills and knowledge equivalent to a high school course of study. It is composed of five c"
+   },
+   {
+    "control_number": "37140",
+    "pages": [
+     31,
+     32
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 31] Academic Plan: H037140E The Bookkeeping Certificate of Completion will prepare students with the hands-on skills and knowledge needed for an entry-level career as a bookkeeper, including use of QuickBooks"
+   },
+   {
+    "control_number": "37141",
+    "pages": [
+     145
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 145] Academic Plan: H037141E The Emergency Medical Technician Preparation Certificate of Completion will prepare students with the hands-on skills and knowledge needed for an entry-level career as an Emergency"
+   },
+   {
+    "control_number": "37245",
+    "pages": [
+     60
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 60] Academic Plan: H037245D This certificate of achievement is designed for students who want a fast-track course of study that will provide them with a solid foundation in Microsoft Windows and Office as well"
+   },
+   {
+    "control_number": "37385",
+    "pages": [
+     86,
+     87
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 86] Academic Plan: H037385D The goal of the Information Technology Technician (ITTP I) Computer Sales & Support Certificate of Achievement is to prepare students for jobs as entry-level computer sales and tec"
+   },
+   {
+    "control_number": "37517",
+    "pages": [
+     162,
+     163
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 162] Academic Plan: H037517G Student completing the Associate in Arts in Spanish for Transfer degree will have satisfied the lower division major preparation for bachelor’s degrees in similar majors as determ"
+   },
+   {
+    "control_number": "37792",
+    "pages": [
+     64
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.833,
+    "opens": "[page 64] Academic Plan: H037792E The Fundamentals of Warehousing and Distribution Certificate of Completion will expose students to the industry knowledge needed to succeed as a warehouse worker and quickly advanc"
+   },
+   {
+    "control_number": "38068",
+    "pages": [
+     113,
+     114,
+     115
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.955,
+    "opens": "[page 113] Academic Plan: H038068G Student completing the Associate in Arts in Journalism for Transfer degree will have satisfied the lower division major preparation for bachelor’s degrees in similar majors as dete"
+   },
+   {
+    "control_number": "38586",
+    "pages": [
+     147,
+     148
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 147] Academic Plan: H038586G Student completing the Associate in Arts in Philosophy for Transfer degree will have satisfied the lower division major preparation for bachelor’s degrees in similar majors as det"
+   },
+   {
+    "control_number": "38592",
+    "pages": [
+     49,
+     50,
+     51,
+     52
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 49] Academic Plan: H038592C This program is designed to prepare students for employment in biotechnology research and related fields. Upon completing the required coursework, students will acquire proficiency "
+   },
+   {
+    "control_number": "38611",
+    "pages": [
+     65
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 65] Academic Plan: H038611E The International Sales and Marketing Professional Certificate of Completion prepares students to demonstrate the practical job skills and industry knowledge needed to become a pro"
+   },
+   {
+    "control_number": "38682",
+    "pages": [
+     95
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 95] Academic Plan: H038682E The Culinary Basics Training Certificate of Completion will prepare students for an entry level positions in the Foodservice industry. This program is taught at our state-of- the-ar"
+   },
+   {
+    "control_number": "38696",
+    "pages": [
+     102
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 102] Academic Plan: H038696F The ESL III - Advanced Certificate of Competency provides non-native adult learners with academic language proficiency skills in listening/speaking and reading/writing. Students d"
+   },
+   {
+    "control_number": "38715",
+    "pages": [
+     51,
+     52
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 51] Academic Plan: H038715D Students who complete the program with a minimum grade of C in all required courses will receive a Certificate of Achievement. This certificate is designed for those with limited t"
+   },
+   {
+    "control_number": "38716",
+    "pages": [
+     50,
+     51
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 50] Academic Plan: H038716D Students who complete the program with a minimum grade of C in all required courses will receive a Certificate of Achievement. This certificate is ideal for those seeking to specia"
+   },
+   {
+    "control_number": "38880",
+    "pages": [
+     112
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 112] Academic Plan: H038880C The Humanities is the story of everything humankind has ever dreamed, thought, created, painted, built, written, believed, imagined, sculpted, sung, acted and played. It is our sto"
+   },
+   {
+    "control_number": "39199",
+    "pages": [
+     101
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 101] Academic Plan: H039199F The English as a Second Language II - Intermediate Certificate of Competency is an intermediate – advanced communicative-based listening/speaking and reading/writing language prof"
+   },
+   {
+    "control_number": "39203",
+    "pages": [
+     32
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 32] Academic Plan: H039203E The QuickBooks Certificate of Completion will provide students with the hands-on skills and knowledge needed for professional bookkeeping, entrepreneurs, accounting clerks, payroll"
+   },
+   {
+    "control_number": "39712",
+    "pages": [
+     84
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 84] Academic Plan: H039712D The Cloud Computing program prepares students to design solutions for Infrastructure as a Service (IaaS) architectures by provisioning computing instances, establishing virtual priv"
+   },
+   {
+    "control_number": "39984",
+    "pages": [
+     103
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 103] Academic Plan: H039984H Student completing the Associate in Science in Environmental Science for Transfer degree will have satisfied the lower division major preparation for bachelor’s degrees in similar "
+   },
+   {
+    "control_number": "40037",
+    "pages": [
+     96,
+     97,
+     98
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 96] Academic Plan: H040037G Student completing the Associate in Arts in Economics for Transfer degree will have satisfied the lower division major preparation for bachelor’s degrees in similar majors as determ"
+   },
+   {
+    "control_number": "40109",
+    "pages": [
+     150,
+     151,
+     152,
+     153
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 150] Academic Plan: H040109G Student completing the Associate in Arts in Political Science for Transfer degree will have satisfied the lower division major preparation for bachelor’s degrees in similar majors "
+   },
+   {
+    "control_number": "40145",
+    "pages": [
+     48
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 48] Academic Plan: H040145H Student completing the Associate in Science in Biology for Transfer degree will have satisfied the lower division major preparation for bachelor’s degrees in similar majors as dete"
+   },
+   {
+    "control_number": "40231",
+    "pages": [
+     160,
+     161,
+     162,
+     163
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 160] Academic Plan: H040231G Student completing the Associate in Arts in Sociology for Transfer degree will have satisfied the lower division major preparation for bachelor’s degrees in similar majors as dete"
+   },
+   {
+    "control_number": "41041",
+    "pages": [
+     52,
+     53,
+     54,
+     55
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 52] Academic Plan: H041041H Student completing the Associate in Science in Business Administration 2.0 for Transfer degree will have satisfied the lower division major preparation for bachelor’s degrees in si"
+   },
+   {
+    "control_number": "41096",
+    "pages": [
+     106,
+     107
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.875,
+    "opens": "[page 106] Academic Plan: H041096C The Associate in Arts degree in French provides a solid foundation in French language and literature for those wishing to continue their study of French. The courses included in th"
+   },
+   {
+    "control_number": "41102",
+    "pages": [
+     69,
+     70
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.9,
+    "opens": "[page 69] Degrees and Certificates – CHEMISTRY LAHC Catalog 2026-2027 Enroll now at www.lahc.edu. 68 Chemistry - Associate in Science in for UC Transfer (UCTP) Degree Academic Plan: H041129M The University of Cal"
+   },
+   {
+    "control_number": "41103",
+    "pages": [
+     145,
+     146
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 145] Academic Plan: H041103D The Pre-Health Professions Certificate of Achievement will prepare students for entry into health professional programs such as Nursing. Courses in this certificate are prerequisit"
+   },
+   {
+    "control_number": "41104",
+    "pages": [
+     144,
+     145,
+     146
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 144] Academic Plan: H041104C The Pre-Health Professions AS will prepare students for entry into health professional programs such as Nursing. Courses in this degree are prerequisites for many health professio"
+   },
+   {
+    "control_number": "41111",
+    "pages": [
+     33
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 33] Academic Plan: H041111E This certificate provides comprehensive coverage of the new QuickBooks Online program. Topics include tips on choosing the appropriate subscription level for the business, customiz"
+   },
+   {
+    "control_number": "41129",
+    "pages": [
+     69,
+     70
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 69] Academic Plan: H041129M The University of California Transfer Pathway (UCTP) Associate’s Degree in Chemistry is an extension of UC Pathways+. The degrees, which are created by the community colleges, incl"
+   },
+   {
+    "control_number": "41253",
+    "pages": [
+     204
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 204] LAHC Catalog 2026-2027 Enroll now at www.lahc.edu. 203 BSICSKL 208CE: College Readiness: Reading Skills I - Total Hours: 54 Lec - 0 units; PNP - NC; Maj - Description: This is a foundational level cou"
+   },
+   {
+    "control_number": "41254",
+    "pages": [
+     203
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 203] LAHC Catalog 2026-2027 Enroll now at www.lahc.edu. 202 BSICSKL 086CE: GED/HiSET Preparation: Social Studies - Total Hours: 180 Lab; DE - 0 units; PNP - NC; Maj - Description: This course is designed t"
+   },
+   {
+    "control_number": "41357",
+    "pages": [
+     146
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 146] Academic Plan: H041357H Student completing the Associate in Science in Nutrition and Dietetics for Transfer degree will have satisfied the lower division major preparation for bachelor’s degrees in simila"
+   },
+   {
+    "control_number": "41370",
+    "pages": [
+     110,
+     111
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 110] Academic Plan: H041370H Student completing the Associate in Science in Hospitality Management for Transfer degree will have satisfied the lower division major preparation for bachelor’s degrees in similar"
+   },
+   {
+    "control_number": "41763",
+    "pages": [
+     87
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 87] Academic Plan: H041763D This Certificate of Achievement is the second step in pursuing a career in Information and Technology field as an IT Technician. This certificate will help students launch a career "
+   },
+   {
+    "control_number": "42458",
+    "pages": [
+     74,
+     75,
+     76,
+     77
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.905,
+    "opens": "[page 74] Degrees and Certificates – CHILD DEVELOPMENT AND EDUCATION LAHC Catalog 2026-2027 Enroll now at www.lahc.edu. 73 Elementary Teacher Education: Integrated Programs - Associate in Arts Transfer (AA-T) Degree"
+   },
+   {
+    "control_number": "43108",
+    "pages": [
+     80
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 80] Academic Plan: H043108G Student completing the Associate in Arts in Communication Studies 2.0 for Transfer degree will have satisfied the lower division major preparation for bachelor’s degrees in similar "
+   },
+   {
+    "control_number": "43398",
+    "pages": [
+     159
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 159] Academic Plan: H043398D The Social Sciences Data Analytics Certificate of Achievement is designed to provide high school students with an introduction to the data analytics field within the context of th"
+   },
+   {
+    "control_number": "43420",
+    "pages": [
+     92
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 92] Academic Plan: H043420D The Professional Baking and Pastry Arts program is designed for entry-level positions opportunities in the baking and pastry industry. Students will learn about the functions of ing"
+   },
+   {
+    "control_number": "43586",
+    "pages": [
+     58
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 58] Academic Plan: H043586D The Business Data Analytics Certificate of Achievement is designed to provide students with a broad introduction to the business field and a basic foundation in data analysis and i"
+   },
+   {
+    "control_number": "43701",
+    "pages": [
+     66,
+     67
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 66] Academic Plan: H043701E This certificate introduces students the basic concepts skills and resources that are foundational in building sustainable small business enterprises and an understanding of the key"
+   },
+   {
+    "control_number": "43702",
+    "pages": [
+     63
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 63] Academic Plan: H043702E This certificate introduces students to the hands-on details that they need to understand in developing their business model including setting out and developing the operational, m"
+   },
+   {
+    "control_number": "43703",
+    "pages": [
+     66,
+     67
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 66] Academic Plan: H043703E This certificate introduces students to strategies that will enable them to skillfully market their product and maintain a sustainable small business venture using various social me"
+   },
+   {
+    "control_number": "43704",
+    "pages": [
+     67
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 67] Academic Plan: H043704E Sustainable businesses are enterprises that strive to meet the triple bottom line, which is a social, environmental and financial framework to evaluate business performance and suc"
+   },
+   {
+    "control_number": "43724",
+    "pages": [
+     63
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 63] Academic Plan: H043724E The Digital Marketing Pre-Apprenticeship program is a project-based learning experience designed to provide aspiring digital marketers with a solid foundation in the principles, st"
+   },
+   {
+    "control_number": "43922",
+    "pages": [
+     81,
+     82
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 81] Academic Plan: H043922H Student completing the Associate in Science in Computer Science for Transfer degree will have satisfied the lower division major preparation for bachelor’s degrees in similar major"
+   },
+   {
+    "control_number": "44009",
+    "pages": [
+     92
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 92] Academic Plan: H044009D The Advanced Professional Baking and Pastry Arts program is designed for entry-level positions and advancement opportunities in the baking and pastry industry. Students will lear"
+   },
+   {
+    "control_number": "44180",
+    "pages": [
+     111
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 111] Academic Plan: H044180D The Hospitality Management Certificate prepares students in entry to mid-level positions in the Hospitality Industry. The certificate provides students with knowledge and training "
+   },
+   {
+    "control_number": "44271",
+    "pages": [
+     99,
+     100,
+     101,
+     102
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 99] Academic Plan: H044271D The creative writing certificate of achievement provides students with the analytical skills to distinguish key elements and structures of the four major genres of creative writing:"
+   },
+   {
+    "control_number": "44320",
+    "pages": [
+     71,
+     72,
+     73,
+     74
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 71] Academic Plan: H044320G Student completing the Associate in Arts in Child and Adolescent Development for Transfer degree will have satisfied the lower division major preparation for bachelor’s degrees in "
+   },
+   {
+    "control_number": "44347",
+    "pages": [
+     135
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 135] Academic Plan: H044347E The Pro Tools Certification program provides expert and emerging professional musicians with the opportunity to become an Avid Certified User for Pro Tools. By completing the Pro "
+   },
+   {
+    "control_number": "44348",
+    "pages": [
+     111
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 111] Academic Plan: H044348E The Hospitality, First Time Supervisor Certificate of Completion prepares students for entry-level employment and supervisory positions in the Hospitality and tourism sector and/or"
+   },
+   {
+    "control_number": "44376",
+    "pages": [
+     45
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 45] Academic Plan: H044376D The Media Arts – Animation Certificate of Achievement equips students with essential artistic, technological, storytelling, and design skills vital for success as 3D animators and v"
+   },
+   {
+    "control_number": "44415",
+    "pages": [
+     46
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 46] Academic Plan: H044415D The Media Arts – Game Art and Design Certificate of Achievement equips students with essential artistic, technological, storytelling, and design skills vital for success as develop"
+   },
+   {
+    "control_number": "44499",
+    "pages": [
+     120,
+     121,
+     122,
+     123
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.889,
+    "opens": "[page 120] Degrees and Certificates – LAW, PUBLIC POLICY, AND SOCIETY LAHC Catalog 2026-2027 Enroll now at www.lahc.edu. 119 STAT C1000E Introduction to Statistics (4) STAT 001 Elementary Statistics I for the Social"
+   },
+   {
+    "control_number": "44815",
+    "pages": [
+     135
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 135] Academic Plan: H044815E The Music Internship program offers students a platform to apply the skills acquired through required music courses towards earning a degree or certificate. Through partnerships wi"
+   },
+   {
+    "control_number": "44947",
+    "pages": [
+     119,
+     120,
+     121,
+     122
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.559,
+    "opens": "[page 119] Degrees and Certificates – LAW, PUBLIC POLICY, AND SOCIETY LAHC Catalog 2026-2027 Enroll now at www.lahc.edu. 118 Law, Public Policy, and Society - Associate in Arts for Transfer (AA-T) Degree Academic P"
+   },
+   {
+    "control_number": "45230",
+    "pages": [
+     157,
+     158,
+     159,
+     160
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 157] Academic Plan: H045230G Student completing the Associate in Arts in Social Justice Studies: General for Transfer degree will have satisfied the lower division major preparation for bachelor’s degrees in "
+   },
+   {
+    "control_number": "45238",
+    "pages": [
+     94
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 94] Academic Plan: H045238E The Basic Barista Skills II certificate aims to provide individuals with the basic skills desired in the labor market, guide them in learning applicable barista skills, and gain ha"
+   },
+   {
+    "control_number": "45372",
+    "pages": [
+     153,
+     154
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.957,
+    "opens": "[page 153] Academic Plan: H045372H Student completing the Associate in Science in Public Health for Transfer degree will have satisfied the lower division major preparation for bachelor’s degrees in similar majors a"
+   },
+   {
+    "control_number": "45436",
+    "pages": [
+     93
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 93] Academic Plan: H045436E Basic Barista Skill I Certificate of Completion aims to provide individuals with learning of basic skills desired in the labor market, guide them in learning applicable barista skil"
+   },
+   {
+    "control_number": "45733",
+    "pages": [
+     164
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 164] Academic Plan: H045733G Student completing the Associate in Arts in Theatre Arts for Transfer degree will have satisfied the lower division major preparation for bachelor’s degrees in similar majors as d"
+   },
+   {
+    "control_number": "45817",
+    "pages": [
+     79
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 79] Academic Plan: H045817D The Certificate of Achievement in Special Needs and Neurodiversity is designed for students seeking to specialize in working with children who have special needs across early care "
+   },
+   {
+    "control_number": "45834",
+    "pages": [
+     85
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 85] Academic Plan: H045834D The Cybersecurity Analyst certificate of achievement program is a one-year program that prepares students for an entry level position in the field of computer internetwork systems s"
+   },
+   {
+    "control_number": "46129",
+    "pages": [
+     149
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 149] Academic Plan: H046129H Student completing the Associate in Science in Physics 2.0 in for Transfer degree will have satisfied the lower division major preparation for bachelor’s degrees in similar majors "
+   },
+   {
+    "control_number": "46138",
+    "pages": [
+     129
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 129] Academic Plan: H046138H Student completing the Associate in Science in Mathematics 2.0 for Transfer degree will have satisfied the lower division major preparation for bachelor’s degrees in similar majors"
+   },
+   {
+    "control_number": "46276",
+    "pages": [
+     308,
+     309
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 308] LAHC Catalog 2026-2027 Enroll now at www.lahc.edu. 307 certificate of completion in Sustainable Small Business Development. VOC ED 193CE: Marketing and Sales for Small Business - Total Hours: 36 Lec;"
+   },
+   {
+    "control_number": "46297",
+    "pages": [
+     74,
+     75,
+     76,
+     77
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.971,
+    "opens": "[page 74] Academic Plan: H046297G Student completing the Associate in Arts in Elementary Teacher Education: Integrated Programs for Transfer degree will have satisfied the lower division major preparation for bache"
+   },
+   {
+    "control_number": "46353",
+    "pages": [
+     55,
+     56,
+     57,
+     58
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 55] Degrees and Certificates – BUSINESS LAHC Catalog 2026-2027 Enroll now at www.lahc.edu. 54 Business Administration - Associate in Arts (AA) Degree Academic Plan: H017778C This degree program is designed "
+   },
+   {
+    "control_number": "46354",
+    "pages": [
+     55,
+     56,
+     57,
+     58
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": false,
+    "coverage": 0.857,
+    "opens": "[page 55] Degrees and Certificates – BUSINESS LAHC Catalog 2026-2027 Enroll now at www.lahc.edu. 54 Business Administration - Associate in Arts (AA) Degree Academic Plan: H017778C This degree program is designed "
+   }
+  ],
+  "unproven": [
+   "33509",
+   "46354"
+  ]
  },
  "loads": 1,
- "seconds": 63.9,
- "found": 118,
+ "seconds": 96.0,
+ "found": 117,
  "by_method": {
   "no_closed_list": 3,
-  "not_found": 3,
-  "pdf_pages": 118
+  "not_found": 4,
+  "pdf_pages": 117
  },
  "shared_pages": {
-  "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=39": [
-   "02768",
-   "21630"
-  ],
-  "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=56": [
-   "02770",
-   "21632"
-  ],
-  "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=69": [
-   "02797",
-   "32810",
-   "41102",
-   "41129"
-  ],
-  "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=131": [
-   "08303",
-   "10694"
-  ],
-  "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=78": [
-   "08305",
-   "21645"
-  ],
   "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=55": [
    "17778",
-   "46353",
-   "46354"
-  ],
-  "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=122": [
-   "18706",
-   "33509",
-   "38586"
-  ],
-  "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=89": [
-   "19343",
-   "19344"
+   "46353"
   ],
   "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=129": [
    "32688",
    "46138"
   ],
-  "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=144": [
-   "41103",
-   "41104"
+  "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=149": [
+   "32810",
+   "46129"
+  ],
+  "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=145": [
+   "37141",
+   "41103"
+  ],
+  "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=69": [
+   "41102",
+   "41129"
   ],
   "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=74": [
    "42458",
@@ -101,6 +1532,21 @@
  },
  "not_found": [
   {
+   "control_number": "33509",
+   "title": "Intersegmental General Education Transfer Curriculum",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "pages": [
+     122,
+     123,
+     124,
+     125
+    ],
+    "coverage": 0.528,
+    "why": "the page prints neither the control number nor the title and award"
+   }
+  },
+  {
    "control_number": "33797",
    "title": "CSU General Education",
    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
@@ -110,12 +1556,18 @@
    }
   },
   {
-   "control_number": "44947",
-   "title": "California General Education Transfer Curriculum (Cal-GETC)",
-   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "control_number": "46354",
+   "title": "Entrepreneurial Management",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
    "near_miss": {
-    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=147",
-    "coverage": 0.364
+    "pages": [
+     55,
+     56,
+     57,
+     58
+    ],
+    "coverage": 0.857,
+    "why": "the page prints neither the control number nor the title and award"
    }
   },
   {
@@ -131,1195 +1583,145 @@
  "page_claimed": [],
  "coverage_bands": {
   "0.5-0.8": 3,
-  "0.8-1.0": 20,
-  "1.0": 95
+  "0.8-1.0": 16,
+  "1.0": 98
  },
  "would_extract": {
-  "against": null,
-  "kept": 0,
-  "programs": 118,
+  "against": "kb/program_requirements_college/los_angeles_harbor",
+  "kept": 104,
+  "programs": 13,
   "list": [
-   {
-    "control_number": "02768",
-    "title": "Architectural Technology",
-    "award": "A.S. Degree",
-    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=39",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "02770",
-    "title": "Business Administration",
-    "award": "A.S. Degree",
-    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=56",
-    "coverage": 0.944,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "02775",
-    "title": "Administrative Assistant",
-    "award": "A.S. Degree",
-    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=54",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "02790",
-    "title": "Nursing Professional RN",
-    "award": "A.S. Degree",
-    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=139",
-    "coverage": 0.9,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
    {
     "control_number": "02797",
     "title": "Chemistry",
     "award": "A.S. Degree",
-    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=69",
+    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=70",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "02799",
-    "title": "Administration of Justice",
-    "award": "A.S. Degree",
-    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=35",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "02800",
-    "title": "Fire Technology",
-    "award": "A.S. Degree",
-    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=104",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "08298",
-    "title": "Engineering",
-    "award": "A.S. Degree",
-    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=97",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=69",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "08303",
     "title": "Music Technology",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=131",
+    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=134",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "08304",
-    "title": "Nursing Professional RN - LVN to RN",
-    "award": "A.S. Degree",
-    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=142",
-    "coverage": 0.955,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=131",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "08305",
     "title": "Child Development",
     "award": "A.S. Degree",
-    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=78",
+    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=76",
     "coverage": 0.96,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=78",
+    "was_coverage": 0.96,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "10683",
     "title": "Accounting",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=28",
+    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=29",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "10686",
-    "title": "Computer Information Systems",
-    "award": "A.S. Degree",
-    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=83",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "10693",
-    "title": "Music Performance",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=132",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "10694",
-    "title": "Music",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=131",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "10698",
-    "title": "Music Songwriting",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=133",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "17778",
-    "title": "Business Administration",
-    "award": "A.A. Degree",
-    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=55",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "18706",
-    "title": "Liberal Arts and Sciences - Arts and Humanities",
-    "award": "A.A. Degree",
-    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=122",
-    "coverage": 0.739,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "18707",
-    "title": "Liberal Arts and Sciences - Health and Fitness",
-    "award": "A.A. Degree",
-    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=123",
-    "coverage": 0.694,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "18708",
-    "title": "Liberal Arts and Sciences: Mathematics and Natural Sciences",
-    "award": "A.A. Degree",
-    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=125",
-    "coverage": 0.935,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "18709",
-    "title": "Liberal Arts and Sciences: Social and Behavioral Sciences",
-    "award": "A.A. Degree",
-    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=127",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=28",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "19343",
     "title": "Culinary Arts",
     "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=89",
+    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=90",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "19344",
-    "title": "Culinary Arts",
-    "award": "A.S. Degree",
-    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=89",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "19850",
-    "title": "Art",
-    "award": "A.A. Degree",
-    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=44",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=89",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "21630",
     "title": "Architectural Technology",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=39",
+    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=40",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=39",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "21632",
     "title": "Business Administration",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=56",
+    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=57",
     "coverage": 0.941,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "21633",
-    "title": "Real Estate",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=155",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "21645",
-    "title": "Child Development",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=78",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "21646",
-    "title": "Administration of Justice",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=36",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "21648",
-    "title": "Fire Technology",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=105",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "22949",
-    "title": "Kinesiology",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=118",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "22950",
-    "title": "Liberal Studies",
-    "award": "A.A. Degree",
-    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=77",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "30026",
-    "title": "Computer Science and Engineering",
-    "award": "A.S. Degree",
-    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=82",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "30319",
-    "title": "Psychology",
-    "award": "A.A. Degree",
-    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=152",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=56",
+    "was_coverage": 0.941,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "31028",
     "title": "Kinesiology",
     "award": "A.A- T Degree",
-    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=117",
-    "coverage": 0.837,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "31029",
-    "title": "Studio Arts",
-    "award": "A.A- T Degree",
-    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=43",
+    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=116",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "31221",
-    "title": "History",
-    "award": "A.A- T Degree",
-    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=109",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "32099",
-    "title": "Music",
-    "award": "A.A- T Degree",
-    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=130",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "32613",
-    "title": "PSYCHOLOGY",
-    "award": "A.A- T Degree",
-    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=151",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "32673",
-    "title": "English",
-    "award": "A.A- T Degree",
-    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=98",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "32688",
-    "title": "Mathematics",
-    "award": "A.S. T Degree",
-    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=129",
-    "coverage": 0.857,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "32690",
-    "title": "EARLY CHILDHOOD EDUCATION",
-    "award": "A.S. T Degree",
-    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=73",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=117",
+    "was_coverage": 0.837,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "32810",
     "title": "Physics",
     "award": "A.S. T Degree",
-    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=69",
+    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=149",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "33087",
-    "title": "Administration of Justice",
-    "award": "A.S. T Degree",
-    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=34",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "33285",
-    "title": "Anthropology",
-    "award": "A.A- T Degree",
-    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=37",
-    "coverage": 0.96,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "33509",
-    "title": "Intersegmental General Education Transfer Curriculum",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=122",
-    "coverage": 0.528,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "35548",
-    "title": "Business Information Worker 1",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=59",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "36644",
-    "title": "Global Trade and Logistics",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=61",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "36919",
-    "title": "GENERAL EDUCATION DIPLOMA (GED)",
-    "award": "Noncredit program",
-    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=108",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37140",
-    "title": "BOOKKEEPING",
-    "award": "Noncredit program",
-    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=31",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37141",
-    "title": "EMERGENCY MEDICAL TECHNICIAN PREPARATION",
-    "award": "Noncredit program",
-    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=145",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37245",
-    "title": "Business Information Worker II",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=60",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37385",
-    "title": "ITTP I: Computer Sales and Support",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=86",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37517",
-    "title": "Spanish",
-    "award": "A.A- T Degree",
-    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=162",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37792",
-    "title": "FUNDAMENTALS OF WAREHOUSING AND DISTRIBUTION",
-    "award": "Noncredit program",
-    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=64",
-    "coverage": 0.833,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "38068",
-    "title": "Journalism",
-    "award": "A.A- T Degree",
-    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=113",
-    "coverage": 0.955,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=69",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "38586",
     "title": "Philosophy",
     "award": "A.A- T Degree",
-    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=122",
-    "coverage": 0.804,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "38592",
-    "title": "Biotechnology",
-    "award": "A.S. Degree",
-    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=49",
+    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=147",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "38611",
-    "title": "International Sales and Marketing Professional",
-    "award": "Noncredit program",
-    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=65",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "38682",
-    "title": "Culinary Basics Training",
-    "award": "Noncredit program",
-    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=95",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "38696",
-    "title": "ESL III - Advanced",
-    "award": "Noncredit program",
-    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=102",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "38715",
-    "title": "Biotechnology Research Lab Assistant",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=51",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "38716",
-    "title": "Biotechnology Lab Assistant",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=50",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "38880",
-    "title": "Humanities",
-    "award": "A.A. Degree",
-    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=112",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "39199",
-    "title": "ESL II - Intermediate",
-    "award": "Noncredit program",
-    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=101",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "39203",
-    "title": "QUICKBOOKS",
-    "award": "Noncredit program",
-    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=32",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "39712",
-    "title": "CLOUD COMPUTING",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=84",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "39984",
-    "title": "Environmental Science",
-    "award": "A.S. T Degree",
-    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=103",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "40037",
-    "title": "Economics",
-    "award": "A.A- T Degree",
-    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=96",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "40109",
-    "title": "Political Science",
-    "award": "A.A- T Degree",
-    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=150",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "40145",
-    "title": "Biology",
-    "award": "A.S. T Degree",
-    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=48",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=122",
+    "was_coverage": 0.804,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "40231",
     "title": "Sociology",
     "award": "A.A- T Degree",
-    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=128",
-    "coverage": 0.8,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "41041",
-    "title": "Business Administration 2.0",
-    "award": "A.S. T Degree",
-    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=52",
+    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=160",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "41096",
-    "title": "French",
-    "award": "A.A. Degree",
-    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=106",
-    "coverage": 0.875,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "41102",
-    "title": "UCTP Physics",
-    "award": "A.S. T Degree",
-    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=69",
-    "coverage": 0.9,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=128",
+    "was_coverage": 0.8,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "41103",
     "title": "Pre-Health Professions",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=144",
+    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=145",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=144",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
    },
    {
-    "control_number": "41104",
-    "title": "Pre-Health Professions",
-    "award": "A.S. Degree",
-    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=144",
-    "coverage": 1.0,
+    "control_number": "44947",
+    "title": "California General Education Transfer Curriculum (Cal-GETC)",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=119",
+    "coverage": 0.559,
     "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "41111",
-    "title": "Quickbooks Online",
-    "award": "Noncredit program",
-    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=33",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "41129",
-    "title": "UCTP Chemistry",
-    "award": "A.S. T Degree",
-    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=69",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "41253",
-    "title": "COLLEGE READINESS:  READING SKILLS",
-    "award": "Noncredit program",
-    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=204",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "41254",
-    "title": "COLLEGE READINESS:  WRITING SKILLS",
-    "award": "Noncredit program",
-    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=203",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "41357",
-    "title": "Nutrition and Dietetics",
-    "award": "A.S. T Degree",
-    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=146",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "41370",
-    "title": "Hospitality Management",
-    "award": "A.S. T Degree",
-    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=110",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "41763",
-    "title": "ITTP II: Help Desk User Support",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=87",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "42458",
-    "title": "Elementary Teacher Education",
-    "award": "A.A- T Degree",
-    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=74",
-    "coverage": 0.905,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "43108",
-    "title": "Communication Studies 2.0",
-    "award": "A.A- T Degree",
-    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=80",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "43398",
-    "title": "Social Sciences Data Analytics",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=159",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "43420",
-    "title": "Professional Baking and Pastry Arts",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=92",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "43586",
-    "title": "Business Data Analytics",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=58",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "43701",
-    "title": "Introduction to Sustainable Small Business Development",
-    "award": "Noncredit program",
-    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=66",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "43702",
-    "title": "Fundamentals of Developing a Sustainable Small Business Enterprise",
-    "award": "Noncredit program",
-    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=63",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "43703",
-    "title": "Strategies for Marketing a Sustainable Small Business Enterprise",
-    "award": "Noncredit program",
-    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=66",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "43704",
-    "title": "Sustainable Small Business Development",
-    "award": "Noncredit program",
-    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=67",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "43724",
-    "title": "Digital Marketing Pre-Apprenticeship",
-    "award": "Noncredit program",
-    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=63",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "43922",
-    "title": "Computer Science",
-    "award": "A.S. T Degree",
-    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=81",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "44009",
-    "title": "Advanced Professional Baking and Pastry Arts",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=92",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "44180",
-    "title": "Hospitality Management",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=111",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "44271",
-    "title": "Creative Writing",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=99",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "44320",
-    "title": "Child and Adolescent Development",
-    "award": "A.A- T Degree",
-    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=71",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "44347",
-    "title": "Pro Tools Certification",
-    "award": "Noncredit program",
-    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=135",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "44348",
-    "title": "Hospitality, First Time Supervisor",
-    "award": "Noncredit program",
-    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=111",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "44376",
-    "title": "Media Arts - Animation",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=45",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "44415",
-    "title": "Media Arts - Game Art and Design",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=46",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "44499",
-    "title": "Law, Public Policy, and Society",
-    "award": "A.A- T Degree",
-    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=120",
-    "coverage": 0.889,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "44815",
-    "title": "Music Internship",
-    "award": "Noncredit program",
-    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=135",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "45230",
-    "title": "Social Justice Studies: General",
-    "award": "A.A- T Degree",
-    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=157",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "45238",
-    "title": "Basic Barista Skill II",
-    "award": "Noncredit program",
-    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=94",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "45372",
-    "title": "Public Health",
-    "award": "A.S. T Degree",
-    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=153",
-    "coverage": 0.957,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "45436",
-    "title": "Basic Barista Skill I",
-    "award": "Noncredit program",
-    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=93",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "45733",
-    "title": "Theatre Arts",
-    "award": "A.A- T Degree",
-    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=164",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "45817",
-    "title": "Special Needs and Neurodiversity",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=79",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "45834",
-    "title": "Cybersecurity Analyst",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=85",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "46129",
-    "title": "Physics 2.0",
-    "award": "A.S. T Degree",
-    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=149",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "46138",
-    "title": "Mathematics 2.0",
-    "award": "A.S. T Degree",
-    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=129",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "46276",
-    "title": "Library Technical Services",
-    "award": "Noncredit program",
-    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=308",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "46297",
-    "title": "Elementary Teacher Education: Integrated Programs",
-    "award": "A.A- T Degree",
-    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=74",
-    "coverage": 0.971,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "46353",
-    "title": "Business Management",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=55",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "46354",
-    "title": "Entrepreneurial Management",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=55",
-    "coverage": 0.857,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_coverage": 0.0,
+    "was_method": "not_found"
    }
   ]
  },
- "run": "39006381839"
+ "run": "39019555407"
 }

@@ -2,7 +2,7 @@
  "college": "Los Angeles Harbor College",
  "programs": 124,
  "with_closed_list": 121,
- "found": 118,
+ "found": 117,
  "extracted": 118,
  "errors": 0,
  "passed_machine_checks": 86,
@@ -17,6 +17,21 @@
  "cost_per_program": 0.0758,
  "not_found": [
   {
+   "control_number": "33509",
+   "title": "Intersegmental General Education Transfer Curriculum",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "pages": [
+     122,
+     123,
+     124,
+     125
+    ],
+    "coverage": 0.528,
+    "why": "the page prints neither the control number nor the title and award"
+   }
+  },
+  {
    "control_number": "33797",
    "title": "CSU General Education",
    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
@@ -26,12 +41,18 @@
    }
   },
   {
-   "control_number": "44947",
-   "title": "California General Education Transfer Curriculum (Cal-GETC)",
-   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "control_number": "46354",
+   "title": "Entrepreneurial Management",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
    "near_miss": {
-    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=147",
-    "coverage": 0.364
+    "pages": [
+     55,
+     56,
+     57,
+     58
+    ],
+    "coverage": 0.857,
+    "why": "the page prints neither the control number nor the title and award"
    }
   },
   {
@@ -44,5 +65,5 @@
    }
   }
  ],
- "run": "39006381839"
+ "run": "39019555407"
 }

@@ -25,8 +25,8 @@
   ],
   "source": {
    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=39",
-   "title": null,
-   "h1": null,
+   "title": "Academic Plan: H002768C",
+   "h1": "Academic Plan: H002768C",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -35,10 +35,11 @@
     41,
     42
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 15,
-  "text_chars": 9883
+  "text_chars": 9724
  },
  {
   "control_number": "02770",
@@ -68,8 +69,8 @@
   ],
   "source": {
    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=56",
-   "title": null,
-   "h1": null,
+   "title": "Academic Plan: H002770C",
+   "h1": "Academic Plan: H002770C",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -78,10 +79,11 @@
     58,
     59
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 18,
-  "text_chars": 10008
+  "text_chars": 9854
  },
  {
   "control_number": "02775",
@@ -112,8 +114,8 @@
   ],
   "source": {
    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=54",
-   "title": null,
-   "h1": null,
+   "title": "Academic Plan: H002775C",
+   "h1": "Academic Plan: H002775C",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -122,10 +124,11 @@
     56,
     57
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 18,
-  "text_chars": 11330
+  "text_chars": 11175
  },
  {
   "control_number": "02790",
@@ -147,14 +150,15 @@
   ],
   "source": {
    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=139",
-   "title": null,
-   "h1": null,
+   "title": "Degrees and Certificates – NURSING AND HEALTH PROFESSIONS",
+   "h1": "Degrees and Certificates – NURSING AND HEALTH PROFESSIONS",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     139
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 10,
   "text_chars": 3735
@@ -177,19 +181,19 @@
    "PHYSICS38"
   ],
   "source": {
-   "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=69",
-   "title": null,
-   "h1": null,
+   "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=70",
+   "title": "Academic Plan: H002797C",
+   "h1": "Academic Plan: H002797C",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    69,
     70
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 8,
-  "text_chars": 4933
+  "text_chars": 1593
  },
  {
   "control_number": "02799",
@@ -210,18 +214,19 @@
   ],
   "source": {
    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=35",
-   "title": null,
-   "h1": null,
+   "title": "Academic Plan: H002799C",
+   "h1": "Academic Plan: H002799C",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     35,
     36
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 8,
-  "text_chars": 4620
+  "text_chars": 4447
  },
  {
   "control_number": "02800",
@@ -242,18 +247,19 @@
   ],
   "source": {
    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=104",
-   "title": null,
-   "h1": null,
+   "title": "Academic Plan: H002800C",
+   "h1": "Academic Plan: H002800C",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     104,
     105
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 8,
-  "text_chars": 5022
+  "text_chars": 4868
  },
  {
   "control_number": "08298",
@@ -281,17 +287,18 @@
   ],
   "source": {
    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=97",
-   "title": null,
-   "h1": null,
+   "title": "Academic Plan: H008298C",
+   "h1": "Academic Plan: H008298C",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     97
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 15,
-  "text_chars": 3798
+  "text_chars": 3653
  },
  {
   "control_number": "08303",
@@ -315,21 +322,19 @@
    "MUSIC775"
   ],
   "source": {
-   "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=131",
-   "title": null,
-   "h1": null,
+   "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=134",
+   "title": "Academic Plan: H008303D",
+   "h1": "Academic Plan: H008303D",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    131,
-    132,
-    133,
     134
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 12,
-  "text_chars": 12159
+  "text_chars": 2264
  },
  {
   "control_number": "08304",
@@ -363,8 +368,8 @@
   ],
   "source": {
    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=142",
-   "title": null,
-   "h1": null,
+   "title": "Degrees and Certificates – NURSING AND HEALTH PROFESSIONS",
+   "h1": "Degrees and Certificates – NURSING AND HEALTH PROFESSIONS",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -373,7 +378,8 @@
     144,
     145
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 22,
   "text_chars": 11790
@@ -412,19 +418,22 @@
    "EDUC1"
   ],
   "source": {
-   "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=78",
-   "title": null,
-   "h1": null,
+   "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=76",
+   "title": "Academic Plan: H008305C",
+   "h1": "Academic Plan: H008305C",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    76,
+    77,
     78,
     79
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 25,
-  "text_chars": 5760
+  "text_chars": 11995
  },
  {
   "control_number": "10683",
@@ -442,20 +451,20 @@
    "ACCTG3"
   ],
   "source": {
-   "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=28",
-   "title": null,
-   "h1": null,
+   "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=29",
+   "title": "Academic Plan: H010683D",
+   "h1": "Academic Plan: H010683D",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    28,
     29,
     30
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 6,
-  "text_chars": 8316
+  "text_chars": 4915
  },
  {
   "control_number": "10686",
@@ -476,8 +485,8 @@
   ],
   "source": {
    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=83",
-   "title": null,
-   "h1": null,
+   "title": "Academic Plan: H010686C",
+   "h1": "Academic Plan: H010686C",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -486,10 +495,11 @@
     85,
     86
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 8,
-  "text_chars": 10111
+  "text_chars": 9923
  },
  {
   "control_number": "10693",
@@ -531,8 +541,8 @@
   ],
   "source": {
    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=132",
-   "title": null,
-   "h1": null,
+   "title": "Academic Plan: H010693D",
+   "h1": "Academic Plan: H010693D",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -540,10 +550,11 @@
     133,
     134
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 29,
-  "text_chars": 8188
+  "text_chars": 8043
  },
  {
   "control_number": "10694",
@@ -606,8 +617,8 @@
   ],
   "source": {
    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=131",
-   "title": null,
-   "h1": null,
+   "title": "Academic Plan: H010694D",
+   "h1": "Academic Plan: H010694D",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -616,10 +627,11 @@
     133,
     134
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 50,
-  "text_chars": 12159
+  "text_chars": 12026
  },
  {
   "control_number": "10698",
@@ -643,18 +655,19 @@
   ],
   "source": {
    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=133",
-   "title": null,
-   "h1": null,
+   "title": "Academic Plan: H010698D",
+   "h1": "Academic Plan: H010698D",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     133,
     134
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 11,
-  "text_chars": 4755
+  "text_chars": 4616
  },
  {
   "control_number": "17778",
@@ -686,8 +699,8 @@
   ],
   "source": {
    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=55",
-   "title": null,
-   "h1": null,
+   "title": "Academic Plan: H017778C",
+   "h1": "Academic Plan: H017778C",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -696,10 +709,11 @@
     57,
     58
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 19,
-  "text_chars": 10820
+  "text_chars": 10669
  },
  {
   "control_number": "18706",
@@ -794,8 +808,8 @@
   ],
   "source": {
    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=122",
-   "title": null,
-   "h1": null,
+   "title": "Degrees and Certificates – LIBERAL ARTS AND SCIENCES",
+   "h1": "Degrees and Certificates – LIBERAL ARTS AND SCIENCES",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -804,7 +818,8 @@
     124,
     125
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 111,
   "text_chars": 13317
@@ -870,8 +885,8 @@
   ],
   "source": {
    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=123",
-   "title": null,
-   "h1": null,
+   "title": "Academic Plan: H018707C",
+   "h1": "Academic Plan: H018707C",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -880,10 +895,11 @@
     125,
     126
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 72,
-  "text_chars": 11449
+  "text_chars": 11259
  },
  {
   "control_number": "18708",
@@ -954,8 +970,8 @@
   ],
   "source": {
    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=125",
-   "title": null,
-   "h1": null,
+   "title": "Academic Plan: H018708C",
+   "h1": "Academic Plan: H018708C",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -964,10 +980,11 @@
     127,
     128
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 62,
-  "text_chars": 12711
+  "text_chars": 12515
  },
  {
   "control_number": "18709",
@@ -1042,18 +1059,19 @@
   ],
   "source": {
    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=127",
-   "title": null,
-   "h1": null,
+   "title": "Academic Plan: H018709C",
+   "h1": "Academic Plan: H018709C",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     127,
     128
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 62,
-  "text_chars": 6785
+  "text_chars": 6589
  },
  {
   "control_number": "19343",
@@ -1078,21 +1096,21 @@
    "CLNART136"
   ],
   "source": {
-   "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=89",
-   "title": null,
-   "h1": null,
+   "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=90",
+   "title": "Academic Plan: H019343D",
+   "h1": "Academic Plan: H019343D",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    89,
     90,
     91,
     92
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 13,
-  "text_chars": 11705
+  "text_chars": 8363
  },
  {
   "control_number": "19344",
@@ -1118,8 +1136,8 @@
   ],
   "source": {
    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=89",
-   "title": null,
-   "h1": null,
+   "title": "Academic Plan: H019344C",
+   "h1": "Academic Plan: H019344C",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -1128,10 +1146,11 @@
     91,
     92
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 13,
-  "text_chars": 11705
+  "text_chars": 11556
  },
  {
   "control_number": "19850",
@@ -1171,17 +1190,18 @@
   ],
   "source": {
    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=44",
-   "title": null,
-   "h1": null,
+   "title": "Academic Plan: H019850C",
+   "h1": "Academic Plan: H019850C",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     44
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 27,
-  "text_chars": 2855
+  "text_chars": 2715
  },
  {
   "control_number": "21630",
@@ -1201,21 +1221,21 @@
    "ARC271"
   ],
   "source": {
-   "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=39",
-   "title": null,
-   "h1": null,
+   "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=40",
+   "title": "Academic Plan: H021630D",
+   "h1": "Academic Plan: H021630D",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    39,
     40,
     41,
     42
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 8,
-  "text_chars": 9883
+  "text_chars": 6491
  },
  {
   "control_number": "21632",
@@ -1243,21 +1263,21 @@
    "SUPV1"
   ],
   "source": {
-   "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=56",
-   "title": null,
-   "h1": null,
+   "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=57",
+   "title": "Academic Plan: H021632D",
+   "h1": "Academic Plan: H021632D",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    56,
     57,
     58,
     59
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 17,
-  "text_chars": 10008
+  "text_chars": 6735
  },
  {
   "control_number": "21633",
@@ -1283,18 +1303,19 @@
   ],
   "source": {
    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=155",
-   "title": null,
-   "h1": null,
+   "title": "Academic Plan: H021633D",
+   "h1": "Academic Plan: H021633D",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     155,
     156
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 13,
-  "text_chars": 5090
+  "text_chars": 4945
  },
  {
   "control_number": "21645",
@@ -1333,18 +1354,19 @@
   ],
   "source": {
    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=78",
-   "title": null,
-   "h1": null,
+   "title": "Academic Plan: H021645D",
+   "h1": "Academic Plan: H021645D",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     78,
     79
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 26,
-  "text_chars": 5760
+  "text_chars": 5590
  },
  {
   "control_number": "21646",
@@ -1372,17 +1394,18 @@
   ],
   "source": {
    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=36",
-   "title": null,
-   "h1": null,
+   "title": "Academic Plan: H021646D",
+   "h1": "Academic Plan: H021646D",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     36
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 15,
-  "text_chars": 2029
+  "text_chars": 1857
  },
  {
   "control_number": "21648",
@@ -1407,17 +1430,18 @@
   ],
   "source": {
    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=105",
-   "title": null,
-   "h1": null,
+   "title": "Academic Plan: H021648D",
+   "h1": "Academic Plan: H021648D",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     105
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 12,
-  "text_chars": 2320
+  "text_chars": 2167
  },
  {
   "control_number": "22949",
@@ -1443,17 +1467,18 @@
   ],
   "source": {
    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=118",
-   "title": null,
-   "h1": null,
+   "title": "Academic Plan: H022949D",
+   "h1": "Academic Plan: H022949D",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     118
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 13,
-  "text_chars": 3343
+  "text_chars": 3186
  },
  {
   "control_number": "22950",
@@ -1479,8 +1504,8 @@
   ],
   "source": {
    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=77",
-   "title": null,
-   "h1": null,
+   "title": "Academic Plan: H022950C",
+   "h1": "Academic Plan: H022950C",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -1488,10 +1513,11 @@
     78,
     79
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 13,
-  "text_chars": 8236
+  "text_chars": 8070
  },
  {
   "control_number": "30026",
@@ -1519,8 +1545,8 @@
   ],
   "source": {
    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=82",
-   "title": null,
-   "h1": null,
+   "title": "Academic Plan: H030026C",
+   "h1": "Academic Plan: H030026C",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -1528,10 +1554,11 @@
     83,
     84
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 15,
-  "text_chars": 7640
+  "text_chars": 7448
  },
  {
   "control_number": "30319",
@@ -1558,8 +1585,8 @@
   ],
   "source": {
    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=152",
-   "title": null,
-   "h1": null,
+   "title": "Academic Plan: H030319C",
+   "h1": "Academic Plan: H030319C",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -1567,10 +1594,11 @@
     153,
     154
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 14,
-  "text_chars": 7307
+  "text_chars": 7166
  },
  {
   "control_number": "31028",
@@ -1578,20 +1606,25 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "pdf_pages",
-  "coverage": 0.837,
+  "coverage": 1.0,
   "codes_found": [
    "ANATOMY1",
    "CHEM101",
    "CHEM65",
+   "DANCETQ141",
    "HEALTH11",
    "HEALTH12",
    "KIN10",
    "KIN2171",
+   "KIN2172",
    "KIN2291",
+   "KIN2292",
    "KIN2451",
+   "KIN2452",
    "KIN2501",
    "KIN2502",
    "KIN2511",
+   "KIN2512",
    "KIN272",
    "KIN2871",
    "KIN2872",
@@ -1599,11 +1632,13 @@
    "KIN2911",
    "KIN2912",
    "KIN3501",
+   "KIN3502",
    "KINATH504",
    "KINATH506",
    "KINATH511",
    "KINATH512",
    "KINATH516",
+   "KINATH552",
    "KINATH557",
    "KINATH558",
    "KINMAJ100",
@@ -1618,21 +1653,22 @@
    "STATC1000E"
   ],
   "source": {
-   "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=117",
-   "title": null,
-   "h1": null,
+   "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=116",
+   "title": "Academic Plan: H031028G",
+   "h1": "Academic Plan: H031028G",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    116,
     117,
     118,
-    119,
-    120
+    119
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 43,
-  "text_chars": 11555
+  "text_chars": 11824
  },
  {
   "control_number": "31029",
@@ -1661,18 +1697,19 @@
   ],
   "source": {
    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=43",
-   "title": null,
-   "h1": null,
+   "title": "Academic Plan: H031029G",
+   "h1": "Academic Plan: H031029G",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     43,
     44
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 16,
-  "text_chars": 6716
+  "text_chars": 6553
  },
  {
   "control_number": "31221",
@@ -1711,17 +1748,18 @@
   ],
   "source": {
    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=109",
-   "title": null,
-   "h1": null,
+   "title": "Academic Plan: H031221G",
+   "h1": "Academic Plan: H031221G",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     109
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 26,
-  "text_chars": 4566
+  "text_chars": 4412
  },
  {
   "control_number": "32099",
@@ -1761,8 +1799,8 @@
   ],
   "source": {
    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=130",
-   "title": null,
-   "h1": null,
+   "title": "Academic Plan: H032099G",
+   "h1": "Academic Plan: H032099G",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -1771,10 +1809,11 @@
     132,
     133
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 27,
-  "text_chars": 14115
+  "text_chars": 13969
  },
  {
   "control_number": "32613",
@@ -1801,8 +1840,8 @@
   ],
   "source": {
    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=151",
-   "title": null,
-   "h1": null,
+   "title": "Academic Plan: H032613G",
+   "h1": "Academic Plan: H032613G",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -1811,10 +1850,11 @@
     153,
     154
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 14,
-  "text_chars": 11484
+  "text_chars": 11328
  },
  {
   "control_number": "32673",
@@ -1858,18 +1898,19 @@
   ],
   "source": {
    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=98",
-   "title": null,
-   "h1": null,
+   "title": "Academic Plan: H032673G",
+   "h1": "Academic Plan: H032673G",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     98,
     99
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 31,
-  "text_chars": 7296
+  "text_chars": 7126
  },
  {
   "control_number": "32688",
@@ -1888,17 +1929,18 @@
   ],
   "source": {
    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=129",
-   "title": null,
-   "h1": null,
+   "title": "Mathematics - Associate in Science for Transfer (AS-T) Degree 2.0",
+   "h1": "Mathematics - Associate in Science for Transfer (AS-T) Degree 2.0",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     129
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 7,
-  "text_chars": 3435
+  "text_chars": 3337
  },
  {
   "control_number": "32690",
@@ -1919,18 +1961,19 @@
   ],
   "source": {
    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=73",
-   "title": null,
-   "h1": null,
+   "title": "Academic Plan: H032690H",
+   "h1": "Academic Plan: H032690H",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     73,
     74
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 8,
-  "text_chars": 7037
+  "text_chars": 6842
  },
  {
   "control_number": "32810",
@@ -1948,19 +1991,19 @@
    "PHYSICS39"
   ],
   "source": {
-   "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=69",
-   "title": null,
-   "h1": null,
+   "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=149",
+   "title": "Physics - Associate in Science for Transfer (AS-T) Degree 2.0",
+   "h1": "Physics - Associate in Science for Transfer (AS-T) Degree 2.0",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    69,
-    70
+    149
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 6,
-  "text_chars": 4933
+  "text_chars": 3535
  },
  {
   "control_number": "33087",
@@ -1985,8 +2028,8 @@
   ],
   "source": {
    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=34",
-   "title": null,
-   "h1": null,
+   "title": "Academic Plan: H033087H",
+   "h1": "Academic Plan: H033087H",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -1995,10 +2038,11 @@
     36,
     37
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 12,
-  "text_chars": 12179
+  "text_chars": 11990
  },
  {
   "control_number": "33285",
@@ -2035,110 +2079,31 @@
   ],
   "source": {
    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=37",
-   "title": null,
-   "h1": null,
+   "title": "Academic Plan: H033285G",
+   "h1": "Academic Plan: H033285G",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     37,
     38
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 25,
-  "text_chars": 4953
+  "text_chars": 4794
  },
  {
   "control_number": "33509",
   "title": "Intersegmental General Education Transfer Curriculum",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "pdf_pages",
-  "coverage": 0.528,
-  "codes_found": [
-   "ANATOMY1",
-   "ANTHRO101",
-   "ANTHRO102",
-   "ASTRON1",
-   "ASTRON5",
-   "BIOLOGY3",
-   "BIOLOGY5",
-   "CHEM101",
-   "CHEM102",
-   "CHEM211",
-   "CHEM212",
-   "CHEM65",
-   "ENGLISH214",
-   "ENGLISH215",
-   "ENGLISH219",
-   "ENGLISH234",
-   "ENGLISH239",
-   "ENGLISH240",
-   "ENVSCI1",
-   "ENVSCI2",
-   "FRENCH1",
-   "FRENCH2",
-   "GEOG1",
-   "GEOG15",
-   "GEOLOGY1",
-   "GEOLOGY6",
-   "HISTORY1",
-   "HISTORY2",
-   "HISTORY43",
-   "HISTORY44",
-   "HISTORY74",
-   "HISTORY81",
-   "HISTORY82",
-   "HISTORY86",
-   "HISTORY87",
-   "HUMAN1",
-   "HUMAN17",
-   "HUMAN6",
-   "HUMAN60",
-   "MATH234",
-   "MICRO20",
-   "MUSIC101",
-   "MUSIC111",
-   "MUSIC116",
-   "MUSIC141",
-   "PHILOS1",
-   "PHILOS20",
-   "PHILOS33",
-   "PHYSIOL1",
-   "PSYCC1000",
-   "PSYCH14",
-   "PSYCH2",
-   "PSYCH41",
-   "SOC1",
-   "SOC12",
-   "SOC2",
-   "SOC21",
-   "SPANISH1",
-   "SPANISH12",
-   "SPANISH2",
-   "SPANISH22",
-   "SPANISH3",
-   "SPANISH35",
-   "SPANISH36",
-   "SPANISH4",
-   "THEATER100"
-  ],
-  "source": {
-   "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=122",
-   "title": null,
-   "h1": null,
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    122,
-    123,
-    124,
-    125
-   ],
-   "extractor": "pypdf"
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 125,
-  "text_chars": 13317
+  "text_chars": 0
  },
  {
   "control_number": "33797",
@@ -2172,8 +2137,8 @@
   ],
   "source": {
    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=59",
-   "title": null,
-   "h1": null,
+   "title": "Academic Plan: H035548D",
+   "h1": "Academic Plan: H035548D",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -2182,10 +2147,11 @@
     61,
     62
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 9,
-  "text_chars": 8534
+  "text_chars": 8375
  },
  {
   "control_number": "36644",
@@ -2204,17 +2170,18 @@
   ],
   "source": {
    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=61",
-   "title": null,
-   "h1": null,
+   "title": "Academic Plan: H036644D",
+   "h1": "Academic Plan: H036644D",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     61
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 6,
-  "text_chars": 1732
+  "text_chars": 1576
  },
  {
   "control_number": "36908",
@@ -2244,17 +2211,18 @@
   ],
   "source": {
    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=108",
-   "title": null,
-   "h1": null,
+   "title": "Academic Plan: H036919F",
+   "h1": "Academic Plan: H036919F",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     108
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 5,
-  "text_chars": 2552
+  "text_chars": 2399
  },
  {
   "control_number": "36972",
@@ -2281,18 +2249,19 @@
   ],
   "source": {
    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=31",
-   "title": null,
-   "h1": null,
+   "title": "Academic Plan: H037140E",
+   "h1": "Academic Plan: H037140E",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     31,
     32
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 2,
-  "text_chars": 5657
+  "text_chars": 5499
  },
  {
   "control_number": "37141",
@@ -2307,17 +2276,18 @@
   ],
   "source": {
    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=145",
-   "title": null,
-   "h1": null,
+   "title": "Academic Plan: H037141E",
+   "h1": "Academic Plan: H037141E",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     145
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 2,
-  "text_chars": 3074
+  "text_chars": 1265
  },
  {
   "control_number": "37245",
@@ -2337,17 +2307,18 @@
   ],
   "source": {
    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=60",
-   "title": null,
-   "h1": null,
+   "title": "Academic Plan: H037245D",
+   "h1": "Academic Plan: H037245D",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     60
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 7,
-  "text_chars": 2071
+  "text_chars": 1911
  },
  {
   "control_number": "37385",
@@ -2366,18 +2337,19 @@
   ],
   "source": {
    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=86",
-   "title": null,
-   "h1": null,
+   "title": "Academic Plan: H037385D",
+   "h1": "Academic Plan: H037385D",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     86,
     87
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 6,
-  "text_chars": 5659
+  "text_chars": 5444
  },
  {
   "control_number": "37517",
@@ -2418,18 +2390,19 @@
   ],
   "source": {
    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=162",
-   "title": null,
-   "h1": null,
+   "title": "Academic Plan: H037517G",
+   "h1": "Academic Plan: H037517G",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     162,
     163
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 28,
-  "text_chars": 5223
+  "text_chars": 5073
  },
  {
   "control_number": "37792",
@@ -2447,17 +2420,18 @@
   ],
   "source": {
    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=64",
-   "title": null,
-   "h1": null,
+   "title": "Academic Plan: H037792E",
+   "h1": "Academic Plan: H037792E",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     64
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 6,
-  "text_chars": 3027
+  "text_chars": 2853
  },
  {
   "control_number": "38068",
@@ -2491,8 +2465,8 @@
   ],
   "source": {
    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=113",
-   "title": null,
-   "h1": null,
+   "title": "Academic Plan: H038068G",
+   "h1": "Academic Plan: H038068G",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -2500,10 +2474,11 @@
     114,
     115
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 22,
-  "text_chars": 11912
+  "text_chars": 11756
  },
  {
   "control_number": "38586",
@@ -2511,8 +2486,16 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "pdf_pages",
-  "coverage": 0.804,
+  "coverage": 1.0,
   "codes_found": [
+   "ENGLISH203",
+   "ENGLISH204",
+   "ENGLISH205",
+   "ENGLISH206",
+   "ENGLISH207",
+   "ENGLISH208",
+   "ENGLISH209",
+   "ENGLISH211",
    "ENGLISH214",
    "ENGLISH215",
    "ENGLISH218",
@@ -2544,6 +2527,7 @@
    "PHILOS20",
    "PHILOS33",
    "PHILOS6",
+   "PHILOS9",
    "SPANISH12",
    "SPANISH2",
    "SPANISH3",
@@ -2552,18 +2536,20 @@
    "SPANISH4"
   ],
   "source": {
-   "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=122",
-   "title": null,
-   "h1": null,
+   "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=147",
+   "title": "Academic Plan: H038586G",
+   "h1": "Academic Plan: H038586G",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    122
+    147,
+    148
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 46,
-  "text_chars": 3776
+  "text_chars": 4969
  },
  {
   "control_number": "38592",
@@ -2584,8 +2570,8 @@
   ],
   "source": {
    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=49",
-   "title": null,
-   "h1": null,
+   "title": "Academic Plan: H038592C",
+   "h1": "Academic Plan: H038592C",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -2594,10 +2580,11 @@
     51,
     52
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 8,
-  "text_chars": 11308
+  "text_chars": 11159
  },
  {
   "control_number": "38611",
@@ -2613,17 +2600,18 @@
   ],
   "source": {
    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=65",
-   "title": null,
-   "h1": null,
+   "title": "Academic Plan: H038611E",
+   "h1": "Academic Plan: H038611E",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     65
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 3,
-  "text_chars": 2269
+  "text_chars": 2093
  },
  {
   "control_number": "38682",
@@ -2640,17 +2628,18 @@
   ],
   "source": {
    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=95",
-   "title": null,
-   "h1": null,
+   "title": "Academic Plan: H038682E",
+   "h1": "Academic Plan: H038682E",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     95
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 4,
-  "text_chars": 1859
+  "text_chars": 1701
  },
  {
   "control_number": "38696",
@@ -2666,17 +2655,18 @@
   ],
   "source": {
    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=102",
-   "title": null,
-   "h1": null,
+   "title": "Academic Plan: H038696F",
+   "h1": "Academic Plan: H038696F",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     102
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 3,
-  "text_chars": 1654
+  "text_chars": 1486
  },
  {
   "control_number": "38715",
@@ -2696,18 +2686,19 @@
   ],
   "source": {
    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=51",
-   "title": null,
-   "h1": null,
+   "title": "Academic Plan: H038715D",
+   "h1": "Academic Plan: H038715D",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     51,
     52
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 7,
-  "text_chars": 5605
+  "text_chars": 5434
  },
  {
   "control_number": "38716",
@@ -2724,18 +2715,19 @@
   ],
   "source": {
    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=50",
-   "title": null,
-   "h1": null,
+   "title": "Academic Plan: H038716D",
+   "h1": "Academic Plan: H038716D",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     50,
     51
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 4,
-  "text_chars": 4747
+  "text_chars": 4585
  },
  {
   "control_number": "38718",
@@ -2779,17 +2771,18 @@
   ],
   "source": {
    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=112",
-   "title": null,
-   "h1": null,
+   "title": "Academic Plan: H038880C",
+   "h1": "Academic Plan: H038880C",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     112
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 19,
-  "text_chars": 4313
+  "text_chars": 4172
  },
  {
   "control_number": "39199",
@@ -2805,17 +2798,18 @@
   ],
   "source": {
    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=101",
-   "title": null,
-   "h1": null,
+   "title": "Academic Plan: H039199F",
+   "h1": "Academic Plan: H039199F",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     101
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 3,
-  "text_chars": 2702
+  "text_chars": 2531
  },
  {
   "control_number": "39203",
@@ -2831,17 +2825,18 @@
   ],
   "source": {
    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=32",
-   "title": null,
-   "h1": null,
+   "title": "Academic Plan: H039203E",
+   "h1": "Academic Plan: H039203E",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     32
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 3,
-  "text_chars": 2844
+  "text_chars": 2687
  },
  {
   "control_number": "39712",
@@ -2860,17 +2855,18 @@
   ],
   "source": {
    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=84",
-   "title": null,
-   "h1": null,
+   "title": "Academic Plan: H039712D",
+   "h1": "Academic Plan: H039712D",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     84
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 6,
-  "text_chars": 2096
+  "text_chars": 1922
  },
  {
   "control_number": "39984",
@@ -2895,17 +2891,18 @@
   ],
   "source": {
    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=103",
-   "title": null,
-   "h1": null,
+   "title": "Academic Plan: H039984H",
+   "h1": "Academic Plan: H039984H",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     103
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 12,
-  "text_chars": 3826
+  "text_chars": 3645
  },
  {
   "control_number": "40037",
@@ -2934,8 +2931,8 @@
   ],
   "source": {
    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=96",
-   "title": null,
-   "h1": null,
+   "title": "Academic Plan: H040037G",
+   "h1": "Academic Plan: H040037G",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -2943,10 +2940,11 @@
     97,
     98
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 16,
-  "text_chars": 12101
+  "text_chars": 11948
  },
  {
   "control_number": "40109",
@@ -2980,8 +2978,8 @@
   ],
   "source": {
    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=150",
-   "title": null,
-   "h1": null,
+   "title": "Academic Plan: H040109G",
+   "h1": "Academic Plan: H040109G",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -2990,10 +2988,11 @@
     152,
     153
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 21,
-  "text_chars": 14804
+  "text_chars": 14634
  },
  {
   "control_number": "40145",
@@ -3016,17 +3015,18 @@
   ],
   "source": {
    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=48",
-   "title": null,
-   "h1": null,
+   "title": "Academic Plan: H040145H",
+   "h1": "Academic Plan: H040145H",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     48
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 10,
-  "text_chars": 3389
+  "text_chars": 3237
  },
  {
   "control_number": "40231",
@@ -3034,8 +3034,9 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "pdf_pages",
-  "coverage": 0.8,
+  "coverage": 1.0,
   "codes_found": [
+   "ANTHRO102",
    "HISTC1001",
    "HISTC1002",
    "HISTORY1",
@@ -3049,27 +3050,35 @@
    "HISTORY87",
    "POLSCI4",
    "SOC1",
+   "SOC11",
    "SOC12",
    "SOC2",
    "SOC21",
+   "SOC3",
+   "SOC31",
    "SOC4",
    "STAT1",
+   "STAT1S",
    "STATC1000",
    "STATC1000E"
   ],
   "source": {
-   "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=128",
-   "title": null,
-   "h1": null,
+   "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=160",
+   "title": "Academic Plan: H040231G",
+   "h1": "Academic Plan: H040231G",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    128
+    160,
+    161,
+    162,
+    163
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 25,
-  "text_chars": 2850
+  "text_chars": 9578
  },
  {
   "control_number": "41041",
@@ -3097,8 +3106,8 @@
   ],
   "source": {
    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=52",
-   "title": null,
-   "h1": null,
+   "title": "Academic Plan: H041041H",
+   "h1": "Academic Plan: H041041H",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -3107,10 +3116,11 @@
     54,
     55
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 15,
-  "text_chars": 9906
+  "text_chars": 9732
  },
  {
   "control_number": "41096",
@@ -3130,18 +3140,19 @@
   ],
   "source": {
    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=106",
-   "title": null,
-   "h1": null,
+   "title": "Academic Plan: H041096C",
+   "h1": "Academic Plan: H041096C",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     106,
     107
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 8,
-  "text_chars": 4604
+  "text_chars": 4471
  },
  {
   "control_number": "41102",
@@ -3163,15 +3174,16 @@
   ],
   "source": {
    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=69",
-   "title": null,
-   "h1": null,
+   "title": "Degrees and Certificates – CHEMISTRY",
+   "h1": "Degrees and Certificates – CHEMISTRY",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     69,
     70
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 10,
   "text_chars": 4933
@@ -3195,20 +3207,20 @@
    "PSYCH41"
   ],
   "source": {
-   "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=144",
-   "title": null,
-   "h1": null,
+   "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=145",
+   "title": "Academic Plan: H041103D",
+   "h1": "Academic Plan: H041103D",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    144,
     145,
     146
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 9,
-  "text_chars": 9456
+  "text_chars": 6805
  },
  {
   "control_number": "41104",
@@ -3234,8 +3246,8 @@
   ],
   "source": {
    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=144",
-   "title": null,
-   "h1": null,
+   "title": "Academic Plan: H041104C",
+   "h1": "Academic Plan: H041104C",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -3243,10 +3255,11 @@
     145,
     146
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 13,
-  "text_chars": 9456
+  "text_chars": 9280
  },
  {
   "control_number": "41111",
@@ -3261,17 +3274,18 @@
   ],
   "source": {
    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=33",
-   "title": null,
-   "h1": null,
+   "title": "Academic Plan: H041111E",
+   "h1": "Academic Plan: H041111E",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     33
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 2,
-  "text_chars": 2019
+  "text_chars": 1855
  },
  {
   "control_number": "41129",
@@ -3295,18 +3309,19 @@
   ],
   "source": {
    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=69",
-   "title": null,
-   "h1": null,
+   "title": "Academic Plan: H041129M",
+   "h1": "Academic Plan: H041129M",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     69,
     70
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 11,
-  "text_chars": 4933
+  "text_chars": 4771
  },
  {
   "control_number": "41253",
@@ -3322,14 +3337,15 @@
   ],
   "source": {
    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=204",
-   "title": null,
-   "h1": null,
+   "title": "",
+   "h1": "",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     204
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 3,
   "text_chars": 3751
@@ -3348,14 +3364,15 @@
   ],
   "source": {
    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=203",
-   "title": null,
-   "h1": null,
+   "title": "",
+   "h1": "",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     203
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 3,
   "text_chars": 3108
@@ -3388,17 +3405,18 @@
   ],
   "source": {
    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=146",
-   "title": null,
-   "h1": null,
+   "title": "Academic Plan: H041357H",
+   "h1": "Academic Plan: H041357H",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     146
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 17,
-  "text_chars": 3904
+  "text_chars": 3719
  },
  {
   "control_number": "41370",
@@ -3425,18 +3443,19 @@
   ],
   "source": {
    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=110",
-   "title": null,
-   "h1": null,
+   "title": "Academic Plan: H041370H",
+   "h1": "Academic Plan: H041370H",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     110,
     111
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 14,
-  "text_chars": 6452
+  "text_chars": 6280
  },
  {
   "control_number": "41763",
@@ -3455,17 +3474,18 @@
   ],
   "source": {
    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=87",
-   "title": null,
-   "h1": null,
+   "title": "Academic Plan: H041763D",
+   "h1": "Academic Plan: H041763D",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     87
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 6,
-  "text_chars": 2638
+  "text_chars": 2424
  },
  {
   "control_number": "42458",
@@ -3497,8 +3517,8 @@
   ],
   "source": {
    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=74",
-   "title": null,
-   "h1": null,
+   "title": "Degrees and Certificates – CHILD DEVELOPMENT AND EDUCATION",
+   "h1": "Degrees and Certificates – CHILD DEVELOPMENT AND EDUCATION",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -3507,7 +3527,8 @@
     76,
     77
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 21,
   "text_chars": 12011
@@ -3536,17 +3557,18 @@
   ],
   "source": {
    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=80",
-   "title": null,
-   "h1": null,
+   "title": "Academic Plan: H043108G",
+   "h1": "Academic Plan: H043108G",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     80
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 13,
-  "text_chars": 3498
+  "text_chars": 3317
  },
  {
   "control_number": "43398",
@@ -3564,17 +3586,18 @@
   ],
   "source": {
    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=159",
-   "title": null,
-   "h1": null,
+   "title": "Academic Plan: H043398D",
+   "h1": "Academic Plan: H043398D",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     159
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 5,
-  "text_chars": 2333
+  "text_chars": 2158
  },
  {
   "control_number": "43420",
@@ -3592,17 +3615,18 @@
   ],
   "source": {
    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=92",
-   "title": null,
-   "h1": null,
+   "title": "Academic Plan: H043420D",
+   "h1": "Academic Plan: H043420D",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     92
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 5,
-  "text_chars": 3016
+  "text_chars": 2846
  },
  {
   "control_number": "43586",
@@ -3624,17 +3648,18 @@
   ],
   "source": {
    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=58",
-   "title": null,
-   "h1": null,
+   "title": "Academic Plan: H043586D",
+   "h1": "Academic Plan: H043586D",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     58
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 9,
-  "text_chars": 2248
+  "text_chars": 2095
  },
  {
   "control_number": "43701",
@@ -3649,18 +3674,19 @@
   ],
   "source": {
    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=66",
-   "title": null,
-   "h1": null,
+   "title": "Academic Plan: H043701E",
+   "h1": "Academic Plan: H043701E",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     66,
     67
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 2,
-  "text_chars": 4138
+  "text_chars": 3954
  },
  {
   "control_number": "43702",
@@ -3675,17 +3701,18 @@
   ],
   "source": {
    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=63",
-   "title": null,
-   "h1": null,
+   "title": "Academic Plan: H043702E",
+   "h1": "Academic Plan: H043702E",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     63
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 2,
-  "text_chars": 2809
+  "text_chars": 1196
  },
  {
   "control_number": "43703",
@@ -3700,18 +3727,19 @@
   ],
   "source": {
    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=66",
-   "title": null,
-   "h1": null,
+   "title": "Academic Plan: H043703E",
+   "h1": "Academic Plan: H043703E",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     66,
     67
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 2,
-  "text_chars": 4138
+  "text_chars": 2604
  },
  {
   "control_number": "43704",
@@ -3730,17 +3758,18 @@
   ],
   "source": {
    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=67",
-   "title": null,
-   "h1": null,
+   "title": "Academic Plan: H043704E",
+   "h1": "Academic Plan: H043704E",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     67
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 6,
-  "text_chars": 1495
+  "text_chars": 1328
  },
  {
   "control_number": "43724",
@@ -3755,17 +3784,18 @@
   ],
   "source": {
    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=63",
-   "title": null,
-   "h1": null,
+   "title": "Academic Plan: H043724E",
+   "h1": "Academic Plan: H043724E",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     63
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 2,
-  "text_chars": 2809
+  "text_chars": 2644
  },
  {
   "control_number": "43922",
@@ -3790,18 +3820,19 @@
   ],
   "source": {
    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=81",
-   "title": null,
-   "h1": null,
+   "title": "Academic Plan: H043922H",
+   "h1": "Academic Plan: H043922H",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     81,
     82
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 12,
-  "text_chars": 6621
+  "text_chars": 6430
  },
  {
   "control_number": "44009",
@@ -3818,17 +3849,18 @@
   ],
   "source": {
    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=92",
-   "title": null,
-   "h1": null,
+   "title": "Academic Plan: H044009D",
+   "h1": "Academic Plan: H044009D",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     92
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 4,
-  "text_chars": 3016
+  "text_chars": 1353
  },
  {
   "control_number": "44180",
@@ -3849,17 +3881,18 @@
   ],
   "source": {
    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=111",
-   "title": null,
-   "h1": null,
+   "title": "Academic Plan: H044180D",
+   "h1": "Academic Plan: H044180D",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     111
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 8,
-  "text_chars": 2807
+  "text_chars": 2651
  },
  {
   "control_number": "44271",
@@ -3883,8 +3916,8 @@
   ],
   "source": {
    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=99",
-   "title": null,
-   "h1": null,
+   "title": "Academic Plan: H044271D",
+   "h1": "Academic Plan: H044271D",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -3893,10 +3926,11 @@
     101,
     102
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 11,
-  "text_chars": 10880
+  "text_chars": 10714
  },
  {
   "control_number": "44320",
@@ -3931,8 +3965,8 @@
   ],
   "source": {
    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=71",
-   "title": null,
-   "h1": null,
+   "title": "Academic Plan: H044320G",
+   "h1": "Academic Plan: H044320G",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -3941,10 +3975,11 @@
     73,
     74
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 22,
-  "text_chars": 12250
+  "text_chars": 12051
  },
  {
   "control_number": "44347",
@@ -3959,17 +3994,18 @@
   ],
   "source": {
    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=135",
-   "title": null,
-   "h1": null,
+   "title": "Academic Plan: H044347E",
+   "h1": "Academic Plan: H044347E",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     135
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 2,
-  "text_chars": 3405
+  "text_chars": 1463
  },
  {
   "control_number": "44348",
@@ -3984,17 +4020,18 @@
   ],
   "source": {
    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=111",
-   "title": null,
-   "h1": null,
+   "title": "Academic Plan: H044348E",
+   "h1": "Academic Plan: H044348E",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     111
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 2,
-  "text_chars": 2807
+  "text_chars": 983
  },
  {
   "control_number": "44376",
@@ -4013,17 +4050,18 @@
   ],
   "source": {
    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=45",
-   "title": null,
-   "h1": null,
+   "title": "Academic Plan: H044376D",
+   "h1": "Academic Plan: H044376D",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     45
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 6,
-  "text_chars": 2691
+  "text_chars": 2530
  },
  {
   "control_number": "44415",
@@ -4043,17 +4081,18 @@
   ],
   "source": {
    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=46",
-   "title": null,
-   "h1": null,
+   "title": "Academic Plan: H044415D",
+   "h1": "Academic Plan: H044415D",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     46
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 7,
-  "text_chars": 2812
+  "text_chars": 2641
  },
  {
   "control_number": "44499",
@@ -4106,8 +4145,8 @@
   ],
   "source": {
    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=120",
-   "title": null,
-   "h1": null,
+   "title": "Degrees and Certificates – LAW, PUBLIC POLICY, AND SOCIETY",
+   "h1": "Degrees and Certificates – LAW, PUBLIC POLICY, AND SOCIETY",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -4116,7 +4155,8 @@
     122,
     123
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 45,
   "text_chars": 15009
@@ -4134,29 +4174,154 @@
   ],
   "source": {
    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=135",
-   "title": null,
-   "h1": null,
+   "title": "Academic Plan: H044815E",
+   "h1": "Academic Plan: H044815E",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     135
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 2,
-  "text_chars": 3405
+  "text_chars": 3262
  },
  {
   "control_number": "44947",
   "title": "California General Education Transfer Curriculum (Cal-GETC)",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "pdf_pages",
+  "coverage": 0.559,
+  "codes_found": [
+   "ADMJUS1",
+   "AFROAM4",
+   "AFROAM5",
+   "ANTHRO102",
+   "ANTHRO132",
+   "ARC132",
+   "ARC133",
+   "ART100",
+   "ART103",
+   "ART111",
+   "ART201",
+   "ARTHC1100",
+   "ARTHC1200",
+   "ASIAN20",
+   "CHICANO32",
+   "CHICANO34",
+   "CHICANO36",
+   "COMM104",
+   "COMM121",
+   "COMM122",
+   "COMMC1000",
+   "DANCEST805",
+   "ECON1",
+   "ECON2",
+   "ENGLC1000",
+   "ENGLC1000E",
+   "ENGLC1001",
+   "ENGLISH102",
+   "ENGLISH203",
+   "ENGLISH204",
+   "ENGLISH205",
+   "ENGLISH206",
+   "ENGLISH207",
+   "ENGLISH208",
+   "ENGLISH209",
+   "ENGLISH211",
+   "ENGLISH212",
+   "ENGLISH213",
+   "ENGLISH214",
+   "ENGLISH215",
+   "ENGLISH218",
+   "ENGLISH219",
+   "ENGLISH223",
+   "ENGLISH234",
+   "ENGLISH239",
+   "ENGLISH240",
+   "ENGLISH251",
+   "ENGLISH260",
+   "ENGLISH265",
+   "ENGLISH270",
+   "ENGLISH271",
+   "ENGLISH272",
+   "FRENCH10",
+   "FRENCH2",
+   "FRENCH26",
+   "FRENCH3",
+   "FRENCH4",
+   "FRENCH5",
+   "HISTC1001",
+   "HISTC1002",
+   "HISTORY1",
+   "HISTORY2",
+   "HISTORY43",
+   "HISTORY44",
+   "HISTORY52",
+   "HISTORY58",
+   "HISTORY74",
+   "HISTORY81",
+   "HISTORY82",
+   "HISTORY86",
+   "HISTORY87",
+   "HUMAN1",
+   "HUMAN17",
+   "HUMAN3",
+   "HUMAN30",
+   "HUMAN6",
+   "HUMAN60",
+   "HUMAN77",
+   "MUSIC100",
+   "MUSIC101",
+   "MUSIC111",
+   "MUSIC116",
+   "MUSIC118",
+   "MUSIC141",
+   "MUSIC2161",
+   "PHILOS1",
+   "PHILOS20",
+   "PHILOS33",
+   "PHILOS6",
+   "POLSC1000",
+   "POLSCI2",
+   "POLSCI3",
+   "POLSCI5",
+   "POLSCI50",
+   "POLSCI7",
+   "SOC11",
+   "SOC2",
+   "SOC3",
+   "SOC31",
+   "SPANISH12",
+   "SPANISH2",
+   "SPANISH3",
+   "SPANISH35",
+   "SPANISH36",
+   "SPANISH4",
+   "STAT1",
+   "STATC1000",
+   "STATC1000E",
+   "THEATER100"
+  ],
+  "source": {
+   "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=119",
+   "title": "Degrees and Certificates – LAW, PUBLIC POLICY, AND SOCIETY",
+   "h1": "Degrees and Certificates – LAW, PUBLIC POLICY, AND SOCIETY",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    119,
+    120,
+    121,
+    122
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
   "listed": 195,
-  "text_chars": 0
+  "text_chars": 14319
  },
  {
   "control_number": "45230",
@@ -4204,8 +4369,8 @@
   ],
   "source": {
    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=157",
-   "title": null,
-   "h1": null,
+   "title": "Academic Plan: H045230G",
+   "h1": "Academic Plan: H045230G",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -4214,10 +4379,11 @@
     159,
     160
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 35,
-  "text_chars": 12556
+  "text_chars": 12366
  },
  {
   "control_number": "45238",
@@ -4232,17 +4398,18 @@
   ],
   "source": {
    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=94",
-   "title": null,
-   "h1": null,
+   "title": "Academic Plan: H045238E",
+   "h1": "Academic Plan: H045238E",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     94
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 2,
-  "text_chars": 3013
+  "text_chars": 2857
  },
  {
   "control_number": "45372",
@@ -4277,18 +4444,19 @@
   ],
   "source": {
    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=153",
-   "title": null,
-   "h1": null,
+   "title": "Academic Plan: H045372H",
+   "h1": "Academic Plan: H045372H",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     153,
     154
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 23,
-  "text_chars": 4313
+  "text_chars": 4148
  },
  {
   "control_number": "45436",
@@ -4305,17 +4473,18 @@
   ],
   "source": {
    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=93",
-   "title": null,
-   "h1": null,
+   "title": "Academic Plan: H045436E",
+   "h1": "Academic Plan: H045436E",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     93
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 4,
-  "text_chars": 2709
+  "text_chars": 2554
  },
  {
   "control_number": "45733",
@@ -4343,17 +4512,18 @@
   ],
   "source": {
    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=164",
-   "title": null,
-   "h1": null,
+   "title": "Academic Plan: H045733G",
+   "h1": "Academic Plan: H045733G",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     164
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 15,
-  "text_chars": 4085
+  "text_chars": 3925
  },
  {
   "control_number": "45817",
@@ -4373,17 +4543,18 @@
   ],
   "source": {
    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=79",
-   "title": null,
-   "h1": null,
+   "title": "Academic Plan: H045817D",
+   "h1": "Academic Plan: H045817D",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     79
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 7,
-  "text_chars": 2663
+  "text_chars": 2478
  },
  {
   "control_number": "45834",
@@ -4401,17 +4572,18 @@
   ],
   "source": {
    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=85",
-   "title": null,
-   "h1": null,
+   "title": "Academic Plan: H045834D",
+   "h1": "Academic Plan: H045834D",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     85
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 5,
-  "text_chars": 2674
+  "text_chars": 2494
  },
  {
   "control_number": "46129",
@@ -4436,17 +4608,18 @@
   ],
   "source": {
    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=149",
-   "title": null,
-   "h1": null,
+   "title": "Academic Plan: H046129H",
+   "h1": "Academic Plan: H046129H",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     149
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 12,
-  "text_chars": 3629
+  "text_chars": 3472
  },
  {
   "control_number": "46138",
@@ -4469,17 +4642,18 @@
   ],
   "source": {
    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=129",
-   "title": null,
-   "h1": null,
+   "title": "Academic Plan: H046138H",
+   "h1": "Academic Plan: H046138H",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     129
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 10,
-  "text_chars": 3435
+  "text_chars": 3270
  },
  {
   "control_number": "46276",
@@ -4494,15 +4668,16 @@
   ],
   "source": {
    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=308",
-   "title": null,
-   "h1": null,
+   "title": "",
+   "h1": "",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     308,
     309
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 2,
   "text_chars": 6626
@@ -4551,8 +4726,8 @@
   ],
   "source": {
    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=74",
-   "title": null,
-   "h1": null,
+   "title": "Academic Plan: H046297G",
+   "h1": "Academic Plan: H046297G",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -4561,10 +4736,11 @@
     76,
     77
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 34,
-  "text_chars": 12011
+  "text_chars": 11799
  },
  {
   "control_number": "46353",
@@ -4582,8 +4758,8 @@
   ],
   "source": {
    "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=55",
-   "title": null,
-   "h1": null,
+   "title": "Degrees and Certificates – BUSINESS",
+   "h1": "Degrees and Certificates – BUSINESS",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -4592,7 +4768,8 @@
     57,
     58
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 5,
   "text_chars": 10820
@@ -4602,32 +4779,12 @@
   "title": "Entrepreneurial Management",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "pdf_pages",
-  "coverage": 0.857,
-  "codes_found": [
-   "BUS1",
-   "BUS5",
-   "FINANCE1",
-   "FINANCE8",
-   "MARKET21",
-   "MGMT13"
-  ],
-  "source": {
-   "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=55",
-   "title": null,
-   "h1": null,
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    55,
-    56,
-    57,
-    58
-   ],
-   "extractor": "pypdf"
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 7,
-  "text_chars": 10820
+  "text_chars": 0
  },
  {
   "control_number": "46494",

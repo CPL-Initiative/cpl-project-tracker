@@ -130,8 +130,8 @@
    "count": 0,
    "not_verbatim": [],
    "why": [],
-   "heading_printed": false,
-   "heading_without_outcomes": false,
+   "heading_printed": true,
+   "heading_without_outcomes": true,
    "pass": true
   },
   "careers": {
@@ -367,5 +367,6 @@
    "Reviewer should locate the Philosophy A.A.-T section elsewhere in the 2026-2027 LAHC catalog (the page link may point to the wrong page)."
   ]
  },
- "extracted_run": "39006381839"
+ "extracted_run": 39019555407,
+ "read_run": "39006381839"
 }
