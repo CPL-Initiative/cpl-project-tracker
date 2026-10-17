@@ -103,17 +103,11 @@
    "program": 3,
    "courses": 0,
    "count": 3,
-   "not_verbatim": [
-    "Design and draft landscape plan.",
-    "Estimate the cost of a landscape construction project."
-   ],
-   "why": [
-    "not in the catalog text as printed: Design and draft landscape plan.",
-    "not in the catalog text as printed: Estimate the cost of a landscape construction project."
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 1,
@@ -235,5 +229,6 @@
    "Pages 298-299 are course descriptions. Courses described there but not in the program requirements (HORT 007, 031, 101, 102, 301A-E) were not placed."
   ]
  },
- "extracted_run": "39035226783"
+ "extracted_run": 39037377728,
+ "read_run": "39035226783"
 }

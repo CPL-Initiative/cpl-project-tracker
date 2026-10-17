@@ -82,15 +82,11 @@
    "program": 3,
    "courses": 0,
    "count": 3,
-   "not_verbatim": [
-    "Demonstrate an ability to safely use a 3D printer, laser cutter, CNC machine, basic hand and power tools, and basic electronics."
-   ],
-   "why": [
-    "not in the catalog text as printed: Demonstrate an ability to safely use a 3D printer, laser cutter, CNC machine, ba"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 0,
@@ -100,7 +96,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -283,5 +279,6 @@
    "Text after the program section is the DRFT course descriptions, which are not part of the requirements."
   ]
  },
- "extracted_run": "39035226783"
+ "extracted_run": 39037377728,
+ "read_run": "39035226783"
 }

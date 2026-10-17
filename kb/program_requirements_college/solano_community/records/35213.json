@@ -103,17 +103,11 @@
    "program": 3,
    "courses": 0,
    "count": 3,
-   "not_verbatim": [
-    "Apply an understanding of how diverse cultural beliefs and social, political and/or historical context impact forms of human expression.",
-    "Demonstrate quantitative reasoning skills through problem solving."
-   ],
-   "why": [
-    "not in the catalog text as printed: Apply an understanding of how diverse cultural beliefs and social, political and",
-    "not in the catalog text as printed: Demonstrate quantitative reasoning skills through problem solving."
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 0,
@@ -463,5 +457,6 @@
    "COMM C1000, MATH 012, GEOG 001 and CINA 011 are not in the closed list and are marked as catalog additions."
   ]
  },
- "extracted_run": "39035226783"
+ "extracted_run": 39037377728,
+ "read_run": "39035226783"
 }

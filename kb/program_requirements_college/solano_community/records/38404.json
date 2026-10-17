@@ -82,17 +82,11 @@
    "program": 3,
    "courses": 0,
    "count": 3,
-   "not_verbatim": [
-    "Analyze, document and construct a solution to a problem by applying appropriate computer science concepts and ideas.",
-    "Effectively communicate solution(s)."
-   ],
-   "why": [
-    "not in the catalog text as printed: Analyze, document and construct a solution to a problem by applying appropriate ",
-    "not in the catalog text as printed: Effectively communicate solution(s)."
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 0,
@@ -105,7 +99,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -236,5 +230,6 @@
    "No careers named in the text."
   ]
  },
- "extracted_run": "39035226783"
+ "extracted_run": 39037377728,
+ "read_run": "39035226783"
 }

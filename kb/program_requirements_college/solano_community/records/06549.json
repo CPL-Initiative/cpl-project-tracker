@@ -106,15 +106,11 @@
    "program": 3,
    "courses": 0,
    "count": 3,
-   "not_verbatim": [
-    "Produce an APA formatted research proposal."
-   ],
-   "why": [
-    "not in the catalog text as printed: Produce an APA formatted research proposal."
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 0,
@@ -300,5 +296,6 @@
    "The A.A. and A.A.-T print identical program outcomes; recorded the outcomes printed under the A.A. section."
   ]
  },
- "extracted_run": "39035226783"
+ "extracted_run": 39037377728,
+ "read_run": "39035226783"
 }

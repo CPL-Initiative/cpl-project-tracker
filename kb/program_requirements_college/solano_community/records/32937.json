@@ -82,19 +82,11 @@
    "program": 3,
    "courses": 0,
    "count": 3,
-   "not_verbatim": [
-    "Recognize and define a variety of major economic, social, cultural and political events and trends in history.",
-    "Analyze the significant causal factors that contributed to the shaping of a variety of historical movements, events and trends.",
-    "Interrogate and analyze primary historical evidence, including textual documents, artifacts and visual images."
-   ],
-   "why": [
-    "not in the catalog text as printed: Recognize and define a variety of major economic, social, cultural and political",
-    "not in the catalog text as printed: Analyze the significant causal factors that contributed to the shaping of a vari",
-    "not in the catalog text as printed: Interrogate and analyze primary historical evidence, including textual documents"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 0,
@@ -107,7 +99,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -333,5 +325,6 @@
    "Outcomes copied with PDF ligature extraction artifacts (e.g. 'deﬁ ne', 'poliƟ cal', 'arƟ facts') read as the printed words 'define', 'political', 'artifacts'; line breaks read as spaces."
   ]
  },
- "extracted_run": "39035226783"
+ "extracted_run": 39037377728,
+ "read_run": "39035226783"
 }

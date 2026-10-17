@@ -83,14 +83,10 @@
    "courses": 0,
    "count": 3,
    "not_verbatim": [
-    "Demonstrate a high intermediate/advanced linguistic proficiency (reading, writing, speaking, listening) in the use of specialized vocabulary and grammatical structures applied to various community work environments.",
-    "Apply cultural responsiveness and linguistic skills to successfully identify and solve potential communication pitfalls in the workforce.",
-    "Identify, define, and analyze the important differences between interpretation and translation, and articulate the specialized skill-set required of each area."
+    "Apply cultural responsiveness and linguistic skills to successfully identify and solve potential communication pitfalls in the workforce."
    ],
    "why": [
-    "not in the catalog text as printed: Demonstrate a high intermediate/advanced linguistic proficiency (reading, writin",
-    "not in the catalog text as printed: Apply cultural responsiveness and linguistic skills to successfully identify and",
-    "not in the catalog text as printed: Identify, define, and analyze the important differences between interpretation a"
+    "not in the catalog text as printed: Apply cultural responsiveness and linguistic skills to successfully identify and"
    ],
    "heading_printed": true,
    "heading_without_outcomes": false,
@@ -247,5 +243,6 @@
    "The following page section (Spanish/English Healthcare Interpreter Training) belongs to a different program and was not read."
   ]
  },
- "extracted_run": "39035226783"
+ "extracted_run": 39037377728,
+ "read_run": "39035226783"
 }

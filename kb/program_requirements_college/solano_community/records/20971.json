@@ -84,15 +84,11 @@
    "count": 4,
    "not_verbatim": [
     "Demonstrate proﬁciency in diagnosing and repairing automotive steering and suspension systems",
-    "Use electrical diagnostic equipment and do hands-on testing with a digital multi-meter",
-    "Proﬁciently diagnose, service, and repair automotive brake systems",
-    "Safely work on and repair hybrid and alternative fuel vehicles"
+    "Proﬁciently diagnose, service, and repair automotive brake systems"
    ],
    "why": [
     "not in the catalog text as printed: Demonstrate proﬁciency in diagnosing and repairing automotive steering and suspe",
-    "not in the catalog text as printed: Use electrical diagnostic equipment and do hands-on testing with a digital multi",
-    "not in the catalog text as printed: Proﬁciently diagnose, service, and repair automotive brake systems",
-    "not in the catalog text as printed: Safely work on and repair hybrid and alternative fuel vehicles"
+    "not in the catalog text as printed: Proﬁciently diagnose, service, and repair automotive brake systems"
    ],
    "heading_printed": true,
    "heading_without_outcomes": false,
@@ -204,5 +200,6 @@
    "The program title in the request includes 'Technician'. The catalog heading reads 'Automotive Maintenance and Light Repair Certificate of Achievement'."
   ]
  },
- "extracted_run": "39035226783"
+ "extracted_run": 39037377728,
+ "read_run": "39035226783"
 }

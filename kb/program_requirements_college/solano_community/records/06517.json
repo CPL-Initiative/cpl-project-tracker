@@ -135,12 +135,10 @@
    "courses": 0,
    "count": 3,
    "not_verbatim": [
-    "Understand and apply ethical principles and legal considerations specific to journalism to produce well-researched, compelling multimedia stories using a combination of text, images, audio, and video to effectively communicate information to diverse audiences, with an emphasis on clarity, accuracy, and journalistic style.",
     "Demonstrate an understanding of the importance of diversity and inclusion in journalism, reflecting it in coverage and story selection to represent a broad range of perspectives, while working collaboratively in a newsroom setting and demonstrating effective communication and teamwork skills essential for the dynamic and fast-paced nature of journalism.",
     "Compile a comprehensive and professional portfolio showcasing a range of journalistic work across different media formats and disciplines, including written copy, digital media, and photography, demonstrating growth and proficiency over the course of the program."
    ],
    "why": [
-    "not in the catalog text as printed: Understand and apply ethical principles and legal considerations specific to jou",
     "not in the catalog text as printed: Demonstrate an understanding of the importance of diversity and inclusion in jou",
     "not in the catalog text as printed: Compile a comprehensive and professional portfolio showcasing a range of journal"
    ],
@@ -472,5 +470,6 @@
    "Journalism Courses block says 'Complete 9 units' and lists exactly three 3-unit courses; recorded as 'all'."
   ]
  },
- "extracted_run": "39035226783"
+ "extracted_run": 39037377728,
+ "read_run": "39035226783"
 }

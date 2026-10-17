@@ -83,13 +83,9 @@
    "courses": 0,
    "count": 3,
    "not_verbatim": [
-    "Perform manipulate skills and pass written tests that meet the National Fire Protection Association Standard 1001 and the California State Fire Marshal standard for Firefighter 1 & 2",
-    "Demonstrate specific skills, knowledge and abilities in routine and emergency firefighting operations",
     "Display the personal and professional attitude and discipline necessary for employment in the firefighting profession"
    ],
    "why": [
-    "not in the catalog text as printed: Perform manipulate skills and pass written tests that meet the National Fire Pro",
-    "not in the catalog text as printed: Demonstrate specific skills, knowledge and abilities in routine and emergency fi",
     "not in the catalog text as printed: Display the personal and professional attitude and discipline necessary for empl"
    ],
    "heading_printed": true,
@@ -200,5 +196,6 @@
    "Course descriptions on page 285 (FIRE 051, 053, 054, 056) are not part of this certificate's requirements."
   ]
  },
- "extracted_run": "39035226783"
+ "extracted_run": 39037377728,
+ "read_run": "39035226783"
 }

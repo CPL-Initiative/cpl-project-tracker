@@ -83,11 +83,9 @@
    "courses": 0,
    "count": 4,
    "not_verbatim": [
-    "Facilitate psychoeducational and support groups.",
     "Apply basic Human Services knowledge and skills in community settings."
    ],
    "why": [
-    "not in the catalog text as printed: Facilitate psychoeducational and support groups.",
     "not in the catalog text as printed: Apply basic Human Services knowledge and skills in community settings."
    ],
    "heading_printed": true,
@@ -218,5 +216,6 @@
    "Careers are the 'areas of employment' named in the program description."
   ]
  },
- "extracted_run": "39035226783"
+ "extracted_run": 39037377728,
+ "read_run": "39035226783"
 }

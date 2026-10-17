@@ -83,14 +83,10 @@
    "courses": 0,
    "count": 4,
    "not_verbatim": [
-    "Demonstrate the research and critical thinking skills necessary to analyze and interpret current issues in a professional media environment.",
-    "Demonstrate a working knowledge of the written, oral and visual communication skills necessary to analyze, interpret and produce accurate news and editorials across a variety of platforms.",
-    "Demonstrate a working knowledge of the fundamental technological applications of media production."
+    "Demonstrate a working knowledge of the written, oral and visual communication skills necessary to analyze, interpret and produce accurate news and editorials across a variety of platforms."
    ],
    "why": [
-    "not in the catalog text as printed: Demonstrate the research and critical thinking skills necessary to analyze and i",
-    "not in the catalog text as printed: Demonstrate a working knowledge of the written, oral and visual communication sk",
-    "not in the catalog text as printed: Demonstrate a working knowledge of the fundamental technological applications of"
+    "not in the catalog text as printed: Demonstrate a working knowledge of the written, oral and visual communication sk"
    ],
    "heading_printed": true,
    "heading_without_outcomes": false,
@@ -272,5 +268,6 @@
    "The page also prints a Journalism Certificate of Achievement and a Multimedia Journalism Certificate of Achievement; those sections were not used."
   ]
  },
- "extracted_run": "39035226783"
+ "extracted_run": 39037377728,
+ "read_run": "39035226783"
 }

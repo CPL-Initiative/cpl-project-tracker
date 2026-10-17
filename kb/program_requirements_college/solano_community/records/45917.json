@@ -82,17 +82,11 @@
    "program": 4,
    "courses": 0,
    "count": 4,
-   "not_verbatim": [
-    "Identify, compare, and contrast the characteristics of various musical cultures",
-    "Show proficiency in music theory: reading, writing, and analyzing musical scores and compositions"
-   ],
-   "why": [
-    "not in the catalog text as printed: Identify, compare, and contrast the characteristics of various musical cultures",
-    "not in the catalog text as printed: Show proficiency in music theory: reading, writing, and analyzing musical scores"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 0,
@@ -102,7 +96,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -215,5 +209,6 @@
    "The description mentions 'fields such as humanities, education, or cultural studies' as complementary areas of study, not careers; careers left empty."
   ]
  },
- "extracted_run": "39035226783"
+ "extracted_run": 39037377728,
+ "read_run": "39035226783"
 }

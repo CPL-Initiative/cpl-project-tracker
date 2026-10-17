@@ -82,23 +82,11 @@
    "program": 6,
    "courses": 0,
    "count": 6,
-   "not_verbatim": [
-    "Educate patients, families, and communities in health promotion behaviors that increase wellness and decrease disease and illness across populations and communities.",
-    "Synthesize principles of the nursing process and critical thinking—utilizing memory, recall, and clinical reasoning—to assist individuals, families, and communities in achieving positive adaptation to changes in health or in supporting a peaceful death.",
-    "Integrate technology and evidence-based concepts of nursing practice across the healthcare continuum to ensure safe, quality, and patient-centered care.",
-    "Communicate effectively using verbal, written, and electronic modalities with patients, families, peers, faculty, and members of the interdisciplinary healthcare team.",
-    "Collaborate with interdisciplinary healthcare teams and demonstrate beginning leadership skills to promote optimal patient outcomes and quality improvement initiatives."
-   ],
-   "why": [
-    "not in the catalog text as printed: Educate patients, families, and communities in health promotion behaviors that i",
-    "not in the catalog text as printed: Synthesize principles of the nursing process and critical thinking-utilizing mem",
-    "not in the catalog text as printed: Integrate technology and evidence-based concepts of nursing practice across the ",
-    "not in the catalog text as printed: Communicate effectively using verbal, written, and electronic modalities with pa",
-    "not in the catalog text as printed: Collaborate with interdisciplinary healthcare teams and demonstrate beginning le"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 0,
@@ -111,7 +99,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -283,5 +271,6 @@
    "No general education pattern, degree total, or careers are printed in this excerpt; prerequisites/GE may appear on the preceding catalog page."
   ]
  },
- "extracted_run": "39035226783"
+ "extracted_run": 39037377728,
+ "read_run": "39035226783"
 }

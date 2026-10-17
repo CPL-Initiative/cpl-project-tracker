@@ -82,19 +82,11 @@
    "program": 5,
    "courses": 0,
    "count": 5,
-   "not_verbatim": [
-    "Demonstrates knowledge of written and verbal communication skills.",
-    "Research and analyze health related data about social, psychological and cultural environments, needs and interests of different communities.",
-    "Accurately assess knowledge, skills, and abilities in relationship to one’s educational, career, and/or personal goals."
-   ],
-   "why": [
-    "not in the catalog text as printed: Demonstrates knowledge of written and verbal communication skills.",
-    "not in the catalog text as printed: Research and analyze health related data about social, psychological and cultura",
-    "not in the catalog text as printed: Accurately assess knowledge, skills, and abilities in relationship to one's educ"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 1,
@@ -107,7 +99,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -491,5 +483,6 @@
    "Career entry 'nursing' taken from 'enter the field of nursing' in the program description."
   ]
  },
- "extracted_run": "39035226783"
+ "extracted_run": 39037377728,
+ "read_run": "39035226783"
 }

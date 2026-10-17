@@ -83,14 +83,10 @@
    "courses": 0,
    "count": 5,
    "not_verbatim": [
-    "Demonstrate critical thinking skills as related to decision making and problem solving in the workplace.",
-    "Create and design appropriate professional and educational samples for a career portfolio.",
-    "Identify and implement measures to ensure public safety and disease prevention"
+    "Create and design appropriate professional and educational samples for a career portfolio."
    ],
    "why": [
-    "not in the catalog text as printed: Demonstrate critical thinking skills as related to decision making and problem s",
-    "not in the catalog text as printed: Create and design appropriate professional and educational samples for a career ",
-    "not in the catalog text as printed: Identify and implement measures to ensure public safety and disease prevention"
+    "not in the catalog text as printed: Create and design appropriate professional and educational samples for a career "
    ],
    "heading_printed": true,
    "heading_without_outcomes": false,
@@ -185,5 +181,6 @@
    "Total 17 units from 'Required Major Total Units' and 'the 17-unit major'."
   ]
  },
- "extracted_run": "39035226783"
+ "extracted_run": 39037377728,
+ "read_run": "39035226783"
 }

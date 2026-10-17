@@ -104,17 +104,9 @@
    "courses": 0,
    "count": 5,
    "not_verbatim": [
-    "Effectively and ethically apply analytical and critical thinking skills to evaluate and assess law enforcement interactions with multicultural communities.",
-    "Analyze the key concepts/theories of past and current practices of the criminal justice system.",
-    "Assess historical and present-day diversity and human rights issues pertaining to the criminal justice system.",
-    "Analyze organizational and institutional ethics within the American justice system, especially as they pertain to modern policing and professional standards of conduct.",
     "Apply ethical and professional standards of conduct in a law enforcement setting."
    ],
    "why": [
-    "not in the catalog text as printed: Effectively and ethically apply analytical and critical thinking skills to evalu",
-    "not in the catalog text as printed: Analyze the key concepts/theories of past and current practices of the criminal ",
-    "not in the catalog text as printed: Assess historical and present-day diversity and human rights issues pertaining t",
-    "not in the catalog text as printed: Analyze organizational and institutional ethics within the American justice syst",
     "not in the catalog text as printed: Apply ethical and professional standards of conduct in a law enforcement setting"
    ],
    "heading_printed": true,
@@ -362,5 +354,6 @@
    "Catalog codes use leading zeros (e.g., CJ 001) matching closed-list codes without them (CJ 1)."
   ]
  },
- "extracted_run": "39035226783"
+ "extracted_run": 39037377728,
+ "read_run": "39035226783"
 }

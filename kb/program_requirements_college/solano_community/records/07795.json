@@ -99,21 +99,11 @@
    "program": 5,
    "courses": 0,
    "count": 5,
-   "not_verbatim": [
-    "Recognize and identify common athletic injuries and the role the certified athletic trainer plays in injury assessment.",
-    "Complete athletic training competency skills required in first 2 years of ATEP Athletic Training programs. Develop and apply strategies to prevent the incidence and/or severity of injury and illnesses",
-    "Assess patient status and develop treatment and rehabilitation that are consistent with contemporary disablement models",
-    "Identify, in the laboratory, major microscopic and gross structures of the major systems of the human body."
-   ],
-   "why": [
-    "not in the catalog text as printed: Recognize and identify common athletic injuries and the role the certified athle",
-    "not in the catalog text as printed: Complete athletic training competency skills required in first 2 years of ATEP A",
-    "not in the catalog text as printed: Assess patient status and develop treatment and rehabilitation that are consiste",
-    "not in the catalog text as printed: Identify, in the laboratory, major microscopic and gross structures of the major"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 0,
@@ -238,5 +228,6 @@
    "Page 332 contains course descriptions (including SPMD 056A/056B, not part of this major); no course outcomes printed."
   ]
  },
- "extracted_run": "39035226783"
+ "extracted_run": 39037377728,
+ "read_run": "39035226783"
 }

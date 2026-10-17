@@ -99,17 +99,11 @@
    "program": 2,
    "courses": 0,
    "count": 2,
-   "not_verbatim": [
-    "Demonstrate the use of the accounting cycle to prepare the income statement, statement of owner’s equity, and balance sheet while applying the generally accepted accounting principles and concepts.",
-    "Analyze and evaluate managerial decisions using basic managerial accounting concepts and theory."
-   ],
-   "why": [
-    "not in the catalog text as printed: Demonstrate the use of the accounting cycle to prepare the income statement, sta",
-    "not in the catalog text as printed: Analyze and evaluate managerial decisions using basic managerial accounting conc"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 1,
@@ -247,5 +241,6 @@
    "Catalog prints codes with leading zeros (ACCT 001, CIS 050); these match closed-list ACCT 1, CIS 50, etc. ACCT 180 appears only in the course descriptions, not in the requirements."
   ]
  },
- "extracted_run": "39035226783"
+ "extracted_run": 39037377728,
+ "read_run": "39035226783"
 }

@@ -154,21 +154,11 @@
    "program": 4,
    "courses": 0,
    "count": 4,
-   "not_verbatim": [
-    "Demonstrate analytical and/or conceptual problem solving skills.",
-    "Carry out experiments and critically assess their data.",
-    "Understand the role of hypotheses, measurement and analysis in the development of scientific theory as evidence by laboratory reports.",
-    "Write a laboratory report or give an oral presentation."
-   ],
-   "why": [
-    "not in the catalog text as printed: Demonstrate analytical and/or conceptual problem solving skills.",
-    "not in the catalog text as printed: Carry out experiments and critically assess their data.",
-    "not in the catalog text as printed: Understand the role of hypotheses, measurement and analysis in the development o",
-    "not in the catalog text as printed: Write a laboratory report or give an oral presentation."
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": false,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 0,
@@ -503,5 +493,6 @@
    "No general education pattern or degree total printed in this excerpt."
   ]
  },
- "extracted_run": "39035226783"
+ "extracted_run": 39037377728,
+ "read_run": "39035226783"
 }

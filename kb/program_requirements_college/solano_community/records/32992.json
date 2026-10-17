@@ -84,23 +84,16 @@
    "program": 4,
    "courses": 0,
    "count": 4,
-   "not_verbatim": [
-    "Assess written materials for context, theme, structure, and technical requirements.",
-    "Express the relationship between culture and dramatic art, using scholarly sources to analyze the performing art persuasively and thoroughly."
-   ],
-   "why": [
-    "not in the catalog text as printed: Assess written materials for context, theme, structure, and technical requiremen",
-    "not in the catalog text as printed: Express the relationship between culture and dramatic art, using scholarly sourc"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 12,
    "not_verbatim": [
     "television/film acting",
-    "lighting",
     "theatre education",
     "sporting event production"
    ],
@@ -313,5 +306,6 @@
    "The A.A. and Certificate of Achievement sections on following pages were not used."
   ]
  },
- "extracted_run": "39035226783"
+ "extracted_run": 39037377728,
+ "read_run": "39035226783"
 }

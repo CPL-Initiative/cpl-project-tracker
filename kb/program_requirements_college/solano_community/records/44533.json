@@ -89,13 +89,9 @@
    "courses": 0,
    "count": 3,
    "not_verbatim": [
-    "Demonstrate a high degree of competency and a broad knowledge of skills as they relate to general office procedures.",
-    "Demonstrate mastery of the modern (QWERTY/alphanumeric) typewriting keyboard under timed conditions with established speed and accuracy.",
     "Demonstrate professional level document processing skills related to the development, formatting, and use of standard business correspondence."
    ],
    "why": [
-    "not in the catalog text as printed: Demonstrate a high degree of competency and a broad knowledge of skills as they ",
-    "not in the catalog text as printed: Demonstrate mastery of the modern (QWERTY/alphanumeric) typewriting keyboard und",
     "not in the catalog text as printed: Demonstrate professional level document processing skills related to the develop"
    ],
    "heading_printed": true,
@@ -236,5 +232,6 @@
    "The AS degree requires the major plus general education and electives, but no degree total, GE pattern, or GE units are printed for this certificate record."
   ]
  },
- "extracted_run": "39035226783"
+ "extracted_run": 39037377728,
+ "read_run": "39035226783"
 }

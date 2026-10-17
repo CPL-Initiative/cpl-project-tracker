@@ -82,15 +82,11 @@
    "program": 1,
    "courses": 0,
    "count": 1,
-   "not_verbatim": [
-    "Demonstrate the use of the accounting cycle to prepare the income statement, statement of owner’s equity, and balance sheet while applying the generally accepted accounting principles and concepts."
-   ],
-   "why": [
-    "not in the catalog text as printed: Demonstrate the use of the accounting cycle to prepare the income statement, sta"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 1,
@@ -100,7 +96,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -225,5 +221,6 @@
    "Career 'accountant' is taken from the program description ('An accountant is an analyst...'); reviewer may confirm it counts as a named career."
   ]
  },
- "extracted_run": "39035226783"
+ "extracted_run": 39037377728,
+ "read_run": "39035226783"
 }

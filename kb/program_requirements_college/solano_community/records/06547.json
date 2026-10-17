@@ -102,19 +102,11 @@
    "program": 3,
    "courses": 0,
    "count": 3,
-   "not_verbatim": [
-    "Demonstrate analytical and/or conceptual problem solving skills related to the study of Physics.",
-    "Carry out experiments and critically assess data. Students will learn the role of hypothesis, measurement, and analysis in the development of scientific theory, as evidenced by laboratory reports.",
-    "Write a professional scientific laboratory report."
-   ],
-   "why": [
-    "not in the catalog text as printed: Demonstrate analytical and/or conceptual problem solving skills related to the s",
-    "not in the catalog text as printed: Carry out experiments and critically assess data. Students will learn the role o",
-    "not in the catalog text as printed: Write a professional scientific laboratory report."
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": false,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 0,
@@ -419,5 +411,6 @@
    "Page 405 contains PHYS course descriptions (PHYS 002, 004, 010, etc.); these are not program requirements and were not recorded. Career-like mentions there (teachers, technicians) belong to course descriptions and were not recorded as careers."
   ]
  },
- "extracted_run": "39035226783"
+ "extracted_run": 39037377728,
+ "read_run": "39035226783"
 }

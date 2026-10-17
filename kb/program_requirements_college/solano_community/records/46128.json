@@ -82,17 +82,11 @@
    "program": 3,
    "courses": 0,
    "count": 3,
-   "not_verbatim": [
-    "Use qualitative and quantitative analysis techniques to solve chemistry problems through integration of multiple ideas that demonstrates reasoning completely and clearly.",
-    "Use chemistry principles to evaluate and solve conceptual challenges."
-   ],
-   "why": [
-    "not in the catalog text as printed: Use qualitative and quantitative analysis techniques to solve chemistry problems",
-    "not in the catalog text as printed: Use chemistry principles to evaluate and solve conceptual challenges."
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 0,
@@ -102,7 +96,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -236,5 +230,6 @@
    "Page 190 contains the separate Chemistry A.S. (26-30 units) section, not used for this record."
   ]
  },
- "extracted_run": "39035226783"
+ "extracted_run": 39037377728,
+ "read_run": "39035226783"
 }

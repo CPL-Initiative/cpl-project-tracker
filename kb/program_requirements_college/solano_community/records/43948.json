@@ -82,26 +82,15 @@
    "program": 4,
    "courses": 0,
    "count": 4,
-   "not_verbatim": [
-    "Identify and comprehend laws, regulations, codes and standards that influence fire department operations, and identify regulatory and advisory organizations that create and mandate them, especially in the areas of fire prevention, building codes and ordin",
-    "Analyze the causes of fire; determine extinguishing agents and methods; differentiate the stages of the fire and fire development; and compare methods of heat transfer .",
-    "Identify and describe common types of building construction and conditions associated with structural collapse and fire fighter safety.",
-    "Demonstrate the ability to analyze, appraise and evaluate fire and emergency incidents and identify components of emergency management and fire fighter safety."
-   ],
-   "why": [
-    "not in the catalog text as printed: Identify and comprehend laws, regulations, codes and standards that influence fi",
-    "not in the catalog text as printed: Analyze the causes of fire; determine extinguishing agents and methods; differen",
-    "not in the catalog text as printed: Identify and describe common types of building construction and conditions assoc",
-    "not in the catalog text as printed: Demonstrate the ability to analyze, appraise and evaluate fire and emergency inc"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 7,
    "not_verbatim": [
-    "firefighter",
     "fire service field",
     "Fire Prevention Specialist",
     "battalion chief"
@@ -111,7 +100,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -219,5 +208,6 @@
    "The Firefighter 1 & 2 Certificate of Achievement on the next page is a separate award and was not read."
   ]
  },
- "extracted_run": "39035226783"
+ "extracted_run": 39037377728,
+ "read_run": "39035226783"
 }

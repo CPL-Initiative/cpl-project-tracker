@@ -96,19 +96,11 @@
    "program": 3,
    "courses": 0,
    "count": 3,
-   "not_verbatim": [
-    "Identify and analyze historical and modern-day factors that contribute to social inequities in the United States and globally, especially those related to race, gender, and sexuality.",
-    "Demonstrate knowledge of the unique experiences and social, artistic, and intellectual contributions of key social groups studied.",
-    "Apply critical thinking and problem-solving skills to complex social issues related to equality, inclusion, and social justice."
-   ],
-   "why": [
-    "not in the catalog text as printed: Identify and analyze historical and modern-day factors that contribute to social",
-    "not in the catalog text as printed: Demonstrate knowledge of the unique experiences and social, artistic, and intell",
-    "not in the catalog text as printed: Apply critical thinking and problem-solving skills to complex social issues rela"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 0,
@@ -121,7 +113,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -345,5 +337,6 @@
    "No specific careers are named; the text mentions only 'a range of career paths'."
   ]
  },
- "extracted_run": "39035226783"
+ "extracted_run": 39037377728,
+ "read_run": "39035226783"
 }

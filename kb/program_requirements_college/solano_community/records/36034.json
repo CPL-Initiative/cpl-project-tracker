@@ -99,21 +99,11 @@
    "program": 4,
    "courses": 0,
    "count": 4,
-   "not_verbatim": [
-    "Explain and discuss basic astronomical phenomena including, but not limited to: gravitation, the seasons, the phases of the Moon, eclipses.",
-    "Apply the laws of  to explain the properties of planets, stars, galaxies, and the Universe.",
-    "Explain and discuss the impact and history of scientific theories and their importance in the advancement of astronomy.",
-    "Demonstrate proficiency in applying scientific procedures for making observations and measurements typical of modern astronomical research."
-   ],
-   "why": [
-    "not in the catalog text as printed: Explain and discuss basic astronomical phenomena including, but not limited to: ",
-    "not in the catalog text as printed: Apply the laws of to explain the properties of planets, stars, galaxies, and the",
-    "not in the catalog text as printed: Explain and discuss the impact and history of scientific theories and their impo",
-    "not in the catalog text as printed: Demonstrate proficiency in applying scientific procedures for making observation"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 0,
@@ -292,5 +282,6 @@
    "ASTR 049 appears only in course descriptions, not in the program requirements; not placed. Course descriptions on page 146 contain no course-level outcomes."
   ]
  },
- "extracted_run": "39035226783"
+ "extracted_run": 39037377728,
+ "read_run": "39035226783"
 }

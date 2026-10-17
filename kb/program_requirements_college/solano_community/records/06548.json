@@ -96,17 +96,11 @@
    "program": 4,
    "courses": 0,
    "count": 4,
-   "not_verbatim": [
-    "Formulate and write names applying International Union of Pure and Applied Chemistry rules for chemical compounds.",
-    "Identify and write different types of chemical reactions."
-   ],
-   "why": [
-    "not in the catalog text as printed: Formulate and write names applying International Union of Pure and Applied Chemi",
-    "not in the catalog text as printed: Identify and write different types of chemical reactions."
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 0,
@@ -247,5 +241,6 @@
    "No careers are named in the program's own section."
   ]
  },
- "extracted_run": "39035226783"
+ "extracted_run": 39037377728,
+ "read_run": "39035226783"
 }

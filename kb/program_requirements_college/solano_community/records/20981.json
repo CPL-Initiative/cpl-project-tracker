@@ -94,17 +94,11 @@
    "program": 3,
    "courses": 0,
    "count": 3,
-   "not_verbatim": [
-    "Attain certification of plant operators.",
-    "Understand technology laws and regulations."
-   ],
-   "why": [
-    "not in the catalog text as printed: Attain certification of plant operators.",
-    "not in the catalog text as printed: Understand technology laws and regulations."
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 1,
@@ -351,5 +345,6 @@
    "Career entry 'water and wastewater treatment personnel' is taken from the description's statement about certification requirements; reviewer may judge whether it counts as a career named."
   ]
  },
- "extracted_run": "39035226783"
+ "extracted_run": 39037377728,
+ "read_run": "39035226783"
 }

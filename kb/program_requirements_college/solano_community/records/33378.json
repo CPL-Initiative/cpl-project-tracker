@@ -84,19 +84,11 @@
    "program": 3,
    "courses": 0,
    "count": 3,
-   "not_verbatim": [
-    "Develop theory and content knowledge of political science.",
-    "Comprehend, analyze, and evaluate academic literature in political science.",
-    "Create original work and/or research in political science."
-   ],
-   "why": [
-    "not in the catalog text as printed: Develop theory and content knowledge of political science.",
-    "not in the catalog text as printed: Comprehend, analyze, and evaluate academic literature in political science.",
-    "not in the catalog text as printed: Create original work and/or research in political science."
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 0,
@@ -260,5 +252,6 @@
    "The program outcomes are printed for the Associate in Arts in Political Science for Transfer itself."
   ]
  },
- "extracted_run": "39035226783"
+ "extracted_run": 39037377728,
+ "read_run": "39035226783"
 }

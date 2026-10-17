@@ -84,25 +84,16 @@
    "program": 3,
    "courses": 0,
    "count": 3,
-   "not_verbatim": [
-    "Analyze issues related to the perception, scholarship, and display of artwork.",
-    "Use scholarly sources effectively and ethically to support their analyses of art.",
-    "Analyze the relationship between various cultures and their art forms, linking specific works, artists, and art movements/periods to relevant historical events, cultural values, and belief systems."
-   ],
-   "why": [
-    "not in the catalog text as printed: Analyze issues related to the perception, scholarship, and display of artwork.",
-    "not in the catalog text as printed: Use scholarly sources effectively and ethically to support their analyses of art",
-    "not in the catalog text as printed: Analyze the relationship between various cultures and their art forms, linking s"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 4,
    "not_verbatim": [
-    "art education",
-    "administration"
+    "art education"
    ],
    "pass": false
   },
@@ -112,7 +103,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -355,5 +346,6 @@
    "ARTH C1100 title is printed with the misspelling 'Midieval'."
   ]
  },
- "extracted_run": "39035226783"
+ "extracted_run": 39037377728,
+ "read_run": "39035226783"
 }

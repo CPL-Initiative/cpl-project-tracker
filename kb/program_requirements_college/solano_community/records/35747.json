@@ -82,19 +82,11 @@
    "program": 3,
    "courses": 0,
    "count": 3,
-   "not_verbatim": [
-    "Understand the theory of air conditioning and heating systems and how to properly repair automotive HVAC systems",
-    "Utilize electrical diagnostic equipment and do hands-on testing with digital multi-meter",
-    "Safely work on and repair hybrid and alternative fuel vehicles"
-   ],
-   "why": [
-    "not in the catalog text as printed: Understand the theory of air conditioning and heating systems and how to properl",
-    "not in the catalog text as printed: Utilize electrical diagnostic equipment and do hands-on testing with digital mul",
-    "not in the catalog text as printed: Safely work on and repair hybrid and alternative fuel vehicles"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 1,
@@ -106,7 +98,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -197,5 +189,6 @@
    "The page also prints the Automotive Maintenance and Light Repair Certificate of Achievement; only the Electrical and Body Systems section was read."
   ]
  },
- "extracted_run": "39035226783"
+ "extracted_run": 39037377728,
+ "read_run": "39035226783"
 }

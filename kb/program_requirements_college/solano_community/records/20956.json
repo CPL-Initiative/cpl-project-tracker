@@ -82,19 +82,11 @@
    "program": 6,
    "courses": 0,
    "count": 6,
-   "not_verbatim": [
-    "Demonstrate oral and written skills unique in the business community.",
-    "Apply leadership, ethical standards, and team building skills necessary for managerial positions in the 21st century.",
-    "Use basic computation skills to analyze and solve business problems requiring the use of mathematics."
-   ],
-   "why": [
-    "not in the catalog text as printed: Demonstrate oral and written skills unique in the business community.",
-    "not in the catalog text as printed: Apply leadership, ethical standards, and team building skills necessary for mana",
-    "not in the catalog text as printed: Use basic computation skills to analyze and solve business problems requiring th"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 0,
@@ -104,7 +96,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -218,5 +210,6 @@
    "Outcome text is restored from PDF ligature artifacts (e.g., 'wriƩen' to 'written', 'posiƟons' to 'positions')."
   ]
  },
- "extracted_run": "39035226783"
+ "extracted_run": 39037377728,
+ "read_run": "39035226783"
 }

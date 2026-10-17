@@ -89,18 +89,10 @@
    "courses": 0,
    "count": 5,
    "not_verbatim": [
-    "Integrate conceptual elements with aesthetic and technical skills to create cohesive and memorable photographs.",
-    "Demonstrate full knowledge of the technical aspects of photography, including camera operations, exposure, lighting, and post-production, including software applications and printing.",
-    "Demonstrate an understanding of industry trends and professional practices related to a career in photography.",
-    "Conceive and produce a coherent portfolio of original work that meets department and professional industry standards.",
-    "Demonstrate an understanding of, and sensitivity towards, historical and contemporary issues of equity, race and representation in the photo industry."
+    "Conceive and produce a coherent portfolio of original work that meets department and professional industry standards."
    ],
    "why": [
-    "not in the catalog text as printed: Integrate conceptual elements with aesthetic and technical skills to create cohe",
-    "not in the catalog text as printed: Demonstrate full knowledge of the technical aspects of photography, including ca",
-    "not in the catalog text as printed: Demonstrate an understanding of industry trends and professional practices relat",
-    "not in the catalog text as printed: Conceive and produce a coherent portfolio of original work that meets department",
-    "not in the catalog text as printed: Demonstrate an understanding of, and sensitivity towards, historical and contemp"
+    "not in the catalog text as printed: Conceive and produce a coherent portfolio of original work that meets department"
    ],
    "heading_printed": true,
    "heading_without_outcomes": false,
@@ -109,12 +101,7 @@
   "careers": {
    "count": 17,
    "not_verbatim": [
-    "advertising",
-    "illustration",
     "fine art",
-    "assisting",
-    "post-production",
-    "marketing",
     "video production"
    ],
    "pass": false
@@ -396,5 +383,6 @@
    "Careers drawn from the program description's photographic fields, career opportunities and related fields."
   ]
  },
- "extracted_run": "39035226783"
+ "extracted_run": 39037377728,
+ "read_run": "39035226783"
 }

@@ -88,17 +88,11 @@
    "program": 3,
    "courses": 0,
    "count": 3,
-   "not_verbatim": [
-    "Demonstrate proficiency using industry standard computer aided drafting/design CAD (AutoCAD) software program.",
-    "Demonstrate proficiency at reading, drawing and dimensioning industry standard civil drawings."
-   ],
-   "why": [
-    "not in the catalog text as printed: Demonstrate proficiency using industry standard computer aided drafting/design C",
-    "not in the catalog text as printed: Demonstrate proficiency at reading, drawing and dimensioning industry standard c"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 3,
@@ -110,7 +104,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -278,5 +272,6 @@
    "OCED 090 and OCED 091 appear in List A but are not in the closed list."
   ]
  },
- "extracted_run": "39035226783"
+ "extracted_run": 39037377728,
+ "read_run": "39035226783"
 }

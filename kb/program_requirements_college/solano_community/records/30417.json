@@ -83,16 +83,10 @@
    "courses": 0,
    "count": 6,
    "not_verbatim": [
-    "Demonstrate computer literacy and word processing skills related to formatting business documents.",
-    "Demonstrate the differences in medical insurance and explain the duties of a medical office assistant, HIPPA.",
-    "Demonstrate ability to type medical documents and facility at using medical software such as Medisoft.",
-    "Employ the necessary soft skills to apply and find employment and keep it."
+    "Demonstrate computer literacy and word processing skills related to formatting business documents."
    ],
    "why": [
-    "not in the catalog text as printed: Demonstrate computer literacy and word processing skills related to formatting b",
-    "not in the catalog text as printed: Demonstrate the differences in medical insurance and explain the duties of a med",
-    "not in the catalog text as printed: Demonstrate ability to type medical documents and facility at using medical soft",
-    "not in the catalog text as printed: Employ the necessary soft skills to apply and find employment and keep it."
+    "not in the catalog text as printed: Demonstrate computer literacy and word processing skills related to formatting b"
    ],
    "heading_printed": true,
    "heading_without_outcomes": false,
@@ -242,5 +236,6 @@
    "Required Major Total Units printed as 20, matching the sum of listed courses (13.5 + 6.5)."
   ]
  },
- "extracted_run": "39035226783"
+ "extracted_run": 39037377728,
+ "read_run": "39035226783"
 }

@@ -99,19 +99,11 @@
    "program": 3,
    "courses": 0,
    "count": 3,
-   "not_verbatim": [
-    "Design and/or interpret an investigation, including data collection and/or analysis.",
-    "Describe the molecular basis of genetics and energetics.",
-    "Explain the principles and mechanisms of microevolution and macroevolution."
-   ],
-   "why": [
-    "not in the catalog text as printed: Design and/or interpret an investigation, including data collection and/or analy",
-    "not in the catalog text as printed: Describe the molecular basis of genetics and energetics.",
-    "not in the catalog text as printed: Explain the principles and mechanisms of microevolution and macroevolution."
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 0,
@@ -234,5 +226,6 @@
    "The Biomedical Sciences section and the course descriptions that follow were not used."
   ]
  },
- "extracted_run": "39035226783"
+ "extracted_run": 39037377728,
+ "read_run": "39035226783"
 }

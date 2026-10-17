@@ -82,15 +82,11 @@
    "program": 2,
    "courses": 0,
    "count": 2,
-   "not_verbatim": [
-    "Sign effectively, using appropriate skills, in working with the Deaf and Hard of Hearing."
-   ],
-   "why": [
-    "not in the catalog text as printed: Sign effectively, using appropriate skills, in working with the Deaf and Hard of"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 1,
@@ -100,7 +96,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -228,5 +224,6 @@
    "Career 'interpreter' taken from the program description ('in order to become an interpreter')."
   ]
  },
- "extracted_run": "39035226783"
+ "extracted_run": 39037377728,
+ "read_run": "39035226783"
 }

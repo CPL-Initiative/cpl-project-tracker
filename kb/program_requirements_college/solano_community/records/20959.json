@@ -82,19 +82,11 @@
    "program": 3,
    "courses": 0,
    "count": 3,
-   "not_verbatim": [
-    "Apply marketing research principles to a company’s product or service.",
-    "Apply advertising principles to promote a firm’s image and product/service offering.",
-    "Develop a marketing plan for a business using the fundamental elements of the marketing mix."
-   ],
-   "why": [
-    "not in the catalog text as printed: Apply marketing research principles to a company's product or service.",
-    "not in the catalog text as printed: Apply advertising principles to promote a firm's image and product/service offer",
-    "not in the catalog text as printed: Develop a marketing plan for a business using the fundamental elements of the ma"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 0,
@@ -104,7 +96,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -243,5 +235,6 @@
    "The 'Required Major Total Units 30' is recorded both as total_units and as the block's stated total."
   ]
  },
- "extracted_run": "39035226783"
+ "extracted_run": 39037377728,
+ "read_run": "39035226783"
 }

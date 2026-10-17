@@ -82,17 +82,11 @@
    "program": 3,
    "courses": 0,
    "count": 3,
-   "not_verbatim": [
-    "Use maps and other appropriate geographic tools to interpret and analyze spatial data.",
-    "Identify major worldwide spatial political, cultural, economic, and environmental patterns."
-   ],
-   "why": [
-    "not in the catalog text as printed: Use maps and other appropriate geographic tools to interpret and analyze spatial",
-    "not in the catalog text as printed: Identify major worldwide spatial political, cultural, economic, and environmenta"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 0,
@@ -105,7 +99,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -213,5 +207,6 @@
    "GEOG 006 California Geography appears only in the course descriptions on page 288, not in the degree requirements, and is not on the closed list."
   ]
  },
- "extracted_run": "39035226783"
+ "extracted_run": 39037377728,
+ "read_run": "39035226783"
 }

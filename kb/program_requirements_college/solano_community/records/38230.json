@@ -87,13 +87,9 @@
    "courses": 0,
    "count": 3,
    "not_verbatim": [
-    "Apply knowledge of the regulation of the Food and Drug Administration and other international regulatory agencies of cell-based therapeutic agents.",
-    "Apply knowledge of cell biology concepts to prepare and maintain cells in culture while maintaining sterility stem cells must be able to be cultured in an undifferentiated state or induced to differentiate into different cell types.",
     "Follow the appropriate procedures to maintain controlled documents: In a research setting, students will keep a research laboratory notebook using a standard legal format. In a manufacturing setting, students will keep the appropriate controlled documents"
    ],
    "why": [
-    "not in the catalog text as printed: Apply knowledge of the regulation of the Food and Drug Administration and other ",
-    "not in the catalog text as printed: Apply knowledge of cell biology concepts to prepare and maintain cells in cultur",
     "not in the catalog text as printed: Follow the appropriate procedures to maintain controlled documents: In a researc"
    ],
    "heading_printed": true,
@@ -288,5 +284,6 @@
    "Careers recorded from the description: 'emerging fields of gene therapy ... and cell therapy'."
   ]
  },
- "extracted_run": "39035226783"
+ "extracted_run": 39037377728,
+ "read_run": "39035226783"
 }

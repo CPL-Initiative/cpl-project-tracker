@@ -82,17 +82,11 @@
    "program": 3,
    "courses": 0,
    "count": 3,
-   "not_verbatim": [
-    "Effectively use modern programming languages, such as Python and R, to visualize and model large varieties and volumes of data.",
-    "Possess a solid theoretical understanding of classical statistical models and data science techniques."
-   ],
-   "why": [
-    "not in the catalog text as printed: Effectively use modern programming languages, such as Python and R, to visualize",
-    "not in the catalog text as printed: Possess a solid theoretical understanding of classical statistical models and da"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 0,
@@ -105,7 +99,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -251,5 +245,6 @@
    "General education is mentioned but no named pattern, GE units, or degree total is printed."
   ]
  },
- "extracted_run": "39035226783"
+ "extracted_run": 39037377728,
+ "read_run": "39035226783"
 }

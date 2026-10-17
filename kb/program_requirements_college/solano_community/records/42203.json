@@ -84,13 +84,11 @@
    "count": 3,
    "not_verbatim": [
     "Demonstrate a high intermediate/advanced linguistic proficiency in speaking, listening, and reading as applied to the use of the three modes (consecutive and simultaneous interpretation, and sight translation) in healthcare interpreting settings.",
-    "Apply critical thinking, cultural responsiveness and linguistic skills to successfully identify and manage potential communication- and ethical-pitfalls in healthcare settings.",
-    "Locate and articulate the resources that are available to pursue continuing education opportunities in the field, to obtain formal assessments of their specific linguistic proficiency levels, and to pursue national interpreting certifications."
+    "Apply critical thinking, cultural responsiveness and linguistic skills to successfully identify and manage potential communication- and ethical-pitfalls in healthcare settings."
    ],
    "why": [
     "not in the catalog text as printed: Demonstrate a high intermediate/advanced linguistic proficiency in speaking, lis",
-    "not in the catalog text as printed: Apply critical thinking, cultural responsiveness and linguistic skills to succes",
-    "not in the catalog text as printed: Locate and articulate the resources that are available to pursue continuing educ"
+    "not in the catalog text as printed: Apply critical thinking, cultural responsiveness and linguistic skills to succes"
    ],
    "heading_printed": true,
    "heading_without_outcomes": false,
@@ -257,5 +255,6 @@
    "PDF ligature artifacts (e.g., 'Ɵ', 'ﬁ', 'seƫ n gs', 'piƞ alls') were read as 'ti', 'fi', 'settings', 'pitfalls' in the outcomes and careers."
   ]
  },
- "extracted_run": "39035226783"
+ "extracted_run": 39037377728,
+ "read_run": "39035226783"
 }

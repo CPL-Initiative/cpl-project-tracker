@@ -94,19 +94,11 @@
    "program": 4,
    "courses": 0,
    "count": 4,
-   "not_verbatim": [
-    "Analyze and perform the elements of music (rhythm, melody, harmony and form) with technical facility and artistry as a soloist and as a member of an ensemble.",
-    "Critique personal music performances and those of other musicians.",
-    "Compare and contrast the characteristics of various musical cultures and historical periods."
-   ],
-   "why": [
-    "not in the catalog text as printed: Analyze and perform the elements of music (rhythm, melody, harmony and form) wit",
-    "not in the catalog text as printed: Critique personal music performances and those of other musicians.",
-    "not in the catalog text as printed: Compare and contrast the characteristics of various musical cultures and histori"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 0,
@@ -119,7 +111,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -385,5 +377,6 @@
    "Catalog course titles differ from state file titles (e.g., MUSC 001 'Beginning Theory I' vs 'Music Theory I'; MUSC 007 'Jazz and Popular Music in America' vs 'History of Jazz Music'); matched by code."
   ]
  },
- "extracted_run": "39035226783"
+ "extracted_run": 39037377728,
+ "read_run": "39035226783"
 }

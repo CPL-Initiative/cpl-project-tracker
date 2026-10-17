@@ -86,19 +86,11 @@
    "program": 3,
    "courses": 0,
    "count": 3,
-   "not_verbatim": [
-    "Describe physical phenomena in multiple forms (verbal, pictorial, graphical, and mathematical).",
-    "Qualitatively and quantitatively predict, analyze and/or explain the behavior of physical systems using fundamental physical principles and models.",
-    "Develop and implement a plan of collecting and/or accessing experimental data, and performing data analysis"
-   ],
-   "why": [
-    "not in the catalog text as printed: Describe physical phenomena in multiple forms (verbal, pictorial, graphical, and",
-    "not in the catalog text as printed: Qualitatively and quantitatively predict, analyze and/or explain the behavior of",
-    "not in the catalog text as printed: Develop and implement a plan of collecting and/or accessing experimental data, a"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 0,
@@ -111,7 +103,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -351,5 +343,6 @@
    "Course descriptions on page 401 (PHSC courses) contain no course outcomes or careers."
   ]
  },
- "extracted_run": "39035226783"
+ "extracted_run": 39037377728,
+ "read_run": "39035226783"
 }

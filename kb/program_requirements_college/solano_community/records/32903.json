@@ -82,27 +82,11 @@
    "program": 7,
    "courses": 0,
    "count": 7,
-   "not_verbatim": [
-    "Demonstrate an understanding of the American Criminal Justice system and the scope of responsibilities of the various local, state, and federal law enforcement agencies beginning with arrest through parole.",
-    "Articulate the system’s objectives, the crime problem, and role expectations of criminal justice personnel, and describe the various agencies and each subsystem within the system.",
-    "Describe the system’s responsibilities to the community, factors in crime causation, the social implications of crime and communication barriers between the system and the community.",
-    "Articulate the differences between the major criminological theories of the causes of crime and how those theories relate to policies toward crime and criminal behavior .",
-    "Analyze legal concepts and make rational decisions about case processing.",
-    "Demonstrate knowledge of the rules of evidence, legal definitions, and concepts of evidentiary law. Apply basic investigative proficiencies.",
-    "Demonstrate critical thinking and analytical skills acquired in the social sciences in preparation for continuance of college-level education at a four-year college."
-   ],
-   "why": [
-    "not in the catalog text as printed: Demonstrate an understanding of the American Criminal Justice system and the sco",
-    "not in the catalog text as printed: Articulate the system's objectives, the crime problem, and role expectations of ",
-    "not in the catalog text as printed: Describe the system's responsibilities to the community, factors in crime causat",
-    "not in the catalog text as printed: Articulate the differences between the major criminological theories of the caus",
-    "not in the catalog text as printed: Analyze legal concepts and make rational decisions about case processing.",
-    "not in the catalog text as printed: Demonstrate knowledge of the rules of evidence, legal definitions, and concepts ",
-    "not in the catalog text as printed: Demonstrate critical thinking and analytical skills acquired in the social scien"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 0,
@@ -115,7 +99,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -261,5 +245,6 @@
    "Total 18 is from 'Required Major Total Units ... 18'. Other sections on the page (Corrections, Law Enforcement, Modern Policing) were not read for this award."
   ]
  },
- "extracted_run": "39035226783"
+ "extracted_run": 39037377728,
+ "read_run": "39035226783"
 }

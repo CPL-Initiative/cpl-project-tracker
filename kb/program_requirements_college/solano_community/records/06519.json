@@ -82,19 +82,11 @@
    "program": 3,
    "courses": 0,
    "count": 3,
-   "not_verbatim": [
-    "Construct applications that use GUI (graphical user interface) components and access databases for data permanence.",
-    "Develop a programming solution to a data structure problem using object-oriented methodologies and appropriate data structures and algorithms.",
-    "Implement a well-designed, properly normalized relational database after analyzing user requirements and business rules."
-   ],
-   "why": [
-    "not in the catalog text as printed: Construct applications that use GUI (graphical user interface) components and ac",
-    "not in the catalog text as printed: Develop a programming solution to a data structure problem using object-oriented",
-    "not in the catalog text as printed: Implement a well-designed, properly normalized relational database after analyzi"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 0,
@@ -107,7 +99,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -323,5 +315,6 @@
    "Catalog prints codes with leading zeros (CIS 001); these match closed-list codes (CIS 1) and are not catalog additions."
   ]
  },
- "extracted_run": "39035226783"
+ "extracted_run": 39037377728,
+ "read_run": "39035226783"
 }
