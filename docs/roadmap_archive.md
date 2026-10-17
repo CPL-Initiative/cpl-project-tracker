@@ -12,6 +12,7 @@ status: archive
 
 ## INDEX update-history entries rotated out (2026-10-17)
 
+- 2026-10-16 (S399 SkyRowan, Sam's session): Sierra's statewide catalog A/B'd, put to Sam (Open Asks Sheet 85) and deployed (smoke green); Sheet 85 answered, no card open; wave 5, ten curriQunet colleges, six loaded (#2168, build `9c74da80bad7`); #2167 fixes the curriQunet catalog choice; the Sierra lessons doc compacted (#2165); handoff 400 names SkyBirch.
 - 2026-10-16 (S398 SkyLinden, Sam's session): wave 4 finished (Santa Ana, Rio Hondo, Saddleback loaded; builds `66b50c86891e` and `fa8ee2a84935` applied; nine procedure records, #2161); the display job's 120 minutes and gzipped receipts (#2159); the Memory tab's UI pass (#2160); Sierra: one assistant in COBI and her statewide catalog, on Sam's words of the day.
 - 2026-10-15 (S395 SkyHawthorn): wave 2's procedure records and their generator (#2146); staff email off the public dashboard (#2147); Santa Ana's colon titles in the curriQunet reader (#2148); the catalog sweep's wave 3, ten colleges, 1,132 records (#2149); handoff 396.
 - 2026-10-15 (S394 SkyMadrone): extraction v10 (#2141); UI pass GR Priorities (#2142); the catalog sweep, waves 1 and 2, eight colleges (#2143, #2144) with the NOCCCD campus-letter and curriQunet cap fixes; procedure records v1 for wave 1; lessons archive 2; handoff 395 (SkyHawthorn).

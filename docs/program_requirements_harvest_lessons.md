@@ -706,3 +706,14 @@ reports showed. A page read of the PDF around one failing outcome named the faul
 **Patterns that worked.** One branch per college cut from the code branch before it merged, so the eight captures
 ran while #2199's tests did. A Supabase result too large for the context lands in a file: parse it there and check
 it against a fingerprint computed in the same query, with nothing retyped.
+
+## Moved from the lane (S406 compaction)
+
+- Build `c111c9b05ca0` (S405): 12,424 programs at 92 colleges, adding Coalinga 52, Skyline 42, West Valley 133, Copper
+  Mountain 46, San Diego Continuing Education 90 and Solano 144, with their dated reads and San Mateo's.
+- Sheet 89 card 1's detail (S405): Grossmont's row names the catalog's cover image, and its catalog page links
+  `catalog.gcccd.edu/grossmont/`, the district CourseLeaf host Cuyamaca reads; Ohlone's names its landing page, and
+  its 2026-2027 catalog is PDF chapters, chapter 7 the curriculum guides; Cañada's names its schedule page, and its
+  online catalog `catalog.canadacollege.edu/current/` refuses the reader in robots.txt.
+- The refusing hosts before S406: De Anza and CCSF (Cloudflare 403), American River, Cosumnes River, Folsom Lake and
+  Sacramento City (404), Cerro Coso and Porterville (robots.txt on the PDF). All eight now read from Sam's copies.
