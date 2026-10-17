@@ -1,0 +1,138 @@
+{
+ "college": "Barstow Community College",
+ "load_run": "39007616158",
+ "function": "program_requirement_records_college_load",
+ "at": "2026-10-17T05:49:15Z",
+ "records": 71,
+ "posted": 56,
+ "batches": 3,
+ "inserted": 56,
+ "kept": 0,
+ "skipped": [
+  {
+   "control_number": "09688",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "18489",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "33065",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "33067",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "33083",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "35100",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "35770",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "39136",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "39151",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "39588",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "39718",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "40024",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "40066",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "40067",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "43659",
+   "why": "places none of its listed courses (another program's page)"
+  }
+ ],
+ "error": null,
+ "extracted_runs": [
+  "39006332820"
+ ],
+ "machine_pass": 51,
+ "inserted_keys": [
+  "04736",
+  "17763",
+  "18206",
+  "18482",
+  "18483",
+  "18487",
+  "18488",
+  "18490",
+  "18491",
+  "18494",
+  "18500",
+  "18501",
+  "18503",
+  "18588",
+  "18589",
+  "19967",
+  "30562",
+  "30733",
+  "31034",
+  "31051",
+  "33066",
+  "33070",
+  "33071",
+  "33076",
+  "35346",
+  "39150",
+  "39360",
+  "39436",
+  "39522",
+  "39655",
+  "39670",
+  "39719",
+  "39906",
+  "40021",
+  "40065",
+  "40088",
+  "40097",
+  "40101",
+  "40102",
+  "40103",
+  "40633",
+  "40827",
+  "40830",
+  "41033",
+  "41079",
+  "41081",
+  "41251",
+  "41261",
+  "41556",
+  "42255",
+  "43165",
+  "43495",
+  "43650",
+  "44290",
+  "44292",
+  "45801"
+ ],
+ "kept_keys": [],
+ "rollback": "delete from public.program_requirement_records where college = 'Barstow Community College' and checked = false and control_number in ('04736', '17763', '18206', '18482', '18483', '18487', '18488', '18490', '18491', '18494', '18500', '18501', '18503', '18588', '18589', '19967', '30562', '30733', '31034', '31051', '33066', '33070', '33071', '33076', '35346', '39150', '39360', '39436', '39522', '39655', '39670', '39719', '39906', '40021', '40065', '40088', '40097', '40101', '40102', '40103', '40633', '40827', '40830', '41033', '41079', '41081', '41251', '41261', '41556', '42255', '43165', '43495', '43650', '44290', '44292', '45801');"
+}
