@@ -43,14 +43,16 @@
     ".cplmx-note { color: var(--text-muted); font-size:.76rem; font-style:italic; }",
     ".cplmx-toolbar { display:flex; flex-wrap:wrap; gap:8px; align-items:center; margin:0 0 10px; }",
     ".cplmx-toolbar input.q { flex:1 1 240px; min-width:180px; padding:7px 11px; border:1px solid var(--border-strong); border-radius:6px; font-size:.86rem; background: var(--surface-opaque); color: var(--text-body); }",
-    ".cplmx-toolbar input.q:focus { outline:none; border-color: var(--seal-blue); }",
-    ".cplmx-btn { background: var(--seal-blue); color: var(--surface-opaque); border:none; border-radius:6px; padding:7px 14px; font-weight:600; font-size:.8rem; cursor:pointer; }",
-    ".cplmx-btn:hover { opacity:.92; }",
-    ".cplmx-btn.ghost { background: var(--surface-subtle); color: var(--text-body); border:1px solid var(--border-strong); }",
+    ".cplmx-toolbar input.q:focus { border-color: var(--seal-blue); }",
+    ".cplmx :focus-visible { outline:3px solid var(--focus-ring); outline-offset:2px; border-radius:6px; }",
+    // Controls are underlined words (Sam, 2026-10-09): no border, no fill, 24px tall.
+    ".cplmx-btn { font:inherit; font-size:.86rem; font-weight:600; cursor:pointer; min-height:24px; padding:2px 0; border:0; background:none; color: var(--accent-link); text-decoration:underline; text-decoration-thickness:1px; text-underline-offset:3px; white-space:nowrap; }",
+    ".cplmx-btn:hover { text-decoration-thickness:2px; }",
     ".cplmx-count { font-size:.78rem; color: var(--text-muted); margin-left:auto; }",
     ".cplmx-main { display:flex; gap:12px; align-items:stretch; }",
     ".cplmx-list { flex:0 0 360px; max-width:42%; border:1px solid var(--border); border-radius:8px; background: var(--surface-opaque); overflow-y:auto; max-height:72vh; }",
-    ".cplmx-row { padding:7px 12px; border-bottom:1px solid var(--border); cursor:pointer; }",
+    ".cplmx-row { display:block; width:100%; text-align:left; font:inherit; color:inherit; background:none; border:0; border-bottom:1px solid var(--border); padding:7px 12px; cursor:pointer; }",
+    ".cplmx-row .t, .cplmx-row .s { display:block; }",
     ".cplmx-row:hover { background: var(--surface-subtle); }",
     ".cplmx-row.on { background: var(--surface-muted); box-shadow: inset 3px 0 0 var(--seal-blue); }",
     ".cplmx-row .t { font-weight:600; color: var(--navy-primary); font-size:.85rem; }",
@@ -363,15 +365,16 @@
     var qIn = el("input", "q");
     qIn.type = "search";
     qIn.placeholder = "Search title, issuer, raw variant…";
+    qIn.setAttribute("aria-label", "Search credentials");
     qIn.value = STATE.q;
     var count = el("span", "cplmx-count");
-    var allBtn = el("button", "cplmx-btn", "⬇ Download all (JSON)");
+    var allBtn = el("button", "cplmx-btn", "Download all (JSON)");
     allBtn.type = "button";
     allBtn.addEventListener("click", function () {
       download("map_exhibit_export_" + today() + ".json",
         exportJson(STATE.entries, STATE.payload, STATE.overlayOk), "application/json;charset=utf-8");
     });
-    var csvBtn = el("button", "cplmx-btn ghost", "⬇ CSV");
+    var csvBtn = el("button", "cplmx-btn", "Download CSV");
     csvBtn.type = "button";
     csvBtn.addEventListener("click", function () {
       download("map_exhibit_export_" + today() + ".csv", csvText(STATE.entries), "text/csv;charset=utf-8");
@@ -380,6 +383,10 @@
 
     // Master-detail split.
     var list = el("div", "cplmx-list");
+    // A scrolling pane is a labeled region a keyboard can reach (CLAUDE.md, Presentation rules).
+    list.tabIndex = 0;
+    list.setAttribute("role", "region");
+    list.setAttribute("aria-label", "Canonical credentials");
     var detail = el("div", "cplmx-detail");
     root.appendChild(el("div", "cplmx-main", [list, detail]));
     mount.appendChild(root);
@@ -391,20 +398,20 @@
         return;
       }
       var text = JSON.stringify(entry.rec, null, 2);
-      var dlBtn = el("button", "cplmx-btn ghost", "⬇");
+      var dlBtn = el("button", "cplmx-btn", "Download");
       dlBtn.type = "button";
       dlBtn.title = "Download this record (JSON)";
       dlBtn.addEventListener("click", function () {
         download("map_exhibit_" + slug(entry.title) + ".json", text, "application/json;charset=utf-8");
       });
-      var cpBtn = el("button", "cplmx-btn ghost", "⧉");
+      var cpBtn = el("button", "cplmx-btn", "Copy");
       cpBtn.type = "button";
       cpBtn.title = "Copy this record to the clipboard";
       cpBtn.addEventListener("click", function () {
         try {
           if (navigator.clipboard && navigator.clipboard.writeText) {
             navigator.clipboard.writeText(text).then(function () {
-              cpBtn.textContent = "✓"; setTimeout(function () { cpBtn.textContent = "⧉"; }, 1200);
+              cpBtn.textContent = "Copied"; setTimeout(function () { cpBtn.textContent = "Copy"; }, 1200);
             });
           }
         } catch (e) { /* clipboard unavailable — no-op */ }
@@ -414,6 +421,9 @@
         dlBtn, cpBtn
       ]));
       var pre = el("pre", "cplmx-pre");
+      pre.tabIndex = 0;
+      pre.setAttribute("role", "region");
+      pre.setAttribute("aria-label", "FullExhibitJSON record");
       pre.textContent = text;
       detail.appendChild(pre);
     }
@@ -433,10 +443,12 @@
         var idx = STATE.entries.indexOf(e);
         var on = (STATE.selected === idx);
         if (on) selectedEntry = e;
-        var row = el("div", "cplmx-row" + (on ? " on" : ""), [
-          el("div", "t", e.title || "(untitled)"),
-          el("div", "s", (e.issuer || "no issuer") + " · " + e.nVariants + " variant" + (e.nVariants === 1 ? "" : "s"))
+        var row = el("button", "cplmx-row" + (on ? " on" : ""), [
+          el("span", "t", e.title || "(untitled)"),
+          el("span", "s", (e.issuer || "no issuer") + " · " + e.nVariants + " variant" + (e.nVariants === 1 ? "" : "s"))
         ]);
+        row.type = "button";
+        row.setAttribute("aria-pressed", on ? "true" : "false");
         row.addEventListener("click", function () {
           STATE.selected = idx;
           renderList();
@@ -447,7 +459,10 @@
         // Selection fell out of the filter (or nothing picked yet) → first row.
         STATE.selected = STATE.entries.indexOf(rows[0]);
         selectedEntry = rows[0];
-        if (list.firstChild && list.firstChild.classList) list.firstChild.classList.add("on");
+        if (list.firstChild && list.firstChild.classList) {
+          list.firstChild.classList.add("on");
+          list.firstChild.setAttribute("aria-pressed", "true");
+        }
       }
       renderDetail(selectedEntry);
     }
