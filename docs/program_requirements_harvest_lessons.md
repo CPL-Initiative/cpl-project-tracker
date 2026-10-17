@@ -686,11 +686,11 @@ reports showed. A page read of the PDF around one failing outcome named the faul
   of 74, Folsom Lake 107 of 108, De Anza 227 of 243 (its 2025-2026 catalog), Cosumnes River 217 of 219, Sacramento
   City 204 of 207, CCSF 349 of 371 and American River 368 of 368, each in under eight minutes: one download, no page
   loads. The four Los Rios colleges print one compiled catalog each, so the PDF reader needed nothing new.
-- **Extraction and loads** (each under the $40 go; $150.90 in all): Cerro Coso $4.87, 52 loaded; Porterville $6.13,
+- **Extraction and loads** (each under the $40 go; $131.00 in all): Cerro Coso $4.87, 52 loaded; Porterville $6.13,
   76; Folsom Lake $9.43, 104; De Anza $19.66, 210; Sacramento City $18.50, 182; Cosumnes River $18.96, 182; CCSF
-  $23.60, 294; American River $29.75, 326 (07230 took a Cloudflare 502 from the extraction gateway and is
-  re-extracted on its own). Records placing none of their listed courses stay out of the load: 13, 6, 3, 17, 22,
-  35, 55 and 41; 1,426 loaded in all. CCSF's 55 (16%) is the highest share of the sweep. Four read at random are
+  $23.60, 294; American River $29.85, 327 (07230 took a Cloudflare 502 from the extraction gateway, then
+  re-extracted alone with `force=07230` and loaded). Records placing none of their listed courses stay out of the load: 13, 6, 3, 17, 22,
+  35, 55 and 41; 1,427 loaded in all. CCSF's 55 (16%) is the highest share of the sweep. Four read at random are
   wrong-page picks the extraction caught and reported as not found (Physics 2.0 drew course descriptions, pages
   795-797; Editorial Management and Design drew the Journalism degrees page), so the title gate still admits a
   one-subject program's course pages in a large catalog. Nothing false loaded; the reader item stays open.
