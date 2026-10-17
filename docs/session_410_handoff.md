@@ -35,7 +35,9 @@ at about 230,000 tokens left, while the display apply ran. If the routine starte
 1. **The display apply** (run 39078224767 on `main`, dispatched 23:14Z, about an hour). Read its applied record
    (`kb/receipts/program_requirement_records_display_2026-10-17_ffd6929a4f90.applied_<run>.json`, committed by the job):
    15,517 written is the good result.
-2. **Sheet 92's replies** (`ArtifactData` `list`, collection `replies`). On "posted": file Cañada by its release copies
+2. **Sheet 92's replies** (`ArtifactData` `list`, collection `replies`). Sam, in chat at 23:30Z: he will post Cañada's
+   copies later, from a computer (he was on his phone). Look for them on the `catalog-files` release before asking
+   again. Once posted: file Cañada by its release copies
    (`kb/hand_filed_catalogs/README.md`, "Filing a release copy"), then `step=read` with `college=Cañada College`.
 
 ## Priority after that
