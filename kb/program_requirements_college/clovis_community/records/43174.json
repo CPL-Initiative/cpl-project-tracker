@@ -84,11 +84,19 @@
    "program": 3,
    "courses": 0,
    "count": 3,
-   "not_verbatim": [],
-   "why": [],
+   "not_verbatim": [
+    "Prepare for employment/self-employment in the graphic design industry.",
+    "Build graphic design skills required for traditional print and digital media platforms.",
+    "Assemble a portfolio of graphic design projects for self-promotion and marketing materials geared toward a career in contemporary graphic design industries."
+   ],
+   "why": [
+    "not in the catalog text as printed: Prepare for employment/self-employment in the graphic design industry.",
+    "not in the catalog text as printed: Build graphic design skills required for traditional print and digital media pla",
+    "not in the catalog text as printed: Assemble a portfolio of graphic design projects for self-promotion and marketing"
+   ],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": true
+   "pass": false
   },
   "careers": {
    "count": 1,
@@ -225,5 +233,6 @@
    "ART 43 is printed at 2 units in this certificate but at 3 units in the Art AA degree sections on the same pages."
   ]
  },
- "extracted_run": "39006155986"
+ "extracted_run": 39019541982,
+ "read_run": "39006155986"
 }

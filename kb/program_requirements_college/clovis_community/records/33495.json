@@ -91,11 +91,27 @@
    "program": 7,
    "courses": 0,
    "count": 7,
-   "not_verbatim": [],
-   "why": [],
+   "not_verbatim": [
+    "Define Business, list the five functions of business, and describe each function.",
+    "Utilize effective oral communication skills in a variety of situations (including one-on-one and group presentations) and using a variety of formats.",
+    "Write effective business letters, memos, research papers, and other documents.",
+    "Conduct research using a variety of resources including published documents and web based resources.",
+    "Effectively and efficiently use technology (commonly used computers and software) as it relates to the world of business.",
+    "Discuss the basic accounting concepts and financial statements used regularly in business.",
+    "List and describe the major forces influencing human behavior in the workplace."
+   ],
+   "why": [
+    "not in the catalog text as printed: Define Business, list the five functions of business, and describe each function",
+    "not in the catalog text as printed: Utilize effective oral communication skills in a variety of situations (includin",
+    "not in the catalog text as printed: Write effective business letters, memos, research papers, and other documents.",
+    "not in the catalog text as printed: Conduct research using a variety of resources including published documents and ",
+    "not in the catalog text as printed: Effectively and efficiently use technology (commonly used computers and software",
+    "not in the catalog text as printed: Discuss the basic accounting concepts and financial statements used regularly in",
+    "not in the catalog text as printed: List and describe the major forces influencing human behavior in the workplace."
+   ],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": true
+   "pass": false
   },
   "careers": {
    "count": 6,
@@ -108,7 +124,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": true
+  "pass": false
  },
  "record": {
   "program": {
@@ -251,5 +267,6 @@
    "Section heading on page 159 follows the end of a preceding program (List B with Physics sequences, Total Units 39-42), which is not part of this award."
   ]
  },
- "extracted_run": "39006155986"
+ "extracted_run": 39019541982,
+ "read_run": "39006155986"
 }

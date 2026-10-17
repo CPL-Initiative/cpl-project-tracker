@@ -82,11 +82,21 @@
    "program": 4,
    "courses": 0,
    "count": 4,
-   "not_verbatim": [],
-   "why": [],
+   "not_verbatim": [
+    "Identify the anatomy of plants and describe their major physiological processes.",
+    "Explain the development of soil, as well as the composition and properties of soil.",
+    "Identify the plant, soil, and environmental factors that influence plant growth, and how they can be manipulated to alter plant growth.",
+    "Describe the relationship between agriculture and the local environment."
+   ],
+   "why": [
+    "not in the catalog text as printed: Identify the anatomy of plants and describe their major physiological processes.",
+    "not in the catalog text as printed: Explain the development of soil, as well as the composition and properties of so",
+    "not in the catalog text as printed: Identify the plant, soil, and environmental factors that influence plant growth,",
+    "not in the catalog text as printed: Describe the relationship between agriculture and the local environment."
+   ],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": true
+   "pass": false
   },
   "careers": {
    "count": 4,
@@ -96,7 +106,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": true
+  "pass": false
  },
  "record": {
   "program": {
@@ -242,5 +252,6 @@
    "The description also mentions 'entry-level positions in plant-science-related positions'; not recorded as a separate career beyond 'plant science'."
   ]
  },
- "extracted_run": "39006155986"
+ "extracted_run": 39019541982,
+ "read_run": "39006155986"
 }

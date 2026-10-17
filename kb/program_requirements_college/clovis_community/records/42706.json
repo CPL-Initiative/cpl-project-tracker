@@ -87,11 +87,21 @@
    "program": 4,
    "courses": 0,
    "count": 4,
-   "not_verbatim": [],
-   "why": [],
-   "heading_printed": true,
+   "not_verbatim": [
+    "Demonstrate knowledge of music theory equivalent to two years of undergraduate study.",
+    "Establish aural skills and musicianship (ear-training) needed to pursue a broad range of specializations in the music major.",
+    "Prepare keyboard and improvisational skills required for undergraduate piano proficiency.",
+    "Perform music from various styles as a soloist as well as within an ensemble."
+   ],
+   "why": [
+    "not in the catalog text as printed: Demonstrate knowledge of music theory equivalent to two years of undergraduate s",
+    "not in the catalog text as printed: Establish aural skills and musicianship (ear-training) needed to pursue a broad ",
+    "not in the catalog text as printed: Prepare keyboard and improvisational skills required for undergraduate piano pro",
+    "not in the catalog text as printed: Perform music from various styles as a soloist as well as within an ensemble."
+   ],
+   "heading_printed": false,
    "heading_without_outcomes": false,
-   "pass": true
+   "pass": false
   },
   "careers": {
    "count": 0,
@@ -285,5 +295,6 @@
    "Specializations named (music education, music performance, music composition, music therapy, music business, commercial music) are described as bachelor's degree specializations, not careers, so careers left empty."
   ]
  },
- "extracted_run": "39006155986"
+ "extracted_run": 39019541982,
+ "read_run": "39006155986"
 }

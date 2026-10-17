@@ -89,11 +89,17 @@
    "program": 2,
    "courses": 0,
    "count": 2,
-   "not_verbatim": [],
-   "why": [],
+   "not_verbatim": [
+    "Recognize the functions of the Criminal Justice System.",
+    "Be able to calculate how to work within a constitutional framework."
+   ],
+   "why": [
+    "not in the catalog text as printed: Recognize the functions of the Criminal Justice System.",
+    "not in the catalog text as printed: Be able to calculate how to work within a constitutional framework."
+   ],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": true
+   "pass": false
   },
   "careers": {
    "count": 7,
@@ -106,7 +112,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": true
+  "pass": false
  },
  "record": {
   "program": {
@@ -302,5 +308,6 @@
    "The 60 semester unit requirement is the generic SB1440 transfer-degree statement, not recorded as a degree total; no Cal-GETC unit figure is printed."
   ]
  },
- "extracted_run": "39006155986"
+ "extracted_run": 39019541982,
+ "read_run": "39006155986"
 }

@@ -102,11 +102,25 @@
    "program": 6,
    "courses": 0,
    "count": 6,
-   "not_verbatim": [],
-   "why": [],
+   "not_verbatim": [
+    "Understand the social impact of computers on human society",
+    "Carry out computer related tasks with professional ethics",
+    "Write programs using procedural programming language",
+    "Write programs using object oriented programming language",
+    "Analyze and solve application problems in science and engineering",
+    "Write programs using advanced programming concepts"
+   ],
+   "why": [
+    "not in the catalog text as printed: Understand the social impact of computers on human society",
+    "not in the catalog text as printed: Carry out computer related tasks with professional ethics",
+    "not in the catalog text as printed: Write programs using procedural programming language",
+    "not in the catalog text as printed: Write programs using object oriented programming language",
+    "not in the catalog text as printed: Analyze and solve application problems in science and engineering",
+    "not in the catalog text as printed: Write programs using advanced programming concepts"
+   ],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": true
+   "pass": false
   },
   "careers": {
    "count": 0,
@@ -119,7 +133,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": true
+  "pass": false
  },
  "record": {
   "program": {
@@ -304,5 +318,6 @@
    "MATH C2210 and MATH C2220 are not in the closed list and are recorded as catalog additions."
   ]
  },
- "extracted_run": "39006155986"
+ "extracted_run": 39019541982,
+ "read_run": "39006155986"
 }

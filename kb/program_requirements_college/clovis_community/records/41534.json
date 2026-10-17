@@ -93,8 +93,8 @@
    "count": 0,
    "not_verbatim": [],
    "why": [],
-   "heading_printed": true,
-   "heading_without_outcomes": true,
+   "heading_printed": false,
+   "heading_without_outcomes": false,
    "pass": true
   },
   "careers": {
@@ -239,5 +239,6 @@
    "Description mentions only 'a wide range of rewarding careers'; no specific career named."
   ]
  },
- "extracted_run": "39006155986"
+ "extracted_run": 39019541982,
+ "read_run": "39006155986"
 }

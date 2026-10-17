@@ -2,29 +2,20 @@
  "college": "Clovis Community College",
  "programs": 129,
  "with_closed_list": 121,
- "found": 115,
+ "found": 117,
  "extracted": 115,
  "errors": 0,
- "passed_machine_checks": 65,
+ "passed_machine_checks": 55,
  "failed": {
   "coverage": 21,
   "invented": 6,
   "arithmetic": 45,
   "repeated": 0,
-  "outcomes": 5
+  "outcomes": 20
  },
  "cost_usd": 8.34,
  "cost_per_program": 0.0725,
  "not_found": [
-  {
-   "control_number": "33496",
-   "title": "Communication Studies",
-   "award": "A.A- T Degree",
-   "near_miss": {
-    "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=111",
-    "coverage": 0.471
-   }
-  },
   {
    "control_number": "35845",
    "title": "Food Safety and Quality Technician",
@@ -44,15 +35,6 @@
    }
   },
   {
-   "control_number": "42839",
-   "title": "Communication Studies 2.0",
-   "award": "A.A- T Degree",
-   "near_miss": {
-    "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=111",
-    "coverage": 0.444
-   }
-  },
-  {
    "control_number": "44163",
    "title": "Preparation for Career",
    "award": "Noncredit program",
@@ -65,5 +47,5 @@
    "near_miss": null
   }
  ],
- "run": "39006155986"
+ "run": "39019541982"
 }

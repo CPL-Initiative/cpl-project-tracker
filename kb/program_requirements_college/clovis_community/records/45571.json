@@ -88,11 +88,21 @@
    "program": 4,
    "courses": 0,
    "count": 4,
-   "not_verbatim": [],
-   "why": [],
-   "heading_printed": true,
+   "not_verbatim": [
+    "Prepare tax returns for individuals, businesses, and partnerships.",
+    "Apply IRS (Internal Revenue Service) code to determine income, expenses and other credits/deductions.",
+    "Implement the filing requirements, and documentation needed by the IRS for different entities.",
+    "Utilize the proper authority, responsibility, and due diligence of an Enrolled Agent."
+   ],
+   "why": [
+    "not in the catalog text as printed: Prepare tax returns for individuals, businesses, and partnerships.",
+    "not in the catalog text as printed: Apply IRS (Internal Revenue Service) code to determine income, expenses and othe",
+    "not in the catalog text as printed: Implement the filing requirements, and documentation needed by the IRS for diffe",
+    "not in the catalog text as printed: Utilize the proper authority, responsibility, and due diligence of an Enrolled A"
+   ],
+   "heading_printed": false,
    "heading_without_outcomes": false,
-   "pass": true
+   "pass": false
   },
   "careers": {
    "count": 2,
@@ -102,7 +112,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": true
+  "pass": false
  },
  "record": {
   "program": {
@@ -208,5 +218,6 @@
    "The preceding Accounting certificate section on the same page was ignored."
   ]
  },
- "extracted_run": "39006155986"
+ "extracted_run": 39019541982,
+ "read_run": "39006155986"
 }

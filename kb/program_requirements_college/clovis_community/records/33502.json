@@ -105,11 +105,21 @@
    "program": 4,
    "courses": 0,
    "count": 4,
-   "not_verbatim": [],
-   "why": [],
+   "not_verbatim": [
+    "Analyze major psychological theories and research, and apply them when examining behavior & mental processes.",
+    "Synthesize knowledge regarding biological, psychological, and sociocultural influences on behavior and mental processes.",
+    "Critically evaluate scientific claims within the field of psychology and differentiate from pseudoscience.",
+    "Utilize psychological applications in the pursuit of self-improvement (e.g., develop effective college learning skills) and relationships."
+   ],
+   "why": [
+    "not in the catalog text as printed: Analyze major psychological theories and research, and apply them when examining",
+    "not in the catalog text as printed: Synthesize knowledge regarding biological, psychological, and sociocultural infl",
+    "not in the catalog text as printed: Critically evaluate scientific claims within the field of psychology and differe",
+    "not in the catalog text as printed: Utilize psychological applications in the pursuit of self-improvement (e.g., dev"
+   ],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": true
+   "pass": false
   },
   "careers": {
    "count": 0,
@@ -394,5 +404,6 @@
    "Catalog prints SOCI C1000 and MATH C2210/C2220 and BIOL C1000/C1001/C1001L, which are not in the closed list (closed list has older codes SOC 1A, MATH 5A/5B, BIOL 3/10/10L)."
   ]
  },
- "extracted_run": "39006155986"
+ "extracted_run": 39019541982,
+ "read_run": "39006155986"
 }

@@ -82,11 +82,23 @@
    "program": 5,
    "courses": 0,
    "count": 5,
-   "not_verbatim": [],
-   "why": [],
+   "not_verbatim": [
+    "Apply Fundamental Robotics Concepts: Define and d escribe essential robotics concepts, components, and advantages, emphasizing their impact on industrial efficiency and productivity.",
+    "Ensure Safety and Proper Operation in Robotics: Implement safety procedures and operate industrial robots using teach pendants, ensuring both safe practices and effective robot handling.",
+    "Develop and Manage Robot Programs: Create, manage, and troubleshoot robot programs, demonstrating proficiency in interpreting commands and maintaining operational reliability.",
+    "Interface and Integrate Robotics with Other Systems: Connect robots with PLCs and Ethernet networks, and develop programs for specific tasks to ensure seamless functionality and communication within industrial systems.",
+    "Utilize Industrial Robotics Programming and Integration Techniques: Apply Industrial programming techniques and integrate robotic workcells, focusing on optimizing efficiency, safety, and performance in specialized applications."
+   ],
+   "why": [
+    "not in the catalog text as printed: Apply Fundamental Robotics Concepts: Define and d escribe essential robotics con",
+    "not in the catalog text as printed: Ensure Safety and Proper Operation in Robotics: Implement safety procedures and ",
+    "not in the catalog text as printed: Develop and Manage Robot Programs: Create, manage, and troubleshoot robot progra",
+    "not in the catalog text as printed: Interface and Integrate Robotics with Other Systems: Connect robots with PLCs an",
+    "not in the catalog text as printed: Utilize Industrial Robotics Programming and Integration Techniques: Apply Indust"
+   ],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": true
+   "pass": false
   },
   "careers": {
    "count": 1,
@@ -96,7 +108,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": true
+  "pass": false
  },
  "record": {
   "program": {
@@ -197,5 +209,6 @@
    "Career taken from the catalog description: 'entry-level roles as industrial automation technicians'. Industries named (manufacturing, food production, logistics) were not recorded as careers."
   ]
  },
- "extracted_run": "39006155986"
+ "extracted_run": 39019541982,
+ "read_run": "39006155986"
 }

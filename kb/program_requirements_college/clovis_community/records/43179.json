@@ -82,11 +82,19 @@
    "program": 3,
    "courses": 0,
    "count": 3,
-   "not_verbatim": [],
-   "why": [],
+   "not_verbatim": [
+    "Prepare for employment/self-employment in the animation, multimedia, game design, and UX industries.",
+    "Build 2D and 3D animation skills required for various digital media platforms.",
+    "Assemble a portfolio of animation projects for self-promotion and marketing materials geared toward a career in contemporary animation and multimedia industries."
+   ],
+   "why": [
+    "not in the catalog text as printed: Prepare for employment/self-employment in the animation, multimedia, game design",
+    "not in the catalog text as printed: Build 2D and 3D animation skills required for various digital media platforms.",
+    "not in the catalog text as printed: Assemble a portfolio of animation projects for self-promotion and marketing mate"
+   ],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": true
+   "pass": false
   },
   "careers": {
    "count": 1,
@@ -96,7 +104,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": true
+  "pass": false
  },
  "record": {
   "program": {
@@ -239,5 +247,6 @@
    "Career field taken from the catalog description ('entry-level employment in the multimedia industry'); the outcomes also mention animation, multimedia, game design, and UX industries."
   ]
  },
- "extracted_run": "39006155986"
+ "extracted_run": 39019541982,
+ "read_run": "39006155986"
 }

@@ -82,11 +82,19 @@
    "program": 3,
    "courses": 0,
    "count": 3,
-   "not_verbatim": [],
-   "why": [],
+   "not_verbatim": [
+    "Use industry-standard tools and technologies to support wildlife and plant management projects.",
+    "Access the impacts of human activities on local ecosystems and recommend strategies for habitat restoration and conservation.",
+    "Apply essential field techniques to monitor and manage wildlife and plant populations in various ecosystems."
+   ],
+   "why": [
+    "not in the catalog text as printed: Use industry-standard tools and technologies to support wildlife and plant manag",
+    "not in the catalog text as printed: Access the impacts of human activities on local ecosystems and recommend strateg",
+    "not in the catalog text as printed: Apply essential field techniques to monitor and manage wildlife and plant popula"
+   ],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": true
+   "pass": false
   },
   "careers": {
    "count": 5,
@@ -96,7 +104,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": true
+  "pass": false
  },
  "record": {
   "program": {
@@ -233,5 +241,6 @@
    "The preceding Plant Science certificate section on the same page was ignored."
   ]
  },
- "extracted_run": "39006155986"
+ "extracted_run": 39019541982,
+ "read_run": "39006155986"
 }

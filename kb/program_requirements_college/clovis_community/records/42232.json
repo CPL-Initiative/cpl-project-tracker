@@ -82,11 +82,17 @@
    "program": 2,
    "courses": 0,
    "count": 2,
-   "not_verbatim": [],
-   "why": [],
-   "heading_printed": true,
+   "not_verbatim": [
+    "Demonstrate introductory subject matter competency and knowledge of integrated studies found in the Associate in Arts in Elementary Teacher Education for Transfer Degree.",
+    "Demonstrate effective written and oral communication skills."
+   ],
+   "why": [
+    "not in the catalog text as printed: Demonstrate introductory subject matter competency and knowledge of integrated s",
+    "not in the catalog text as printed: Demonstrate effective written and oral communication skills."
+   ],
+   "heading_printed": false,
    "heading_without_outcomes": false,
-   "pass": true
+   "pass": false
   },
   "careers": {
    "count": 4,
@@ -96,7 +102,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": true
+  "pass": false
  },
  "record": {
   "program": {
@@ -209,5 +215,6 @@
    "Careers taken from the program's catalog description."
   ]
  },
- "extracted_run": "39006155986"
+ "extracted_run": 39019541982,
+ "read_run": "39006155986"
 }

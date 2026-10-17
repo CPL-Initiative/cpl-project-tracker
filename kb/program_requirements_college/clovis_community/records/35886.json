@@ -90,11 +90,15 @@
    "program": 1,
    "courses": 0,
    "count": 1,
-   "not_verbatim": [],
-   "why": [],
+   "not_verbatim": [
+    "Recognize and understand cultural similarities and differences between U.S. culture and that of the Spanish-speaking world.  Distinguish simple behavioral patterns that represent these cultures and behave in culturally appropriate ways in specific situations."
+   ],
+   "why": [
+    "not in the catalog text as printed: Recognize and understand cultural similarities and differences between U.S. cult"
+   ],
    "heading_printed": false,
    "heading_without_outcomes": false,
-   "pass": true
+   "pass": false
   },
   "careers": {
    "count": 7,
@@ -356,5 +360,6 @@
    "Printed total 19-21 units; core is 16 units plus one List A course (3-4 units), giving 19-20; the 21 upper bound is as printed."
   ]
  },
- "extracted_run": "39006155986"
+ "extracted_run": 39019541982,
+ "read_run": "39006155986"
 }

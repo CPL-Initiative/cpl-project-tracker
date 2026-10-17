@@ -94,11 +94,19 @@
    "program": 3,
    "courses": 0,
    "count": 3,
-   "not_verbatim": [],
-   "why": [],
+   "not_verbatim": [
+    "Describe the historically significant theories employed within the discipline of political science.",
+    "Interpret and evaluate political events through a critical comparison of local, state, national and international political frameworks and institutions.",
+    "Explain the complex relationship between political culture, diverse political institutions, and patterns of global engagement."
+   ],
+   "why": [
+    "not in the catalog text as printed: Describe the historically significant theories employed within the discipline of",
+    "not in the catalog text as printed: Interpret and evaluate political events through a critical comparison of local, ",
+    "not in the catalog text as printed: Explain the complex relationship between political culture, diverse political in"
+   ],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": true
+   "pass": false
   },
   "careers": {
    "count": 10,
@@ -326,5 +334,6 @@
    "Careers taken from the catalog description's list of pursuits within the discipline."
   ]
  },
- "extracted_run": "39006155986"
+ "extracted_run": 39019541982,
+ "read_run": "39006155986"
 }
