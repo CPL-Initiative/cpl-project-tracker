@@ -15,10 +15,11 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-380 document(s).
+381 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 410 | [Session 410 handoff: the display apply, Hartnell through its Coursedog PDF, SmartCatalog's subject pages, Cañada's sheet](../session_410_handoff.md) | 2026-10-17 |
 | 409 | [Session 409 handoff: the display apply, Cuesta, Cañada's page, and Exhibit Adoption's UI pass](../session_409_handoff.md) | 2026-10-17 |
 | 408 | [Session 408 handoff: catalog steps, the heading preference, the migrate path, six colleges reading](../session_408_handoff.md) | 2026-10-17 |
 | 407 | [Session 407 handoff: the eight hand-filed catalogs loaded, Sheet 90, MAP Export's UI pass](../session_407_handoff.md) | 2026-10-17 |

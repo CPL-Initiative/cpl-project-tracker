@@ -1,11 +1,11 @@
 {
   "schema": 1,
-  "written_at": "2026-10-17T20:32:00Z",
-  "session": 408,
-  "moniker": "SkyAgave",
+  "written_at": "2026-10-17T23:24:01Z",
+  "session": 409,
+  "moniker": "SkyOcotillo",
   "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_409_handoff.md",
+  "handoff": "docs/session_410_handoff.md",
   "unchecked": [
     {
       "college": "Allan Hancock College",
@@ -30434,6 +30434,1273 @@
       "program": "Wildland Fire Technology",
       "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
       "control_number": "42403",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "Cuesta College",
+      "program": "ACADEMIC SKILLS BRIDGE TO COLLEGE CREDIT",
+      "award": "Noncredit program",
+      "control_number": "42891",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "Cuesta College",
+      "program": "ACCOUNTING CLERK",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "07677",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "Cuesta College",
+      "program": "ACCOUNTING CONCENTRATION",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "42042",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "Cuesta College",
+      "program": "ADDICTION STUDIES FOUNDATION",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "38466",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "Cuesta College",
+      "program": "ADDICTION TREATMENT STUDIES",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "37078",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "Cuesta College",
+      "program": "ADDICTION TREATMENT STUDIES",
+      "award": "A.A. Degree",
+      "control_number": "37079",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "Cuesta College",
+      "program": "Administration of Justice",
+      "award": "A.S. T Degree",
+      "control_number": "31933",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "Cuesta College",
+      "program": "ADVANCED ENGINE PERFORMANCE TECHNICIAN",
+      "award": "A.S. Degree",
+      "control_number": "14793",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "Cuesta College",
+      "program": "AGRICULTURE ANIMAL SCIENCES",
+      "award": "A.S. T Degree",
+      "control_number": "46389",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "Cuesta College",
+      "program": "AGRICULTURE BUSINESS",
+      "award": "A.S. T Degree",
+      "control_number": "33704",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "Cuesta College",
+      "program": "Anthropology",
+      "award": "A.A- T Degree",
+      "control_number": "32139",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "Cuesta College",
+      "program": "ARCHITECTURAL TECHNOLOGY",
+      "award": "A.S. Degree",
+      "control_number": "07672",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "Cuesta College",
+      "program": "ART HISTORY",
+      "award": "A.A- T Degree",
+      "control_number": "32270",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "Cuesta College",
+      "program": "ART HISTORY AND PROFESSIONAL PRACTICES",
+      "award": "A.A. Degree",
+      "control_number": "05669",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "Cuesta College",
+      "program": "ART STUDIO",
+      "award": "A.A. Degree",
+      "control_number": "33939",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "Cuesta College",
+      "program": "AUDIO TECHNOLOGY I",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "38465",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "Cuesta College",
+      "program": "AUTO BODY TECHNICIAN",
+      "award": "A.S. Degree",
+      "control_number": "07685",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "Cuesta College",
+      "program": "AUTO BODY TECHNICIAN",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "21040",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "Cuesta College",
+      "program": "AUTOMOTIVE TECHNICIAN",
+      "award": "A.S. Degree",
+      "control_number": "05666",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "Cuesta College",
+      "program": "Automotive Technician",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "37046",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "Cuesta College",
+      "program": "AVIATION MAINTENANCE TECHNOLOGY",
+      "award": "A.S. Degree",
+      "control_number": "46278",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "Cuesta College",
+      "program": "AVIATION MECHANIC - AIRFRAME",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "43036",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "Cuesta College",
+      "program": "AVIATION MECHANIC - AIRFRAME & POWERPLANT",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "41744",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "Cuesta College",
+      "program": "AVIATION MECHANIC - GENERAL",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "42973",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "Cuesta College",
+      "program": "Biology",
+      "award": "A.S. T Degree",
+      "control_number": "33963",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "Cuesta College",
+      "program": "BLACKSMITHING",
+      "award": "Noncredit program",
+      "control_number": "46075",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "Cuesta College",
+      "program": "BUSINESS ADMINISTRATION",
+      "award": "A.S. T Degree",
+      "control_number": "32153",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "Cuesta College",
+      "program": "BUSINESS ADMINISTRATION - CAREER TRACK",
+      "award": "A.A. Degree",
+      "control_number": "30452",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "Cuesta College",
+      "program": "BUSINESS ADMINISTRATION 2.0",
+      "award": "A.S. T Degree",
+      "control_number": "41742",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "Cuesta College",
+      "program": "BUSINESS ADMINISTRATIVE ASSISTANT",
+      "award": "A.A. Degree",
+      "control_number": "05660",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "Cuesta College",
+      "program": "BUSINESS ADMINISTRATIVE ASSISTANT",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "10433",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "Cuesta College",
+      "program": "BUSINESS CAREER TRACK CORE",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "21033",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "Cuesta College",
+      "program": "CALIFORNIA CONSERVATION AWARENESS",
+      "award": "Noncredit program",
+      "control_number": "40856",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "Cuesta College",
+      "program": "CAREER TECHNICAL EDUCATION TEACHER PREPARATION",
+      "award": "A.S. Degree",
+      "control_number": "42770",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "Cuesta College",
+      "program": "CERAMICS",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "37979",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "Cuesta College",
+      "program": "Chemistry",
+      "award": "A.S. Degree",
+      "control_number": "05687",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "Cuesta College",
+      "program": "CHILD AND ADOLESCENT DEVELOPMENT",
+      "award": "A.A- T Degree",
+      "control_number": "36269",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "Cuesta College",
+      "program": "CHILD DEVELOPMENT AND FAMILY STUDIES",
+      "award": "A.A. Degree",
+      "control_number": "42411",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "Cuesta College",
+      "program": "CHILD DEVELOPMENT ASSOCIATE TEACHER",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "38470",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "Cuesta College",
+      "program": "CHILD DEVELOPMENT MASTER TEACHER",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "38479",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "Cuesta College",
+      "program": "CHILD DEVELOPMENT SITE SUPERVISOR",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "38471",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "Cuesta College",
+      "program": "CLOUD COMPUTING",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "39907",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "Cuesta College",
+      "program": "COMMERCIAL DRIVER'S LICENSE",
+      "award": "Noncredit program",
+      "control_number": "45157",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "Cuesta College",
+      "program": "COMMERCIAL MUSIC",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "41526",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "Cuesta College",
+      "program": "Communication Studies",
+      "award": "A.A- T Degree",
+      "control_number": "31857",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "Cuesta College",
+      "program": "COMMUNICATION STUDIES 2.0",
+      "award": "A.A- T Degree",
+      "control_number": "42763",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "Cuesta College",
+      "program": "COMPUTER AND NETWORKING TECHNOLOGY",
+      "award": "A.S. Degree",
+      "control_number": "14441",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "Cuesta College",
+      "program": "COMPUTER SCIENCE",
+      "award": "A.S. Degree",
+      "control_number": "13607",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "Cuesta College",
+      "program": "CONSTRUCTION TECHNOLOGY",
+      "award": "A.S. Degree",
+      "control_number": "05667",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "Cuesta College",
+      "program": "CONSTRUCTION TECHNOLOGY",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "21041",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "Cuesta College",
+      "program": "CRIMINAL JUSTICE",
+      "award": "A.A. Degree",
+      "control_number": "05690",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "Cuesta College",
+      "program": "CULINARY ARTS",
+      "award": "A.S. Degree",
+      "control_number": "40085",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "Cuesta College",
+      "program": "CULINARY ARTS STUDIES",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "39908",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "Cuesta College",
+      "program": "DATA SCIENCE",
+      "award": "A.S. Degree",
+      "control_number": "45889",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "Cuesta College",
+      "program": "DATA SCIENCE",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "45890",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "Cuesta College",
+      "program": "DIGITAL COMMERCE CONCENTRATION",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "42040",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "Cuesta College",
+      "program": "EARLY CHILDHOOD EDUCATION",
+      "award": "A.A. Degree",
+      "control_number": "05680",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "Cuesta College",
+      "program": "EARLY CHILDHOOD EDUCATION",
+      "award": "A.S. T Degree",
+      "control_number": "32377",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "Cuesta College",
+      "program": "Economics",
+      "award": "A.A- T Degree",
+      "control_number": "33041",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "Cuesta College",
+      "program": "ELECTRICAL TECHNOLOGY",
+      "award": "A.S. Degree",
+      "control_number": "16766",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "Cuesta College",
+      "program": "ELECTRONICS AND STATE ELECTRICIAN",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "21042",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "Cuesta College",
+      "program": "ELEMENTARY EDUCATION: LIBERAL STUDIES WITH CHILD DEVELOPMENT EMPHASIS (PK-6 PREP)",
+      "award": "A.A. Degree",
+      "control_number": "43775",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "Cuesta College",
+      "program": "Elementary Teacher Education",
+      "award": "A.A- T Degree",
+      "control_number": "36738",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "Cuesta College",
+      "program": "EMPLOYABILITY & TRANSITIONS",
+      "award": "Noncredit program",
+      "control_number": "40825",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "Cuesta College",
+      "program": "ENGINE PERFORMANCE SPECIALIST",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "10374",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "Cuesta College",
+      "program": "ENGINEERING",
+      "award": "A.S. Degree",
+      "control_number": "05696",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "Cuesta College",
+      "program": "English",
+      "award": "A.A- T Degree",
+      "control_number": "32271",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "Cuesta College",
+      "program": "Environmental Sciences",
+      "award": "A.S. T Degree",
+      "control_number": "36960",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "Cuesta College",
+      "program": "EQUIPMENT TECHNICIAN",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "38515",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "Cuesta College",
+      "program": "ESL CITIZENSHIP",
+      "award": "Noncredit program",
+      "control_number": "42865",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "Cuesta College",
+      "program": "ESSENTIAL RANCHING SKILLS",
+      "award": "Noncredit program",
+      "control_number": "44171",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "Cuesta College",
+      "program": "ETHNIC STUDIES FOR EDUCATORS",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "43707",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "Cuesta College",
+      "program": "EXERCISE SCIENCE - FITNESS PROFESSIONAL",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "41234",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "Cuesta College",
+      "program": "FARM MANAGEMENT",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "40057",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "Cuesta College",
+      "program": "FILM TELEVISION AND ELECTRONIC MEDIA",
+      "award": "A.A. Degree",
+      "control_number": "07681",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "Cuesta College",
+      "program": "FILM, TELEVISION, AND ELECTRONIC MEDIA",
+      "award": "A.S. T Degree",
+      "control_number": "36261",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "Cuesta College",
+      "program": "FOOD, NUTRITION, AND SYSTEMS STUDIES",
+      "award": "A.S. Degree",
+      "control_number": "44824",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "Cuesta College",
+      "program": "GENERAL BUSINESS CONCENTRATION",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "42043",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "Cuesta College",
+      "program": "GEOGRAPHIC INFORMATION SYSTEMS",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "38358",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "Cuesta College",
+      "program": "GEOLOGY",
+      "award": "A.S. Degree",
+      "control_number": "05688",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "Cuesta College",
+      "program": "Geology",
+      "award": "A.S. T Degree",
+      "control_number": "32321",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "Cuesta College",
+      "program": "Global Studies",
+      "award": "A.A- T Degree",
+      "control_number": "36271",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "Cuesta College",
+      "program": "Graphics",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "35076",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "Cuesta College",
+      "program": "HIGH SCHOOL/MIDDLE SCHOOL TEACHER PATHWAY",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "39678",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "Cuesta College",
+      "program": "HISTORY",
+      "award": "A.A. Degree",
+      "control_number": "15491",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "Cuesta College",
+      "program": "HISTORY",
+      "award": "A.A- T Degree",
+      "control_number": "32593",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "Cuesta College",
+      "program": "HOSPITALITY MANAGEMENT",
+      "award": "A.S. T Degree",
+      "control_number": "37339",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "Cuesta College",
+      "program": "HOSPITALITY MANAGEMENT FOUNDATION",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "38468",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "Cuesta College",
+      "program": "HOSPITALITY MANAGEMENT NONCREDIT",
+      "award": "Noncredit program",
+      "control_number": "38384",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "Cuesta College",
+      "program": "HUMAN SERVICES",
+      "award": "A.A. Degree",
+      "control_number": "05679",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "Cuesta College",
+      "program": "INCLUSION AND SPECIAL NEEDS",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "40104",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "Cuesta College",
+      "program": "JAZZ STUDIES",
+      "award": "A.A. Degree",
+      "control_number": "13698",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "Cuesta College",
+      "program": "JOURNALISM",
+      "award": "A.A. Degree",
+      "control_number": "05661",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "Cuesta College",
+      "program": "JOURNALISM",
+      "award": "A.A- T Degree",
+      "control_number": "32157",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "Cuesta College",
+      "program": "LAW, PUBLIC POLICY, AND SOCIETY",
+      "award": "A.A- T Degree",
+      "control_number": "36762",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "Cuesta College",
+      "program": "LEGAL STUDIES: BUSINESS OPTION",
+      "award": "A.A. Degree",
+      "control_number": "15547",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "Cuesta College",
+      "program": "LEGAL STUDIES: SOCIAL SCIENCE OPTION",
+      "award": "A.A. Degree",
+      "control_number": "15548",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "Cuesta College",
+      "program": "LIBERAL ARTS - ARTS AND HUMANITIES",
+      "award": "A.A. Degree",
+      "control_number": "18710",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "Cuesta College",
+      "program": "LIBERAL ARTS - SCIENCE",
+      "award": "A.A. Degree",
+      "control_number": "33875",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "Cuesta College",
+      "program": "LIBERAL ARTS - SOCIAL AND BEHAVIORAL SCIENCES",
+      "award": "A.A. Degree",
+      "control_number": "18712",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "Cuesta College",
+      "program": "LIBERAL ARTS: HEALTH AND WELLNESS",
+      "award": "A.A. Degree",
+      "control_number": "43682",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "Cuesta College",
+      "program": "LIBRARY/INFORMATION TECHNOLOGY",
+      "award": "A.S. Degree",
+      "control_number": "05684",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "Cuesta College",
+      "program": "LIBRARY/INFORMATION TECHNOLOGY",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "21054",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "Cuesta College",
+      "program": "Licensed Vocational Nursing",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "16837",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "Cuesta College",
+      "program": "Licensed Vocational Nursing",
+      "award": "A.S. Degree",
+      "control_number": "35008",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "Cuesta College",
+      "program": "MAINTENANCE AND LIGHT REPAIR TECHNICIAN",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "37170",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "Cuesta College",
+      "program": "MANAGEMENT INFORMATION SYSTEMS",
+      "award": "A.S. Degree",
+      "control_number": "13611",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "Cuesta College",
+      "program": "MANAGEMENT SPECIALIZATION",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "39909",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "Cuesta College",
+      "program": "MARKETING CONCENTRATION",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "42044",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "Cuesta College",
+      "program": "MATH PREPARATION FOR COLLEGE SUCCESS",
+      "award": "Noncredit program",
+      "control_number": "43794",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "Cuesta College",
+      "program": "Mathematics",
+      "award": "A.S. T Degree",
+      "control_number": "30918",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "Cuesta College",
+      "program": "MECHANIZED AGRICULTURE",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "37077",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "Cuesta College",
+      "program": "MEDICAL ASSISTING",
+      "award": "A.S. Degree",
+      "control_number": "05677",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "Cuesta College",
+      "program": "Medical Assisting",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "21044",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "Cuesta College",
+      "program": "MULTIMEDIA JOURNALISM",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "42046",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "Cuesta College",
+      "program": "MUSIC",
+      "award": "A.A- T Degree",
+      "control_number": "32198",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "Cuesta College",
+      "program": "MUSIC",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "37433",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "Cuesta College",
+      "program": "MUSIC PERFORMANCE",
+      "award": "A.A. Degree",
+      "control_number": "14876",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "Cuesta College",
+      "program": "NONCREDIT AUTO/BODY COLLISION REPAIR",
+      "award": "Noncredit program",
+      "control_number": "37257",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "Cuesta College",
+      "program": "NONCREDIT AUTOMOTIVE REFINISH REPAIR",
+      "award": "Noncredit program",
+      "control_number": "37258",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "Cuesta College",
+      "program": "NONCREDIT BASIC INTERNET SKILLS",
+      "award": "Noncredit program",
+      "control_number": "38250",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "Cuesta College",
+      "program": "NONCREDIT BASIC OFFICE SOFTWARE SKILLS",
+      "award": "Noncredit program",
+      "control_number": "38201",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "Cuesta College",
+      "program": "NONCREDIT BEGINNING COMPUTER SKILLS",
+      "award": "Noncredit program",
+      "control_number": "38254",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "Cuesta College",
+      "program": "NONCREDIT CAREER STRATEGIST",
+      "award": "Noncredit program",
+      "control_number": "38260",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "Cuesta College",
+      "program": "NONCREDIT ENGLISH AS A SECOND LANGUAGE - LEVEL I",
+      "award": "Noncredit program",
+      "control_number": "33400",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "Cuesta College",
+      "program": "NONCREDIT ENGLISH AS A SECOND LANGUAGE - LEVEL II",
+      "award": "Noncredit program",
+      "control_number": "33401",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "Cuesta College",
+      "program": "NONCREDIT ENGLISH AS A SECOND LANGUAGE - LEVEL III",
+      "award": "Noncredit program",
+      "control_number": "33402",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "Cuesta College",
+      "program": "NONCREDIT ENGLISH AS A SECOND LANGUAGE - LEVEL V",
+      "award": "Noncredit program",
+      "control_number": "37253",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "Cuesta College",
+      "program": "NONCREDIT ENGLISH AS A SECOND LANGUAGE LEVEL IV",
+      "award": "Noncredit program",
+      "control_number": "37252",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "Cuesta College",
+      "program": "NONCREDIT ESL: BEGINNING CONVERSATION",
+      "award": "Noncredit program",
+      "control_number": "38772",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "Cuesta College",
+      "program": "NONCREDIT ESL: LISTENING AND SPEAKING FOR ENGLISH SPEAKERS OF OTHER LANGUAGES",
+      "award": "Noncredit program",
+      "control_number": "35142",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "Cuesta College",
+      "program": "NONCREDIT STRUCTURAL STEEL CERTIFICATION",
+      "award": "Noncredit program",
+      "control_number": "38687",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "Cuesta College",
+      "program": "NONCREDIT VOCATIONAL ENGLISH AS A SECOND LANGUAGE",
+      "award": "Noncredit program",
+      "control_number": "24397",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "Cuesta College",
+      "program": "NURSING, REGISTERED",
+      "award": "A.S. Degree",
+      "control_number": "05675",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "Cuesta College",
+      "program": "NURSING, REGISTERED (30 UNIT OPTION)",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "13697",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "Cuesta College",
+      "program": "Nutrition and Dietetics",
+      "award": "A.S. T Degree",
+      "control_number": "33634",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "Cuesta College",
+      "program": "NUTRITION EDUCATION/COACHING",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "38467",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "Cuesta College",
+      "program": "PARALEGAL",
+      "award": "A.A. Degree",
+      "control_number": "12223",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "Cuesta College",
+      "program": "Paralegal",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "21053",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "Cuesta College",
+      "program": "Paramedic",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "16875",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "Cuesta College",
+      "program": "PARAMEDIC",
+      "award": "A.S. Degree",
+      "control_number": "32960",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "Cuesta College",
+      "program": "PARAPROFESSIONAL COUNSELING SKILLS",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "38469",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "Cuesta College",
+      "program": "PARAPROFESSIONAL EDUCATOR/PRE-TEACHING",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "38836",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "Cuesta College",
+      "program": "PARAPROFESSIONAL EDUCATOR/PRE-TEACHING",
+      "award": "A.A. Degree",
+      "control_number": "38837",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "Cuesta College",
+      "program": "PARENTING EDUCATION/FAMILY ADVOCACY",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "38472",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "Cuesta College",
+      "program": "PHOTOGRAPHY",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "37980",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "Cuesta College",
+      "program": "PHYSICS",
+      "award": "A.S. Degree",
+      "control_number": "05686",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "Cuesta College",
+      "program": "Physics",
+      "award": "A.S. T Degree",
+      "control_number": "32453",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "Cuesta College",
+      "program": "PK – 3 PATHWAY FOR ELEMENTARY EDUCATORS",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "37651",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "Cuesta College",
+      "program": "POLITICAL SCIENCE",
+      "award": "A.A. Degree",
+      "control_number": "15487",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "Cuesta College",
+      "program": "POLITICAL SCIENCE",
+      "award": "A.A- T Degree",
+      "control_number": "31885",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "Cuesta College",
+      "program": "POWER AND INSTRUMENTATION",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "38500",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "Cuesta College",
+      "program": "PRE-NURSING",
+      "award": "A.S. Degree",
+      "control_number": "33910",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "Cuesta College",
+      "program": "PREMEDICAL STUDIES",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "37435",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "Cuesta College",
+      "program": "PSYCHIATRIC TECHNICIAN",
+      "award": "A.S. Degree",
+      "control_number": "20945",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "Cuesta College",
+      "program": "PSYCHIATRIC TECHNICIAN",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "20946",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "Cuesta College",
+      "program": "Psychology",
+      "award": "A.A- T Degree",
+      "control_number": "32454",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "Cuesta College",
+      "program": "PSYCHOLOGY",
+      "award": "A.A. Degree",
+      "control_number": "35099",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "Cuesta College",
+      "program": "PUBLIC HEALTH",
+      "award": "A.S. T Degree",
+      "control_number": "44556",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "Cuesta College",
+      "program": "Public Health Science",
+      "award": "A.S. T Degree",
+      "control_number": "36266",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "Cuesta College",
+      "program": "RECREATION ADMINISTRATION",
+      "award": "A.A. Degree",
+      "control_number": "07684",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "Cuesta College",
+      "program": "SCULPTURE FOUNDRY",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "37981",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "Cuesta College",
+      "program": "SECONDARY EDUCATION",
+      "award": "Noncredit program",
+      "control_number": "24462",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "Cuesta College",
+      "program": "SMALL BUSINESS MANAGEMENT CONCENTRATION",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "42045",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "Cuesta College",
+      "program": "SOCIAL JUSTICE STUDIES",
+      "award": "A.A- T Degree",
+      "control_number": "36603",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "Cuesta College",
+      "program": "SOCIAL JUSTICE: CHICANO STUDIES",
+      "award": "A.A- T Degree",
+      "control_number": "44904",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "Cuesta College",
+      "program": "SOCIAL JUSTICE: ETHNIC STUDIES",
+      "award": "A.A- T Degree",
+      "control_number": "44278",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "Cuesta College",
+      "program": "SOCIAL JUSTICE: GENDER STUDIES",
+      "award": "A.A- T Degree",
+      "control_number": "44552",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "Cuesta College",
+      "program": "SOCIAL WORK AND HUMAN SERVICES",
+      "award": "A.A- T Degree",
+      "control_number": "37062",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "Cuesta College",
+      "program": "SOCIOLOGY",
+      "award": "A.A. Degree",
+      "control_number": "16506",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "Cuesta College",
+      "program": "Sociology",
+      "award": "A.A- T Degree",
+      "control_number": "30845",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "Cuesta College",
+      "program": "SPANISH",
+      "award": "A.A- T Degree",
+      "control_number": "32562",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "Cuesta College",
+      "program": "SPORTS MEDICINE",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "42774",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "Cuesta College",
+      "program": "STUDIO ARTS",
+      "award": "A.A- T Degree",
+      "control_number": "32131",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "Cuesta College",
+      "program": "TECHNICAL THEATER",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "43368",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "Cuesta College",
+      "program": "Theatre Arts",
+      "award": "A.A- T Degree",
+      "control_number": "32140",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "Cuesta College",
+      "program": "TRANSITIONS",
+      "award": "Noncredit program",
+      "control_number": "42883",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "Cuesta College",
+      "program": "VITICULTURE",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "39911",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "Cuesta College",
+      "program": "WELDING TECHNOLOGY",
+      "award": "A.S. Degree",
+      "control_number": "05668",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "Cuesta College",
+      "program": "WELDING TECHNOLOGY",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "21043",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "Cuesta College",
+      "program": "WOMEN'S, FEMINIST, AND QUEER STUDIES",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "44776",
       "loaded": "2026-10-17"
     },
     {
@@ -107137,10 +108404,17 @@
     }
   ],
   "next_step": {
-    "title": "Read the display apply and load Cuesta",
-    "text": "Read the applied record of display build f949e7c0ea35 (run 39066977901), then load Cuesta's extraction when it files and build its wave."
+    "title": "Read the display apply, then read Hartnell's catalog PDF",
+    "text": "Read the applied record of display build ffd6929a4f90 (run 39078224767), then read Hartnell through the whole-catalog PDF its Coursedog catalog publishes, once the reader takes course codes printed with no space."
   },
-  "calls": [],
+  "calls": [
+    {
+      "title": "Post Cañada's 2026-2027 catalog and addendum to the catalog-files release",
+      "text": "Both files sit under the catalog host's path that robots.txt refuses, so the reader cannot fetch them. A person may fetch a public file by hand. With no reply, Cañada stays without records.",
+      "link": "https://claude.ai/artifact/AZrSg3EREDme7kYsE7Nzwd",
+      "part": "reading"
+    }
+  ],
   "notes": {
     "addenda": "The eight addenda amending loaded colleges' catalogs were read on Oct 14 and filed on Oct 14 as read, each with the programs and courses it changes. The other 71 listed addenda wait for the reader to reach their colleges.",
     "procedures": "76 colleges have one: the eLumen six and the first S402 wave's four were written on Oct 17, and the 28 whose map host refuses or never reaches the reader each name the routes tried.",
@@ -107150,28 +108424,28 @@
   },
   "changes": [
     {
-      "at": "2026-10-17T19:16:00Z",
-      "text": "College of the Desert loaded 323 records, and City College of San Francisco reread 41 records and loaded 2 more."
+      "at": "2026-10-17T22:24:00Z",
+      "text": "Display build f949e7c0ea35 was applied: 15,336 programs written."
     },
     {
-      "at": "2026-10-17T19:48:00Z",
-      "text": "The reader now reads a run of course numbers printed after one subject, as Glendale's catalog prints them."
+      "at": "2026-10-17T22:25:00Z",
+      "text": "Cuesta College loaded 181 records, unchecked."
     },
     {
-      "at": "2026-10-17T19:53:00Z",
-      "text": "The outcomes check now reads a list number printed at the end of a line, as Ohlone's catalog prints it."
+      "at": "2026-10-17T22:32:00Z",
+      "text": "Cañada's 2026-2027 catalog was found under the path its robots.txt refuses; Open Asks Sheet 92 asks for a copy."
     },
     {
-      "at": "2026-10-17T19:55:00Z",
-      "text": "East Los Angeles's 120 records now name their 2026-2027 catalog, and 13 more programs loaded."
+      "at": "2026-10-17T23:08:00Z",
+      "text": "The Coursedog and SmartCatalog catalog hosts were read: Hartnell's catalog publishes a whole-catalog PDF."
     },
     {
-      "at": "2026-10-17T20:12:00Z",
-      "text": "Grossmont, Ohlone, Los Angeles Southwest, Glendale and Pasadena City loaded 864 records."
+      "at": "2026-10-17T23:14:00Z",
+      "text": "Display build ffd6929a4f90 (15,517 programs at 109 colleges) merged and its apply started."
     },
     {
-      "at": "2026-10-17T20:30:00Z",
-      "text": "Display build f949e7c0ea35 merged with 15,336 programs at 108 colleges, and its apply began."
+      "at": "2026-10-17T23:19:00Z",
+      "text": "The Exhibit Adoption tab's controls became underlined words, and its table and matrix pass AA in both themes."
     }
   ],
   "headline": [
@@ -107243,7 +108517,7 @@
   },
   "harvest": {
     "day": "2026-10-17",
-    "gaps": 3284,
+    "gaps": 3655,
     "parts": {
       "links": {
         "catalog": [
@@ -107260,11 +108534,11 @@
         ]
       },
       "roep": [
-        16023,
+        17694,
         20282
       ],
       "coci": [
-        14039,
+        14216,
         20282
       ],
       "outcomes": {
@@ -107273,12 +108547,12 @@
           89192
         ],
         "plo": [
-          14039,
+          14216,
           20282
         ]
       },
       "careers": [
-        12989,
+        13166,
         20282
       ]
     }
