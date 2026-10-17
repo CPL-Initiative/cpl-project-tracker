@@ -92,17 +92,11 @@
    "program": 3,
    "courses": 0,
    "count": 3,
-   "not_verbatim": [
-    "Demonstrate grammatical and semantic proficiency in paragraph or narrative mode (for ASL) at the intermediate-low level.",
-    "Understanding of cultural and community differences"
-   ],
-   "why": [
-    "not in the catalog text as printed: Demonstrate grammatical and semantic proficiency in paragraph or narrative mode ",
-    "not in the catalog text as printed: Understanding of cultural and community differences"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 0,
@@ -360,5 +354,6 @@
    "Pages 342-343 hold separate ASL A.A. and ASL/English Interpreter Training programs; not read for this record."
   ]
  },
- "extracted_run": "39035226783"
+ "extracted_run": 39037377728,
+ "read_run": "39035226783"
 }

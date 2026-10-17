@@ -97,19 +97,11 @@
    "program": 3,
    "courses": 0,
    "count": 3,
-   "not_verbatim": [
-    "Describe and apply current safety rules and regulations while working on various industrial equipment and machinery.",
-    "Demonstrate the physical operation of electro-mechanical components such as AC and DC motors, solenoids, relays and various sensors used in basic manufacturing systems",
-    "Describe and perform troubleshooting, preventative maintenance and documentation methods associated with basic manufacturing system standing of electrical systems and devices related to manufacturing and automation systems."
-   ],
-   "why": [
-    "not in the catalog text as printed: Describe and apply current safety rules and regulations while working on various",
-    "not in the catalog text as printed: Demonstrate the physical operation of electro-mechanical components such as AC a",
-    "not in the catalog text as printed: Describe and perform troubleshooting, preventative maintenance and documentation"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 0,
@@ -119,7 +111,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -234,5 +226,6 @@
    "The Maintenance Technician section names no careers; the career list on the preceding page belongs to the Automation program and was not used."
   ]
  },
- "extracted_run": "39035226783"
+ "extracted_run": 39037377728,
+ "read_run": "39035226783"
 }

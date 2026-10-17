@@ -82,15 +82,11 @@
    "program": 2,
    "courses": 0,
    "count": 2,
-   "not_verbatim": [
-    "Sign effectively, using appropriate skills, in working with the Deaf and Hard of Hearing."
-   ],
-   "why": [
-    "not in the catalog text as printed: Sign effectively, using appropriate skills, in working with the Deaf and Hard of"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": false,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 0,
@@ -103,7 +99,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -229,5 +225,6 @@
    "Course descriptions for ASL 007, 011, 055, 056 appear but these courses are not part of the requirements."
   ]
  },
- "extracted_run": "39035226783"
+ "extracted_run": 39037377728,
+ "read_run": "39035226783"
 }

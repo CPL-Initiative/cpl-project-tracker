@@ -99,17 +99,11 @@
    "program": 3,
    "courses": 0,
    "count": 3,
-   "not_verbatim": [
-    "Demonstrate grammatical and semantic proficiency in paragraph mode at the intermediate-mid level in French",
-    "Demonstrate understanding of cultural and community differences"
-   ],
-   "why": [
-    "not in the catalog text as printed: Demonstrate grammatical and semantic proficiency in paragraph mode at the interm",
-    "not in the catalog text as printed: Demonstrate understanding of cultural and community differences"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 0,
@@ -269,5 +263,6 @@
    "FREN 049 (French Honors) appears only in the course descriptions, not in the requirements, and is not placed."
   ]
  },
- "extracted_run": "39035226783"
+ "extracted_run": 39037377728,
+ "read_run": "39035226783"
 }

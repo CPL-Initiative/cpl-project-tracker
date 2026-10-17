@@ -88,23 +88,11 @@
    "program": 5,
    "courses": 0,
    "count": 5,
-   "not_verbatim": [
-    "Produce functional web pages replete with responsive web elements.",
-    "Properly use design elements and an HTML editor in creating web pages.",
-    "Develop a project incorporating CSS, search forms, tables, photo galleries, shared borders, themes, interactive components, dynamic web pages and publish to a server.",
-    "Create web elements for print design and production.",
-    "Create and edit production quality animation and video"
-   ],
-   "why": [
-    "not in the catalog text as printed: Produce functional web pages replete with responsive web elements.",
-    "not in the catalog text as printed: Properly use design elements and an HTML editor in creating web pages.",
-    "not in the catalog text as printed: Develop a project incorporating CSS, search forms, tables, photo galleries, shar",
-    "not in the catalog text as printed: Create web elements for print design and production.",
-    "not in the catalog text as printed: Create and edit production quality animation and video"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 5,
@@ -119,7 +107,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -260,5 +248,6 @@
    "PDF text had ligature artifacts (e.g., 'Ɵ'), normalized to 'ti' in outcomes and careers."
   ]
  },
- "extracted_run": "39035226783"
+ "extracted_run": 39037377728,
+ "read_run": "39035226783"
 }

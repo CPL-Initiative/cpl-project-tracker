@@ -82,19 +82,11 @@
    "program": 3,
    "courses": 0,
    "count": 3,
-   "not_verbatim": [
-    "Demonstrate the ability to perform mathematical (algebraic) operations required for calculations important in chemistry and biology",
-    "Demonstrate the ability to read and write in a range of writing style categories typical of laboratory and scholarly environments, including lab reports, expository texts, and research-based arguments.",
-    "Demonstrate the ability to perform routine laboratory techniques including buffer preparation, media preparation, and aseptic microbial culture."
-   ],
-   "why": [
-    "not in the catalog text as printed: Demonstrate the ability to perform mathematical (algebraic) operations required ",
-    "not in the catalog text as printed: Demonstrate the ability to read and write in a range of writing style categories",
-    "not in the catalog text as printed: Demonstrate the ability to perform routine laboratory techniques including buffe"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 1,
@@ -104,7 +96,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -246,5 +238,6 @@
    "Career 'Laboratory Assistant' taken from the program description; it also mentions entry level positions in biotechnology companies."
   ]
  },
- "extracted_run": "39035226783"
+ "extracted_run": 39037377728,
+ "read_run": "39035226783"
 }

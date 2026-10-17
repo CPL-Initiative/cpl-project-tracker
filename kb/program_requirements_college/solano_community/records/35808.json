@@ -88,19 +88,11 @@
    "program": 3,
    "courses": 0,
    "count": 3,
-   "not_verbatim": [
-    "Analyze and perform the elements of music (rhythm, melody, harmony and form) with technical facility and artistry as a soloist and as a member of an ensemble.",
-    "Analyze musical scores and compositions.",
-    "Critique personal music performances and those of other musicians"
-   ],
-   "why": [
-    "not in the catalog text as printed: Analyze and perform the elements of music (rhythm, melody, harmony and form) wit",
-    "not in the catalog text as printed: Analyze musical scores and compositions.",
-    "not in the catalog text as printed: Critique personal music performances and those of other musicians"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 0,
@@ -113,7 +105,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -315,5 +307,6 @@
    "Pages 358-359 (Music-Instrumental A.A. and Music-Vocal A.A.) belong to other awards and were not used."
   ]
  },
- "extracted_run": "39035226783"
+ "extracted_run": 39037377728,
+ "read_run": "39035226783"
 }

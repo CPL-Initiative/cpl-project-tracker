@@ -82,19 +82,11 @@
    "program": 4,
    "courses": 0,
    "count": 4,
-   "not_verbatim": [
-    "Understand and apply developmental theories from conception through adolescence.",
-    "Design a play based curriculum which supports children using developmental, inclusive and anti-bias principles.",
-    "Identify and analyze quality early childhood practices including professionalism, self-reflection, play-based holistic learning, multiculturalism, and relationship building to ascertain their impact on children’s development."
-   ],
-   "why": [
-    "not in the catalog text as printed: Understand and apply developmental theories from conception through adolescence.",
-    "not in the catalog text as printed: Design a play based curriculum which supports children using developmental, incl",
-    "not in the catalog text as printed: Identify and analyze quality early childhood practices including professionalism"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 1,
@@ -104,7 +96,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -190,5 +182,6 @@
    "Career 'associate teacher' taken from the description ('associate teacher level of the Child Development Permit Matrix'); the description also mentions qualifying as a 'fully qualified teacher' under Title 22 and working in federal and state funded programs for children aged 0-5."
   ]
  },
- "extracted_run": "39035226783"
+ "extracted_run": 39037377728,
+ "read_run": "39035226783"
 }

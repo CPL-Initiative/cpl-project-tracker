@@ -97,24 +97,15 @@
    "program": 4,
    "courses": 0,
    "count": 4,
-   "not_verbatim": [
-    "Become more aware of cultural, social, political, environmental, and economic forces within the world they live.",
-    "Build skills in critical thinking, reading and writing.",
-    "Improve skills cited above to provide an excellent base for transfer and success at four-year institutions."
-   ],
-   "why": [
-    "not in the catalog text as printed: Become more aware of cultural, social, political, environmental, and economic fo",
-    "not in the catalog text as printed: Build skills in critical thinking, reading and writing.",
-    "not in the catalog text as printed: Improve skills cited above to provide an excellent base for transfer and success"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 6,
    "not_verbatim": [
-    "education",
     "criminal justice"
    ],
    "pass": false
@@ -264,5 +255,6 @@
    "The separate Sociology Associate in Arts section (page 429) was not used; its List A/List B courses (SOCI 023, ANTH 002, POLS 019, PSYC 030) are not part of this award."
   ]
  },
- "extracted_run": "39035226783"
+ "extracted_run": 39037377728,
+ "read_run": "39035226783"
 }

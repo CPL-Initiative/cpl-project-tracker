@@ -88,21 +88,11 @@
    "program": 4,
    "courses": 0,
    "count": 4,
-   "not_verbatim": [
-    "Define important foundational concepts in community/public health",
-    "Identify different public health disciplines, professions, and organizations, and explain how each contributes to the field of public health.",
-    "Outline strategies for prevention, detection, and control of infectious and chronic disease.",
-    "Analyze current public health issues and describe how they affect societal well-being among specific populations of age, sex, ethnicity, minority, education, and socioeconomic status."
-   ],
-   "why": [
-    "not in the catalog text as printed: Define important foundational concepts in community/public health",
-    "not in the catalog text as printed: Identify different public health disciplines, professions, and organizations, an",
-    "not in the catalog text as printed: Outline strategies for prevention, detection, and control of infectious and chro",
-    "not in the catalog text as printed: Analyze current public health issues and describe how they affect societal well-"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 0,
@@ -315,5 +305,6 @@
    "Text after the Public Health section (HED course descriptions, Kinesiology A.A.-T) belongs to other content and was not used."
   ]
  },
- "extracted_run": "39035226783"
+ "extracted_run": 39037377728,
+ "read_run": "39035226783"
 }

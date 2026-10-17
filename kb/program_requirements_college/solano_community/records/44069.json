@@ -99,21 +99,11 @@
    "program": 4,
    "courses": 0,
    "count": 4,
-   "not_verbatim": [
-    "Recognize and remediate soil properties in terms of chemistry, plant growth requirements, erosion, organic content, pore space and carbon sequestration.",
-    "Manage greenhouse, nursery, landscape, and field crops using economics, soil science, and horticultural principles.",
-    "Produce plants using sexual and asexual methods of propagation, identifying water, nutrient, light, pH and temperature requirements per crop to produce crop production cost estimates.",
-    "Describe how markets function as applied to plant science."
-   ],
-   "why": [
-    "not in the catalog text as printed: Recognize and remediate soil properties in terms of chemistry, plant growth requ",
-    "not in the catalog text as printed: Manage greenhouse, nursery, landscape, and field crops using economics, soil sci",
-    "not in the catalog text as printed: Produce plants using sexual and asexual methods of propagation, identifying wate",
-    "not in the catalog text as printed: Describe how markets function as applied to plant science."
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 9,
@@ -276,5 +266,6 @@
    "PDF ligature artifacts (e.g., 'propertie s' printed with Ɵ/ﬁ glyphs) were normalized to the intended letters in outcomes and careers."
   ]
  },
- "extracted_run": "39035226783"
+ "extracted_run": 39037377728,
+ "read_run": "39035226783"
 }

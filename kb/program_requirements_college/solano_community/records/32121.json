@@ -95,19 +95,11 @@
    "program": 3,
    "courses": 0,
    "count": 3,
-   "not_verbatim": [
-    "Apply appropriate materials and techniques to solve creative problems.",
-    "Apply composition strategies to create visually unified and compositionally effective works of art.",
-    "Utilize appropriate language and approaches to create, analyze and critique conceptually effective works."
-   ],
-   "why": [
-    "not in the catalog text as printed: Apply appropriate materials and techniques to solve creative problems.",
-    "not in the catalog text as printed: Apply composition strategies to create visually unified and compositionally effe",
-    "not in the catalog text as printed: Utilize appropriate language and approaches to create, analyze and critique conc"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 1,
@@ -120,7 +112,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -450,5 +442,6 @@
    "Career entry 'studio art' taken from description: 'prepare students for a career ... in studio art'."
   ]
  },
- "extracted_run": "39035226783"
+ "extracted_run": 39037377728,
+ "read_run": "39035226783"
 }

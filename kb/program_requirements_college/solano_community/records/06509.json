@@ -82,15 +82,11 @@
    "program": 1,
    "courses": 0,
    "count": 1,
-   "not_verbatim": [
-    "Recognize and describe the importance of marketing, law, economics, accounting, business administration, finance, risk analysis, and personnel management in business and formulate hypotheses based on these concepts."
-   ],
-   "why": [
-    "not in the catalog text as printed: Recognize and describe the importance of marketing, law, economics, accounting, "
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 0,
@@ -103,7 +99,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -289,5 +285,6 @@
    "Pages 173-174 (Business-Insurance program and BUS course descriptions) belong to other sections and were not used."
   ]
  },
- "extracted_run": "39035226783"
+ "extracted_run": 39037377728,
+ "read_run": "39035226783"
 }

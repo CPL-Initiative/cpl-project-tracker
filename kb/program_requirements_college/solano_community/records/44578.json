@@ -83,12 +83,10 @@
    "courses": 0,
    "count": 4,
    "not_verbatim": [
-    "Employ and document a structured design process to develop design solutions, working both individually and collaboratively.",
     "Select the appropriate tools, materials and processes for a range of design contexts and media platforms.",
     "Develop and maintain a professional portfolio of work."
    ],
    "why": [
-    "not in the catalog text as printed: Employ and document a structured design process to develop design solutions, wor",
     "not in the catalog text as printed: Select the appropriate tools, materials and processes for a range of design cont",
     "not in the catalog text as printed: Develop and maintain a professional portfolio of work."
    ],
@@ -365,5 +363,6 @@
    "Program outcomes lead-in names the 'Graphic Design & Illustration Associate in Arts', apparently an older program name; outcomes recorded for this A.A. Outcomes text normalized from PDF ligature artifacts (e.g., 'soluƟ ons' -> 'solutions')."
   ]
  },
- "extracted_run": "39035226783"
+ "extracted_run": 39037377728,
+ "read_run": "39035226783"
 }

@@ -82,21 +82,11 @@
    "program": 4,
    "courses": 0,
    "count": 4,
-   "not_verbatim": [
-    "Obtain and demonstrate skill set for entry level positions in broadcasting and electronic media productions.",
-    "Amass a minimum of 200 experience hours working on sports production tasks and to acquire recorded audio/video content to compile a demo tape.",
-    "Broadcast production assignments totaling 200 hours, exams, self-evaluation journals, and viewer response and evaluations.",
-    "Demonstrate ability to work as an individual as well as an effective team member on sports productions."
-   ],
-   "why": [
-    "not in the catalog text as printed: Obtain and demonstrate skill set for entry level positions in broadcasting and e",
-    "not in the catalog text as printed: Amass a minimum of 200 experience hours working on sports production tasks and t",
-    "not in the catalog text as printed: Broadcast production assignments totaling 200 hours, exams, self-evaluation jour",
-    "not in the catalog text as printed: Demonstrate ability to work as an individual as well as an effective team member"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 0,
@@ -106,7 +96,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -190,5 +180,6 @@
    "Course descriptions following the program (COMM C1000, COMM C1004) belong to the course listing, not this certificate."
   ]
  },
- "extracted_run": "39035226783"
+ "extracted_run": 39037377728,
+ "read_run": "39035226783"
 }

@@ -90,19 +90,11 @@
    "program": 3,
    "courses": 0,
    "count": 3,
-   "not_verbatim": [
-    "Demonstrate analytical and/or conceptual problem solving skills related to the study of Physics.",
-    "Carry out experiments and critically assess data. Students will learn the role of hypothesis, measurement, and analysis in the development of scientific theory, as evidenced by laboratory reports.",
-    "Write a professional scientific laboratory report."
-   ],
-   "why": [
-    "not in the catalog text as printed: Demonstrate analytical and/or conceptual problem solving skills related to the s",
-    "not in the catalog text as printed: Carry out experiments and critically assess data. Students will learn the role o",
-    "not in the catalog text as printed: Write a professional scientific laboratory report."
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": false,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 0,
@@ -411,5 +403,6 @@
    "The PDF filename indicates an archived catalog dated 5.16.26; consistent with the 2026-2027 catalog year."
   ]
  },
- "extracted_run": "39035226783"
+ "extracted_run": 39037377728,
+ "read_run": "39035226783"
 }

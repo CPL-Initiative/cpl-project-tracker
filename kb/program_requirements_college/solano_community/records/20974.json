@@ -82,19 +82,11 @@
    "program": 3,
    "courses": 0,
    "count": 3,
-   "not_verbatim": [
-    "Demonstrate proficient, entry-level aviation maintenance skills in airframe, powerplant, or airframe and powerplant with emphasis on aircraft engines, aircraft structures, and aircraft systems.",
-    "Have a working knowledge to inspect, maintain, service and repair aircraft electrical, engine (piston and turbine), airframe structure, flight control, hydraulic, pneumatic, fuel, navigation and instrument systems and other aircraft components specified by Federal Aviation Regulation Part 147.",
-    "Obtain the knowledge and skills to pass oral, practical and written Federal Aviation Administration (FAA) examination in general and airframe/powerplant subjects."
-   ],
-   "why": [
-    "not in the catalog text as printed: Demonstrate proficient, entry-level aviation maintenance skills in airframe, pow",
-    "not in the catalog text as printed: Have a working knowledge to inspect, maintain, service and repair aircraft elect",
-    "not in the catalog text as printed: Obtain the knowledge and skills to pass oral, practical and written Federal Avia"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 0,
@@ -104,7 +96,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -208,5 +200,6 @@
    "The page states a 41-unit major for the Airframe certificate; no degree total applies to this certificate."
   ]
  },
- "extracted_run": "39035226783"
+ "extracted_run": 39037377728,
+ "read_run": "39035226783"
 }

@@ -107,16 +107,10 @@
    "courses": 0,
    "count": 4,
    "not_verbatim": [
-    "Critically evaluate speeches, debates, and other communicative performances.",
-    "Comprehend the skills and techniques necessary to be organized, confident communicators in a variety of classroom settings.",
-    "Understand the process of communication and communication methods in multiple contexts.",
-    "Communicate utilizing a variety of performance methods."
+    "Comprehend the skills and techniques necessary to be organized, confident communicators in a variety of classroom settings."
    ],
    "why": [
-    "not in the catalog text as printed: Critically evaluate speeches, debates, and other communicative performances.",
-    "not in the catalog text as printed: Comprehend the skills and techniques necessary to be organized, confident commun",
-    "not in the catalog text as printed: Understand the process of communication and communication methods in multiple co",
-    "not in the catalog text as printed: Communicate utilizing a variety of performance methods."
+    "not in the catalog text as printed: Comprehend the skills and techniques necessary to be organized, confident commun"
    ],
    "heading_printed": true,
    "heading_without_outcomes": false,
@@ -348,5 +342,6 @@
    "The page states the standard ADT requirement of 60 CSU-transferable units including Cal-GETC and at least 18 units in the major; read as generic ADT boilerplate, so degree_total is null. Cal-GETC units are not printed."
   ]
  },
- "extracted_run": "39035226783"
+ "extracted_run": 39037377728,
+ "read_run": "39035226783"
 }

@@ -84,23 +84,11 @@
    "program": 5,
    "courses": 0,
    "count": 5,
-   "not_verbatim": [
-    "Work effectively with lighting and scenery design plans.",
-    "Work competently with common materials and techniques when constructing theatrical elements.",
-    "Apply fundamental techniques while participating as a member of a backstage production crew.",
-    "Demonstrate basic skills in one or more of the following areas of specialization. lighting hangs and focus, scenic carpentry, scenic painting, audio set up and signal routing.",
-    "Integrate knowledge of theatre history and literature when constructing theatrical elements."
-   ],
-   "why": [
-    "not in the catalog text as printed: Work effectively with lighting and scenery design plans.",
-    "not in the catalog text as printed: Work competently with common materials and techniques when constructing theatric",
-    "not in the catalog text as printed: Apply fundamental techniques while participating as a member of a backstage prod",
-    "not in the catalog text as printed: Demonstrate basic skills in one or more of the following areas of specialization",
-    "not in the catalog text as printed: Integrate knowledge of theatre history and literature when constructing theatric"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 10,
@@ -326,5 +314,6 @@
    "Outcome and career text normalized from PDF ligature artifacts (e.g., 'eﬀ ecƟ vely' read as 'effectively')."
   ]
  },
- "extracted_run": "39035226783"
+ "extracted_run": 39037377728,
+ "read_run": "39035226783"
 }

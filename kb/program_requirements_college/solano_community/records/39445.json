@@ -83,13 +83,9 @@
    "courses": 0,
    "count": 3,
    "not_verbatim": [
-    "Professional level proficiency in utilizing photography and graphic design to create expressive original works, appropriate for use in various applications including fashion and editorial, advertising and fine art.",
-    "Working knowledge of current graphic design and photographic software programs, including specific understanding of the strengths and appropriate applications of each program and an ability to work between the programs for strong outcomes.",
     "Complete a professional portfolio and accompanying promotional materials appropriate for use in seeking employment in areas of design and media, such as advertising, editorial and fashion production, fine art and social media."
    ],
    "why": [
-    "not in the catalog text as printed: Professional level proficiency in utilizing photography and graphic design to cr",
-    "not in the catalog text as printed: Working knowledge of current graphic design and photographic software programs, ",
     "not in the catalog text as printed: Complete a professional portfolio and accompanying promotional materials appropr"
    ],
    "heading_printed": true,
@@ -305,5 +301,6 @@
    "Page footer text 'Consult with your counselor for guidance on custom course pathwayr' noted; the Certificate of Completion (noncredit, hours) section on the next page belongs to a different award and was not read."
   ]
  },
- "extracted_run": "39035226783"
+ "extracted_run": 39037377728,
+ "read_run": "39035226783"
 }

@@ -114,19 +114,11 @@
    "program": 4,
    "courses": 0,
    "count": 4,
-   "not_verbatim": [
-    "Apply an understanding of how diverse cultural beliefs and social, political, and/or historical context impact forms of human expression.",
-    "Demonstrate quantitative reasoning skills and an understanding of the scientific method, consistent with elementary level standards.",
-    "Critically evaluate strategies and techniques for working with culturally, linguistically and ethnically diverse populations, including children with special education needs."
-   ],
-   "why": [
-    "not in the catalog text as printed: Apply an understanding of how diverse cultural beliefs and social, political, an",
-    "not in the catalog text as printed: Demonstrate quantitative reasoning skills and an understanding of the scientific",
-    "not in the catalog text as printed: Critically evaluate strategies and techniques for working with culturally, lingu"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 0,
@@ -394,5 +386,6 @@
    "The 'careers in elementary teacher education' phrase appears only in the EDUC 001 course description, so it was not recorded as a career."
   ]
  },
- "extracted_run": "39035226783"
+ "extracted_run": 39037377728,
+ "read_run": "39035226783"
 }

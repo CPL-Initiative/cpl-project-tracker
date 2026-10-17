@@ -99,21 +99,11 @@
    "program": 4,
    "courses": 0,
    "count": 4,
-   "not_verbatim": [
-    "Demonstrate the ability to properly service and repair automotive engines, automatic and manual transmissions and transaxles.",
-    "Demonstrate the ability to properly service and repair automotive brakes, steering and suspension systems.",
-    "Demonstrate the ability to properly service and repair automotive electrical, engine performance, HVAC and hybrid/alternative fuel vehicles.",
-    "Demonstrate effective workplace skills including oral and written communication and proper disposal and handling of hazardous waste materials"
-   ],
-   "why": [
-    "not in the catalog text as printed: Demonstrate the ability to properly service and repair automotive engines, autom",
-    "not in the catalog text as printed: Demonstrate the ability to properly service and repair automotive brakes, steeri",
-    "not in the catalog text as printed: Demonstrate the ability to properly service and repair automotive electrical, en",
-    "not in the catalog text as printed: Demonstrate effective workplace skills including oral and written communication "
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 4,
@@ -273,5 +263,6 @@
    "Certificate sections that follow (Automatic Transmissions and Transaxles, Electrical and Body Systems, Maintenance and Light Repair) were not used."
   ]
  },
- "extracted_run": "39035226783"
+ "extracted_run": 39037377728,
+ "read_run": "39035226783"
 }

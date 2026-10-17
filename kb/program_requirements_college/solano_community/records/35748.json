@@ -82,19 +82,11 @@
    "program": 3,
    "courses": 0,
    "count": 3,
-   "not_verbatim": [
-    "Diagnose, remove, and repair automotive transmissions and transaxles",
-    "Utilize electrical diagnostic equipment and do hands-on testing with digital multi-meter",
-    "Safely work on and repair hybrid and alternative fuel vehicles"
-   ],
-   "why": [
-    "not in the catalog text as printed: Diagnose, remove, and repair automotive transmissions and transaxles",
-    "not in the catalog text as printed: Utilize electrical diagnostic equipment and do hands-on testing with digital mul",
-    "not in the catalog text as printed: Safely work on and repair hybrid and alternative fuel vehicles"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 1,
@@ -106,7 +98,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -198,5 +190,6 @@
    "The page also prints the Automotive Technician A.S. and other ATEC certificates; only the Automatic Transmissions and Transaxles certificate section was read."
   ]
  },
- "extracted_run": "39035226783"
+ "extracted_run": 39037377728,
+ "read_run": "39035226783"
 }

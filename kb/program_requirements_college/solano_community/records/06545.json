@@ -86,23 +86,11 @@
    "program": 5,
    "courses": 0,
    "count": 5,
-   "not_verbatim": [
-    "Demonstrate an ability to compose and communicate using appropriate rhetorical patterns and writing strategies.",
-    "Demonstrate college-level reading, writing, and analytical skills.",
-    "Demonstrate an understanding of the importance and influence of literature’s study of the human condition in shaping and reflecting intellectual history and cultural identity.",
-    "Demonstrate, through the study and analysis of literature from a variety of cultural or ethnic backgrounds and sexual orientations, an ability to recognize and examine assumptions about difference and social norms and an understanding of how the experience of reading literature from different perspectives can better prepare one for meaningful participation in a diverse global community.",
-    "Explore and demonstrate through creative writing and/or analytical techniques, the practice and study of diverse literatures and publishing."
-   ],
-   "why": [
-    "not in the catalog text as printed: Demonstrate an ability to compose and communicate using appropriate rhetorical p",
-    "not in the catalog text as printed: Demonstrate college-level reading, writing, and analytical skills.",
-    "not in the catalog text as printed: Demonstrate an understanding of the importance and influence of literature's stu",
-    "not in the catalog text as printed: Demonstrate, through the study and analysis of literature from a variety of cult",
-    "not in the catalog text as printed: Explore and demonstrate through creative writing and/or analytical techniques, t"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 2,
@@ -117,7 +105,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -369,5 +357,6 @@
    "Text states students completing the A.A. in English also satisfy requirements for the AA-T in English."
   ]
  },
- "extracted_run": "39035226783"
+ "extracted_run": 39037377728,
+ "read_run": "39035226783"
 }

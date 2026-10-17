@@ -83,14 +83,10 @@
    "courses": 0,
    "count": 3,
    "not_verbatim": [
-    "Differentiate and employ the skills and techniques required to take the California State Board of Barbering and Cosmetology, Esthetics examinationInterpret and apply cosmetology theories.",
-    "Apply skin care concepts and theories to a variety of professional settings",
-    "Demonstrate completion of mandatory clinic laboratory hours and practical operations according to the California State Board of Barbering and Cosmetology"
+    "Apply skin care concepts and theories to a variety of professional settings"
    ],
    "why": [
-    "not in the catalog text as printed: Differentiate and employ the skills and techniques required to take the Californ",
-    "not in the catalog text as printed: Apply skin care concepts and theories to a variety of professional settings",
-    "not in the catalog text as printed: Demonstrate completion of mandatory clinic laboratory hours and practical operat"
+    "not in the catalog text as printed: Apply skin care concepts and theories to a variety of professional settings"
    ],
    "heading_printed": true,
    "heading_without_outcomes": false,
@@ -176,5 +172,6 @@
    "The award type given (16 to fewer than 30 semester units) is consistent with the 26-unit total printed."
   ]
  },
- "extracted_run": "39035226783"
+ "extracted_run": 39037377728,
+ "read_run": "39035226783"
 }

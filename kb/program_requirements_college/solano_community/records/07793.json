@@ -86,17 +86,11 @@
    "program": 3,
    "courses": 0,
    "count": 3,
-   "not_verbatim": [
-    "Demonstrate knowledge of application software such as word processing, spread sheets, personal information management, database, operating systems, and networking, presentation and html editors.",
-    "Demonstrate effective oral and written communication."
-   ],
-   "why": [
-    "not in the catalog text as printed: Demonstrate knowledge of application software such as word processing, spread sh",
-    "not in the catalog text as printed: Demonstrate effective oral and written communication."
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 1,
@@ -111,7 +105,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -248,5 +242,6 @@
    "Catalog codes use leading zeros (CIS 001 etc.) matching closed-list CIS 1 etc."
   ]
  },
- "extracted_run": "39035226783"
+ "extracted_run": 39037377728,
+ "read_run": "39035226783"
 }

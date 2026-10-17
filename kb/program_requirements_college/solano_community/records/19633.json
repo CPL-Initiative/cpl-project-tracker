@@ -86,19 +86,11 @@
    "program": 3,
    "courses": 0,
    "count": 3,
-   "not_verbatim": [
-    "Explain how the structure and function of protein pharmaceuticals and evaluate which protein properties a production facility can exploit to purify a particular protein from other cellular components.",
-    "In preparation to working at a biotechnology company, a successful student should be able to construct a pathway analyzing how a drug of biologic is produced by genetically engineered cells and subsequently purified.",
-    "Explain how the manufacturer of pharmaceuticals is regulated by the Food and Drug Administration and other international agencies and how quality systems assure the safety, purity, identity, consistency, potency, and stability of a product."
-   ],
-   "why": [
-    "not in the catalog text as printed: Explain how the structure and function of protein pharmaceuticals and evaluate w",
-    "not in the catalog text as printed: In preparation to working at a biotechnology company, a successful student shoul",
-    "not in the catalog text as printed: Explain how the manufacturer of pharmaceuticals is regulated by the Food and Dru"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 1,
@@ -110,7 +102,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -281,5 +273,6 @@
    "Catalog note advises prior knowledge of computers; not a course requirement."
   ]
  },
- "extracted_run": "39035226783"
+ "extracted_run": 39037377728,
+ "read_run": "39035226783"
 }

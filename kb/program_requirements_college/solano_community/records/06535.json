@@ -90,21 +90,11 @@
    "program": 4,
    "courses": 0,
    "count": 4,
-   "not_verbatim": [
-    "Read and analyze written materials for context, theme and dramatic intent.",
-    "Demonstrate comprehension of vocal and physical performance techniques, and influencing and audience with their craft.",
-    "Demonstrate comprehension of technical and artistic production elements including; stagecraft, scenery, costumes, lighting and sound.",
-    "Utilize and apply current theatrical technology."
-   ],
-   "why": [
-    "not in the catalog text as printed: Read and analyze written materials for context, theme and dramatic intent.",
-    "not in the catalog text as printed: Demonstrate comprehension of vocal and physical performance techniques, and infl",
-    "not in the catalog text as printed: Demonstrate comprehension of technical and artistic production elements includin",
-    "not in the catalog text as printed: Utilize and apply current theatrical technology."
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 1,
@@ -434,5 +424,6 @@
    "The Theatre Arts Technical Certificate of Achievement section that follows was not read for this record."
   ]
  },
- "extracted_run": "39035226783"
+ "extracted_run": 39037377728,
+ "read_run": "39035226783"
 }

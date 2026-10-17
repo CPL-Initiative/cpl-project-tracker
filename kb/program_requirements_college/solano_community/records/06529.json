@@ -82,19 +82,11 @@
    "program": 5,
    "courses": 0,
    "count": 5,
-   "not_verbatim": [
-    "Recognize and interpret technical drawings in the planning and fabrication of projects.",
-    "Demonstrate appropriate workplace safety policies and procedures during welding and fabrication operations.",
-    "Apply mathematical concepts to solve problems related to an industrial/technical environment."
-   ],
-   "why": [
-    "not in the catalog text as printed: Recognize and interpret technical drawings in the planning and fabrication of pr",
-    "not in the catalog text as printed: Demonstrate appropriate workplace safety policies and procedures during welding ",
-    "not in the catalog text as printed: Apply mathematical concepts to solve problems related to an industrial/technical"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": false,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 0,
@@ -107,7 +99,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -232,5 +224,6 @@
    "The excerpt begins mid-section on page 447; the program title, description and any career information may be on the preceding page and were not provided. No general education pattern or degree total is printed in this excerpt."
   ]
  },
- "extracted_run": "39035226783"
+ "extracted_run": 39037377728,
+ "read_run": "39035226783"
 }

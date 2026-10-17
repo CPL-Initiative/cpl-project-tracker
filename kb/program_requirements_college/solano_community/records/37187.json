@@ -82,19 +82,11 @@
    "program": 3,
    "courses": 0,
    "count": 3,
-   "not_verbatim": [
-    "Demonstrate advanced skills in selecting a broad range of appropriate materials and techniques to solve creative problems.",
-    "Apply advanced composition strategies to create visually unified and compositionally effective works of art.",
-    "Utilize appropriate language and approaches to create, analyze, and critique conceptually effective works of art at an advanced level, with breadth and depth of analysis."
-   ],
-   "why": [
-    "not in the catalog text as printed: Demonstrate advanced skills in selecting a broad range of appropriate materials ",
-    "not in the catalog text as printed: Apply advanced composition strategies to create visually unified and composition",
-    "not in the catalog text as printed: Utilize appropriate language and approaches to create, analyze, and critique con"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": false,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 0,
@@ -107,7 +99,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -495,5 +487,6 @@
    "No general education pattern, degree total, or careers are printed in this excerpt; text after page 132 is course descriptions."
   ]
  },
- "extracted_run": "39035226783"
+ "extracted_run": 39037377728,
+ "read_run": "39035226783"
 }

@@ -86,23 +86,11 @@
    "program": 9,
    "courses": 0,
    "count": 9,
-   "not_verbatim": [
-    "Demonstrate how a range of human experiences influences decision-making and behavior.",
-    "Identify and explain the ideas and institutions that make up the American political system, including the legal field, to describe the evolution of civil liberties and rights in the United States and apply this knowledge to current events and legal issues, and to recognize the role of public opinion, interest groups, ethics and political parties regarding the electoral process, law, and public policy in society.",
-    "Demonstrate knowledge of the field of law and the various classifications of the law, including being able to distinguish among the various parts of a contract.",
-    "Communicate complex ideas clearly and persuasively in written and oral forms.",
-    "Demonstrate high - level critical thinking and analytical skills."
-   ],
-   "why": [
-    "not in the catalog text as printed: Demonstrate how a range of human experiences influences decision-making and beha",
-    "not in the catalog text as printed: Identify and explain the ideas and institutions that make up the American politi",
-    "not in the catalog text as printed: Demonstrate knowledge of the field of law and the various classifications of the",
-    "not in the catalog text as printed: Communicate complex ideas clearly and persuasively in written and oral forms.",
-    "not in the catalog text as printed: Demonstrate high - level critical thinking and analytical skills."
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 0,
@@ -115,7 +103,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -517,5 +505,6 @@
    "Description names transfer majors (American Studies, Criminal Justice, etc.) and further study in law/public policy, but no careers; careers left empty."
   ]
  },
- "extracted_run": "39035226783"
+ "extracted_run": 39037377728,
+ "read_run": "39035226783"
 }

@@ -82,17 +82,11 @@
    "program": 4,
    "courses": 0,
    "count": 4,
-   "not_verbatim": [
-    "Efficiently demonstrate the techniques and the application of skills needed to set up a recording session for instrumental and vocal performance.",
-    "Recognize and operate basic software synthesizers, drum machines, and sampler instruments."
-   ],
-   "why": [
-    "not in the catalog text as printed: Efficiently demonstrate the techniques and the application of skills needed to s",
-    "not in the catalog text as printed: Recognize and operate basic software synthesizers, drum machines, and sampler in"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 6,
@@ -105,7 +99,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -246,5 +240,6 @@
    "Careers were read from the description's list of entry-level workplaces/fields (recording studios, video production, game audio, etc.); a reviewer may confirm these qualify as career fields."
   ]
  },
- "extracted_run": "39035226783"
+ "extracted_run": 39037377728,
+ "read_run": "39035226783"
 }

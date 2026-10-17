@@ -90,21 +90,11 @@
    "program": 5,
    "courses": 0,
    "count": 5,
-   "not_verbatim": [
-    "Troubleshoot and solve basic problems involving electrical wiring, connections, and distribution at both the component level.",
-    "Troubleshoot and solve basic problems involving mechanical and fluid power systems.",
-    "Demonstrate proficiency in integrating computer use with industrial machinery and control systems.",
-    "Demonstrate proficiency in relating and integrating math and science concepts with basic systems found in industry."
-   ],
-   "why": [
-    "not in the catalog text as printed: Troubleshoot and solve basic problems involving electrical wiring, connections, ",
-    "not in the catalog text as printed: Troubleshoot and solve basic problems involving mechanical and fluid power syste",
-    "not in the catalog text as printed: Demonstrate proficiency in integrating computer use with industrial machinery an",
-    "not in the catalog text as printed: Demonstrate proficiency in relating and integrating math and science concepts wi"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": false,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 0,
@@ -327,5 +317,6 @@
    "No general education pattern, degree total, or GE units are printed in this extract for the A.S.; pages 119-121 are course descriptions."
   ]
  },
- "extracted_run": "39035226783"
+ "extracted_run": 39037377728,
+ "read_run": "39035226783"
 }

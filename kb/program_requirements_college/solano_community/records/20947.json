@@ -86,17 +86,11 @@
    "program": 3,
    "courses": 0,
    "count": 3,
-   "not_verbatim": [
-    "Design and draft landscape plan.",
-    "Estimate the cost of a landscape construction project."
-   ],
-   "why": [
-    "not in the catalog text as printed: Design and draft landscape plan.",
-    "not in the catalog text as printed: Estimate the cost of a landscape construction project."
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 1,
@@ -108,7 +102,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -216,5 +210,6 @@
    "Career entry 'horticulture field' is taken from the description ('enter the horticulture field'); reviewer may judge whether it counts as a career field."
   ]
  },
- "extracted_run": "39035226783"
+ "extracted_run": 39037377728,
+ "read_run": "39035226783"
 }

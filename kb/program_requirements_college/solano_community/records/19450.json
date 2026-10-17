@@ -100,17 +100,11 @@
    "program": 3,
    "courses": 0,
    "count": 3,
-   "not_verbatim": [
-    "Demonstrate knowledge of cultural, social, political, environmental, and economic forces within the world they live.",
-    "Demonstrate an ability to critically analyze sociological concepts and issues"
-   ],
-   "why": [
-    "not in the catalog text as printed: Demonstrate knowledge of cultural, social, political, environmental, and economi",
-    "not in the catalog text as printed: Demonstrate an ability to critically analyze sociological concepts and issues"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": false,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 0,
@@ -288,5 +282,6 @@
    "No careers named in the text."
   ]
  },
- "extracted_run": "39035226783"
+ "extracted_run": 39037377728,
+ "read_run": "39035226783"
 }

@@ -82,21 +82,11 @@
    "program": 4,
    "courses": 0,
    "count": 4,
-   "not_verbatim": [
-    "Analyze common real estate problems, apply appropriate solutions, and interpret outcomes.",
-    "Meet career preparation goals, as well as prepare for a state licensing exam.",
-    "Explain the process for making home purchase or sale decisions and completing real estate transactions.",
-    "Demonstrate mastery of program-specific concepts and skills (e.g. understand theory and application in real estate finance, investments, property management and financial institutions)."
-   ],
-   "why": [
-    "not in the catalog text as printed: Analyze common real estate problems, apply appropriate solutions, and interpret ",
-    "not in the catalog text as printed: Meet career preparation goals, as well as prepare for a state licensing exam.",
-    "not in the catalog text as printed: Explain the process for making home purchase or sale decisions and completing re",
-    "not in the catalog text as printed: Demonstrate mastery of program-specific concepts and skills (e.g. understand the"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": false,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 0,
@@ -109,7 +99,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -275,5 +265,6 @@
    "No careers are named in the program section. The license exam reference in the RE 164 course description was not used."
   ]
  },
- "extracted_run": "39035226783"
+ "extracted_run": 39037377728,
+ "read_run": "39035226783"
 }

@@ -86,19 +86,11 @@
    "program": 3,
    "courses": 0,
    "count": 3,
-   "not_verbatim": [
-    "Demonstrate knowledge of the structure and function of the major organ systems of the human body.",
-    "Demonstrate knowledge of the normal physiological functions of the organ systems and explain how disturbances of normal physiological functions lead to metabolic and physiological disorders (clinical applications).",
-    "Demonstrate knowledge of how microorganisms interact with the human body and describe how these interactions lead to health or human disease"
-   ],
-   "why": [
-    "not in the catalog text as printed: Demonstrate knowledge of the structure and function of the major organ systems o",
-    "not in the catalog text as printed: Demonstrate knowledge of the normal physiological functions of the organ systems",
-    "not in the catalog text as printed: Demonstrate knowledge of how microorganisms interact with the human body and des"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 7,
@@ -110,7 +102,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -228,5 +220,6 @@
    "CHEM 010 (Intermediate Chemistry) is not in the closed list and is marked as a catalog addition."
   ]
  },
- "extracted_run": "39035226783"
+ "extracted_run": 39037377728,
+ "read_run": "39035226783"
 }
