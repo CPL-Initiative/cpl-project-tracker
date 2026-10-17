@@ -1,0 +1,330 @@
+{
+ "college": "Ohlone College",
+ "control_number": "39343",
+ "shape": "adt",
+ "title": "Kinesiology",
+ "award": "A.A- T Degree",
+ "source_url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=50",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8299,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8299,
+    "output_tokens": 2614,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2614,
+  "output_tokens_details": {
+   "thinking_tokens": 942
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.08548,
+ "ms": 22381,
+ "seconds": 22.7,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 14,
+   "listed": 24,
+   "share": 0.583,
+   "missing": [
+    "BIOL103A",
+    "BIOL103B",
+    "BIOL111",
+    "BIOL112",
+    "KIN240",
+    "PE350A3",
+    "PE350D3",
+    "PE351A3",
+    "PE374A3",
+    "PE375A3"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    8.0,
+    12.0
+   ],
+   "stated": [
+    20.0,
+    24.0
+   ],
+   "against": "program",
+   "why": [
+    "the blocks sum to 8.0-12.0; the catalog states 20.0-24.0"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": true,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Kinesiology A.A-T (section heading on preceding page; excerpt begins mid-section)",
+   "measure": "units",
+   "total_units": {
+    "min": 20,
+    "max": 24
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Fitness",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 1,
+     "max": 1
+    },
+    "courses": [
+     {
+      "code": "PE-342A3",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PE-343A3",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PE-344A3",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PE-372A3",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PE-376A3",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PE-376B3",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Individual Sports",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 1,
+     "max": 1
+    },
+    "courses": [
+     {
+      "code": "PE-360A3",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PE-362A3",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "LIST A",
+    "rule": "choose_courses",
+    "minimum": 2,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 10
+    },
+    "courses": [
+     {
+      "code": "CHEM-101A",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HLTH-101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN-250",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS-120",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC-C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "STAT-C1000",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "BIOL 103A",
+    "why": "not in text; likely on preceding page (core of A.A-T cut off)"
+   },
+   {
+    "code": "BIOL 103B",
+    "why": "not in text; likely on preceding page (core of A.A-T cut off)"
+   },
+   {
+    "code": "BIOL 111",
+    "why": "not in text; likely on preceding page (core of A.A-T cut off)"
+   },
+   {
+    "code": "BIOL 112",
+    "why": "not in text; likely on preceding page (core of A.A-T cut off)"
+   },
+   {
+    "code": "KIN 240",
+    "why": "named only in the Certificate of Achievement section in this excerpt; A.A-T core likely on preceding page"
+   },
+   {
+    "code": "PE 350A3",
+    "why": "not in text; Aquatics area likely on preceding page"
+   },
+   {
+    "code": "PE 350D3",
+    "why": "not in text; Aquatics area likely on preceding page"
+   },
+   {
+    "code": "PE 351A3",
+    "why": "not in text; Aquatics area likely on preceding page"
+   },
+   {
+    "code": "PE 374A3",
+    "why": "named only in the Certificate of Achievement section in this excerpt; A.A-T Combatives area likely on preceding page"
+   },
+   {
+    "code": "PE 375A3",
+    "why": "named only in the Certificate of Achievement section in this excerpt; A.A-T Combatives area likely on preceding page"
+   }
+  ],
+  "notes": [
+   "The excerpt begins on page 50 mid-way through the Kinesiology A.A-T section; its heading, description, outcomes, required core (likely KIN 240, BIOL courses) and the movement-based area rule plus earlier areas (likely Aquatics, Combatives) are on the preceding page and not in the text.",
+   "Fitness and Individual Sports are movement-based areas; the governing rule (e.g., one course maximum from some number of areas) is not in the excerpt, so these blocks are recorded as choose 1 each with option_group null. Reviewer should check whether only some areas are required.",
+   "Total Required Units: 20.0-24.0 recorded as total_units for the A.A-T major; no degree total or GE pattern is printed in the excerpt.",
+   "The Certificate of Achievement in Kinesiology: Fitness Professional section (with its own outcomes, careers, and Total Required Units 18.0-20.0) follows and was not used for this award; its careers and student learning outcomes belong to the certificate."
+  ]
+ },
+ "extracted_run": "39061732843"
+}

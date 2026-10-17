@@ -1,0 +1,284 @@
+{
+ "college": "Ohlone College",
+ "control_number": "37931",
+ "shape": "degree",
+ "title": "Game Design and Animation",
+ "award": "A.A. Degree",
+ "source_url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=39",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 10278,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 10278,
+    "output_tokens": 2124,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2124,
+  "output_tokens_details": {
+   "thinking_tokens": 847
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.08359,
+ "ms": 17331,
+ "seconds": 17.7,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 16,
+   "listed": 16,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    36.0,
+    37.0
+   ],
+   "stated": [
+    36.0,
+    37.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "GAME DESIGN AND ANIMATION — Associate in Arts in Game Design and Animation",
+   "measure": "units",
+   "total_units": {
+    "min": 36,
+    "max": 37
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Ohlone College or Cal-GETC General Education",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Create animations, game design documents, prototypes, assets, and game levels using industry-standard tools and production methods.",
+    "Conceptualize and design compelling visual narratives and gameplay, as well as evaluate audience/player engagement.",
+    "Lead, or participate in, an interdisciplinary team-oriented game and animation production project, manage scheduling, resource allocation, and milestone achievement.",
+    "Demonstrate an understanding of the historical, cultural, sociological, ethical, and psychological aspects of games and animations.",
+    "Develop a professional portfolio demonstrating creative and intellectual accomplishments."
+   ],
+   "careers": [
+    "interactive digital media related fields"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "MAJOR FIELD",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 18,
+     "max": 19
+    },
+    "courses": [
+     {
+      "code": "DAID-103",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DAID-111",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "DAID-112",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "DAID-114",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DAID-118",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DAID-122",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DAID-125",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "SUPPORTING COURSES",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 18,
+     "max": 18
+    },
+    "courses": [
+     {
+      "code": "ART-104A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ART-104C",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "DAID-115",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DAID-119",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "DAID-126",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "DAID-123",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DAID-124",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "DAID-127",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "DAID-160",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The degree section begins on page 39 and continues on page 40; requirements, outcomes and course tables are on page 40.",
+   "Requirements state 'Complete at least 60 degree-applicable units', a general associate degree requirement, not a printed total for this award; degree_total left null.",
+   "No units are printed for the GE pattern, so ge_units is null.",
+   "Career entry taken from 'Students can examine the many careers in interactive digital media related fields'; reviewer may judge whether this names a career field.",
+   "DAID-127 title printed as '3D Pr ototyping' (text extraction artifact)."
+  ]
+ },
+ "extracted_run": 39063337090,
+ "read_run": "39061732843"
+}

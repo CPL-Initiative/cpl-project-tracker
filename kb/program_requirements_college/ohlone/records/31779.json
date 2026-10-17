@@ -1,0 +1,334 @@
+{
+ "college": "Ohlone College",
+ "control_number": "31779",
+ "shape": "certificate",
+ "title": "Kinesiology: Fitness Professional",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=50",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7740,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7740,
+    "output_tokens": 2448,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2448,
+  "output_tokens_details": {
+   "thinking_tokens": 704
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.07992,
+ "ms": 17957,
+ "seconds": 18.2,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 23,
+   "listed": 23,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    18.0,
+    20.0
+   ],
+   "stated": [
+    18.0,
+    20.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 8,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Certificate of Achievement in Kinesiology: Fitness Professional",
+   "measure": "units",
+   "total_units": {
+    "min": 18,
+    "max": 20
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Administer assessment techniques to gather baseline data with respect to cardiorespiratory endurance; muscular strength and endurance; flexibility; and body composition.",
+    "Analyze the basic structure of the cardiorespiratory and musculoskeletal systems and how they respond to fitness training.",
+    "Design an appropriate individual fitness plan considering client health history, goals, and abilities.",
+    "Appreciate the value and importance of regular fitness activity in decreasing the risk factors associated with chronic diseases."
+   ],
+   "careers": [
+    "personal training",
+    "physical therapy",
+    "exercise physiology",
+    "exercise biology",
+    "fitness instruction",
+    "physical education",
+    "coaching",
+    "athletics"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Major Field",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 16,
+     "max": 18
+    },
+    "courses": [
+     {
+      "code": "BIOL-102",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HLTH-101",
+        "units": 3,
+        "catalog_addition": false
+       },
+       {
+        "code": "HLTH-150",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "HLTH-109",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN-240",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN-250",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN-258",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WEX-185A1",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "WEX-185A2",
+        "units": 2,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Movement-Based Courses",
+    "rule": "choose_courses",
+    "minimum": 2,
+    "option_group": null,
+    "stated": {
+     "min": 2,
+     "max": 2
+    },
+    "courses": [
+     {
+      "code": "PE-374A3",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PE-375A3",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PE-342A3",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PE-343A3",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PE-344A3",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PE-346A3",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PE-372A3",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PE-378A3",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PE-360A3",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PE-362A3",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PE-363A3",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PE-376A3",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PE-376B3",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PE-376C3",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Movement-Based Courses: catalog says 'Complete one course maximum from two of the following areas' (2.0 units). Courses are grouped into four areas: Combatives (PE-374A3, PE-375A3), Fitness (PE-342A3, PE-343A3, PE-344A3, PE-346A3, PE-372A3, PE-378A3), Individual Sports (PE-360A3, PE-362A3, PE-363A3), Mind-Body Fitness (PE-376A3, PE-376B3, PE-376C3). Recorded as one block choosing 2 courses; the two courses must come from two different areas, at most one per area.",
+   "Major Field block printed total 16.0-18.0; range reflects BIOL-102 (4) vs HLTH-101/HLTH-150 (3) and WEX-185A1 (1) vs WEX-185A2 (2).",
+   "Careers taken from the program description ('careers in a variety of health science professions including ... personal training, physical therapy, ...'); the description also mentions entry-level jobs in the fitness industry and vocational areas of group fitness instruction and personal training."
+  ]
+ },
+ "extracted_run": 39063337090,
+ "read_run": "39061732843"
+}

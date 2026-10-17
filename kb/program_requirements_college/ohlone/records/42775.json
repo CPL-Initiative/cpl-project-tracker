@@ -1,0 +1,174 @@
+{
+ "college": "Ohlone College",
+ "control_number": "42775",
+ "shape": "noncredit",
+ "title": "Smart Manufacturing Technology",
+ "award": "Noncredit program",
+ "source_url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=99",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6863,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6863,
+    "output_tokens": 1048,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1048,
+  "output_tokens_details": {
+   "thinking_tokens": 371
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.04841,
+ "ms": 8709,
+ "seconds": 9.2,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 2,
+   "listed": 2,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    72.0,
+    72.0
+   ],
+   "stated": [
+    72.0,
+    72.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Certificate of Completion in Smart Manufacturing Technology",
+   "measure": "hours",
+   "total_units": {
+    "min": 72,
+    "max": 72
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Demonstrate understanding of basic relevant smart manufacturing tools and equipment.",
+    "Apply basic troubleshooting techniques to resolve manufacturing problems.",
+    "Interpret basic manufacturing Blue Prints, Standard Operating Procedures (SoPs), and Manufacturing Processes Instructions (MPIs).",
+    "Apply understanding of basic Smart Manufacturing processes in daily manufacturing line operations, material handling, and inventory.",
+    "Demonstrate understanding of relevant safety guidelines in smart manufacturing."
+   ],
+   "careers": [
+    "entry-level manufacturing technicians"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "MAJOR FIELD",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 72,
+     "max": 72
+    },
+    "courses": [
+     {
+      "code": "ETEC-926",
+      "units": 27,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ETEC-928",
+      "units": 45,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Noncredit certificate counted in hours; 'Total Required Hours: 72.0' recorded as total_units and as the MAJOR FIELD block's stated total.",
+   "Catalog prints codes with a hyphen (ETEC-926, ETEC-928); these match closed-list ETEC 926 and ETEC 928.",
+   "In the PDF extraction, the outcome list numbers appear at the end of the first line of each outcome. The outcomes were rejoined across line breaks.",
+   "The following section (STEM Concepts) belongs to a different program and was not read."
+  ]
+ },
+ "extracted_run": 39063337090,
+ "read_run": "39061732843"
+}

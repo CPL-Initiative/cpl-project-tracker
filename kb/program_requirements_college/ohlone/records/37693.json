@@ -1,0 +1,164 @@
+{
+ "college": "Ohlone College",
+ "control_number": "37693",
+ "shape": "certificate",
+ "title": "Kinesiology: Sports Medicine",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=88",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7612,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7612,
+    "output_tokens": 1146,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1146,
+  "output_tokens_details": {
+   "thinking_tokens": 742
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.05337,
+ "ms": 11488,
+ "seconds": 11.8,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 6,
+   "share": 0.0,
+   "missing": [
+    "HLTH101",
+    "KIN250",
+    "KIN257",
+    "KIN258",
+    "KIN381",
+    "KIN382"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": true,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "No section for the Certificate of Achievement found; the text holds only 'Certificate of Accomplishment in Kinesiology: Sports Medicine'",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "HLTH 101",
+    "why": "not in the text; the Certificate of Achievement section is not in the excerpt"
+   },
+   {
+    "code": "KIN 250",
+    "why": "named only in the Certificate of Accomplishment section, a different award"
+   },
+   {
+    "code": "KIN 258",
+    "why": "named only in the Certificate of Accomplishment section, a different award"
+   },
+   {
+    "code": "KIN 381",
+    "why": "named only in the Certificate of Accomplishment section, a different award"
+   },
+   {
+    "code": "KIN 382",
+    "why": "named only in the Certificate of Accomplishment section, a different award"
+   },
+   {
+    "code": "KIN257",
+    "why": "named only in the Certificate of Accomplishment section, a different award"
+   }
+  ],
+  "notes": []
+ },
+ "extracted_run": "39061732843"
+}
