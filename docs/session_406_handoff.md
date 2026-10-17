@@ -34,7 +34,9 @@ tool, read the open PRs and their comments before you write anything.
   `idx_display_arithmetic`, `idx_display_reviewer`, `idx_display_here` in an insert or update); drafted the four
   district access notes and the Program Mapper vendor note
   (`CPLBrain/04-projects/cpl-initiative/20261017_Catalog_Reader_Access_Notes_Draft_1.md`, waiting on Sam to add names
-  and send); opened #2197, the My College Sierra restyle Sam approved.
+  and send); merged #2197 (14:07Z): My College's Sierra and Sierra AI take the
+  public Sierra page's style, from the mock-up Sam approved (`cpl_memory` `sam-my-college-sierra-public-style-2026-10-17`;
+  the sierra-page-redesign lane's NEXT is the public page's Copy/Helpful/Not helpful pills becoming words).
 
 ## Decisions Sam made this run
 
@@ -57,17 +59,14 @@ tool, read the open PRs and their comments before you write anything.
 
 ## Priority, in order
 
-1. **#2197** (the hand-opened S405's PR): My College's Sierra and Sierra AI take the public Sierra page's style, from
-   the mock-up Sam approved (`cpl_memory` `sam-my-college-sierra-public-style-2026-10-17`). If that session has let it
-   go, see it merged on a green `test`.
-2. The three items above.
-3. **Hand-filed PDFs** as Sam files them (De Anza, CCSF, American River, Cosumnes River, Folsom Lake, Sacramento City,
+1. The three items above.
+2. **Hand-filed PDFs** as Sam files them (De Anza, CCSF, American River, Cosumnes River, Folsom Lake, Sacramento City,
    Cerro Coso; Porterville and Cañada joined them). Each: commit the file and its record, dispatch `step=read`.
-4. **Own HTML not yet read:** College of the Desert, LA Trade Tech, LA Mission, LA Southwest, Glendale, Pasadena City.
+3. **Own HTML not yet read:** College of the Desert, LA Trade Tech, LA Mission, LA Southwest, Glendale, Pasadena City.
    A capture-only run first, one branch per college; read the registry row's address first, since three of this run's
    rows named a page about the catalog.
-5. Procedure records for LA City, Pierce, San Mateo and this run's seven.
-6. The UI pass on **MAP Export** (S405 skipped it: no room for a fix PR).
+4. Procedure records for LA City, Pierce, San Mateo and this run's seven.
+5. The UI pass on **MAP Export** (S405 skipped it: no room for a fix PR).
 
 ## Patterns and safety
 
