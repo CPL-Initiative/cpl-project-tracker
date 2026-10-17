@@ -330,7 +330,56 @@ REPLIES_BAR = (
     '</details>'
     '</div>')
 
-REPLIES_CSS = SUBMIT_CSS + r"""
+# A code block on a sheet is a paste, and Sam answers from his phone (2026-10-17: "Can you make
+# it easy to copy the code to paste on the decision sheets? I'm working from my phone."). Every
+# <pre> gets a Copy control above it: an underlined word (the controls rule of 2026-10-09). Where
+# the clipboard refuses, the control selects the whole block so the phone's own Copy takes it.
+PRE_COPY_CSS = r"""
+  /* ── a Copy control on every code block (S407) ── */
+  .pre-copy-row { display: flex; align-items: center; gap: 10px; margin: 10px 0 4px; }
+  .pre-copy { font: inherit; font-size: .92rem; font-weight: 600; min-height: 24px; padding: 0 2px;
+    background: none; border: 0; color: var(--seal-blue, #002F6D); text-decoration: underline;
+    text-underline-offset: 3px; cursor: pointer; }
+  .pre-copy:focus-visible { outline: 2px solid var(--seal-blue, #002F6D); outline-offset: 2px; }
+  .pre-copy-said { font-size: .86rem; color: var(--text-muted, #5C5C55); }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .pre-copy { color: var(--cobalt-on-dark, #7DA1D4); } }
+  :root[data-theme="dark"] .pre-copy { color: var(--cobalt-on-dark, #7DA1D4); }
+"""
+
+PRE_COPY_JS = r"""<script>
+(function(){
+  function said(row, text){ var s = row.querySelector(".pre-copy-said"); if (s) s.textContent = text; }
+  function selectAll(pre){
+    try { var r = document.createRange(); r.selectNodeContents(pre);
+          var sel = window.getSelection(); sel.removeAllRanges(); sel.addRange(r); return true; }
+    catch (e) { return false; }
+  }
+  Array.prototype.forEach.call(document.querySelectorAll("pre"), function(pre, i){
+    var prev = pre.previousElementSibling;
+    if (prev && prev.classList && prev.classList.contains("pre-copy-row")) return;
+    var card = pre.closest ? pre.closest("[id]") : null;
+    var h = card ? card.querySelector("h3") : null;
+    var row = document.createElement("div"); row.className = "pre-copy-row";
+    var b = document.createElement("button"); b.type = "button"; b.className = "pre-copy"; b.id = "pre-copy-" + (i + 1);
+    b.textContent = "Copy";
+    b.setAttribute("aria-label", "Copy the code" + (h ? " for: " + h.textContent.trim() : ""));
+    var s = document.createElement("span"); s.className = "pre-copy-said"; s.setAttribute("aria-live", "polite");
+    row.appendChild(b); row.appendChild(s);
+    pre.parentNode.insertBefore(row, pre);
+    b.addEventListener("click", function(){
+      var text = pre.textContent;
+      var fallback = function(){ said(row, selectAll(pre) ? "Selected. Use your phone's Copy." : "Select the code and copy it."); };
+      try {
+        if (navigator.clipboard && navigator.clipboard.writeText)
+          navigator.clipboard.writeText(text).then(function(){ said(row, "Copied"); }, fallback);
+        else fallback();
+      } catch (e) { fallback(); }
+    });
+  });
+})();
+</script>"""
+
+REPLIES_CSS = SUBMIT_CSS + PRE_COPY_CSS + r"""
   /* ── replies: chips, a note, a follow-up flag (Sam, 2026-09-05) ── */
   .reply { margin: 12px 0 0; padding-top: 10px; border-top: 1px dashed var(--border); }
   .reply-row { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
@@ -1186,7 +1235,7 @@ def inject(html_text, sheet_id):
     if hi >= 0:
         html_text = html_text[:hi] + MARK_S + REPLIES_HOWTO + MARK_E + html_text[hi:]
     # The bar and the script at the foot.
-    foot = MARK_S + REPLIES_BAR + replies_js(sheet_id) + MARK_E
+    foot = MARK_S + REPLIES_BAR + replies_js(sheet_id) + PRE_COPY_JS + MARK_E
     if '</body>' in html_text:
         html_text = html_text.replace('</body>', foot + '</body>', 1)
     else:
