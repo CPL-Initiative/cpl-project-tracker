@@ -1,0 +1,15 @@
+{
+ "_readme": "S402 SkyToyon, 2026-10-17. Page read 38998089408 found Santiago Canyon's eLumen host serving its 2025-2026 catalog (slug 'catalog', header '2025-2026 Catalog') and West Valley's 2026-2027 catalog as HTML on westvalley.edu, but the reader's 40-link cap hid Santiago Canyon's 'Catalog Archives' and 'Printer Friendly Catalog (PDF)' links and West Valley's 'Download 2026-2027 Catalog'. The harvest reads a college's current catalog, never one a year behind (Palo Verde, S387). Two loads, no model call, links narrowed to the ones the cap hid.",
+ "college": "Santiago Canyon College",
+ "questions": {
+  "scc_2026": "Whether Santiago Canyon publishes a 2026-2027 catalog (an eLumen slug, a PDF, an archive entry), and its href.",
+  "wvc_download": "The href of West Valley's 'Download 2026-2027 Catalog' and whether its catalog pages are one page per program."
+ },
+ "keywords": ["2026-2027", "2026-27", "26-27", "[Aa]rchive", "PDF"],
+ "pages": [
+  {"answers": ["scc_2026"], "url": "https://sccollege.elumenapp.com/catalog/catalog/home",
+   "links": "\\.pdf|archive|26-27|2026|printer|catalog/(?!catalog/)"},
+  {"answers": ["wvc_download"], "url": "https://www.westvalley.edu/catalog/index.html",
+   "links": "\\.pdf|download|program|degree|certificate"}
+ ]
+}

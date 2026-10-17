@@ -70,8 +70,8 @@ Every document in `docs/`, by lane. Rebuild with `python3 kb/_build_docs_index.p
 | Lessons docs | 87 | [`catalog/lessons.md`](catalog/lessons.md) |
 | Workstream docs | 83 | [`catalog/workstream-docs.md`](catalog/workstream-docs.md) |
 | Reference (pull-side) | 56 | [`catalog/reference.md`](catalog/reference.md) |
-| Session handoffs | 373 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
-| **total** | **1156** | |
+| Session handoffs | 374 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
+| **total** | **1157** | |
 <!-- /generated:corpus -->
 
 Not covered by a lane catalog:
@@ -122,6 +122,7 @@ Authoritative external sources we've cached:
 - [`reference/`](reference/) — ASCCC / COCI / CCN-CID source documents
 
 ## Update history
+- 2026-10-17 (S402 SkyToyon, Sam's session): two catalog-sweep waves, Lake Tahoe, Marin, Butte and Las Positas (#2186, build `40d138a9f533` applied), then Los Medanos and Mission (#2187, build `7c13e42917c5`); the eLumen reader takes catalog links written whole with a fragment (Los Medanos 7 to 83 of 97); the college workflow refuses a run naming no college; ten procedure records; Open Asks Sheet 87 asks to correct five registry rows; handoff 403 names SkyYarrow.
 - 2026-10-17 (S401 SkyManzanita, Sam's session): five catalog-reader faults read from the hosts' own outlines (#2177 curriQunet retry, #2178 Butte's two title forms, #2179 and #2183 the eLumen menu walk, #2182 Las Positas's comma); the eLumen wave, six colleges loaded, build `d4ac5009f5aa` applied (#2181); Lake Tahoe and Marin extracted; handoff 402 names SkyToyon.
 - 2026-10-16 (S400 SkyBirch, Sam's session): My College's Sierra in Sierra AI's format on Sam's ask (#2171); the program search's no-match path fixed after the smoke's 7l timeout (#2173, applied, 2,742 to 204 ms); wave 5's second half loaded, build `9237d2cbf931` applied (#2170); nine procedure records (#2172, #2174); Butte parked for its reader; handoff 401 names SkyManzanita.
 - 2026-10-16 (S399 SkyRowan, Sam's session): Sierra's statewide catalog A/B'd, put to Sam (Open Asks Sheet 85) and deployed (smoke green); Sheet 85 answered, no card open; wave 5, ten curriQunet colleges, six loaded (#2168, build `9c74da80bad7`); #2167 fixes the curriQunet catalog choice; the Sierra lessons doc compacted (#2165); handoff 400 names SkyBirch.
