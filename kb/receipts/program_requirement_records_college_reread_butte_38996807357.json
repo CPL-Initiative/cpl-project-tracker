@@ -1,0 +1,1399 @@
+{
+ "college": "Butte College",
+ "reread_run": "38996807357",
+ "function": "program_requirement_records_college_reread",
+ "extracted_run": "38981247046",
+ "at": "2026-10-17T02:56:12Z",
+ "posted": 158,
+ "batches": 7,
+ "skipped": [
+  {
+   "control_number": "39882",
+   "why": "places none of its listed courses (another program's page)"
+  }
+ ],
+ "error": null,
+ "replaced": 8,
+ "absent": 0,
+ "held": 0,
+ "kept": 150,
+ "carried": 0,
+ "replaced_keys": [
+  "01323",
+  "07474",
+  "19995",
+  "19999",
+  "20005",
+  "43185",
+  "43186",
+  "43187"
+ ],
+ "absent_keys": [],
+ "held_keys": [],
+ "kept_keys": [
+  "01298",
+  "01302",
+  "01305",
+  "01306",
+  "01307",
+  "01308",
+  "01310",
+  "01311",
+  "01312",
+  "01313",
+  "01314",
+  "01315",
+  "01322",
+  "01325",
+  "01329",
+  "01348",
+  "01355",
+  "01358",
+  "01362",
+  "01370",
+  "07257",
+  "07258",
+  "07260",
+  "07264",
+  "07269",
+  "09582",
+  "11128",
+  "11131",
+  "11136",
+  "11140",
+  "12221",
+  "14583",
+  "15151",
+  "16981",
+  "19980",
+  "19981",
+  "19984",
+  "19985",
+  "19986",
+  "19987",
+  "19988",
+  "19989",
+  "19990",
+  "19991",
+  "19996",
+  "19998",
+  "20000",
+  "20001",
+  "20003",
+  "20006",
+  "20007",
+  "20010",
+  "20012",
+  "20014",
+  "20015",
+  "20016",
+  "20017",
+  "31000",
+  "31042",
+  "31133",
+  "31236",
+  "31246",
+  "31284",
+  "31306",
+  "31307",
+  "31422",
+  "31512",
+  "31850",
+  "31930",
+  "31939",
+  "31941",
+  "31950",
+  "31951",
+  "31952",
+  "31953",
+  "31954",
+  "32093",
+  "32446",
+  "32469",
+  "32721",
+  "32841",
+  "33182",
+  "33199",
+  "33222",
+  "33563",
+  "33579",
+  "33847",
+  "33927",
+  "35022",
+  "35061",
+  "35132",
+  "35197",
+  "35684",
+  "35746",
+  "35887",
+  "36241",
+  "36259",
+  "37059",
+  "37852",
+  "37939",
+  "37940",
+  "37941",
+  "37942",
+  "37943",
+  "37944",
+  "37945",
+  "37967",
+  "38056",
+  "38057",
+  "38058",
+  "38059",
+  "39883",
+  "39884",
+  "39885",
+  "40709",
+  "40710",
+  "40923",
+  "41755",
+  "41986",
+  "42240",
+  "43333",
+  "43453",
+  "44131",
+  "44132",
+  "44133",
+  "44134",
+  "44135",
+  "44136",
+  "44137",
+  "44138",
+  "44141",
+  "44142",
+  "44143",
+  "44298",
+  "44301",
+  "44349",
+  "44575",
+  "44716",
+  "44753",
+  "44823",
+  "44968",
+  "45454",
+  "45652",
+  "45662",
+  "45770",
+  "45799",
+  "46303",
+  "46540",
+  "46541",
+  "46584"
+ ],
+ "carried_keys": [],
+ "machine_pass": 83,
+ "rollback": "update public.program_requirement_records r set program_title = b.program_title, award = b.award, catalog_year = b.catalog_year, source_url = b.source_url, measure = b.measure, total_min = b.total_min, total_max = b.total_max, record = b.record, checks = b.checks, extracted_run = b.extracted_run, checked = false, checked_by = null, checked_at = null from jsonb_to_recordset(<before>) as b(control_number text, program_title text, award text, catalog_year text, source_url text, measure text, total_min numeric, total_max numeric, record jsonb, checks jsonb, extracted_run bigint) where r.college = 'Butte College' and r.control_number = b.control_number and r.checked = false and r.extracted_run = 38981247046;  -- <before> is this receipt's before, as a jsonb literal",
+ "before": [
+  {
+   "award": "A.S. Degree",
+   "checks": {
+    "listed": 15,
+    "placed": 15,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "incomplete"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required courses",
+      "rule": "all",
+      "stated": {
+       "max": 49.5,
+       "min": 49.5
+      },
+      "courses": [
+       {
+        "code": "AUT 6",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "AUT 7",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "AUT 8",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "AUT 9",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "AUT 20",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "AUT 21",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "AUT 22",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "AUT 23",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "AUT 30",
+        "units": 5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "AUT 31",
+        "units": 5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "AUT 52",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "AUT 53",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "AUT 56",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "AUT 57",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "AUT 60",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "AUT 81",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "AUT 82",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "AUT 83",
+        "units": 1.5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [
+      "automotive technicians"
+     ],
+     "measure": "units",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "Explain the principles of operation and maintenance required to repair all systems of the modern automobile with emphasis on Honda and Acura automobiles.",
+      "Safely and correctly maintain, diagnose and repair specific areas of the vehicle with emphasis on Honda and Acura automobiles.",
+      "Effectively communicate vehicle diagnoses, repair procedures, and maintenance recommendations, accurately documenting all work performed in accordance with industry standards.",
+      "Apply the state and federal regulations of the Occupational Safety and Health Association (OSHA) and the Environmental Protection Agency (EPA).",
+      "Demonstrate proficiency in the use of industry-standard tools and precision measuring instruments.",
+      "Apply safe work habits and practices."
+     ],
+     "ge_pattern": "Butte GE",
+     "total_units": {
+      "max": 49.5,
+      "min": 49.5
+     },
+     "degree_total": {
+      "max": 76.5,
+      "min": 70.5
+     },
+     "section_heading": "Automotive Department - Automotive Technology - Honda, Professional Automotive Career Training (PACT) - AS Degree, Career/Technical Program",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": 49.5,
+   "total_min": 49.5,
+   "source_url": "https://butte.curriqunet.com/catalog/iq/25398/28086/28227",
+   "catalog_year": "2026-2027",
+   "extracted_run": 38948140330,
+   "program_title": "Automotive Technology",
+   "control_number": "01323"
+  },
+  {
+   "award": "A.S. Degree",
+   "checks": {
+    "listed": 7,
+    "placed": 7,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "incomplete"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required courses",
+      "rule": "all",
+      "stated": {
+       "max": 21,
+       "min": 21
+      },
+      "courses": [
+       {
+        "code": "MSP 10",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MSP 74",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "RTVF 12",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "RTVF 14",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "RTVF 30",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "RTVF 40",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "RTVF 55",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [
+      "computers",
+      "satellite teleconferencing",
+      "the Internet",
+      "interactive video games",
+      "digital audio and video production"
+     ],
+     "measure": "units",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "Demonstrate critical thinking skills and conceptual problem-solving skills to create a portfolio of work in audio/video production.",
+      "Demonstrate expert and safe use of hardware and software while creating audio/video productions.",
+      "Discuss, analyze and write about audio/video productions.",
+      "Organize and assemble audio/video productions for presentation to an audience."
+     ],
+     "ge_pattern": "Butte Local",
+     "total_units": {
+      "max": 21,
+      "min": 21
+     },
+     "degree_total": {
+      "max": 66,
+      "min": 60
+     },
+     "section_heading": "Radio-TV-Film: Video Production (AS Degree)",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": 21,
+   "total_min": 21,
+   "source_url": "https://butte.curriqunet.com/catalog/iq/25399/28161/28045/27591",
+   "catalog_year": "2026-2027",
+   "extracted_run": 38948140330,
+   "program_title": "Radio-TV-Film: Video Production",
+   "control_number": "07474"
+  },
+  {
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "checks": {
+    "listed": 7,
+    "placed": 7,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "equal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required courses",
+      "rule": "all",
+      "stated": {
+       "max": 21,
+       "min": 21
+      },
+      "courses": [
+       {
+        "code": "MSP 10",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MSP 74",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "RTVF 12",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "RTVF 14",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "RTVF 30",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "RTVF 40",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "RTVF 55",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [],
+     "measure": "units",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "Demonstrate critical thinking skills and conceptual problem-solving skills to create a portfolio of work in audio/video production.",
+      "Demonstrate expert and safe use of hardware and software while creating audio/video productions.",
+      "Discuss, analyze and write about audio/video productions.",
+      "Organize and assemble audio/video productions for presentation to an audience."
+     ],
+     "ge_pattern": null,
+     "total_units": {
+      "max": 21,
+      "min": 21
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "Radio-TV-Film: Video Production (Certificate of Achievement)",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": 21,
+   "total_min": 21,
+   "source_url": "https://butte.curriqunet.com/catalog/iq/25399/28161/28045/27593",
+   "catalog_year": "2026-2027",
+   "extracted_run": 38948140330,
+   "program_title": "Radio-TV-Film: Video Production",
+   "control_number": "19995"
+  },
+  {
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "checks": {
+    "listed": 15,
+    "placed": 15,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "equal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required courses",
+      "rule": "all",
+      "stated": {
+       "max": 49.5,
+       "min": 49.5
+      },
+      "courses": [
+       {
+        "code": "AUT 6",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "AUT 7",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "AUT 8",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "AUT 9",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "AUT 20",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "AUT 21",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "AUT 22",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "AUT 23",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "AUT 30",
+        "units": 5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "AUT 31",
+        "units": 5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "AUT 52",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "AUT 53",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "AUT 56",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "AUT 57",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "AUT 60",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "AUT 81",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "AUT 82",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "AUT 83",
+        "units": 1.5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [],
+     "measure": "units",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "Explain the principles of operation and maintenance required to repair all systems of the modern automobile with emphasis on Honda and Acura automobiles.",
+      "Safely and correctly maintain, diagnose and repair specific areas of the vehicle with emphasis on Honda and Acura automobiles.",
+      "Effectively communicate vehicle diagnoses, repair procedures, and maintenance recommendations, accurately documenting all work performed in accordance with industry standards.",
+      "Apply the state and federal regulations of the Occupational Safety and Health Association (OSHA) and the Environmental Protection Agency (EPA).",
+      "Demonstrate proficiency in the use of industry-standard tools and precision measuring instruments.",
+      "Apply safe work habits and practices."
+     ],
+     "ge_pattern": null,
+     "total_units": {
+      "max": 49.5,
+      "min": 49.5
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "Certificate of Achievement in Automotive Technology - Honda, Professional Automotive Career Training (PACT)",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": 49.5,
+   "total_min": 49.5,
+   "source_url": "https://butte.curriqunet.com/catalog/iq/25398/28086/28228",
+   "catalog_year": "2026-2027",
+   "extracted_run": 38948140330,
+   "program_title": "Automotive Technology",
+   "control_number": "19999"
+  },
+  {
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "checks": {
+    "listed": 11,
+    "placed": 10,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "equal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required courses",
+      "rule": "all",
+      "stated": {
+       "max": 29,
+       "min": 29
+      },
+      "courses": [
+       {
+        "code": "BIOL 15",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BIOL 21",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "NSG 64",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "NSG 68",
+        "units": 5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "NSG 69",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "NSG 74",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "NSG 78",
+        "units": 5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "NSG 79",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "NSG 88",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "NSG 89",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [],
+     "measure": "units",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "Adhere to standards of professional practice, and practice within legal, ethical and regulatory frameworks.",
+      "Demonstrate effective verbal, non-verbal, and written communication using compassion and cultural awareness resulting in trusting relationships.",
+      "Provide comprehensive assessments with a holistic view of the client using the functional health assessment.",
+      "Demonstrate evidenced-based practice and the use of critical thinking based on the nursing process to provide the foundation for appropriate clinical decision making.",
+      "Adapt care when providing nursing interventions to assist the clients in achieving desired outcomes.",
+      "Develop individualized teaching plan based on assessed needs.",
+      "Demonstrate decision-making coordination with the client, significant support person(s), and members of the healthcare team.",
+      "Demonstrate effective management through gathering information, planning, and directing in collaboration with the health care team to assist the client to move toward positive outcomes in an efficient and cost effective manner."
+     ],
+     "ge_pattern": null,
+     "total_units": {
+      "max": 29,
+      "min": 29
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "Registered Nursing: LVN to ADN (Certificate of Achievement)",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": 29,
+   "total_min": 29,
+   "source_url": "https://butte.curriqunet.com/catalog/iq/25399/28163/28039/27619",
+   "catalog_year": "2026-2027",
+   "extracted_run": 38948140330,
+   "program_title": "Registered Nursing: LVN to ADN",
+   "control_number": "20005"
+  },
+  {
+   "award": "A.S. Degree",
+   "checks": {
+    "listed": 17,
+    "placed": 10,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "incomplete"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required courses",
+      "rule": "all",
+      "stated": {
+       "max": 29.5,
+       "min": 29.5
+      },
+      "courses": [
+       {
+        "code": "NSG 51",
+        "units": 1.5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "NSG 52",
+        "units": 1.5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "NSG 4",
+        "units": 2.5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "NSG 6",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "NSG 9",
+        "units": 1.5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "NSG 10",
+        "units": 1.5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "NSG 12",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "NSG 13",
+        "units": 0.5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "NSG 14",
+        "units": 1.5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "NSG 15",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "NSG 16",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "NSG 17",
+        "units": 6,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [],
+     "measure": "units",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "Adhere to standards of professional practice and practice within legal, ethical and regulatory framework.",
+      "Demonstrate effective verbal, non-verbal, and written communication using compassion and cultural awareness resulting in trusting relationships.",
+      "Provide comprehensive assessments with a holistic view of the client using the functional health assessment.",
+      "Demonstrate evidenced-based practice and the use of critical thinking based on the nursing process to provide the foundation for appropriate clinical decision making.",
+      "Adapt care when providing nursing interventions to assist the clients in achieving desired outcomes.",
+      "Develop individualized teaching plan based on assessed needs.",
+      "Demonstrate decision-making coordination with the client, significant support person(s) and members of the healthcare team.",
+      "Demonstrate effective management through gathering information, planning, and directing in collaboration with the healthcare team to assist the client to move toward positive outcomes in an efficient and cost-effective manner."
+     ],
+     "ge_pattern": "Butte GE",
+     "total_units": {
+      "max": 29.5,
+      "min": 29.5
+     },
+     "degree_total": {
+      "max": 63,
+      "min": 60
+     },
+     "section_heading": "Required courses:",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": 21.5,
+      "min": 21.5
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": 29.5,
+   "total_min": 29.5,
+   "source_url": "https://butte.curriqunet.com/catalog/iq/25399/28163/28039/27611",
+   "catalog_year": "2026-2027",
+   "extracted_run": 38948140330,
+   "program_title": "Accelerated Track Registered Nursing",
+   "control_number": "43185"
+  },
+  {
+   "award": "A.S. Degree",
+   "checks": {
+    "listed": 12,
+    "placed": 12,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "incomplete"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required courses",
+      "rule": "all",
+      "stated": {
+       "max": 29.5,
+       "min": 29.5
+      },
+      "courses": [
+       {
+        "code": "NSG 51",
+        "units": 1.5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "NSG 52",
+        "units": 1.5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "NSG 4",
+        "units": 2.5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "NSG 6",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "NSG 9",
+        "units": 1.5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "NSG 10",
+        "units": 1.5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "NSG 12",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "NSG 13",
+        "units": 0.5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "NSG 14",
+        "units": 1.5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "NSG 15",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "NSG 16",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "NSG 17",
+        "units": 6,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [
+      "Registered Nurse"
+     ],
+     "measure": "units",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "Adhere to standards of professional practice and practice within legal, ethical and regulatory framework.",
+      "Demonstrate effective verbal, non-verbal, and written communication using compassion and cultural awareness resulting in trusting relationships.",
+      "Provide comprehensive assessments with a holistic view of the client using the functional health assessment.",
+      "Demonstrate evidenced-based practice and the use of critical thinking based on the nursing process to provide the foundation for appropriate clinical decision making.",
+      "Adapt care when providing nursing interventions to assist the clients in achieving desired outcomes.",
+      "Develop individualized teaching plan based on assessed needs.",
+      "Demonstrate decision-making coordination with the client, significant support person(s) and members of the healthcare team.",
+      "Demonstrate effective management through gathering information, planning, and directing in collaboration with the healthcare team to assist the client to move toward positive outcomes in an efficient and cost-effective manner."
+     ],
+     "ge_pattern": "Butte Local",
+     "total_units": {
+      "max": 29.5,
+      "min": 29.5
+     },
+     "degree_total": {
+      "max": 63,
+      "min": 60
+     },
+     "section_heading": "N to ADN (AS Degree)",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": 21.5,
+      "min": 21.5
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": 29.5,
+   "total_min": 29.5,
+   "source_url": "https://butte.curriqunet.com/catalog/iq/25399/28163/28039/27611",
+   "catalog_year": "2026-2027",
+   "extracted_run": 38948140330,
+   "program_title": "Accelerated Track Registered Nursing: LVN to ADN",
+   "control_number": "43186"
+  },
+  {
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "checks": {
+    "listed": 11,
+    "placed": 11,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "equal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required courses",
+      "rule": "all",
+      "stated": {
+       "max": 29.5,
+       "min": 29.5
+      },
+      "courses": [
+       {
+        "code": "BIOL 15",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BIOL 21",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "NSG 51",
+        "units": 1.5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "NSG 52",
+        "units": 1.5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "NSG 9",
+        "units": 1.5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "NSG 12",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "NSG 13",
+        "units": 0.5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "NSG 14",
+        "units": 1.5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "NSG 15",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "NSG 16",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "NSG 17",
+        "units": 6,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [
+      "Registered Nurse"
+     ],
+     "measure": "units",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "Adhere to standards of professional practice and practice within legal, ethical and regulatory framework.",
+      "Demonstrate effective verbal, non-verbal, and written communication using compassion and cultural awareness resulting in trusting relationships.",
+      "Provide comprehensive assessments with a holistic view of the client using the functional health assessment.",
+      "Demonstrate evidenced-based practice and the use of critical thinking based on the nursing process to provide the foundation for appropriate clinical decision making",
+      "Adapt care when providing nursing interventions to assist the clients in achieving desired outcomes.",
+      "Develop individualized teaching plan based on assessed needs.",
+      "Demonstrate decision-making coordination with the client, significant support person(s) and members of the healthcare team.",
+      "Demonstrate effective management through gathering information, planning, and directing in collaboration with the healthcare team to assist the client to move toward positive outcomes in an efficient and cost-effective manner."
+     ],
+     "ge_pattern": null,
+     "total_units": {
+      "max": 29.5,
+      "min": 29.5
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "Accelerated Track Registered Nursing: LVN to ADN (Certificate of Achievement)",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": 29.5,
+   "total_min": 29.5,
+   "source_url": "https://butte.curriqunet.com/catalog/iq/25399/28163/28039/27613",
+   "catalog_year": "2026-2027",
+   "extracted_run": 38948140330,
+   "program_title": "Accelerated Track Registered Nursing: LVN to ADN",
+   "control_number": "43187"
+  }
+ ]
+}

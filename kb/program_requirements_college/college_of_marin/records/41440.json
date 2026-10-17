@@ -1,0 +1,192 @@
+{
+ "college": "College of Marin",
+ "control_number": "41440",
+ "shape": "noncredit",
+ "title": "Academic ESL Preparation",
+ "award": "Noncredit program",
+ "source_url": "https://marin.elumenapp.com/catalog/current/program/5-certificate-of-competency-academic-esl-preparation-fall-2020-credit-noncredit",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6189,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6189,
+    "output_tokens": 1260,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1260,
+  "output_tokens_details": {
+   "thinking_tokens": 386
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.04996,
+ "ms": 11245,
+ "seconds": 11.6,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 3,
+   "listed": 3,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": [
+    0.0,
+    0.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 6,
+   "courses": 0,
+   "count": 6,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "5. Certificate of Competency, Academic ESL Preparation",
+   "measure": "units",
+   "total_units": {
+    "min": 0,
+    "max": 0
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Identify meaning and use present and past modals.",
+    "Identify parts of speech and basic functions of words in sentences.",
+    "Distinguish various tenses in form and meaning.",
+    "Ask and answer yes/no questions and information questions in a variety of tenses.",
+    "Demonstrate reading comprehension of short passages.",
+    "Express opinions, goals or describe experiences in writing in paragraph format including proper punctuation."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "ESLN040A and ESLN040B",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "ESLN040A and ESLN040B; or ESLN040L",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ESLN040A",
+      "units": 0,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ESLN040B",
+      "units": 0,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "ESLN040L",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "ESLN040A and ESLN040B; or ESLN040L",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ESLN040L",
+      "units": 0,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Noncredit certificate of competency; the catalog prints '(Total 0 Units)' and 'Complete the following number of credits: 0' and states no hours, so measure is recorded as units with total 0.",
+   "The group heading 'ESLN040A and ESLN040B; or ESLN040L' is followed by 'Complete all of the following', but the heading describes a choice: either ESLN040A plus ESLN040B, or ESLN040L alone. Recorded as two option blocks in one option_group; reviewer should confirm.",
+   "The group's printed '(Total 0 Units)' applies to the combined option group, so it is not recorded as stated on either option block.",
+   "Catalog prints course titles as 'Academic ESL Preparation A/B/- Long'; the closed list titles them 'Credit ESL Preparation'. Codes match (ESLN040A = ESLN 040A, etc.).",
+   "The source URL references 'fall-2020'; the page may reflect an earlier catalog version than 2026-2027."
+  ]
+ },
+ "extracted_run": "38984695817"
+}

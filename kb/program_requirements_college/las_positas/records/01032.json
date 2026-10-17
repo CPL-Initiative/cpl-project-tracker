@@ -4,12 +4,12 @@
  "shape": "degree",
  "title": "Humanities",
  "award": "A.A. Degree",
- "source_url": "https://laspositas.curriqunet.com/catalog/iq/102/105/155/1872/1875",
+ "source_url": "https://laspositas.curriqunet.com/catalog/iq/102/105/150/1820/1825",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 11100,
+  "input_tokens": 7871,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 11100,
-    "output_tokens": 9943,
+    "input_tokens": 7871,
+    "output_tokens": 2210,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,384 +30,71 @@
     "model": null
    }
   ],
-  "output_tokens": 9943,
+  "output_tokens": 2210,
   "output_tokens_details": {
-   "thinking_tokens": 1806
+   "thinking_tokens": 419
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.24326,
- "ms": 104375,
- "seconds": 104.8,
+ "cost_usd": 0.07568,
+ "ms": 16628,
+ "seconds": 17.2,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 20,
+   "placed": 24,
    "listed": 24,
-   "share": 0.833,
-   "missing": [
-    "ENG32",
-    "ENG41",
-    "ENG42",
-    "WMST2"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
    "pass": true
   },
   "invented": {
-   "count": 155,
+   "count": 2,
    "codes": [
-    "ARHS1",
-    "ARHS3",
-    "ARHS8",
-    "ARTHC1100",
-    "ARTS12A",
-    "ARTS12B",
-    "ARTS12C",
-    "ARTS12D",
-    "ARTS23",
-    "ARTS24",
-    "ARTS26",
-    "ARTS2A",
-    "ARTS3A",
-    "ARTS3B",
-    "ARTS3C",
-    "ARTS3D",
-    "ARTS7A",
-    "ARTS7B",
-    "ARTS7C",
-    "ARTS7D",
-    "FLMS5",
-    "FLMS7",
-    "FREN1A",
-    "FREN1B",
-    "GDDM2",
-    "GDDM3",
-    "GDDM4",
-    "GDDM40",
-    "GDDM45A",
-    "GDDM45B",
-    "GDDM50",
-    "GDDM51",
-    "GDDM52",
-    "GDDM53",
-    "GDDM54",
-    "GDDM55",
-    "GDDM56",
-    "GDDM57",
-    "GDDM58",
-    "GDDM59",
-    "GDDM60",
-    "GDDM62",
-    "GDDM64",
-    "GDDM70",
-    "HIST14",
-    "HIST25",
-    "HIST28",
-    "HIST3",
-    "HIST4",
-    "HISTC1001",
-    "HISTC1002",
-    "HUMN2",
-    "JAMS12",
-    "KIN3",
-    "LIBR1",
-    "LIBR4",
-    "LIBR6",
-    "LIBR7",
-    "MUS1",
-    "MUS10A",
-    "MUS10B",
-    "MUS11",
-    "MUS13",
-    "MUS14",
-    "MUS15",
-    "MUS16",
-    "MUS21A",
-    "MUS21B",
-    "MUS22A",
-    "MUS22B",
-    "MUS23A",
-    "MUS23B",
-    "MUS25",
-    "MUS27",
-    "MUS28",
-    "MUS31",
-    "MUS34",
-    "MUS35",
-    "MUS36",
-    "MUS37",
-    "MUS38",
-    "MUS4",
-    "MUS41",
-    "MUS44",
-    "MUS45",
-    "MUS46",
-    "MUS48",
-    "MUS5",
-    "MUS6",
-    "MUS8A",
-    "MUS8B",
-    "PHIL3",
-    "PHIL4",
-    "PHIL5",
-    "PHIL6",
-    "PHIL8",
-    "PHTO50",
-    "PHTO51A",
-    "PHTO56",
-    "PHTO57",
-    "PHTO58",
-    "PHTO60",
-    "PHTO64A",
-    "PHTO66",
-    "PHTO68",
-    "PHTO69",
-    "PHTO70",
-    "POLI25",
-    "RELS3",
-    "SPAN1A",
-    "SPAN1B",
-    "SPAN21",
-    "SPAN22",
-    "SPAN23",
-    "SPAN2A",
-    "SPAN2B",
-    "THEA1",
-    "THEA11",
-    "THEA1A",
-    "THEA1B",
-    "THEA25",
-    "THEA31A",
-    "THEA31B",
-    "THEA31C",
-    "THEA31D",
-    "THEA39A",
-    "THEA39B",
-    "THEA39C",
-    "THEA3A",
-    "THEA3B",
-    "THEA3C",
-    "THEA47A",
-    "THEA47B",
-    "THEA47C",
-    "THEA47D",
-    "THEA48A",
-    "THEA48B",
-    "THEA48C",
-    "THEA48D",
-    "THEA5",
-    "THEA50",
-    "THEA50L",
-    "THEA51",
-    "THEA52",
-    "THEA53",
-    "THEA54",
-    "THEA55",
-    "THEA56",
-    "THEA57A",
-    "THEA57B",
-    "THEA57C",
-    "THEA57D",
-    "THEA58",
-    "THEA60",
-    "WLDT71"
+    "ENG45",
+    "FLMS2"
    ],
    "flagged": [
-    "ARHS1",
-    "ARHS3",
-    "ARHS8",
-    "ARTHC1100",
-    "ARTS12A",
-    "ARTS12B",
-    "ARTS12C",
-    "ARTS12D",
-    "ARTS23",
-    "ARTS24",
-    "ARTS26",
-    "ARTS2A",
-    "ARTS3A",
-    "ARTS3B",
-    "ARTS3C",
-    "ARTS3D",
-    "ARTS7A",
-    "ARTS7B",
-    "ARTS7C",
-    "ARTS7D",
-    "FLMS5",
-    "FLMS7",
-    "FREN1A",
-    "FREN1B",
-    "GDDM2",
-    "GDDM3",
-    "GDDM4",
-    "GDDM40",
-    "GDDM45A",
-    "GDDM45B",
-    "GDDM50",
-    "GDDM51",
-    "GDDM52",
-    "GDDM53",
-    "GDDM54",
-    "GDDM55",
-    "GDDM56",
-    "GDDM57",
-    "GDDM58",
-    "GDDM59",
-    "GDDM60",
-    "GDDM62",
-    "GDDM64",
-    "GDDM70",
-    "HIST14",
-    "HIST25",
-    "HIST28",
-    "HIST3",
-    "HIST4",
-    "HISTC1001",
-    "HISTC1002",
-    "HUMN2",
-    "JAMS12",
-    "KIN3",
-    "LIBR1",
-    "LIBR4",
-    "LIBR6",
-    "LIBR7",
-    "MUS1",
-    "MUS10A",
-    "MUS10B",
-    "MUS11",
-    "MUS13",
-    "MUS14",
-    "MUS15",
-    "MUS16",
-    "MUS21A",
-    "MUS21B",
-    "MUS22A",
-    "MUS22B",
-    "MUS23A",
-    "MUS23B",
-    "MUS25",
-    "MUS27",
-    "MUS28",
-    "MUS31",
-    "MUS34",
-    "MUS35",
-    "MUS36",
-    "MUS37",
-    "MUS38",
-    "MUS4",
-    "MUS41",
-    "MUS44",
-    "MUS45",
-    "MUS46",
-    "MUS48",
-    "MUS5",
-    "MUS6",
-    "MUS8A",
-    "MUS8B",
-    "PHIL3",
-    "PHIL4",
-    "PHIL5",
-    "PHIL6",
-    "PHIL8",
-    "PHTO50",
-    "PHTO51A",
-    "PHTO56",
-    "PHTO57",
-    "PHTO58",
-    "PHTO60",
-    "PHTO64A",
-    "PHTO66",
-    "PHTO68",
-    "PHTO69",
-    "PHTO70",
-    "POLI25",
-    "RELS3",
-    "SPAN1A",
-    "SPAN1B",
-    "SPAN21",
-    "SPAN22",
-    "SPAN23",
-    "SPAN2A",
-    "SPAN2B",
-    "THEA1",
-    "THEA11",
-    "THEA1A",
-    "THEA1B",
-    "THEA25",
-    "THEA31A",
-    "THEA31B",
-    "THEA31C",
-    "THEA31D",
-    "THEA39A",
-    "THEA39B",
-    "THEA39C",
-    "THEA3A",
-    "THEA3B",
-    "THEA3C",
-    "THEA47A",
-    "THEA47B",
-    "THEA47C",
-    "THEA47D",
-    "THEA48A",
-    "THEA48B",
-    "THEA48C",
-    "THEA48D",
-    "THEA5",
-    "THEA50",
-    "THEA50L",
-    "THEA51",
-    "THEA52",
-    "THEA53",
-    "THEA54",
-    "THEA55",
-    "THEA56",
-    "THEA57A",
-    "THEA57B",
-    "THEA57C",
-    "THEA57D",
-    "THEA58",
-    "THEA60",
-    "WLDT71"
+    "ENG45",
+    "FLMS2"
    ],
    "pass": true
   },
   "arithmetic": {
    "pass": false,
-   "status": "unequal",
+   "status": "incomplete",
    "computed": [
-    12.0,
-    12.0
+    18.0,
+    18.0
    ],
    "stated": [
-    18.0,
-    21.0
+    60.0,
+    60.0
    ],
-   "against": "program",
+   "against": "degree",
+   "ge": null,
    "why": [
-    "the blocks sum to 12.0-12.0; the catalog states 18.0-21.0"
+    "the record names the degree total and the Las Positas College General Education (LPC-GE) or Cal-GETC pattern, but no units for it"
    ],
-   "degree": {
-    "pass": false,
-    "status": "incomplete",
+   "major": {
+    "pass": true,
+    "status": "equal",
     "computed": [
-     12.0,
-     12.0
+     18.0,
+     18.0
     ],
     "stated": [
-     60.0,
-     60.0
+     18.0,
+     18.0
     ],
-    "against": "degree",
-    "ge": null,
-    "why": [
-     "the record names the degree total and the Las Positas College General Education (LPC-GE) or Cal-GETC pattern, but no units for it"
-    ]
+    "against": "program",
+    "why": []
    }
   },
   "repeated": {
@@ -415,9 +102,9 @@
    "pass": true
   },
   "outcomes": {
-   "program": 2,
+   "program": 4,
    "courses": 0,
-   "count": 2,
+   "count": 4,
    "not_verbatim": [],
    "why": [],
    "heading_printed": true,
@@ -436,11 +123,11 @@
  },
  "record": {
   "program": {
-   "section_heading": "Liberal Arts & Sciences: Arts and Humanities (AA): Program Requirements",
+   "section_heading": "Humanities (AA): Program Requirements",
    "measure": "units",
    "total_units": {
     "min": 18,
-    "max": 21
+    "max": 18
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -458,1061 +145,24 @@
    },
    "electives_fill_degree": false,
    "outcomes": [
-    "Apply art theory to specific works of art.",
-    "Critically analyze important texts and ideas within the global intellectual tradition."
+    "Interpret and analyze culture and art by applying theoretical methods used in the humanities.",
+    "Discuss major themes expressed in art, culture, and belief systems as seen throughout global history.",
+    "Demonstrate their own appreciation for the value of art, ideas, and culture through discussion and writing.",
+    "Formally evaluate a variety of art forms using the elements and principles corresponding to each medium."
    ],
    "careers": []
   },
   "blocks": [
    {
-    "name": "Arts",
-    "rule": "choose_units",
-    "minimum": 6,
+    "name": "Required Core",
+    "rule": "all",
+    "minimum": null,
     "option_group": null,
     "stated": {
-     "min": null,
-     "max": null
+     "min": 9,
+     "max": 9
     },
     "courses": [
-     {
-      "code": "ARHS 1",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "ARHS 2",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "ARHS 3",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "ARHS 7",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "ARHS 8",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "ARTH C1100",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "ARTH C1200",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "ARTS 2A",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "ARTS 3A",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "ARTS 3B",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "ARTS 3C",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "ARTS 3D",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "ARTS 7A",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "ARTS 7B",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "ARTS 7C",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "ARTS 7D",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "ARTS 12A",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "ARTS 12B",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "ARTS 12C",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "ARTS 12D",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "ARTS 23",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "ARTS 24",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "ARTS 26",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [
-       {
-        "code": "GDDM 51",
-        "units": 3,
-        "catalog_addition": true
-       }
-      ],
-      "catalog_addition": true
-     },
-     {
-      "code": "FLMS 5",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "FLMS 7",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "GDDM 2",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "GDDM 3",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "GDDM 4",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "GDDM 40",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "GDDM 45A",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "GDDM 45B",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "GDDM 50",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "GDDM 52",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "GDDM 53",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "GDDM 54",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "GDDM 55",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "GDDM 56",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "GDDM 57",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "GDDM 58",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "GDDM 59",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "GDDM 60",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "GDDM 62",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "GDDM 64",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "GDDM 70",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [
-       {
-        "code": "PHTO 70",
-        "units": 3,
-        "catalog_addition": true
-       }
-      ],
-      "catalog_addition": true
-     },
-     {
-      "code": "JAMS 12",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "MUS 1",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "MUS 3",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "MUS 4",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "MUS 5",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "MUS 6",
-      "units": 2,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "MUS 8A",
-      "units": 4,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "MUS 8B",
-      "units": 4,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "MUS 10A",
-      "units": 4,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "MUS 10B",
-      "units": 4,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "MUS 11",
-      "units": 1,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "MUS 13",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "MUS 14",
-      "units": 1,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "MUS 15",
-      "units": 1,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "MUS 16",
-      "units": 1,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "MUS 21A",
-      "units": 1,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "MUS 21B",
-      "units": 1,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "MUS 22A",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "MUS 22B",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "MUS 23A",
-      "units": 1,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "MUS 23B",
-      "units": 1,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "MUS 25",
-      "units": 2,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "MUS 27",
-      "units": 2,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "MUS 28",
-      "units": 1,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "MUS 31",
-      "units": 1,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "MUS 34",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "MUS 35",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "MUS 36",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "MUS 37",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "MUS 38",
-      "units": 1,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "MUS 41",
-      "units": 1,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "MUS 44",
-      "units": 1,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "MUS 45",
-      "units": 2,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "MUS 46",
-      "units": 2,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "MUS 48",
-      "units": 1,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "PHTO 50",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "PHTO 51A",
-      "units": 1.5,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "PHTO 56",
-      "units": 1.5,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "PHTO 57",
-      "units": 1.5,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "PHTO 58",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "PHTO 60",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "PHTO 64A",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "PHTO 66",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "PHTO 67",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "PHTO 68",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "PHTO 69",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "POLI 25",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "THEA 1",
-      "units": 1,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "THEA 1A",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "THEA 1B",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "THEA 3A",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "THEA 3B",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "THEA 3C",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "THEA 4",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "THEA 5",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "THEA 10",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "THEA 11",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "THEA 25",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "THEA 31A",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "THEA 31B",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "THEA 31C",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "THEA 31D",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "THEA 39B",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "THEA 39C",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "THEA 47A",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "THEA 47B",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "THEA 47C",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "THEA 47D",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "THEA 48A",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "THEA 39A",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "THEA 48B",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "THEA 48C",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "THEA 48D",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "THEA 50",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "THEA 50L",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "THEA 51",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "THEA 52",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "THEA 53",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "THEA 54",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "THEA 55",
-      "units": 1,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "THEA 56",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "THEA 57A",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "THEA 57B",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "THEA 57C",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "THEA 57D",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "THEA 58",
-      "units": 2,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "THEA 60",
-      "units": 1,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "WLDT 71",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     }
-    ]
-   },
-   {
-    "name": "Humanities",
-    "rule": "choose_units",
-    "minimum": 6,
-    "option_group": null,
-    "stated": {
-     "min": null,
-     "max": null
-    },
-    "courses": [
-     {
-      "code": "FREN 1A",
-      "units": 5,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "FREN 1B",
-      "units": 5,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "HIST 1",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "HIST 2",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "HIST 3",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "HIST 4",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "HIST 14",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "HIST 25",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "HIST 28",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "HIST 32",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "HIST C1001",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "HIST C1002",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "HUMN 2",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
      {
       "code": "HUMN 3",
       "units": 3,
@@ -1521,7 +171,61 @@
       "catalog_addition": false
      },
      {
-      "code": "HUMN 4",
+      "code": "HUMN 28",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHIL 1",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List A: Select One",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "ENG 32",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENG 41",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENG 42",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENG 45",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HIST 32",
       "units": 3,
       "units_max": null,
       "alternatives": [],
@@ -1542,6 +246,128 @@
       "catalog_addition": false
      },
      {
+      "code": "PHIL 2",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "RELS 1",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WMST 2",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List B: Select One",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "FLMS 2",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HUMN 4",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS 3",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHTO 67",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THEA 4",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THEA 10",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List C: Select One",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "ARHS 2",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARHS 7",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARTH C1200",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 1",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 2",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
       "code": "HUMN 11",
       "units": 3,
       "units_max": null,
@@ -1554,194 +380,18 @@
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
-     },
-     {
-      "code": "HUMN 28",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "KIN 3",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "LIBR 1",
-      "units": 1,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "LIBR 4",
-      "units": 0.5,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "LIBR 6",
-      "units": 0.5,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "LIBR 7",
-      "units": 0.5,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "PHIL 1",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "PHIL 2",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "PHIL 3",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "PHIL 4",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "PHIL 5",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "PHIL 6",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "PHIL 8",
-      "units": 4,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "RELS 1",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "RELS 3",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "SPAN 1A",
-      "units": 5,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "SPAN 1B",
-      "units": 5,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "SPAN 2A",
-      "units": 4,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "SPAN 2B",
-      "units": 4,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "SPAN 21",
-      "units": 5,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "SPAN 22",
-      "units": 5,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "SPAN 23",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
      }
     ]
    }
   ],
   "course_outcomes": [],
-  "missing_explained": [
-   {
-    "code": "ENG 32",
-    "why": "not in the text"
-   },
-   {
-    "code": "ENG 41",
-    "why": "not in the text"
-   },
-   {
-    "code": "ENG 42",
-    "why": "not in the text"
-   },
-   {
-    "code": "WMST 2",
-    "why": "not in the text"
-   }
-  ],
+  "missing_explained": [],
   "notes": [
-   "Program mismatch: the requested program is 'Humanities' A.A., but the catalog text is for 'Liberal Arts & Sciences: Arts and Humanities, Associate of Arts (AA)'. A reviewer should confirm that this is the right page. Four closed-list courses (ENG 32, ENG 41, ENG 42, WMST 2) do not appear on it.",
-   "The Required Core reads 'Complete at least 18 units from below with at least 6 units from Arts and 6 units from Humanities (18-21 Units)'. It is recorded as two choose_units blocks of 6 units each. The overall rule of at least 18 units across both lists, with a printed total of 18-21, applies to the Arts and Humanities blocks together.",
-   "total_units is taken from 'Total Units in Area of Emphasis 18.0-21.0'. degree_total is taken from 'Total : 60.0'.",
-   "The page prints 39.0-42.0 units for 'Additional General Education and Elective Units' combined, so it gives no separate GE or elective figure. ge_units and degree_elective_units are therefore left null. The GE pattern may be either LPC-GE or Cal-GETC, and double counting between GE and the major is permitted.",
-   "The cross-listed rows 'ARTS 26/GDDM 51' and 'GDDM 70/PHTO 70' are each recorded as one course with the other code as its alternative.",
-   "The closed-list code 'ARTHC1200' is matched to the catalog's 'ARTH C1200'.",
-   "In the catalog, THEA 39A is printed out of order, after THEA 48A. The catalog order is kept here.",
-   "The program learning outcomes are printed for the program as a whole. The lead-in 'Upon completion of this program, students will be able to:' is omitted from them.",
-   "The text names no careers."
+   "ARTH C1200 in the catalog matched to closed-list code ARTHC1200 (same title); treated as not a catalog addition.",
+   "The page prints 42.0 units for 'Additional General Education and Electives' combined, without separating GE units from elective units; ge_units and degree_elective_units left null and electives_fill_degree false. Total 60.0 recorded as degree_total.",
+   "GE pattern may be either LPC-GE or Cal-GETC per the page.",
+   "The overview names fields students may major in (Liberal Arts, English, Art History, etc.); these are transfer majors, not careers, so careers left empty."
   ]
  },
- "extracted_run": "38935144431"
+ "extracted_run": "38984747530"
 }

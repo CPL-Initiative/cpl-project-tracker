@@ -1,0 +1,215 @@
+{
+ "college": "Lake Tahoe Community College",
+ "control_number": "33694",
+ "shape": "degree",
+ "title": "Fire Academy",
+ "award": "A.A. Degree",
+ "source_url": "https://ltcc.elumenapp.com/catalog/2026-2027/program/fire-academy-aa-summer-2024",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7489,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7489,
+    "output_tokens": 1345,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1345,
+  "output_tokens_details": {
+   "thinking_tokens": 354
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.05686,
+ "ms": 11351,
+ "seconds": 11.9,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 3,
+   "listed": 3,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "FIR170K"
+   ],
+   "flagged": [
+    "FIR170K"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    38.75,
+    38.75
+   ],
+   "stated": [
+    38.75,
+    38.75
+   ],
+   "against": "program",
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     38.75,
+     38.75
+    ],
+    "stated": [
+     90.0,
+     90.0
+    ],
+    "against": "degree",
+    "ge": null,
+    "why": [],
+    "fill": [
+     51.25,
+     51.25
+    ]
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 7,
+   "courses": 0,
+   "count": 7,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Fire Academy AA",
+   "measure": "units",
+   "total_units": {
+    "min": 38.75,
+    "max": 38.75
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": 90,
+    "max": 90
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": true,
+   "outcomes": [
+    "Demonstrate effective and safe operation of fire service tools and equipment.",
+    "Identify and properly use various fire appliances and nozzles, and demonstrate effective hose rolling techniques.",
+    "Identify, maintain and utilize various types of ladders used in the fire service.",
+    "Demonstrate proficiency in the donning and doffing of self-contained breathing apparatus.",
+    "Identify various forcible entry tools and describe their use.",
+    "Operate within the Incident Command System (ICS).",
+    "Apply appropriate critical thinking and skills in the assessment of illness and/or injury of a person involved in an emergency situation and apply emergency treatment principles and techniques."
+   ],
+   "careers": [
+    "fire service"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "B. Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 38.75,
+     "max": 38.75
+    },
+    "courses": [
+     {
+      "code": "FIR170K",
+      "units": 1.75,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "FIR170L",
+      "units": 12.75,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FIR170M",
+      "units": 12,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HEA140E",
+      "units": 12.25,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Lake Tahoe Community College counts in quarter units; the page prints 'Units: 90 units' and 'ELECTIVE UNITS to bring the total to 90', recorded as degree_total 90 with electives_fill_degree true.",
+   "The major total 'Complete the following number of credits: 38.75' is recorded as total_units.",
+   "The page lists 'A. General Education Requirements / General Education Patterns' without naming a specific pattern or printing GE units; ge_pattern and ge_units left null.",
+   "Catalog units differ slightly from the state file (FIR170L 12.75 vs 12.8; HEA140E 12.25 vs 12.3).",
+   "FIR170K is not in the closed list and is recorded as a catalog addition.",
+   "The prerequisite paragraph mentions 'Lake Tahoe Basin Fire Academy, Part 2 (FIR170B)' as prerequisite to FIR170M, which appears to be an outdated reference (likely meant FIR170L); not placed in any block.",
+   "'Firefighter I' and 'EMT' are named as certifications, not recorded as careers; the only career field recorded is 'fire service' from 'entry-level employment in the fire service'."
+  ]
+ },
+ "extracted_run": "38984692790"
+}

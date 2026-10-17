@@ -1,0 +1,240 @@
+{
+ "college": "Butte College",
+ "control_number": "43187",
+ "shape": "certificate",
+ "title": "Accelerated Track Registered Nursing: LVN to ADN",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://butte.curriqunet.com/catalog/iq/25398/28156/28382",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8707,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8707,
+    "output_tokens": 1425,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1425,
+  "output_tokens_details": {
+   "thinking_tokens": 228
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.06333,
+ "ms": 11884,
+ "seconds": 12.4,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 11,
+   "listed": 11,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    29.5,
+    29.5
+   ],
+   "stated": [
+    29.5,
+    29.5
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 8,
+   "courses": 0,
+   "count": 8,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Certificate of Achievement in Accelerated Track Registered Nursing: LVN to ADN",
+   "measure": "units",
+   "total_units": {
+    "min": 29.5,
+    "max": 29.5
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Adhere to standards of professional practice and practice within legal, ethical and regulatory framework.",
+    "Demonstrate effective verbal, non-verbal, and written communication using compassion and cultural awareness resulting in trusting relationships.",
+    "Provide comprehensive assessments with a holistic view of the client using the functional health assessment.",
+    "Demonstrate evidenced-based practice and the use of critical thinking based on the nursing process to provide the foundation for appropriate clinical decision making",
+    "Adapt care when providing nursing interventions to assist the clients in achieving desired outcomes.",
+    "Develop individualized teaching plan based on assessed needs.",
+    "Demonstrate decision-making coordination with the client, significant support person(s) and members of the healthcare team.",
+    "Demonstrate effective management through gathering information, planning, and directing in collaboration with the healthcare team to assist the client to move toward positive outcomes in an efficient and cost-effective manner."
+   ],
+   "careers": [
+    "registered nurse"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 29.5,
+     "max": 29.5
+    },
+    "courses": [
+     {
+      "code": "BIOL 15",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL 21",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NSG 51",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NSG 52",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NSG 9",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NSG 12",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NSG 13",
+      "units": 0.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NSG 14",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NSG 15",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NSG 16",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NSG 17",
+      "units": 6,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "GE Pattern(s) printed as 'None'.",
+   "The Map section repeats the same 11 required courses by term (Total 29.50); not recorded as separate blocks.",
+   "Courses named only as prerequisites in the Map (BIOL 20, CHEM 1, CHEM 51, BIOL 1, BIOL 2) are not program requirements and were not recorded.",
+   "Admission requires 16 units of college-level nursing credit from a vocational/practical nursing program and an LVN license; these are admission requirements, not courses in the award.",
+   "Text mentions 'A 30-unit option is available' without detailing it; not recorded."
+  ]
+ },
+ "extracted_run": "38981247046"
+}

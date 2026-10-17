@@ -1,0 +1,187 @@
+{
+ "college": "Lake Tahoe Community College",
+ "control_number": "19265",
+ "shape": "certificate",
+ "title": "Fire Academy",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://ltcc.elumenapp.com/catalog/2026-2027/program/fire-academy-certificate-summer-2024",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6979,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6979,
+    "output_tokens": 1040,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1040,
+  "output_tokens_details": {
+   "thinking_tokens": 275
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.04872,
+ "ms": 8964,
+ "seconds": 9.5,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 2,
+   "listed": 2,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "FIR170K"
+   ],
+   "flagged": [
+    "FIR170K"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    26.5,
+    26.5
+   ],
+   "stated": [
+    26.5,
+    26.5
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 7,
+   "courses": 0,
+   "count": 7,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Fire Academy Certificate",
+   "measure": "units",
+   "total_units": {
+    "min": 26.5,
+    "max": 26.5
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Demonstrate effective and safe operation of fire service tools and equipment.",
+    "Identify and properly use various fire appliances and nozzles, and demonstrate effective hose rolling techniques.",
+    "Identify, maintain and utilize various types of ladders used in the fire service.",
+    "Demonstrate proficiency in the donning and doffing of self-contained breathing apparatus.",
+    "Identify various forcible entry tools and describe their use.",
+    "Operate within the Incident Command System (ICS).",
+    "Apply appropriate critical thinking and skills in the assessment of illness and/or injury of a person involved in an emergency situation and apply emergency treatment principles and techniques."
+   ],
+   "careers": [
+    "fire service"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Fire Academy Certificate",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 26.5,
+     "max": 26.5
+    },
+    "courses": [
+     {
+      "code": "FIR170K",
+      "units": 1.75,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "FIR170L",
+      "units": 12.75,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FIR170M",
+      "units": 12,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Catalog prints codes without a space (FIR170L, FIR170M); matched to closed-list FIR 170L and FIR 170M.",
+   "FIR170K (Orientation Class, 1.75 units) is not in the closed list; recorded as a catalog addition.",
+   "Catalog lists FIR170L at 12.75 units; the state file stores 12.8.",
+   "Career entry taken from 'prepares students for entry-level employment in the fire service'; Firefighter I is a State Fire Marshal certification, not recorded as a career.",
+   "The source URL slug references summer 2024 although the catalog year is 2026-2027; reviewer may confirm currency."
+  ]
+ },
+ "extracted_run": "38984692790"
+}

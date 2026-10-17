@@ -1,0 +1,299 @@
+{
+ "college": "Lake Tahoe Community College",
+ "control_number": "01596",
+ "shape": "degree",
+ "title": "Business- Marketing",
+ "award": "A.A. Degree",
+ "source_url": "https://ltcc.elumenapp.com/catalog/2026-2027/program/business-marketing-aa-summer-2022",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6655,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6655,
+    "output_tokens": 1917,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1917,
+  "output_tokens_details": {
+   "thinking_tokens": 524
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.06496,
+ "ms": 16578,
+ "seconds": 17.6,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 8,
+   "listed": 10,
+   "share": 0.8,
+   "missing": [
+    "ECONC2001",
+    "ECONC2002"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 3,
+   "codes": [
+    "BSN137",
+    "ECO101",
+    "ECO102"
+   ],
+   "flagged": [
+    "BSN137",
+    "ECO101",
+    "ECO102"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    39.0,
+    39.0
+   ],
+   "stated": [
+    39.0,
+    39.0
+   ],
+   "against": "program",
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     39.0,
+     39.0
+    ],
+    "stated": [
+     90.0,
+     90.0
+    ],
+    "against": "degree",
+    "ge": null,
+    "why": [],
+    "fill": [
+     51.0,
+     51.0
+    ]
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Business-Marketing AA",
+   "measure": "units",
+   "total_units": {
+    "min": 39,
+    "max": 39
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": 90,
+    "max": 90
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": true,
+   "outcomes": [
+    "Apply critical and analytical thought in diverse business situations.",
+    "Identify the basic principles of the disciplines which comprise the major.",
+    "Identify and apply basic financial analysis tools and critical business skills needed to plan and manage strategic activities.",
+    "Identify the key factors contributing to the complexity of the global business environment and its relationship with various political, social, cultural, and technological influences."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "All of the following courses for Business",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 25,
+     "max": 25
+    },
+    "courses": [
+     {
+      "code": "BSN100",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BSN101A",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BSN102",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BSN104",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BSN110A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BSN110B",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "At least one of the following courses for Economics",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 4,
+     "max": 8
+    },
+    "courses": [
+     {
+      "code": "ECO101",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ECO102",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "All courses for Marketing",
+    "rule": "choose_units",
+    "minimum": 10,
+    "option_group": null,
+    "stated": {
+     "min": 10,
+     "max": 10
+    },
+    "courses": [
+     {
+      "code": "BSN135",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BSN136",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BSN137",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ECONC2001",
+    "why": "not in the text; catalog lists ECO102 Principles of Economics (MICRO) instead"
+   },
+   {
+    "code": "ECONC2002",
+    "why": "not in the text; catalog lists ECO101 Principles of Economics (MACRO) instead"
+   }
+  ],
+  "notes": [
+   "Lake Tahoe Community College uses quarter units; the page prints 'Units: 90 units' and 'ELECTIVE UNITS to bring the total to 90', recorded as degree_total 90 with electives_fill_degree true. Major total printed as 39.",
+   "The page also prints an intermediate group 'All courses (Total 29)' combining the Business block (25) and the Economics block (4-8); not recorded as a separate block.",
+   "Marketing block is headed 'All courses for Marketing' but says 'Complete the following number of credits: 10' over three 4-unit courses (BSN135, BSN136, BSN137); recorded as choose_units 10. Since each course is 4 units, 10 units effectively requires all three courses (12 units); reviewer should check.",
+   "Course codes are recorded as printed without a space (e.g., BSN100); they correspond to closed-list codes such as BSN 100.",
+   "GE section names only 'General Education Patterns' without naming a specific pattern or units; ge_pattern and ge_units left null.",
+   "The outcomes are printed for the Business degree as a whole on this page; recorded as this award's outcomes.",
+   "Source URL slug references 'summer-2022' though catalog year is 2026-2027; reviewer may confirm currency."
+  ]
+ },
+ "extracted_run": "38984692790"
+}

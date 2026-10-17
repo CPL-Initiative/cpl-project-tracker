@@ -1,0 +1,268 @@
+{
+ "college": "College of Marin",
+ "control_number": "40777",
+ "shape": "certificate",
+ "title": "Graphic Design",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://marin.elumenapp.com/catalog/current/program/certificate-of-achievement-in-multimedia-studies-graphic-design-fall-2020-credit-noncredit",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6695,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6695,
+    "output_tokens": 1927,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1927,
+  "output_tokens_details": {
+   "thinking_tokens": 650
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.06532,
+ "ms": 15177,
+ "seconds": 15.7,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 12,
+   "listed": 12,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 3,
+   "codes": [
+    "MMST101",
+    "MMST110",
+    "MMST111"
+   ],
+   "flagged": [
+    "MMST101",
+    "MMST110",
+    "MMST111"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    24.5,
+    24.5
+   ],
+   "stated": [
+    24.5,
+    24.5
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "COA in MMST, Graphic Design",
+   "measure": "units",
+   "total_units": {
+    "min": 24.5,
+    "max": 24.5
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Develop and update traditional and digital graphic design knowledge and skills.",
+    "Demonstrate understanding of graphic design terminology and comprehension during discussions, presentations, and critiques.",
+    "Written communication of concepts with visual examples as necessitated (e.g. photographs, sketches, and/or storyboards) applied in all graphic design assignments.",
+    "Demonstrated research, analysis, and development applied to solve visual and/or technical problems and to communicate ideas in all assignments.",
+    "Submit accurate, finished assignments and projects that are of suitable for inclusion within a personal portfolio of graphic design work."
+   ],
+   "careers": [
+    "entry level occupations in the Multimedia Industry"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "COA in MMST, Graphic Design",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 24.5,
+     "max": 24.5
+    },
+    "courses": [
+     {
+      "code": "MMST101",
+      "units": 0.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MMST110",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MMST111",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MMST112",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "GDES112",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "GDES115",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MMST115",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "GDES120",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MMST120",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "GDES122",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MMST122",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "GDES132",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MMST132",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "GDES200",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MMST200",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The catalog prints each Graphic Design Option course as a cross-listed pair (GDES/MMST nnn, 3 units) with both codes beneath; recorded as one entry with the other code as an alternative, keeping the printed order (MMST112 listed before GDES112; GDES first for the others).",
+   "The description splits the 24.5 units into three core MMST courses (6.5 units: MMST101, MMST110, MMST111) and the Graphic Design Option courses (18 units); the page prints them as one list, recorded as a single 'all' block.",
+   "MMST101, MMST110 and MMST111 are not in the closed list and are marked catalog additions.",
+   "Codes printed without a space (e.g., GDES112) were matched to closed-list codes with a space (GDES 112).",
+   "The source URL references 'fall-2020' while the requested catalog year is 2026-2027; reviewer should confirm the page reflects the current catalog.",
+   "Career entry taken from 'entry level occupations in the Multimedia Industry'; 'Design internships' was not recorded as a career."
+  ]
+ },
+ "extracted_run": "38984695817"
+}

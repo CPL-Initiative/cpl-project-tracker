@@ -1,0 +1,233 @@
+{
+ "college": "Lake Tahoe Community College",
+ "control_number": "31829",
+ "shape": "adt",
+ "title": "Early Childhood Education",
+ "award": "A.S. T Degree",
+ "source_url": "https://ltcc.elumenapp.com/catalog/2026-2027/program/early-childhood-education-as-t-fall-2025",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6871,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6871,
+    "output_tokens": 1630,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1630,
+  "output_tokens_details": {
+   "thinking_tokens": 558
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.06008,
+ "ms": 14435,
+ "seconds": 14.9,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 8,
+   "listed": 8,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    32.0,
+    32.0
+   ],
+   "stated": [
+    90.0,
+    90.0
+   ],
+   "against": "degree",
+   "ge": null,
+   "why": [
+    "the record names the degree total and the Cal-GETC pattern, but no units for it"
+   ],
+   "major": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     32.0,
+     32.0
+    ],
+    "stated": [
+     32.0,
+     32.0
+    ],
+    "against": "program",
+    "why": []
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "A.S. Degree for Transfer",
+   "measure": "units",
+   "total_units": {
+    "min": 32,
+    "max": 32
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": 90,
+    "max": 90
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": true,
+   "outcomes": [
+    "Evaluate the needs, the characteristics, and the multiple influences on development of children birth to age eight as related to high quality care and education of young children.",
+    "Design, implement, and evaluate environments and activities that support positive, developmental play and learning outcomes for all children.",
+    "Apply effective guidance and interaction strategies that support all children's social learning, identity, and self-confidence.",
+    "Develop strategies that promote partnerships between programs, teachers, families, and their communities.",
+    "Demonstrate ethical standards and professional behaviors that deepen understanding, knowledge, and commitment to the early childhood profession."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Early Childhood Education AS-T",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 32,
+     "max": 32
+    },
+    "courses": [
+     {
+      "code": "ECE100",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECE101",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECE102",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECE103",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECE110",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECE124",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECE126",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECE202",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Units are quarter units (LTCC is on the quarter system); the major total is printed as 'Total 32' / 'Complete the following number of credits: 32'.",
+   "degree_total 90 is taken from 'C. ELECTIVE UNITS to bring the total to 90.' in this award's Program Requirements; the generic '60 semester units or 90 quarter units' sentence was not itself used as the total. Reviewer should confirm.",
+   "Electives fill the remainder of the 90-unit degree; no elective units are printed.",
+   "GE pattern named in the description as 'The California General Education Transfer Curriculum - Breadth Requirements'; the requirements list only says 'General Education Patterns' with no units.",
+   "The program learning outcomes list is printed once for the Early Childhood Education program page (which mentions both the A.A. and AS-T); recorded as shared by this award.",
+   "The description mentions 'a variety of professions serving children and their families' but names no specific career, so careers is empty.",
+   "The catalog text begins mid-sentence; the start of the program description is cut off."
+  ]
+ },
+ "extracted_run": "38984692790"
+}

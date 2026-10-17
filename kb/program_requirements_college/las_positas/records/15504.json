@@ -1,0 +1,315 @@
+{
+ "college": "Las Positas College",
+ "control_number": "15504",
+ "shape": "degree",
+ "title": "Cybersecurity and Network Administration",
+ "award": "A.S. Degree",
+ "source_url": "https://laspositas.curriqunet.com/catalog/iq/102/105/132/1596/1599",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7769,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7769,
+    "output_tokens": 1972,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1972,
+  "output_tokens_details": {
+   "thinking_tokens": 442
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.07052,
+ "ms": 15319,
+ "seconds": 15.8,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 17,
+   "listed": 18,
+   "share": 0.944,
+   "missing": [
+    "CIS50"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    40.0,
+    40.0
+   ],
+   "stated": [
+    62.0,
+    62.0
+   ],
+   "against": "degree",
+   "ge": null,
+   "why": [
+    "the record names the degree total and the Las Positas College General Education (LPC-GE) or California General Education Transfer Curriculum (Cal-GETC) pattern, but no units for it"
+   ],
+   "major": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     40.0,
+     40.0
+    ],
+    "stated": [
+     40.0,
+     40.0
+    ],
+    "against": "program",
+    "why": []
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 1,
+   "courses": 0,
+   "count": 1,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 21,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Cybersecurity and Network Administration (AS): Program Requirements",
+   "measure": "units",
+   "total_units": {
+    "min": 40,
+    "max": 40
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Las Positas College General Education (LPC-GE) or California General Education Transfer Curriculum (Cal-GETC)",
+   "degree_total": {
+    "min": 62,
+    "max": 62
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Design, configure, manage, troubleshoot, and secure networks ethically and efficiently, using the latest concepts, technologies, and techniques."
+   ],
+   "careers": [
+    "Network Specialist/Technician/Engineer",
+    "Systems Specialist/Technician/Engineer",
+    "Microsoft Specialist/Technician/Engineer",
+    "Cisco Specialist/Technician/Engineer",
+    "Information Security Specialist",
+    "Cybersecurity Specialist",
+    "IT Specialist Information Security",
+    "IT Security Specialist/Consultant",
+    "Information Technology Specialist information Security",
+    "Incident Analyst/Responder",
+    "IT Auditor",
+    "Cyber Crime Analyst/Investigator",
+    "Cybersecurity Specialist/Technician",
+    "Cyber Risk Analyst",
+    "Cybersecurity Analyst",
+    "Cybersecurity Consultant",
+    "Information Security Consultant",
+    "Penetration & Vulnerability Tester",
+    "Cybersecurity Manager/Administrator",
+    "Cybersecurity Engineer",
+    "Cybersecurity Architect"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Core",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 40,
+     "max": 40
+    },
+    "courses": [
+     {
+      "code": "CIS 43",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CNT 43",
+        "units": 3,
+        "catalog_addition": false
+       },
+       {
+        "code": "CS 43",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS 66",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CNT 52",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "CNT 51",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CNT 55",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CNT 56",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CNT 68",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CNT 69",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CNT 7285",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CNT 7501",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CNT 8001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CNT 8002",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CNT 8003",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CS 41",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CNT 7401",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "CIS 50",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "The page prints 'Additional General Education and Elective Units' as a single combined figure of 22.0 units covering both GE and electives; since it is not a GE-only figure, ge_units and degree_elective_units are left null.",
+   "Degree total 'Total : 62.0' recorded in degree_total; 'Total Units for the Major 40.0' recorded in total_units.",
+   "GE pattern may be either LPC-GE or Cal-GETC per the page.",
+   "The Career Opportunities text refers to the 'Associate of Sciences in Network Security and Administration degree', a different name than the program title; the description text appears truncated at its start.",
+   "Cross-listed courses printed with slashes (CIS 43/CNT 43/CS 43, CIS 66/CNT 52, CS 41/CNT 7401) recorded as one entry with alternatives.",
+   "The page prints one outcome for the program as a whole; recorded for this award."
+  ]
+ },
+ "extracted_run": "38984747530"
+}
