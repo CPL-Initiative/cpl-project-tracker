@@ -1,0 +1,19 @@
+{
+ "_readme": "S409 SkyOcotillo, 2026-10-17. Hartnell's Coursedog catalog page fetched, from its own scripts, a whole-catalog PDF the vendor generated on 2026-08-21 (pdf-reports call; includePrograms true, with requirement sets) on Coursedog's public bucket (run 39077713662). If it is the 2026-2027 catalog and prints each program's course list, the whole-catalog PDF reader can follow it through a procedure catalog step with no new reader. This read prints the pages naming the year and one program. Pages only, no model call, no table write.",
+ "college": "Hartnell College",
+ "questions": {
+  "catalog_pdf": "The PDF's catalog year, and how it prints one program: title, award, the course list as code, title and units, any choose-N block, and the total."
+ },
+ "keywords": [
+  "2026\\s*[-–/]\\s*(20)?27",
+  "Addiction Studies",
+  "Program Requirements",
+  "Total Units"
+ ],
+ "pages": [
+  {
+   "answers": ["catalog_pdf"],
+   "url": "https://coursedog-pdfs-public-prod.s3.us-east-2.amazonaws.com/hartnell_colleague/catalog/6cd77c15-b59c-4c31-a31a-792bcda015b0-hartnell_colleague-catalog-1787336752847.pdf"
+  }
+ ]
+}

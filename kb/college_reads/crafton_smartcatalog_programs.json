@@ -1,0 +1,34 @@
+{
+ "_readme": "S409 SkyOcotillo, 2026-10-17. SmartCatalog's outline at Crafton Hills (run 39077713662): Credit Programs lists one page per subject (Accounting (ACCT), Business Administration (BUSAD) ...) and the host has no sitemap. This read prints the Credit Programs page's links and follows two subject pages, to see whether a subject page lists its programs or prints their course lists itself, and how. Taft's catalog front page, on the same vendor, is read beside it for its outline. Pages only, no model call, no table write.",
+ "college": "Crafton Hills College",
+ "questions": {
+  "program_list": "Each subject page's address pattern, and whether it lists programs (title, award, address) or prints them.",
+  "program_page": "What a program prints: the course list as code, title and units, any choose-N block, and the total.",
+  "taft_outline": "Taft's catalog sections, and where its programs are listed."
+ },
+ "keywords": [
+  "[Cc]ertificate",
+  "A\\.S\\.",
+  "A\\.A\\.",
+  "[Aa]ssociate",
+  "[Dd]egree",
+  "[Uu]nits?",
+  "[Rr]equired",
+  "[Ss]elect",
+  "[Tt]otal"
+ ],
+ "pages": [
+  {
+   "answers": ["program_list", "program_page"],
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs",
+   "links": "credit-programs/",
+   "follow": "accounting|business-administration"
+  },
+  {
+   "answers": ["taft_outline"],
+   "url": "https://taftcollege.smartcatalogiq.com/2026-2027/2026-2027-catalog",
+   "links": "program|degree|certificate|major|area",
+   "follow": "programs|degrees|certificates|majors|areas-of-study"
+  }
+ ]
+}

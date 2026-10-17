@@ -1,0 +1,22 @@
+{
+ "_readme": "S409 SkyOcotillo, 2026-10-17. Merced's catalog is Coursedog at catalog.mccd.edu. Hartnell's Coursedog page fetched its program list and a whole-catalog PDF from the vendor's API as it loaded (run 39077713662); this read loads Merced's programs view with \"network\": true to find the same two calls. Pages only, no model call, no table write.",
+ "college": "Merced College",
+ "questions": {
+  "catalog_source": "Which addresses the catalog's scripts fetch the program list and any whole-catalog PDF from, and the catalog id and year they name."
+ },
+ "keywords": [
+  "[Cc]ertificate",
+  "[Aa]ssociate",
+  "[Dd]egree",
+  "pdf",
+  "2026\\s*[-–/]\\s*(20)?27"
+ ],
+ "pages": [
+  {
+   "answers": ["catalog_source"],
+   "url": "https://catalog.mccd.edu/programs",
+   "network": true,
+   "links": "programs/|pdf"
+  }
+ ]
+}
