@@ -1582,6 +1582,11 @@ check(C.is_pdf_catalog({"catalog_platform": "pdf"}) and C.is_pdf_catalog({"catal
       "a PDF catalog is known by its platform, its format or its address")
 
 
+toc = ["Contents\nAccounting, Associate in Science ........ 4\nACCT 101 ACCT 102 ACCT 210 BUS 120"] + PDF_PAGES[1:]
+got = C.pdf_program_pages(toc, {"title": "Accounting", "award": "A.S. Degree"}, PDF_COURSES)
+check(got and got["pages"][0] == 4, "a contents line with a dot leader is no heading: %r" % (got and got["pages"]))
+
+
 class StepReader:
     pass
 

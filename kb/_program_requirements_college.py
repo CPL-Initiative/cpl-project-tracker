@@ -1567,6 +1567,7 @@ def ac_urls(reader, start: str, cache: dict, report: dict) -> list[str]:
 PDF_HEADING_CHARS = 120   # a line this long or shorter can be a program's heading
 PDF_HEADING_BONUS = 5     # codes a heading naming title and award is worth
 PDF_RUN_PAGES = 3         # pages after the start a program's list may continue onto
+PDF_LEADER = re.compile(r"\.{4,}|(?:\. ){4,}")   # a table of contents' dot leader
 
 
 def pdf_heading(text: str, program: dict) -> tuple[float, bool, int]:
@@ -1577,7 +1578,8 @@ def pdf_heading(text: str, program: dict) -> tuple[float, bool, int]:
     best, pos = (0.0, False, -1), 0
     for line in (text or "").split("\n"):
         low = line.strip().lower()
-        if low and len(low) <= PDF_HEADING_CHARS and tokens:
+        # A contents line ("Architectural Design ....... 2") names a program it does not hold.
+        if low and len(low) <= PDF_HEADING_CHARS and tokens and not PDF_LEADER.search(low):
             share = sum(1 for w in tokens if re.search(r"\b" + re.escape(w) + r"\b", low)) / len(tokens)
             award = any(re.search(a, low) for a in pats)
             if (share, award) > best[:2]:
@@ -1673,6 +1675,10 @@ def pdf_records(reader, college: str, programs: list[dict], reg: dict, cache: di
                         "label": None, "got": {"title": got["heading"], "h1": got["heading"]}}
                 rec = source_record(college, prog, reg, best, "pdf_pages")
                 rec["source"].update(pages=got["pages"], extractor=extractor, heading_named=got["named"])
+                # A capture-only read files the preview alone: each pick's opening shows whether it is the program's page.
+                report["pdf"].setdefault("picks", []).append(
+                    {"control_number": prog["control_number"], "pages": got["pages"], "named": got["named"],
+                     "coverage": round(got["coverage"], 3), "opens": re.sub(r"\s+", " ", got["text"][:220])})
             else:
                 rec = source_record(college, prog, reg, None, "not_found")
                 if got:
