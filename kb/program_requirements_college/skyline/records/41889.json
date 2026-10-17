@@ -1,0 +1,20 @@
+{
+ "college": "Skyline College",
+ "control_number": "41889",
+ "shape": "adt",
+ "title": "Business Administration 2.0",
+ "award": "A.S. T Degree",
+ "source_url": "https://catalog.skylinecollege.edu/current/programs/business-administration-for-transfer-degree-2-0-as-t.php",
+ "record_shape": 6,
+ "model": null,
+ "stop_reason": null,
+ "usage": null,
+ "cost_usd": null,
+ "ms": null,
+ "seconds": 2.1,
+ "parts": null,
+ "error": "HTTP 401: {\"error\":\"unauthorized\"}",
+ "score": null,
+ "record": null,
+ "extracted_run": "39032119511"
+}

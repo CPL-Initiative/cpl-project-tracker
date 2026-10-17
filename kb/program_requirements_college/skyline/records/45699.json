@@ -1,0 +1,20 @@
+{
+ "college": "Skyline College",
+ "control_number": "45699",
+ "shape": "degree",
+ "title": "Mechanical Engineering",
+ "award": "A.S. Degree",
+ "source_url": "https://catalog.skylinecollege.edu/current/_compare.new.programs.php",
+ "record_shape": 6,
+ "model": null,
+ "stop_reason": null,
+ "usage": null,
+ "cost_usd": null,
+ "ms": null,
+ "seconds": 1.5,
+ "parts": null,
+ "error": "HTTP 401: {\"error\":\"unauthorized\"}",
+ "score": null,
+ "record": null,
+ "extracted_run": "39032119511"
+}

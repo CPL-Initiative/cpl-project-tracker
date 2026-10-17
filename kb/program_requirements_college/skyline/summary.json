@@ -1,0 +1,107 @@
+{
+ "college": "Skyline College",
+ "programs": 144,
+ "with_closed_list": 58,
+ "found": 53,
+ "extracted": 53,
+ "errors": 33,
+ "passed_machine_checks": 15,
+ "failed": {
+  "coverage": 4,
+  "invented": 0,
+  "arithmetic": 5,
+  "repeated": 0,
+  "outcomes": 0
+ },
+ "cost_usd": 1.29,
+ "cost_per_program": 0.0243,
+ "not_found": [
+  {
+   "control_number": "32962",
+   "title": "Residential Energy Efficiency",
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+   "near_miss": {
+    "url": "https://catalog.skylinecollege.edu/current/programs/residential-energy-efficiency-ca.php",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 10,
+    "why": "coarse net: the page's code tokens name 0 of 10 listed courses",
+    "error": null,
+    "chars": {
+     "body": 1277,
+     "content": 9199,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "33044",
+   "title": "Entrepreneurship and Small Business Management in Energy Systems Technology",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://catalog.skylinecollege.edu/current/programs/entrepreneurship-and-small-business-management-in-energy-systems-technology-as.php",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 10,
+    "why": "coarse net: the page's code tokens name 0 of 10 listed courses",
+    "error": null,
+    "chars": {
+     "body": 1360,
+     "content": 9333,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "36255",
+   "title": "Anesthesia Technology",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://catalog.skylinecollege.edu/current/programs/automotive-technology-as.php",
+    "label": {
+     "award": 1,
+     "title": 0.5
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 7,
+    "why": "coarse net: the page's code tokens name 0 of 7 listed courses",
+    "error": null,
+    "chars": {
+     "body": 8982,
+     "content": 27911,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "46509",
+   "title": "Human Resources Management",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  }
+ ],
+ "run": "39032119511"
+}
