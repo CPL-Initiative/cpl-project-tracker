@@ -4,12 +4,12 @@
  "shape": "adt",
  "title": "Social Justice Studies: General",
  "award": "A.A- T Degree",
- "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=375",
+ "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=391",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 11939,
+  "input_tokens": 10054,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 11939,
-    "output_tokens": 4098,
+    "input_tokens": 10054,
+    "output_tokens": 3617,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,97 +30,99 @@
     "model": null
    }
   ],
-  "output_tokens": 4098,
+  "output_tokens": 3617,
   "output_tokens_details": {
-   "thinking_tokens": 1227
+   "thinking_tokens": 1100
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.12972,
- "ms": 30839,
- "seconds": 31.4,
+ "cost_usd": 0.11256,
+ "ms": 26798,
+ "seconds": 27.4,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 18,
+   "placed": 6,
    "listed": 38,
-   "share": 0.474,
+   "share": 0.158,
    "missing": [
-    "AFAM60",
+    "ANTH20",
     "ANTH25",
     "ART108",
     "ASAM35",
+    "ECON20",
     "ENGL57",
     "ENGL58",
-    "ETHN37",
     "HIST12A",
     "HIST12B",
+    "HIST45",
     "HLTH221",
     "HUM25",
+    "IDST17",
     "IDST31",
-    "IDST37",
+    "IDST36",
     "LALS/LGBT9",
     "LALS10",
+    "LGBT10",
+    "LGBT11",
+    "LGBT15",
+    "LGBT18",
+    "LGBT20",
+    "LGBT21",
+    "LGBT24",
+    "LGBT50",
+    "LGBT55",
+    "LGBT75",
     "POLS19",
     "PSYC25",
-    "SOC25",
-    "WGST25",
-    "WGST35"
+    "WGST10",
+    "WGST35",
+    "WGST54"
    ],
-   "unexplained": [
-    "LALS/LGBT9"
-   ],
+   "unexplained": [],
    "none_placed": false,
-   "pass": false
+   "pass": true
   },
   "invented": {
-   "count": 14,
+   "count": 9,
    "codes": [
-    "CDEV76",
-    "HLTH67",
-    "IDST80A",
-    "IDST80C",
-    "IDST80D",
-    "IDST80E",
-    "IDST80F",
-    "IDST80G",
-    "LALS9",
-    "LGBT12",
-    "LGBT70",
-    "LGBT9",
-    "PSYC24",
-    "WGST55"
+    "ASAM22",
+    "CINE19",
+    "LALS15",
+    "LBCS114",
+    "LBCS70A",
+    "LBCS70B",
+    "LBCS88",
+    "LBCS96C",
+    "SOC7"
    ],
    "flagged": [
-    "CDEV76",
-    "HLTH67",
-    "IDST80A",
-    "IDST80C",
-    "IDST80D",
-    "IDST80E",
-    "IDST80F",
-    "IDST80G",
-    "LGBT12",
-    "LGBT70",
-    "PSYC24",
-    "WGST55"
+    "ASAM22",
+    "CINE19",
+    "LALS15",
+    "LBCS114",
+    "LBCS70A",
+    "LBCS70B",
+    "LBCS88",
+    "LBCS96C",
+    "SOC7"
    ],
-   "pass": false
+   "pass": true
   },
   "arithmetic": {
    "pass": true,
    "status": "equal",
    "computed": [
-    21.0,
-    21.0
+    18.0,
+    18.0
    ],
    "stated": [
-    21.0,
-    21.0
+    18.0,
+    18.0
    ],
    "against": "program",
    "why": []
@@ -130,9 +132,9 @@
    "pass": true
   },
   "outcomes": {
-   "program": 2,
+   "program": 4,
    "courses": 0,
-   "count": 2,
+   "count": 4,
    "not_verbatim": [],
    "why": [],
    "heading_printed": true,
@@ -140,7 +142,7 @@
    "pass": true
   },
   "careers": {
-   "count": 0,
+   "count": 8,
    "not_verbatim": [],
    "pass": true
   },
@@ -150,22 +152,22 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "Not printed in the text (section begins before page 375; ends with 'Total: 21.0' before 'Liberal Arts and Sciences Emphasis in Social and Behavioral Sciences – AS Degree')",
+   "section_heading": "Social Justice Studies: General, Labor and Community Studies – AA-T Degree",
    "measure": "units",
    "total_units": {
-    "min": 21,
-    "max": 21
+    "min": 18,
+    "max": 18
    },
    "open_elective_units": null,
    "degree_elective_units": {
     "min": null,
     "max": null
    },
-   "ge_pattern": null,
+   "ge_pattern": "Cal-GETC",
    "degree_total": {
     "min": null,
     "max": null
@@ -176,20 +178,90 @@
    },
    "electives_fill_degree": false,
    "outcomes": [
-    "Examine gender identities, gender expressions, and sexual orientation across cultures historically and/or in a contemporary context.",
-    "Identify the role of art and creativity in various global cultural contexts in relation to gender and sexuality."
+    "Design and implement a strategic organizing campaign for use by a labor or community organizing setting.",
+    "Assess the effectiveness of historical working-class movements for social and/or racial justice.",
+    "Evaluate the value of contemporary public policy proposals as they impact working-class people and communities of color.",
+    "Employ professional standards required for a career in labor or community organizing."
    ],
-   "careers": []
+   "careers": [
+    "advocacy",
+    "policy",
+    "labor relations",
+    "community organizing",
+    "labor rights advocacy",
+    "community development",
+    "social policy",
+    "public service"
+   ]
   },
   "blocks": [
    {
-    "name": "Required Courses",
-    "rule": "all",
-    "minimum": null,
+    "name": "Select one course from the following",
+    "rule": "choose_courses",
+    "minimum": 1,
     "option_group": null,
     "stated": {
-     "min": 6,
-     "max": 6
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "LBCS 70A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "LBCS 70B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Select one course from the following",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "ETHN 37",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "IDST 37",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC 7",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Select one course from the following",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
     },
     "courses": [
      {
@@ -200,7 +272,14 @@
       "catalog_addition": false
      },
      {
-      "code": "LGBT 15",
+      "code": "SOC 25",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WGST 25",
       "units": 3,
       "units_max": null,
       "alternatives": [],
@@ -209,255 +288,73 @@
     ]
    },
    {
-    "name": "Choose one course from the following",
+    "name": "Select three courses from at least two of the following areas",
     "rule": "choose_courses",
-    "minimum": 1,
-    "option_group": null,
-    "stated": {
-     "min": 3,
-     "max": 3
-    },
-    "courses": [
-     {
-      "code": "LGBT 20",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "LGBT 55",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     }
-    ]
-   },
-   {
-    "name": "Choose one course from the following",
-    "rule": "choose_courses",
-    "minimum": 1,
-    "option_group": null,
-    "stated": {
-     "min": 3,
-     "max": 3
-    },
-    "courses": [
-     {
-      "code": "LGBT 11",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "LGBT 12",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "LGBT 18",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "LGBT 75",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     }
-    ]
-   },
-   {
-    "name": "Choose two courses from the following",
-    "rule": "choose_courses",
-    "minimum": 2,
-    "option_group": null,
-    "stated": {
-     "min": 6,
-     "max": 6
-    },
-    "courses": [
-     {
-      "code": "LALS 9",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [
-       {
-        "code": "LGBT 9",
-        "units": 3,
-        "catalog_addition": false
-       }
-      ],
-      "catalog_addition": false
-     },
-     {
-      "code": "LGBT 10",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "LGBT 50",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "LGBT 70",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "ANTH 20",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "ECON 20",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "HIST 45",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "PSYC 24",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     }
-    ]
-   },
-   {
-    "name": "Choose three units from the following",
-    "rule": "choose_units",
     "minimum": 3,
     "option_group": null,
     "stated": {
-     "min": 3,
-     "max": 3
+     "min": 9,
+     "max": 9
     },
     "courses": [
      {
-      "code": "LGBT 21",
+      "code": "LBCS 70A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "LBCS 70B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "LBCS 88",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "LBCS 114",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "AFAM 60",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "LGBT 24",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "CDEV 76",
+      "code": "CINE 19",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
-      "code": "HLTH 67",
+      "code": "ASAM 22",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
-      "code": "IDST 17",
+      "code": "LALS 15",
       "units": 3,
       "units_max": null,
       "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "IDST 36",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "IDST 80A",
-      "units": 0.5,
-      "units_max": null,
-      "alternatives": [],
       "catalog_addition": true
      },
      {
-      "code": "IDST 80C",
-      "units": 0.5,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "IDST 80D",
-      "units": 0.5,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "IDST 80E",
-      "units": 0.5,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "IDST 80F",
-      "units": 0.5,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "IDST 80G",
-      "units": 0.5,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "WGST 10",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "WGST 54",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "WGST 55",
+      "code": "LBCS 96C",
       "units": 3,
       "units_max": null,
       "alternatives": [],
@@ -469,48 +366,24 @@
   "course_outcomes": [],
   "missing_explained": [
    {
-    "code": "AFAM 60",
-    "why": "named only in the Liberal Arts and Sciences Social and Behavioral Sciences AS section"
+    "code": "ANTH 20",
+    "why": "named only in the LGBTQ Studies AA-T section"
    },
    {
     "code": "ANTH 25",
-    "why": "named only in the Liberal Arts and Sciences Social and Behavioral Sciences AS section"
-   },
-   {
-    "code": "ASAM 35",
-    "why": "named only in the Liberal Arts and Sciences Social and Behavioral Sciences AS section"
-   },
-   {
-    "code": "ETHN 37",
-    "why": "named only in the Liberal Arts and Sciences Social and Behavioral Sciences AS section"
-   },
-   {
-    "code": "HLTH 221",
-    "why": "named only in the Liberal Arts and Sciences Social and Behavioral Sciences AS section"
-   },
-   {
-    "code": "LALS 10",
-    "why": "named only in the Liberal Arts and Sciences Social and Behavioral Sciences AS section"
-   },
-   {
-    "code": "PSYC 25",
-    "why": "named only in the Liberal Arts and Sciences Social and Behavioral Sciences AS section"
-   },
-   {
-    "code": "SOC 25",
-    "why": "named only in the Liberal Arts and Sciences Social and Behavioral Sciences AS section"
-   },
-   {
-    "code": "WGST 25",
-    "why": "named only in the Liberal Arts and Sciences Social and Behavioral Sciences AS section"
-   },
-   {
-    "code": "WGST 35",
-    "why": "named only in the Liberal Arts and Sciences Social and Behavioral Sciences AS section"
+    "why": "named only in the LGBTQ Studies AA-T section"
    },
    {
     "code": "ART 108",
     "why": "not in the text"
+   },
+   {
+    "code": "ASAM 35",
+    "why": "not in the text"
+   },
+   {
+    "code": "ECON 20",
+    "why": "named only in the LGBTQ Studies AA-T section"
    },
    {
     "code": "ENGL 57",
@@ -526,6 +399,14 @@
    },
    {
     "code": "HIST 12B",
+    "why": "named only in the LGBTQ Studies AA-T section"
+   },
+   {
+    "code": "HIST 45",
+    "why": "named only in the LGBTQ Studies AA-T section"
+   },
+   {
+    "code": "HLTH 221",
     "why": "not in the text"
    },
    {
@@ -533,26 +414,92 @@
     "why": "not in the text"
    },
    {
+    "code": "IDST 17",
+    "why": "named only in the LGBTQ Studies AA-T section"
+   },
+   {
     "code": "IDST 31",
     "why": "not in the text"
    },
    {
-    "code": "IDST 37",
+    "code": "IDST 36",
     "why": "not in the text"
    },
    {
+    "code": "LALS 10",
+    "why": "not in the text"
+   },
+   {
+    "code": "LALS/LGBT 9",
+    "why": "LGBT 9 named only in the LGBTQ Studies AA-T section"
+   },
+   {
+    "code": "LGBT 10",
+    "why": "named only in the LGBTQ Studies AA-T section"
+   },
+   {
+    "code": "LGBT 11",
+    "why": "named only in the LGBTQ Studies AA-T section"
+   },
+   {
+    "code": "LGBT 15",
+    "why": "named only in the LGBTQ Studies AA-T section"
+   },
+   {
+    "code": "LGBT 18",
+    "why": "named only in the LGBTQ Studies AA-T section"
+   },
+   {
+    "code": "LGBT 21",
+    "why": "not in the text"
+   },
+   {
+    "code": "LGBT 24",
+    "why": "not in the text"
+   },
+   {
+    "code": "LGBT 50",
+    "why": "named only in the LGBTQ Studies AA-T section"
+   },
+   {
+    "code": "LGBT 55",
+    "why": "named only in the LGBTQ Studies AA-T section"
+   },
+   {
+    "code": "LGBT 75",
+    "why": "named only in the LGBTQ Studies AA-T section"
+   },
+   {
+    "code": "LGBT20",
+    "why": "named only in the LGBTQ Studies AA-T section"
+   },
+   {
     "code": "POLS 19",
+    "why": "named only in the LGBTQ Studies AA-T section"
+   },
+   {
+    "code": "PSYC 25",
+    "why": "not in the text"
+   },
+   {
+    "code": "WGST 10",
+    "why": "not in the text"
+   },
+   {
+    "code": "WGST 35",
+    "why": "not in the text"
+   },
+   {
+    "code": "WGST 54",
     "why": "not in the text"
    }
   ],
   "notes": [
-   "The section's heading, program summary and first two learning outcomes fall on a page before 375 that is not in the text; only outcomes 3 and 4 are visible, so outcomes are incomplete.",
-   "The section read (LGBT 5 and LGBT 15 core, LGBT-focused choices, total 21.0 units, local AA/AS completion language) looks like an LGBT Studies program rather than a Social Justice Studies: General AA-T; a reviewer should confirm it is the correct section for this award, since many closed-list women's and gender studies courses are absent.",
-   "Closed list stores 'LGBT20' without a space; matched to catalog 'LGBT 20'.",
-   "Closed list 'LALS/LGBT 9' matched to catalog 'LALS 9 OR LGBT 9', recorded as one entry with an alternative.",
-   "LGBT 18 printed as 'Transgender Lives, Culture and Art' (closed list title has a comma).",
-   "Total 21.0 is the major total; the page says the degree has other components including general education but prints no degree total."
+   "The catalog's section heading is 'Social Justice Studies: General, Labor and Community Studies – AA-T Degree', which matches the program title, but the closed list looks like a women's/gender/LGBTQ-focused version of the degree; most of its courses appear only in the LGBTQ Studies section or not at all, and most courses in this section (LBCS, SOC 7, CINE 19, ASAM 22, LALS 15) are catalog additions. Reviewer should confirm the right section/program mapping.",
+   "In the area block, LBCS 70A or 70B may be selected only if not already used in the first required block; the three courses must come from at least two of the four areas (Area 1: LBCS 70A, 70B, 88, 114; Area 2: AFAM 60, CINE 19; Area 3: ASAM 22, LALS 15; Area 4: LBCS 96C).",
+   "ETHN 37 and IDST 37 share the same title and may be cross-listed; recorded as separate choices as printed.",
+   "The 60-unit sentence is the generic ADT requirement, not recorded as a degree total; no GE units are printed."
   ]
  },
- "extracted_run": "39047128472"
+ "extracted_run": "39056434592"
 }

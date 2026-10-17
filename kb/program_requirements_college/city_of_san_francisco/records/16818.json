@@ -4,12 +4,12 @@
  "shape": "degree",
  "title": "Paramedic",
  "award": "A.S. Degree",
- "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=276",
+ "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=274",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 8061,
+  "input_tokens": 10295,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 8061,
-    "output_tokens": 2187,
+    "input_tokens": 10295,
+    "output_tokens": 2035,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,79 +30,70 @@
     "model": null
    }
   ],
-  "output_tokens": 2187,
+  "output_tokens": 2035,
   "output_tokens_details": {
-   "thinking_tokens": 974
+   "thinking_tokens": 615
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.07598,
- "ms": 20648,
- "seconds": 21.0,
+ "cost_usd": 0.08188,
+ "ms": 16341,
+ "seconds": 16.6,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 4,
+   "placed": 14,
    "listed": 14,
-   "share": 0.286,
-   "missing": [
-    "EMTP121",
-    "EMTP122",
-    "EMTP123",
-    "EMTP124",
-    "EMTP125",
-    "EMTP126",
-    "EMTP127",
-    "EMTP128",
-    "EMTP129",
-    "EMTP130A"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
    "pass": true
   },
   "invented": {
-   "count": 0,
-   "codes": [],
-   "flagged": [],
+   "count": 1,
+   "codes": [
+    "EMTP130B"
+   ],
+   "flagged": [
+    "EMTP130B"
+   ],
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    3.0,
-    3.0
+    45.0,
+    45.0
    ],
    "stated": [
     45.0,
     45.0
    ],
    "against": "program",
-   "why": [
-    "the blocks sum to 3.0-3.0; the catalog states 45.0-45.0"
-   ]
+   "why": []
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 4,
    "courses": 0,
-   "count": 0,
+   "count": 4,
    "not_verbatim": [],
    "why": [],
    "heading_printed": true,
-   "heading_without_outcomes": true,
+   "heading_without_outcomes": false,
    "pass": true
   },
   "careers": {
-   "count": 0,
+   "count": 1,
    "not_verbatim": [],
    "pass": true
   },
@@ -112,11 +103,11 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "Paramedic – A.S. Degree (heading and start of section fall before page 276; not in the provided text)",
+   "section_heading": "Paramedic – AS Degree",
    "measure": "units",
    "total_units": {
     "min": 45,
@@ -137,18 +128,114 @@
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [],
-   "careers": []
+   "outcomes": [
+    "Apply advanced-level emergency medical knowledge and standards within the paramedic scope of practice to the care of patients in a diverse community.",
+    "Apply safe advanced-level technical skills in emergency medical situations within the paramedic scope of practice.",
+    "Behave professionally, skillfully, and in a manner consistent with employer and community expectations of an Emergency Medical Services (EMS) provider.",
+    "Support patient advocacy and interprofessional collaboration in prehospital care to address health disparities in a diverse community."
+   ],
+   "careers": [
+    "licensed paramedic"
+   ]
   },
   "blocks": [
    {
-    "name": "(block heading cut off at page break; courses visible at top of page 276)",
-    "rule": "choose_units",
-    "minimum": 3,
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
     "option_group": null,
     "stated": {
-     "min": null,
-     "max": null
+     "min": 42,
+     "max": 42
+    },
+    "courses": [
+     {
+      "code": "EMTP 121",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "EMTP 122",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "EMTP 123",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "EMTP 124",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "EMTP 125",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "EMTP 126",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "EMTP 127",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "EMTP 128",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "EMTP 129",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "EMTP 130A",
+      "units": 7,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "EMTP 130B",
+      "units": 9,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Choose one course from the following",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
     },
     "courses": [
      {
@@ -183,55 +270,15 @@
    }
   ],
   "course_outcomes": [],
-  "missing_explained": [
-   {
-    "code": "EMTP 121",
-    "why": "A.S. core list falls before page 276, not in text; named only in the Certificate of Achievement section"
-   },
-   {
-    "code": "EMTP 122",
-    "why": "A.S. core list not in text; named only in the Certificate of Achievement section"
-   },
-   {
-    "code": "EMTP 124",
-    "why": "A.S. core list not in text; named only in the Certificate of Achievement section"
-   },
-   {
-    "code": "EMTP 126",
-    "why": "A.S. core list not in text; named only in the Certificate of Achievement section"
-   },
-   {
-    "code": "EMTP 129",
-    "why": "A.S. core list not in text; named only in the Certificate of Achievement section"
-   },
-   {
-    "code": "EMTP 130A",
-    "why": "A.S. core list not in text; named only in the Certificate of Achievement section"
-   },
-   {
-    "code": "EMTP123",
-    "why": "A.S. core list not in text; named only in the Certificate of Achievement section"
-   },
-   {
-    "code": "EMTP125",
-    "why": "A.S. core list not in text; named only in the Certificate of Achievement section"
-   },
-   {
-    "code": "EMTP127",
-    "why": "A.S. core list not in text; named only in the Certificate of Achievement section"
-   },
-   {
-    "code": "EMTP128",
-    "why": "A.S. core list not in text; named only in the Certificate of Achievement section"
-   }
-  ],
+  "missing_explained": [],
   "notes": [
-   "The provided text begins mid-way through the A.S. Degree section: its heading, program summary, outcomes and required EMTP course list are on the preceding page (275) and were not provided. Only the last four course rows and 'Total: 45.0' are visible.",
-   "The heading of the block holding HLTH 30, HLTH 54, HLTH 221 and SOC 1 is cut off. It is recorded as choose_units with minimum 3 because the A.S. total (45.0) is 3 units above the certificate's 42.0-unit EMTP core; this rule and minimum are inferred, not printed, and should be checked against page 275.",
-   "The Certificate of Achievement section (outcomes, 42.0-unit EMTP list including EMTP 130B, not in the closed list) belongs to a different award and was not recorded. Its learning outcomes and the phrase 'entry-level paramedics' were not attributed to the A.S. degree.",
-   "Unit values in the certificate section differ from the closed list (e.g., EMTP 124 printed as 1.0 vs 2 stored); not relevant to the visible A.S. rows but worth checking.",
-   "No general education pattern, degree total or careers are visible for the A.S. degree in the provided text."
+   "Closed list stores EMTP123, EMTP125, EMTP127, EMTP128 without a space; matched to the catalog's EMTP 123, 125, 127, 128 and treated as closed-list courses.",
+   "EMTP 124 is printed as 'Trauma Certification' 1.0 unit; the closed list stores 'Paramedic Theory - PHTLS' 2 units. EMTP 122 is printed as 'Pharmacology in EMS' versus closed-list title 'Paramed Theory-Drugs,IV,Airway'.",
+   "EMTP 130B Paramedic Field Internship (9.0) is not in the closed list; recorded as catalog addition.",
+   "The page says the degree has general education requirements but names no GE pattern and prints no degree total.",
+   "Careers: the text names employers (fire department, private ambulance service, third service, hospital) rather than job titles; only 'licensed paramedic' recorded as an occupation.",
+   "The Certificate of Achievement section that follows prints the same EMTP courses (total 42.0) without the HLTH/SOC choice and with only three outcomes; not used for this record."
   ]
  },
- "extracted_run": "39047128472"
+ "extracted_run": "39056434592"
 }

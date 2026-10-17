@@ -4,12 +4,12 @@
  "shape": "adt",
  "title": "Film, Television, and Electronic Media",
  "award": "A.S. T Degree",
- "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=99",
+ "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=98",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 7203,
+  "input_tokens": 8415,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 7203,
-    "output_tokens": 2553,
+    "input_tokens": 8415,
+    "output_tokens": 2914,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 2553,
+  "output_tokens": 2914,
   "output_tokens_details": {
-   "thinking_tokens": 760
+   "thinking_tokens": 973
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.07987,
- "ms": 19411,
- "seconds": 19.8,
+ "cost_usd": 0.09194,
+ "ms": 21735,
+ "seconds": 22.0,
  "parts": null,
  "error": null,
  "score": {
@@ -83,12 +83,12 @@
    "pass": true
   },
   "outcomes": {
-   "program": 1,
+   "program": 5,
    "courses": 0,
-   "count": 1,
+   "count": 5,
    "not_verbatim": [],
    "why": [],
-   "heading_printed": false,
+   "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
   },
@@ -107,7 +107,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "Program Requirements and Completion Time",
+   "section_heading": "Film, Television & Electronic Media – AS-T Degree",
    "measure": "units",
    "total_units": {
     "min": 18,
@@ -129,6 +129,10 @@
    },
    "electives_fill_degree": false,
    "outcomes": [
+    "Describe and analyze the history, issues and impact of film, television and electronic media in a local and global context.",
+    "Demonstrate media literacy as a key part of the development of critical thinking skills.",
+    "Apply introductory analytical skills to the design and creation of content for film, television, and electronic media with a focus on writing, storytelling, teamwork, and leadership in preparation for further study at the university level.",
+    "Demonstrate film, television and electronic media production and performance craft skills suitable for further development at the university level.",
     "Demonstrate standards of professional conduct in a media context."
    ],
    "careers": []
@@ -373,13 +377,12 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The program title heading and outcomes 1-4 appear to be on the previous catalog page (page 98), which is not in the text; only outcome 5 is printed here. The section heading recorded is the subheading printed on this page.",
-   "The text states the AS-T requires 60 semester units including Cal-GETC; this reads as the general degree requirement sentence, so degree_total is left null. No Cal-GETC unit figure is printed.",
-   "Area 1 and Area 2 electives must be courses not used above; BCST 140, BCST 141 and CINE 24 appear in both the third choice block and Area 1.",
-   "BCST 120 Audio Production is not in the closed list (catalog addition).",
-   "The page layout splits the Area 1 unit column after the Area 2 heading; units were matched to Area 1 courses in order (CINE 24 = 4.0).",
-   "Total printed for the major: 18.0-20.0."
+   "The course table at the top of page 98 (Total 18.0-19.0, with CINE 18/21, CINE 20A-C and film studies electives) belongs to the preceding program section, not this AS-T; it was ignored.",
+   "The 'Area 1 Elective' and 'Area 2 Elective' blocks require courses 'not used above'; BCST 140, BCST 141 and CINE 24 appear both in the third choose-one block and in Area 1.",
+   "The page states students must complete 60 semester units including Cal-GETC and the major; recorded as the standard degree requirement rather than a printed degree total, so degree_total is null. Reviewer may check.",
+   "No Cal-GETC unit figure is printed, so ge_units is null.",
+   "The text names transfer majors (broadcast and digital media, film, TV) but no careers, so careers is empty."
   ]
  },
- "extracted_run": "39047128472"
+ "extracted_run": "39056434592"
 }

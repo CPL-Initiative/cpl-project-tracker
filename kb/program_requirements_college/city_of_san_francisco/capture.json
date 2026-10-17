@@ -5,7 +5,7 @@
  "catalog_year": "2026-2027",
  "programs": 417,
  "with_closed_list": 371,
- "started": "2026-10-17T17:56:18Z",
+ "started": "2026-10-17T18:04:39Z",
  "pdf": {
   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf",
   "access": "hand_filed",
@@ -4287,7 +4287,7 @@
   "unproven": []
  },
  "loads": 0,
- "seconds": 177.8,
+ "seconds": 318.4,
  "found": 349,
  "by_method": {
   "no_closed_list": 46,
@@ -4798,5 +4798,5 @@
   "programs": 0,
   "list": []
  },
- "run": "39055842443"
+ "run": "39056434592"
 }

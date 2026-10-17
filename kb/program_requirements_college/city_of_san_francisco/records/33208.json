@@ -4,12 +4,12 @@
  "shape": "adt",
  "title": "Spanish",
  "award": "A.A- T Degree",
- "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=184",
+ "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=183",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 10410,
+  "input_tokens": 10468,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 10410,
-    "output_tokens": 4732,
+    "input_tokens": 10468,
+    "output_tokens": 4454,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 4732,
+  "output_tokens": 4454,
   "output_tokens_details": {
-   "thinking_tokens": 1836
+   "thinking_tokens": 1752
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.13628,
- "ms": 37550,
- "seconds": 38.1,
+ "cost_usd": 0.13095,
+ "ms": 35853,
+ "seconds": 36.1,
  "parts": null,
  "error": null,
  "score": {
@@ -71,7 +71,7 @@
    "status": "unequal",
    "computed": [
     3.0,
-    6.0
+    21.0
    ],
    "stated": [
     21.0,
@@ -79,7 +79,7 @@
    ],
    "against": "program",
    "why": [
-    "the blocks sum to 3.0-6.0; the catalog states 21.0-27.0"
+    "the blocks sum to 3.0-21.0; the catalog states 21.0-27.0"
    ]
   },
   "repeated": {
@@ -87,13 +87,13 @@
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 3,
    "courses": 0,
-   "count": 0,
+   "count": 3,
    "not_verbatim": [],
    "why": [],
    "heading_printed": true,
-   "heading_without_outcomes": true,
+   "heading_without_outcomes": false,
    "pass": true
   },
   "careers": {
@@ -111,7 +111,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "Spanish A.A-T section (heading not in supplied text; section begins mid-page 184 and ends at 'Total: 21.0-27.0' on page 185)",
+   "section_heading": "Spanish – AA-T Degree",
    "measure": "units",
    "total_units": {
     "min": 21,
@@ -122,7 +122,7 @@
     "min": null,
     "max": null
    },
-   "ge_pattern": null,
+   "ge_pattern": "Cal-GETC",
    "degree_total": {
     "min": null,
     "max": null
@@ -132,18 +132,22 @@
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [],
+   "outcomes": [
+    "Apply a range of intermediate Spanish vocabulary, grammar, and syntax to communicate in oral and written Spanish.",
+    "Interpret oral and written Spanish texts, applying knowledge of intermediate vocabulary and structures.",
+    "Analyze and synthesize aspects of Spanish-speaking cultures and society."
+   ],
    "careers": []
   },
   "blocks": [
    {
-    "name": "Option 1: Choose a first-level option",
+    "name": "Option 1: Spanish Language Learners – Required",
     "rule": "all",
     "minimum": null,
-    "option_group": "Option",
+    "option_group": "Option 1 or Option 2",
     "stated": {
-     "min": 5,
-     "max": 6
+     "min": null,
+     "max": null
     },
     "courses": [
      {
@@ -163,19 +167,7 @@
        }
       ],
       "catalog_addition": false
-     }
-    ]
-   },
-   {
-    "name": "Option 1: Choose a second-level option",
-    "rule": "all",
-    "minimum": null,
-    "option_group": "Option",
-    "stated": {
-     "min": 5,
-     "max": 6
-    },
-    "courses": [
+     },
      {
       "code": "SPAN 2",
       "units": 5,
@@ -193,19 +185,7 @@
        }
       ],
       "catalog_addition": false
-     }
-    ]
-   },
-   {
-    "name": "Option 1: Choose a third-level option",
-    "rule": "all",
-    "minimum": null,
-    "option_group": "Option",
-    "stated": {
-     "min": 5,
-     "max": 6
-    },
-    "courses": [
+     },
      {
       "code": "SPAN 3",
       "units": 5,
@@ -223,19 +203,7 @@
        }
       ],
       "catalog_addition": false
-     }
-    ]
-   },
-   {
-    "name": "Option 1: Both of the following",
-    "rule": "all",
-    "minimum": null,
-    "option_group": "Option",
-    "stated": {
-     "min": 6,
-     "max": 6
-    },
-    "courses": [
+     },
      {
       "code": "SPAN 6A",
       "units": 3,
@@ -256,7 +224,7 @@
     "name": "Option 1: Choose one of the following elective courses",
     "rule": "choose_courses",
     "minimum": 1,
-    "option_group": "Option",
+    "option_group": "Option 1 or Option 2",
     "stated": {
      "min": null,
      "max": null
@@ -335,13 +303,13 @@
     ]
    },
    {
-    "name": "Option 2: Spanish Heritage Speakers – Required: Choose an option",
+    "name": "Option 2: Spanish Heritage Speakers – Required",
     "rule": "all",
     "minimum": null,
-    "option_group": "Option",
+    "option_group": "Option 1 or Option 2",
     "stated": {
-     "min": 5,
-     "max": 6
+     "min": null,
+     "max": null
     },
     "courses": [
      {
@@ -361,19 +329,7 @@
        }
       ],
       "catalog_addition": false
-     }
-    ]
-   },
-   {
-    "name": "Option 2: Choose an option",
-    "rule": "all",
-    "minimum": null,
-    "option_group": "Option",
-    "stated": {
-     "min": 5,
-     "max": 6
-    },
-    "courses": [
+     },
      {
       "code": "SPAN 32",
       "units": 5,
@@ -398,7 +354,7 @@
     "name": "Option 2: Choose one of the following LIST A elective courses",
     "rule": "choose_courses",
     "minimum": 1,
-    "option_group": "Option",
+    "option_group": "Option 1 or Option 2",
     "stated": {
      "min": null,
      "max": null
@@ -438,7 +394,7 @@
     "name": "Option 2: Choose two of the following LIST B elective courses",
     "rule": "choose_courses",
     "minimum": 2,
-    "option_group": "Option",
+    "option_group": "Option 1 or Option 2",
     "stated": {
      "min": null,
      "max": null
@@ -527,15 +483,15 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The supplied text begins mid-section on page 184; the A.A-T heading, program description, Option 1 heading, any outcomes and GE/degree-total information are presumably on page 183 and are not in the text. Section identified as the A.A-T because it has Option 1/Option 2 with List A/List B and ends 'Total: 21.0-27.0' before the Certificate of Achievement section.",
-   "Option 1's heading is not printed in the text; the unlabeled blocks before 'OPTION 2: SPANISH HERITAGE SPEAKERS' are read as Option 1. Blocks prefixed 'Option 1:' form one path and 'Option 2:' the other; all share option_group 'Option'.",
-   "Each level choice (e.g., SPAN 1 OR both SPAN 1A AND SPAN 1B) is recorded as one entry whose alternatives are the 1A+1B pair; the alternative requires both courses together.",
-   "Units for the Option 1 elective list were printed in a separate column (3.0 each) and assigned in order.",
-   "LIST B appears only after Option 2's List A; it is read as part of Option 2, but a reviewer should check whether it also applies to Option 1 (page 183 may hold more Option 1 requirements).",
-   "Catalog prints 'LALS 9'; matched to closed-list 'LALS/LGBT 9'.",
-   "Learning outcomes printed on pages 185 and 187 belong to the Spanish and Spanish for Heritage Speakers Certificates of Achievement, not this award, so they are not recorded.",
-   "Printed total 21.0-27.0 does not obviously match the sums of the option blocks (Option 2 sums to 19-21 with List B); recorded as printed."
+   "Option 1 and Option 2 are alternative paths; all blocks of both options share option_group 'Option 1 or Option 2' and block names carry the option prefix to show which option each belongs to.",
+   "Each 'Choose a ... option' (e.g., SPAN 1 OR both SPAN 1A AND SPAN 1B) is recorded as one entry with the paired A/B courses as alternatives; the alternative path requires BOTH A and B courses (6 units) in place of the single 5-unit course. Each such choice prints 5.0-6.0 units.",
+   "Catalog prints 'LALS 9'; matched to closed-list 'LALS/LGBT 9' (cross-listed) and not flagged as a catalog addition.",
+   "Printed total 21.0-27.0; summing Option 2 (5-6 + 5-6 + 3 + 6) gives 19-21, below the printed minimum. The catalog notes students who place higher and fall short of 18 major units should take Option 2 List B courses to reach 18 units required by Title 5.",
+   "Option 1 elective units are printed displaced in a separate column (ten 3.0 values for ten courses); each assigned 3 units.",
+   "Degree requires 60 CSU-transferable units including full Cal-GETC; this is the standard ADT statement, so degree_total left null and no Cal-GETC units printed.",
+   "Completion text says 'minimum time for completion of this certificate is 4 semesters' though the award is a degree.",
+   "Text at top of page 183 (ending 'Total: 18.0') belongs to a preceding program and was not used."
   ]
  },
- "extracted_run": "39047128472"
+ "extracted_run": "39056434592"
 }
