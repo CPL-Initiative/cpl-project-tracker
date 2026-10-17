@@ -5,7 +5,7 @@
  "catalog_year": "2026-2027",
  "programs": 69,
  "with_closed_list": 65,
- "started": "2026-10-17T05:26:20Z",
+ "started": "2026-10-17T05:28:57Z",
  "pdf": {
   "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf",
   "access": "ok",
@@ -22,7 +22,7 @@
   "extractor": "pypdf"
  },
  "loads": 1,
- "seconds": 19.2,
+ "seconds": 21.0,
  "found": 65,
  "by_method": {
   "no_closed_list": 4,
@@ -747,5 +747,5 @@
    }
   ]
  },
- "run": "39006206530"
+ "run": "39006340803"
 }
