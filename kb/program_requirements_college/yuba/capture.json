@@ -5,7 +5,7 @@
  "catalog_year": "2026-2027",
  "programs": 104,
  "with_closed_list": 94,
- "started": "2026-10-17T05:26:40Z",
+ "started": "2026-10-17T05:31:43Z",
  "pdf": {
   "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf",
   "access": "ok",
@@ -22,7 +22,7 @@
   "extractor": "pypdf"
  },
  "loads": 1,
- "seconds": 191.4,
+ "seconds": 177.9,
  "found": 93,
  "by_method": {
   "no_closed_list": 10,
@@ -1092,5 +1092,5 @@
    }
   ]
  },
- "run": "39006208126"
+ "run": "39006517642"
 }

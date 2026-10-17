@@ -1,0 +1,201 @@
+{
+ "college": "Yuba College",
+ "control_number": "07031",
+ "shape": "degree",
+ "title": "Photographic Imaging",
+ "award": "A.S. Degree",
+ "source_url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=61",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7893,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7893,
+    "output_tokens": 1527,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1527,
+  "output_tokens_details": {
+   "thinking_tokens": 668
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.06211,
+ "ms": 13649,
+ "seconds": 14.0,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 4,
+   "listed": 7,
+   "share": 0.571,
+   "missing": [
+    "PHOTO13",
+    "PHOTO22",
+    "PHOTO33"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    12.0,
+    12.0
+   ],
+   "stated": [
+    21.0,
+    21.0
+   ],
+   "against": "program",
+   "why": [
+    "the blocks sum to 12.0-12.0; the catalog states 21.0-21.0"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Photographic Imaging A.S. Degree (heading not in supplied text; section continues from previous page)",
+   "measure": "units",
+   "total_units": {
+    "min": 21,
+    "max": 21
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required Courses (continued from previous page; block heading not in text)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "PHOTO 35",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHOTO 36A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHOTO 36B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHOTO 36C",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "PHOTO 13",
+    "why": "not in the supplied A.S. section text; likely on previous page (60); named in the certificate section only"
+   },
+   {
+    "code": "PHOTO 22",
+    "why": "not in the supplied A.S. section text; likely on previous page (60); named in the certificate section only"
+   },
+   {
+    "code": "PHOTO 33",
+    "why": "not in the supplied A.S. section text; likely on previous page (60); named in the certificate section only"
+   }
+  ],
+  "notes": [
+   "The supplied text begins on page 61 in the middle of the A.S. degree's course list; the section heading, description, outcomes, careers, and the first courses of the major are on the previous page and were not provided.",
+   "The visible degree courses (PHOTO 35, 36A, 36B, 36C) appear without a block heading; recorded as required ('all') because no choice rule is visible, but a reviewer should check page 60 for whether they fall under a 'choose' rule. Major total of 21 units equals seven 3-unit courses, consistent with all seven closed-list courses being required, but this is not confirmed by the text.",
+   "The sentences about a minimum of 21 units of General Education and 60 degree-applicable units for any AA/AS are generic statements, not recorded as this award's degree_total or ge_units.",
+   "Outcomes and careers printed on page 61 belong to the Photographic Imaging Certificate of Achievement, not the A.S. degree, and were not recorded."
+  ]
+ },
+ "extracted_run": "39006517642"
+}

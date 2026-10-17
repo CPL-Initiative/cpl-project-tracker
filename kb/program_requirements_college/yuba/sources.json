@@ -1,0 +1,3534 @@
+[
+ {
+  "control_number": "07001",
+  "title": "Agriculture",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "AG4",
+   "AG45",
+   "AG45A",
+   "AG60",
+   "AG65",
+   "AG7",
+   "AG70",
+   "GNBUS30",
+   "PLSCI20",
+   "PLSCI20A",
+   "PLSCI22",
+   "PLSCI22A",
+   "VETT8",
+   "VETT91"
+  ],
+  "source": {
+   "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=57",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    57,
+    58,
+    59
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 14,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "07002",
+  "title": "Veterinary Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VETT1",
+   "VETT10",
+   "VETT12",
+   "VETT2",
+   "VETT2A",
+   "VETT3",
+   "VETT4",
+   "VETT53A",
+   "VETT53B",
+   "VETT53C",
+   "VETT53D",
+   "VETT55",
+   "VETT59",
+   "VETT5C",
+   "VETT5D",
+   "VETT7",
+   "VETT8",
+   "VETT9"
+  ],
+  "source": {
+   "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=172",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    172,
+    173,
+    174,
+    175
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 18,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "07007",
+  "title": "Accounting",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT11",
+   "ACCT12",
+   "ACCT3",
+   "ACCT9",
+   "ECONC2001",
+   "ECONC2002",
+   "GNBUS10",
+   "GNBUS18",
+   "GNBUS33",
+   "GNBUS41",
+   "GNBUS48",
+   "GNBUS51"
+  ],
+  "source": {
+   "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=78",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    78,
+    79,
+    80,
+    81
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 12,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "07014",
+  "title": "Computer Science",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "COMSC11",
+   "COMSC12",
+   "COMSC15",
+   "COMSC2",
+   "COMSC6",
+   "COMSC7",
+   "COMSC8",
+   "COMSC9A",
+   "COMSC9B"
+  ],
+  "source": {
+   "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=86",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    86,
+    87,
+    88
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 9,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "07023",
+  "title": "Engine Performance/Drivability and Tune-Up",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "AUTO21",
+   "AUTO50B",
+   "AUTO5236",
+   "AUTO5244",
+   "AUTO5261C",
+   "AUTO5261D",
+   "AUTO5281",
+   "AUTO5333",
+   "AUTO5355",
+   "AUTO95"
+  ],
+  "source": {
+   "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=68",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    68,
+    69,
+    70,
+    71
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 10,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "07027",
+  "title": "Welding Technologies",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.923,
+  "codes_found": [
+   "DRAFT20",
+   "MFGT20",
+   "MFGT21",
+   "WELD10",
+   "WELD12",
+   "WELD20",
+   "WELD22",
+   "WELD40",
+   "WELD50",
+   "WELD52",
+   "WELD64",
+   "WELD85"
+  ],
+  "source": {
+   "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=175",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    175,
+    176,
+    177
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 13,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "07028",
+  "title": "Art",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART12A",
+   "ART12B",
+   "ART14A",
+   "ART14B",
+   "ART19B",
+   "ART2",
+   "ART20",
+   "ART21",
+   "ART3A",
+   "ART3B",
+   "ART41A",
+   "ART41B",
+   "ART42A",
+   "ART42B",
+   "ART44",
+   "ART46A",
+   "ART46B",
+   "ART4A",
+   "ART4B",
+   "ART5",
+   "ART6A",
+   "ART8A",
+   "ART8B",
+   "ART9A",
+   "ART9B",
+   "ARTHC1100"
+  ],
+  "source": {
+   "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=60",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    60,
+    61,
+    62,
+    63
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 26,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "07029",
+  "title": "Music",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "MUSIC16",
+   "MUSIC1A",
+   "MUSIC1B",
+   "MUSIC1C",
+   "MUSIC1D",
+   "MUSIC1E",
+   "MUSIC28R",
+   "MUSIC2A",
+   "MUSIC2B",
+   "MUSIC2C",
+   "MUSIC2D",
+   "MUSIC2E",
+   "MUSIC30AR",
+   "MUSIC30BR",
+   "MUSIC30CR",
+   "MUSIC30DR",
+   "MUSIC30ER",
+   "MUSIC30GR",
+   "MUSIC31R",
+   "MUSIC32R",
+   "MUSIC34R",
+   "MUSIC41A",
+   "MUSIC43R",
+   "MUSIC8A",
+   "MUSIC8B"
+  ],
+  "source": {
+   "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=138",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    138,
+    139,
+    140,
+    141
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 25,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "07030",
+  "title": "Theatre Arts",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "07031",
+  "title": "Photographic Imaging",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "PHOTO13",
+   "PHOTO22",
+   "PHOTO33",
+   "PHOTO35",
+   "PHOTO36A",
+   "PHOTO36B",
+   "PHOTO36C"
+  ],
+  "source": {
+   "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=61",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    61
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 7,
+  "text_chars": 5715
+ },
+ {
+  "control_number": "07035",
+  "title": "Associate in Science Nursing (ASN)",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "NURS11A",
+   "NURS11B",
+   "NURS12A",
+   "NURS12B",
+   "NURS13A",
+   "NURS13B",
+   "NURS14A",
+   "NURS14B",
+   "NURS14C"
+  ],
+  "source": {
+   "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=146",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    146
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 9,
+  "text_chars": 6983
+ },
+ {
+  "control_number": "07043",
+  "title": "English",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ENGL30A",
+   "ENGL30B",
+   "ENGL31A",
+   "ENGL36",
+   "ENGL37",
+   "ENGL38",
+   "ENGL40A",
+   "ENGL40C",
+   "ENGL42",
+   "ENGL46A",
+   "ENGL46B",
+   "ENGLC1001",
+   "MCOMM8",
+   "THART34"
+  ],
+  "source": {
+   "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=100",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    100,
+    101,
+    102
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 14,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "07046",
+  "title": "Communication Studies",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "07048",
+  "title": "Mathematics",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.833,
+  "codes_found": [
+   "MATH1A",
+   "MATH1B",
+   "MATH1C",
+   "MATH3",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=98",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    98
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 6,
+  "text_chars": 6652
+ },
+ {
+  "control_number": "07053",
+  "title": "Psychology with a Focus on Social Services",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "AJ10",
+   "ECE31",
+   "HUSEV10",
+   "HUSEV28",
+   "PSYCC1000",
+   "PSYCH12",
+   "PSYCH22",
+   "PSYCH33",
+   "PSYCH41",
+   "PSYCH7",
+   "SPECH7"
+  ],
+  "source": {
+   "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=159",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    159,
+    160
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 11,
+  "text_chars": 12031
+ },
+ {
+  "control_number": "07054",
+  "title": "Law Enforcement",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "AJ10",
+   "AJ11",
+   "AJ13",
+   "AJ14",
+   "AJ15",
+   "AJ16",
+   "AJ19",
+   "AJ20",
+   "AJ30",
+   "AJ31",
+   "AJ78"
+  ],
+  "source": {
+   "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=52",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    52,
+    53,
+    54
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 11,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "07057",
+  "title": "Fire Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "EMT61",
+   "FIRTC1",
+   "FIRTC2",
+   "FIRTC3",
+   "FIRTC4",
+   "FIRTC5",
+   "FIRTC6",
+   "FIRTC60",
+   "FIRTC61",
+   "FIRTC62",
+   "FIRTC63",
+   "FIRTC64",
+   "FIRTC65A",
+   "FIRTC65B",
+   "FIRTC67",
+   "FIRTC69",
+   "FIRTC70A",
+   "FIRTC70B",
+   "FIRTC70C",
+   "FIRTC70D",
+   "FIRTC70E",
+   "FIRTC70F",
+   "FIRTC74",
+   "FIRTC75",
+   "FIRTC76A",
+   "FIRTC76B",
+   "FIRTC77",
+   "FIRTC85"
+  ],
+  "source": {
+   "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=109",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    109,
+    110,
+    111,
+    112
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 28,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "07058",
+  "title": "Social Science",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "07062",
+  "title": "History",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ECONC2001",
+   "ECONC2002",
+   "HIST16A",
+   "HIST16B",
+   "HIST29",
+   "HIST4A",
+   "HIST4B",
+   "HIST5A",
+   "HIST5B",
+   "HISTC1001",
+   "HISTC1002",
+   "HUMAN10",
+   "POLSC1000",
+   "SOCIL1"
+  ],
+  "source": {
+   "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=122",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    122,
+    123,
+    124,
+    125
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 14,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "07146",
+  "title": "Manufacturing Technology/Machining",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "AUTO5322",
+   "DRAFT30",
+   "MFGT20",
+   "MFGT21",
+   "MFGT34",
+   "MFGT35",
+   "MFGT60",
+   "WELD10"
+  ],
+  "source": {
+   "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=133",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    133,
+    134
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 8,
+  "text_chars": 11557
+ },
+ {
+  "control_number": "07147",
+  "title": "Manufacturing Technology/ Machining",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "AUTO5322",
+   "DRAFT30",
+   "MFGT20",
+   "MFGT21",
+   "MFGT34",
+   "MFGT60",
+   "WELD10",
+   "WELD20"
+  ],
+  "source": {
+   "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=133",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    133,
+    134
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 8,
+  "text_chars": 11557
+ },
+ {
+  "control_number": "07151",
+  "title": "Commercial Art",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "07154",
+  "title": "Early Childhood Education",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ECE10",
+   "ECE11",
+   "ECE17",
+   "ECE1A",
+   "ECE1B",
+   "ECE1C",
+   "ECE27",
+   "ECE3",
+   "ECE31",
+   "ECE42",
+   "ECE43",
+   "ECE46",
+   "ECE46A",
+   "ECE46B",
+   "ECE46C"
+  ],
+  "source": {
+   "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=90",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    90,
+    91,
+    92,
+    93
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 15,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "07155",
+  "title": "School Age Children",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "07159",
+  "title": "Fire Fighter Academy",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "FIRTC1",
+   "FIRTC2",
+   "FIRTC3",
+   "FIRTC4",
+   "FIRTC5",
+   "FIRTC6",
+   "FIRTC60",
+   "FIRTC61",
+   "FIRTC62",
+   "FIRTC63",
+   "FIRTC64",
+   "FIRTC67",
+   "FIRTC69",
+   "FIRTC70A",
+   "FIRTC70B",
+   "FIRTC70C",
+   "FIRTC70D",
+   "FIRTC70E",
+   "FIRTC70F",
+   "FIRTC74",
+   "FIRTC76A",
+   "FIRTC76B",
+   "FIRTC77"
+  ],
+  "source": {
+   "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=110",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    110,
+    111,
+    112,
+    113
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 23,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "07162",
+  "title": "General Business Management",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT10",
+   "ACCT11",
+   "ECONC2002",
+   "GNBUS10",
+   "GNBUS18",
+   "GNBUS2",
+   "GNBUS21",
+   "GNBUS30",
+   "GNBUS33",
+   "GNBUS48",
+   "GNBUS52",
+   "GNBUS56",
+   "GNBUS6",
+   "GNBUS9"
+  ],
+  "source": {
+   "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=78",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    78,
+    79,
+    80,
+    81
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 14,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "10173",
+  "title": "Automotive Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "AUTO21",
+   "AUTO512",
+   "AUTO523",
+   "AUTO5236",
+   "AUTO524",
+   "AUTO5241",
+   "AUTO5244",
+   "AUTO5245",
+   "AUTO5261A",
+   "AUTO5262A",
+   "AUTO5262B",
+   "AUTO5281",
+   "AUTO5331",
+   "AUTO5333"
+  ],
+  "source": {
+   "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=68",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    68,
+    69,
+    70,
+    71
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 14,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "10185",
+  "title": "Child Development Teacher",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ECE10",
+   "ECE16",
+   "ECE1A",
+   "ECE1B",
+   "ECE27",
+   "ECE3",
+   "ECE31"
+  ],
+  "source": {
+   "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=91",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    91,
+    92,
+    93,
+    94
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 7,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "10186",
+  "title": "Diversity in ECE Specialization",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ECE10",
+   "ECE11",
+   "ECE16",
+   "ECE1A",
+   "ECE1B",
+   "ECE27",
+   "ECE3",
+   "ECE31",
+   "ECE37",
+   "ECE46",
+   "ECE6",
+   "ECE7A"
+  ],
+  "source": {
+   "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=92",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    92,
+    93,
+    94,
+    95
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 12,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "10187",
+  "title": "Infant and Toddler",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ECE10",
+   "ECE1A",
+   "ECE1B",
+   "ECE27",
+   "ECE3",
+   "ECE31",
+   "ECE42",
+   "ECE46A"
+  ],
+  "source": {
+   "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=90",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    90,
+    91,
+    92,
+    93
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 8,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "10189",
+  "title": "Chemical Dependency Counselor",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "HUSEV11",
+   "HUSEV20",
+   "HUSEV21",
+   "HUSEV22",
+   "HUSEV23",
+   "HUSEV24",
+   "HUSEV25",
+   "HUSEV28",
+   "HUSEV40",
+   "HUSEV41",
+   "HUSEV44R"
+  ],
+  "source": {
+   "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=124",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    124,
+    125,
+    126,
+    127
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 11,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "10998",
+  "title": "Arts and Humanities",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "11011",
+  "title": "Film, Television, and Electronic Media",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.889,
+  "codes_found": [
+   "FTVE14",
+   "FTVE15",
+   "FTVE19",
+   "FTVE2",
+   "FTVE4",
+   "FTVE5",
+   "FTVE6",
+   "FTVE8"
+  ],
+  "source": {
+   "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=107",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    107,
+    108,
+    109
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 9,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "13308",
+  "title": "Small Business Management",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT10",
+   "ACCT11",
+   "GNBUS10",
+   "GNBUS30",
+   "GNBUS48",
+   "GNBUS5",
+   "GNBUS6",
+   "GNBUS7"
+  ],
+  "source": {
+   "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=80",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    80,
+    81,
+    82,
+    83
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 8,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "16183",
+  "title": "Accounting",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT10",
+   "ACCT11",
+   "ACCT3",
+   "ACCT9",
+   "GNBUS2",
+   "GNBUS30",
+   "GNBUS41",
+   "GNBUS51",
+   "GNBUS53",
+   "GNBUS56"
+  ],
+  "source": {
+   "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=78",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    78,
+    79,
+    80,
+    81
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 10,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "16751",
+  "title": "Small Business Management",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT10",
+   "ACCT11",
+   "ACCT3",
+   "ACCT9",
+   "GNBUS10",
+   "GNBUS18",
+   "GNBUS2",
+   "GNBUS21",
+   "GNBUS30",
+   "GNBUS33",
+   "GNBUS5",
+   "GNBUS7"
+  ],
+  "source": {
+   "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=79",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    79,
+    80,
+    81,
+    82
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 12,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "16894",
+  "title": "Basic Police Academy",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "AJ50",
+   "AJ52"
+  ],
+  "source": {
+   "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=51",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    51,
+    52,
+    53,
+    54
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 2,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "17946",
+  "title": "Social and Behavioral Sciences",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "17947",
+  "title": "Natural Sciences",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "19425",
+  "title": "Basic Police Academy",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "AJ50",
+   "AJ52"
+  ],
+  "source": {
+   "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=51",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    51,
+    52,
+    53,
+    54
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 2,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "19522",
+  "title": "Veterinary Assistant and Animal Care",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VETT10",
+   "VETT12",
+   "VETT52",
+   "VETT54",
+   "VETT55",
+   "VETT56",
+   "VETT7",
+   "VETT8",
+   "VETT9",
+   "VETT91"
+  ],
+  "source": {
+   "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=172",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    172,
+    173,
+    174,
+    175
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 10,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "19613",
+  "title": "Reserve Officer Level II",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "AJ51"
+  ],
+  "source": {
+   "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=52",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    52,
+    53
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 1,
+  "text_chars": 13734
+ },
+ {
+  "control_number": "20164",
+  "title": "Fire Technology",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "FIRTC1",
+   "FIRTC2",
+   "FIRTC3",
+   "FIRTC4",
+   "FIRTC5",
+   "FIRTC6",
+   "FIRTC60",
+   "FIRTC61",
+   "FIRTC62",
+   "FIRTC63",
+   "FIRTC64",
+   "FIRTC67",
+   "FIRTC69",
+   "FIRTC70A",
+   "FIRTC70B",
+   "FIRTC70C",
+   "FIRTC70D",
+   "FIRTC70E",
+   "FIRTC70F",
+   "FIRTC74",
+   "FIRTC75",
+   "FIRTC76A",
+   "FIRTC76B",
+   "FIRTC77",
+   "FIRTC85"
+  ],
+  "source": {
+   "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=110",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    110,
+    111,
+    112,
+    113
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 25,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "20167",
+  "title": "Chemical Dependency Counselor",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "HUSEV10",
+   "HUSEV11",
+   "HUSEV20",
+   "HUSEV21",
+   "HUSEV22",
+   "HUSEV23",
+   "HUSEV24",
+   "HUSEV25",
+   "HUSEV28",
+   "HUSEV40",
+   "HUSEV41",
+   "HUSEV44R",
+   "PSYCC1000",
+   "SOCIL1"
+  ],
+  "source": {
+   "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=125",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    125,
+    126,
+    127
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 14,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "20180",
+  "title": "Psychiatric Technician",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "HLTH10",
+   "PSYCT50",
+   "PSYCT51",
+   "PSYCT52",
+   "PSYCT53",
+   "PSYCT54",
+   "PSYCT55",
+   "PSYCT56",
+   "PSYCT57",
+   "PSYCT58",
+   "PSYCT59",
+   "PSYCT60",
+   "PSYCT61",
+   "PSYCT62",
+   "PSYCT63"
+  ],
+  "source": {
+   "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=156",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    156,
+    157,
+    158
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 15,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "20191",
+  "title": "Photographic Imaging",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "PHOTO13",
+   "PHOTO22",
+   "PHOTO33",
+   "PHOTO35",
+   "PHOTO36A",
+   "PHOTO36B",
+   "PHOTO36C"
+  ],
+  "source": {
+   "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=61",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    61
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 7,
+  "text_chars": 5715
+ },
+ {
+  "control_number": "20196",
+  "title": "Advanced Welding Technologies",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "DRAFT20",
+   "MFGT20",
+   "WELD10",
+   "WELD12",
+   "WELD20",
+   "WELD22",
+   "WELD50",
+   "WELD85"
+  ],
+  "source": {
+   "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=175",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    175,
+    176,
+    177
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 8,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "20201",
+  "title": "Engine Performance/Drivability and Tune-Up",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "AUTO21",
+   "AUTO50B",
+   "AUTO5236",
+   "AUTO5244",
+   "AUTO5261C",
+   "AUTO5261D",
+   "AUTO5281",
+   "AUTO5333",
+   "AUTO5355",
+   "AUTO95"
+  ],
+  "source": {
+   "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=68",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    68,
+    69,
+    70,
+    71
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 10,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "20208",
+  "title": "Automotive Drive Trains",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "AUTO21",
+   "AUTO512",
+   "AUTO523",
+   "AUTO5262A",
+   "AUTO5262B",
+   "AUTO5322",
+   "AUTO5331"
+  ],
+  "source": {
+   "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=68",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    68,
+    69,
+    70,
+    71
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 7,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "20209",
+  "title": "Automotive Technology",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "AUTO21",
+   "AUTO512",
+   "AUTO523",
+   "AUTO5236",
+   "AUTO524",
+   "AUTO5241",
+   "AUTO5244",
+   "AUTO5245",
+   "AUTO5261A",
+   "AUTO5262A",
+   "AUTO5262B",
+   "AUTO5281",
+   "AUTO5331",
+   "AUTO5333"
+  ],
+  "source": {
+   "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=68",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    68,
+    69,
+    70,
+    71
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 14,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "20210",
+  "title": "Computer Science",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "COMSC11",
+   "COMSC12",
+   "COMSC15",
+   "COMSC2",
+   "COMSC6",
+   "COMSC7",
+   "COMSC9A",
+   "COMSC9B"
+  ],
+  "source": {
+   "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=86",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    86,
+    87,
+    88
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 8,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "20211",
+  "title": "Film, Television, and Electronic Media",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 7,
+  "text_chars": 0
+ },
+ {
+  "control_number": "20214",
+  "title": "General Business-Business Computer Applications",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT10",
+   "ACCT3",
+   "GNBUS10",
+   "GNBUS21",
+   "GNBUS30",
+   "GNBUS32",
+   "GNBUS33",
+   "GNBUS34",
+   "GNBUS37",
+   "GNBUS41",
+   "GNBUS42",
+   "GNBUS51"
+  ],
+  "source": {
+   "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=80",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    80,
+    81,
+    82,
+    83
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 12,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "20216",
+  "title": "General Business Administrative Assistant",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "GNBUS18",
+   "GNBUS21",
+   "GNBUS32",
+   "GNBUS33",
+   "GNBUS41",
+   "GNBUS51",
+   "GNBUS52",
+   "GNBUS53",
+   "GNBUS55A",
+   "GNBUS55B",
+   "GNBUS60",
+   "GNBUS61",
+   "GNBUS62",
+   "GNBUS63",
+   "GNBUS64",
+   "GNBUS65",
+   "GNBUS68"
+  ],
+  "source": {
+   "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=79",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    79,
+    80,
+    81,
+    82
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 17,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "30173",
+  "title": "Reserve Officer Level I",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "AJ52"
+  ],
+  "source": {
+   "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=52",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    52,
+    53
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 1,
+  "text_chars": 13734
+ },
+ {
+  "control_number": "30716",
+  "title": "Sociology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTHR2",
+   "ECONC2001",
+   "ECONC2002",
+   "POLSC1000",
+   "PSYCC1000",
+   "PSYCH22",
+   "PSYCH41",
+   "PSYCH6",
+   "PSYCH7",
+   "SOCIL1",
+   "SOCIL10",
+   "SOCIL2",
+   "SOCIL5",
+   "SOCIL6",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=164",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    164,
+    165,
+    166,
+    167
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 15,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "30875",
+  "title": "Mathematics",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "MATH1A",
+   "MATH1B",
+   "MATH1C",
+   "MATH2",
+   "MATH3",
+   "PHYS4A"
+  ],
+  "source": {
+   "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=134",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    134,
+    135
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 6,
+  "text_chars": 10985
+ },
+ {
+  "control_number": "31044",
+  "title": "Fire Fighter Academy",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "FIRTC1",
+   "FIRTC2",
+   "FIRTC3",
+   "FIRTC4",
+   "FIRTC5",
+   "FIRTC6",
+   "FIRTC61",
+   "FIRTC62",
+   "FIRTC63",
+   "FIRTC64",
+   "FIRTC67",
+   "FIRTC69",
+   "FIRTC70A",
+   "FIRTC70B",
+   "FIRTC70C",
+   "FIRTC70D",
+   "FIRTC70E",
+   "FIRTC70F",
+   "FIRTC74",
+   "FIRTC75",
+   "FIRTC76A",
+   "FIRTC76B",
+   "FIRTC77"
+  ],
+  "source": {
+   "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=110",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    110,
+    111,
+    112,
+    113
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 23,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "31620",
+  "title": "Chemistry",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEM18A",
+   "CHEM18B",
+   "CHEM1A",
+   "CHEM1B",
+   "MATH1A",
+   "MATH1B",
+   "PHYS2A",
+   "PHYS2B",
+   "PHYS3A",
+   "PHYS3B",
+   "PHYS4A",
+   "PHYS4B"
+  ],
+  "source": {
+   "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=85",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    85,
+    86
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 12,
+  "text_chars": 13505
+ },
+ {
+  "control_number": "31743",
+  "title": "Biology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL2",
+   "BIOL3",
+   "MATH1A",
+   "MATH9",
+   "PHYS2A",
+   "PHYS4A",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=74",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    74,
+    75
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 7,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "32296",
+  "title": "Early Childhood Education",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ECE10",
+   "ECE1A",
+   "ECE1B",
+   "ECE27",
+   "ECE3",
+   "ECE31"
+  ],
+  "source": {
+   "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=90",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    90,
+    91,
+    92,
+    93
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 6,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "32873",
+  "title": "Psychology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL1",
+   "BIOL10",
+   "BIOL10L",
+   "BIOL11",
+   "BIOL15",
+   "BIOL24L",
+   "BIOL4",
+   "ENGLC1001",
+   "ENGLC1003",
+   "PHIL12",
+   "PSYCC1000",
+   "PSYCH12",
+   "PSYCH22",
+   "PSYCH33",
+   "PSYCH41",
+   "PSYCH46",
+   "PSYCH6",
+   "PSYCH7",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=158",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    158,
+    159,
+    160
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 19,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "32888",
+  "title": "Kinesiology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL4",
+   "BIOL5",
+   "CHEM1A",
+   "CHEM2A",
+   "HLTH3",
+   "KINES122",
+   "KINES125",
+   "KINES126",
+   "KINES127",
+   "KINES131",
+   "KINES133",
+   "KINES134",
+   "KINES136",
+   "KINES137",
+   "KINES142",
+   "KINES157",
+   "KINES157B",
+   "KINES171",
+   "KINES175",
+   "KINES177",
+   "KINES179",
+   "KINES20",
+   "KINES4",
+   "PHYS2A",
+   "PHYS3A",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=128",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    128,
+    129,
+    130,
+    131
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 26,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "33029",
+  "title": "History",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "33035",
+  "title": "Administration of Justice",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "AJ10",
+   "AJ11",
+   "AJ13",
+   "AJ14",
+   "AJ15",
+   "AJ16",
+   "AJ19",
+   "AJ20",
+   "AJ30",
+   "AJ31",
+   "PSYCC1000",
+   "PSYCH6",
+   "SOCIL1",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=50",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    50,
+    51,
+    52,
+    53
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 14,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "33108",
+  "title": "English",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ENGL30A",
+   "ENGL30B",
+   "ENGL31A",
+   "ENGL34",
+   "ENGL36",
+   "ENGL37",
+   "ENGL38",
+   "ENGL39",
+   "ENGL42",
+   "ENGL46A",
+   "ENGL46B",
+   "ENGLC1001",
+   "ENGLC1003",
+   "FTVE19",
+   "HUMAN34",
+   "THART34"
+  ],
+  "source": {
+   "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=100",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    100,
+    101,
+    102
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 16,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "33124",
+  "title": "Political Science",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "HISTC1001",
+   "HISTC1002",
+   "POLSC1000",
+   "POLSC2",
+   "POLSC3",
+   "POLSC6",
+   "POLSC7",
+   "PSYCH6",
+   "SOCIL5",
+   "SOCIL6",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=155",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    155
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 11,
+  "text_chars": 6622
+ },
+ {
+  "control_number": "33129",
+  "title": "Music",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "MUSIC1A",
+   "MUSIC1B",
+   "MUSIC1C",
+   "MUSIC1D",
+   "MUSIC1E",
+   "MUSIC28R",
+   "MUSIC2A",
+   "MUSIC2C",
+   "MUSIC2E",
+   "MUSIC30AR",
+   "MUSIC30BR",
+   "MUSIC30DR",
+   "MUSIC30ER",
+   "MUSIC30GR",
+   "MUSIC31R",
+   "MUSIC32R",
+   "MUSIC34R",
+   "MUSIC41A",
+   "MUSIC8A",
+   "MUSIC8B"
+  ],
+  "source": {
+   "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=137",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    137,
+    138,
+    139,
+    140
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 20,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "33620",
+  "title": "Studio Arts",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART12A",
+   "ART12B",
+   "ART14A",
+   "ART14B",
+   "ART2",
+   "ART20",
+   "ART21",
+   "ART4A",
+   "ART4B",
+   "ART6A",
+   "ART6B",
+   "ART9A",
+   "ART9B",
+   "ARTHC1100",
+   "PHOTO13",
+   "PHOTO36A"
+  ],
+  "source": {
+   "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=59",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    59,
+    60,
+    61,
+    62
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 16,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "35801",
+  "title": "Biology",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL2",
+   "BIOL3",
+   "CHEM1A",
+   "CHEM1B",
+   "MATH1A",
+   "PHYS2A",
+   "PHYS2B",
+   "PHYS3A",
+   "PHYS3B",
+   "PHYS4A",
+   "PHYS4B"
+  ],
+  "source": {
+   "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=73",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    73,
+    74,
+    75
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 11,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "35836",
+  "title": "Chemistry",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEM18A",
+   "CHEM18B",
+   "CHEM1A",
+   "CHEM1B",
+   "MATH1A",
+   "MATH1B",
+   "PHYS4A",
+   "PHYS4B"
+  ],
+  "source": {
+   "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=84",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    84,
+    85,
+    86
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 8,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "35850",
+  "title": "Computer Science",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "COMSC12",
+   "COMSC15",
+   "COMSC2",
+   "COMSC9A",
+   "COMSC9B",
+   "MATH1A",
+   "MATH1B",
+   "PHYS4A",
+   "PHYS4B"
+  ],
+  "source": {
+   "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=86",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    86,
+    87,
+    88
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 9,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "36014",
+  "title": "Arts Specialization",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ECE10",
+   "ECE16",
+   "ECE1A",
+   "ECE1B",
+   "ECE27",
+   "ECE3",
+   "ECE31",
+   "ECE46A",
+   "ECE46B",
+   "ECE46C",
+   "ECE7A"
+  ],
+  "source": {
+   "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=91",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    91,
+    92,
+    93,
+    94
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 11,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "36015",
+  "title": "Children with Special Needs Specialization",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ECE10",
+   "ECE17",
+   "ECE1A",
+   "ECE1B",
+   "ECE27",
+   "ECE3",
+   "ECE31",
+   "ECE46C"
+  ],
+  "source": {
+   "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=91",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    91,
+    92,
+    93,
+    94
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 8,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "36035",
+  "title": "Transitional Kindergarten and Early Education",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ECE17",
+   "ECE1A",
+   "ECE1B",
+   "ECE1C",
+   "ECE27",
+   "ECE3",
+   "ECE31"
+  ],
+  "source": {
+   "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=94",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    94,
+    95,
+    96,
+    97
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 7,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "36247",
+  "title": "Site Supervisor",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ECE10",
+   "ECE1A",
+   "ECE1B",
+   "ECE27",
+   "ECE2A",
+   "ECE2B",
+   "ECE3",
+   "ECE31",
+   "ECE37",
+   "ECE46A",
+   "ECE46B",
+   "ECE46C"
+  ],
+  "source": {
+   "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=93",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    93,
+    94,
+    95,
+    96
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 12,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "36780",
+  "title": "Radiologic Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "RADT1",
+   "RADT12",
+   "RADT2",
+   "RADT3A",
+   "RADT3B",
+   "RADT3C",
+   "RADT3D",
+   "RADT4",
+   "RADT5",
+   "RADT55",
+   "RADT6A",
+   "RADT6B",
+   "RADT6C",
+   "RADT6D",
+   "RADT6E",
+   "RADT7",
+   "RADT8",
+   "RADT9"
+  ],
+  "source": {
+   "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=161",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    161,
+    162,
+    163
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 18,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "36876",
+  "title": "Academic Preparedness and Career Development",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESL516A",
+   "ESL540A"
+  ],
+  "source": {
+   "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=103",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    103,
+    104,
+    105
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 2,
+  "text_chars": 15818
+ },
+ {
+  "control_number": "37069",
+  "title": "Kinesiology",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "HLTH1",
+   "HLTH10",
+   "HLTH13",
+   "HLTH3",
+   "HLTH4",
+   "HLTH5",
+   "HLTH6",
+   "KINES122",
+   "KINES125",
+   "KINES126",
+   "KINES127",
+   "KINES131",
+   "KINES133",
+   "KINES134",
+   "KINES136",
+   "KINES136B",
+   "KINES137",
+   "KINES142",
+   "KINES157",
+   "KINES157B",
+   "KINES158",
+   "KINES171",
+   "KINES175",
+   "KINES176",
+   "KINES177",
+   "KINES179",
+   "KINES21A",
+   "KINES21B",
+   "KINES22",
+   "KINES28",
+   "KINES29A",
+   "KINES29B",
+   "KINES4",
+   "KINES6",
+   "KINES7",
+   "KINES9"
+  ],
+  "source": {
+   "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=128",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    128,
+    129,
+    130,
+    131
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 36,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "37338",
+  "title": "Geology",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEM1A",
+   "CHEM1B",
+   "GEOL10L",
+   "GEOL11L",
+   "MATH1A",
+   "MATH1B"
+  ],
+  "source": {
+   "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=120",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    120
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 6,
+  "text_chars": 5828
+ },
+ {
+  "control_number": "37447",
+  "title": "Theatre",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "THART10",
+   "THART11A",
+   "THART11B",
+   "THART29R",
+   "THART30",
+   "THART45A",
+   "THART45B",
+   "THART45C"
+  ],
+  "source": {
+   "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=167",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    167,
+    168,
+    169,
+    170
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 8,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "37606",
+  "title": "Language and Literacy Specialization",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ECE10",
+   "ECE1A",
+   "ECE1B",
+   "ECE27",
+   "ECE3",
+   "ECE31",
+   "ECE37",
+   "ECE39",
+   "ECE46A",
+   "ECE46B",
+   "ECE46C",
+   "ECE6"
+  ],
+  "source": {
+   "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=92",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    92,
+    93,
+    94,
+    95
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 12,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "37615",
+  "title": "Teacher/Family Relationships Specialization",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ECE1A",
+   "ECE1B",
+   "ECE3",
+   "ECE31",
+   "ECE32",
+   "ECE35"
+  ],
+  "source": {
+   "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=93",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    93,
+    94,
+    95,
+    96
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 6,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "37616",
+  "title": "Biology-Allied Health",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.923,
+  "codes_found": [
+   "ANTHR2",
+   "ART12A",
+   "ART14A",
+   "ART4A",
+   "ART9A",
+   "BIOL4",
+   "BIOL5",
+   "BIOL6",
+   "CHEM1A",
+   "CHEM1B",
+   "CHEM2A",
+   "COMMC1000",
+   "HLTH10",
+   "MATH20",
+   "NURS51",
+   "PHYS2A",
+   "PHYS2B",
+   "PHYS3A",
+   "PHYS3B",
+   "PSYCC1000",
+   "PSYCH41",
+   "SOCIL1",
+   "SPECH6",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=75",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    75,
+    76,
+    77
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 26,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "37946",
+  "title": "LVN to RN Career Mobility Program",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "NURS13A",
+   "NURS13B",
+   "NURS14A",
+   "NURS14B",
+   "NURS14C"
+  ],
+  "source": {
+   "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=146",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    146
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 5,
+  "text_chars": 6983
+ },
+ {
+  "control_number": "38009",
+  "title": "LVN To RN 30-Unit Option",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL5",
+   "BIOL6",
+   "NURS13C",
+   "NURS14A",
+   "NURS14B",
+   "NURS14C"
+  ],
+  "source": {
+   "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=148",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    148,
+    149
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 6,
+  "text_chars": 14073
+ },
+ {
+  "control_number": "38100",
+  "title": "Interpersonal Communication",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESL563",
+   "ESL565",
+   "ESL568"
+  ],
+  "source": {
+   "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=103",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    103,
+    104,
+    105,
+    106
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 3,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "38148",
+  "title": "Life Skills",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESL543",
+   "ESL545"
+  ],
+  "source": {
+   "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=103",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    103
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 2,
+  "text_chars": 5903
+ },
+ {
+  "control_number": "38877",
+  "title": "Introductory Welding Technologies",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "WELD10",
+   "WELD20",
+   "WELD40",
+   "WELD50"
+  ],
+  "source": {
+   "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=175",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    175,
+    176,
+    177
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 4,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "39257",
+  "title": "Transportation Engine Repair and Machining",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "AUTO21",
+   "AUTO512",
+   "AUTO5245",
+   "AUTO5261A",
+   "AUTO5333"
+  ],
+  "source": {
+   "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=70",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    70,
+    71,
+    72,
+    73
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 5,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "39385",
+  "title": "Fabrication and Manufacturing Methods",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "DRAFT20",
+   "MFGT20",
+   "MFGT34",
+   "MFGT35",
+   "MFGT60",
+   "WELD83",
+   "WELD84",
+   "WELD85",
+   "WELD88"
+  ],
+  "source": {
+   "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=175",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    175,
+    176,
+    177
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 9,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "39447",
+  "title": "Automotive Service Technician",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "AUTO21",
+   "AUTO512",
+   "AUTO5236",
+   "AUTO524",
+   "AUTO5241",
+   "AUTO5261A",
+   "AUTO5262C",
+   "AUTO5262D",
+   "AUTO5262E",
+   "AUTO5281"
+  ],
+  "source": {
+   "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=69",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    69,
+    70,
+    71,
+    72
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 10,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "39581",
+  "title": "Automotive Emission Technician",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "AUTO50B",
+   "AUTO5244",
+   "AUTO5333",
+   "AUTO5355",
+   "AUTO95"
+  ],
+  "source": {
+   "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=68",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    68,
+    69,
+    70,
+    71
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 5,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "40743",
+  "title": "Cal-GETC",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "41308",
+  "title": "Agriculture Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "AG4",
+   "AG45",
+   "AG60",
+   "AG65",
+   "AG7",
+   "AG70",
+   "GNBUS30",
+   "PLSCI20",
+   "PLSCI22"
+  ],
+  "source": {
+   "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=57",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    57,
+    58,
+    59
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 9,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "41475",
+  "title": "Human Resources",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT10",
+   "GNBUS10",
+   "GNBUS21",
+   "GNBUS30",
+   "GNBUS33",
+   "GNBUS48",
+   "GNBUS5",
+   "GNBUS53",
+   "GNBUS6",
+   "GNBUS8",
+   "GNBUS9"
+  ],
+  "source": {
+   "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=78",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    78,
+    79,
+    80,
+    81
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 11,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "41502",
+  "title": "Agricultural Technician",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "AG4",
+   "AG60",
+   "AG65",
+   "AG70",
+   "GNBUS30",
+   "PLSCI20",
+   "PLSCI22"
+  ],
+  "source": {
+   "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=57",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    57,
+    58,
+    59
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 7,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "41568",
+  "title": "Business Administration 2.0",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT11",
+   "ACCT12",
+   "ECONC2001",
+   "ECONC2002",
+   "GNBUS10",
+   "GNBUS18",
+   "GNBUS21",
+   "MATH9",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=77",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    77,
+    78,
+    79,
+    80
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 9,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "41769",
+  "title": "Environmental Science",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEM1A",
+   "CHEM1B",
+   "ECOL10",
+   "ECON1B",
+   "GEOL10L",
+   "MATH1A",
+   "MATH9",
+   "PHYS2A",
+   "PHYS2B",
+   "PHYS3A",
+   "PHYS3B",
+   "PHYS4A",
+   "PHYS4B",
+   "PSYCH6",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=97",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    97,
+    98
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 15,
+  "text_chars": 13090
+ },
+ {
+  "control_number": "42493",
+  "title": "Economics",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT11",
+   "ACCT12",
+   "COMSC12",
+   "COMSC9A",
+   "ECONC2001",
+   "ECONC2002",
+   "MATH1A",
+   "MATH1B",
+   "MATH1C",
+   "MATH3",
+   "MATH9",
+   "POLSC7",
+   "PSYCC1000",
+   "PSYCH6",
+   "SOCIL1",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=98",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    98,
+    99
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 16,
+  "text_chars": 11060
+ },
+ {
+  "control_number": "42762",
+  "title": "Communication Studies 2.0",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTHR2",
+   "COMMC1000",
+   "PSYCC1000",
+   "SOCIL1",
+   "SPECH2",
+   "SPECH3",
+   "SPECH4R",
+   "SPECH6",
+   "SPECH7",
+   "SPECH8"
+  ],
+  "source": {
+   "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=165",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    165,
+    166
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 10,
+  "text_chars": 12481
+ },
+ {
+  "control_number": "43555",
+  "title": "Field Technician - Watershed Management",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ECOL10",
+   "GEOG10",
+   "GEOG13",
+   "GEOG40",
+   "GEOG41",
+   "GEOG42",
+   "GEOG43",
+   "NTRSC12",
+   "NTRSC15",
+   "NTRSC5"
+  ],
+  "source": {
+   "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=144",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    144,
+    145
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 10,
+  "text_chars": 14736
+ },
+ {
+  "control_number": "43557",
+  "title": "Geographic Information Systems (GIS)",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "COMSC3",
+   "COMSC4",
+   "GEOG10",
+   "GEOG11",
+   "GEOG12",
+   "GEOG13",
+   "NTRSC15"
+  ],
+  "source": {
+   "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=118",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    118,
+    119
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 7,
+  "text_chars": 12682
+ },
+ {
+  "control_number": "43558",
+  "title": "Soil Conservation Technician",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ECOL10",
+   "GEOG10",
+   "GEOG13",
+   "GEOG40",
+   "GEOG41",
+   "GEOG42",
+   "GEOG43",
+   "NTRSC12",
+   "NTRSC15",
+   "PLSCI22"
+  ],
+  "source": {
+   "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=144",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    144,
+    145
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 10,
+  "text_chars": 14736
+ }
+]
