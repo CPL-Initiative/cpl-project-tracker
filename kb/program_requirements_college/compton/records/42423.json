@@ -94,8 +94,10 @@
   },
   "careers": {
    "count": 3,
-   "not_verbatim": [],
-   "pass": true
+   "not_verbatim": [
+    "office administration"
+   ],
+   "pass": false
   },
   "degree": {
    "status": "major only",
@@ -249,5 +251,6 @@
    "The outcomes list is printed in the Business Administration 2.0 section introduction for 'the degree program'; recorded for this AS-T award."
   ]
  },
- "extracted_run": "39006336111"
+ "extracted_run": 39019546820,
+ "read_run": "39006336111"
 }

@@ -82,21 +82,34 @@
    "program": 4,
    "courses": 0,
    "count": 4,
-   "not_verbatim": [],
-   "why": [],
+   "not_verbatim": [
+    "Safety Knowledge and Skills: Acquire and be able to use specific safety knowledge and skills relating to the air conditioning and refrigeration discipline and will be able to apply those skills to specific job requirements.",
+    "Installing Servicing and Repairing Systems: Install, service, and repair ACR systems as required by the industry guidelines.",
+    "Pressure Testing and Charging Systems: Properly pressure test, evacuate, and charge ACR system.",
+    "Attaining Certificates, Degrees, Transferring and Attaining Jobs: Successfully earn a certificate/graduate/transfer to four-year universities and will successfully compete for jobs in which they can apply their knowledge and communicative skills acquired in the air conditioning and refrigeration program."
+   ],
+   "why": [
+    "not in the catalog text as printed: Safety Knowledge and Skills: Acquire and be able to use specific safety knowledg",
+    "not in the catalog text as printed: Installing Servicing and Repairing Systems: Install, service, and repair ACR sys",
+    "not in the catalog text as printed: Pressure Testing and Charging Systems: Properly pressure test, evacuate, and cha",
+    "not in the catalog text as printed: Attaining Certificates, Degrees, Transferring and Attaining Jobs: Successfully e"
+   ],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": true
+   "pass": false
   },
   "careers": {
    "count": 2,
-   "not_verbatim": [],
-   "pass": true
+   "not_verbatim": [
+    "advanced apprentice",
+    "entry-level heating, ventilation, air conditioning, and controls technician"
+   ],
+   "pass": false
   },
   "degree": {
    "status": "n/a"
   },
-  "pass": true
+  "pass": false
  },
  "record": {
   "program": {
@@ -182,5 +195,6 @@
    "Total Units: 13 printed for the certificate matches the sum of the four required courses."
   ]
  },
- "extracted_run": "39006336111"
+ "extracted_run": 39019546820,
+ "read_run": "39006336111"
 }

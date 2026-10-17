@@ -78,11 +78,75 @@
    "program": 31,
    "courses": 0,
    "count": 31,
-   "not_verbatim": [],
-   "why": [],
+   "not_verbatim": [
+    "Write letters given visual or aural input.",
+    "Produce phonetic sounds orally for individual letters.",
+    "Write numerals and their corresponding English words.",
+    "Respond appropriately to directions and commands given in class.",
+    "Use phrases appropriately to convey and obtain basic information in the classroom.",
+    "Identify pictures of basic vocabulary with spoken words.",
+    "Arrange letters to form familiar vocabulary acquisition with regularity.",
+    "Write simple sentences using the verb “to be” about personal information or pictures.",
+    "Complete cloze activities with correct vocabulary.",
+    "Use correct word order to write simple sentences.",
+    "Place days of the week in the correct order.",
+    "Match vocabulary words to their corresponding pictures.",
+    "Write sentences with the verb “to be” using correct subject-verb agreement.",
+    "Respond to high-frequency commands and social expressions and attempt to reproduce what is heard.",
+    "Sustain a brief 3 to 5-minute conversation on a familiar topic using simple questions and respond accurately with yes or no answers, single words, and short phrases.",
+    "Ask and respond to simple questions and requests related to personal information and needs.",
+    "Identify basic information from charts and use prepositions of time to describe or organize temporal information.",
+    "Accurately produce statements using simple present, simple past, and present continuous verb tenses in conversation.",
+    "Accurately formulate yes or no questions, wh-questions, and affirmative and negative statements in speaking and writing.",
+    "Identify nouns in speaking and in writing using determiners and pronouns.",
+    "Write simple and compound sentences using coordinating conjunctions.",
+    "Match phonological sounds to letters and clusters of letters in verb tenses and produce proper question intonation.",
+    "Read and complete simple forms and personal information.",
+    "Make statements related to basic daily needs, preferences, and familiar activities with limited attention to stress and intonation.",
+    "Identify the main topic of conversation or short paragraph of a familiar topic.",
+    "Some basic texts for key information and define the sequence of a simple narrative passage.",
+    "Use predicting or decoding strategies to interpret new words in familiar contexts.",
+    "Accurately produce affirmative and negative statements in writing.",
+    "Compose a short paragraph of related sentences including compound sentences.",
+    "Accurately use future tense, verbs followed by gerunds and infinitives, modals, frequency adverbs, quantifiers, and comparatives and superlatives in speaking and writing.",
+    "Respond appropriately to oral instructions in academic and workplace settings."
+   ],
+   "why": [
+    "not in the catalog text as printed: Write letters given visual or aural input.",
+    "not in the catalog text as printed: Produce phonetic sounds orally for individual letters.",
+    "not in the catalog text as printed: Write numerals and their corresponding English words.",
+    "not in the catalog text as printed: Respond appropriately to directions and commands given in class.",
+    "not in the catalog text as printed: Use phrases appropriately to convey and obtain basic information in the classroo",
+    "not in the catalog text as printed: Identify pictures of basic vocabulary with spoken words.",
+    "not in the catalog text as printed: Arrange letters to form familiar vocabulary acquisition with regularity.",
+    "not in the catalog text as printed: Write simple sentences using the verb \"to be\" about personal information or pict",
+    "not in the catalog text as printed: Complete cloze activities with correct vocabulary.",
+    "not in the catalog text as printed: Use correct word order to write simple sentences.",
+    "not in the catalog text as printed: Place days of the week in the correct order.",
+    "not in the catalog text as printed: Match vocabulary words to their corresponding pictures.",
+    "not in the catalog text as printed: Write sentences with the verb \"to be\" using correct subject-verb agreement.",
+    "not in the catalog text as printed: Respond to high-frequency commands and social expressions and attempt to reprodu",
+    "not in the catalog text as printed: Sustain a brief 3 to 5-minute conversation on a familiar topic using simple ques",
+    "not in the catalog text as printed: Ask and respond to simple questions and requests related to personal information",
+    "not in the catalog text as printed: Identify basic information from charts and use prepositions of time to describe ",
+    "not in the catalog text as printed: Accurately produce statements using simple present, simple past, and present con",
+    "not in the catalog text as printed: Accurately formulate yes or no questions, wh-questions, and affirmative and nega",
+    "not in the catalog text as printed: Identify nouns in speaking and in writing using determiners and pronouns.",
+    "not in the catalog text as printed: Write simple and compound sentences using coordinating conjunctions.",
+    "not in the catalog text as printed: Match phonological sounds to letters and clusters of letters in verb tenses and ",
+    "not in the catalog text as printed: Read and complete simple forms and personal information.",
+    "not in the catalog text as printed: Make statements related to basic daily needs, preferences, and familiar activiti",
+    "not in the catalog text as printed: Identify the main topic of conversation or short paragraph of a familiar topic.",
+    "not in the catalog text as printed: Some basic texts for key information and define the sequence of a simple narrati",
+    "not in the catalog text as printed: Use predicting or decoding strategies to interpret new words in familiar context",
+    "not in the catalog text as printed: Accurately produce affirmative and negative statements in writing.",
+    "not in the catalog text as printed: Compose a short paragraph of related sentences including compound sentences.",
+    "not in the catalog text as printed: Accurately use future tense, verbs followed by gerunds and infinitives, modals, ",
+    "not in the catalog text as printed: Respond appropriately to oral instructions in academic and workplace settings."
+   ],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": true
+   "pass": false
   },
   "careers": {
    "count": 0,
@@ -92,7 +156,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": true
+  "pass": false
  },
  "record": {
   "program": {
@@ -198,5 +262,6 @@
    "The Program Requirements list continues across the page break from page 89 to page 90."
   ]
  },
- "extracted_run": "39006336111"
+ "extracted_run": 39019546820,
+ "read_run": "39006336111"
 }

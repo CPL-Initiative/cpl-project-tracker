@@ -96,8 +96,11 @@
   },
   "careers": {
    "count": 4,
-   "not_verbatim": [],
-   "pass": true
+   "not_verbatim": [
+    "research",
+    "archival science"
+   ],
+   "pass": false
   },
   "degree": {
    "status": "major only",
@@ -322,5 +325,6 @@
    "The 60-unit and 18-unit figures are generic AA-T requirements, not recorded as degree_total; the major total 'Total Units: 18' is recorded as total_units."
   ]
  },
- "extracted_run": "39006336111"
+ "extracted_run": 39019546820,
+ "read_run": "39006336111"
 }

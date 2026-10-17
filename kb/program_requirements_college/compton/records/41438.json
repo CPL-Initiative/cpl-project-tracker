@@ -61,13 +61,13 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
+   "pass": true,
    "status": "unstated",
    "computed": null,
    "stated": null,
    "against": null,
    "why": [
-    "the record states no figure, but the catalog text names 6-9 units, 6 units, 12 \nunits, 6 units"
+    "the catalog prints no total, no hours and no units"
    ]
   },
   "repeated": {
@@ -92,7 +92,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -163,5 +163,6 @@
    "The outcome 'Be prepared for students for effective skills in the workplace' is copied as printed, including its awkward wording."
   ]
  },
- "extracted_run": "39006336111"
+ "extracted_run": 39019546820,
+ "read_run": "39006336111"
 }

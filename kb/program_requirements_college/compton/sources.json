@@ -12,8 +12,8 @@
   ],
   "source": {
    "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=76",
-   "title": null,
-   "h1": null,
+   "title": "74    Compton College Catalog 2026-2027  www.compton.edu",
+   "h1": "74    Compton College Catalog 2026-2027  www.compton.edu",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -21,7 +21,8 @@
     77,
     78
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 4,
   "text_chars": 14388
@@ -40,20 +41,19 @@
    "ATEC128"
   ],
   "source": {
-   "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=76",
-   "title": null,
-   "h1": null,
+   "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=78",
+   "title": "The Automotive Tune-Up Technician certificate of achievement",
+   "h1": "The Automotive Tune-Up Technician certificate of achievement",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    76,
-    77,
     78
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 4,
-  "text_chars": 14388
+  "text_chars": 4595
  },
  {
   "control_number": "37320",
@@ -69,19 +69,19 @@
    "BUS125"
   ],
   "source": {
-   "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=80",
-   "title": null,
-   "h1": null,
+   "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=81",
+   "title": "Business Management – Certificate of Achievement",
+   "h1": "Business Management – Certificate of Achievement",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    80,
     81
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 4,
-  "text_chars": 11265
+  "text_chars": 5835
  },
  {
   "control_number": "37321",
@@ -98,17 +98,18 @@
   ],
   "source": {
    "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=101",
-   "title": null,
-   "h1": null,
+   "title": "CNC Machine Operator – Certificate of Achievement",
+   "h1": "CNC Machine Operator – Certificate of Achievement",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     101
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 4,
-  "text_chars": 5317
+  "text_chars": 5261
  },
  {
   "control_number": "37322",
@@ -136,19 +137,19 @@
    "ACR160"
   ],
   "source": {
-   "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=74",
-   "title": null,
-   "h1": null,
+   "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=75",
+   "title": "Refrigeration Certificate of Achievement prepares students for",
+   "h1": "Refrigeration Certificate of Achievement prepares students for",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    74,
     75
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 4,
-  "text_chars": 10241
+  "text_chars": 5102
  },
  {
   "control_number": "37325",
@@ -178,15 +179,16 @@
   ],
   "source": {
    "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=74",
-   "title": null,
-   "h1": null,
+   "title": "72    Compton College Catalog 2026-2027  www.compton.edu",
+   "h1": "72    Compton College Catalog 2026-2027  www.compton.edu",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     74,
     75
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 5,
   "text_chars": 10241
@@ -210,15 +212,16 @@
   ],
   "source": {
    "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=82",
-   "title": null,
-   "h1": null,
+   "title": "80    Compton College Catalog 2026-2027  www.compton.edu",
+   "h1": "80    Compton College Catalog 2026-2027  www.compton.edu",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     82,
     83
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 15,
   "text_chars": 10641
@@ -239,18 +242,19 @@
   ],
   "source": {
    "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=101",
-   "title": null,
-   "h1": null,
+   "title": "to obtain a degree or certificate in marketing. The student will",
+   "h1": "to obtain a degree or certificate in marketing. The student will",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     101,
     102
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 8,
-  "text_chars": 10907
+  "text_chars": 8146
  },
  {
   "control_number": "37335",
@@ -268,19 +272,19 @@
    "MTT160"
   ],
   "source": {
-   "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=100",
-   "title": null,
-   "h1": null,
+   "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=101",
+   "title": "The Numerical Control Programmer certificate of achievement aims to",
+   "h1": "The Numerical Control Programmer certificate of achievement aims to",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    100,
     101
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 10,
-  "text_chars": 10884
+  "text_chars": 3585
  },
  {
   "control_number": "37360",
@@ -299,17 +303,18 @@
   ],
   "source": {
    "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=73",
-   "title": null,
-   "h1": null,
+   "title": "The Administration of Justice certificate of achievement prepares",
+   "h1": "The Administration of Justice certificate of achievement prepares",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     73
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 7,
-  "text_chars": 5320
+  "text_chars": 885
  },
  {
   "control_number": "37361",
@@ -333,17 +338,18 @@
   ],
   "source": {
    "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=114",
-   "title": null,
-   "h1": null,
+   "title": "Welding – Certificate of Achievement",
+   "h1": "Welding – Certificate of Achievement",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     114
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 13,
-  "text_chars": 3556
+  "text_chars": 867
  },
  {
   "control_number": "37362",
@@ -361,18 +367,19 @@
   ],
   "source": {
    "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=74",
-   "title": null,
-   "h1": null,
+   "title": "The Air Conditioning certificate of achievement prepares",
+   "h1": "The Air Conditioning certificate of achievement prepares",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     74,
     75
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 5,
-  "text_chars": 10241
+  "text_chars": 7636
  },
  {
   "control_number": "37363",
@@ -387,8 +394,8 @@
   ],
   "source": {
    "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=76",
-   "title": null,
-   "h1": null,
+   "title": "74    Compton College Catalog 2026-2027  www.compton.edu",
+   "h1": "74    Compton College Catalog 2026-2027  www.compton.edu",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -396,7 +403,8 @@
     77,
     78
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 2,
   "text_chars": 14388
@@ -419,20 +427,20 @@
    "ATEC143"
   ],
   "source": {
-   "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=76",
-   "title": null,
-   "h1": null,
+   "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=77",
+   "title": "Automotive Technician I – Certificate of",
+   "h1": "Automotive Technician I – Certificate of",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    76,
     77,
     78
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 10,
-  "text_chars": 14388
+  "text_chars": 7392
  },
  {
   "control_number": "37369",
@@ -455,18 +463,19 @@
   ],
   "source": {
    "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=77",
-   "title": null,
-   "h1": null,
+   "title": "Automotive Technician II – Certificate of",
+   "h1": "Automotive Technician II – Certificate of",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     77,
     78
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 12,
-  "text_chars": 9500
+  "text_chars": 6129
  },
  {
   "control_number": "37370",
@@ -485,17 +494,18 @@
   ],
   "source": {
    "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=103",
-   "title": null,
-   "h1": null,
+   "title": "Commercial Music – Certificate of Achievement",
+   "h1": "Commercial Music – Certificate of Achievement",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     103
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 6,
-  "text_chars": 5956
+  "text_chars": 5899
  },
  {
   "control_number": "37373",
@@ -514,15 +524,16 @@
   ],
   "source": {
    "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=84",
-   "title": null,
-   "h1": null,
+   "title": "82    Compton College Catalog 2026-2027  www.compton.edu",
+   "h1": "82    Compton College Catalog 2026-2027  www.compton.edu",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     84,
     85
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 9,
   "text_chars": 11049
@@ -540,15 +551,16 @@
   ],
   "source": {
    "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=162",
-   "title": null,
-   "h1": null,
+   "title": "160    Compton College Catalog 2026-2027  www.compton.edu",
+   "h1": "160    Compton College Catalog 2026-2027  www.compton.edu",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     162,
     163
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 4,
   "text_chars": 8850
@@ -575,15 +587,16 @@
   ],
   "source": {
    "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=74",
-   "title": null,
-   "h1": null,
+   "title": "72    Compton College Catalog 2026-2027  www.compton.edu",
+   "h1": "72    Compton College Catalog 2026-2027  www.compton.edu",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     74,
     75
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 11,
   "text_chars": 10241
@@ -594,29 +607,27 @@
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
   "method": "pdf_pages",
-  "coverage": 1.0,
+  "coverage": 0.667,
   "codes_found": [
-   "ACRP103",
-   "ACRP104",
    "ACRP136",
    "ACRP138",
    "ACRP144",
    "ACRP146"
   ],
   "source": {
-   "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=75",
-   "title": null,
-   "h1": null,
+   "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=76",
+   "title": "74    Compton College Catalog 2026-2027  www.compton.edu",
+   "h1": "74    Compton College Catalog 2026-2027  www.compton.edu",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    75,
     76
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 6,
-  "text_chars": 10201
+  "text_chars": 4886
  },
  {
   "control_number": "37378",
@@ -635,14 +646,15 @@
   ],
   "source": {
    "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=76",
-   "title": null,
-   "h1": null,
+   "title": "74    Compton College Catalog 2026-2027  www.compton.edu",
+   "h1": "74    Compton College Catalog 2026-2027  www.compton.edu",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     76
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 6,
   "text_chars": 4886
@@ -664,19 +676,19 @@
    "MTT160"
   ],
   "source": {
-   "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=100",
-   "title": null,
-   "h1": null,
+   "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=101",
+   "title": "Machinist - Certificate of Achievement",
+   "h1": "Machinist - Certificate of Achievement",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    100,
     101
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 8,
-  "text_chars": 10884
+  "text_chars": 4521
  },
  {
   "control_number": "37381",
@@ -693,17 +705,18 @@
   ],
   "source": {
    "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=81",
-   "title": null,
-   "h1": null,
+   "title": "Retail Management – Certificate of Achievement",
+   "h1": "Retail Management – Certificate of Achievement",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     81
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 8,
-  "text_chars": 5891
+  "text_chars": 4379
  },
  {
   "control_number": "37477",
@@ -721,15 +734,16 @@
   ],
   "source": {
    "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=82",
-   "title": null,
-   "h1": null,
+   "title": "80    Compton College Catalog 2026-2027  www.compton.edu",
+   "h1": "80    Compton College Catalog 2026-2027  www.compton.edu",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     82,
     83
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 9,
   "text_chars": 10641
@@ -754,14 +768,15 @@
   ],
   "source": {
    "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=91",
-   "title": null,
-   "h1": null,
+   "title": "www.compton.edu Compton College Catalog 2026-2027    89",
+   "h1": "www.compton.edu Compton College Catalog 2026-2027    89",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     91
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 13,
   "text_chars": 5193
@@ -785,8 +800,8 @@
   ],
   "source": {
    "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=75",
-   "title": null,
-   "h1": null,
+   "title": "www.compton.edu Compton College Catalog 2026-2027    73",
+   "h1": "www.compton.edu Compton College Catalog 2026-2027    73",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -795,7 +810,8 @@
     77,
     78
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 10,
   "text_chars": 16000
@@ -818,15 +834,16 @@
   ],
   "source": {
    "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=100",
-   "title": null,
-   "h1": null,
+   "title": "98    Compton College Catalog 2026-2027  www.compton.edu",
+   "h1": "98    Compton College Catalog 2026-2027  www.compton.edu",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     100,
     101
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 8,
   "text_chars": 10884
@@ -856,14 +873,15 @@
   ],
   "source": {
    "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=91",
-   "title": null,
-   "h1": null,
+   "title": "www.compton.edu Compton College Catalog 2026-2027    89",
+   "h1": "www.compton.edu Compton College Catalog 2026-2027    89",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     91
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 19,
   "text_chars": 5193
@@ -888,14 +906,15 @@
   ],
   "source": {
    "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=91",
-   "title": null,
-   "h1": null,
+   "title": "www.compton.edu Compton College Catalog 2026-2027    89",
+   "h1": "www.compton.edu Compton College Catalog 2026-2027    89",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     91
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 11,
   "text_chars": 5193
@@ -941,15 +960,16 @@
   ],
   "source": {
    "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=98",
-   "title": null,
-   "h1": null,
+   "title": "96    Compton College Catalog 2026-2027  www.compton.edu",
+   "h1": "96    Compton College Catalog 2026-2027  www.compton.edu",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     98,
     99
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 33,
   "text_chars": 10934
@@ -1015,8 +1035,8 @@
   ],
   "source": {
    "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=96",
-   "title": null,
-   "h1": null,
+   "title": "General Studies: Social and Behavioral Sciences A.A.",
+   "h1": "General Studies: Social and Behavioral Sciences A.A.",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -1025,7 +1045,8 @@
     98,
     99
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 62,
   "text_chars": 16000
@@ -1056,15 +1077,16 @@
   ],
   "source": {
    "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=82",
-   "title": null,
-   "h1": null,
+   "title": "80    Compton College Catalog 2026-2027  www.compton.edu",
+   "h1": "80    Compton College Catalog 2026-2027  www.compton.edu",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     82,
     83
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 24,
   "text_chars": 10641
@@ -1091,14 +1113,15 @@
   ],
   "source": {
    "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=114",
-   "title": null,
-   "h1": null,
+   "title": "112    Compton College Catalog 2026-2027  www.compton.edu",
+   "h1": "112    Compton College Catalog 2026-2027  www.compton.edu",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     114
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 18,
   "text_chars": 3556
@@ -1123,15 +1146,16 @@
   ],
   "source": {
    "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=77",
-   "title": null,
-   "h1": null,
+   "title": "www.compton.edu Compton College Catalog 2026-2027    75",
+   "h1": "www.compton.edu Compton College Catalog 2026-2027    75",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     77,
     78
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 11,
   "text_chars": 9500
@@ -1158,15 +1182,16 @@
   ],
   "source": {
    "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=74",
-   "title": null,
-   "h1": null,
+   "title": "72    Compton College Catalog 2026-2027  www.compton.edu",
+   "h1": "72    Compton College Catalog 2026-2027  www.compton.edu",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     74,
     75
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 12,
   "text_chars": 10241
@@ -1189,15 +1214,16 @@
   ],
   "source": {
    "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=80",
-   "title": null,
-   "h1": null,
+   "title": "78    Compton College Catalog 2026-2027  www.compton.edu",
+   "h1": "78    Compton College Catalog 2026-2027  www.compton.edu",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     80,
     81
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 10,
   "text_chars": 11265
@@ -1224,15 +1250,16 @@
   ],
   "source": {
    "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=84",
-   "title": null,
-   "h1": null,
+   "title": "82    Compton College Catalog 2026-2027  www.compton.edu",
+   "h1": "82    Compton College Catalog 2026-2027  www.compton.edu",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     84,
     85
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 14,
   "text_chars": 11049
@@ -1253,15 +1280,16 @@
   ],
   "source": {
    "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=101",
-   "title": null,
-   "h1": null,
+   "title": "www.compton.edu Compton College Catalog 2026-2027    99",
+   "h1": "www.compton.edu Compton College Catalog 2026-2027    99",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     101,
     102
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 10,
   "text_chars": 10907
@@ -1298,14 +1326,15 @@
   ],
   "source": {
    "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=102",
-   "title": null,
-   "h1": null,
+   "title": "100    Compton College Catalog 2026-2027  www.compton.edu",
+   "h1": "100    Compton College Catalog 2026-2027  www.compton.edu",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     102
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 21,
   "text_chars": 5588
@@ -1323,8 +1352,8 @@
   ],
   "source": {
    "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=161",
-   "title": null,
-   "h1": null,
+   "title": "www.compton.edu Compton College Catalog 2026-2027    159",
+   "h1": "www.compton.edu Compton College Catalog 2026-2027    159",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -1332,7 +1361,8 @@
     162,
     163
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 4,
   "text_chars": 12335
@@ -1371,14 +1401,15 @@
   ],
   "source": {
    "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=92",
-   "title": null,
-   "h1": null,
+   "title": "90    Compton College Catalog 2026-2027  www.compton.edu",
+   "h1": "90    Compton College Catalog 2026-2027  www.compton.edu",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     92
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 26,
   "text_chars": 3875
@@ -1400,15 +1431,16 @@
   ],
   "source": {
    "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=100",
-   "title": null,
-   "h1": null,
+   "title": "98    Compton College Catalog 2026-2027  www.compton.edu",
+   "h1": "98    Compton College Catalog 2026-2027  www.compton.edu",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     100,
     101
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 12,
   "text_chars": 10884
@@ -1438,14 +1470,15 @@
   ],
   "source": {
    "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=92",
-   "title": null,
-   "h1": null,
+   "title": "90    Compton College Catalog 2026-2027  www.compton.edu",
+   "h1": "90    Compton College Catalog 2026-2027  www.compton.edu",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     92
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 23,
   "text_chars": 3875
@@ -1480,18 +1513,19 @@
   ],
   "source": {
    "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=95",
-   "title": null,
-   "h1": null,
+   "title": "General Studies: Kinesiology and Wellness A.A.",
+   "h1": "General Studies: Kinesiology and Wellness A.A.",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     95,
     96
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 25,
-  "text_chars": 10162
+  "text_chars": 6832
  },
  {
   "control_number": "38212",
@@ -1521,17 +1555,18 @@
   ],
   "source": {
    "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=88",
-   "title": null,
-   "h1": null,
+   "title": "The English Associate of Arts for Transfer (AA-T) is intended for students",
+   "h1": "The English Associate of Arts for Transfer (AA-T) is intended for students",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     88
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 17,
-  "text_chars": 5889
+  "text_chars": 4744
  },
  {
   "control_number": "38213",
@@ -1550,17 +1585,18 @@
   ],
   "source": {
    "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=108",
-   "title": null,
-   "h1": null,
+   "title": "The Physics 2.0 Associate of Science for Transfer (AS-T) is intended for",
+   "h1": "The Physics 2.0 Associate of Science for Transfer (AS-T) is intended for",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     108
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 6,
-  "text_chars": 6032
+  "text_chars": 4687
  },
  {
   "control_number": "38214",
@@ -1583,17 +1619,18 @@
   ],
   "source": {
    "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=73",
-   "title": null,
-   "h1": null,
+   "title": "The Administration of Justice Associate of Science for Transfer",
+   "h1": "The Administration of Justice Associate of Science for Transfer",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     73
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 12,
-  "text_chars": 5320
+  "text_chars": 4632
  },
  {
   "control_number": "38215",
@@ -1624,8 +1661,8 @@
   ],
   "source": {
    "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=109",
-   "title": null,
-   "h1": null,
+   "title": "www.compton.edu Compton College Catalog 2026-2027    107",
+   "h1": "www.compton.edu Compton College Catalog 2026-2027    107",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -1634,7 +1671,8 @@
     111,
     112
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 19,
   "text_chars": 16000
@@ -1706,8 +1744,8 @@
   ],
   "source": {
    "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=93",
-   "title": null,
-   "h1": null,
+   "title": "General Studies: Arts and Humanities A.A.",
+   "h1": "General Studies: Arts and Humanities A.A.",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -1716,7 +1754,8 @@
     95,
     96
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 68,
   "text_chars": 16000
@@ -1770,17 +1809,18 @@
   ],
   "source": {
    "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=95",
-   "title": null,
-   "h1": null,
+   "title": "General Studies: Fine and Applied Arts A.A.",
+   "h1": "General Studies: Fine and Applied Arts A.A.",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     95
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 47,
-  "text_chars": 4924
+  "text_chars": 4764
  },
  {
   "control_number": "38219",
@@ -1822,8 +1862,8 @@
   ],
   "source": {
    "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=94",
-   "title": null,
-   "h1": null,
+   "title": "92    Compton College Catalog 2026-2027  www.compton.edu",
+   "h1": "92    Compton College Catalog 2026-2027  www.compton.edu",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -1831,7 +1871,8 @@
     95,
     96
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 35,
   "text_chars": 15150
@@ -1884,8 +1925,8 @@
   ],
   "source": {
    "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=94",
-   "title": null,
-   "h1": null,
+   "title": "92    Compton College Catalog 2026-2027  www.compton.edu",
+   "h1": "92    Compton College Catalog 2026-2027  www.compton.edu",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -1893,7 +1934,8 @@
     95,
     96
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 40,
   "text_chars": 15150
@@ -1932,8 +1974,8 @@
   ],
   "source": {
    "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=97",
-   "title": null,
-   "h1": null,
+   "title": "The History Associate of Arts for Transfer (AA-T) is intended for",
+   "h1": "The History Associate of Arts for Transfer (AA-T) is intended for",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -1941,10 +1983,11 @@
     98,
     99
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 17,
-  "text_chars": 16000
+  "text_chars": 13896
  },
  {
   "control_number": "38387",
@@ -1997,8 +2040,8 @@
   ],
   "source": {
    "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=107",
-   "title": null,
-   "h1": null,
+   "title": "www.compton.edu Compton College Catalog 2026-2027    105",
+   "h1": "www.compton.edu Compton College Catalog 2026-2027    105",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -2007,7 +2050,8 @@
     109,
     110
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 64,
   "text_chars": 16000
@@ -2033,17 +2077,18 @@
   ],
   "source": {
    "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=112",
-   "title": null,
-   "h1": null,
+   "title": "learning of Spanish and prepares students to transfer and major in",
+   "h1": "learning of Spanish and prepares students to transfer and major in",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     112
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 10,
-  "text_chars": 5595
+  "text_chars": 4131
  },
  {
   "control_number": "38422",
@@ -2066,14 +2111,15 @@
   ],
   "source": {
    "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=95",
-   "title": null,
-   "h1": null,
+   "title": "www.compton.edu Compton College Catalog 2026-2027    93",
+   "h1": "www.compton.edu Compton College Catalog 2026-2027    93",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     95
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 15,
   "text_chars": 4924
@@ -2103,15 +2149,16 @@
   ],
   "source": {
    "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=98",
-   "title": null,
-   "h1": null,
+   "title": "96    Compton College Catalog 2026-2027  www.compton.edu",
+   "h1": "96    Compton College Catalog 2026-2027  www.compton.edu",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     98,
     99
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 17,
   "text_chars": 10934
@@ -2139,8 +2186,8 @@
   ],
   "source": {
    "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=109",
-   "title": null,
-   "h1": null,
+   "title": "The Psychology Associate of Arts for Transfer (AA-T) is intended",
+   "h1": "The Psychology Associate of Arts for Transfer (AA-T) is intended",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -2149,7 +2196,8 @@
     111,
     112
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 15,
   "text_chars": 16000
@@ -2181,15 +2229,16 @@
   ],
   "source": {
    "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=106",
-   "title": null,
-   "h1": null,
+   "title": "104    Compton College Catalog 2026-2027  www.compton.edu",
+   "h1": "104    Compton College Catalog 2026-2027  www.compton.edu",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     106,
     107
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 19,
   "text_chars": 9984
@@ -2224,8 +2273,8 @@
   ],
   "source": {
    "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=105",
-   "title": null,
-   "h1": null,
+   "title": "Program Requirements for Nursing A.S. Degree:",
+   "h1": "Program Requirements for Nursing A.S. Degree:",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -2233,10 +2282,11 @@
     106,
     107
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 22,
-  "text_chars": 16000
+  "text_chars": 11192
  },
  {
   "control_number": "38567",
@@ -2262,14 +2312,15 @@
   ],
   "source": {
    "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=91",
-   "title": null,
-   "h1": null,
+   "title": "www.compton.edu Compton College Catalog 2026-2027    89",
+   "h1": "www.compton.edu Compton College Catalog 2026-2027    89",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     91
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 1,
   "text_chars": 5193
@@ -2289,17 +2340,18 @@
   ],
   "source": {
    "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=79",
-   "title": null,
-   "h1": null,
+   "title": "Biomanufacturing Technician - Certificate of",
+   "h1": "Biomanufacturing Technician - Certificate of",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     79
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 4,
-  "text_chars": 4123
+  "text_chars": 2424
  },
  {
   "control_number": "41026",
@@ -2319,15 +2371,16 @@
   ],
   "source": {
    "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=79",
-   "title": null,
-   "h1": null,
+   "title": "www.compton.edu Compton College Catalog 2026-2027    77",
+   "h1": "www.compton.edu Compton College Catalog 2026-2027    77",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     79,
     80
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 7,
   "text_chars": 9497
@@ -2345,17 +2398,18 @@
   ],
   "source": {
    "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=79",
-   "title": null,
-   "h1": null,
+   "title": "Biotechnology Laboratory Assistant - Certificate",
+   "h1": "Biotechnology Laboratory Assistant - Certificate",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     79
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 2,
-  "text_chars": 4123
+  "text_chars": 1224
  },
  {
   "control_number": "41438",
@@ -2370,18 +2424,19 @@
   ],
   "source": {
    "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=88",
-   "title": null,
-   "h1": null,
+   "title": "Basic Career Training - Certificate of Completion",
+   "h1": "Basic Career Training - Certificate of Completion",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     88,
     89
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 2,
-  "text_chars": 11811
+  "text_chars": 6903
  },
  {
   "control_number": "41599",
@@ -2395,19 +2450,19 @@
    "ESL13"
   ],
   "source": {
-   "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=89",
-   "title": null,
-   "h1": null,
+   "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=90",
+   "title": "88    Compton College Catalog 2026-2027  www.compton.edu",
+   "h1": "88    Compton College Catalog 2026-2027  www.compton.edu",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    89,
     90
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 3,
-  "text_chars": 11276
+  "text_chars": 5354
  },
  {
   "control_number": "41600",
@@ -2425,14 +2480,15 @@
   ],
   "source": {
    "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=85",
-   "title": null,
-   "h1": null,
+   "title": "www.compton.edu Compton College Catalog 2026-2027    83",
+   "h1": "www.compton.edu Compton College Catalog 2026-2027    83",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     85
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 5,
   "text_chars": 5725
@@ -2450,17 +2506,18 @@
   ],
   "source": {
    "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=90",
-   "title": null,
-   "h1": null,
+   "title": "16 and ESL 17 , students will receive a Level 3 Certificate of Completion.",
+   "h1": "16 and ESL 17 , students will receive a Level 3 Certificate of Completion.",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     90
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 2,
-  "text_chars": 5354
+  "text_chars": 1881
  },
  {
   "control_number": "41625",
@@ -2475,14 +2532,15 @@
   ],
   "source": {
    "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=90",
-   "title": null,
-   "h1": null,
+   "title": "88    Compton College Catalog 2026-2027  www.compton.edu",
+   "h1": "88    Compton College Catalog 2026-2027  www.compton.edu",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     90
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 2,
   "text_chars": 5354
@@ -2500,14 +2558,15 @@
   ],
   "source": {
    "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=89",
-   "title": null,
-   "h1": null,
+   "title": "www.compton.edu Compton College Catalog 2026-2027    87",
+   "h1": "www.compton.edu Compton College Catalog 2026-2027    87",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     89
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 2,
   "text_chars": 5920
@@ -2533,17 +2592,18 @@
   ],
   "source": {
    "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=87",
-   "title": null,
-   "h1": null,
+   "title": "The Economics Associate in Arts for Transfer (AA-T) is intended for",
+   "h1": "The Economics Associate in Arts for Transfer (AA-T) is intended for",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     87
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 10,
-  "text_chars": 5517
+  "text_chars": 4347
  },
  {
   "control_number": "42423",
@@ -2568,18 +2628,19 @@
   ],
   "source": {
    "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=80",
-   "title": null,
-   "h1": null,
+   "title": "careers and transfer to a major in Business Administration.",
+   "h1": "careers and transfer to a major in Business Administration.",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     80,
     81
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 12,
-  "text_chars": 11265
+  "text_chars": 10080
  },
  {
   "control_number": "42724",
@@ -2619,14 +2680,15 @@
   ],
   "source": {
    "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=96",
-   "title": null,
-   "h1": null,
+   "title": "94    Compton College Catalog 2026-2027  www.compton.edu",
+   "h1": "94    Compton College Catalog 2026-2027  www.compton.edu",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     96
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 19,
   "text_chars": 5236
@@ -2647,17 +2709,18 @@
   ],
   "source": {
    "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=92",
-   "title": null,
-   "h1": null,
+   "title": "Social Media - Certificate of Achievement",
+   "h1": "Social Media - Certificate of Achievement",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     92
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 5,
-  "text_chars": 3875
+  "text_chars": 3812
  },
  {
   "control_number": "43718",
@@ -2677,15 +2740,16 @@
   ],
   "source": {
    "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=93",
-   "title": null,
-   "h1": null,
+   "title": "www.compton.edu Compton College Catalog 2026-2027    91",
+   "h1": "www.compton.edu Compton College Catalog 2026-2027    91",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     93,
     94
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 13,
   "text_chars": 10418
@@ -2705,14 +2769,15 @@
   ],
   "source": {
    "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=97",
-   "title": null,
-   "h1": null,
+   "title": "www.compton.edu Compton College Catalog 2026-2027    95",
+   "h1": "www.compton.edu Compton College Catalog 2026-2027    95",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     97
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 4,
   "text_chars": 5183
@@ -2730,17 +2795,18 @@
   ],
   "source": {
    "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=97",
-   "title": null,
-   "h1": null,
+   "title": "High School Spanish - Certificate of Competency",
+   "h1": "High School Spanish - Certificate of Competency",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     97
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 2,
-  "text_chars": 5183
+  "text_chars": 4079
  },
  {
   "control_number": "44275",
@@ -2755,17 +2821,18 @@
   ],
   "source": {
    "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=106",
-   "title": null,
-   "h1": null,
+   "title": "Certified Nursing Assistant - Certificate of Competency",
+   "h1": "Certified Nursing Assistant - Certificate of Competency",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     106
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 2,
-  "text_chars": 5449
+  "text_chars": 4340
  },
  {
   "control_number": "45446",
@@ -2793,14 +2860,15 @@
   ],
   "source": {
    "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=97",
-   "title": null,
-   "h1": null,
+   "title": "www.compton.edu Compton College Catalog 2026-2027    95",
+   "h1": "www.compton.edu Compton College Catalog 2026-2027    95",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     97
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 3,
   "text_chars": 5183
@@ -2828,8 +2896,8 @@
   ],
   "source": {
    "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=110",
-   "title": null,
-   "h1": null,
+   "title": "108    Compton College Catalog 2026-2027  www.compton.edu",
+   "h1": "108    Compton College Catalog 2026-2027  www.compton.edu",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -2837,7 +2905,8 @@
     111,
     112
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 12,
   "text_chars": 16000
@@ -2860,16 +2929,17 @@
   ],
   "source": {
    "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=102",
-   "title": null,
-   "h1": null,
+   "title": "for the student who plans to transfer in mathematics. The core of the",
+   "h1": "for the student who plans to transfer in mathematics. The core of the",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     102
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 8,
-  "text_chars": 5588
+  "text_chars": 5113
  }
 ]

@@ -94,11 +94,27 @@
    "program": 7,
    "courses": 0,
    "count": 7,
-   "not_verbatim": [],
-   "why": [],
+   "not_verbatim": [
+    "Adhere to standards of professional practice, is accountable for his/her actions and behaviors, and practice nursing within legal, ethical, and regulatory frameworks.",
+    "Communicate effectively, accurately, and in a timely manner with patients, significant others, and members of the health care team.",
+    "Utilize the nursing process to provide patient centered nursing care, integrating evidence-based practice to address the unmet basic needs for a diverse population of patients in a variety of health care settings.",
+    "Implement health education to promote and facilitate informed decision making, achieve positive outcomes, and support self-care activities.",
+    "Utilize teamwork and collaboration while providing quality care to individuals and families.",
+    "Manage care of the patient by demonstrating effective use of human, physical, financial, and technological resources.",
+    "Demonstrate the ability to recognize potential threats to patient safety from both system ineffectiveness and individual performance and appropriately intervene."
+   ],
+   "why": [
+    "not in the catalog text as printed: Adhere to standards of professional practice, is accountable for his/her actions",
+    "not in the catalog text as printed: Communicate effectively, accurately, and in a timely manner with patients, signi",
+    "not in the catalog text as printed: Utilize the nursing process to provide patient centered nursing care, integratin",
+    "not in the catalog text as printed: Implement health education to promote and facilitate informed decision making, a",
+    "not in the catalog text as printed: Utilize teamwork and collaboration while providing quality care to individuals a",
+    "not in the catalog text as printed: Manage care of the patient by demonstrating effective use of human, physical, fi",
+    "not in the catalog text as printed: Demonstrate the ability to recognize potential threats to patient safety from bo"
+   ],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": true
+   "pass": false
   },
   "careers": {
    "count": 1,
@@ -111,7 +127,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": true
+  "pass": false
  },
  "record": {
   "program": {
@@ -340,5 +356,6 @@
    "The only career reference is the phrase 'careers in nursing'."
   ]
  },
- "extracted_run": "39006336111"
+ "extracted_run": 39019546820,
+ "read_run": "39006336111"
 }

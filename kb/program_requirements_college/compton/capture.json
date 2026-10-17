@@ -5,7 +5,7 @@
  "catalog_year": "2026-2027",
  "programs": 87,
  "with_closed_list": 86,
- "started": "2026-10-17T05:28:42Z",
+ "started": "2026-10-17T09:02:36Z",
  "pdf": {
   "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf",
   "access": "ok",
@@ -19,10 +19,964 @@
    "p79: 'www.compton.edu Compton College Catalog 2026-2027    77\\nBIOMANUFACTURING\\nIn the Biomanufacturing program, students will gain key \\nknowledge, skills, and abilities needed to work in the \\nbiomanufacturing industry, which uses biological syste'",
    "p158: '156    Compton College Catalog 2026-2027  www.compton.edu\\nCIS 164 - Programming Fundamentals II: Apple Swift II (CSU)\\nUnits: 3 Lecture Hours: 36 Lab Hours: 54 Outside Hours: 72 \\nGrading Method: Letter Credit Status: Credit, degree applicabl'"
   ],
-  "extractor": "pypdf"
+  "extractor": "pypdf",
+  "picks": [
+   {
+    "control_number": "37317",
+    "pages": [
+     76,
+     77,
+     78
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.5,
+    "opens": "[page 76] 74 Compton College Catalog 2026-2027 www.compton.edu ACRP 124 Automotive Collision Analysis (3) ACRP 126 Automotive Accident Reconstruction (3) ACRP 136 Introduction to Automotive Collision Estimating"
+   },
+   {
+    "control_number": "37318",
+    "pages": [
+     78
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 78] The Automotive Tune-Up Technician certificate of achievement prepares students for employment in the field and provides upgrade opportunities for currently employed personnel. By completing the certificate r"
+   },
+   {
+    "control_number": "37320",
+    "pages": [
+     81
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 81] Business Management – Certificate of Achievement The Business Management certificate of achievement provides students with the opportunity to obtain a degree or certificate in business management. The studen"
+   },
+   {
+    "control_number": "37321",
+    "pages": [
+     101
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 101] CNC Machine Operator – Certificate of Achievement The CNC Machine Operator certificate of achievement aims to provide basic to advanced training in manual or conventional machining, computer numerical prog"
+   },
+   {
+    "control_number": "37323",
+    "pages": [
+     75
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 75] Refrigeration Certificate of Achievement prepares students for employment in the field and provides upgrade opportunities for currently employed personnel. Upon success completion of the certificate requirem"
+   },
+   {
+    "control_number": "37332",
+    "pages": [
+     74,
+     75
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 74] 72 Compton College Catalog 2026-2027 www.compton.edu AIR CONDITIONING AND REFRIGERATION The Air Conditioning and Refrigeration program prepares students for employment in the field and provides upgrade opp"
+   },
+   {
+    "control_number": "37333",
+    "pages": [
+     82,
+     83
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.533,
+    "opens": "[page 82] 80 Compton College Catalog 2026-2027 www.compton.edu Program Requirements for AA-T Degree: Required Core: 9 units ESTU 103 The Chicano in Contemporary United States Society (3) ESTU 108 Chicana and Latina "
+   },
+   {
+    "control_number": "37334",
+    "pages": [
+     101,
+     102
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.625,
+    "opens": "[page 101] to obtain a degree or certificate in marketing. The student will explore opportunities in the marketing field, acquire basic marketing terminology, apply marketing concepts to the role of marketing in socie"
+   },
+   {
+    "control_number": "37335",
+    "pages": [
+     101
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.6,
+    "opens": "[page 101] The Numerical Control Programmer certificate of achievement aims to provide basic to advanced training in manual or conventional machining, computer numerical programming and operation, advanced multi-axis "
+   },
+   {
+    "control_number": "37360",
+    "pages": [
+     73
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.857,
+    "opens": "[page 73] The Administration of Justice certificate of achievement prepares students for a career in criminal justice. By completing the certificate requirements, students gain the ability to apply principles of the j"
+   },
+   {
+    "control_number": "37361",
+    "pages": [
+     114
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.846,
+    "opens": "[page 114] Welding – Certificate of Achievement Program Requirements: Required Core: 12-14 units WELD 108 Introduction to Multi-Process Welding (4) WELD 109 Advanced Welding for Manufacturing (4) WELD 1 1 1 Introductio"
+   },
+   {
+    "control_number": "37362",
+    "pages": [
+     74,
+     75
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 74] The Air Conditioning certificate of achievement prepares students for employment in the field and provides upgrade opportunities for currently employed personnel. By completing certificate requirements, the "
+   },
+   {
+    "control_number": "37363",
+    "pages": [
+     76,
+     77,
+     78
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 76] 74 Compton College Catalog 2026-2027 www.compton.edu ACRP 124 Automotive Collision Analysis (3) ACRP 126 Automotive Accident Reconstruction (3) ACRP 136 Introduction to Automotive Collision Estimating"
+   },
+   {
+    "control_number": "37367",
+    "pages": [
+     77,
+     78
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.8,
+    "opens": "[page 77] Automotive Technician I – Certificate of Achievement The Automotive Technician certificates of achievement train students to work as professionals in this field, offering instruction in maintenance, diagnosi"
+   },
+   {
+    "control_number": "37369",
+    "pages": [
+     77,
+     78
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.833,
+    "opens": "[page 77] Automotive Technician II – Certificate of Achievement The Automotive Technician certificates of achievement train students to work as professionals in this field, offering instruction in maintenance, diagnos"
+   },
+   {
+    "control_number": "37370",
+    "pages": [
+     103
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 103] Commercial Music – Certificate of Achievement The Commercial Music certificate of achievement is designed so that upon completion the student will be equipped with the necessary technical skills to be emplo"
+   },
+   {
+    "control_number": "37373",
+    "pages": [
+     84,
+     85
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.667,
+    "opens": "[page 84] 82 Compton College Catalog 2026-2027 www.compton.edu List A: 9 units COMS 120 Argumentation and Debate (3) COMS 140 Small Group Communication (3) COMS 250 Oral Interpretation of Literature (3) COMS 260 "
+   },
+   {
+    "control_number": "37374",
+    "pages": [
+     162,
+     163
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.5,
+    "opens": "[page 162] 160 Compton College Catalog 2026-2027 www.compton.edu COSM 104 - Introduction to Cosmetology I (CSU) Units: 8 Lecture Hours: 54 Lab Hours: 270 Outside Hours: 108 Grading Method: Letter Credit Status: Cred"
+   },
+   {
+    "control_number": "37375",
+    "pages": [
+     74,
+     75
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 74] 72 Compton College Catalog 2026-2027 www.compton.edu AIR CONDITIONING AND REFRIGERATION The Air Conditioning and Refrigeration program prepares students for employment in the field and provides upgrade opp"
+   },
+   {
+    "control_number": "37376",
+    "pages": [
+     76
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.667,
+    "opens": "[page 76] 74 Compton College Catalog 2026-2027 www.compton.edu ACRP 124 Automotive Collision Analysis (3) ACRP 126 Automotive Accident Reconstruction (3) ACRP 136 Introduction to Automotive Collision Estimating"
+   },
+   {
+    "control_number": "37378",
+    "pages": [
+     76
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 76] 74 Compton College Catalog 2026-2027 www.compton.edu ACRP 124 Automotive Collision Analysis (3) ACRP 126 Automotive Accident Reconstruction (3) ACRP 136 Introduction to Automotive Collision Estimating"
+   },
+   {
+    "control_number": "37379",
+    "pages": [
+     101
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.875,
+    "opens": "[page 101] Machinist - Certificate of Achievement The Machinist certificate of achievement program aims to provide basic to advanced training in manual or conventional machining, computer numerical programming and op"
+   },
+   {
+    "control_number": "37381",
+    "pages": [
+     81
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.5,
+    "opens": "[page 81] Retail Management – Certificate of Achievement The Retail Management certificate of achievement is a comprehensive college program designed to prepare current and future retail employees for a fast-paced and "
+   },
+   {
+    "control_number": "37477",
+    "pages": [
+     82,
+     83
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.556,
+    "opens": "[page 82] 80 Compton College Catalog 2026-2027 www.compton.edu Program Requirements for AA-T Degree: Required Core: 9 units ESTU 103 The Chicano in Contemporary United States Society (3) ESTU 108 Chicana and Latina "
+   },
+   {
+    "control_number": "37559",
+    "pages": [
+     91
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.692,
+    "opens": "[page 91] www.compton.edu Compton College Catalog 2026-2027 89 Personal Care Attendant - Certificate of Completion The Personal Care Attendant Program is designed for ESL learners interested in preparing for careers"
+   },
+   {
+    "control_number": "37569",
+    "pages": [
+     75,
+     76,
+     77,
+     78
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.8,
+    "opens": "[page 75] www.compton.edu Compton College Catalog 2026-2027 73 Heating, Ventilation and Air Conditioning (HVAC) and Refrigeration – Certificate of Achievement The Heating Ventilation, and Air Conditioning (HVAC) and "
+   },
+   {
+    "control_number": "37570",
+    "pages": [
+     100,
+     101
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.875,
+    "opens": "[page 100] 98 Compton College Catalog 2026-2027 www.compton.edu coordinating people, processes, and resources in fast-paced logistics environments. The program equips learners with practical skills for workforce re"
+   },
+   {
+    "control_number": "37573",
+    "pages": [
+     91
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.737,
+    "opens": "[page 91] www.compton.edu Compton College Catalog 2026-2027 89 Personal Care Attendant - Certificate of Completion The Personal Care Attendant Program is designed for ESL learners interested in preparing for careers"
+   },
+   {
+    "control_number": "37574",
+    "pages": [
+     91
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.818,
+    "opens": "[page 91] www.compton.edu Compton College Catalog 2026-2027 89 Personal Care Attendant - Certificate of Completion The Personal Care Attendant Program is designed for ESL learners interested in preparing for careers"
+   },
+   {
+    "control_number": "37632",
+    "pages": [
+     98,
+     99
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.909,
+    "opens": "[page 98] 96 Compton College Catalog 2026-2027 www.compton.edu LIBERAL STUDIES Program Learning Outcomes: Upon successful completion of the degree program students will be able to: • Integrate an understanding of th"
+   },
+   {
+    "control_number": "37633",
+    "pages": [
+     96,
+     97,
+     98,
+     99
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.806,
+    "opens": "[page 96] General Studies: Social and Behavioral Sciences A.A. These courses emphasize an appreciation and understanding of how members of diverse societies operate or have operated as individuals and social groups. Co"
+   },
+   {
+    "control_number": "37634",
+    "pages": [
+     82,
+     83
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.625,
+    "opens": "[page 82] 80 Compton College Catalog 2026-2027 www.compton.edu Program Requirements for AA-T Degree: Required Core: 9 units ESTU 103 The Chicano in Contemporary United States Society (3) ESTU 108 Chicana and Latina "
+   },
+   {
+    "control_number": "37920",
+    "pages": [
+     114
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.611,
+    "opens": "[page 114] 112 Compton College Catalog 2026-2027 www.compton.edu WELDING The Welding program prepares students for employment in the field and provides opportunities for currently employed personnel to upgrade the"
+   },
+   {
+    "control_number": "37970",
+    "pages": [
+     77,
+     78
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.818,
+    "opens": "[page 77] www.compton.edu Compton College Catalog 2026-2027 75 Automotive Brakes/Suspension Transmission/Drive Train Technician – Certificate of Achievement The Automotive Brakes/Suspension, Transmission/Drive Train "
+   },
+   {
+    "control_number": "38037",
+    "pages": [
+     74,
+     75
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.917,
+    "opens": "[page 74] 72 Compton College Catalog 2026-2027 www.compton.edu AIR CONDITIONING AND REFRIGERATION The Air Conditioning and Refrigeration program prepares students for employment in the field and provides upgrade opp"
+   },
+   {
+    "control_number": "38069",
+    "pages": [
+     80,
+     81
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.7,
+    "opens": "[page 80] 78 Compton College Catalog 2026-2027 www.compton.edu BUSINESS Business Administration 2.0 Students entering in Fall 2022 must complete the Business Administration 2.0 degree. Students with catalog rights p"
+   },
+   {
+    "control_number": "38070",
+    "pages": [
+     84,
+     85
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.786,
+    "opens": "[page 84] 82 Compton College Catalog 2026-2027 www.compton.edu List A: 9 units COMS 120 Argumentation and Debate (3) COMS 140 Small Group Communication (3) COMS 250 Oral Interpretation of Literature (3) COMS 260 "
+   },
+   {
+    "control_number": "38089",
+    "pages": [
+     101,
+     102
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.5,
+    "opens": "[page 101] www.compton.edu Compton College Catalog 2026-2027 99 CNC Machine Operator – Certificate of Achievement The CNC Machine Operator certificate of achievement aims to provide basic to advanced training in ma"
+   },
+   {
+    "control_number": "38171",
+    "pages": [
+     102
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 102] 100 Compton College Catalog 2026-2027 www.compton.edu BUS 122 Human Relations in Organizations (3) BUS 125 Introduction to Business (3) BUS 127 Effective English for Business (3) or BUS 128 Written "
+   },
+   {
+    "control_number": "38172",
+    "pages": [
+     161,
+     162,
+     163
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.5,
+    "opens": "[page 161] www.compton.edu Compton College Catalog 2026-2027 159 CONTEMPORARY HEALTH (CH) CH 101 - Personal and Community Health Issues (CSU, UC*) Units: 3 Lecture Hours: 54 Lab Hours: 0 Outside Hours: 108 Grading Me"
+   },
+   {
+    "control_number": "38173",
+    "pages": [
+     92
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.885,
+    "opens": "[page 92] 90 Compton College Catalog 2026-2027 www.compton.edu FILM Social Media - Certificate of Achievement The Social Media Certificate aims to provide students with the training and skills to utilize Social Med"
+   },
+   {
+    "control_number": "38174",
+    "pages": [
+     100,
+     101
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.5,
+    "opens": "[page 100] 98 Compton College Catalog 2026-2027 www.compton.edu coordinating people, processes, and resources in fast-paced logistics environments. The program equips learners with practical skills for workforce re"
+   },
+   {
+    "control_number": "38175",
+    "pages": [
+     92
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.609,
+    "opens": "[page 92] 90 Compton College Catalog 2026-2027 www.compton.edu FILM Social Media - Certificate of Achievement The Social Media Certificate aims to provide students with the training and skills to utilize Social Med"
+   },
+   {
+    "control_number": "38176",
+    "pages": [
+     95,
+     96
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.76,
+    "opens": "[page 95] General Studies: Kinesiology and Wellness A.A. These courses emphasize lifelong understanding and the development of a student’s physiological, psychological, and social well-being. Students transferring to a"
+   },
+   {
+    "control_number": "38212",
+    "pages": [
+     88
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 88] The English Associate of Arts for Transfer (AA-T) is intended for students who plan to complete a bachelor’s degree in a similar major at a CSU campus. Students completing the AA-T are given priority consider"
+   },
+   {
+    "control_number": "38213",
+    "pages": [
+     108
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 108] The Physics 2.0 Associate of Science for Transfer (AS-T) is intended for students who plan to complete a bachelor’s degree in a similar major at a CSU campus. Students completing the AS-T are guaranteed adm"
+   },
+   {
+    "control_number": "38214",
+    "pages": [
+     73
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.833,
+    "opens": "[page 73] The Administration of Justice Associate of Science for Transfer (AS-T) is intended for students who plan to complete a bachelor’s degree in a similar major at a CSU campus. Students completing the AS-T are g"
+   },
+   {
+    "control_number": "38215",
+    "pages": [
+     109,
+     110,
+     111,
+     112
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.947,
+    "opens": "[page 109] www.compton.edu Compton College Catalog 2026-2027 107 Program Requirements for AA-T Degree: Required Core: 3 units POLS C1000 American Government and Politics (3) or POLS C1000H American Government and"
+   },
+   {
+    "control_number": "38217",
+    "pages": [
+     93,
+     94,
+     95,
+     96
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.824,
+    "opens": "[page 93] General Studies: Arts and Humanities A.A. These courses emphasize the appreciation of arts and humanities through cultural activities and artistic expression. Students will evaluate and interpret the ways in "
+   },
+   {
+    "control_number": "38218",
+    "pages": [
+     95
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.809,
+    "opens": "[page 95] General Studies: Fine and Applied Arts A.A. These courses will emphasize the nature of artistic activities and expression of art through analysis, examination, performance, and technical development. Students"
+   },
+   {
+    "control_number": "38219",
+    "pages": [
+     94,
+     95,
+     96
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.829,
+    "opens": "[page 94] 92 Compton College Catalog 2026-2027 www.compton.edu SPAN 104 Intermediate Spanish II (5) SPAN 105 Advanced Spanish I (3) SPAN 106 Advanced Spanish II (3) SPAN 152 Spanish for Native Speakers I (5) SPAN 153"
+   },
+   {
+    "control_number": "38220",
+    "pages": [
+     94,
+     95,
+     96
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.925,
+    "opens": "[page 94] 92 Compton College Catalog 2026-2027 www.compton.edu SPAN 104 Intermediate Spanish II (5) SPAN 105 Advanced Spanish I (3) SPAN 106 Advanced Spanish II (3) SPAN 152 Spanish for Native Speakers I (5) SPAN 153"
+   },
+   {
+    "control_number": "38330",
+    "pages": [
+     97,
+     98,
+     99
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.647,
+    "opens": "[page 97] The History Associate of Arts for Transfer (AA-T) is intended for students who plan to complete a bachelor’s degree in a similar major at a CSU campus. Students completing the AA-T are given priority conside"
+   },
+   {
+    "control_number": "38387",
+    "pages": [
+     107,
+     108,
+     109,
+     110
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.625,
+    "opens": "[page 107] www.compton.edu Compton College Catalog 2026-2027 105 Area 3 Fitness: DANC 250 Pilates Mat Class (3) PE 102 Walking for Fitness (1) PE 103 Boot Camp Fitness Training (1) PE 1 10 Body Conditioning and Physic"
+   },
+   {
+    "control_number": "38421",
+    "pages": [
+     112
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 112] learning of Spanish and prepares students to transfer and major in Spanish. The Spanish Associate of Arts for Transfer (AA-T) is intended for students who plan to complete a bachelor’s degree in a similar ma"
+   },
+   {
+    "control_number": "38422",
+    "pages": [
+     95
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.667,
+    "opens": "[page 95] www.compton.edu Compton College Catalog 2026-2027 93 SPAN 152 Spanish for Native Speakers I (5) SPAN 153 Spanish for Native Speakers II (5) Total Units: 18 General Studies: Fine and Applied Arts A.A. These "
+   },
+   {
+    "control_number": "38424",
+    "pages": [
+     98,
+     99
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.824,
+    "opens": "[page 98] 96 Compton College Catalog 2026-2027 www.compton.edu LIBERAL STUDIES Program Learning Outcomes: Upon successful completion of the degree program students will be able to: • Integrate an understanding of th"
+   },
+   {
+    "control_number": "38486",
+    "pages": [
+     109,
+     110,
+     111,
+     112
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.8,
+    "opens": "[page 109] The Psychology Associate of Arts for Transfer (AA-T) is intended for students who plan to complete a bachelor’s degree in a similar major at a CSU campus. Students completing the AA-T are given priority con"
+   },
+   {
+    "control_number": "38547",
+    "pages": [
+     106,
+     107
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.842,
+    "opens": "[page 106] 104 Compton College Catalog 2026-2027 www.compton.edu Program Requirements for Nursing Upward Mobility Option A.S. Degree: NURS 149 Advanced Placement in Nursing (2.5) NURS 230 Mental Health Nursing (3.5)"
+   },
+   {
+    "control_number": "38548",
+    "pages": [
+     105,
+     106,
+     107
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.864,
+    "opens": "[page 105] Program Requirements for Nursing A.S. Degree: NURS 220 Nursing Fundamentals (3.5) NURS 222 Medical Surgical Nursing – Older Adult (4) NURS 224 Nursing Pharmacology (3) NURS 226 Nursing Skills Practicum I (.5) "
+   },
+   {
+    "control_number": "40270",
+    "pages": [
+     91
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 91] www.compton.edu Compton College Catalog 2026-2027 89 Personal Care Attendant - Certificate of Completion The Personal Care Attendant Program is designed for ESL learners interested in preparing for careers"
+   },
+   {
+    "control_number": "41007",
+    "pages": [
+     79
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 79] Biomanufacturing Technician - Certificate of Achievement The Biomanufacturing Technician certificate of achievement provides training in the theory as well as the practical applications of processes in an in"
+   },
+   {
+    "control_number": "41026",
+    "pages": [
+     79,
+     80
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 79] www.compton.edu Compton College Catalog 2026-2027 77 BIOMANUFACTURING In the Biomanufacturing program, students will gain key knowledge, skills, and abilities needed to work in the biomanufacturing industr"
+   },
+   {
+    "control_number": "41100",
+    "pages": [
+     79
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 79] Biotechnology Laboratory Assistant - Certificate of Achievement The Biotechnology Laboratory Assistant certificate of achievement prepares students with the technical skills needed to work in a biotech labor"
+   },
+   {
+    "control_number": "41438",
+    "pages": [
+     88,
+     89
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 88] Basic Career Training - Certificate of Completion The Compton College Basic Career Training Certificate is designed to prepare students for computer literacy and basic employability skills to successfully ent"
+   },
+   {
+    "control_number": "41599",
+    "pages": [
+     90
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.667,
+    "opens": "[page 90] 88 Compton College Catalog 2026-2027 www.compton.edu Program Requirements: ESL 1 1 Literacy (0) ESL 12 Level 1 (0) ESL 13 Level 2 (0) ESL Level 2 - Certificate of Completion The Compton College ESL Leve"
+   },
+   {
+    "control_number": "41600",
+    "pages": [
+     85
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 85] www.compton.edu Compton College Catalog 2026-2027 83 Select one of the following groups of courses: 3-4 units Programming: 3-4 units CIS 160 Application Development and Programming Using Visual Basic.Net ("
+   },
+   {
+    "control_number": "41603",
+    "pages": [
+     90
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 90] 16 and ESL 17 , students will receive a Level 3 Certificate of Completion. Students progress through class sequences based on individual needs before transitioning into career-focused courses or credit cours"
+   },
+   {
+    "control_number": "41625",
+    "pages": [
+     90
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 90] 88 Compton College Catalog 2026-2027 www.compton.edu Program Requirements: ESL 1 1 Literacy (0) ESL 12 Level 1 (0) ESL 13 Level 2 (0) ESL Level 2 - Certificate of Completion The Compton College ESL Leve"
+   },
+   {
+    "control_number": "42312",
+    "pages": [
+     89
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 89] www.compton.edu Compton College Catalog 2026-2027 87 Program Learning Outcomes: Upon successful completion of the certificate program, students will be able to: • Create a student-centered learning environm"
+   },
+   {
+    "control_number": "42372",
+    "pages": [
+     87
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 87] The Economics Associate in Arts for Transfer (AA-T) is intended for students who plan to complete a bachelor’s degree in a similar major at a CSU campus. Students completing the AA-T are given priority consid"
+   },
+   {
+    "control_number": "42423",
+    "pages": [
+     80,
+     81
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 80] careers and transfer to a major in Business Administration. Program Learning Outcomes: Upon successful completion of the degree program, students will be able to: • Understand and utilize a comprehensive vocab"
+   },
+   {
+    "control_number": "43216",
+    "pages": [
+     96
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.789,
+    "opens": "[page 96] 94 Compton College Catalog 2026-2027 www.compton.edu Social Sciences and Development: minimum 3 units CH 101 Personal and Community Health Issues (3) HDEV 1 10 Strategies for Creating Success in College and"
+   },
+   {
+    "control_number": "43700",
+    "pages": [
+     92
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 92] Social Media - Certificate of Achievement The Social Media Certificate aims to provide students with the training and skills to utilize Social Media tools to effectively market, promote, and inspire to action"
+   },
+   {
+    "control_number": "43718",
+    "pages": [
+     93,
+     94
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.538,
+    "opens": "[page 93] www.compton.edu Compton College Catalog 2026-2027 91 GENERAL STUDIES The Associate of Arts Degree in General Studies provides students with the opportunity to explore diverse methods of inquiry by selectin"
+   },
+   {
+    "control_number": "43856",
+    "pages": [
+     97
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 97] www.compton.edu Compton College Catalog 2026-2027 95 HIGH SCHOOL High School Mathematics - Certificate of Competency The High School Education Mathematics program provides integrated mathematics courses c"
+   },
+   {
+    "control_number": "43857",
+    "pages": [
+     97
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 97] High School Spanish - Certificate of Competency The High School Spanish program provides courses in Language, Literature, and Culture which satisfy the language requirements of a high school diploma. Satisfac"
+   },
+   {
+    "control_number": "44275",
+    "pages": [
+     106
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 106] Certified Nursing Assistant - Certificate of Competency This program prepares the student to function as an entry-level worker on a health care team in a long-term care facility or home care environment. The"
+   },
+   {
+    "control_number": "45460",
+    "pages": [
+     97
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 97] www.compton.edu Compton College Catalog 2026-2027 95 HIGH SCHOOL High School Mathematics - Certificate of Competency The High School Education Mathematics program provides integrated mathematics courses c"
+   },
+   {
+    "control_number": "45545",
+    "pages": [
+     110,
+     111,
+     112
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 110] 108 Compton College Catalog 2026-2027 www.compton.edu REAL ESTATE Real Estate Salesperson - Certificate of Achievement The Real Estate Salesperson Certificate of Achievement will qualify and prepare stud"
+   },
+   {
+    "control_number": "46580",
+    "pages": [
+     102
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.875,
+    "opens": "[page 102] for the student who plans to transfer in mathematics. The core of the major is the calculus sequence, in which the student will acquire a conceptual understanding of the principles of differential and integr"
+   }
+  ],
+  "unproven": []
  },
  "loads": 1,
- "seconds": 34.1,
+ "seconds": 60.5,
  "found": 81,
  "by_method": {
   "no_closed_list": 1,
@@ -32,23 +986,26 @@
  "shared_pages": {
   "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=76": [
    "37317",
-   "37318",
    "37363",
-   "37367",
+   "37376",
    "37378"
   ],
-  "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=80": [
+  "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=81": [
    "37320",
-   "38069",
-   "42423"
+   "37381"
   ],
   "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=101": [
    "37321",
    "37334",
+   "37335",
+   "37379",
    "38089"
   ],
-  "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=74": [
+  "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=75": [
    "37323",
+   "37569"
+  ],
+  "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=74": [
    "37332",
    "37362",
    "37375",
@@ -59,12 +1016,6 @@
    "37477",
    "37634"
   ],
-  "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=100": [
-   "37335",
-   "37379",
-   "37570",
-   "38174"
-  ],
   "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=73": [
    "37360",
    "38214"
@@ -74,6 +1025,7 @@
    "37920"
   ],
   "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=77": [
+   "37367",
    "37369",
    "37970"
   ],
@@ -81,15 +1033,15 @@
    "37373",
    "38070"
   ],
-  "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=75": [
-   "37376",
-   "37569"
-  ],
   "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=91": [
    "37559",
    "37573",
    "37574",
    "40270"
+  ],
+  "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=100": [
+   "37570",
+   "38174"
   ],
   "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=98": [
    "37632",
@@ -98,6 +1050,10 @@
   "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=96": [
    "37633",
    "43216"
+  ],
+  "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=80": [
+   "38069",
+   "42423"
   ],
   "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=102": [
    "38171",
@@ -144,11 +1100,8 @@
    "41026",
    "41100"
   ],
-  "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=89": [
-   "41599",
-   "42312"
-  ],
   "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=90": [
+   "41599",
    "41603",
    "41625"
   ]
@@ -159,7 +1112,7 @@
    "title": "Special Education Assistant",
    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
    "near_miss": {
-    "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=82",
+    "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=83",
     "coverage": 0.412
    }
   },
@@ -168,7 +1121,7 @@
    "title": "Early Childhood Education",
    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
    "near_miss": {
-    "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=82",
+    "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=86",
     "coverage": 0.3
    }
   },
@@ -202,826 +1155,96 @@
  ],
  "page_claimed": [],
  "coverage_bands": {
-  "0.5-0.8": 25,
+  "0.5-0.8": 26,
   "0.8-1.0": 24,
-  "1.0": 32
+  "1.0": 31
  },
  "would_extract": {
-  "against": null,
-  "kept": 0,
-  "programs": 81,
+  "against": "kb/program_requirements_college/compton",
+  "kept": 73,
+  "programs": 8,
   "list": [
-   {
-    "control_number": "37317",
-    "title": "Automotive Brakes/Suspension, Transmission/Drive Train Technician",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=76",
-    "coverage": 0.5,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
    {
     "control_number": "37318",
     "title": "Automotive Tune-Up Technician",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=76",
+    "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=78",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=76",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "37320",
     "title": "Business Management",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=80",
+    "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=81",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37321",
-    "title": "CNC Machine Operator",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=101",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=80",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "37323",
     "title": "Refrigeration",
     "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=74",
+    "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=75",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37332",
-    "title": "Air Conditioning and Refrigeration Electric Controls",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=74",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37333",
-    "title": "Early Intervention Assistant",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=82",
-    "coverage": 0.533,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37334",
-    "title": "Marketing",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=101",
-    "coverage": 0.625,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=74",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "37335",
     "title": "Numerical Control Programmer",
     "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=100",
+    "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=101",
     "coverage": 0.6,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37360",
-    "title": "Administration of Justice",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=73",
-    "coverage": 0.857,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37361",
-    "title": "Welding",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=114",
-    "coverage": 0.846,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37362",
-    "title": "Air Conditioning",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=74",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37363",
-    "title": "Automotive Engine Rebuilding and Repair Technician",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=76",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=100",
+    "was_coverage": 0.6,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "37367",
     "title": "Automotive Technician I",
     "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=76",
-    "coverage": 0.8,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37369",
-    "title": "Automotive Technician II",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
     "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=77",
-    "coverage": 0.833,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37370",
-    "title": "Commercial Music",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=103",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37373",
-    "title": "Computer Systems Applications",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=84",
-    "coverage": 0.667,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37374",
-    "title": "Cosmetology Level II",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=162",
-    "coverage": 0.5,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37375",
-    "title": "Heating, Ventilation, and Air Conditioning (HVAC) and Refrigeration",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=74",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "coverage": 0.8,
+    "was_url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=76",
+    "was_coverage": 0.8,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "37376",
     "title": "Automotive Collision Repair",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=75",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37378",
-    "title": "Automotive Painting and Refinishing",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
     "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=76",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "coverage": 0.667,
+    "was_url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=75",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "37379",
     "title": "Machinist",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=100",
-    "coverage": 0.875,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37381",
-    "title": "Retail Management",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=81",
-    "coverage": 0.5,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37477",
-    "title": "Early Childhood Education",
-    "award": "A.S. T Degree",
-    "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=82",
-    "coverage": 0.556,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37559",
-    "title": "Ethnic Studies: African American Studies Option",
-    "award": "A.A. Degree",
-    "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=91",
-    "coverage": 0.692,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37569",
-    "title": "Automotive Collision Repair/Painting",
-    "award": "A.S. Degree",
-    "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=75",
-    "coverage": 0.8,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37570",
-    "title": "Machine Tool Technology: Machinist option",
-    "award": "A.S. Degree",
-    "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=100",
-    "coverage": 0.875,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37573",
-    "title": "Ethnic Studies: American Cultures Option",
-    "award": "A.A. Degree",
-    "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=91",
-    "coverage": 0.737,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37574",
-    "title": "Ethnic Studies: Chicano Studies Option",
-    "award": "A.A. Degree",
-    "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=91",
-    "coverage": 0.818,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37632",
-    "title": "Liberal Studies: Elementary Teaching (Teacher Preparation Option)",
-    "award": "A.A. Degree",
-    "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=98",
-    "coverage": 0.909,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37633",
-    "title": "General Studies: Social and Behavioral Sciences",
-    "award": "A.A. Degree",
-    "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=96",
-    "coverage": 0.806,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37634",
-    "title": "Child Development",
-    "award": "A.A. Degree",
-    "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=82",
-    "coverage": 0.625,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37920",
-    "title": "Welding",
-    "award": "A.S. Degree",
-    "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=114",
-    "coverage": 0.611,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37970",
-    "title": "Automotive Technology",
-    "award": "A.S. Degree",
-    "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=77",
-    "coverage": 0.818,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "38037",
-    "title": "Air Conditioning and Refrigeration",
-    "award": "A.S. Degree",
-    "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=74",
-    "coverage": 0.917,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "38069",
-    "title": "Business Management",
-    "award": "A.S. Degree",
-    "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=80",
-    "coverage": 0.7,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "38070",
-    "title": "Computer Information Systems",
-    "award": "A.S. Degree",
-    "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=84",
-    "coverage": 0.786,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "38089",
-    "title": "Business: Marketing",
-    "award": "A.S. Degree",
     "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=101",
-    "coverage": 0.5,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "38171",
-    "title": "Music",
-    "award": "A.A. Degree",
-    "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=102",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "38172",
-    "title": "Cosmetology",
-    "award": "A.S. Degree",
-    "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=161",
-    "coverage": 0.5,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "38173",
-    "title": "General Science",
-    "award": "A.S. Degree",
-    "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=92",
-    "coverage": 0.885,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "38174",
-    "title": "Machine Tool Technology: Numerical Control Programmer option",
-    "award": "A.S. Degree",
-    "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=100",
-    "coverage": 0.5,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "38175",
-    "title": "Physical Science",
-    "award": "A.S. Degree",
-    "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=92",
-    "coverage": 0.609,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "38176",
-    "title": "General Studies: Kinesiology and Wellness",
-    "award": "A.A. Degree",
-    "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=95",
-    "coverage": 0.76,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "38212",
-    "title": "English",
-    "award": "A.A- T Degree",
-    "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=88",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "38213",
-    "title": "Physics",
-    "award": "A.S. T Degree",
-    "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=108",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "38214",
-    "title": "Administration of Justice",
-    "award": "A.S. T Degree",
-    "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=73",
-    "coverage": 0.833,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "38215",
-    "title": "Political Science",
-    "award": "A.A- T Degree",
-    "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=109",
-    "coverage": 0.947,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "38217",
-    "title": "General Studies: Arts and Humanities",
-    "award": "A.A. Degree",
-    "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=93",
-    "coverage": 0.824,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "38218",
-    "title": "General Studies: Fine and Applied Arts",
-    "award": "A.A. Degree",
-    "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=95",
-    "coverage": 0.809,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "38219",
-    "title": "General Studies: Biological and Physical Sciences",
-    "award": "A.A. Degree",
-    "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=94",
-    "coverage": 0.829,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "38220",
-    "title": "General Studies: Culture and Communication",
-    "award": "A.A. Degree",
-    "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=94",
-    "coverage": 0.925,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "38330",
-    "title": "History",
-    "award": "A.A- T Degree",
-    "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=97",
-    "coverage": 0.647,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "38387",
-    "title": "Kinesiology",
-    "award": "A.A- T Degree",
-    "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=107",
-    "coverage": 0.625,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "38421",
-    "title": "Spanish",
-    "award": "A.A- T Degree",
-    "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=112",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "38422",
-    "title": "Studio Arts",
-    "award": "A.A- T Degree",
-    "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=95",
-    "coverage": 0.667,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "38424",
-    "title": "Elementary Teacher Education",
-    "award": "A.A- T Degree",
-    "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=98",
-    "coverage": 0.824,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "38486",
-    "title": "Psychology",
-    "award": "A.A- T Degree",
-    "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=109",
-    "coverage": 0.8,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "38547",
-    "title": "Nursing: Upward Mobility Option",
-    "award": "A.S. Degree",
-    "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=106",
-    "coverage": 0.842,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "38548",
-    "title": "Nursing",
-    "award": "A.S. Degree",
-    "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=105",
-    "coverage": 0.864,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "40270",
-    "title": "Personal Care Attendant",
-    "award": "Noncredit program",
-    "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=91",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "41007",
-    "title": "Biomanufacturing Technician",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=79",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "41026",
-    "title": "Biomanufacturing",
-    "award": "A.S. Degree",
-    "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=79",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "41100",
-    "title": "Biotechnology Laboratory Assistant",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=79",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "41438",
-    "title": "Basic Career Training",
-    "award": "Noncredit program",
-    "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=88",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "coverage": 0.875,
+    "was_url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=100",
+    "was_coverage": 0.875,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "41599",
     "title": "ESL Level 1",
     "award": "Noncredit program",
-    "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=89",
+    "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=90",
     "coverage": 0.667,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "41600",
-    "title": "Apple Apps Development: Swift",
-    "award": "Noncredit program",
-    "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=85",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "41603",
-    "title": "ESL Level 3",
-    "award": "Noncredit program",
-    "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=90",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "41625",
-    "title": "ESL Level 2",
-    "award": "Noncredit program",
-    "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=90",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "42312",
-    "title": "ESL for Childhood Education",
-    "award": "Noncredit program",
-    "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=89",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "42372",
-    "title": "Economics",
-    "award": "A.A- T Degree",
-    "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=87",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "42423",
-    "title": "Business Administration 2.0",
-    "award": "A.S. T Degree",
-    "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=80",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "43216",
-    "title": "Sociology",
-    "award": "A.A- T Degree",
-    "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=96",
-    "coverage": 0.789,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "43700",
-    "title": "Social Media",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=92",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "43718",
-    "title": "Communication Studies 2.0",
-    "award": "A.A- T Degree",
-    "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=93",
-    "coverage": 0.538,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "43856",
-    "title": "High School Social Sciences",
-    "award": "Noncredit program",
-    "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=97",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "43857",
-    "title": "High School Spanish",
-    "award": "Noncredit program",
-    "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=97",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "44275",
-    "title": "Certified Nursing Assistant",
-    "award": "Noncredit program",
-    "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=106",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "45460",
-    "title": "High School Mathematics",
-    "award": "Noncredit program",
-    "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=97",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "45545",
-    "title": "Social Justice Studies: LGBTQ Studies",
-    "award": "A.A- T Degree",
-    "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=110",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "46580",
-    "title": "Mathematics 2.0",
-    "award": "A.S. T Degree",
-    "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=102",
-    "coverage": 0.875,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=89",
+    "was_coverage": 0.667,
+    "was_method": "pdf_pages"
    }
   ]
  },
- "run": "39006336111"
+ "run": "39019546820"
 }

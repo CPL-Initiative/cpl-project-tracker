@@ -67,7 +67,7 @@
    "stated": null,
    "against": null,
    "why": [
-    "the record states no figure, but the catalog text names 3 unit, 3 unit, 11 units, 3 units"
+    "the record states no figure, but the catalog text names 11 units, 3 units"
    ]
   },
   "repeated": {
@@ -160,5 +160,6 @@
    "The career entry is taken from the description 'function as an entry-level worker on a health care team in a long-term care facility or home care environment'. A reviewer should check whether it should count as a career."
   ]
  },
- "extracted_run": "39006336111"
+ "extracted_run": 39019546820,
+ "read_run": "39006336111"
 }

@@ -82,11 +82,19 @@
    "program": 3,
    "courses": 0,
    "count": 3,
-   "not_verbatim": [],
-   "why": [],
+   "not_verbatim": [
+    "Given an in-class exam, based on readings, classroom discussions and demonstrations, take a Pass/No Pass practice exam, or an official ASE Certification Test exam with a grade equivalent of \"pass.\"",
+    "Develop knowledge and skills for job entry positions in the automotive field.",
+    "Working in the field, will develop updated knowledge and skills in the automotive field."
+   ],
+   "why": [
+    "not in the catalog text as printed: Given an in-class exam, based on readings, classroom discussions and demonstrati",
+    "not in the catalog text as printed: Develop knowledge and skills for job entry positions in the automotive field.",
+    "not in the catalog text as printed: Working in the field, will develop updated knowledge and skills in the automotiv"
+   ],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": true
+   "pass": false
   },
   "careers": {
    "count": 0,
@@ -96,7 +104,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": true
+  "pass": false
  },
  "record": {
   "program": {
@@ -232,5 +240,6 @@
    "No careers recorded: the certificate section names none specifically; the Automotive Technology description's technician roles are tied to 'A student completing degree requirements'."
   ]
  },
- "extracted_run": "39006336111"
+ "extracted_run": 39019546820,
+ "read_run": "39006336111"
 }

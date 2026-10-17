@@ -5,13 +5,13 @@
  "found": 81,
  "extracted": 81,
  "errors": 0,
- "passed_machine_checks": 56,
+ "passed_machine_checks": 46,
  "failed": {
   "coverage": 9,
   "invented": 0,
-  "arithmetic": 23,
+  "arithmetic": 22,
   "repeated": 0,
-  "outcomes": 2
+  "outcomes": 13
  },
  "cost_usd": 5.84,
  "cost_per_program": 0.0721,
@@ -21,7 +21,7 @@
    "title": "Special Education Assistant",
    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
    "near_miss": {
-    "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=82",
+    "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=83",
     "coverage": 0.412
    }
   },
@@ -30,7 +30,7 @@
    "title": "Early Childhood Education",
    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
    "near_miss": {
-    "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=82",
+    "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=86",
     "coverage": 0.3
    }
   },
@@ -62,5 +62,5 @@
    }
   }
  ],
- "run": "39006336111"
+ "run": "39019546820"
 }

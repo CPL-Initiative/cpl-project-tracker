@@ -100,11 +100,19 @@
    "program": 3,
    "courses": 0,
    "count": 3,
-   "not_verbatim": [],
-   "why": [],
+   "not_verbatim": [
+    "Pass at least one ASE certification test or practice test in Auto Collision Repair (B2, B3, B4, B5 or B6).",
+    "Pass the official I-CAR MIG welding qualification test or ECC imitation. Welds include butt weld, lap weld, and plug weld in flat and vertical positions.",
+    "Examine a damaged vehicle and create an informal written estimate of the parts, tools, materials, and time needed to repair the vehicle."
+   ],
+   "why": [
+    "not in the catalog text as printed: Pass at least one ASE certification test or practice test in Auto Collision Repa",
+    "not in the catalog text as printed: Pass the official I-CAR MIG welding qualification test or ECC imitation. Welds i",
+    "not in the catalog text as printed: Examine a damaged vehicle and create an informal written estimate of the parts, "
+   ],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": true
+   "pass": false
   },
   "careers": {
    "count": 4,
@@ -114,7 +122,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": true
+  "pass": false
  },
  "record": {
   "program": {
@@ -272,5 +280,6 @@
    "Careers are taken from the shared program description ('prepares students for employment in the fields of ...'), which applies to completing the certificate requirements."
   ]
  },
- "extracted_run": "39006336111"
+ "extracted_run": 39019546820,
+ "read_run": "39006336111"
 }

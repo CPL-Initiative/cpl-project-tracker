@@ -82,11 +82,23 @@
    "program": 5,
    "courses": 0,
    "count": 5,
-   "not_verbatim": [],
-   "why": [],
-   "heading_printed": true,
+   "not_verbatim": [
+    "The Fourth Amendment: Recognize unlawful behavior and take appropriate enforcement action properly utilizing probable cause as required in the fourth amendment of the U.S. Constitution.",
+    "The Criminal Justice Reports: Properly document a criminal investigation, crime analysis report, intelligence report, or other criminal justice documentation. The report will include the correct elements of the incident involved, will include the relevant facts, be accurate and complete and will be grammatically correct.",
+    "Interpreting Criminal Profiles and Identifying Criminal Behaviors: After being provided a hypothetical crime scenario will be able to recognize and interpret as suspicious or criminal behavior based on facts presented in the scenario.",
+    "Certificates, Graduation, and Transfer Students: Successfully earn a certificate/graduate/transfer to four-year universities and will successfully compete for jobs in which they can apply legal, investigative, and communicative skills acquired in the administration of justice program.",
+    "The Criminal Justice System: Explain what the criminal justice system is, what role it performs in society and how its components interact with one another in achieving its goals."
+   ],
+   "why": [
+    "not in the catalog text as printed: The Fourth Amendment: Recognize unlawful behavior and take appropriate enforceme",
+    "not in the catalog text as printed: The Criminal Justice Reports: Properly document a criminal investigation, crime ",
+    "not in the catalog text as printed: Interpreting Criminal Profiles and Identifying Criminal Behaviors: After being p",
+    "not in the catalog text as printed: Certificates, Graduation, and Transfer Students: Successfully earn a certificate",
+    "not in the catalog text as printed: The Criminal Justice System: Explain what the criminal justice system is, what r"
+   ],
+   "heading_printed": false,
    "heading_without_outcomes": false,
-   "pass": true
+   "pass": false
   },
   "careers": {
    "count": 6,
@@ -96,7 +108,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": true
+  "pass": false
  },
  "record": {
   "program": {
@@ -209,5 +221,6 @@
    "'criminal justice' is recorded as a career field from 'prepares students for a career in criminal justice'."
   ]
  },
- "extracted_run": "39006336111"
+ "extracted_run": 39019546820,
+ "read_run": "39006336111"
 }

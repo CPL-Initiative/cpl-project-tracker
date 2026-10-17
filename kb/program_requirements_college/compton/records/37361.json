@@ -82,11 +82,19 @@
    "program": 3,
    "courses": 0,
    "count": 3,
-   "not_verbatim": [],
-   "why": [],
-   "heading_printed": true,
+   "not_verbatim": [
+    "Success in the Welding Industry: Demonstrate knowledge of the skills needed for success in the welding industry.",
+    "Acquire and use specific safety knowledge and skills relating to welding discipline and will be able to apply those skills to specific job requirements.",
+    "Successfully earn a certificate/graduate/transfer to four-year universities and will successfully compete for jobs in which they can apply their knowledge and communicative skills acquired in welding program."
+   ],
+   "why": [
+    "not in the catalog text as printed: Success in the Welding Industry: Demonstrate knowledge of the skills needed for ",
+    "not in the catalog text as printed: Acquire and use specific safety knowledge and skills relating to welding discipl",
+    "not in the catalog text as printed: Successfully earn a certificate/graduate/transfer to four-year universities and "
+   ],
+   "heading_printed": false,
    "heading_without_outcomes": false,
-   "pass": true
+   "pass": false
   },
   "careers": {
    "count": 0,
@@ -96,7 +104,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": true
+  "pass": false
  },
  "record": {
   "program": {
@@ -269,5 +277,6 @@
    "The program description names no specific careers; it says only that the program prepares students 'for employment in the field'."
   ]
  },
- "extracted_run": "39006336111"
+ "extracted_run": 39019546820,
+ "read_run": "39006336111"
 }

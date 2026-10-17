@@ -82,11 +82,25 @@
    "program": 6,
    "courses": 0,
    "count": 6,
-   "not_verbatim": [],
-   "why": [],
+   "not_verbatim": [
+    "Apply principles from mathematics, physics, and chemistry to solve applied problems in engineering.",
+    "Identify different digital and analog sensor technologies.",
+    "Follow and build robotic devices and components in accordance with industry standard schematics and diagrams.",
+    "Solving Engineering Problems: students will apply principles from mathematics, physics, and chemistry to solve applied problems in engineering.",
+    "Digital and Analog Sensor Technologies: Upon completion of the courses in this discipline, the student will be able to identify different digital and analog sensor technology.",
+    "Industry Standards: Upon completion of the courses in this discipline, the student will be able to follow and build robotic devices and components in accordance with industry standard schematics and diagrams."
+   ],
+   "why": [
+    "not in the catalog text as printed: Apply principles from mathematics, physics, and chemistry to solve applied probl",
+    "not in the catalog text as printed: Identify different digital and analog sensor technologies.",
+    "not in the catalog text as printed: Follow and build robotic devices and components in accordance with industry stan",
+    "not in the catalog text as printed: Solving Engineering Problems: students will apply principles from mathematics, p",
+    "not in the catalog text as printed: Digital and Analog Sensor Technologies: Upon completion of the courses in this d",
+    "not in the catalog text as printed: Industry Standards: Upon completion of the courses in this discipline, the stude"
+   ],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": true
+   "pass": false
   },
   "careers": {
    "count": 1,
@@ -96,7 +110,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": true
+  "pass": false
  },
  "record": {
   "program": {
@@ -227,5 +241,6 @@
    "The A.S. degree in Machine Tool Technology: Numerical Control Programmer prints the same ten courses and 33 units; only the certificate section was used."
   ]
  },
- "extracted_run": "39006336111"
+ "extracted_run": 39019546820,
+ "read_run": "39006336111"
 }

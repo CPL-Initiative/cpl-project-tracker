@@ -95,6 +95,8 @@
   "careers": {
    "count": 5,
    "not_verbatim": [
+    "bioprocessing technicians",
+    "research and development lab technicians",
     "quality control/quality assurance associates"
    ],
    "pass": false
@@ -196,5 +198,6 @@
    "The A.S. degree's outcome and the Biotechnology Laboratory Assistant certificate's outcome were not recorded; only the outcome printed under this certificate is included."
   ]
  },
- "extracted_run": "39006336111"
+ "extracted_run": 39019546820,
+ "read_run": "39006336111"
 }
