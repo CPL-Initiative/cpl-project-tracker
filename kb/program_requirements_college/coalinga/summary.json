@@ -1,0 +1,97 @@
+{
+ "college": "Coalinga College",
+ "programs": 68,
+ "with_closed_list": 62,
+ "found": 53,
+ "extracted": 53,
+ "errors": 0,
+ "passed_machine_checks": 42,
+ "failed": {
+  "coverage": 1,
+  "invented": 0,
+  "arithmetic": 11,
+  "repeated": 0,
+  "outcomes": 0
+ },
+ "cost_usd": 3.34,
+ "cost_per_program": 0.063,
+ "not_found": [
+  {
+   "control_number": "07958",
+   "title": "Administration of Justice: Correctional Science",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "19009",
+   "title": "CSU General Education-Breadth",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "30887",
+   "title": "Administration of Justice",
+   "award": "A.S. T Degree",
+   "near_miss": {
+    "url": "https://coalingacollege.edu/catalog/2026-2027/programs-of-study/business-administration2.0.php",
+    "label": {
+     "award": 0,
+     "title": 0.5
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 9,
+    "why": "coarse net: the page's code tokens name 0 of 9 listed courses",
+    "error": null,
+    "chars": {
+     "body": 5365,
+     "content": 20192,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "45288",
+   "title": "Transfer Studies: Cal-GETC",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "url": "https://coalingacollege.edu/catalog/2026-2027/programs-of-study/transfer-studies-cal-getc.php",
+    "label": {
+     "award": 0,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 90,
+    "why": "coarse net: the page's code tokens name 0 of 90 listed courses",
+    "error": null,
+    "chars": {
+     "body": 4885,
+     "content": 18328,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "46574",
+   "title": "Medical Assisting",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  }
+ ],
+ "run": "39032865307"
+}

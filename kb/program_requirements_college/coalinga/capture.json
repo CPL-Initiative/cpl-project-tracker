@@ -5,7 +5,7 @@
  "catalog_year": "2026-2027",
  "programs": 68,
  "with_closed_list": 62,
- "started": "2026-10-17T12:24:38Z",
+ "started": "2026-10-17T12:32:41Z",
  "scope": "/catalog/2026-2027/",
  "sitemap": {
   "url": "https://coalingacollege.edu/sitemap.xml",
@@ -21,7 +21,7 @@
  "child_pages": 0,
  "banner_h1": null,
  "loads": 72,
- "seconds": 363.1,
+ "seconds": 360.6,
  "found": 53,
  "by_method": {
   "no_closed_list": 6,
@@ -695,5 +695,5 @@
    }
   ]
  },
- "run": "39032331604"
+ "run": "39032865307"
 }

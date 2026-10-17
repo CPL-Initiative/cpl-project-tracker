@@ -1,0 +1,264 @@
+{
+ "college": "Coalinga College",
+ "control_number": "20339",
+ "shape": "certificate",
+ "title": "Psychiatric Technician Training Program",
+ "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+ "source_url": "https://coalingacollege.edu/catalog/2026-2027/programs-of-study/psychiatric-technician.php",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7594,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7594,
+    "output_tokens": 2265,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2265,
+  "output_tokens_details": {
+   "thinking_tokens": 847
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.07568,
+ "ms": 20449,
+ "seconds": 20.8,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 9,
+   "listed": 9,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 4,
+   "codes": [
+    "PT101",
+    "PT52",
+    "PT62",
+    "PT72"
+   ],
+   "flagged": [
+    "PT101",
+    "PT52",
+    "PT62",
+    "PT72"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    48.5,
+    48.5
+   ],
+   "stated": [
+    48.5,
+    48.5
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Psychiatric Technician Training Program",
+   "measure": "units",
+   "total_units": {
+    "min": 48.5,
+    "max": 48.5
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Students will apply principals of safety in various healthcare settings.",
+    "Students will utilize critical thinking and problem solving skills in industry specific areas.",
+    "Students will apply principals of caring to individualized populations.",
+    "Students will apply evidence-based care.",
+    "Students will model professional behaviors in the healthcare setting."
+   ],
+   "careers": [
+    "Psychiatric Technicians"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Core Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 48.5,
+     "max": 48.5
+    },
+    "courses": [
+     {
+      "code": "PT 101",
+      "units": 0.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PT 051",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PT 051L",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PT 052",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PT 052L",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PT 061",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PT 061L",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PT 062",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PT 062L",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PT 071",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PT 071L",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PT 072",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PT 072L",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The catalog text begins mid-sentence; the section's own heading is not visible, so section_heading uses the program title. Reviewer should confirm the page heading.",
+   "The page appears to describe a single program and prints Associate Degree requirements (Local GE or Cal-GETC, 'Total Degree Units 60', 'General Education (GE) Units 21-28', 'Elective Units (As needed to reach 60 units) 0'). Because the named award is a Certificate of Achievement, those degree-only figures were not recorded in degree_total, ge_units, ge_pattern or electives_fill_degree. The page also says 'Complete a minimum of 18 additional units from the major list below', which conflicts with the 48.5-unit major total.",
+   "The printed degree figures are internally inconsistent: 48.5 major units plus 21-28 GE units exceeds the printed 60 total degree units, and 0 units are double-counted.",
+   "total_units is the printed 'Total Major Units 48.5', matching the 'Required Core Courses (48.5 Units)' heading. The listed courses sum to 48.5.",
+   "The catalog prints codes with leading zeros (PT 051, PT 061, PT 071). These were matched to the closed-list entries PT 51, PT 61 and PT 71. PT 052, PT 062, PT 072 and PT 101 are not in the closed list and are marked as catalog additions.",
+   "The catalog prints 'Cinical' for PT 062L (typo).",
+   "The program prerequisite courses (HS 005, BIO 032, PHARM 003, PSYC C1000) are entry requirements, not award courses, and are not placed in blocks.",
+   "The program student learning outcomes are printed once for the program page; this award is assumed to share them. 'principals' is kept as printed."
+  ]
+ },
+ "extracted_run": "39032865307"
+}

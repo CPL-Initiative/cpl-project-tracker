@@ -1,0 +1,317 @@
+{
+ "college": "Coalinga College",
+ "control_number": "36749",
+ "shape": "adt",
+ "title": "Agriculture Plant Science",
+ "award": "A.S. T Degree",
+ "source_url": "https://coalingacollege.edu/catalog/2026-2027/programs-of-study/agriculture-plant-science.php",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7540,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7540,
+    "output_tokens": 2327,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2327,
+  "output_tokens_details": {
+   "thinking_tokens": 766
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.0767,
+ "ms": 18471,
+ "seconds": 18.8,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 13,
+   "listed": 14,
+   "share": 0.929,
+   "missing": [
+    "ECON1B"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "ECONC2002"
+   ],
+   "flagged": [
+    "ECONC2002"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    21.0,
+    27.0
+   ],
+   "stated": [
+    21.0,
+    27.0
+   ],
+   "against": "program",
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     64.0,
+     76.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     34.0,
+     34.0
+    ],
+    "why": [],
+    "overlap": true
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 9,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Agriculture Plant Science AS-T Degree",
+   "measure": "units",
+   "total_units": {
+    "min": 21,
+    "max": 27
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": 9,
+    "max": 15
+   },
+   "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": 34,
+    "max": 34
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Students will identify the major plant vegetative and reproductive structures and explain plant growth and reproduction processes including respiration, photosynthesis, transpiration, growth, fertilization and fruit formation.",
+    "Students will integrate and apply basic plant and soil science principles to achieve sustainable plant growth and yield under diverse environmental conditions.",
+    "Students will explain historical, present and future challenges associated with local and global food production systems.",
+    "Students will apply scientific and mathematical reasoning and critical thinking skills to address practical challenges in agricultural production systems."
+   ],
+   "careers": [
+    "pest control advisors",
+    "certified crop advisors",
+    "farm managers",
+    "irrigation consultants",
+    "fertilizer sales",
+    "agricultural research technician",
+    "viticulture",
+    "horticulture",
+    "agronomy"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Core Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 18,
+     "max": 19
+    },
+    "courses": [
+     {
+      "code": "SLSCI 021",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "STAT C1000",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 002A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CHEM 001A",
+        "units": 5,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "AGBUS 040",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ECON C2002",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "CRPSCI 001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CRPSCI 002",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Plus 3-5 units from the course options listed below",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 5
+    },
+    "courses": [
+     {
+      "code": "AG 014",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 012A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 012AL",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 002B",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Plus 0-3 units from the courses listed below",
+    "rule": "choose_units",
+    "minimum": 0,
+    "option_group": null,
+    "stated": {
+     "min": 0,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "AET 021",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AGBUS 024",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ECON 001B",
+    "why": "not in the text; catalog offers ECON C2002 as the alternative to AGBUS 040"
+   }
+  ],
+  "notes": [
+   "Catalog prints codes with leading zeros (SLSCI 021, AGBUS 040, CRPSCI 001, CRPSCI 002, AG 014, AET 021, AGBUS 024) that match closed-list codes without zeros (SLSCI 21, AGBUS 40, etc.); treated as the same courses, not catalog additions.",
+   "CHEM 012A and CHEM 012AL are printed as a paired option ('and') in the 3-5 unit list; they are taken together (5 units) as one choice.",
+   "Second elective list is '0-3 units', so its minimum is recorded as 0.",
+   "Page lists 'Units that may be double-counted as GE 10' and 'Elective Units 9-15' toward the 60-unit total; elective units recorded as degree_elective_units.",
+   "The general ADT sentence about 'a minimum of 18 semester units' in the major is not used as the major total; the printed 'Total Major Units 21-27' is.",
+   "Careers 'viticulture', 'horticulture' and 'agronomy' are named as career fields for a baccalaureate degree in Plant Science."
+  ]
+ },
+ "extracted_run": "39032865307"
+}
