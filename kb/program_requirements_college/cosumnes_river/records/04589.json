@@ -1,0 +1,268 @@
+{
+ "college": "Cosumnes River College",
+ "control_number": "04589",
+ "shape": "degree",
+ "title": "Architecture",
+ "award": "A.S. Degree",
+ "source_url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=152",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 11445,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 11445,
+    "output_tokens": 2482,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2482,
+  "output_tokens_details": {
+   "thinking_tokens": 688
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.09542,
+ "ms": 19837,
+ "seconds": 20.3,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 10,
+   "listed": 10,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 3,
+   "codes": [
+    "ARCH325",
+    "ARCH326",
+    "ARCH330"
+   ],
+   "flagged": [
+    "ARCH325",
+    "ARCH326",
+    "ARCH330"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    42.0,
+    42.0
+   ],
+   "stated": [
+    42.0,
+    42.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 6,
+   "courses": 0,
+   "count": 6,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 5,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Degree Requirements",
+   "measure": "units",
+   "total_units": {
+    "min": 42,
+    "max": 42
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Local General Education Pattern or Cal-GETC",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": true,
+   "outcomes": [
+    "Have the necessary technical knowledge and reasoning skills to identify, articulate, record information, assess evidence, investigate precedents and solve problems pertaining to the built environment and perform the tasks required within the architecture and environmental design professions. This includes the ability to use basic formal organizational and environmental principles; build abstract relationships to inform two and three‐dimensional design; and understand the impact of ideas based on research, analysis of multiple theoretical, social, political, economic, cultural and environmental contexts.",
+    "Have the necessary communication skills, using a diverse range of techniques and media to think about and convey architectural ideas including writing; analytical and envisioning drawing; speaking to peers and groups; computer modeling and physical model‐making.",
+    "Be able to comprehend the technical aspects of design, systems, sustainability, constructability, and materials, and be able to apply this comprehension to architectural solutions. This includes: 1. Site Design: Ability to respond to site determinants such as context and planning issues in the development of a project design. 2. Life Safety: Ability to apply basic principles of life‐safety systems and exiting. 3. Environmental Systems: Understanding the principles of environmental control systems and sustainable design. 4. Structural Systems: Understanding the basic principles of structural behavior in withstanding gravity and lateral loads and the appropriate structural alternatives. 5. Building Envelope Systems: Understanding of the basic principles of building materials and characteristics in the appropriate selection relative to performance, aesthetics, moisture control, energy and durability.",
+    "ave the values of ethics and understanding of historical, cultural, human, aesthetic, environmental, public health and social issues to be able to affect creative change. This includes understanding the diverse needs, values, behavioral norms, physical abilities, social and spatial patterns that characterize different cultures and individuals.",
+    "Be able to work effectively as a team member or as an individual.",
+    "Have the professional attitude and desire for life‐long learning. This includes developing habits of research, precedent, and independent learning."
+   ],
+   "careers": [
+    "Architecture",
+    "Building Information Modeler",
+    "Inspection",
+    "Planning",
+    "Construction Administration"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Degree Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 42,
+     "max": 42
+    },
+    "courses": [
+     {
+      "code": "ARCH 300",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARCH 310",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARCH 320",
+      "units": 3.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARCH 321",
+      "units": 3.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARCH 322",
+      "units": 3.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARCH 325",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ARCH 326",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ARCH 329",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARCH 330",
+      "units": 3.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ARCH 332",
+      "units": 3.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARCH 334",
+      "units": 3.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARCH 342",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CMT 310",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The A.S. section begins before page 152; the program title heading and start of the description are not in the text, so the section heading recorded is 'Degree Requirements'.",
+   "Block total stated as 'Total Units: 42' was recorded as both total_units and the block's stated total; the printed course units sum to 42.",
+   "The catalog prints ARCH 332 and ARCH 334 at 3.5 units; the state file stores 3 units for each.",
+   "ARCH 325, ARCH 326 and ARCH 330 are not in the closed list and are recorded as catalog additions.",
+   "The degree requires the program plus Local GE or Cal-GETC 'plus sufficient electives for a total of at least 60 units'; no printed degree total or GE units, so degree_total and ge_units are null and electives_fill_degree is true.",
+   "Outcomes copied without the 'PSLO #n:' labels; PSLO #4 begins 'ave' (typo in the catalog) and was copied as printed. The Architectural Technology Certificate prints the same outcomes list."
+  ]
+ },
+ "extracted_run": "39047009824"
+}

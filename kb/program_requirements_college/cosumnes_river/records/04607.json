@@ -1,0 +1,331 @@
+{
+ "college": "Cosumnes River College",
+ "control_number": "04607",
+ "shape": "degree",
+ "title": "Automotive Mechanics Technology",
+ "award": "A.S. Degree",
+ "source_url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=180",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7926,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7926,
+    "output_tokens": 3127,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 3127,
+  "output_tokens_details": {
+   "thinking_tokens": 1077
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.09424,
+ "ms": 24873,
+ "seconds": 25.2,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 11,
+   "listed": 17,
+   "share": 0.647,
+   "missing": [
+    "AMT140",
+    "AMT300",
+    "AMT303",
+    "AMT304",
+    "AMT305",
+    "AMT310"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 2,
+   "codes": [
+    "AMT328",
+    "AMT498"
+   ],
+   "flagged": [
+    "AMT328",
+    "AMT498"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    29.0,
+    29.0
+   ],
+   "stated": [
+    43.0,
+    43.0
+   ],
+   "against": "program",
+   "why": [
+    "the blocks sum to 29.0-29.0; the catalog states 43.0-43.0"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 13,
+   "courses": 0,
+   "count": 13,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 6,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Automotive Mechanics Technology Associate in Science (A.S.) degree (heading not in the supplied text; the requirements table begins mid-list on page 180)",
+   "measure": "units",
+   "total_units": {
+    "min": 43,
+    "max": 43
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Local General Education Pattern or California General Education Transfer Curriculum (Cal-GETC)",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": true,
+   "outcomes": [
+    "Understand the fundamental purpose, components, and operation of major automotive systems to include gasoline engines, automatic transmissions and transaxles, manual transmissions, drivetrains, and axles, suspension and steering systems, brake systems, electrical and electronic systems, heating and air conditioning systems, and engine performance systems.",
+    "Understand the proper use of tools, equipment, and publications used for automotive diagnosis and repair.",
+    "Understand typical automotive shop hierarchy, structure, and standard procedures.",
+    "Prepare and write repair orders to include: customer information, vehicle identifying information, customer concerns, related service history, cause, and correction.",
+    "Diagnose engine mechanical concerns, conduct diagnostic testing procedures, and perform the procedures and techniques involved in typical engine repairs and overhauls.",
+    "Demonstrate the ability to diagnose, service, and repair automatic transmissions and transaxles.",
+    "Demonstrate the ability to diagnose and repair manual transmissions, transaxles, and drive train concerns.",
+    "Demonstrate the ability to diagnose and repair automotive suspension and steering concerns.",
+    "Demonstrate the ability to diagnose and repair automotive brake systems.",
+    "Demonstrate the ability to diagnose and repair automotive electrical and electronic concerns.",
+    "Demonstrate the ability to diagnose and repair automotive heating, ventilation, and air conditioning (HVAC) system concerns.",
+    "Demonstrate the ability to diagnose, service, and repair gasoline engine performance systems and their components.",
+    "Verify the outcome of the repair through a test drive analysis or system self-test."
+   ],
+   "careers": [
+    "Auto Technician",
+    "Auto/Truck Specialist",
+    "Automotive Microcomputer Programmer & Operator",
+    "Field Service/Sales Representative",
+    "Inventory Controls Manager",
+    "Tune-up & Electrical Specialist"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Program (table continues from previous page)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "AMT 314",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AMT 316",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AMT 322",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AMT 324",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AMT 326",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AMT 330",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AMT 332",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "A minimum of 5 units from the following",
+    "rule": "choose_units",
+    "minimum": 5,
+    "option_group": null,
+    "stated": {
+     "min": 5,
+     "max": 5
+    },
+    "courses": [
+     {
+      "code": "AMT 301",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AMT 306",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AMT 498",
+      "units": 0.5,
+      "units_max": 4,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "A minimum of 3 units from the following",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "AMT 321",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AMT 328",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "AMT 340",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "AMT 140",
+    "why": "not in the text; likely on the previous page cut off before the table"
+   },
+   {
+    "code": "AMT 300",
+    "why": "not in the text; likely in the cut-off start of the required table on the previous page"
+   },
+   {
+    "code": "AMT 303",
+    "why": "not in the text; likely in the cut-off start of the required table on the previous page"
+   },
+   {
+    "code": "AMT 304",
+    "why": "not in the text; likely in the cut-off start of the required table on the previous page"
+   },
+   {
+    "code": "AMT 305",
+    "why": "not in the text; likely in the cut-off start of the required table on the previous page"
+   },
+   {
+    "code": "AMT 310",
+    "why": "not in the text; likely in the cut-off start of the required table on the previous page"
+   }
+  ],
+  "notes": [
+   "The supplied text begins mid-table on page 180; the section heading and the first rows of the required courses (likely including AMT 300, 303, 304, 310 and possibly others) are on the previous page and not captured. The first block is therefore incomplete; reviewer should check page 179.",
+   "Total Units: 43 is recorded as the major total; the 60-unit figure is the general A.S. requirement ('sufficient electives for a total of at least 60 units'), so degree_total is left null and electives_fill_degree is true.",
+   "Outcomes: the 'PSLO n:' labels were removed as list labels; three bulleted outcomes carry no PSLO number and were kept as printed.",
+   "AMT 498 and AMT 328 are not in the closed list and are marked catalog additions.",
+   "The text after the Career Information paragraph begins the separate Ford ASSET A.S. program, which was not read for this record."
+  ]
+ },
+ "extracted_run": "39047009824"
+}

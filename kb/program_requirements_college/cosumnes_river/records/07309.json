@@ -1,0 +1,343 @@
+{
+ "college": "Cosumnes River College",
+ "control_number": "07309",
+ "shape": "degree",
+ "title": "Early Childhood Education, Site Supervisor",
+ "award": "A.A. Degree",
+ "source_url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=302",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 12005,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 12005,
+    "output_tokens": 3023,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 3023,
+  "output_tokens_details": {
+   "thinking_tokens": 1013
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.10848,
+ "ms": 24193,
+ "seconds": 24.6,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 21,
+   "listed": 21,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    43.0,
+    43.0
+   ],
+   "stated": [
+    43.0,
+    43.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 6,
+   "courses": 0,
+   "count": 6,
+   "not_verbatim": [
+    "(Implement and design inclusive environments) Understand the importance and practice in desiging environments that promote justice, equity and inclusion for all children, families, and communities.",
+    "(Observation, Documentation and Assessment) Utilize authentic assessment strategies based on observation, reflection, documentation, and interpretation of children’s development to inform teaching practices."
+   ],
+   "why": [
+    "not in the catalog text as printed: (Implement and design inclusive environments) Understand the importance and prac",
+    "not in the catalog text as printed: (Observation, Documentation and Assessment) Utilize authentic assessment strateg"
+   ],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": false
+  },
+  "careers": {
+   "count": 2,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Early Childhood Education, Site Supervisor",
+   "measure": "units",
+   "total_units": {
+    "min": 43,
+    "max": 43
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Local General Education Pattern or California General Education Transfer Curriculum (Cal-GETC)",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": true,
+   "outcomes": [
+    "(Development and Learning) Analyze and synthesize research and theories to support development and learning. Evaluate and implement developmentally appropriate and culturally relevant approaches to teaching and learning which support the whole child including foundational skills and concepts in language and literacy, math, science, art, health and wellness, and social relationships.",
+    "(Implement and design inclusive environments) Understand the importance and practice in desiging environments that promote justice, equity and inclusion for all children, families, and communities.",
+    "(Professionalism) Develop competencies, professional skills, and plans for professional growth. Integrate reflective practices to support professional growth as an Early Childhood professional. Understand and integrate the NAEYC Code of Ethics to support children, families, and other educators.",
+    "(Observation, Documentation and Assessment) Utilize authentic assessment strategies based on observation, reflection, documentation, and interpretation of children’s development to inform teaching practices.",
+    "(Family Engagement) Incorporate strategies for building respectful and reciprocal relationships with families, children and the community in order to support children's development and learning. Develop knowledge and skills to provide a responsive curriculum and learning environment that reflects the children and the families in the program.",
+    "(Leadership) Understanding and commitment to leadership development that empowers, encourages, cultivates, and supports self and others to become agents of change and advocate for high-quality early care and education experiences for all children, support for families, and professional stature of educators."
+   ],
+   "careers": [
+    "director",
+    "site supervisor"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Degree Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ECE 300",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECE 312",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECE 314",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECE 415",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECE 326",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECE 320",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECE 430",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECE 404",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECE 321",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECE 420",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECE 422",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECE 424",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "A minimum of 3 units from the following",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "ECE 322",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECE 342",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECE 343",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECE 365",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECE 307",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECE 361",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "A minimum of 3 units from the following",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "ECE 330",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECE 331",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECE 402",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The excerpt begins mid-description; the section heading is not printed in the text, so the program title is used as section_heading.",
+   "The degree text says 'plus sufficient electives for a total of at least 60 units'; read as a general graduation statement, so degree_total is null and electives_fill_degree is true. No GE units are printed.",
+   "Outcome bullets are printed oddly: each 'PSLO N:' label sits on its own bullet with its text on the following bullet(s). Each PSLO was recorded as one outcome with the 'PSLO N:' label removed and its printed text joined; reviewer should check this reading.",
+   "PSLO 2 for this degree reads '(Implement and design inclusive environments)' with typo 'desiging', differing from the certificate sections' PSLO 2; copied as printed.",
+   "Career Information paragraph says 'After completing this certificate' though it sits in the A.A. degree section; careers 'director' and 'site supervisor' taken from it.",
+   "Sections for Master Teacher and Teacher certificates that follow were not used."
+  ]
+ },
+ "extracted_run": "39047009824"
+}

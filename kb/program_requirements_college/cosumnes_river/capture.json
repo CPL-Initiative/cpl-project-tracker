@@ -1,0 +1,5298 @@
+{
+ "college": "Cosumnes River College",
+ "catalog_url": "https://www.crc.losrios.edu/catalog",
+ "platform": "custom_html",
+ "catalog_year": "2026-2027",
+ "programs": 226,
+ "with_closed_list": 219,
+ "started": "2026-10-17T15:54:21Z",
+ "pdf": {
+  "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf",
+  "access": "hand_filed",
+  "status": null,
+  "bytes": 4515038,
+  "pages_total": 653,
+  "error": null,
+  "chars_total": 2474916,
+  "pypdf_accepted": 217,
+  "sample": [
+   "p196: 'This course consists of supervised experience in an automotive \\nrepair service setting performing the tasks and responsibilities of \\nan automotive service technician. Those duties include, but are not \\nlimited to, diagnosing and repairing a'",
+   "p392: 'GEOG 392 Field Studies in Geography: \\nCoastal Landscapes \\nUnits: 1 - 4 \\nHours: 6 - 24 hours LEC; 36 - 144 hours LAB \\nPrerequisite: None. \\nTransferable: CSU \\nC-ID: C-ID GEOG 160 \\nThis is a field studies course of the geography of coastal \\nla'"
+  ],
+  "extractor": "pypdf",
+  "hand_filed": {
+   "college": "Cosumnes River College",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf",
+   "fetched_by": "Sam Lee",
+   "fetched_at": "2026-10-17",
+   "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc",
+   "file": null,
+   "copy_url": "https://github.com/user-attachments/files/33599449/crc-catalog-26-27.pdf",
+   "note": "Sam downloaded it in a browser and posted it to the catalog-files release (2026-10-17); its host answers the reader 404 (since 2026-10-08). cpl_memory sam-hand-filed-catalog-pdf-links-2026-10-17.",
+   "addenda": []
+  },
+  "picks": [
+   {
+    "control_number": "04584",
+    "pages": [
+     623,
+     624
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 623] A.S. in Veterinary Technology CRC's Veterinary Technology Associate of Science Degree program provides students with the skills and knowledge necessary to pursue a career as a Registered Veterinary Technici"
+   },
+   {
+    "control_number": "04586",
+    "pages": [
+     134,
+     135
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 134] The Agriculture Business Associate in Science (A.S.) degree may be obtained by completion of the required program, and either (a) the Local General Education Pattern or (b) the California General Education "
+   },
+   {
+    "control_number": "04589",
+    "pages": [
+     152,
+     153,
+     154,
+     155
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 152] built environment. HIGHLIGHTS *Participation in architecturally-related events such as the Design Village Competition at Cal Poly San Luis Obispo. *Field trips to a variety of architectural sites for study"
+   },
+   {
+    "control_number": "04593",
+    "pages": [
+     121,
+     122,
+     123,
+     124
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.875,
+    "opens": "[page 121] A.A. in Accounting This program provides training for entry-level employment in private industry, government accounting, or for self-employment as a provider of computer-based bookkeeping and/or tax service"
+   },
+   {
+    "control_number": "04595",
+    "pages": [
+     471,
+     472,
+     473,
+     474
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 471] A.A. in Management Management in Business Certificate Dean: Tyler Rollins Department Chair: Eric Granquist Phone: (916) 691-7226 Email: rollint@crc.losrios.edu Associate Degree A.A. in Management T"
+   },
+   {
+    "control_number": "04596",
+    "pages": [
+     474,
+     475,
+     476
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 474] A.A. in Marketing The Marketing degree provides an opportunity for students to acquire knowledge and training for careers in sales, advertising, and marketing. The competency-based curriculum is designed to"
+   },
+   {
+    "control_number": "04597",
+    "pages": [
+     564,
+     565,
+     566,
+     567
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.739,
+    "opens": "[page 564] CRC offers, in addition to a Real Estate A.A. Degree, a variety of courses available which satisfy State of California prerequisites for Real Estate Salesperson and Real Estate Broker examinations. Degrees "
+   },
+   {
+    "control_number": "04600",
+    "pages": [
+     437,
+     438,
+     439,
+     440
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 437] A.A. in Journalism The Journalism program is designed to train students in the writing, reporting and critical thinking skills required for jobs in the news media or for transfer to a journalism program at "
+   },
+   {
+    "control_number": "04601",
+    "pages": [
+     211,
+     212
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.933,
+    "opens": "[page 211] A.A. in Broadcast Journalism Dean: Ashu Mishra Department Chair: Mun Kang Phone: (916) 691-7090 Email: kangm@crc.losrios.edu Associate Degree A.A. in Broadcast Journalism This CRC program introduces"
+   },
+   {
+    "control_number": "04602",
+    "pages": [
+     249,
+     250,
+     251,
+     252
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.833,
+    "opens": "[page 249] Course Code Course Title Units or MATH 400 Calculus I (5) 2nd Semester: ACCT 301 Financial Accounting 4 CISA 315 Introduction to Electronic Spreadsheets 2 STAT C1000E Introduction to Statistics 4 3rd "
+   },
+   {
+    "control_number": "04607",
+    "pages": [
+     180
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.647,
+    "opens": "[page 180] Course Code Course Title Units AMT 314 Wheel Alignment 3 AMT 316 Automotive Brakes 3 AMT 322 Engine Repair 3 AMT 324 Electronic Fuel Injection 3 AMT 326 Automotive Heating and Air Conditioning 3 AMT 330"
+   },
+   {
+    "control_number": "04609",
+    "pages": [
+     158,
+     159,
+     160,
+     161
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.857,
+    "opens": "[page 158] Technology such as AutoCAD, Rhinoceros, SketchUp, Lumion, Adobe CS Suite, Bluebeam as well as Building Information Modeling (BIM) software components, such as Revit Architecture, MEP, and Structure to prepa"
+   },
+   {
+    "control_number": "04611",
+    "pages": [
+     278,
+     279,
+     280
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 278] methods and procedures (instructor option) *Transfer potential to four-year programs in Construction Technology Degree Requirements Course Code Course Title Units ACCT 101 Fundamentals of College Accounti"
+   },
+   {
+    "control_number": "04614",
+    "pages": [
+     170,
+     171,
+     172,
+     173
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.774,
+    "opens": "[page 170] Course Code Course Title Units ARTH 332 Asian Art (3) ARTH 333 Introduction to Islamic Art (3) Take two (2) Art History courses selected from: A minimum of 12 units from the following: 12 ART 301 Digital "
+   },
+   {
+    "control_number": "04615",
+    "pages": [
+     500,
+     501,
+     502,
+     503
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.667,
+    "opens": "[page 500] A.A. in Music, General Completion of this degree provides a foundation in music. Program offerings include course work in music theory and aural skills, applied instrumental and vocal instruction, ensemble "
+   },
+   {
+    "control_number": "04616",
+    "pages": [
+     604,
+     605
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.59,
+    "opens": "[page 604] Course Code Course Title Units TAP 360 Children's Theatre Rehearsal and Performance I (1 - 3) TAP 361 Children's Theatre Rehearsal and Performance II (1 - 3) TAP 362 Children's Theatre Rehearsal and Perform"
+   },
+   {
+    "control_number": "04622",
+    "pages": [
+     493,
+     494,
+     495,
+     496
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 493] A.S. in Medical Assisting Medical Assisting Certificate Medical Assisting, Administrative Certificate Dean: Kris Hubbard Department Chair: Serena Fuller Phone: (916) 691-7296 Email: hubbark@crc.losri"
+   },
+   {
+    "control_number": "04623",
+    "pages": [
+     399,
+     400,
+     401,
+     402
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 399] A.S. in Health Information Technology Health Information Coding Specialist Certificate Dean: Kris Hubbard Department Liasons: Cori Burns Kristen Borth, Program Coordinator Phone: (916) 691-7452 Email:"
+   },
+   {
+    "control_number": "04633",
+    "pages": [
+     583
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 583] Course Code Course Title Units PSYC C1000 Introduction to Psychology 3 PSYC 340 Abnormal Behavior 3 SOC 321 Race, Ethnicity and Inequality in the United States (3) 3 Total Units: 37.5 - 41 1Students must "
+   },
+   {
+    "control_number": "04635",
+    "pages": [
+     301,
+     302,
+     303,
+     304
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 301] Note to Transfer Students: If you are interested in transferring to a four-year college or university to pursue a Bachelor’s degree in this major, it is critical that you meet with a CRC counselor to select"
+   },
+   {
+    "control_number": "04637",
+    "pages": [
+     366
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 366] A.S. in Fire Technology The fire service is one of the most dynamic employers in the country. This CRC program is designed to provide the student with updated skills and knowledge necessary to complete and "
+   },
+   {
+    "control_number": "04645",
+    "pages": [
+     221,
+     222,
+     223,
+     224
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.95,
+    "opens": "[page 221] requisite courses. The program includes coursework in culinary arts, food and equipment use and identification, culinary sanitation, nutrition, management techniques, marketing, legal control, financial an"
+   },
+   {
+    "control_number": "04648",
+    "pages": [
+     426,
+     427,
+     428,
+     429
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 426] university to pursue a bachelor’s degree in this major, it is critical that you meet with a CRC counselor to select and plan the courses for your major. Schools vary widely in terms of the required preparat"
+   },
+   {
+    "control_number": "07087",
+    "pages": [
+     220,
+     221,
+     222,
+     223
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 220] Course Code Course Title Units BUS 495 Independent Studies in Business (0.5 - 4) BUS 498 Work Experience in Business (0.5 - 4) A minimum of 3 units from the following: 3 CISC 310 Introduction to Computer I"
+   },
+   {
+    "control_number": "07088",
+    "pages": [
+     414,
+     415,
+     416,
+     417
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 414] A.S. in Horticulture, Sustainable Landscape Technology A variety of professional career opportunities are available to those who wish to provide professional landscape installation and/or support services."
+   },
+   {
+    "control_number": "07097",
+    "pages": [
+     219,
+     220,
+     221,
+     222
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 219] A.A. in Business, General This program provides an overview of business fundamentals for students interested in most business occupations. The program is also recommended for general government service occu"
+   },
+   {
+    "control_number": "07288",
+    "pages": [
+     271,
+     272,
+     273
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 271] A.S. in Construction Construction Certificate Construction Pre-Apprenticeship Certificate Green Buildings Certificate Solar Installers Certificate Dean: Brian Rickel Department Chair: Ryan Connally Ph"
+   },
+   {
+    "control_number": "07290",
+    "pages": [
+     128
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.957,
+    "opens": "[page 128] A.A. in Advertising/Public Relations This CRC program is part of CRC's offerings in Radio, Television and Film Production and is designed for students interested in careers in public relations and advertisi"
+   },
+   {
+    "control_number": "07291",
+    "pages": [
+     531,
+     532,
+     533,
+     534
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.955,
+    "opens": "[page 531] The flexibility of the program allows students to explore specific areas of interest within photography, including fine art, documentary, studio, and applied practices. Students planning to transfer to a fo"
+   },
+   {
+    "control_number": "07292",
+    "pages": [
+     555,
+     556,
+     557,
+     558
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 555] Degree Requirements Course Code Course Title Units RTVF 300 Mass Media and Society 3 RTVF 306 Introduction to Media Aesthetics and Cinematic Arts 3 RTVF 312 Beginning Radio and Podcasting 3 RTVF 315 Voice"
+   },
+   {
+    "control_number": "07294",
+    "pages": [
+     621,
+     622
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.909,
+    "opens": "[page 621] preparation. The courses that CRC requires for an Associate’s degree in this major may be different from the requirements needed for the Bachelor’s degree. Degree Requirements Course Code Course Title Uni"
+   },
+   {
+    "control_number": "07300",
+    "pages": [
+     246
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 246] A.S. in CIS - Computer Science This program provides a foundation in algorithm development, programming techniques, data structures, and structured problem solving. This A.S. Degree would be appropriate fo"
+   },
+   {
+    "control_number": "07302",
+    "pages": [
+     248,
+     249
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.7,
+    "opens": "[page 248] • Implement network perimeter defense (PSLO 6). Career Information Some career opportunities associated with this degree include: security analyst, network systems security administrator, security policy a"
+   },
+   {
+    "control_number": "07305",
+    "pages": [
+     213,
+     214,
+     215,
+     216
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 213] Course Code Course Title Units BIT 112 Building Inspection Principles for Disabled Access 3 BIT 120 Mechanical I/Plumbing Code Requirements 3 BIT 121 Mechanical II / H.V.A.C. Code Requirements 3 BIT 140 R"
+   },
+   {
+    "control_number": "07309",
+    "pages": [
+     302,
+     303,
+     304,
+     305
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 302] of the early childhood education field. When combined with verified professional experience, this certificate qualifies individuals for the Site Supervisor Permit issued by the California Commission on Teac"
+   },
+   {
+    "control_number": "07312",
+    "pages": [
+     306,
+     307,
+     308,
+     309
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 306] • PSLO 3: (Observation, Documentation and Assessment) Utilize authentic assessment strategies based on observation, reflection, documentation, and interpretation of childrenâ€™s development to inform teachi"
+   },
+   {
+    "control_number": "07314",
+    "pages": [
+     303,
+     304,
+     305,
+     306
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 303] Certificates of Achievement Early Childhood Education - Master Teacher Certificate This certificate meets the requirements for teaching in a publicly funded early care and education program. It requires an"
+   },
+   {
+    "control_number": "07315",
+    "pages": [
+     301,
+     302,
+     303,
+     304
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 301] Note to Transfer Students: If you are interested in transferring to a four-year college or university to pursue a Bachelor’s degree in this major, it is critical that you meet with a CRC counselor to select"
+   },
+   {
+    "control_number": "07319",
+    "pages": [
+     282,
+     283,
+     284,
+     285
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 282] Culinary Services Certificate, the Cooking and Supervision Certificate, and the Small Business Management/Entrepreneurship Certificate, which are embedded within the degree path. Students who complete all p"
+   },
+   {
+    "control_number": "07320",
+    "pages": [
+     221,
+     222
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": false,
+    "coverage": 0.556,
+    "opens": "[page 221] requisite courses. The program includes coursework in culinary arts, food and equipment use and identification, culinary sanitation, nutrition, management techniques, marketing, legal control, financial an"
+   },
+   {
+    "control_number": "11319",
+    "pages": [
+     206,
+     207,
+     208,
+     209
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 206] Course Code Course Title Units CHEM 421 Organic Chemistry II (5) GEOG 300 Physical Geography: Exploring Earth's Environmental Systems (3) and GEOG 301 Physical Geography Laboratory (1) GEOL 300 Physical "
+   },
+   {
+    "control_number": "11320",
+    "pages": [
+     122,
+     123,
+     124,
+     125
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 122] Accounting Certificate Certificate Requirements Course Code Course Title Units ACCT 107 Auditing 3 ACCT 111 Cost Accounting 3 ACCT 301 Financial Accounting 4 ACCT 311 Managerial Accounting 4 ACCT 341 Co"
+   },
+   {
+    "control_number": "11328",
+    "pages": [
+     254,
+     255,
+     256
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 254] CIS - Programming in C/C++ Certificate This CIS - Programming in C/C++ certificate provides students an advanced level of C/C++ programming skill. It will prepare students in advancing their career or trans"
+   },
+   {
+    "control_number": "11330",
+    "pages": [
+     248,
+     249
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.667,
+    "opens": "[page 248] • Implement network perimeter defense (PSLO 6). Career Information Some career opportunities associated with this degree include: security analyst, network systems security administrator, security policy a"
+   },
+   {
+    "control_number": "11336",
+    "pages": [
+     179,
+     180
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 179] Automotive Engine Performance Certificate Automotive Engine Performance (Ford ASSET) Certificate Automotive Engine Repair Certificate Automotive Engine Repair (Ford ASSET) Certificate Automotive Heating an"
+   },
+   {
+    "control_number": "11338",
+    "pages": [
+     169,
+     170,
+     171,
+     172
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.923,
+    "opens": "[page 169] Course Code Course Title Units ART 301 Digital Drawing and Composition (3) or ART 338 Introduction to Digital Painting I (3) Art History Electives: A minimum of 3 units from the following: 3 ARTH C1100"
+   },
+   {
+    "control_number": "11339",
+    "pages": [
+     167,
+     168,
+     169,
+     170
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 167] A.A. in Art - Art History CRC's art curriculum offers introductory and intermediate level courses in painting, watercolor, computer art, drawing, sculpture, ceramics, printmaking and design, as well as cour"
+   },
+   {
+    "control_number": "11340",
+    "pages": [
+     531,
+     532,
+     533,
+     534
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.85,
+    "opens": "[page 531] The flexibility of the program allows students to explore specific areas of interest within photography, including fine art, documentary, studio, and applied practices. Students planning to transfer to a fo"
+   },
+   {
+    "control_number": "11341",
+    "pages": [
+     533,
+     534,
+     535,
+     536
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.842,
+    "opens": "[page 533] The Portraiture and Wedding Photography Certificate prepares students for entry-level careers in portrait and wedding photography. The program emphasizes working with people in real-world settings, combinin"
+   },
+   {
+    "control_number": "11343",
+    "pages": [
+     493,
+     494,
+     495,
+     496
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 493] Medical Assisting, Administrative Certificate Dean: Kris Hubbard Department Chair: Serena Fuller Phone: (916) 691-7296 Email: hubbark@crc.losrios.edu Associate Degree A.S. in Medical Assisting The C"
+   },
+   {
+    "control_number": "11346",
+    "pages": [
+     425,
+     426,
+     427
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.967,
+    "opens": "[page 425] based on their interests Note to Transfer Students: If you are interested in transferring to a four-year college or university to pursue a bachelor’s degree in this major, it is critical that you meet with"
+   },
+   {
+    "control_number": "11347",
+    "pages": [
+     425,
+     426,
+     427
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.786,
+    "opens": "[page 425] based on their interests Note to Transfer Students: If you are interested in transferring to a four-year college or university to pursue a bachelor’s degree in this major, it is critical that you meet with"
+   },
+   {
+    "control_number": "11348",
+    "pages": [
+     429,
+     430,
+     431,
+     432
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.941,
+    "opens": "[page 429] Course Code Course Title Units ART 300 Drawing and Composition I (3) ART 302 Drawing and Composition II (3) ART 304 Figure Drawing I (3) ART 305 Figure Drawing II (3) ART 312 Portrait Drawing (3) ART 32"
+   },
+   {
+    "control_number": "12208",
+    "pages": [
+     471,
+     472,
+     473,
+     474
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 471] Management in Business Certificate Dean: Tyler Rollins Department Chair: Eric Granquist Phone: (916) 691-7226 Email: rollint@crc.losrios.edu Associate Degree A.A. in Management This program provides"
+   },
+   {
+    "control_number": "12260",
+    "pages": [
+     303,
+     304,
+     305,
+     306
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 303] Certificates of Achievement Early Childhood Education - Master Teacher Certificate This certificate meets the requirements for teaching in a publicly funded early care and education program. It requires an"
+   },
+   {
+    "control_number": "12262",
+    "pages": [
+     122,
+     123,
+     124,
+     125
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.917,
+    "opens": "[page 122] Accounting Clerk Certificate This Certificate is designed to provide the skills necessary for clerical level positions within an Accounting environment. These positions support Accounting professionals and "
+   },
+   {
+    "control_number": "12667",
+    "pages": [
+     239,
+     240,
+     241,
+     242
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.923,
+    "opens": "[page 239] in the following areas: • Mass Media Studies • Broadcast Electronic Communication Arts • Organizational Communication • Intercultural Communication • Visual Communication • Rhetoric • Group Communicatio"
+   },
+   {
+    "control_number": "12725",
+    "pages": [
+     328,
+     329,
+     330,
+     331
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 328] A.S. in Engineering - Civil/Mechanical Option A.S. in Engineering - Electrical/Computer Option A.S. in General Science Dean: Banafsheh Amini Department Chair: Eric Anderson Phone: (916) 691-7204 Email"
+   },
+   {
+    "control_number": "12726",
+    "pages": [
+     328,
+     329,
+     330,
+     331
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 328] A.S. in Engineering - Electrical/Computer Option A.S. in General Science Dean: Banafsheh Amini Department Chair: Eric Anderson Phone: (916) 691-7204 Email: anderse@crc.losrios.edu Associate Degrees "
+   },
+   {
+    "control_number": "12740",
+    "pages": [
+     478
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 478] A.S. in Mathematics This degree is designed to provide a foundation in mathematics and to meet common lower-division requirements for a major in Mathematics or Statistics at many four-year institutions. It "
+   },
+   {
+    "control_number": "12741",
+    "pages": [
+     469
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": false,
+    "coverage": 1.0,
+    "opens": "[page 469] Course Code Course Title Units or ANTH 482 Honors Biological Anthropology Laboratory (1) ASTR C1001 Introduction to Astronomy (3) ASTR C1001L Introduction to Astronomy Lab (1) BIOL C1001 Introducti"
+   },
+   {
+    "control_number": "12742",
+    "pages": [
+     204,
+     205,
+     206,
+     207
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 204] Note to Transfer Students: This degree is intended to prepare students for transfer to a University of California campus or other four-year institutions. It is critical that you meet with a counselor from y"
+   },
+   {
+    "control_number": "12743",
+    "pages": [
+     204,
+     205,
+     206,
+     207
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 204] A.S. in Biology: Pre-Nursing Option CRC's Biology, Pre-nursing option offers courses which satisfy general education requirements in Life Sciences, are prerequisites for a degree in Veterinary Technology, M"
+   },
+   {
+    "control_number": "12789",
+    "pages": [
+     335,
+     336,
+     337,
+     338
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 335] Associate’s degree in this major may be different from the requirements needed for the Bachelor’s degree. Degree Requirements Course Code Course Title Units Core requirements (18 units): ENGL C1000 Academ"
+   },
+   {
+    "control_number": "12790",
+    "pages": [
+     233,
+     234,
+     235,
+     236
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 233] students conduct hands-on chemical experimentation in a modern, well-equipped laboratory. HIGHLIGHTS *An outstanding chemistry faculty striving to maintain an excellent and well-respected chemistry program"
+   },
+   {
+    "control_number": "12791",
+    "pages": [
+     542,
+     543,
+     544,
+     545
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 542] A.S. in Physics The Associate in Science in Physics degree provides students with a thorough overview of the field of physics. Students will have demonstrated sufficient understanding in the fields of mecha"
+   },
+   {
+    "control_number": "12792",
+    "pages": [
+     393,
+     394,
+     395,
+     396
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 393] A.S.-T. in Geology The Associate in Science in Geology for Transfer Degree (AA-T) is designed to provide a seamless transfer pathway for students interested in pursuing at least one Geology degree option in"
+   },
+   {
+    "control_number": "14268",
+    "pages": [
+     226,
+     227,
+     228
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 226] Business, Office Assistant Certificate This Certificate of Achievement is designed to provide students with general knowledge in business and an in-depth knowledge of a variety of business technology applic"
+   },
+   {
+    "control_number": "14289",
+    "pages": [
+     320,
+     321,
+     322
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 320] or behavioral support. This program supports students pursuing roles as paraeducators, instructional aides, and future teachers in early learning, elementary, and inclusive educational settings, while maint"
+   },
+   {
+    "control_number": "14387",
+    "pages": [
+     399,
+     400,
+     401,
+     402
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 399] Health Information Coding Specialist Certificate Dean: Kris Hubbard Department Liasons: Cori Burns Kristen Borth, Program Coordinator Phone: (916) 691-7452 Email: borthk@crc.losrios.edu Associate Deg"
+   },
+   {
+    "control_number": "14394",
+    "pages": [
+     255,
+     256,
+     257,
+     258
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.938,
+    "opens": "[page 255] CIS - Web Programming Certificate This certificate prepares students for work as a front end, back end, or full stack Web developer, designing, building, and maintaining professional websites. Additionally,"
+   },
+   {
+    "control_number": "14396",
+    "pages": [
+     254,
+     255,
+     256,
+     257
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 254] used for students to improvement their job skills in high tech computer science, computer programming, game programming, research, teaching, etc. CIS - Programming in C/C++ Certificate This CIS - Programmi"
+   },
+   {
+    "control_number": "15246",
+    "pages": [
+     361,
+     362,
+     363,
+     364
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 361] for an Associate’s degree in this major may be different from the requirements needed for the Bachelor’s degree. Exact major requirements for UC and CSU institutions can be found on www.assist.org. Career "
+   },
+   {
+    "control_number": "15249",
+    "pages": [
+     574,
+     575,
+     576,
+     577
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.838,
+    "opens": "[page 574] Course Code Course Title Units or BIOL 350 Environmental Biology (3) ECON C2002 Principles of Macroeconomics (3) or ECON C2001 Principles of Microeconomics (3) GEOG 302 Environmental Studies & Su"
+   },
+   {
+    "control_number": "15300",
+    "pages": [
+     593,
+     594,
+     595,
+     596
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 593] A.A.-T. in Spanish A.A. in Spanish Dean: Emmanuel Sigauke Department Chair: Blanca Gill Phone: (916) 691-7359 Email: sigauke@crc.losrios.edu Associate Degrees for Transfer A.A.-T. in Spanish The As"
+   },
+   {
+    "control_number": "15306",
+    "pages": [
+     413,
+     414,
+     415,
+     416
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 413] coursework and facilitate the successful transition of agriculture students from high school to the university. *Internships in agriculture are available for students interested in work experience opportuni"
+   },
+   {
+    "control_number": "15314",
+    "pages": [
+     247,
+     248
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 247] • Design, write, test, and debug computer programs in a structured language, a low-level language, and an object- oriented language. • Incorporate foundational data management concepts such as data structur"
+   },
+   {
+    "control_number": "15326",
+    "pages": [
+     298
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.917,
+    "opens": "[page 298] Course Code Course Title Units RTVF 360 Introduction to Motion Graphics: Adobe After Effects 3 RTVF 362 Digital Non-Linear Video Editing 3 RTVF 368 Scriptwriting for Film, Video & Multimedia 3 PHOTO 302 "
+   },
+   {
+    "control_number": "17868",
+    "pages": [
+     465,
+     466,
+     467,
+     468
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.649,
+    "opens": "[page 465] Course Code Course Title Units ENGLT 336 Race and Ethnicity in Contemporary American Literature (3) ENGLT 340 World Literature I (3) ENGLT 341 World Literature II (3) ENGLT 343 Contemporary Regional World"
+   },
+   {
+    "control_number": "17869",
+    "pages": [
+     466
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.846,
+    "opens": "[page 466] Course Code Course Title Units VIET 402 Elementary Vietnamese (4) VIET 411 Intermediate Vietnamese (4) VIET 412 Intermediate Vietnamese (4) Total Units: 18 The Liberal Arts - Arts and Humanities Associat"
+   },
+   {
+    "control_number": "17870",
+    "pages": [
+     432
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.684,
+    "opens": "[page 432] Course Code Course Title Units ETHNS 330 Introduction to Asian American Studies (3) ETHNS 360 Introduction to Chicana/o/x Studies (3) ETHNS 344 The Latino Experience in America (3) GEOG 302 Environmen"
+   },
+   {
+    "control_number": "17871",
+    "pages": [
+     469,
+     470
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.923,
+    "opens": "[page 469] Course Code Course Title Units or ANTH 482 Honors Biological Anthropology Laboratory (1) ASTR C1001 Introduction to Astronomy (3) ASTR C1001L Introduction to Astronomy Lab (1) BIOL C1001 Introducti"
+   },
+   {
+    "control_number": "18851",
+    "pages": [
+     139,
+     140
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 139] Associate Degree A.S. in Equine Science Equine Science is the study of the principles behind the biology, function, and management of the horse. This program prepares students to develop the skills and kno"
+   },
+   {
+    "control_number": "18902",
+    "pages": [
+     522,
+     523,
+     524,
+     525
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 522] perform a wide variety of pharmacy related tasks under the direct supervision of a registered pharmacist. Successful completion of the program not only prepares graduates to participate in taking the Pharma"
+   },
+   {
+    "control_number": "19013",
+    "pages": [
+     384,
+     385,
+     386,
+     387
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.889,
+    "opens": "[page 384] Degree Requirements Course Code Course Title Units Core Courses: GEOG 302 Environmental Studies & Sustainability 3 BIOL 350 Environmental Biology (3) 3 or BIOL 352 Conservation Biology (3) ECON 306 "
+   },
+   {
+    "control_number": "19854",
+    "pages": [
+     144,
+     145,
+     146,
+     147
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.926,
+    "opens": "[page 144] planning to transfer to a four-year school with a major in Anthropology should consult the lower division requirements at the university they plan to attend. Degree Requirements Course Code Course Title Un"
+   },
+   {
+    "control_number": "20147",
+    "pages": [
+     623,
+     624
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 623] Associate Degree A.S. in Veterinary Technology CRC's Veterinary Technology Associate of Science Degree program provides students with the skills and knowledge necessary to pursue a career as a Registered V"
+   },
+   {
+    "control_number": "20153",
+    "pages": [
+     414,
+     415,
+     416,
+     417
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 414] A.S. in Horticulture, Sustainable Landscape Technology A variety of professional career opportunities are available to those who wish to provide professional landscape installation and/or support services."
+   },
+   {
+    "control_number": "20178",
+    "pages": [
+     134,
+     135
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 134] Agriculture Business Certificate This program is designed to prepare students for entry level employment in agriculture business. Certificate Requirements Course Code Course Title Units AGB 300 Introducti"
+   },
+   {
+    "control_number": "20182",
+    "pages": [
+     152,
+     153,
+     154,
+     155
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 152] built environment. HIGHLIGHTS *Participation in architecturally-related events such as the Design Village Competition at Cal Poly San Luis Obispo. *Field trips to a variety of architectural sites for study"
+   },
+   {
+    "control_number": "20187",
+    "pages": [
+     123,
+     124,
+     125,
+     126
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.938,
+    "opens": "[page 123] Accounting, Advanced Certificate This program is designed for a student who wishes to develop advanced levels of Accounting skills but not earn a degree. These requirements match the major requirements of t"
+   },
+   {
+    "control_number": "20193",
+    "pages": [
+     220,
+     221,
+     222,
+     223
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 220] Course Code Course Title Units BUS 495 Independent Studies in Business (0.5 - 4) BUS 498 Work Experience in Business (0.5 - 4) A minimum of 3 units from the following: 3 CISC 310 Introduction to Computer I"
+   },
+   {
+    "control_number": "20197",
+    "pages": [
+     564,
+     565,
+     566,
+     567
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.889,
+    "opens": "[page 564] Real Estate Broker Certificate Real Estate Salesperson Certificate Dean: Tyler Rollins Department Chair: Eric Granquist Phone: (916) 691-7226 Email: rollint@crc.losrios.edu Associate Degree A.A. in "
+   },
+   {
+    "control_number": "20200",
+    "pages": [
+     298
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 298] Digital Media Certificate This instructional program is designed to provide skills for industry. This option can lead to entry-level jobs in television, Cable TV, business or industrial video and graphics, "
+   },
+   {
+    "control_number": "20204",
+    "pages": [
+     247,
+     248
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 247] • Design, write, test, and debug computer programs in a structured language, a low-level language, and an object- oriented language. • Incorporate foundational data management concepts such as data structur"
+   },
+   {
+    "control_number": "20206",
+    "pages": [
+     190,
+     191,
+     192
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.882,
+    "opens": "[page 190] Certificate Requirements Course Code Course Title Units AMT 300 Automotive Fundamentals and Shop Procedures 4 AMT 303 Automotive Electrical & Electronic Systems 4 AMT 304 Automotive Manual Drive Train and"
+   },
+   {
+    "control_number": "20215",
+    "pages": [
+     271,
+     272,
+     273
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 271] Construction Certificate Construction Pre-Apprenticeship Certificate Green Buildings Certificate Solar Installers Certificate Dean: Brian Rickel Department Chair: Ryan Connally Phone: (916) 525-4319 "
+   },
+   {
+    "control_number": "20217",
+    "pages": [
+     161,
+     162,
+     163
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.857,
+    "opens": "[page 161] • Develop a comprehensive understanding of green rating systems, livable communities strategies and the ability to apply these concepts in decision-making. • PSLO 3: Demonstrate independent learning, teamwo"
+   },
+   {
+    "control_number": "20220",
+    "pages": [
+     278,
+     279,
+     280
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 278] methods and procedures (instructor option) *Transfer potential to four-year programs in Construction Technology Degree Requirements Course Code Course Title Units ACCT 101 Fundamentals of College Accounti"
+   },
+   {
+    "control_number": "20222",
+    "pages": [
+     214,
+     215,
+     216,
+     217
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 214] Student Learning Outcomes Upon completion of this program, the student will be able to: • PSLO #1: Comprehend the qualifications for entry level skills, the discipline and evaluation process, fire service s"
+   },
+   {
+    "control_number": "20224",
+    "pages": [
+     493,
+     494,
+     495,
+     496
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 493] Upon completion of the Certificate in Medical Assisting, students may take the CMA certification exam administered by American Association of Medical Assistants (AAMA). Degrees and Certificates Offered A.S"
+   },
+   {
+    "control_number": "20226",
+    "pages": [
+     581,
+     582,
+     583
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 581] Social Work and Human Services Certificate Dean: Kris Hubbard Department Chair: Brandy Jones-Thomas Phone: (916) 691-7587 Email: hubbark@crc.losrios.edu Associate Degrees A.A. in Chemical Dependency "
+   },
+   {
+    "control_number": "20227",
+    "pages": [
+     366
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 366] • PSLO #5: Differentiate between fire detection and fire suppression systems. Career Information Fire Inspector, Fire Investigator, Plans Examiner, Building Inspector, Fire Prevention Specialist/Officer, P"
+   },
+   {
+    "control_number": "20367",
+    "pages": [
+     170,
+     171,
+     172,
+     173
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 170] A.A. in Art-Photo The art-photography program is designed to teach students fine art photography with an emphasis in black and white film based processes. Critical analysis, history and current theories in "
+   },
+   {
+    "control_number": "22953",
+    "pages": [
+     124,
+     125,
+     126
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.875,
+    "opens": "[page 124] Accounting, Taxation Certificate This certificate acknowledges student achievement and proficiency in preparing and reviewing the income tax returns of individuals and business entities together with an und"
+   },
+   {
+    "control_number": "30426",
+    "pages": [
+     517,
+     518,
+     519,
+     520
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.923,
+    "opens": "[page 517] A.S. in Nutrition and Foods CRC’s Department of Nutrition and Foods offers an Associate's Degree Program that is challenging, accessible, and rewarding. The program provides opportunities to master the know"
+   },
+   {
+    "control_number": "30566",
+    "pages": [
+     552,
+     553,
+     554
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.8,
+    "opens": "[page 552] ADTs also require that students must earn a “C” or better in all courses required for the major or area of emphasis. A “P” (Pass) grade is also an acceptable grade for courses in the major if the course is "
+   },
+   {
+    "control_number": "30575",
+    "pages": [
+     292,
+     293,
+     294,
+     295
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 292] According to the American Registry for Diagnostic Medical Sonographers (ARDMS), sonographers are “highly-skilled professionals who use specialized equipment to create images of structures inside the human b"
+   },
+   {
+    "control_number": "30576",
+    "pages": [
+     292,
+     293,
+     294,
+     295
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 292] According to the American Registry for Diagnostic Medical Sonographers (ARDMS), sonographers are “highly-skilled professionals who use specialized equipment to create images of structures inside the human b"
+   },
+   {
+    "control_number": "30720",
+    "pages": [
+     237
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.842,
+    "opens": "[page 237] A.A.-T. in Communication Studies 2.0 A.A. in Communication, Organizational Communication Applied Communication Skills Certificate Dean: Emilie Mitchell Department Chair: Daniel T. DuBray Phone: (916) 6"
+   },
+   {
+    "control_number": "30722",
+    "pages": [
+     590,
+     591,
+     592
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 590] sociological phenomena; assess the significance of important social movements in American society; define and identify various theoretical perspectives across the discipline of sociology; and analyze, inter"
+   },
+   {
+    "control_number": "30852",
+    "pages": [
+     416,
+     417,
+     418,
+     419
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 416] The certificate in Sustainable Landscape Design concentrates on those courses that develop the knowledge, skills, and attitudes essential to creating landscape and irrigation designs that make best use of l"
+   },
+   {
+    "control_number": "31053",
+    "pages": [
+     364
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 364] narrative, documentary and experimental styles. This option can lead to entry-level jobs in the film industry, post-production, television, new media, business and industry. Some of the courses in this majo"
+   },
+   {
+    "control_number": "31054",
+    "pages": [
+     477,
+     478
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 477] A.S.-T. in Mathematics A.S. in Mathematics Dean: Camille Moreno Department Chair: Phuong Le Phone: (916) 691-7440 Email: CRC-MathDept@crc.losrios.edu Associate Degrees for Transfer A.S.-T. in Mathem"
+   },
+   {
+    "control_number": "31055",
+    "pages": [
+     540,
+     541,
+     542,
+     543
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 540] (2) Obtainment of a minimum grade point average of 2.0. ADTs also require that students must earn a â€œCâ€⯑ or better in all courses required for the major or area of emphasis. A â€œPâ€⯑ (Pass) grade is als"
+   },
+   {
+    "control_number": "31311",
+    "pages": [
+     158
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 158] Technology such as AutoCAD, Rhinoceros, SketchUp, Lumion, Adobe CS Suite, Bluebeam as well as Building Information Modeling (BIM) software components, such as Revit Architecture, MEP, and Structure to prepa"
+   },
+   {
+    "control_number": "31674",
+    "pages": [
+     602,
+     603,
+     604,
+     605
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 602] A.A.-T. in Theatre Arts A.A. in Theatre Arts Theatre for Young Audiences Certificate Dean: Ashu Mishra Department Chair: Martin Flynn Phone: (916) 691-7090 Email: mishraa@crc.losrios.edu Associate D"
+   },
+   {
+    "control_number": "31780",
+    "pages": [
+     635,
+     636,
+     637,
+     638
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 635] A.S. in Welding Technology The Welding Program at Cosumnes River College specializes in welding training to meet current needs for the Welding Industry. In addition to learning technical welding skills of S"
+   },
+   {
+    "control_number": "31781",
+    "pages": [
+     636,
+     637,
+     638,
+     639
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 636] Certificates of Achievement Welding Code Certificate The Welding Code Certificate specializes in the American Welding Society Structural Steel Welding Code (D1.1) and Seismic Welding Code (D1.8). Students "
+   },
+   {
+    "control_number": "31913",
+    "pages": [
+     300,
+     301,
+     302,
+     303
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 300] Degree Requirements Course Code Course Title Units ECE 312 Child Development 3 ECE 314 The Child, the Family and the Community 3 ECE 300 Introduction to Principles and Practices in Early Childhood Educati"
+   },
+   {
+    "control_number": "31915",
+    "pages": [
+     166,
+     167,
+     168,
+     169
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 166] A.A.-T. in Studio Arts Completion of this degree provides a foundation in studio art methods. Program offerings include coursework in art history, 2-D, and 3-D studio practices. The Associate in Arts in Stu"
+   },
+   {
+    "control_number": "31916",
+    "pages": [
+     142
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 142] Anthropologists aim to study our species from a biological perspective- examining our DNA, relationship to our closest animal relatives, the primates and the fossil evidence of our earliest human ancestors."
+   },
+   {
+    "control_number": "31931",
+    "pages": [
+     165,
+     166,
+     167,
+     168
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 165] A.A.-T. in Art History The Associate in Arts in Art History for Transfer Degree (AA-T) is designed to provide a seamless transfer pathway for students interested in pursuing at least one Art History degree "
+   },
+   {
+    "control_number": "31993",
+    "pages": [
+     442,
+     443,
+     444,
+     445
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.955,
+    "opens": "[page 442] A.A.-T. in Kinesiology A.A. in Kinesiology A.A. in Sport Management Sport Management Certificate Dean: Collin Pregliasco Department Chair: Minet Gunther Phone: (916) 691-7261 Email: PregliC@crc.losr"
+   },
+   {
+    "control_number": "31994",
+    "pages": [
+     382,
+     383,
+     384,
+     385
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 382] A.A.-T. in Geography Geography is the science of place and space. Geographers study the relationships among geographic places, natural systems, society, cultural activities, and the interdependence of all t"
+   },
+   {
+    "control_number": "31995",
+    "pages": [
+     316,
+     317,
+     318
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 316] A.A.-T. in Elementary Teacher Education: Integrated Programs A.A. in Early Childhood Education A.A. in Early Childhood Education, Site Supervisor A.A. in Elementary and Inclusive Education Early Childhood "
+   },
+   {
+    "control_number": "31996",
+    "pages": [
+     436,
+     437,
+     438,
+     439
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 436] media or for transfer to a journalism program at a four-year institution. Degrees Offered A.A.-T. in Journalism A.A. in Journalism Dean: Ashu Mishra Department Chair: Adam Wadenius Phone: (916) 691-7"
+   },
+   {
+    "control_number": "31997",
+    "pages": [
+     581,
+     582,
+     583,
+     584
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.923,
+    "opens": "[page 581] A.A. in Chemical Dependency Studies Degree The program in Chemical Dependency Studies centers around the specific skills and abilities necessary to provide comprehensive drug and alcohol counseling. Course"
+   },
+   {
+    "control_number": "31998",
+    "pages": [
+     582,
+     583,
+     584,
+     585
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.923,
+    "opens": "[page 582] Course Code Course Title Units SWHS 360 Techniques for Interviewing and Case Management Services 3 SWHS 364 Advanced Techniques for Working with Groups 4 SWHS 367 Advanced Practices in Human Services 3 SW"
+   },
+   {
+    "control_number": "32569",
+    "pages": [
+     393,
+     394,
+     395,
+     396
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 393] A.S.-T. in Geology The Associate in Science in Geology for Transfer Degree (AA-T) is designed to provide a seamless transfer pathway for students interested in pursuing at least one Geology degree option in"
+   },
+   {
+    "control_number": "33053",
+    "pages": [
+     335
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.786,
+    "opens": "[page 335] Associate’s degree in this major may be different from the requirements needed for the Bachelor’s degree. Degree Requirements Course Code Course Title Units Core requirements (18 units): ENGL C1000 Academ"
+   },
+   {
+    "control_number": "33072",
+    "pages": [
+     404,
+     405,
+     406,
+     407
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 404] The Associate in Arts in History for Transfer Degree (AA-T) is designed to provide a seamless transfer pathway for students interested in pursuing a History degree in the California State University (CSU) s"
+   },
+   {
+    "control_number": "33457",
+    "pages": [
+     171
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 171] Fine Art Photography Certificate The fine art photography program is designed for students who want to enter a career path in fine art photography. Students will use a variety of cameras and formats to prod"
+   },
+   {
+    "control_number": "33537",
+    "pages": [
+     499,
+     500,
+     501,
+     502
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 499] Degree Requirements Course Code Course Title Units MUFHL 400 Music Theory and Musicianship I 4 MUFHL 404 Music Theory II 3 MUFHL 405 Musicianship II 1 MUFHL 412 Music Theory III 3 MUFHL 413 Musicianship "
+   },
+   {
+    "control_number": "33542",
+    "pages": [
+     593,
+     594,
+     595,
+     596
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 593] A.A.-T. in Spanish A.A. in Spanish Dean: Emmanuel Sigauke Department Chair: Blanca Gill Phone: (916) 691-7359 Email: sigauke@crc.losrios.edu Associate Degrees for Transfer A.A.-T. in Spanish The As"
+   },
+   {
+    "control_number": "33571",
+    "pages": [
+     313,
+     314,
+     315
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 313] A.A.-T. in Economics Dean: Tyler Rollins Department Chair: Edwin Fagin Phone: (916) 691-7226 Email: rollint@crc.losrios.edu Associate Degree for Transfer A.A.-T. in Economics The Associate in Arts i"
+   },
+   {
+    "control_number": "33931",
+    "pages": [
+     133,
+     134,
+     135
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 133] Degree Requirements Course Code Course Title Units AGB 321 Agriculture Economics 3 PLTS 310 Soils, Soil Management, and Plant Nutrition (3) 3 - 5 or HORT 302 Soils, Soil Management, and Plant Nutrition "
+   },
+   {
+    "control_number": "35072",
+    "pages": [
+     237
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 237] CHEM 499 Experimental Offering in Chemistry Units: 0.5 - 4 Prerequisite: None. Transferable: CSU This is the experimental courses description. Communication Studies Overview The role of communication i"
+   },
+   {
+    "control_number": "35097",
+    "pages": [
+     255,
+     256
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.933,
+    "opens": "[page 255] Career Information Computer Operator; Applications Software Specialist; Systems Analyst; Programmer; Data Entry Specialist; Computer Systems Specialist; Computer Technician CIS - Web Programming Certificat"
+   },
+   {
+    "control_number": "35148",
+    "pages": [
+     516,
+     517,
+     518,
+     519
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 516] A.S.-T. in Nutrition and Dietetics A.S. in Nutrition and Foods Nutrition and Foods, Community Nutrition Certificate Regenerative Foodways Certificate Dean: Kris Hubbard Department Chair: Serena Fuller "
+   },
+   {
+    "control_number": "35175",
+    "pages": [
+     248
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 248] A.S. in Information Technology Associate This degree allows students to acquire basic core Information Technology competencies that will prepare them for a career in Computer Networking, Cybersecurity, and "
+   },
+   {
+    "control_number": "35303",
+    "pages": [
+     203,
+     204,
+     205,
+     206
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 203] transfer to University of California biology programs that may have different requirements. If a student intends to transfer to University of California, additional courses in chemistry, physics, and math m"
+   },
+   {
+    "control_number": "35336",
+    "pages": [
+     248
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 248] • Implement network perimeter defense (PSLO 6). Career Information Some career opportunities associated with this degree include: security analyst, network systems security administrator, security policy a"
+   },
+   {
+    "control_number": "35350",
+    "pages": [
+     226,
+     227,
+     228
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": false,
+    "coverage": 0.857,
+    "opens": "[page 226] Business, General Certificate The Certificate of Achievement in Business provides an overview of the various disciplines in business. It is intended to meet the needs of students who wish to develop, retrai"
+   },
+   {
+    "control_number": "35354",
+    "pages": [
+     181
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 181] Courses within the Ford ASSET program allow students to earn Service Technician Specialty Training (STST) certifications from Ford Motor Company in the following areas: • New Ford/Lincoln Technician • Fiel"
+   },
+   {
+    "control_number": "35357",
+    "pages": [
+     184,
+     185
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 184] • Repair automotive electrical/electronic systems relating to Brake Systems. • Understand theory and operation of automotive brake systems. • Explain the operation of conventional, anti-lock, traction contr"
+   },
+   {
+    "control_number": "35358",
+    "pages": [
+     181
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 181] Courses within the Ford ASSET program allow students to earn Service Technician Specialty Training (STST) certifications from Ford Motor Company in the following areas: • New Ford/Lincoln Technician • Fiel"
+   },
+   {
+    "control_number": "35359",
+    "pages": [
+     181
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 181] Courses within the Ford ASSET program allow students to earn Service Technician Specialty Training (STST) certifications from Ford Motor Company in the following areas: • New Ford/Lincoln Technician • Fiel"
+   },
+   {
+    "control_number": "35360",
+    "pages": [
+     181
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 181] Courses within the Ford ASSET program allow students to earn Service Technician Specialty Training (STST) certifications from Ford Motor Company in the following areas: • New Ford/Lincoln Technician • Fiel"
+   },
+   {
+    "control_number": "35361",
+    "pages": [
+     181
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 181] Courses within the Ford ASSET program allow students to earn Service Technician Specialty Training (STST) certifications from Ford Motor Company in the following areas: • New Ford/Lincoln Technician • Fiel"
+   },
+   {
+    "control_number": "35362",
+    "pages": [
+     181
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 181] Courses within the Ford ASSET program allow students to earn Service Technician Specialty Training (STST) certifications from Ford Motor Company in the following areas: • New Ford/Lincoln Technician • Fiel"
+   },
+   {
+    "control_number": "35363",
+    "pages": [
+     179,
+     180
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 179] Automotive Heating and Air Conditioning Certificate Automotive Heating and Air Conditioning (Ford ASSET) Certificate Automotive Mechanics Technology Certificate Automotive Mechanics Technology (Ford ASSET)"
+   },
+   {
+    "control_number": "35364",
+    "pages": [
+     179,
+     180
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 179] Automatic Transmissions and Transaxles Certificate Automatic Transmissions/Transaxles (Ford ASSET) Certificate Automotive Brakes Certificate Automotive Brakes (Ford ASSET) Certificate Automotive Electrical"
+   },
+   {
+    "control_number": "35366",
+    "pages": [
+     194
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 194] Small Engine Repair Certificate This curriculum is designed for students who are interested in obtaining skills necessary for the repair of small engines used in industry, home maintenance, landscape mainte"
+   },
+   {
+    "control_number": "35367",
+    "pages": [
+     179,
+     180
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 179] Automotive Suspension and Steering Certificate Automotive Suspension and Steering (Ford ASSET) Certificate Manual Drive Train and Axles (Ford ASSET) Certificate Small Engine Repair Certificate Dean: Brian"
+   },
+   {
+    "control_number": "35374",
+    "pages": [
+     181
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 181] Courses within the Ford ASSET program allow students to earn Service Technician Specialty Training (STST) certifications from Ford Motor Company in the following areas: • New Ford/Lincoln Technician • Fiel"
+   },
+   {
+    "control_number": "35375",
+    "pages": [
+     252,
+     253,
+     254,
+     255
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 252] CIS - Database Analyst-SQL Certificate This certificate is designed for beginning students as well as technical professionals who aspire to design, create, or administer relational databases and create clie"
+   },
+   {
+    "control_number": "35378",
+    "pages": [
+     184,
+     185,
+     186,
+     187
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 184] Automotive Electrical Systems Certificate This curriculum is designed for students interested in seeking employment in the diagnosis and repair of automotive electrical systems. Certificate Requirements C"
+   },
+   {
+    "control_number": "35379",
+    "pages": [
+     187,
+     188
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.667,
+    "opens": "[page 187] Automotive Engine Repair Certificate This curriculum is designed for students interested in seeking employment in the engine overhaul and engine repair field. Certificate Requirements Course Code Course Ti"
+   },
+   {
+    "control_number": "35408",
+    "pages": [
+     248,
+     249
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.8,
+    "opens": "[page 248] • Implement network perimeter defense (PSLO 6). Career Information Some career opportunities associated with this degree include: security analyst, network systems security administrator, security policy a"
+   },
+   {
+    "control_number": "35409",
+    "pages": [
+     253,
+     254
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 253] Course Code Course Title Units or CISP 400 Object Oriented Programming with C++ (4) or CISP 300 Algorithm Design/Problem Solving (3) or CISC 498 Work Experience in Computer Information Science"
+   },
+   {
+    "control_number": "35410",
+    "pages": [
+     191,
+     192,
+     193,
+     194
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 191] • Automatic Transmissions • Gasoline Engine Repair • Gasoline Engine Performance • Diesel Engine Repair • Diesel Engine Performance • Manual Transmissions Instructors for this program are Ford STST certi"
+   },
+   {
+    "control_number": "35411",
+    "pages": [
+     252,
+     253,
+     254,
+     255
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 252] the second in a series of three certificate programs in Relational Database Management Systems. Courses taken towards the completion of the Database Analyst-SQL Certificate may be also be used towards this "
+   },
+   {
+    "control_number": "35412",
+    "pages": [
+     191,
+     192,
+     193,
+     194
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 191] • Automatic Transmissions • Gasoline Engine Repair • Gasoline Engine Performance • Diesel Engine Repair • Diesel Engine Performance • Manual Transmissions Instructors for this program are Ford STST certi"
+   },
+   {
+    "control_number": "35413",
+    "pages": [
+     555,
+     556,
+     557,
+     558
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 555] Radio Production Certificate This program is designed to provide skills in radio production through the preparation of programming for the campus radio station and through podcasting. This option can lead t"
+   },
+   {
+    "control_number": "35414",
+    "pages": [
+     621,
+     622
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.9,
+    "opens": "[page 621] preparation. The courses that CRC requires for an Associate’s degree in this major may be different from the requirements needed for the Bachelor’s degree. Degree Requirements Course Code Course Title Uni"
+   },
+   {
+    "control_number": "35552",
+    "pages": [
+     556,
+     557,
+     558
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 556] A.S.-T. in Film, Television and Electronic Media A.A. in Film / Digital Cinema Production Dean: Ashu Mishra Department Chair: Mun Kang Phone: (916) 691-7090 Email: kangm@crc.losrios.edu Associate Deg"
+   },
+   {
+    "control_number": "35655",
+    "pages": [
+     636,
+     637,
+     638,
+     639
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 636] Welding Code Certificate The Welding Code Certificate specializes in the American Welding Society Structural Steel Welding Code (D1.1) and Seismic Welding Code (D1.8). Students have the option to select one"
+   },
+   {
+    "control_number": "35657",
+    "pages": [
+     636,
+     637,
+     638,
+     639
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 636] Welding Fabricator Certificate The Welding Fabricator Certificate specializes in up-to-date welding code and safety regulations, modern power sources and techniques, fabrication procedures with the Gas Meta"
+   },
+   {
+    "control_number": "35658",
+    "pages": [
+     389,
+     390
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 389] Sustainability Certificate This certificate advances student's understanding of the principles of sustainability and sustainable practices with respect to ecosystems, green buildings, business, agriculture,"
+   },
+   {
+    "control_number": "35742",
+    "pages": [
+     496,
+     497
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.5,
+    "opens": "[page 496] Career Information Administrative Medical Assistant; entry-level Insurance Biller; Hospital Unit Secretary Medical Assisting (MEDA) Courses MEDA 100 Introduction to Medical Assisting Units: 1.5 Hours: 2"
+   },
+   {
+    "control_number": "35871",
+    "pages": [
+     414,
+     415,
+     416,
+     417
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 414] A.S. in Horticulture, Sustainable Landscape Technology A variety of professional career opportunities are available to those who wish to provide professional landscape installation and/or support services."
+   },
+   {
+    "control_number": "35899",
+    "pages": [
+     474,
+     475,
+     476
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 474] Marketing Certificate This Certificate of Achievement in Marketing provides an opportunity for students to acquire knowledge and training for business marketing and prepares them for careers in sales, adve"
+   },
+   {
+    "control_number": "35900",
+    "pages": [
+     226,
+     227,
+     228,
+     229
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 226] Business, General Certificate The Certificate of Achievement in Business provides an overview of the various disciplines in business. It is intended to meet the needs of students who wish to develop, retrai"
+   },
+   {
+    "control_number": "35901",
+    "pages": [
+     388,
+     389,
+     390,
+     391
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 388] Course Code Course Title Units or HIST 360 History of African Civilizations (3) or HIST 370 History of the Americas through the 19th Century Wars of Independence (3) or HIST 371 History of t"
+   },
+   {
+    "control_number": "36447",
+    "pages": [
+     248
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 248] • Implement network perimeter defense (PSLO 6). Career Information Some career opportunities associated with this degree include: security analyst, network systems security administrator, security policy a"
+   },
+   {
+    "control_number": "36525",
+    "pages": [
+     288,
+     289,
+     290,
+     291
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 288] A.A. in Deaf Studies Dean: Emmanuel Sigauke Department Chair: Kim E. Harrell Phone: (916) 226-5289 Email: harrelke@crc.losrios.edu Associate Degree A.A. in Deaf Studies This degree provides an intro"
+   },
+   {
+    "control_number": "36566",
+    "pages": [
+     222,
+     223,
+     224,
+     225
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": false,
+    "coverage": 0.952,
+    "opens": "[page 222] • Practice professional ethics, provide leadership, demonstrate personal and global responsibility and work effectively as a team member. Career Information Culinary Manager; Culinary Supervisor; Cook; Kit"
+   },
+   {
+    "control_number": "37242",
+    "pages": [
+     516,
+     517,
+     518,
+     519
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 516] Nutrition and Foods, Community Nutrition Certificate Regenerative Foodways Certificate Dean: Kris Hubbard Department Chair: Serena Fuller Phone: (916) 691-7296 Email: hubbark@crc.losrios.edu Associat"
+   },
+   {
+    "control_number": "37285",
+    "pages": [
+     300,
+     301,
+     302,
+     303
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 300] Degree Requirements Course Code Course Title Units ECE 312 Child Development 3 ECE 314 The Child, the Family and the Community 3 ECE 300 Introduction to Principles and Practices in Early Childhood Educati"
+   },
+   {
+    "control_number": "37337",
+    "pages": [
+     271,
+     272
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 271] Construction Pre-Apprenticeship Certificate Green Buildings Certificate Solar Installers Certificate Dean: Brian Rickel Department Chair: Ryan Connally Phone: (916) 525-4319 Email: rickelb@crc.losrio"
+   },
+   {
+    "control_number": "37837",
+    "pages": [
+     160,
+     161
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 160] Green Buildings Certificate The purpose of this certificate is to develop job skills and an understanding of green strategies for high performance buildings and livable communities. It is focused on student"
+   },
+   {
+    "control_number": "37842",
+    "pages": [
+     221,
+     222
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 221] requisite courses. The program includes coursework in culinary arts, food and equipment use and identification, culinary sanitation, nutrition, management techniques, marketing, legal control, financial an"
+   },
+   {
+    "control_number": "37848",
+    "pages": [
+     415,
+     416,
+     417,
+     418
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.941,
+    "opens": "[page 415] Certificates of Achievement Horticulture, General Horticulture Certificate This program provides students with the essential knowledge and skills for entry level employment in the Horticulture industry. S"
+   },
+   {
+    "control_number": "37891",
+    "pages": [
+     257,
+     258,
+     259
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 257] Cyber Defense Certificate This fully online certificate provides graduates with the skill sets needed to defend a network. Students will be introduced to the basic tools and techniques that can be used to p"
+   },
+   {
+    "control_number": "38017",
+    "pages": [
+     502,
+     503,
+     504,
+     505
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.632,
+    "opens": "[page 502] Course Code Course Title Units or MUP 330 Concert Band (2) or MUP 357 College Chorus (2) or MUP 360 Chamber Singers (2) A minimum of 3 units from the following: 3 MUFHL 400 Music Theory and M"
+   },
+   {
+    "control_number": "38021",
+    "pages": [
+     137,
+     138
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.938,
+    "opens": "[page 137] emphasis on basic science, healthcare delivery and culturally competent patient care. Students completing the degree will be prepared to enter programs for careers in Medical Assisting, Health Information T"
+   },
+   {
+    "control_number": "38024",
+    "pages": [
+     213,
+     214,
+     215,
+     216
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 213] Course Code Course Title Units BIT 112 Building Inspection Principles for Disabled Access 3 BIT 120 Mechanical I/Plumbing Code Requirements 3 BIT 121 Mechanical II / H.V.A.C. Code Requirements 3 BIT 140 R"
+   },
+   {
+    "control_number": "38381",
+    "pages": [
+     131
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 131] Regenerative Foodways Certificate The Regenerative Foodways Certificate brings the intersection of food, health, and environment into the classroom. The courses provide hands-on learning in the current fiel"
+   },
+   {
+    "control_number": "38382",
+    "pages": [
+     605
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 605] Theatre for Young Audiences Certificate The Certificate in Children's Theatre focuses on building skills in puppetry, storytelling, Story Dramatization, creative drama in the classroom and other skills pert"
+   },
+   {
+    "control_number": "38750",
+    "pages": [
+     502,
+     503
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.875,
+    "opens": "[page 502] The Entrepreneurial Arts: Music Composition Certificate prepares students for all aspects of a music career, from performance to thriving as a working artist. We give you the tools to grow and survive as an"
+   },
+   {
+    "control_number": "39131",
+    "pages": [
+     282,
+     283
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 282] Certificate, and the Small Business Management/Entrepreneurship Certificate, which are embedded within the degree path. Students who complete all program requirements for their chosen AA Degree will be elig"
+   },
+   {
+    "control_number": "39139",
+    "pages": [
+     564,
+     565,
+     566,
+     567
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.889,
+    "opens": "[page 564] Real Estate Salesperson Certificate Dean: Tyler Rollins Department Chair: Eric Granquist Phone: (916) 691-7226 Email: rollint@crc.losrios.edu Associate Degree A.A. in Real Estate The Real Estate A.A"
+   },
+   {
+    "control_number": "39146",
+    "pages": [
+     547,
+     548,
+     549,
+     550
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 547] A.A.-T. in Political Science Dean: Emilie Mitchell Department Chair: Martin Morales Phone: (916) 691-7114 Email: moralem@crc.losrios.edu Associate Degree for Transfer A.A.-T. in Political Science Th"
+   },
+   {
+    "control_number": "39286",
+    "pages": [
+     256
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 256] Computer Science Certificate This certificate teaches students to design, create, and debug complicated apps. Structured programming, object-oriented programming, programming mathematics, and data structure"
+   },
+   {
+    "control_number": "39354",
+    "pages": [
+     323
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 323] Emergency Medical Technician Certificate Dean: Kris Hubbard Department Chair: Samantha Juner Phone: (916) 691-7906 Email: hubbark@crc.losrios.edu Certificate of Achievement Emergency Medical Technici"
+   },
+   {
+    "control_number": "39585",
+    "pages": [
+     247,
+     248,
+     249
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 247] • Design, write, test, and debug computer programs in a structured language, a low-level language, and an object- oriented language. • Incorporate foundational data management concepts such as data structur"
+   },
+   {
+    "control_number": "39606",
+    "pages": [
+     274
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 274] Solar Installers Certificate The Solar Installers Certificate program is designed to quickly prepare students for jobs installing solar panels in the solar industry. Our focus is to blend the academic rigor"
+   },
+   {
+    "control_number": "39656",
+    "pages": [
+     576,
+     577,
+     578,
+     579
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.977,
+    "opens": "[page 576] Associate Degrees for Transfer A.A.-T. in Social Justice Studies: Race and Ethnicity Social Justice Studies is an interdisciplinary and diverse field that gives voice to historically marginalized peoples a"
+   },
+   {
+    "control_number": "39679",
+    "pages": [
+     578,
+     579
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.938,
+    "opens": "[page 578] Course Code Course Title Units Area 1: History and Government HIST 331 Women in American History (3) Area 2: Arts and Humanities ARTH 312 Women in Art (3) ENGLT 360 Women in Literature (3) ENGLT 365 Intr"
+   },
+   {
+    "control_number": "40365",
+    "pages": [
+     129,
+     130
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.857,
+    "opens": "[page 129] Mechanized Agriculture Technician Certificate Regenerative Foodways Certificate General Agriculture Certificate Dean: Kris Hubbard Department Chair: Dave Andrews Phone: (916) 691-7614 Email: hubbark@"
+   },
+   {
+    "control_number": "40421",
+    "pages": [
+     366
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 366] A.S. in Fire Technology The fire service is one of the most dynamic employers in the country. This CRC program is designed to provide the student with updated skills and knowledge necessary to complete and "
+   },
+   {
+    "control_number": "40921",
+    "pages": [
+     523,
+     524,
+     525
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 523] Pharmacy Technician Certificate The CRC Pharmacy Technology Certificate Program includes didactic, laboratory, and practicum components that are structured to facilitate the achievement of educational and c"
+   },
+   {
+    "control_number": "41712",
+    "pages": [
+     257,
+     258
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 257] Cyber Defense Certificate This fully online certificate provides graduates with the skill sets needed to defend a network. Students will be introduced to the basic tools and techniques that can be used to p"
+   },
+   {
+    "control_number": "41992",
+    "pages": [
+     219,
+     220,
+     221,
+     222
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 219] be guaranteed admission to the CSU system with junior status and will not have to repeat lower division coursework. Each California State University may have slightly different requirements for transfer so "
+   },
+   {
+    "control_number": "42403",
+    "pages": [
+     367
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 367] Wildland Fire Technology Certificate The fire service is one of the most dynamic employers in the country. This CRC program is designed for students who want to gain certification as a wildland firefighter "
+   },
+   {
+    "control_number": "42792",
+    "pages": [
+     237
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 237] A.A.-T. in Communication Studies 2.0 A.A. in Communication, Organizational Communication Applied Communication Skills Certificate Dean: Emilie Mitchell Department Chair: Daniel T. DuBray Phone: (916) 6"
+   },
+   {
+    "control_number": "43894",
+    "pages": [
+     224,
+     225,
+     226,
+     227
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 224] The Business Information Professional I Certificate prepares students for entry-level office, computer, and administrative support positions in a variety of industries. This certification includes courses i"
+   },
+   {
+    "control_number": "44527",
+    "pages": [
+     503,
+     504,
+     505
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 503] Music History Certificate Completion of this certificate provides an introductory foundation to the history of music in its historical and cultural contexts. The certificate includes both western and global"
+   },
+   {
+    "control_number": "45203",
+    "pages": [
+     95,
+     96
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.966,
+    "opens": "[page 95] California General Education Transfer Curriculum Requirements The California General Education Transfer Curriculum (Cal-GETC) is a general education pattern designed to make transferring from a California Com"
+   },
+   {
+    "control_number": "45317",
+    "pages": [
+     600,
+     601
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 600] A.S. in Surgical Technology Surgical Technologists are employed in hospitals, surgery centers, and physician's offices to deliver patient care before, during and after surgery. Cosumnes River College's prog"
+   },
+   {
+    "control_number": "45615",
+    "pages": [
+     503
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 503] Music Theory Certificate Completion of this certificate provides students with an introductory foundation to the techniques and best practices of music in a variety of historical and cultural contexts. The "
+   },
+   {
+    "control_number": "45820",
+    "pages": [
+     223,
+     224,
+     225,
+     226
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 223] A.S. in Business Information Technology The Associate in Science Business Information Technology degree provides general knowledge in business and in-depth knowledge of a variety of business technology appl"
+   },
+   {
+    "control_number": "45827",
+    "pages": [
+     225,
+     226,
+     227,
+     228
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 225] The Business Information Professional II (BIP II) Certificate will prepare students for mid-level office and administrative support positions in a variety of job positions in a multitude of industries, incl"
+   },
+   {
+    "control_number": "46092",
+    "pages": [
+     445
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 445] Sport Management Certificate Students pursuing a Sport Management Certificate will complete coursework that can prepare students to meet specific sport management occupational needs. This certificate will h"
+   },
+   {
+    "control_number": "46139",
+    "pages": [
+     444,
+     445
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.96,
+    "opens": "[page 444] A.A. in Sport Management Students pursuing a Sport Management A.A. Degree will complete coursework in both kinesiology and recreation. This program offers courses that satisfy lower division General Educat"
+   },
+   {
+    "control_number": "46419",
+    "pages": [
+     316,
+     317,
+     318
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 316] A.A.-T. in Elementary Teacher Education: Integrated Programs A.A. in Early Childhood Education A.A. in Early Childhood Education, Site Supervisor A.A. in Elementary and Inclusive Education Early Childhood "
+   }
+  ],
+  "unproven": []
+ },
+ "loads": 0,
+ "seconds": 171.3,
+ "found": 217,
+ "by_method": {
+  "no_closed_list": 7,
+  "not_found": 2,
+  "pdf_pages": 217
+ },
+ "shared_pages": {
+  "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=623": [
+   "04584",
+   "20147"
+  ],
+  "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=134": [
+   "04586",
+   "20178"
+  ],
+  "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=152": [
+   "04589",
+   "20182"
+  ],
+  "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=471": [
+   "04595",
+   "12208"
+  ],
+  "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=474": [
+   "04596",
+   "35899"
+  ],
+  "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=564": [
+   "04597",
+   "20197",
+   "39139"
+  ],
+  "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=158": [
+   "04609",
+   "31311"
+  ],
+  "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=278": [
+   "04611",
+   "20220"
+  ],
+  "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=170": [
+   "04614",
+   "20367"
+  ],
+  "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=493": [
+   "04622",
+   "11343",
+   "20224"
+  ],
+  "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=399": [
+   "04623",
+   "14387"
+  ],
+  "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=301": [
+   "04635",
+   "07315"
+  ],
+  "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=366": [
+   "04637",
+   "20227",
+   "40421"
+  ],
+  "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=221": [
+   "04645",
+   "07320",
+   "37842"
+  ],
+  "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=220": [
+   "07087",
+   "20193"
+  ],
+  "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=414": [
+   "07088",
+   "20153",
+   "35871"
+  ],
+  "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=219": [
+   "07097",
+   "41992"
+  ],
+  "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=271": [
+   "07288",
+   "20215",
+   "37337"
+  ],
+  "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=531": [
+   "07291",
+   "11340"
+  ],
+  "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=555": [
+   "07292",
+   "35413"
+  ],
+  "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=621": [
+   "07294",
+   "35414"
+  ],
+  "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=248": [
+   "07302",
+   "11330",
+   "35175",
+   "35336",
+   "35408",
+   "36447"
+  ],
+  "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=213": [
+   "07305",
+   "38024"
+  ],
+  "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=303": [
+   "07314",
+   "12260"
+  ],
+  "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=282": [
+   "07319",
+   "39131"
+  ],
+  "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=122": [
+   "11320",
+   "12262"
+  ],
+  "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=254": [
+   "11328",
+   "14396"
+  ],
+  "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=179": [
+   "11336",
+   "35363",
+   "35364",
+   "35367"
+  ],
+  "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=425": [
+   "11346",
+   "11347"
+  ],
+  "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=328": [
+   "12725",
+   "12726"
+  ],
+  "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=469": [
+   "12741",
+   "17871"
+  ],
+  "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=204": [
+   "12742",
+   "12743"
+  ],
+  "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=335": [
+   "12789",
+   "33053"
+  ],
+  "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=393": [
+   "12792",
+   "32569"
+  ],
+  "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=226": [
+   "14268",
+   "35350",
+   "35900"
+  ],
+  "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=255": [
+   "14394",
+   "35097"
+  ],
+  "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=593": [
+   "15300",
+   "33542"
+  ],
+  "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=247": [
+   "15314",
+   "20204",
+   "39585"
+  ],
+  "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=298": [
+   "15326",
+   "20200"
+  ],
+  "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=581": [
+   "20226",
+   "31997"
+  ],
+  "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=292": [
+   "30575",
+   "30576"
+  ],
+  "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=237": [
+   "30720",
+   "35072",
+   "42792"
+  ],
+  "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=636": [
+   "31781",
+   "35655",
+   "35657"
+  ],
+  "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=300": [
+   "31913",
+   "37285"
+  ],
+  "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=316": [
+   "31995",
+   "46419"
+  ],
+  "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=516": [
+   "35148",
+   "37242"
+  ],
+  "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=181": [
+   "35354",
+   "35358",
+   "35359",
+   "35360",
+   "35361",
+   "35362",
+   "35374"
+  ],
+  "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=184": [
+   "35357",
+   "35378"
+  ],
+  "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=252": [
+   "35375",
+   "35411"
+  ],
+  "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=191": [
+   "35410",
+   "35412"
+  ],
+  "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=257": [
+   "37891",
+   "41712"
+  ],
+  "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=502": [
+   "38017",
+   "38750"
+  ],
+  "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=503": [
+   "44527",
+   "45615"
+  ]
+ },
+ "not_found": [
+  {
+   "control_number": "14419",
+   "title": "Kinesiology",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=442",
+    "coverage": 0.42
+   }
+  },
+  {
+   "control_number": "39444",
+   "title": "Honors",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=378",
+    "coverage": 0.333
+   }
+  }
+ ],
+ "page_claimed": [],
+ "coverage_bands": {
+  "0.5-0.8": 15,
+  "0.8-1.0": 47,
+  "1.0": 155
+ },
+ "would_extract": {
+  "against": null,
+  "kept": 0,
+  "programs": 217,
+  "list": [
+   {
+    "control_number": "04584",
+    "title": "Veterinary Technology",
+    "award": "A.S. Degree",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=623",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "04586",
+    "title": "Agriculture Business",
+    "award": "A.S. Degree",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=134",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "04589",
+    "title": "Architecture",
+    "award": "A.S. Degree",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=152",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "04593",
+    "title": "Accounting",
+    "award": "A.A. Degree",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=121",
+    "coverage": 0.875,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "04595",
+    "title": "Management",
+    "award": "A.A. Degree",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=471",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "04596",
+    "title": "Marketing",
+    "award": "A.A. Degree",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=474",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "04597",
+    "title": "Real Estate",
+    "award": "A.A. Degree",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=564",
+    "coverage": 0.739,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "04600",
+    "title": "Journalism",
+    "award": "A.A. Degree",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=437",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "04601",
+    "title": "Broadcast Journalism",
+    "award": "A.A. Degree",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=211",
+    "coverage": 0.933,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "04602",
+    "title": "Management Information Systems",
+    "award": "A.S. Degree",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=249",
+    "coverage": 0.833,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "04607",
+    "title": "Automotive Mechanics Technology",
+    "award": "A.S. Degree",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=180",
+    "coverage": 0.647,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "04609",
+    "title": "ADT: Interior Building Architecture",
+    "award": "A.S. Degree",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=158",
+    "coverage": 0.857,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "04611",
+    "title": "Construction Management Technology",
+    "award": "A.S. Degree",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=278",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "04614",
+    "title": "Art - Studio Art",
+    "award": "A.A. Degree",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=170",
+    "coverage": 0.774,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "04615",
+    "title": "Music, General",
+    "award": "A.A. Degree",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=500",
+    "coverage": 0.667,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "04616",
+    "title": "Theatre Arts",
+    "award": "A.A. Degree",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=604",
+    "coverage": 0.59,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "04622",
+    "title": "Medical Assisting",
+    "award": "A.S. Degree",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=493",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "04623",
+    "title": "Health Information Technology",
+    "award": "A.S. Degree",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=399",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "04633",
+    "title": "Social Work and Human Services",
+    "award": "A.A. Degree",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=583",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "04635",
+    "title": "Early Childhood Education",
+    "award": "A.A. Degree",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=301",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "04637",
+    "title": "Fire Technology",
+    "award": "A.S. Degree",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=366",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "04645",
+    "title": "Culinary Arts Management",
+    "award": "A.A. Degree",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=221",
+    "coverage": 0.95,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "04648",
+    "title": "Humanities",
+    "award": "A.A. Degree",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=426",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "07087",
+    "title": "Business, Small Business Management/Entrepreneurship",
+    "award": "A.A. Degree",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=220",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "07088",
+    "title": "Horticulture, Sustainable Landscape Technology",
+    "award": "A.S. Degree",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=414",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "07097",
+    "title": "Business, General",
+    "award": "A.A. Degree",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=219",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "07288",
+    "title": "Construction",
+    "award": "A.S. Degree",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=271",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "07290",
+    "title": "Advertising/Public Relations",
+    "award": "A.A. Degree",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=128",
+    "coverage": 0.957,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "07291",
+    "title": "Photography",
+    "award": "A.A. Degree",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=531",
+    "coverage": 0.955,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "07292",
+    "title": "Radio Production",
+    "award": "A.A. Degree",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=555",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "07294",
+    "title": "Television Production",
+    "award": "A.A. Degree",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=621",
+    "coverage": 0.909,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "07300",
+    "title": "CIS: Computer Science",
+    "award": "A.S. Degree",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=246",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "07302",
+    "title": "CIS: Server Administrator",
+    "award": "A.S. Degree",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=248",
+    "coverage": 0.7,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "07305",
+    "title": "Building Inspection Technology",
+    "award": "A.S. Degree",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=213",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "07309",
+    "title": "Early Childhood Education, Site Supervisor",
+    "award": "A.A. Degree",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=302",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "07312",
+    "title": "ECE Infant Specialist",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=306",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "07314",
+    "title": "Early Childhood Education - Teacher",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=303",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "07315",
+    "title": "ECE: School Age Child Care and Education",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=301",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "07319",
+    "title": "Cooking and Supervision",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=282",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "07320",
+    "title": "School Foodservice Specialist",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=221",
+    "coverage": 0.556,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "11319",
+    "title": "Science, General",
+    "award": "A.S. Degree",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=206",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "11320",
+    "title": "Accounting",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=122",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "11328",
+    "title": "CIS: Programming in \"C/C++\"",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=254",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "11330",
+    "title": "CIS: Server Administrator",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=248",
+    "coverage": 0.667,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "11336",
+    "title": "Automotive Engine Performance",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=179",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "11338",
+    "title": "Art - Design",
+    "award": "A.A. Degree",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=169",
+    "coverage": 0.923,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "11339",
+    "title": "Art - Art History",
+    "award": "A.A. Degree",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=167",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "11340",
+    "title": "Photography: Commercial & Studio Photography",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=531",
+    "coverage": 0.85,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "11341",
+    "title": "Photography: Portraiture & Wedding Photography",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=533",
+    "coverage": 0.842,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "11343",
+    "title": "Medical Assisting, Administrative",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=493",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "11346",
+    "title": "American Studies",
+    "award": "A.A. Degree",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=425",
+    "coverage": 0.967,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "11347",
+    "title": "Interdisciplinary Studies, Ethnic Studies",
+    "award": "A.A. Degree",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=425",
+    "coverage": 0.786,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "11348",
+    "title": "Interdisciplinary Studies, Women's Studies",
+    "award": "A.A. Degree",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=429",
+    "coverage": 0.941,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "12208",
+    "title": "Management in Business",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=471",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "12260",
+    "title": "Early Childhood Education - Master Teacher",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=303",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "12262",
+    "title": "Accounting Clerk",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=122",
+    "coverage": 0.917,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "12667",
+    "title": "Communication, Organizational Communication",
+    "award": "A.A. Degree",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=239",
+    "coverage": 0.923,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "12725",
+    "title": "Engineering - Civil/Mechanical Option",
+    "award": "A.S. Degree",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=328",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "12726",
+    "title": "Engineering, Electrical/Computer",
+    "award": "A.S. Degree",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=328",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "12740",
+    "title": "Mathematics",
+    "award": "A.S. Degree",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=478",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "12741",
+    "title": "Biology: Biological Sciences, Biology Concentration Option",
+    "award": "A.S. Degree",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=469",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "12742",
+    "title": "Biology",
+    "award": "A.S. Degree",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=204",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "12743",
+    "title": "Biology - Pre-Nursing Option",
+    "award": "A.S. Degree",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=204",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "12789",
+    "title": "English",
+    "award": "A.A. Degree",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=335",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "12790",
+    "title": "Chemistry",
+    "award": "A.S. Degree",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=233",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "12791",
+    "title": "Physics",
+    "award": "A.S. Degree",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=542",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "12792",
+    "title": "Geology",
+    "award": "A.S. Degree",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=393",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "14268",
+    "title": "Business: Office Assistant",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=226",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "14289",
+    "title": "Elementary and Inclusive Education",
+    "award": "A.A. Degree",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=320",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "14387",
+    "title": "Health Information Coding Specialist",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=399",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "14394",
+    "title": "CIS - Web Programming",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=255",
+    "coverage": 0.938,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "14396",
+    "title": "CIS: Relational Database Administration",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=254",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "15246",
+    "title": "Film and Media Studies",
+    "award": "A.A. Degree",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=361",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "15249",
+    "title": "Geography",
+    "award": "A.S. Degree",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=574",
+    "coverage": 0.838,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "15300",
+    "title": "Spanish",
+    "award": "A.A. Degree",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=593",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "15306",
+    "title": "Agriculture, General Agriculture",
+    "award": "A.S. Degree",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=413",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "15314",
+    "title": "CIS: Information Systems Security",
+    "award": "A.S. Degree",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=247",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "15326",
+    "title": "Digital Media",
+    "award": "A.A. Degree",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=298",
+    "coverage": 0.917,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "17868",
+    "title": "Liberal Arts - Arts and Humanities",
+    "award": "A.A. Degree",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=465",
+    "coverage": 0.649,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "17869",
+    "title": "Liberal Arts - Communication and Writing",
+    "award": "A.A. Degree",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=466",
+    "coverage": 0.846,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "17870",
+    "title": "Liberal Arts - Social and Behavioral Sciences",
+    "award": "A.A. Degree",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=432",
+    "coverage": 0.684,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "17871",
+    "title": "Liberal Arts - Math and Science",
+    "award": "A.A. Degree",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=469",
+    "coverage": 0.923,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "18851",
+    "title": "Animal Science: Equine Science",
+    "award": "A.S. Degree",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=139",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "18902",
+    "title": "Pharmacy Technology",
+    "award": "A.S. Degree",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=522",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "19013",
+    "title": "Environmental Studies & Sustainability",
+    "award": "A.S. Degree",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=384",
+    "coverage": 0.889,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "19854",
+    "title": "Anthropology",
+    "award": "A.S. Degree",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=144",
+    "coverage": 0.926,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20147",
+    "title": "Veterinary Technology",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=623",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20153",
+    "title": "Horticulture, Sustainable Landscape Technology",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=414",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20178",
+    "title": "Agriculture Business",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=134",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20182",
+    "title": "Architecture: Architectural Technology",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=152",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20187",
+    "title": "Accounting, Advanced",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=123",
+    "coverage": 0.938,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20193",
+    "title": "Business: Small Business Management/Entrepreneurship",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=220",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20197",
+    "title": "Real Estate Broker",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=564",
+    "coverage": 0.889,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20200",
+    "title": "Digital Media",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=298",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20204",
+    "title": "CIS: Information Systems Security",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=247",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20206",
+    "title": "Automotive Mechanics Technology",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=190",
+    "coverage": 0.882,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20215",
+    "title": "Construction",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=271",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20217",
+    "title": "ADT: Interior Building Architecture",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=161",
+    "coverage": 0.857,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20220",
+    "title": "Construction Management Technology",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=278",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20222",
+    "title": "Building Inspection Technology",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=214",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20224",
+    "title": "Medical Assisting",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=493",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20226",
+    "title": "Social Work and Human Services",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=581",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20227",
+    "title": "Firefighter Suppression Specialist",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=366",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20367",
+    "title": "Art-Photo",
+    "award": "A.A. Degree",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=170",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22953",
+    "title": "Accounting, Taxation",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=124",
+    "coverage": 0.875,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "30426",
+    "title": "Nutrition and Foods",
+    "award": "A.S. Degree",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=517",
+    "coverage": 0.923,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "30566",
+    "title": "Psychology",
+    "award": "A.A- T Degree",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=552",
+    "coverage": 0.8,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "30575",
+    "title": "Diagnostic Medical Sonography",
+    "award": "Certificate of Achievement requiring 60+S/90+Q units",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=292",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "30576",
+    "title": "Diagnostic Medical Sonography",
+    "award": "A.S. Degree",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=292",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "30720",
+    "title": "Communication Studies",
+    "award": "A.A- T Degree",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=237",
+    "coverage": 0.842,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "30722",
+    "title": "Sociology",
+    "award": "A.A- T Degree",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=590",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "30852",
+    "title": "Sustainable Landscape Design",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=416",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31053",
+    "title": "Film/Digital Cinema Production",
+    "award": "A.A. Degree",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=364",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31054",
+    "title": "Mathematics",
+    "award": "A.S. T Degree",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=477",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31055",
+    "title": "Physics",
+    "award": "A.S. T Degree",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=540",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31311",
+    "title": "ADT: Building Information Modeling (BIM)",
+    "award": "A.S. Degree",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=158",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31674",
+    "title": "Theatre Arts",
+    "award": "A.A- T Degree",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=602",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31780",
+    "title": "Welding Technology",
+    "award": "A.S. Degree",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=635",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31781",
+    "title": "Welding Technology",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=636",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31913",
+    "title": "Early Childhood Education",
+    "award": "A.S. T Degree",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=300",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31915",
+    "title": "Studio Arts",
+    "award": "A.A- T Degree",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=166",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31916",
+    "title": "Anthropology",
+    "award": "A.A- T Degree",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=142",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31931",
+    "title": "Art History",
+    "award": "A.A- T Degree",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=165",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31993",
+    "title": "Kinesiology",
+    "award": "A.A- T Degree",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=442",
+    "coverage": 0.955,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31994",
+    "title": "Geography",
+    "award": "A.A- T Degree",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=382",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31995",
+    "title": "Elementary Teacher Education",
+    "award": "A.A- T Degree",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=316",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31996",
+    "title": "Journalism",
+    "award": "A.A- T Degree",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=436",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31997",
+    "title": "Chemical Dependency Studies",
+    "award": "A.A. Degree",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=581",
+    "coverage": 0.923,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31998",
+    "title": "Chemical Dependency Studies",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=582",
+    "coverage": 0.923,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32569",
+    "title": "Geology",
+    "award": "A.S. T Degree",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=393",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33053",
+    "title": "English",
+    "award": "A.A- T Degree",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=335",
+    "coverage": 0.786,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33072",
+    "title": "History",
+    "award": "A.A- T Degree",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=404",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33457",
+    "title": "Fine Art Photography",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=171",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33537",
+    "title": "Music",
+    "award": "A.A- T Degree",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=499",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33542",
+    "title": "Spanish",
+    "award": "A.A- T Degree",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=593",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33571",
+    "title": "Economics",
+    "award": "A.A- T Degree",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=313",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33931",
+    "title": "Agriculture Business",
+    "award": "A.S. T Degree",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=133",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35072",
+    "title": "Communication Studies - Applied Communication Skills",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=237",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35097",
+    "title": "CIS - Web Developer",
+    "award": "A.S. Degree",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=255",
+    "coverage": 0.933,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35148",
+    "title": "Nutrition and Dietetics",
+    "award": "A.S. T Degree",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=516",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35175",
+    "title": "Information Technology Associate",
+    "award": "A.S. Degree",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=248",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35303",
+    "title": "Biology",
+    "award": "A.S. T Degree",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=203",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35336",
+    "title": "Information Technology Technician",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=248",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35350",
+    "title": "Business Information Worker",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=226",
+    "coverage": 0.857,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35354",
+    "title": "Automatic Transmissions/Transaxles (Ford ASSET)",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=181",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35357",
+    "title": "Automotive Brakes (Ford ASSET)",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=184",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35358",
+    "title": "Automotive Heating and Air Conditioning (Ford ASSET)",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=181",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35359",
+    "title": "Automotive Engine Repair (Ford ASSET)",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=181",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35360",
+    "title": "Automotive Engine Performance (Ford ASSET)",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=181",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35361",
+    "title": "Automotive Suspension and Steering (Ford ASSET)",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=181",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35362",
+    "title": "Automotive Electrical Systems (Ford ASSET)",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=181",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35363",
+    "title": "Automotive Heating and Air Conditioning",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=179",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35364",
+    "title": "Automatic Transmissions and Transaxles",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=179",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35366",
+    "title": "Small Engine Repair",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=194",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35367",
+    "title": "Automotive Suspension and Steering",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=179",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35374",
+    "title": "Manual Drive Train and Axles (Ford ASSET)",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=181",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35375",
+    "title": "CIS - Database Analyst, SQL",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=252",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35378",
+    "title": "Automotive Electrical Systems",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=184",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35379",
+    "title": "Automotive Engine Repair",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=187",
+    "coverage": 0.667,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35408",
+    "title": "CIS - Linux Systems Administrator",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=248",
+    "coverage": 0.8,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35409",
+    "title": "CIS-Object Oriented Software Development",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=253",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35410",
+    "title": "Automotive Mechanics Technology (Ford ASSET)",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=191",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35411",
+    "title": "CIS-Database Design",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=252",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35412",
+    "title": "Automotive Mechanics Technology (Ford ASSET)",
+    "award": "A.S. Degree",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=191",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35413",
+    "title": "Radio Production",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=555",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35414",
+    "title": "Television Production",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=621",
+    "coverage": 0.9,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35552",
+    "title": "Film, Television and Electronic Media",
+    "award": "A.S. T Degree",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=556",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35655",
+    "title": "Welding Code",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=636",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35657",
+    "title": "Welding Fabricator",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=636",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35658",
+    "title": "Sustainability",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=389",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35742",
+    "title": "Medical Assisting, Medical Insurance Billing",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=496",
+    "coverage": 0.5,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35871",
+    "title": "Horticulture, Sustainable Irrigation and Water Management Technology",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=414",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35899",
+    "title": "Marketing",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=474",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35900",
+    "title": "Business, General",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=226",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35901",
+    "title": "Geography - Field Data Mapping and Geographic Information Systems (GIS)",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=388",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36447",
+    "title": "Information Technology Associate",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=248",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36525",
+    "title": "Deaf Studies",
+    "award": "A.A. Degree",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=288",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36566",
+    "title": "Culinary Arts Mngt: Restaurant and Food Service Entrepreneurship",
+    "award": "A.A. Degree",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=222",
+    "coverage": 0.952,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37242",
+    "title": "Community Nutrition",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=516",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37285",
+    "title": "ECE, Associate Teacher",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=300",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37337",
+    "title": "Construction Pre-Apprenticeship",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=271",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37837",
+    "title": "Green Buildings",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=160",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37842",
+    "title": "Culinary Arts Management: Basic Culinary Services",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=221",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37848",
+    "title": "Horticulture, General Horticulture",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=415",
+    "coverage": 0.941,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37891",
+    "title": "Cybersecurity",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=257",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38017",
+    "title": "Entrepreneurial Arts – Independent Music Instructor",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=502",
+    "coverage": 0.632,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38021",
+    "title": "Allied Health: Pre-Health Occupations",
+    "award": "A.S. Degree",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=137",
+    "coverage": 0.938,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38024",
+    "title": "Fire Technology: Fire Prevention",
+    "award": "A.S. Degree",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=213",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38381",
+    "title": "Regenerative Foodways",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=131",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38382",
+    "title": "Theatre for Young Audiences",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=605",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38750",
+    "title": "Entrepreneurial Arts – Music Composition",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=502",
+    "coverage": 0.875,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39131",
+    "title": "Business: Entrepreneurship",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=282",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39139",
+    "title": "Real Estate Salesperson",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=564",
+    "coverage": 0.889,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39146",
+    "title": "Political Science",
+    "award": "A.A- T Degree",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=547",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39286",
+    "title": "Computer Science",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=256",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39354",
+    "title": "Emergency Medical Technician",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=323",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39585",
+    "title": "Cybersecurity and Information Assurance",
+    "award": "A.S. Degree",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=247",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39606",
+    "title": "Solar Installers",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=274",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39656",
+    "title": "Social Justice Studies: Ethnic Studies",
+    "award": "A.A- T Degree",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=576",
+    "coverage": 0.977,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39679",
+    "title": "Social Justice Studies: Gender Studies",
+    "award": "A.A- T Degree",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=578",
+    "coverage": 0.938,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40365",
+    "title": "Mechanized Agriculture Technician",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=129",
+    "coverage": 0.857,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40421",
+    "title": "Fire Technology",
+    "award": "A.S. Degree",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=366",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40921",
+    "title": "Pharmacy Technician",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=523",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41712",
+    "title": "Cyber Defense",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=257",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41992",
+    "title": "Business Administration 2.0",
+    "award": "A.S. T Degree",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=219",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42403",
+    "title": "Wildland Fire Technology",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=367",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42792",
+    "title": "Communication Studies 2.0",
+    "award": "A.A- T Degree",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=237",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43894",
+    "title": "Business Information Professional I",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=224",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44527",
+    "title": "Music History",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=503",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45203",
+    "title": "California General Education Transfer Curriculum (Cal-GETC)",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=95",
+    "coverage": 0.966,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45317",
+    "title": "Surgical Technology",
+    "award": "A.S. Degree",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=600",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45615",
+    "title": "Music Theory",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=503",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45820",
+    "title": "Business Information Technology",
+    "award": "A.S. Degree",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=223",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45827",
+    "title": "Business Information Professional II",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=225",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46092",
+    "title": "Sport Management",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=445",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46139",
+    "title": "Sport Management",
+    "award": "A.A. Degree",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=444",
+    "coverage": 0.96,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46419",
+    "title": "Elementary Teacher Education: Integrated Programs",
+    "award": "A.A- T Degree",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=316",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   }
+  ]
+ },
+ "run": "39047009824"
+}

@@ -1,0 +1,270 @@
+{
+ "college": "Cosumnes River College",
+ "control_number": "18851",
+ "shape": "degree",
+ "title": "Animal Science: Equine Science",
+ "award": "A.S. Degree",
+ "source_url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=139",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8758,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8758,
+    "output_tokens": 2347,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2347,
+  "output_tokens_details": {
+   "thinking_tokens": 896
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.08197,
+ "ms": 19283,
+ "seconds": 19.6,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 12,
+   "listed": 12,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "ANSC498"
+   ],
+   "flagged": [
+    "ANSC498"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    30.5,
+    34.0
+   ],
+   "stated": [
+    30.5,
+    34.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 12,
+   "courses": 0,
+   "count": 12,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 8,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "A.S. in Equine Science",
+   "measure": "units",
+   "total_units": {
+    "min": 30.5,
+    "max": 34
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Local General Education Pattern or California General Education Transfer Curriculum (Cal-GETC)",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": true,
+   "outcomes": [
+    "Describe the processes involved and outline major events in the evolution and domestication of the horse.",
+    "Formulate a disease and parasite prevention program for equine.",
+    "Describe career opportunities and requirements for successful employment in the equine industry.",
+    "Relate basic genetic principles to techniques in breeding selection and mating programs.",
+    "Identify anatomy and describe physiology of the male and female equine reproductive tract.",
+    "List and explain the correct use of specialized insemination tools.",
+    "Develop and maintain bookkeeping and record systems.",
+    "Develop a ranch plan for an equine facility, incorporating legal requirements and regulations.",
+    "Identify parts of the equine gastrointestinal system and describe the function of each.",
+    "Implement a sound feeding program based on the type and amount of work performed.",
+    "Assess the function and importance of each nutrient as it pertains to equine nutrition.",
+    "Demonstrate basic handling of the horse including catching, haltering, leading and tying."
+   ],
+   "careers": [
+    "horse farm management",
+    "technologists",
+    "consultants",
+    "show and race facility managers and staff",
+    "high school and community or junior college riding and equine science instructors",
+    "government agents",
+    "journalists",
+    "sales or service representatives for companies promoting horse feed, health, and care products"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Degree Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 30.5,
+     "max": 34
+    },
+    "courses": [
+     {
+      "code": "ANSC 300",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANSC 301",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANSC 302",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANSC 303",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANSC 304",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANSC 305",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANSC 306",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANSC 307",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AGB 310",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AGB 320",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AGB 330",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "AGB 331",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANSC 498",
+      "units": 0.5,
+      "units_max": 4,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "AGB 320 is printed with a parenthetical '(3)' like the AGB 330/AGB 331 choice rows, which may suggest it belongs to an 'or' group; recorded as required because the printed total 30.5-34 matches AGB 320 required plus AGB 330 or AGB 331 (an AGB 320/330/331 single choice would give 27.5-31). Reviewer should check.",
+   "ANSC 498 Work Experience in Animal Science (0.5-4) is not in the closed list; recorded as a catalog addition.",
+   "Degree text says the A.S. requires the program plus Local GE or Cal-GETC 'plus sufficient electives for a total of at least 60 units'; no degree total or GE units printed, so degree_total and ge_units are null and electives_fill_degree is true.",
+   "Careers taken from the Career Information paragraph; organizations named as sources of career opportunities (breed associations, humane organizations, etc.) were not recorded as careers."
+  ]
+ },
+ "extracted_run": "39047009824"
+}

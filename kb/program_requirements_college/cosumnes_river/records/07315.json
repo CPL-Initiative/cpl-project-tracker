@@ -1,0 +1,174 @@
+{
+ "college": "Cosumnes River College",
+ "control_number": "07315",
+ "shape": "certificate",
+ "title": "ECE: School Age Child Care and Education",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=301",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 11694,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 11694,
+    "output_tokens": 723,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 723,
+  "output_tokens_details": {
+   "thinking_tokens": 300
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.06124,
+ "ms": 7282,
+ "seconds": 7.5,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 8,
+   "share": 0.0,
+   "missing": [
+    "ECE300",
+    "ECE307",
+    "ECE312",
+    "ECE314",
+    "ECE320",
+    "ECE321",
+    "ECE326",
+    "ECE404"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": true,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ECE 300",
+    "why": "section for this certificate not in the text; named only in other awards' sections"
+   },
+   {
+    "code": "ECE 307",
+    "why": "section for this certificate not in the text; named only in other awards' sections"
+   },
+   {
+    "code": "ECE 312",
+    "why": "section for this certificate not in the text; named only in other awards' sections"
+   },
+   {
+    "code": "ECE 314",
+    "why": "section for this certificate not in the text; named only in other awards' sections"
+   },
+   {
+    "code": "ECE 320",
+    "why": "section for this certificate not in the text; named only in other awards' sections"
+   },
+   {
+    "code": "ECE 321",
+    "why": "section for this certificate not in the text; named only in other awards' sections"
+   },
+   {
+    "code": "ECE 326",
+    "why": "section for this certificate not in the text; named only in other awards' sections"
+   },
+   {
+    "code": "ECE 404",
+    "why": "section for this certificate not in the text; named only in other awards' sections"
+   }
+  ],
+  "notes": []
+ },
+ "extracted_run": "39047009824"
+}

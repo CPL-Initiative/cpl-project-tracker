@@ -1,0 +1,403 @@
+{
+ "college": "Cosumnes River College",
+ "control_number": "35410",
+ "shape": "certificate",
+ "title": "Automotive Mechanics Technology (Ford ASSET)",
+ "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+ "source_url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=191",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 12042,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 12042,
+    "output_tokens": 3556,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 3556,
+  "output_tokens_details": {
+   "thinking_tokens": 1083
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.11929,
+ "ms": 27140,
+ "seconds": 27.6,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 13,
+   "listed": 13,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 3,
+   "codes": [
+    "AMT131",
+    "AMT385",
+    "AMT498"
+   ],
+   "flagged": [
+    "AMT131",
+    "AMT385",
+    "AMT498"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    58.0,
+    58.0
+   ],
+   "stated": [
+    58.0,
+    58.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 13,
+   "courses": 0,
+   "count": 13,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 8,
+   "not_verbatim": [
+    "Ford/Lincoln Specialized Technician (in any of the Service Technician Specialty Training [STST] areas)"
+   ],
+   "pass": false
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Automotive Mechanics Technology (Ford ASSET) Certificate",
+   "measure": "units",
+   "total_units": {
+    "min": 58,
+    "max": 58
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Understand the fundamental purpose, components, and operation of major automotive systems to include gasoline engines, automatic transmissions and transaxles, manual transmissions, drivetrains, and axles, suspension and steering systems, brake systems, electrical and electronic systems, heating and air conditioning systems, and engine performance systems.",
+    "Understand the proper use of tools, equipment, and publications used for automotive diagnosis and repair.",
+    "Understand typical new car dealership hierarchy, structure, and standard procedures.",
+    "Prepare and write repair orders to include: customer information, vehicle identifying information, customer concerns, related service history, cause, and correction.",
+    "Diagnose engine mechanical concerns, conduct diagnostic testing procedures, and perform the procedures and techniques involved in typical engine repairs and overhauls.",
+    "Demonstrate the ability to diagnose, service, and repair automatic transmissions and transaxles.",
+    "Demonstrate the ability to diagnose and repair manual transmissions, transaxles, and drive train concerns.",
+    "Demonstrate the ability to diagnose and repair automotive suspension and steering concerns.",
+    "Demonstrate the ability to diagnose and repair automotive brake systems.",
+    "Demonstrate the ability to diagnose and repair automotive electrical and electronic concerns.",
+    "Demonstrate the ability to diagnose and repair automotive heating, ventilation, and air conditioning (HVAC) system concerns.",
+    "Demonstrate the ability to diagnose, service, and repair gasoline engine performance systems and their components.",
+    "Verify the outcome of the repair through a test drive analysis or system self-test."
+   ],
+   "careers": [
+    "service technicians",
+    "Automotive Technician",
+    "Light Duty Diesel Technician",
+    "Ford/Lincoln Specialized Technician (in any of the Service Technician Specialty Training [STST] areas)",
+    "Ford/Lincoln Engine Master Technician",
+    "Ford/Lincoln Chassis Master Technician",
+    "Ford/Lincoln Drivetrain Master Technician",
+    "Ford/Lincoln Senior Master Technician"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Certificate Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "AMT 370",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AMT 371",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AMT 372",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "A minimum of 3 units from the following",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "AMT 498",
+      "units": 0.5,
+      "units_max": 4,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Certificate Requirements (continued)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "AMT 374",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AMT 375",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AMT 376",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "A minimum of 3 units from the following",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "AMT 498",
+      "units": 0.5,
+      "units_max": 4,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Certificate Requirements (continued)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "AMT 378",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AMT 130",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AMT 379",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AMT 385",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "AMT 381",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AMT 382",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AMT 383",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "A minimum of 3 units from the following",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "AMT 498",
+      "units": 0.5,
+      "units_max": 4,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Certificate Requirements (continued)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "AMT 131",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "AMT 340",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "A minimum of 3 units from the following",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "AMT 498",
+      "units": 0.5,
+      "units_max": 4,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The extracted text begins mid-section on page 191; the award's heading (presumably on page 190) is not in the text, so section_heading is inferred from the program title. The section's opening description may also be partly missing.",
+   "The certificate table is printed as one list interrupted four times by 'A minimum of 3 units from the following: 3' with AMT 498 (0.5-4); each is recorded as its own choose_units block of 3 units, and the required courses between them as 'all' blocks. Block sums (13+3+9+3+19+3+8+3) equal the printed Total Units: 58.",
+   "AMT 498 (Work Experience) appears in four separate 3-unit blocks, meaning 12 units of work experience in total; reviewer may confirm this reading.",
+   "Outcomes are printed with labels 'PSLO 1:' through 'PSLO 10:' on some bullets; those labels were dropped as list numbers. Several unlabeled bullets are interleaved and recorded as separate outcomes as printed.",
+   "Careers 'service technicians' is taken from the description ('placement as service technicians in Ford and/or Lincoln dealerships'); the rest from Career Information.",
+   "AMT 385, AMT 131 and AMT 498 are not in the closed list and are marked catalog_addition."
+  ]
+ },
+ "extracted_run": "39047009824"
+}

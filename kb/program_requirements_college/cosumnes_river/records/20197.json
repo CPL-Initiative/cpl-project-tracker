@@ -1,0 +1,288 @@
+{
+ "college": "Cosumnes River College",
+ "control_number": "20197",
+ "shape": "certificate",
+ "title": "Real Estate Broker",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=564",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 11843,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 11843,
+    "output_tokens": 3052,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 3052,
+  "output_tokens_details": {
+   "thinking_tokens": 1485
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.10841,
+ "ms": 24673,
+ "seconds": 24.9,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 8,
+   "listed": 9,
+   "share": 0.889,
+   "missing": [
+    "RE296282560"
+   ],
+   "unexplained": [
+    "RE296282560"
+   ],
+   "none_placed": false,
+   "pass": false
+  },
+  "invented": {
+   "count": 2,
+   "codes": [
+    "RE296",
+    "RE342"
+   ],
+   "flagged": [
+    "RE342"
+   ],
+   "pass": false
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    24.0,
+    25.0
+   ],
+   "stated": [
+    24.0,
+    25.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 9,
+   "courses": 0,
+   "count": 9,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 9,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Real Estate Broker Certificate",
+   "measure": "units",
+   "total_units": {
+    "min": 24,
+    "max": 25
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Demonstrate the ability to understand real estate principles and concepts and how they impact the business of real estate.",
+    "Apply a basic knowledge of the fundamental real estate concepts to real estate transactions.",
+    "Define technical terminology involved in the real estate field.",
+    "Demonstrate a general understanding of the duties and expectations of a real estate salesperson and a real estate broker.",
+    "Describe the roles and responsibilities of entities and professionals within the real estate industry.",
+    "Satisfy the education requirements to apply for the California Real Estate Broker Licensing Examination.",
+    "Demonstrate the ability to think critically and analyze problems so as to be able to apply real estate principles and concepts to diagnose and resolve real and hypothetical real estate issues.",
+    "Understand legal and ethical standards and apply them to fact patterns to reach defensible conclusions.",
+    "Demonstrate the ability to find and use resource materials to conduct research and obtain information needed to facilitate the completion of an educational or a career task."
+   ],
+   "careers": [
+    "sales",
+    "leasing",
+    "property management",
+    "lending",
+    "appraisal",
+    "title insurance",
+    "escrow services",
+    "development",
+    "investment"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Certificate Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "RE 120",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "RE 296",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "RE 110",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "RE 130",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "RE 342",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "RE 150",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ACCT 301",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "A minimum of 9 units from the following",
+    "rule": "choose_units",
+    "minimum": 9,
+    "option_group": null,
+    "stated": {
+     "min": 9,
+     "max": 9
+    },
+    "courses": [
+     {
+      "code": "RE 120",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "RE 296",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "RE 150",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ACCT 301",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "RE 190",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "RE 300",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 340",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Closed-list code 'RE296282560' (Internship in Real Estate) appears malformed; it was matched to the catalog's RE 296 Internship in Real Estate and recorded as an alternative to RE 120 (catalog_addition false). Reviewer should confirm.",
+   "The required RE 150 / ACCT 301 row prints '3 - 4' units; recorded as RE 150 3 units with ACCT 301 (4 units) as an alternative, since the range reflects the alternative.",
+   "RE 120/RE 296 and RE 150/ACCT 301 appear both in the required list and in the 9-unit choice list; footnote 1 says that if both RE 120 and RE 296 (or both RE 150 and ACCT 301) are completed, one may be used to satisfy a course in the 9-unit requirement.",
+   "The narrative list of broker license courses names Real Estate Appraisal as RE 140, while the requirements table lists RE 342 Real Estate Appraisal; RE 342 is not in the closed list and is recorded as a catalog addition.",
+   "Outcome labels 'PSLO #1:' and 'PSLO #2:' were treated as list numbering and omitted from the first and seventh outcome entries; the outcomes list is the one printed under the Broker Certificate section (spanning pages 565-566).",
+   "The A.A. degree and Real Estate Salesperson Certificate sections on the same pages were not used."
+  ]
+ },
+ "extracted_run": "39047009824"
+}

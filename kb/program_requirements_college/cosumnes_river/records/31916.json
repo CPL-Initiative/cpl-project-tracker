@@ -1,0 +1,367 @@
+{
+ "college": "Cosumnes River College",
+ "control_number": "31916",
+ "shape": "adt",
+ "title": "Anthropology",
+ "award": "A.A- T Degree",
+ "source_url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=142",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8008,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8008,
+    "output_tokens": 3308,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 3308,
+  "output_tokens_details": {
+   "thinking_tokens": 1015
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.09819,
+ "ms": 26425,
+ "seconds": 26.8,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 22,
+   "listed": 22,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    19.0,
+    21.0
+   ],
+   "stated": [
+    19.0,
+    21.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 11,
+   "courses": 0,
+   "count": 11,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Degree Requirements",
+   "measure": "units",
+   "total_units": {
+    "min": 19,
+    "max": 21
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "DEMONSTRATE UNDERSTANDING OF THE PROCESSES OF SCIENCE, THE SCIENTIFIC METHOD, AND THE RELATIONSHIP BETWEEN SCIENTIFIC RESEARCH AND ESTABLISHED KNOWLEDGE. (PSLO 1)",
+    "Recognize the way in which research leads to generally accepted conclusions and the integration of new research data with the building of a body of scientific knowledge.",
+    "Recognize that the information presented in science textbooks and other established \"authorities\" is the result of research conducted in the field or the lab and is based on an accumulation of data.",
+    "Design a scientific inquiry.",
+    "CLEARLY EXPRESS SELF WHEN WRITING OR SPEAKING ABOUT ANTHROPOLOGY DEMONSTRATING KNOWLEDGE OF BASIC ANTHROPOLOGICAL TERMINOLOGY AND UNDERSTANDING MAJOR ANTHROPOLOGICAL CONCEPTS. (PSLO 2)",
+    "Produce laboratory exercises or field projects which address background information, procedures, results and analysis of data developed during the event of activity.",
+    "Write essays explaining anthropological processes in clear and concise terms",
+    "DEMONSTRATE BOTH CONTENT KNOWLEDGE AND TEST TAKING SKILLS WHEN COMPLETING ESSAY, OBJECTIVE AND MULTIPLE CHOICE EXAMS. (PSLO 3)",
+    "Demonstrate problem solving abilities in major content areas of Anthropology including evolution, genetics, culture, archaeology and human evolution.",
+    "Analyze the logic of multiple choice questions and choose the correct response from among related items.",
+    "Write clear responses to essay question prompts without including extraneous information or omitting information necessary to provide a clear answer."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Core",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ANTH 300",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANTH 301",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANTH 310",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ANTH 313",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANTH 323",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "STAT C1000E",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PSYC 330",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Anthropology Electives",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "ANTH 303",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANTH 316",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANTH 324",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANTH 331",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANTH 332",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANTH 334",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANTH 341",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANTH 374",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANTH 336",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Science Electives: GEOL 300 and GEOL 301",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Science Electives",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "GEOL 300",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOL 301",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Science Electives: GEOL 305 and GEOL 306",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Science Electives",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "GEOL 305",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOL 306",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Science Electives: GEOG 335 or PSYC 335",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": "Science Electives",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "GEOG 335",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC 335",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "No program heading is printed in the extracted text; section_heading uses the printed 'Degree Requirements' heading. The page belongs to Programs of Study – Anthropology, AA-T.",
+   "Science Electives prints a single total of 3 - 4 units over the choice (GEOL 300 and GEOL 301) or (GEOL 305 and GEOL 306) or GEOG 335 or PSYC 335; recorded as three option blocks in option_group 'Science Electives' with stated null. The bracket nesting in the source is garbled across a page/column break; reviewer should confirm the grouping.",
+   "STAT C1000E printed as (4) with a row range 3 - 4 reflecting the PSYC 330 (3) alternative.",
+   "The 60 transferable units sentence is a generic AA-T requirement, not recorded as degree_total. Cal-GETC is named but no GE units printed.",
+   "Outcomes recorded as printed, including the capitalized PSLO headings with their '(PSLO n)' labels and the sub-bullets under each, as separate entries."
+  ]
+ },
+ "extracted_run": "39047009824"
+}

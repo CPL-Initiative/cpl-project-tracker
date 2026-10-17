@@ -1,0 +1,261 @@
+{
+ "college": "Cosumnes River College",
+ "control_number": "30852",
+ "shape": "certificate",
+ "title": "Sustainable Landscape Design",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=416",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 11579,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 11579,
+    "output_tokens": 1812,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1812,
+  "output_tokens_details": {
+   "thinking_tokens": 581
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.08256,
+ "ms": 15414,
+ "seconds": 15.8,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 11,
+   "listed": 11,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "HORT498"
+   ],
+   "flagged": [
+    "HORT498"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    22.0,
+    22.0
+   ],
+   "stated": [
+    22.0,
+    22.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 6,
+   "courses": 0,
+   "count": 6,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 6,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Certificate Requirements",
+   "measure": "units",
+   "total_units": {
+    "min": 22,
+    "max": 22
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Demonstrate a fundamental understanding of basic horticultural principles and practices.",
+    "Demonstrate a fundamental understanding of soils, soil development, soil building and preparation, and sustainable soil management.",
+    "Demonstrate a fundamental understanding of plant identification, selection, and use of plant material best suited for sustainable landscapes.",
+    "Demonstrate a fundamental understanding of basic landscape design principles and practices.",
+    "Demonstrate a fundamental understanding of hydraulics and irrigation design, installation, and water management principles and practices.",
+    "Propose landscape design concepts based on sound, sustainable soil management, water conservation, construction and maintenance, and integrated pest management best practices."
+   ],
+   "careers": [
+    "sustainable landscape planning and irrigation design",
+    "landscape and irrigation design",
+    "planning",
+    "consultation",
+    "installation management",
+    "water systems management"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Certificate Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "HORT 300",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HORT 302",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PLTS 310",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "HORT 303",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PLTS 332",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "HORT 305",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HORT 306",
+        "units": 3,
+        "catalog_addition": false
+       },
+       {
+        "code": "HORT 307",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "HORT 340",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HORT 350",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HORT 351",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "A minimum of 2 units from the following",
+    "rule": "choose_units",
+    "minimum": 2,
+    "option_group": null,
+    "stated": {
+     "min": 2,
+     "max": 2
+    },
+    "courses": [
+     {
+      "code": "HORT 498",
+      "units": 0.5,
+      "units_max": 4,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The section's own title heading is not in the extracted text (it likely sits on the preceding page); the section was identified by its description 'The certificate in Sustainable Landscape Design...' and its 'Certificate Requirements' heading on page 416.",
+   "Units printed '31' beside HORT 303 and '32' beside HORT 340 read as 3 units with footnote markers 1 and 2.",
+   "Footnotes: Horticulture 100 at American River College meets the HORT 303 requirement; Horticulture 322 at American River College meets the HORT 340 requirement. These are other-college courses and were not recorded as alternatives.",
+   "Third outcome is labeled 'PLSO 3.' in the catalog (likely typo for PSLO 3); the label was omitted as a list number.",
+   "The following Sustainable Landscape Technology and Regenerative Foodways certificates were not read."
+  ]
+ },
+ "extracted_run": "39047009824"
+}

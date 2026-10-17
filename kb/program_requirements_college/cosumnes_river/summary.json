@@ -1,0 +1,39 @@
+{
+ "college": "Cosumnes River College",
+ "programs": 226,
+ "with_closed_list": 219,
+ "found": 217,
+ "extracted": 217,
+ "errors": 0,
+ "passed_machine_checks": 135,
+ "failed": {
+  "coverage": 43,
+  "invented": 8,
+  "arithmetic": 67,
+  "repeated": 0,
+  "outcomes": 8
+ },
+ "cost_usd": 18.96,
+ "cost_per_program": 0.0874,
+ "not_found": [
+  {
+   "control_number": "14419",
+   "title": "Kinesiology",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=442",
+    "coverage": 0.42
+   }
+  },
+  {
+   "control_number": "39444",
+   "title": "Honors",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=378",
+    "coverage": 0.333
+   }
+  }
+ ],
+ "run": "39047009824"
+}

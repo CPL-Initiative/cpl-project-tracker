@@ -1,0 +1,387 @@
+{
+ "college": "Cosumnes River College",
+ "control_number": "11346",
+ "shape": "degree",
+ "title": "American Studies",
+ "award": "A.A. Degree",
+ "source_url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=425",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 10917,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 10917,
+    "output_tokens": 3266,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 3266,
+  "output_tokens_details": {
+   "thinking_tokens": 1227
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.10899,
+ "ms": 26526,
+ "seconds": 26.7,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 29,
+   "listed": 30,
+   "share": 0.967,
+   "missing": [
+    "ART325"
+   ],
+   "unexplained": [
+    "ART325"
+   ],
+   "none_placed": false,
+   "pass": false
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "ARTH325"
+   ],
+   "flagged": [],
+   "pass": false
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    21.0,
+    21.0
+   ],
+   "stated": [
+    60.0,
+    60.0
+   ],
+   "against": "degree",
+   "ge": null,
+   "why": [
+    "the record names the degree total and the Local General Education Pattern or California General Education Transfer Curriculum (Cal-GETC) pattern, but no units for it"
+   ],
+   "major": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     21.0,
+     21.0
+    ],
+    "stated": [
+     21.0,
+     21.0
+    ],
+    "against": "program",
+    "why": []
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 6,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Degree Requirements",
+   "measure": "units",
+   "total_units": {
+    "min": 21,
+    "max": 21
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Local General Education Pattern or California General Education Transfer Curriculum (Cal-GETC)",
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": true,
+   "outcomes": [
+    "Synthesize multiple disciplines focusing on U.S. society, such as history, art appreciation, music appreciation, and philosophy to achieve cultural literacy.",
+    "Practice college level critical thinking and writing in the interdisciplinary courses within the American Studies major.",
+    "Evaluate cross-cultural links between multiple disciplines focusing on U.S. society, with an emphasis on commonalities of cultural expression between different subcultures in the U.S.",
+    "Develop a foundation for cultural pluralism, a rejection of previous personal prejudices, and knowledge of and comfort with others unlike themselves."
+   ],
+   "careers": [
+    "Research",
+    "Archivist",
+    "Education",
+    "Historian",
+    "Law",
+    "Politics"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Degree Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "HUM 332",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC 321",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST C1001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HIST C1002",
+        "units": 3,
+        "catalog_addition": false
+       },
+       {
+        "code": "HIST 314",
+        "units": 3,
+        "catalog_addition": false
+       },
+       {
+        "code": "HIST 320",
+        "units": 3,
+        "catalog_addition": false
+       },
+       {
+        "code": "HIST 321",
+        "units": 3,
+        "catalog_addition": false
+       },
+       {
+        "code": "HIST 331",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "A minimum of 12 units from the following",
+    "rule": "choose_units",
+    "minimum": 12,
+    "option_group": null,
+    "stated": {
+     "min": 12,
+     "max": 12
+    },
+    "courses": [
+     {
+      "code": "ANTH 334",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARTH 325",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 345",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANCE 310",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "DANCE 351",
+        "units": 1,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "DEAF 351",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGLT 320",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ENGLT 321",
+        "units": 3,
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGLT 330",
+        "units": 3,
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGLT 336",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ETHNS 300",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ETHNS 320",
+        "units": 3,
+        "catalog_addition": false
+       },
+       {
+        "code": "ETHNS 330",
+        "units": 3,
+        "catalog_addition": false
+       },
+       {
+        "code": "ETHNS 360",
+        "units": 3,
+        "catalog_addition": false
+       },
+       {
+        "code": "ETHNS 344",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "HUM 339",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUFHL 308",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MUFHL 315",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "POLS C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "POLS C1000H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPAN 427",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "TA 306",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The excerpt begins mid-section; the American Studies program heading is on the preceding page and not in the text, so section_heading uses the 'Degree Requirements' heading that precedes the American Studies Total Units: 21 and its own degree statement.",
+   "The catalog prints ARTH 325 Native American Art History; the closed list stores it as 'ART325' with the same title. Treated as the same course (catalog_addition false); reviewer should confirm.",
+   "The HIST requirement is printed as one 3-unit row with 'or' options (HIST C1001/C1002/314/320/321/331); recorded as one required entry with alternatives.",
+   "Title differences between catalog and closed list: DANCE 351 'Hip Hop I' vs 'Urban Hip Hop I'; ETHNS 320 'Introduction to African American Studies' vs 'The African American Experience'; ETHNS 330 'Introduction to Asian American Studies' vs 'The Asian American Experience in America'; ETHNS 360 'Introduction to Chicana/o/x Studies' vs 'Chicanos-Mexican Americans in the U.S.'.",
+   "degree_total of 60 taken from the American Studies A.A. statement 'plus sufficient electives for a total of at least 60 units'; the page states it as a minimum ('at least'), and electives fill the remainder with no units printed.",
+   "Outcome labels 'PSLO 1:' through 'PSLO 4:' were omitted as list numbering.",
+   "The Humanities A.A. section and HUM course descriptions that follow belong to a different program and were not used."
+  ]
+ },
+ "extracted_run": "39047009824"
+}

@@ -1,0 +1,277 @@
+{
+ "college": "Cosumnes River College",
+ "control_number": "30722",
+ "shape": "adt",
+ "title": "Sociology",
+ "award": "A.A- T Degree",
+ "source_url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=590",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 10774,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 10774,
+    "output_tokens": 2507,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2507,
+  "output_tokens_details": {
+   "thinking_tokens": 715
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.09324,
+ "ms": 21132,
+ "seconds": 21.5,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 9,
+   "listed": 9,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "STATC1000H"
+   ],
+   "flagged": [
+    "STATC1000H"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    18.0,
+    19.0
+   ],
+   "stated": [
+    18.0,
+    19.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 24,
+   "courses": 0,
+   "count": 24,
+   "not_verbatim": [
+    "Analyze and evaluate values and norms present in the behavior of individuals and groups occupying society’s social structures and institutions.",
+    "Discuss and explain how ascriptions to sociological concepts affect and shape individuals and groups’ life chances and opportunities."
+   ],
+   "why": [
+    "not in the catalog text as printed: Analyze and evaluate values and norms present in the behavior of individuals and",
+    "not in the catalog text as printed: Discuss and explain how ascriptions to sociological concepts affect and shape in"
+   ],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": false
+  },
+  "careers": {
+   "count": 6,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Degree Requirements",
+   "measure": "units",
+   "total_units": {
+    "min": 18,
+    "max": 19
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Identify and comprehend their individual relationship to structures in the larger society.",
+    "Individuals will comprehend the magnitude of their influence on social structures in society, and the social structures that influence them.",
+    "Demonstrate an awareness of the sociological resources available within the structures of society.",
+    "Effectively utilize social structures as resources in society to facilitate their own movement and/or progress in society.",
+    "Apply effective critical thinking skills to interpret sociological phenomena.",
+    "Apply sociological approaches to assess a social context.",
+    "Distinguish between macro-level and micro-level orientations of assessment of given social contexts.",
+    "Investigate and determine which social contexts require objective or subjective analysis.",
+    "Assess the significance of important social movements in American society.",
+    "Demonstrate an awareness of the consistent goals, perspectives, and factors leading to social movements.",
+    "Assess the significance of social movements of marginalized people in society.",
+    "Explain the outcomes of social movements in American society.",
+    "Define and identify various theoretical perspectives across the discipline of Sociology.",
+    "Discuss and Explain Social Conflict Approach.",
+    "Discuss and Explain Symbolic Interactionist Approach.",
+    "Discuss and Explain Structural Functionalist Approach.",
+    "Comprehend how social practices facilitate the functioning of social structures as they are responsible for maintaining the society as a whole.",
+    "Examine and assess the effects of sociocultural customs and traditions on social structures and institutions.",
+    "Analyze and evaluate values and norms present in the behavior of individuals and groups occupying society’s social structures and institutions.",
+    "Investigate the relationship between religion, language, customs and traditions, and how they facilitate comprehension of values and influence social practices.",
+    "Analyze, interpret, and critically think about sociological ascriptions to race, gender, ethnicity, class, sexual orientation, political affiliation, and other sociological concepts.",
+    "Discuss and explain how ascriptions to sociological concepts affect and shape individuals and groups’ life chances and opportunities.",
+    "Demonstrate content knowledge of how and why particular ideas are ascribed to sociological concepts.",
+    "Explain and assess the socialization that individuals and groups undergo due to ideas ascribed to sociological concepts."
+   ],
+   "careers": [
+    "teacher",
+    "social worker",
+    "probation officer",
+    "employment counselor",
+    "urban planner",
+    "data analyst"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Degree Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "SOC 300",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC 301",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC 302",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC 330",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "STAT C1000E",
+        "units": 4,
+        "catalog_addition": false
+       },
+       {
+        "code": "STAT C1000H",
+        "units": 4,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "A minimum of 6 units from the following",
+    "rule": "choose_units",
+    "minimum": 6,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "SOC 305",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC 310",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC 321",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC 341",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The excerpt begins mid-description; the award's own heading (likely 'Associate in Arts in Sociology for Transfer (AA-T) Degree') is not in the text, so the 'Degree Requirements' table heading is used as section_heading.",
+   "The statistics row prints '(3) 3 - 4' as a range across the PSYC 330 / STAT C1000E / STAT C1000H choice; PSYC 330 is recorded at its own 3 units and the STAT alternatives at 4.",
+   "STAT C1000H (honors) is not in the closed list and is recorded as a catalog addition.",
+   "Outcomes are printed as six numbered PSLOs (PSLO1-PSLO6) each followed by sub-bullets; all bullets are recorded in order as separate entries with the '(PSLOn)' labels removed. Reviewer may wish to treat sub-bullets as sub-outcomes of the preceding PSLO.",
+   "The page states the AA-T may be obtained by completing 60 transferable semester units including Cal-GETC; this reads as the standard ADT requirement, so degree_total is left null. No units are printed for Cal-GETC.",
+   "SOC 303 and SOC 495 appear only in the course descriptions, not in the degree requirements."
+  ]
+ },
+ "extracted_run": "39047009824"
+}

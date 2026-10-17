@@ -1,0 +1,659 @@
+{
+ "college": "Cosumnes River College",
+ "control_number": "17870",
+ "shape": "degree",
+ "title": "Liberal Arts - Social and Behavioral Sciences",
+ "award": "A.A. Degree",
+ "source_url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=432",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8746,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8746,
+    "output_tokens": 4618,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 4618,
+  "output_tokens_details": {
+   "thinking_tokens": 890
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.12734,
+ "ms": 32913,
+ "seconds": 33.1,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 54,
+   "listed": 79,
+   "share": 0.684,
+   "missing": [
+    "AGB321",
+    "ANTH310",
+    "ANTH316",
+    "ANTH323",
+    "ANTH324",
+    "ANTH331",
+    "ANTH332",
+    "ANTH334",
+    "ANTH341",
+    "ANTH374",
+    "BUS330",
+    "BUS345",
+    "COMM325",
+    "COMM341",
+    "COMM363",
+    "COMM480",
+    "ECE312",
+    "ECE314",
+    "ECON306",
+    "ECONC2001",
+    "ECONC2002",
+    "ETHNS300",
+    "ETHNS320",
+    "POL311259390",
+    "PSY368250840"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    18.0,
+    18.0
+   ],
+   "stated": [
+    18.0,
+    18.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Liberal Arts - Social and Behavioral Sciences Associate in Arts (A.A.) degree",
+   "measure": "units",
+   "total_units": {
+    "min": 18,
+    "max": 18
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Local General Education Pattern or California General Education Transfer Curriculum (Cal-GETC)",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": true,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required Program (course list)",
+    "rule": "choose_units",
+    "minimum": 18,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ETHNS 330",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ETHNS 360",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ETHNS 344",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOG 302",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOG 310",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOG 322",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 301",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 302",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 307",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 308",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST C1001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST C1002",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 314",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 320",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 321",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 331",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 344",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 360",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 364",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 365",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 370",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 371",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 373",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 380",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "JOUR 310",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "RTVF 300",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "JOUR 320",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHIL 360",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "POLS C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "POLS 302",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "POLS 304",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "POLS 310",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "POLS 312",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "POLS 313",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "POLS 314",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "POLS 315",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "POLS 317",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "POLS 318",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "POLS 319",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "POLS 320",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC 312",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC 320",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC 335",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC 340",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC 356",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC 371",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC 300",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC 301",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC 302",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC 305",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC 321",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC 341",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "TA 306",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "AGB 321",
+    "why": "not in the text; likely on the preceding page (431) cut from the extract"
+   },
+   {
+    "code": "ANTH 310",
+    "why": "not in the text; likely on the preceding page cut from the extract"
+   },
+   {
+    "code": "ANTH 316",
+    "why": "not in the text; likely on the preceding page cut from the extract"
+   },
+   {
+    "code": "ANTH 323",
+    "why": "not in the text; likely on the preceding page cut from the extract"
+   },
+   {
+    "code": "ANTH 324",
+    "why": "not in the text; likely on the preceding page cut from the extract"
+   },
+   {
+    "code": "ANTH 331",
+    "why": "not in the text; likely on the preceding page cut from the extract"
+   },
+   {
+    "code": "ANTH 332",
+    "why": "not in the text; likely on the preceding page cut from the extract"
+   },
+   {
+    "code": "ANTH 334",
+    "why": "not in the text; likely on the preceding page cut from the extract"
+   },
+   {
+    "code": "ANTH 341",
+    "why": "not in the text; likely on the preceding page cut from the extract"
+   },
+   {
+    "code": "ANTH 374",
+    "why": "not in the text; likely on the preceding page cut from the extract"
+   },
+   {
+    "code": "BUS 330",
+    "why": "not in the text; likely on the preceding page cut from the extract"
+   },
+   {
+    "code": "BUS 345",
+    "why": "not in the text; likely on the preceding page cut from the extract"
+   },
+   {
+    "code": "COMM 325",
+    "why": "not in the text; likely on the preceding page cut from the extract"
+   },
+   {
+    "code": "COMM 341",
+    "why": "not in the text; likely on the preceding page cut from the extract"
+   },
+   {
+    "code": "COMM 363",
+    "why": "not in the text; likely on the preceding page cut from the extract"
+   },
+   {
+    "code": "COMM 480",
+    "why": "not in the text; likely on the preceding page cut from the extract"
+   },
+   {
+    "code": "ECE 312",
+    "why": "not in the text; likely on the preceding page cut from the extract"
+   },
+   {
+    "code": "ECE 314",
+    "why": "not in the text; likely on the preceding page cut from the extract"
+   },
+   {
+    "code": "ECON 306",
+    "why": "not in the text; likely on the preceding page cut from the extract"
+   },
+   {
+    "code": "ECON C2001",
+    "why": "not in the text; likely on the preceding page cut from the extract"
+   },
+   {
+    "code": "ECON C2002",
+    "why": "not in the text; likely on the preceding page cut from the extract"
+   },
+   {
+    "code": "ETHNS 300",
+    "why": "not in the text; likely on the preceding page cut from the extract"
+   },
+   {
+    "code": "ETHNS 320",
+    "why": "not in the text; likely on the preceding page cut from the extract"
+   },
+   {
+    "code": "POL311259390",
+    "why": "not in the text; malformed code in state file (possibly a POLS International Political Economy course on the preceding page)"
+   },
+   {
+    "code": "PSY368250840",
+    "why": "not in the text; malformed code in state file (possibly a PSYC Cross Cultural Psychology course on the preceding page)"
+   }
+  ],
+  "notes": [
+   "The extract begins mid-table on page 432; the section heading, program description, the selection rule and the first part of the course list (likely ANTH, BUS, COMM, ECE, ECON, ETHNS 300/320 courses) are on page 431 and not in the text. Section heading was taken from the closing paragraph.",
+   "Block rule recorded as choose_units with minimum 18 inferred from 'Total Units: 18'; the actual instruction line (e.g., 'A minimum of 18 units from the following') is not visible and should be verified.",
+   "Some catalog titles differ from the state file (e.g., ETHNS 330 'Introduction to Asian American Studies', ETHNS 360 'Introduction to Chicana/o/x Studies', HIST 301/302 retitled, POLS 320 'Introduction to Political Theory').",
+   "Degree completion: required program plus Local GE or Cal-GETC 'plus sufficient electives for a total of at least 60 units'; recorded as electives_fill_degree true, degree_total left null as the 60-unit figure is a minimum stated generically.",
+   "No program outcomes or careers appear in the extracted text."
+  ]
+ },
+ "extracted_run": "39047009824"
+}
