@@ -1,0 +1,754 @@
+{
+ "college": "Mission College",
+ "control_number": "30681",
+ "shape": "adt",
+ "title": "Sociology",
+ "award": "A.A- T Degree",
+ "source_url": "https://mission.elumenapp.com/catalog/24-25/program/sociology-aa-t-2026fa",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8521,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8521,
+    "output_tokens": 4766,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 4766,
+  "output_tokens_details": {
+   "thinking_tokens": 1372
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.1294,
+ "ms": 35175,
+ "seconds": 35.5,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 17,
+   "listed": 17,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 51,
+   "codes": [
+    "ANT2",
+    "ANT55",
+    "CHD1",
+    "COM14",
+    "ECN6",
+    "ECONC2001",
+    "ECONC2002",
+    "ETH1A",
+    "ETH44",
+    "ETH44H",
+    "HIS15",
+    "HIS15H",
+    "HIS16",
+    "HIS16H",
+    "HIS20",
+    "HIS31",
+    "HIS33",
+    "HIS33H",
+    "HIS44",
+    "HIS44H",
+    "HIS4A",
+    "HIS4AH",
+    "HIS4B",
+    "HIS4BH",
+    "HISTC1001",
+    "HISTC1001H",
+    "HISTC1002",
+    "HISTC1002H",
+    "HUM16",
+    "HUM18",
+    "HUM18H",
+    "HUM20",
+    "HUM24",
+    "KIN81",
+    "PHI5",
+    "POL2",
+    "POL4",
+    "PSY12",
+    "PSY15",
+    "PSY15H",
+    "PSY25",
+    "PSY45",
+    "PSY7",
+    "SJS1",
+    "SJS2",
+    "SJS3",
+    "SOC50",
+    "SOC54",
+    "SOC58",
+    "SOC60",
+    "STATC1000E"
+   ],
+   "flagged": [
+    "ANT2",
+    "ANT55",
+    "CHD1",
+    "COM14",
+    "ECN6",
+    "ECONC2001",
+    "ECONC2002",
+    "ETH1A",
+    "ETH44",
+    "ETH44H",
+    "HIS15",
+    "HIS15H",
+    "HIS16",
+    "HIS16H",
+    "HIS20",
+    "HIS31",
+    "HIS33",
+    "HIS33H",
+    "HIS44",
+    "HIS44H",
+    "HIS4A",
+    "HIS4AH",
+    "HIS4B",
+    "HIS4BH",
+    "HISTC1001",
+    "HISTC1001H",
+    "HISTC1002",
+    "HISTC1002H",
+    "HUM16",
+    "HUM18",
+    "HUM18H",
+    "HUM20",
+    "HUM24",
+    "KIN81",
+    "PHI5",
+    "POL2",
+    "POL4",
+    "PSY12",
+    "PSY15",
+    "PSY15H",
+    "PSY25",
+    "PSY45",
+    "PSY7",
+    "SJS1",
+    "SJS2",
+    "SJS3",
+    "SOC50",
+    "SOC54",
+    "SOC58",
+    "SOC60",
+    "STATC1000E"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    18.0,
+    22.0
+   ],
+   "stated": [
+    18.0,
+    22.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Sociology AA-T",
+   "measure": "units",
+   "total_units": {
+    "min": 18,
+    "max": 22
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Students will utilize the basic principles of sociology to analyze the behavior of people functioning in social groups",
+    "Students will compare and contrast group dynamics in formal and informal social groups",
+    "Students will explain formal and informal rules of social behavior.",
+    "Students will relate social customs and social interactions within specific groups to analysis of how global perspectives affect United States Society."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required Core",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 9,
+     "max": 12
+    },
+    "courses": [
+     {
+      "code": "SOC001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "SOC001H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC002",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "SOC002H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "STATC1000",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "STATC1000E",
+        "units": 6,
+        "catalog_addition": true
+       },
+       {
+        "code": "STATC1000H",
+        "units": 4,
+        "catalog_addition": false
+       },
+       {
+        "code": "SOC016",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List A",
+    "rule": "choose_units",
+    "minimum": 6,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "PSY010",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC021",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC040",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC047",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSY015",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PSY015H",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "List B",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "ANT002",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ANT003",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANT055",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CHD001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "COM014",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ECONC2001",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ECONC2002",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ECN006",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ETH001A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ETH044",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ETH044H",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "HIS004A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HIS004AH",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "HIS004B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HIS004BH",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "HIS015",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HIS015H",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "HIS016",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HIS016H",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "HISTC1001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HISTC1001H",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "HISTC1002",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HISTC1002H",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "HIS020",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HIS031",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HIS033",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HIS033H",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "HIS044",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HIS044H",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "HUM016",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HUM018",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HUM018H",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "HUM020",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HUM024",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "KIN081",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PHI005",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "POL002",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "POL004",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "POLSC1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "POLSC1000H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSY007",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PSY012",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PSY025",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PSY045",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PSYCC1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PSYCC1000H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "SJS001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "SJS002",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "SJS003",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "SOC040",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC045",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC050",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "SOC054",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "SOC058",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "SOC060",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The page states the generic ADT requirements (60 CSU-transferable units, minimum 18 units in the major) as a list for all such degrees; not recorded as degree_total or total_units. The major total 18-22 is printed by the requirements table.",
+   "List B also allows 'Any course from List A not already used' (printed with 0 units); those List A courses are not repeated in List B except SOC040, which the catalog itself lists in List B.",
+   "Catalog prints duplicate rows in List B (HIS016H twice; HISTC1002 and HISTC1002H twice); recorded once each.",
+   "Honors twins in List B (e.g., ETH044/ETH044H, HIS004A/HIS004AH, POLSC1000/POLSC1000H, PSYCC1000/PSYCC1000H) recorded as alternatives. PSYCC1000H is printed without 'Honors' in its title.",
+   "Catalog codes are printed without spaces/with leading zeros (e.g., SOC001 = closed-list SOC 1, SOC016 = SOC 16, ANT003 = ANT 3); matched accordingly. PSY045 is not in the closed list (closed list has SOC 45), so flagged as addition.",
+   "Program Curriculum Changes section lists added/deleted courses (e.g., HIS 017A, ECN 001A deleted); deleted courses not recorded.",
+   "Source URL path references catalog/24-25 while the program slug says 2026fa; reviewer may want to confirm catalog year.",
+   "The single program outcomes list on the page is recorded for this award."
+  ]
+ },
+ "extracted_run": "39000023893"
+}

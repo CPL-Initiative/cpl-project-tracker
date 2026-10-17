@@ -1,0 +1,547 @@
+{
+ "college": "Mission College",
+ "control_number": "31473",
+ "shape": "adt",
+ "title": "History",
+ "award": "A.A- T Degree",
+ "source_url": "https://mission.elumenapp.com/catalog/24-25/program/history-aa-t-2026fa",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8721,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8721,
+    "output_tokens": 3570,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 3570,
+  "output_tokens_details": {
+   "thinking_tokens": 1116
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.10628,
+ "ms": 26514,
+ "seconds": 27.1,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 36,
+   "listed": 42,
+   "share": 0.857,
+   "missing": [
+    "COU55",
+    "JPN1",
+    "SPA1",
+    "SPA50A",
+    "SPA50B",
+    "VIE49B"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 9,
+   "codes": [
+    "ARB2",
+    "CHI2",
+    "ETH44",
+    "ETH44H",
+    "HIS20",
+    "HIS44",
+    "HIS44H",
+    "HUM20",
+    "HUM24"
+   ],
+   "flagged": [
+    "ARB2",
+    "CHI2",
+    "ETH44",
+    "ETH44H",
+    "HIS20",
+    "HIS44",
+    "HIS44H",
+    "HUM20",
+    "HUM24"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    18.0,
+    20.0
+   ],
+   "stated": [
+    18.0,
+    20.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "History AA-T",
+   "measure": "units",
+   "total_units": {
+    "min": 18,
+    "max": 20
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Identify major historical issues.",
+    "Define and be able to compare and contrast key historical issues and cultural assumptions.",
+    "Describe the value and positive attributes of different cultures and societies.",
+    "Identify the main participants in historical events of the culture under study.",
+    "Analyze major historical events either verbally or in writing."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required Core",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "HISTC1001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HISTC1001H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "HISTC1002",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HISTC1002H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List A",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "HIS004A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HIS004AH",
+        "units": 3,
+        "catalog_addition": false
+       },
+       {
+        "code": "HIS015",
+        "units": 3,
+        "catalog_addition": false
+       },
+       {
+        "code": "HIS015H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIS004B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HIS004BH",
+        "units": 3,
+        "catalog_addition": false
+       },
+       {
+        "code": "HIS016",
+        "units": 3,
+        "catalog_addition": false
+       },
+       {
+        "code": "HIS016H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List B Area 1: Diversity",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 5
+    },
+    "courses": [
+     {
+      "code": "ARB002",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CHI002",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HIS020",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HIS031",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIS033",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HIS033H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIS044",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HIS044H",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "HUM001A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HUM001B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HUM016",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HUM018",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HUM018H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "HUM020",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HUM022",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HUM024",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ETH044",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ETH044H",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "JPN002",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPA002",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPA003",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPA004",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List B Area 2",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "ANT003",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COM012",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HUM007",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "POLSC1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "POLSC1000H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "POL004",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "POL007",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYCC1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PSYCC1000H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "SOC001H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "COU 55",
+    "why": "not in the text"
+   },
+   {
+    "code": "JPN 1",
+    "why": "not in the text"
+   },
+   {
+    "code": "SPA 050A",
+    "why": "not in the text"
+   },
+   {
+    "code": "SPA 050B",
+    "why": "not in the text"
+   },
+   {
+    "code": "SPA 1",
+    "why": "not in the text"
+   },
+   {
+    "code": "VIE 049B",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "List B (Total 6-8) requires one course from each area; recorded as two blocks (Area 1 and Area 2), each choose 1 course.",
+   "Area 1 also allows 'Any course from List A not yet used'; those List A courses are not repeated in the Area 1 block.",
+   "Catalog prints codes without spaces (e.g., HIS004A, HIS015); matched to closed-list codes HIS 004A, HIS 15, etc.",
+   "HIS044/HIS044H and ETH044/ETH044H (African American History) appear to be cross-listed; recorded as separate entries.",
+   "The 60-unit requirement is the generic ADT requirement, not recorded as degree_total; no Cal-GETC unit figure printed.",
+   "The source URL path references catalog 24-25 while the program slug indicates 2026FA; reviewer should confirm catalog year.",
+   "Program Outcomes printed for the program as a whole; recorded for this award."
+  ]
+ },
+ "extracted_run": "39000023893"
+}

@@ -1,0 +1,352 @@
+{
+ "college": "Mission College",
+ "control_number": "44504",
+ "shape": "adt",
+ "title": "Communication Studies 2.0",
+ "award": "A.A- T Degree",
+ "source_url": "https://mission.elumenapp.com/catalog/24-25/program/communication-studies-2-0-aa-t-2026fa",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7552,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7552,
+    "output_tokens": 3011,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 3011,
+  "output_tokens_details": {
+   "thinking_tokens": 1296
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.09043,
+ "ms": 25368,
+ "seconds": 25.9,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 14,
+   "listed": 16,
+   "share": 0.875,
+   "missing": [
+    "COM8",
+    "ENG1B"
+   ],
+   "unexplained": [
+    "COM8"
+   ],
+   "none_placed": false,
+   "pass": false
+  },
+  "invented": {
+   "count": 5,
+   "codes": [
+    "COM10",
+    "COM18",
+    "COM18H",
+    "ENGLC1003",
+    "POLSC1000H"
+   ],
+   "flagged": [
+    "COM10",
+    "COM18H",
+    "ENGLC1003",
+    "POLSC1000H"
+   ],
+   "pass": false
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    18.0,
+    18.0
+   ],
+   "stated": [
+    60.0,
+    60.0
+   ],
+   "against": "degree",
+   "ge": null,
+   "why": [
+    "the record names the degree total and the Cal-GETC pattern, but no units for it"
+   ],
+   "major": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     18.0,
+     18.0
+    ],
+    "stated": [
+     18.0,
+     18.0
+    ],
+    "against": "program",
+    "why": []
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 8,
+   "courses": 0,
+   "count": 8,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Communication Studies 2.0 AA-T",
+   "measure": "units",
+   "total_units": {
+    "min": 18,
+    "max": 18
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Create and implement effective communication strategies to orally deliver a message appropriate to the context.",
+    "Identify, analyze, and evaluate their own verbal and nonverbal messages as well as those of others in a variety of contexts.",
+    "Identify, explain, and apply theories about the communication process as they relate to a variety of audiences and contexts.",
+    "Research, analyze, and critically evaluate reference material to support the development of communication competence.",
+    "Students will identify, explain, and apply theories about the communication process as they relate to a variety of audiences and contexts.",
+    "Students will create and implement effective communication strategies to orally deliver a message appropriate to the context.",
+    "Students will identify, analyze, and evaluate their own verbal and nonverbal messages as well as those of others in a variety of contexts.",
+    "Students will research, analyze, and critically evaluate reference material to support the development of communication competence."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Core Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "COMMC1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "COMMC1000H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "COM018",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "COM018H",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List A",
+    "rule": "choose_units",
+    "minimum": 9,
+    "option_group": null,
+    "stated": {
+     "min": 9,
+     "max": 9
+    },
+    "courses": [
+     {
+      "code": "COM012",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COM014",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COM020",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "COM020H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "POLSC1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "POLSC1000H",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List B",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "ANT003",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COM010",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "COM015",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGLC1003",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ENGLC1001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYCC1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PSYCC1000H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "SOC001H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ENG 001B",
+    "why": "not in the text; Program Curriculum Changes says it was deleted from the course block (replaced by ENGL C1003)"
+   }
+  ],
+  "notes": [
+   "degree_total 60 taken from the description sentence 'is a 60-unit program' for this AA-T; no units printed for Cal-GETC, so ge_units is null.",
+   "COM018 (Improving Communication in Interpersonal Relationships) is matched to closed-list 'COM 8', which has the same title; reviewer should confirm the code mismatch (possible truncation of COM 18 in the state file).",
+   "List B also allows 'Any List A course not already used'; those List A courses are not repeated in the List B block.",
+   "PSYCC1000H is printed with title 'Introduction to Psychology' (no 'Honors'); treated as the honors twin of PSYCC1000.",
+   "Two outcome lists are printed: one under 'Program Outcomes' and a second, same in substance, under 'Communications Studies, Associate in Arts for Transfer'; both recorded. The 'rr' prefix on the second list appears to be a bullet glyph artifact and was left out.",
+   "Source URL is under the 24-25 catalog path but the program code indicates 2026FA; check catalog year.",
+   "Catalog prints codes without spaces (e.g., COMMC1000, POLSC1000H); recorded as printed."
+  ]
+ },
+ "extracted_run": "39000023893"
+}

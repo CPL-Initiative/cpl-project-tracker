@@ -1,0 +1,329 @@
+{
+ "college": "Mission College",
+ "control_number": "41321",
+ "shape": "certificate",
+ "title": "User Experience and Interface Design",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://mission.elumenapp.com/catalog/24-25/program/user-experience-and-interface-design-ca-2026fa",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7390,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7390,
+    "output_tokens": 2881,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2881,
+  "output_tokens_details": {
+   "thinking_tokens": 1157
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.08718,
+ "ms": 23414,
+ "seconds": 23.9,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 15,
+   "listed": 15,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 2,
+   "codes": [
+    "GDS11",
+    "GDS64"
+   ],
+   "flagged": [
+    "GDS11",
+    "GDS64"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    18.0,
+    18.0
+   ],
+   "stated": [
+    18.0,
+    18.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 19,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "User Experience and Interface Design CA",
+   "measure": "units",
+   "total_units": {
+    "min": 18,
+    "max": 18
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Students will be able to identify, explain, and apply advanced User Experience and Interaction Design principles such as universal design, user research, heuristic analysis, personas, information architecture, storyboarding, user task flows, journey maps, prototyping, principles of interface design, and common UI design patterns.",
+    "Students will be able to generate comprehensive documentation related to a UX business strategy and goals, user research, personas, application features and specifications, site and journey maps, storyboards, wireframes and prototypes.",
+    "Students will apply the technical concepts and best practices used in user experience design, interaction design, and interface design to develop designs, assets, and functional prototype(s) for web, mobile, and other applications at an intermediate level."
+   ],
+   "careers": [
+    "entry level user experience designers",
+    "user interface and interaction designers",
+    "user researchers",
+    "information architects",
+    "digital media designers",
+    "content developers",
+    "website design and development",
+    "marketing presentation design",
+    "interactive learning product design",
+    "virtual & augmented reality design",
+    "user research and usability testing",
+    "web design",
+    "user experience design",
+    "interaction design",
+    "interface design",
+    "information architecture",
+    "visual design",
+    "content strategy",
+    "mobile design"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Core Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 12,
+     "max": 12
+    },
+    "courses": [
+     {
+      "code": "GDS070",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GDS077",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GDS072",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "GDS076",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Electives",
+    "rule": "choose_units",
+    "minimum": 9,
+    "option_group": null,
+    "stated": {
+     "min": 9,
+     "max": 9
+    },
+    "courses": [
+     {
+      "code": "GDS010",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GDS072",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GDS076",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GDS064",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "GDS062",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GDS035",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GDS065",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GDS085",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GDS081",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GDS049",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART031A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART033A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GDS055A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GDS011",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "GDS061",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Core Requirements prints (Total 12) but its courses sum to 9 (GDS070 3 + GDS077 3 + one of GDS072/GDS076 3); with Electives (Total 9) the program total of 18 matches 9 + 9, so the core's printed 12 appears inconsistent.",
+   "The nested 'Complete GDS072 or GDS076' row prints 0 units; recorded as one core entry GDS072 with GDS076 as its alternative.",
+   "GDS072 and GDS076 also appear in the Electives list; presumably the one not used for the core may count as an elective.",
+   "Description calls the certificate 'User Experience and Interaction Design' while the heading says 'User Experience and Interface Design CA'.",
+   "Source URL path shows catalog/24-25 while the program code suggests 2026FA; verify catalog year.",
+   "GDS049 printed as 'WordPress and Content Management Systems'; closed list title is 'Jquery, Wordpress and Content Management Systems'.",
+   "Curriculum change notes mention GDS 084 and GDS 047 removed from electives; not recorded.",
+   "Careers include 'Other examples where students might find employment' areas from the description; reviewer may wish to verify those entries."
+  ]
+ },
+ "extracted_run": "39000023893"
+}
