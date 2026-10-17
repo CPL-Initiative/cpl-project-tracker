@@ -966,6 +966,15 @@ try:
           "reconcile: a filed record with fresh text is reconciled, rescored (30 + 6 + GE 24 = 60) and stamped with the run")
     check(kept_r["extracted_run"] == 38442109713 and "reconciled" not in kept_r,
           "reconcile: a filed record with no fresh page is filed again as it was")
+    # A record the steps leave alone but the scorer now reads differently carries the run too,
+    # or step=reread keeps the loaded row's old checks (LA City and Pierce, S403: 0 replaced).
+    json.dump({"control_number": "06999", "award": "A.S. Degree", "closed_list": [{"code": "ASTRO 3", "units": 30}],
+               "text": "Astronomy\nASTRO 3 Stars 30"}, open(os.path.join(outd, "sources", "06999.json"), "w"))
+    C.reconcile_filed("Cabrillo College", outd, "38700000001", keep)
+    rs = json.load(open(os.path.join(outd, "records", "06999.json")))
+    check("reconciled" not in rs and rs["score"] != other["score"] and rs["extracted_run"] == 38700000001
+          and rs["read_run"] == 38442109713,
+          "reconcile: a record rescored with no reconcile step is stamped with the run, so step=reread posts it")
 finally:
     shutil.rmtree(rcd, ignore_errors=True)
 

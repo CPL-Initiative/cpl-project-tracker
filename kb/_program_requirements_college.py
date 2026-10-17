@@ -2116,7 +2116,7 @@ def reconcile_filed(college: str, out_dir: str, run_id: str | None, keep_from: s
     """A reconcile run (step=reconcile, no model call): every filed record goes to
     out/records, and each one whose page the capture read again is reconciled with
     the fresh text (kb/_program_requirements_reconcile.py) and rescored. A record
-    that changed carries the run as its extracted_run, its notes as reconciled and
+    that changed, or only scored differently, carries the run as its extracted_run, its notes as reconciled and
     the run it was read by as read_run, so step=reread posts it and only it."""
     import _program_requirements_reconcile as R
     import _program_requirements_score as S
@@ -2145,10 +2145,13 @@ def reconcile_filed(college: str, out_dir: str, run_id: str | None, keep_from: s
                       ", ".join(n["field"] for n in notes), a.get("status")), flush=True)
             else:
                 # The scorer may have learned a reading since (East LA's spaced hyphens, S403):
-                # the fresh page rescores the record, and its requirements stay as read.
+                # the fresh page rescores the record, and its requirements stay as read. A new
+                # score carries the run too, or step=reread keeps the loaded row's old checks
+                # (LA City and Pierce, rereads 39018310349 and 39018312320: 0 replaced).
                 fresh = S.score(rec, src["closed_list"], src["text"], filed.get("award") or src.get("award"))
                 if fresh != filed.get("score"):
-                    filed = dict(filed, score=fresh)
+                    filed = dict(filed, score=fresh, read_run=filed.get("extracted_run"),
+                                 extracted_run=int(run_id) if str(run_id or "").isdigit() else run_id)
                     rescored += 1
         elif not src:
             unread += 1
