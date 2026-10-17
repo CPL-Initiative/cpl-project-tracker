@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "written_at": "2026-10-17T00:02:36Z",
+  "written_at": "2026-10-17T00:42:44Z",
   "session": 401,
   "moniker": "SkyManzanita",
   "run": "Sam's session",
@@ -65158,8 +65158,8 @@
     }
   ],
   "next_step": {
-    "title": "Finish the readers' rereads, then a second wave build",
-    "text": "Merge the Las Positas and Los Medanos reader fixes, load Butte's reread, extract Lake Tahoe, Marin, Las Positas and Los Medanos once their reads find most programs, then build their display in one wave."
+    "title": "Load the finished rereads, then a second wave build",
+    "text": "Confirm Lake Tahoe and Marin's loads, load Butte and Las Positas when their rereads file, then build their display in one wave; Los Medanos's reader still finds 7 of 97."
   },
   "calls": [],
   "notes": {
@@ -65189,6 +65189,18 @@
     {
       "at": "2026-10-16T23:58:00Z",
       "text": "The display build of 9,325 programs merged and its apply started from main."
+    },
+    {
+      "at": "2026-10-17T00:05:00Z",
+      "text": "The curriQunet reader now reads Las Positas's award after the name's last comma; its reread started."
+    },
+    {
+      "at": "2026-10-17T00:23:00Z",
+      "text": "The eLumen reader now reads a section's own menu; Los Medanos still finds 7 of 97."
+    },
+    {
+      "at": "2026-10-17T00:42:00Z",
+      "text": "Lake Tahoe and Marin extracted, 78 and 89 programs found, and their loads started."
     }
   ],
   "headline": [
