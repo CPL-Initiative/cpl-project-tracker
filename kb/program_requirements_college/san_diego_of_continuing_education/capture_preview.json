@@ -1,0 +1,2602 @@
+{
+ "college": "San Diego College of Continuing Education",
+ "catalog_url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf",
+ "platform": "pdf",
+ "catalog_year": "2026-2027",
+ "programs": 144,
+ "with_closed_list": 120,
+ "started": "2026-10-17T12:58:58Z",
+ "pdf": {
+  "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf",
+  "access": "ok",
+  "status": 200,
+  "bytes": 6232956,
+  "pages_total": 144,
+  "error": null,
+  "chars_total": 505825,
+  "pypdf_accepted": 109,
+  "sample": [
+   "p44: 'Automotive\\n44          San Diego College of Continuing eDuCation • 2026-2027\\nCertificate of Completion:\\nAutomotive Technician\\nThe goals of the Automotive Technician program \\nare to provide training in skills necessary for entry-\\nlevel emplo'",
+   "p87: ' \\nSan Diego College of Continuing eDuCation • 2026-2027          87\\nof how each system within an automobile works.  \\nStudents learn how to operate basic hand, power, \\nand lifting tools as well as the major measuring \\ninstruments and devices'"
+  ],
+  "extractor": "pypdf",
+  "picks": [
+   {
+    "control_number": "24081",
+    "pages": [
+     45
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 45] Automotive San Diego College of Continuing eDuCation • 2026-2027 45 Certificate of Completion: Combined Upholstery Trades The auto upholstery and furniture upholstery program at ECC is a training pro"
+   },
+   {
+    "control_number": "24101",
+    "pages": [
+     74
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.6,
+    "opens": "[page 74] Information Technology 74 San Diego College of Continuing eDuCation • 2026-2027 Certificate of Completion: AWS Cloud Solutions The AWS Cloud Solutions program provides students with the knowledge and "
+   },
+   {
+    "control_number": "24143",
+    "pages": [
+     67,
+     68
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 67] Healthcare Careers San Diego College of Continuing eDuCation • 2026-2027 67 Certificate of Completion: Introduction to Healthcare Careers This program provides an introductory overview of the healthc"
+   },
+   {
+    "control_number": "24148",
+    "pages": [
+     74
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 74] Information Technology 74 San Diego College of Continuing eDuCation • 2026-2027 Certificate of Completion: AWS Cloud Solutions The AWS Cloud Solutions program provides students with the knowledge and "
+   },
+   {
+    "control_number": "24236",
+    "pages": [
+     118,
+     119
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.75,
+    "opens": "[page 118] 118 San Diego College of Continuing eDuCation • 2026-2027 Optical Technician 2 HL TH 615 Non-Fee Advisory: HLTH 614 with a Grade of “C” or better, or equivalent. The Optical Technician 2 course "
+   },
+   {
+    "control_number": "24237",
+    "pages": [
+     54
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 54] Clothing & Textiles 54 San Diego College of Continuing eDuCation • 2026-2027 crucial for the workplace. Graduates are prepared for diverse roles in the cut and sew industry, such as advanced construc"
+   },
+   {
+    "control_number": "24238",
+    "pages": [
+     118,
+     119
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.75,
+    "opens": "[page 118] 118 San Diego College of Continuing eDuCation • 2026-2027 Optical Technician 2 HL TH 615 Non-Fee Advisory: HLTH 614 with a Grade of “C” or better, or equivalent. The Optical Technician 2 course "
+   },
+   {
+    "control_number": "24241",
+    "pages": [
+     43
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 43] San Diego College of Continuing eDuCation • 2026-2027 43 Air Conditioning and Heating Certificate Programs Air Conditioning/Heating Certificate of Completion: Air Conditioning/Heating The Air Conditio"
+   },
+   {
+    "control_number": "24279",
+    "pages": [
+     72
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 72] Hospitality & Culinary Arts 72 San Diego College of Continuing eDuCation • 2026-2027 confectionary store, or starting their own cottage industry business. Required Courses FDNT 663 Advanced Pastries a"
+   },
+   {
+    "control_number": "24306",
+    "pages": [
+     76,
+     77
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.5,
+    "opens": "[page 76] Information Technology 76 San Diego College of Continuing eDuCation • 2026-2027 Certificate of Completion: Desktop Technician The Desktop Technician program prepares students for careers in computer a"
+   },
+   {
+    "control_number": "24313",
+    "pages": [
+     131,
+     132
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": false,
+    "coverage": 0.6,
+    "opens": "[page 131] San Diego College of Continuing eDuCation • 2026-2027 131 will prepare students to use an email software application in a business environment. (FT) Google Applications OFSY 531 Non-Fee This course"
+   },
+   {
+    "control_number": "24332",
+    "pages": [
+     44
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 44] Automotive 44 San Diego College of Continuing eDuCation • 2026-2027 Certificate of Completion: Automotive Technician The goals of the Automotive Technician program are to provide training in skills ne"
+   },
+   {
+    "control_number": "24333",
+    "pages": [
+     45
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 45] Automotive San Diego College of Continuing eDuCation • 2026-2027 45 Certificate of Completion: Combined Upholstery Trades The auto upholstery and furniture upholstery program at ECC is a training pro"
+   },
+   {
+    "control_number": "24419",
+    "pages": [
+     70,
+     71
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.964,
+    "opens": "[page 70] High School Diploma, High School Equivalency & Basic Skills 70 San Diego College of Continuing eDuCation • 2026-2027 ABED 441 Basic Education, Language Arts, Beginning Level ABED 443 Basic Education, "
+   },
+   {
+    "control_number": "30772",
+    "pages": [
+     63
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 63] English as a Second Language San Diego College of Continuing eDuCation • 2026-2027 63 Certificate of Competency: Advanced Prevocational ESL The Advanced Prevocational ESL program equips students with"
+   },
+   {
+    "control_number": "30773",
+    "pages": [
+     65
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 65] English as a Second Language San Diego College of Continuing eDuCation • 2026-2027 65 and oral communications. Instruction focuses on pronunciation and application of grammar knowledge in writing and"
+   },
+   {
+    "control_number": "30789",
+    "pages": [
+     62,
+     63
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 62] English as a Second Language 62 San Diego College of Continuing eDuCation • 2026-2027 Required Courses COMM 660 Visual Design COMM 661 Vector Design Certificate of Completion: Web Design and Content M"
+   },
+   {
+    "control_number": "30790",
+    "pages": [
+     44
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 44] Automotive 44 San Diego College of Continuing eDuCation • 2026-2027 Certificate of Completion: Automotive Technician The goals of the Automotive Technician program are to provide training in skills ne"
+   },
+   {
+    "control_number": "31482",
+    "pages": [
+     25
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 25] San Diego College of Continuing eDuCation • 2026-2027 25 Welcome to San Diego College of Continuing Education San Diego College of Continuing Education (SDCCE) to College CTE (Career Technical Educati"
+   },
+   {
+    "control_number": "31483",
+    "pages": [
+     80
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 80] Skilled & Technical Trades 80 San Diego College of Continuing eDuCation • 2026-2027 program requires completion of INDT 631 and INDT 632. These courses include instruction in the reading and interpre"
+   },
+   {
+    "control_number": "31484",
+    "pages": [
+     78,
+     79
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 78] Skilled & Technical Trades 78 San Diego College of Continuing eDuCation • 2026-2027 Required Courses COMP 640 Windows Operating Systems COMP 642 Server Admin Fundamentals Skilled & Technical Trades Ce"
+   },
+   {
+    "control_number": "31486",
+    "pages": [
+     79
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 79] Skilled & Technical Trades San Diego College of Continuing eDuCation • 2026-2027 79 Required Courses INDT 605 Gas Metal Arc Welding INDT 606 Flux-Cored Arc Welding Certificate of Completion: Gas Tungst"
+   },
+   {
+    "control_number": "31487",
+    "pages": [
+     80
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 80] Skilled & Technical Trades 80 San Diego College of Continuing eDuCation • 2026-2027 program requires completion of INDT 631 and INDT 632. These courses include instruction in the reading and interpre"
+   },
+   {
+    "control_number": "32671",
+    "pages": [
+     48,
+     49
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 48] Business, Accounting and Entrepreneurship 48 San Diego College of Continuing eDuCation • 2026-2027 Required Courses BUSN 621 Project Management I BUSN 622 Project Management II BUSN 623 Project Managem"
+   },
+   {
+    "control_number": "33135",
+    "pages": [
+     59
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 59] Digital Media & Programming San Diego College of Continuing eDuCation • 2026-2027 59 their education and earn a degree as employers typically require a bachelor’s degree as the minimum educational re"
+   },
+   {
+    "control_number": "33136",
+    "pages": [
+     59
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 59] Digital Media & Programming San Diego College of Continuing eDuCation • 2026-2027 59 their education and earn a degree as employers typically require a bachelor’s degree as the minimum educational re"
+   },
+   {
+    "control_number": "33403",
+    "pages": [
+     76
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 76] Information Technology 76 San Diego College of Continuing eDuCation • 2026-2027 Certificate of Completion: Desktop Technician The Desktop Technician program prepares students for careers in computer a"
+   },
+   {
+    "control_number": "33750",
+    "pages": [
+     76
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.5,
+    "opens": "[page 76] Information Technology 76 San Diego College of Continuing eDuCation • 2026-2027 Certificate of Completion: Desktop Technician The Desktop Technician program prepares students for careers in computer a"
+   },
+   {
+    "control_number": "33783",
+    "pages": [
+     76,
+     77
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 76] Information Technology 76 San Diego College of Continuing eDuCation • 2026-2027 Certificate of Completion: Desktop Technician The Desktop Technician program prepares students for careers in computer a"
+   },
+   {
+    "control_number": "33867",
+    "pages": [
+     77
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 77] Information Technology San Diego College of Continuing eDuCation • 2026-2027 77 Certificate of Completion: Security Essentials The Security Essentials program is designed to provide students with comp"
+   },
+   {
+    "control_number": "33869",
+    "pages": [
+     76,
+     77
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 76] Information Technology 76 San Diego College of Continuing eDuCation • 2026-2027 Certificate of Completion: Desktop Technician The Desktop Technician program prepares students for careers in computer a"
+   },
+   {
+    "control_number": "35139",
+    "pages": [
+     49
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 49] Business, Accounting and Entrepreneurship San Diego College of Continuing eDuCation • 2026-2027 49 also serves as a foundation for small business management, project management, and business sales. R"
+   },
+   {
+    "control_number": "35140",
+    "pages": [
+     76
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.5,
+    "opens": "[page 76] Information Technology 76 San Diego College of Continuing eDuCation • 2026-2027 Certificate of Completion: Desktop Technician The Desktop Technician program prepares students for careers in computer a"
+   },
+   {
+    "control_number": "35838",
+    "pages": [
+     47
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": false,
+    "coverage": 0.6,
+    "opens": "[page 47] Business, Accounting and Entrepreneurship San Diego College of Continuing eDuCation • 2026-2027 47 and an overview of employee responsibilities and employer expectations. Topics include business voca"
+   },
+   {
+    "control_number": "35841",
+    "pages": [
+     45
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 45] Automotive San Diego College of Continuing eDuCation • 2026-2027 45 Certificate of Completion: Combined Upholstery Trades The auto upholstery and furniture upholstery program at ECC is a training pro"
+   },
+   {
+    "control_number": "35966",
+    "pages": [
+     46
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 46] Business, Accounting and Entrepreneurship 46 San Diego College of Continuing eDuCation • 2026-2027 Business, Accounting and Entrepreneurship Certificate Programs Account Clerk Program Administrative"
+   },
+   {
+    "control_number": "35967",
+    "pages": [
+     47
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 47] Business, Accounting and Entrepreneurship San Diego College of Continuing eDuCation • 2026-2027 47 and an overview of employee responsibilities and employer expectations. Topics include business voca"
+   },
+   {
+    "control_number": "35968",
+    "pages": [
+     47
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 47] Business, Accounting and Entrepreneurship San Diego College of Continuing eDuCation • 2026-2027 47 and an overview of employee responsibilities and employer expectations. Topics include business voca"
+   },
+   {
+    "control_number": "36588",
+    "pages": [
+     64
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 64] English as a Second Language 64 San Diego College of Continuing eDuCation • 2026-2027 communication skills, reading skills, vocabulary development and grammatical competence. Development of critical "
+   },
+   {
+    "control_number": "36887",
+    "pages": [
+     65
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 65] English as a Second Language San Diego College of Continuing eDuCation • 2026-2027 65 and oral communications. Instruction focuses on pronunciation and application of grammar knowledge in writing and"
+   },
+   {
+    "control_number": "36895",
+    "pages": [
+     75
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 75] Information Technology San Diego College of Continuing eDuCation • 2026-2027 75 Certificate of Completion: Cloud Solutions AWS- Specialty Security The Cloud Solutions AWS-Specialty Security certificat"
+   },
+   {
+    "control_number": "36896",
+    "pages": [
+     75
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 75] Information Technology San Diego College of Continuing eDuCation • 2026-2027 75 Certificate of Completion: Cloud Solutions AWS- Specialty Security The Cloud Solutions AWS-Specialty Security certificat"
+   },
+   {
+    "control_number": "37546",
+    "pages": [
+     65
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 65] English as a Second Language San Diego College of Continuing eDuCation • 2026-2027 65 and oral communications. Instruction focuses on pronunciation and application of grammar knowledge in writing and"
+   },
+   {
+    "control_number": "37828",
+    "pages": [
+     65
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 65] English as a Second Language San Diego College of Continuing eDuCation • 2026-2027 65 and oral communications. Instruction focuses on pronunciation and application of grammar knowledge in writing and"
+   },
+   {
+    "control_number": "38005",
+    "pages": [
+     66
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 66] Healthcare Careers 66 San Diego College of Continuing eDuCation • 2026-2027 Certificate of Competency: Intermediate High Prevocational ESL The Intermediate High Prevocational ESL program further deve"
+   },
+   {
+    "control_number": "38411",
+    "pages": [
+     27
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 27] San Diego College of Continuing eDuCation • 2026-2027 27 Welcome to San Diego College of Continuing Education San Diego College of Continuing Education (SDCCE) to College CTE (Career Technical Educati"
+   },
+   {
+    "control_number": "38412",
+    "pages": [
+     27
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 27] San Diego College of Continuing eDuCation • 2026-2027 27 Welcome to San Diego College of Continuing Education San Diego College of Continuing Education (SDCCE) to College CTE (Career Technical Educati"
+   },
+   {
+    "control_number": "38693",
+    "pages": [
+     68
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 68] Healthcare Careers 68 San Diego College of Continuing eDuCation • 2026-2027 Certificate of Completion: Nurse Assistant in Behavioral Health The Nurse Assistant in Behavioral Health Program provides s"
+   },
+   {
+    "control_number": "38694",
+    "pages": [
+     68
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 68] Healthcare Careers 68 San Diego College of Continuing eDuCation • 2026-2027 Certificate of Completion: Nurse Assistant in Behavioral Health The Nurse Assistant in Behavioral Health Program provides s"
+   },
+   {
+    "control_number": "38695",
+    "pages": [
+     67,
+     68
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 67] Healthcare Careers San Diego College of Continuing eDuCation • 2026-2027 67 Certificate of Completion: Introduction to Healthcare Careers This program provides an introductory overview of the healthc"
+   },
+   {
+    "control_number": "38720",
+    "pages": [
+     65
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 65] English as a Second Language San Diego College of Continuing eDuCation • 2026-2027 65 and oral communications. Instruction focuses on pronunciation and application of grammar knowledge in writing and"
+   },
+   {
+    "control_number": "39186",
+    "pages": [
+     61
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 61] Digital Media & Programming San Diego College of Continuing eDuCation • 2026-2027 61 Certificate of Completion: Motion and Video Production The Motion and Video Production program is designed to prov"
+   },
+   {
+    "control_number": "39187",
+    "pages": [
+     58
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 58] Digital Media & Programming 58 San Diego College of Continuing eDuCation • 2026-2027 Certificate of Completion: Data Management with Python The Data Management with Python program teaches the basic c"
+   },
+   {
+    "control_number": "39640",
+    "pages": [
+     69
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 69] High School Diploma, High School Equivalency & Basic Skills San Diego College of Continuing eDuCation • 2026-2027 69 Certificate of Completion: Optical Technician The Optical Technician program trains "
+   },
+   {
+    "control_number": "39700",
+    "pages": [
+     73,
+     74,
+     75
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 73] Information Technology San Diego College of Continuing eDuCation • 2026-2027 73 bodily processes. Students will learn basic nutrition principles and explore how to apply these in a variety pf dishes "
+   },
+   {
+    "control_number": "39774",
+    "pages": [
+     27
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 27] San Diego College of Continuing eDuCation • 2026-2027 27 Welcome to San Diego College of Continuing Education San Diego College of Continuing Education (SDCCE) to College CTE (Career Technical Educati"
+   },
+   {
+    "control_number": "39924",
+    "pages": [
+     50,
+     51,
+     52
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 50] Child Development 50 San Diego College of Continuing eDuCation • 2026-2027 Child Development Certificate Programs Child Care Provider Training Child Home Care Training Early Learner Development Early "
+   },
+   {
+    "control_number": "39925",
+    "pages": [
+     50,
+     51,
+     52
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 50] Child Development 50 San Diego College of Continuing eDuCation • 2026-2027 Child Development Certificate Programs Child Care Provider Training Child Home Care Training Early Learner Development Early "
+   },
+   {
+    "control_number": "39926",
+    "pages": [
+     50
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 50] Child Development 50 San Diego College of Continuing eDuCation • 2026-2027 Child Development Certificate Programs Child Care Provider Training Child Home Care Training Early Learner Development Early "
+   },
+   {
+    "control_number": "39927",
+    "pages": [
+     26
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 26] 26 San Diego College of Continuing eDuCation •2026-2027 Welcome to San Diego College of Continuing Education San Diego College of Continuing Education (SDCCE) to College CTE (Career Technical Educatio"
+   },
+   {
+    "control_number": "39928",
+    "pages": [
+     51
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 51] Child Development San Diego College of Continuing eDuCation • 2026-2027 51 Upon successful completion of the program, the student will be prepared to lead activities at home and in the workplace with"
+   },
+   {
+    "control_number": "39929",
+    "pages": [
+     51
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 51] Child Development San Diego College of Continuing eDuCation • 2026-2027 51 Upon successful completion of the program, the student will be prepared to lead activities at home and in the workplace with"
+   },
+   {
+    "control_number": "39930",
+    "pages": [
+     51,
+     52
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 51] Child Development San Diego College of Continuing eDuCation • 2026-2027 51 Upon successful completion of the program, the student will be prepared to lead activities at home and in the workplace with"
+   },
+   {
+    "control_number": "39936",
+    "pages": [
+     62
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 62] English as a Second Language 62 San Diego College of Continuing eDuCation • 2026-2027 Required Courses COMM 660 Visual Design COMM 661 Vector Design Certificate of Completion: Web Design and Content M"
+   },
+   {
+    "control_number": "40118",
+    "pages": [
+     29
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 29] San Diego College of Continuing eDuCation • 2026-2027 29 Welcome to San Diego College of Continuing Education San Diego College of Continuing Education (SDCCE) to College CTE (Career Technical Educati"
+   },
+   {
+    "control_number": "40119",
+    "pages": [
+     29
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 29] San Diego College of Continuing eDuCation • 2026-2027 29 Welcome to San Diego College of Continuing Education San Diego College of Continuing Education (SDCCE) to College CTE (Career Technical Educati"
+   },
+   {
+    "control_number": "40120",
+    "pages": [
+     73
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": false,
+    "coverage": 1.0,
+    "opens": "[page 73] Information Technology San Diego College of Continuing eDuCation • 2026-2027 73 bodily processes. Students will learn basic nutrition principles and explore how to apply these in a variety pf dishes "
+   },
+   {
+    "control_number": "40123",
+    "pages": [
+     73
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 73] Information Technology San Diego College of Continuing eDuCation • 2026-2027 73 bodily processes. Students will learn basic nutrition principles and explore how to apply these in a variety pf dishes "
+   },
+   {
+    "control_number": "40469",
+    "pages": [
+     64
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 64] English as a Second Language 64 San Diego College of Continuing eDuCation • 2026-2027 communication skills, reading skills, vocabulary development and grammatical competence. Development of critical "
+   },
+   {
+    "control_number": "40470",
+    "pages": [
+     63
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 63] English as a Second Language San Diego College of Continuing eDuCation • 2026-2027 63 Certificate of Competency: Advanced Prevocational ESL The Advanced Prevocational ESL program equips students with"
+   },
+   {
+    "control_number": "40471",
+    "pages": [
+     66
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 66] Healthcare Careers 66 San Diego College of Continuing eDuCation • 2026-2027 Certificate of Competency: Intermediate High Prevocational ESL The Intermediate High Prevocational ESL program further deve"
+   },
+   {
+    "control_number": "40472",
+    "pages": [
+     63
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 63] English as a Second Language San Diego College of Continuing eDuCation • 2026-2027 63 Certificate of Competency: Advanced Prevocational ESL The Advanced Prevocational ESL program equips students with"
+   },
+   {
+    "control_number": "40474",
+    "pages": [
+     70
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 70] High School Diploma, High School Equivalency & Basic Skills 70 San Diego College of Continuing eDuCation • 2026-2027 ABED 441 Basic Education, Language Arts, Beginning Level ABED 443 Basic Education, "
+   },
+   {
+    "control_number": "40475",
+    "pages": [
+     70
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 70] High School Diploma, High School Equivalency & Basic Skills 70 San Diego College of Continuing eDuCation • 2026-2027 ABED 441 Basic Education, Language Arts, Beginning Level ABED 443 Basic Education, "
+   },
+   {
+    "control_number": "40516",
+    "pages": [
+     90
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 90] 90 San Diego College of Continuing eDuCation • 2026-2027 Project Management III BUSN 623 Non-Fee Advisory: Successful completion of BUSN 621 Project Management I and BUSN 622 Project Management II, "
+   },
+   {
+    "control_number": "40517",
+    "pages": [
+     53
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": false,
+    "coverage": 1.0,
+    "opens": "[page 53] Clothing & Textiles San Diego College of Continuing eDuCation • 2026-2027 53 necessary to foster a successful transition to credit institutions and/or further study in the field of child development."
+   },
+   {
+    "control_number": "40532",
+    "pages": [
+     113
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 113] San Diego College of Continuing eDuCation • 2026-2027 113 This course develops students’ reading skills at intermediate and advanced ESL levels with an emphasis on vocabulary development, reading "
+   },
+   {
+    "control_number": "41451",
+    "pages": [
+     60
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 60] Digital Media & Programming 60 San Diego College of Continuing eDuCation • 2026-2027 Enrollment To learn more about this certificate and for enrollment instructions, visit https://sdcce.edu/job- train"
+   },
+   {
+    "control_number": "41468",
+    "pages": [
+     70,
+     71
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 70] High School Diploma, High School Equivalency & Basic Skills 70 San Diego College of Continuing eDuCation • 2026-2027 ABED 441 Basic Education, Language Arts, Beginning Level ABED 443 Basic Education, "
+   },
+   {
+    "control_number": "41595",
+    "pages": [
+     53
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 53] Clothing & Textiles San Diego College of Continuing eDuCation • 2026-2027 53 necessary to foster a successful transition to credit institutions and/or further study in the field of child development."
+   },
+   {
+    "control_number": "41623",
+    "pages": [
+     52
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 52] Child Development 52 San Diego College of Continuing eDuCation • 2026-2027 regulations related to teaching children with disabilities. Program instruction focuses on understanding terminology and app"
+   },
+   {
+    "control_number": "41626",
+    "pages": [
+     60
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": false,
+    "coverage": 1.0,
+    "opens": "[page 60] Digital Media & Programming 60 San Diego College of Continuing eDuCation • 2026-2027 Enrollment To learn more about this certificate and for enrollment instructions, visit https://sdcce.edu/job- train"
+   },
+   {
+    "control_number": "42016",
+    "pages": [
+     64,
+     65
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 64] English as a Second Language 64 San Diego College of Continuing eDuCation • 2026-2027 communication skills, reading skills, vocabulary development and grammatical competence. Development of critical "
+   },
+   {
+    "control_number": "42155",
+    "pages": [
+     48
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 48] Business, Accounting and Entrepreneurship 48 San Diego College of Continuing eDuCation • 2026-2027 Required Courses BUSN 621 Project Management I BUSN 622 Project Management II BUSN 623 Project Managem"
+   },
+   {
+    "control_number": "42360",
+    "pages": [
+     67
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 67] Healthcare Careers San Diego College of Continuing eDuCation • 2026-2027 67 Certificate of Completion: Introduction to Healthcare Careers This program provides an introductory overview of the healthc"
+   },
+   {
+    "control_number": "42361",
+    "pages": [
+     120
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 120] 120 San Diego College of Continuing eDuCation • 2026-2027 Non-Fee This introductory course focuses on development of the 0 to 24 month old child in outdoor settings. The physical, cognitive and so"
+   },
+   {
+    "control_number": "42646",
+    "pages": [
+     59
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 59] Digital Media & Programming San Diego College of Continuing eDuCation • 2026-2027 59 their education and earn a degree as employers typically require a bachelor’s degree as the minimum educational re"
+   },
+   {
+    "control_number": "44332",
+    "pages": [
+     55
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 55] Clothing & Textiles San Diego College of Continuing eDuCation • 2026-2027 55 Required Courses CLTX 670 Intro to Fashion Industry CLTX 671 Fashion Retail Basics Certificate of Completion: Industrial Se"
+   },
+   {
+    "control_number": "44333",
+    "pages": [
+     56
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 56] Clothing & Textiles 56 San Diego College of Continuing eDuCation • 2026-2027 Certificate of Completion: Product and Textile Surface Treatments: Digital Printing The Product and Textile Surface Treat"
+   },
+   {
+    "control_number": "44334",
+    "pages": [
+     55
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 55] Clothing & Textiles San Diego College of Continuing eDuCation • 2026-2027 55 Required Courses CLTX 670 Intro to Fashion Industry CLTX 671 Fashion Retail Basics Certificate of Completion: Industrial Se"
+   },
+   {
+    "control_number": "44335",
+    "pages": [
+     56
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 56] Clothing & Textiles 56 San Diego College of Continuing eDuCation • 2026-2027 Certificate of Completion: Product and Textile Surface Treatments: Digital Printing The Product and Textile Surface Treat"
+   },
+   {
+    "control_number": "44336",
+    "pages": [
+     29
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 29] San Diego College of Continuing eDuCation • 2026-2027 29 Welcome to San Diego College of Continuing Education San Diego College of Continuing Education (SDCCE) to College CTE (Career Technical Educati"
+   },
+   {
+    "control_number": "44337",
+    "pages": [
+     54
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 54] Clothing & Textiles 54 San Diego College of Continuing eDuCation • 2026-2027 crucial for the workplace. Graduates are prepared for diverse roles in the cut and sew industry, such as advanced construc"
+   },
+   {
+    "control_number": "44338",
+    "pages": [
+     55
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 55] Clothing & Textiles San Diego College of Continuing eDuCation • 2026-2027 55 Required Courses CLTX 670 Intro to Fashion Industry CLTX 671 Fashion Retail Basics Certificate of Completion: Industrial Se"
+   },
+   {
+    "control_number": "44339",
+    "pages": [
+     54
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 54] Clothing & Textiles 54 San Diego College of Continuing eDuCation • 2026-2027 crucial for the workplace. Graduates are prepared for diverse roles in the cut and sew industry, such as advanced construc"
+   },
+   {
+    "control_number": "44340",
+    "pages": [
+     57
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 57] Digital Media & Programming San Diego College of Continuing eDuCation • 2026-2027 57 Certificate of Completion: Textile Product Innovator The Textile Product Innovator certificate program empowers stu"
+   },
+   {
+    "control_number": "45374",
+    "pages": [
+     64
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 64] English as a Second Language 64 San Diego College of Continuing eDuCation • 2026-2027 communication skills, reading skills, vocabulary development and grammatical competence. Development of critical "
+   },
+   {
+    "control_number": "45439",
+    "pages": [
+     48
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 48] Business, Accounting and Entrepreneurship 48 San Diego College of Continuing eDuCation • 2026-2027 Required Courses BUSN 621 Project Management I BUSN 622 Project Management II BUSN 623 Project Managem"
+   },
+   {
+    "control_number": "45440",
+    "pages": [
+     61
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 61] Digital Media & Programming San Diego College of Continuing eDuCation • 2026-2027 61 Certificate of Completion: Motion and Video Production The Motion and Video Production program is designed to prov"
+   },
+   {
+    "control_number": "45441",
+    "pages": [
+     74,
+     75
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 74] Information Technology 74 San Diego College of Continuing eDuCation • 2026-2027 Certificate of Completion: AWS Cloud Solutions The AWS Cloud Solutions program provides students with the knowledge and "
+   },
+   {
+    "control_number": "45442",
+    "pages": [
+     60
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 60] Digital Media & Programming 60 San Diego College of Continuing eDuCation • 2026-2027 Enrollment To learn more about this certificate and for enrollment instructions, visit https://sdcce.edu/job- train"
+   },
+   {
+    "control_number": "45443",
+    "pages": [
+     75
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 75] Information Technology San Diego College of Continuing eDuCation • 2026-2027 75 Certificate of Completion: Cloud Solutions AWS- Specialty Security The Cloud Solutions AWS-Specialty Security certificat"
+   },
+   {
+    "control_number": "45444",
+    "pages": [
+     49
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 49] Business, Accounting and Entrepreneurship San Diego College of Continuing eDuCation • 2026-2027 49 also serves as a foundation for small business management, project management, and business sales. R"
+   },
+   {
+    "control_number": "46209",
+    "pages": [
+     53
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 53] Clothing & Textiles San Diego College of Continuing eDuCation • 2026-2027 53 necessary to foster a successful transition to credit institutions and/or further study in the field of child development."
+   },
+   {
+    "control_number": "46210",
+    "pages": [
+     57
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 57] Digital Media & Programming San Diego College of Continuing eDuCation • 2026-2027 57 Certificate of Completion: Textile Product Innovator The Textile Product Innovator certificate program empowers stu"
+   },
+   {
+    "control_number": "46211",
+    "pages": [
+     73,
+     74,
+     75
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 73] Information Technology San Diego College of Continuing eDuCation • 2026-2027 73 bodily processes. Students will learn basic nutrition principles and explore how to apply these in a variety pf dishes "
+   },
+   {
+    "control_number": "46212",
+    "pages": [
+     81
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 81] Skilled & Technical Trades San Diego College of Continuing eDuCation • 2026-2027 81 Certificate of Completion: SolidWorks Design The SolidWorks Design certificate program provides students with the sk"
+   },
+   {
+    "control_number": "46213",
+    "pages": [
+     69
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 69] High School Diploma, High School Equivalency & Basic Skills San Diego College of Continuing eDuCation • 2026-2027 69 Certificate of Completion: Optical Technician The Optical Technician program trains "
+   },
+   {
+    "control_number": "46214",
+    "pages": [
+     68
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 68] Healthcare Careers 68 San Diego College of Continuing eDuCation • 2026-2027 Certificate of Completion: Nurse Assistant in Behavioral Health The Nurse Assistant in Behavioral Health Program provides s"
+   }
+  ],
+  "unproven": []
+ },
+ "loads": 1,
+ "seconds": 34.2,
+ "found": 109,
+ "by_method": {
+  "no_closed_list": 24,
+  "not_found": 11,
+  "pdf_pages": 109
+ },
+ "shared_pages": {
+  "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=45": [
+   "24081",
+   "24333",
+   "35841"
+  ],
+  "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=74": [
+   "24101",
+   "24148",
+   "45441"
+  ],
+  "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=67": [
+   "24143",
+   "38695",
+   "42360"
+  ],
+  "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=118": [
+   "24236",
+   "24238"
+  ],
+  "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=54": [
+   "24237",
+   "44337",
+   "44339"
+  ],
+  "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=76": [
+   "24306",
+   "33403",
+   "33750",
+   "33783",
+   "33869",
+   "35140"
+  ],
+  "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=44": [
+   "24332",
+   "30790"
+  ],
+  "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=70": [
+   "24419",
+   "40474",
+   "40475",
+   "41468"
+  ],
+  "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=63": [
+   "30772",
+   "40470",
+   "40472"
+  ],
+  "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=65": [
+   "30773",
+   "36887",
+   "37546",
+   "37828",
+   "38720"
+  ],
+  "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=62": [
+   "30789",
+   "39936"
+  ],
+  "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=80": [
+   "31483",
+   "31487"
+  ],
+  "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=48": [
+   "32671",
+   "42155",
+   "45439"
+  ],
+  "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=59": [
+   "33135",
+   "33136",
+   "42646"
+  ],
+  "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=49": [
+   "35139",
+   "45444"
+  ],
+  "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=47": [
+   "35838",
+   "35967",
+   "35968"
+  ],
+  "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=64": [
+   "36588",
+   "40469",
+   "42016",
+   "45374"
+  ],
+  "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=75": [
+   "36895",
+   "36896",
+   "45443"
+  ],
+  "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=66": [
+   "38005",
+   "40471"
+  ],
+  "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=27": [
+   "38411",
+   "38412",
+   "39774"
+  ],
+  "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=68": [
+   "38693",
+   "38694",
+   "46214"
+  ],
+  "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=61": [
+   "39186",
+   "45440"
+  ],
+  "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=69": [
+   "39640",
+   "46213"
+  ],
+  "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=73": [
+   "39700",
+   "40120",
+   "40123",
+   "46211"
+  ],
+  "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=50": [
+   "39924",
+   "39925",
+   "39926"
+  ],
+  "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=51": [
+   "39928",
+   "39929",
+   "39930"
+  ],
+  "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=29": [
+   "40118",
+   "40119",
+   "44336"
+  ],
+  "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=53": [
+   "40517",
+   "41595",
+   "46209"
+  ],
+  "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=60": [
+   "41451",
+   "41626",
+   "45442"
+  ],
+  "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=55": [
+   "44332",
+   "44334",
+   "44338"
+  ],
+  "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=56": [
+   "44333",
+   "44335"
+  ],
+  "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=57": [
+   "44340",
+   "46210"
+  ]
+ },
+ "not_found": [
+  {
+   "control_number": "24067",
+   "title": "Medical Office Assistant Program",
+   "award": null,
+   "near_miss": {
+    "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=46",
+    "coverage": 0.25
+   }
+  },
+  {
+   "control_number": "24086",
+   "title": "Multimedia Specialist Program",
+   "award": null,
+   "near_miss": {
+    "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=130",
+    "coverage": 0.167
+   }
+  },
+  {
+   "control_number": "24124",
+   "title": "Data Entry Specialist Program",
+   "award": null,
+   "near_miss": {
+    "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=25",
+    "coverage": 0.429
+   }
+  },
+  {
+   "control_number": "24141",
+   "title": "Web Specialist Program",
+   "award": null,
+   "near_miss": {
+    "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=100",
+    "coverage": 0.1
+   }
+  },
+  {
+   "control_number": "24204",
+   "title": "Food Preparation for Health Care Professionals Program",
+   "award": null,
+   "near_miss": null
+  },
+  {
+   "control_number": "24206",
+   "title": "General Educational Development Program",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "24240",
+   "title": "Appliance/Refrigeration/Air Conditioning Repair Program",
+   "award": null,
+   "near_miss": null
+  },
+  {
+   "control_number": "24336",
+   "title": "Professional Bakeshop Skills Program",
+   "award": null,
+   "near_miss": null
+  },
+  {
+   "control_number": "24337",
+   "title": "Pre-Vocational English as a Second Language (VESL) Program",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "33871",
+   "title": "Culinary Arts and Sciences Program",
+   "award": null,
+   "near_miss": null
+  },
+  {
+   "control_number": "35965",
+   "title": "Virtual Datacenter",
+   "award": "Noncredit program",
+   "near_miss": null
+  }
+ ],
+ "page_claimed": [],
+ "coverage_bands": {
+  "0.5-0.8": 8,
+  "0.8-1.0": 1,
+  "1.0": 100
+ },
+ "would_extract": {
+  "against": null,
+  "kept": 0,
+  "programs": 109,
+  "list": [
+   {
+    "control_number": "24081",
+    "title": "Quick Service Technician",
+    "award": "Noncredit program",
+    "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=45",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "24101",
+    "title": "Network Security Specialist Certificate Program",
+    "award": null,
+    "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=74",
+    "coverage": 0.6,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "24143",
+    "title": "Nursing Assistant Training Program",
+    "award": "Noncredit program",
+    "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=67",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "24148",
+    "title": "Cisco Certified Network Associate (CCNA)",
+    "award": "Noncredit program",
+    "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=74",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "24236",
+    "title": "Child Development 1",
+    "award": "Noncredit program",
+    "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=118",
+    "coverage": 0.75,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "24237",
+    "title": "Clothing Construction Program",
+    "award": null,
+    "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=54",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "24238",
+    "title": "Child Development 2 Program",
+    "award": "Noncredit program",
+    "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=118",
+    "coverage": 0.75,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "24241",
+    "title": "Auto Body and Paint Technician Program",
+    "award": "Noncredit program",
+    "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=43",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "24279",
+    "title": "Culinary Arts Program",
+    "award": null,
+    "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=72",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "24306",
+    "title": "Network Systems Specialist Program",
+    "award": "Noncredit program",
+    "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=76",
+    "coverage": 0.5,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "24313",
+    "title": "Front Desk/Office Assistant Program",
+    "award": null,
+    "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=131",
+    "coverage": 0.6,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "24332",
+    "title": "Automotive Technician Program",
+    "award": null,
+    "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=44",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "24333",
+    "title": "Combined Upholstery Trades Program",
+    "award": null,
+    "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=45",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "24419",
+    "title": "Secondary Education Completion Program",
+    "award": "Noncredit program",
+    "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=70",
+    "coverage": 0.964,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "30772",
+    "title": "Beginning English as a Second Language Program",
+    "award": "Noncredit program",
+    "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=63",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "30773",
+    "title": "Intermediate English as a Second Language Program",
+    "award": "Noncredit program",
+    "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=65",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "30789",
+    "title": "Advanced English as a Second Language Program",
+    "award": "Noncredit program",
+    "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=62",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "30790",
+    "title": "Brake/Suspension and Light Service Technician Program",
+    "award": null,
+    "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=44",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31482",
+    "title": "Electronic Technician Program",
+    "award": null,
+    "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=25",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31483",
+    "title": "Shielded Metal Arc Welding",
+    "award": "Noncredit program",
+    "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=80",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31484",
+    "title": "Gas Metal and Flux-Cored Arc Welding",
+    "award": "Noncredit program",
+    "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=78",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31486",
+    "title": "Gas Tungsten Arc Welding",
+    "award": "Noncredit program",
+    "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=79",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31487",
+    "title": "Metal Fabrication Program",
+    "award": null,
+    "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=80",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32671",
+    "title": "Project Management Program",
+    "award": null,
+    "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=48",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33135",
+    "title": "Front End Web Developer I",
+    "award": "Noncredit program",
+    "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=59",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33136",
+    "title": "Front End Web Developer II",
+    "award": "Noncredit program",
+    "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=59",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33403",
+    "title": "Network Technician",
+    "award": "Noncredit program",
+    "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=76",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33750",
+    "title": "Server Essentials Program",
+    "award": "Noncredit program",
+    "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=76",
+    "coverage": 0.5,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33783",
+    "title": "Desktop Technician",
+    "award": "Noncredit program",
+    "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=76",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33867",
+    "title": "Security Essentials",
+    "award": "Noncredit program",
+    "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=77",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33869",
+    "title": "Linux Server Administration Program",
+    "award": null,
+    "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=76",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35139",
+    "title": "Small Business Growth Program",
+    "award": null,
+    "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=49",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35140",
+    "title": "Windows System Administration",
+    "award": "Noncredit program",
+    "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=76",
+    "coverage": 0.5,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35838",
+    "title": "Office Assistant II",
+    "award": null,
+    "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=47",
+    "coverage": 0.6,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35841",
+    "title": "Service Advisor",
+    "award": null,
+    "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=45",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35966",
+    "title": "Administrative Professional: Entry Level Skills",
+    "award": "Noncredit program",
+    "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=46",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35967",
+    "title": "Administrative Professional: Technical Skills",
+    "award": "Noncredit program",
+    "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=47",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35968",
+    "title": "Administrative Professional: Communication Skills",
+    "award": "Noncredit program",
+    "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=47",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36588",
+    "title": "ESL Conversation Program",
+    "award": "Noncredit program",
+    "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=64",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36887",
+    "title": "ESL Pronunciation",
+    "award": "Noncredit program",
+    "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=65",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36895",
+    "title": "Cybersecurity Analyst",
+    "award": "Noncredit program",
+    "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=75",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36896",
+    "title": "Cyber Threat and Response",
+    "award": "Noncredit program",
+    "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=75",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37546",
+    "title": "ESL Grammar",
+    "award": "Noncredit program",
+    "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=65",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37828",
+    "title": "ESL Reading",
+    "award": "Noncredit program",
+    "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=65",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38005",
+    "title": "Health Unit Coordinator",
+    "award": "Noncredit program",
+    "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=66",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38411",
+    "title": "Visual and Vector Design",
+    "award": "Noncredit program",
+    "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=27",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38412",
+    "title": "Digital Design",
+    "award": "Noncredit program",
+    "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=27",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38693",
+    "title": "Nurse Assistant in Behavioral Health Program",
+    "award": "Noncredit program",
+    "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=68",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38694",
+    "title": "Nurse Assistant Rehabilitative Program",
+    "award": "Noncredit program",
+    "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=68",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38695",
+    "title": "Nurse Assistant Acute Care Program",
+    "award": "Noncredit program",
+    "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=67",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38720",
+    "title": "English as a Second Language Multilevel Citizenship",
+    "award": "Noncredit program",
+    "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=65",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39186",
+    "title": "Programming with Python",
+    "award": "Noncredit program",
+    "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=61",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39187",
+    "title": "Data Management with Python",
+    "award": "Noncredit program",
+    "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=58",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39640",
+    "title": "Personal Care Assistant/Caregiver Program",
+    "award": "Noncredit program",
+    "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=69",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39700",
+    "title": "AWS Cloud Solutions",
+    "award": "Noncredit program",
+    "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=73",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39774",
+    "title": "Motion and Video Production",
+    "award": "Noncredit program",
+    "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=27",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39924",
+    "title": "Child Care Provider Training",
+    "award": "Noncredit program",
+    "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=50",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39925",
+    "title": "Child Home Care Training",
+    "award": "Noncredit program",
+    "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=50",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39926",
+    "title": "Early Learner Development",
+    "award": "Noncredit program",
+    "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=50",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39927",
+    "title": "Early Learner Enrichment",
+    "award": "Noncredit program",
+    "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=26",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39928",
+    "title": "Infant and Toddler Development",
+    "award": "Noncredit program",
+    "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=51",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39929",
+    "title": "Infant and Toddler Enrichment",
+    "award": "Noncredit program",
+    "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=51",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39930",
+    "title": "Infant Care Specialist",
+    "award": "Noncredit program",
+    "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=51",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39936",
+    "title": "Web Design and Content Management",
+    "award": "Noncredit program",
+    "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=62",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40118",
+    "title": "Baking and Pastry Arts I",
+    "award": "Noncredit program",
+    "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=29",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40119",
+    "title": "Baking and Pastry Arts II",
+    "award": "Noncredit program",
+    "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=29",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40120",
+    "title": "Culinary Nutrition",
+    "award": "Noncredit program",
+    "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=73",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40123",
+    "title": "Introduction to Hospitality Industry",
+    "award": "Noncredit program",
+    "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=73",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40469",
+    "title": "Beginning High Prevocational ESL",
+    "award": "Noncredit program",
+    "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=64",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40470",
+    "title": "Beginning Low Prevocational ESL",
+    "award": "Noncredit program",
+    "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=63",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40471",
+    "title": "Intermediate High Prevocational ESL",
+    "award": "Noncredit program",
+    "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=66",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40472",
+    "title": "Advanced Prevocational ESL",
+    "award": "Noncredit program",
+    "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=63",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40474",
+    "title": "High School Equivalency Preparation 1",
+    "award": "Noncredit program",
+    "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=70",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40475",
+    "title": "High School Equivalency Preparation 2",
+    "award": "Noncredit program",
+    "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=70",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40516",
+    "title": "Advanced Project Management",
+    "award": "Noncredit program",
+    "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=90",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40517",
+    "title": "School-Age Care and Leadership",
+    "award": "Noncredit program",
+    "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=53",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40532",
+    "title": "Intermediate Low Prevocational ESL",
+    "award": "Noncredit program",
+    "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=113",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41451",
+    "title": "Intro to Digital Design Careers",
+    "award": "Noncredit program",
+    "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=60",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41468",
+    "title": "Introduction to Career and College Readiness",
+    "award": "Noncredit program",
+    "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=70",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41595",
+    "title": "Three to Five-Year-Old Specialty Curriculum",
+    "award": "Noncredit program",
+    "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=53",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41623",
+    "title": "Introduction to Child Care as a Career",
+    "award": "Noncredit program",
+    "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=52",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41626",
+    "title": "Full Stack Web Developer",
+    "award": "Noncredit program",
+    "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=60",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42016",
+    "title": "English as a Second Language Citizenship",
+    "award": "Noncredit program",
+    "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=64",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42155",
+    "title": "Business Sales",
+    "award": "Noncredit program",
+    "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=48",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42360",
+    "title": "Introduction to Healthcare Careers",
+    "award": "Noncredit program",
+    "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=67",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42361",
+    "title": "Instructional Aide",
+    "award": "Noncredit program",
+    "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=120",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42646",
+    "title": "Digital Photography",
+    "award": "Noncredit program",
+    "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=59",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44332",
+    "title": "Patternmaking for Product Development",
+    "award": "Noncredit program",
+    "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=55",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44333",
+    "title": "Product and Textile Surface Treatments: Embroidery",
+    "award": "Noncredit program",
+    "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=56",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44334",
+    "title": "Industrial Sewing and Manufacturing",
+    "award": "Noncredit program",
+    "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=55",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44335",
+    "title": "Product and Textile Surface Treatments: Digital Printing",
+    "award": "Noncredit program",
+    "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=56",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44336",
+    "title": "Sewn Product Construction Essentials",
+    "award": "Noncredit program",
+    "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=29",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44337",
+    "title": "Advanced Sewn Product Construction",
+    "award": "Noncredit program",
+    "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=54",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44338",
+    "title": "Pattern Fitting Technician",
+    "award": "Noncredit program",
+    "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=55",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44339",
+    "title": "Essential Digital Tools for Manufacturing",
+    "award": "Noncredit program",
+    "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=54",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44340",
+    "title": "CMS (Content Management Systems)",
+    "award": "Noncredit program",
+    "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=57",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45374",
+    "title": "English as a Second Language Beginning Listening and Speaking",
+    "award": "Noncredit program",
+    "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=64",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45439",
+    "title": "Artificial Intelligence for Business",
+    "award": "Noncredit program",
+    "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=48",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45440",
+    "title": "Programming with JavaScript",
+    "award": "Noncredit program",
+    "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=61",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45441",
+    "title": "Cloud Solutions AWS-Specialty Machine Learning",
+    "award": "Noncredit program",
+    "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=74",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45442",
+    "title": "Introduction to Software Development",
+    "award": "Noncredit program",
+    "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=60",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45443",
+    "title": "Cloud Solutions AWS-Specialty Security",
+    "award": "Noncredit program",
+    "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=75",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45444",
+    "title": "Google for Business",
+    "award": "Noncredit program",
+    "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=49",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46209",
+    "title": "School-Age Tutoring",
+    "award": "Noncredit program",
+    "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=53",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46210",
+    "title": "Textile Product Innovator",
+    "award": "Noncredit program",
+    "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=57",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46211",
+    "title": "AWS Cloud Operations Administration",
+    "award": "Noncredit program",
+    "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=73",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46212",
+    "title": "SolidWorks Design",
+    "award": "Noncredit program",
+    "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=81",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46213",
+    "title": "Optical Technician",
+    "award": "Noncredit program",
+    "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=69",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46214",
+    "title": "Ophthalmic Assistant",
+    "award": "Noncredit program",
+    "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=68",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   }
+  ]
+ },
+ "run": "39034614074"
+}
