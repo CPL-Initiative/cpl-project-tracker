@@ -1,0 +1,334 @@
+{
+ "college": "Copper Mountain College",
+ "control_number": "14719",
+ "shape": "degree",
+ "title": "Automotive Technology",
+ "award": "A.S. Degree",
+ "source_url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=71",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 11213,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 11213,
+    "output_tokens": 3681,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 3681,
+  "output_tokens_details": {
+   "thinking_tokens": 1721
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.11847,
+ "ms": 28405,
+ "seconds": 28.9,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 6,
+   "listed": 6,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 10,
+   "codes": [
+    "AUTO18",
+    "AUTO28",
+    "AUTO35",
+    "AUTO36",
+    "AUTO44",
+    "AUTO45",
+    "AUTO60",
+    "AUTO65",
+    "AUTO78",
+    "CIS70A"
+   ],
+   "flagged": [
+    "AUTO18",
+    "AUTO28",
+    "AUTO35",
+    "AUTO36",
+    "AUTO44",
+    "AUTO45",
+    "AUTO60",
+    "AUTO65",
+    "AUTO78",
+    "CIS70A"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    66.0,
+    69.0
+   ],
+   "stated": [
+    66.0,
+    66.0
+   ],
+   "against": "degree",
+   "ge": [
+    21.0,
+    21.0
+   ],
+   "why": [],
+   "within": true
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 6,
+   "courses": 0,
+   "count": 6,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Associate in Science in AUTOMOTIVE TECHNOLOGY",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "CMC General Education Requirement",
+   "degree_total": {
+    "min": 66,
+    "max": 66
+   },
+   "ge_units": {
+    "min": 21,
+    "max": 21
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Identify the components, perform service on, and describe the construction features, theory and/or operating principles related to the eight general automotive areas of ASE certification.* (ILOs: Information Competency) *Dependent upon restrictive electives chosen.",
+    "Use various automotive test equipment: to diagnose vehicle component failures, determine the logical cause of the failure through complete and accurate analysis (either mechanical or electrical), evaluate and discuss findings, prepare a written estimate of needed system repairs, estimate the related costs, and perform and verify correct repairs in all eight general automotive areas of ASE certification.* (ILOs: Communication Skills, Critical Thinking, and Information Competency) *Dependent upon restrictive electives chosen.",
+    "Utilize applicable vehicle service information to locate pertinent procedures and specifications related to the inspection, service, diagnosis, repair, adjustment of all automotive systems, and document the services. (ILOs: Information Competency)",
+    "Demonstrate proper use and safety practices associated with common automotive technician hand tools, precision measuring tools, power equipment, standard automotive laboratory equipment, and repair and service associated with electrical, hydraulic and mechanical systems. (ILOs: Information Competency)",
+    "Work independently and in groups to diagnose, service, repair, and maintain vehicles. (ILOs: Personal Development)",
+    "Exhibit professionalism, sensitivity, tact, integrity, and appropriate communication skills when handling customer/co-worker needs, complaints, questions, and special challenges. (ILOs - Personal Development, Ethics, Communication Skills)"
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 42,
+     "max": 43
+    },
+    "courses": [
+     {
+      "code": "AUTO 004",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUTO 018",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "AUTO 020",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUTO 021",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUTO 029",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUTO 035",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "AUTO 036",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "AUTO 044",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "AUTO 045",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "AUTO 065",
+        "units": 4,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "AUTO 028",
+      "units": 3,
+      "units_max": 4,
+      "alternatives": [
+       {
+        "code": "AUTO 078",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "BUMA 010",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Restricted Electives - choose at least three (3) units from the following",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 5
+    },
+    "courses": [
+     {
+      "code": "AUTO 027",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUTO 060",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CIS 070A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "AUTO 045",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "AUTO 065",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "AUTO 028",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "AUTO 078",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Catalog prints codes zero-padded (AUTO 004, AUTO 020, BUMA 010); these were matched to closed-list AUTO 4, AUTO 20, BUMA 10 etc. and marked catalog_addition false.",
+   "The range 3-4 is printed beside the AUTO 028 or AUTO 078 pair as a whole; recorded on AUTO 028 as 3-4 with AUTO 078 units null. Other sections of the catalog show AUTO 028 = 3 and AUTO 078 = 4.",
+   "Restricted electives list no per-course units. AUTO 045 or AUTO 065 and AUTO 028 or AUTO 078 appear both in Required Courses and Restricted Electives; presumably the student may use the option not taken in the required list as an elective — reviewer should check.",
+   "No major total is printed; the page prints Required Courses 42-43 and Restricted Electives 3-5 separately, CMC General Education 21, and MINIMUM DEGREE UNITS 66 (recorded as degree_total).",
+   "No careers are named in the A.S. section."
+  ]
+ },
+ "extracted_run": "39035222722"
+}

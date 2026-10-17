@@ -1,0 +1,196 @@
+{
+ "college": "Copper Mountain College",
+ "control_number": "43132",
+ "shape": "adt",
+ "title": "Kinesiology",
+ "award": "A.A- T Degree",
+ "source_url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=158",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 11737,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 11737,
+    "output_tokens": 1060,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1060,
+  "output_tokens_details": {
+   "thinking_tokens": 223
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.06815,
+ "ms": 9714,
+ "seconds": 10.2,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 11,
+   "share": 0.0,
+   "missing": [
+    "BI23",
+    "PE43",
+    "PE45",
+    "PE52",
+    "PE91",
+    "PE96",
+    "PE98",
+    "PH2A",
+    "PH4A",
+    "PSYCC1000",
+    "SOCIC1000"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "KINESIOLOGY  (KINE)",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "BI 23",
+    "why": "not in the text; no program requirements section provided"
+   },
+   {
+    "code": "PE 43",
+    "why": "not in the text; KINE 058A is described as formerly PE 043, but no program requirements section provided"
+   },
+   {
+    "code": "PE 45",
+    "why": "not in the text; KINE 054A is described as formerly PE 045, but no program requirements section provided"
+   },
+   {
+    "code": "PE 52",
+    "why": "not in the text; KINE 032A is described as formerly PE 052, but no program requirements section provided"
+   },
+   {
+    "code": "PE 91",
+    "why": "not in the text; KINE 057A is described as formerly PE 091, but no program requirements section provided"
+   },
+   {
+    "code": "PE 96",
+    "why": "not in the text; KINE 039A is described as formerly PE 096, but no program requirements section provided"
+   },
+   {
+    "code": "PE 98",
+    "why": "not in the text; KINE 047A is described as formerly PE 098, but no program requirements section provided"
+   },
+   {
+    "code": "PH 002A",
+    "why": "not in the text"
+   },
+   {
+    "code": "PH 004A",
+    "why": "not in the text"
+   },
+   {
+    "code": "PSYC C1000",
+    "why": "not in the text"
+   },
+   {
+    "code": "SOCIC1000",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "The supplied text (catalog pages 158-160) is the KINESIOLOGY (KINE) course description listing, not the Kinesiology A.A-T degree requirements section; no blocks, totals, GE pattern, outcomes or careers for the award are printed. The program requirements page should be located and reviewed.",
+   "Several KINE activity courses are labeled 'Effective Spring 2027' and note former PE codes (KINE 032A formerly PE 052, KINE 039A formerly PE 096, KINE 043A formerly PE 062, KINE 047A formerly PE 098, KINE 054A formerly PE 045, KINE 057A formerly PE 091, KINE 058A formerly PE 043); the closed list uses the old PE codes.",
+   "KINE 101's course description mentions career opportunities in teaching, coaching, allied health, and fitness professions; these were not recorded as program careers because they come from a course description."
+  ]
+ },
+ "extracted_run": "39035222722"
+}

@@ -1,0 +1,191 @@
+{
+ "college": "Copper Mountain College",
+ "control_number": "38512",
+ "shape": "certificate",
+ "title": "Computer-Aided Design and Drafting",
+ "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+ "source_url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=82",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6968,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6968,
+    "output_tokens": 1608,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1608,
+  "output_tokens_details": {
+   "thinking_tokens": 464
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.06003,
+ "ms": 13111,
+ "seconds": 13.5,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 4,
+   "listed": 4,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    12.0,
+    12.0
+   ],
+   "stated": [
+    12.0,
+    12.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 6,
+   "courses": 0,
+   "count": 6,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 4,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Certificate of Achievement in COMPUTER -AIDED DESIGN AND DRAFTING (CADD) TECHNICIAN with emphasis on employment preparation",
+   "measure": "units",
+   "total_units": {
+    "min": 12,
+    "max": 12
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Compose advanced CADD 2-D drawings and identify computer concepts and terms including the CADD Draw, Modify, Layers, Annotation and Properties menus and utilize their functions and draw an accurate representation of a complex two-dimensional object at an advanced level (ILOs: Communication Skills, Critical Thinking Skills, Personal Development and Information Competency).",
+    "Identify the CADD Rendering and Animations menus and utilize their functions at a beginning level (ILOs: Communication Skills, Critical Thinking Skills, Ethics, Personal Development and Information Competency).",
+    "Compose basic CADD 3-D and GIS drawings and identify computer concepts and terms (ILOs: Communication Skills, Critical Thinking Skills, Personal Development and Information Competency).",
+    "Identify the various CADD and 3-D drawing and animation menus and utilize their functions (ILOs: Communication Skills, Critical Thinking Skills, Ethics, Personal Development and Information Competency).",
+    "Draw an accurate representation of a complex three- dimensional object and print an accurate representation of it on a 3-D Printer (ILOs: Communication Skills, Critical Thinking Skills, Ethics, Personal Development and Information Competency).",
+    "Conduct an effective job search in the CADD field and complete a professional application packet (ILOs: Communication Skills, Critical Thinking Skills, Ethics, Personal Development and Information Competency)."
+   ],
+   "careers": [
+    "architects",
+    "engineers",
+    "landscapers",
+    "fabricators"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CADD 001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CADD 002",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CADD 003",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CADD 004",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Catalog prints codes with leading zeros (CADD 001-004); these match closed-list CADD 1-4, so not marked as catalog additions.",
+   "Total taken from 'MINIMUM CERTIFICATE UNITS 12'.",
+   "Outcome 5 breaks across lines as 'three- / dimensional'; recorded as 'three- dimensional' per the printed text; reviewer may confirm whether 'three-dimensional' was intended.",
+   "Careers taken from the description sentence saying CADD skills can be utilized by architects, engineers, landscapers, fabricators; it also names application areas '3-D printing' and 'Geographic Information Systems (GIS)' and employment 'in the CADD Industry', which were not recorded as careers."
+  ]
+ },
+ "extracted_run": "39035222722"
+}

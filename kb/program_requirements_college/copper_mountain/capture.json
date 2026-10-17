@@ -5,7 +5,7 @@
  "catalog_year": "2026-2027",
  "programs": 59,
  "with_closed_list": 48,
- "started": "2026-10-17T12:58:53Z",
+ "started": "2026-10-17T13:07:57Z",
  "pdf": {
   "url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf",
   "access": "ok",
@@ -583,7 +583,7 @@
   "unproven": []
  },
  "loads": 1,
- "seconds": 28.5,
+ "seconds": 28.8,
  "found": 48,
  "by_method": {
   "no_closed_list": 11,
@@ -1134,5 +1134,5 @@
    }
   ]
  },
- "run": "39034612211"
+ "run": "39035222722"
 }
