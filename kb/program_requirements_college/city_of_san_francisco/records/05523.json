@@ -1,0 +1,347 @@
+{
+ "college": "City College of San Francisco",
+ "control_number": "05523",
+ "shape": "degree",
+ "title": "Fire Science Technology",
+ "award": "A.S. Degree",
+ "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=250",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 9163,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 9163,
+    "output_tokens": 2360,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2360,
+  "output_tokens_details": {
+   "thinking_tokens": 644
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.08385,
+ "ms": 18714,
+ "seconds": 19.2,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 14,
+   "listed": 15,
+   "share": 0.933,
+   "missing": [
+    "FSC63"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 3,
+   "codes": [
+    "FSC107A",
+    "FSC55",
+    "FSC65"
+   ],
+   "flagged": [
+    "FSC107A",
+    "FSC55",
+    "FSC65"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    30.0,
+    42.5
+   ],
+   "stated": [
+    30.0,
+    42.5
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 9,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Fire Science Technology – AS Degree",
+   "measure": "units",
+   "total_units": {
+    "min": 30,
+    "max": 42.5
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Articulate fire department organizational structure and operational levels.",
+    "Compare fire suppression systems and fire prevention programs that protect the public in various types of building construction.",
+    "Compare the effects of topography, aspect, and environmental factors on wildland fire behavior, suppression, and prevention.",
+    "Define occupational safety and health concerns as they relate to emergency service organizations, including medical emergencies and activation of the 911 system"
+   ],
+   "careers": [
+    "Firefighter",
+    "Fire Prevention Specialists",
+    "Wildland Firefighter",
+    "Fire Investigator",
+    "Fire Engineer",
+    "Fire Hydraulics specialist",
+    "First Responder",
+    "Emergency Medical Technician",
+    "Life Safety Directors in High Rise Buildings"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 21,
+     "max": 21
+    },
+    "courses": [
+     {
+      "code": "F SC 50",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "F SC 52A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "F SC 53",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "F SC 55",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "F SC 57",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "F SC 61A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "F SC 64",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "OPTION ONE",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Choose one option from the following",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "EMT 100",
+      "units": 8,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "OPTION TWO",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Choose one option from the following",
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "F SC 17",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "F SC 62",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Choose 3 units from the following",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 13.5
+    },
+    "courses": [
+     {
+      "code": "F SC 51A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "F SC 62",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "F SC 65",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "F SC 107A",
+      "units": 0.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "F SC 107B",
+      "units": 2.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "F SC 111",
+      "units": 13.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "F SC 145",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "F SC 150",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "F SC 63",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "The option choice ('Choose one option from the following') prints a combined total of 6.0-8.0 units; Option One prints no units on its row. The 8.0 for EMT 100 is taken from a stray '8.0' printed at the bottom of page 251 after the page footer, apparently displaced from the EMT 100 row; reviewer should confirm.",
+   "Catalog footnote: F SC 62 cannot be selected from the 'Choose 3 units' list if already chosen in Option Two; F SC 62 therefore appears in both the Option Two block and the elective block.",
+   "Program total printed as 'Total: 30.0-42.5' for the major; no degree total or GE units are printed. The page refers to CCSF associate degree general education requirements without naming a pattern.",
+   "Closed list stores F SC 111 at 13 units; catalog prints 13.5. Closed list titles F SC 107B 'Fire Training Work Experience'; catalog prints 'Fire Training Work Experience II'.",
+   "Page 251 prints the core course rows in a scrambled column layout; codes and units were matched in order."
+  ]
+ },
+ "extracted_run": "39047128472"
+}

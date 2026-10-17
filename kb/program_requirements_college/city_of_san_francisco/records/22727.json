@@ -1,0 +1,390 @@
+{
+ "college": "City College of San Francisco",
+ "control_number": "22727",
+ "shape": "certificate",
+ "title": "Medical Assisting",
+ "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+ "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=265",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 10241,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 10241,
+    "output_tokens": 3102,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 3102,
+  "output_tokens_details": {
+   "thinking_tokens": 1109
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.103,
+ "ms": 24236,
+ "seconds": 24.8,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 20,
+   "listed": 20,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "HCT104"
+   ],
+   "flagged": [
+    "HCT104"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    53.5,
+    54.5
+   ],
+   "stated": [
+    53.5,
+    58.5
+   ],
+   "against": "program",
+   "why": [
+    "the blocks sum to 53.5-54.5; the catalog states 53.5-58.5"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 7,
+   "courses": 0,
+   "count": 7,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 3,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Medical Assisting – Certificate of Achievement",
+   "measure": "units",
+   "total_units": {
+    "min": 53.5,
+    "max": 58.5
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Perform clinical procedures, laboratory tests, phlebotomy, and diagnostic studies.",
+    "Use computer applications to create documents and perform medical record and billing activities.",
+    "Practice infection control and adhere to OSHA and HIPAA regulations.",
+    "Receive, communicate with, and support patients and staff.",
+    "Collaborate in a culturally diverse health care environment and apply the principles of health care ethics and professional conduct with patients, staff, and the community.",
+    "Compare the various certification exams for medical assistants.",
+    "Describe the procedure for applying for the phlebotomy certifying exam and license."
+   ],
+   "careers": [
+    "medical assistant",
+    "medical receptionist",
+    "office manager"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "OPTION 1",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Anatomy and Physiology",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "BIO 106",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "OPTION 2",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Anatomy and Physiology",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "BIO 108",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "OPTION 2: AND one of the following Physiology courses",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": "Anatomy and Physiology",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "BIO 111",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIO 112",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Required Course",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "EMT 14",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "First Semester",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 19,
+     "max": 19
+    },
+    "courses": [
+     {
+      "code": "HCT 61",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIT 50A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HCT 67",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MED 55",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MED 56",
+      "units": 3.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HCT 104",
+      "units": 5.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Second Semester",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 22.5,
+     "max": 22.5
+    },
+    "courses": [
+     {
+      "code": "HIT 50B",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIT 57",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIT 73A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIT 76",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MED 49",
+      "units": 5.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MED 62",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MED 70",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MED 71",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Summer Session",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 5,
+     "max": 5
+    },
+    "courses": [
+     {
+      "code": "HCT 82A",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HCT 82B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The Anatomy and Physiology choice prints 'Units 4.0-9.0' for the whole choice, not per option; stated left null on the option blocks. Option 2 is BIO 108 AND one of BIO 111/BIO 112, recorded as two blocks sharing option_group 'Anatomy and Physiology'; Option 1 is BIO 106 alone.",
+   "The semester tables are printed in columns (codes, titles, units separated); units were matched by position and the semester subtotals (3.0, 19.0, 22.5, 5.0) and total 53.5-58.5 reconcile.",
+   "The preceding section on pages 265-266 is the Medical Assisting associate degree major (Total 61.0-66.0, including HIT 75, MED 73, PSYC C1000); it was not used for this certificate.",
+   "HCT 104 Phlebotomy Technician is required in the certificate but absent from the closed list (catalog_addition true).",
+   "EMT 14 is titled 'First Aid and Cardiopulmonary Resuscitation' in the catalog vs 'First Aid, CPR, and AED' in the state file.",
+   "The certificate's learning outcomes are identical to those printed for the degree section."
+  ]
+ },
+ "extracted_run": "39047128472"
+}

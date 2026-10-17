@@ -1,0 +1,140 @@
+{
+ "college": "City College of San Francisco",
+ "control_number": "36980",
+ "shape": "noncredit",
+ "title": "Medisoft for Business",
+ "award": "Noncredit program",
+ "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=564",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6911,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6911,
+    "output_tokens": 563,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 563,
+  "output_tokens_details": {
+   "thinking_tokens": 162
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.0389,
+ "ms": 5824,
+ "seconds": 6.2,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 0,
+   "listed": 1,
+   "share": 0.0,
+   "missing": [
+    "COMP9900"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "unstated",
+   "computed": null,
+   "stated": null,
+   "against": null,
+   "why": [
+    "the catalog prints no total, no hours and no units"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "",
+   "measure": "hours",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "COMP 9900",
+    "why": "only its course description appears (45 hours); the text prints no Medisoft for Business program requirements"
+   }
+  ],
+  "notes": [
+   "The excerpt (catalog page 564) holds only course descriptions for COMP 9900, 9901, 9903, 9904, 9905 and 9909. It has no section for the Medisoft for Business noncredit program, so no heading, requirements, total hours, outcomes or careers could be recorded.",
+   "Measure is set to hours because the award is a noncredit program and the catalog lists hours for noncredit courses (COMP 9900: 45 hours).",
+   "A reviewer should find the Medisoft for Business program section elsewhere in the 2026-27 catalog. The closed list names only COMP 9900, which is unexpected for a Medisoft program, so the state file is also worth checking."
+  ]
+ },
+ "extracted_run": "39047128472"
+}

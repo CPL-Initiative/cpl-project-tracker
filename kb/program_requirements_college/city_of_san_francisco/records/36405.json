@@ -1,0 +1,232 @@
+{
+ "college": "City College of San Francisco",
+ "control_number": "36405",
+ "shape": "noncredit",
+ "title": "ESL Intermediate Low Focus Skills",
+ "award": "Noncredit program",
+ "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=168",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7924,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7924,
+    "output_tokens": 1434,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1434,
+  "output_tokens_details": {
+   "thinking_tokens": 390
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.06038,
+ "ms": 11197,
+ "seconds": 11.7,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 9,
+   "listed": 9,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    131.5,
+    262.5
+   ],
+   "stated": [
+    131.5,
+    262.5
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "ESL Intermediate Low Focus Skills – Certificate of Competency",
+   "measure": "hours",
+   "total_units": {
+    "min": 131.5,
+    "max": 262.5
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Interpret general and supporting ideas in low-intermediate oral English texts in familiar and unfamiliar contexts",
+    "Use low-intermediate English structures and forms to engage in extended conversational exchanges with increasing accuracy and fluency",
+    "Construct meaning from low-intermediate written English texts on familiar and unfamiliar topics.",
+    "Use low-intermediate English structures and vocabulary to write one or more organized paragraphs"
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Choose one course from the following",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 87.5,
+     "max": 175
+    },
+    "courses": [
+     {
+      "code": "ESLN 3500",
+      "units": 175,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ESLN 3505",
+      "units": 87.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ESLN 3560",
+      "units": 175,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ESLN 3600",
+      "units": 175,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ESLN 3605",
+      "units": 87.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Choose one course from the following",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 44,
+     "max": 87.5
+    },
+    "courses": [
+     {
+      "code": "ESLN 5220",
+      "units": 87.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ESLN 5525",
+      "units": 87.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ESLN 5550",
+      "units": 44,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ESLN 5575",
+      "units": 87.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Noncredit Certificate of Competency counted in hours; all units fields hold hours.",
+   "The Required Courses table begins at the bottom of page 168 and continues on page 169; the section was read across the page break.",
+   "Closed list stores ESLN3505 and ESLN3605 without a space; the catalog prints ESLN 3505 and ESLN 3605. Treated as the same courses (catalog_addition false).",
+   "The page also prints the ESL Intermediate Low Certificate of Competency and the ESL Intermediate Low Oral Communication Skills certificate adjacent; only the Focus Skills section was read.",
+   "No specific careers are named; the summary mentions only general 'employment'."
+  ]
+ },
+ "extracted_run": "39047128472"
+}

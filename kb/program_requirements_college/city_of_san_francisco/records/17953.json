@@ -1,0 +1,298 @@
+{
+ "college": "City College of San Francisco",
+ "control_number": "17953",
+ "shape": "degree",
+ "title": "Liberal Arts and Sciences Emphasis in Communication",
+ "award": "A.A. Degree",
+ "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=206",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7180,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7180,
+    "output_tokens": 1748,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1748,
+  "output_tokens_details": {
+   "thinking_tokens": 391
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.06368,
+ "ms": 13980,
+ "seconds": 14.5,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 8,
+   "listed": 14,
+   "share": 0.571,
+   "missing": [
+    "CMST2",
+    "CMST20",
+    "CMST3",
+    "CMST4",
+    "CMST6",
+    "ENGL1B"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 6,
+   "codes": [
+    "COMM12",
+    "COMM2",
+    "COMM20",
+    "COMM3",
+    "COMM4",
+    "ENGLC1003"
+   ],
+   "flagged": [
+    "COMM12",
+    "COMM2",
+    "COMM20",
+    "COMM3",
+    "COMM4",
+    "ENGLC1003"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    18.0,
+    18.0
+   ],
+   "stated": [
+    18.0,
+    18.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": true,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Liberal Arts and Sciences: Emphasis in Communication - AA Degree (heading not printed in the excerpt; inferred)",
+   "measure": "units",
+   "total_units": {
+    "min": 18,
+    "max": 18
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Complete 18 units with courses from at least 3 different disciplines/departments",
+    "rule": "choose_units",
+    "minimum": 18,
+    "option_group": null,
+    "stated": {
+     "min": 18,
+     "max": 18
+    },
+    "courses": [
+     {
+      "code": "COMM C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COMM 2",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "COMM 3",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "COMM 4",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "COMM 12",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "COMM 20",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ENGL C1000",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL C1003",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ENGL C1001",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ESL 79",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "LALS 2",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHIL 2",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHIL 4",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHIL 40",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "CMST 2",
+    "why": "not in the text under this code; catalog prints COMM 2 Introduction to Rhetorical Criticism (likely renumbered)"
+   },
+   {
+    "code": "CMST 3",
+    "why": "not in the text under this code; catalog prints COMM 3 Argumentation and Debate (likely renumbered)"
+   },
+   {
+    "code": "CMST 4",
+    "why": "not in the text under this code; catalog prints COMM 4 Group Communication (likely renumbered)"
+   },
+   {
+    "code": "CMST 20",
+    "why": "not in the text under this code; catalog prints COMM 20 Interpersonal Communication (likely renumbered)"
+   },
+   {
+    "code": "CMST 6",
+    "why": "not in the text"
+   },
+   {
+    "code": "ENGL 1B",
+    "why": "not in the text; catalog lists ENGL C1003 Critical Thinking and Writing through Literature instead"
+   }
+  ],
+  "notes": [
+   "The excerpt starts mid-section on page 206; the Communication emphasis heading, program summary and any learning outcomes appear to be on the preceding page, which was not provided. Section heading is inferred, and outcomes/careers for this award could not be read.",
+   "The learning outcomes printed on this page belong to the Science and Mathematics emphasis (AS), not the Communication emphasis, and were not recorded.",
+   "Requirement: 18 units from the list, drawn from at least 3 different disciplines/departments.",
+   "Catalog prints COMM 2, 3, 4, 20 where the closed list has CMST 2, 3, 4, 20 with matching titles; recorded as printed with catalog_addition true. Reviewer should confirm the subject renaming."
+  ]
+ },
+ "extracted_run": "39047128472"
+}

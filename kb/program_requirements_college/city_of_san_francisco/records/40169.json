@@ -1,0 +1,282 @@
+{
+ "college": "City College of San Francisco",
+ "control_number": "40169",
+ "shape": "certificate",
+ "title": "Entrepreneurship and Innovation in Hospitality Management",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=140",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 10026,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 10026,
+    "output_tokens": 2245,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2245,
+  "output_tokens_details": {
+   "thinking_tokens": 822
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.085,
+ "ms": 17807,
+ "seconds": 18.4,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 10,
+   "listed": 10,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 4,
+   "codes": [
+    "CAHS208",
+    "CAHS32",
+    "ENTR102",
+    "VMD102"
+   ],
+   "flagged": [
+    "CAHS208",
+    "CAHS32",
+    "ENTR102",
+    "VMD102"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    18.0,
+    19.5
+   ],
+   "stated": [
+    18.0,
+    19.5
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 3,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Entrepreneurship and Innovation in Hospitality Management – Certificate of Achievement",
+   "measure": "units",
+   "total_units": {
+    "min": 18,
+    "max": 19.5
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Apply an entrepreneurial mindset that breeds creativity and innovation in hospitality management.",
+    "Use terms and concepts related to functional areas of entrepreneurship necessary for startups.",
+    "Analyze the marketing environment to identify entrepreneurial opportunities and areas for growth and development.",
+    "Develop an agile and lean business plan for a startup project or enterprise that is ready for pitching.",
+    "Compare different entrepreneurship pathways that are available for people venturing into food and beverage industry."
+   ],
+   "careers": [
+    "freelance chef",
+    "food blogger",
+    "content creator in the hospitality industry"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 9,
+     "max": 10.5
+    },
+    "courses": [
+     {
+      "code": "ENTR 101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENTR 102",
+      "units": 1.5,
+      "units_max": 3,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "VMD 102",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MRKT 140",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Choose a minimum of 9 units from the following",
+    "rule": "choose_units",
+    "minimum": 9,
+    "option_group": null,
+    "stated": {
+     "min": 9,
+     "max": 9
+    },
+    "courses": [
+     {
+      "code": "CAHS 32",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CAHS 34",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CAHS 42",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CAHS 100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CAHS 205",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CAHS 208",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CAHS 209",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CAHS 222",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIO 121",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIO 130",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The required block prints 'Required Units 10.5-9.0' with ENTR 102 'Applied Design Thinking for Entrepreneurship 3.0-1.5' and VMD 102 'Design Thinking 1.5' listed as separate rows; it is unclear whether VMD 102 is always required or is an alternative/companion to a 1.5-unit ENTR 102. Recorded both as required with ENTR 102 as 1.5-3 units; reviewer should check.",
+   "Catalog prints ranges in descending order (10.5-9.0, 19.5-18.0); recorded as min/max.",
+   "Closed list writes 'CAHS100'; matched to catalog's 'CAHS 100'.",
+   "The page also prints a preceding Entrepreneurship certificate (Total 18.0) with a similar but different outcomes list; it was not used.",
+   "Careers taken from the program summary's gig-economy examples; the summary also names entrepreneurship pathways (full-time business ownership, sub-contracting (freelancing), consulting, corporate intrapreneurship, mission-driven social entrepreneurship) which were not recorded as careers."
+  ]
+ },
+ "extracted_run": "39047128472"
+}

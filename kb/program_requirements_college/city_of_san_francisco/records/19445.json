@@ -1,0 +1,189 @@
+{
+ "college": "City College of San Francisco",
+ "control_number": "19445",
+ "shape": "certificate",
+ "title": "Databases for Developers",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=352",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6897,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6897,
+    "output_tokens": 1767,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1767,
+  "output_tokens_details": {
+   "thinking_tokens": 1178
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.06293,
+ "ms": 17250,
+ "seconds": 17.7,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 11,
+   "share": 0.0,
+   "missing": [
+    "CNIT195",
+    "CNIT197",
+    "CS111B",
+    "CS131B",
+    "CS150A",
+    "CS155P",
+    "CS160A",
+    "CS177",
+    "CS195",
+    "CS211E",
+    "CS231"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": true,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Not found in text (page 352 opens mid-section of an unnamed certificate, followed by 'Wireless Networking – Certificate of Accomplishment')",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "CNIT 195",
+    "why": "no Databases for Developers section in the text; appears only in an unidentified certificate's section"
+   },
+   {
+    "code": "CNIT 197",
+    "why": "no Databases for Developers section in the text; appears only in an unidentified certificate's section"
+   },
+   {
+    "code": "CS 111B",
+    "why": "not in the text"
+   },
+   {
+    "code": "CS 131B",
+    "why": "no Databases for Developers section in the text; appears only in an unidentified certificate's section"
+   },
+   {
+    "code": "CS 150A",
+    "why": "no Databases for Developers section in the text; appears only in an unidentified certificate's section"
+   },
+   {
+    "code": "CS 155P",
+    "why": "not in the text"
+   },
+   {
+    "code": "CS 160A",
+    "why": "no Databases for Developers section in the text; appears only in an unidentified certificate's section"
+   },
+   {
+    "code": "CS 177",
+    "why": "no Databases for Developers section in the text; appears only in an unidentified certificate's section"
+   },
+   {
+    "code": "CS 195",
+    "why": "no Databases for Developers section in the text; appears only in an unidentified certificate's section"
+   },
+   {
+    "code": "CS 211E",
+    "why": "not in the text"
+   },
+   {
+    "code": "CS 231",
+    "why": "no Databases for Developers section in the text; appears only in an unidentified certificate's section"
+   }
+  ],
+  "notes": []
+ },
+ "extracted_run": "39047128472"
+}
