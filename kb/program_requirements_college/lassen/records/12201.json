@@ -1,0 +1,285 @@
+{
+ "college": "Lassen College",
+ "control_number": "12201",
+ "shape": "certificate",
+ "title": "Welding Technology - 1 Year",
+ "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+ "source_url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=99",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 10099,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 10099,
+    "output_tokens": 1884,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1884,
+  "output_tokens_details": {
+   "thinking_tokens": 427
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.07808,
+ "ms": 14280,
+ "seconds": 14.8,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 12,
+   "listed": 12,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 2,
+   "codes": [
+    "WT52",
+    "WT53"
+   ],
+   "flagged": [
+    "WT52",
+    "WT53"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    23.0,
+    23.0
+   ],
+   "stated": [
+    23.0,
+    23.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 9,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Certificate of Achievement: Welding Technology - One Year",
+   "measure": "units",
+   "total_units": {
+    "min": 23,
+    "max": 23
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Demonstrate the safe set-up and application of Oxyacetylene Cutting (OAC), Oxyacetylene Welding (OAW), Carbon Arc Cutting (CAC), Gas Tungsten Arc Welding (GTAW), Gas Metal Arc Welding (GMAW), Flux Cored Arc Welding (FCAW), and Shielded Metal Arc Welding (SMAW) to ferrous, alloy and nonferrous metals.",
+    "Apply the SMAW, GTAW, GMAW, and FCAW processes to steel plate and pipe that meet or exceed industry standards and the American Welding Society Structural Welding Code, DI.1.",
+    "Interpret technical information used on industrial working and assembly drawings.",
+    "Safely power up the controller and jog the robot in world and joint mode within a work cell.",
+    "Describe hazard materials awareness and handling."
+   ],
+   "careers": [
+    "Welding Technician",
+    "Sales",
+    "Inspection",
+    "Supervision & Management",
+    "Aerospace",
+    "Welding Engineering",
+    "Construction",
+    "Trucking & Automotive",
+    "Welding Instructor"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Core Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 17,
+     "max": 17
+    },
+    "courses": [
+     {
+      "code": "IT 22",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "IT 72",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WT 20",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WT 21",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WT 37",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WT 38",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WT 51",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Required Electives",
+    "rule": "choose_units",
+    "minimum": 6,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "WT 36",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WT 42",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WT 43",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WT 44",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WT 45",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WT 52",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "WT 53",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The core table for WT 37, WT 38 and WT 51 is printed with codes, titles and units in separate stacked columns; units were matched by position (3.0, 3.0, 2.0), which sums to the stated 17 core units.",
+   "The catalog prints WT 36, WT 37 and WT 38 at 3.0 units each, while the state file stores 1 unit for each; recorded the catalog's units.",
+   "Required Electives (6 units) read as choose courses totaling 6 units; the catalog does not print 'select' wording explicitly.",
+   "Careers are taken from the Career Options list printed for the Welding Technology program as a whole, which this certificate shares.",
+   "The section is followed by its own Program Student Learning Outcomes for the One-Year certificate, recorded as printed.",
+   "The closed list names the award as an 18+ unit Certificate of Achievement; the catalog states 23 units total."
+  ]
+ },
+ "extracted_run": "39006337658"
+}

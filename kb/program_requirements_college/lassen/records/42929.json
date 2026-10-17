@@ -1,0 +1,248 @@
+{
+ "college": "Lassen College",
+ "control_number": "42929",
+ "shape": "degree",
+ "title": "Computer Information Systems",
+ "award": "A.S. Degree",
+ "source_url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=65",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7013,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7013,
+    "output_tokens": 1863,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1863,
+  "output_tokens_details": {
+   "thinking_tokens": 549
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.06531,
+ "ms": 15458,
+ "seconds": 16.0,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 10,
+   "listed": 10,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    60.0,
+    60.0
+   ],
+   "stated": [
+    60.0,
+    60.0
+   ],
+   "against": "degree",
+   "ge": [
+    21.0,
+    21.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 6,
+   "courses": 0,
+   "count": 6,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Associates in Science Degree Computer Information Systems",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": 14,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": 21,
+    "max": 21
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Identify computer hardware, and diagnose hardware problems",
+    "Implement simple algorithms, automate business processes, and visualize data using the Python programming language",
+    "Describe network components, protocols, architectures, and the application of current communication and networking technologies.",
+    "Determine how to detect and stop security breaches in networks and applications, and help organizations increase awareness of security policies and procedures.",
+    "Design a database to meet defined requirements and implement queries in SQL.",
+    "Explain the core concepts of the cloud computing paradigm and apply fundamental concepts in cloud infrastructures to understand the tradeoffs in power, efficiency, and cost."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required Core Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 19,
+     "max": 19
+    },
+    "courses": [
+     {
+      "code": "CIS 50",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS 60",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS 70",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS 81",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS 82",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS 90",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Required Electives",
+    "rule": "choose_units",
+    "minimum": 6,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "CA 31",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS 71",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS 80",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS 91",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The section heading says 'Associates in Science Degree' but the total line reads 'Total Units for the Associate in Arts Degree: 60 Units'; recorded 60 as degree_total. Reviewer should check the award type.",
+   "No major total is printed (core 19 + required electives 6 = 25 is not stated), so total_units is null.",
+   "Electives: 14 units from any courses numbered 1-99, printed outside every block; recorded as open_elective_units against degree_total.",
+   "General Education Requirements: 21 Units printed without naming a specific pattern; ge_pattern left null.",
+   "CA 31 is printed with 3.0 units in the catalog while the state file stores 2 units.",
+   "Catalog titles differ slightly from the closed list (CIS 81 'Introduction to Python', CIS 80 'Introduction to Databases' vs 'Introduction to Datasystems').",
+   "The Program Student Learning Outcomes printed under the A.S. section carry a lead-in naming the 'Computer Support Specialist Certificate of Achievement', apparently a copy error; the outcomes themselves match the degree's courses (Python, databases) and are recorded for this degree. The certificate section prints its own separate outcomes, which are not recorded here.",
+   "The 'Required Electives' rule states the student must complete 6 units from the list; recorded as stated 6."
+  ]
+ },
+ "extracted_run": "39006337658"
+}
