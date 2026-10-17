@@ -5,7 +5,7 @@
  "catalog_year": "2026-2027",
  "programs": 267,
  "with_closed_list": 244,
- "started": "2026-10-15T02:15:27Z",
+ "started": "2026-10-17T03:31:54Z",
  "elumen": {
   "catalog": "DVC2026-2027Catalog",
   "start_status": 200,
@@ -18,8 +18,8 @@
  },
  "pages_read": 0,
  "banner_h1": null,
- "loads": 6,
- "seconds": 43.0,
+ "loads": 147,
+ "seconds": 623.2,
  "found": 0,
  "by_method": {
   "no_closed_list": 23,
@@ -1992,5 +1992,5 @@
   "programs": 0,
   "list": []
  },
- "run": "38669937625"
+ "run": "38999074345"
 }
