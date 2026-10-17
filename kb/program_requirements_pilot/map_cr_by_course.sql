@@ -20,7 +20,7 @@ with u as (
                          'College of Alameda','Feather River College','Imperial Valley College','Laney College','Las Positas College','Madera College',
                          'Merritt College','Berkeley City College','Gavilan College',
                          'Antelope Valley College','Columbia College','Contra Costa College','Lemoore College','College of the Redwoods','College of the Siskiyous',
-                         'Lake Tahoe Community College','College of Marin','Butte College','Los Medanos College','Mission College')
+                         'Lake Tahoe Community College','College of Marin','Butte College','Los Medanos College','Mission College','East Los Angeles College')
     and coalesce(u.college_course,'') <> ''
 ), p as (
   select college, m[1] || ' ' || m[2] code, source_code, exhibit_id, credit_rec from u
