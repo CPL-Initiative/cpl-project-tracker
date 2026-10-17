@@ -115,11 +115,15 @@
    "program": 1,
    "courses": 0,
    "count": 1,
-   "not_verbatim": [],
-   "why": [],
+   "not_verbatim": [
+    "Students will be able to demonstrate proficiency in the core academic skills and knowledge required for transfer into a kinesiology program at a four-year college or university."
+   ],
+   "why": [
+    "not in the catalog text as printed: Students will be able to demonstrate proficiency in the core academic skills and"
+   ],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": true
+   "pass": false
   },
   "careers": {
    "count": 0,
@@ -599,5 +603,6 @@
    "60-unit and CalGETC statement is the generic ADT requirement; no award-specific degree total or GE units printed, so degree_total and ge_units are null."
   ]
  },
- "extracted_run": "39006378829"
+ "extracted_run": 39019553475,
+ "read_run": "39006378829"
 }

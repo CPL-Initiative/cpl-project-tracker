@@ -5,7 +5,7 @@
  "catalog_year": "2026-2027",
  "programs": 283,
  "with_closed_list": 264,
- "started": "2026-10-17T05:29:27Z",
+ "started": "2026-10-17T09:02:40Z",
  "pdf": {
   "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf",
   "access": "ok",
@@ -14,20 +14,2141 @@
   "pages_total": 432,
   "error": null,
   "chars_total": 1898275,
-  "pypdf_accepted": 160,
+  "pypdf_accepted": 161,
   "sample": [
    "p130: 'Santa Clarita Community College District128\\nCREDIT PROGRAMS / COURSE DESCRIPTIONS\\nEARLY CHILDHOOD EDUCATION\\nof early care  and education in the United \\nStates, ethical standards, NAEYC professional \\npreparation standards, and the California'",
    "p260: 'Santa Clarita Community College District258\\nCREDIT PROGRAMS / COURSE DESCRIPTIONS\\nPHYSICS\\nPHYSICS\\nThe Physics program provides curriculum concerned \\nwith the properties of matter and energy, and their \\ninteractions and transformations. The '"
   ],
-  "extractor": "pypdf"
+  "extractor": "pypdf",
+  "picks": [
+   {
+    "control_number": "02275",
+    "pages": [
+     107,
+     108,
+     109,
+     110
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 107] College of the Canyons 105 CREDIT PROGRAMS / COURSE DESCRIPTIONS Program Requirements: Units Required: 33 ......................................................Units CAWT-036 Microsoft Outlook - Brief ......"
+   },
+   {
+    "control_number": "02276",
+    "pages": [
+     205,
+     206,
+     207,
+     208
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.919,
+    "opens": "[page 205] College of the Canyons 203 CREDIT PROGRAMS / COURSE DESCRIPTIONS MEDIA ENTERTAINMENT ARTS MEA-190 Stop-Motion Animation Fundamentals ..................................3.0 MEA-208 Advanced Screenwriting ....."
+   },
+   {
+    "control_number": "02277",
+    "pages": [
+     114,
+     115
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 114] Associate in Science Degree: Computer Science Degree Student Learning Outcome: Students will be able to identify, evaluate, analyze, and present fundamental software solutions and their applications. Prog"
+   },
+   {
+    "control_number": "02279",
+    "pages": [
+     139,
+     140,
+     141
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 139] College of the Canyons 137 CREDIT PROGRAMS / COURSE DESCRIPTIONS ENGINEERING Career options include: mechanical engineer, civil engineer, electrical engineer, computer engineer, aerospace engineer, biomedica"
+   },
+   {
+    "control_number": "02284",
+    "pages": [
+     73,
+     74,
+     75,
+     76
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 73] College of the Canyons 71 CREDIT PROGRAMS / COURSE DESCRIPTIONS ARCHITECTURAL DRAFTING ARCHT-260 3-D CAD for Modeling/Animation.....3.0 ID-102 Applied Color for Designers.............3.0 ID-104 Rapid Visualiza"
+   },
+   {
+    "control_number": "02285",
+    "pages": [
+     305,
+     306,
+     307,
+     308
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 305] College of the Canyons 303 CREDIT PROGRAMS / COURSE DESCRIPTIONS WELDING Associate in Science Degree and Certificate of Achievement: Welding Technology Welding Technology is a career education program desi"
+   },
+   {
+    "control_number": "02286",
+    "pages": [
+     80,
+     81,
+     82
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 80] Associate in Arts Degree: Art Degree Student Learning Outcome: Students will be able to analyze and interpret works of cultural importance. Program Requirements: Units Required: 27 ........................"
+   },
+   {
+    "control_number": "02288",
+    "pages": [
+     214,
+     215
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 214] Associate in Arts Degree: French Degree Student Learning Outcome: Students will be able to demonstrate proficiency in communicating in expressive and receptive forms in French. Compare and contrast cultur"
+   },
+   {
+    "control_number": "02290",
+    "pages": [
+     217,
+     218,
+     219
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 217] Associate in Arts Degree: Spanish Degree Student Learning Outcome: ─ Demonstrate proficiency in communicating in expressive and receptive forms in Spanish. ─ Compare and contrast cultures and histories"
+   },
+   {
+    "control_number": "02291",
+    "pages": [
+     233,
+     234,
+     235,
+     236
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.941,
+    "opens": "[page 233] College of the Canyons 231 CREDIT PROGRAMS / COURSE DESCRIPTIONS NURSING will be placed on a waiting list until an opening in the appropriate course becomes available. Transfer students who have previously f"
+   },
+   {
+    "control_number": "02294",
+    "pages": [
+     142,
+     143,
+     144,
+     145
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 142] Santa Clarita Community College District140 CREDIT PROGRAMS / COURSE DESCRIPTIONS ENGLISH OR ENGL-C1001H Critical Thinking and Writing – Honors .............................................3.0 ENGL C1002 Int"
+   },
+   {
+    "control_number": "02297",
+    "pages": [
+     199,
+     200,
+     201,
+     202
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 199] Associate in Science Degree: Mathematics Degree Student Learning Outcome: Students will be able to: ─ Prepare for the mathematical reasoning required in upper division work in their major, including the "
+   },
+   {
+    "control_number": "02302",
+    "pages": [
+     65,
+     66,
+     67,
+     68
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 65] College of the Canyons 63 CREDIT PROGRAMS / COURSE DESCRIPTIONS Administration of Justice The Administration of Justice program focuses on the study of law enforcement in the United States with the primary e"
+   },
+   {
+    "control_number": "02305",
+    "pages": [
+     167,
+     168,
+     169,
+     170
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 167] Associate in Arts Degree: History Degree Student Learning Outcome: Students will be able to analyze and interpret the significance of specific historical events and time periods. Program Requirements: Unit"
+   },
+   {
+    "control_number": "02309",
+    "pages": [
+     171,
+     172
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 171] College of the Canyons 169 CREDIT PROGRAMS / COURSE DESCRIPTIONS HOSPITALITY MANAGEMENT Program Requirements: Units Required: 19 ......................................................Units HOSP-101 Introduct"
+   },
+   {
+    "control_number": "07287",
+    "pages": [
+     88,
+     89,
+     90,
+     91
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 88] Santa Clarita Community College District86 CREDIT PROGRAMS / COURSE DESCRIPTIONS BIOLOGICAL SCIENCES Program Requirements: Units Required: 31 – 32 ......................................................Units B"
+   },
+   {
+    "control_number": "10297",
+    "pages": [
+     93,
+     94,
+     95,
+     96
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 93] College of the Canyons 91 CREDIT PROGRAMS / COURSE DESCRIPTIONS BUSINESS ECON-C2001 Principles of Macroeconomics .........3.0 OR ECON-C2001H Principles of Macroeconomics – Honors ............................."
+   },
+   {
+    "control_number": "10298",
+    "pages": [
+     107,
+     108,
+     109,
+     110
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 107] College of the Canyons 105 CREDIT PROGRAMS / COURSE DESCRIPTIONS Program Requirements: Units Required: 33 ......................................................Units CAWT-036 Microsoft Outlook - Brief ......"
+   },
+   {
+    "control_number": "10302",
+    "pages": [
+     174,
+     175,
+     176,
+     177
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.969,
+    "opens": "[page 174] Santa Clarita Community College District172 CREDIT PROGRAMS / COURSE DESCRIPTIONS INTERIOR DESIGN Plus six units from the following that have not already been taken above: ID-084 Digital Illustration for Arch"
+   },
+   {
+    "control_number": "10307",
+    "pages": [
+     130,
+     131,
+     132,
+     133
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 130] Santa Clarita Community College District128 CREDIT PROGRAMS / COURSE DESCRIPTIONS EARLY CHILDHOOD EDUCATION of early care and education in the United States, ethical standards, NAEYC professional preparatio"
+   },
+   {
+    "control_number": "10308",
+    "pages": [
+     131,
+     132,
+     133,
+     134
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 131] College of the Canyons 129 CREDIT PROGRAMS / COURSE DESCRIPTIONS EARLY CHILDHOOD EDUCATION Program Requirements: Units Required: 32 ......................................................Units ECE-100 Princip"
+   },
+   {
+    "control_number": "10309",
+    "pages": [
+     130,
+     131,
+     132,
+     133
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 130] Santa Clarita Community College District128 CREDIT PROGRAMS / COURSE DESCRIPTIONS EARLY CHILDHOOD EDUCATION of early care and education in the United States, ethical standards, NAEYC professional preparatio"
+   },
+   {
+    "control_number": "10310",
+    "pages": [
+     130,
+     131,
+     132,
+     133
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 130] Santa Clarita Community College District128 CREDIT PROGRAMS / COURSE DESCRIPTIONS EARLY CHILDHOOD EDUCATION of early care and education in the United States, ethical standards, NAEYC professional preparatio"
+   },
+   {
+    "control_number": "10311",
+    "pages": [
+     130,
+     131,
+     132,
+     133
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 130] Santa Clarita Community College District128 CREDIT PROGRAMS / COURSE DESCRIPTIONS EARLY CHILDHOOD EDUCATION of early care and education in the United States, ethical standards, NAEYC professional preparatio"
+   },
+   {
+    "control_number": "10312",
+    "pages": [
+     171,
+     172
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 171] The Restaurant Management Associate in Science Degree with a designation prepares students for a career in the restaurant industry. Degree Student Learning Outcome: Students will be able to demonstrate pr"
+   },
+   {
+    "control_number": "10318",
+    "pages": [
+     291,
+     292,
+     293,
+     294
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.75,
+    "opens": "[page 291] Associate in Arts Degree: Social Science Social Science is the study of people as members of a society. It examines individual and group behavior, communication and decision-making from a contemporary view,"
+   },
+   {
+    "control_number": "10564",
+    "pages": [
+     152,
+     153,
+     154
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 152] Santa Clarita Community College District150 CREDIT PROGRAMS / COURSE DESCRIPTIONS FIRE TECHNOLOGY ETHNST 104 CHICANA/LATINA FEMINISM IN CONTEMPORARY SOCIETY Units: 3.00 (3.00 units lecture) UC:CSU 54.00 hours"
+   },
+   {
+    "control_number": "10924",
+    "pages": [
+     303,
+     304
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 303] College of the Canyons 301 CREDIT PROGRAMS / COURSE DESCRIPTIONS THEATR 241 MOVEMENT FOR THE PERFORMER Units: 2.00 (1.00 unit lecture, 1.00 unit lab) UC:CSU 18.00 hours lecture, 54.00 hours lab Develops the p"
+   },
+   {
+    "control_number": "12120",
+    "pages": [
+     229,
+     230,
+     231
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 229] College of the Canyons 227 CREDIT PROGRAMS / COURSE DESCRIPTIONS NETWORK TECHNOLOGY principles and develop troubleshooting skills. Students can prepare for industry certifications from industries and organiz"
+   },
+   {
+    "control_number": "12409",
+    "pages": [
+     92,
+     93,
+     94
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.818,
+    "opens": "[page 92] Santa Clarita Community College District90 CREDIT PROGRAMS / COURSE DESCRIPTIONS BUSINESS BUSINESS The Business Department offers a comprehensive program for transfer and non-transfer students. The first two "
+   },
+   {
+    "control_number": "14647",
+    "pages": [
+     203,
+     204,
+     205,
+     206
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 203] College of the Canyons 201 CREDIT PROGRAMS / COURSE DESCRIPTIONS MEDIA ENTERTAINMENT ARTS Associate in Arts Degree: Animation Production The Animation Program will prepare students for an entry-level positi"
+   },
+   {
+    "control_number": "14648",
+    "pages": [
+     204,
+     205,
+     206,
+     207
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.941,
+    "opens": "[page 204] Santa Clarita Community College District202 CREDIT PROGRAMS / COURSE DESCRIPTIONS MEDIA ENTERTAINMENT ARTS Plus a minimum of three units from the following: MEA-100 Mass Media and Society .................3.0 "
+   },
+   {
+    "control_number": "14705",
+    "pages": [
+     252,
+     253,
+     254,
+     255
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.9,
+    "opens": "[page 252] Associate in Arts Degree: Photography This program offers an associate degree in photography. The primary goal of this degree is to provide the student with a foundation of knowledge and technical abilities "
+   },
+   {
+    "control_number": "14706",
+    "pages": [
+     253,
+     254,
+     255
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 253] College of the Canyons 251 CREDIT PROGRAMS / COURSE DESCRIPTIONS PHYSICAL SCIENCE assistant photographer, photography laboratory technician, photography restoration specialist, wedding photographer, portrait"
+   },
+   {
+    "control_number": "15316",
+    "pages": [
+     175,
+     176,
+     177
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": false,
+    "coverage": 1.0,
+    "opens": "[page 175] College of the Canyons 173 CREDIT PROGRAMS / COURSE DESCRIPTIONS INTERIOR DESIGN Certificate of Achievement: Interior Design – Home Staging and Visual Merchandising This certificate prepares students to becom"
+   },
+   {
+    "control_number": "15476",
+    "pages": [
+     205,
+     206,
+     207,
+     208
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.914,
+    "opens": "[page 205] College of the Canyons 203 CREDIT PROGRAMS / COURSE DESCRIPTIONS MEDIA ENTERTAINMENT ARTS MEA-190 Stop-Motion Animation Fundamentals ..................................3.0 MEA-208 Advanced Screenwriting ....."
+   },
+   {
+    "control_number": "15477",
+    "pages": [
+     205,
+     206,
+     207,
+     208
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.914,
+    "opens": "[page 205] College of the Canyons 203 CREDIT PROGRAMS / COURSE DESCRIPTIONS MEDIA ENTERTAINMENT ARTS MEA-190 Stop-Motion Animation Fundamentals ..................................3.0 MEA-208 Advanced Screenwriting ....."
+   },
+   {
+    "control_number": "16623",
+    "pages": [
+     206,
+     207,
+     208,
+     209
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 206] Santa Clarita Community College District204 CREDIT PROGRAMS / COURSE DESCRIPTIONS MEDIA ENTERTAINMENT ARTS OR MEA-112 Exploring Video Studio Production .......................................2.0 MUSIC-114 D"
+   },
+   {
+    "control_number": "16656",
+    "pages": [
+     162,
+     163
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 162] Santa Clarita Community College District160 CREDIT PROGRAMS / COURSE DESCRIPTIONS GRAPHIC AND MULTIMEDIA DESIGN GRAPHIC and MULTIMEDIA DESIGN Associate in Arts Degree: Graphic and Multimedia Design The pr"
+   },
+   {
+    "control_number": "16690",
+    "pages": [
+     242
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 242] Santa Clarita Community College District240 CREDIT PROGRAMS / COURSE DESCRIPTIONS PARALEGAL PARALEGAL Associate in Arts Degree and Certificate of Achievement: Paralegal Studies The paralegal profession contin"
+   },
+   {
+    "control_number": "16834",
+    "pages": [
+     288,
+     289,
+     290
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 288] Santa Clarita Community College District286 CREDIT PROGRAMS / COURSE DESCRIPTIONS SIGN LANGUAGE SIGN LANGUAGE Associate in Arts Degree: American Sign Language Interpreting The American Sign Language Interpret"
+   },
+   {
+    "control_number": "16961",
+    "pages": [
+     120,
+     121,
+     122
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.938,
+    "opens": "[page 120] Santa Clarita Community College District 118 CREDIT PROGRAMS / COURSE DESCRIPTIONS COUNS 110 CAREER/LIFE PLANNING Units: 3.00 (3.00 units lecture) CSU 54.00 hours lecture Introduces self-assessment tools to id"
+   },
+   {
+    "control_number": "16962",
+    "pages": [
+     84,
+     85,
+     86,
+     87
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 84] Santa Clarita Community College District82 CREDIT PROGRAMS / COURSE DESCRIPTIONS AUTOMOTIVE TECHNOLOGY AUTECH-185 Automotive Chassis Maintenance and Light Repair ..............................4.0 Plus one cou"
+   },
+   {
+    "control_number": "16978",
+    "pages": [
+     286,
+     287
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.875,
+    "opens": "[page 286] Santa Clarita Community College District284 CREDIT PROGRAMS / COURSE DESCRIPTIONS RECREATION MANAGEMENT REAL 105 REAL ESTATE FINANCING Units: 3.00 (3.00 units lecture) CSU 54.00 hours lecture Explores real est"
+   },
+   {
+    "control_number": "17030",
+    "pages": [
+     116,
+     117,
+     118,
+     119
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.722,
+    "opens": "[page 116] Santa Clarita Community College District114 CREDIT PROGRAMS / COURSE DESCRIPTIONS CONSTRUCTION MANAGEMENT TECHNOLOGY Associate in Science and Certificate of Achievement: Construction Management The Constru"
+   },
+   {
+    "control_number": "17031",
+    "pages": [
+     189,
+     190
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.917,
+    "opens": "[page 189] College of the Canyons 187 CREDIT PROGRAMS / COURSE DESCRIPTIONS LAND SURVEYING KPET 210 PREVENTION AND CARE OF ATHLETIC INJURIES Units: 3.00 (3.00 units lecture) UC:CSU 54.00 hours lecture Introduces the fie"
+   },
+   {
+    "control_number": "17569",
+    "pages": [
+     119
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.833,
+    "opens": "[page 119] College of the Canyons 117 CREDIT PROGRAMS / COURSE DESCRIPTIONS COUNSELING CONST 109 CALIFORNIA BUILDING CODE Units: 3.00 (3.00 units lecture) CSU 54.00 hours lecture Recommended Preparation: CONST-108 Focus"
+   },
+   {
+    "control_number": "17747",
+    "pages": [
+     298,
+     299,
+     300
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 298] Associate in Arts Degree: Theatre Degree Student Learning Outcome: Students will be able to demonstrate performance techniques and proficiency in one or more technical area. Program Requirements: Units Req"
+   },
+   {
+    "control_number": "17748",
+    "pages": [
+     298,
+     299,
+     300
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 298] Santa Clarita Community College District 296 CREDIT PROGRAMS / COURSE DESCRIPTIONS THEATR-141 Scene Performance .........................3.0 THEATR-210 Script Analysis .................................3.0 Ass"
+   },
+   {
+    "control_number": "17967",
+    "pages": [
+     72,
+     73,
+     74,
+     75
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.952,
+    "opens": "[page 72] Santa Clarita Community College District70 CREDIT PROGRAMS / COURSE DESCRIPTIONS ARCHITECTURAL DRAFTING CONST-103 Blue Print Reading for Construction ....................................3.0 Plus twelve units"
+   },
+   {
+    "control_number": "17973",
+    "pages": [
+     194,
+     195
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 194] Santa Clarita Community College District192 CREDIT PROGRAMS / COURSE DESCRIPTIONS LIBERAL ARTS AND SCIENCES ENGL C1002 Introduction to Literature..................3.0 ENGL C1003 Critical Thinking and Writing "
+   },
+   {
+    "control_number": "17974",
+    "pages": [
+     195,
+     196
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.627,
+    "opens": "[page 195] College of the Canyons 193 CREDIT PROGRAMS / COURSE DESCRIPTIONS LIBERAL ARTS AND SCIENCES BIOSCI-202 Introduction to Human Physiology ...4.0 BIOSCI-221 Introduction to Microbiology.............5.0 CHEM-151 Pr"
+   },
+   {
+    "control_number": "17975",
+    "pages": [
+     193,
+     194,
+     195
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.934,
+    "opens": "[page 193] College of the Canyons 191 CREDIT PROGRAMS / COURSE DESCRIPTIONS LIBERAL ARTS AND SCIENCES minimum of six units must be completed within a single discipline for both the humanities and social & behavioral sc"
+   },
+   {
+    "control_number": "18021",
+    "pages": [
+     265,
+     266
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.95,
+    "opens": "[page 265] College of the Canyons 263 CREDIT PROGRAMS / COURSE DESCRIPTIONS PSYCHOLOGY PSYC 102 PHYSIOLOGICAL PSYCHOLOGY Units: 3.00 (3.00 units lecture) UC:CSU 54.00 hours lecture C-ID PSY 150 Prerequisite: PSYC-C1000 "
+   },
+   {
+    "control_number": "18919",
+    "pages": [
+     84,
+     85,
+     86,
+     87
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 84] Santa Clarita Community College District82 CREDIT PROGRAMS / COURSE DESCRIPTIONS AUTOMOTIVE TECHNOLOGY AUTECH-185 Automotive Chassis Maintenance and Light Repair ..............................4.0 Plus one cou"
+   },
+   {
+    "control_number": "18947",
+    "pages": [
+     92,
+     93,
+     94
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.818,
+    "opens": "[page 92] Santa Clarita Community College District90 CREDIT PROGRAMS / COURSE DESCRIPTIONS BUSINESS BUSINESS The Business Department offers a comprehensive program for transfer and non-transfer students. The first two "
+   },
+   {
+    "control_number": "18948",
+    "pages": [
+     203,
+     204,
+     205,
+     206
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 203] College of the Canyons 201 CREDIT PROGRAMS / COURSE DESCRIPTIONS MEDIA ENTERTAINMENT ARTS Associate in Arts Degree: Animation Production The Animation Program will prepare students for an entry-level positi"
+   },
+   {
+    "control_number": "18949",
+    "pages": [
+     204,
+     205,
+     206,
+     207
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 204] The Computer Animation Certificate provides skills necessary in the animation industry with a focus on 2D and 3D computer animation. Certificate Student Learning Outcome: Students will be able to create "
+   },
+   {
+    "control_number": "18950",
+    "pages": [
+     116,
+     117,
+     118,
+     119
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.722,
+    "opens": "[page 116] Santa Clarita Community College District114 CREDIT PROGRAMS / COURSE DESCRIPTIONS CONSTRUCTION MANAGEMENT TECHNOLOGY Associate in Science and Certificate of Achievement: Construction Management The Constru"
+   },
+   {
+    "control_number": "18951",
+    "pages": [
+     189,
+     190
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.917,
+    "opens": "[page 189] Certificate of Achievement: Land Surveying The focus of the Land Surveying program is to provide the student with a thorough background in land surveying and mapping, in addition to an introduction to the c"
+   },
+   {
+    "control_number": "18979",
+    "pages": [
+     294,
+     295,
+     296
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.96,
+    "opens": "[page 294] Associate in Arts Degree: Sociology Degree Student Learning Outcome: Students will be able to analyze a social issue using sociological concepts. Program Requirements: Units Required: 25 – 26 Units SOCI-1"
+   },
+   {
+    "control_number": "18993",
+    "pages": [
+     303,
+     304
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 303] College of the Canyons 301 CREDIT PROGRAMS / COURSE DESCRIPTIONS THEATR 241 MOVEMENT FOR THE PERFORMER Units: 2.00 (1.00 unit lecture, 1.00 unit lab) UC:CSU 18.00 hours lecture, 54.00 hours lab Develops the p"
+   },
+   {
+    "control_number": "19386",
+    "pages": [
+     174,
+     175,
+     176,
+     177
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.957,
+    "opens": "[page 174] Certificate of Achievement: Interior Design The Interior Design program’s goals are to prepare graduates for employment in the current job market. An important objective of the program is to consistently of"
+   },
+   {
+    "control_number": "20447",
+    "pages": [
+     93,
+     94,
+     95,
+     96
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 93] College of the Canyons 91 CREDIT PROGRAMS / COURSE DESCRIPTIONS BUSINESS ECON-C2001 Principles of Macroeconomics .........3.0 OR ECON-C2001H Principles of Macroeconomics – Honors ............................."
+   },
+   {
+    "control_number": "20451",
+    "pages": [
+     107,
+     108,
+     109,
+     110
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 107] College of the Canyons 105 CREDIT PROGRAMS / COURSE DESCRIPTIONS Program Requirements: Units Required: 33 ......................................................Units CAWT-036 Microsoft Outlook - Brief ......"
+   },
+   {
+    "control_number": "20452",
+    "pages": [
+     107,
+     108,
+     109,
+     110
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 107] College of the Canyons 105 CREDIT PROGRAMS / COURSE DESCRIPTIONS Program Requirements: Units Required: 33 ......................................................Units CAWT-036 Microsoft Outlook - Brief ......"
+   },
+   {
+    "control_number": "20458",
+    "pages": [
+     229,
+     230,
+     231
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 229] College of the Canyons 227 CREDIT PROGRAMS / COURSE DESCRIPTIONS NETWORK TECHNOLOGY principles and develop troubleshooting skills. Students can prepare for industry certifications from industries and organiz"
+   },
+   {
+    "control_number": "20460",
+    "pages": [
+     305,
+     306,
+     307,
+     308
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 305] College of the Canyons 303 CREDIT PROGRAMS / COURSE DESCRIPTIONS WELDING Associate in Science Degree and Certificate of Achievement: Welding Technology Welding Technology is a career education program desi"
+   },
+   {
+    "control_number": "20463",
+    "pages": [
+     162,
+     163
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 162] Santa Clarita Community College District160 CREDIT PROGRAMS / COURSE DESCRIPTIONS GRAPHIC AND MULTIMEDIA DESIGN GRAPHIC and MULTIMEDIA DESIGN Associate in Arts Degree: Graphic and Multimedia Design The pr"
+   },
+   {
+    "control_number": "20465",
+    "pages": [
+     65,
+     66,
+     67,
+     68
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 65] College of the Canyons 63 CREDIT PROGRAMS / COURSE DESCRIPTIONS Administration of Justice The Administration of Justice program focuses on the study of law enforcement in the United States with the primary e"
+   },
+   {
+    "control_number": "20466",
+    "pages": [
+     152,
+     153,
+     154
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 152] The Fire Technology - Pre-Service degree/certificate program prepares students for careers in the fire service, either public or private. After completion of the program, students will have a basic understa"
+   },
+   {
+    "control_number": "30293",
+    "pages": [
+     211,
+     212,
+     213
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 211] College of the Canyons 209 CREDIT PROGRAMS / COURSE DESCRIPTIONS MEDICAL LABORATORY TECHNICIAN APPLICATION PROCEDURE: Follow these steps in this order. Please see the website at www.canyons.edu/mlt for links"
+   },
+   {
+    "control_number": "30297",
+    "pages": [
+     105,
+     106
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.923,
+    "opens": "[page 105] College of the Canyons 103 CREDIT PROGRAMS / COURSE DESCRIPTIONS Plus three units from the following: COMM-225 Strategies of Argumentation ............3.0 OR COMM-227 Introduction to Rhetorical Criticism ..3.0"
+   },
+   {
+    "control_number": "30836",
+    "pages": [
+     293,
+     294,
+     295,
+     296
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.923,
+    "opens": "[page 293] College of the Canyons 291 CREDIT PROGRAMS / COURSE DESCRIPTIONS Please see a counselor or visit www.canyons.edu for more information. Degree Student Learning Outcome: Students will be able to analyze a s"
+   },
+   {
+    "control_number": "30837",
+    "pages": [
+     199,
+     200,
+     201,
+     202
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.727,
+    "opens": "[page 199] College of the Canyons 197 CREDIT PROGRAMS / COURSE DESCRIPTIONS MATHEMATICS MATHEMATICS The Mathematics program provides curriculum from algebra to statistics, liberal arts math, linear algebra, calculus, a"
+   },
+   {
+    "control_number": "30838",
+    "pages": [
+     265,
+     266
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.95,
+    "opens": "[page 265] College of the Canyons 263 CREDIT PROGRAMS / COURSE DESCRIPTIONS PSYCHOLOGY PSYC 102 PHYSIOLOGICAL PSYCHOLOGY Units: 3.00 (3.00 units lecture) UC:CSU 54.00 hours lecture C-ID PSY 150 Prerequisite: PSYC-C1000 "
+   },
+   {
+    "control_number": "31354",
+    "pages": [
+     298,
+     299,
+     300
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 298] Santa Clarita Community College District 296 CREDIT PROGRAMS / COURSE DESCRIPTIONS THEATR-141 Scene Performance .........................3.0 THEATR-210 Script Analysis .................................3.0 Ass"
+   },
+   {
+    "control_number": "31356",
+    "pages": [
+     98
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 98] Santa Clarita Community College District96 CREDIT PROGRAMS / COURSE DESCRIPTIONS CHEMISTRY Science) of the Cal-GETC. These are to be completed at the UC, once transferred. Note: this degree is not aligned wit"
+   },
+   {
+    "control_number": "31357",
+    "pages": [
+     249,
+     250,
+     251
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 249] College of the Canyons 247 CREDIT PROGRAMS / COURSE DESCRIPTIONS PHILOSOPHY PHILOSOPHY Philosophy is the activity of trying to make sense of our world through sustained and rigorous thinking about the most d"
+   },
+   {
+    "control_number": "31733",
+    "pages": [
+     156,
+     157,
+     158,
+     159
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 156] Santa Clarita Community College District154 CREDIT PROGRAMS / COURSE DESCRIPTIONS GEOGRAPHY Students should consult with a counselor when planning to complete the degree for more information on university ad"
+   },
+   {
+    "control_number": "32389",
+    "pages": [
+     262,
+     263,
+     264,
+     265
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 262] Santa Clarita Community College District260 CREDIT PROGRAMS / COURSE DESCRIPTIONS POLITICAL SCIENCE Degree Student Learning Outcome: Students will be able to evaluate and analyze the basic institutional stru"
+   },
+   {
+    "control_number": "32656",
+    "pages": [
+     130,
+     131,
+     132,
+     133
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 130] Santa Clarita Community College District128 CREDIT PROGRAMS / COURSE DESCRIPTIONS EARLY CHILDHOOD EDUCATION of early care and education in the United States, ethical standards, NAEYC professional preparatio"
+   },
+   {
+    "control_number": "32696",
+    "pages": [
+     159
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 159] College of the Canyons 157 CREDIT PROGRAMS / COURSE DESCRIPTIONS GEOLOGY Associate in Science for Transfer Degree: Geology TThe Student Transfer Achievement Reform Act (Senate Bill 1440, now codified in Cal"
+   },
+   {
+    "control_number": "32704",
+    "pages": [
+     114,
+     115
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 114] AS-T in Computer Science. Additional majors are being developed. Please see a counselor or visit www.canyons.edu for more information. Degree Student Learning Outcome: Students will be able to evaluate a"
+   },
+   {
+    "control_number": "32723",
+    "pages": [
+     179,
+     180,
+     181,
+     182
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.889,
+    "opens": "[page 179] College of the Canyons 177 CREDIT PROGRAMS / COURSE DESCRIPTIONS KINESIOLOGY - PHYSICAL EDUCATION KPEA-175B Intermediate Softball........................1.0 KPEA-195A Beginning Volleyball ....................."
+   },
+   {
+    "control_number": "32727",
+    "pages": [
+     79,
+     80,
+     81,
+     82
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 79] College of the Canyons 77 CREDIT PROGRAMS / COURSE DESCRIPTIONS ART Degree Student Learning Outcome: Students will be able to analyze and interpret works of cultural importance. Program Requirements: Units R"
+   },
+   {
+    "control_number": "32815",
+    "pages": [
+     217,
+     218,
+     219
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 217] College of the Canyons 215 CREDIT PROGRAMS / COURSE DESCRIPTIONS MODERN LANGUAGES OR SPAN-101H Elementary Spanish I – Honors .......5.0 SPAN-102 Elementary Spanish II .....................5.0 Plus ten units fr"
+   },
+   {
+    "control_number": "32817",
+    "pages": [
+     65,
+     66,
+     67,
+     68
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 65] College of the Canyons 63 CREDIT PROGRAMS / COURSE DESCRIPTIONS Administration of Justice The Administration of Justice program focuses on the study of law enforcement in the United States with the primary e"
+   },
+   {
+    "control_number": "32829",
+    "pages": [
+     167,
+     168,
+     169,
+     170
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.917,
+    "opens": "[page 167] College of the Canyons 165 CREDIT PROGRAMS / COURSE DESCRIPTIONS HISTORY POLS-C1000 American Government and Politics .............................................3.0 POLS-C1000H American Government and P"
+   },
+   {
+    "control_number": "32895",
+    "pages": [
+     249,
+     250,
+     251
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 249] College of the Canyons 247 CREDIT PROGRAMS / COURSE DESCRIPTIONS PHILOSOPHY PHILOSOPHY Philosophy is the activity of trying to make sense of our world through sustained and rigorous thinking about the most d"
+   },
+   {
+    "control_number": "32896",
+    "pages": [
+     142,
+     143,
+     144,
+     145
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.963,
+    "opens": "[page 142] Santa Clarita Community College District140 CREDIT PROGRAMS / COURSE DESCRIPTIONS ENGLISH OR ENGL-C1001H Critical Thinking and Writing – Honors .............................................3.0 ENGL C1002 Int"
+   },
+   {
+    "control_number": "33581",
+    "pages": [
+     202,
+     203,
+     204,
+     205
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.857,
+    "opens": "[page 202] Santa Clarita Community College District200 CREDIT PROGRAMS / COURSE DESCRIPTIONS MATH 240X CALCULUS FOR BUSINESS AND SOCIAL SCIENCE WITH SUPPORT Units: 6.00 (5.00 units lecture, 1.00 unit lab) UC:CSU 90.00 h"
+   },
+   {
+    "control_number": "33814",
+    "pages": [
+     74,
+     75,
+     76,
+     77
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.96,
+    "opens": "[page 74] Santa Clarita Community College District72 CREDIT PROGRAMS / COURSE DESCRIPTIONS ARCHITECTURAL DRAFTING building sector certifications and code compliance documentation, educational resources must adapt to me"
+   },
+   {
+    "control_number": "35653",
+    "pages": [
+     88,
+     89,
+     90,
+     91
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 88] studies for the biology major preparing for transfer to a four-year institution; support courses in human anatomy, human physiology and general microbiology, which may be used to satisfy prerequisites for nu"
+   },
+   {
+    "control_number": "36092",
+    "pages": [
+     120,
+     121,
+     122
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.938,
+    "opens": "[page 120] Santa Clarita Community College District 118 CREDIT PROGRAMS / COURSE DESCRIPTIONS COUNS 110 CAREER/LIFE PLANNING Units: 3.00 (3.00 units lecture) CSU 54.00 hours lecture Introduces self-assessment tools to id"
+   },
+   {
+    "control_number": "36117",
+    "pages": [
+     293,
+     294,
+     295,
+     296
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.778,
+    "opens": "[page 293] College of the Canyons 291 CREDIT PROGRAMS / COURSE DESCRIPTIONS Please see a counselor or visit www.canyons.edu for more information. Degree Student Learning Outcome: Students will be able to analyze a s"
+   },
+   {
+    "control_number": "36124",
+    "pages": [
+     108,
+     109,
+     110,
+     111
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 108] Santa Clarita Community College District106 CREDIT PROGRAMS / COURSE DESCRIPTIONS Program Requirements: Units Required: 34 ......................................................Units CAWT-074 Introduction to"
+   },
+   {
+    "control_number": "36125",
+    "pages": [
+     108,
+     109,
+     110
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 108] The Certificate of Achievement in Web Development is a vocational program that reflects the multi-faceted nature of the competencies required to develop and maintain websites. The program is, therefore, int"
+   },
+   {
+    "control_number": "36156",
+    "pages": [
+     109,
+     110,
+     111,
+     112
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 109] College of the Canyons 107 CREDIT PROGRAMS / COURSE DESCRIPTIONS COMPUTER APPLICATIONS AND WEB TECHNOLOGIES Degree Student Learning Outcome: Students will be able to demonstrate proficiency in the core sk"
+   },
+   {
+    "control_number": "36163",
+    "pages": [
+     108,
+     109,
+     110,
+     111
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 108] Santa Clarita Community College District106 CREDIT PROGRAMS / COURSE DESCRIPTIONS Program Requirements: Units Required: 34 ......................................................Units CAWT-074 Introduction to"
+   },
+   {
+    "control_number": "36570",
+    "pages": [
+     149,
+     150,
+     151
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.857,
+    "opens": "[page 149] Associate in Arts: Environmental Studies Environmental Studies is an interdisciplinary and multidisciplinary program of study that presents a broad overview of ecological issues from a variety of perspectiv"
+   },
+   {
+    "control_number": "36648",
+    "pages": [
+     148,
+     149,
+     150,
+     151
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.947,
+    "opens": "[page 148] Santa Clarita Community College District146 CREDIT PROGRAMS / COURSE DESCRIPTIONS ENVIRONMENTAL SCIENCES ENVIRONMENTAL SCIENCES The environmental sciences focus on understanding the relationships between nat"
+   },
+   {
+    "control_number": "36793",
+    "pages": [
+     170,
+     171,
+     172
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.909,
+    "opens": "[page 170] Santa Clarita Community College District168 CREDIT PROGRAMS / COURSE DESCRIPTIONS HOSPITALITY MANAGEMENT HIST 240 LATIN AMERICAN CIVILIZATION Units: 3.00 (3.00 units lecture) UC:CSU 54.00 hours lecture Surveys"
+   },
+   {
+    "control_number": "36794",
+    "pages": [
+     219,
+     220,
+     221,
+     222
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.875,
+    "opens": "[page 219] College of the Canyons 217 CREDIT PROGRAMS / COURSE DESCRIPTIONS MUSIC SPAN 212 SPANISH FOR HERITAGE SPEAKERS II Units: 5.00 (5.00 units lecture) UC:CSU 90.00 hours lecture C-ID SPAN 230 Prerequisite: SPAN-21"
+   },
+   {
+    "control_number": "36984",
+    "pages": [
+     299,
+     300
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 299] College of the Canyons 297 CREDIT PROGRAMS / COURSE DESCRIPTIONS THEATR-182C Rehearsal/Performance (Comedy): Principal .........................3.0 THEATR-184A Rehearsal/Performance (Musical Theatre): Ens"
+   },
+   {
+    "control_number": "36993",
+    "pages": [
+     299,
+     300
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 299] College of the Canyons 297 CREDIT PROGRAMS / COURSE DESCRIPTIONS THEATR-182C Rehearsal/Performance (Comedy): Principal .........................3.0 THEATR-184A Rehearsal/Performance (Musical Theatre): Ens"
+   },
+   {
+    "control_number": "36998",
+    "pages": [
+     116,
+     117,
+     118,
+     119
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 116] Santa Clarita Community College District114 CREDIT PROGRAMS / COURSE DESCRIPTIONS CONSTRUCTION MANAGEMENT TECHNOLOGY Associate in Science and Certificate of Achievement: Construction Management The Constru"
+   },
+   {
+    "control_number": "37004",
+    "pages": [
+     116,
+     117,
+     118,
+     119
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 116] Santa Clarita Community College District114 CREDIT PROGRAMS / COURSE DESCRIPTIONS CONSTRUCTION MANAGEMENT TECHNOLOGY Associate in Science and Certificate of Achievement: Construction Management The Constru"
+   },
+   {
+    "control_number": "37448",
+    "pages": [
+     161
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.611,
+    "opens": "[page 161] College of the Canyons 159 CREDIT PROGRAMS / COURSE DESCRIPTIONS GLOBAL STUDIES FRNCH-201 Intermediate French I ......................5.0 FRNCH-202 Intermediate French II .....................5.0 SPAN-201 Inte"
+   },
+   {
+    "control_number": "37648",
+    "pages": [
+     161
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.853,
+    "opens": "[page 161] The Certificate of Achievement in Global Competencies is an interdisciplinary program of study designed to expose students to a diversity of foundational courses that collectively lead to heightened global "
+   },
+   {
+    "control_number": "37867",
+    "pages": [
+     135,
+     136
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 135] College of the Canyons 133 CREDIT PROGRAMS / COURSE DESCRIPTIONS ECONOMICS Plus one course from the following: ECON-291 Statistical Methods in Business and Economics ................4.0 PSYC-104 Statistics "
+   },
+   {
+    "control_number": "37868",
+    "pages": [
+     80,
+     81,
+     82
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.909,
+    "opens": "[page 80] Santa Clarita Community College District78 CREDIT PROGRAMS / COURSE DESCRIPTIONS ART Printmaking: ART-237 Fundamentals of Printmaking .........3.0 ART-238 Printmaking – Intaglio ......................3.0 Sculp"
+   },
+   {
+    "control_number": "37953",
+    "pages": [
+     69,
+     70,
+     71
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.895,
+    "opens": "[page 69] College of the Canyons 67 CREDIT PROGRAMS / COURSE DESCRIPTIONS ANTHROPOLOGY ANTHROPOLOGY Anthropology is a scientific discipline that studies human beings from a biological and cultural (bio-cultural) perspe"
+   },
+   {
+    "control_number": "38552",
+    "pages": [
+     193,
+     194,
+     195,
+     196
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.895,
+    "opens": "[page 193] College of the Canyons 191 CREDIT PROGRAMS / COURSE DESCRIPTIONS LIBERAL ARTS AND SCIENCES minimum of six units must be completed within a single discipline for both the humanities and social & behavioral sc"
+   },
+   {
+    "control_number": "40041",
+    "pages": [
+     245,
+     246,
+     247
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.815,
+    "opens": "[page 245] College of the Canyons 243 CREDIT PROGRAMS / COURSE DESCRIPTIONS PARALEGAL HIST-120H The Role of Women in the History of the United States - Honors ..............3.0 HIST-130 Social and Cultural History of "
+   },
+   {
+    "control_number": "40090",
+    "pages": [
+     156,
+     157,
+     158,
+     159
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.951,
+    "opens": "[page 156] Santa Clarita Community College District154 CREDIT PROGRAMS / COURSE DESCRIPTIONS GEOGRAPHY Students should consult with a counselor when planning to complete the degree for more information on university ad"
+   },
+   {
+    "control_number": "40362",
+    "pages": [
+     306,
+     307
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.857,
+    "opens": "[page 306] The Certificate of Achievement in Metal Fabrication provides theoretical and hands-on skills in the safe and efficient use of industry relevant metal fabrication tools equipment. Coursework includes project"
+   },
+   {
+    "control_number": "40364",
+    "pages": [
+     306,
+     307,
+     308,
+     309
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 306] Santa Clarita Community College District 304 CREDIT PROGRAMS / COURSE DESCRIPTIONS WELD-131 Non-Destructive Testing ..................3.0 WELD-132 Print Reading for Welders and Fabricators ................"
+   },
+   {
+    "control_number": "40383",
+    "pages": [
+     84,
+     85,
+     86,
+     87
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 84] Santa Clarita Community College District82 CREDIT PROGRAMS / COURSE DESCRIPTIONS AUTOMOTIVE TECHNOLOGY AUTECH-185 Automotive Chassis Maintenance and Light Repair ..............................4.0 Plus one cou"
+   },
+   {
+    "control_number": "40384",
+    "pages": [
+     84,
+     85,
+     86,
+     87
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 84] Santa Clarita Community College District82 CREDIT PROGRAMS / COURSE DESCRIPTIONS AUTOMOTIVE TECHNOLOGY AUTECH-185 Automotive Chassis Maintenance and Light Repair ..............................4.0 Plus one cou"
+   },
+   {
+    "control_number": "40387",
+    "pages": [
+     242
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 242] *The Paralegal Studies Certificate will be granted upon the completion of all required courses and only to students who possess an associate's degree or bachelor's degree from a regionally accredited instit"
+   },
+   {
+    "control_number": "40388",
+    "pages": [
+     73,
+     74,
+     75,
+     76
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 73] College of the Canyons 71 CREDIT PROGRAMS / COURSE DESCRIPTIONS ARCHITECTURAL DRAFTING ARCHT-260 3-D CAD for Modeling/Animation.....3.0 ID-102 Applied Color for Designers.............3.0 ID-104 Rapid Visualiza"
+   },
+   {
+    "control_number": "40389",
+    "pages": [
+     84,
+     85,
+     86,
+     87
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 84] Certificate of Achievement: Engine Repair The Engine Repair certificate of achievement will prepare an individual for a career as a mid-level technician. Students will have the ability to diagnose a variety o"
+   },
+   {
+    "control_number": "40411",
+    "pages": [
+     84,
+     85,
+     86,
+     87
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 84] The Quick Service Technician Certificate of Achievement will prepare an individual for entry-level employment as a light-duty service technician within the Automotive industry. Students will have the ability"
+   },
+   {
+    "control_number": "40415",
+    "pages": [
+     84,
+     85,
+     86,
+     87
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 84] Santa Clarita Community College District82 CREDIT PROGRAMS / COURSE DESCRIPTIONS AUTOMOTIVE TECHNOLOGY AUTECH-185 Automotive Chassis Maintenance and Light Repair ..............................4.0 Plus one cou"
+   },
+   {
+    "control_number": "40417",
+    "pages": [
+     310,
+     311
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 310] Santa Clarita Community College District 308 CREDIT PROGRAMS / COURSE DESCRIPTIONS WELD 132 PRINT READING FOR WELDERS AND FABRICATORS Units: 3.00 (3.00 units lecture) CSU 54.00 hours lecture C-ID WELD 110X Re"
+   },
+   {
+    "control_number": "40418",
+    "pages": [
+     305,
+     306,
+     307,
+     308
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 305] College of the Canyons 303 CREDIT PROGRAMS / COURSE DESCRIPTIONS WELDING Associate in Science Degree and Certificate of Achievement: Welding Technology Welding Technology is a career education program desi"
+   },
+   {
+    "control_number": "40419",
+    "pages": [
+     306,
+     307
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 306] Santa Clarita Community College District 304 CREDIT PROGRAMS / COURSE DESCRIPTIONS WELD-131 Non-Destructive Testing ..................3.0 WELD-132 Print Reading for Welders and Fabricators ................"
+   },
+   {
+    "control_number": "40420",
+    "pages": [
+     306,
+     307,
+     308,
+     309
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 306] Santa Clarita Community College District 304 CREDIT PROGRAMS / COURSE DESCRIPTIONS WELD-131 Non-Destructive Testing ..................3.0 WELD-132 Print Reading for Welders and Fabricators ................"
+   },
+   {
+    "control_number": "40486",
+    "pages": [
+     175,
+     176,
+     177
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 175] College of the Canyons 173 CREDIT PROGRAMS / COURSE DESCRIPTIONS INTERIOR DESIGN Certificate of Achievement: Interior Design – Home Staging and Visual Merchandising This certificate prepares students to becom"
+   },
+   {
+    "control_number": "40494",
+    "pages": [
+     109,
+     110,
+     111,
+     112
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 109] College of the Canyons 107 CREDIT PROGRAMS / COURSE DESCRIPTIONS COMPUTER APPLICATIONS AND WEB TECHNOLOGIES Degree Student Learning Outcome: Students will be able to demonstrate proficiency in the core sk"
+   },
+   {
+    "control_number": "40631",
+    "pages": [
+     191,
+     192
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 191] College of the Canyons 189 CREDIT PROGRAMS / COURSE DESCRIPTIONS LAW ENFORCEMENT TECHNOLOGY LAW ENFORCEMENT TECHNOLOGY The Law Enforcement Technology program focuses on the emerging trends and uses of techno"
+   },
+   {
+    "control_number": "40666",
+    "pages": [
+     191,
+     192
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 191] College of the Canyons 189 CREDIT PROGRAMS / COURSE DESCRIPTIONS LAW ENFORCEMENT TECHNOLOGY LAW ENFORCEMENT TECHNOLOGY The Law Enforcement Technology program focuses on the emerging trends and uses of techno"
+   },
+   {
+    "control_number": "41576",
+    "pages": [
+     220,
+     221,
+     222,
+     223
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.733,
+    "opens": "[page 220] Santa Clarita Community College District218 CREDIT PROGRAMS / COURSE DESCRIPTIONS MUSIC Music students are required to audition and, once accepted, enroll in Music 189 (Individualized Lessons), to receive in"
+   },
+   {
+    "control_number": "41713",
+    "pages": [
+     92,
+     93,
+     94,
+     95
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.786,
+    "opens": "[page 92] Santa Clarita Community College District90 CREDIT PROGRAMS / COURSE DESCRIPTIONS BUSINESS BUSINESS The Business Department offers a comprehensive program for transfer and non-transfer students. The first two "
+   },
+   {
+    "control_number": "42191",
+    "pages": [
+     221,
+     222
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.9,
+    "opens": "[page 221] College of the Canyons 219 CREDIT PROGRAMS / COURSE DESCRIPTIONS MUSIC Program Requirements: Units Required: 22.5 Units: MUSIC-137A Introduction to Sibelius ....................2.0 MUSIC-154 Live Sound Reinfo"
+   },
+   {
+    "control_number": "42193",
+    "pages": [
+     221
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 221] College of the Canyons 219 CREDIT PROGRAMS / COURSE DESCRIPTIONS MUSIC Program Requirements: Units Required: 22.5 Units: MUSIC-137A Introduction to Sibelius ....................2.0 MUSIC-154 Live Sound Reinfo"
+   },
+   {
+    "control_number": "42670",
+    "pages": [
+     123
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 123] College of the Canyons 121 CREDIT PROGRAMS / COURSE DESCRIPTIONS CYBERSECURITY CYBERSECURITY Associate in Science Degree: Cybersecurity The Network Technology Department’s Cybersecurity Associate program wil"
+   },
+   {
+    "control_number": "42737",
+    "pages": [
+     196,
+     197,
+     198
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 196] Santa Clarita Community College District194 CREDIT PROGRAMS / COURSE DESCRIPTIONS MANUFACTURING TECHNOLOGY POLS-250 Comparative Government and Politics .............................................3.0 POLS-"
+   },
+   {
+    "control_number": "42843",
+    "pages": [
+     101,
+     102,
+     103
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 101] College of the Canyons 99 CREDIT PROGRAMS / COURSE DESCRIPTIONS CLINICAL LABORATORY SCIENTIST CLINICAL LABORATORY SCIENTIST Certificate of Achievement: College of the Canyons Clinical Laboratory Scientist "
+   },
+   {
+    "control_number": "42861",
+    "pages": [
+     104,
+     105,
+     106
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.958,
+    "opens": "[page 104] Santa Clarita Community College District102 CREDIT PROGRAMS / COURSE DESCRIPTIONS COMMUNICATION STUDIES Associate in Arts for Transfer Degree: Communication Studies 2.0 The Student Transfer Achievement Reform"
+   },
+   {
+    "control_number": "43271",
+    "pages": [
+     244,
+     245,
+     246,
+     247
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.65,
+    "opens": "[page 244] Santa Clarita Community College District242 CREDIT PROGRAMS / COURSE DESCRIPTIONS PARALEGAL intending to transfer to a particular CSU campus or to university or college that is not part of the CSU system. Stu"
+   },
+   {
+    "control_number": "43377",
+    "pages": [
+     352
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 352] Santa Clarita Community College District 350 SCHOOL OF PERSONAL AND PROFESSIONAL LEARNING / NONCREDIT CLASSES SCHOOL OF PERSONAL AND PROFESSIONAL LEARNING - NONCREDIT MEDICAL SCRIBE Certificate of Completion: "
+   },
+   {
+    "control_number": "43392",
+    "pages": [
+     252,
+     253,
+     254,
+     255
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 252] Santa Clarita Community College District250 CREDIT PROGRAMS / COURSE DESCRIPTIONS PHOTOGRAPHY PHOTOGRAPHY Associate in Arts Degree: Photography This program offers an associate degree in photography. The prim"
+   },
+   {
+    "control_number": "43549",
+    "pages": [
+     220,
+     221,
+     222
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.818,
+    "opens": "[page 220] Santa Clarita Community College District218 CREDIT PROGRAMS / COURSE DESCRIPTIONS MUSIC Music students are required to audition and, once accepted, enroll in Music 189 (Individualized Lessons), to receive in"
+   },
+   {
+    "control_number": "43782",
+    "pages": [
+     352
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 352] Santa Clarita Community College District 350 SCHOOL OF PERSONAL AND PROFESSIONAL LEARNING / NONCREDIT CLASSES SCHOOL OF PERSONAL AND PROFESSIONAL LEARNING - NONCREDIT MEDICAL SCRIBE Certificate of Completion: "
+   },
+   {
+    "control_number": "43916",
+    "pages": [
+     288,
+     289,
+     290
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 288] Santa Clarita Community College District286 CREDIT PROGRAMS / COURSE DESCRIPTIONS SIGN LANGUAGE SIGN LANGUAGE Associate in Arts Degree: American Sign Language Interpreting The American Sign Language Interpret"
+   },
+   {
+    "control_number": "43918",
+    "pages": [
+     229,
+     230
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": false,
+    "coverage": 1.0,
+    "opens": "[page 229] College of the Canyons 227 CREDIT PROGRAMS / COURSE DESCRIPTIONS NETWORK TECHNOLOGY principles and develop troubleshooting skills. Students can prepare for industry certifications from industries and organiz"
+   },
+   {
+    "control_number": "44260",
+    "pages": [
+     71,
+     72,
+     73,
+     74
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.976,
+    "opens": "[page 71] The Bachelor of Science in Building Performance degree addresses regional workforce needs by developing technicians proficient in Building Energy Modeling and compliance documentation for the California Ene"
+   },
+   {
+    "control_number": "44285",
+    "pages": [
+     124,
+     125,
+     126
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 124] Associate in Arts Degree: Dance The Dance Major provides students with the acquisition and knowledge of expressive performing art skills. Dance Appreciation, fundamental and intermediate courses in ballet"
+   },
+   {
+    "control_number": "44382",
+    "pages": [
+     121,
+     122
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 121] The Culinary Arts Baking and Pastry Certificate of Specialization is designed for those interested in professional baking. It includes comprehensive study with an emphasis on application of fundamental baki"
+   },
+   {
+    "control_number": "44414",
+    "pages": [
+     247,
+     248
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 247] College of the Canyons 245 CREDIT PROGRAMS / COURSE DESCRIPTIONS PHARMACY TECHNOLOGY PARLGL 140 BANKRUPTCY Units: 3.00 (3.00 units lecture) CSU 54.00 hours lecture Overview of the basic functions, procedures, "
+   },
+   {
+    "control_number": "44447",
+    "pages": [
+     256,
+     257,
+     258,
+     259
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 256] Santa Clarita Community College District254 CREDIT PROGRAMS / COURSE DESCRIPTIONS PHYSICAL THERAPIST ASSISTANT Candidate for Accreditation is an accreditation status of affiliation with the Commission on Accr"
+   },
+   {
+    "control_number": "44458",
+    "pages": [
+     247,
+     248
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 247] College of the Canyons 245 CREDIT PROGRAMS / COURSE DESCRIPTIONS PHARMACY TECHNOLOGY PARLGL 140 BANKRUPTCY Units: 3.00 (3.00 units lecture) CSU 54.00 hours lecture Overview of the basic functions, procedures, "
+   },
+   {
+    "control_number": "44657",
+    "pages": [
+     164,
+     165,
+     166
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.967,
+    "opens": "[page 164] Santa Clarita Community College District162 CREDIT PROGRAMS / COURSE DESCRIPTIONS HEALTH SCIENCE This degree may not be the best option for students intending to transfer to a particular CSU campus or to uni"
+   },
+   {
+    "control_number": "45077",
+    "pages": [
+     238,
+     239,
+     240,
+     241
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 238] Santa Clarita Community College District236 CREDIT PROGRAMS / COURSE DESCRIPTIONS OCCUPATIONAL THERAPY ASSISTANT Degree Student Learning Outcome: Students will be able to demonstrate the ability to provide "
+   },
+   {
+    "control_number": "45180",
+    "pages": [
+     126,
+     127,
+     128
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 126] Santa Clarita Community College District124 CREDIT PROGRAMS / COURSE DESCRIPTIONS DIAGNOSTIC MEDICAL SONOGRAPHY DANCE 161 COC DANCE COMPANY PRODUCTION Units: 3.00 (1.00 unit lecture, 2.00 units lab) UC:CSU 1"
+   },
+   {
+    "control_number": "45268",
+    "pages": [
+     150,
+     151
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 150] Santa Clarita Community College District148 CREDIT PROGRAMS / COURSE DESCRIPTIONS ENVIRONMENTAL SCIENCES environmental studies, and oceanography. The Certificate of Achievement provides an opportunity for st"
+   },
+   {
+    "control_number": "45528",
+    "pages": [
+     66,
+     67,
+     68,
+     69
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.854,
+    "opens": "[page 66] 64 CREDIT PROGRAMS / COURSE DESCRIPTIONS ADMINISTRATION OF JUSTICE Associate in Science Degree and Certificate of Achievement: Administration of Justice Degree and Certificate Student Learning Outcome: Stu"
+   },
+   {
+    "control_number": "45550",
+    "pages": [
+     101,
+     102,
+     103
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": false,
+    "coverage": 1.0,
+    "opens": "[page 101] College of the Canyons 99 CREDIT PROGRAMS / COURSE DESCRIPTIONS CLINICAL LABORATORY SCIENTIST CLINICAL LABORATORY SCIENTIST Certificate of Achievement: College of the Canyons Clinical Laboratory Scientist "
+   },
+   {
+    "control_number": "45756",
+    "pages": [
+     98,
+     99
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": false,
+    "coverage": 1.0,
+    "opens": "[page 98] Santa Clarita Community College District96 CREDIT PROGRAMS / COURSE DESCRIPTIONS CHEMISTRY Science) of the Cal-GETC. These are to be completed at the UC, once transferred. Note: this degree is not aligned wit"
+   }
+  ],
+  "unproven": []
  },
  "loads": 1,
- "seconds": 94.6,
- "found": 160,
+ "seconds": 116.6,
+ "found": 161,
  "by_method": {
   "no_closed_list": 19,
-  "not_found": 104,
-  "pdf_pages": 160
+  "not_found": 103,
+  "pdf_pages": 161
  },
  "shared_pages": {
   "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=107": [
@@ -38,8 +2159,8 @@
   ],
   "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=205": [
    "02276",
-   "15477",
-   "16623"
+   "15476",
+   "15477"
   ],
   "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=114": [
    "02277",
@@ -52,7 +2173,6 @@
   "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=305": [
    "02285",
    "20460",
-   "40362",
    "40418"
   ],
   "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=80": [
@@ -100,11 +2220,8 @@
    "10307",
    "10309",
    "10310",
+   "10311",
    "32656"
-  ],
-  "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=131": [
-   "10308",
-   "10311"
   ],
   "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=152": [
    "10564",
@@ -161,6 +2278,7 @@
    "18919",
    "40383",
    "40384",
+   "40389",
    "40411",
    "40415"
   ],
@@ -188,13 +2306,16 @@
    "30838"
   ],
   "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=293": [
-   "18979",
    "30836",
    "36117"
   ],
   "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=98": [
    "31356",
    "45756"
+  ],
+  "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=249": [
+   "31357",
+   "32895"
   ],
   "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=156": [
    "31733",
@@ -205,6 +2326,10 @@
    "36125",
    "36163"
   ],
+  "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=109": [
+   "36156",
+   "40494"
+  ],
   "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=299": [
    "36984",
    "36993"
@@ -214,6 +2339,7 @@
    "37648"
   ],
   "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=306": [
+   "40362",
    "40364",
    "40419",
    "40420"
@@ -224,8 +2350,11 @@
   ],
   "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=220": [
    "41576",
-   "42193",
    "43549"
+  ],
+  "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=221": [
+   "42191",
+   "42193"
   ],
   "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=101": [
    "42843",
@@ -587,15 +2716,6 @@
    "near_miss": null
   },
   {
-   "control_number": "43271",
-   "title": "Law, Public Policy, and Society",
-   "award": "A.A- T Degree",
-   "near_miss": {
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=245",
-    "coverage": 0.48
-   }
-  },
-  {
    "control_number": "43310",
    "title": "Crime and Intelligence Analysis",
    "award": "Noncredit program",
@@ -877,1616 +2997,136 @@
  ],
  "page_claimed": [],
  "coverage_bands": {
-  "0.5-0.8": 9,
-  "0.8-1.0": 44,
-  "1.0": 107
+  "0.5-0.8": 10,
+  "0.8-1.0": 45,
+  "1.0": 106
  },
  "would_extract": {
-  "against": null,
-  "kept": 0,
-  "programs": 160,
+  "against": "kb/program_requirements_college/college_of_the_canyons",
+  "kept": 149,
+  "programs": 12,
   "list": [
-   {
-    "control_number": "02275",
-    "title": "Administrative Assistant",
-    "award": "A.S. Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=107",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "02276",
-    "title": "New Media Journalism",
-    "award": "A.A. Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=205",
-    "coverage": 0.919,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "02277",
-    "title": "Computer Science",
-    "award": "A.S. Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=114",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "02279",
-    "title": "Engineering",
-    "award": "A.S. Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=139",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "02284",
-    "title": "Architectural Drafting",
-    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=73",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "02285",
-    "title": "Welding Technology",
-    "award": "A.S. Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=305",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "02286",
-    "title": "Art",
-    "award": "A.A. Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=80",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "02288",
-    "title": "French",
-    "award": "A.A. Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=214",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "02290",
-    "title": "Spanish",
-    "award": "A.A. Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=217",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "02291",
-    "title": "Nursing: Registered Nurse",
-    "award": "A.S. Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=233",
-    "coverage": 0.941,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "02294",
-    "title": "English",
-    "award": "A.A. Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=142",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "02297",
-    "title": "Mathematics",
-    "award": "A.S. Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=199",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "02302",
-    "title": "Administration of Justice",
-    "award": "A.S. Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=65",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "02305",
-    "title": "History",
-    "award": "A.A. Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=167",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "02309",
-    "title": "Hospitality Management",
-    "award": "A.S. Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=171",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "07287",
-    "title": "Biological Sciences",
-    "award": "A.S. Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=88",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "10297",
-    "title": "Human Resources Management",
-    "award": "A.S. Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=93",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "10298",
-    "title": "Computer Applications",
-    "award": "A.S. Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=107",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "10302",
-    "title": "Interior Design",
-    "award": "A.S. Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=174",
-    "coverage": 0.969,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "10307",
-    "title": "Early Childhood Education - Preschool",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=130",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "10308",
-    "title": "Early Childhood Education – Supervision & Administration of Children's Programs",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=131",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "10309",
-    "title": "Early Childhood Education - Infant/Toddler",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=130",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "10310",
-    "title": "Early Childhood Education - School-Age",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=130",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
    {
     "control_number": "10311",
     "title": "Early Childhood Education - Special Education",
     "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=131",
+    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=130",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "10312",
-    "title": "Restaurant Management",
-    "award": "A.S. Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=171",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "10318",
-    "title": "Social Science",
-    "award": "A.A. Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=291",
-    "coverage": 0.75,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "10564",
-    "title": "Fire Technology: Pre-Service",
-    "award": "A.S. Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=152",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "10924",
-    "title": "Water Systems Technology",
-    "award": "A.S. Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=303",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "12120",
-    "title": "Network Technology",
-    "award": "A.S. Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=229",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "12409",
-    "title": "Accounting",
-    "award": "A.S. Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=92",
-    "coverage": 0.818,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "14647",
-    "title": "Animation Production",
-    "award": "A.A. Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=203",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "14648",
-    "title": "Computer Animation",
-    "award": "A.A. Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=204",
-    "coverage": 0.941,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "14705",
-    "title": "Photography",
-    "award": "A.A. Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=252",
-    "coverage": 0.9,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "14706",
-    "title": "Commercial Photography",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=253",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "15316",
-    "title": "Interior Decorating – Home Staging and Visual Merchandising",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=175",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=131",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "15476",
     "title": "Sound Arts",
     "award": "A.A. Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=206",
-    "coverage": 0.914,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "15477",
-    "title": "Filmmaking",
-    "award": "A.A. Degree",
     "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=205",
     "coverage": 0.914,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=206",
+    "was_coverage": 0.914,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "16623",
     "title": "Video Game Animation",
     "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=205",
+    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=206",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "16656",
-    "title": "Graphic and Multimedia Design",
-    "award": "A.A. Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=162",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "16690",
-    "title": "Paralegal Studies",
-    "award": "A.A. Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=242",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "16834",
-    "title": "American Sign Language Interpreting",
-    "award": "A.A. Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=288",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "16961",
-    "title": "Culinary Arts",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=120",
-    "coverage": 0.938,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "16962",
-    "title": "Automotive Technology",
-    "award": "A.S. Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=84",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "16978",
-    "title": "Recreation Management",
-    "award": "A.A. Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=286",
-    "coverage": 0.875,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "17030",
-    "title": "Construction Management",
-    "award": "A.S. Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=116",
-    "coverage": 0.722,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "17031",
-    "title": "Land Surveying",
-    "award": "A.S. Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=189",
-    "coverage": 0.917,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=205",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "17569",
     "title": "Building Inspection",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=117",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "17747",
-    "title": "Theatre",
-    "award": "A.A. Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=298",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "17748",
-    "title": "Theatre - Performance",
-    "award": "A.A. Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=298",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "17967",
-    "title": "Architectural Drafting & Technology",
-    "award": "A.S. Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=72",
-    "coverage": 0.952,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "17973",
-    "title": "Liberal Arts and Sciences: Mathematics and Science Emphasis",
-    "award": "A.A. Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=194",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "17974",
-    "title": "Liberal Arts and Sciences: Social and Behavioral Sciences Emphasis",
-    "award": "A.A. Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=195",
-    "coverage": 0.627,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "17975",
-    "title": "Liberal Arts and Sciences: Humanities Emphasis",
-    "award": "A.A. Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=193",
-    "coverage": 0.934,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "18021",
-    "title": "Psychology",
-    "award": "A.A. Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=265",
-    "coverage": 0.95,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "18919",
-    "title": "Automotive Technology",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=84",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "18947",
-    "title": "Accounting",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=92",
-    "coverage": 0.818,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "18948",
-    "title": "Animation Production",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=203",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "18949",
-    "title": "Computer Animation",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=204",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "18950",
-    "title": "Construction Management",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=116",
-    "coverage": 0.722,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "18951",
-    "title": "Land Surveying",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=189",
-    "coverage": 0.917,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=119",
+    "coverage": 0.833,
+    "was_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=117",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "18979",
     "title": "Sociology",
     "award": "A.A. Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=293",
+    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=294",
     "coverage": 0.96,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "18993",
-    "title": "Water Systems Technology",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=303",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "19386",
-    "title": "Interior Design",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=174",
-    "coverage": 0.957,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "20447",
-    "title": "Human Resources Management",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=93",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "20451",
-    "title": "Administrative Assistant",
-    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=107",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "20452",
-    "title": "Computer Applications",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=107",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "20458",
-    "title": "Network Technology",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=229",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "20460",
-    "title": "Welding Technology",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=305",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "20463",
-    "title": "Graphic and Multimedia Design",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=162",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "20465",
-    "title": "Administration of Justice",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=65",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "20466",
-    "title": "Fire Technology : Pre-Service",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=152",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "30293",
-    "title": "Medical Laboratory Technician",
-    "award": "A.S. Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=211",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "30297",
-    "title": "Communication Studies",
-    "award": "A.A. Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=105",
-    "coverage": 0.923,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "30836",
-    "title": "Sociology",
-    "award": "A.A- T Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=293",
-    "coverage": 0.923,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "30837",
-    "title": "Mathematics",
-    "award": "A.S. T Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=199",
-    "coverage": 0.727,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "30838",
-    "title": "Psychology",
-    "award": "A.A- T Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=265",
-    "coverage": 0.95,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "31354",
-    "title": "Theatre Arts",
-    "award": "A.A- T Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=298",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "31356",
-    "title": "Physics",
-    "award": "A.S. T Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=98",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=293",
+    "was_coverage": 0.96,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "31357",
     "title": "Philosophy",
     "award": "A.A. Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=250",
+    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=249",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "31733",
-    "title": "Geography",
-    "award": "A.A- T Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=156",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "32389",
-    "title": "Political Science",
-    "award": "A.A- T Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=262",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "32656",
-    "title": "Early Childhood Education",
-    "award": "A.S. T Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=130",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "32696",
-    "title": "Geology",
-    "award": "A.S. T Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=159",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "32704",
-    "title": "Computer Science",
-    "award": "A.S. T Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=114",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=250",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "32723",
     "title": "Kinesiology",
     "award": "A.A- T Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=178",
-    "coverage": 0.933,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "32727",
-    "title": "Studio Arts",
-    "award": "A.A- T Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=79",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "32815",
-    "title": "Spanish",
-    "award": "A.A- T Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=217",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "32817",
-    "title": "Administration of Justice",
-    "award": "A.S. T Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=65",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "32829",
-    "title": "History",
-    "award": "A.A- T Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=167",
-    "coverage": 0.917,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "32895",
-    "title": "Philosophy",
-    "award": "A.A- T Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=249",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "32896",
-    "title": "English",
-    "award": "A.A- T Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=142",
-    "coverage": 0.963,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "33581",
-    "title": "Journalism",
-    "award": "A.A- T Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=202",
-    "coverage": 0.857,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "33814",
-    "title": "Sustainable Design and Development",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=74",
-    "coverage": 0.96,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "35653",
-    "title": "Biology",
-    "award": "A.S. T Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=88",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "36092",
-    "title": "Culinary Arts",
-    "award": "A.A. Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=120",
-    "coverage": 0.938,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "36117",
-    "title": "Social Justice Studies",
-    "award": "A.A- T Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=293",
-    "coverage": 0.778,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "36124",
-    "title": "Web Development",
-    "award": "A.S. Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=108",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "36125",
-    "title": "Web Development",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=108",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "36156",
-    "title": "Web Publishing and Design",
-    "award": "A.S. Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=109",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "36163",
-    "title": "Web Publishing and Design",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=108",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "36570",
-    "title": "Environmental Studies",
-    "award": "A.A. Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=149",
-    "coverage": 0.857,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "36648",
-    "title": "Environmental Science",
-    "award": "A.S. T Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=148",
-    "coverage": 0.947,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "36793",
-    "title": "Hospitality Management",
-    "award": "A.S. T Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=170",
-    "coverage": 0.909,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "36794",
-    "title": "Music",
-    "award": "A.A- T Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=219",
-    "coverage": 0.875,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "36984",
-    "title": "Technical Theatre",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=299",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "36993",
-    "title": "Technical Theatre",
-    "award": "A.A. Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=299",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "36998",
-    "title": "Construction Technology",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=116",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37004",
-    "title": "Construction Technology",
-    "award": "A.S. Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=116",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37448",
-    "title": "Global Studies",
-    "award": "A.A- T Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=161",
-    "coverage": 0.611,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37648",
-    "title": "Global Competencies",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=161",
-    "coverage": 0.853,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37867",
-    "title": "Economics",
-    "award": "A.A- T Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=135",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37868",
-    "title": "Art History",
-    "award": "A.A- T Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=80",
-    "coverage": 0.909,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37953",
-    "title": "Anthropology",
-    "award": "A.A- T Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=69",
-    "coverage": 0.895,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "38552",
-    "title": "Liberal Arts and Sciences: Health Science Emphasis",
-    "award": "A.A. Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=193",
-    "coverage": 0.895,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "40041",
-    "title": "Cal-LAW Scholar",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=245",
-    "coverage": 0.815,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "40090",
-    "title": "Applied GIS and Spatial Studies",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=156",
-    "coverage": 0.951,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=179",
+    "coverage": 0.889,
+    "was_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=178",
+    "was_coverage": 0.933,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "40362",
     "title": "Metal Fabrication",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=305",
-    "coverage": 0.857,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "40364",
-    "title": "Semi-Automatic Welding",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
     "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=306",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "40383",
-    "title": "Advanced Diagnosis and Performance",
-    "award": "A.S. Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=84",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "40384",
-    "title": "Advanced Diagnosis and Performance",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=84",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "40387",
-    "title": "Paralegal Studies",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=242",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "40388",
-    "title": "Architectural Computer Aided Drafting",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=73",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "coverage": 0.857,
+    "was_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=305",
+    "was_coverage": 0.857,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "40389",
     "title": "Engine Repair",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=83",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "40411",
-    "title": "Quick Service Technician",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
     "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=84",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "40415",
-    "title": "Transmission Service Technician",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=84",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "40417",
-    "title": "Wine and Beer Studies",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=310",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "40418",
-    "title": "Gas Tungsten Arc Welding",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=305",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "40419",
-    "title": "Robotic Welding Automation",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=306",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "40420",
-    "title": "Structural Steel Welding",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=306",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "40486",
-    "title": "Interior Design – Set Decorator for TV and Film",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=175",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=83",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "40494",
     "title": "Medical Office Administrative Assistant",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=110",
+    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=109",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "40631",
-    "title": "Law Enforcement Technology",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=191",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "40666",
-    "title": "Law Enforcement Technology",
-    "award": "A.S. Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=191",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "41576",
-    "title": "Music",
-    "award": "A.A. Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=220",
-    "coverage": 0.733,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "41713",
-    "title": "Business Administration 2.0",
-    "award": "A.S. T Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=92",
-    "coverage": 0.786,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "42191",
-    "title": "Electronic Music",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=221",
-    "coverage": 0.9,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=110",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "42193",
     "title": "Music Composition",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=220",
+    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=221",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=220",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
    },
    {
-    "control_number": "42670",
-    "title": "Cybersecurity",
-    "award": "A.S. Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=123",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "42737",
-    "title": "Tooling and Milling",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=196",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "42843",
-    "title": "Clinical Laboratory Scientist Program",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=101",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "42861",
-    "title": "Communication Studies 2.0",
+    "control_number": "43271",
+    "title": "Law, Public Policy, and Society",
     "award": "A.A- T Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=104",
-    "coverage": 0.958,
+    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=244",
+    "coverage": 0.65,
     "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "43377",
-    "title": "Nursing Success",
-    "award": "Noncredit program",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=352",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "43392",
-    "title": "Commercial Photography",
-    "award": "A.A. Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=252",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "43549",
-    "title": "Commercial Music",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=220",
-    "coverage": 0.818,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "43782",
-    "title": "Nursing Skills Lab",
-    "award": "Noncredit program",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=352",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "43916",
-    "title": "American Sign Language – Deaf Studies",
-    "award": "A.A. Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=288",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "43918",
-    "title": "Systems Administrator",
-    "award": "A.S. Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=229",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "44260",
-    "title": "Building Performance",
-    "award": "Baccalaureate of Science (B.S.) Degree.",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=71",
-    "coverage": 0.976,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "44285",
-    "title": "Dance",
-    "award": "A.A. Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=124",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "44382",
-    "title": "Baking and Pastry",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=121",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "44414",
-    "title": "Pharmacy Technology",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=247",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "44447",
-    "title": "Physical Therapist Assistant",
-    "award": "A.S. Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=256",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "44458",
-    "title": "Pharmacy Technology",
-    "award": "A.S. Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=247",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "44657",
-    "title": "Public Health",
-    "award": "A.S. T Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=164",
-    "coverage": 0.967,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "45077",
-    "title": "Occupational Therapy Assistant",
-    "award": "A.S. Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=238",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "45180",
-    "title": "Diagnostic Medical Sonography",
-    "award": "A.S. Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=126",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "45268",
-    "title": "Sustainable Resources, Energy Management, and Environmental Ethics",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=150",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "45528",
-    "title": "Modern Policing",
-    "award": "A.S. Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=66",
-    "coverage": 0.854,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "45550",
-    "title": "Clinical Laboratory Scientist Accelerated Lecture Program",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=101",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "45756",
-    "title": "UCTP Chemistry",
-    "award": "A.S. T Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=98",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_coverage": 0.0,
+    "was_method": "not_found"
    }
   ]
  },
- "run": "39006378829"
+ "run": "39019553475"
 }

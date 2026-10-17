@@ -65,8 +65,8 @@
   ],
   "source": {
    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=107",
-   "title": null,
-   "h1": null,
+   "title": "College of the Canyons 105",
+   "h1": "College of the Canyons 105",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -75,7 +75,8 @@
     109,
     110
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 19,
   "text_chars": 16000
@@ -125,8 +126,8 @@
   ],
   "source": {
    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=205",
-   "title": null,
-   "h1": null,
+   "title": "College of the Canyons 203",
+   "h1": "College of the Canyons 203",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -135,7 +136,8 @@
     207,
     208
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 37,
   "text_chars": 16000
@@ -166,18 +168,19 @@
   ],
   "source": {
    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=114",
-   "title": null,
-   "h1": null,
+   "title": "Associate in Science Degree: Computer",
+   "h1": "Associate in Science Degree: Computer",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     114,
     115
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 15,
-  "text_chars": 8419
+  "text_chars": 6596
  },
  {
   "control_number": "02278",
@@ -227,8 +230,8 @@
   ],
   "source": {
    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=139",
-   "title": null,
-   "h1": null,
+   "title": "College of the Canyons 137",
+   "h1": "College of the Canyons 137",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -236,7 +239,8 @@
     140,
     141
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 25,
   "text_chars": 13918
@@ -264,8 +268,8 @@
   ],
   "source": {
    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=73",
-   "title": null,
-   "h1": null,
+   "title": "College of the Canyons 71",
+   "h1": "College of the Canyons 71",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -274,7 +278,8 @@
     75,
     76
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 12,
   "text_chars": 16000
@@ -316,8 +321,8 @@
   ],
   "source": {
    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=305",
-   "title": null,
-   "h1": null,
+   "title": "College of the Canyons",
+   "h1": "College of the Canyons",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -326,7 +331,8 @@
     307,
     308
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 26,
   "text_chars": 16000
@@ -360,8 +366,8 @@
   ],
   "source": {
    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=80",
-   "title": null,
-   "h1": null,
+   "title": "Associate in Arts Degree: Art",
+   "h1": "Associate in Arts Degree: Art",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -369,10 +375,11 @@
     81,
     82
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 18,
-  "text_chars": 12040
+  "text_chars": 11698
  },
  {
   "control_number": "02288",
@@ -390,18 +397,19 @@
   ],
   "source": {
    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=214",
-   "title": null,
-   "h1": null,
+   "title": "Associate in Arts Degree: French",
+   "h1": "Associate in Arts Degree: French",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     214,
     215
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 5,
-  "text_chars": 8733
+  "text_chars": 6255
  },
  {
   "control_number": "02290",
@@ -420,8 +428,8 @@
   ],
   "source": {
    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=217",
-   "title": null,
-   "h1": null,
+   "title": "Associate in Arts Degree: Spanish",
+   "h1": "Associate in Arts Degree: Spanish",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -429,10 +437,11 @@
     218,
     219
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 6,
-  "text_chars": 12980
+  "text_chars": 11634
  },
  {
   "control_number": "02291",
@@ -461,8 +470,8 @@
   ],
   "source": {
    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=233",
-   "title": null,
-   "h1": null,
+   "title": "College of the Canyons 231",
+   "h1": "College of the Canyons 231",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -471,7 +480,8 @@
     235,
     236
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 17,
   "text_chars": 16000
@@ -510,8 +520,8 @@
   ],
   "source": {
    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=142",
-   "title": null,
-   "h1": null,
+   "title": "Santa Clarita Community College District140",
+   "h1": "Santa Clarita Community College District140",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -520,7 +530,8 @@
     144,
     145
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 23,
   "text_chars": 16000
@@ -546,8 +557,8 @@
   ],
   "source": {
    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=199",
-   "title": null,
-   "h1": null,
+   "title": "Associate in Science Degree: Mathematics",
+   "h1": "Associate in Science Degree: Mathematics",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -556,7 +567,8 @@
     201,
     202
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 10,
   "text_chars": 16000
@@ -584,8 +596,8 @@
   ],
   "source": {
    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=65",
-   "title": null,
-   "h1": null,
+   "title": "College of the Canyons 63",
+   "h1": "College of the Canyons 63",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -594,7 +606,8 @@
     67,
     68
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 12,
   "text_chars": 16000
@@ -630,8 +643,8 @@
   ],
   "source": {
    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=167",
-   "title": null,
-   "h1": null,
+   "title": "Associate in Arts Degree: History",
+   "h1": "Associate in Arts Degree: History",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -640,7 +653,8 @@
     169,
     170
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 20,
   "text_chars": 16000
@@ -663,15 +677,16 @@
   ],
   "source": {
    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=171",
-   "title": null,
-   "h1": null,
+   "title": "College of the Canyons 169",
+   "h1": "College of the Canyons 169",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     171,
     172
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 7,
   "text_chars": 8803
@@ -724,8 +739,8 @@
   ],
   "source": {
    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=88",
-   "title": null,
-   "h1": null,
+   "title": "Santa Clarita Community College District86",
+   "h1": "Santa Clarita Community College District86",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -734,7 +749,8 @@
     90,
     91
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 25,
   "text_chars": 16000
@@ -758,8 +774,8 @@
   ],
   "source": {
    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=93",
-   "title": null,
-   "h1": null,
+   "title": "College of the Canyons 91",
+   "h1": "College of the Canyons 91",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -768,7 +784,8 @@
     95,
     96
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 8,
   "text_chars": 16000
@@ -800,8 +817,8 @@
   ],
   "source": {
    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=107",
-   "title": null,
-   "h1": null,
+   "title": "College of the Canyons 105",
+   "h1": "College of the Canyons 105",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -810,7 +827,8 @@
     109,
     110
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 16,
   "text_chars": 16000
@@ -857,8 +875,8 @@
   ],
   "source": {
    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=174",
-   "title": null,
-   "h1": null,
+   "title": "Santa Clarita Community College District172",
+   "h1": "Santa Clarita Community College District172",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -867,7 +885,8 @@
     176,
     177
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 32,
   "text_chars": 16000
@@ -903,8 +922,8 @@
   ],
   "source": {
    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=130",
-   "title": null,
-   "h1": null,
+   "title": "Santa Clarita Community College District128",
+   "h1": "Santa Clarita Community College District128",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -913,7 +932,8 @@
     132,
     133
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 8,
   "text_chars": 16000
@@ -939,8 +959,8 @@
   ],
   "source": {
    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=131",
-   "title": null,
-   "h1": null,
+   "title": "College of the Canyons 129",
+   "h1": "College of the Canyons 129",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -949,7 +969,8 @@
     133,
     134
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 10,
   "text_chars": 16000
@@ -973,8 +994,8 @@
   ],
   "source": {
    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=130",
-   "title": null,
-   "h1": null,
+   "title": "Santa Clarita Community College District128",
+   "h1": "Santa Clarita Community College District128",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -983,7 +1004,8 @@
     132,
     133
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 8,
   "text_chars": 16000
@@ -1008,8 +1030,8 @@
   ],
   "source": {
    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=130",
-   "title": null,
-   "h1": null,
+   "title": "Santa Clarita Community College District128",
+   "h1": "Santa Clarita Community College District128",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -1018,7 +1040,8 @@
     132,
     133
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 9,
   "text_chars": 16000
@@ -1046,20 +1069,22 @@
    "ECE160"
   ],
   "source": {
-   "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=131",
-   "title": null,
-   "h1": null,
+   "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=130",
+   "title": "Santa Clarita Community College District128",
+   "h1": "Santa Clarita Community College District128",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    130,
     131,
     132,
     133
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 13,
-  "text_chars": 13713
+  "text_chars": 16000
  },
  {
   "control_number": "10312",
@@ -1080,18 +1105,19 @@
   ],
   "source": {
    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=171",
-   "title": null,
-   "h1": null,
+   "title": "The Restaurant Management Associate in Science",
+   "h1": "The Restaurant Management Associate in Science",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     171,
     172
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 8,
-  "text_chars": 8803
+  "text_chars": 7976
  },
  {
   "control_number": "10318",
@@ -1131,8 +1157,8 @@
   ],
   "source": {
    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=291",
-   "title": null,
-   "h1": null,
+   "title": "Associate in Arts Degree: Social Science",
+   "h1": "Associate in Arts Degree: Social Science",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -1141,7 +1167,8 @@
     293,
     294
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 36,
   "text_chars": 16000
@@ -1168,8 +1195,8 @@
   ],
   "source": {
    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=152",
-   "title": null,
-   "h1": null,
+   "title": "Santa Clarita Community College District150",
+   "h1": "Santa Clarita Community College District150",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -1177,7 +1204,8 @@
     153,
     154
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 11,
   "text_chars": 13480
@@ -1204,15 +1232,16 @@
   ],
   "source": {
    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=303",
-   "title": null,
-   "h1": null,
+   "title": "College of the Canyons",
+   "h1": "College of the Canyons",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     303,
     304
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 11,
   "text_chars": 9200
@@ -1239,8 +1268,8 @@
   ],
   "source": {
    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=229",
-   "title": null,
-   "h1": null,
+   "title": "College of the Canyons",
+   "h1": "College of the Canyons",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -1248,7 +1277,8 @@
     230,
     231
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 11,
   "text_chars": 14554
@@ -1273,8 +1303,8 @@
   ],
   "source": {
    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=92",
-   "title": null,
-   "h1": null,
+   "title": "Santa Clarita Community College District90",
+   "h1": "Santa Clarita Community College District90",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -1282,7 +1312,8 @@
     93,
     94
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 11,
   "text_chars": 13917
@@ -1314,8 +1345,8 @@
   ],
   "source": {
    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=203",
-   "title": null,
-   "h1": null,
+   "title": "College of the Canyons 201",
+   "h1": "College of the Canyons 201",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -1324,7 +1355,8 @@
     205,
     206
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 16,
   "text_chars": 16000
@@ -1356,8 +1388,8 @@
   ],
   "source": {
    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=204",
-   "title": null,
-   "h1": null,
+   "title": "Santa Clarita Community College District202",
+   "h1": "Santa Clarita Community College District202",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -1366,7 +1398,8 @@
     206,
     207
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 17,
   "text_chars": 16000
@@ -1400,8 +1433,8 @@
   ],
   "source": {
    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=252",
-   "title": null,
-   "h1": null,
+   "title": "Associate in Arts Degree: Photography",
+   "h1": "Associate in Arts Degree: Photography",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -1410,7 +1443,8 @@
     254,
     255
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 20,
   "text_chars": 16000
@@ -1435,8 +1469,8 @@
   ],
   "source": {
    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=253",
-   "title": null,
-   "h1": null,
+   "title": "College of the Canyons 251",
+   "h1": "College of the Canyons 251",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -1444,7 +1478,8 @@
     254,
     255
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 9,
   "text_chars": 14207
@@ -1470,8 +1505,8 @@
   ],
   "source": {
    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=175",
-   "title": null,
-   "h1": null,
+   "title": "College of the Canyons 173",
+   "h1": "College of the Canyons 173",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -1479,7 +1514,8 @@
     176,
     177
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 10,
   "text_chars": 12094
@@ -1526,18 +1562,19 @@
    "WE186MEA"
   ],
   "source": {
-   "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=206",
-   "title": null,
-   "h1": null,
+   "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=205",
+   "title": "College of the Canyons 203",
+   "h1": "College of the Canyons 203",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    205,
     206,
     207,
-    208,
-    209
+    208
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 35,
   "text_chars": 16000
@@ -1585,8 +1622,8 @@
   ],
   "source": {
    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=205",
-   "title": null,
-   "h1": null,
+   "title": "College of the Canyons 203",
+   "h1": "College of the Canyons 203",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -1595,7 +1632,8 @@
     207,
     208
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 35,
   "text_chars": 16000
@@ -1617,18 +1655,19 @@
    "MEA232"
   ],
   "source": {
-   "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=205",
-   "title": null,
-   "h1": null,
+   "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=206",
+   "title": "Santa Clarita Community College District204",
+   "h1": "Santa Clarita Community College District204",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    205,
     206,
     207,
-    208
+    208,
+    209
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 7,
   "text_chars": 16000
@@ -1655,15 +1694,16 @@
   ],
   "source": {
    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=162",
-   "title": null,
-   "h1": null,
+   "title": "Santa Clarita Community College District160",
+   "h1": "Santa Clarita Community College District160",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     162,
     163
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 11,
   "text_chars": 8927
@@ -1691,14 +1731,15 @@
   ],
   "source": {
    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=242",
-   "title": null,
-   "h1": null,
+   "title": "Santa Clarita Community College District240",
+   "h1": "Santa Clarita Community College District240",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     242
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 12,
   "text_chars": 5376
@@ -1728,8 +1769,8 @@
   ],
   "source": {
    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=288",
-   "title": null,
-   "h1": null,
+   "title": "Santa Clarita Community College District286",
+   "h1": "Santa Clarita Community College District286",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -1737,7 +1778,8 @@
     289,
     290
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 14,
   "text_chars": 13351
@@ -1768,8 +1810,8 @@
   ],
   "source": {
    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=120",
-   "title": null,
-   "h1": null,
+   "title": "Santa Clarita Community College District",
+   "h1": "Santa Clarita Community College District",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -1777,7 +1819,8 @@
     121,
     122
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 16,
   "text_chars": 13704
@@ -1806,8 +1849,8 @@
   ],
   "source": {
    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=84",
-   "title": null,
-   "h1": null,
+   "title": "Santa Clarita Community College District82",
+   "h1": "Santa Clarita Community College District82",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -1816,7 +1859,8 @@
     86,
     87
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 13,
   "text_chars": 16000
@@ -1853,15 +1897,16 @@
   ],
   "source": {
    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=286",
-   "title": null,
-   "h1": null,
+   "title": "Santa Clarita Community College District284",
+   "h1": "Santa Clarita Community College District284",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     286,
     287
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 24,
   "text_chars": 9512
@@ -1890,8 +1935,8 @@
   ],
   "source": {
    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=116",
-   "title": null,
-   "h1": null,
+   "title": "Santa Clarita Community College District114",
+   "h1": "Santa Clarita Community College District114",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -1900,7 +1945,8 @@
     118,
     119
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 18,
   "text_chars": 16000
@@ -1927,15 +1973,16 @@
   ],
   "source": {
    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=189",
-   "title": null,
-   "h1": null,
+   "title": "College of the Canyons 187",
+   "h1": "College of the Canyons 187",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     189,
     190
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 12,
   "text_chars": 7694
@@ -1946,9 +1993,8 @@
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
   "method": "pdf_pages",
-  "coverage": 1.0,
+  "coverage": 0.833,
   "codes_found": [
-   "CONST103",
    "CONST108",
    "CONST109",
    "CONST120",
@@ -1956,20 +2002,19 @@
    "CONST124"
   ],
   "source": {
-   "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=117",
-   "title": null,
-   "h1": null,
+   "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=119",
+   "title": "College of the Canyons 117",
+   "h1": "College of the Canyons 117",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    117,
-    118,
     119
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 6,
-  "text_chars": 12467
+  "text_chars": 3773
  },
  {
   "control_number": "17646",
@@ -2010,8 +2055,8 @@
   ],
   "source": {
    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=298",
-   "title": null,
-   "h1": null,
+   "title": "Associate in Arts Degree: Theatre",
+   "h1": "Associate in Arts Degree: Theatre",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -2019,10 +2064,11 @@
     299,
     300
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 16,
-  "text_chars": 13963
+  "text_chars": 13757
  },
  {
   "control_number": "17748",
@@ -2051,8 +2097,8 @@
   ],
   "source": {
    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=298",
-   "title": null,
-   "h1": null,
+   "title": "Santa Clarita Community College District",
+   "h1": "Santa Clarita Community College District",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -2060,7 +2106,8 @@
     299,
     300
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 16,
   "text_chars": 13963
@@ -2096,8 +2143,8 @@
   ],
   "source": {
    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=72",
-   "title": null,
-   "h1": null,
+   "title": "Santa Clarita Community College District70",
+   "h1": "Santa Clarita Community College District70",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -2106,7 +2153,8 @@
     74,
     75
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 21,
   "text_chars": 16000
@@ -2158,15 +2206,16 @@
   ],
   "source": {
    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=194",
-   "title": null,
-   "h1": null,
+   "title": "Santa Clarita Community College District192",
+   "h1": "Santa Clarita Community College District192",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     194,
     195
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 36,
   "text_chars": 9840
@@ -2219,15 +2268,16 @@
   ],
   "source": {
    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=195",
-   "title": null,
-   "h1": null,
+   "title": "College of the Canyons 193",
+   "h1": "College of the Canyons 193",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     195,
     196
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 59,
   "text_chars": 9591
@@ -2300,8 +2350,8 @@
   ],
   "source": {
    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=193",
-   "title": null,
-   "h1": null,
+   "title": "College of the Canyons 191",
+   "h1": "College of the Canyons 191",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -2309,7 +2359,8 @@
     194,
     195
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 61,
   "text_chars": 14753
@@ -2344,15 +2395,16 @@
   ],
   "source": {
    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=265",
-   "title": null,
-   "h1": null,
+   "title": "College of the Canyons 263",
+   "h1": "College of the Canyons 263",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     265,
     266
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 20,
   "text_chars": 7781
@@ -2381,8 +2433,8 @@
   ],
   "source": {
    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=84",
-   "title": null,
-   "h1": null,
+   "title": "Santa Clarita Community College District82",
+   "h1": "Santa Clarita Community College District82",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -2391,7 +2443,8 @@
     86,
     87
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 13,
   "text_chars": 16000
@@ -2416,8 +2469,8 @@
   ],
   "source": {
    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=92",
-   "title": null,
-   "h1": null,
+   "title": "Santa Clarita Community College District90",
+   "h1": "Santa Clarita Community College District90",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -2425,7 +2478,8 @@
     93,
     94
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 11,
   "text_chars": 13917
@@ -2447,8 +2501,8 @@
   ],
   "source": {
    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=203",
-   "title": null,
-   "h1": null,
+   "title": "College of the Canyons 201",
+   "h1": "College of the Canyons 201",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -2457,7 +2511,8 @@
     205,
     206
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 6,
   "text_chars": 16000
@@ -2479,8 +2534,8 @@
   ],
   "source": {
    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=204",
-   "title": null,
-   "h1": null,
+   "title": "The Computer Animation Certificate provides skills",
+   "h1": "The Computer Animation Certificate provides skills",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -2489,7 +2544,8 @@
     206,
     207
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 6,
   "text_chars": 16000
@@ -2518,8 +2574,8 @@
   ],
   "source": {
    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=116",
-   "title": null,
-   "h1": null,
+   "title": "Santa Clarita Community College District114",
+   "h1": "Santa Clarita Community College District114",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -2528,7 +2584,8 @@
     118,
     119
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 18,
   "text_chars": 16000
@@ -2555,18 +2612,19 @@
   ],
   "source": {
    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=189",
-   "title": null,
-   "h1": null,
+   "title": "Certificate of Achievement: Land Surveying",
+   "h1": "Certificate of Achievement: Land Surveying",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     189,
     190
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 12,
-  "text_chars": 7694
+  "text_chars": 5569
  },
  {
   "control_number": "18979",
@@ -2602,21 +2660,21 @@
    "STATC1000H"
   ],
   "source": {
-   "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=293",
-   "title": null,
-   "h1": null,
+   "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=294",
+   "title": "Associate in Arts Degree: Sociology",
+   "h1": "Associate in Arts Degree: Sociology",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    293,
     294,
     295,
     296
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 25,
-  "text_chars": 16000
+  "text_chars": 11335
  },
  {
   "control_number": "18993",
@@ -2640,15 +2698,16 @@
   ],
   "source": {
    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=303",
-   "title": null,
-   "h1": null,
+   "title": "College of the Canyons",
+   "h1": "College of the Canyons",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     303,
     304
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 11,
   "text_chars": 9200
@@ -2686,8 +2745,8 @@
   ],
   "source": {
    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=174",
-   "title": null,
-   "h1": null,
+   "title": "Certificate of Achievement: Interior Design",
+   "h1": "Certificate of Achievement: Interior Design",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -2696,10 +2755,11 @@
     176,
     177
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 23,
-  "text_chars": 16000
+  "text_chars": 15176
  },
  {
   "control_number": "20446",
@@ -2732,8 +2792,8 @@
   ],
   "source": {
    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=93",
-   "title": null,
-   "h1": null,
+   "title": "College of the Canyons 91",
+   "h1": "College of the Canyons 91",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -2742,7 +2802,8 @@
     95,
     96
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 8,
   "text_chars": 16000
@@ -2813,8 +2874,8 @@
   ],
   "source": {
    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=107",
-   "title": null,
-   "h1": null,
+   "title": "College of the Canyons 105",
+   "h1": "College of the Canyons 105",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -2823,7 +2884,8 @@
     109,
     110
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 19,
   "text_chars": 16000
@@ -2855,8 +2917,8 @@
   ],
   "source": {
    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=107",
-   "title": null,
-   "h1": null,
+   "title": "College of the Canyons 105",
+   "h1": "College of the Canyons 105",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -2865,7 +2927,8 @@
     109,
     110
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 16,
   "text_chars": 16000
@@ -2891,8 +2954,8 @@
   ],
   "source": {
    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=229",
-   "title": null,
-   "h1": null,
+   "title": "College of the Canyons",
+   "h1": "College of the Canyons",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -2900,7 +2963,8 @@
     230,
     231
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 10,
   "text_chars": 14554
@@ -2942,8 +3006,8 @@
   ],
   "source": {
    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=305",
-   "title": null,
-   "h1": null,
+   "title": "College of the Canyons",
+   "h1": "College of the Canyons",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -2952,7 +3016,8 @@
     307,
     308
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 26,
   "text_chars": 16000
@@ -2979,15 +3044,16 @@
   ],
   "source": {
    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=162",
-   "title": null,
-   "h1": null,
+   "title": "Santa Clarita Community College District160",
+   "h1": "Santa Clarita Community College District160",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     162,
     163
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 11,
   "text_chars": 8927
@@ -3015,8 +3081,8 @@
   ],
   "source": {
    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=65",
-   "title": null,
-   "h1": null,
+   "title": "College of the Canyons 63",
+   "h1": "College of the Canyons 63",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -3025,7 +3091,8 @@
     67,
     68
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 12,
   "text_chars": 16000
@@ -3052,8 +3119,8 @@
   ],
   "source": {
    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=152",
-   "title": null,
-   "h1": null,
+   "title": "The Fire Technology - Pre-Service degree/certificate",
+   "h1": "The Fire Technology - Pre-Service degree/certificate",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -3061,10 +3128,11 @@
     153,
     154
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 11,
-  "text_chars": 13480
+  "text_chars": 12650
  },
  {
   "control_number": "30293",
@@ -3101,8 +3169,8 @@
   ],
   "source": {
    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=211",
-   "title": null,
-   "h1": null,
+   "title": "College of the Canyons 209",
+   "h1": "College of the Canyons 209",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -3110,7 +3178,8 @@
     212,
     213
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 24,
   "text_chars": 13343
@@ -3138,15 +3207,16 @@
   ],
   "source": {
    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=105",
-   "title": null,
-   "h1": null,
+   "title": "College of the Canyons 103",
+   "h1": "College of the Canyons 103",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     105,
     106
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 13,
   "text_chars": 8308
@@ -3222,8 +3292,8 @@
   ],
   "source": {
    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=293",
-   "title": null,
-   "h1": null,
+   "title": "College of the Canyons",
+   "h1": "College of the Canyons",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -3232,7 +3302,8 @@
     295,
     296
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 26,
   "text_chars": 16000
@@ -3256,8 +3327,8 @@
   ],
   "source": {
    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=199",
-   "title": null,
-   "h1": null,
+   "title": "College of the Canyons 197",
+   "h1": "College of the Canyons 197",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -3266,7 +3337,8 @@
     201,
     202
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 11,
   "text_chars": 16000
@@ -3301,15 +3373,16 @@
   ],
   "source": {
    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=265",
-   "title": null,
-   "h1": null,
+   "title": "College of the Canyons 263",
+   "h1": "College of the Canyons 263",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     265,
     266
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 20,
   "text_chars": 7781
@@ -3335,8 +3408,8 @@
   ],
   "source": {
    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=298",
-   "title": null,
-   "h1": null,
+   "title": "Santa Clarita Community College District",
+   "h1": "Santa Clarita Community College District",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -3344,7 +3417,8 @@
     299,
     300
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 10,
   "text_chars": 13963
@@ -3366,14 +3440,15 @@
   ],
   "source": {
    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=98",
-   "title": null,
-   "h1": null,
+   "title": "Santa Clarita Community College District96",
+   "h1": "Santa Clarita Community College District96",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     98
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 6,
   "text_chars": 5212
@@ -3403,19 +3478,21 @@
    "PHILOS250"
   ],
   "source": {
-   "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=250",
-   "title": null,
-   "h1": null,
+   "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=249",
+   "title": "College of the Canyons 247",
+   "h1": "College of the Canyons 247",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    249,
     250,
     251
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 15,
-  "text_chars": 8145
+  "text_chars": 13208
  },
  {
   "control_number": "31733",
@@ -3438,8 +3515,8 @@
   ],
   "source": {
    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=156",
-   "title": null,
-   "h1": null,
+   "title": "Santa Clarita Community College District154",
+   "h1": "Santa Clarita Community College District154",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -3448,7 +3525,8 @@
     158,
     159
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 10,
   "text_chars": 16000
@@ -3474,8 +3552,8 @@
   ],
   "source": {
    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=262",
-   "title": null,
-   "h1": null,
+   "title": "Santa Clarita Community College District260",
+   "h1": "Santa Clarita Community College District260",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -3484,7 +3562,8 @@
     264,
     265
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 10,
   "text_chars": 16000
@@ -3508,8 +3587,8 @@
   ],
   "source": {
    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=130",
-   "title": null,
-   "h1": null,
+   "title": "Santa Clarita Community College District128",
+   "h1": "Santa Clarita Community College District128",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -3518,7 +3597,8 @@
     132,
     133
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 8,
   "text_chars": 16000
@@ -3541,14 +3621,15 @@
   ],
   "source": {
    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=159",
-   "title": null,
-   "h1": null,
+   "title": "College of the Canyons 157",
+   "h1": "College of the Canyons 157",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     159
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 7,
   "text_chars": 4734
@@ -3572,18 +3653,19 @@
   ],
   "source": {
    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=114",
-   "title": null,
-   "h1": null,
+   "title": "AS-T in Computer Science. Additional majors are being",
+   "h1": "AS-T in Computer Science. Additional majors are being",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     114,
     115
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 8,
-  "text_chars": 8419
+  "text_chars": 7726
  },
  {
   "control_number": "32723",
@@ -3591,7 +3673,7 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "pdf_pages",
-  "coverage": 0.933,
+  "coverage": 0.889,
   "codes_found": [
    "BIOSCI201",
    "BIOSCI202",
@@ -3599,8 +3681,6 @@
    "BIOSCI205",
    "CHEM201",
    "CHEM201H",
-   "DANCE107",
-   "DANCE180",
    "KPEA101A",
    "KPEA101B",
    "KPEA102",
@@ -3637,18 +3717,19 @@
    "STATC1000H"
   ],
   "source": {
-   "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=178",
-   "title": null,
-   "h1": null,
+   "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=179",
+   "title": "College of the Canyons 177",
+   "h1": "College of the Canyons 177",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    178,
     179,
     180,
-    181
+    181,
+    182
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 45,
   "text_chars": 16000
@@ -3688,8 +3769,8 @@
   ],
   "source": {
    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=79",
-   "title": null,
-   "h1": null,
+   "title": "College of the Canyons 77",
+   "h1": "College of the Canyons 77",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -3698,7 +3779,8 @@
     81,
     82
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 24,
   "text_chars": 16000
@@ -3726,8 +3808,8 @@
   ],
   "source": {
    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=217",
-   "title": null,
-   "h1": null,
+   "title": "College of the Canyons 215",
+   "h1": "College of the Canyons 215",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -3735,7 +3817,8 @@
     218,
     219
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 12,
   "text_chars": 12980
@@ -3761,8 +3844,8 @@
   ],
   "source": {
    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=65",
-   "title": null,
-   "h1": null,
+   "title": "College of the Canyons 63",
+   "h1": "College of the Canyons 63",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -3771,7 +3854,8 @@
     67,
     68
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 10,
   "text_chars": 16000
@@ -3809,8 +3893,8 @@
   ],
   "source": {
    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=167",
-   "title": null,
-   "h1": null,
+   "title": "College of the Canyons 165",
+   "h1": "College of the Canyons 165",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -3819,7 +3903,8 @@
     169,
     170
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 24,
   "text_chars": 16000
@@ -3848,8 +3933,8 @@
   ],
   "source": {
    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=249",
-   "title": null,
-   "h1": null,
+   "title": "College of the Canyons 247",
+   "h1": "College of the Canyons 247",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -3857,7 +3942,8 @@
     250,
     251
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 13,
   "text_chars": 13208
@@ -3899,8 +3985,8 @@
   ],
   "source": {
    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=142",
-   "title": null,
-   "h1": null,
+   "title": "Santa Clarita Community College District140",
+   "h1": "Santa Clarita Community College District140",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -3909,7 +3995,8 @@
     144,
     145
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 27,
   "text_chars": 16000
@@ -3949,8 +4036,8 @@
   ],
   "source": {
    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=202",
-   "title": null,
-   "h1": null,
+   "title": "Santa Clarita Community College District200",
+   "h1": "Santa Clarita Community College District200",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -3959,7 +4046,8 @@
     204,
     205
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 14,
   "text_chars": 16000
@@ -3999,8 +4087,8 @@
   ],
   "source": {
    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=74",
-   "title": null,
-   "h1": null,
+   "title": "Santa Clarita Community College District72",
+   "h1": "Santa Clarita Community College District72",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -4009,7 +4097,8 @@
     76,
     77
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 25,
   "text_chars": 16000
@@ -4049,8 +4138,8 @@
   ],
   "source": {
    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=88",
-   "title": null,
-   "h1": null,
+   "title": "studies for the biology major preparing for transfer to a",
+   "h1": "studies for the biology major preparing for transfer to a",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -4059,10 +4148,11 @@
     90,
     91
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 12,
-  "text_chars": 16000
+  "text_chars": 15347
  },
  {
   "control_number": "36092",
@@ -4090,8 +4180,8 @@
   ],
   "source": {
    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=120",
-   "title": null,
-   "h1": null,
+   "title": "Santa Clarita Community College District",
+   "h1": "Santa Clarita Community College District",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -4099,7 +4189,8 @@
     121,
     122
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 16,
   "text_chars": 13704
@@ -4129,8 +4220,8 @@
   ],
   "source": {
    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=293",
-   "title": null,
-   "h1": null,
+   "title": "College of the Canyons",
+   "h1": "College of the Canyons",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -4139,7 +4230,8 @@
     295,
     296
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 18,
   "text_chars": 16000
@@ -4178,8 +4270,8 @@
   ],
   "source": {
    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=108",
-   "title": null,
-   "h1": null,
+   "title": "Santa Clarita Community College District106",
+   "h1": "Santa Clarita Community College District106",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -4188,7 +4280,8 @@
     110,
     111
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 23,
   "text_chars": 16000
@@ -4213,8 +4306,8 @@
   ],
   "source": {
    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=108",
-   "title": null,
-   "h1": null,
+   "title": "The Certificate of Achievement in Web Development is a",
+   "h1": "The Certificate of Achievement in Web Development is a",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -4222,10 +4315,11 @@
     109,
     110
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 9,
-  "text_chars": 15456
+  "text_chars": 13514
  },
  {
   "control_number": "36156",
@@ -4266,8 +4360,8 @@
   ],
   "source": {
    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=109",
-   "title": null,
-   "h1": null,
+   "title": "College of the Canyons 107",
+   "h1": "College of the Canyons 107",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -4276,7 +4370,8 @@
     111,
     112
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 28,
   "text_chars": 16000
@@ -4302,8 +4397,8 @@
   ],
   "source": {
    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=108",
-   "title": null,
-   "h1": null,
+   "title": "Santa Clarita Community College District106",
+   "h1": "Santa Clarita Community College District106",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -4312,7 +4407,8 @@
     110,
     111
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 10,
   "text_chars": 16000
@@ -4364,8 +4460,8 @@
   ],
   "source": {
    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=149",
-   "title": null,
-   "h1": null,
+   "title": "Associate in Arts: Environmental Studies",
+   "h1": "Associate in Arts: Environmental Studies",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -4373,10 +4469,11 @@
     150,
     151
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 28,
-  "text_chars": 14576
+  "text_chars": 14069
  },
  {
   "control_number": "36619",
@@ -4419,8 +4516,8 @@
   ],
   "source": {
    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=148",
-   "title": null,
-   "h1": null,
+   "title": "Santa Clarita Community College District146",
+   "h1": "Santa Clarita Community College District146",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -4429,7 +4526,8 @@
     150,
     151
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 19,
   "text_chars": 16000
@@ -4455,8 +4553,8 @@
   ],
   "source": {
    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=170",
-   "title": null,
-   "h1": null,
+   "title": "Santa Clarita Community College District168",
+   "h1": "Santa Clarita Community College District168",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -4464,7 +4562,8 @@
     171,
     172
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 11,
   "text_chars": 13421
@@ -4494,8 +4593,8 @@
   ],
   "source": {
    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=219",
-   "title": null,
-   "h1": null,
+   "title": "College of the Canyons 217",
+   "h1": "College of the Canyons 217",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -4504,7 +4603,8 @@
     221,
     222
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 16,
   "text_chars": 16000
@@ -4563,15 +4663,16 @@
   ],
   "source": {
    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=299",
-   "title": null,
-   "h1": null,
+   "title": "College of the Canyons",
+   "h1": "College of the Canyons",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     299,
     300
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 7,
   "text_chars": 9034
@@ -4594,15 +4695,16 @@
   ],
   "source": {
    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=299",
-   "title": null,
-   "h1": null,
+   "title": "College of the Canyons",
+   "h1": "College of the Canyons",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     299,
     300
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 7,
   "text_chars": 9034
@@ -4629,8 +4731,8 @@
   ],
   "source": {
    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=116",
-   "title": null,
-   "h1": null,
+   "title": "Santa Clarita Community College District114",
+   "h1": "Santa Clarita Community College District114",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -4639,7 +4741,8 @@
     118,
     119
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 11,
   "text_chars": 16000
@@ -4666,8 +4769,8 @@
   ],
   "source": {
    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=116",
-   "title": null,
-   "h1": null,
+   "title": "Santa Clarita Community College District114",
+   "h1": "Santa Clarita Community College District114",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -4676,7 +4779,8 @@
     118,
     119
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 11,
   "text_chars": 16000
@@ -4703,14 +4807,15 @@
   ],
   "source": {
    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=161",
-   "title": null,
-   "h1": null,
+   "title": "College of the Canyons 159",
+   "h1": "College of the Canyons 159",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     161
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 18,
   "text_chars": 4883
@@ -4767,17 +4872,18 @@
   ],
   "source": {
    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=161",
-   "title": null,
-   "h1": null,
+   "title": "The Certificate of Achievement in Global Competencies",
+   "h1": "The Certificate of Achievement in Global Competencies",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     161
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 34,
-  "text_chars": 4883
+  "text_chars": 4356
  },
  {
   "control_number": "37867",
@@ -4808,15 +4914,16 @@
   ],
   "source": {
    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=135",
-   "title": null,
-   "h1": null,
+   "title": "College of the Canyons 133",
+   "h1": "College of the Canyons 133",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     135,
     136
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 18,
   "text_chars": 8323
@@ -4842,8 +4949,8 @@
   ],
   "source": {
    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=80",
-   "title": null,
-   "h1": null,
+   "title": "Santa Clarita Community College District78",
+   "h1": "Santa Clarita Community College District78",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -4851,7 +4958,8 @@
     81,
     82
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 11,
   "text_chars": 12040
@@ -4884,8 +4992,8 @@
   ],
   "source": {
    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=69",
-   "title": null,
-   "h1": null,
+   "title": "College of the Canyons 67",
+   "h1": "College of the Canyons 67",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -4893,7 +5001,8 @@
     70,
     71
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 19,
   "text_chars": 13965
@@ -5094,8 +5203,8 @@
   ],
   "source": {
    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=193",
-   "title": null,
-   "h1": null,
+   "title": "College of the Canyons 191",
+   "h1": "College of the Canyons 191",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -5104,7 +5213,8 @@
     195,
     196
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 19,
   "text_chars": 16000
@@ -5286,8 +5396,8 @@
   ],
   "source": {
    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=245",
-   "title": null,
-   "h1": null,
+   "title": "College of the Canyons 243",
+   "h1": "College of the Canyons 243",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -5295,7 +5405,8 @@
     246,
     247
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 27,
   "text_chars": 13551
@@ -5369,8 +5480,8 @@
   ],
   "source": {
    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=156",
-   "title": null,
-   "h1": null,
+   "title": "Santa Clarita Community College District154",
+   "h1": "Santa Clarita Community College District154",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -5379,7 +5490,8 @@
     158,
     159
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 61,
   "text_chars": 16000
@@ -5460,20 +5572,20 @@
    "WELD133"
   ],
   "source": {
-   "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=305",
-   "title": null,
-   "h1": null,
+   "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=306",
+   "title": "The Certificate of Achievement in Metal Fabrication",
+   "h1": "The Certificate of Achievement in Metal Fabrication",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    305,
     306,
     307
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 7,
-  "text_chars": 13743
+  "text_chars": 8481
  },
  {
   "control_number": "40364",
@@ -5493,8 +5605,8 @@
   ],
   "source": {
    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=306",
-   "title": null,
-   "h1": null,
+   "title": "Santa Clarita Community College District",
+   "h1": "Santa Clarita Community College District",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -5503,7 +5615,8 @@
     308,
     309
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 7,
   "text_chars": 16000
@@ -5530,8 +5643,8 @@
   ],
   "source": {
    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=84",
-   "title": null,
-   "h1": null,
+   "title": "Santa Clarita Community College District82",
+   "h1": "Santa Clarita Community College District82",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -5540,7 +5653,8 @@
     86,
     87
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 11,
   "text_chars": 16000
@@ -5567,8 +5681,8 @@
   ],
   "source": {
    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=84",
-   "title": null,
-   "h1": null,
+   "title": "Santa Clarita Community College District82",
+   "h1": "Santa Clarita Community College District82",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -5577,7 +5691,8 @@
     86,
     87
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 11,
   "text_chars": 16000
@@ -5603,17 +5718,18 @@
   ],
   "source": {
    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=242",
-   "title": null,
-   "h1": null,
+   "title": "*The Paralegal Studies Certificate will be granted upon",
+   "h1": "*The Paralegal Studies Certificate will be granted upon",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     242
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 10,
-  "text_chars": 5376
+  "text_chars": 3759
  },
  {
   "control_number": "40388",
@@ -5632,8 +5748,8 @@
   ],
   "source": {
    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=73",
-   "title": null,
-   "h1": null,
+   "title": "College of the Canyons 71",
+   "h1": "College of the Canyons 71",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -5642,7 +5758,8 @@
     75,
     76
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 6,
   "text_chars": 16000
@@ -5662,21 +5779,22 @@
    "AUTECH180"
   ],
   "source": {
-   "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=83",
-   "title": null,
-   "h1": null,
+   "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=84",
+   "title": "Certificate of Achievement: Engine Repair",
+   "h1": "Certificate of Achievement: Engine Repair",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    83,
     84,
     85,
-    86
+    86,
+    87
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 5,
-  "text_chars": 16000
+  "text_chars": 14825
  },
  {
   "control_number": "40411",
@@ -5694,8 +5812,8 @@
   ],
   "source": {
    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=84",
-   "title": null,
-   "h1": null,
+   "title": "The Quick Service Technician Certificate of Achievement",
+   "h1": "The Quick Service Technician Certificate of Achievement",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -5704,10 +5822,11 @@
     86,
     87
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 5,
-  "text_chars": 16000
+  "text_chars": 13841
  },
  {
   "control_number": "40415",
@@ -5725,8 +5844,8 @@
   ],
   "source": {
    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=84",
-   "title": null,
-   "h1": null,
+   "title": "Santa Clarita Community College District82",
+   "h1": "Santa Clarita Community College District82",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -5735,7 +5854,8 @@
     86,
     87
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 5,
   "text_chars": 16000
@@ -5760,15 +5880,16 @@
   ],
   "source": {
    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=310",
-   "title": null,
-   "h1": null,
+   "title": "Santa Clarita Community College District",
+   "h1": "Santa Clarita Community College District",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     310,
     311
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 9,
   "text_chars": 8335
@@ -5791,8 +5912,8 @@
   ],
   "source": {
    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=305",
-   "title": null,
-   "h1": null,
+   "title": "College of the Canyons",
+   "h1": "College of the Canyons",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -5801,7 +5922,8 @@
     307,
     308
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 7,
   "text_chars": 16000
@@ -5824,15 +5946,16 @@
   ],
   "source": {
    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=306",
-   "title": null,
-   "h1": null,
+   "title": "Santa Clarita Community College District",
+   "h1": "Santa Clarita Community College District",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     306,
     307
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 7,
   "text_chars": 8823
@@ -5855,8 +5978,8 @@
   ],
   "source": {
    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=306",
-   "title": null,
-   "h1": null,
+   "title": "Santa Clarita Community College District",
+   "h1": "Santa Clarita Community College District",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -5865,7 +5988,8 @@
     308,
     309
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 7,
   "text_chars": 16000
@@ -5890,8 +6014,8 @@
   ],
   "source": {
    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=175",
-   "title": null,
-   "h1": null,
+   "title": "College of the Canyons 173",
+   "h1": "College of the Canyons 173",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -5899,7 +6023,8 @@
     176,
     177
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 9,
   "text_chars": 12094
@@ -5920,20 +6045,22 @@
    "HLHSCI249"
   ],
   "source": {
-   "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=110",
-   "title": null,
-   "h1": null,
+   "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=109",
+   "title": "College of the Canyons 107",
+   "h1": "College of the Canyons 107",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    109,
     110,
     111,
     112
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 6,
-  "text_chars": 13645
+  "text_chars": 16000
  },
  {
   "control_number": "40631",
@@ -5957,15 +6084,16 @@
   ],
   "source": {
    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=191",
-   "title": null,
-   "h1": null,
+   "title": "College of the Canyons 189",
+   "h1": "College of the Canyons 189",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     191,
     192
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 11,
   "text_chars": 8299
@@ -5992,15 +6120,16 @@
   ],
   "source": {
    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=191",
-   "title": null,
-   "h1": null,
+   "title": "College of the Canyons 189",
+   "h1": "College of the Canyons 189",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     191,
     192
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 11,
   "text_chars": 8299
@@ -6074,8 +6203,8 @@
   ],
   "source": {
    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=220",
-   "title": null,
-   "h1": null,
+   "title": "Santa Clarita Community College District218",
+   "h1": "Santa Clarita Community College District218",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -6084,7 +6213,8 @@
     222,
     223
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 30,
   "text_chars": 16000
@@ -6159,8 +6289,8 @@
   ],
   "source": {
    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=92",
-   "title": null,
-   "h1": null,
+   "title": "Santa Clarita Community College District90",
+   "h1": "Santa Clarita Community College District90",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -6169,7 +6299,8 @@
     94,
     95
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 14,
   "text_chars": 16000
@@ -6206,15 +6337,16 @@
   ],
   "source": {
    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=221",
-   "title": null,
-   "h1": null,
+   "title": "College of the Canyons 219",
+   "h1": "College of the Canyons 219",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     221,
     222
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 10,
   "text_chars": 9058
@@ -6236,19 +6368,19 @@
    "MUSIC220B"
   ],
   "source": {
-   "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=220",
-   "title": null,
-   "h1": null,
+   "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=221",
+   "title": "College of the Canyons 219",
+   "h1": "College of the Canyons 219",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    220,
     221
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 7,
-  "text_chars": 9985
+  "text_chars": 4654
  },
  {
   "control_number": "42216",
@@ -6380,14 +6512,15 @@
   ],
   "source": {
    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=123",
-   "title": null,
-   "h1": null,
+   "title": "College of the Canyons 121",
+   "h1": "College of the Canyons 121",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     123
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 11,
   "text_chars": 4007
@@ -6423,8 +6556,8 @@
   ],
   "source": {
    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=196",
-   "title": null,
-   "h1": null,
+   "title": "Santa Clarita Community College District194",
+   "h1": "Santa Clarita Community College District194",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -6432,7 +6565,8 @@
     197,
     198
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 8,
   "text_chars": 14010
@@ -6458,8 +6592,8 @@
   ],
   "source": {
    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=101",
-   "title": null,
-   "h1": null,
+   "title": "College of the Canyons 99",
+   "h1": "College of the Canyons 99",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -6467,7 +6601,8 @@
     102,
     103
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 10,
   "text_chars": 15288
@@ -6506,8 +6641,8 @@
   ],
   "source": {
    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=104",
-   "title": null,
-   "h1": null,
+   "title": "Santa Clarita Community College District102",
+   "h1": "Santa Clarita Community College District102",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -6515,7 +6650,8 @@
     105,
     106
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 24,
   "text_chars": 13268
@@ -6573,12 +6709,92 @@
   "title": "Law, Public Policy, and Society",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "pdf_pages",
+  "coverage": 0.65,
+  "codes_found": [
+   "ADMJUS101",
+   "ADMJUS110",
+   "ADMJUS120",
+   "ADMJUS125",
+   "ADMJUS135",
+   "ADMJUS185",
+   "ANTHRO103",
+   "ANTHRO103H",
+   "BUS126",
+   "BUS211",
+   "COMMC1000",
+   "COMMC1000H",
+   "COUNS142",
+   "COUNS150",
+   "ECON291",
+   "ECONC2001H",
+   "ECONC2002H",
+   "ENGLC1000",
+   "ENGLC1000H",
+   "ENGLC1001",
+   "ENGLC1001H",
+   "GEOGRPH102",
+   "GLST101",
+   "GLST102",
+   "HIST116",
+   "HIST117",
+   "HIST120",
+   "HIST120H",
+   "HIST130",
+   "HIST161",
+   "HIST191",
+   "HIST192",
+   "HIST193",
+   "HIST210",
+   "HIST243",
+   "HISTC1001",
+   "HISTC1001H",
+   "HLHSCI243",
+   "PARLGL101",
+   "PHILOS120",
+   "PHILOS206",
+   "POLSC1000",
+   "POLSC1000H",
+   "SOCI101",
+   "SOCI101H",
+   "SOCI103",
+   "SOCI103H",
+   "SOCI104",
+   "SOCI105",
+   "SOCI106",
+   "SOCI107",
+   "SOCI110",
+   "SOCI130",
+   "SOCI137",
+   "SOCI200",
+   "SOCI200H",
+   "SOCI205",
+   "SOCI207",
+   "SOCI208",
+   "SOCI210",
+   "SOCI233",
+   "SOCI250",
+   "STATC1000",
+   "STATC1000E",
+   "STATC1000H"
+  ],
+  "source": {
+   "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=244",
+   "title": "Santa Clarita Community College District242",
+   "h1": "Santa Clarita Community College District242",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    244,
+    245,
+    246,
+    247
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
   "listed": 100,
-  "text_chars": 0
+  "text_chars": 16000
  },
  {
   "control_number": "43310",
@@ -6633,14 +6849,15 @@
   ],
   "source": {
    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=352",
-   "title": null,
-   "h1": null,
+   "title": "Santa Clarita Community College District",
+   "h1": "Santa Clarita Community College District",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     352
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 6,
   "text_chars": 4591
@@ -6731,8 +6948,8 @@
   ],
   "source": {
    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=252",
-   "title": null,
-   "h1": null,
+   "title": "Santa Clarita Community College District250",
+   "h1": "Santa Clarita Community College District250",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -6741,7 +6958,8 @@
     254,
     255
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 15,
   "text_chars": 16000
@@ -6766,8 +6984,8 @@
   ],
   "source": {
    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=220",
-   "title": null,
-   "h1": null,
+   "title": "Santa Clarita Community College District218",
+   "h1": "Santa Clarita Community College District218",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -6775,7 +6993,8 @@
     221,
     222
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 11,
   "text_chars": 14389
@@ -6832,14 +7051,15 @@
   ],
   "source": {
    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=352",
-   "title": null,
-   "h1": null,
+   "title": "Santa Clarita Community College District",
+   "h1": "Santa Clarita Community College District",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     352
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 5,
   "text_chars": 4591
@@ -6874,8 +7094,8 @@
   ],
   "source": {
    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=288",
-   "title": null,
-   "h1": null,
+   "title": "Santa Clarita Community College District286",
+   "h1": "Santa Clarita Community College District286",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -6883,7 +7103,8 @@
     289,
     290
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 7,
   "text_chars": 13351
@@ -6908,15 +7129,16 @@
   ],
   "source": {
    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=229",
-   "title": null,
-   "h1": null,
+   "title": "College of the Canyons",
+   "h1": "College of the Canyons",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     229,
     230
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 9,
   "text_chars": 9194
@@ -7057,8 +7279,8 @@
   ],
   "source": {
    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=71",
-   "title": null,
-   "h1": null,
+   "title": "The Bachelor of Science in Building Performance degree",
+   "h1": "The Bachelor of Science in Building Performance degree",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -7067,7 +7289,8 @@
     73,
     74
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 42,
   "text_chars": 16000
@@ -7110,8 +7333,8 @@
   ],
   "source": {
    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=124",
-   "title": null,
-   "h1": null,
+   "title": "Associate in Arts Degree: Dance",
+   "h1": "Associate in Arts Degree: Dance",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -7119,10 +7342,11 @@
     125,
     126
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 15,
-  "text_chars": 12595
+  "text_chars": 12500
  },
  {
   "control_number": "44310",
@@ -7165,18 +7389,19 @@
   ],
   "source": {
    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=121",
-   "title": null,
-   "h1": null,
+   "title": "The Culinary Arts Baking and Pastry Certificate of",
+   "h1": "The Culinary Arts Baking and Pastry Certificate of",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     121,
     122
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 6,
-  "text_chars": 8815
+  "text_chars": 8550
  },
  {
   "control_number": "44414",
@@ -7197,15 +7422,16 @@
   ],
   "source": {
    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=247",
-   "title": null,
-   "h1": null,
+   "title": "College of the Canyons 245",
+   "h1": "College of the Canyons 245",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     247,
     248
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 8,
   "text_chars": 8929
@@ -7245,8 +7471,8 @@
   ],
   "source": {
    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=256",
-   "title": null,
-   "h1": null,
+   "title": "Santa Clarita Community College District254",
+   "h1": "Santa Clarita Community College District254",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -7255,7 +7481,8 @@
     258,
     259
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 24,
   "text_chars": 16000
@@ -7279,15 +7506,16 @@
   ],
   "source": {
    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=247",
-   "title": null,
-   "h1": null,
+   "title": "College of the Canyons 245",
+   "h1": "College of the Canyons 245",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     247,
     248
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 8,
   "text_chars": 8929
@@ -7416,8 +7644,8 @@
   ],
   "source": {
    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=164",
-   "title": null,
-   "h1": null,
+   "title": "Santa Clarita Community College District162",
+   "h1": "Santa Clarita Community College District162",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -7425,7 +7653,8 @@
     165,
     166
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 30,
   "text_chars": 13046
@@ -7522,8 +7751,8 @@
   ],
   "source": {
    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=238",
-   "title": null,
-   "h1": null,
+   "title": "Santa Clarita Community College District236",
+   "h1": "Santa Clarita Community College District236",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -7532,7 +7761,8 @@
     240,
     241
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 21,
   "text_chars": 16000
@@ -7572,8 +7802,8 @@
   ],
   "source": {
    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=126",
-   "title": null,
-   "h1": null,
+   "title": "Santa Clarita Community College District124",
+   "h1": "Santa Clarita Community College District124",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -7581,7 +7811,8 @@
     127,
     128
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 12,
   "text_chars": 13937
@@ -7622,15 +7853,16 @@
   ],
   "source": {
    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=150",
-   "title": null,
-   "h1": null,
+   "title": "Santa Clarita Community College District148",
+   "h1": "Santa Clarita Community College District148",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     150,
     151
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 25,
   "text_chars": 9913
@@ -7729,8 +7961,8 @@
   ],
   "source": {
    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=66",
-   "title": null,
-   "h1": null,
+   "title": "64",
+   "h1": "64",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -7739,7 +7971,8 @@
     68,
     69
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 41,
   "text_chars": 16000
@@ -7761,8 +7994,8 @@
   ],
   "source": {
    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=101",
-   "title": null,
-   "h1": null,
+   "title": "College of the Canyons 99",
+   "h1": "College of the Canyons 99",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -7770,7 +8003,8 @@
     102,
     103
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 6,
   "text_chars": 15288
@@ -7822,15 +8056,16 @@
   ],
   "source": {
    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=98",
-   "title": null,
-   "h1": null,
+   "title": "Santa Clarita Community College District96",
+   "h1": "Santa Clarita Community College District96",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     98,
     99
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 12,
   "text_chars": 9683

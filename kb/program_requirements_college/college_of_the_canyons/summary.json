@@ -2,7 +2,7 @@
  "college": "College of the Canyons",
  "programs": 283,
  "with_closed_list": 264,
- "found": 160,
+ "found": 161,
  "extracted": 160,
  "errors": 0,
  "passed_machine_checks": 104,
@@ -11,7 +11,7 @@
   "invented": 23,
   "arithmetic": 43,
   "repeated": 0,
-  "outcomes": 0
+  "outcomes": 1
  },
  "cost_usd": 13.55,
  "cost_per_program": 0.0847,
@@ -362,15 +362,6 @@
    "near_miss": null
   },
   {
-   "control_number": "43271",
-   "title": "Law, Public Policy, and Society",
-   "award": "A.A- T Degree",
-   "near_miss": {
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=245",
-    "coverage": 0.48
-   }
-  },
-  {
    "control_number": "43310",
    "title": "Crime and Intelligence Analysis",
    "award": "Noncredit program",
@@ -650,5 +641,5 @@
    "near_miss": null
   }
  ],
- "run": "39006378829"
+ "run": "39019553475"
 }

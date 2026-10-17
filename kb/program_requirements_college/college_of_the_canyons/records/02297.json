@@ -94,8 +94,14 @@
   },
   "careers": {
    "count": 6,
-   "not_verbatim": [],
-   "pass": true
+   "not_verbatim": [
+    "computer programmer",
+    "financial analyst",
+    "statistician",
+    "systems analyst",
+    "urban planner"
+   ],
+   "pass": false
   },
   "degree": {
    "status": "major only",
@@ -251,5 +257,6 @@
    "MATH-211X (Calculus I with Support, 6.0 units) is printed as an OR option to MATH-211 and is not in the closed list."
   ]
  },
- "extracted_run": "39006378829"
+ "extracted_run": 39019553475,
+ "read_run": "39006378829"
 }
