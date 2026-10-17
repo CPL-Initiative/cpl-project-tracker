@@ -914,6 +914,19 @@ lig = {**plo, "program": {**plo["program"], "outcomes": ["Design and draft lands
 LIG_TEXT = "Program Outcomes\n1. Design and draŌ  landscape plan.\n3. EsƟ mate the cost of a landscape construcƟ on project."
 check(S.outcomes_check(lig, LIG_TEXT)["pass"],
       "an outcome printed with Solano's stand-in ligature glyphs ('draŌ ', 'EsƟ mate') is verbatim (S405)")
+MARK_TEXT = ("STUDENT LEARNING OUTCOMES\nDemonstrate knowledge of basic laws and principles of California real estate. 1.\n"
+             "Demonstrate knowledge of real estate listings, deposit receipts, escrows, 2.\nand financing.\nMAJOR FIELD")
+marked = {**plo, "program": {**plo["program"], "outcomes": [
+    "Demonstrate knowledge of basic laws and principles of California real estate.",
+    "Demonstrate knowledge of real estate listings, deposit receipts, escrows, and financing."]}}
+check(S.outcomes_check(marked, MARK_TEXT)["pass"],
+      "an outcome whose list number Ohlone's PDF prints at its first line's end ('escrows, 2.') is verbatim (S408)")
+check(S.outcomes_check({**marked, "program": {**marked["program"], "outcomes": [
+    "Demonstrate knowledge of real estate listings, deposit receipts, escrows, 2. and financing."]}}, MARK_TEXT)["pass"],
+      "the marker reading adds a reading: the text as printed still reads")
+check(not S.outcomes_check({**marked, "program": {**marked["program"], "outcomes": [
+    "Demonstrate knowledge of real estate listings, escrows, and financing."]}}, MARK_TEXT)["pass"],
+      "an outcome missing words is still reworded with the marker reading")
 check(not S.outcomes_check({**lig, "program": {**lig["program"], "outcomes": ["Design and draft a landscape plan."]}},
                            LIG_TEXT)["pass"],
       "the ligature reading still refuses a word the text does not print")
