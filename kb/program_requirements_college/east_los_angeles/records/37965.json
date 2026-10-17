@@ -107,19 +107,11 @@
    "program": 4,
    "courses": 0,
    "count": 4,
-   "not_verbatim": [
-    "Employ appropriate technologies and contextual knowledge in the production and marketing of commercial music.",
-    "Recognize applications of music theory in commercial music genres via analysis and application.",
-    "Production Technology Option: Evaluate and successfully troubleshoot signal flow applications in a studio and in a Digital Audio Workstation software."
-   ],
-   "why": [
-    "not in the catalog text as printed: Employ appropriate technologies and contextual knowledge in the production and m",
-    "not in the catalog text as printed: Recognize applications of music theory in commercial music genres via analysis a",
-    "not in the catalog text as printed: Production Technology Option: Evaluate and successfully troubleshoot signal flow"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 7,

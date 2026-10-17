@@ -86,15 +86,11 @@
    "program": 1,
    "courses": 0,
    "count": 1,
-   "not_verbatim": [
-    "Explore healthcare professions including job descriptions, work environment, employment opportunities, requirements for potential further educational pathways, and potential workplace earnings."
-   ],
-   "why": [
-    "not in the catalog text as printed: Explore healthcare professions including job descriptions, work environment, emp"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 1,
@@ -104,7 +100,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {

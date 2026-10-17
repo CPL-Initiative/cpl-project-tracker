@@ -82,15 +82,11 @@
    "program": 2,
    "courses": 0,
    "count": 2,
-   "not_verbatim": [
-    "Describe and summarize the skills necessary to enhance the knowledge in the area of the criminal justice system and provide an in-depth understanding of supervision policy and procedures followed in law enforcement."
-   ],
-   "why": [
-    "not in the catalog text as printed: Describe and summarize the skills necessary to enhance the knowledge in the area"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 0,
@@ -100,7 +96,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {

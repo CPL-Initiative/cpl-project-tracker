@@ -110,17 +110,11 @@
    "program": 6,
    "courses": 0,
    "count": 6,
-   "not_verbatim": [
-    "Demonstrate a mastery of a complex body of knowledge and specialized skills in the cognitive (knowledge), psychomotor (skills), and affective (behavior) learning domains.",
-    "Prepare students to display professionalism and cultural sensitivity while interacting and communicating with providers, staff and patients."
-   ],
-   "why": [
-    "not in the catalog text as printed: Demonstrate a mastery of a complex body of knowledge and specialized skills in t",
-    "not in the catalog text as printed: Prepare students to display professionalism and cultural sensitivity while inter"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 1,

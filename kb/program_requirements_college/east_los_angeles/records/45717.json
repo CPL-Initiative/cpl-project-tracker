@@ -82,17 +82,11 @@
    "program": 3,
    "courses": 0,
    "count": 3,
-   "not_verbatim": [
-    "Demonstrate and summarize both department policies and procedures as well as legal statutes related to criminal investigations.",
-    "Demonstrate proficiency in applying learned tactics to the interview process of witnesses and suspects, and apply this knowledge to the courtroom environment."
-   ],
-   "why": [
-    "not in the catalog text as printed: Demonstrate and summarize both department policies and procedures as well as leg",
-    "not in the catalog text as printed: Demonstrate proficiency in applying learned tactics to the interview process of "
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 0,
@@ -102,7 +96,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {

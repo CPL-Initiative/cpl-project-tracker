@@ -103,15 +103,11 @@
    "program": 3,
    "courses": 0,
    "count": 3,
-   "not_verbatim": [
-    "Build parts by using Computer Aided Manufacturing (CAM) techniques specifically in Additive Manufacturing and 3D printing."
-   ],
-   "why": [
-    "not in the catalog text as printed: Build parts by using Computer Aided Manufacturing (CAM) techniques specifically "
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 1,
@@ -121,7 +117,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {

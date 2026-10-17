@@ -93,15 +93,11 @@
    "program": 2,
    "courses": 0,
    "count": 2,
-   "not_verbatim": [
-    "Differentiate fundamental scientific concepts relating biology, chemistry, environmental science, and physics."
-   ],
-   "why": [
-    "not in the catalog text as printed: Differentiate fundamental scientific concepts relating biology, chemistry, envir"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 0,

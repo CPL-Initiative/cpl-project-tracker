@@ -92,15 +92,11 @@
    "program": 2,
    "courses": 0,
    "count": 2,
-   "not_verbatim": [
-    "Evaluate early childhood environments and curricula using developmentally appropriate practices and inclusive, anti-bias principles."
-   ],
-   "why": [
-    "not in the catalog text as printed: Evaluate early childhood environments and curricula using developmentally approp"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 0,
@@ -110,7 +106,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {

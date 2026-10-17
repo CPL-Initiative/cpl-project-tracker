@@ -82,21 +82,11 @@
    "program": 4,
    "courses": 0,
    "count": 4,
-   "not_verbatim": [
-    "Demonstrate comprehensive knowledge of yoga theory, anatomy, physiology, philosophy, and teaching methodology by integrating foundational concepts into both personal practice and instruction.",
-    "Design and lead safe, effective yoga classes that emphasize anatomical alignment, include appropriate modifications, and are adaptable to students of varying physical abilities and experience levels.",
-    "Analyze the historical and cultural roots of yoga, demonstrating an ethical and respectful approach to teaching that promotes cultural awareness and honors the tradition.",
-    "Apply personal practice experience to build teaching confidence and professionalism, preparing for employment in yoga instruction and related roles in the health, wellness, and fitness industries."
-   ],
-   "why": [
-    "not in the catalog text as printed: Demonstrate comprehensive knowledge of yoga theory, anatomy, physiology, philoso",
-    "not in the catalog text as printed: Design and lead safe, effective yoga classes that emphasize anatomical alignment",
-    "not in the catalog text as printed: Analyze the historical and cultural roots of yoga, demonstrating an ethical and ",
-    "not in the catalog text as printed: Apply personal practice experience to build teaching confidence and professional"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 2,
@@ -106,7 +96,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {

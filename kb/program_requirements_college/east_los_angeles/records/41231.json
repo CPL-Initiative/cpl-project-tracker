@@ -123,19 +123,11 @@
    "program": 4,
    "courses": 0,
    "count": 4,
-   "not_verbatim": [
-    "Analyze issues of resource management and depletion particularly as they apply to diminishing supplies of energy sources, minerals, water, food, and natural habitat.",
-    "Critique the human response to environmental challenges including the economics of pollution, the character of environmental justice, and the effects of population change.",
-    "Demonstrate scientific thinking, quantitative reasoning, sound environmental principles, and ethical purposefulness."
-   ],
-   "why": [
-    "not in the catalog text as printed: Analyze issues of resource management and depletion particularly as they apply t",
-    "not in the catalog text as printed: Critique the human response to environmental challenges including the economics ",
-    "not in the catalog text as printed: Demonstrate scientific thinking, quantitative reasoning, sound environmental pri"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 0,

@@ -102,15 +102,11 @@
    "program": 3,
    "courses": 0,
    "count": 3,
-   "not_verbatim": [
-    "Apply 2-D and 3-D Computer Aided Drafting (CAD) techniques to construct and test project prototypes through technical reports/presentations while employing Geometric Dimensioning & Tolerancing (ASME Y14.5) industry standard."
-   ],
-   "why": [
-    "not in the catalog text as printed: Apply 2-D and 3-D Computer Aided Drafting (CAD) techniques to construct and test"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 0,

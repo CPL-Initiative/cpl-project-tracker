@@ -98,10 +98,8 @@
   },
   "careers": {
    "count": 10,
-   "not_verbatim": [
-    "laboratory analyst"
-   ],
-   "pass": false
+   "not_verbatim": [],
+   "pass": true
   },
   "degree": {
    "status": "read"

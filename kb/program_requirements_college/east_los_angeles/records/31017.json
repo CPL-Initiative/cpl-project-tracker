@@ -136,17 +136,11 @@
    "program": 3,
    "courses": 0,
    "count": 3,
-   "not_verbatim": [
-    "Demonstrate physical fitness concepts, healthy living practices, lifelong wellness, appropriate stress reduction techniques, sport, dance, and physical skill development.",
-    "Explain the validity of fitness, health, and human movement using the scientific method and the relationship between scientific research and established knowledge."
-   ],
-   "why": [
-    "not in the catalog text as printed: Demonstrate physical fitness concepts, healthy living practices, lifelong wellne",
-    "not in the catalog text as printed: Explain the validity of fitness, health, and human movement using the scientific"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 0,

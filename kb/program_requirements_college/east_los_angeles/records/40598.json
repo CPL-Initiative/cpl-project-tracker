@@ -78,15 +78,11 @@
    "program": 4,
    "courses": 0,
    "count": 4,
-   "not_verbatim": [
-    "Identify examples of illegal activity, and recognize appropriate governing authorities and proper protocol to be followed when reporting illegal activity in the health care setting."
-   ],
-   "why": [
-    "not in the catalog text as printed: Identify examples of illegal activity, and recognize appropriate governing autho"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 1,
@@ -96,7 +92,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {

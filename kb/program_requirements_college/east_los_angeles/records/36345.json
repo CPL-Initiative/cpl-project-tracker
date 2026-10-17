@@ -96,19 +96,11 @@
    "program": 4,
    "courses": 0,
    "count": 4,
-   "not_verbatim": [
-    "Develop communication skills to communicate effectively in written, oral and graphical forms.",
-    "Develop critical thinking skills to apply economic analysis to everyday problems in real world situations.",
-    "Develop quantitative reasoning skills to understand how to use empirical evidence to evaluate the validity of an economic argument."
-   ],
-   "why": [
-    "not in the catalog text as printed: Develop communication skills to communicate effectively in written, oral and gra",
-    "not in the catalog text as printed: Develop critical thinking skills to apply economic analysis to everyday problems",
-    "not in the catalog text as printed: Develop quantitative reasoning skills to understand how to use empirical evidenc"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 0,

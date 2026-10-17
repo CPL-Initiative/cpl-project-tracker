@@ -95,17 +95,11 @@
    "program": 2,
    "courses": 0,
    "count": 2,
-   "not_verbatim": [
-    "Analyze and examine traditional architectural techniques along with CAD (Computer-Aided Design) design process.",
-    "Create complex professional multi-media presentations as a means to communicate design intent."
-   ],
-   "why": [
-    "not in the catalog text as printed: Analyze and examine traditional architectural techniques along with CAD (Compute",
-    "not in the catalog text as printed: Create complex professional multi-media presentations as a means to communicate "
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 0,

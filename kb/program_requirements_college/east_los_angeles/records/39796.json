@@ -94,10 +94,8 @@
   },
   "careers": {
    "count": 2,
-   "not_verbatim": [
-    "medical administrative assistant"
-   ],
-   "pass": false
+   "not_verbatim": [],
+   "pass": true
   },
   "degree": {
    "status": "n/a"

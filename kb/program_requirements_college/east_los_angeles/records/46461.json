@@ -90,17 +90,11 @@
    "program": 5,
    "courses": 0,
    "count": 5,
-   "not_verbatim": [
-    "Apply principles of visual art, design, and spatial representation to produce effective two- and three-dimensional content for animation, visual effects, and interactive entertainment work.",
-    "Develop characters, environments, and visual concepts for animation, visual effects, and interactive entertainment works."
-   ],
-   "why": [
-    "not in the catalog text as printed: Apply principles of visual art, design, and spatial representation to produce ef",
-    "not in the catalog text as printed: Develop characters, environments, and visual concepts for animation, visual effe"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 0,

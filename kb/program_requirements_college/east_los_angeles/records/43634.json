@@ -90,15 +90,11 @@
    "program": 1,
    "courses": 0,
    "count": 1,
-   "not_verbatim": [
-    "Create a developmentally appropriate and culturally relevant curriculum experiences and quality environments."
-   ],
-   "why": [
-    "not in the catalog text as printed: Create a developmentally appropriate and culturally relevant curriculum experien"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 0,
@@ -108,7 +104,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {

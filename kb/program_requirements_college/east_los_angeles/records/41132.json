@@ -108,15 +108,11 @@
    "program": 3,
    "courses": 0,
    "count": 3,
-   "not_verbatim": [
-    "Examine the historical background of applied methods of investigation."
-   ],
-   "why": [
-    "not in the catalog text as printed: Examine the historical background of applied methods of investigation."
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 3,

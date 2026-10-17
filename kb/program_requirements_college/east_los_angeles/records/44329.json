@@ -86,15 +86,11 @@
    "program": 1,
    "courses": 0,
    "count": 1,
-   "not_verbatim": [
-    "Exhibit proficiency in core competencies, including the application of best practices, tools, and methodologies relevant to the field."
-   ],
-   "why": [
-    "not in the catalog text as printed: Exhibit proficiency in core competencies, including the application of best prac"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 9,
@@ -104,7 +100,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {

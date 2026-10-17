@@ -90,17 +90,11 @@
    "program": 3,
    "courses": 0,
    "count": 3,
-   "not_verbatim": [
-    "Utilize Microsoft Office applications to effectively communicate, present, and format data for the business environment.",
-    "Implement industry language and fundamental leadership skills to effectively communicate with upper management, colleagues, and end-user customers."
-   ],
-   "why": [
-    "not in the catalog text as printed: Utilize Microsoft Office applications to effectively communicate, present, and f",
-    "not in the catalog text as printed: Implement industry language and fundamental leadership skills to effectively com"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 0,
@@ -110,7 +104,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {

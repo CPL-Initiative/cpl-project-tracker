@@ -112,19 +112,11 @@
    "program": 3,
    "courses": 0,
    "count": 3,
-   "not_verbatim": [
-    "Analyze and discuss effectively the impact of theoretical, social, political, economic and cultural concepts that affect our built environment.",
-    "Appraise and compare traditional architectural techniques along with CAD (Computer-Aided Design) design process.",
-    "Create complex professional multi-media presentations as a means to communicate design intent."
-   ],
-   "why": [
-    "not in the catalog text as printed: Analyze and discuss effectively the impact of theoretical, social, political, ec",
-    "not in the catalog text as printed: Appraise and compare traditional architectural techniques along with CAD (Comput",
-    "not in the catalog text as printed: Create complex professional multi-media presentations as a means to communicate "
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 3,

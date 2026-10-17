@@ -85,15 +85,11 @@
    "program": 2,
    "courses": 0,
    "count": 2,
-   "not_verbatim": [
-    "Evaluate the complex historical, social, and cultural developments in Central America in conjunction with identifying diverse Central American cultures, ethnicities, experiences, and perspectives."
-   ],
-   "why": [
-    "not in the catalog text as printed: Evaluate the complex historical, social, and cultural developments in Central Am"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 15,

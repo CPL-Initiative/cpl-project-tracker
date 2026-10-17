@@ -92,15 +92,11 @@
    "program": 2,
    "courses": 0,
    "count": 2,
-   "not_verbatim": [
-    "Synthesize basic information about human development, nutrition and body functions to provide quality care and safety to the older-adult and across the continuum of care from wellness to illness."
-   ],
-   "why": [
-    "not in the catalog text as printed: Synthesize basic information about human development, nutrition and body functio"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 2,
@@ -110,7 +106,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {

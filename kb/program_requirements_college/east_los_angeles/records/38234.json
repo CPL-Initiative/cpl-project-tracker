@@ -92,15 +92,11 @@
    "program": 2,
    "courses": 0,
    "count": 2,
-   "not_verbatim": [
-    "Proficiently produce letters, memos, email messages, reports, tables, spreadsheets, databases, and other applications using business-related software applications."
-   ],
-   "why": [
-    "not in the catalog text as printed: Proficiently produce letters, memos, email messages, reports, tables, spreadshee"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 5,
@@ -110,7 +106,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {

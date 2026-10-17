@@ -82,17 +82,11 @@
    "program": 2,
    "courses": 0,
    "count": 2,
-   "not_verbatim": [
-    "Demonstrate proficiency in applying learned tactics and techniques in inmate contacts and custodial situations related to the performance of the job classification.",
-    "Describe and summarize both departmental policies and procedures as well as legal statutes related to the performance of their duties, recognizing the authority granted and limitations established for their job classification."
-   ],
-   "why": [
-    "not in the catalog text as printed: Demonstrate proficiency in applying learned tactics and techniques in inmate con",
-    "not in the catalog text as printed: Describe and summarize both departmental policies and procedures as well as lega"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 0,
@@ -102,7 +96,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {

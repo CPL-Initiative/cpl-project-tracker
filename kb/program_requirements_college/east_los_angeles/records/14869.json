@@ -106,15 +106,11 @@
    "program": 1,
    "courses": 0,
    "count": 1,
-   "not_verbatim": [
-    "Manage production teams, rehearsals, and performances in theater productions."
-   ],
-   "why": [
-    "not in the catalog text as printed: Manage production teams, rehearsals, and performances in theater productions."
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 4,

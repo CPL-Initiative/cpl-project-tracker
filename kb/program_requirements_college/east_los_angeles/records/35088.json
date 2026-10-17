@@ -114,19 +114,11 @@
    "program": 4,
    "courses": 0,
    "count": 4,
-   "not_verbatim": [
-    "Analyze issues of resource management and depletion particularly as they apply to diminishing supplies of energy sources, minerals, water, food, and natural habitat.",
-    "Analyze the scientific basis underlying environmental degradation particularly pollution of water, air and land and the components of global climate change.",
-    "Critique the human response to environmental challenges including economics of pollution, the character of environmental regulation and policy, environmental justice and the effects of population change."
-   ],
-   "why": [
-    "not in the catalog text as printed: Analyze issues of resource management and depletion particularly as they apply t",
-    "not in the catalog text as printed: Analyze the scientific basis underlying environmental degradation particularly p",
-    "not in the catalog text as printed: Critique the human response to environmental challenges including economics of p"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 0,
@@ -136,7 +128,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {

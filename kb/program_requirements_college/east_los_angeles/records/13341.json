@@ -88,19 +88,11 @@
    "program": 3,
    "courses": 0,
    "count": 3,
-   "not_verbatim": [
-    "Apply appropriate assessment and treatment methods in the clinical setting.",
-    "Compare and contrast the difference among assessment, intervention, treatment, and prevention in the recovery process.",
-    "Differentiate between the major theoretical perspectives in psychology."
-   ],
-   "why": [
-    "not in the catalog text as printed: Apply appropriate assessment and treatment methods in the clinical setting.",
-    "not in the catalog text as printed: Compare and contrast the difference among assessment, intervention, treatment, a",
-    "not in the catalog text as printed: Differentiate between the major theoretical perspectives in psychology."
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 0,
@@ -110,7 +102,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {

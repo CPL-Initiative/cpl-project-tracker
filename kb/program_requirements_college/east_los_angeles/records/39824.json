@@ -94,27 +94,21 @@
    "program": 4,
    "courses": 0,
    "count": 4,
-   "not_verbatim": [
-    "Program automation tasks, including cybersecurity defenses, and configuring and troubleshooting networks."
-   ],
-   "why": [
-    "not in the catalog text as printed: Program automation tasks, including cybersecurity defenses, and configuring and "
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 4,
-   "not_verbatim": [
-    "Information Security Analysts"
-   ],
-   "pass": false
+   "not_verbatim": [],
+   "pass": true
   },
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {

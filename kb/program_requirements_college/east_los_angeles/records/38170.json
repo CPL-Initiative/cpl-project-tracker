@@ -98,15 +98,11 @@
    "program": 2,
    "courses": 0,
    "count": 2,
-   "not_verbatim": [
-    "Apply and evaluate design skills during the multiple phases of a practical theater production in preparation for career opportunities."
-   ],
-   "why": [
-    "not in the catalog text as printed: Apply and evaluate design skills during the multiple phases of a practical theat"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 1,
@@ -116,7 +112,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {

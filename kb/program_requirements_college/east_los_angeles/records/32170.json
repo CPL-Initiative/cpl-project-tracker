@@ -94,17 +94,11 @@
    "program": 3,
    "courses": 0,
    "count": 3,
-   "not_verbatim": [
-    "Garner a critical understanding of the complex interplay between social circumstances and individual experience.",
-    "Understand and express in writing the implementation of methods for a social scientific research project."
-   ],
-   "why": [
-    "not in the catalog text as printed: Garner a critical understanding of the complex interplay between social circumst",
-    "not in the catalog text as printed: Understand and express in writing the implementation of methods for a social sci"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 0,

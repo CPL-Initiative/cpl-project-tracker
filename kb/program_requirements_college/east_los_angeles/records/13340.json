@@ -86,30 +86,21 @@
    "program": 3,
    "courses": 0,
    "count": 3,
-   "not_verbatim": [
-    "Achieve competency in a forensic science work environment utilizing acceptable practices and methods.",
-    "Recognize the importance of ethical standards in evidence handling using professional code of ethics."
-   ],
-   "why": [
-    "not in the catalog text as printed: Achieve competency in a forensic science work environment utilizing acceptable p",
-    "not in the catalog text as printed: Recognize the importance of ethical standards in evidence handling using profess"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 4,
-   "not_verbatim": [
-    "Crime Scene Technician",
-    "Criminal Investigation (Detective)"
-   ],
-   "pass": false
+   "not_verbatim": [],
+   "pass": true
   },
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
