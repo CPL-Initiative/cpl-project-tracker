@@ -70,9 +70,12 @@ function splitTop(str) {
   out.push(cur);
   return out;
 }
+// The stored columns the light index reads (S405), as the paths Postgres computes them from.
+const STORED = { idx_fp: "requirements_fp", idx_display_arithmetic: "display->checks->>arithmetic",
+  idx_display_reviewer: "display->checks->>reviewer", idx_display_here: "display->counts->here" };
 function pickPath(row, item) {
   const m = /^(?:([A-Za-z_][A-Za-z0-9_]*):)?(.+)$/.exec(item);
-  const alias = m[1], path = m[2];
+  const alias = m[1], path = STORED[m[2]] || m[2];
   const parts = path.split(/(->>|->)/);
   const col = parts[0];
   let v = col === "requirements_fp" ? (row.requirements_fp || "fp-" + row.control_number) : row[col];
@@ -169,6 +172,7 @@ function pickAll(M) {
 }
 function recordReads(db) { return db.asked.filter(function (a) { return /program_requirement_records\?/.test(a.url); }); }
 // A read that asks for a whole record: the record, or the whole display.
+function asksFp(a) { return a.select.some(function (it) { return /^(requirements_fp|requirements_fp:idx_fp|idx_fp)$/.test(it); }); }
 function asksFull(a) { return a.select.some(function (it) { const p = it.replace(/^[A-Za-z_0-9]+:/, ""); return p === "record" || p === "display"; }); }
 
 const REGISTRY = [
@@ -399,14 +403,33 @@ block("(6d)", function () {
     check("(6d) in the table's order, the last college included",
       got.length === 2840 && got[0].control_number === "10000" && got[2839].control_number === "12839");
     const idx = indexReads(db);
-    check("(6d) every page asks for a range of at most 250 rows, over the stable order",
-      idx.length >= 12 && idx.every(function (a) {
-        const m = /^(\d+)-(\d+)$/.exec(a.range || ""); return m && (+m[2] - +m[1] + 1) <= 250 &&
+    check("(6d) every page asks for a range of at most 1,000 rows (PostgREST's cap), over the stable order",
+      idx.length === 3 && idx.every(function (a) {
+        const m = /^(\d+)-(\d+)$/.exec(a.range || ""); return m && (+m[2] - +m[1] + 1) <= 1000 &&
           /order=college,control_number/.test(a.url); }), JSON.stringify(idx.slice(0, 2).map(function (a) { return a.range; })));
     check("(6d) only the first page asks for the count", idx.filter(function (a) { return a.prefer === "count=exact"; }).length === 1 &&
       idx[0].prefer === "count=exact");
     check("(6d) no page is read twice, none past the end", new Set(idx.map(function (a) { return a.range; })).size === idx.length &&
-      idx.length === Math.ceil(2840 / 250));
+      idx.length === Math.ceil(2840 / 1000));
+  });
+});
+// ── (6e) The index reads stored columns, never display or the fingerprint function (S405) ──
+// Sam, 2026-10-17: "Prog Req tab in COBI loads very slow". Each Range page is an OFFSET, which
+// evaluates every skipped row: with three paths into display, the last public page of 11,969 took
+// 9.4 s (anon's limit is 3 s), and the signed-in index's requirements_fp added 10.4 s a pass.
+// The same reads from the stored idx_* columns take 22 ms. A path into display or the computed
+// requirements_fp in the index brings the cost back, growing with the square of the table.
+block("(6e)", function () {
+  const db = restDb({ records: genRecords(1200) });
+  const { M } = loadModule({ fetch: db.fetch });
+  return M._load().then(function () {
+    const idx = indexReads(db);
+    check("(6e) the index reads no path into display or record",
+      idx.length > 0 && idx.every(function (a) { return a.select.every(function (it) { return !/(^|:)(display|record)(->|$)/.test(it); }); }),
+      JSON.stringify(idx[0] && idx[0].select));
+    check("(6e) and never the computed requirements_fp", idx.every(function (a) { return a.select.indexOf("requirements_fp") < 0; }));
+    check("(6e) its display figures come from the stored columns",
+      ["dar:idx_display_arithmetic", "drv:idx_display_reviewer", "here:idx_display_here"].every(function (it) { return idx[0].select.indexOf(it) >= 0; }));
   });
 });
 block("(6d2)", function () {
@@ -418,7 +441,7 @@ block("(6d2)", function () {
   });
 });
 block("(6d3)", function () {
-  const db = restDb({ records: genRecords(2840), fail: function (a) { return a.range === "1000-1249" ? 500 : 0; } });
+  const db = restDb({ records: genRecords(2840), fail: function (a) { return a.range === "1000-1999" ? 500 : 0; } });
   const { M, root } = loadModule({ fetch: db.fetch });
   return M._load().then(function () {
     check("(6d3) a failed page fails the read, naming the table, never a short list",
@@ -429,14 +452,14 @@ block("(6d3)", function () {
 block("(6d4)", function () {
   // A page cancelled at the role's time limit passes once the other reads finish: one retry.
   let failedOnce = false;
-  const db = restDb({ records: genRecords(600), fail: function (a) {
-    if (a.range === "250-499" && a.select.indexOf("cov:checks->coverage") >= 0 && !failedOnce) { failedOnce = true; return 500; }
+  const db = restDb({ records: genRecords(1600), fail: function (a) {
+    if (a.range === "1000-1999" && a.select.indexOf("cov:checks->coverage") >= 0 && !failedOnce) { failedOnce = true; return 500; }
     return 0;
   } });
   const { M } = loadModule({ fetch: db.fetch });
   return M._load().then(function () {
     check("(6d4) a page that answers 500 once is read again, and the read completes",
-      failedOnce && (M._state.records || []).length === 600 && !M._state.error,
+      failedOnce && (M._state.records || []).length === 1600 && !M._state.error,
       "records " + (M._state.records || []).length + "; error " + M._state.error);
   });
 });
@@ -1989,8 +2012,8 @@ block("(24a)", function () {
     check("(24a) the first load reads the index and the checked records' details, and never a record or a whole display",
       reads.length === 2 && reads.every(function (a) { return !asksFull(a) && !a.filters.college && !a.filters.control_number; }) &&
       reads.some(function (a) { return a.filters.checked === "is.true"; }), reads.map(function (a) { return a.select.join(","); }).join(" | "));
-    check("(24a) the public index never asks for the fingerprint, which anon may not read",
-      reads.every(function (a) { return a.select.indexOf("requirements_fp") < 0; }) && !A.M._state.error, A.M._state.error);
+    check("(24a) the public index never asks for the fingerprint, which only a reviewer's Confirm needs",
+      reads.every(function (a) { return !asksFp(a); }) && !A.M._state.error, A.M._state.error);
     check("(24a) the page holds every record as an index row",
       A.M._state.records.length === HARVEST.length && A.M._state.records.every(function (p) { return p._light === true && !p.record || p.checked; }));
     check("(24a) the districts come from map_colleges", A.M._state.districts && A.M._state.districts[22] === "Riverside Community College District");
@@ -2223,7 +2246,7 @@ block("(24f)", function () {
       JSON.stringify(inValues(full[0].filters.control_number)) === '["20102"]' && JSON.stringify(inValues(full[0].filters.college)) === '["Irvine Valley College"]',
       full.map(function (a) { return a.url; }).join(" "));
     check("(24f) under the reviewer's token, with the fingerprint Confirm needs", full[0].auth === "Bearer tok" &&
-      full[0].select.indexOf("requirements_fp") >= 0 && r.M._state.review.records.filter(function (p) { return !p._light; })[0].requirements_fp === "fp-20102");
+      asksFp(full[0]) && r.M._state.review.records.filter(function (p) { return !p._light; })[0].requirements_fp === "fp-20102");
   });
 });
 

@@ -87,10 +87,17 @@
      and machineFails() read (the Records view's glance and its Show filter). Sized on the live
      table's 2,840 records (row_to_json, 2026-10-13): 0.57 MB, 0.72 MB signed in with each
      record's requirements_fp, against 34 MB for every full row; one college's full rows run
-     up to 4.0 MB. fromIndex() rebuilds the shapes the rest of the file reads. */
+     up to 4.0 MB. fromIndex() rebuilds the shapes the rest of the file reads.
+     Its display paths and the fingerprint are stored columns since S405 (2026-10-17, Sam: "Prog Req
+     tab in COBI loads very slow"): read as paths into display and the requirements_fp function,
+     every Range page's OFFSET evaluated each skipped row, and the last public page of 11,969 took
+     9.4 s against anon's 3 s; from the columns it takes 22 ms, fingerprint included
+     (chatbox/supabase_program_requirement_records_index_columns_2026_10_17_s405.sql). */
   var INDEX_SELECT = "college,control_number,program_title,checked," +
     "cov:checks->coverage,inv:checks->invented,ar:checks->>arithmetic,rv:checks->reviewer->>verdict," +
-    "dar:display->checks->>arithmetic,drv:display->checks->>reviewer,here:display->counts->here";
+    "dar:idx_display_arithmetic,drv:idx_display_reviewer,here:idx_display_here";
+  /* The fingerprint the verdicts compare, stored as a column (idx_fp, program_record_fp(record)). */
+  var FP_SELECT = "requirements_fp:idx_fp";
   /* What only a checked record shows, read for the checked records alone (31 rows, 10 KB): who
      checked it and when, its display build, its program map, and whether its catalog prints
      outcomes (the first one, or null). The Progress view's parts and headline count these. */
@@ -365,19 +372,23 @@
      read stopped at the 1,000th of 2,840 records (Content-Range 0-999/*) and the colleges
      after it never reached the tab. It also carried 11 MB of JSON in one statement, and as
      anon (statement_timeout 3s) it answered 500 ("canceling statement due to statement
-     timeout"). Each page is RECORD_PAGE rows over the URL's own stable order; the first
-     asks for the exact count, so the rest go RECORD_PARALLEL at a time. Without a count it
+     timeout"). Each page is RECORD_PAGE rows (or the size a caller names) over the URL's own stable
+     order; the first asks for the exact count, so the rest go RECORD_PARALLEL at a time. Without a count it
      reads on until a short page. A failed page fails the whole read, naming the table:
      a short list must never pass for the whole one.
      docs/kb-notes/methodology-paginate-postgrest-reads.md */
   var RECORD_PAGE = 250, RECORD_PARALLEL = 2, RECORD_RETRY_MS = 600;
-  function getAllRows(url, hdrs) {
+  /* The light index reads only small columns, so it takes PostgREST's whole 1,000-row page, four
+     at a time: 12 requests for 11,969 records where 250-row pages took 48 (S405). */
+  var INDEX_PAGE = 1000, INDEX_PARALLEL = 4;
+  function getAllRows(url, hdrs, size, parallel) {
     var name = url.split("?")[0].split("/").pop();
+    var PAGE = size || RECORD_PAGE, PAR = parallel || RECORD_PARALLEL;
     function page(i) {
       var h = {};
       Object.keys(hdrs || {}).forEach(function (k) { h[k] = hdrs[k]; });
       h["Range-Unit"] = "items";
-      h.Range = (i * RECORD_PAGE) + "-" + ((i + 1) * RECORD_PAGE - 1);
+      h.Range = (i * PAGE) + "-" + ((i + 1) * PAGE - 1);
       if (i === 0) h.Prefer = "count=exact";
       /* A statement cancelled at the role's time limit answers 500; it passes once the
          other reads finish, so a page gets one more try before the read fails. */
@@ -393,25 +404,25 @@
       });
     }
     return page(0).then(function (first) {
-      if (first.rows.length < RECORD_PAGE) return first.rows;
+      if (first.rows.length < PAGE) return first.rows;
       if (first.total == null) {
         var out = first.rows.slice();
         var more = function (i) {
           return page(i).then(function (p) {
             out = out.concat(p.rows);
-            return p.rows.length < RECORD_PAGE ? out : more(i + 1);
+            return p.rows.length < PAGE ? out : more(i + 1);
           });
         };
         return more(1);
       }
-      var pages = Math.ceil(first.total / RECORD_PAGE), got = [first.rows], next = 1;
+      var pages = Math.ceil(first.total / PAGE), got = [first.rows], next = 1;
       var worker = function () {
         if (next >= pages) return Promise.resolve();
         var i = next++;
         return page(i).then(function (p) { got[i] = p.rows; return worker(); });
       };
       var workers = [];
-      for (var k = 0; k < Math.min(RECORD_PARALLEL, pages - 1); k++) workers.push(worker());
+      for (var k = 0; k < Math.min(PAR, pages - 1); k++) workers.push(worker());
       return Promise.all(workers).then(function () {
         return got.reduce(function (all, rows) { return all.concat(rows || []); }, []);
       });
@@ -455,7 +466,8 @@
   function readIndex(hdrs, withFp) {
     var base = REST + "/program_requirement_records?select=";
     return Promise.all([
-      getAllRows(base + INDEX_SELECT + (withFp ? ",requirements_fp" : "") + "&order=college,control_number", hdrs),
+      getAllRows(base + INDEX_SELECT + (withFp ? "," + FP_SELECT : "") + "&order=college,control_number", hdrs,
+        INDEX_PAGE, INDEX_PARALLEL),
       getAllRows(base + CHECKED_SELECT + "&checked=is.true&order=college,control_number", hdrs)
     ]).then(function (got) {
       var at = {};
@@ -526,7 +538,7 @@
     if (!reviewing()) return Promise.resolve(headers());
     return fresh().then(function () { return sessionHeaders(); });
   }
-  function fullSelect() { return RECORD_SELECT + (reviewing() ? ",requirements_fp" : ""); }
+  function fullSelect() { return RECORD_SELECT + (reviewing() ? "," + FP_SELECT : ""); }
   function readColleges(cols) {
     return readerHeaders().then(function (h) {
       return getAllRows(REST + "/program_requirement_records?select=" + fullSelect() +
