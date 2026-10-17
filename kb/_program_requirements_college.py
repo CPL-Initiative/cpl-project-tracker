@@ -1562,48 +1562,169 @@ def ac_urls(reader, start: str, cache: dict, report: dict) -> list[str]:
 # registry's single_pdf rows). The pilot read West LA's one program at a time
 # (pick_pdf_pages); a college is the same read with the file fetched once.
 # A catalog's course descriptions name a subject's codes page after page, so a
-# page counts toward a program only when it names the program's title words:
-# the program's own page does, and the description pages of a one-subject
-# program, which can name more of its codes, mostly do not.
+# page counts toward a program only when it names the program's title words
+# (outside a contents line) or prints its control number: the program's own
+# page does, and the description pages of a one-subject program, which can
+# name more of its codes, mostly do not. Two S403 sessions wrote a reader
+# each; this one is #2189's with the East LA session's signals folded in.
+PDF_HEADING_CHARS = 120   # a line this long or shorter can be a program's heading
+PDF_HEADING_BONUS = 5     # codes a heading naming title and award is worth
+PDF_RUN_PAGES = 3         # pages after the start a program's list may continue onto
+PDF_CN_BONUS = 10         # codes the program's own control number printed on the page is worth
+PDF_LEADER = re.compile(r"\.{4,}|(?:\. ){4,}")   # a table of contents' dot leader
+
+
+def pdf_heading(text: str, program: dict) -> tuple[float, bool, int]:
+    """(share of the title's words, whether the award is named, offset) for the
+    page line that names the title most fully, the award breaking a tie."""
+    tokens = P.title_tokens(program.get("title") or "")
+    pats = P.AWARD_WORDS.get(P.award_kind(program.get("award")), [])
+    best, pos = (0.0, False, -1), 0
+    for line in (text or "").split("\n"):
+        # pypdf runs a heading into the paragraph after it ("Medical Assistant, Associate in Science
+        # Degree (Academic Plan E002456C) A medical assistant interacts..."), so a line's opening is read.
+        low = line.strip().lower()[:PDF_HEADING_CHARS]
+        # A contents line ("Architectural Design ....... 2") names a program it does not hold.
+        if low and tokens and not PDF_LEADER.search(low):
+            share = sum(1 for w in tokens if re.search(r"\b" + re.escape(w) + r"\b", low)) / len(tokens)
+            award = any(re.search(a, low) for a in pats)
+            if (share, award) > best[:2]:
+                best = (share, award, pos)
+        pos += len(line) + 1
+    return best
+
+
+def pdf_control_number(text: str, cn: str | None) -> int:
+    """Where the page prints the program's state control number, or -1. East LA
+    heads each program "Basic Police Academy Preparation (Academic Plan E013343D)"
+    for control number 13343, and no other page names that plan."""
+    if not cn or not text:
+        return -1
+    m = re.search(r"(?:\b[A-Z]0*|plan\W{0,3}0*|control (?:number|no\.?)\W{0,3}0*)" + re.escape(cn.lstrip("0"))
+                  + r"(?:[A-Z]\b|(?![0-9A-Za-z]))", text, re.I)
+    return m.start() if m else -1
+
+
+def _titled(text: str, pats: list) -> bool:
+    """Every title word on the page, outside its contents lines."""
+    low = "\n".join(ln for ln in (text or "").lower().split("\n") if not PDF_LEADER.search(ln))
+    return all(pt.search(low) for pt in pats)
+
+
+def _pdf_pick(pages: list[str], program: dict, courses: list[dict]) -> tuple[list[int], int, tuple, bool]:
+    """(run of page indexes, where the first prints the control number, its
+    heading, whether it passed the title gate) for the program, or an empty
+    run. The highest-scoring page whose run covers the list wins; a page that
+    scores high on a printed control number but names too few listed codes
+    gives way. Pierce prints numbers away from the program's page, and the
+    bonus alone took 80 of its 194 picks to pages that fail the share (S403)."""
+    tokens = P.title_tokens(program.get("title") or "")
+    pats = [re.compile(r"\b" + re.escape(w) + r"\b") for w in tokens]
+    cn = program.get("control_number")
+    cands = []
+    for i, txt in enumerate(pages):
+        at = pdf_control_number(txt, cn)
+        titled = bool(pats) and _titled(txt, pats)
+        if at < 0 and not titled:
+            continue
+        n = len(P.find_codes(txt, courses))
+        if not n:
+            continue
+        head = pdf_heading(txt, program)
+        s = n + (PDF_HEADING_BONUS if head[0] == 1.0 and head[1] else 0) + (PDF_CN_BONUS if at >= 0 else 0)
+        cands.append((s, -i, i, at, head, titled))
+    if not cands:
+        return list(P.pick_pdf_pages(pages, program, courses) or []), -1, (0.0, False, -1), False
+    cands.sort(reverse=True)
+
+    def run_from(best: int) -> list[int]:
+        run = [best]
+        for j in range(best + 1, min(best + 1 + PDF_RUN_PAGES, len(pages))):
+            if not P.find_codes(pages[j], courses):
+                break
+            run.append(j)
+        return run
+    for _, _, i, at, head, titled in cands:
+        run = run_from(i)
+        if P.coverage(P.find_codes("\n".join(pages[k] for k in run), courses), courses) >= P.ACCEPT_SHARE:
+            return run, at, head, titled
+    _, _, i, at, head, titled = cands[0]
+    return run_from(i), at, head, titled
+
+
 def pdf_program_pages(pages: list[str], program: dict, courses: list[dict]) -> list[int]:
     """The run of PDF pages holding the program: among the pages that carry
-    every title word, the one naming the most listed codes, then the pages
-    after it while they still name listed codes (a table across pages). When
-    no page carries the title words, the pilot's picker."""
-    tokens = P.title_tokens(program["title"])
-    best, best_n = None, 0
-    if tokens:
-        pats = [re.compile(r"\b" + re.escape(w) + r"\b") for w in tokens]
-        for i, txt in enumerate(pages):
-            low = (txt or "").lower()
-            if not all(pt.search(low) for pt in pats):
-                continue
-            n = len(P.find_codes(txt, courses))
-            if n > best_n:
-                best, best_n = i, n
-    if best is None:
-        return P.pick_pdf_pages(pages, program, courses)
-    run = [best]
-    for j in range(best + 1, min(best + 4, len(pages))):
-        if P.find_codes(pages[j], courses):
-            run.append(j)
-        else:
-            break
-    return run
+    every title word or print its control number, the one naming the most
+    listed codes (a heading naming title and award, and the control number,
+    count extra), then the pages after it while they still name listed codes
+    (a table across pages). When no page qualifies, the pilot's picker."""
+    return _pdf_pick(pages, program, courses)[0]
 
 
 def pdf_best(url: str, pages: list[str], program: dict, courses: list[dict], extractor: str | None) -> dict | None:
     """The program's pages as a source the extraction reads, in the shape
-    source_record() takes: None when no page names a listed course."""
-    run = pdf_program_pages(pages, program, courses)
+    source_record() takes: None when no page names a listed course. The text
+    opens on the program's heading, so an A.S. and the certificate printed
+    after it each open on their own name."""
+    run, cn_at, head, titled = _pdf_pick(pages, program, courses)
     if not run:
         return None
-    text = "\n\n".join("[page %d]\n%s" % (i + 1, pages[i]) for i in run)
+    parts = []
+    for n, i in enumerate(run):
+        txt = pages[i]
+        cut = txt
+        if n == 0 and cn_at >= 0:
+            # From the start of the line that prints the control number: the heading.
+            cut = txt[txt.rfind("\n", 0, cn_at) + 1:]
+        elif n == 0 and head[0] == 1.0 and head[1] and head[2] > 0:
+            cut = txt[head[2]:]
+        # Only while the cut keeps every listed code the page names: Pierce prints the number
+        # and the heading's words below the list, and the cut left 80 programs no codes (S403).
+        if len(P.find_codes(cut, courses)) == len(P.find_codes(txt, courses)):
+            txt = cut
+        parts.append("[page %d]\n%s" % (i + 1, txt))
+    text = "\n\n".join(parts)
     found = P.find_codes(text, courses)
+    first = (text.split("\n", 2) + ["", ""])[1].strip()
     return {"url": "%s#page=%d" % (url, run[0] + 1), "field": "pdf_pages", "found": found,
             "coverage": P.coverage(found, courses), "text": text,
             "pages": [i + 1 for i in run], "extractor": extractor,
-            "got": {"title": None, "h1": None}}
+            "named": bool(head[0] == 1.0 and head[1]), "control_number_printed": cn_at >= 0, "titled": titled,
+            "got": {"title": first[:PDF_HEADING_CHARS], "h1": first[:PDF_HEADING_CHARS]}}
+
+
+PDF_CN_SHARE = 0.5        # a catalog printing this share of its programs' control numbers prints them all
+
+
+def pdf_unproven(picks: list[dict]) -> set[str]:
+    """The picks a catalog that prints control numbers does not vouch for. East LA
+    prints the number in 116 of its 141 headings (run 39010864052); of the 25
+    others, six went to its online-course, C-ID and admissions pages up front.
+    Where the numbers are the catalog's habit, a page that prints neither the
+    number nor all the title words (the pilot's picker chose it on codes alone)
+    is no proof, and the program stays out. A title-gated page stays: at Los
+    Angeles City the stricter test, title and award on one heading line, dropped
+    28 of its 245 picks (run 39017360234)."""
+    if not picks or sum(1 for p in picks if p["cn_printed"]) < PDF_CN_SHARE * len(picks):
+        return set()
+    return {p["control_number"] for p in picks
+            if not p["cn_printed"] and not p.get("titled") and not p["named"]}
+
+
+def pdf_start(reader, reg: dict, cache: dict, report: dict) -> tuple[str | None, int]:
+    """The catalog PDF's address and how long to wait for it: the link its
+    procedure record says to follow, or the registry's."""
+    step = P.procedure_catalog(reg.get("procedure"))
+    if step and step["format"] == "pdf":
+        got = P.load(reader, step["start"], cache, False)
+        # A menu link can carry the same words as the file's ("2026 - 2027" at East LA): a PDF step follows a PDF.
+        pdfs = [ln for ln in got.get("links") or [] if ".pdf" in (ln.get("href") or "").lower().split("?")[0]]
+        href = P.follow_link(pdfs, step["follow"])
+        report["procedure_step"] = {"start": step["start"], "follow": step["follow"], "href": href,
+                                    "status": got.get("status"), "access": got.get("access")}
+        if href:
+            return href, step["timeout_s"] * 1000
+    return reg.get("catalog_url"), P.CATALOG_PDF_WAIT_S * 1000
 
 
 def is_pdf_catalog(reg: dict) -> bool:
@@ -1611,15 +1732,21 @@ def is_pdf_catalog(reg: dict) -> bool:
     return reg.get("catalog_format") == "single_pdf" and url.endswith(".pdf")
 
 
+def reads_as_pdf(reg: dict) -> bool:
+    """A registry row naming one PDF file, or a procedure record whose catalog step is a PDF."""
+    return is_pdf_catalog(reg) or (P.procedure_catalog(reg.get("procedure")) or {}).get("format") == "pdf"
+
+
 def capture_pdf(college: str, out_dir: str, programs: list[dict], reg: dict, report: dict) -> list[dict]:
     """Every program at a college whose catalog is one PDF: the file read once
     (pypdf, then pdfminer when pypdf's text names few listed codes), each
     program given its run of pages."""
-    start = reg["catalog_url"]
     delay = int(os.environ.get("CENSUS_DELAY_MS", "4000"))
     pw, browser, reader = P.open_reader(delay)
     try:
-        pdf = P.read_pdf(reader, start, {}, timeout_ms=P.CATALOG_PDF_WAIT_S * 1000)
+        start, wait = pdf_start(reader, reg, {}, report)
+        pdf = (P.read_pdf(reader, start, {}, timeout_ms=wait) if start
+               else {"access": "no_address", "pages": []})
     finally:
         browser.close()
         pw.stop()
@@ -1652,16 +1779,31 @@ def capture_pdf(college: str, out_dir: str, programs: list[dict], reg: dict, rep
             best = pdf_best(start, pages, prog, prog["closed_list"], extractor)
             if best and best["coverage"] >= P.ACCEPT_SHARE:
                 rec = source_record(college, prog, reg, best, "pdf_pages")
-                rec["source"].update(pages=best["pages"], extractor=extractor)
+                rec["source"].update(pages=best["pages"], extractor=extractor, heading_named=best["named"])
                 # The pages are the program's own: keep their text whole, not a window around the codes.
                 rec["text"] = best["text"][:P.TEXT_CAP]
+                # A capture-only read files the preview alone: each pick's opening shows whether it is the program's page.
+                report["pdf"].setdefault("picks", []).append(
+                    {"control_number": prog["control_number"], "pages": best["pages"], "named": best["named"],
+                     "cn_printed": best["control_number_printed"], "titled": best["titled"],
+                     "coverage": round(best["coverage"], 3), "opens": re.sub(r"\s+", " ", best["text"][:220])})
             else:
                 rec = source_record(college, prog, reg, None, "not_found")
                 if best:
                     rec["near_miss"] = {"url": best["url"], "coverage": round(best["coverage"], 3)}
         recs.append(rec)
-        _write(os.path.join(out_dir, "sources", prog["control_number"] + ".json"), rec)
-        print("%-6s %-12s cov %-5s %s" % (prog["control_number"], rec["method"][:12], rec["coverage"],
+    picks = {p["control_number"]: p for p in report["pdf"].get("picks") or []}
+    drop = pdf_unproven(list(picks.values()))
+    report["pdf"]["unproven"] = sorted(drop)
+    byc = {p["control_number"]: p for p in programs}
+    for i, rec in enumerate(recs):
+        cn = rec["control_number"]
+        if cn in drop:
+            recs[i] = rec = source_record(college, byc[cn], reg, None, "not_found")
+            rec["near_miss"] = {"pages": picks[cn]["pages"], "coverage": picks[cn]["coverage"],
+                                "why": "the page prints neither the control number nor the title and award"}
+        _write(os.path.join(out_dir, "sources", cn + ".json"), rec)
+        print("%-6s %-12s cov %-5s %s" % (cn, rec["method"][:12], rec["coverage"],
                                           (rec.get("source") or {}).get("url") or ""), flush=True)
     return recs
 
@@ -1679,7 +1821,7 @@ def capture(college: str, out_dir: str, limit: int = 0) -> int:
               "started": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())}
     os.makedirs(os.path.join(out_dir, "sources"), exist_ok=True)
     platform = reg.get("catalog_platform")
-    if start and is_pdf_catalog(reg):
+    if reads_as_pdf(reg) and (start or reg.get("procedure")):
         recs = capture_pdf(college, out_dir, programs, reg, report)
         return finish_capture(college, out_dir, recs, report, t0)
     if not start or platform not in ("courseleaf", "curriqunet", "elumen", "acalog"):
@@ -1974,7 +2116,7 @@ def reconcile_filed(college: str, out_dir: str, run_id: str | None, keep_from: s
     """A reconcile run (step=reconcile, no model call): every filed record goes to
     out/records, and each one whose page the capture read again is reconciled with
     the fresh text (kb/_program_requirements_reconcile.py) and rescored. A record
-    that changed carries the run as its extracted_run, its notes as reconciled and
+    that changed, or only scored differently, carries the run as its extracted_run, its notes as reconciled and
     the run it was read by as read_run, so step=reread posts it and only it."""
     import _program_requirements_reconcile as R
     import _program_requirements_score as S
@@ -1985,12 +2127,19 @@ def reconcile_filed(college: str, out_dir: str, run_id: str | None, keep_from: s
         if src.get("text"):
             sources[src["control_number"]] = src
     os.makedirs(os.path.join(out_dir, "records"), exist_ok=True)
-    changed, unread = [], 0
+    changed, unread, rescored, moved = [], 0, 0, 0
     for path in sorted(glob.glob(os.path.join(keep_from, "records", "*.json"))):
         with open(path) as fh:
             filed = json.load(fh)
         src = sources.get(filed.get("control_number"))
         rec = filed.get("record")
+        if src and filed.get("source_url") and (src.get("source") or {}).get("url") \
+                and (src.get("source") or {}).get("url") != filed.get("source_url"):
+            # The capture took the program to another page than the one it was extracted
+            # from: that text says nothing about this record. LA City and Pierce rescored 49
+            # records on a moved PDF page before this guard (S403).
+            src = None
+            moved += 1
         if src and isinstance(rec, dict):
             new, notes = R.reconcile(rec, src["text"], college, filed.get("award") or src.get("award"))
             if notes:
@@ -2001,10 +2150,21 @@ def reconcile_filed(college: str, out_dir: str, run_id: str | None, keep_from: s
                 a = filed["score"]["arithmetic"]
                 print("%-6s reconciled %s; arith %s" % (filed["control_number"],
                       ", ".join(n["field"] for n in notes), a.get("status")), flush=True)
+            else:
+                # The scorer may have learned a reading since (East LA's spaced hyphens, S403):
+                # the fresh page rescores the record, and its requirements stay as read. A new
+                # score carries the run too, or step=reread keeps the loaded row's old checks
+                # (LA City and Pierce, rereads 39018310349 and 39018312320: 0 replaced).
+                fresh = S.score(rec, src["closed_list"], src["text"], filed.get("award") or src.get("award"))
+                if fresh != filed.get("score"):
+                    filed = dict(filed, score=fresh, read_run=filed.get("extracted_run"),
+                                 extracted_run=int(run_id) if str(run_id or "").isdigit() else run_id)
+                    rescored += 1
         elif not src:
             unread += 1
         _write(os.path.join(out_dir, "records", os.path.basename(path)), filed)
-    print("reconcile: %d filed records changed, %d had no fresh page" % (len(changed), unread), flush=True)
+    print("reconcile: %d filed records changed, %d rescored, %d had no fresh page (%d of them on another page)"
+          % (len(changed), rescored, unread, moved), flush=True)
     return 0
 
 

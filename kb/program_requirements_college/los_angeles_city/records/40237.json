@@ -88,17 +88,11 @@
    "program": 5,
    "courses": 0,
    "count": 5,
-   "not_verbatim": [
-    "Create a web application using CRUD methodology. Use it in fictitious books store to manage inventory, back orders and maintain a best seller list.",
-    "Gain appropriate skills in  computer literacy, computer applications, and programming to enable efficient use of computers and their applications."
-   ],
-   "why": [
-    "not in the catalog text as printed: Create a web application using CRUD methodology. Use it in fictitious books stor",
-    "not in the catalog text as printed: Gain appropriate skills in computer literacy, computer applications, and program"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 0,
@@ -108,7 +102,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -234,5 +228,6 @@
    "The description names no careers for this certificate; careers listed on the page belong to the Java Programming and Machine Learning sections and were not recorded."
   ]
  },
- "extracted_run": "39006380342"
+ "extracted_run": 39018419466,
+ "read_run": "39006380342"
 }

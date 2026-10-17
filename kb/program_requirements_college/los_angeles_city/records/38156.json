@@ -86,15 +86,11 @@
    "program": 3,
    "courses": 0,
    "count": 3,
-   "not_verbatim": [
-    "Integrate and demonstrate knowledge of the needs, characteristics, and multiple influences that support optimal development in all areas for children from birth through 2½ years of age."
-   ],
-   "why": [
-    "not in the catalog text as printed: Integrate and demonstrate knowledge of the needs, characteristics, and multiple "
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 1,
@@ -104,7 +100,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -211,5 +207,6 @@
    "Career entry taken from the description: 'entry-level teacher position within private infant/toddler programs' / 'Infant/Toddler teachers'."
   ]
  },
- "extracted_run": "39006380342"
+ "extracted_run": 39018419466,
+ "read_run": "39006380342"
 }

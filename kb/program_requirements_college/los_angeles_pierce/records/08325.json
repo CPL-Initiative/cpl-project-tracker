@@ -98,17 +98,11 @@
    "program": 4,
    "courses": 0,
    "count": 4,
-   "not_verbatim": [
-    "Develop receptive and expressive skills in American Sign Language and Fingerspelling.",
-    "Develop knowledge and awareness of the similarities and differences between the Deaf Culture/Deaf community and the hearing community."
-   ],
-   "why": [
-    "not in the catalog text as printed: Develop receptive and expressive skills in American Sign Language and Fingerspel",
-    "not in the catalog text as printed: Develop knowledge and awareness of the similarities and differences between the "
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 2,
@@ -121,7 +115,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -304,5 +298,6 @@
    "The Certificate of Achievement section that follows prints the same outcomes and required courses (32 units) but was not used for this record."
   ]
  },
- "extracted_run": "39006383070"
+ "extracted_run": 39018421038,
+ "read_run": "39006383070"
 }

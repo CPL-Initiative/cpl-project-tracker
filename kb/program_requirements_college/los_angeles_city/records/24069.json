@@ -86,15 +86,11 @@
    "program": 2,
    "courses": 0,
    "count": 2,
-   "not_verbatim": [
-    "Apply entrepreneurship and customer service concepts to analyze and improve various business ideas."
-   ],
-   "why": [
-    "not in the catalog text as printed: Apply entrepreneurship and customer service concepts to analyze and improve vari"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 1,
@@ -104,7 +100,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -175,5 +171,6 @@
    "The page continues with other noncredit certificates (Gig Economy Success Kit, Global Business, Job Readiness, etc.); only the Entrepreneurship Skills section was read. VOC ED 239CE also appears in the Job Readiness certificate."
   ]
  },
- "extracted_run": "39006380342"
+ "extracted_run": 39018419466,
+ "read_run": "39006380342"
 }

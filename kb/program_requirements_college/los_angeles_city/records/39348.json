@@ -88,15 +88,11 @@
    "program": 3,
    "courses": 0,
    "count": 3,
-   "not_verbatim": [
-    "Preparation to complete a bachelor’s degree and attend law school to strengthen the equity, diversity, and inclusivity of people in the legal profession."
-   ],
-   "why": [
-    "not in the catalog text as printed: Preparation to complete a bachelor's degree and attend law school to strengthen "
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 0,
@@ -106,7 +102,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -262,5 +258,6 @@
    "No specific careers are named; the description mentions only 'career options with a law degree'."
   ]
  },
- "extracted_run": "39006380342"
+ "extracted_run": 39018419466,
+ "read_run": "39006380342"
 }

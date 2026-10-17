@@ -86,29 +86,21 @@
    "program": 5,
    "courses": 0,
    "count": 5,
-   "not_verbatim": [
-    "Perform the duties of various technical crew positions in a single-camera production environment while working as a team with fellow production personnel.",
-    "Assess and produce personal resumés and digital video portfolio projects."
-   ],
-   "why": [
-    "not in the catalog text as printed: Perform the duties of various technical crew positions in a single-camera produc",
-    "not in the catalog text as printed: Assess and produce personal resumés and digital video portfolio projects."
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 1,
-   "not_verbatim": [
-    "Production Assistant (PA)"
-   ],
-   "pass": false
+   "not_verbatim": [],
+   "pass": true
   },
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -188,5 +180,6 @@
    "The preceding Cinematography certificate section on the same page was ignored."
   ]
  },
- "extracted_run": "39006380342"
+ "extracted_run": 39018419466,
+ "read_run": "39006380342"
 }

@@ -88,34 +88,21 @@
    "program": 6,
    "courses": 0,
    "count": 6,
-   "not_verbatim": [
-    "Use various Python libraries such as numpy, scipy, pandas, matplotlib, seaborn, statsmodels, scikit-learn, keras, and TensorFlow to analyze, visualize, and forecast data for various applications.",
-    "Apply binary, multi-class, and multi-label classification algorithms to choose between different alternatives in supervised learning.",
-    "Demonstrate the use of clustering algorithms and dimensionality reduction technique in unsupervised learning applications.",
-    "Explore reinforcement learning by modeling and formalizing computer interaction with the environment and machine learning through this interaction."
-   ],
-   "why": [
-    "not in the catalog text as printed: Use various Python libraries such as numpy, scipy, pandas, matplotlib, seaborn, ",
-    "not in the catalog text as printed: Apply binary, multi-class, and multi-label classification algorithms to choose b",
-    "not in the catalog text as printed: Demonstrate the use of clustering algorithms and dimensionality reduction techni",
-    "not in the catalog text as printed: Explore reinforcement learning by modeling and formalizing computer interaction "
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 14,
-   "not_verbatim": [
-    "Machine Learning applications and development",
-    "Associate Data Scientist"
-   ],
-   "pass": false
+   "not_verbatim": [],
+   "pass": true
   },
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -230,5 +217,6 @@
    "Career fields 'Machine Learning applications and development', 'Data Science', 'Data Engineering' taken from the program description; the rest from 'Possible Jobs'."
   ]
  },
- "extracted_run": "39006380342"
+ "extracted_run": 39018419466,
+ "read_run": "39006380342"
 }

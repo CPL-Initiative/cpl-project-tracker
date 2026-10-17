@@ -82,15 +82,11 @@
    "program": 3,
    "courses": 0,
    "count": 3,
-   "not_verbatim": [
-    "Communicate simple words, phrases and answer questions drawn from familiar material used in the contexts of classroom, workplace and community at the literacy and novice level."
-   ],
-   "why": [
-    "not in the catalog text as printed: Communicate simple words, phrases and answer questions drawn from familiar mater"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 0,
@@ -100,7 +96,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -169,5 +165,6 @@
    "The 'enhanced job opportunities' phrase in the description names no specific career, so careers is left empty."
   ]
  },
- "extracted_run": "39006383070"
+ "extracted_run": 39018421038,
+ "read_run": "39006383070"
 }

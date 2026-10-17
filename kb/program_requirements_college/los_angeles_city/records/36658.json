@@ -85,15 +85,11 @@
    "program": 3,
    "courses": 0,
    "count": 3,
-   "not_verbatim": [
-    "Apply stylistically appropriate musical conventions in the creation of original music."
-   ],
-   "why": [
-    "not in the catalog text as printed: Apply stylistically appropriate musical conventions in the creation of original "
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 2,
@@ -103,7 +99,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -682,5 +678,6 @@
    "The preceding Music Production and Technology certificate on the same page was ignored."
   ]
  },
- "extracted_run": "39006380342"
+ "extracted_run": 39018419466,
+ "read_run": "39006380342"
 }

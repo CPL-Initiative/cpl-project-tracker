@@ -82,15 +82,11 @@
    "program": 4,
    "courses": 0,
    "count": 4,
-   "not_verbatim": [
-    "Demonstrate command of rules regarding plagiarism and academic ethics, as defined by the California Education Code;"
-   ],
-   "why": [
-    "not in the catalog text as printed: Demonstrate command of rules regarding plagiarism and academic ethics, as define"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 0,
@@ -100,7 +96,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -426,5 +422,6 @@
    "The 60-unit ADT sentence and Cal-GETC requirement text belong to the following Environmental Science section; no degree total is printed for English."
   ]
  },
- "extracted_run": "39006383070"
+ "extracted_run": 39018421038,
+ "read_run": "39006383070"
 }

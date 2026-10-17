@@ -94,17 +94,11 @@
    "program": 7,
    "courses": 0,
    "count": 7,
-   "not_verbatim": [
-    "Provide the student with an overview of the paralegal profession that includes typical paralegal tasks, places of legal employment, areas of law, and ethical responsibility.",
-    "Develop the student’s legal writing skills by exercising the student’s critical thinking skills and analytical skills."
-   ],
-   "why": [
-    "not in the catalog text as printed: Provide the student with an overview of the paralegal profession that includes t",
-    "not in the catalog text as printed: Develop the student's legal writing skills by exercising the student's critical "
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 1,
@@ -114,7 +108,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -369,5 +363,6 @@
    "Career entry 'paralegal' is taken from the description sentence 'The combination of courses produces a professional and competent paralegal.'"
   ]
  },
- "extracted_run": "39006380342"
+ "extracted_run": 39018419466,
+ "read_run": "39006380342"
 }

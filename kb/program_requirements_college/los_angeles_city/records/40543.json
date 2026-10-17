@@ -82,15 +82,11 @@
    "program": 3,
    "courses": 0,
    "count": 3,
-   "not_verbatim": [
-    "Identify strategies for maintaining a safe kitchen environment, including proper food storage, food preparation, cleaning, sanitization, and employee hygiene practices."
-   ],
-   "why": [
-    "not in the catalog text as printed: Identify strategies for maintaining a safe kitchen environment, including proper"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 0,
@@ -100,7 +96,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -168,5 +164,6 @@
    "The section names no specific careers; the description mentions only food service-industry concepts and skills."
   ]
  },
- "extracted_run": "39006380342"
+ "extracted_run": 39018419466,
+ "read_run": "39006380342"
 }

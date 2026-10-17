@@ -1,0 +1,449 @@
+{
+ "college": "East Los Angeles College",
+ "control_number": "41231",
+ "shape": "adt",
+ "title": "Environmental Science",
+ "award": "A.S. T Degree",
+ "source_url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=92",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 12268,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 12268,
+    "output_tokens": 3960,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 3960,
+  "output_tokens_details": {
+   "thinking_tokens": 1767
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.12827,
+ "ms": 32610,
+ "seconds": 32.9,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 14,
+   "listed": 15,
+   "share": 0.933,
+   "missing": [
+    "MATH236"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 8,
+   "codes": [
+    "BUS15",
+    "ECON20",
+    "GEOG1",
+    "GEOG15",
+    "MATH261S",
+    "PHYSICS101",
+    "PHYSICS102",
+    "PSYCH91"
+   ],
+   "flagged": [
+    "BUS15",
+    "ECON20",
+    "GEOG1",
+    "GEOG15",
+    "MATH261S",
+    "PHYSICS101",
+    "PHYSICS102",
+    "PSYCH91"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    39.0,
+    45.0
+   ],
+   "stated": [
+    41.0,
+    45.0
+   ],
+   "against": "program",
+   "why": [
+    "the blocks sum to 39.0-45.0; the catalog states 41.0-45.0"
+   ],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     73.0,
+     79.0
+    ],
+    "stated": [
+     62.0,
+     66.0
+    ],
+    "against": "degree",
+    "ge": [
+     34.0,
+     34.0
+    ],
+    "why": [],
+    "overlap": true
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Associate in Science in Environmental Science for Transfer (Academic Plan E041231H)",
+   "measure": "units",
+   "total_units": {
+    "min": 41,
+    "max": 45
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": 62,
+    "max": 66
+   },
+   "ge_units": {
+    "min": 34,
+    "max": 34
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Analyze issues of resource management and depletion particularly as they apply to diminishing supplies of energy sources, minerals, water, food, and natural habitat.",
+    "Analyze the scientific basis underlying environmental degradation particularly pollution of water, air, and land, and the components of global climate change.",
+    "Critique the human response to environmental challenges including the economics of pollution, the character of environmental justice, and the effects of population change.",
+    "Demonstrate scientific thinking, quantitative reasoning, sound environmental principles, and ethical purposefulness."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "OPTION 1",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Core option",
+    "stated": {
+     "min": 15,
+     "max": 15
+    },
+    "courses": [
+     {
+      "code": "BIOLOGY 006",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOLOGY 007",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 101",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "OPTION 2",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Core option",
+    "stated": {
+     "min": 15,
+     "max": 15
+    },
+    "courses": [
+     {
+      "code": "BIOLOGY 006",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 101",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 102",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "AND ALL COURSES LISTED BELOW",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ENV SCI 001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 015",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ECON 020",
+        "units": 3,
+        "catalog_addition": true
+       },
+       {
+        "code": "PSYCH 091",
+        "units": 4,
+        "catalog_addition": true
+       },
+       {
+        "code": "STAT C1000",
+        "units": 4,
+        "catalog_addition": false
+       },
+       {
+        "code": "STAT C1000E",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "MATH 261",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MATH 261S",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECON C2001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Physical Geology and Physical Geology Laboratory",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Geoscience",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "GEOLOGY 001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOLOGY 006",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Physical Geology and Laboratory",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Geoscience",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "GEOLOGY 004",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Physical Geography and Physical Geography Laboratory",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Geoscience",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "GEOG 001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "GEOG 015",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "General Physics I and II",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Physics",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "PHYSICS 006",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYSICS 007",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Physics for Engineers and Scientists I and II",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Physics",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "PHYSICS 101",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PHYSICS 102",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "MATH 236",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "The section's title heading is not in the extracted text (it begins at '(Academic Plan E041231H)'); heading taken from the description sentence 'Associate in Science in Environmental Science for Transfer Degree'.",
+   "The 41-45 units printed on 'CHOOSE OPTION 1 OR OPTION 2 AND ALL COURSES LISTED BELOW' is recorded as the major total; 'Total 62-66' is the degree total with Cal-GETC; note says 13 units of major courses may be double counted.",
+   "The single 'Subtotal 15' printed after Option 2 is applied as stated to both Option 1 and Option 2.",
+   "Geoscience rows (GEOLOGY 001 AND GEOLOGY 006 OR GEOLOGY 004 OR GEOG 001 AND GEOG 015) read as three alternative pairings; this reading is consistent with the 41-45 unit range but a reviewer should confirm.",
+   "Physics rows read as two alternative sequences: PHYSICS 006 + 007, or PHYSICS 101 + 102.",
+   "Cal-GETC 34 units taken from the ADT requirements paragraph in this section ('34 semester/45 quarter units').",
+   "Option 2 prints BIOLOGY 006 with the title 'General Biology'."
+  ]
+ },
+ "extracted_run": "39011319511"
+}

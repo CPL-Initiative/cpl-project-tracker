@@ -86,15 +86,11 @@
    "program": 3,
    "courses": 0,
    "count": 3,
-   "not_verbatim": [
-    "Apply important U.S. government export and import regulations to traded goods and correctly use export and import documentation."
-   ],
-   "why": [
-    "not in the catalog text as printed: Apply important U.S. government export and import regulations to traded goods an"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 0,
@@ -104,7 +100,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -215,5 +211,6 @@
    "Program description mentions 'many types of international jobs' and refers careers to the Gainful Employment website; no specific careers named, so careers left empty."
   ]
  },
- "extracted_run": "39006383070"
+ "extracted_run": 39018421038,
+ "read_run": "39006383070"
 }

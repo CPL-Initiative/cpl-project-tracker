@@ -82,17 +82,11 @@
    "program": 3,
    "courses": 0,
    "count": 3,
-   "not_verbatim": [
-    "Demonstrate the skills necessary to assist with routine medical exams.",
-    "Identify and practice infection control procedures for the ambulatory care setting."
-   ],
-   "why": [
-    "not in the catalog text as printed: Demonstrate the skills necessary to assist with routine medical exams.",
-    "not in the catalog text as printed: Identify and practice infection control procedures for the ambulatory care setti"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 1,
@@ -102,7 +96,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -193,5 +187,6 @@
    "The catalog prints VOC ED 375CE's title as 'MEDICAL ASSISTING BACK OFFICE I' and VOC ED 435CE's as 'INTRODUCTION TO MEDICAL TERMINOLOGY LEVEL 2'; the codes match the closed list."
   ]
  },
- "extracted_run": "39006380342"
+ "extracted_run": 39018419466,
+ "read_run": "39006380342"
 }

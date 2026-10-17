@@ -10,6 +10,11 @@ status: archive
 
 # Roadmap Archive — Completed Work & Session Narratives
 
+## INDEX update-history entries rotated out (2026-10-17)
+
+- 2026-10-15 (S395 SkyHawthorn): wave 2's procedure records and their generator (#2146); staff email off the public dashboard (#2147); Santa Ana's colon titles in the curriQunet reader (#2148); the catalog sweep's wave 3, ten colleges, 1,132 records (#2149); handoff 396.
+- 2026-10-15 (S394 SkyMadrone): extraction v10 (#2141); UI pass GR Priorities (#2142); the catalog sweep, waves 1 and 2, eight colleges (#2143, #2144) with the NOCCCD campus-letter and curriQunet cap fixes; procedure records v1 for wave 1; lessons archive 2; handoff 395 (SkyHawthorn).
+
 ## INDEX update-history entries rotated out (2026-10-16)
 
 - 2026-10-14 (S392 SkyTamarack): Sheet 81 carried out (#2127); the summary-row highlight (#2128); record shape 6 and the Major only gap (#2129); El Camino and San Joaquin Delta (#2131); the reconcile pass (#2130); Sheet 82; handoff 393 (SkySycamore).

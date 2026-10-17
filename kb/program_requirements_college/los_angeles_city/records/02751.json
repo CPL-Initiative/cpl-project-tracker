@@ -100,11 +100,9 @@
    "courses": 0,
    "count": 3,
    "not_verbatim": [
-    "Read sophisticated college-level expository texts and works of literature that deal with various literary, historical, and cultural themes; distinguish main ideas and supporting points; evaluate the persuasiveness of arguments and evidence; critique assumptions using critical thinking.",
     "Distinguish between different styles of written English and evaluate the appropriateness of a particular style, tone, or voice for a given audience; vary sentence shape and structure for emphasis and effect; use all major forms of punctuation effectively, including colons."
    ],
    "why": [
-    "not in the catalog text as printed: Read sophisticated college-level expository texts and works of literature that d",
     "not in the catalog text as printed: Distinguish between different styles of written English and evaluate the appropr"
    ],
    "heading_printed": true,
@@ -313,5 +311,6 @@
    "No careers are named in the English AA section."
   ]
  },
- "extracted_run": "39006380342"
+ "extracted_run": 39018419466,
+ "read_run": "39006380342"
 }

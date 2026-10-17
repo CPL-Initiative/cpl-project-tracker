@@ -82,19 +82,11 @@
    "program": 5,
    "courses": 0,
    "count": 5,
-   "not_verbatim": [
-    "Writing will demonstrate a clear understanding of the requirements of clear exposition for college-level written communication such as analysis of evidence, appropriate inferences from the evidence, and coherent focus on the argument.",
-    "Writing will demonstrate critical thinking practices such as: use of qualified generalizations, syllogistic reasoning, analysis, inference, evaluation, and synthesis.",
-    "Writing will demonstrate understanding of the need to incorporate and synthesize literary traditions and literary theories."
-   ],
-   "why": [
-    "not in the catalog text as printed: Writing will demonstrate a clear understanding of the requirements of clear expo",
-    "not in the catalog text as printed: Writing will demonstrate critical thinking practices such as: use of qualified g",
-    "not in the catalog text as printed: Writing will demonstrate understanding of the need to incorporate and synthesize"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 0,
@@ -104,7 +96,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -232,5 +224,6 @@
    "The career fields named under the Linguistics certificates belong to those programs and were not recorded."
   ]
  },
- "extracted_run": "39006380342"
+ "extracted_run": 39018419466,
+ "read_run": "39006380342"
 }

@@ -86,19 +86,11 @@
    "program": 5,
    "courses": 0,
    "count": 5,
-   "not_verbatim": [
-    "Develop a solution to a business problem using the most appropriate business application software.",
-    "Construct business presentations that are accurate, well-organized, and are appropriate to the audience and purpose.",
-    "Develop accurate accounting reports using appropriate spreadsheet and accounting software."
-   ],
-   "why": [
-    "not in the catalog text as printed: Develop a solution to a business problem using the most appropriate business app",
-    "not in the catalog text as printed: Construct business presentations that are accurate, well-organized, and are appr",
-    "not in the catalog text as printed: Develop accurate accounting reports using appropriate spreadsheet and accounting"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 5,
@@ -108,7 +100,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -262,5 +254,6 @@
    "Line-break hyphenation in outcomes (e.g., 'appro -priate', 'well-orga -nized', 'spread -sheet') read as single words."
   ]
  },
- "extracted_run": "39006380342"
+ "extracted_run": 39018419466,
+ "read_run": "39006380342"
 }

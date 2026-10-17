@@ -82,17 +82,11 @@
    "program": 5,
    "courses": 0,
    "count": 5,
-   "not_verbatim": [
-    "Define the goals of various hospitality elements and related products and services.",
-    "Describe opportunities for entry and advancement in the hospitality field. Identify key qualities, philosophies, or experiences associated with success in the field."
-   ],
-   "why": [
-    "not in the catalog text as printed: Define the goals of various hospitality elements and related products and servic",
-    "not in the catalog text as printed: Describe opportunities for entry and advancement in the hospitality field. Ident"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 4,
@@ -102,7 +96,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -215,5 +209,6 @@
    "Page also contains Desktop Publishing, Legal Office Procedures, Legal Office Skills and Office Administration sections, which were ignored."
   ]
  },
- "extracted_run": "39006383070"
+ "extracted_run": 39018421038,
+ "read_run": "39006383070"
 }

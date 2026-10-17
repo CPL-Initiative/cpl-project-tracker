@@ -99,17 +99,11 @@
    "program": 4,
    "courses": 0,
    "count": 4,
-   "not_verbatim": [
-    "Summarize core principles in the foundational courses of psychology such as General Psychology, Developmental Psychology, Social Psychology, and Personality.",
-    "Demonstrate counseling’s 12 core functions including screening intake, assessment, treatment planning, counseling, case management, crisis management, client education, referral, report and record keeping, and consultation with other professionals in the field of Human Services."
-   ],
-   "why": [
-    "not in the catalog text as printed: Summarize core principles in the foundational courses of psychology such as Gene",
-    "not in the catalog text as printed: Demonstrate counseling's 12 core functions including screening intake, assessmen"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 0,
@@ -254,5 +248,6 @@
    "The AA section names no careers; the career list (community and social service specialist, etc.) appears only in the Certificate of Achievement section and was not recorded."
   ]
  },
- "extracted_run": "39006380342"
+ "extracted_run": 39018419466,
+ "read_run": "39006380342"
 }

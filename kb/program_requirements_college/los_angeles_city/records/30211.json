@@ -99,19 +99,11 @@
    "program": 4,
    "courses": 0,
    "count": 4,
-   "not_verbatim": [
-    "Communicate effectively, by means of listening, speaking, reading, and writing.",
-    "Utilize contemporary information technology to retrieve, process, and communicate information.",
-    "Apply critical thinking skills to solve problems, to evaluate arguments, and to interpret information."
-   ],
-   "why": [
-    "not in the catalog text as printed: Communicate effectively, by means of listening, speaking, reading, and writing.",
-    "not in the catalog text as printed: Utilize contemporary information technology to retrieve, process, and communicat",
-    "not in the catalog text as printed: Apply critical thinking skills to solve problems, to evaluate arguments, and to "
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 0,
@@ -544,5 +536,6 @@
    "Program student learning outcomes copied with hyphenated line breaks rejoined (e.g., 'read -ing' as 'reading')."
   ]
  },
- "extracted_run": "39006380342"
+ "extracted_run": 39018419466,
+ "read_run": "39006380342"
 }

@@ -90,10 +90,8 @@
   },
   "careers": {
    "count": 6,
-   "not_verbatim": [
-    "restaurants"
-   ],
-   "pass": false
+   "not_verbatim": [],
+   "pass": true
   },
   "degree": {
    "status": "n/a"
@@ -175,5 +173,6 @@
    "Careers are read from the description's 'entry-level supervisory roles' and the sectors named (hotels, restaurants, tourism, recreation, event planning); reviewer may wish to confirm whether sectors should count as career fields."
   ]
  },
- "extracted_run": "39006383070"
+ "extracted_run": 39018421038,
+ "read_run": "39006383070"
 }

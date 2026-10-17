@@ -86,21 +86,11 @@
    "program": 10,
    "courses": 0,
    "count": 10,
-   "not_verbatim": [
-    "Create a fully documented modular design with correct mathematical and logical operations suitable for implementation from a given program specification.",
-    "Gain appropriate skills in computer literacy, computer applications, and programming to enable efficient use of computers and their applications.",
-    "Design Infrastructure as a Service (IaaS) for cloud computing to provide computing instances, establish virtual private networks, and manage databases and storage.",
-    "Employ complex data structures and algorithms, including sorting, searching, and recursion, to design and implement solutions to advanced computer science problems."
-   ],
-   "why": [
-    "not in the catalog text as printed: Create a fully documented modular design with correct mathematical and logical o",
-    "not in the catalog text as printed: Gain appropriate skills in computer literacy, computer applications, and program",
-    "not in the catalog text as printed: Design Infrastructure as a Service (IaaS) for cloud computing to provide computi",
-    "not in the catalog text as printed: Employ complex data structures and algorithms, including sorting, searching, and"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 3,
@@ -110,7 +100,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -266,5 +256,6 @@
    "Line-break hyphenation in outcomes (e.g. 'mathe -matical', 'net -works') was rejoined; a double space in outcome 2 was normalized to a single space."
   ]
  },
- "extracted_run": "39006380342"
+ "extracted_run": 39018419466,
+ "read_run": "39006380342"
 }

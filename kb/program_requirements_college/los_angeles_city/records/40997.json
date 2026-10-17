@@ -88,31 +88,21 @@
    "program": 4,
    "courses": 0,
    "count": 4,
-   "not_verbatim": [
-    "Evaluate their own and their fellow students’ scripts in a writing-workshop setting that replicates the development process in feature filmmaking and in scripted television production.",
-    "Demonstrate awareness of screen- and teleplay competitions that are followed by content buyers, agents, and managers, along with an understanding of the various diversity writing workshops available at the major studios and broadcast networks.",
-    "Differentiate the historical, cultural, and economic influences on the media. Evaluate film and genre history to become conversant with the industry’s most-produced and -popular film and television genres."
-   ],
-   "why": [
-    "not in the catalog text as printed: Evaluate their own and their fellow students' scripts in a writing-workshop sett",
-    "not in the catalog text as printed: Demonstrate awareness of screen- and teleplay competitions that are followed by ",
-    "not in the catalog text as printed: Differentiate the historical, cultural, and economic influences on the media. Ev"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 9,
-   "not_verbatim": [
-    "Freelance Screenwriter"
-   ],
-   "pass": false
+   "not_verbatim": [],
+   "pass": true
   },
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -247,5 +237,6 @@
    "Line-break hyphenation in outcomes and careers (e.g. 'writ -ing', 'Screen -writer') was joined."
   ]
  },
- "extracted_run": "39006380342"
+ "extracted_run": 39018419466,
+ "read_run": "39006380342"
 }

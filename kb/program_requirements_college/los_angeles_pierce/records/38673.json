@@ -90,17 +90,11 @@
    "program": 6,
    "courses": 0,
    "count": 6,
-   "not_verbatim": [
-    "Communicate effectively and confidently in the classroom, community, and industry.",
-    "Use knowledge of best practices to further sustainability (economic, environmental, and cultural/social) in the industry."
-   ],
-   "why": [
-    "not in the catalog text as printed: Communicate effectively and confidently in the classroom, community, and industr",
-    "not in the catalog text as printed: Use knowledge of best practices to further sustainability (economic, environment"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 0,
@@ -110,7 +104,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -271,5 +265,6 @@
    "PDF text shows spacing artifacts (e.g., 'MA TH 228B', 'ST A T 101'); codes normalized to MATH 228B, STAT 101, STAT C1000."
   ]
  },
- "extracted_run": "39006383070"
+ "extracted_run": 39018421038,
+ "read_run": "39006383070"
 }

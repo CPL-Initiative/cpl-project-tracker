@@ -1,0 +1,222 @@
+{
+ "college": "East Los Angeles College",
+ "control_number": "38374",
+ "shape": "certificate",
+ "title": "Phlebotomy Technician",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=82",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6757,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6757,
+    "output_tokens": 1549,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1549,
+  "output_tokens_details": {
+   "thinking_tokens": 486
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.05801,
+ "ms": 12326,
+ "seconds": 12.7,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 6,
+   "listed": 6,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 2,
+   "codes": [
+    "HLTHOCC64",
+    "HLTHOCC69"
+   ],
+   "flagged": [
+    "HLTHOCC64",
+    "HLTHOCC69"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    16.5,
+    16.5
+   ],
+   "stated": [
+    16.5,
+    16.5
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 2,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Phlebotomy Technician (Academic Plan E038374D)",
+   "measure": "units",
+   "total_units": {
+    "min": 16.5,
+    "max": 16.5
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Display professionalism and cultural sensitivity while interacting and communicating with providers, staff, and patients.",
+    "Prepare competent entry-level phlebotomy technician in the cognitive (knowledge), psychomotor (skills), and affective (behavior) learning domain.",
+    "Describe six patient factors which influence the ability to perform venipuncture successfully."
+   ],
+   "careers": [
+    "Certified Phlebotomy Technicians (CPT)",
+    "Limited Phlebotomy Technicians (LPT)"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 16.5,
+     "max": 16.5
+    },
+    "courses": [
+     {
+      "code": "HLTHOCC 062",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HLTHOCC 063",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HLTHOCC 064",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HLTHOCC 065",
+      "units": 2.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HLTHOCC 067",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HLTHOCC 068",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HLTHOCC 069",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HEALTH 011",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The extracted text does not show the program title heading; the section heading is inferred from the program name and the printed Academic Plan number E038374D.",
+   "Catalog codes print leading zeros (HLTHOCC 062, HEALTH 011); these are treated as the closed-list courses HLTHOCC 62, HEALTH 11, etc.",
+   "HLTHOCC 064 (Cultural and Legal Topics for Health Care Professionals, 1 unit) and HLTHOCC 069 (Phlebotomy Technician Directed Clinical Practicum, 2 units) are not in the closed list and are marked as catalog additions.",
+   "HLTHOCC 067, 068 and 069 carry an asterisk in the catalog; the footnote explaining it is not in the extracted text.",
+   "The PDF hyphenation 'tech - nician' in the second outcome was rejoined as 'technician'.",
+   "The printed total of 16.5 units matches the sum of the listed courses. The table total was recorded as the block's stated total as well as total_units."
+  ]
+ },
+ "extracted_run": "39011319511"
+}

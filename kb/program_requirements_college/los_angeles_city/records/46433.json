@@ -82,19 +82,11 @@
    "program": 4,
    "courses": 0,
    "count": 4,
-   "not_verbatim": [
-    "Apply principles of production design, visual storytelling, and script analysis to create cohesive design concepts for film, television, and digital media.",
-    "Design and develop immersive theatrical environments, including scenery, props, costumes, and spatial layouts, that support live performance, collaboration, and audience engagement.",
-    "Develop a professional production design portfolio that demonstrates creative design, visual storytelling, spatial and aesthetic problem-solving, collaborative practice, budgeting awareness, and the ability to create cohesive design concepts for film, theater, television, and/or multimedia productions."
-   ],
-   "why": [
-    "not in the catalog text as printed: Apply principles of production design, visual storytelling, and script analysis ",
-    "not in the catalog text as printed: Design and develop immersive theatrical environments, including scenery, props, ",
-    "not in the catalog text as printed: Develop a professional production design portfolio that demonstrates creative de"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 1,
@@ -104,7 +96,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -297,5 +289,6 @@
    "Required block includes a three-way choice: CINEMA 931 or THEATER 385 or ART 385."
   ]
  },
- "extracted_run": "39006380342"
+ "extracted_run": 39018419466,
+ "read_run": "39006380342"
 }

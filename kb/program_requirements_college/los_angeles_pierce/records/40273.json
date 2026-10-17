@@ -86,15 +86,11 @@
    "program": 3,
    "courses": 0,
    "count": 3,
-   "not_verbatim": [
-    "Students will have sufficient mastery of one or more media to complete the technical and formal challenges pertinent to a body of original work and will be able to clearly communicate the content and context of their work visually, orally and in writing."
-   ],
-   "why": [
-    "not in the catalog text as printed: Students will have sufficient mastery of one or more media to complete the techn"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 0,
@@ -104,7 +100,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -237,5 +233,6 @@
    "The American Sign Language Studies AA section that follows was not read."
   ]
  },
- "extracted_run": "39006383070"
+ "extracted_run": 39018421038,
+ "read_run": "39006383070"
 }

@@ -82,15 +82,11 @@
    "program": 3,
    "courses": 0,
    "count": 3,
-   "not_verbatim": [
-    "Demonstrate improved pronunciation intelligibility: Accurately produce English sounds, including vowels, consonants, and consonant clusters, and apply stress and intonation patterns to enhance clarity."
-   ],
-   "why": [
-    "not in the catalog text as printed: Demonstrate improved pronunciation intelligibility: Accurately produce English s"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 0,
@@ -100,7 +96,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -168,5 +164,6 @@
    "Page also prints Academic Bridge and Citizenship certificates; those sections were not read for this record."
   ]
  },
- "extracted_run": "39006383070"
+ "extracted_run": 39018421038,
+ "read_run": "39006383070"
 }

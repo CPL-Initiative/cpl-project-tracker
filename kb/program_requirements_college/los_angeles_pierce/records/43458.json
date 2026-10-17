@@ -82,15 +82,11 @@
    "program": 3,
    "courses": 0,
    "count": 3,
-   "not_verbatim": [
-    "Students will be able to employ communication competence necessary to engage in personal, professional, civic, and intercultural relationships."
-   ],
-   "why": [
-    "not in the catalog text as printed: Students will be able to employ communication competence necessary to engage in "
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 0,
@@ -100,7 +96,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -280,5 +276,6 @@
    "The page top belongs to the preceding Child and Adolescent Development section and was ignored."
   ]
  },
- "extracted_run": "39006383070"
+ "extracted_run": 39018421038,
+ "read_run": "39006383070"
 }

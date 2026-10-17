@@ -1,0 +1,372 @@
+{
+ "college": "East Los Angeles College",
+ "control_number": "35888",
+ "shape": "degree",
+ "title": "Women/Gender Studies",
+ "award": "A.A. Degree",
+ "source_url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=360",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7348,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7348,
+    "output_tokens": 2567,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2567,
+  "output_tokens_details": {
+   "thinking_tokens": 646
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.08073,
+ "ms": 20365,
+ "seconds": 20.8,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 13,
+   "listed": 13,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 7,
+   "codes": [
+    "CHICANO25",
+    "CHICANO26",
+    "CHICANO27",
+    "ENGLISH245",
+    "HEALTH5",
+    "HISTORY83",
+    "KINMAJ111"
+   ],
+   "flagged": [
+    "CHICANO25",
+    "CHICANO26",
+    "CHICANO27",
+    "ENGLISH245",
+    "HEALTH5",
+    "HISTORY83",
+    "KINMAJ111"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    45.0,
+    45.0
+   ],
+   "stated": [
+    60.0,
+    60.0
+   ],
+   "against": "degree",
+   "ge": [
+    27.0,
+    27.0
+   ],
+   "why": [
+    "the record says electives fill the degree total, but the catalog text names no electives"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 2,
+   "courses": 0,
+   "count": 2,
+   "not_verbatim": [
+    "Delineate the literary, artistic, scientific, political and/or other contributions of women throughout history."
+   ],
+   "why": [
+    "not in the catalog text as printed: Delineate the literary, artistic, scientific, political and/or other contributio"
+   ],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": false
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "(Academic Plan E035888C)",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "LACCD General Education Plan",
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": 27,
+    "max": 27
+   },
+   "electives_fill_degree": true,
+   "outcomes": [
+    "Delineate the literary, artistic, scientific, political and/or other contributions of women throughout history.",
+    "Analyze how women’s diverse experiences are affected by society’s values, beliefs, traditions, and institutions, as well as race, ethnicity, social class, politics, nationality , religion, sexual orientation, and gender identity."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "CORE REQUIREMENTS",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "SOC 022",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHILOS 044",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "CATEGORY I. THE CREATIVE WOMEN: SELECT ONE COURSE",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "ARTHIST 181",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHICANO 027",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ENGLISH 239",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGLISH 245",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HUMAN 008",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "CATEGORY II. HISTORY AND POLITICS: SELECT ONE COURSE",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "HISTORY 052",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HISTORY 083",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CHICANO 026",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "POL SCI 019",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "CATEGORY III. GENDER AND SOCIETY: SELECT ONE COURSE",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "ANTHRO 109",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHICANO 025",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CHICANO 047",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHICANO 050",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYCH 032",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "CATEGORY IV. SPORTS AND HEALTH: SELECT ONE COURSE",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "HEALTH 005",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HEALTH 008",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN MAJ 109",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN MAJ 111",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The excerpt shows no program title heading; only '(Academic Plan E035888C)' is printed at the top of the section, so it is used as section_heading.",
+   "The catalog prints codes with leading zeros (e.g., SOC 022, PHILOS 044); these were matched to the closed-list codes without zeros (SOC 22, PHILOS 44, etc.) and not marked as additions.",
+   "No major total is printed; the core (6) plus four categories (3 each) would sum to 18 units, but total_units is left null as not stated.",
+   "Total 60 is recorded as degree_total and LACCD General Education Plan 27 as ge_units; the page says to complete additional degree-applicable units if needed to reach 60, so electives_fill_degree is true.",
+   "Note printed: 6 units of major courses may be double counted in LACCD General Education 3 and 4b.",
+   "ENGLISH 239 is marked with an asterisk: 'This course has a prerequisite.'",
+   "In the first outcome, the PDF line break falls in 'and/ or'; it was rendered as 'and/or'. The second outcome's 'nationality , religion' spacing is copied as printed.",
+   "Catalog year not known; source is the 2026-2027 ELAC General Catalog PDF."
+  ]
+ },
+ "extracted_run": "39011319511"
+}

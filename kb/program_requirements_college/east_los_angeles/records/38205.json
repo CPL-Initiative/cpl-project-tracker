@@ -1,0 +1,264 @@
+{
+ "college": "East Los Angeles College",
+ "control_number": "38205",
+ "shape": "certificate",
+ "title": "Commercial Music: Music Arranging",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=289",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 12450,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 12450,
+    "output_tokens": 1556,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1556,
+  "output_tokens_details": {
+   "thinking_tokens": 450
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.08092,
+ "ms": 12426,
+ "seconds": 12.8,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 5,
+   "listed": 12,
+   "share": 0.417,
+   "missing": [
+    "MUSIC111",
+    "MUSIC121",
+    "MUSIC122",
+    "MUSIC161",
+    "MUSIC200",
+    "MUSIC206",
+    "MUSIC281"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 4,
+   "codes": [
+    "MUSIC118",
+    "MUSIC205",
+    "MUSIC280",
+    "MUSIC411"
+   ],
+   "flagged": [
+    "MUSIC118",
+    "MUSIC205",
+    "MUSIC280",
+    "MUSIC411"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    18.0,
+    18.0
+   ],
+   "stated": [
+    18.0,
+    18.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "(Academic Plan E038205D) Certificate of Achievement in Songwriting & Arranging",
+   "measure": "units",
+   "total_units": {
+    "min": 18,
+    "max": 18
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Recognize applications of music theory via analysis and performance.",
+    "Analyze the historical and cultural contexts of various musics.",
+    "Employ appropriate technologies and contextual knowledge in the production and marketing of commercial music."
+   ],
+   "careers": [
+    "Commercial Music Arranging"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 18,
+     "max": 18
+    },
+    "courses": [
+     {
+      "code": "MUSIC 116",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MUSIC 118",
+        "units": 3,
+        "catalog_addition": true
+       },
+       {
+        "code": "MUSIC 141",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSIC 205",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MUSIC 248",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSIC 271",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSIC 280",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MUSIC 321",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSIC 411",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "MUSIC 111",
+    "why": "named only in the A.A.-T in Music section"
+   },
+   {
+    "code": "MUSIC 121",
+    "why": "named only in the Music A.A. and A.A.-T sections"
+   },
+   {
+    "code": "MUSIC 122",
+    "why": "named only in the Music A.A. and A.A.-T sections"
+   },
+   {
+    "code": "MUSIC 161",
+    "why": "named only in the Commercial Music and Recording A.A. and Music A.A.-T sections"
+   },
+   {
+    "code": "MUSIC 200",
+    "why": "named only in the Music A.A. and A.A.-T sections"
+   },
+   {
+    "code": "MUSIC 206",
+    "why": "not in the text"
+   },
+   {
+    "code": "MUSIC 281",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "The certificate's title heading is cut off before the text starts; the section is identified by Academic Plan E038205D and its description names it 'Certificate of Achievement in Songwriting & Arranging', not 'Commercial Music: Music Arranging'. Reviewer should confirm this is the same award.",
+   "The catalog prints no block heading; 'Required Courses' is a descriptive name. The Total 18 is the certificate total and equals the block sum.",
+   "Catalog year read as 2026-2027 from page headers.",
+   "Several closed-list courses (MUSIC 206, MUSIC 281) do not appear anywhere in the text; the closed list may reflect an older version of the program."
+  ]
+ },
+ "extracted_run": "39011319511"
+}

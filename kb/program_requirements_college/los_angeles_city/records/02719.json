@@ -105,17 +105,11 @@
    "program": 6,
    "courses": 0,
    "count": 6,
-   "not_verbatim": [
-    "Prepare traditional and contribution-margin income statements and define related terms.",
-    "Demonstrate an understanding on how cost accounting methods, procedures, and techniques are used to determine product or service cost."
-   ],
-   "why": [
-    "not in the catalog text as printed: Prepare traditional and contribution-margin income statements and define related",
-    "not in the catalog text as printed: Demonstrate an understanding on how cost accounting methods, procedures, and tec"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 5,
@@ -297,5 +291,6 @@
    "Core courses sum to 42 units with one course chosen from each 'OR' group, matching the stated 42 major units."
   ]
  },
- "extracted_run": "39006380342"
+ "extracted_run": 39018419466,
+ "read_run": "39006380342"
 }

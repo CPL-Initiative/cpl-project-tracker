@@ -82,17 +82,11 @@
    "program": 4,
    "courses": 0,
    "count": 4,
-   "not_verbatim": [
-    "Critical Thinking: The student will demonstrate proficiency in defining issues, problems, questions, and assumptions; differentiating between facts, opinions, and biases; synthesizing and generating solutions and possible outcomes; and using evidence and reasoning to support conclusions when dealing with the three components of the criminal justice system: law enforcement, courts, and correction.",
-    "Civic Responsibility and Ethical Reasoning in a Diverse Society: The student will demonstrate proficiency in understanding, and engaging with, contemporary notions of the public good in a democratic and diverse society, and the relevant principles, concepts, and arguments that guide ethical decision-making."
-   ],
-   "why": [
-    "not in the catalog text as printed: Critical Thinking: The student will demonstrate proficiency in defining issues, ",
-    "not in the catalog text as printed: Civic Responsibility and Ethical Reasoning in a Diverse Society: The student wil"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 0,
@@ -102,7 +96,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -344,5 +338,6 @@
    "Hyphenated line breaks in outcomes (differ-entiating, dem-ocratic) joined; outcomes recorded with their printed labels."
   ]
  },
- "extracted_run": "39006383070"
+ "extracted_run": 39018421038,
+ "read_run": "39006383070"
 }

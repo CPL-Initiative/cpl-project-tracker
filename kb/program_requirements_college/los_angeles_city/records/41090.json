@@ -101,19 +101,16 @@
    "program": 5,
    "courses": 0,
    "count": 5,
-   "not_verbatim": [
-    "Write a short essay in response to a given topic on the major concepts of a business organization from the following: management, marketing, finances, human resources, economics, legal forms of business ownership and international/global environments."
-   ],
-   "why": [
-    "not in the catalog text as printed: Write a short essay in response to a given topic on the major concepts of a busi"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 5,
    "not_verbatim": [
+    "business commerce",
     "international business management"
    ],
    "pass": false
@@ -121,7 +118,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -340,5 +337,6 @@
    "The 'Major Core Courses (19 units)' heading appears to cover only the five required courses; the three select-one groups make up the rest of the 28-31 major units."
   ]
  },
- "extracted_run": "39006380342"
+ "extracted_run": 39018419466,
+ "read_run": "39006380342"
 }

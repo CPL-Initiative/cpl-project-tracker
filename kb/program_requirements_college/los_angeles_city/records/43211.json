@@ -113,15 +113,11 @@
    "program": 3,
    "courses": 0,
    "count": 3,
-   "not_verbatim": [
-    "Apply knowledge of diversity and individual differences in specific social work scenarios."
-   ],
-   "why": [
-    "not in the catalog text as printed: Apply knowledge of diversity and individual differences in specific social work "
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 0,
@@ -410,5 +406,6 @@
    "Core sum: 19 units of fixed courses plus a 3-4 unit statistics choice gives 22-23, which matches the stated total. With List A at 6 units, this matches Major Units 28-29."
   ]
  },
- "extracted_run": "39006380342"
+ "extracted_run": 39018419466,
+ "read_run": "39006380342"
 }

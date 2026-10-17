@@ -83,12 +83,10 @@
    "courses": 0,
    "count": 4,
    "not_verbatim": [
-    "Gain the skills, knowledge, and experience necessary to seek entry level employment in the video game industry or interactive media or entry to a game related program at a four-year college/university.",
-    "Organize, schedule, budget and manage day-to-day development of a digital game production."
+    "Gain the skills, knowledge, and experience necessary to seek entry level employment in the video game industry or interactive media or entry to a game related program at a four-year college/university."
    ],
    "why": [
-    "not in the catalog text as printed: Gain the skills, knowledge, and experience necessary to seek entry level employm",
-    "not in the catalog text as printed: Organize, schedule, budget and manage day-to-day development of a digital game p"
+    "not in the catalog text as printed: Gain the skills, knowledge, and experience necessary to seek entry level employm"
    ],
    "heading_printed": true,
    "heading_without_outcomes": false,
@@ -202,5 +200,6 @@
    "Career field 'game industry' taken from the description ('entry-level opportunities in the game industry'); 'related fields in emerging interactive media' was not recorded as a named career."
   ]
  },
- "extracted_run": "39006380342"
+ "extracted_run": 39018419466,
+ "read_run": "39006380342"
 }

@@ -108,15 +108,11 @@
    "program": 4,
    "courses": 0,
    "count": 4,
-   "not_verbatim": [
-    "Function within a team, communicate effectively, behave professionally, and act with ethical responsibility as it relates to the science and engineering fields."
-   ],
-   "why": [
-    "not in the catalog text as printed: Function within a team, communicate effectively, behave professionally, and act "
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 0,
@@ -356,5 +352,6 @@
    "Block totals 28 + 14 + 3 = 45 match the printed Major Units of 45."
   ]
  },
- "extracted_run": "39006380342"
+ "extracted_run": 39018419466,
+ "read_run": "39006380342"
 }

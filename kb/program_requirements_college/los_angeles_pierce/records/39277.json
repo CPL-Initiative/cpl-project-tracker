@@ -88,15 +88,11 @@
    "program": 4,
    "courses": 0,
    "count": 4,
-   "not_verbatim": [
-    "Students will be able to research, identify, and describe major historical periods, cultural references, notable genres, key terminology, and defining events in the development of dance."
-   ],
-   "why": [
-    "not in the catalog text as printed: Students will be able to research, identify, and describe major historical perio"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 3,
@@ -109,7 +105,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -411,5 +407,6 @@
    "DANCETQ 112 and THEATER 310 are not in the closed list and are marked catalog additions."
   ]
  },
- "extracted_run": "39006383070"
+ "extracted_run": 39018421038,
+ "read_run": "39006383070"
 }

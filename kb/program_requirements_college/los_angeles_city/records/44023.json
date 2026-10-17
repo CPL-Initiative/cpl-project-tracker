@@ -82,15 +82,11 @@
    "program": 3,
    "courses": 0,
    "count": 3,
-   "not_verbatim": [
-    "Use computers and/or smartphones to practice and improve English language skills through educational multimedia, Canvas, and Office 365."
-   ],
-   "why": [
-    "not in the catalog text as printed: Use computers and/or smartphones to practice and improve English language skills"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 0,
@@ -100,7 +96,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -210,5 +206,6 @@
    "Description mentions job opportunities and career training generally but names no specific career, so careers is empty."
   ]
  },
- "extracted_run": "39006380342"
+ "extracted_run": 39018419466,
+ "read_run": "39006380342"
 }

@@ -98,10 +98,8 @@
   },
   "careers": {
    "count": 6,
-   "not_verbatim": [
-    "visual storytelling for graphic novels"
-   ],
-   "pass": false
+   "not_verbatim": [],
+   "pass": true
   },
   "degree": {
    "status": "n/a"
@@ -229,5 +227,6 @@
    "Award type printed is Certificate of Achievement; state file category says 16 to fewer than 30 units, consistent with 27."
   ]
  },
- "extracted_run": "39006380342"
+ "extracted_run": 39018419466,
+ "read_run": "39006380342"
 }

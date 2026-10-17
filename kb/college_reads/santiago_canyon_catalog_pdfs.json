@@ -1,0 +1,20 @@
+{
+ "_readme": "S403 SkyYarrow, 2026-10-17. Santiago Canyon's eLumen host serves the 2025-2026 catalog only (S402). Its own site may link the 2026-2027 catalog as a PDF or an archive; the 40-link cap hid them twice, so this read shows PDF links only, from the college's catalog page. One load.",
+ "college": "Santiago Canyon College",
+ "questions": {
+  "catalog_pdfs": "Whether sccollege.edu links a 2026-2027 catalog PDF or printer copy, and its address."
+ },
+ "keywords": [
+  "2026-2027",
+  "catalog"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "catalog_pdfs"
+   ],
+   "url": "https://sccollege.edu/academics/catalog/",
+   "links": "\\.pdf|printer"
+  }
+ ]
+}

@@ -111,17 +111,11 @@
    "program": 4,
    "courses": 0,
    "count": 4,
-   "not_verbatim": [
-    "Assess the major concepts in comparing and analyzing political systems and political cultures around the globe, including globalization, democratization, and political and economic development in selected countries.",
-    "Use media resources to evaluate and assess research and writings in issues of political science."
-   ],
-   "why": [
-    "not in the catalog text as printed: Assess the major concepts in comparing and analyzing political systems and polit",
-    "not in the catalog text as printed: Use media resources to evaluate and assess research and writings in issues of po"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 0,
@@ -131,7 +125,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -260,5 +254,6 @@
    "Catalog codes printed with leading zeros (e.g., SOC 011, CHICANO 044) were matched to closed-list codes without them (SOC 11, CHICANO 44). AFRO AM 004 and AFRO AM 005 are not in the closed list."
   ]
  },
- "extracted_run": "39006380342"
+ "extracted_run": 39018419466,
+ "read_run": "39006380342"
 }

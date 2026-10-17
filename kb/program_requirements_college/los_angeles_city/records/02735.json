@@ -117,10 +117,8 @@
   },
   "careers": {
    "count": 6,
-   "not_verbatim": [
-    "entertainment"
-   ],
-   "pass": false
+   "not_verbatim": [],
+   "pass": true
   },
   "degree": {
    "status": "read"
@@ -653,5 +651,6 @@
    "Catalog note: courses may be substituted under special circumstances with departmental approval; students should plan to develop a portfolio."
   ]
  },
- "extracted_run": "39006380342"
+ "extracted_run": 39018419466,
+ "read_run": "39006380342"
 }

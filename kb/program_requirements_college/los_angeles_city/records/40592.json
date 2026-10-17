@@ -86,15 +86,11 @@
    "program": 4,
    "courses": 0,
    "count": 4,
-   "not_verbatim": [
-    "Serve as technical crew in the production of costumes, lighting, sound, or scenery or front of house, in the realization of a fully produced theater event."
-   ],
-   "why": [
-    "not in the catalog text as printed: Serve as technical crew in the production of costumes, lighting, sound, or scene"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 4,
@@ -104,7 +100,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -240,5 +236,6 @@
    "The text above this section (the Core/List A material and the Theater Academy Acting AA) belongs to other awards and was not used."
   ]
  },
- "extracted_run": "39006380342"
+ "extracted_run": 39018419466,
+ "read_run": "39006380342"
 }

@@ -82,15 +82,11 @@
    "program": 2,
    "courses": 0,
    "count": 2,
-   "not_verbatim": [
-    "Develop workforce readiness and professional competencies to pursue employment or entrepreneurship in a variety of healthcare and community settings."
-   ],
-   "why": [
-    "not in the catalog text as printed: Develop workforce readiness and professional competencies to pursue employment o"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 3,
@@ -100,7 +96,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -198,5 +194,6 @@
    "All values are in hours (noncredit Certificate of Completion, 'Total Lecture Hrs')."
   ]
  },
- "extracted_run": "39006380342"
+ "extracted_run": 39018419466,
+ "read_run": "39006380342"
 }

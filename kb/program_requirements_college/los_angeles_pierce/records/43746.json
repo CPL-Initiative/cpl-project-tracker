@@ -82,15 +82,11 @@
    "program": 6,
    "courses": 0,
    "count": 6,
-   "not_verbatim": [
-    "Practice ethics, integrity, and professionalism by discussing scenarios and developing strategies to make a positive impact in the workplace and beyond."
-   ],
-   "why": [
-    "not in the catalog text as printed: Practice ethics, integrity, and professionalism by discussing scenarios and deve"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 0,
@@ -100,7 +96,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -172,5 +168,6 @@
    "No careers are named in this program's section."
   ]
  },
- "extracted_run": "39006383070"
+ "extracted_run": 39018421038,
+ "read_run": "39006383070"
 }

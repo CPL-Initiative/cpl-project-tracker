@@ -82,15 +82,11 @@
    "program": 3,
    "courses": 0,
    "count": 3,
-   "not_verbatim": [
-    "Interpret the signs and symptoms of heart attack and stroke, and explain how positive lifestyle changes can mitigate cardiovascular disease."
-   ],
-   "why": [
-    "not in the catalog text as printed: Interpret the signs and symptoms of heart attack and stroke, and explain how pos"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 1,
@@ -100,7 +96,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -172,5 +168,6 @@
    "Career taken from description: 'roles as IHSS providers specializing in chronic illnesses'."
   ]
  },
- "extracted_run": "39006380342"
+ "extracted_run": 39018419466,
+ "read_run": "39006380342"
 }

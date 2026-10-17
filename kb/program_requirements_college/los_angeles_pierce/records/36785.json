@@ -82,19 +82,11 @@
    "program": 6,
    "courses": 0,
    "count": 6,
-   "not_verbatim": [
-    "Communicate clearly and effectively in ASL, expressing and recognizing specific manual and non-manual language elements.",
-    "Produce college-level American Sign Language and English texts demonstrating knowledge of, and critical inquiry into, key concepts or issues in American Sign Language, the Deaf Community, and Deaf Culture.",
-    "Share critical insight into the nature of the diverse Deaf community, its language and culture through a social justice orientation."
-   ],
-   "why": [
-    "not in the catalog text as printed: Communicate clearly and effectively in ASL, expressing and recognizing specific ",
-    "not in the catalog text as printed: Produce college-level American Sign Language and English texts demonstrating kno",
-    "not in the catalog text as printed: Share critical insight into the nature of the diverse Deaf community, its langua"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 5,
@@ -107,7 +99,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -207,5 +199,6 @@
    "Line-break hyphenation artifacts (e.g. 'rec -ognizing', 'con -cepts', 'commu -nity') were joined; 'life-long' kept with its hyphen as printed at line end."
   ]
  },
- "extracted_run": "39006383070"
+ "extracted_run": 39018421038,
+ "read_run": "39006383070"
 }

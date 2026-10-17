@@ -1,0 +1,299 @@
+{
+ "college": "East Los Angeles College",
+ "control_number": "02456",
+ "shape": "degree",
+ "title": "Medical Assistant",
+ "award": "A.S. Degree",
+ "source_url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=84",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7434,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7434,
+    "output_tokens": 2361,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2361,
+  "output_tokens_details": {
+   "thinking_tokens": 845
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.07696,
+ "ms": 20101,
+ "seconds": 20.6,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 11,
+   "listed": 11,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 3,
+   "codes": [
+    "CAOT82",
+    "HLTHOCC60",
+    "HTHTEK133"
+   ],
+   "flagged": [
+    "CAOT82",
+    "HLTHOCC60",
+    "HTHTEK133"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    75.0,
+    77.0
+   ],
+   "stated": [
+    63.0,
+    65.0
+   ],
+   "against": "degree",
+   "ge": [
+    27.0,
+    27.0
+   ],
+   "why": [
+    "the blocks and general education sum to 75.0-77.0; the catalog prints 63.0-65.0 for the degree"
+   ],
+   "major": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     48.0,
+     50.0
+    ],
+    "stated": [
+     48.0,
+     50.0
+    ],
+    "against": "program",
+    "why": []
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 6,
+   "courses": 0,
+   "count": 6,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "(Academic Plan E002456C)",
+   "measure": "units",
+   "total_units": {
+    "min": 48,
+    "max": 50
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "LACCD General Education Plan",
+   "degree_total": {
+    "min": 63,
+    "max": 65
+   },
+   "ge_units": {
+    "min": 27,
+    "max": 27
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Communicate and collaborate professionally and effectively with patients, healthcare team, and third-party providers in diverse environments.",
+    "Demonstrate a mastery of a complex body of knowledge and specialized skills in the cognitive (knowledge), psychomotor (skills), and affective (behavior) learning domains.",
+    "Demonstrate and practice behavior consistent with the legal and ethical standards of the profession.",
+    "Demonstrate standard, quality, safety, and risk-reduction precautions in the healthcare setting.",
+    "Prepare students to display professionalism and cultural sensitivity while interacting and communicating with providers, staff and patients.",
+    "Provide competent medical assisting care, in variety of settings, based on the entry-level competencies for a Medical Assistant."
+   ],
+   "careers": [
+    "medical assistant"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "REQUIRED CORE",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 48,
+     "max": 50
+    },
+    "courses": [
+     {
+      "code": "ALD HTH 057",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CAOT 082",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HLTHOCC 054",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HLTHOCC 040",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HLTHOCC 061",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HLTHOCC 051",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HLTHOCC 052",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HLTHOCC 053",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HLTHOCC 055",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HLTHOCC 056",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HLTHOCC 059",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HLTHOCC 060",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HTHTEK 133",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PHYSIOL 006",
+      "units": 6,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Completion of Intermediate Algebra or its equivalent or higher Math course",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 5
+    },
+    "courses": []
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "No program title heading appears in the extracted text; section_heading uses the printed '(Academic Plan E002456C)' line. The text does not state the award type explicitly; assumed to be the A.S. Degree.",
+   "The REQUIRED CORE total 48-50 includes the 45 units of listed courses plus the 3-5 unit math requirement; the math requirement names no specific course, so it is recorded as a separate block with no courses.",
+   "Catalog codes are printed with leading zeros (e.g., ALD HTH 057, HLTHOCC 040, PHYSIOL 006) and were matched to closed-list codes without zeros.",
+   "Notes in catalog: 6 units may be double counted in LACCD GE areas 2 and 5; high-unit major per AP 4100, with LACCD GE areas 4a (3 units) and 7 (3 units) waived.",
+   "Source PDF is the 2026-2027 General Catalog; catalog year was given as not known.",
+   "Career 'medical assistant' taken from the program description ('A medical assistant interacts with...')."
+  ]
+ },
+ "extracted_run": "39011319511"
+}
