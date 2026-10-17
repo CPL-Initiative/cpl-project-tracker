@@ -1,0 +1,186 @@
+{
+ "college": "Pasadena City College",
+ "control_number": "46266",
+ "shape": "noncredit",
+ "title": "Carpentry Fundamentals",
+ "award": "Noncredit program",
+ "source_url": "https://curriculum.pasadena.edu/noncredit-division/short-term-career-technical-education/carpentry-fundamentals-cert-of-completion/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6955,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6955,
+    "output_tokens": 1310,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1310,
+  "output_tokens_details": {
+   "thinking_tokens": 350
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.05402,
+ "ms": 10951,
+ "seconds": 11.3,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 4,
+   "listed": 4,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "unstated",
+   "computed": null,
+   "stated": null,
+   "against": null,
+   "why": [
+    "the catalog prints no total, no hours and no units"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 6,
+   "courses": 0,
+   "count": 6,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 2,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Requirements for the Certificate of Completion",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Apply OSHA 29 CFR 1926 safety standards and demonstrate safe work practices in simulated carpentry environments.",
+    "Identify and respond to construction site hazards, including proper use of personal protective equipment (PPE) and understanding of Safety Data Sheets (SDS) and GHS pictograms.",
+    "Demonstrate basic carpentry skills in framing, foundations, and layout through hands-on lab activities.",
+    "Describe the roles, structures, and benefits of unionized carpentry trades, and articulate pathways to apprenticeship and career advancement.",
+    "Communicate and collaborate effectively in team-based work environments, demonstrating reliability, professionalism, and respect for diversity in the trades.",
+    "Develop a personalized career and training plan aligned with their interests, aptitudes, and entry into union pre-apprenticeship programs or the construction workforce."
+   ],
+   "careers": [
+    "construction and building trades",
+    "construction trades"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Course List",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "BLDN 2300",
+      "units": 0,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BLDN 3002",
+      "units": 0,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BLDN 3003",
+      "units": 0,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BLDN 3004",
+      "units": 0,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The page prints a 'Units' column with 0 for each noncredit course and states no hours or total; measure left as units with the printed 0s, and total_units null.",
+   "The page's own title heading (presumably 'Carpentry Fundamentals – Certificate of Completion') is not in the extracted text; the requirements heading is used as section_heading.",
+   "The page states 'A Certificate of Completion is awarded upon completion of all required courses', so all four courses are recorded as required.",
+   "Catalog prints BLDN 2300 title as 'INTRODUCTION TO OCCUPATIONAL SAFETY AND HEALTH FOR THE BUILDING TRADES', slightly differing from the state file title ('Introduction to Construction Safety and Health for the Building Trades').",
+   "Careers are drawn from the program description ('entry into the construction and building trades', 'entry-level employment in the construction trades'); a reviewer may judge whether these career fields should be listed."
+  ]
+ },
+ "extracted_run": "39061730187"
+}

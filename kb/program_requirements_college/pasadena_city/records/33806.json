@@ -1,0 +1,226 @@
+{
+ "college": "Pasadena City College",
+ "control_number": "33806",
+ "shape": "degree",
+ "title": "GERONTOLOGY",
+ "award": "A.S. Degree",
+ "source_url": "https://curriculum.pasadena.edu/academic-programs/gerontology/gerontology-as-cert-achievement/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7174,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7174,
+    "output_tokens": 1628,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1628,
+  "output_tokens_details": {
+   "thinking_tokens": 433
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.06126,
+ "ms": 14370,
+ "seconds": 14.8,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 5,
+   "listed": 5,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "SOC22"
+   ],
+   "flagged": [
+    "SOC22"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    18.0,
+    18.0
+   ],
+   "stated": [
+    18.0,
+    18.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 18,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Requirements for the Certificate of Achievement",
+   "measure": "units",
+   "total_units": {
+    "min": 18,
+    "max": 18
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "PCC Local Gen Ed or Cal-GETC",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Demonstrate knowledge of relationships among older adults, their families, and society.",
+    "Apply current theory and research in the interdisciplinary field of gerontology and its role in society to assess biological, social, and psychological issues that impact older adults and those who work with and care for them.",
+    "Analyze aspects of ageism in American society and socially conscious behavior regarding the older population.",
+    "Apply acquired interdisciplinary knowledge of older adults in varied career applications, such as design of services for older adults, patient care, and engineering and technology for independent living."
+   ],
+   "careers": [
+    "the field of aging",
+    "Home Care Companion",
+    "Activity Director",
+    "Adult Educator",
+    "Transportation Coordinator",
+    "Meal Coordinator",
+    "Admission Coordinator",
+    "Marketing Coordinator",
+    "Travel/Tour Specialist",
+    "Home Safety/Home Organization Specialist",
+    "Department of Human Services Worker",
+    "Senior Center Director",
+    "Administrator for assisted living",
+    "Administrator for independent living",
+    "Marketing Director",
+    "Care Manager",
+    "Geriatric Social Worker",
+    "Gerontologist"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Requirements for the Certificate of Achievement",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 18,
+     "max": 18
+    },
+    "courses": [
+     {
+      "code": "GERO 001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GERO 022",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GERO 140",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HUM 002",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC 022",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC 022",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The page combines the A.S. degree and the Certificate of Achievement. It prints no separate major requirements for the A.S.; the only course list is headed 'Requirements for the Certificate of Achievement' (Total Units 18), followed by 'General Education Requirements for the Associate in Science Degree'. The A.S. major was read as this same list. A reviewer should confirm.",
+   "The page prints no degree total and no GE units. It names PCC Local Gen Ed and Cal-GETC (with IGETC/CSU GE for students with catalog rights) as GE options.",
+   "The program outcomes are printed once for the whole page and were recorded as shared by the A.S. degree.",
+   "The catalog prints codes with leading zeros (GERO 001, GERO 022, HUM 002, PSYC 022). These match closed-list GERO 1, GERO 22, HUM 2 and PSYC 22.",
+   "SOC 022 Sociology of Aging is not in the closed list.",
+   "Careers include job titles listed both 'With Completion of an Associate Degree' and 'With Completion of a B.A. or M.A.'. Placement settings (county councils on aging, etc.) were not recorded as careers."
+  ]
+ },
+ "extracted_run": "39061730187"
+}

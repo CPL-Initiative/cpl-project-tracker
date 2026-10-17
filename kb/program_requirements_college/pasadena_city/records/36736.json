@@ -1,0 +1,305 @@
+{
+ "college": "Pasadena City College",
+ "control_number": "36736",
+ "shape": "adt",
+ "title": "Nutrition and Dietetics",
+ "award": "A.S. T Degree",
+ "source_url": "https://curriculum.pasadena.edu/academic-programs/kinesiology/nutrition-dietitics-ast/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7655,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7655,
+    "output_tokens": 2092,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2092,
+  "output_tokens_details": {
+   "thinking_tokens": 716
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.07246,
+ "ms": 16303,
+ "seconds": 16.7,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 13,
+   "listed": 13,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "NUTR11"
+   ],
+   "flagged": [
+    "NUTR11"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    60.0,
+    62.0
+   ],
+   "stated": [
+    60.0,
+    60.0
+   ],
+   "against": "degree",
+   "ge": [
+    34.0,
+    34.0
+   ],
+   "why": [
+    "the blocks and general education come to 60.0-62.0, past the 60.0-60.0 the catalog prints for the degree"
+   ],
+   "fill": null,
+   "major": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     26.0,
+     28.0
+    ],
+    "stated": [
+     26.0,
+     28.0
+    ],
+    "against": "program",
+    "why": []
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 4,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Associate in Science in Nutrition and Dietetics for Transfer Degree",
+   "measure": "units",
+   "total_units": {
+    "min": 26,
+    "max": 28
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": 34,
+    "max": 34
+   },
+   "electives_fill_degree": true,
+   "outcomes": [
+    "Apply the physical, biological, and social sciences to the study of foods and nutrition.",
+    "Recognize how food and nutrition affect health and human performance across the lifecycle.",
+    "Examine and outline the process by which the human body ingests, digests, absorbs, transports, utilizes and excretes food substances.",
+    "Identify appropriate nutrition strategies for working with diverse populations with a variety of nutrition-related health needs."
+   ],
+   "careers": [
+    "nutritionists",
+    "registered dietitians (RD)",
+    "food scientists",
+    "dietetics or fitness professionals"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "REQUIRED CORE",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "NUTR 011",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PSYC C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PSYC C1000H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "MICR 002",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 001A",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "LIST A - SELECT TWO COURSES FROM THE FOLLOWING",
+    "rule": "choose_courses",
+    "minimum": 2,
+    "option_group": null,
+    "stated": {
+     "min": 8,
+     "max": 10
+    },
+    "courses": [
+     {
+      "code": "CHEM 001B",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANAT 025",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PYSO 001",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 008A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "STAT C1000",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "STAT C1000H",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "STAT 018",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "STAT 015",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "LIST B",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "NUTR 012",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Catalog text begins mid-sentence; the start of the program description is cut off.",
+   "total_units taken from 'Required Subtotal 26-28'; degree total 60 and Cal-GETC 34 as printed.",
+   "Footnote 1: if C-ID CHEM 120S is used in the Core, only one course is required for List A.",
+   "Footnote 2: students with rights to former patterns may use CSU GE or IGETC-CSU in lieu of Cal-GETC.",
+   "Units are not printed beside individual List A courses; only the list total 8-10 is printed.",
+   "Program Outcomes are printed once on the page for the program; this award shares that list.",
+   "NUTR 011 is not in the closed list (marked catalog_addition). Catalog codes MICR 002, ANAT 025, PYSO 001, STAT 018, STAT 015, NUTR 012 match closed-list MICR 2, ANAT 25, PYSO 1, STAT 18, STAT 15, NUTR 12.",
+   "Transferable electives fill the remainder to 60 units; no units printed for them."
+  ]
+ },
+ "extracted_run": "39061730187"
+}

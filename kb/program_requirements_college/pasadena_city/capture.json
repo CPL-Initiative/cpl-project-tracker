@@ -5,7 +5,7 @@
  "catalog_year": "2026-2027",
  "programs": 367,
  "with_closed_list": 318,
- "started": "2026-10-17T18:20:24Z",
+ "started": "2026-10-17T19:17:23Z",
  "scope": null,
  "sitemap": {
   "url": "https://curriculum.pasadena.edu/sitemap.xml",
@@ -20,7 +20,7 @@
  "child_pages": 0,
  "banner_h1": "2026-2027 ACADEMIC CATALOG",
  "loads": 401,
- "seconds": 1975.8,
+ "seconds": 1937.9,
  "found": 296,
  "by_method": {
   "no_closed_list": 49,
@@ -3695,5 +3695,5 @@
    }
   ]
  },
- "run": "39057581005"
+ "run": "39061730187"
 }

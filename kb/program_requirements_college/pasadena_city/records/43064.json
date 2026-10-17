@@ -1,0 +1,245 @@
+{
+ "college": "Pasadena City College",
+ "control_number": "43064",
+ "shape": "certificate",
+ "title": "Culinary Management and Operations",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://curriculum.pasadena.edu/academic-programs/hospitality-management/culinary-management-and-operations-cert-achievement/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7614,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7614,
+    "output_tokens": 1551,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1551,
+  "output_tokens_details": {
+   "thinking_tokens": 419
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.06148,
+ "ms": 12288,
+ "seconds": 13.0,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 11,
+   "listed": 11,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    21.5,
+    23.0
+   ],
+   "stated": [
+    23.0,
+    23.0
+   ],
+   "against": "program",
+   "why": [
+    "the blocks sum to 21.5-23.0; the catalog states 23.0-23.0"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Requirements for the Certificate of Achievement",
+   "measure": "units",
+   "total_units": {
+    "min": 23,
+    "max": 23
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Demonstrate foundational culinary management and operations techniques and applications through building blocks of the hospitality industry.",
+    "Apply the major concepts, skills and values of the hospitality industry to address common problems.",
+    "Employ effective management techniques in hospitality operations.",
+    "Execute industry work experience internship for applied skills."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Requirements for the Certificate of Achievement",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "HOSP 003",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HOSP 014",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HOSP 015",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HOSP 140",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "HOSP 121",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HOSP 141",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "HOSP 050",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HOSP 045",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HOSP 021",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "WORK EXPERIENCE INTERNSHIP (REQUIREMENT OF 2 EARNED UNITS)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 2,
+     "max": 2
+    },
+    "courses": [
+     {
+      "code": "BUS 070A",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BUS 070B",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Catalog prints codes zero-padded (HOSP 003, HOSP 014, HOSP 015, HOSP 021, HOSP 045, HOSP 050); these match closed-list HOSP 3, 14, 15, 21, 45, 50.",
+   "Alternatives HOSP 140, HOSP 141 and BUS 070B have no units printed beside them; units left null.",
+   "BUS 070A/070B are variable-unit work experience courses (closed list stores 0.5); catalog requires 2 earned units, printed as 2 beside BUS 070A.",
+   "The page also shows a 'General Education Requirements for the Associate in Science Degree' section (PCC Local Gen Ed, Cal-GETC) that does not apply to this Certificate of Achievement; ge_pattern left null.",
+   "Description mentions 'employment in commercial culinary service operations' and 'positions that could quickly escalate to lead or managerial opportunities' but names no specific career or job title; careers left empty for reviewer check."
+  ]
+ },
+ "extracted_run": "39061730187"
+}
