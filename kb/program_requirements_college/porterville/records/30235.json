@@ -1,0 +1,246 @@
+{
+ "college": "Porterville College",
+ "control_number": "30235",
+ "shape": "degree",
+ "title": "Biological and Physical Science",
+ "award": "A.A. Degree",
+ "source_url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=70",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7853,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7853,
+    "output_tokens": 1384,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1384,
+  "output_tokens_details": {
+   "thinking_tokens": 231
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.05909,
+ "ms": 12069,
+ "seconds": 12.6,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 21,
+   "share": 0.0,
+   "missing": [
+    "ASTRC1000",
+    "BIOLC1000",
+    "BIOLP115",
+    "BIOLP119",
+    "BIOLP120",
+    "BIOLP135",
+    "BIOLP136",
+    "BIOLP160",
+    "CHEMP101A",
+    "CHEMP101B",
+    "CHEMP105",
+    "CHEMP106",
+    "ERSCP110",
+    "ERSCP115",
+    "GEOLP110",
+    "NUTRP110",
+    "PHSCP112",
+    "PHYSP102A",
+    "PHYSP102B",
+    "PHYSP104A",
+    "PHYSP104B"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "GRADUATION & GENERAL EDUCATION",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ASTR C1000",
+    "why": "not in the text (only ASTR C1001 appears, in a GE list)"
+   },
+   {
+    "code": "BIOL C1000",
+    "why": "appears only in local GE Area 5B list; program section not in the text"
+   },
+   {
+    "code": "BIOL P115",
+    "why": "appears only in local GE Area 5B list; program section not in the text"
+   },
+   {
+    "code": "BIOL P119",
+    "why": "appears only in local GE Area 5B list; program section not in the text"
+   },
+   {
+    "code": "BIOL P120",
+    "why": "appears only in local GE Area 5B list; program section not in the text"
+   },
+   {
+    "code": "BIOL P135",
+    "why": "appears only in local GE Area 5B list; program section not in the text"
+   },
+   {
+    "code": "BIOL P136",
+    "why": "appears only in local GE Area 5B list; program section not in the text"
+   },
+   {
+    "code": "BIOL P160",
+    "why": "appears only in local GE Area 5B list; program section not in the text"
+   },
+   {
+    "code": "CHEM P101A",
+    "why": "appears only in local GE Area 5A list; program section not in the text"
+   },
+   {
+    "code": "CHEM P101B",
+    "why": "appears only in local GE Area 5A list; program section not in the text"
+   },
+   {
+    "code": "CHEM P105",
+    "why": "appears only in local GE Area 5A list; program section not in the text"
+   },
+   {
+    "code": "CHEM P106",
+    "why": "appears only in local GE Area 5A list; program section not in the text"
+   },
+   {
+    "code": "ERSC P110",
+    "why": "appears only in local GE Area 5A list; program section not in the text"
+   },
+   {
+    "code": "ERSC P115",
+    "why": "appears only in local GE Area 5B list; program section not in the text"
+   },
+   {
+    "code": "GEOL P110",
+    "why": "appears only in local GE Area 5A list; program section not in the text"
+   },
+   {
+    "code": "NUTR P110",
+    "why": "appears only in local GE Area 6 list; program section not in the text"
+   },
+   {
+    "code": "PHSC P112",
+    "why": "appears only in local GE Area 5A list; program section not in the text"
+   },
+   {
+    "code": "PHYS P102A",
+    "why": "appears only in local GE Area 5A list; program section not in the text"
+   },
+   {
+    "code": "PHYS P102B",
+    "why": "appears only in local GE Area 5A list; program section not in the text"
+   },
+   {
+    "code": "PHYS P104A",
+    "why": "appears only in local GE Area 5A list; program section not in the text"
+   },
+   {
+    "code": "PHYS P104B",
+    "why": "appears only in local GE Area 5A list; program section not in the text"
+   }
+  ],
+  "notes": [
+   "The supplied text (catalog page 70) is the Graduation & General Education section listing local GE Areas 4-7, not the Biological and Physical Science A.A. program section. No program requirements, totals, outcomes or careers could be read; the source page reference likely points to the wrong page.",
+   "Closed-list courses appear only as options in the GE Area 5A/5B and Area 6 lists; GE courses are not placed in blocks.",
+   "A reviewer should locate the actual Biological and Physical Science A.A. degree section elsewhere in the 2026-2027 catalog (it may be an area-of-emphasis degree that draws on the Area 5 natural science list)."
+  ]
+ },
+ "extracted_run": "39046786897"
+}

@@ -1,0 +1,39 @@
+{
+ "college": "Porterville College",
+ "programs": 91,
+ "with_closed_list": 85,
+ "found": 82,
+ "extracted": 82,
+ "errors": 0,
+ "passed_machine_checks": 39,
+ "failed": {
+  "coverage": 11,
+  "invented": 5,
+  "arithmetic": 40,
+  "repeated": 0,
+  "outcomes": 3
+ },
+ "cost_usd": 6.13,
+ "cost_per_program": 0.0747,
+ "not_found": [
+  {
+   "control_number": "36021",
+   "title": "High Beginning English as a Second Language (ESL)",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "36022",
+   "title": "Advanced English as a Second Language",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "36023",
+   "title": "High Intermediate English as a Second Language (ESL)",
+   "award": "Noncredit program",
+   "near_miss": null
+  }
+ ],
+ "run": "39046786897"
+}

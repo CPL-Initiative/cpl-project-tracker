@@ -1,0 +1,218 @@
+{
+ "college": "Porterville College",
+ "control_number": "06809",
+ "shape": "degree",
+ "title": "Child Development",
+ "award": "A.A. Degree",
+ "source_url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=84",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7870,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7870,
+    "output_tokens": 2451,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2451,
+  "output_tokens_details": {
+   "thinking_tokens": 1224
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.0805,
+ "ms": 21706,
+ "seconds": 22.8,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 5,
+   "listed": 6,
+   "share": 0.833,
+   "missing": [
+    "CDEVC1000"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "CHDVP223"
+   ],
+   "flagged": [
+    "CHDVP223"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    18.0,
+    18.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 9,
+   "courses": 0,
+   "count": 9,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Child Development Associate in Arts",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Understand, observe, and analyze development from a theoretical perspective: including the realms of physical, socio-emotional, and cognitive development; from conception through adolescence",
+    "develop curriculum appropriate to the individual developmental needs of children from infancy through school-age and across a variety of categories; aesthetic, affective, cognitive, language, physical, and social.",
+    "Individually; demonstrate classroom management skills; working with both small and large groups of children",
+    "demonstrate an understanding of the health, safety, and nutrition requirements of programs and children from infancy through school-age",
+    "analyze assessment techniques commonly used in the field of Child Development",
+    "analyze assessment techniques commonly used in the field of Child Development",
+    "address diversity issues, including special needs, with children, families, and programs in a constructive way",
+    "assess and practice a variety of program models",
+    "take a leadership role in both the profession of Child Development and the in the community through an understanding of advocacy."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required Core Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 18,
+     "max": 18
+    },
+    "courses": [
+     {
+      "code": "CHDV P117",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHDV P119",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHDV P122",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHDV P143",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHDV P144",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHDV P223",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "CDEVC1000",
+    "why": "named only in the preceding A.A.-T Child and Adolescent Development section (as CDEV C1000); the A.A. lists CHDV P223 Child, Growth and Development instead"
+   }
+  ],
+  "notes": [
+   "The excerpt ends right after the Required Core Courses list (followed by the running footer 'Associate Degrees'); the A.A. requirements likely continue on the next page (further blocks, major total, GE pattern) and should be checked.",
+   "No major total or degree total is printed in the excerpt; the description's sentence 'You must complete a minimum of 60 units, including the courses listed in the major and general education requirements' was read as a general degree requirement, not a printed award total, so degree_total is null.",
+   "The section heading is printed as 'Child Development Associate in Arts' with 'Effective Summer 2025' above it, which belongs to the preceding A.A.-T section.",
+   "Program learning outcomes are printed as one run-on paragraph separated by semicolons; they were split at each new outcome verb. 'Individually;' was attached to the classroom management outcome. The assessment-techniques outcome is printed twice and both copies are recorded as printed.",
+   "The description names permits (Associate Teacher, Teacher, Master Teacher, Site Supervisor), not careers, so careers is empty.",
+   "CHDV P223 (Child, Growth and Development) is not in the closed list; the closed list's CDEVC1000 Child Growth and Development may be its C-ID-numbered equivalent."
+  ]
+ },
+ "extracted_run": "39046786897"
+}

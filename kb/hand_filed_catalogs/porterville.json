@@ -5,18 +5,26 @@
  "fetched_at": "2026-10-17",
  "catalog_year": "2026-2027",
  "copy_url": "https://github.com/user-attachments/files/33599443/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf",
- "sha256": "",
+ "sha256": "c9621980d38bf1ef8d68c2a32d03d9a50411e3045d764a1ebaa63f26c33bcb17",
  "note": "Sam downloaded it in a browser and posted it to the catalog-files release (2026-10-17); its robots.txt disallows the catalog PDF to readers. cpl_memory sam-hand-filed-catalog-pdf-links-2026-10-17.",
  "addenda": [
   {
    "title": "Addendum 1 (2026-09-10)",
    "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_Catalog_Addendum_1_FINAL_09102026.pdf",
-   "copy_url": "https://github.com/user-attachments/files/33599442/Porterville_College_Catalog_Addendum_1_FINAL_09102026.pdf"
+   "copy_url": "https://github.com/user-attachments/files/33599442/Porterville_College_Catalog_Addendum_1_FINAL_09102026.pdf",
+   "sha256": "fbac63cf90421fa239e81839789ad3fbce2fd5ccfa571d24a4f46f692e88aeab",
+   "bytes": 1236082,
+   "pinned_run": "39046617778"
   },
   {
    "title": "Addendum 2 (2026-09-22)",
    "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_Catalog_Addendum_version2_formatted_09222026.pdf",
-   "copy_url": "https://github.com/user-attachments/files/33599440/Porterville_College_Catalog_Addendum_version2_formatted_09222026.pdf"
+   "copy_url": "https://github.com/user-attachments/files/33599440/Porterville_College_Catalog_Addendum_version2_formatted_09222026.pdf",
+   "sha256": "7612851d6cd8702acd93f99eefcb60cd3bd073fc91df8fd599dcfc47ddb1fa94",
+   "bytes": 1075029,
+   "pinned_run": "39046617778"
   }
- ]
+ ],
+ "bytes": 9163086,
+ "pinned_run": "39046617778"
 }
