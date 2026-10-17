@@ -1,0 +1,25 @@
+{
+ "_readme": "S407 SkyMesquite, 2026-10-17. Pasadena City College's catalog page links its 2026-2027 Catalog to curriculum.pasadena.edu (page read 39053259803), with each earlier year under /archive/<year>/. This read loads that host's front page once to name its platform and how it lists programs, before any correction to the registry row. One load, no model call.",
+ "college": "Pasadena City College",
+ "questions": {
+  "catalog_host": "Which platform curriculum.pasadena.edu runs, which catalog year it serves, and where it lists programs (an A-Z page, a program menu or a sitemap)."
+ },
+ "keywords": [
+  "2026",
+  "2027",
+  "[Cc]atalog",
+  "CourseLeaf",
+  "[Pp]rograms",
+  "[Dd]egree",
+  "sitemap"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "catalog_host"
+   ],
+   "url": "https://curriculum.pasadena.edu/",
+   "links": "program|degree|certificate|archive|sitemap|courseleaf"
+  }
+ ]
+}
