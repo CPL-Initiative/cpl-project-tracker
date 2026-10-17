@@ -1,0 +1,288 @@
+{
+ "college": "Lassen College",
+ "control_number": "31132",
+ "shape": "adt",
+ "title": "Studio Arts",
+ "award": "A.A- T Degree",
+ "source_url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=53",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6587,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6587,
+    "output_tokens": 1856,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1856,
+  "output_tokens_details": {
+   "thinking_tokens": 576
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.06347,
+ "ms": 15056,
+ "seconds": 15.6,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 10,
+   "listed": 10,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 2,
+   "codes": [
+    "ARTHC1100",
+    "ARTHC1200"
+   ],
+   "flagged": [
+    "ARTHC1100",
+    "ARTHC1200"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    24.0,
+    24.0
+   ],
+   "stated": [
+    60.0,
+    60.0
+   ],
+   "against": "degree",
+   "ge": null,
+   "why": [
+    "the record names the degree total and the Cal-GETC pattern, but no units for it"
+   ],
+   "major": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     24.0,
+     24.0
+    ],
+    "stated": [
+     24.0,
+     24.0
+    ],
+    "against": "program",
+    "why": []
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Associate in Arts in Studio Arts for Transfer",
+   "measure": "units",
+   "total_units": {
+    "min": 24,
+    "max": 24
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": true,
+   "outcomes": [
+    "Solve basic problems of visual expression using various techniques and mediums.",
+    "Produce basic realistic and nonrealistic drawings of various subjects using alternate styles.",
+    "Produce visual works of art in a variety of mediums.",
+    "Interpret, evaluate and critiques orally and in writing visual works of art.",
+    "Demonstrate knowledge of specific historical and cultural art styles."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Complete the following 12 units",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 12,
+     "max": 12
+    },
+    "courses": [
+     {
+      "code": "ART 1A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 1B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 2",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 7",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ARTH C1200",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Complete the Following",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ART 6",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ARTH C1100",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select 9 additional units from the following",
+    "rule": "choose_units",
+    "minimum": 9,
+    "option_group": null,
+    "stated": {
+     "min": 9,
+     "max": 9
+    },
+    "courses": [
+     {
+      "code": "ART 3",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 10A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 23",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 25",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 36A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The page uses a two-column layout that interleaves the headings; I read 'Complete the following 12 units' as ART 1A, 1B, 2 and ART 7/ARTH C1200, 'Complete the Following' as ART 6/ARTH C1100, and 'Select 9 additional units' as ART 3, 10A, 23, 25 and 36A. This gives 12+3+9 = 24, which matches the stated core total of 24 units. A reviewer should verify this reading.",
+   "total_units is taken from 'Required Core Courses ... 24 Units'. degree_total is taken from 'Total units for the Associate in Arts Degree ...: 60 units'.",
+   "The page names Cal-GETC as the general education pattern but prints no units for it.",
+   "'Remaining Units to total 60 Units may be selected from courses numbered 1-49' is recorded as electives_fill_degree; no elective units are printed.",
+   "ARTH C1200 and ARTH C1100 are not in the closed list and are recorded as catalog additions.",
+   "The Program Student Learning Outcomes are printed for the Associate in Arts in Studio Art for Transfer."
+  ]
+ },
+ "extracted_run": "39006337658"
+}

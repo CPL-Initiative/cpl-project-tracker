@@ -1,0 +1,194 @@
+{
+ "college": "Lassen College",
+ "control_number": "43938",
+ "shape": "certificate",
+ "title": "Registered Dental Assisting",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=127",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 10988,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 10988,
+    "output_tokens": 1099,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1099,
+  "output_tokens_details": {
+   "thinking_tokens": 315
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.06593,
+ "ms": 10365,
+ "seconds": 10.9,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 11,
+   "share": 0.0,
+   "missing": [
+    "DA50",
+    "DA51",
+    "DA52",
+    "DA53",
+    "DA54",
+    "DA55",
+    "DA56",
+    "DA57",
+    "DA58",
+    "DA59",
+    "DA60"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "(no program section in text; course descriptions DA 52–DA 60 only)",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "DA 50",
+    "why": "Not in the text except as a corequisite; no program requirements section in the excerpt."
+   },
+   {
+    "code": "DA 51",
+    "why": "Not in the text except as a corequisite; no program requirements section in the excerpt."
+   },
+   {
+    "code": "DA 52",
+    "why": "Appears only as a course description; no program requirements section in the excerpt."
+   },
+   {
+    "code": "DA 53",
+    "why": "Appears only as a course description; no program requirements section in the excerpt."
+   },
+   {
+    "code": "DA 54",
+    "why": "Appears only as a course description; no program requirements section in the excerpt."
+   },
+   {
+    "code": "DA 55",
+    "why": "Appears only as a course description; no program requirements section in the excerpt."
+   },
+   {
+    "code": "DA 56",
+    "why": "Appears only as a course description; no program requirements section in the excerpt."
+   },
+   {
+    "code": "DA 57",
+    "why": "Appears only as a course description; no program requirements section in the excerpt."
+   },
+   {
+    "code": "DA 58",
+    "why": "Appears only as a course description; no program requirements section in the excerpt."
+   },
+   {
+    "code": "DA 59",
+    "why": "Appears only as a course description; no program requirements section in the excerpt."
+   },
+   {
+    "code": "DA 60",
+    "why": "Appears only as a course description; no program requirements section in the excerpt."
+   }
+  ],
+  "notes": [
+   "The supplied pages (catalog pp. 125-126) contain only course descriptions for DA 52-DA 60 (with the tail of the DA 50 or DA 51 description), followed by Developmental Studies and Economics courses. The Registered Dental Assisting Certificate of Achievement requirements section is not in the text, so no blocks, totals, outcomes or careers could be recorded.",
+   "The text has no heading for the award, so section_heading is a description, not a printed heading.",
+   "Reviewer should locate the program requirements page for Registered Dental Assisting elsewhere in the 2026-2027 catalog.",
+   "The DA 60 description appears cut off after its Recommended Preparation line."
+  ]
+ },
+ "extracted_run": "39006337658"
+}

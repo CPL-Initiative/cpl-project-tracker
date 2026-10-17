@@ -1,0 +1,269 @@
+{
+ "college": "Lassen College",
+ "control_number": "43543",
+ "shape": "certificate",
+ "title": "Forestry Management",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=71",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7601,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7601,
+    "output_tokens": 1879,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1879,
+  "output_tokens_details": {
+   "thinking_tokens": 493
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.06798,
+ "ms": 14897,
+ "seconds": 15.4,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 13,
+   "listed": 13,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    29.5,
+    29.5
+   ],
+   "stated": [
+    29.5,
+    29.5
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 7,
+   "courses": 0,
+   "count": 7,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 4,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Certificate of Achievement Forestry Management",
+   "measure": "units",
+   "total_units": {
+    "min": 29.5,
+    "max": 29.5
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Demonstrate knowledge of forest ecology and understand how forests respond to natural disturbances or management activities.",
+    "Understand the use of fire in management of natural resources.",
+    "Develop quantitative and qualitative skills for data collection, analysis and interpretation for forest ecology and management.",
+    "Develop an understanding of forestry products and be able to evaluate typical financial investments in forestry.",
+    "Demonstrate an understanding of forest conservation, forest ecology, and resource management conflicts and solutions from multiple perspectives ranging from private landowners to industry and public lands.",
+    "Effectively analyze and integrate the social and natural sciences to understand diverse challenges to forest management and conservation",
+    "Understand operational considerations while working under the Incident Command system during wildland fires."
+   ],
+   "careers": [
+    "Forest and Conservation Technicians",
+    "Forest Fire Inspectors and Prevention Specialists",
+    "Foresters",
+    "Conservation Scientists"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Core Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 19,
+     "max": 19
+    },
+    "courses": [
+     {
+      "code": "FOR 1",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FOR 2",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FOR 3",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FOR 4",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FOR 5",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FOR 6",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FOR 7",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Required Electives",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 10.5,
+     "max": 10.5
+    },
+    "courses": [
+     {
+      "code": "AERO 50",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FS 61",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FS 85",
+      "units": 0.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FS 89",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FS 72",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AGR 19",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The 'Required Electives: 10.5 units' list sums exactly to 10.5 units (3+2+0.5+1+1+3), so every listed course is effectively required; recorded as rule 'all' with stated 10.5. A reviewer may prefer choose_units with minimum 10.5.",
+   "Core 19 + electives 10.5 = 29.5, matching the printed certificate total.",
+   "The Program Student Learning Outcomes list is shared by the A.S. degree and the Certificate of Achievement; recorded here for the certificate.",
+   "Outcomes are printed numbered 6-12 in the catalog (numbering appears to continue from a prior list); numbers omitted.",
+   "Catalog prints FS 61 as 'Basic Firefighter (Basic 32)' while the state file title is 'Basic Firefighter Training (Basic 32)'.",
+   "Careers are taken from the shared program description, which names occupations for the degree."
+  ]
+ },
+ "extracted_run": "39006337658"
+}

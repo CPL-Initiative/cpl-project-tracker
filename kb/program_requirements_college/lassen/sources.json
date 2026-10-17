@@ -1,0 +1,2579 @@
+[
+ {
+  "control_number": "02121",
+  "title": "Agriculture Science and Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.941,
+  "codes_found": [
+   "AGR1",
+   "AGR10",
+   "AGR11",
+   "AGR12",
+   "AGR13",
+   "AGR14",
+   "AGR19",
+   "AGR2",
+   "AGR20",
+   "AGR3",
+   "AGR31",
+   "AGR40",
+   "AGR41",
+   "AGR61",
+   "AGR8",
+   "AGR9"
+  ],
+  "source": {
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=49",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    49,
+    50
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 17,
+  "text_chars": 4264
+ },
+ {
+  "control_number": "02133",
+  "title": "Vocational Nursing",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VN50",
+   "VN51",
+   "VN52",
+   "VN53",
+   "VN54",
+   "VN55",
+   "VN56",
+   "VN57",
+   "VN58",
+   "VN60"
+  ],
+  "source": {
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=87",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    87
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 10,
+  "text_chars": 2925
+ },
+ {
+  "control_number": "02134",
+  "title": "Administration of Justice",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "AJ10",
+   "AJ11",
+   "AJ12",
+   "AJ14",
+   "AJ16",
+   "AJ20",
+   "AJ23",
+   "AJ24",
+   "AJ35",
+   "AJ49",
+   "AJ5",
+   "AJ52A",
+   "AJ55",
+   "AJ56",
+   "AJ57",
+   "AJ58",
+   "AJ59",
+   "AJ60",
+   "AJ61",
+   "AJ62",
+   "AJ63",
+   "AJ64",
+   "AJ66",
+   "AJ73",
+   "AJ8",
+   "AJ9"
+  ],
+  "source": {
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=45",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    45,
+    46
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 26,
+  "text_chars": 7222
+ },
+ {
+  "control_number": "07168",
+  "title": "Drug & Alcohol Paraprofessional",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "09297",
+  "title": "Accounting",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 19,
+  "text_chars": 0
+ },
+ {
+  "control_number": "09299",
+  "title": "Administrative Office Technician",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 19,
+  "text_chars": 0
+ },
+ {
+  "control_number": "09308",
+  "title": "Welding Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.941,
+  "codes_found": [
+   "BUS25",
+   "IT22",
+   "IT72",
+   "WT20",
+   "WT21",
+   "WT22",
+   "WT23",
+   "WT36",
+   "WT37",
+   "WT38",
+   "WT39",
+   "WT42",
+   "WT43",
+   "WT44",
+   "WT45",
+   "WT51"
+  ],
+  "source": {
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=99",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    99,
+    100,
+    101
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 17,
+  "text_chars": 9161
+ },
+ {
+  "control_number": "09316",
+  "title": "Child Development",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.692,
+  "codes_found": [
+   "CD11",
+   "CD12",
+   "CD16",
+   "CD19",
+   "CD20",
+   "CD22",
+   "CD24",
+   "CD25",
+   "CD31"
+  ],
+  "source": {
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=61",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    61,
+    62
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 13,
+  "text_chars": 5569
+ },
+ {
+  "control_number": "09319",
+  "title": "Human Services",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 15,
+  "text_chars": 0
+ },
+ {
+  "control_number": "12201",
+  "title": "Welding Technology - 1 Year",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "IT22",
+   "IT72",
+   "WT20",
+   "WT21",
+   "WT36",
+   "WT37",
+   "WT38",
+   "WT42",
+   "WT43",
+   "WT44",
+   "WT45",
+   "WT51"
+  ],
+  "source": {
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=99",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    99,
+    100,
+    101
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 12,
+  "text_chars": 9161
+ },
+ {
+  "control_number": "17742",
+  "title": "Fire Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.97,
+  "codes_found": [
+   "BUS25",
+   "BUS27",
+   "EMT21",
+   "FS13",
+   "FS14",
+   "FS20",
+   "FS23",
+   "FS26",
+   "FS3",
+   "FS4",
+   "FS49",
+   "FS5",
+   "FS50",
+   "FS51",
+   "FS52",
+   "FS56",
+   "FS57",
+   "FS581",
+   "FS59",
+   "FS6",
+   "FS601",
+   "FS60C",
+   "FS61",
+   "FS64",
+   "FS64B",
+   "FS65A",
+   "FS65B",
+   "FS65C",
+   "FS70",
+   "FS70A",
+   "FS70B",
+   "FS70C",
+   "FS72",
+   "FS72A",
+   "FS72B",
+   "FS72C",
+   "FS72IC",
+   "FS73A",
+   "FS74",
+   "FS75",
+   "FS76",
+   "FS78",
+   "FS8",
+   "FS80",
+   "FS81",
+   "FS84",
+   "FS85",
+   "FS87",
+   "FS89",
+   "FS90",
+   "FS92A",
+   "FS92B",
+   "FS92C",
+   "FS92D",
+   "FS92E",
+   "FS94",
+   "FS95",
+   "FS96",
+   "FS96A",
+   "FS97A",
+   "FS97B",
+   "FS9818",
+   "FS982",
+   "FS9821"
+  ],
+  "source": {
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=69",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    69,
+    70,
+    71
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 71,
+  "text_chars": 10519
+ },
+ {
+  "control_number": "18331",
+  "title": "IGETC",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "18751",
+  "title": "General Studies Natural Science",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "AGR10",
+   "AGR19",
+   "AGR20",
+   "ANTH1",
+   "ANTH1L",
+   "ASTR1",
+   "BIOL1",
+   "BIOL20",
+   "BIOL21",
+   "BIOL22",
+   "BIOL25",
+   "BIOL26",
+   "BIOL32",
+   "BIOL32L",
+   "CHEM1A",
+   "CHEM1B",
+   "CHEM40",
+   "CHEM40L",
+   "CHEM45",
+   "CHEM8",
+   "GEOL1",
+   "GEOL5",
+   "PHSC1",
+   "PHYS2A",
+   "PHYS2B"
+  ],
+  "source": {
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=81",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    81,
+    82
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 25,
+  "text_chars": 6600
+ },
+ {
+  "control_number": "18752",
+  "title": "University Studies Natural Science",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "AGR10",
+   "AGR19",
+   "AGR20",
+   "ANTH1",
+   "ANTH1L",
+   "ASTR1",
+   "BIOL1",
+   "BIOL20",
+   "BIOL21",
+   "BIOL22",
+   "BIOL25",
+   "BIOL26",
+   "BIOL32",
+   "BIOL32L",
+   "CHEM1A",
+   "CHEM1B",
+   "CHEM40",
+   "CHEM40L",
+   "CHEM45",
+   "CHEM8",
+   "GEOL1",
+   "GEOL5",
+   "PHSC1",
+   "PHYS2A",
+   "PHYS2B"
+  ],
+  "source": {
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=81",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    81,
+    82
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 25,
+  "text_chars": 6600
+ },
+ {
+  "control_number": "18753",
+  "title": "General Studies Social Science",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.963,
+  "codes_found": [
+   "AGR2",
+   "AJ10",
+   "AJ12",
+   "AJ20",
+   "ANTH2",
+   "CD31",
+   "ECON10",
+   "ECON11",
+   "ES1",
+   "GEOG2",
+   "HIST14",
+   "HIST15",
+   "HIST16",
+   "HIST17",
+   "HUM1",
+   "HUM2",
+   "POLSC1000",
+   "PSYC18",
+   "PSYC33",
+   "PSYC5",
+   "PSYC6",
+   "PSYCC1000",
+   "SOC1",
+   "SOC2",
+   "SOC3",
+   "SOC4"
+  ],
+  "source": {
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=93",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    93,
+    94
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 27,
+  "text_chars": 6270
+ },
+ {
+  "control_number": "18754",
+  "title": "University Studies Social Science",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.963,
+  "codes_found": [
+   "AGR2",
+   "AJ10",
+   "AJ12",
+   "AJ20",
+   "ANTH2",
+   "CD31",
+   "ECON10",
+   "ECON11",
+   "ES1",
+   "GEOG2",
+   "HIST14",
+   "HIST15",
+   "HIST16",
+   "HIST17",
+   "HUM1",
+   "HUM2",
+   "POLSC1000",
+   "PSYC18",
+   "PSYC33",
+   "PSYC5",
+   "PSYC6",
+   "PSYCC1000",
+   "SOC1",
+   "SOC2",
+   "SOC3",
+   "SOC4"
+  ],
+  "source": {
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=93",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    93,
+    94
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 27,
+  "text_chars": 6270
+ },
+ {
+  "control_number": "18756",
+  "title": "University Studies Agriculture Science",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "AGR1",
+   "AGR10",
+   "AGR13",
+   "AGR2",
+   "AGR20",
+   "AGR40",
+   "AGR41"
+  ],
+  "source": {
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=48",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    48,
+    49,
+    50
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 7,
+  "text_chars": 7469
+ },
+ {
+  "control_number": "18758",
+  "title": "University Studies Humanities",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART6",
+   "ART7",
+   "ART8",
+   "FILM1",
+   "HIST14",
+   "HIST15",
+   "HUM1",
+   "HUM2",
+   "MUS12",
+   "MUS6",
+   "MUS7",
+   "PHIL10"
+  ],
+  "source": {
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=79",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    79
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 12,
+  "text_chars": 3193
+ },
+ {
+  "control_number": "18848",
+  "title": "University Studies Allied Health",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL20",
+   "BIOL21",
+   "BIOL22",
+   "CHEM1A",
+   "CHEM45",
+   "CHEM8",
+   "PSYCC1000"
+  ],
+  "source": {
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=51",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    51
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 7,
+  "text_chars": 3236
+ },
+ {
+  "control_number": "19321",
+  "title": "University Studies Physical Education",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.964,
+  "codes_found": [
+   "BIOL25",
+   "BIOL26",
+   "HLTH2",
+   "PE15",
+   "PEAC10",
+   "PEAC10D",
+   "PEAC16",
+   "PEAC2A",
+   "PEAC2B",
+   "PEAC2C",
+   "PEAC2D",
+   "PEAC34",
+   "PEAC44",
+   "PEAC5A",
+   "PEAC5A2",
+   "PEAC5B",
+   "PEAC5C",
+   "PEAC5C2",
+   "PEAC5D",
+   "PEAC6",
+   "PEAC6B",
+   "PEAC6D",
+   "PEAC7",
+   "PEAC7D",
+   "PEAC9",
+   "PEAC9B",
+   "PEAC9D"
+  ],
+  "source": {
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=90",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    90
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 28,
+  "text_chars": 3898
+ },
+ {
+  "control_number": "19375",
+  "title": "Child Development",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 0.857,
+  "codes_found": [
+   "CD12",
+   "CD16",
+   "CD19",
+   "CD20",
+   "CD22",
+   "CD31"
+  ],
+  "source": {
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=62",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    62
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 7,
+  "text_chars": 1681
+ },
+ {
+  "control_number": "19376",
+  "title": "Human Services",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 15,
+  "text_chars": 0
+ },
+ {
+  "control_number": "19377",
+  "title": "Fire Technology",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 0.983,
+  "codes_found": [
+   "BUS25",
+   "BUS27",
+   "EMT21",
+   "FS13",
+   "FS14",
+   "FS20",
+   "FS23",
+   "FS26",
+   "FS3",
+   "FS4",
+   "FS49",
+   "FS5",
+   "FS51",
+   "FS56",
+   "FS581",
+   "FS59",
+   "FS6",
+   "FS601",
+   "FS60C",
+   "FS61",
+   "FS64B",
+   "FS65A",
+   "FS65B",
+   "FS65C",
+   "FS70",
+   "FS70A",
+   "FS70B",
+   "FS70C",
+   "FS72",
+   "FS72A",
+   "FS72B",
+   "FS72C",
+   "FS72IC",
+   "FS73A",
+   "FS74",
+   "FS75",
+   "FS76",
+   "FS78",
+   "FS8",
+   "FS80",
+   "FS81",
+   "FS85",
+   "FS87",
+   "FS89",
+   "FS90",
+   "FS92A",
+   "FS92B",
+   "FS92C",
+   "FS92D",
+   "FS92E",
+   "FS94",
+   "FS95",
+   "FS96",
+   "FS96A",
+   "FS97A",
+   "FS9818",
+   "FS982",
+   "FS9821"
+  ],
+  "source": {
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=69",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    69,
+    70,
+    71
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 60,
+  "text_chars": 10519
+ },
+ {
+  "control_number": "21595",
+  "title": "Agriculture Science and  Technology",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "AGR1",
+   "AGR10",
+   "AGR11",
+   "AGR12",
+   "AGR13",
+   "AGR14",
+   "AGR19",
+   "AGR2",
+   "AGR20",
+   "AGR3",
+   "AGR4",
+   "AGR40",
+   "AGR8",
+   "AGR9"
+  ],
+  "source": {
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=49",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    49,
+    50
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 14,
+  "text_chars": 4264
+ },
+ {
+  "control_number": "21598",
+  "title": "Administrative Office Technician",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "21602",
+  "title": "Welding Technology-Two Year",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 0.941,
+  "codes_found": [
+   "BUS25",
+   "IT22",
+   "IT72",
+   "WT20",
+   "WT21",
+   "WT22",
+   "WT23",
+   "WT36",
+   "WT37",
+   "WT38",
+   "WT39",
+   "WT42",
+   "WT43",
+   "WT44",
+   "WT45",
+   "WT51"
+  ],
+  "source": {
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=99",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    99,
+    100,
+    101
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 17,
+  "text_chars": 9161
+ },
+ {
+  "control_number": "21605",
+  "title": "Drug & Alcohol Paraprofessional",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 15,
+  "text_chars": 0
+ },
+ {
+  "control_number": "21606",
+  "title": "Administration of Justice",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "AJ10",
+   "AJ11",
+   "AJ12",
+   "AJ14",
+   "AJ16",
+   "AJ20",
+   "AJ23",
+   "AJ24",
+   "AJ35",
+   "AJ49",
+   "AJ5",
+   "AJ52A",
+   "AJ55",
+   "AJ56",
+   "AJ57",
+   "AJ58",
+   "AJ59",
+   "AJ60",
+   "AJ61",
+   "AJ62",
+   "AJ63",
+   "AJ64",
+   "AJ66",
+   "AJ73",
+   "AJ8",
+   "AJ9"
+  ],
+  "source": {
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=45",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    45,
+    46
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 26,
+  "text_chars": 7222
+ },
+ {
+  "control_number": "30947",
+  "title": "Administration of Justice",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "AJ12",
+   "AJ14",
+   "AJ20",
+   "AJ23",
+   "AJ24",
+   "AJ35",
+   "AJ5",
+   "AJ8",
+   "AJ9",
+   "PSYCC1000",
+   "SOC1",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=44",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    44,
+    45,
+    46
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 12,
+  "text_chars": 11269
+ },
+ {
+  "control_number": "31015",
+  "title": "Early Childhood Education",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CD11",
+   "CD12",
+   "CD16",
+   "CD19",
+   "CD20",
+   "CD24",
+   "CD25",
+   "CD31"
+  ],
+  "source": {
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=61",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    61,
+    62
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 8,
+  "text_chars": 5569
+ },
+ {
+  "control_number": "31037",
+  "title": "Sociology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "POLSC1000",
+   "PSYC5",
+   "PSYCC1000",
+   "SOC1",
+   "SOC2",
+   "SOC3",
+   "SOC4",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=98",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    98
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 8,
+  "text_chars": 3651
+ },
+ {
+  "control_number": "31132",
+  "title": "Studio Arts",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART10A",
+   "ART1A",
+   "ART1B",
+   "ART2",
+   "ART23",
+   "ART25",
+   "ART3",
+   "ART36A",
+   "ART6",
+   "ART7"
+  ],
+  "source": {
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=53",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    53
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 10,
+  "text_chars": 1576
+ },
+ {
+  "control_number": "31178",
+  "title": "Art History",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 0.8,
+  "codes_found": [
+   "ART10A",
+   "ART1A",
+   "ART1B",
+   "ART2",
+   "ART3",
+   "ART36A",
+   "ART6",
+   "ART7"
+  ],
+  "source": {
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=53",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    53
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 10,
+  "text_chars": 1576
+ },
+ {
+  "control_number": "31297",
+  "title": "Business Administration",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 0.889,
+  "codes_found": [
+   "BUS1A",
+   "BUS1B",
+   "BUS2",
+   "BUS22",
+   "BUS27",
+   "ECON10",
+   "ECON11",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=58",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    58,
+    59,
+    60
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 9,
+  "text_chars": 8462
+ },
+ {
+  "control_number": "31379",
+  "title": "History",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "HIST14",
+   "HIST15",
+   "HIST16",
+   "HIST17",
+   "HUM1",
+   "HUM2",
+   "POLSC1000"
+  ],
+  "source": {
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=77",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    77
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 7,
+  "text_chars": 3112
+ },
+ {
+  "control_number": "31407",
+  "title": "Graphic Design",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 15,
+  "text_chars": 0
+ },
+ {
+  "control_number": "31411",
+  "title": "Graphic Design",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 11,
+  "text_chars": 0
+ },
+ {
+  "control_number": "32083",
+  "title": "Psychology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 0.857,
+  "codes_found": [
+   "BIOL32",
+   "PSYC18",
+   "PSYC33",
+   "PSYC5",
+   "PSYCC1000",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=92",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    92,
+    93,
+    94
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 7,
+  "text_chars": 9546
+ },
+ {
+  "control_number": "33263",
+  "title": "Economics",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "MATH1A",
+   "MATH6",
+   "PSYCC1000",
+   "SOC1",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=58",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    58
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 5,
+  "text_chars": 3407
+ },
+ {
+  "control_number": "33322",
+  "title": "Engine Repair",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "AT50",
+   "AT58",
+   "AT60",
+   "AT70",
+   "AT72",
+   "AT74",
+   "AT80"
+  ],
+  "source": {
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=54",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    54,
+    55,
+    56
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 7,
+  "text_chars": 7720
+ },
+ {
+  "control_number": "33323",
+  "title": "Advance Mechanics",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "AT50",
+   "AT54",
+   "AT56",
+   "AT58",
+   "AT60",
+   "AT66",
+   "AT68",
+   "AT70"
+  ],
+  "source": {
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=54",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    54,
+    55,
+    56
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 8,
+  "text_chars": 7720
+ },
+ {
+  "control_number": "33388",
+  "title": "Kinesiology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL21",
+   "BIOL22",
+   "BIOL25",
+   "BIOL26",
+   "CHEM1A",
+   "HLTH2",
+   "PE15",
+   "PEAC10",
+   "PEAC16",
+   "PEAC32D",
+   "PEAC34",
+   "PEAC44",
+   "PEAC5D",
+   "PEAC9",
+   "PHYS2A",
+   "PSYCC1000",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=90",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    90
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 18,
+  "text_chars": 3898
+ },
+ {
+  "control_number": "33661",
+  "title": "Automotive Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "AT49",
+   "AT50",
+   "AT54",
+   "AT56",
+   "AT58",
+   "AT60",
+   "AT66",
+   "AT68",
+   "AT70",
+   "AT72",
+   "AT74",
+   "AT80",
+   "AT82",
+   "AT84"
+  ],
+  "source": {
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=54",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    54,
+    55,
+    56
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 14,
+  "text_chars": 7720
+ },
+ {
+  "control_number": "33729",
+  "title": "Agriculture Animal Science",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "AGR10",
+   "AGR11",
+   "AGR12",
+   "AGR13",
+   "AGR14",
+   "AGR2",
+   "CHEM1A",
+   "CHEM45",
+   "ECON11",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=49",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    49,
+    50,
+    51
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 10,
+  "text_chars": 7502
+ },
+ {
+  "control_number": "33730",
+  "title": "Agriculture Business",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "AGR1",
+   "AGR10",
+   "AGR19",
+   "AGR2",
+   "AGR20",
+   "AGR3",
+   "AGR4",
+   "CHEM1A",
+   "CHEM45",
+   "ECON10",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=48",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    48,
+    49,
+    50,
+    51
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 11,
+  "text_chars": 10707
+ },
+ {
+  "control_number": "35106",
+  "title": "Nutrition and Dietetics",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL20",
+   "BIOL21",
+   "BIOL22",
+   "BIOL25",
+   "BIOL26",
+   "CHEM1A",
+   "CHEM8",
+   "HLTH25",
+   "PSYCC1000",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=88",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    88
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 10,
+  "text_chars": 3385
+ },
+ {
+  "control_number": "35216",
+  "title": "High School Equivalency",
+  "award": null,
+  "shape": "other",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "35223",
+  "title": "Career Pathway Entry",
+  "award": null,
+  "shape": "other",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "36554",
+  "title": "Medical Assisting",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "HO49",
+   "HO70",
+   "HO71"
+  ],
+  "source": {
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=75",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    75,
+    76
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 3,
+  "text_chars": 4297
+ },
+ {
+  "control_number": "36681",
+  "title": "Automotive Chassis and Maintenance",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "AT150",
+   "AT151"
+  ],
+  "source": {
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=56",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    56
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 2,
+  "text_chars": 1618
+ },
+ {
+  "control_number": "37760",
+  "title": "Small Business Management",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS10",
+   "BUS2",
+   "BUS22",
+   "BUS25",
+   "BUS27"
+  ],
+  "source": {
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=59",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    59
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 5,
+  "text_chars": 1919
+ },
+ {
+  "control_number": "40089",
+  "title": "Geographic Information Systems",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "GIS1",
+   "GIS2",
+   "GIS3",
+   "GIS4",
+   "GIS5"
+  ],
+  "source": {
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=74",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    74
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 5,
+  "text_chars": 4379
+ },
+ {
+  "control_number": "40583",
+  "title": "IT Support Professional",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 5,
+  "text_chars": 0
+ },
+ {
+  "control_number": "40731",
+  "title": "Basic Wildland Firefighter",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "FS20",
+   "FS5",
+   "FS51",
+   "FS60C",
+   "FS61",
+   "FS72",
+   "FS74",
+   "FS8",
+   "FS85",
+   "FS90",
+   "FS9821"
+  ],
+  "source": {
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=69",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    69,
+    70,
+    71
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 11,
+  "text_chars": 10519
+ },
+ {
+  "control_number": "41739",
+  "title": "Computer Support Specialist",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CIS50",
+   "CIS60",
+   "CIS70",
+   "CIS82",
+   "CIS90"
+  ],
+  "source": {
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=65",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    65
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 5,
+  "text_chars": 2944
+ },
+ {
+  "control_number": "41912",
+  "title": "Social Work and Human Services",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "AJ12",
+   "ANTH2",
+   "BIOL21",
+   "BIOL22",
+   "BIOL25",
+   "BIOL26",
+   "CD12",
+   "CD31",
+   "ECON10",
+   "ECON11",
+   "ENGLC1001",
+   "HIST16",
+   "HIST17",
+   "HUS10",
+   "HUS42",
+   "HUS43",
+   "PSYC18",
+   "PSYC6",
+   "PSYCC1000",
+   "SOC1",
+   "SOC2",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=96",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    96,
+    97,
+    98
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 22,
+  "text_chars": 9806
+ },
+ {
+  "control_number": "42300",
+  "title": "Business Administration 2.0",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS1A",
+   "BUS1B",
+   "BUS2",
+   "BUS22",
+   "BUS27",
+   "ECON10",
+   "ECON11",
+   "MATH6",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=58",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    58,
+    59,
+    60
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 9,
+  "text_chars": 8462
+ },
+ {
+  "control_number": "42798",
+  "title": "Registered Nursing",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ASL1",
+   "COMMC1000",
+   "ES1",
+   "NURS1",
+   "NURS10",
+   "NURS11",
+   "NURS12",
+   "NURS13",
+   "NURS14",
+   "NURS15",
+   "NURS16",
+   "NURS17",
+   "NURS2",
+   "NURS3",
+   "NURS4",
+   "NURS5",
+   "NURS6",
+   "NURS7",
+   "NURS8",
+   "NURS9",
+   "PSYC18",
+   "SOC1"
+  ],
+  "source": {
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=85",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    85
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 22,
+  "text_chars": 2714
+ },
+ {
+  "control_number": "42929",
+  "title": "Computer Information Systems",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CA31",
+   "CIS50",
+   "CIS60",
+   "CIS70",
+   "CIS71",
+   "CIS80",
+   "CIS81",
+   "CIS82",
+   "CIS90",
+   "CIS91"
+  ],
+  "source": {
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=65",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    65
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 10,
+  "text_chars": 2944
+ },
+ {
+  "control_number": "43471",
+  "title": "Cal Fire Academy",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "FS20",
+   "FS51",
+   "FS59",
+   "FS601",
+   "FS60C",
+   "FS61",
+   "FS72",
+   "FS80",
+   "FS81"
+  ],
+  "source": {
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=68",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    68,
+    69,
+    70,
+    71
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 9,
+  "text_chars": 14352
+ },
+ {
+  "control_number": "43543",
+  "title": "Forestry Management",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "AERO50",
+   "AGR19",
+   "FOR1",
+   "FOR2",
+   "FOR3",
+   "FOR4",
+   "FOR5",
+   "FOR6",
+   "FOR7",
+   "FS61",
+   "FS72",
+   "FS85",
+   "FS89"
+  ],
+  "source": {
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=71",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    71
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 13,
+  "text_chars": 3990
+ },
+ {
+  "control_number": "43544",
+  "title": "Forestry Management",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "AERO50",
+   "AGR19",
+   "FOR1",
+   "FOR2",
+   "FOR3",
+   "FOR4",
+   "FOR5",
+   "FOR6",
+   "FOR7",
+   "FS61",
+   "FS72",
+   "FS85",
+   "FS89"
+  ],
+  "source": {
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=71",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    71
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 13,
+  "text_chars": 3990
+ },
+ {
+  "control_number": "43571",
+  "title": "Student Success Preparation",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 0.818,
+  "codes_found": [
+   "COMMC1000",
+   "ENGLC1000",
+   "ENGLC1001",
+   "ES1",
+   "HIST16",
+   "HIST17",
+   "MATH6",
+   "POLSC1000",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=60",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    60
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 11,
+  "text_chars": 3132
+ },
+ {
+  "control_number": "43938",
+  "title": "Registered Dental Assisting",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "DA50",
+   "DA51",
+   "DA52",
+   "DA53",
+   "DA54",
+   "DA55",
+   "DA56",
+   "DA57",
+   "DA58",
+   "DA59",
+   "DA60"
+  ],
+  "source": {
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=127",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    127,
+    128
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 11,
+  "text_chars": 13400
+ },
+ {
+  "control_number": "44266",
+  "title": "Commercial Driver's Training",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CDL150",
+   "CDL151",
+   "CDL152"
+  ],
+  "source": {
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=63",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    63
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 3,
+  "text_chars": 1659
+ },
+ {
+  "control_number": "44457",
+  "title": "Advanced Placement Registered Nursing",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ASL1",
+   "BIOL20",
+   "BIOL21",
+   "BIOL22",
+   "COMMC1000",
+   "ENGLC1000",
+   "ES1",
+   "NURS10",
+   "NURS11",
+   "NURS12",
+   "NURS15",
+   "NURS17",
+   "NURS50",
+   "PSYC18",
+   "SOC1",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=85",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    85,
+    86,
+    87,
+    88
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 16,
+  "text_chars": 11585
+ },
+ {
+  "control_number": "44495",
+  "title": "Nursing Assistant",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "HO150",
+   "HO151"
+  ],
+  "source": {
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=107",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    107
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 2,
+  "text_chars": 4638
+ },
+ {
+  "control_number": "45100",
+  "title": "Cal-GETC",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 65,
+  "text_chars": 0
+ },
+ {
+  "control_number": "45318",
+  "title": "Social Work and Human Services",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "AJ12",
+   "ANTH1",
+   "ANTH1L",
+   "ANTH2",
+   "CD12",
+   "CD31",
+   "ECON10",
+   "ECON11",
+   "ES1",
+   "HUS10",
+   "HUS42",
+   "HUS43",
+   "PSYC18",
+   "PSYC6",
+   "PSYCC1000",
+   "SOC1",
+   "SOC2",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=97",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    97,
+    98
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 18,
+  "text_chars": 6170
+ },
+ {
+  "control_number": "45344",
+  "title": "Biology/Chemistry",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL10",
+   "BIOL20",
+   "BIOL21",
+   "BIOL22",
+   "BIOL25",
+   "BIOL26",
+   "BIOL32",
+   "BIOL32L",
+   "CHEM1A",
+   "CHEM1B",
+   "CHEM40",
+   "CHEM40L",
+   "CHEM45",
+   "CHEM8"
+  ],
+  "source": {
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=82",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    82
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 14,
+  "text_chars": 2904
+ },
+ {
+  "control_number": "45346",
+  "title": "Natural Science",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "AGR10",
+   "AGR19",
+   "AGR20",
+   "ANTH1",
+   "ASTR1",
+   "BIOL10",
+   "BIOL20",
+   "BIOL21",
+   "BIOL22",
+   "BIOL25",
+   "BIOL26",
+   "BIOL32",
+   "BIOL32L",
+   "CHEM1A",
+   "CHEM1B",
+   "CHEM40",
+   "CHEM40L",
+   "CHEM45",
+   "CHEM8",
+   "GEOL1",
+   "GEOL5",
+   "PHSC1",
+   "PHYS2A",
+   "PHYS2B"
+  ],
+  "source": {
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=82",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    82
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 24,
+  "text_chars": 2904
+ },
+ {
+  "control_number": "45524",
+  "title": "Administration of Justice - Law Enforcement",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "AJ12",
+   "AJ20",
+   "AJ23",
+   "AJ35",
+   "AJ52A",
+   "AJ8"
+  ],
+  "source": {
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=45",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    45,
+    46
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 6,
+  "text_chars": 7222
+ },
+ {
+  "control_number": "45525",
+  "title": "Administration of Justice - Corrections",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "AJ52A",
+   "AJ59",
+   "AJ60",
+   "AJ9"
+  ],
+  "source": {
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=45",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    45,
+    46
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 4,
+  "text_chars": 7222
+ },
+ {
+  "control_number": "45611",
+  "title": "Social Science",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 0.963,
+  "codes_found": [
+   "AGR2",
+   "AJ10",
+   "AJ12",
+   "AJ20",
+   "ANTH2",
+   "CD31",
+   "ECON10",
+   "ECON11",
+   "ES1",
+   "GEOG2",
+   "HIST14",
+   "HIST15",
+   "HIST16",
+   "HIST17",
+   "HUM1",
+   "HUM2",
+   "POLSC1000",
+   "PSYC18",
+   "PSYC33",
+   "PSYC5",
+   "PSYC6",
+   "PSYCC1000",
+   "SOC1",
+   "SOC2",
+   "SOC3",
+   "SOC4"
+  ],
+  "source": {
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=93",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    93,
+    94
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 27,
+  "text_chars": 6270
+ },
+ {
+  "control_number": "45924",
+  "title": "Registered Nursing Prerequisite",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL20",
+   "BIOL21",
+   "BIOL22",
+   "ENGLC1000",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=85",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    85,
+    86,
+    87,
+    88
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 5,
+  "text_chars": 11585
+ },
+ {
+  "control_number": "45926",
+  "title": "Humanities",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART6",
+   "ART7",
+   "ART8",
+   "FILM1",
+   "HIST14",
+   "HIST15",
+   "HUM1",
+   "HUM2",
+   "MUS12",
+   "MUS6",
+   "MUS7",
+   "PHIL10"
+  ],
+  "source": {
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=79",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    79
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 12,
+  "text_chars": 3193
+ },
+ {
+  "control_number": "45927",
+  "title": "Registered Nursing Advanced Placement Prerequisite",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL20",
+   "BIOL21",
+   "BIOL22",
+   "ENGLC1000",
+   "NURS50",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=85",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    85,
+    86,
+    87,
+    88
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 6,
+  "text_chars": 11585
+ },
+ {
+  "control_number": "46345",
+  "title": "Elementary Teacher Education: Integrated Programs",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.857,
+  "codes_found": [
+   "ART8",
+   "BIOL32L",
+   "CD31",
+   "CHEM40",
+   "CHEM45",
+   "COMMC1000",
+   "ED2",
+   "ENGLC1000",
+   "HIST14",
+   "MATH11A",
+   "MUS12",
+   "POLSC1000"
+  ],
+  "source": {
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=66",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    66
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 14,
+  "text_chars": 2873
+ }
+]

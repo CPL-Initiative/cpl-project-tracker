@@ -5,7 +5,7 @@
  "catalog_year": "2026-2027",
  "programs": 78,
  "with_closed_list": 73,
- "started": "2026-10-17T05:26:20Z",
+ "started": "2026-10-17T05:28:43Z",
  "pdf": {
   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf",
   "access": "ok",
@@ -22,7 +22,7 @@
   "extractor": "pypdf"
  },
  "loads": 1,
- "seconds": 30.7,
+ "seconds": 30.3,
  "found": 64,
  "by_method": {
   "no_closed_list": 5,
@@ -842,5 +842,5 @@
    }
   ]
  },
- "run": "39006192798"
+ "run": "39006337658"
 }
