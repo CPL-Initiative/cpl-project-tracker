@@ -4,7 +4,7 @@
   "supabase_tables": 99,
   "rpcs": 39,
   "edge_functions": 8,
-  "file_datasets": 651,
+  "file_datasets": 652,
   "external_services": 181,
   "consumers": 443,
   "workflows": 53,
@@ -318,7 +318,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 1209
+     "line": 1213
     }
    ],
    "main_committers": []
@@ -353,7 +353,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 1165
+     "line": 1169
     }
    ],
    "main_committers": []
@@ -525,7 +525,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 1104
+     "line": 1108
     }
    ],
    "main_committers": []
@@ -2156,7 +2156,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 742
+     "line": 746
     }
    ],
    "main_committers": []
@@ -11900,6 +11900,17 @@
    "served": true,
    "main_committers": []
   },
+  "file:kb/hand_filed_catalogs": {
+   "consumers": [],
+   "producers": [
+    {
+     "by": "workflow:program-requirements-college.yml",
+     "how": "commit"
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
   "file:kb/identities_rekey_out/2026-09-05/dead_worklist.json": {
    "consumers": [
     {
@@ -19808,7 +19819,7 @@
      "kind": "script",
      "direction": "call",
      "how": "literal",
-     "line": 2322
+     "line": 2383
     }
    ],
    "main_committers": []
@@ -19820,7 +19831,7 @@
      "kind": "script",
      "direction": "call",
      "how": "literal",
-     "line": 2409
+     "line": 2470
     }
    ],
    "main_committers": []
@@ -24008,6 +24019,7 @@
    ],
    "adds": [
     "kb/program_requirements_college",
+    "kb/hand_filed_catalogs",
     "kb/receipts",
     "kb/receipts"
    ],

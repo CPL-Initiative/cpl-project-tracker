@@ -565,6 +565,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/futuro_hth_map_reference.json` | scripts: `kb/_build_futuro_hth_crosswalk.py` | — |
 | `kb/governance_candidates.json` | tabs: `governance` | committed by: `daily-dashboard.yml` |
 | `kb/governance_register.json` | tabs: `governance` | — |
+| `kb/hand_filed_catalogs` | none found | committed by: `program-requirements-college.yml` |
 | `kb/identities_rekey_out/2026-09-05/dead_worklist.json` | scripts: `kb/_identities_rekey_dryrun.py` | — |
 | `kb/identities_rekey_out/2026-09-05/dead_worklist.md` | none found | scripts: `kb/_identities_rekey_dryrun.py` |
 | `kb/insert.sql` | none found | modules: `kb/_carp_apprentice_plan_s109.js` |
@@ -1117,5 +1118,5 @@ check these BY HAND before trusting an absence:
 - `reviewer_signin.js`
 - `scripts/supabase_migrate.py`
 
-Coverage: 99 Supabase tables · 39 RPCs · 8 edge functions · 651 file
+Coverage: 99 Supabase tables · 39 RPCs · 8 edge functions · 652 file
 datasets · 181 external services · 443 consumers · 53 workflows · 38 tabs.
