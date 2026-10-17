@@ -272,16 +272,33 @@ function makeWin(opts) {
     const rows = root.querySelectorAll(".cplmx-row");
     check("render: a list row per credential", rows.length === 3);
     check("render: overlay title shows in the list", html.indexOf("New Shiny Title") >= 0);
-    check("render: download buttons present",
-      html.indexOf("⬇ Download all (JSON)") >= 0 && html.indexOf("⬇ CSV") >= 0);
+    check("render: download controls are words",
+      html.indexOf("Download all (JSON)") >= 0 && html.indexOf("Download CSV") >= 0);
+    // UI pass (S406): controls are words, never ⬇ or ⧉ standing in for a label.
+    check("render: no glyph labels a control",
+      Array.prototype.every.call(root.querySelectorAll("button"), (b) => !/[⬇⧉✓]/.test(b.textContent)));
+    // A keyboard selects a credential: each row is a button that says whether it is the one shown.
+    check("render: each row is a button carrying aria-pressed",
+      Array.prototype.every.call(rows, (r) => r.tagName === "BUTTON" && r.type === "button")
+      && rows[0].getAttribute("aria-pressed") === "true" && rows[1].getAttribute("aria-pressed") === "false");
+    // The two scrolling panes are labeled regions a keyboard can reach.
+    const listPane = root.querySelector(".cplmx-list");
+    check("render: the list pane is a focusable labeled region",
+      listPane.tabIndex === 0 && listPane.getAttribute("role") === "region" && !!listPane.getAttribute("aria-label"));
+    check("render: the search box has a label", !!root.querySelector("input.q").getAttribute("aria-label"));
+    check("css: focus is never suppressed without a ring",
+      w.document.getElementById("cpl-map-export-css").textContent.indexOf("outline:none") < 0
+      && w.document.getElementById("cpl-map-export-css").textContent.indexOf(":focus-visible") >= 0);
     // first row selected by default → detail <pre> shows its JSON
     const pre = root.querySelector(".cplmx-pre");
     check("render: detail pre shows the selected record's JSON",
       !!pre && pre.textContent.indexOf('"title": "CompTIA A+ Certification"') >= 0
       && pre.textContent.indexOf('"combinedStatusName": "Active"') >= 0);
-    check("render: per-record ⬇ + ⧉ copy affordances", !!root.querySelector('.cplmx-detail-head') &&
-      root.querySelector(".cplmx-detail-head").textContent.indexOf("⬇") >= 0 &&
-      root.querySelector(".cplmx-detail-head").textContent.indexOf("⧉") >= 0);
+    check("render: per-record Download and Copy controls", !!root.querySelector('.cplmx-detail-head') &&
+      root.querySelector(".cplmx-detail-head").textContent.indexOf("Download") >= 0 &&
+      root.querySelector(".cplmx-detail-head").textContent.indexOf("Copy") >= 0);
+    check("render: the record pane is a focusable labeled region",
+      pre.tabIndex === 0 && pre.getAttribute("role") === "region" && !!pre.getAttribute("aria-label"));
     // click the second row → detail switches
     rows[1].click();
     check("render: clicking a row switches the detail",
