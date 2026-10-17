@@ -1,0 +1,269 @@
+{
+ "college": "College of San Mateo",
+ "control_number": "31254",
+ "shape": "adt",
+ "title": "Geology",
+ "award": "A.S. T Degree",
+ "source_url": "http://catalog.collegeofsanmateo.edu/current/programs/geology-as-t.php",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7217,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7217,
+    "output_tokens": 1763,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1763,
+  "output_tokens_details": {
+   "thinking_tokens": 491
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.06413,
+ "ms": 13771,
+ "seconds": 14.2,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 8,
+   "listed": 8,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 2,
+   "codes": [
+    "PHYS250",
+    "PHYS260"
+   ],
+   "flagged": [
+    "PHYS250",
+    "PHYS260"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    28.0,
+    28.0
+   ],
+   "stated": [
+    28.0,
+    28.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 20,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Program Requirements",
+   "measure": "units",
+   "total_units": {
+    "min": 28,
+    "max": 28
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": true,
+   "outcomes": [
+    "Apply tools, practices, and quantitative reasoning to collect, analyze, and interpret geologically relevant data in laboratory and field settings.",
+    "Apply concepts, models, and quantitative techniques from mathematics, physics, chemistry, and biology to solve complex geologic problems.",
+    "Apply scientific inquiry and investigation of evidence to formulate and critically evaluate scientific arguments, especially as relates to geologic phenomena.",
+    "Evaluate quantitative and qualitative evidence for how humans impact earth processes and how earth processes impact humans."
+   ],
+   "careers": [
+    "exploratory geology",
+    "minerals management",
+    "engineering",
+    "engineering geologist",
+    "environmental geologist",
+    "geochemist",
+    "geology assistant",
+    "geophysicist",
+    "hydrologist",
+    "mining geologist",
+    "marine geologist",
+    "oceanographer",
+    "paleontologist",
+    "petroleum geologist",
+    "petrologist",
+    "seismologist",
+    "soils technician",
+    "teacher/professor",
+    "volcanologist",
+    "waste management geologist"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Core Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 28,
+     "max": 28
+    },
+    "courses": [
+     {
+      "code": "CHEM 210",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 220",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOL 100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOL 101",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH C2210",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH C2220",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PALN 110",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PALN 111",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Additional recommended preparation (not required)",
+    "rule": "recommended",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "PHYS 250",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PHYS 260",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The page prints a generic 'University Transfer Program 60–70 transferable units' line and 'minimum 60 CSU transferable unit requirement' for electives; neither is printed as this award's own degree total, so degree_total is left null.",
+   "Electives: 'Additional CSU or UC transferable courses needed to meet the minimum 60 CSU transferable unit requirement' with no units printed, so electives_fill_degree is true.",
+   "Outcomes come from the page's outcomes tab, printed for the program as a whole; the A.S.-T shares it.",
+   "Careers 'exploratory geology', 'minerals management', 'engineering' are taken from the sentence about employment requiring a Bachelor's degree; reviewer may judge whether these count as career fields.",
+   "PALN 111 is printed as 'Paleontology Laboratory' versus closed-list title 'Paleontology Lab/Field Studies'; treated as the same course."
+  ]
+ },
+ "extracted_run": "39025870196"
+}

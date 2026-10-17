@@ -1,0 +1,358 @@
+{
+ "college": "College of San Mateo",
+ "control_number": "31435",
+ "shape": "adt",
+ "title": "History",
+ "award": "A.A- T Degree",
+ "source_url": "http://catalog.collegeofsanmateo.edu/current/programs/university-transfer-option-a-california-general-education-transfer-curriculum-cal-getc-ca.php",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 11607,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 11607,
+    "output_tokens": 2465,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2465,
+  "output_tokens_details": {
+   "thinking_tokens": 370
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.09573,
+ "ms": 18784,
+ "seconds": 19.3,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 43,
+   "share": 0.0,
+   "missing": [
+    "ADMJ100",
+    "ANTH110",
+    "ANTH180",
+    "BUS125",
+    "CHIN111",
+    "CHIN112",
+    "CHIN121",
+    "CHIN122",
+    "CHIN131",
+    "CHIN132",
+    "COMMC1004",
+    "DGME100",
+    "DGME102",
+    "ECONC2001",
+    "ECONC2002",
+    "ETHN101",
+    "ETHN103",
+    "GEOG110",
+    "GEOG150",
+    "HIST100",
+    "HIST101",
+    "HIST260",
+    "HIST310",
+    "HISTC1001",
+    "HISTC1002",
+    "POLS100",
+    "PSYC105",
+    "PSYC110",
+    "PSYC200",
+    "PSYC201",
+    "PSYC220",
+    "PSYC225",
+    "PSYC300",
+    "PSYC410",
+    "PSYCC1000",
+    "SOCI105",
+    "SOCI110",
+    "SOCI141",
+    "SOCIC1000",
+    "SPAN110",
+    "SPAN112",
+    "SPAN120",
+    "SPAN122"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "No History A.A-T section in text; the page is University Transfer Option A: California General Education Transfer Curriculum (Cal-GETC)",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ADMJ 100",
+    "why": "listed only in Cal-GETC Area 4, not a History A.A-T section"
+   },
+   {
+    "code": "ANTH 110",
+    "why": "listed only in Cal-GETC Area 4, not a History A.A-T section"
+   },
+   {
+    "code": "ANTH 180",
+    "why": "listed only in Cal-GETC Area 4, not a History A.A-T section"
+   },
+   {
+    "code": "BUS125",
+    "why": "BUS. 125 listed only in Cal-GETC Area 4, not a History A.A-T section"
+   },
+   {
+    "code": "CHIN 111",
+    "why": "not in the text"
+   },
+   {
+    "code": "CHIN 112",
+    "why": "not in the text"
+   },
+   {
+    "code": "CHIN 121",
+    "why": "not in the text"
+   },
+   {
+    "code": "CHIN 122",
+    "why": "not in the text"
+   },
+   {
+    "code": "CHIN 131",
+    "why": "listed only in Cal-GETC Area 3B, not a History A.A-T section"
+   },
+   {
+    "code": "CHIN 132",
+    "why": "listed only in Cal-GETC Area 3B, not a History A.A-T section"
+   },
+   {
+    "code": "COMM C1004",
+    "why": "listed only in Cal-GETC Area 4, not a History A.A-T section"
+   },
+   {
+    "code": "DGME 100",
+    "why": "listed only in Cal-GETC Area 4, not a History A.A-T section"
+   },
+   {
+    "code": "DGME 102",
+    "why": "listed only in Cal-GETC Area 4, not a History A.A-T section"
+   },
+   {
+    "code": "ECON C2001",
+    "why": "listed only in Cal-GETC Area 4, not a History A.A-T section"
+   },
+   {
+    "code": "ECON C2002",
+    "why": "listed only in Cal-GETC Area 4, not a History A.A-T section"
+   },
+   {
+    "code": "ETHN 101",
+    "why": "listed only in Cal-GETC Areas 4 and 6, not a History A.A-T section"
+   },
+   {
+    "code": "ETHN 103",
+    "why": "listed only in Cal-GETC Area 4, not a History A.A-T section"
+   },
+   {
+    "code": "GEOG 110",
+    "why": "listed only in Cal-GETC Area 4, not a History A.A-T section"
+   },
+   {
+    "code": "GEOG 150",
+    "why": "listed only in Cal-GETC Area 4, not a History A.A-T section"
+   },
+   {
+    "code": "HIST 100",
+    "why": "listed only in Cal-GETC Areas 3B and 4, not a History A.A-T section"
+   },
+   {
+    "code": "HIST 101",
+    "why": "listed only in Cal-GETC Areas 3B and 4, not a History A.A-T section"
+   },
+   {
+    "code": "HIST 260",
+    "why": "listed only in Cal-GETC Areas 3B and 4, not a History A.A-T section"
+   },
+   {
+    "code": "HIST 310",
+    "why": "listed only in Cal-GETC Areas 3B and 4, not a History A.A-T section"
+   },
+   {
+    "code": "HIST C1001",
+    "why": "listed only in Cal-GETC Areas 3B and 4, not a History A.A-T section"
+   },
+   {
+    "code": "HIST C1002",
+    "why": "listed only in Cal-GETC Areas 3B and 4, not a History A.A-T section"
+   },
+   {
+    "code": "POLS 100",
+    "why": "listed only in Cal-GETC Area 4, not a History A.A-T section"
+   },
+   {
+    "code": "PSYC 105",
+    "why": "listed only in Cal-GETC Area 4, not a History A.A-T section"
+   },
+   {
+    "code": "PSYC 110",
+    "why": "listed only in Cal-GETC Area 4, not a History A.A-T section"
+   },
+   {
+    "code": "PSYC 200",
+    "why": "listed only in Cal-GETC Area 4, not a History A.A-T section"
+   },
+   {
+    "code": "PSYC 201",
+    "why": "not in the text"
+   },
+   {
+    "code": "PSYC 220",
+    "why": "listed only in Cal-GETC Areas 4 and 5B, not a History A.A-T section"
+   },
+   {
+    "code": "PSYC 225",
+    "why": "listed only in Cal-GETC Area 4, not a History A.A-T section"
+   },
+   {
+    "code": "PSYC 300",
+    "why": "listed only in Cal-GETC Area 4, not a History A.A-T section"
+   },
+   {
+    "code": "PSYC 410",
+    "why": "listed only in Cal-GETC Area 4, not a History A.A-T section"
+   },
+   {
+    "code": "PSYC C1000",
+    "why": "listed only in Cal-GETC Area 4, not a History A.A-T section"
+   },
+   {
+    "code": "SOCI 105",
+    "why": "listed only in Cal-GETC Area 4, not a History A.A-T section"
+   },
+   {
+    "code": "SOCI 110",
+    "why": "listed only in Cal-GETC Area 4, not a History A.A-T section"
+   },
+   {
+    "code": "SOCI 141",
+    "why": "listed only in Cal-GETC Area 4, not a History A.A-T section"
+   },
+   {
+    "code": "SOCI C1000",
+    "why": "listed only in Cal-GETC Area 4, not a History A.A-T section"
+   },
+   {
+    "code": "SPAN 110",
+    "why": "not in the text"
+   },
+   {
+    "code": "SPAN 112",
+    "why": "not in the text"
+   },
+   {
+    "code": "SPAN 120",
+    "why": "not in the text"
+   },
+   {
+    "code": "SPAN 122",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "The source page is the University Transfer Option A: Cal-GETC general education pattern page, not the History A.A-T program page. The text contains no History A.A-T requirements, so no blocks were recorded.",
+   "The 'Total Required Units: 34' belongs to the Cal-GETC pattern, not the History major, so total_units is null. GE courses never go in blocks.",
+   "The outcomes printed on the page (communication, quantitative analysis, critical thinking, diversity, ethics) belong to the Cal-GETC transfer option, not the History A.A-T, so they were not recorded.",
+   "The text begins mid-page (cut off at 'troduction to Literature'); earlier Area 1 content is missing.",
+   "A reviewer should locate the correct History A.A-T catalog page for 2026-2027."
+  ]
+ },
+ "extracted_run": "39025870196"
+}

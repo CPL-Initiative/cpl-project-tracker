@@ -1,0 +1,277 @@
+{
+ "college": "College of San Mateo",
+ "control_number": "32203",
+ "shape": "adt",
+ "title": "English",
+ "award": "A.A- T Degree",
+ "source_url": "https://catalog.collegeofsanmateo.edu/current/programs/english-aa.php",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7312,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7312,
+    "output_tokens": 2269,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2269,
+  "output_tokens_details": {
+   "thinking_tokens": 967
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.07463,
+ "ms": 20879,
+ "seconds": 21.4,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 26,
+   "share": 0.0,
+   "missing": [
+    "COMM170",
+    "COMM171",
+    "ENGL161",
+    "ENGL162",
+    "ENGL163",
+    "ENGLC1000",
+    "ENGLC1000E",
+    "ENGLC1001",
+    "ENGLC1002",
+    "LIT101",
+    "LIT105",
+    "LIT113",
+    "LIT115",
+    "LIT150",
+    "LIT151",
+    "LIT154",
+    "LIT155",
+    "LIT156",
+    "LIT201",
+    "LIT202",
+    "LIT220",
+    "LIT221",
+    "LIT231",
+    "LIT232",
+    "LIT266",
+    "LIT430"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": [
+    60.0,
+    60.0
+   ],
+   "against": "degree",
+   "ge": null,
+   "why": [],
+   "transfer": true,
+   "fill": [
+    60.0,
+    60.0
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": true,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Related Degrees & Certificates",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "COMM 170",
+    "why": "AA-T requirements not in text; page is the English AA"
+   },
+   {
+    "code": "COMM 171",
+    "why": "AA-T requirements not in text; page is the English AA"
+   },
+   {
+    "code": "ENGL 161",
+    "why": "named only in the English AA section"
+   },
+   {
+    "code": "ENGL 162",
+    "why": "named only in the English AA section"
+   },
+   {
+    "code": "ENGL 163",
+    "why": "named only in the English AA section"
+   },
+   {
+    "code": "ENGL C1000",
+    "why": "not in the text"
+   },
+   {
+    "code": "ENGL C1000E",
+    "why": "not in the text"
+   },
+   {
+    "code": "ENGL C1001",
+    "why": "named only in the English AA section"
+   },
+   {
+    "code": "ENGL C1002",
+    "why": "named only in the English AA section"
+   },
+   {
+    "code": "LIT. 101",
+    "why": "AA-T requirements not in text; page is the English AA"
+   },
+   {
+    "code": "LIT. 105",
+    "why": "AA-T requirements not in text; page is the English AA"
+   },
+   {
+    "code": "LIT. 113",
+    "why": "AA-T requirements not in text; page is the English AA"
+   },
+   {
+    "code": "LIT. 115",
+    "why": "AA-T requirements not in text; page is the English AA"
+   },
+   {
+    "code": "LIT. 150",
+    "why": "AA-T requirements not in text; page is the English AA"
+   },
+   {
+    "code": "LIT. 151",
+    "why": "AA-T requirements not in text; page is the English AA"
+   },
+   {
+    "code": "LIT. 154",
+    "why": "AA-T requirements not in text; page is the English AA"
+   },
+   {
+    "code": "LIT. 155",
+    "why": "AA-T requirements not in text; page is the English AA"
+   },
+   {
+    "code": "LIT. 156",
+    "why": "AA-T requirements not in text; page is the English AA"
+   },
+   {
+    "code": "LIT. 201",
+    "why": "AA-T requirements not in text; page is the English AA"
+   },
+   {
+    "code": "LIT. 202",
+    "why": "AA-T requirements not in text; page is the English AA"
+   },
+   {
+    "code": "LIT. 220",
+    "why": "AA-T requirements not in text; page is the English AA"
+   },
+   {
+    "code": "LIT. 221",
+    "why": "AA-T requirements not in text; page is the English AA"
+   },
+   {
+    "code": "LIT. 231",
+    "why": "AA-T requirements not in text; page is the English AA"
+   },
+   {
+    "code": "LIT. 232",
+    "why": "AA-T requirements not in text; page is the English AA"
+   },
+   {
+    "code": "LIT. 266",
+    "why": "AA-T requirements not in text; page is the English AA"
+   },
+   {
+    "code": "LIT. 430",
+    "why": "named only in the English AA section (Group A/B)"
+   }
+  ],
+  "notes": [
+   "The source page is the English Associate in Arts (AA) degree page, not the AA-T. The AA-T is named only in the 'Related Degrees & Certificates' list as 'AA-T Associate in Arts Degree for Transfer — English 60 units'; its requirements are not printed, so no blocks are recorded.",
+   "degree_total 60 is taken from that related-programs listing for the AA-T; reviewer should confirm.",
+   "The page's Career Opportunities and Program Learning Outcomes belong to the English AA page and are not recorded for the AA-T; reviewer may decide whether they are shared.",
+   "The AA section on the page: Required Core choose 3 units from ENGL C1001/ENGL C1002; 15 units from Group A (literature courses in the 100/200 series and/or LIT. 430) or Group B (9-12 units literature plus 3-6 units from ENGL 161/162/163); Total Required Major Units 18.",
+   "The correct AA-T page (likely english-aat.php) should be retrieved to record this award."
+  ]
+ },
+ "extracted_run": "39025870196"
+}

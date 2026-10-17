@@ -1,0 +1,258 @@
+{
+ "college": "College of San Mateo",
+ "control_number": "31576",
+ "shape": "degree",
+ "title": "Digital Media: Graphic Design",
+ "award": "A.A. Degree",
+ "source_url": "http://catalog.collegeofsanmateo.edu/current/programs/digital-media-graphic-design-aa.php",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6822,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6822,
+    "output_tokens": 1614,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1614,
+  "output_tokens_details": {
+   "thinking_tokens": 623
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.05957,
+ "ms": 13571,
+ "seconds": 14.1,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 5,
+   "listed": 6,
+   "share": 0.833,
+   "missing": [
+    "DGME168"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 5,
+   "codes": [
+    "ART200",
+    "ART301",
+    "DGME164",
+    "DGME215",
+    "DGME216"
+   ],
+   "flagged": [
+    "ART200",
+    "ART301",
+    "DGME164",
+    "DGME215",
+    "DGME216"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    27.0,
+    27.0
+   ],
+   "stated": [
+    27.0,
+    27.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 10,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Program Requirements",
+   "measure": "units",
+   "total_units": {
+    "min": 27,
+    "max": 27
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": true,
+   "outcomes": [
+    "Synthesize visual solutions to graphic problems by integrating information and ideas.",
+    "Design and produce original solutions to graphic problems using technology and software central to the graphics industry effectively.",
+    "Analyze, compare and contrast the effectiveness of their own original design work and the work of others."
+   ],
+   "careers": [
+    "environmental graphics",
+    "exhibit and display design",
+    "signage",
+    "motion graphics and titling for film and video",
+    "information design",
+    "interface design",
+    "type design",
+    "web design",
+    "education design",
+    "nonprofit design"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Core Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 27,
+     "max": 27
+    },
+    "courses": [
+     {
+      "code": "ART 200",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ART 301",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "DGME 103",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "DGME 164",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "DGME 211",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DGME 215",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "DGME 216",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "DGME 220",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DGME 230",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DGME 250",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "DGME 168",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "The catalog text begins mid-sentence; the program description is truncated, so careers listed come from the visible portion only (fields of work the description says graphic designers may work in). The truncated portion may name additional careers.",
+   "The 60-unit figure is the minimum for any Associate degree, not printed as this award's total, so degree_total is null; GE and electives fill the remainder (electives_fill_degree true).",
+   "GE pattern is not named on the page (refers to AA/AS Degree Requirements), so ge_pattern is null.",
+   "'60-70 transferable units' under University Transfer Program refers to transfer generally, not this award's total.",
+   "Program Learning Outcomes appear to be printed for the Graphic Design program as a whole; recorded for this A.A. degree."
+  ]
+ },
+ "extracted_run": "39025870196"
+}

@@ -1,0 +1,344 @@
+{
+ "college": "College of San Mateo",
+ "control_number": "35024",
+ "shape": "adt",
+ "title": "Nutrition and Dietetics",
+ "award": "A.S. T Degree",
+ "source_url": "http://catalog.collegeofsanmateo.edu/current/programs/nutrition-and-dietetics-as-t.php",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7368,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7368,
+    "output_tokens": 2736,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2736,
+  "output_tokens_details": {
+   "thinking_tokens": 1032
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.08419,
+ "ms": 22721,
+ "seconds": 23.2,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 11,
+   "listed": 11,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    26.0,
+    29.0
+   ],
+   "stated": [
+    26.0,
+    29.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 6,
+   "courses": 0,
+   "count": 6,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 80,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Program Requirements",
+   "measure": "units",
+   "total_units": {
+    "min": 26,
+    "max": 29
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": true,
+   "outcomes": [
+    "Explain the principles of nutrition and their effect on health.",
+    "Demonstrate a fundamental understanding of health behaviors on nutritional and health status.",
+    "Assess the impact of age, culture and gender on diet and nutrition.",
+    "Describe food preparation, preservation, serving, and storage techniques that prevent food poisoning.",
+    "Design meal plans based on current nutritional guidelines.",
+    "Interpret current nutrition research."
+   ],
+   "careers": [
+    "anatomist",
+    "aquatic biologist",
+    "bacteriologist",
+    "biologist",
+    "biotechnologist",
+    "botanist",
+    "cytogeneticist",
+    "cytologist",
+    "ecologist",
+    "embryologist",
+    "entomologist",
+    "geneticist",
+    "herpetologist",
+    "ichthyologist",
+    "mammalogist",
+    "marine biologist",
+    "microbiologist",
+    "molecular biologist",
+    "morphologist",
+    "mycologist",
+    "ornithologist",
+    "paleobotanist",
+    "paleozoologist",
+    "parasitologist",
+    "pathologist",
+    "pharmacologist",
+    "photobiologist",
+    "phycologist",
+    "physiologist",
+    "protozoologist",
+    "systematist",
+    "taxonomist",
+    "toxicologist",
+    "tropical biologist",
+    "virologist",
+    "wildlife biologist",
+    "zoologist",
+    "educators",
+    "scientists",
+    "forensic scientists",
+    "illustrators",
+    "museum specialists",
+    "naturalists",
+    "photographers",
+    "science writers/editors",
+    "agricultural biologist",
+    "agrigeneticist",
+    "animal scientist",
+    "apiculturist",
+    "farmer/farm manager",
+    "field crop manager",
+    "fish and game warden",
+    "food technologist",
+    "foresters/forestry technicians",
+    "horticulturist",
+    "plant and animal breeder",
+    "plant and animal physiologist",
+    "plant quarantine/ pest control inspector",
+    "range scientist",
+    "soil scientist/conservationist",
+    "audiologist",
+    "chiropractor",
+    "coroner",
+    "dentist",
+    "exercise physiologist",
+    "health care administrator",
+    "medical laboratory technologist/technician",
+    "medical librarian",
+    "nurse",
+    "nutritionist",
+    "optometrist",
+    "pharmacist",
+    "physician",
+    "podiatrist",
+    "public/ environmental health specialist",
+    "sanitarian",
+    "speech pathologist",
+    "veterinarian",
+    "specialists in sports medicine",
+    "manual arts, music, occupational, physical, and recreational therapists"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Core Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 15,
+     "max": 15
+    },
+    "courses": [
+     {
+      "code": "BIOL 310",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 210",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL 240",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Required Selective Courses: List A",
+    "rule": "choose_units",
+    "minimum": 8,
+    "option_group": null,
+    "stated": {
+     "min": 8,
+     "max": 10
+    },
+    "courses": [
+     {
+      "code": "CHEM 220",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL 260",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "STAT C1000",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC 121",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Required Selective Courses: List B",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "BIOL 250",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECON C2002",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOCI C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The careers are taken from a career-opportunities passage at the top of the page that speaks of majors in the Biological Sciences generally, not Nutrition and Dietetics specifically; reviewer should confirm it applies to this program.",
+   "Page header prints 'University Transfer Program 60–70 transferable units'; this reads as a generic transfer-program label, so degree_total is left null.",
+   "Electives: 'Additional CSU or UC transferable courses needed to meet the minimum 60 CSU transferable unit requirement' - no units printed, so electives_fill_degree is true.",
+   "Outcomes come from the page's outcomes tab, printed for the program as a whole; recorded as shared by this award.",
+   "STAT C1000 and PSYC 121 are both statistics courses in List A; the catalog does not restrict combining them."
+  ]
+ },
+ "extracted_run": "39025870196"
+}

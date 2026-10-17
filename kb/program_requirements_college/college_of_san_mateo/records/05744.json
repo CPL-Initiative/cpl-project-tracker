@@ -1,0 +1,274 @@
+{
+ "college": "College of San Mateo",
+ "control_number": "05744",
+ "shape": "degree",
+ "title": "Architecture",
+ "award": "A.S. Degree",
+ "source_url": "http://catalog.collegeofsanmateo.edu/current/programs/architecture-as.php",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6824,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6824,
+    "output_tokens": 1791,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1791,
+  "output_tokens_details": {
+   "thinking_tokens": 589
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.06312,
+ "ms": 14771,
+ "seconds": 15.7,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 6,
+   "listed": 6,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 5,
+   "codes": [
+    "ARCH100",
+    "ARCH120",
+    "ARCH140",
+    "ARCH210",
+    "ARCH666"
+   ],
+   "flagged": [
+    "ARCH100",
+    "ARCH120",
+    "ARCH140",
+    "ARCH210",
+    "ARCH666"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    19.0,
+    19.0
+   ],
+   "stated": [
+    19.0,
+    19.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 12,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Major Requirements",
+   "measure": "units",
+   "total_units": {
+    "min": 19,
+    "max": 19
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": true,
+   "outcomes": [
+    "Use basic architectural principles in elementary two & three dimensional design problem-solving.",
+    "Use graphics, including freehand drawing and computer applications, and physical models to communicate three dimensional design concepts and alternatives throughout a basic project design process.",
+    "Describe architectural precedents and traditions, in particular the influences of the 20th/21st century, as well as elementary climatic, technological, socioeconomic, and other cultural factors that impact the built environment and the practice of environmental design",
+    "Successfully carry out both individual and collaborative work as a part of a design team."
+   ],
+   "careers": [
+    "art",
+    "historic restoration",
+    "product development",
+    "government",
+    "politics",
+    "business administration",
+    "law",
+    "education",
+    "medicine",
+    "research",
+    "land development",
+    "the military"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Core Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 16,
+     "max": 16
+    },
+    "courses": [
+     {
+      "code": "ARCH 100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ARCH 120",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ARCH 140",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ARCH 210",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ARCH 220",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARCH 666",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Required Selective Courses",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "ART 204",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 205",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 301",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 350",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DRAF 121",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "ART 350 is listed with no units printed beside it; units left null (state file stores 3).",
+   "The page says General Education coursework and electives as needed to meet the minimum 60 units required for the Associate degree; this is a generic minimum, so degree_total is null and electives_fill_degree is true. The GE pattern is not named (refers to 'AA/AS Degree Requirements'), so ge_pattern is null.",
+   "'University Transfer Program 60-70 transferable units' refers to transfer preparation, not recorded as this award's total.",
+   "The catalog text begins mid-sentence in the career description; careers are taken from the listed fields 'such as art, historic restoration, ... the military' for advanced work, which a reviewer may wish to confirm as career fields. Earlier career text may be cut off.",
+   "The Program Learning Outcomes are printed for the program page as a whole; recorded for this award."
+  ]
+ },
+ "extracted_run": "39025870196"
+}

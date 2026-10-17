@@ -1,0 +1,429 @@
+{
+ "college": "College of San Mateo",
+ "control_number": "05756",
+ "shape": "degree",
+ "title": "CIS: Applications and Development AS",
+ "award": "A.S. Degree",
+ "source_url": "http://catalog.collegeofsanmateo.edu/current/programs/computer-science-applications-and-development-as.php",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7174,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7174,
+    "output_tokens": 2476,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2476,
+  "output_tokens_details": {
+   "thinking_tokens": 569
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.07822,
+ "ms": 19130,
+ "seconds": 20.1,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 1,
+   "listed": 1,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 21,
+   "codes": [
+    "CIS110",
+    "CIS114",
+    "CIS117",
+    "CIS121",
+    "CIS127",
+    "CIS128",
+    "CIS129",
+    "CIS135",
+    "CIS137",
+    "CIS138",
+    "CIS151",
+    "CIS254",
+    "CIS255",
+    "CIS256",
+    "CIS262",
+    "CIS264",
+    "CIS278",
+    "CIS279",
+    "CIS363",
+    "CIS364",
+    "CIS380"
+   ],
+   "flagged": [
+    "CIS110",
+    "CIS114",
+    "CIS117",
+    "CIS121",
+    "CIS127",
+    "CIS128",
+    "CIS129",
+    "CIS135",
+    "CIS137",
+    "CIS138",
+    "CIS151",
+    "CIS254",
+    "CIS255",
+    "CIS256",
+    "CIS262",
+    "CIS264",
+    "CIS278",
+    "CIS279",
+    "CIS363",
+    "CIS364",
+    "CIS380"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    30.0,
+    34.0
+   ],
+   "stated": [
+    30.0,
+    34.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 6,
+   "courses": 0,
+   "count": 6,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 17,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Program Requirements",
+   "measure": "units",
+   "total_units": {
+    "min": 30,
+    "max": 34
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": true,
+   "outcomes": [
+    "Create and debug code for given specifications and write appropriate documentation.",
+    "Demonstrate a comprehensive understanding of one or more computer programming languages.",
+    "Demonstrate proficiency in using data analysis and data management tools.",
+    "Demonstrate proficiency in using one or more internet programming languages to design and implement a web based program.",
+    "Communicate effectively orally, in writing and in media.",
+    "Work collaboratively and ethically in teams on projects."
+   ],
+   "careers": [
+    "applied scientist",
+    "communications technician",
+    "computer maintenance technician",
+    "computer operator",
+    "data base specialist",
+    "documentation specialist",
+    "information specialist",
+    "Local Area Network (LAN) administrator",
+    "PC specialist",
+    "programmer",
+    "software engineer",
+    "software technician",
+    "systems analyst",
+    "systems test engineer",
+    "technician support representative",
+    "sales personnel skilled in marketing methods for computer systems",
+    "entry-level programming positions"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Core Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 18,
+     "max": 18
+    },
+    "courses": [
+     {
+      "code": "CIS 110",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CIS 151",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CIS 254",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CIS 255",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CIS 278",
+        "units": 4,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "CIS 256",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CIS 279",
+        "units": 4,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Required Selective Courses: Select 6-8 units from the following courses",
+    "rule": "choose_units",
+    "minimum": 6,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 8
+    },
+    "courses": [
+     {
+      "code": "CIS 255",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CIS 256",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CIS 278",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CIS 279",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CIS 121",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CIS 132",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS 262",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CIS 264",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CIS 363",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CIS 364",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Required Selective Courses: Select 6-8 units from the following courses",
+    "rule": "choose_units",
+    "minimum": 6,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 8
+    },
+    "courses": [
+     {
+      "code": "CIS 114",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CIS 117",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CIS 127",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CIS 128",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CIS 129",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CIS 135",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CIS 137",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CIS 138",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CIS 380",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "CIS 255, 256, 278 and 279 in the first selective block are marked '* if not used above': they count there only if not already used to satisfy the core OR choices.",
+   "The page names no specific GE pattern; it says 'required General Education coursework and electives as needed to meet the minimum 60 units required for the Associate degree', read as electives_fill_degree true. The 60 units is the generic associate degree minimum, not recorded as degree_total.",
+   "'60–70 transferable units' under University Transfer Program appears to be general department transfer text, not recorded as a total.",
+   "Career opportunities list comes from the department-wide Computer and Information Science introduction, shared across CIS programs; 'entry-level programming positions' is from this program's overview.",
+   "Outcomes come from the page's outcomes tab for this program.",
+   "Closed list contains only CIS 132; all other codes are recorded as catalog additions."
+  ]
+ },
+ "extracted_run": "39025870196"
+}

@@ -1,0 +1,354 @@
+{
+ "college": "College of San Mateo",
+ "control_number": "43844",
+ "shape": "certificate",
+ "title": "Music and Technology",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "http://catalog.collegeofsanmateo.edu/current/programs/music-and-technology-ca.php",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7788,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7788,
+    "output_tokens": 2726,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2726,
+  "output_tokens_details": {
+   "thinking_tokens": 974
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.08567,
+ "ms": 21513,
+ "seconds": 21.9,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 13,
+   "listed": 13,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 6,
+   "codes": [
+    "DGME113",
+    "ENG161",
+    "MUS301",
+    "MUS371",
+    "MUS401",
+    "MUS501"
+   ],
+   "flagged": [
+    "DGME113",
+    "ENG161",
+    "MUS301",
+    "MUS371",
+    "MUS401",
+    "MUS501"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    23.0,
+    23.0
+   ],
+   "stated": [
+    23.0,
+    23.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 24,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Program Requirements",
+   "measure": "units",
+   "total_units": {
+    "min": 23,
+    "max": 23
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Compose and produce original music and sound design using various electronic and digital technologies and techniques.",
+    "Use recording, mixing and editing digital audio to produce original creative projects.",
+    "Demonstrate understanding of the control, transmission, reception, and effects of sound as applied to music production.",
+    "Acquire marketable skills to create and compete successfully on a career path of their own design in the music industry."
+   ],
+   "careers": [
+    "accompanist",
+    "arranger",
+    "composer",
+    "conductor",
+    "critic",
+    "band, orchestra or recording musician",
+    "lyricist",
+    "performing instrumentalist or vocalist",
+    "music director (radio station)",
+    "private music instructor",
+    "music producer",
+    "music publisher",
+    "music therapist",
+    "night-club/restaurant entertainer",
+    "recording engineer",
+    "teacher/professor",
+    "choir director",
+    "music librarian",
+    "music minister",
+    "piano tuner",
+    "professional manager",
+    "recreation specialist",
+    "soloist",
+    "music and technology"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Core Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 15,
+     "max": 15
+    },
+    "courses": [
+     {
+      "code": "MUS. 100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS. 280",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS. 286",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS. 290",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS. 291",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Required Selective Courses",
+    "rule": "choose_units",
+    "minimum": 8,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "MUS. 120",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS. 222",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS. 289",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS. 292",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS. 293",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS. 298",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS. 398",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS. 423",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Additional Recommended Courses (not part of the Music and Technology AA/Certificate)",
+    "rule": "recommended",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "MUS 301",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MUS 371",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MUS 401",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MUS 501",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ENG 161",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "DGME 113",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The page prints 'Recommended course electives for students with specific interests' (Songwriting, Electronic Music Performance, Audio Engineering, Audio for Video and Game Design) listing MUS 120, 423, 289, 222, 298, 292, 293 and 'Additional Music and Technology Elective (2-4)'; these are guidance for choosing among the Required Selective Courses and are not recorded as separate blocks.",
+   "The additional recommended courses (MUS 301, 371, 401, 501, ENG 161, DGME 113) are stated as not part of the Music and Technology AA/Certificate; they are grouped in one recommended block from several sub-headings.",
+   "Required Selective rule is 'Choose a minimum of 8 units'; no separate block total printed. Core 15 + selective 8 = Total Required Units 23 as printed.",
+   "The outcomes come from the page's outcomes tab, which appears to be shared by the Music and Technology AA and Certificate.",
+   "Careers are taken from the Music Department's 'About the Program' text (department-wide) and the program overview ('careers in music and technology').",
+   "The page's University Transfer Program note (60-70 transferable units) is general transfer information, not this certificate's total."
+  ]
+ },
+ "extracted_run": "39025870196"
+}

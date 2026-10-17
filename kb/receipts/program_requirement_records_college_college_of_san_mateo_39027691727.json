@@ -1,0 +1,97 @@
+{
+ "college": "College of San Mateo",
+ "load_run": "39027691727",
+ "function": "program_requirement_records_college_load",
+ "at": "2026-10-17T11:11:19Z",
+ "records": 60,
+ "posted": 55,
+ "batches": 3,
+ "inserted": 55,
+ "kept": 0,
+ "skipped": [
+  {
+   "control_number": "30818",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "31255",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "31435",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "32203",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "42137",
+   "why": "places none of its listed courses (another program's page)"
+  }
+ ],
+ "error": null,
+ "extracted_runs": [
+  "39025870196"
+ ],
+ "machine_pass": 51,
+ "inserted_keys": [
+  "05744",
+  "05745",
+  "05756",
+  "05766",
+  "05773",
+  "05779",
+  "05785",
+  "05805",
+  "09079",
+  "10927",
+  "19394",
+  "30446",
+  "30460",
+  "30817",
+  "31254",
+  "31269",
+  "31360",
+  "31554",
+  "31558",
+  "31564",
+  "31576",
+  "31577",
+  "33042",
+  "33267",
+  "33348",
+  "33393",
+  "33860",
+  "33879",
+  "33912",
+  "35024",
+  "35574",
+  "35666",
+  "35881",
+  "37013",
+  "38487",
+  "39408",
+  "41976",
+  "42094",
+  "42139",
+  "42996",
+  "43063",
+  "43071",
+  "43072",
+  "43193",
+  "43844",
+  "44067",
+  "44288",
+  "45220",
+  "45244",
+  "45245",
+  "45246",
+  "45291",
+  "45506",
+  "45547",
+  "45948"
+ ],
+ "kept_keys": [],
+ "rollback": "delete from public.program_requirement_records where college = 'College of San Mateo' and checked = false and control_number in ('05744', '05745', '05756', '05766', '05773', '05779', '05785', '05805', '09079', '10927', '19394', '30446', '30460', '30817', '31254', '31269', '31360', '31554', '31558', '31564', '31576', '31577', '33042', '33267', '33348', '33393', '33860', '33879', '33912', '35024', '35574', '35666', '35881', '37013', '38487', '39408', '41976', '42094', '42139', '42996', '43063', '43071', '43072', '43193', '43844', '44067', '44288', '45220', '45244', '45245', '45246', '45291', '45506', '45547', '45948');"
+}
