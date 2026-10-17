@@ -1,0 +1,171 @@
+{
+ "college": "College of the Canyons",
+ "control_number": "31356",
+ "shape": "adt",
+ "title": "Physics",
+ "award": "A.S. T Degree",
+ "source_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=98",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8001,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8001,
+    "output_tokens": 938,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 938,
+  "output_tokens_details": {
+   "thinking_tokens": 291
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.05076,
+ "ms": 9795,
+ "seconds": 10.1,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 6,
+   "share": 0.0,
+   "missing": [
+    "MATH211",
+    "MATH212",
+    "MATH213",
+    "PHYSIC220",
+    "PHYSIC221",
+    "PHYSIC222"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": true,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "CHEMISTRY (Physics A.S.-T section not found in the text)",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "MATH 211",
+    "why": "Physics A.S.-T section not in the text; named only in the Chemistry degree requirements"
+   },
+   {
+    "code": "MATH 212",
+    "why": "Physics A.S.-T section not in the text; named only in the Chemistry degree requirements"
+   },
+   {
+    "code": "MATH 213",
+    "why": "Physics A.S.-T section not in the text; named only in the Chemistry degree requirements"
+   },
+   {
+    "code": "PHYSIC 220",
+    "why": "Physics A.S.-T section not in the text; named only in the Chemistry degree requirements"
+   },
+   {
+    "code": "PHYSIC 221",
+    "why": "Physics A.S.-T section not in the text; named only in the Chemistry degree requirements"
+   },
+   {
+    "code": "PHYSIC 222",
+    "why": "Physics A.S.-T section not in the text; named only in the Chemistry degree requirements"
+   }
+  ],
+  "notes": [
+   "The supplied text (catalog page 98) shows the end of a Chemistry degree section (Units Required: 51) followed by CHEM course descriptions. It contains no Physics A.S.-T section, so no blocks, totals, outcomes or careers were recorded for the Physics award.",
+   "The Chemistry section lists PHYSIC-220, 221, 222 and MATH-211, 212, 213 among its requirements, but these belong to the Chemistry degree and were not recorded as Physics requirements.",
+   "Reviewer should locate the Physics A.S.-T section elsewhere in the 2026-27 catalog PDF; the page link may be off."
+  ]
+ },
+ "extracted_run": "39006378829"
+}

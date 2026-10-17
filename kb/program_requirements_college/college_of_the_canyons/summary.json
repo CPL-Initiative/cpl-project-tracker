@@ -1,0 +1,654 @@
+{
+ "college": "College of the Canyons",
+ "programs": 283,
+ "with_closed_list": 264,
+ "found": 160,
+ "extracted": 160,
+ "errors": 0,
+ "passed_machine_checks": 104,
+ "failed": {
+  "coverage": 34,
+  "invented": 23,
+  "arithmetic": 43,
+  "repeated": 0,
+  "outcomes": 0
+ },
+ "cost_usd": 13.55,
+ "cost_per_program": 0.0847,
+ "not_found": [
+  {
+   "control_number": "30366",
+   "title": "ESL/Beginning Level",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "30367",
+   "title": "ESL/Intermediate Level",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "30500",
+   "title": "General Education Development Preparation",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "33377",
+   "title": "Elementary Teacher Education",
+   "award": "A.A- T Degree",
+   "near_miss": {
+    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=136",
+    "coverage": 0.043
+   }
+  },
+  {
+   "control_number": "35146",
+   "title": "Digital Office",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "36218",
+   "title": "Residential Repair Technician",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "36619",
+   "title": "Spanish for Healthcare Workers",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "36888",
+   "title": "Management Tool Box",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "36889",
+   "title": "Customer Relations",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "36890",
+   "title": "Workplace Essentials",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "37584",
+   "title": "Master Gardener",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "37994",
+   "title": "Career Strategist",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "38001",
+   "title": "Certified Adobe Photoshop Technician",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "38278",
+   "title": "Global Navigation Satellite System (GNSS)",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "38341",
+   "title": "Gateway Human Resources Assistant",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "38342",
+   "title": "Supervisor’s Roadmap",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "38343",
+   "title": "Human Resources Professionals",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "38345",
+   "title": "Fundamentals of Communication",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "38346",
+   "title": "Mindful Co-worker",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "38347",
+   "title": "Navigating Mental Health Issues in the Workplace",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "38348",
+   "title": "Survive and Thrive in the Workplace",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "38685",
+   "title": "Digital Publishing for the Office",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "38686",
+   "title": "Digital Photographic Project Fundamentals",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "38688",
+   "title": "English as a Second Language (ESL) for College Preparation I",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "38769",
+   "title": "Digital Photographic Camera and Composition Fundamentals",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "38770",
+   "title": "Digital Photographic Camera and Manual Exposure Fundamentals",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "39046",
+   "title": "College Success Toolkit",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "39188",
+   "title": "Instructional Aide Training",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "39755",
+   "title": "Essential Arithmetic Skills",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "39756",
+   "title": "Essential Pre-Algebra Skills",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "39757",
+   "title": "Essential Beginning Algebra Skills",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "40224",
+   "title": "English as a Second Language (ESL) for College Preparation II",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "40226",
+   "title": "Fundamental Skills for Commercial Artists",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "40227",
+   "title": "Business of Acting",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "40247",
+   "title": "21st Century Career Skills",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "40248",
+   "title": "Occupational Safety Health Administration (OSHA) Construction Certification",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "40826",
+   "title": "Teaching Foundation",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "40908",
+   "title": "Upgrade to Academic Success",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "40912",
+   "title": "Yoga Teacher Training",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "41598",
+   "title": "Real Estate",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "41610",
+   "title": "Project Management for Non-Project Managers",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "41615",
+   "title": "Baking Fundamentals",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "42067",
+   "title": "Emerging Leaders",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "42216",
+   "title": "Essential Academic Skills",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "42217",
+   "title": "English for the Workplace",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "42218",
+   "title": "Understanding Trauma in Children and Youth Training",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "42349",
+   "title": "Therapeutic Rehabilitation Technician",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "42509",
+   "title": "Firefighter Academy",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "42547",
+   "title": "Essential Intermediate Algebra Skills: Polynomials",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "42548",
+   "title": "Essential Intermediate Algebra Skills: Quadratics, Exponentials, and Logarithms",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "42549",
+   "title": "Essential Intermediate Algebra Skills: Shapes and Patterns",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "42550",
+   "title": "Essential Intermediate Algebra Skills: Functions and Rational Exponents",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "42674",
+   "title": "Certified Paralegal Exam Test Preparation",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "42930",
+   "title": "Medical Scribe",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "42935",
+   "title": "Entrepreneurship",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "42936",
+   "title": "Personal Care Aide Training",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "42937",
+   "title": "Physical Fitness Preparation for Public Safety",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "43271",
+   "title": "Law, Public Policy, and Society",
+   "award": "A.A- T Degree",
+   "near_miss": {
+    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=245",
+    "coverage": 0.48
+   }
+  },
+  {
+   "control_number": "43310",
+   "title": "Crime and Intelligence Analysis",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "43311",
+   "title": "Welding Safety – Welding Lab Skills Enhancement",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "43312",
+   "title": "Supporting and Empowering Veterans",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "43385",
+   "title": "Conversational ASL for Personal and Professional Development",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "43386",
+   "title": "Library and Internet Research Skills",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "43388",
+   "title": "Fundamentals of Public Communications",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "43389",
+   "title": "Intermediate Conversational English",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "43390",
+   "title": "Beginning Conversational English",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "43730",
+   "title": "Fundamental Teaching Skills for Higher Education",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "43731",
+   "title": "Model Making for Architecture and Interior Design",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "43783",
+   "title": "21st Century Teaching Practices",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "44078",
+   "title": "Generative AI for Academic and Career Success",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "44100",
+   "title": "Intermediate American Language and Culture",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "44101",
+   "title": "Advanced American Language and Culture",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "44235",
+   "title": "ASL for Personal and Professional Development",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "44236",
+   "title": "Essential Workforce Skills for Health Professions",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "44237",
+   "title": "Executive Functioning Skills",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "44238",
+   "title": "Keyboarding and Document Processing",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "44273",
+   "title": "Wilderness Leadership",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "44310",
+   "title": "Spanish for Educators",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "44311",
+   "title": "Essential Accounting Skills",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "44478",
+   "title": "Drafting for the Entertainment Industry (Vectorworks)",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "44479",
+   "title": "Drafting for the Entertainment Industry (AutoCAD)",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "44480",
+   "title": "Basic Computer Drafting for the Entertainment Industry",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "44509",
+   "title": "Commercial Printing",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "44635",
+   "title": "Physical Therapist Assistant Essential Lab Skills",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "44636",
+   "title": "Math and Professional Skills for Healthcare Careers",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "44637",
+   "title": "QuickBooks Online",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "44804",
+   "title": "Fundamental Skills in Diagnostic Medical Sonography",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "44811",
+   "title": "Career Preparation for Occupational Therapy Assistants",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "44812",
+   "title": "Police Defensive Tactics and Arrest & Control",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "44813",
+   "title": "Public Speaking for Interviews and the Workplace",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "44814",
+   "title": "Public Speaking for Social Meida and the Workplace",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "45148",
+   "title": "NCEES Fundamentals of Surveying (FS) Exam Test Preparation",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "45284",
+   "title": "CalGETC",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=293",
+    "coverage": 0.124
+   }
+  },
+  {
+   "control_number": "45336",
+   "title": "Diné Language and Culture for the Workplace",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "45340",
+   "title": "eSports and Interactive Media",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "45341",
+   "title": "Written Exam and Interview Workshop for Public Safety Entry & Promotion",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "45610",
+   "title": "Essential Skills for Microsoft Windows and Keyboarding",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "45704",
+   "title": "CSU/UC Preparation",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "45875",
+   "title": "Fundamentals of Anatomy and Physiology for Movement Professionals",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "45876",
+   "title": "Mock Trial",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "45882",
+   "title": "Screenwriting Fundamentals",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "46274",
+   "title": "Foundations of Dementia Care: Alzheimer’s and Cognitive Support",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "46275",
+   "title": "Introduction to Healthcare and Nursing Assistant Skills",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "46428",
+   "title": "Teaching Yoga for Health and Longevity",
+   "award": "Noncredit program",
+   "near_miss": null
+  }
+ ],
+ "run": "39006378829"
+}
