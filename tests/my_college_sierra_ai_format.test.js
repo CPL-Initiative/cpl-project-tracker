@@ -19,9 +19,16 @@
 //      shown only its privacy half) into `.cplchat-foot`; the COBI-wide box
 //      carries the same words.
 //  (3) ONE FRAME. My College's <details> inside .cb-assist draws no card, its
-//      summary is the ruled bar, Full screen sits on that bar, and the log has
+//      summary carries her name, Full screen sits on that line, and the log has
 //      neither a frame nor a floor. jsdom has no layout, so these read the CSS;
 //      `npm run a11y -- my-college-page` measures the painted result.
+//  (4) THE PUBLIC PAGE'S STYLE (S405). Sam, 2026-10-17: "My College Sierra looks
+//      like the old format still--busy and boxy"; he approved the mock-up
+//      (https://claude.ai/artifact/LQ2wayKDomp3411VZAR74y): "Yes, use the new
+//      Sierra". No frame around her and no rule under her name; every choice and
+//      control a word, never a pill; the box the one white card; her answer
+//      plain text, the reader's question a tinted line. Each check fails on the
+//      S400 files.
 //
 // ⚠ Budget: ~44 MB per booted jsdom window (docs/kb-notes/methodology-a-test-
 // file-is-a-memory-budget.md). This file boots two.
@@ -134,11 +141,40 @@ function myCollege() {
       /(^|\n)\.cplchat-foot \{[^}]*font-size/.test(dock) && !/\.cplchat-foot \{ display:none/.test(dock));
     check("(3) ⭐ the <details> inside .cb-assist draws no card of its own",
       /\.cb-assist>\.cb-assist-d\.cb-sec\{border:0;[^}]*background:transparent/.test(all));
-    check("(3) its summary is the ruled bar",
-      /\.cb-assist>\.cb-assist-d\[open\]>\.cb-sum\{border-bottom:1px solid var\(--border\)/.test(all));
+    check("(3) its summary carries her name with no rule under it (S405)",
+      /\.cb-assist>\.cb-assist-d\[open\]>\.cb-sum\{border-bottom:0;/.test(all)
+        && !/\.cb-assist>\.cb-assist-d\[open\]>\.cb-sum\{border-bottom:1px/.test(all));
     check("(3) ⭐ Full screen sits on that bar, placed, never moved out of her box",
       /\.cb-assist-d \.cplchat:not\(\.cplchat-full\)>\.cplchat-dockbar\{position:absolute;top:0;right:0/.test(all)
         && !!box.querySelector("#cb-assistant-mount .cplchat > .cplchat-dockbar > .cplchat-dock-btn"));
+  });
+
+  // ── (4) the public page's style (CSS; the a11y sweep measures the paint) ──
+  await block("(4)", async function () {
+    const all = Array.prototype.map.call(doc.querySelectorAll("style"), function (s) { return s.textContent; }).join("\n");
+    const rule = function (sel) {
+      const esc = sel.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+      const m = all.match(new RegExp("(^|\\n|')" + esc + " ?\\{[^}]*\\}", "g")) || [];
+      return m.join(" ");
+    };
+    check("(4) ⭐ no frame around Sierra on My College",
+      /\.cb-assist\{border:0;[^}]*background:transparent/.test(all) && !/\.cb-assist\{border-width:2px/.test(all));
+    const pills = [".cplchat-aud-chip", ".cplchat-chip", ".cplchat-fb-btn", ".cplchat-fb-copy", ".cplchat-dock-btn"];
+    const pilled = pills.filter(function (sel) {
+      const r = rule(sel);
+      return !r || /border:1px|border-radius:999px|border-radius:16px/.test(r) || !/border:0/.test(r);
+    });
+    check("(4) ⭐ every choice and control is a word, never a pill", pilled.length === 0, pilled.join(", "));
+    const row = rule(".cplchat-inputrow"), input = rule(".cplchat-input");
+    check("(4) ⭐ the box is the one white card",
+      /background:var\(--surface-opaque\)/.test(row) && /border-radius:20px/.test(row) && /border:0/.test(input), row);
+    const bot = rule(".cplchat-bot .cplchat-bubble"), user = rule(".cplchat-user .cplchat-bubble");
+    check("(4) ⭐ her answer is plain text, with no bubble drawn around it",
+      /background:transparent/.test(bot) && /border:0/.test(bot), bot);
+    check("(4) the reader's question is a tinted line, never the navy bubble",
+      /background:var\(--surface-muted\)/.test(user) && !/seal-blue/.test(user), user);
+    const ask = box && box.querySelector("#cb-assistant-mount .cplchat-send");
+    check("(4) the button says Ask, as on the public page", !!ask && ask.textContent === "Ask", ask && ask.textContent);
   });
 
   let pass = 0;
