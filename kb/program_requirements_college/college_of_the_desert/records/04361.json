@@ -1,0 +1,321 @@
+{
+ "college": "College of the Desert",
+ "control_number": "04361",
+ "shape": "degree",
+ "title": "Registered Nursing",
+ "award": "A.S. Degree",
+ "source_url": "https://collegeofthedesert.edu/_web-items/documents/pdf-files/catalogs/2026-2027-catalog.pdf#page=224",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 9948,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 9948,
+    "output_tokens": 2575,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2575,
+  "output_tokens_details": {
+   "thinking_tokens": 786
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.09129,
+ "ms": 19882,
+ "seconds": 20.5,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 21,
+   "listed": 22,
+   "share": 0.955,
+   "missing": [
+    "COMM9"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "COMMC1004"
+   ],
+   "flagged": [
+    "COMMC1004"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    63.0,
+    65.0
+   ],
+   "stated": [
+    71.0,
+    73.0
+   ],
+   "against": "degree",
+   "ge": null,
+   "why": [
+    "the record names the degree total and the COD GE pattern, but no units for it"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 6,
+   "courses": 0,
+   "count": 6,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Registered Nursing Course Sequence",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "COD GE",
+   "degree_total": {
+    "min": 71,
+    "max": 73
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Demonstrate accountability for the delivery of nursing care while influencing the behaviors of others to achieve shared goals.",
+    "Assimilate clinical judgement, rooted in evidence-based practice, to provide nursing care at an entry level.",
+    "Design client-centered care for individuals that recognizes the client as a full partner with individual preferences and beliefs.",
+    "Integrate communication principles to foster a respectful environment that supports shared decision-making in the efforts of improving client's optimal wellness.",
+    "Competently manages all aspects of safety for clients through system effectiveness, individual performance, and quality improvement to minimize risk of harm to patients.",
+    "Demonstrate the professional identity of the nurse."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "BI 013",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BI 014",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BI 015",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL C1000",
+      "units": 4,
+      "units_max": 5,
+      "alternatives": [
+       {
+        "code": "ENGL C1000E",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PSY 003",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "COMM C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "COMM C1004",
+        "units": null,
+        "catalog_addition": true
+       },
+       {
+        "code": "COMM 013",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "COMM 017",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC 003",
+      "units": 3,
+      "units_max": 4,
+      "alternatives": [
+       {
+        "code": "STAT C1000",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "NRN 110",
+      "units": 7,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NRN 120",
+      "units": 7,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NRN 130",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NRN 140",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NRN 210",
+      "units": 7,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NRN 220",
+      "units": 6.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NRN 230",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NRN 240",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NRN 250",
+      "units": 0.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "COMM 9",
+    "why": "not in the text; the catalog lists COMM C1004 Interpersonal Communication as an alternative instead"
+   }
+  ],
+  "notes": [
+   "The 'Vocational Nursing AS Degree' line at the top of page 224 appears to be a running page header; the Registered Nursing section is headed 'Registered Nursing Course Sequence'.",
+   "Catalog codes printed with leading zeros (BI 013, PSY 003, COMM 013, COMM 017, SOC 003) and NRN codes with a space were matched to closed-list codes BI 13, PSY 3, COMM013, COMM 17, SOC 3, NRN110 etc.; ENGL C1000 matched to closed-list ENGLC1000.",
+   "Unit ranges 4-5 (ENGL C1000 or ENGL C1000E) and 3-4 (SOC 003 or STAT C1000) are printed on the row as a whole; alternatives' individual units are not printed.",
+   "COMM C1004 Interpersonal Communication is not on the closed list (closed list has COMM 9 Introduction to Interpersonal Communication, likely its predecessor); recorded as catalog addition.",
+   "The required list includes COD GE Area A3 Arts Humanities and Culture (3), Area A6 Ethnic Studies (3), and Area A7 Personal Growth and Development, Health, Activity and Wellness (2); these GE requirements were not placed in a block. No overall GE unit total is printed.",
+   "DEGREE TOTAL 71-73 is printed for the whole degree including the listed GE areas; no separate major total is printed.",
+   "No careers are named for this program; the text only mentions eligibility for the Registered Nurse Licensing Examination."
+  ]
+ },
+ "extracted_run": "39056007346"
+}

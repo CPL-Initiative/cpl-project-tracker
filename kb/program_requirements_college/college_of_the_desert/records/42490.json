@@ -1,0 +1,318 @@
+{
+ "college": "College of the Desert",
+ "control_number": "42490",
+ "shape": "degree",
+ "title": "Interaction Design",
+ "award": "A.S. Degree",
+ "source_url": "https://collegeofthedesert.edu/_web-items/documents/pdf-files/catalogs/2026-2027-catalog.pdf#page=176",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 11417,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 11417,
+    "output_tokens": 2266,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2266,
+  "output_tokens_details": {
+   "thinking_tokens": 830
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.09099,
+ "ms": 17904,
+ "seconds": 18.3,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 11,
+   "listed": 17,
+   "share": 0.647,
+   "missing": [
+    "ART3A",
+    "CIS82C",
+    "DDP101",
+    "DDP111",
+    "DDP131",
+    "DDP132"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 3,
+   "codes": [
+    "ART34",
+    "DDP106",
+    "DDP201"
+   ],
+   "flagged": [
+    "ART34",
+    "DDP106",
+    "DDP201"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    37.0,
+    37.0
+   ],
+   "stated": [
+    37.0,
+    37.0
+   ],
+   "against": "program",
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     60.0,
+     60.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     23.0,
+     23.0
+    ],
+    "why": []
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 6,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Interaction Design AS Degree",
+   "measure": "units",
+   "total_units": {
+    "min": 37,
+    "max": 37
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "COD General Education Pattern",
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": 23,
+    "max": 23
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Design, publish, and maintain websites using authoring or scripting languages, content creation tools, management tools and a variety of digital media assets.",
+    "Research, problem-solve, and organize a consistent and functional website, mobile application, or user experience for a targeted user group or persona using agile and iterative methodologies.",
+    "Evaluate and create code that is valid, properly structured, meets industry standards, and is accessible and compatible with browsers, mobile devices and/or operating systems."
+   ],
+   "careers": [
+    "web design and development",
+    "creative coding",
+    "front-end web",
+    "mobile application design",
+    "interaction design",
+    "UX (User Experience) design"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Core Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 37,
+     "max": 37
+    },
+    "courses": [
+     {
+      "code": "DDP 100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ART 034",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "DDP 106",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "DDP 110",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DDP 112",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DDP 116",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DDP 150",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DDP 151",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DDP 195",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DDP 201",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CIS 023A",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS 085C",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS 087",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DDP 095A",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ART 003A",
+    "why": "not in the text"
+   },
+   {
+    "code": "CIS 082C",
+    "why": "named only in the Web Design Certificate of Achievement section"
+   },
+   {
+    "code": "DDP 101",
+    "why": "named only in the Photography, Video Post-Production and Web Design certificate sections"
+   },
+   {
+    "code": "DDP 111",
+    "why": "named only in the Web Design Certificate of Achievement section"
+   },
+   {
+    "code": "DDP 131",
+    "why": "named only in the Photography Certificate of Achievement section"
+   },
+   {
+    "code": "DDP 132",
+    "why": "named only in the Photography and Web Design certificate sections"
+   }
+  ],
+  "notes": [
+   "The lines at the top of page 176 (DDP 303A InDesign A, DDP 303B InDesign B, 0 units) follow a running page header 'Interaction Design AS Degree' but appear to be the end of a preceding InDesign certificate of completion section; they were not recorded for this degree.",
+   "'Required Subtotal 37' is read as the major total (total_units); 'DEGREE TOTAL 60' recorded as degree_total and 'COD General Education Pattern (p. 74) 23' as ge_units.",
+   "CIS 087 matches closed-list CIS 87 and DDP 095A matches closed-list DDP095A (code formatting differences only).",
+   "ART 034 is printed as an alternative to DDP 100 with no units beside it; it is not in the closed list.",
+   "DDP 106 and DDP 201 are not in the closed list."
+  ]
+ },
+ "extracted_run": "39056007346"
+}

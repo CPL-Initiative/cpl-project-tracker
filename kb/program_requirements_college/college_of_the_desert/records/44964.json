@@ -1,0 +1,164 @@
+{
+ "college": "College of the Desert",
+ "control_number": "44964",
+ "shape": "certificate",
+ "title": "Health and Wellness Coaching",
+ "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+ "source_url": "https://collegeofthedesert.edu/_web-items/documents/pdf-files/catalogs/2026-2027-catalog.pdf#page=394",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8291,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8291,
+    "output_tokens": 749,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 749,
+  "output_tokens_details": {
+   "thinking_tokens": 202
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.04814,
+ "ms": 7350,
+ "seconds": 7.8,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 5,
+   "share": 0.0,
+   "missing": [
+    "HS13",
+    "KINE10",
+    "KINE20",
+    "KINE21",
+    "KINE95B"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Kinesiology (KINE)",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "HS013",
+    "why": "not in the text"
+   },
+   {
+    "code": "KINE 095B",
+    "why": "not in the text"
+   },
+   {
+    "code": "KINE 10",
+    "why": "named only as a prerequisite in the KINE 020 course description; no program requirements in the text"
+   },
+   {
+    "code": "KINE 20",
+    "why": "appears only as a course description (KINE 020); no program requirements in the text"
+   },
+   {
+    "code": "KINE 21",
+    "why": "appears only as a course description (KINE 021); no program requirements in the text"
+   }
+  ],
+  "notes": [
+   "The supplied text (catalog page 394, printed page 393) is the Kinesiology course description listing, not the Health and Wellness Coaching certificate's program page; no requirements, total, outcomes or careers for the award are printed, so no blocks were recorded.",
+   "KINE 020 (Units: 3, prerequisite KINE 010) and KINE 021 (Units: 1, corequisite KINE 020) are described as intended for the Health and Wellness Coaching program, but the text does not state they are required for the certificate.",
+   "The KINE 020 course description mentions career opportunities in health and wellness coaching; not recorded as careers because it comes from a course description.",
+   "Reviewer should locate the program's own section elsewhere in the 2026-2027 catalog."
+  ]
+ },
+ "extracted_run": "39056007346"
+}

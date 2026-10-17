@@ -1,0 +1,308 @@
+{
+ "college": "College of the Desert",
+ "control_number": "45016",
+ "shape": "degree",
+ "title": "Physical Therapist Assistant",
+ "award": "A.S. Degree",
+ "source_url": "https://collegeofthedesert.edu/_web-items/documents/pdf-files/catalogs/2026-2027-catalog.pdf#page=204",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8074,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8074,
+    "output_tokens": 2589,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2589,
+  "output_tokens_details": {
+   "thinking_tokens": 987
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.08408,
+ "ms": 21730,
+ "seconds": 22.3,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 13,
+   "listed": 25,
+   "share": 0.52,
+   "missing": [
+    "BI13",
+    "BI14",
+    "ENGLC1000",
+    "KINE8",
+    "MATH16",
+    "PHIL13",
+    "PHIL14",
+    "PHIL6",
+    "PSY3",
+    "PSYCC1000",
+    "SOC3",
+    "STATC1000"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    41.0,
+    41.0
+   ],
+   "stated": [
+    72.0,
+    72.0
+   ],
+   "against": "degree",
+   "ge": null,
+   "why": [
+    "the blocks and general education sum to 41.0-41.0; the catalog prints 72.0-72.0 for the degree"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": true,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Physical Therapist Assistant Program (Technical Phase)",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": 72,
+    "max": 72
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Physical Therapist Assistant Program (Technical Phase)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 41,
+     "max": 41
+    },
+    "courses": [
+     {
+      "code": "PTA 001",
+      "units": 2.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PTA 002",
+      "units": 2.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PTA 003",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PTA 004",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PTA 005",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PTA 006",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PTA 007",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PTA 009",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PTA 010",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PTA 011",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PTA 012",
+      "units": 4.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PTA 013",
+      "units": 7.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PTA 014",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "BI 13",
+    "why": "named only in the Pre-PTA certificate section; degree lists that certificate as one line item"
+   },
+   {
+    "code": "BI 14",
+    "why": "named only in the Pre-PTA certificate section; degree lists that certificate as one line item"
+   },
+   {
+    "code": "ENGLC1000",
+    "why": "named only in the Pre-PTA certificate section; degree lists that certificate as one line item"
+   },
+   {
+    "code": "KINE 8",
+    "why": "named only in the Pre-PTA certificate and Sports Medicine sections"
+   },
+   {
+    "code": "MATH 16",
+    "why": "named only in the Pre-PTA certificate section"
+   },
+   {
+    "code": "PHIL 13",
+    "why": "named only in the Pre-PTA certificate section"
+   },
+   {
+    "code": "PHIL 14",
+    "why": "named only in the Pre-PTA certificate section"
+   },
+   {
+    "code": "PHIL 6",
+    "why": "named only in the Pre-PTA certificate section"
+   },
+   {
+    "code": "PSY 3",
+    "why": "named only in the Pre-PTA certificate section"
+   },
+   {
+    "code": "PSYC C1000",
+    "why": "named only in the Pre-PTA certificate section"
+   },
+   {
+    "code": "SOC 3",
+    "why": "named only in the Pre-PTA certificate section"
+   },
+   {
+    "code": "STAT C1000",
+    "why": "named only in the Pre-PTA certificate section"
+   }
+  ],
+  "notes": [
+   "The text begins mid-section on page 204: the start of the PTA A.S. Degree section (its heading, description, outcomes, careers, and any prerequisite-phase listing and GE pattern) is on the previous page and not in the text. Section heading recorded is the visible subheading.",
+   "The degree's visible requirements list 'Pre-Physical Therapist Assistant Certificate of Achievement' as a line item, then 'One course from C1(b) Oral Communication and Critical Thinking (3 units)', then the Technical Phase (41 units). The Pre-PTA certificate's courses (BI 013, BI 014, PSYC C1000 or PSY 003, ENGL C1000, KINE 008, math choice, PHIL choice; Certificate Total 31-35) appear in the separate certificate section and were not placed in this degree's blocks; a reviewer may wish to treat them as degree requirements via the certificate.",
+   "The C1(b) Oral Communication requirement names no specific course and was not recorded as a block.",
+   "Degree Total 72 recorded as degree_total; no major total is printed in the visible text, so total_units is null.",
+   "Outcomes shown on the page belong to the Pre-PTA certificate and the Sports Medicine AS degree, not this award; none recorded."
+  ]
+ },
+ "extracted_run": "39056007346"
+}

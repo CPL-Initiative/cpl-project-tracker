@@ -1,0 +1,146 @@
+{
+ "college": "College of the Desert",
+ "control_number": "35780",
+ "shape": "noncredit",
+ "title": "Water Safety Instructor",
+ "award": "Noncredit program",
+ "source_url": "https://collegeofthedesert.edu/_web-items/documents/pdf-files/catalogs/2026-2027-catalog.pdf#page=400",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7626,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7626,
+    "output_tokens": 751,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 751,
+  "output_tokens_details": {
+   "thinking_tokens": 270
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.04552,
+ "ms": 7633,
+ "seconds": 8.1,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 0,
+   "listed": 2,
+   "share": 0.0,
+   "missing": [
+    "KINE306",
+    "KINE307"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unstated",
+   "computed": null,
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record states no figure, but the catalog text names 1  Units, 2  Units, 3  Units, 4  Units"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "KINE 307  Water Safety Instructor II (course description only; no program section in the text)",
+   "measure": "hours",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "KINE 306",
+    "why": "No program requirements section in the text; named only as KINE 307's prerequisite."
+   },
+   {
+    "code": "KINE 307",
+    "why": "No program requirements section in the text; only its course description (20 noncredit hours) appears."
+   }
+  ],
+  "notes": [
+   "The excerpt (catalog page 399/400) holds course descriptions for KINE 307, LIS and MAKR courses, not the Water Safety Instructor program's requirements section, so no blocks are recorded.",
+   "KINE 307's description calls it 'the second course of a two course certificate' for Water Safety Instructor, lists KINE 306 as its prerequisite, and prints 'Noncredit Hours: 20'. This suggests the program is KINE 306 plus KINE 307, but the text does not print the requirements. A reviewer should check the program page.",
+   "The text prints no total hours, outcomes or careers for the program.",
+   "Measure is set to hours because the program is noncredit and the catalog counts its courses in noncredit hours."
+  ]
+ },
+ "extracted_run": "39056007346"
+}

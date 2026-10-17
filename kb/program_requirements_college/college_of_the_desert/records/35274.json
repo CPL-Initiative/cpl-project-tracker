@@ -1,0 +1,377 @@
+{
+ "college": "College of the Desert",
+ "control_number": "35274",
+ "shape": "degree",
+ "title": "Early Childhood Education",
+ "award": "A.S. Degree",
+ "source_url": "https://collegeofthedesert.edu/_web-items/documents/pdf-files/catalogs/2026-2027-catalog.pdf#page=179",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 11709,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 11709,
+    "output_tokens": 2769,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2769,
+  "output_tokens_details": {
+   "thinking_tokens": 844
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.10222,
+ "ms": 22128,
+ "seconds": 22.5,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 20,
+   "listed": 29,
+   "share": 0.69,
+   "missing": [
+    "CDE101",
+    "CDE226A",
+    "CDE226B",
+    "CDE226C",
+    "CDE236",
+    "CDE237",
+    "CDE240",
+    "CDE241",
+    "CDE245"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "CDEVC1000"
+   ],
+   "flagged": [
+    "CDEVC1000"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    61.0,
+    61.0
+   ],
+   "stated": [
+    61.0,
+    61.0
+   ],
+   "against": "degree",
+   "ge": [
+    23.0,
+    23.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 3,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Early Childhood Education A.S. Degree",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "COD General Education Pattern",
+   "degree_total": {
+    "min": 61,
+    "max": 61
+   },
+   "ge_units": {
+    "min": 23,
+    "max": 23
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Integrate understanding of the needs, characteristics, and multiple influences on the development of children from birth to age eight as related to high-quality care and education of young children.",
+    "Design, implement, and evaluate environments and activities that support positive developmental play and learning outcomes for all young children.",
+    "Apply effective guidance and interaction strategies that support all children’s social learning, identity, and self-conﬁdence.",
+    "Develop strategies that promote partnerships between programs, teachers, families, and their communities.",
+    "Apply ethical standards and professional behaviors that demonstrate understanding and knowledge, deepening the commitment to the Early Care and Education profession."
+   ],
+   "careers": [
+    "Assistant Teacher",
+    "Teacher",
+    "Child Development Specialist"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 25,
+     "max": 25
+    },
+    "courses": [
+     {
+      "code": "CDEV C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CDE 102",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDE 103",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDE 104",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDE 201",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDE 202",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDE 203",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDE 204",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Elective Courses",
+    "rule": "choose_units",
+    "minimum": 13,
+    "option_group": null,
+    "stated": {
+     "min": 13,
+     "max": 13
+    },
+    "courses": [
+     {
+      "code": "CDE 220",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDE 221",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDE 223",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDE 224",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDE 225",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDE 227",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDE 228",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDE 229",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDE 230",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDE 231",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDE 232",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDE 233",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDE 234",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "CDE101",
+    "why": "not in the text; the catalog lists CDEV C1000 Child Growth & Development (common course number) in its place"
+   },
+   {
+    "code": "CDE 226A",
+    "why": "not in the text"
+   },
+   {
+    "code": "CDE 226B",
+    "why": "not in the text"
+   },
+   {
+    "code": "CDE 226C",
+    "why": "not in the text"
+   },
+   {
+    "code": "CDE 236",
+    "why": "not in the text"
+   },
+   {
+    "code": "CDE 237",
+    "why": "not in the text"
+   },
+   {
+    "code": "CDE 240",
+    "why": "not in the text"
+   },
+   {
+    "code": "CDE 241",
+    "why": "not in the text"
+   },
+   {
+    "code": "CDE 245",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "The section's heading and opening lines fall on the previous page (p. 178) and are not in the excerpt; the page-179 running header reads 'Early Childhood Education AS-T Degree', but the text before the AS-T section (Required Subtotal 25, Elective Subtotal 13, COD General Education Pattern 23, DEGREE TOTAL 61) is read as the A.S. degree. The section_heading is inferred, not printed in the excerpt.",
+   "The description says the degree requires '25 units in the major', but the page prints Required Subtotal 25 plus Elective Subtotal 13 (38 units) and no single major total; total_units left null.",
+   "Elective Courses note: 'course work from other areas may be substituted with advisor approval.'",
+   "CDEV C1000 is recorded as a catalog addition; it appears to be the common-course-numbered replacement for CDE101 in the closed list.",
+   "Closed-list codes CDE204 and CDE233 are printed as 'CDE 204' and 'CDE 233' and treated as matching.",
+   "The description states graduates meet requirements for a Site Supervisor permit."
+  ]
+ },
+ "extracted_run": "39056007346"
+}

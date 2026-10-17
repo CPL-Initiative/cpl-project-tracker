@@ -1,0 +1,163 @@
+{
+ "college": "College of the Desert",
+ "control_number": "36308",
+ "shape": "certificate",
+ "title": "Family Child Care",
+ "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+ "source_url": "https://collegeofthedesert.edu/_web-items/documents/pdf-files/catalogs/2026-2027-catalog.pdf#page=179",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 11211,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 11211,
+    "output_tokens": 943,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 943,
+  "output_tokens_details": {
+   "thinking_tokens": 335
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.0637,
+ "ms": 9214,
+ "seconds": 9.7,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 5,
+   "share": 0.0,
+   "missing": [
+    "CDE101",
+    "CDE102",
+    "CDE103",
+    "CDE201",
+    "CDE245"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": true,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Family Child Care Certificate of Achievement (not found in the supplied text)",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "CDE 102",
+    "why": "Family Child Care section not in the text; appears only in other ECE degree/certificate sections"
+   },
+   {
+    "code": "CDE 103",
+    "why": "Family Child Care section not in the text; appears only in other ECE degree/certificate sections"
+   },
+   {
+    "code": "CDE 201",
+    "why": "Family Child Care section not in the text; appears only in other ECE degree/certificate sections"
+   },
+   {
+    "code": "CDE 245",
+    "why": "not in the text"
+   },
+   {
+    "code": "CDE101",
+    "why": "Family Child Care section not in the text; likely renumbered as CDEV C1000, which appears only in other ECE sections"
+   }
+  ],
+  "notes": [
+   "The supplied catalog text (pages 179-181) contains the Early Childhood Education AS degree tail, the ECE AS-T, and the Associate Teacher, Master Teacher, Site Supervisor and Teacher Certificates of Achievement, then Economics; no Family Child Care Certificate of Achievement section appears, so no blocks, totals, outcomes or careers were recorded.",
+   "CDE 245 (Licensed Family Child Care), the program's distinguishing course, is not printed anywhere in the text; the Family Child Care section is probably on another page of the catalog PDF.",
+   "The closed-list code CDE101 likely corresponds to CDEV C1000 Child Growth & Development as printed in this catalog; reviewer should verify."
+  ]
+ },
+ "extracted_run": "39056007346"
+}

@@ -1,0 +1,204 @@
+{
+ "college": "College of the Desert",
+ "control_number": "36769",
+ "shape": "certificate",
+ "title": "Business Information Worker - Office Manager",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://collegeofthedesert.edu/_web-items/documents/pdf-files/catalogs/2026-2027-catalog.pdf#page=94",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 12794,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 12794,
+    "output_tokens": 972,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 972,
+  "output_tokens_details": {
+   "thinking_tokens": 334
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.07062,
+ "ms": 10586,
+ "seconds": 11.0,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 14,
+   "share": 0.0,
+   "missing": [
+    "AIS12",
+    "AIS17",
+    "AIS4A",
+    "AIS6",
+    "AIS72",
+    "AIS7B",
+    "BUAC10",
+    "BUAC5",
+    "BUAC51",
+    "BUAC95A",
+    "BUMA27",
+    "BUMA95A",
+    "CIS10",
+    "CIS95A"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": true,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Not found in the supplied text",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "AIS 004A",
+    "why": "Business Information Worker - Office Manager section not in the text; appears only in another program's list"
+   },
+   {
+    "code": "AIS 007B",
+    "why": "Office Manager section not in the text; appears only in agriculture program electives"
+   },
+   {
+    "code": "AIS 17",
+    "why": "not in the text"
+   },
+   {
+    "code": "AIS 72",
+    "why": "Office Manager section not in the text; AIS 072 appears only in agriculture program electives"
+   },
+   {
+    "code": "AIS006",
+    "why": "Office Manager section not in the text; AIS 006 appears only in agriculture program lists"
+   },
+   {
+    "code": "AIS012",
+    "why": "not in the text"
+   },
+   {
+    "code": "BUAC 095A",
+    "why": "Office Manager section not in the text; appears only as an alternative in agriculture program electives"
+   },
+   {
+    "code": "BUAC 10",
+    "why": "Office Manager section not in the text; appears only in another program's electives"
+   },
+   {
+    "code": "BUAC 5",
+    "why": "not in the text"
+   },
+   {
+    "code": "BUAC 51",
+    "why": "Office Manager section not in the text; appears only in another program's electives"
+   },
+   {
+    "code": "BUMA 27",
+    "why": "Office Manager section not in the text; appears only in another program's electives"
+   },
+   {
+    "code": "BUMA095A",
+    "why": "not in the text"
+   },
+   {
+    "code": "CIS 095A",
+    "why": "Office Manager section not in the text; appears only as an alternative in agriculture program electives"
+   },
+   {
+    "code": "CIS010",
+    "why": "Office Manager section not in the text; CIS 010 appears only in agriculture program lists"
+   }
+  ],
+  "notes": []
+ },
+ "extracted_run": "39056007346"
+}
