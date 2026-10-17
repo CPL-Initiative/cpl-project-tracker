@@ -1,0 +1,211 @@
+{
+ "college": "Los Angeles Valley College",
+ "control_number": "02967",
+ "shape": "degree",
+ "title": "Spanish",
+ "award": "A.A. Degree",
+ "source_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=126",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 11765,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 11765,
+    "output_tokens": 2000,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2000,
+  "output_tokens_details": {
+   "thinking_tokens": 914
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.08706,
+ "ms": 18104,
+ "seconds": 18.4,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 14,
+   "share": 0.0,
+   "missing": [
+    "LING1",
+    "SPANISH1",
+    "SPANISH12",
+    "SPANISH16",
+    "SPANISH2",
+    "SPANISH3",
+    "SPANISH35",
+    "SPANISH36",
+    "SPANISH37",
+    "SPANISH4",
+    "SPANISH48",
+    "SPANISH5",
+    "SPANISH6",
+    "SPANISH9"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": true,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "WORLD LANGUAGES AND CULTURES",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "LING 1",
+    "why": "no Spanish A.A. section in the text; named only in the AA-T, Foreign Languages AA, French, German and Italian sections"
+   },
+   {
+    "code": "SPANISH 1",
+    "why": "no Spanish A.A. section in the text; named only in the Spanish AA-T section"
+   },
+   {
+    "code": "SPANISH 2",
+    "why": "no Spanish A.A. section in the text; named only in the Spanish AA-T section"
+   },
+   {
+    "code": "SPANISH 3",
+    "why": "no Spanish A.A. section in the text; named only in the Spanish AA-T section"
+   },
+   {
+    "code": "SPANISH 4",
+    "why": "no Spanish A.A. section in the text; named only in the Spanish AA-T section"
+   },
+   {
+    "code": "SPANISH 5",
+    "why": "no Spanish A.A. section in the text; named only in the Spanish AA-T section"
+   },
+   {
+    "code": "SPANISH 6",
+    "why": "no Spanish A.A. section in the text; named only in the Spanish AA-T section"
+   },
+   {
+    "code": "SPANISH 9",
+    "why": "no Spanish A.A. section in the text; named only in the Spanish AA-T section"
+   },
+   {
+    "code": "SPANISH 12",
+    "why": "no Spanish A.A. section in the text; named only in the Spanish AA-T section"
+   },
+   {
+    "code": "SPANISH 16",
+    "why": "no Spanish A.A. section in the text; named only in the Spanish AA-T section"
+   },
+   {
+    "code": "SPANISH 35",
+    "why": "no Spanish A.A. section in the text; named only in the Spanish AA-T section"
+   },
+   {
+    "code": "SPANISH 36",
+    "why": "no Spanish A.A. section in the text; named only in the Spanish AA-T section"
+   },
+   {
+    "code": "SPANISH 37",
+    "why": "no Spanish A.A. section in the text; named only in the Spanish AA-T section and the Skills Certificate description"
+   },
+   {
+    "code": "SPANISH 48",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "The 2026-2027 catalog's World Languages and Cultures pages list no Spanish A.A. degree. The 'Programs Offered' table lists Spanish AA-T (V032853G), Foreign Languages AA, French AA, German AA, Italian AA and the Spanish Language Skills Certificate only. No section was recorded because none matches the named award.",
+   "The closed list does not appear to describe the AA-T. It lacks HISTORY 005/006, which the AA-T's List A requires. It also includes SPANISH 48, which the text does not print. The Spanish A.A. may have been discontinued or may belong to another catalog year. A reviewer should check whether this record should instead read the Associate in Arts in Spanish for Transfer section (Major Units: 18-25; Total Minimum Units: 60; Cal-GETC).",
+   "The Spanish Language Skills Certificate section is cut off mid-outcome at the end of the text."
+  ]
+ },
+ "extracted_run": "39006418426"
+}

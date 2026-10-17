@@ -1,0 +1,184 @@
+{
+ "college": "Los Angeles Valley College",
+ "control_number": "45216",
+ "shape": "certificate",
+ "title": "Media Arts: Cinematography",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=64",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 11630,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 11630,
+    "output_tokens": 1566,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1566,
+  "output_tokens_details": {
+   "thinking_tokens": 675
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.07784,
+ "ms": 14977,
+ "seconds": 15.3,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 9,
+   "share": 0.0,
+   "missing": [
+    "CINEMA101",
+    "CINEMA105",
+    "CINEMA107",
+    "CINEMA115",
+    "CINEMA117",
+    "MEDIART100",
+    "MEDIART101",
+    "MEDIART115",
+    "MEDIART116"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": true,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "MEDIA ARTS: CINEMATOGRAPHY (only the Associate of Arts Degree section appears; no Certificate of Achievement section in the text)",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "CINEMA 101",
+    "why": "named only in the A.A. section; certificate section not in the text"
+   },
+   {
+    "code": "CINEMA 105",
+    "why": "named only in the A.A. section; certificate section not in the text"
+   },
+   {
+    "code": "CINEMA 107",
+    "why": "named only in the A.A. section; certificate section not in the text"
+   },
+   {
+    "code": "CINEMA 115",
+    "why": "named only in the A.A. section; certificate section not in the text"
+   },
+   {
+    "code": "CINEMA 117",
+    "why": "named only in the A.A. section; certificate section not in the text"
+   },
+   {
+    "code": "MEDIART 100",
+    "why": "named only in the A.A. section; certificate section not in the text"
+   },
+   {
+    "code": "MEDIART 101",
+    "why": "named only in the A.A. section; certificate section not in the text"
+   },
+   {
+    "code": "MEDIART 115",
+    "why": "named only in the A.A. section; certificate section not in the text"
+   },
+   {
+    "code": "MEDIART 116",
+    "why": "named only in the A.A. section; certificate section not in the text"
+   }
+  ],
+  "notes": [
+   "The supplied text (catalog pages 64-66) prints only the Associate of Arts Degree (AA) for Media Arts: Cinematography (State Code 45256), not the Certificate of Achievement. Its requirements were not recorded as the certificate's.",
+   "The A.A. section lists: required CINEMA 105, CINEMA 107, CINEMA 117, MEDIART 100, MEDIART 116 (3 units each); List A choose 1 of CINEMA 101 or MEDIART 101 (3); List B choose 1 of CINEMA 115 or MEDIART 115 (3); Major Units: 21; Total Minimum Units: 60. These match the closed list exactly, so the certificate may share these requirements; a reviewer should locate the certificate section (likely elsewhere in the catalog, e.g., the Cinema or certificates pages) to confirm.",
+   "The A.A. section prints four Program Student Learning Outcomes and describes preparing students to work in the camera department; these were not recorded because they belong to the degree section, not the certificate.",
+   "Text is cut off mid-section at the end of page 66 (Media Arts: Visual Effects)."
+  ]
+ },
+ "extracted_run": "39006418426"
+}
