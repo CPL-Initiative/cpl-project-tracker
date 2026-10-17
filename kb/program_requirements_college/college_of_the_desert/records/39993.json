@@ -1,0 +1,206 @@
+{
+ "college": "College of the Desert",
+ "control_number": "39993",
+ "shape": "certificate",
+ "title": "Community Health Worker: Children and Families",
+ "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+ "source_url": "https://collegeofthedesert.edu/_web-items/documents/pdf-files/catalogs/2026-2027-catalog.pdf#page=198",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 11354,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 11354,
+    "output_tokens": 1765,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1765,
+  "output_tokens_details": {
+   "thinking_tokens": 684
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.08072,
+ "ms": 15456,
+ "seconds": 15.8,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 4,
+   "listed": 5,
+   "share": 0.8,
+   "missing": [
+    "CDE101"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "CDEVC1000"
+   ],
+   "flagged": [
+    "CDEVC1000"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    13.0,
+    13.0
+   ],
+   "stated": [
+    13.0,
+    13.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 6,
+   "courses": 0,
+   "count": 6,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Community Health Worker: Children and Families Certificate of Achievement",
+   "measure": "units",
+   "total_units": {
+    "min": 13,
+    "max": 13
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Apply culturally competent care by recognizing the health needs of diverse populations and utilizing strategies that promote equity and inclusion in health and social service settings.",
+    "Demonstrate effective communication and interpersonal skills by building trust, providing social support, and educating individuals and communities in ways that enhance health literacy and self-sufﬁciency.",
+    "Coordinate and manage care through effective system navigation, referrals, and follow-up to ensure access to needed health and social services.",
+    "Advocate for health equity by supporting community-led efforts to address social determinants of health and participating in policy advocacy initiatives.",
+    "Provide basic health services and assessments that support community health needs, including screenings, ﬁrst aid, and environmental assessments.",
+    "Promote personal and community wellness through outreach, education, and empowerment strategies that address chronic disease prevention and health promotion."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "KINE 010",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDEV C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CDE 102",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HS 075",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HS 076",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "CDE 101",
+    "why": "not in the text; the catalog lists CDEV C1000 Child Growth & Development (same title, common course number) in its place"
+   }
+  ],
+  "notes": [
+   "The section's own heading is not in the excerpt (it falls on the previous page); the text on page 198 begins under the running header 'Health Science AS Degree' with outcomes 1-6 and a requirements table ending 'CERTIFICATE TOTAL 13'. The section_heading given is the program title, not a printed heading; reviewer should confirm.",
+   "Outcomes 1-6 at the top of page 198 are read as this certificate's outcomes (continued from the prior page); the lead-in and any earlier text are not in the excerpt, so confirm none are cut off.",
+   "KINE 010, HS 075 and HS 076 are printed with leading zeros; matched to closed-list KINE 10, HS 75 and HS 76.",
+   "CDEV C1000 is marked a catalog addition because the code is not in the closed list, though it appears to be the common-course-numbered replacement for CDE 101.",
+   "Catalog note: 'Reduced from 17 to 13 units. Does not qualify for Title IV Federal Funding.'",
+   "No careers are named in this certificate's section."
+  ]
+ },
+ "extracted_run": "39056007346"
+}

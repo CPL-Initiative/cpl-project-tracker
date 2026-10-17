@@ -1,0 +1,300 @@
+{
+ "college": "Grossmont College",
+ "control_number": "45053",
+ "shape": "degree",
+ "title": "Biological Sciences: Pre-Allied Health",
+ "award": "A.S. Degree",
+ "source_url": "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/stem/biological-sciences-pre-allied-health-as/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6994,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6994,
+    "output_tokens": 2075,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2075,
+  "output_tokens_details": {
+   "thinking_tokens": 516
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.06948,
+ "ms": 16584,
+ "seconds": 17.1,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 9,
+   "listed": 9,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 7,
+   "codes": [
+    "BIO118",
+    "BIO215",
+    "BOT161",
+    "CDEVC1000",
+    "PSY140",
+    "PSY150",
+    "STATC1000"
+   ],
+   "flagged": [
+    "BIO118",
+    "BIO215",
+    "BOT161",
+    "CDEVC1000",
+    "PSY140",
+    "PSY150",
+    "STATC1000"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    31.0,
+    31.0
+   ],
+   "stated": [
+    31.0,
+    31.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Biological Sciences: Pre-Allied Health Associate in Science",
+   "measure": "units",
+   "total_units": {
+    "min": 31,
+    "max": 31
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Explain the principles and laws of living systems with particular reference to human disease and human performance, including the role of scientiﬁc inquiry in life/medical science, cell theory, the hierarchy of structure and function in living organisms, and principles of heredity.",
+    "Describe the normal relationships between structure and function relationships of humans, alterations in normal structure/function that characterize disease; the structure, function, classiﬁcation and epidemiology of pathogenic microorganisms; and cellular and nutritional biochemistry.",
+    "Exhibit competency in the methods used to study living systems, with a focus on human biology including applying principles and procedures of research and experimental design, and gathering, organizing interpreting, evaluating and communicating data.",
+    "Exhibit conﬁdence and ability to function as a health care professional including the ability to conduct independent and collaborative investigation skills, communicate scientific information electively in oral and written form, and utilize technology eﬀectively and appropriately.",
+    "Exhibit the ability to integrate the content, skills and abilities gained in courses and practice independent, self- directed learning."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Associate Degree Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 31,
+     "max": 31
+    },
+    "courses": [
+     {
+      "code": "BIOL-C1000",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIO-140",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIO-141",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIO-141L",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIO-152",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM-102",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COMM-C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC-C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOCI-C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Recommended Electives",
+    "rule": "recommended",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CDEV C1000",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PSY 150",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "STAT C1000",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BIO 215",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "PSY 140",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "Bio 118",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BOT 161",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "BIOL-C1000 and SOCI-C1000 matched to closed-list entries BIOLC1000 and SOCIC1000 (same courses, code formatting differs).",
+   "Page says 'Plus General Education and Elective Requirements' but names no GE pattern and prints no degree total or GE units.",
+   "Recommended electives print no units; the separator between 'BIO 215 Biostatistics' and 'PSY 140' is a comma, read as PSY 140 being a separate recommended course rather than a third alternative.",
+   "Description mentions Bio 120 (general biology) as a prerequisite for several courses; it is not listed as a requirement and was not recorded.",
+   "Outcomes copied with the ligature characters as printed (e.g., 'scientiﬁc', 'eﬀectively'); 'communicate scientific information electively' copied as printed.",
+   "No specific careers are named; the description refers only generally to 'allied health fields' and allied health programs, so careers was left empty."
+  ]
+ },
+ "extracted_run": "39061728041"
+}

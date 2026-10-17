@@ -1,0 +1,273 @@
+{
+ "college": "Los Angeles Mission College",
+ "control_number": "35394",
+ "shape": "adt",
+ "title": "Nutrition and Dietetics",
+ "award": "A.S. T Degree",
+ "source_url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=70",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 12121,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 12121,
+    "output_tokens": 1788,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1788,
+  "output_tokens_details": {
+   "thinking_tokens": 569
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.08424,
+ "ms": 15576,
+ "seconds": 16.1,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 4,
+   "listed": 6,
+   "share": 0.667,
+   "missing": [
+    "BIOLOGY3",
+    "CHEM102"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 6,
+   "codes": [
+    "ANATOMY1",
+    "NUTRTN21",
+    "NUTRTN24",
+    "PHYSIOL1",
+    "STAT101",
+    "STATC1000E"
+   ],
+   "flagged": [
+    "ANATOMY1",
+    "NUTRTN21",
+    "NUTRTN24",
+    "PHYSIOL1",
+    "STAT101",
+    "STATC1000E"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    26.0,
+    26.0
+   ],
+   "stated": [
+    26.0,
+    26.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "ASSOCIATE IN SCIENCE FOR TRANSFER (AS-T) Nutrition and Dietetics (M035394H)",
+   "measure": "units",
+   "total_units": {
+    "min": 26,
+    "max": 26
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": 34,
+    "max": 34
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Apply the physical, biological, and social sciences to the study of foods and nutrition.",
+    "Recognize how food and nutrition affect health and human performance across the lifecycle and impact both local and global concerns.",
+    "Effectively communicate and critically think about food and nutrition issues with an understanding and appreciation of a diverse and multicultural society."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "REQUIRED CORE",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CHEM 101",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MICRO 020",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NUTRTN 021",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PSYC C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List A: Select two (2) courses",
+    "rule": "choose_courses",
+    "minimum": 2,
+    "option_group": null,
+    "stated": {
+     "min": 8,
+     "max": 8
+    },
+    "courses": [
+     {
+      "code": "ANATOMY 001",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PHYSIOL 001",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "STAT C1000",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "STAT C1000E",
+        "units": null,
+        "catalog_addition": true
+       },
+       {
+        "code": "STAT 101",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List B: Select one (1) course",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "NUTRTN 024",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "BIOLOGY 3",
+    "why": "not in the Nutrition and Dietetics section; named only in other programs' sections (e.g., Public Health, Kinesiology)"
+   },
+   {
+    "code": "CHEM 102",
+    "why": "not in the Nutrition and Dietetics section; named only in the AS Biology section"
+   }
+  ],
+  "notes": [
+   "MICRO 020 in the catalog matched to closed-list MICRO 20.",
+   "List A prints no units beside individual courses; only the list total of 8 is printed. With two choice rows (ANATOMY 001 or PHYSIOL 001; a statistics course), selecting two courses effectively means one from each row.",
+   "List B says 'Select one (1) course' but prints only NUTRTN 024; the list may be incomplete in the extracted text.",
+   "Cal-GETC units (34 semester) come from the generic ADT requirement paragraph; no degree total is printed for this award beyond the generic 60-unit ADT statement.",
+   "The 'minimum of 18 semester units' in the major is a generic ADT rule, not recorded as the award total; the printed major total is 26.",
+   "No careers are named in this section."
+  ]
+ },
+ "extracted_run": "39054675770"
+}

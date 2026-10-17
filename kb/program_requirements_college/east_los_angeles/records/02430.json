@@ -9,7 +9,7 @@
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 9114,
+  "input_tokens": 10139,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 9114,
-    "output_tokens": 2437,
+    "input_tokens": 10139,
+    "output_tokens": 2688,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,31 +30,29 @@
     "model": null
    }
   ],
-  "output_tokens": 2437,
+  "output_tokens": 2688,
   "output_tokens_details": {
-   "thinking_tokens": 947
+   "thinking_tokens": 1120
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.0852,
- "ms": 19842,
- "seconds": 20.4,
+ "cost_usd": 0.09432,
+ "ms": 22389,
+ "seconds": 22.9,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 5,
+   "placed": 7,
    "listed": 12,
-   "share": 0.417,
+   "share": 0.583,
    "missing": [
     "ARC110",
     "ARC121",
     "ARC160",
-    "ARC201",
-    "ARC261",
     "ENV101",
     "ENV102"
    ],
@@ -63,9 +61,10 @@
    "pass": true
   },
   "invented": {
-   "count": 7,
+   "count": 8,
    "codes": [
     "ARC172",
+    "ARC202",
     "ARC221",
     "ARC262",
     "MATH241",
@@ -75,6 +74,7 @@
    ],
    "flagged": [
     "ARC172",
+    "ARC202",
     "ARC221",
     "ARC262",
     "MATH241",
@@ -88,8 +88,8 @@
    "pass": false,
    "status": "incomplete",
    "computed": [
-    47.0,
-    49.0
+    56.0,
+    58.0
    ],
    "stated": [
     60.0,
@@ -164,15 +164,37 @@
   },
   "blocks": [
    {
-    "name": "Certificate of Achievement in Architectural Design",
+    "name": "Certificate of Achievement in Architectural Design: Complete the following additional courses",
     "rule": "all",
     "minimum": null,
     "option_group": null,
     "stated": {
-     "min": 21,
-     "max": 21
+     "min": 9,
+     "max": 9
     },
-    "courses": []
+    "courses": [
+     {
+      "code": "ARC 201",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARC 202",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ARC 261",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    },
    {
     "name": "Complete the following additional courses",
@@ -269,42 +291,32 @@
   "missing_explained": [
    {
     "code": "ARC 110",
-    "why": "not in the text; likely part of the Certificate of Achievement in Architectural Design, whose courses are not printed in this section"
+    "why": "likely in the Skills Certificate in Architectural Design, whose course list is not in the text"
    },
    {
     "code": "ARC 121",
-    "why": "not in the text; likely part of the Certificate of Achievement courses not printed here"
+    "why": "likely in the Skills Certificate in Architectural Design, whose course list is not in the text"
    },
    {
     "code": "ARC 160",
-    "why": "not in the text; likely part of the Certificate of Achievement courses not printed here"
-   },
-   {
-    "code": "ARC 201",
-    "why": "not in the text; likely part of the Certificate of Achievement courses not printed here"
-   },
-   {
-    "code": "ARC 261",
-    "why": "not in the text; likely part of the Certificate of Achievement courses not printed here"
+    "why": "likely in the Skills Certificate in Architectural Design, whose course list is not in the text"
    },
    {
     "code": "ENV 101",
-    "why": "not in the text; likely part of the Certificate of Achievement courses not printed here"
+    "why": "likely in the Skills Certificate in Architectural Design, whose course list is not in the text"
    },
    {
     "code": "ENV 102",
-    "why": "not in the text; likely part of the Certificate of Achievement courses not printed here"
+    "why": "likely in the Skills Certificate in Architectural Design, whose course list is not in the text"
    }
   ],
   "notes": [
-   "The section heading itself is not in the extracted text (text begins at '(Academic Plan E002430C)'); heading inferred from the parallel Architectural Technology section format. Reviewer should confirm.",
-   "The degree requires the Certificate of Achievement in Architectural Design (21 units), but that certificate's course list is not printed in this text; the block is recorded with its stated 21 units and no courses.",
-   "No major total is printed; 21 + 20-21 would be 41-42 but was not computed. Total 60-61 is recorded as degree_total.",
-   "Note printed: 6 units of major courses may be double counted in LACCD GE area 2 and 3.",
-   "Note printed: high unit major per AP 4100; student may waive either LACCD GE Area 4a (3 units) or Area 7 (3 units).",
-   "ARC 172 and ARC 262 are marked as having prerequisites.",
-   "ARC 262 or ARC 221 and MATH 241/241S/260/260S are recorded as single choices with alternatives within the additional courses block (stated 20-21)."
+   "The degree's major includes the Certificate of Achievement in Architectural Design (21 units), which itself includes the Skills Certificate in Architectural Design (12 units) plus ARC 201, ARC 202, ARC 261. The Skills Certificate course list falls on the previous page and is not in the text; its 12 units are not represented in any block.",
+   "The first block is taken from the Certificate of Achievement in Architectural Design section printed just above the degree section, since the degree incorporates that certificate.",
+   "The page prints no major total; Total 60-61 is the whole degree with the 27-unit LACCD General Education Plan. Certificate (21) plus additional courses (20-21) would be 41-42 but is not printed, so total_units is null.",
+   "Additional courses block states 20-21 units; with MATH 260/260S (5 units) the sum could reach 22, so the stated range may not cover every path. Reviewer should check.",
+   "Note: 6 units of major courses may be double counted in LACCD GE areas 2 and 3; high-unit major per AP 4100, student may waive LACCD GE Area 4a or Area 7 (3 units)."
   ]
  },
- "extracted_run": "39011319511"
+ "extracted_run": "39063389278"
 }

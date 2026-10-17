@@ -1,0 +1,321 @@
+{
+ "college": "College of the Desert",
+ "control_number": "07928",
+ "shape": "degree",
+ "title": "Alcohol and Drug Studies",
+ "award": "A.S. Degree",
+ "source_url": "https://collegeofthedesert.edu/_web-items/documents/pdf-files/catalogs/2026-2027-catalog.pdf#page=103",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 10094,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 10094,
+    "output_tokens": 3004,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 3004,
+  "output_tokens_details": {
+   "thinking_tokens": 1330
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.10046,
+ "ms": 25162,
+ "seconds": 25.7,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 18,
+   "listed": 19,
+   "share": 0.947,
+   "missing": [
+    "COMM9"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "COMMC1004"
+   ],
+   "flagged": [
+    "COMMC1004"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    66.0,
+    66.0
+   ],
+   "stated": [
+    60.0,
+    60.0
+   ],
+   "against": "degree",
+   "ge": [
+    23.0,
+    23.0
+   ],
+   "why": [
+    "the blocks and general education come to 66.0-66.0, past the 60.0-60.0 the catalog prints for the degree"
+   ],
+   "fill": null
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Alcohol and Drug Studies AS Degree",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "COD General Education Pattern",
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": 23,
+    "max": 23
+   },
+   "electives_fill_degree": true,
+   "outcomes": [
+    "Apply critical thinking skills to execute daily duties in the substance abuse treatment field.",
+    "Display the skills and aptitude necessary to qualify for certification exams in addiction counseling professionals.",
+    "Fulfill the requirements for an entry- level position in substance abuse treatment field.",
+    "Transfer to a higher level learning institution."
+   ],
+   "careers": [
+    "supervised chemical dependency counselors"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 39,
+     "max": 39
+    },
+    "courses": [
+     {
+      "code": "HSAD 001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HSAD 002",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HSAD 004",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HSAD 024",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HSAD 036",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HSAD 020",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HSAD 022",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HSAD 025",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HSAD 030",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HSAD 034",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HSAD 032A",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HSAD 032B",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HSAD 033A",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HSAD 033B",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HSAD 095B",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Electives",
+    "rule": "choose_units",
+    "minimum": 6,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "PSY 003",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PSY 007",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "PSY 010",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "COMM C1004",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "COMM 9",
+    "why": "not in the text; the electives list prints COMM C1004 Interpersonal Communication instead (likely the common course number replacing COMM 9)"
+   }
+  ],
+  "notes": [
+   "HSAD 095B is printed with units '2, 2' and the note 'Maximum of 4 units may be used for work experience'; recorded as 2 units, but the Required Subtotal of 39 counts it as 4 units (taken twice).",
+   "The required courses are printed under the sub-headings FALL SEMESTER, SPRING SEMESTER and Internship/Practicum (Fall & Spring); all are recorded in one 'Required Courses' block with the printed Required Subtotal 39.",
+   "The Electives list appears at the top of page 104 under a running heading 'Alcohol and Drug Studies Certificate of Achievement', but it continues the AS Degree table (Elective Subtotal 6, COD GE 23, DEGREE TOTAL 60) and is read as part of the AS Degree.",
+   "No major total is printed (only Required Subtotal 39 and Elective Subtotal 6), so total_units is null.",
+   "Transferable electives are 'as needed to reach 60 transferable units' with no units printed; footnote says major units may be double counted for COD General Education.",
+   "The program overview at the top of the section also prints a paragraph of HSAD program outcomes in prose; the outcomes recorded are the numbered Learning Outcomes list under the AS Degree section.",
+   "Catalog codes use leading zeros (HSAD 001, PSY 003) and match the closed list's HSAD 1, PSY 3, etc."
+  ]
+ },
+ "extracted_run": "39056007346"
+}

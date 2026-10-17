@@ -1,0 +1,291 @@
+{
+ "college": "College of the Desert",
+ "control_number": "45709",
+ "shape": "degree",
+ "title": "Plant Science",
+ "award": "A.S. Degree",
+ "source_url": "https://collegeofthedesert.edu/_web-items/documents/pdf-files/catalogs/2026-2027-catalog.pdf#page=95",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 12402,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 12402,
+    "output_tokens": 2374,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2374,
+  "output_tokens_details": {
+   "thinking_tokens": 1039
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.09709,
+ "ms": 20147,
+ "seconds": 20.5,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 3,
+   "listed": 9,
+   "share": 0.333,
+   "missing": [
+    "AGBU59A",
+    "AGBU59B",
+    "AGPS2",
+    "AGPS32",
+    "BUAC66",
+    "CIS10"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 5,
+   "codes": [
+    "AGEH5",
+    "BUMA3",
+    "CH3",
+    "ECONC2001",
+    "STATC1000"
+   ],
+   "flagged": [
+    "AGEH5",
+    "BUMA3",
+    "CH3",
+    "ECONC2001",
+    "STATC1000"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    21.0,
+    22.0
+   ],
+   "stated": [
+    21.0,
+    22.0
+   ],
+   "against": "program",
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     55.0,
+     56.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     34.0,
+     34.0
+    ],
+    "why": [],
+    "fill": [
+     4.0,
+     5.0
+    ]
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 13,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Agriculture Plant Science AS-T",
+   "measure": "units",
+   "total_units": {
+    "min": 21,
+    "max": 22
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": 34,
+    "max": 34
+   },
+   "electives_fill_degree": true,
+   "outcomes": [
+    "Demonstrate the ability to communicate with clients and assess landscape or nursery for ecological and economic sustainability.",
+    "Explain and apply basic principles of botany to horticulture practices, plant growth, development and harvest.",
+    "Meet the requirements for transfer to a California State University with a major in Plant Science or Horticulture."
+   ],
+   "careers": [
+    "plant scientist",
+    "agriculture teacher",
+    "biotechnologist",
+    "agronomist",
+    "crop scientist",
+    "turf manager",
+    "farm manager",
+    "weed scientist",
+    "entomologist",
+    "nursery manager",
+    "garden specialist",
+    "researcher",
+    "landscape manager"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Core Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 21,
+     "max": 22
+    },
+    "courses": [
+     {
+      "code": "AGPS 001",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AGPS 005",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AGPS 005L",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AGEH 005",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CH 003",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ECON C2001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "STAT C1000",
+      "units": 3,
+      "units_max": 4,
+      "alternatives": [
+       {
+        "code": "BUMA 003",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "AGBU 059A",
+    "why": "not in the Plant Science AS-T section; listed in other agriculture programs"
+   },
+   {
+    "code": "AGBU 059B",
+    "why": "not in the Plant Science AS-T section; listed in other agriculture programs"
+   },
+   {
+    "code": "AGPS 2",
+    "why": "not in the Plant Science AS-T section; listed in Agriculture Technician certificate and other programs"
+   },
+   {
+    "code": "AGPS 32",
+    "why": "not in the Plant Science AS-T section; listed in other agriculture programs"
+   },
+   {
+    "code": "BUAC066",
+    "why": "not in the Plant Science AS-T section; appears only as an elective in the Environmental Horticulture certificate"
+   },
+   {
+    "code": "CIS 10",
+    "why": "not in the Plant Science AS-T section; listed in other agriculture programs"
+   }
+  ],
+  "notes": [
+   "The only Plant Science section in the text is the Agriculture Plant Science AS-T (Associate in Science for Transfer); its printed heading falls before the extract, so section_heading uses the name given in the description ('Agriculture Plant Science AS-T').",
+   "The closed list (AGBU 059A/B, AGPS 2, AGPS 32, BUAC066, CIS 10) matches a local agriculture A.S. (e.g., General Agriculture) better than this AS-T; the state record may describe an older local Plant Science A.S. not printed in this catalog. Reviewer should confirm the correct section.",
+   "total_units taken from 'Required Subtotal 21-22'; the 3-4 units on the STAT C1000 / BUMA 003 row are recorded on STAT C1000.",
+   "Transferable electives fill to 60 units with no units printed; Cal-GETC 34 units, and footnote says major units may double count for Cal-GETC.",
+   "The statement 'A minimum of 18 semester units in a major' is the general AS-T rule, not this award's total."
+  ]
+ },
+ "extracted_run": "39056007346"
+}

@@ -9,7 +9,7 @@
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 10705,
+  "input_tokens": 11804,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 10705,
-    "output_tokens": 1622,
+    "input_tokens": 11804,
+    "output_tokens": 1560,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 1622,
+  "output_tokens": 1560,
   "output_tokens_details": {
-   "thinking_tokens": 413
+   "thinking_tokens": 365
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.07526,
- "ms": 13166,
- "seconds": 13.6,
+ "cost_usd": 0.07842,
+ "ms": 21610,
+ "seconds": 22.0,
  "parts": null,
  "error": null,
  "score": {
@@ -112,7 +112,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "Interventional Radiology Coding",
+   "section_heading": "Interventional Radiology Coding (Academic Plan E035902D)",
    "measure": "units",
    "total_units": {
     "min": 34,
@@ -137,7 +137,7 @@
     "Demonstrate knowledge on clinical application of interventional options relevant to vascular and interventional radiology.",
     "Build practical skills and techniques required to accurately code interventional radiology procedures.",
     "Examine various disease processes in terms of epidemiology, pathophysiology, clinical manifestations, treatment alternatives and expected outcome/prognosis in IR specialty services.",
-    "Adhere to principles of medical ethics by respecting and protecting patients’ best interest and being altruistic and accountable.",
+    "Adhere to principles of medical ethics by respecting and protecting patients' best interest and being altruistic and accountable.",
     "Demonstrate an awareness of and responsiveness to the larger context and system of health care, as well as the ability to call effectively on other resources in the system to provide optimal health care."
    ],
    "careers": [
@@ -151,8 +151,8 @@
     "minimum": null,
     "option_group": null,
     "stated": {
-     "min": null,
-     "max": null
+     "min": 34,
+     "max": 34
     },
     "courses": [
      {
@@ -245,13 +245,12 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The excerpt begins mid-section; the certificate's printed heading and academic plan number are cut off above, so section_heading is taken from the program title and description ('The Interventional Radiology Coding certificate').",
-   "The course table prints no block heading; the block name 'Required Courses' is supplied. All listed courses appear required, with a printed Total of 34.",
-   "HTHTEK 215 is printed as 'Inpatient Coding and Abstracting', while the closed list titles it 'Advanced Inpatient Coding and Abstracting'.",
-   "PHYSIOL 006 in the catalog matches PHYSIOL 6 in the closed list.",
-   "Catalog footnotes: * marks courses with a prerequisite; ** (HTHTEK 108) marks a corequisite.",
-   "The 2026-2027 catalog is the source; the catalog year was given as not known."
+   "The course list has no block heading; it is named 'Required Courses' here, and the printed Total 34 is recorded as both the award total and the block's stated total.",
+   "PHYSIOL 006 as printed is taken to be closed-list PHYSIOL 6.",
+   "HTHTEK 215 is printed here as 'Inpatient Coding and Abstracting', while the closed list titles it 'Advanced Inpatient Coding and Abstracting'.",
+   "Words hyphenated across PDF line breaks in the outcomes (e.g., 'inter -ventional', 'epi -demiology', 'prog -nosis', 'respect -ing') were rejoined.",
+   "The award is listed as Certificate of Achievement; the section shows no degree or GE requirements."
   ]
  },
- "extracted_run": "39011319511"
+ "extracted_run": "39063389278"
 }

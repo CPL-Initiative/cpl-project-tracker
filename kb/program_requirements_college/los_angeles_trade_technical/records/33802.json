@@ -1,0 +1,358 @@
+{
+ "college": "Los Angeles Trade Technical College",
+ "control_number": "33802",
+ "shape": "certificate",
+ "title": "Personal Care Aide",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=202",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8511,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8511,
+    "output_tokens": 2613,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2613,
+  "output_tokens_details": {
+   "thinking_tokens": 864
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.0863,
+ "ms": 20841,
+ "seconds": 21.3,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 6,
+   "listed": 6,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 6,
+   "codes": [
+    "HLTHOCC49A",
+    "HLTHOCC49B",
+    "HLTHOCC62A",
+    "HLTHOCC62B",
+    "HLTHOCC64",
+    "HLTHOCC911"
+   ],
+   "flagged": [
+    "HLTHOCC49A",
+    "HLTHOCC49B",
+    "HLTHOCC62A",
+    "HLTHOCC62B",
+    "HLTHOCC64",
+    "HLTHOCC911"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    16.5,
+    16.5
+   ],
+   "stated": [
+    16.5,
+    16.5
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 2,
+   "courses": 0,
+   "count": 2,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "PERSONAL CARE AIDE — Certificate of Achievement",
+   "measure": "units",
+   "total_units": {
+    "min": 16.5,
+    "max": 16.5
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Students will be able to assess and provide proper patient care techniques, including physical and psychosocial, for the elderly in a variety of health and patient care settings in accordance with industry legal, ethical, and medical standards and regulations.",
+    "Students will be able to demonstrate interpersonal behaviors supportive of the development and maintenance of safe, respectful, ethical, and culturally sensitive peer and patient relationships."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required Courses — Semester I: HLTHOCC 062",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "HLTHOCC 062 path",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "HLTHOCC 062",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Required Courses — Semester I: Option 1",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "HLTHOCC 062 path",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "HLTHOCC 062A",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HLTHOCC 062B",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Required Courses — Semester I: Option 2",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "HLTHOCC 062 path",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "HLTHOCC 062A",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HLTHOCC 911",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Required Courses — Semester I",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "HLTHOCC 063",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HLTHOCC 064",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HLTHOCC 065",
+      "units": 2.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Required Courses — Semester II",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "HEALTH 046",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Required Courses — Semester II: HLTHOCC 049",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "HLTHOCC 049 path",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "HLTHOCC 049",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Required Courses — Semester II: Option 1",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "HLTHOCC 049 path",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "HLTHOCC 049A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HLTHOCC 049B",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Required Courses — Semester II: Option 2",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "HLTHOCC 049 path",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "HLTHOCC 049A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HLTHOCC 911",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "HLTHOCC 062 may be replaced by one of two pairs (062A + 062B, or 062A + 911); recorded as three blocks in option_group 'HLTHOCC 062 path'. Likewise HLTHOCC 049 may be replaced by 049A + 049B or 049A + 911 (option_group 'HLTHOCC 049 path').",
+   "Required units sum to 16.5 (2+2+1+2.5+1+3+5), matching the printed Major Units: 16.5.",
+   "HLTHOCC 064 is required by the catalog but is not in the closed list; marked as catalog addition.",
+   "Careers left empty: the overview describes the Personal Care Aide role but names no separate career list; the career list on page 203 belongs to the Senior Exercise Leader certificate.",
+   "Page 203 text (Senior Exercise Leader, Land & Aquatics Programming) belongs to a different program and was not used."
+  ]
+ },
+ "extracted_run": "39054673977"
+}

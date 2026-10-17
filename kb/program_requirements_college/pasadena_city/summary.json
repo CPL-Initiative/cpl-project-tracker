@@ -1,0 +1,255 @@
+{
+ "college": "Pasadena City College",
+ "programs": 367,
+ "with_closed_list": 318,
+ "found": 296,
+ "extracted": 296,
+ "errors": 0,
+ "passed_machine_checks": 238,
+ "failed": {
+  "coverage": 6,
+  "invented": 0,
+  "arithmetic": 58,
+  "repeated": 0,
+  "outcomes": 0
+ },
+ "cost_usd": 20.86,
+ "cost_per_program": 0.0705,
+ "not_found": [
+  {
+   "control_number": "16745",
+   "title": "Cosmetology - Instructional Techniques in Cosmetology",
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+   "near_miss": {
+    "url": "https://curriculum.pasadena.edu/academic-programs/cosmetology/cosmetology-as-cert-achievement/",
+    "label": {
+     "award": 1,
+     "title": 0.5
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 2,
+    "why": "coarse net: the page's code tokens name 0 of 2 listed courses",
+    "error": null,
+    "chars": {
+     "body": 9165,
+     "content": 35154,
+     "tabs": 0
+    },
+    "tab_panels": [
+     [
+      "Print",
+      147
+     ],
+     [
+      "Close this window",
+      65
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "33361",
+   "title": "IGETC",
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "33362",
+   "title": "CSU-BREADTH",
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+   "near_miss": {
+    "url": "https://curriculum.pasadena.edu/academic-programs/child-development/child-development-early-childhood-education-ast/",
+    "label": {
+     "award": 0,
+     "title": 0.5
+    },
+    "field": "innerText",
+    "coverage": 0.006,
+    "body": 0.006,
+    "content": 0.0,
+    "net": 2,
+    "listed": 345,
+    "why": "coarse net: the page's code tokens name 2 of 345 listed courses",
+    "error": null,
+    "chars": {
+     "body": 9883,
+     "content": 34673,
+     "tabs": 0
+    },
+    "tab_panels": [
+     [
+      "Print",
+      147
+     ],
+     [
+      "Close this window",
+      65
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "36733",
+   "title": "Elementary Teacher Education",
+   "award": "A.A- T Degree",
+   "near_miss": {
+    "url": "https://curriculum.pasadena.edu/academic-programs/education/elementary-teacher-education--integrated-programs-aat/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.319,
+    "body": 0.319,
+    "content": 0.099,
+    "net": 29,
+    "listed": 91,
+    "why": "coarse net: the page's code tokens name 29 of 91 listed courses",
+    "error": null,
+    "chars": {
+     "body": 9326,
+     "content": 35190,
+     "tabs": 0
+    },
+    "tab_panels": [
+     [
+      "Print",
+      147
+     ],
+     [
+      "Close this window",
+      65
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "36782",
+   "title": "Library Technology - Archives and Digital Collections Assistant",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "39026",
+   "title": "Special Education Assistant - Level 1",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://curriculum.pasadena.edu/noncredit-division/short-term-career-technical-education/basic-bookkeeping-assistant-cert-completion/",
+    "label": {
+     "award": 1,
+     "title": 0.667
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 5,
+    "why": "coarse net: the page's code tokens name 0 of 5 listed courses",
+    "error": null,
+    "chars": {
+     "body": 3942,
+     "content": 31013,
+     "tabs": 0
+    },
+    "tab_panels": [
+     [
+      "Print",
+      147
+     ],
+     [
+      "Close this window",
+      65
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "42196",
+   "title": "ESLN Advanced Condensed (Levels 4-5)",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://curriculum.pasadena.edu/noncredit-division/english-second-language/esln-advanced-condensed-levels-4-5-cert-competency/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 2,
+    "why": "coarse net: the page's code tokens name 0 of 2 listed courses",
+    "error": null,
+    "chars": {
+     "body": 3705,
+     "content": 31075,
+     "tabs": 0
+    },
+    "tab_panels": [
+     [
+      "Print",
+      147
+     ],
+     [
+      "Close this window",
+      65
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "42197",
+   "title": "ESLN Beginning - Intermediate Condensed (Levels 1-3)",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://curriculum.pasadena.edu/noncredit-division/english-second-language/esln-intermediate-condensed-levels-literacy-1-cert-competency/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 3,
+    "why": "coarse net: the page's code tokens name 0 of 3 listed courses",
+    "error": null,
+    "chars": {
+     "body": 3825,
+     "content": 31201,
+     "tabs": 0
+    },
+    "tab_panels": [
+     [
+      "Print",
+      147
+     ],
+     [
+      "Close this window",
+      65
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "42972",
+   "title": "Digitization Skills for Libraries and Cultural Heritage Institutions",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  }
+ ],
+ "run": "39061730187"
+}

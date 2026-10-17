@@ -1,0 +1,223 @@
+{
+ "college": "Pasadena City College",
+ "control_number": "33744",
+ "shape": "certificate",
+ "title": "GERONTOLOGY",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://curriculum.pasadena.edu/academic-programs/gerontology/gerontology-as-cert-achievement/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7199,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7199,
+    "output_tokens": 1518,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1518,
+  "output_tokens_details": {
+   "thinking_tokens": 390
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.05916,
+ "ms": 12402,
+ "seconds": 13.0,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 5,
+   "listed": 5,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "SOC22"
+   ],
+   "flagged": [
+    "SOC22"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    18.0,
+    18.0
+   ],
+   "stated": [
+    18.0,
+    18.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 18,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Requirements for the Certificate of Achievement",
+   "measure": "units",
+   "total_units": {
+    "min": 18,
+    "max": 18
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Demonstrate knowledge of relationships among older adults, their families, and society.",
+    "Apply current theory and research in the interdisciplinary field of gerontology and its role in society to assess biological, social, and psychological issues that impact older adults and those who work with and care for them.",
+    "Analyze aspects of ageism in American society and socially conscious behavior regarding the older population.",
+    "Apply acquired interdisciplinary knowledge of older adults in varied career applications, such as design of services for older adults, patient care, and engineering and technology for independent living."
+   ],
+   "careers": [
+    "the field of aging",
+    "Home Care Companion",
+    "Activity Director",
+    "Adult Educator",
+    "Transportation Coordinator",
+    "Meal Coordinator",
+    "Admission Coordinator",
+    "Marketing Coordinator",
+    "Travel/Tour Specialist",
+    "Home Safety/Home Organization Specialist",
+    "Department of Human Services Worker",
+    "Senior Center Director",
+    "Administrator for assisted living",
+    "Administrator for independent living",
+    "Marketing Director",
+    "Care Manager",
+    "Geriatric Social Worker",
+    "Gerontologist"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Requirements for the Certificate of Achievement",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 18,
+     "max": 18
+    },
+    "courses": [
+     {
+      "code": "GERO 001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GERO 022",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GERO 140",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HUM 002",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC 022",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC 022",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The page combines the A.S. degree and the Certificate of Achievement; only one course list is printed, under 'Requirements for the Certificate of Achievement', totaling 18 units.",
+   "Program Outcomes are printed once for the program as a whole; the certificate shares them and they are recorded here.",
+   "SOC 022 (Sociology of Aging) is listed in the certificate requirements but is not in the closed list; recorded as a catalog addition.",
+   "Catalog prints codes with leading zeros (GERO 001, GERO 022, HUM 002, PSYC 022); these match closed-list GERO 1, GERO 22, HUM 2, PSYC 22.",
+   "Job titles are printed in two groups: 'With Completion of an Associate Degree' and 'With Completion of a B.A. or M.A.'; none is tied specifically to the certificate. All are recorded as careers named for the program.",
+   "General education text (PCC Local Gen Ed, Cal-GETC) applies to the A.S. degree only and is not recorded for this certificate."
+  ]
+ },
+ "extracted_run": "39061730187"
+}

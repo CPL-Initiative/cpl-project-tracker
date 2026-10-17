@@ -9,7 +9,7 @@
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 12127,
+  "input_tokens": 12255,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 12127,
-    "output_tokens": 2022,
+    "input_tokens": 12255,
+    "output_tokens": 1561,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 2022,
+  "output_tokens": 1561,
   "output_tokens_details": {
-   "thinking_tokens": 691
+   "thinking_tokens": 436
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.08895,
- "ms": 17083,
- "seconds": 17.5,
+ "cost_usd": 0.08024,
+ "ms": 12910,
+ "seconds": 13.3,
  "parts": null,
  "error": null,
  "score": {
@@ -111,7 +111,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "(Academic Plan E035309C)",
+   "section_heading": "Environmental Studies: Biology, Associate in Arts Degree",
    "measure": "units",
    "total_units": {
     "min": null,
@@ -251,15 +251,12 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The program's title heading is cut off before the excerpt; the section begins with '(Academic Plan E035309C)' and the description names 'The Environmental Studies: Biology Program'. The text does not print the award type (A.A.) in this excerpt.",
-   "No total for the major is printed; the core (31) and elective (3) block totals are printed, and 'Total 60' is recorded as degree_total with 'LACCD GENERAL EDUCATION PLAN 27' as ge_units.",
-   "Page states 'COMPLETE ADDITIONAL DEGREE-APPLICABLE UNITS, IF NEEDED, TO REACH 60 UNITS', so electives_fill_degree is true.",
-   "Note printed: 9 units of major courses may be double counted in LACCD General Education Areas 3, 4b, and 5.",
+   "The page prints no major total; 'Total 60' is recorded as the degree total, with the LACCD General Education Plan at 27 units.",
+   "Core (31) + elective (3) blocks sum to 34 units; the page says to complete additional degree-applicable units, if needed, to reach 60 units, so electives_fill_degree is true.",
+   "Catalog note: 9 units of major courses may be double counted in LACCD General Education Areas 3, 4b, and 5.",
    "ENV SCI 024 Global Climate Change is in the core but not in the closed list (catalog addition).",
-   "Catalog codes use zero-padded numbers (e.g., BIOLOGY 006) matching closed-list codes (BIOLOGY 6).",
-   "Second outcome is copied as printed, including the apparent missing 'and' between 'human society' and 'the environment'.",
-   "Catalog is labeled 2026-2027 in page headers."
+   "No careers are named in this program's section."
   ]
  },
- "extracted_run": "39011319511"
+ "extracted_run": "39063389278"
 }

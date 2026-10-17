@@ -1,0 +1,281 @@
+{
+ "college": "Los Angeles Mission College",
+ "control_number": "08362",
+ "shape": "degree",
+ "title": "Restaurant Management",
+ "award": "A.A. Degree",
+ "source_url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=32",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7925,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7925,
+    "output_tokens": 1828,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1828,
+  "output_tokens_details": {
+   "thinking_tokens": 401
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.06826,
+ "ms": 14684,
+ "seconds": 15.2,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 7,
+   "listed": 7,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 7,
+   "codes": [
+    "BUS5",
+    "CLNART101",
+    "CLNART105",
+    "CLNART107",
+    "CLNART109",
+    "CLNART50",
+    "CLNART60"
+   ],
+   "flagged": [
+    "BUS5",
+    "CLNART101",
+    "CLNART105",
+    "CLNART107",
+    "CLNART109",
+    "CLNART50",
+    "CLNART60"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    42.0,
+    42.0
+   ],
+   "stated": [
+    42.0,
+    42.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 8,
+   "courses": 0,
+   "count": 8,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Management (M008362C)",
+   "measure": "units",
+   "total_units": {
+    "min": 42,
+    "max": 42
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Demonstrate station organization, purchasing, storage, menu writing, and sanitation principles as they apply to food handling.",
+    "Use classic cooking terminology and methods, apply health and safety standards.",
+    "Demonstrate skill and apply professional industry standards in food handling, dining room & beverage service, baking and food service, and use of kitchen equipment and tools.",
+    "Demonstrate responsibility and team skills for the food service industry.",
+    "Describe career opportunities within the food industry and strategize own career.",
+    "Critique, assess, and improve one’s own performance, listening skills and communication skills for personal, academic, and career purposes.",
+    "Recognize the diversity of cultural influences and values related to a professional culinary environment.",
+    "Think critically in evaluating information, solving problems, and making decisions related to food preparation and food service."
+   ],
+   "careers": [
+    "restaurant/food service management"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "REQUIRED CORE",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 42,
+     "max": 42
+    },
+    "courses": [
+     {
+      "code": "BUS 005",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CLN ART 050",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CLN ART 060",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CLN ART 101",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CLN ART 103",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CLN ART 104",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CLN ART 105",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CLN ART 106",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CLN ART 107",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CLN ART 108",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CLN ART 109",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CLN ART 155",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MGMT 002",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MGMT 013",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The section heading is cut at the page break; page 32 begins with 'Management (M008362C)', presumably the end of an 'ASSOCIATE IN ARTS DEGREE Restaurant Management' heading on the previous page. The description confirms it is the Restaurant Management AA degree.",
+   "The 'Total 42' is printed under the required core and is recorded as both the major total and the block's stated total. The printed course units sum to 42.",
+   "The 60-unit sentence is a general Associate Degree requirement, not a printed total for this award, so degree_total is null. No GE pattern or GE units are printed in this section.",
+   "The catalog titles CLN ART 155 'Work Experience – Culinary Arts', while the state file titles it 'CHEFS TRAINING FOR APPRENTICESHIP II'. It is matched by code; a reviewer may check this.",
+   "MGMT 002 and MGMT 013 are matched to the closed-list entries MGMT 2 and MGMT 13. The catalog prints codes with leading zeros.",
+   "The Accounting and Crime Scene Technology certificate sections that follow belong to other programs and were not read."
+  ]
+ },
+ "extracted_run": "39054675770"
+}

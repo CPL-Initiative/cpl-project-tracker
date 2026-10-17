@@ -1,0 +1,423 @@
+{
+ "college": "Los Angeles Trade Technical College",
+ "control_number": "21853",
+ "shape": "certificate",
+ "title": "Electrical Construction and Maintenance:  Electrician",
+ "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+ "source_url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=137",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 14646,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 14646,
+    "output_tokens": 3726,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 3726,
+  "output_tokens_details": {
+   "thinking_tokens": 1602
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.1331,
+ "ms": 31323,
+ "seconds": 31.9,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 57,
+   "share": 0.0,
+   "missing": [
+    "ECONMT1",
+    "ECONMT100",
+    "ECONMT101",
+    "ECONMT105",
+    "ECONMT110",
+    "ECONMT115",
+    "ECONMT116",
+    "ECONMT117",
+    "ECONMT119",
+    "ECONMT120",
+    "ECONMT128",
+    "ECONMT129",
+    "ECONMT130",
+    "ECONMT136",
+    "ECONMT137",
+    "ECONMT138",
+    "ECONMT140",
+    "ECONMT142",
+    "ECONMT150",
+    "ECONMT159",
+    "ECONMT164",
+    "ECONMT167",
+    "ECONMT168",
+    "ECONMT169",
+    "ECONMT171",
+    "ECONMT172",
+    "ECONMT173",
+    "ECONMT174",
+    "ECONMT177",
+    "ECONMT178",
+    "ECONMT181",
+    "ECONMT182",
+    "ECONMT183",
+    "ECONMT184",
+    "ECONMT185",
+    "ECONMT185L",
+    "ECONMT186",
+    "ECONMT187",
+    "ECONMT190",
+    "ECONMT191",
+    "ECONMT192",
+    "ECONMT193",
+    "ECONMT193A",
+    "ECONMT195",
+    "ECONMT196",
+    "ECONMT197",
+    "ECONMT199",
+    "ECONMT205",
+    "ECONMT212",
+    "ECONMT215",
+    "ECONMT285",
+    "ECONMT285L",
+    "ECONMT385",
+    "ECONMT385L",
+    "ECONMT6",
+    "ECONMT7",
+    "ECONMT941"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": true,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Not found: the text prints no 'Electrical Construction and Maintenance: Electrician' section",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ECONMT 1",
+    "why": "Electrician section not in the text"
+   },
+   {
+    "code": "ECONMT 100",
+    "why": "Electrician section not in the text"
+   },
+   {
+    "code": "ECONMT 101",
+    "why": "Electrician section not in the text"
+   },
+   {
+    "code": "ECONMT 105",
+    "why": "Electrician section not in the text"
+   },
+   {
+    "code": "ECONMT 110",
+    "why": "Electrician section not in the text"
+   },
+   {
+    "code": "ECONMT 115",
+    "why": "Electrician section not in the text"
+   },
+   {
+    "code": "ECONMT 116",
+    "why": "Electrician section not in the text"
+   },
+   {
+    "code": "ECONMT 117",
+    "why": "Electrician section not in the text"
+   },
+   {
+    "code": "ECONMT 119",
+    "why": "Electrician section not in the text"
+   },
+   {
+    "code": "ECONMT 120",
+    "why": "Electrician section not in the text"
+   },
+   {
+    "code": "ECONMT 128",
+    "why": "Electrician section not in the text"
+   },
+   {
+    "code": "ECONMT 129",
+    "why": "Electrician section not in the text"
+   },
+   {
+    "code": "ECONMT 130",
+    "why": "Electrician section not in the text"
+   },
+   {
+    "code": "ECONMT 136",
+    "why": "Electrician section not in the text"
+   },
+   {
+    "code": "ECONMT 137",
+    "why": "Electrician section not in the text"
+   },
+   {
+    "code": "ECONMT 138",
+    "why": "Electrician section not in the text"
+   },
+   {
+    "code": "ECONMT 140",
+    "why": "Electrician section not in the text"
+   },
+   {
+    "code": "ECONMT 142",
+    "why": "Electrician section not in the text"
+   },
+   {
+    "code": "ECONMT 150",
+    "why": "Electrician section not in the text"
+   },
+   {
+    "code": "ECONMT 159",
+    "why": "Electrician section not in the text"
+   },
+   {
+    "code": "ECONMT 164",
+    "why": "Electrician section not in the text"
+   },
+   {
+    "code": "ECONMT 167",
+    "why": "Electrician section not in the text"
+   },
+   {
+    "code": "ECONMT 168",
+    "why": "Electrician section not in the text"
+   },
+   {
+    "code": "ECONMT 169",
+    "why": "Electrician section not in the text"
+   },
+   {
+    "code": "ECONMT 171",
+    "why": "Electrician section not in the text"
+   },
+   {
+    "code": "ECONMT 172",
+    "why": "Electrician section not in the text"
+   },
+   {
+    "code": "ECONMT 173",
+    "why": "Electrician section not in the text"
+   },
+   {
+    "code": "ECONMT 174",
+    "why": "Electrician section not in the text"
+   },
+   {
+    "code": "ECONMT 177",
+    "why": "Electrician section not in the text"
+   },
+   {
+    "code": "ECONMT 178",
+    "why": "Electrician section not in the text"
+   },
+   {
+    "code": "ECONMT 181",
+    "why": "Electrician section not in the text"
+   },
+   {
+    "code": "ECONMT 182",
+    "why": "Electrician section not in the text"
+   },
+   {
+    "code": "ECONMT 183",
+    "why": "Electrician section not in the text"
+   },
+   {
+    "code": "ECONMT 184",
+    "why": "Electrician section not in the text"
+   },
+   {
+    "code": "ECONMT 185",
+    "why": "Electrician section not in the text"
+   },
+   {
+    "code": "ECONMT 185L",
+    "why": "Electrician section not in the text"
+   },
+   {
+    "code": "ECONMT 186",
+    "why": "Electrician section not in the text"
+   },
+   {
+    "code": "ECONMT 187",
+    "why": "Electrician section not in the text"
+   },
+   {
+    "code": "ECONMT 190",
+    "why": "Electrician section not in the text"
+   },
+   {
+    "code": "ECONMT 191",
+    "why": "Electrician section not in the text"
+   },
+   {
+    "code": "ECONMT 192",
+    "why": "Electrician section not in the text"
+   },
+   {
+    "code": "ECONMT 193",
+    "why": "Electrician section not in the text"
+   },
+   {
+    "code": "ECONMT 193A",
+    "why": "Electrician section not in the text"
+   },
+   {
+    "code": "ECONMT 195",
+    "why": "Electrician section not in the text"
+   },
+   {
+    "code": "ECONMT 196",
+    "why": "Electrician section not in the text"
+   },
+   {
+    "code": "ECONMT 197",
+    "why": "Electrician section not in the text"
+   },
+   {
+    "code": "ECONMT 199",
+    "why": "Electrician section not in the text"
+   },
+   {
+    "code": "ECONMT 205",
+    "why": "Electrician section not in the text"
+   },
+   {
+    "code": "ECONMT 212",
+    "why": "Electrician section not in the text"
+   },
+   {
+    "code": "ECONMT 285",
+    "why": "Electrician section not in the text"
+   },
+   {
+    "code": "ECONMT 285L",
+    "why": "Electrician section not in the text"
+   },
+   {
+    "code": "ECONMT 385",
+    "why": "Electrician section not in the text"
+   },
+   {
+    "code": "ECONMT 385L",
+    "why": "Electrician section not in the text"
+   },
+   {
+    "code": "ECONMT 6",
+    "why": "Electrician section not in the text"
+   },
+   {
+    "code": "ECONMT 7",
+    "why": "Electrician section not in the text"
+   },
+   {
+    "code": "ECONMT 941",
+    "why": "Electrician section not in the text"
+   },
+   {
+    "code": "ECONMT215",
+    "why": "Electrician section not in the text"
+   }
+  ],
+  "notes": [
+   "The supplied text (pages 137-140) has no section titled 'Electrical Construction and Maintenance: Electrician'. Its sections are Electrical Construction & Maintenance: Construction Technician (A.A. and Certificate of Achievement), Renewable Energy: Energy Efficiency programs, EV Charging Station Installation, Maintenance, and Repair, and the start of Heating & Air Conditioning Mechanics. No requirements were recorded so that another program's requirements are not attributed to this award.",
+   "Reviewer check: the nearest match is the 'ELECTRICAL CONSTRUCTION & MAINTENANCE: CONSTRUCTION TECHNICIAN' Certificate of Achievement on page 137 (Major Units: 48; 40 units of Required Courses plus 8 units of Electives listed under the A.A.). Its required and elective lists cover nearly every closed-list code. If the state's 'Electrician' program is a former or alternate name for that certificate, it should be re-read from that section. The catalog text for that section also names codes not in the closed list: ECONMT 128A, 128B, 128C and BLDGCTQ 102.",
+   "The Electrician section may be on a page not included in the excerpt, such as page 136 or earlier."
+  ]
+ },
+ "extracted_run": "39054673977"
+}

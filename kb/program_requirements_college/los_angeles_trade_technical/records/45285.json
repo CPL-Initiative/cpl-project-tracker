@@ -1,0 +1,964 @@
+{
+ "college": "Los Angeles Trade Technical College",
+ "control_number": "45285",
+ "shape": "certificate",
+ "title": "Cal-GETC",
+ "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+ "source_url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=65",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 9824,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 9824,
+    "output_tokens": 7757,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 7757,
+  "output_tokens_details": {
+   "thinking_tokens": 2137
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.19444,
+ "ms": 57386,
+ "seconds": 57.8,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 53,
+   "listed": 99,
+   "share": 0.535,
+   "missing": [
+    "ART101",
+    "ART102",
+    "ART103",
+    "ASL1",
+    "ASL2",
+    "ASL3",
+    "ASL4",
+    "ASTRON5",
+    "COMMC1000",
+    "ENGLC1000",
+    "ENGLC1001",
+    "ENGLISH101X",
+    "ENGLISH102",
+    "ENGLISH203",
+    "ENGLISH205",
+    "ENGLISH206",
+    "ENGLISH207",
+    "ENGLISH208",
+    "ENGLISH212",
+    "ENGLISH215",
+    "ENGLISH219",
+    "ENGLISH240",
+    "FRENCH2",
+    "HUMAN1",
+    "HUMAN2",
+    "HUMAN60",
+    "LABRST21",
+    "MATH235",
+    "MATH236",
+    "MATH245",
+    "MATH260",
+    "MATH260S",
+    "MATH261",
+    "MATH262",
+    "MATH263",
+    "MATH270",
+    "MATH272",
+    "MATH275",
+    "MUSIC101",
+    "MUSIC116",
+    "MUSIC141",
+    "PHYSICS14",
+    "PSYCH91",
+    "STATC1000",
+    "STATC1000E",
+    "THEATER100"
+   ],
+   "unexplained": [
+    "ASTRON5"
+   ],
+   "none_placed": false,
+   "pass": false
+  },
+  "invented": {
+   "count": 19,
+   "codes": [
+    "AFROAM2",
+    "ASTRON5L",
+    "ECONC2001",
+    "ECONC2002",
+    "GEOG2",
+    "GEOG7",
+    "HISTC1001",
+    "HISTC1002",
+    "HISTORY41",
+    "HISTORY42",
+    "HISTORY43",
+    "HISTORY44",
+    "HISTORY52",
+    "HISTORY86",
+    "HISTORY87",
+    "LABRST1",
+    "LABRST4",
+    "PSYCH10",
+    "SOC21"
+   ],
+   "flagged": [
+    "AFROAM2",
+    "ECONC2001",
+    "ECONC2002",
+    "GEOG2",
+    "GEOG7",
+    "HISTC1001",
+    "HISTC1002",
+    "HISTORY41",
+    "HISTORY42",
+    "HISTORY43",
+    "HISTORY44",
+    "HISTORY52",
+    "HISTORY86",
+    "HISTORY87",
+    "LABRST1",
+    "LABRST4",
+    "PSYCH10",
+    "SOC21"
+   ],
+   "pass": false
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    7.0,
+    13.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "'Area 4 (continued from previous page; heading not in text)' chooses courses but names no minimum",
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Graduation Requirements, Pathways and Programs of Study",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Area 4 (continued from previous page; heading not in text)",
+    "rule": "choose_courses",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ECON C2001",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ECON C2002",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "GEOG 002",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "GEOG 007",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HISTORY 002",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST C1001",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HIST C1002",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HISTORY 041",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HISTORY 042",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HISTORY 043",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HISTORY 044",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HISTORY 052",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HISTORY 086",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HISTORY 087",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "LABR ST 001",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "LABR ST 004",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "POL SCI 002",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "POL SCI 007",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "POLS C1000",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC C1000",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYCH 010",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PSYCH 013",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYCH 014",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYCH 029",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYCH 032",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYCH 041",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYCH 069",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYCH 074",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC 001",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC 002",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC 004",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC 011",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC 021",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "SOC 028",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC 031",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "5A Physical Science",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ASTRON 001",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ASTRON 005L",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 051",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 070",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 101",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 102",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 211",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 212",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 221",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "EARTH 001",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENV SCI 001",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOG 001",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOLOGY 001",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOLOGY 006",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYSICS 006",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYSICS 007",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYSICS 011",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYSICS 012",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYSICS 101",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYSICS 102",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYSICS 103",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "5B Biological Science",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ANATOMY 001",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANTHRO 101",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANTHRO 111",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOLOGY 003",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOLOGY 005",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOLOGY 006",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOLOGY 007",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MICRO 020",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYSIOL 001",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYCH 002",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "6 Ethnic Studies",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "AFRO AM 002",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "AFRO AM 004",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AFRO AM 005",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHICANO 004",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHICANO 007",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHICANO 008",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ART 101",
+    "why": "not in the text (likely Area 3 on an earlier page)"
+   },
+   {
+    "code": "ART 102",
+    "why": "not in the text (likely Area 3 on an earlier page)"
+   },
+   {
+    "code": "ART 103",
+    "why": "not in the text (likely Area 3 on an earlier page)"
+   },
+   {
+    "code": "ASL001",
+    "why": "not in the text (likely Area 3 on an earlier page)"
+   },
+   {
+    "code": "ASL002",
+    "why": "not in the text (likely Area 3 on an earlier page)"
+   },
+   {
+    "code": "ASL003",
+    "why": "not in the text (likely Area 3 on an earlier page)"
+   },
+   {
+    "code": "ASL004",
+    "why": "not in the text (likely Area 3 on an earlier page)"
+   },
+   {
+    "code": "COMM C1000",
+    "why": "not in the text (likely Area 1 on an earlier page)"
+   },
+   {
+    "code": "ENGL C1000",
+    "why": "not in the text (likely Area 1 on an earlier page)"
+   },
+   {
+    "code": "ENGL C1001",
+    "why": "not in the text (likely Area 1 on an earlier page)"
+   },
+   {
+    "code": "ENGLISH 101X",
+    "why": "not in the text"
+   },
+   {
+    "code": "ENGLISH 102",
+    "why": "not in the text"
+   },
+   {
+    "code": "ENGLISH 203",
+    "why": "not in the text (likely Area 3 on an earlier page)"
+   },
+   {
+    "code": "ENGLISH 205",
+    "why": "not in the text (likely Area 3 on an earlier page)"
+   },
+   {
+    "code": "ENGLISH 206",
+    "why": "not in the text (likely Area 3 on an earlier page)"
+   },
+   {
+    "code": "ENGLISH 207",
+    "why": "not in the text (likely Area 3 on an earlier page)"
+   },
+   {
+    "code": "ENGLISH 208",
+    "why": "not in the text (likely Area 3 on an earlier page)"
+   },
+   {
+    "code": "ENGLISH 212",
+    "why": "not in the text (likely Area 3 on an earlier page)"
+   },
+   {
+    "code": "ENGLISH 215",
+    "why": "not in the text (likely Area 3 on an earlier page)"
+   },
+   {
+    "code": "ENGLISH 219",
+    "why": "not in the text (likely Area 3 on an earlier page)"
+   },
+   {
+    "code": "ENGLISH 240",
+    "why": "not in the text (likely Area 3 on an earlier page)"
+   },
+   {
+    "code": "FRENCH 2",
+    "why": "not in the text (likely Area 3 on an earlier page)"
+   },
+   {
+    "code": "HUMAN 1",
+    "why": "not in the text (likely Area 3 on an earlier page)"
+   },
+   {
+    "code": "HUMAN 2",
+    "why": "not in the text (likely Area 3 on an earlier page)"
+   },
+   {
+    "code": "HUMAN 60",
+    "why": "not in the text (likely Area 3 on an earlier page)"
+   },
+   {
+    "code": "LABR ST 21",
+    "why": "not in the text (likely Area 3 on an earlier page)"
+   },
+   {
+    "code": "MATH 235",
+    "why": "not in the text (likely Area 2 on an earlier page)"
+   },
+   {
+    "code": "MATH 236",
+    "why": "not in the text (likely Area 2 on an earlier page)"
+   },
+   {
+    "code": "MATH 245",
+    "why": "not in the text (likely Area 2 on an earlier page)"
+   },
+   {
+    "code": "MATH 260",
+    "why": "not in the text (likely Area 2 on an earlier page)"
+   },
+   {
+    "code": "MATH 260S",
+    "why": "not in the text (likely Area 2 on an earlier page)"
+   },
+   {
+    "code": "MATH 261",
+    "why": "not in the text (likely Area 2 on an earlier page)"
+   },
+   {
+    "code": "MATH 262",
+    "why": "not in the text (likely Area 2 on an earlier page)"
+   },
+   {
+    "code": "MATH 263",
+    "why": "not in the text (likely Area 2 on an earlier page)"
+   },
+   {
+    "code": "MATH 270",
+    "why": "not in the text (likely Area 2 on an earlier page)"
+   },
+   {
+    "code": "MATH 272",
+    "why": "not in the text (likely Area 2 on an earlier page)"
+   },
+   {
+    "code": "MATH 275",
+    "why": "not in the text (likely Area 2 on an earlier page)"
+   },
+   {
+    "code": "MUSIC 101",
+    "why": "not in the text (likely Area 3 on an earlier page)"
+   },
+   {
+    "code": "MUSIC 116",
+    "why": "not in the text (likely Area 3 on an earlier page)"
+   },
+   {
+    "code": "MUSIC 141",
+    "why": "not in the text (likely Area 3 on an earlier page)"
+   },
+   {
+    "code": "PHYSICS 14",
+    "why": "not in the text; 5A lists PHYSICS 012 with lab notation but no separate PHYSICS 014"
+   },
+   {
+    "code": "PSYCH 91",
+    "why": "not in the text (likely Area 2 on an earlier page)"
+   },
+   {
+    "code": "STAT C1000",
+    "why": "not in the text (likely Area 2 on an earlier page)"
+   },
+   {
+    "code": "STAT C1000E",
+    "why": "not in the text (likely Area 2 on an earlier page)"
+   },
+   {
+    "code": "THEATER 100",
+    "why": "not in the text (likely Area 3 on an earlier page)"
+   }
+  ],
+  "notes": [
+   "The text is a single page (p. 65) that begins mid-list; the Cal-GETC heading, Areas 1-3, and the heading and rule of the area containing ECON/GEOG/HISTORY/PSYCH/SOC (presumably Area 4 Social and Behavioral Sciences) are on earlier pages not provided. The first block's name is descriptive and its minimum is left null because no rule is printed in the text.",
+   "No unit values are printed beside any course, so all course units are null. No total units for the certificate are printed in the text.",
+   "Area 5 'Physical & Biological Sciences: 7 sem./9 qtr. units' — 'Complete 2 courses: one from each group: 5A, 5B and 5C'. Recorded as 5A choose 1 and 5B choose 1; the 7-unit area total is not attached to either block. 5C is a lab requirement: at least one course from 5A or 5B must have a companion or embedded lab (courses marked L). 5C text says 'Any unified or companion course from B1 or B3 above', apparently CSU GE area notation.",
+   "The 'L' printed after codes (e.g., 'CHEM 051 L') was read as the lab designation, not part of the code; ASTRON 005L is printed with L attached and recorded as printed (matches ASTRON 5).",
+   "Asterisks after HISTORY 002 and the Area 6 Ethnic Studies courses are not explained in the provided text. Area 6 courses carry approval dates (F'22, F'23); AFRO AM 002 has none.",
+   "The page notes: 'There is NO Cal-GETC for STEM'.",
+   "ge_pattern left null because the award itself is the Cal-GETC pattern certificate rather than a degree naming a GE pattern; the courses here are the pattern's area lists.",
+   "No program learning outcomes or careers are printed in the text."
+  ]
+ },
+ "extracted_run": "39054673977"
+}

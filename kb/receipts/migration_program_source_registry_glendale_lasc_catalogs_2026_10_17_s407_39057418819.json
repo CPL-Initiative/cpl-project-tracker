@@ -1,0 +1,12 @@
+{
+ "what": "supabase-migrate: one committed SQL file applied through the Management API",
+ "file": "kb/receipts/program_source_registry_glendale_lasc_catalogs_2026-10-17_s407.sql",
+ "name": "program_source_registry_glendale_lasc_catalogs_2026_10_17_s407",
+ "version": "20261017181814",
+ "sha256": "1a405ae918616a473114786e5d7ab4d3161dab5388a68c849e3db48b7a430055",
+ "run": "39057418819",
+ "status": 201,
+ "response": "[{\"college\":\"Glendale Community College\",\"catalog_url\":\"https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf\",\"catalog_year\":\"2025-2026\",\"catalog_platform\":\"pdf\",\"catalog_format\":\"single_pdf\",\"best_method\":\"pdf_extraction\",\"corrected\":true},{\"college\":\"Los Angeles Southwest College\",\"catalog_url\":\"https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf\",\"catalog_year\":\"2026-2027\",\"catalog_platform\":\"pdf\",\"catalog_format\":\"single_pdf\",\"best_method\":\"pdf_extraction\",\"corrected\":true}]",
+ "ledger_status": 201,
+ "ledger_response": "[]"
+}

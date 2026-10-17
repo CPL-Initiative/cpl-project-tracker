@@ -9,7 +9,7 @@
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 7640,
+  "input_tokens": 7644,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 7640,
-    "output_tokens": 2589,
+    "input_tokens": 7644,
+    "output_tokens": 2565,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,7 +30,7 @@
     "model": null
    }
   ],
-  "output_tokens": 2589,
+  "output_tokens": 2565,
   "output_tokens_details": {
    "thinking_tokens": 783
   },
@@ -38,9 +38,9 @@
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.08234,
- "ms": 21505,
- "seconds": 21.9,
+ "cost_usd": 0.08188,
+ "ms": 21798,
+ "seconds": 22.1,
  "parts": null,
  "error": null,
  "score": {
@@ -82,8 +82,8 @@
    "pass": false,
    "status": "unequal",
    "computed": [
-    70.0,
-    73.0
+    61.0,
+    67.0
    ],
    "stated": [
     60.0,
@@ -95,7 +95,7 @@
     27.0
    ],
    "why": [
-    "the blocks and general education come to 70.0-73.0, past the 60.0-60.0 the catalog prints for the degree"
+    "the blocks and general education come to 61.0-67.0, past the 60.0-60.0 the catalog prints for the degree"
    ],
    "fill": null
   },
@@ -245,7 +245,7 @@
     ]
    },
    {
-    "name": "List A (Trilingual Option)",
+    "name": "List A (Trilingual Option): Complete the following 3 courses",
     "rule": "all",
     "minimum": null,
     "option_group": "List A or List B",
@@ -278,13 +278,13 @@
     ]
    },
    {
-    "name": "List B (Cultural Option): required course",
+    "name": "List B (Cultural Option): Complete the following courses",
     "rule": "all",
     "minimum": null,
-    "option_group": "List B",
+    "option_group": "List A or List B",
     "stated": {
-     "min": null,
-     "max": null
+     "min": 9,
+     "max": 9
     },
     "courses": [
      {
@@ -297,10 +297,10 @@
     ]
    },
    {
-    "name": "List B (Cultural Option): Complete 6 units from the following",
+    "name": "List B: Complete 6 units from the following",
     "rule": "choose_units",
     "minimum": 6,
-    "option_group": "List B",
+    "option_group": "List A or List B",
     "stated": {
      "min": null,
      "max": null
@@ -347,13 +347,12 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The award's heading (likely 'Interpreter Education, Associate in Arts Degree') is not in the excerpt; the text begins at '(Academic Plan E037969C)' on page 219, so that line is used as section_heading.",
-   "Elective Courses: 'CHOOSE EITHER LIST A OR LIST B' (9 units). List A is one block; List B is printed as ASL 040 AND 6 units from a list, recorded as two blocks that together form the List B option (9 units). The option_group labels differ ('List A or List B' vs 'List B') only by naming; reviewer should treat List A vs the two List B blocks combined as the alternative.",
-   "No major total is printed; core 31 + electives 9 are printed separately. The description says 'a minimum of 42 credits in program requirements and general education', which conflicts with the printed figures (GE 27, Total 60) and with the statement of 21 general education credit hours; not recorded as total_units.",
-   "Total 60 printed for the degree recorded as degree_total; LACCD General Education Plan 27 recorded as ge_units. 'Complete additional degree-applicable units, if needed, to reach 60 units' recorded as electives_fill_degree.",
-   "Notes: 3 units of major courses may be double counted in LACCD GE Area 3; GE Area 4a (3 units) and Area 7 (3 units) are waived as a high-unit major per AP 4100.",
-   "Catalog codes 'A S L 0xx', 'CH DEV 044', 'LING 007' matched to closed-list ASL0xx, CH DEV 44, LING 7."
+   "The program heading (likely 'Interpreter Education, Associate in Arts Degree') falls before the extracted text; section_heading records the first printed line, the Academic Plan number.",
+   "Elective section reads 'CHOOSE EITHER LIST A OR LIST B 9'. List B is two blocks: A S L 040 (required) AND 6 units from the list; both List B blocks share option_group with List A but together form the single List B option (3 + 6 = 9 units). The stated 9 on the List B block is the whole List B total.",
+   "Core 31 + electives 9 = 40 units in the major, but no single major total is printed, so total_units is null. The description says 'a minimum of 42 credits in program requirements and general education' and mentions '21 general education credit hours', which conflicts with 'LACCD GENERAL EDUCATION PLAN 27'; reviewer should check.",
+   "Degree total 60 printed; additional degree-applicable units if needed to reach 60 (electives_fill_degree true). Notes: 3 units of major courses may double count in LACCD GE Area 3; GE Area 4a and Area 7 waived as a high-unit major.",
+   "CH DEV 044 and LING 007 matched to closed-list CH DEV 44 and LING 7; A S L codes matched to closed-list ASL codes. Closed-list title for ASL010 ('American Sign Language-to-English') differs slightly from catalog title ('Sign-to-English')."
   ]
  },
- "extracted_run": "39011319511"
+ "extracted_run": "39063389278"
 }

@@ -1,0 +1,168 @@
+{
+ "college": "Los Angeles Mission College",
+ "control_number": "43795",
+ "shape": "noncredit",
+ "title": "In-Home Support Services (IHSS) Providers Training",
+ "award": "Noncredit program",
+ "source_url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=85",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6628,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6628,
+    "output_tokens": 844,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 844,
+  "output_tokens_details": {
+   "thinking_tokens": 224
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.04339,
+ "ms": 8047,
+ "seconds": 8.3,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 2,
+   "listed": 2,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    108.0,
+    108.0
+   ],
+   "stated": [
+    108.0,
+    108.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 1,
+   "courses": 0,
+   "count": 1,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Services (IHSS) Providers Training (M043795E)",
+   "measure": "hours",
+   "total_units": {
+    "min": 108,
+    "max": 108
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Demonstrate the necessary skills and proficiency to deliver professional care to individuals who choose to live safely in their own homes."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "REQUIRED COURSES",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 108,
+     "max": 108
+    },
+    "courses": [
+     {
+      "code": "VOC ED 002CE",
+      "units": 90,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VOC ED 353CE",
+      "units": 18,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The section heading begins mid-title at the top of page 85 ('Services (IHSS) Providers Training (M043795E)'). The start of the heading, likely 'CERTIFICATE OF COMPLETION In-Home Support...', is probably on page 84 and was not in the supplied text.",
+   "The award is counted in hours. The printed 'Total Hours 108' is recorded as total_units and as the block's stated total.",
+   "The catalog prints the codes as 'VOC ED 002CE' and 'VOC ED 353CE'. These match the closed-list VOCED002CE and VOCED353CE.",
+   "The catalog titles VOC ED 002CE 'In-Home Supportive Service Provider' (singular), while the closed list has 'Providers'.",
+   "The section for the Introduction to Construction Technologies certificate that follows was ignored."
+  ]
+ },
+ "extracted_run": "39054675770"
+}

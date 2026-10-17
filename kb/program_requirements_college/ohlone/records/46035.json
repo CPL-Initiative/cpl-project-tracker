@@ -1,0 +1,146 @@
+{
+ "college": "Ohlone College",
+ "control_number": "46035",
+ "shape": "noncredit",
+ "title": "Esports Entrepreneurship and Live Production - Game Design",
+ "award": "Noncredit program",
+ "source_url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=95",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7613,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7613,
+    "output_tokens": 697,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 697,
+  "output_tokens_details": {
+   "thinking_tokens": 177
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.04439,
+ "ms": 6689,
+ "seconds": 6.9,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 0,
+   "listed": 2,
+   "share": 0.0,
+   "missing": [
+    "DAID922",
+    "DAID925"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "unstated",
+   "computed": null,
+   "stated": null,
+   "against": null,
+   "why": [
+    "the catalog prints no total, no hours and no units"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": true,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Not found: no section for Esports Entrepreneurship and Live Production - Game Design in the provided text",
+   "measure": "hours",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "DAID 922",
+    "why": "Not in this program's section. The text prints it only under the Digital Arts Certificate of Completion (90.0 hours)."
+   },
+   {
+    "code": "DAID 925",
+    "why": "Not in this program's section. The text prints it only under the Digital Arts Certificate of Completion (90.0 hours)."
+   }
+  ],
+  "notes": [
+   "The catalog text for page 95 covers College Success Skills, Development of Self-Concept for Success in the Workforce, and Digital Arts. It contains no section for Esports Entrepreneurship and Live Production - Game Design.",
+   "The Esports program's section may be on another page of the curriculum guide; a reviewer should check the source PDF.",
+   "Both closed-list courses (DAID-922 3D Modeling and DAID-925 Textures for 3D, 90.0 hours each) appear in the Digital Arts certificate's 'Complete three courses' list (Total Required Hours: 270.0). That section was not recorded because it belongs to a different award.",
+   "Measure is set to hours because the program is noncredit and the neighboring noncredit sections count in hours."
+  ]
+ },
+ "extracted_run": "39061732843"
+}

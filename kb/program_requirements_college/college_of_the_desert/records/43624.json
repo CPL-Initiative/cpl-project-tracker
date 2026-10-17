@@ -1,0 +1,191 @@
+{
+ "college": "College of the Desert",
+ "control_number": "43624",
+ "shape": "certificate",
+ "title": "BIW I: Office Support & Technologies",
+ "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+ "source_url": "https://collegeofthedesert.edu/_web-items/documents/pdf-files/catalogs/2026-2027-catalog.pdf#page=105",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 11447,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 11447,
+    "output_tokens": 1355,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1355,
+  "output_tokens_details": {
+   "thinking_tokens": 554
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.07289,
+ "ms": 12683,
+ "seconds": 13.1,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 4,
+   "listed": 4,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    12.0,
+    12.0
+   ],
+   "stated": [
+    12.0,
+    12.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 2,
+   "courses": 0,
+   "count": 2,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 5,
+   "not_verbatim": [
+    "office clerks"
+   ],
+   "pass": false
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "BIW I: Office Support and Technologies Certificate of Achievement",
+   "measure": "units",
+   "total_units": {
+    "min": 12,
+    "max": 12
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Have developed the skills to navigate a variety of modern-day office technology.",
+    "Be able to interact, communicate and perform different business processes with vendors, clientele, and/or coworkers at different ranking levels."
+   ],
+   "careers": [
+    "entry-level administrative support positions",
+    "office clerks",
+    "retail salespersons",
+    "customer service representatives",
+    "receptionists"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses- 12 Units",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 12,
+     "max": 12
+    },
+    "courses": [
+     {
+      "code": "AIS 005",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AIS 012",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AIS 074",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AIS 073",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The BIW I description begins at the bottom of catalog page 104; its Learning Outcomes and Program Requirements (CERTIFICATE TOTAL 12) continue at the top of page 105, under a running page header that reads 'BIW II'. These are read as belonging to BIW I because the BIW II heading and its own requirements (total 15) follow afterward.",
+   "The PDF text prints 'fi' as a ligature character (e.g., 'ofﬁce'); outcomes, careers and the heading are recorded with plain 'fi'.",
+   "The catalog prints codes with leading zeros (AIS 005, AIS 012, AIS 073, AIS 074); these match closed-list AIS 5, AIS 12, AIS 73, AIS 74.",
+   "The section states: 'Does not qualify for Title IV Federal Funding.'",
+   "The AS degree section also lists these four courses as 'Required Courses (BIW I) 12-Units'; this record reads only the certificate section."
+  ]
+ },
+ "extracted_run": "39056007346"
+}

@@ -9,7 +9,7 @@
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 7871,
+  "input_tokens": 7875,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 7871,
-    "output_tokens": 2526,
+    "input_tokens": 7875,
+    "output_tokens": 2175,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 2526,
+  "output_tokens": 2175,
   "output_tokens_details": {
-   "thinking_tokens": 1123
+   "thinking_tokens": 919
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.082,
- "ms": 21862,
- "seconds": 22.6,
+ "cost_usd": 0.075,
+ "ms": 19068,
+ "seconds": 19.5,
  "parts": null,
  "error": null,
  "score": {
@@ -150,17 +150,6 @@
   },
   "blocks": [
    {
-    "name": "Certificate of Achievement in Architectural Technology",
-    "rule": "all",
-    "minimum": null,
-    "option_group": null,
-    "stated": {
-     "min": 22,
-     "max": 22
-    },
-    "courses": []
-   },
-   {
     "name": "COMPLETE THE FOLLOWING ADDITIONAL COURSES",
     "rule": "all",
     "minimum": null,
@@ -230,38 +219,37 @@
   "missing_explained": [
    {
     "code": "ARC 110",
-    "why": "presumably in the Certificate of Achievement (22 units), whose courses are not printed in this section; appears only in course descriptions"
+    "why": "likely part of the Certificate of Achievement (22 units) whose courses are not listed in this section; appears only in course descriptions"
    },
    {
     "code": "ARC 115",
-    "why": "not in the text; presumably part of the referenced Certificate of Achievement"
+    "why": "not in the text; likely part of the Certificate of Achievement courses not listed here"
    },
    {
     "code": "ARC 151",
-    "why": "not in the text; presumably part of the referenced Certificate of Achievement"
+    "why": "not in the text; likely part of the Certificate of Achievement courses not listed here"
    },
    {
     "code": "ARC 161",
-    "why": "not listed as a requirement; named only in a cross-reference note; presumably part of the referenced Certificate of Achievement"
+    "why": "named only in a course-description cross-reference; certificate courses not listed here"
    },
    {
     "code": "ARC 162",
-    "why": "not listed as a requirement; named only in a cross-reference note; presumably part of the referenced Certificate of Achievement"
+    "why": "named only in a course-description cross-reference; certificate courses not listed here"
    },
    {
     "code": "ARC 164",
-    "why": "not listed as a requirement; named only in a cross-reference note; presumably part of the referenced Certificate of Achievement"
+    "why": "named only in a course-description cross-reference; certificate courses not listed here"
    }
   ],
   "notes": [
-   "The award heading (A.A. Degree in Architectural Technology) is not printed in the extracted text, which begins with '(Academic Plan E008252C)'; it likely appears at the bottom of the previous page.",
-   "Major requirements include the Certificate of Achievement in Architectural Technology (22 units), but its courses are not listed in this section; the certificate block is recorded with its stated 22 units and no courses.",
-   "The 12 units printed for 'COMPLETE THE FOLLOWING ADDITIONAL COURSES' appear to include List A: the four listed courses total 9 units, plus 3 from List A (ARC 271 or ARC 272) = 12.",
-   "No major total is printed; 22 + 12 = 34 would be the major but is not stated. Total 61 includes the LACCD GE Plan (27) and is recorded as degree_total.",
-   "Page says to complete additional degree-applicable units if needed to reach 60 units; electives_fill_degree set true although the printed total is already 61.",
-   "Note: high unit major; student may waive LACCD GE Area 4a (3 units) or Area 7 (3 units).",
-   "ARC 271 and ARC 272 carry a prerequisite and are not in the closed list."
+   "The section's own title heading is not in the extracted text; it begins with '(Academic Plan E008252C)' on page 103.",
+   "The degree's major includes the 'Certificate of Achievement in Architectural Technology . . . 22' as a single line; its courses are printed in the certificate's section, not here, so they are not placed in blocks. Reviewer should check the certificate section for ARC 110, 115, 151, 161, 162, 164 and others.",
+   "The '12' printed beside 'COMPLETE THE FOLLOWING ADDITIONAL COURSES' appears to cover both the four listed courses (9 units) and List A (3 units); recorded as stated on the first block.",
+   "List A: ARC 271 or ARC 272, whichever was not completed in the certificate.",
+   "Total 61 = certificate 22 + additional 12 + LACCD GE 27; recorded as degree_total. No separate major total is printed (22 + 12 = 34 not stated).",
+   "Note says this is a high-unit major; student may waive LACCD GE Area 4a (3 units) or Area 7 (3 units)."
   ]
  },
- "extracted_run": "39011319511"
+ "extracted_run": "39063389278"
 }

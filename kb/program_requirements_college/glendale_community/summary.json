@@ -1,0 +1,102 @@
+{
+ "college": "Glendale Community College",
+ "programs": 317,
+ "with_closed_list": 267,
+ "found": 258,
+ "extracted": 258,
+ "errors": 0,
+ "passed_machine_checks": 37,
+ "failed": {
+  "coverage": 62,
+  "invented": 25,
+  "arithmetic": 193,
+  "repeated": 0,
+  "outcomes": 54
+ },
+ "cost_usd": 19.8,
+ "cost_per_program": 0.0767,
+ "not_found": [
+  {
+   "control_number": "11147",
+   "title": "Bookkeeping",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=96",
+    "coverage": 0.292
+   }
+  },
+  {
+   "control_number": "11176",
+   "title": "Theatre Arts: General",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=88",
+    "coverage": 0.118
+   }
+  },
+  {
+   "control_number": "19556",
+   "title": "Bookkeeping",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=96",
+    "coverage": 0.333
+   }
+  },
+  {
+   "control_number": "24274",
+   "title": "High School Equivalency (HSE)",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=271",
+    "coverage": 0.2
+   }
+  },
+  {
+   "control_number": "24297",
+   "title": "Introduction to Hospitality and Tourism",
+   "award": null,
+   "near_miss": {
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=270",
+    "coverage": 0.222
+   }
+  },
+  {
+   "control_number": "24322",
+   "title": "Medical Front Office Clerk",
+   "award": null,
+   "near_miss": {
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=270",
+    "coverage": 0.333
+   }
+  },
+  {
+   "control_number": "24432",
+   "title": "Certificate of Secondary Education Completion",
+   "award": null,
+   "near_miss": {
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=274",
+    "coverage": 0.423
+   }
+  },
+  {
+   "control_number": "30813",
+   "title": "Sociology",
+   "award": "A.A- T Degree",
+   "near_miss": {
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=123",
+    "coverage": 0.412
+   }
+  },
+  {
+   "control_number": "45068",
+   "title": "Cal-GETC",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=50",
+    "coverage": 0.089
+   }
+  }
+ ],
+ "run": "39063367252"
+}

@@ -1,0 +1,197 @@
+{
+ "college": "Ohlone College",
+ "control_number": "46107",
+ "shape": "noncredit",
+ "title": "Graphic and Interactive Design",
+ "award": "Noncredit program",
+ "source_url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=98",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7569,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7569,
+    "output_tokens": 1398,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1398,
+  "output_tokens_details": {
+   "thinking_tokens": 496
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.05824,
+ "ms": 11735,
+ "seconds": 12.1,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 1,
+   "listed": 1,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 3,
+   "codes": [
+    "DAID930A",
+    "DAID932A",
+    "DAID933A"
+   ],
+   "flagged": [
+    "DAID930A",
+    "DAID932A",
+    "DAID933A"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    270.0,
+    288.0
+   ],
+   "stated": [
+    270.0,
+    288.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Certificate of Completion in Graphic and Interactive Design",
+   "measure": "hours",
+   "total_units": {
+    "min": 270,
+    "max": 288
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Create professional-quality visual content that demonstrates effective use of design principles, typography, color theory, and composition.",
+    "Apply industry-standard software and production workflows to complete digital illustration, graphic design, and web design projects.",
+    "Integrate design thinking and creative-technical skills to produce cohesive branding, marketing, and interactive design solutions tailored to diverse audiences and user needs.",
+    "Evaluate and refine design solutions by assessing their effectiveness, technical accuracy, and alignment with client or audience needs."
+   ],
+   "careers": [
+    "creative industries"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "MAJOR FIELD",
+    "rule": "choose_courses",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "DAID-905A",
+      "units": 90,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DAID-930A",
+      "units": 108,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "DAID-932A",
+      "units": 90,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "DAID-933A",
+      "units": 90,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Noncredit program counted in hours; all unit fields hold hours. 'Total Required Hours: 270.0-288.0' recorded as total_units.",
+   "Requirement reads 'Complete a minimum of three courses from the following courses'; the block's own total was not printed separately from the program total, so block stated is null.",
+   "DAID-905A matches closed-list DAID 905A (catalog prints a hyphen). DAID-930A, DAID-932A and DAID-933A are not in the closed list and are recorded as catalog additions.",
+   "Outcome list numbers were printed at line ends in the extracted text; outcomes were reassembled by joining wrapped lines.",
+   "'creative industries' recorded as a career field from the description ('students seeking to enter or advance in the creative industries'); reviewer may check whether it should count. 'entry-level employment' and 'freelance opportunities' were not recorded as careers.",
+   "Other sections on the page (Internship Preparation for Multilingual Learners; Introduction to Permaculture, Design, and Entrepreneurship) belong to other programs and were ignored."
+  ]
+ },
+ "extracted_run": 39063337090,
+ "read_run": "39061732843"
+}

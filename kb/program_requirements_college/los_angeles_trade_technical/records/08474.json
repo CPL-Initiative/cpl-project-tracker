@@ -1,0 +1,600 @@
+{
+ "college": "Los Angeles Trade Technical College",
+ "control_number": "08474",
+ "shape": "certificate",
+ "title": "Operation & Maintenance Engineering: Steam Plant",
+ "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+ "source_url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=142",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 12311,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 12311,
+    "output_tokens": 3889,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 3889,
+  "output_tokens_details": {
+   "thinking_tokens": 973
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.12702,
+ "ms": 29019,
+ "seconds": 29.6,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 14,
+   "listed": 22,
+   "share": 0.636,
+   "missing": [
+    "OPMAAP703",
+    "OPMAAP704",
+    "OPMAAP720",
+    "OPMAAP724",
+    "OPMAAP740",
+    "OPMAAP744",
+    "REFAC101",
+    "REFAC209"
+   ],
+   "unexplained": [
+    "REFAC101"
+   ],
+   "none_placed": false,
+   "pass": false
+  },
+  "invented": {
+   "count": 32,
+   "codes": [
+    "CRPNTRY111A",
+    "CRPNTRY241",
+    "ECONMNT100",
+    "ECONMT105",
+    "ECONMT110",
+    "ECONMT171",
+    "ECONMT181",
+    "ECONMT182",
+    "PLUMBNG145",
+    "PLUMBNG28",
+    "PLUMBNG31",
+    "REFA/C101",
+    "REFA/C111",
+    "REFA/C133",
+    "REFA/C134",
+    "REFA/C135",
+    "REFA/C159",
+    "REFA/C160",
+    "REFA/C161",
+    "REFA/C162",
+    "REFA/C164",
+    "REFA/C165",
+    "REFA/C176",
+    "REFA/C177",
+    "REFA/C187",
+    "REFA/C188",
+    "REFA/C199",
+    "REFA/C201",
+    "REFA/C202",
+    "REFA/C203",
+    "REFA/C204",
+    "REFA/C208"
+   ],
+   "flagged": [
+    "CRPNTRY111A",
+    "CRPNTRY241",
+    "ECONMNT100",
+    "ECONMT105",
+    "ECONMT110",
+    "ECONMT171",
+    "ECONMT181",
+    "ECONMT182",
+    "PLUMBNG145",
+    "PLUMBNG28",
+    "PLUMBNG31",
+    "REFA/C111",
+    "REFA/C133",
+    "REFA/C134",
+    "REFA/C135",
+    "REFA/C159",
+    "REFA/C160",
+    "REFA/C161",
+    "REFA/C162",
+    "REFA/C164",
+    "REFA/C165",
+    "REFA/C176",
+    "REFA/C177",
+    "REFA/C187",
+    "REFA/C188",
+    "REFA/C199",
+    "REFA/C201",
+    "REFA/C202",
+    "REFA/C203",
+    "REFA/C204",
+    "REFA/C208"
+   ],
+   "pass": false
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    36.0,
+    36.0
+   ],
+   "stated": [
+    36.0,
+    36.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 3,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "OPERATION & MAINTENANCE ENGINEERING: STEAM PLANT — Certificate of Achievement",
+   "measure": "units",
+   "total_units": {
+    "min": 36,
+    "max": 36
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Identify and describe the function of all major components of a high and low pressure boiler system utilizing technical manuals.",
+    "Perform calculations and measurements necessary in the operations and maintenance field in accordance with industry standards.",
+    "Troubleshoot a high and low pressure boiler system in utilizing appropriate materials and equipment, in accordance with industry safety standards."
+   ],
+   "careers": [
+    "General maintenance and repair workers",
+    "general maintenance worker",
+    "general maintenance industry"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "REQUIRED COURSES",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "OPMAINT 228",
+      "units": 6,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "OPMAINT 229",
+      "units": 6,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "MAJOR ELECTIVES",
+    "rule": "choose_units",
+    "minimum": 24,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "BLDGCTQ 007",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BLDGCTQ 008",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BLDGCTQ 009",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BLDGCTQ 014",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BLDGCTQ 101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BLDGCTQ 102",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CRPNTRY 111A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CRPNTRY 241",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ECONMNT 100",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ECONMT 105",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ECONMT 110",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ECONMT 119",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ECONMT 173",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECONMT 171",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ECONMT 174",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECONMT 181",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ECONMT 182",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PLUMBNG 028",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PLUMBNG 031",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PLUMBNG 145",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "REF A/C 159",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "REF A/C 160",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "REF A/C 161",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "REF A/C 162",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "REF A/C 164",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "REF A/C 165",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "REF A/C 176",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "REF A/C 177",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "REF A/C 187",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "REF A/C 188",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "REF A/C 202",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "REF A/C 203",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "REF A/C 204",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "REF A/C 208",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "REF A/C 199",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "REF A/C 101",
+      "units": 9,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "REF A/C 111",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "REF A/C 123",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "REF A/C 124",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "REF A/C 125",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "REF A/C 133",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "REF A/C 134",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "REF A/C 135",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "REF A/C 201",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "OPMA AP703",
+    "why": "not in the text"
+   },
+   {
+    "code": "OPMA AP704",
+    "why": "not in the text"
+   },
+   {
+    "code": "OPMA AP724",
+    "why": "not in the text"
+   },
+   {
+    "code": "OPMA AP740",
+    "why": "not in the text"
+   },
+   {
+    "code": "OPMA AP744",
+    "why": "not in the text"
+   },
+   {
+    "code": "OPMAAP720",
+    "why": "not in the text"
+   },
+   {
+    "code": "REFAC209",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "The page begins mid-table: 'Engineering: Steam Plant T008474D C 12 24 36' (required 12, electives 24, major units 36) is the tail of a summary table cut off from the previous page.",
+   "The PLOs are printed under the program overview ('Upon completion of the Certificate program'), before the certificate heading; recorded for this award as the only award in the section.",
+   "BLDGCTQ 007/008/009/014 are printed with leading zeros; treated as closed-list BLDGCTQ 7/8/9/14. REF A/C 101 treated as closed-list REFAC101.",
+   "Catalog units differ from the state file for REF A/C 123 (3 vs 1), REF A/C 124 (3 vs 5); REF A/C 101 printed at 9 units.",
+   "Catalog titles differ from the state file for BLDGCTQ 014 ('Carpentry for Solar Installation') and ECONMT 119.",
+   "ECONMNT 100 is printed with subject 'ECONMNT' (likely a typo for ECONMT 100); recorded as printed and as a catalog addition.",
+   "Major electives block 'Select at least 24 units'; no separate block total printed, so stated is null."
+  ]
+ },
+ "extracted_run": "39054673977"
+}

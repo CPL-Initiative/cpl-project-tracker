@@ -1,0 +1,391 @@
+{
+ "college": "College of the Desert",
+ "control_number": "10196",
+ "shape": "degree",
+ "title": "Environmental Horticulture",
+ "award": "A.S. Degree",
+ "source_url": "https://collegeofthedesert.edu/_web-items/documents/pdf-files/catalogs/2026-2027-catalog.pdf#page=96",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 12156,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 12156,
+    "output_tokens": 3018,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 3018,
+  "output_tokens_details": {
+   "thinking_tokens": 1025
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.10898,
+ "ms": 24045,
+ "seconds": 24.6,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 12,
+   "listed": 12,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 13,
+   "codes": [
+    "AGEH24",
+    "AGEH27",
+    "AGEH30",
+    "AGEH34",
+    "AGEH4",
+    "AGEH4L",
+    "AGEH8",
+    "AGEH95A",
+    "AGPS32",
+    "BUMA31",
+    "CIS10",
+    "NR1",
+    "NR1L"
+   ],
+   "flagged": [
+    "AGEH24",
+    "AGEH27",
+    "AGEH30",
+    "AGEH34",
+    "AGEH4",
+    "AGEH4L",
+    "AGEH8",
+    "AGEH95A",
+    "AGPS32",
+    "BUMA31",
+    "CIS10",
+    "NR1",
+    "NR1L"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    61.0,
+    61.0
+   ],
+   "stated": [
+    61.0,
+    61.0
+   ],
+   "against": "degree",
+   "ge": [
+    23.0,
+    23.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 6,
+   "courses": 0,
+   "count": 6,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 5,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Environmental Horticulture AS Degree (heading not printed in the extracted text; section begins 'The Associate of Science in Environmental Horticulture program')",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "COD General Education Pattern",
+   "degree_total": {
+    "min": 61,
+    "max": 61
+   },
+   "ge_units": {
+    "min": 23,
+    "max": 23
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Fulﬁll the requirements for an entry-level position in their ﬁeld.",
+    "Apply critical thinking skills to execute daily duties in their area of employment.",
+    "Apply critical thinking skills to research, evaluate, analyze, and synthesize information.",
+    "Display the skills and aptitude necessary to qualify for certiﬁcation exams in their ﬁeld.",
+    "Exhibit effective written, oral communication and interpersonal skills.",
+    "Transfer to a higher level learning institution."
+   ],
+   "careers": [
+    "landscape management and construction",
+    "pest control",
+    "sales of fertilizer and horticultural supplies",
+    "irrigation equipment supply and sales",
+    "plant material sales"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 33,
+     "max": 33
+    },
+    "courses": [
+     {
+      "code": "AGEH 001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AGEH 001L",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AGEH 004",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "AGEH 004L",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "AGEH 005",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AGEH 008",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "AGEH 027",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "AGEH 009",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AGEH 016",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AGEH 020",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AGEH 030",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "AGEH 046",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AGEH 046L",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AGEH 095A",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "AGBU 059A",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AGBU 059B",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AGPS 001",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Electives",
+    "rule": "choose_units",
+    "minimum": 5,
+    "option_group": null,
+    "stated": {
+     "min": 5,
+     "max": 5
+    },
+    "courses": [
+     {
+      "code": "AGEH 024",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "AGEH 034",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "AGEH 095A",
+      "units": 1,
+      "units_max": 8,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "AGPS 002",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AGPS 032",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BUMA 031",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CIS 010",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "NR 001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "NR 001L",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The section heading for the A.S. degree is not in the extracted text; the page 97 running header 'Environmental Horticulture Certiﬁcate of Achievement' sits above the end of the degree's elective list (CIS 010, NR 001, NR 001L) and its subtotals, which were read as continuing the degree section.",
+   "The page prints Required Subtotal 33, Elective Subtotal 5, COD General Education Pattern 23 and DEGREE TOTAL 61; no single major total is printed, so total_units is null (subtotals recorded as block stated values).",
+   "Catalog codes use zero-padded numbers (AGEH 001, AGPS 001) matched to closed-list codes AGEH 1, AGPS 1, AGEH 5, AGEH 9, AGEH 16, AGEH 20, AGEH 46, AGPS 2 as the same courses.",
+   "'or AGEH 027 Turfgrass & Landscape Pest Management' is printed without units under AGEH 008; recorded as an alternative with null units.",
+   "AGEH 095A is required (2 units) and also listed in electives as '1-2 units in addition to required' with a printed range 1-8; ambiguous range recorded as printed.",
+   "The certificate section that follows uses different required/elective lists and was not used."
+  ]
+ },
+ "extracted_run": "39056007346"
+}

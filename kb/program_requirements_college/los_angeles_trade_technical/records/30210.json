@@ -1,0 +1,205 @@
+{
+ "college": "Los Angeles Trade Technical College",
+ "control_number": "30210",
+ "shape": "certificate",
+ "title": "Weatherization and Energy Auditor",
+ "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+ "source_url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=138",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 9429,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 9429,
+    "output_tokens": 1567,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1567,
+  "output_tokens_details": {
+   "thinking_tokens": 661
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.06906,
+ "ms": 12963,
+ "seconds": 13.5,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 6,
+   "listed": 6,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    14.0,
+    14.0
+   ],
+   "stated": [
+    14.0,
+    14.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 2,
+   "courses": 0,
+   "count": 2,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 7,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "WEATHERIZATION AND ENERGY AUDITOR Certificate of Achievement",
+   "measure": "units",
+   "total_units": {
+    "min": 14,
+    "max": 14
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Perform new and retrofit weatherization and related energy efficiency operations using hand and power tools, testing equipment, and other P.P.E. in accordance to industry standards.",
+    "Evaluate site and remediation strategies through building orientation, erosion, water management."
+   ],
+   "careers": [
+    "weatherization and energy efficiency specialists",
+    "weatherization, energy efficiency, and retrofit technicians",
+    "home improvement retrofit trainees",
+    "residential air sealing technicians",
+    "insulation installers",
+    "energy conservation representatives",
+    "residential energy field auditors"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "REQUIRED COURSES",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ECONMT 100",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BLDGCTQ 007",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BLDGCTQ 008",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BLDGCTQ 009",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BLDGCTQ 012",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BLDGCTQ 014",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Catalog prints BLDGCTQ codes with leading zeros (007, 008, 009, 012, 014); treated as the closed-list courses BLDGCTQ 7, 8, 9, 12, 14.",
+   "Required courses sum to 14 units, matching the printed 'Major Units: 14'.",
+   "Career phrase 'weatherization, energy efficiency, and retrofit technicians' kept as printed in one entry; it may be read as three separate technician titles.",
+   "A table row 'Energy Auditor T030210D C 14 - 14' at the top of page 138 appears to be the program summary row for this certificate (Required Course Units 14, Major Units 14).",
+   "Page 138 notes these programs are Financial Aid Eligible except Weatherization and Energy Efficiency."
+  ]
+ },
+ "extracted_run": "39054673977"
+}

@@ -71,16 +71,17 @@
    "VMD154"
   ],
   "source": {
-   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=300",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=299",
    "title": "CCSF Catalog - 2026/27",
    "h1": "CCSF Catalog - 2026/27",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    299,
     300
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
@@ -88,7 +89,7 @@
    }
   },
   "listed": 19,
-  "text_chars": 2685
+  "text_chars": 5783
  },
  {
   "control_number": "05430",
@@ -525,19 +526,19 @@
    "PHYC4CL"
   ],
   "source": {
-   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=322",
-   "title": "CCSF Catalog - 2026/27",
-   "h1": "CCSF Catalog - 2026/27",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=320",
+   "title": "Electronic Engineering Technology – AS Degree",
+   "h1": "Electronic Engineering Technology – AS Degree",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    320,
+    321,
     322,
-    323,
-    324,
-    325
+    323
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
@@ -545,7 +546,7 @@
    }
   },
   "listed": 16,
-  "text_chars": 9614
+  "text_chars": 11299
  },
  {
   "control_number": "05462",
@@ -1043,16 +1044,17 @@
    "RF98"
   ],
   "source": {
-   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=101",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=100",
    "title": "",
    "h1": "",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    100,
     101
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
@@ -1060,7 +1062,7 @@
    }
   },
   "listed": 17,
-  "text_chars": 2184
+  "text_chars": 5029
  },
  {
   "control_number": "05503",
@@ -1317,16 +1319,17 @@
    "OH97"
   ],
   "source": {
-   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=425",
-   "title": "CCSF Catalog - 2026/27",
-   "h1": "CCSF Catalog - 2026/27",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=424",
+   "title": "Nursery and Garden-Center Operation – AS Degree",
+   "h1": "Nursery and Garden-Center Operation – AS Degree",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    424,
     425
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
@@ -1334,7 +1337,7 @@
    }
   },
   "listed": 12,
-  "text_chars": 1916
+  "text_chars": 3666
  },
  {
   "control_number": "09174",
@@ -1536,16 +1539,17 @@
    "WELD140"
   ],
   "source": {
-   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=422",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=421",
    "title": "CCSF Catalog - 2026/27",
    "h1": "CCSF Catalog - 2026/27",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    421,
     422
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
@@ -1553,7 +1557,7 @@
    }
   },
   "listed": 26,
-  "text_chars": 2070
+  "text_chars": 5574
  },
  {
   "control_number": "09186",
@@ -2283,7 +2287,7 @@
   "award": "A.S. Degree",
   "shape": "degree",
   "method": "pdf_pages",
-  "coverage": 0.842,
+  "coverage": 0.895,
   "codes_found": [
    "BIO130",
    "CAHS100",
@@ -2291,6 +2295,7 @@
    "CAHS208",
    "CAHS222",
    "CAHS30A",
+   "CAHS30B",
    "CAHS32",
    "CAHS33",
    "CAHS34",
@@ -2303,17 +2308,17 @@
    "PSYC26"
   ],
   "source": {
-   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=145",
-   "title": "",
-   "h1": "",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=142",
+   "title": "Food Service Management – AS Degree",
+   "h1": "Food Service Management – AS Degree",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    145,
-    146
+    142,
+    143
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
@@ -2321,7 +2326,7 @@
    }
   },
   "listed": 19,
-  "text_chars": 5842
+  "text_chars": 5003
  },
  {
   "control_number": "12361",
@@ -2445,16 +2450,18 @@
    "CNIT417"
   ],
   "source": {
-   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=312",
-   "title": "CCSF Catalog - 2026/27",
-   "h1": "CCSF Catalog - 2026/27",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=348",
+   "title": "Routing and Switching (Cisco) – Certificate of Achievement",
+   "h1": "Routing and Switching (Cisco) – Certificate of Achievement",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    312
+    348,
+    349,
+    350
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
@@ -2462,7 +2469,7 @@
    }
   },
   "listed": 6,
-  "text_chars": 1658
+  "text_chars": 6190
  },
  {
   "control_number": "12629",
@@ -2738,17 +2745,19 @@
    "SOC1"
   ],
   "source": {
-   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=276",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=274",
    "title": "CCSF Catalog - 2026/27",
    "h1": "CCSF Catalog - 2026/27",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    274,
+    275,
     276,
     277
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
@@ -2756,7 +2765,7 @@
    }
   },
   "listed": 14,
-  "text_chars": 4987
+  "text_chars": 10503
  },
  {
   "control_number": "16916",
@@ -2916,16 +2925,18 @@
    "JAPA4B"
   ],
   "source": {
-   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=111",
-   "title": "",
-   "h1": "",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=178",
+   "title": "Japanese – AA Degree",
+   "h1": "Japanese – AA Degree",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    111
+    178,
+    179,
+    180
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
@@ -2933,7 +2944,7 @@
    }
   },
   "listed": 15,
-  "text_chars": 2835
+  "text_chars": 6531
  },
  {
   "control_number": "16993",
@@ -2972,19 +2983,19 @@
    "SPAN7"
   ],
   "source": {
-   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=184",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=183",
    "title": "",
    "h1": "",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    183,
     184,
     185,
-    186,
-    187
+    186
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
@@ -2992,7 +3003,7 @@
    }
   },
   "listed": 27,
-  "text_chars": 7543
+  "text_chars": 7830
  },
  {
   "control_number": "17043",
@@ -3451,19 +3462,19 @@
    "STATC1000"
   ],
   "source": {
-   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=304",
-   "title": "CCSF Catalog - 2026/27",
-   "h1": "CCSF Catalog - 2026/27",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=303",
+   "title": "Biotechnology – AS Degree",
+   "h1": "Biotechnology – AS Degree",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    303,
     304,
     305,
-    306,
-    307
+    306
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
@@ -3471,7 +3482,7 @@
    }
   },
   "listed": 27,
-  "text_chars": 9441
+  "text_chars": 10238
  },
  {
   "control_number": "17952",
@@ -3831,17 +3842,18 @@
    "POLS18"
   ],
   "source": {
-   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=373",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=372",
    "title": "CCSF Catalog - 2026/27",
    "h1": "CCSF Catalog - 2026/27",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    372,
     373,
     374
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
@@ -3849,7 +3861,7 @@
    }
   },
   "listed": 16,
-  "text_chars": 6318
+  "text_chars": 9053
  },
  {
   "control_number": "19622",
@@ -3898,9 +3910,10 @@
   "award": "A.A. Degree",
   "shape": "degree",
   "method": "pdf_pages",
-  "coverage": 0.909,
+  "coverage": 0.97,
   "codes_found": [
    "AFAM60",
+   "ANTH25",
    "ART108",
    "ASAM35",
    "ECON25",
@@ -3929,19 +3942,21 @@
    "SOC25",
    "WGST10",
    "WGST20",
+   "WGST25",
    "WGST35"
   ],
   "source": {
-   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=398",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=397",
    "title": "CCSF Catalog - 2026/27",
    "h1": "CCSF Catalog - 2026/27",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    397,
     398
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
@@ -3949,7 +3964,7 @@
    }
   },
   "listed": 33,
-  "text_chars": 2282
+  "text_chars": 4784
  },
  {
   "control_number": "19800",
@@ -5485,19 +5500,17 @@
    "CDEV99"
   ],
   "source": {
-   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=196",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=198",
    "title": "",
    "h1": "",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    196,
-    197,
     198,
     199
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
@@ -5505,7 +5518,7 @@
    }
   },
   "listed": 14,
-  "text_chars": 10680
+  "text_chars": 5331
  },
  {
   "control_number": "30419",
@@ -5575,12 +5588,15 @@
   "award": "A.S. Degree",
   "shape": "degree",
   "method": "pdf_pages",
-  "coverage": 0.725,
+  "coverage": 0.975,
   "codes_found": [
    "BIO108",
+   "BIO11",
    "BIO111",
    "BIO120",
    "BIO134",
+   "BIO9",
+   "ECON5",
    "HLTH10",
    "HLTH102",
    "HLTH103",
@@ -5589,9 +5605,13 @@
    "HLTH177",
    "HLTH221",
    "HLTH231",
+   "HLTH25",
+   "HLTH27",
    "HLTH30",
    "HLTH38",
    "HLTH48",
+   "HLTH53",
+   "HLTH54",
    "HLTH56",
    "HLTH64",
    "HLTH65",
@@ -5605,21 +5625,25 @@
    "HLTH95",
    "HLTH97",
    "IDST17",
-   "PSYC21"
+   "LALS5",
+   "PSYC21",
+   "PSYC5",
+   "STATC1000"
   ],
   "source": {
-   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=236",
-   "title": "CCSF Catalog - 2026/27",
-   "h1": "CCSF Catalog - 2026/27",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=235",
+   "title": "The Associate of Science Degree in Community and Public Health prepares students to address the health needs",
+   "h1": "The Associate of Science Degree in Community and Public Health prepares students to address the health needs",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    235,
     236,
     237,
     238
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
@@ -5627,7 +5651,7 @@
    }
   },
   "listed": 40,
-  "text_chars": 8643
+  "text_chars": 11697
  },
  {
   "control_number": "30517",
@@ -5750,17 +5774,18 @@
    "STATC1000"
   ],
   "source": {
-   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=385",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=384",
    "title": "CCSF Catalog - 2026/27",
    "h1": "CCSF Catalog - 2026/27",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    384,
     385,
     386
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
@@ -5768,7 +5793,7 @@
    }
   },
   "listed": 24,
-  "text_chars": 5380
+  "text_chars": 8492
  },
  {
   "control_number": "30687",
@@ -5824,17 +5849,18 @@
    "WGST54"
   ],
   "source": {
-   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=293",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=292",
    "title": "CCSF Catalog - 2026/27",
    "h1": "CCSF Catalog - 2026/27",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    292,
     293,
     294
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
@@ -5842,7 +5868,7 @@
    }
   },
   "listed": 13,
-  "text_chars": 6277
+  "text_chars": 9219
  },
  {
   "control_number": "30871",
@@ -6025,17 +6051,18 @@
    "AUTO68"
   ],
   "source": {
-   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=401",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=400",
    "title": "CCSF Catalog - 2026/27",
    "h1": "CCSF Catalog - 2026/27",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    400,
     401,
     402
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
@@ -6043,7 +6070,7 @@
    }
   },
   "listed": 10,
-  "text_chars": 4703
+  "text_chars": 7524
  },
  {
   "control_number": "31405",
@@ -6266,18 +6293,24 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "pdf_pages",
-  "coverage": 0.75,
+  "coverage": 1.0,
   "codes_found": [
    "AFAM30",
+   "ANTH1",
    "ANTH11",
    "ANTH12",
    "ANTH1L",
+   "ANTH2",
    "ANTH20",
    "ANTH25",
+   "ANTH3",
+   "ANTH3C",
+   "ANTH4",
    "ANTH50",
    "ANTH8",
    "ASAM42",
    "ECON5",
+   "GEOG4",
    "GEOL10",
    "GEOL10L",
    "HUM7",
@@ -6288,17 +6321,18 @@
    "STATC1000"
   ],
   "source": {
-   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=354",
-   "title": "CCSF Catalog - 2026/27",
-   "h1": "CCSF Catalog - 2026/27",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=353",
+   "title": "Anthropology – AA-T Degree",
+   "h1": "Anthropology – AA-T Degree",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    353,
     354,
     355
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
@@ -6306,7 +6340,7 @@
    }
   },
   "listed": 24,
-  "text_chars": 5367
+  "text_chars": 7218
  },
  {
   "control_number": "31727",
@@ -6729,16 +6763,17 @@
    "VMD200A"
   ],
   "source": {
-   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=68",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=67",
    "title": "",
    "h1": "",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    67,
     68
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
@@ -6746,7 +6781,7 @@
    }
   },
   "listed": 10,
-  "text_chars": 2286
+  "text_chars": 4990
  },
  {
   "control_number": "32838",
@@ -6931,19 +6966,19 @@
    "SPAN7"
   ],
   "source": {
-   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=184",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=183",
    "title": "",
    "h1": "",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    183,
     184,
     185,
-    186,
-    187
+    186
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
@@ -6951,7 +6986,7 @@
    }
   },
   "listed": 38,
-  "text_chars": 7543
+  "text_chars": 7830
  },
  {
   "control_number": "33298",
@@ -6984,16 +7019,17 @@
    "CINE60"
   ],
   "source": {
-   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=99",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=98",
    "title": "",
    "h1": "",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    98,
     99
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
@@ -7001,7 +7037,7 @@
    }
   },
   "listed": 21,
-  "text_chars": 2410
+  "text_chars": 5216
  },
  {
   "control_number": "33299",
@@ -7204,17 +7240,18 @@
    "GEOL10"
   ],
   "source": {
-   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=332",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=331",
    "title": "CCSF Catalog - 2026/27",
    "h1": "CCSF Catalog - 2026/27",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    331,
     332,
     333
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
@@ -7222,7 +7259,7 @@
    }
   },
   "listed": 12,
-  "text_chars": 5315
+  "text_chars": 8519
  },
  {
   "control_number": "35455",
@@ -7230,17 +7267,22 @@
   "award": "A.S. Degree",
   "shape": "degree",
   "method": "pdf_pages",
-  "coverage": 0.829,
+  "coverage": 0.951,
   "codes_found": [
    "ANTH3",
    "ANTH3C",
    "BIO100A",
    "BIO100B",
+   "BIO11",
+   "BIO19",
+   "BIO20",
    "BIO33",
    "ECON5",
    "ENRG3",
    "ENRG3L",
+   "ENVS31",
    "ENVS31L",
+   "GEOG1",
    "GEOG110",
    "GEOG1L",
    "GEOG4",
@@ -7268,17 +7310,19 @@
    "STATC1000"
   ],
   "source": {
-   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=326",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=324",
    "title": "CCSF Catalog - 2026/27",
    "h1": "CCSF Catalog - 2026/27",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    324,
+    325,
     326,
     327
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
@@ -7286,7 +7330,7 @@
    }
   },
   "listed": 41,
-  "text_chars": 4743
+  "text_chars": 9330
  },
  {
   "control_number": "35545",
@@ -7332,12 +7376,15 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "pdf_pages",
-  "coverage": 0.556,
+  "coverage": 0.981,
   "codes_found": [
+   "AFAM30",
+   "AFAM40",
    "AFAM42",
    "AFAM60",
    "ANTH12",
    "ANTH3C",
+   "ASAM10",
    "ASAM20",
    "ASAM22",
    "ASAM27",
@@ -7345,40 +7392,60 @@
    "ASAM35",
    "ASAM40",
    "ASAM42",
+   "ASAM6",
    "CDEV53",
    "CDEV67",
    "ECON30",
    "ETHN37",
    "HIST12B",
+   "HIST18A",
+   "HIST18B",
+   "HIST20",
+   "HIST21",
+   "HIST41A",
+   "HIST41B",
+   "HIST9",
+   "IDST14",
+   "IDST27B",
+   "IDST30",
    "IDST31",
+   "IDST36",
    "IDST37",
    "IDST45",
+   "IDST46",
    "LALS1",
    "LALS10",
+   "LALS11",
+   "LALS13",
+   "LALS14",
    "LALS5",
    "LBCS70A",
    "LBCS70B",
+   "LGBT11",
+   "LGBT20",
    "LGBT5",
    "LGBT50",
+   "LGBT55",
    "POLS12",
+   "POLS45",
    "PSYC23",
    "SOC7",
    "WGST25"
   ],
   "source": {
-   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=389",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=386",
    "title": "CCSF Catalog - 2026/27",
    "h1": "CCSF Catalog - 2026/27",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    389,
-    390,
-    391,
-    392
+    386,
+    387,
+    388,
+    389
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
@@ -7386,7 +7453,7 @@
    }
   },
   "listed": 54,
-  "text_chars": 12240
+  "text_chars": 11460
  },
  {
   "control_number": "35708",
@@ -7510,16 +7577,17 @@
    "CINE61"
   ],
   "source": {
-   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=73",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=72",
    "title": "",
    "h1": "",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    72,
     73
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
@@ -7527,7 +7595,7 @@
    }
   },
   "listed": 11,
-  "text_chars": 2396
+  "text_chars": 5226
  },
  {
   "control_number": "35713",
@@ -7755,19 +7823,19 @@
    "WGST54"
   ],
   "source": {
-   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=390",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=389",
    "title": "CCSF Catalog - 2026/27",
    "h1": "CCSF Catalog - 2026/27",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    389,
     390,
     391,
-    392,
-    393
+    392
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
@@ -7775,7 +7843,7 @@
    }
   },
   "listed": 25,
-  "text_chars": 11308
+  "text_chars": 12240
  },
  {
   "control_number": "36368",
@@ -8665,19 +8733,19 @@
    "STATC1000"
   ],
   "source": {
-   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=324",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=322",
    "title": "CCSF Catalog - 2026/27",
    "h1": "CCSF Catalog - 2026/27",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    322,
+    323,
     324,
-    325,
-    326,
-    327
+    325
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
@@ -8685,7 +8753,7 @@
    }
   },
   "listed": 29,
-  "text_chars": 9330
+  "text_chars": 9614
  },
  {
   "control_number": "37038",
@@ -9067,51 +9135,43 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "pdf_pages",
-  "coverage": 0.737,
+  "coverage": 0.553,
   "codes_found": [
    "AFAM60",
    "ANTH20",
    "ANTH25",
-   "ASAM35",
    "ECON20",
    "ETHN37",
+   "HIST12B",
    "HIST45",
-   "HLTH221",
    "IDST17",
-   "IDST36",
-   "LALS10",
+   "IDST37",
    "LGBT10",
    "LGBT11",
    "LGBT15",
    "LGBT18",
    "LGBT20",
-   "LGBT21",
-   "LGBT24",
    "LGBT5",
    "LGBT50",
    "LGBT55",
    "LGBT75",
-   "PSYC25",
+   "POLS19",
    "SOC25",
-   "WGST10",
-   "WGST25",
-   "WGST35",
-   "WGST54"
+   "WGST25"
   ],
   "source": {
-   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=375",
-   "title": "CCSF Catalog - 2026/27",
-   "h1": "CCSF Catalog - 2026/27",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=391",
+   "title": "Social Justice Studies: General, Labor and Community Studies – AA-T",
+   "h1": "Social Justice Studies: General, Labor and Community Studies – AA-T",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    375,
-    376,
-    377,
-    378
+    391,
+    392,
+    393
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
@@ -9119,7 +9179,7 @@
    }
   },
   "listed": 38,
-  "text_chars": 10687
+  "text_chars": 8693
  },
  {
   "control_number": "37560",
@@ -9305,16 +9365,17 @@
    "MATH90S"
   ],
   "source": {
-   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=330",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=329",
    "title": "CCSF Catalog - 2026/27",
    "h1": "CCSF Catalog - 2026/27",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    329,
     330
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
@@ -9322,7 +9383,7 @@
    }
   },
   "listed": 11,
-  "text_chars": 2179
+  "text_chars": 4499
  },
  {
   "control_number": "37607",
@@ -9950,17 +10011,19 @@
    "WGST10"
   ],
   "source": {
-   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=98",
-   "title": "",
-   "h1": "",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=96",
+   "title": "Film Studies – AA Degree",
+   "h1": "Film Studies – AA Degree",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    96,
+    97,
     98,
     99
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
@@ -9968,7 +10031,7 @@
    }
   },
   "listed": 19,
-  "text_chars": 5216
+  "text_chars": 9452
  },
  {
   "control_number": "37993",
@@ -10042,17 +10105,18 @@
    "CNST118B"
   ],
   "source": {
-   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=409",
-   "title": "CCSF Catalog - 2026/27",
-   "h1": "CCSF Catalog - 2026/27",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=408",
+   "title": "Construction – AS Degree",
+   "h1": "Construction – AS Degree",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    408,
     409,
     410
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
@@ -10060,7 +10124,7 @@
    }
   },
   "listed": 11,
-  "text_chars": 4914
+  "text_chars": 6512
  },
  {
   "control_number": "38225",
@@ -11267,7 +11331,7 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "pdf_pages",
-  "coverage": 0.73,
+  "coverage": 0.754,
   "codes_found": [
    "BIO108",
    "BIO111",
@@ -11298,6 +11362,8 @@
    "DANC34A",
    "DANC37",
    "ECON5",
+   "EMT14",
+   "HLTH53",
    "LALS5",
    "PE174A",
    "PE200B",
@@ -11347,6 +11413,7 @@
    "PE258A",
    "PE258B",
    "PE258C",
+   "PE26",
    "PE260A",
    "PE260B",
    "PE271A",
@@ -11363,19 +11430,19 @@
    "STATC1000"
   ],
   "source": {
-   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=261",
-   "title": "CCSF Catalog - 2026/27",
-   "h1": "CCSF Catalog - 2026/27",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=260",
+   "title": "Kinesiology – AA-T Degree",
+   "h1": "Kinesiology – AA-T Degree",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    260,
     261,
     262,
-    263,
-    264
+    263
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
@@ -11383,7 +11450,7 @@
    }
   },
   "listed": 126,
-  "text_chars": 9326
+  "text_chars": 8733
  },
  {
   "control_number": "39647",
@@ -11539,16 +11606,17 @@
    "JAPA4B"
   ],
   "source": {
-   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=111",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=179",
    "title": "",
    "h1": "",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    111
+    179,
+    180
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
@@ -11556,7 +11624,7 @@
    }
   },
   "listed": 19,
-  "text_chars": 2835
+  "text_chars": 4068
  },
  {
   "control_number": "39762",
@@ -11795,19 +11863,19 @@
    "STATC1000"
   ],
   "source": {
-   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=394",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=393",
    "title": "CCSF Catalog - 2026/27",
    "h1": "CCSF Catalog - 2026/27",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    393,
     394,
     395,
-    396,
-    397
+    396
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
@@ -11815,7 +11883,7 @@
    }
   },
   "listed": 28,
-  "text_chars": 10148
+  "text_chars": 10018
  },
  {
   "control_number": "40151",
@@ -11914,16 +11982,17 @@
    "CNIT40"
   ],
   "source": {
-   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=344",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=343",
    "title": "CCSF Catalog - 2026/27",
    "h1": "CCSF Catalog - 2026/27",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    343,
     344
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
@@ -11931,7 +12000,7 @@
    }
   },
   "listed": 7,
-  "text_chars": 2405
+  "text_chars": 4770
  },
  {
   "control_number": "40168",
@@ -13242,7 +13311,7 @@
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
   "method": "pdf_pages",
-  "coverage": 0.842,
+  "coverage": 1.0,
   "codes_found": [
    "BIO106",
    "BIO108",
@@ -13257,21 +13326,25 @@
    "HLTH91M",
    "PE217A",
    "PE217B",
+   "PE218",
+   "PE219B",
+   "PE219C",
    "PE220",
    "PE222",
    "PE223A"
   ],
   "source": {
-   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=296",
-   "title": "CCSF Catalog - 2026/27",
-   "h1": "CCSF Catalog - 2026/27",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=295",
+   "title": "Yoga – Certificate of Achievement",
+   "h1": "Yoga – Certificate of Achievement",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    295,
     296
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
@@ -13279,7 +13352,7 @@
    }
   },
   "listed": 19,
-  "text_chars": 2414
+  "text_chars": 3884
  },
  {
   "control_number": "40876",
@@ -13430,17 +13503,18 @@
    "PIL2"
   ],
   "source": {
-   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=381",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=380",
    "title": "CCSF Catalog - 2026/27",
    "h1": "CCSF Catalog - 2026/27",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    380,
     381,
     382
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
@@ -13448,7 +13522,7 @@
    }
   },
   "listed": 9,
-  "text_chars": 5533
+  "text_chars": 8595
  },
  {
   "control_number": "41049",
@@ -13845,16 +13919,17 @@
    "ESLN6705"
   ],
   "source": {
-   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=170",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=169",
    "title": "",
    "h1": "",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    169,
     170
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
@@ -13862,7 +13937,7 @@
    }
   },
   "listed": 9,
-  "text_chars": 2491
+  "text_chars": 4769
  },
  {
   "control_number": "41637",
@@ -14031,17 +14106,18 @@
    "STATC1000"
   ],
   "source": {
-   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=319",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=318",
    "title": "CCSF Catalog - 2026/27",
    "h1": "CCSF Catalog - 2026/27",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    318,
     319,
     320
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
@@ -14049,7 +14125,7 @@
    }
   },
   "listed": 13,
-  "text_chars": 5612
+  "text_chars": 7895
  },
  {
   "control_number": "42318",
@@ -14201,18 +14277,19 @@
    "WGST20"
   ],
   "source": {
-   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=78",
-   "title": "",
-   "h1": "",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=77",
+   "title": "The Associate of Arts Degree in Creative Writing offers a wide variety of creative writing, humanities, and arts",
+   "h1": "The Associate of Arts Degree in Creative Writing offers a wide variety of creative writing, humanities, and arts",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    77,
     78,
     79,
     80
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
@@ -14220,7 +14297,7 @@
    }
   },
   "listed": 41,
-  "text_chars": 7160
+  "text_chars": 10199
  },
  {
   "control_number": "42908",
@@ -14922,17 +14999,18 @@
    "PHYC4BL"
   ],
   "source": {
-   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=309",
-   "title": "CCSF Catalog - 2026/27",
-   "h1": "CCSF Catalog - 2026/27",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=308",
+   "title": "Chemistry – AS Degree",
+   "h1": "Chemistry – AS Degree",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    308,
     309,
     310
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
@@ -14940,7 +15018,7 @@
    }
   },
   "listed": 11,
-  "text_chars": 5526
+  "text_chars": 8652
  },
  {
   "control_number": "45951",
@@ -15001,25 +15079,24 @@
   "award": "A.S. T Degree",
   "shape": "adt",
   "method": "pdf_pages",
-  "coverage": 0.727,
+  "coverage": 0.636,
   "codes_found": [
-   "CS110B",
-   "CS111B",
    "MATH110A",
    "MATH110B",
    "MATH110C",
    "MATH120",
    "MATH125",
-   "MATH130"
+   "MATH130",
+   "PHYC4A"
   ],
   "source": {
-   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=734",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=208",
    "title": "CCSF Catalog - 2026/27",
    "h1": "CCSF Catalog - 2026/27",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    734
+    208
    ],
    "extractor": "pypdf",
    "heading_named": false,
@@ -15030,7 +15107,7 @@
    }
   },
   "listed": 11,
-  "text_chars": 2852
+  "text_chars": 2230
  },
  {
   "control_number": "46308",
@@ -15263,10 +15340,14 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "pdf_pages",
-  "coverage": 0.625,
+  "coverage": 0.958,
   "codes_found": [
    "ANTH20",
+   "ANTH25",
+   "ASAM30",
    "ECON20",
+   "ETHN37",
+   "HIST12B",
    "HIST45",
    "IDST17",
    "LGBT10",
@@ -15279,19 +15360,24 @@
    "LGBT50",
    "LGBT55",
    "LGBT70",
-   "LGBT75"
+   "LGBT75",
+   "PHST50",
+   "POLS19",
+   "SOC7",
+   "WGST25"
   ],
   "source": {
-   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=375",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=392",
    "title": "CCSF Catalog - 2026/27",
    "h1": "CCSF Catalog - 2026/27",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    375
+    392,
+    393
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
@@ -15299,7 +15385,7 @@
    }
   },
   "listed": 24,
-  "text_chars": 2469
+  "text_chars": 5642
  },
  {
   "control_number": "46326",

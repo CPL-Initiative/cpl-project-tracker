@@ -4,12 +4,12 @@
  "shape": "degree",
  "title": "Architecture",
  "award": "A.S. Degree",
- "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=300",
+ "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=299",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 7185,
+  "input_tokens": 8293,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 7185,
-    "output_tokens": 1877,
+    "input_tokens": 8293,
+    "output_tokens": 2218,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 1877,
+  "output_tokens": 2218,
   "output_tokens_details": {
-   "thinking_tokens": 441
+   "thinking_tokens": 561
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.06628,
- "ms": 14673,
- "seconds": 15.3,
+ "cost_usd": 0.07753,
+ "ms": 16755,
+ "seconds": 17.2,
  "parts": null,
  "error": null,
  "score": {
@@ -79,17 +79,17 @@
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 5,
    "courses": 0,
-   "count": 0,
+   "count": 5,
    "not_verbatim": [],
    "why": [],
-   "heading_printed": false,
+   "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
   },
   "careers": {
-   "count": 0,
+   "count": 6,
    "not_verbatim": [],
    "pass": true
   },
@@ -103,7 +103,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "Required Courses",
+   "section_heading": "Architecture – AS Degree",
    "measure": "units",
    "total_units": {
     "min": 25,
@@ -124,12 +124,25 @@
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [],
-   "careers": []
+   "outcomes": [
+    "Develop architectural graphics using digital and analog tools that communicate design intentions and document construction requirements.",
+    "Create architectural solutions to a set of project requirements.",
+    "Compare exemplary historical examples of architecture as impacted by social, political, economic, and/or environmental factors.",
+    "Explain the duties and responsibilities of stakeholders within the legal and regulatory environments.",
+    "Identify building and material systems that are responsive to the major requirements of a project."
+   ],
+   "careers": [
+    "architecture",
+    "construction",
+    "architectural technician",
+    "construction detailer",
+    "building materials salesperson",
+    "manufacturer's representative"
+   ]
   },
   "blocks": [
    {
-    "name": "Required Units",
+    "name": "Required Courses",
     "rule": "all",
     "minimum": null,
     "option_group": null,
@@ -325,11 +338,11 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The text begins mid-section on page 300; the Architecture A.S. program heading, description, outcomes and any careers appear on the previous page, which is not in the text. section_heading uses the 'Required Courses' heading printed here.",
-   "The PDF layout separates course rows from their unit values in the 'Choose two' and later lists; units were assigned by position (all 3.0) and block totals (6.0, 3.0, 3.0) match the printed 'Units' lines.",
-   "Block totals sum to the printed Total: 25.0 (10+3+6+3+3).",
-   "The section that follows (Biological Science (Emphasis Health Science) – AS Degree) belongs to another program and was not read."
+   "The table at the top of page 299 (Required Units 6.0, Choose 12 units, Total 18.0) belongs to the preceding program (likely an Architecture certificate) and was not used.",
+   "The PDF extraction scattered the unit column for the last three choice lists; units were matched to courses in printed order (each 3.0). Block subtotals 10+3+6+3+3 match the printed Total: 25.0.",
+   "In the last 'Choose one course' list, VMD 154 and ARCH 160 were printed on separate lines after INTD 100 with no break; both were read as members of that same list. A reviewer may confirm ARCH 160 is not a separate requirement (the 25.0 total supports one list).",
+   "The page refers to general education requirements but names no specific GE pattern and prints no degree total."
   ]
  },
- "extracted_run": "39047128472"
+ "extracted_run": "39056434592"
 }

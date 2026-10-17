@@ -1,0 +1,511 @@
+{
+ "college": "Los Angeles Mission College",
+ "control_number": "08345",
+ "shape": "degree",
+ "title": "Engineering",
+ "award": "A.S. Degree",
+ "source_url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=73",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 10387,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 10387,
+    "output_tokens": 4075,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 4075,
+  "output_tokens_details": {
+   "thinking_tokens": 1289
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.12305,
+ "ms": 32290,
+ "seconds": 32.9,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 13,
+   "listed": 14,
+   "share": 0.929,
+   "missing": [
+    "CHEM101"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 9,
+   "codes": [
+    "CS116",
+    "CS119",
+    "CS213",
+    "CS216",
+    "ENGSUP121",
+    "MATH261",
+    "MATH261S",
+    "MATH262",
+    "MATH263"
+   ],
+   "flagged": [
+    "CS116",
+    "CS119",
+    "CS213",
+    "CS216",
+    "ENGSUP121",
+    "MATH261",
+    "MATH261S",
+    "MATH262",
+    "MATH263"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    33.0,
+    43.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 2,
+   "courses": 0,
+   "count": 2,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "ASSOCIATE OF SCIENCE (AS) Engineering (M008345C)",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Identify engineering fields of interest and develop a plan that will lead to career success in an engineering field.",
+    "Apply critical thinking to solve engineering problems."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "REQUIRED CORE",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 30,
+     "max": 30
+    },
+    "courses": [
+     {
+      "code": "ENG GEN 101",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 261",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MATH 261S",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "MATH 262",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MATH 263",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MATH 275",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYSICS 037",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYSICS 038",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "REQUIRED CIVIL TRACK CORE",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Track",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "EGD TEK 101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENG GEN 122",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENG GEN 131",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENG GEN 151",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "REQUIRED CIVIL TRACK CORE - Select one (1) Elective",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": "Track",
+    "stated": {
+     "min": 3,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "ENG GEN 220",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENG SUP 121",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "REQUIRED COMPUTER SOFTWARE TRACK CORE",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Track",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CS 113",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CS 116",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "CS 213",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CS 216",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "ENG GEN 220",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "REQUIRED COMPUTER SOFTWARE TRACK CORE - Select one (1) Elective",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": "Track",
+    "stated": {
+     "min": 3,
+     "max": 5
+    },
+    "courses": [
+     {
+      "code": "CS 136",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 272",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "REQUIRED ELECTRICAL TRACK CORE",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Track",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CS 116",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CS 119",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ENG GEN 220",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "REQUIRED ELECTRICAL TRACK CORE - Select one (1) Elective",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": "Track",
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "EGD TEK 101",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENG GEN 131",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENG GEN 151",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "MECHANICAL, AEROSPACE, MANUFACTURING TRACK CORE",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Track",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "EGD TEK 101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENG GEN 131",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENG GEN 151",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENG GEN 220",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "MECHANICAL, AEROSPACE, MANUFACTURING TRACK CORE - Select one (1) Elective",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": "Track",
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "EGD TEK 121",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENG GEN 122",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "CHEM 101",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "The student completes the Required Core plus one of four tracks. Each track consists of two blocks (its required track core and its 'Select one (1) Elective' block); all eight track blocks share option_group 'Track', but a track is chosen as a pair of blocks (Civil, Computer Software, Electrical, or Mechanical/Aerospace/Manufacturing), not as a single block.",
+   "The catalog prints cumulative totals per track that include the 30-unit core: Civil 45-46, Computer Software 43-45, Electrical 43, Mechanical/Aerospace/Manufacturing 46. No single program total is printed, so total_units is left null; track blocks' stated is null because the printed totals are cumulative, not block totals.",
+   "Elective courses within the 'Select one (1) Elective' lists print no units beside individual courses; only the list total (3-4, 3-5, 3, 3) is printed.",
+   "PHYSICS 037 and PHYSICS 038 are printed with a leading zero; treated as closed-list PHYSICS 37 and PHYSICS 38. PHYSICS 038's title is misprinted as 'Physics for Engineers and Scientists I'.",
+   "EGD TEK 101 is titled 'Engineering Graphics with CAD' in the catalog vs. 'Engineering Graphics' in the closed list.",
+   "Alternatives CS 116, CS 216, and MATH 261S print no units beside them.",
+   "The 60-unit associate degree note is a generic statement, not recorded as degree_total. No GE pattern is named in the section.",
+   "No careers are named for this program; tracks (Civil, Computer Software, Electrical, Mechanical/Aerospace/Manufacturing Engineering) are recorded as study tracks, not careers."
+  ]
+ },
+ "extracted_run": "39054675770"
+}

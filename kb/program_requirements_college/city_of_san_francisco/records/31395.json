@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "Automotive Hybrid and EV Technology",
  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
- "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=401",
+ "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=400",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 7930,
+  "input_tokens": 9058,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 7930,
-    "output_tokens": 1406,
+    "input_tokens": 9058,
+    "output_tokens": 1416,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 1406,
+  "output_tokens": 1416,
   "output_tokens_details": {
-   "thinking_tokens": 355
+   "thinking_tokens": 353
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.05984,
- "ms": 11682,
- "seconds": 12.2,
+ "cost_usd": 0.06455,
+ "ms": 11269,
+ "seconds": 11.6,
  "parts": null,
  "error": null,
  "score": {
@@ -83,13 +83,13 @@
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 5,
    "courses": 0,
-   "count": 0,
+   "count": 5,
    "not_verbatim": [],
    "why": [],
    "heading_printed": true,
-   "heading_without_outcomes": true,
+   "heading_without_outcomes": false,
    "pass": true
   },
   "careers": {
@@ -104,7 +104,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "Program Requirements and Completion Time",
+   "section_heading": "Automotive Hybrid and EV Technology – Certificate of Achievement",
    "measure": "units",
    "total_units": {
     "min": 16,
@@ -125,7 +125,13 @@
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [],
+   "outcomes": [
+    "Distinguish and classify automotive systems, functions, and their interrelation.",
+    "Demonstrate safe shop practices and operate diagnostic equipment.",
+    "Describe the function of vehicle electrical, hybrid, and battery systems and components.",
+    "Analyze and repair existing and emerging hybrid and electric vehicles.",
+    "Evaluate innovative fuel saving vehicle systems."
+   ],
    "careers": []
   },
   "blocks": [
@@ -234,12 +240,11 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The text begins mid-section on page 401; the award's own heading (Automotive Hybrid and EV Technology – Certificate of Achievement), program summary and any learning outcomes appear to be on the preceding page, which is not in the text. The section was identified as this award because AUTO 56 (Hybrid and EV) is required and the course list matches the closed list; section_heading records the first heading visible. A reviewer should confirm against page 400.",
-   "No learning outcomes or careers are printed in the visible portion of this award's section; the outcomes on pages 401-402 belong to the Automotive Technician AS degree and certificate and were not recorded.",
-   "The closed list writes AUTO51 without a space; the catalog prints AUTO 51 and it was treated as the same closed-list course.",
-   "AUTO 58 (Automotive Heating and Air-Conditioning, 3.0) is not in the closed list and is recorded as a catalog addition.",
-   "The elective block reads 'Choose 9 or more units'; minimum recorded as 9."
+   "The closed list stores AUTO 51 as 'AUTO51' with no units; the catalog prints 'AUTO 51 Automotive Electrical 3.0', treated as the same course.",
+   "AUTO 58 (Automotive Heating and Air-Conditioning) is in the catalog's elective list but not in the closed list; recorded as a catalog addition.",
+   "The section spans pages 400-401; outcomes are on page 400 and the requirements table on page 401.",
+   "The program summary mentions 'entry-level employment in the maintenance and repair of hybrid and electric vehicles' but names no specific career or job title, so careers is left empty."
   ]
  },
- "extracted_run": "39047128472"
+ "extracted_run": "39056434592"
 }

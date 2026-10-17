@@ -1,0 +1,192 @@
+{
+ "college": "Grossmont College",
+ "control_number": "45434",
+ "shape": "certificate",
+ "title": "Medical Office Assistant",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/business/medical-office-assistant-cert-achievement/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6841,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6841,
+    "output_tokens": 711,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 711,
+  "output_tokens_details": {
+   "thinking_tokens": 120
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.04158,
+ "ms": 5717,
+ "seconds": 6.1,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 3,
+   "listed": 3,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "BOT170"
+   ],
+   "flagged": [
+    "BOT170"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    17.5,
+    17.5
+   ],
+   "stated": [
+    17.5,
+    17.5
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 2,
+   "courses": 0,
+   "count": 2,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 7,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Medical Office Assistant Certificate of Achievement",
+   "measure": "units",
+   "total_units": {
+    "min": 17.5,
+    "max": 17.5
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Demonstrate knowledge, skills, and abilities to perform basic office tasks in medical offices using medical terminology, coding, and billing.",
+    "Demonstrate ethical and professional behavior in the workplace."
+   ],
+   "careers": [
+    "medical office receptionists",
+    "assistants",
+    "medical clerical workers",
+    "hospital admitting clerks",
+    "medical insurance billers",
+    "medical insurance coders",
+    "insurance claims processors"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Certificate of Achievement Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 17.5,
+     "max": 17.5
+    },
+    "courses": [
+     {
+      "code": "BOT-161",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BOT-165",
+      "units": 4.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BOT-167",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BOT-170",
+      "units": 6,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "BOT-170 Medical Office Procedures (6 units) is required by the catalog but is not in the closed list; recorded as a catalog addition.",
+   "The printed total of 17.5 units is recorded as both the certificate total and the block's stated total."
+  ]
+ },
+ "extracted_run": "39061728041"
+}

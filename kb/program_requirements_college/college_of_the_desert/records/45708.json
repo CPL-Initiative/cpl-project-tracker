@@ -1,0 +1,428 @@
+{
+ "college": "College of the Desert",
+ "control_number": "45708",
+ "shape": "degree",
+ "title": "Hospitality Management",
+ "award": "A.S. Degree",
+ "source_url": "https://collegeofthedesert.edu/_web-items/documents/pdf-files/catalogs/2026-2027-catalog.pdf#page=146",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 12555,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 12555,
+    "output_tokens": 3642,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 3642,
+  "output_tokens_details": {
+   "thinking_tokens": 1402
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.12306,
+ "ms": 29828,
+ "seconds": 30.4,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 21,
+   "listed": 29,
+   "share": 0.724,
+   "missing": [
+    "BUHM14",
+    "BUHM24",
+    "BUHM31",
+    "BUHM47",
+    "BUHM50",
+    "BUHM51",
+    "BUHM54",
+    "BUHM55"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 3,
+   "codes": [
+    "COMMC1000",
+    "ENGLC1000",
+    "ENGLC1000E"
+   ],
+   "flagged": [
+    "COMMC1000",
+    "ENGLC1000",
+    "ENGLC1000E"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    13.0,
+    18.0
+   ],
+   "stated": [
+    29.0,
+    29.0
+   ],
+   "against": "program",
+   "why": [
+    "the blocks sum to 13.0-18.0; the catalog states 29.0-29.0"
+   ],
+   "degree": {
+    "pass": false,
+    "status": "unequal",
+    "computed": [
+     44.0,
+     54.0
+    ],
+    "stated": [
+     60.0,
+     65.0
+    ],
+    "against": "degree",
+    "ge": [
+     23.0,
+     23.0
+    ],
+    "why": [
+     "the blocks and general education sum to 44.0-54.0; the catalog prints 60.0-65.0 for the degree"
+    ]
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": true,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Hospitality Management AS Degree (employment preparation): heading not in the text; only the tail of this section appears at the top of page 146",
+   "measure": "units",
+   "total_units": {
+    "min": 29,
+    "max": 29
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": 8,
+    "max": 13
+   },
+   "ge_pattern": "COD General Education Pattern",
+   "degree_total": {
+    "min": 60,
+    "max": 65
+   },
+   "ge_units": {
+    "min": 23,
+    "max": 23
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required Courses (heading and earlier rows cut off before page 146)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "BUHM 095A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CART 060",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "General Business Management Courses",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 5
+    },
+    "courses": [
+     {
+      "code": "BUHM 011",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUMA 032",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUMA 094",
+      "units": 3,
+      "units_max": 5,
+      "alternatives": [
+       {
+        "code": "COMM C1000",
+        "units": null,
+        "catalog_addition": true
+       },
+       {
+        "code": "ENGL C1000",
+        "units": null,
+        "catalog_addition": true
+       },
+       {
+        "code": "ENGL C1000E",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Office Technology Courses",
+    "rule": "choose_units",
+    "minimum": 2,
+    "option_group": null,
+    "stated": {
+     "min": 2,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "AIS 002A",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AIS 003A",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AIS 004A",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AIS 007A",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AIS 012",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Employability Soft Skills",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 5
+    },
+    "courses": [
+     {
+      "code": "EMP 010",
+      "units": 0.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "EMP 011",
+      "units": 0.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "EMP 012",
+      "units": 0.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "EMP 013",
+      "units": 0.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "EMP 014",
+      "units": 0.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "EMP 015",
+      "units": 0.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "EMP 016",
+      "units": 0.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "EMP 017",
+      "units": 0.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "EMP 018",
+      "units": 0.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "EMP 019",
+      "units": 0.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPAN 001",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "BUHM 11",
+    "why": "placed as BUHM 011"
+   },
+   {
+    "code": "BUHM 14",
+    "why": "not in the visible part of this award's section (likely on cut-off page 145); appears only in the certificate"
+   },
+   {
+    "code": "BUHM 24",
+    "why": "not in the text; likely in the cut-off start of the section on page 145"
+   },
+   {
+    "code": "BUHM 31",
+    "why": "not in the text; likely in the cut-off start of the section on page 145"
+   },
+   {
+    "code": "BUHM 47",
+    "why": "not in the visible part of this section; named only in the certificate"
+   },
+   {
+    "code": "BUHM 50",
+    "why": "not in the visible part of this section; named only in the transfer-preparation AS and the certificate"
+   },
+   {
+    "code": "BUHM 54",
+    "why": "not in the text; likely in the cut-off start of the section on page 145"
+   },
+   {
+    "code": "BUHM 55",
+    "why": "not in the text; likely in the cut-off start of the section on page 145"
+   },
+   {
+    "code": "BUHM051",
+    "why": "not in the visible part of this section; named only in the transfer-preparation AS and the certificate"
+   }
+  ],
+  "notes": [
+   "The closed list matches the Hospitality Management AS Degree for Employment Preparation (referred to in the certificate description), not the AS Degree (transfer preparation) printed in full on page 146, whose courses (BUAC 020A, BUAC 020B, BUMA 020A, CART 040) are mostly absent from the closed list. This record reads only the tail of the employment-preparation section at the top of page 146; its heading, description, learning outcomes, careers and the first rows of its required courses fall on page 145, which is not in the text.",
+   "'Hospitality Management AS Degree (transfer preparation)' at the top of page 146 appears to be a running page header, not this section's heading.",
+   "The first block (BUHM 095A 3, CART 060 2) is the end of a list whose heading and rule are cut off; recorded as 'all' provisionally.",
+   "BUMA 094 is printed with 3-5 units and alternatives COMM C1000, ENGL C1000, ENGL C1000E without units; the range likely reflects ENGL C1000 with C1000E support. Reviewer should check.",
+   "Required Subtotal 29 recorded as total_units; Electives 8-13 recorded as degree_elective_units; COD General Education Pattern 23 as ge_units; DEGREE TOTAL 60-65 as degree_total.",
+   "No learning outcomes or careers for this award appear in the visible text; the outcomes and careers printed on page 146 belong to the transfer-preparation AS and the certificate."
+  ]
+ },
+ "extracted_run": "39056007346"
+}

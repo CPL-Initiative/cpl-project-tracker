@@ -1,0 +1,181 @@
+{
+ "college": "College of the Desert",
+ "control_number": "36513",
+ "shape": "adt",
+ "title": "Spanish",
+ "award": "A.A- T Degree",
+ "source_url": "https://collegeofthedesert.edu/_web-items/documents/pdf-files/catalogs/2026-2027-catalog.pdf#page=76",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 9687,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 9687,
+    "output_tokens": 941,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 941,
+  "output_tokens_details": {
+   "thinking_tokens": 197
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.05757,
+ "ms": 8674,
+ "seconds": 8.9,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 8,
+   "share": 0.0,
+   "missing": [
+    "COMM9",
+    "SPAN1",
+    "SPAN2",
+    "SPAN20",
+    "SPAN21",
+    "SPAN22",
+    "SPAN3",
+    "SPAN4"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "College of the Desert General Education Requirements (COD GE)",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "COMM 9",
+    "why": "Spanish A.A-T section not in the text; text holds only COD GE area lists"
+   },
+   {
+    "code": "SPAN 1",
+    "why": "Spanish A.A-T section not in the text; SPAN 001 appears only in a COD GE area list"
+   },
+   {
+    "code": "SPAN 2",
+    "why": "Spanish A.A-T section not in the text; SPAN 002 appears only in a COD GE area list"
+   },
+   {
+    "code": "SPAN 20",
+    "why": "Spanish A.A-T section not in the text; SPAN 020 appears only in COD GE area lists"
+   },
+   {
+    "code": "SPAN 21",
+    "why": "Spanish A.A-T section not in the text; SPAN 021 appears only in a COD GE area list"
+   },
+   {
+    "code": "SPAN 22",
+    "why": "Spanish A.A-T section not in the text; SPAN 022 appears only in COD GE area lists"
+   },
+   {
+    "code": "SPAN 3",
+    "why": "Spanish A.A-T section not in the text; SPAN 003 appears only in a COD GE area list"
+   },
+   {
+    "code": "SPAN 4",
+    "why": "Spanish A.A-T section not in the text; SPAN 004 appears only in a COD GE area list"
+   }
+  ],
+  "notes": [
+   "The supplied text (catalog pages 76-77) is the College of the Desert General Education Requirements (COD GE) section, not the Spanish A.A-T program section. The heading recorded is the only heading printed; it does not belong to the named award.",
+   "No major requirements, totals, outcomes or careers for the Spanish A.A-T are printed in the text, so no blocks were recorded. A reviewer should locate the correct catalog page for the Spanish A.A-T.",
+   "SPAN courses appear here only as options within GE areas (humanities list, A4 Social and Behavioral Sciences), which do not count as program blocks."
+  ]
+ },
+ "extracted_run": "39056007346"
+}

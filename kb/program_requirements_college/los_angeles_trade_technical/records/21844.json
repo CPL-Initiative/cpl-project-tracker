@@ -1,0 +1,359 @@
+{
+ "college": "Los Angeles Trade Technical College",
+ "control_number": "21844",
+ "shape": "certificate",
+ "title": "Heavy Truck, Transit, and Equipment Technology",
+ "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+ "source_url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=79",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 9045,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 9045,
+    "output_tokens": 2915,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2915,
+  "output_tokens_details": {
+   "thinking_tokens": 710
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.09448,
+ "ms": 22713,
+ "seconds": 23.2,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 16,
+   "listed": 16,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    48.0,
+    48.0
+   ],
+   "stated": [
+    48.0,
+    48.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 2,
+   "courses": 0,
+   "count": 2,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 4,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "HEAVY TRUCK, TRANSIT AND EQUIPMENT TECHNOLOGY ▌ Certificate of Achievement",
+   "measure": "units",
+   "total_units": {
+    "min": 48,
+    "max": 48
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Identify and explain the operation of diesel vehicle systems (such as engine, transmissions, brakes, electrical and suspension) along with their related subsystems and related industry standards.",
+    "Diagnose and repair diesel powered vehicles and systems using various manufacturer diagnostic software, tools, and shop equipment in accordance with industry standards."
+   ],
+   "careers": [
+    "Heavy-duty truck and bus technicians",
+    "Bus and Truck Mechanics",
+    "Diesel Engine Specialists",
+    "diesel technicians"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Semester I: DIESLTK 112",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Semester I",
+    "stated": {
+     "min": 12,
+     "max": 12
+    },
+    "courses": [
+     {
+      "code": "DIESLTK 112",
+      "units": 12,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Semester I: DIESLTK 112A AND 112B AND 112C",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Semester I",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "DIESLTK 112A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DIESLTK 112B",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DIESLTK 112C",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Semester II: DIESLTK 122",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Semester II",
+    "stated": {
+     "min": 12,
+     "max": 12
+    },
+    "courses": [
+     {
+      "code": "DIESLTK 122",
+      "units": 12,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Semester II: DIESLTK 122A AND 122B AND 122C",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Semester II",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "DIESLTK 122A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DIESLTK 122B",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DIESLTK 122C",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Semester III: DIESLTK 132",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Semester III",
+    "stated": {
+     "min": 12,
+     "max": 12
+    },
+    "courses": [
+     {
+      "code": "DIESLTK 132",
+      "units": 12,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Semester III: DIESLTK 132A AND 132B AND 132C",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Semester III",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "DIESLTK 132A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DIESLTK 132B",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DIESLTK 132C",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Semester IV: DIESLTK 142",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Semester IV",
+    "stated": {
+     "min": 12,
+     "max": 12
+    },
+    "courses": [
+     {
+      "code": "DIESLTK 142",
+      "units": 12,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Semester IV: DIESLTK 142A AND 142B AND 142C",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Semester IV",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "DIESLTK 142A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DIESLTK 142B",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DIESLTK 142C",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The Certificate of Achievement section states it is earned by completing the 48 units of Required Courses listed under the Associate degree; the blocks are therefore read from the A.S. section's Required Courses.",
+   "Each semester offers either the single 12-unit course (e.g., DIESLTK 112) OR the three 4-unit courses (e.g., DIESLTK 112A AND 112B AND 112C); recorded as two blocks per semester sharing an option_group.",
+   "Program learning outcomes are printed once for the 'Degree/Certificate program' and are shared by this certificate.",
+   "Careers 'Heavy-duty truck and bus technicians', 'Bus and Truck Mechanics' and 'Diesel Engine Specialists' come from the program overview printed under the A.S. section; 'diesel technicians' is from the certificate section.",
+   "Closed-list codes DIESLTK112A, DIESLTK112B, DIESLTK122, DIESLTK122B, DIESLTK142 lack a space; matched to catalog codes DIESLTK 112A, 112B, 122, 122B, 142 and not treated as catalog additions.",
+   "Unit discrepancies with the state file: catalog prints 12 for DIESLTK 112/132 (state stores 11), 4 for DIESLTK 122A/132A/132B (state 3) and 4 for DIESLTK 142A/142B (state 5.5).",
+   "Closed-list titles for several sub-courses (e.g., DIESLTK 132B 'HEAVY DUTY DRIVE TRAIN FUNDAMENTALS' vs catalog 'Air Brake Systems'; DIESLTK 142A 'DIESEL ENGINE OVERHAUL') differ from catalog titles; reviewer may check.",
+   "Text on page 79 top lists program code T021844D with 48 units; page 80 begins the separate Truck and Transit Preventive Maintenance certificate, which was not used."
+  ]
+ },
+ "extracted_run": "39054673977"
+}

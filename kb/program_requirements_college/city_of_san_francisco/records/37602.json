@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "Game and Simulation Programming",
  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
- "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=330",
+ "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=329",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 6856,
+  "input_tokens": 7745,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 6856,
-    "output_tokens": 2871,
+    "input_tokens": 7745,
+    "output_tokens": 2787,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 2871,
+  "output_tokens": 2787,
   "output_tokens_details": {
-   "thinking_tokens": 1285
+   "thinking_tokens": 1275
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.08484,
- "ms": 24042,
- "seconds": 24.4,
+ "cost_usd": 0.08672,
+ "ms": 23658,
+ "seconds": 24.0,
  "parts": null,
  "error": null,
  "score": {
@@ -55,14 +55,12 @@
    "pass": true
   },
   "invented": {
-   "count": 3,
+   "count": 2,
    "codes": [
-    "CS110A",
     "PHYC2A",
     "PHYC4A"
    ],
    "flagged": [
-    "CS110A",
     "PHYC2A",
     "PHYC4A"
    ],
@@ -89,9 +87,9 @@
    "pass": true
   },
   "outcomes": {
-   "program": 3,
+   "program": 5,
    "courses": 0,
-   "count": 3,
+   "count": 5,
    "not_verbatim": [],
    "why": [],
    "heading_printed": true,
@@ -99,7 +97,7 @@
    "pass": true
   },
   "careers": {
-   "count": 0,
+   "count": 2,
    "not_verbatim": [],
    "pass": true
   },
@@ -110,7 +108,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "Game and Simulation Programming (heading not printed on this page; text begins mid-section at outcome 3)",
+   "section_heading": "Game and Simulation Programming – Certificate of Achievement",
    "measure": "units",
    "total_units": {
     "min": 24,
@@ -132,11 +130,16 @@
    },
    "electives_fill_degree": false,
    "outcomes": [
+    "Design and implement modular programs using modern features of C++.",
+    "Evaluate and implement data structures and algorithms for given problems, considering appropriateness and efficiency.",
     "Utilize the Unity game engine and integrated development environment (IDE) to the creation of games.",
     "Simulate real-world situations and behaviors.",
     "Operate effectively within a team, gaining work experience."
    ],
-   "careers": []
+   "careers": [
+    "video game developers",
+    "programmers of simulations"
+   ]
   },
   "blocks": [
    {
@@ -180,31 +183,12 @@
     ]
    },
    {
-    "name": "MATH 90",
-    "rule": "all",
-    "minimum": null,
-    "option_group": "Math",
+    "name": "MATH 90 OR MATH 90 AND MATH 90S",
+    "rule": "choose_units",
+    "minimum": 5,
+    "option_group": null,
     "stated": {
      "min": 5,
-     "max": 5
-    },
-    "courses": [
-     {
-      "code": "MATH 90",
-      "units": 5,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     }
-    ]
-   },
-   {
-    "name": "MATH 90 AND MATH 90S",
-    "rule": "all",
-    "minimum": null,
-    "option_group": "Math",
-    "stated": {
-     "min": 8,
      "max": 8
     },
     "courses": [
@@ -296,37 +280,19 @@
       "catalog_addition": false
      }
     ]
-   },
-   {
-    "name": "Program Requirements and Completion Time (advised)",
-    "rule": "recommended",
-    "minimum": null,
-    "option_group": null,
-    "stated": {
-     "min": null,
-     "max": null
-    },
-    "courses": [
-     {
-      "code": "CS 110A",
-      "units": null,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     }
-    ]
    }
   ],
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The page begins mid-section: the program heading and learning outcomes 1 and 2 are on the previous page and are not in the text; only outcomes 3-5 are recorded.",
-   "The math requirement layout is garbled: 'OR 8.0 MATH 90 Precalculus Algebra 5.0 AND MATH 90S ... 3.0' appears between CS 110C and CS 214U, and '5.0-8.0 MATH 90 5.0' after CS 214U. Read as a choice of MATH 90 alone (5) or MATH 90 plus MATH 90S (8), recorded as two blocks in option_group 'Math'. Reviewer should verify.",
-   "Printed 'Required Units 20.0-28.0' and 'Total: 24.0-35.0' do not reconcile with the course units listed (e.g., 15 core + 5-8 math + 3 physics + 1-4 elective = 24-30); recorded as printed.",
-   "CS 110A is only advised for students who have never programmed, before beginning the program; recorded as recommended, not counted.",
-   "Closed list writes 'CNIT198'; catalog prints 'CNIT 198'; treated as the same course.",
-   "No careers named in this section's visible text."
+   "The math requirement is printed in a garbled layout: 'MATH 90 5.0' OR '8.0 MATH 90 5.0 AND MATH 90S 3.0', with a '5.0-8.0' figure. Read as MATH 90 alone (5 units) or MATH 90 with MATH 90S (8 units); recorded as a choose_units block of minimum 5 (MATH 90S alone cannot satisfy it), stated 5-8. MATH 90 is required on both paths.",
+   "The printed 'Required Units 20.0-28.0' covers the core courses plus the math choice; it is recorded on the core block. The printed courses sum to 20-23 for that portion, not 20-28; reviewer should check.",
+   "The physics choice block (PHYC 2A, PHYC 4A) is printed as 'Units 3.0'; both PHYC courses are not in the closed list and are marked catalog additions.",
+   "The closed list prints 'CNIT198' without a space; the catalog prints 'CNIT 198'. Treated as the same course.",
+   "CS 198 is printed as 1.0-5.5 units and CNIT 198 as 2.0-2.5 units, although the block states 1.0-4.0 units.",
+   "CS 110A is advised before beginning the program for students with no programming experience. It is not a requirement and was not recorded.",
+   "Total printed: 24.0-35.0."
   ]
  },
- "extracted_run": "39047128472"
+ "extracted_run": "39056434592"
 }

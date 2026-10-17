@@ -1,0 +1,140 @@
+{
+ "college": "Los Angeles Southwest College",
+ "control_number": "40947",
+ "shape": "noncredit",
+ "title": "Workplace Safety I",
+ "award": "Noncredit program",
+ "source_url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=229",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8098,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8098,
+    "output_tokens": 589,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 589,
+  "output_tokens_details": {
+   "thinking_tokens": 152
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.04417,
+ "ms": 11268,
+ "seconds": 12.0,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 0,
+   "listed": 1,
+   "share": 0.0,
+   "missing": [
+    "VOCED612CE"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unstated",
+   "computed": null,
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record states no figure, but the catalog text names 2 hours, 0.66 hour, 0.25 hour, 0.25 hour"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "",
+   "measure": "hours",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "VOCED612CE",
+    "why": "Appears only in the course descriptions (VOC ED 612CE, Lecture: 0.25 hour); the text has no Workplace Safety I program requirements section."
+   }
+  ],
+  "notes": [
+   "The supplied text (catalog page 229) holds only Vocational Education course descriptions. It has no section for the Workplace Safety I noncredit program, so no section heading, blocks, total hours, outcomes or careers could be recorded.",
+   "The program requirements are probably printed on another page of the catalog. A reviewer should locate the Workplace Safety I program section.",
+   "The course description lists VOC ED 612CE Workplace Safety: Personal Protective Equipment with Lecture: 0.25 hour. Related workplace safety courses also appear in the descriptions: VOC ED 613CE, 614CE, 615CE, 616CE, 610CE and 617CE. Nothing in the text ties any of them to this program."
+  ]
+ },
+ "extracted_run": "39061735776"
+}

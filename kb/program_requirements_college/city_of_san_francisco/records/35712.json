@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "Audio Production and Post-Production",
  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
- "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=73",
+ "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=72",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 6887,
+  "input_tokens": 7886,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 6887,
-    "output_tokens": 1837,
+    "input_tokens": 7886,
+    "output_tokens": 1954,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 1837,
+  "output_tokens": 1954,
   "output_tokens_details": {
-   "thinking_tokens": 511
+   "thinking_tokens": 601
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.06429,
- "ms": 15712,
- "seconds": 16.2,
+ "cost_usd": 0.07062,
+ "ms": 15587,
+ "seconds": 15.9,
  "parts": null,
  "error": null,
  "score": {
@@ -93,7 +93,7 @@
    "pass": true
   },
   "careers": {
-   "count": 0,
+   "count": 9,
    "not_verbatim": [],
    "pass": true
   },
@@ -104,7 +104,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "Audio Production and Post-Production – Certificate of Achievement",
+   "section_heading": "Audio Production and Post-Production - Certificate of Achievement",
    "measure": "units",
    "total_units": {
     "min": 19.5,
@@ -127,12 +127,22 @@
    "electives_fill_degree": false,
    "outcomes": [
     "Plan and execute a production set-up for voice, acoustic, and electronic instruments.",
-    "Produce content working in a variety of professional roles in the context of audio production and post-production.",
+    "Produce content working in a variety of professional roles in the context of audio production and post- production.",
     "Utilize equalization techniques to remedy problems with acoustics.",
     "Apply industry-standard audio workflows to projects.",
     "Display professionalism, communication skills, and effective application of workforce protocol in the sound production and post-production industry."
    ],
-   "careers": []
+   "careers": [
+    "live sound event production",
+    "music recording studios",
+    "sound design for film, television, and video",
+    "sound reinforcement industry",
+    "audio-for-video and film production",
+    "television",
+    "radio production",
+    "advertising",
+    "theater"
+   ]
   },
   "blocks": [
    {
@@ -193,7 +203,7 @@
     "name": "For a live sound emphasis choose the following two courses",
     "rule": "all",
     "minimum": null,
-    "option_group": "Emphasis option",
+    "option_group": "Emphasis",
     "stated": {
      "min": 4,
      "max": 4
@@ -219,7 +229,7 @@
     "name": "For a sound design emphasis choose the following two courses",
     "rule": "all",
     "minimum": null,
-    "option_group": "Emphasis option",
+    "option_group": "Emphasis",
     "stated": {
      "min": 3.5,
      "max": 3.5
@@ -271,13 +281,13 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The section heading for this certificate is not in the supplied text (it appears to be on the preceding page 72); the heading recorded is reconstructed from the program title and award. The outcomes list at the top of page 73 is read as belonging to this certificate since its requirements follow directly.",
-   "The option heading 'Choose one of the following options' prints 3.5-4.0 units; each emphasis is recorded as its own block in option group 'Emphasis option'.",
-   "Catalog prints BCST 127A at 0.5 units; the state file stores 1 unit.",
-   "Outcome 2 breaks across lines as 'post-' / 'production'; recorded as 'post-production' (hyphenated word split at line end).",
-   "BCST 120 Audio Production is not in the closed list and is recorded as a catalog addition.",
-   "Students must complete at least 8 units at City College of San Francisco; minimum completion time 2 semesters."
+   "The option heading 'Choose one of the following options' prints Units 3.5-4.0 for the choice as a whole; each emphasis block's stated total is the figure printed on its own line (4.0 and 3.5).",
+   "BCST 127A is printed with 0.5 units in the catalog, while the state file stores 1 unit.",
+   "The Program Summary calls this a 'Certificate of Completion' although the section heading says Certificate of Achievement.",
+   "Outcomes list begins at the bottom of page 72 and continues on page 73; outcome 2 is split across a line break at 'post-production'.",
+   "Careers entries are industry/field names drawn from the program summary; reviewer may wish to confirm which phrases count as career fields.",
+   "Students must complete at least 8 units at CCSF; minimum completion time 2 semesters."
   ]
  },
- "extracted_run": "39047128472"
+ "extracted_run": "39056434592"
 }

@@ -1,0 +1,147 @@
+{
+ "college": "College of the Desert",
+ "control_number": "39017",
+ "shape": "noncredit",
+ "title": "New World of Work Analysis/Solution Mindset",
+ "award": "Noncredit program",
+ "source_url": "https://collegeofthedesert.edu/_web-items/documents/pdf-files/catalogs/2026-2027-catalog.pdf#page=113",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7733,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7733,
+    "output_tokens": 856,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 856,
+  "output_tokens_details": {
+   "thinking_tokens": 300
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.04805,
+ "ms": 8324,
+ "seconds": 8.8,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 2,
+   "share": 0.0,
+   "missing": [
+    "EMP316A",
+    "EMP316B"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "unstated",
+   "computed": null,
+   "stated": null,
+   "against": null,
+   "why": [
+    "the catalog prints no total, no hours and no units"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": true,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "EMP 316A",
+    "why": "No section for this program in the text; named only as an EMP elective in the Construction Technology Career Preparation Certificate of Completion"
+   },
+   {
+    "code": "EMP 316B",
+    "why": "No section for this program in the text; named only as an EMP elective in the Construction Technology Career Preparation Certificate of Completion"
+   }
+  ],
+  "notes": [
+   "The supplied page (catalog p. 112/PDF p. 113) has no section for the New World of Work Analysis/Solution Mindset noncredit program. It holds the Construction Technology Career Preparation Certificate of Completion and the start of the Construction Technology Concrete and Masonry Certificate of Completion.",
+   "EMP 316A and EMP 316B appear only in the 'Electives: Select 4 from EMP' list of the Construction Technology Career Preparation certificate, which is another award. They are not recorded as this program's requirements.",
+   "The program's own section is likely on another page of the catalog, probably under the EMP/New World of Work programs. A reviewer should locate it to record its blocks, any hours, outcomes and careers.",
+   "section_heading is left empty because no heading for this award is printed in the text.",
+   "measure is set to 'units' as the default because no hours are printed for this award. The text prints 0 units beside the EMP courses in the other certificate."
+  ]
+ },
+ "extracted_run": "39056007346"
+}

@@ -1,0 +1,322 @@
+{
+ "college": "Pasadena City College",
+ "control_number": "36437",
+ "shape": "degree",
+ "title": "Child Development - Early Intervention",
+ "award": "A.S. Degree",
+ "source_url": "https://curriculum.pasadena.edu/academic-programs/child-development/child-development-early-intervention-as-cert-achievement/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 9078,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 9078,
+    "output_tokens": 2871,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2871,
+  "output_tokens_details": {
+   "thinking_tokens": 923
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.09373,
+ "ms": 22631,
+ "seconds": 23.0,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 19,
+   "listed": 19,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 2,
+   "codes": [
+    "CHDV122",
+    "ESL5"
+   ],
+   "flagged": [
+    "CHDV122",
+    "ESL5"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    47.0,
+    47.0
+   ],
+   "stated": [
+    47.0,
+    47.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 10,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Requirements for the Certificate of Achievement (with General Education Requirements for the Associate in Science Degree)",
+   "measure": "units",
+   "total_units": {
+    "min": 47,
+    "max": 47
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "PCC Local Gen Ed or Cal-GETC",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Explain using original written and/or oral presentations the theories and practices of the social, emotional, cognitive, and physical developmental areas of young children from birth to three years of age identified as needing Early Intervention Services.",
+    "Evaluate important factors in planning a supportive child and family educational program in support of the child and family during the first 3 years of life.",
+    "Compare and contrast the skills necessary in working with and supporting diverse family, structures, and program practices as related to Early Intervention strategies.",
+    "Support developmentally appropriate practices and all relevant curriculum application in working with the children and families identified as needing Early Intervention."
+   ],
+   "careers": [
+    "Teaching in Early Care and Education schools such as infant, toddler, preschool, or Transitional Kindergarten (TK)",
+    "Elementary Schools (public or private)",
+    "Before-and after-school program",
+    "Family Child Care Homes",
+    "General Education Settings including parks and recreation programs",
+    "Child Life Specialist",
+    "Private Households",
+    "non-profit and governmental agencies concerned with the welfare of children",
+    "Social and Human Service programs",
+    "credentialed teaching position"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Requirements for the Certificate of Achievement",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 47,
+     "max": 47
+    },
+    "courses": [
+     {
+      "code": "CHDV 010",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHDV 013A",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHDV 013AF",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHDV 014",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHDV 015",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHDV 016",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHDV 017",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHDV 020",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHDV 030",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHDV 035",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHDV 105",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHDV 113",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHDV 114",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHDV 122",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CHDV 122F",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL 100",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ENGL C1000",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGL C1000H",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "ESL 005",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC 021",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PSYC 021H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The page prints only one requirements list, headed 'Requirements for the Certificate of Achievement' (Total Units 47), followed by 'General Education Requirements for the Associate in Science Degree'. I read the A.S. major as this same list plus general education. A reviewer should confirm this; the page prints no separate A.S. major list.",
+   "No degree total and no GE unit figure is printed. The GE section names PCC Local Gen Ed and Cal-GETC, with IGETC or CSU GE allowed for students with catalog rights to the former patterns.",
+   "Catalog codes carry leading zeros (CHDV 010, PSYC 021, etc.). I matched them to closed-list codes without zeros (CHDV 10, PSYC 21), so they are not marked as catalog additions.",
+   "CHDV 122 (Practicum in Early Intervention/Special Education, 2 units) and ESL 005 are not in the closed list; both are marked as catalog additions.",
+   "The Program Outcomes appear as a single list for the program page, which covers both the certificate and the A.S.; I recorded them for this award.",
+   "The careers come from the Child Development discipline introduction, which is shared across CHDV awards.",
+   "The catalog text begins mid-sentence, so part of the program description may be cut off.",
+   "The units for the alternatives (ENGL C1000, ENGL C1000H, ESL 005, PSYC 021H) are not printed and are left null.",
+   "Permit requirements (Associate Teacher, Teacher, Master Teacher, Site Supervisor) mention CHDV 012A, CHDV 012B and CHDV 119. These are permit requirements, not award requirements, and were not placed."
+  ]
+ },
+ "extracted_run": "39061730187"
+}

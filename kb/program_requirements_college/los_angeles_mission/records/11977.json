@@ -1,0 +1,288 @@
+{
+ "college": "Los Angeles Mission College",
+ "control_number": "11977",
+ "shape": "degree",
+ "title": "Multimedia: Animation and 3D Design Concentration",
+ "award": "A.A. Degree",
+ "source_url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=22",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 12183,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 12183,
+    "output_tokens": 1619,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1619,
+  "output_tokens_details": {
+   "thinking_tokens": 360
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.08111,
+ "ms": 13329,
+ "seconds": 13.8,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 9,
+   "listed": 12,
+   "share": 0.75,
+   "missing": [
+    "MULTIMD310",
+    "MULTIMD320",
+    "MULTIMD402"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 4,
+   "codes": [
+    "ANIMATN217",
+    "ANIMATN218",
+    "ANIMATN225",
+    "MULTIMD430"
+   ],
+   "flagged": [
+    "ANIMATN217",
+    "ANIMATN218",
+    "ANIMATN225",
+    "MULTIMD430"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    37.0,
+    37.0
+   ],
+   "stated": [
+    37.0,
+    37.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "& 3D Design (M011977C)",
+   "measure": "units",
+   "total_units": {
+    "min": 37,
+    "max": 37
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Analyze and apply the elements and principles of design with competent skill and technique with computer-based media.",
+    "Analyze basic design principles with an emphasis on illustration, graphic layouts, logo creation, font creation, web navigation, web page layout, and the ability to apply these principles to a specific aesthetic intent, including a functional knowledge of the traditions, conceptual modes, and evolutions of the discipline.",
+    "Synthesize visual forms and their aesthetic functions and basic design principles, with attention to such areas as design, color, and lighting."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "REQUIRED FOUNDATION COURSES",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ART 201",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 204",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MULTIMD 100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MULTIMD 110",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MULTIMD 210",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MULTIMD 220",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "REQUIRED COURSES",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ANIMATN 217",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ANIMATN 218",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ANIMATN 225",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MULTIMD 300",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MULTIMD 400",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MULTIMD 430",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MULTIMD 500",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "MULTIMD 310",
+    "why": "not in the text"
+   },
+   {
+    "code": "MULTIMD 320",
+    "why": "named only in the Graphic & Web Design A.A. section"
+   },
+   {
+    "code": "MULTIMD 402",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "The section heading is cut off at the start of page 22; the excerpt begins with '& 3D Design (M011977C)', presumably the end of 'ASSOCIATE OF ARTS (AA) Multimedia: Animation & 3D Design' printed on the previous page.",
+   "Total 37 is the major total; the 60-unit note is a generic Associate Degree requirement, not recorded as degree_total.",
+   "No general education pattern or GE units are printed in this section.",
+   "The description mentions 'career goals' and the 'animation and design fields' where faculty work, but names no specific careers for students; careers left empty."
+  ]
+ },
+ "extracted_run": "39054675770"
+}

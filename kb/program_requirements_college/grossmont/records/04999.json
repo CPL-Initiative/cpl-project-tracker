@@ -1,0 +1,495 @@
+{
+ "college": "Grossmont College",
+ "control_number": "04999",
+ "shape": "degree",
+ "title": "Theatre Arts: Acting",
+ "award": "A.A. Degree",
+ "source_url": "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/visual-performing-arts/theatre-arts-aa-cert-achievement/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 9748,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 9748,
+    "output_tokens": 3958,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 3958,
+  "output_tokens_details": {
+   "thinking_tokens": 1434
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.11815,
+ "ms": 31095,
+ "seconds": 33.5,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 41,
+   "listed": 42,
+   "share": 0.976,
+   "missing": [
+    "THTR112C112C"
+   ],
+   "unexplained": [
+    "THTR112C112C"
+   ],
+   "none_placed": false,
+   "pass": false
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "THTR112C"
+   ],
+   "flagged": [],
+   "pass": false
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    32.0,
+    32.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 12,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Theatre Arts Associate in Arts and Certificate of Achievement",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Demonstrate an understanding and appreciation for a diverse spectrum of theatrical practices and experiences, and the role of the theatrical art form in culture and society.",
+    "Participate in high-quality, accessible theatrical productions and present them at a reasonable cost for our students and the community at large.",
+    "Understand and demonstrate the proper artistic conduct in all academic and professional theatrical environments."
+   ],
+   "careers": [
+    "Actor / Actress",
+    "Actors’ Agent",
+    "Casting Director",
+    "Costume Designer",
+    "Director",
+    "Display Designer",
+    "Light Technician",
+    "Producer",
+    "Production Stage Manager",
+    "Sound Engineer",
+    "Special Effects Specialist",
+    "Theatre Manager"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Associate Degree Major Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "THTR-101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THTR-110",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THTR-130",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THTR-134A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "THTR-134B",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "THTR-155",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "THTR-157",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "THTR-205",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select one of the following:",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 2,
+     "max": 2
+    },
+    "courses": [
+     {
+      "code": "THTR-102A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "THTR-102B",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "THTR-102C",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "THTR-102D",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "THTR-103A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "THTR-103B",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "THTR-103C",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "THTR-103D",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "THTR-104A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "THTR-104B",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "THTR-104C",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "THTR-104D",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "THTR-111A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "THTR-111B",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "THTR-111C",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "THTR-111D",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "THTR-112A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "THTR-112B",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "THTR-112C",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "THTR-112D",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "THTR-113A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "THTR-113B",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "THTR-113C",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "THTR-113D",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Acting Area of Emphasis",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 12,
+     "max": 12
+    },
+    "courses": [
+     {
+      "code": "THTR-115",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THTR-131",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THTR-207",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "THTR-208",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "THTR-230",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "THTR-132",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "THTR-234A",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "THTR-234B",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "THTR-235A",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "THTR-235B",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Recommended Electives",
+    "rule": "recommended",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 2,
+     "max": 2
+    },
+    "courses": [
+     {
+      "code": "THTR-111A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THTR-111B",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THTR-111C",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THTR-111D",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The page prints one section for the Theatre Arts A.A. and Certificate of Achievement; the Acting award is the core curriculum plus the Acting Area of Emphasis. The Technical Area of Emphasis (THTR-136, THTR-143/144, etc.) was not recorded.",
+   "The core list prints 'Total Units 20', which covers both the required courses (18 units) and the nested 'Select one of the following' practicum/rehearsal choice (2 units); stated was left null on the required block and 2 recorded on the choice block. The Acting emphasis prints 'Total Units 12'. No combined major total (core + emphasis) is printed, so total_units is null.",
+   "'Plus General Education and Elective Requirements' is printed without naming a GE pattern or units; no degree total is printed.",
+   "The Recommended Electives list prints 'Select one of the following: 2'; recorded as recommended with stated 2. Its THTR-111A-D also appear as an option in the core choice block.",
+   "Closed-list entry 'THTR112C112C' (Stage Management III, units not stored) appears malformed; treated as THTR-112C as printed in the catalog, so catalog_addition is false.",
+   "The program learning outcomes are printed once for the Theatre Arts program as a whole; this award shares them.",
+   "Career list footnote '1' (Bachelor's Degree or higher required) was stripped from career titles."
+  ]
+ },
+ "extracted_run": "39061728041"
+}

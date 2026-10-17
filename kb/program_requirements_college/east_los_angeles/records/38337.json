@@ -1,0 +1,337 @@
+{
+ "college": "East Los Angeles College",
+ "control_number": "38337",
+ "shape": "degree",
+ "title": "Geo-Spatial Engineering and Technologies",
+ "award": "A.S. Degree",
+ "source_url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=198",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 11005,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 11005,
+    "output_tokens": 3046,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 3046,
+  "output_tokens_details": {
+   "thinking_tokens": 1242
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.10494,
+ "ms": 23492,
+ "seconds": 23.9,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 16,
+   "listed": 16,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 3,
+   "codes": [
+    "EGDTEK102",
+    "EGDTEK121",
+    "ENGSUP221"
+   ],
+   "flagged": [
+    "EGDTEK102",
+    "EGDTEK121",
+    "ENGSUP221"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    58.0,
+    60.0
+   ],
+   "stated": [
+    60.0,
+    60.0
+   ],
+   "against": "degree",
+   "ge": [
+    27.0,
+    27.0
+   ],
+   "why": [],
+   "fill": [
+    0.0,
+    2.0
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 6,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Geo-Spatial Engineering and Technologies, Associate in Science Degree (Academic Plan E038337C)",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "LACCD General Education Plan",
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": 27,
+    "max": 27
+   },
+   "electives_fill_degree": true,
+   "outcomes": [
+    "Perform test taking strategies for both the State of California Fundamentals of Surveyors (FS) and the Professional Land Surveyors (PLS) examination.",
+    "Perform the fundamental elements of land surveying field and office work.",
+    "Utilize advanced software for land development applications."
+   ],
+   "careers": [
+    "geospatial engineering technicians",
+    "professional land surveyor",
+    "technician",
+    "cartographer",
+    "photogrammetrist",
+    "civil engineering technician"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "MAJOR CORE REQUIREMENTS",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 23,
+     "max": 23
+    },
+    "courses": [
+     {
+      "code": "ENG SUP 121",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENG SUP 221",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ENG SUP 224",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENG SUP 225",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENG SUP 200",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENG SUP 201",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENG SUP 202",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENG GEN 185",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENG GEN 212",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 241",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MATH 241S",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "RESTRICTED ELECTIVES: COMPLETE 6 UNITS FROM THE FOLLOWING",
+    "rule": "choose_units",
+    "minimum": 6,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "EGD TEK 102",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "EGD TEK 121",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CHEM 065",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYSICS 011",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "RESTRICTED ELECTIVES: COMPLETE 2-4 UNITS FROM THE FOLLOWING",
+    "rule": "choose_units",
+    "minimum": 2,
+    "option_group": null,
+    "stated": {
+     "min": 2,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "GEOG 025",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "GIS 025",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARC 164",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENG GEN 101",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The catalog prints no total for the major; Major Core 23 and Restricted Electives 8-10 are printed separately, and total_units is left null.",
+   "Restricted Electives heading prints 8-10 units overall, split into 'Complete 6 units' and 'Complete 2-4 units' sub-lists recorded as separate blocks.",
+   "Degree total 60 printed with LACCD General Education Plan 27; catalog says to complete additional degree-applicable units, if needed, to reach 60 units (electives_fill_degree true).",
+   "Note: 3 units of major courses may be double counted in LACCD GE Area 2.",
+   "CHEM 065, PHYSICS 011, GEOG 025, GIS 025 printed with leading zeros; matched to closed-list CHEM 65, PHYSICS 11, GEOG 25, GIS 25.",
+   "ENG SUP 121 is titled 'Land Surveying I' here (closed list: Plane Surveying I); ENG SUP 201 titled 'GIS Technologies for Land Surveyors' (closed list: Introduction to Engineering Technologies for Land Surveyors).",
+   "EGD TEK 121 is printed at 3 units in this section but 2 units in the Advanced Manufacturing section on the same page; reviewer should check.",
+   "ENG SUP 221 (Land Surveying II) is not in the closed list; recorded as catalog addition."
+  ]
+ },
+ "extracted_run": "39063389278"
+}

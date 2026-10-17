@@ -1,0 +1,270 @@
+{
+ "college": "Ohlone College",
+ "programs": 204,
+ "with_closed_list": 179,
+ "found": 146,
+ "extracted": 146,
+ "errors": 0,
+ "passed_machine_checks": 117,
+ "failed": {
+  "coverage": 13,
+  "invented": 1,
+  "arithmetic": 18,
+  "repeated": 0,
+  "outcomes": 8
+ },
+ "cost_usd": 10.02,
+ "cost_per_program": 0.0687,
+ "not_found": [
+  {
+   "control_number": "01245",
+   "title": "Business Supervision/Management",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=89",
+    "coverage": 0.2
+   }
+  },
+  {
+   "control_number": "01254",
+   "title": "Computer Studies",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=22",
+    "coverage": 0.25
+   }
+  },
+  {
+   "control_number": "01265",
+   "title": "Interior Design",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=10",
+    "coverage": 0.182
+   }
+  },
+  {
+   "control_number": "08524",
+   "title": "Fine Arts",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=10",
+    "coverage": 0.25
+   }
+  },
+  {
+   "control_number": "16631",
+   "title": "Kinesiology: Athletic Training",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=88",
+    "coverage": 0.4
+   }
+  },
+  {
+   "control_number": "16763",
+   "title": "Administrative Assistant with Supervisory Focus",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=5",
+    "coverage": 0.182
+   }
+  },
+  {
+   "control_number": "18035",
+   "title": "Liberal Arts: Language Emphasis",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=51",
+    "coverage": 0.026
+   }
+  },
+  {
+   "control_number": "18038",
+   "title": "Natural Science: Physical Science",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=41",
+    "coverage": 0.217
+   }
+  },
+  {
+   "control_number": "22192",
+   "title": "Administrative Assistant with Supervisory Focus",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=89",
+    "coverage": 0.333
+   }
+  },
+  {
+   "control_number": "22193",
+   "title": "Business Supervision/Management",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=89",
+    "coverage": 0.2
+   }
+  },
+  {
+   "control_number": "22198",
+   "title": "Computer Studies",
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+   "near_miss": {
+    "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=22",
+    "coverage": 0.25
+   }
+  },
+  {
+   "control_number": "22204",
+   "title": "Technical Support Specialist",
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+   "near_miss": {
+    "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=24",
+    "coverage": 0.333
+   }
+  },
+  {
+   "control_number": "22214",
+   "title": "Interior Design",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=10",
+    "coverage": 0.182
+   }
+  },
+  {
+   "control_number": "35542",
+   "title": "Personal Development Studies",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=16",
+    "coverage": 0.1
+   }
+  },
+  {
+   "control_number": "36533",
+   "title": "Journalism",
+   "award": "A.A- T Degree",
+   "near_miss": {
+    "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=87",
+    "coverage": 0.444
+   }
+  },
+  {
+   "control_number": "37259",
+   "title": "Customer Service Academy",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "37260",
+   "title": "Customer Service: Team Building",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "37261",
+   "title": "Customer Service: Communication and Writing",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "37490",
+   "title": "Computer Fundamentals",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "37491",
+   "title": "Beginning Technology Skills",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "38226",
+   "title": "Entrepreneurial Business Basics",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "38496",
+   "title": "Business Support Specialist I",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "38497",
+   "title": "Math Foundations",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "38660",
+   "title": "Effective Job Search Skills",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "38834",
+   "title": "Business Support Specialist II",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "38975",
+   "title": "Computer Aided Design Skills: AutoCAD and SolidWorks",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "40371",
+   "title": "DRE Exam Preparation",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "40405",
+   "title": "Entrepreneurial Business Advanced Food Services (EBB)",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "40609",
+   "title": "Green Business Entrepreneurs",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "41938",
+   "title": "Marketing for Entrepreneurs",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=96",
+    "coverage": 0.25
+   }
+  },
+  {
+   "control_number": "42090",
+   "title": "Entrepreneurship",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=66",
+    "coverage": 0.25
+   }
+  },
+  {
+   "control_number": "42325",
+   "title": "Fundamentals of Entrepreneurial Financing",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "42776",
+   "title": "Community Mental Health Preparation",
+   "award": "Noncredit program",
+   "near_miss": null
+  }
+ ],
+ "run": "39063337090"
+}

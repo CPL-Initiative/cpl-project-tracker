@@ -1,0 +1,39 @@
+{
+ "college": "Los Angeles Southwest College",
+ "programs": 136,
+ "with_closed_list": 96,
+ "found": 94,
+ "extracted": 94,
+ "errors": 0,
+ "passed_machine_checks": 69,
+ "failed": {
+  "coverage": 16,
+  "invented": 6,
+  "arithmetic": 19,
+  "repeated": 0,
+  "outcomes": 0
+ },
+ "cost_usd": 6.0,
+ "cost_per_program": 0.0639,
+ "not_found": [
+  {
+   "control_number": "18798",
+   "title": "Interdisciplinary Studies: Social And Behavioral Science",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=143",
+    "coverage": 0.433
+   }
+  },
+  {
+   "control_number": "45576",
+   "title": "Cal-GETC",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=145",
+    "coverage": 0.368
+   }
+  }
+ ],
+ "run": "39061735776"
+}

@@ -1,0 +1,258 @@
+{
+ "college": "Pasadena City College",
+ "control_number": "22649",
+ "shape": "certificate",
+ "title": "HOSPITALITY MANAGEMENT",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://curriculum.pasadena.edu/academic-programs/hospitality-management/hospitality-management-as-cert-of-achievement/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7430,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7430,
+    "output_tokens": 1939,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1939,
+  "output_tokens_details": {
+   "thinking_tokens": 639
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.0685,
+ "ms": 16276,
+ "seconds": 16.7,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 8,
+   "listed": 8,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 3,
+   "codes": [
+    "BUS70A",
+    "BUS70B",
+    "HOSP30"
+   ],
+   "flagged": [
+    "BUS70A",
+    "BUS70B",
+    "HOSP30"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    19.0,
+    19.0
+   ],
+   "stated": [
+    19.0,
+    19.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 5,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Requirements for the Certificate of Achievement",
+   "measure": "units",
+   "total_units": {
+    "min": 19,
+    "max": 19
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Integrate the development of products and services with guest management skills to exceed expectations in a hospitality environment.",
+    "Model the positive values, integrity, and credibility of competent and ethical leaders and make decisions that align with the fundamental principles of strategic leadership in a hospitality business environment.",
+    "Make logical and ethical decisions by synthesizing a combination of techniques and best practices with organizational and analytical skills to interpret information and formulating rational solutions in a hospitality environment.",
+    "Evaluate one’s own team-related transferable aptitudes—techniques, skills, and knowledge—to contribute to high-achieving and positive team performance in a diverse, sociocultural hospitality environment.",
+    "Apply current, relevant, and trending tech to enhance organizational performance, growth, and profit in a hospitality environment."
+   ],
+   "careers": [
+    "head cook",
+    "first-line supervisor",
+    "lodging manager",
+    "chef",
+    "food service manager"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Course List",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "HOSP 003",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HOSP 014",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HOSP 021",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HOSP 050",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HOSP 005",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HOSP 015",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "HOSP 045",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Four units from one of the following (each internship course is 4 units)",
+    "rule": "choose_units",
+    "minimum": 4,
+    "option_group": null,
+    "stated": {
+     "min": 4,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "BUS 070A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BUS 070B",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HOSP 030",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HOSP 060",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The page combines the A.S. degree and the Certificate of Achievement; only the 'Requirements for the Certificate of Achievement' section was read. Catalog codes are zero-padded (HOSP 003 = HOSP 3, etc.) and matched to the closed list.",
+   "The page prints one Program Outcomes list for the program as a whole; the certificate shares it, so it is recorded here.",
+   "Units are printed only beside the first course of each 'or' group (HOSP 005: 3; BUS 070A: 4); the alternatives HOSP 015, HOSP 045 and the courses BUS 070B, HOSP 030, HOSP 060 are recorded with null units as no units are printed beside them. The heading says each internship course is 4 units.",
+   "The second block is printed as 'or' rows under 'Four units from one of the following'; recorded as a choose_units block of 4 units with each option listed separately.",
+   "The page says 'Total Units 19' for the certificate, within the award's 16-<30 unit range."
+  ]
+ },
+ "extracted_run": "39061730187"
+}

@@ -1,0 +1,290 @@
+{
+ "college": "College of the Desert",
+ "control_number": "42055",
+ "shape": "adt",
+ "title": "Business Administration 2.0",
+ "award": "A.S. T Degree",
+ "source_url": "https://collegeofthedesert.edu/_web-items/documents/pdf-files/catalogs/2026-2027-catalog.pdf#page=142",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 12027,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 12027,
+    "output_tokens": 2311,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2311,
+  "output_tokens_details": {
+   "thinking_tokens": 945
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.09433,
+ "ms": 19202,
+ "seconds": 19.6,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 10,
+   "listed": 12,
+   "share": 0.833,
+   "missing": [
+    "ECON1",
+    "ECON2"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 4,
+   "codes": [
+    "ECONC2001",
+    "ECONC2002",
+    "MATH16",
+    "STATC1000"
+   ],
+   "flagged": [
+    "ECONC2001",
+    "ECONC2002",
+    "MATH16",
+    "STATC1000"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    60.0,
+    63.0
+   ],
+   "stated": [
+    60.0,
+    60.0
+   ],
+   "against": "degree",
+   "ge": [
+    34.0,
+    34.0
+   ],
+   "why": [
+    "the blocks and general education come to 60.0-63.0, past the 60.0-60.0 the catalog prints for the degree"
+   ],
+   "fill": null,
+   "major": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     26.0,
+     29.0
+    ],
+    "stated": [
+     26.0,
+     29.0
+    ],
+    "against": "program",
+    "why": []
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Business Administration 2.0 AS-T Degree",
+   "measure": "units",
+   "total_units": {
+    "min": 26,
+    "max": 29
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": 34,
+    "max": 34
+   },
+   "electives_fill_degree": true,
+   "outcomes": [
+    "Be competitive in transferring to a four-year business school and/or acquire those skills necessary for success in business.",
+    "Weigh information for solving business problems and responding to opportunities and changes.",
+    "Communicate business information effectively using a variety of formats for a variety of audiences and purposes.",
+    "Differentiate between different key functional areas of business and describe key skills needed in each area."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required Core Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 26,
+     "max": 29
+    },
+    "courses": [
+     {
+      "code": "BUMA 010",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUMA 020A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUMA 003",
+      "units": 3,
+      "units_max": 4,
+      "alternatives": [
+       {
+        "code": "SOC 003",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "STAT C1000",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUAC 020A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUAC 020B",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECON C2001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ECON C2002",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MATH 010",
+      "units": 3,
+      "units_max": 5,
+      "alternatives": [
+       {
+        "code": "MATH 016",
+        "units": null,
+        "catalog_addition": true
+       },
+       {
+        "code": "MATH 012",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "MATH 009",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "MATH C2210",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ECON 1",
+    "why": "not in the text; catalog prints ECON C2002 Principles of Macroeconomics instead (likely renumbered)"
+   },
+   {
+    "code": "ECON 2",
+    "why": "not in the text; catalog prints ECON C2001 Principles of Microeconomics instead (likely renumbered)"
+   }
+  ],
+  "notes": [
+   "Closed-list codes BUMA003, BUMA010, MATH 10, MATH 12, MATH 9 and SOC 3 were matched to the catalog's zero-padded codes BUMA 003, BUMA 010, MATH 010, MATH 012, MATH 009 and SOC 003.",
+   "ECON C2001 and ECON C2002 are flagged as catalog additions because their codes differ from the closed list's ECON 2 and ECON 1; they appear to be the same courses under Common Course Numbering.",
+   "The 3-4 range is printed only on the BUMA 003 row and 3-5 only on the MATH 010 row; alternative courses have no units printed beside them.",
+   "degree_total of 60 is taken from the figure printed on the 'Transferable Electives (as needed to reach 60 transferable units)' row and the 60-unit requirement; electives units are not printed, so electives_fill_degree is true.",
+   "Required Subtotal 26-29 recorded as total_units and as the core block's stated total; text also says '26-29 units in the major'.",
+   "Cal-GETC 34 units; footnote says major units may be double counted for Cal-GETC.",
+   "Description names fields of business study (finance, accounting, international business, marketing, hospitality, management) as transfer majors, not careers, so careers left empty."
+  ]
+ },
+ "extracted_run": "39056007346"
+}

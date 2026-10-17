@@ -4,12 +4,12 @@
  "shape": "adt",
  "title": "Mathematics 2.0",
  "award": "A.S. T Degree",
- "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=734",
+ "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=208",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 7089,
+  "input_tokens": 7224,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 7089,
-    "output_tokens": 938,
+    "input_tokens": 7224,
+    "output_tokens": 930,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 938,
+  "output_tokens": 930,
   "output_tokens_details": {
-   "thinking_tokens": 171
+   "thinking_tokens": 235
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.04712,
- "ms": 9311,
- "seconds": 9.8,
+ "cost_usd": 0.0475,
+ "ms": 8640,
+ "seconds": 8.9,
  "parts": null,
  "error": null,
  "score": {
@@ -114,7 +114,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "Not found: page 734 prints only MATH course descriptions (MATH 115 through MATH 9000), no Mathematics A.S.-T requirements section",
+   "section_heading": "Not found: the text shows only part of a Liberal Arts and Sciences course list, not the Mathematics A.S.-T section",
    "measure": "units",
    "total_units": {
     "min": null,
@@ -143,54 +143,50 @@
   "missing_explained": [
    {
     "code": "CS 110B",
-    "why": "no program requirements in the text; named only in the MATH 115 recommended prep"
+    "why": "not in the text; the Mathematics A.S.-T section is absent"
    },
    {
     "code": "CS 111B",
-    "why": "no program requirements in the text; named only in the MATH 115 recommended prep"
+    "why": "not in the text; the Mathematics A.S.-T section is absent"
    },
    {
     "code": "CS 131B",
-    "why": "not in the text"
+    "why": "not in the text; the Mathematics A.S.-T section is absent"
    },
    {
     "code": "MATH 110A",
-    "why": "no program requirements in the text; named only in the MATH 115 recommended prep"
+    "why": "named only in another program's list (Liberal Arts and Sciences math courses), not the Mathematics A.S.-T section"
    },
    {
     "code": "MATH 110B",
-    "why": "no program requirements in the text; named only as a prerequisite"
+    "why": "named only in another program's list (Liberal Arts and Sciences math courses), not the Mathematics A.S.-T section"
    },
    {
     "code": "MATH 110C",
-    "why": "no program requirements in the text; named only as a prerequisite"
+    "why": "named only in another program's list (Liberal Arts and Sciences math courses), not the Mathematics A.S.-T section"
    },
    {
     "code": "MATH 120",
-    "why": "appears only as a course description, not in a program requirements list"
+    "why": "named only in another program's list (Liberal Arts and Sciences math courses), not the Mathematics A.S.-T section"
    },
    {
     "code": "MATH 125",
-    "why": "appears only as a course description, not in a program requirements list"
+    "why": "named only in another program's list (Liberal Arts and Sciences math courses), not the Mathematics A.S.-T section"
    },
    {
     "code": "MATH 130",
-    "why": "appears only as a course description, not in a program requirements list"
+    "why": "named only in another program's list (Liberal Arts and Sciences math courses), not the Mathematics A.S.-T section"
    },
    {
     "code": "PHYC 4A",
-    "why": "not in the text"
+    "why": "named only in another program's science list, not the Mathematics A.S.-T section"
    },
    {
     "code": "PHYC 4AL",
-    "why": "not in the text"
+    "why": "not in the text; the Mathematics A.S.-T section is absent"
    }
   ],
-  "notes": [
-   "The supplied text (catalog page 734) is from the course descriptions section (MATH 115, 120, 125, 130, 9000, then the start of MED - Medical Assisting). It does not contain the Mathematics 2.0 A.S.-T degree requirements. No blocks, totals, outcomes or careers could be recorded.",
-   "A reviewer should locate the Mathematics A.S.-T program page in the 2026-27 CCSF catalog. That page belongs in the degree programs section, not the course listings.",
-   "The closed list includes MATH 130, a combined Linear Algebra and Differential Equations course. It is likely an alternative to MATH 120 + MATH 125 in the degree, but the text does not state this."
-  ]
+  "notes": []
  },
- "extracted_run": "39047128472"
+ "extracted_run": "39056434592"
 }

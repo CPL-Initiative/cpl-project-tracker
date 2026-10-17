@@ -1,0 +1,183 @@
+{
+ "college": "College of the Desert",
+ "control_number": "40194",
+ "shape": "noncredit",
+ "title": "Geographic Information Systems for Business",
+ "award": "Noncredit program",
+ "source_url": "https://collegeofthedesert.edu/_web-items/documents/pdf-files/catalogs/2026-2027-catalog.pdf#page=217",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 9595,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 9595,
+    "output_tokens": 1101,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1101,
+  "output_tokens_details": {
+   "thinking_tokens": 392
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.0604,
+ "ms": 10417,
+ "seconds": 10.8,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 5,
+   "listed": 5,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unstated",
+   "computed": null,
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record states no figure, but the catalog text names 9 units, 9 units, 9 units"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Geographic Information Systems for Business Certiﬁcate of Completion",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Demonstrate competence in using ArcGIS online products to create online and interactive maps to resolve business problems and identify opportunities.",
+    "Evaluate how GIS impacts business decisions.",
+    "Using critical thinking skills, evaluate accuracy and effectiveness of different map projections and data management scales."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Program Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "NR 321A",
+      "units": 0,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "GIS 321A",
+        "units": 0,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "NR 321B",
+      "units": 0,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "GIS 321B",
+        "units": 0,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "GIS 324",
+      "units": 0,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Read the second section headed 'Geographic Information Systems for Business Certiﬁcate of Completion' (the noncredit one listing NR/GIS 321A, 321B and GIS 324). The text above it, with GIS 021/022/023 and 18 units of credit courses, appears to belong to a different credit certificate; the repeated heading at the top of page 217 looks like a page running head.",
+   "The catalog prints 0 in the Units column for each noncredit course and gives no hours or total for this award, so measure is 'units' with 0 as printed, and total_units is null.",
+   "The careers named in the description at the top of page 217 (urban planning, community services, etc.) belong to the preceding credit certificate's section, not this award, so careers is left empty."
+  ]
+ },
+ "extracted_run": "39056007346"
+}

@@ -1,0 +1,2212 @@
+{
+ "college": "Ohlone College",
+ "catalog_url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf",
+ "platform": "pdf",
+ "catalog_year": "2026-2027",
+ "programs": 204,
+ "with_closed_list": 179,
+ "started": "2026-10-17T19:39:44Z",
+ "pdf": {
+  "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf",
+  "access": "ok",
+  "status": 200,
+  "bytes": 3876301,
+  "pages_total": 100,
+  "error": null,
+  "chars_total": 714622,
+  "pypdf_accepted": 146,
+  "sample": [
+   "p31: '92                                                                                                                                      2026-2027 OHLONE COLLEGE CATALOG\\n                                                                       '",
+   "p61: '122                                                                                                                                  2026-2027 OHLONE COLLEGE CATALOG\\n                                                                          '"
+  ],
+  "extractor": "pypdf",
+  "picks": [
+   {
+    "control_number": "01248",
+    "pages": [
+     66
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.9,
+    "opens": "[page 66] Associate in Arts in Real Estate Sales Agent/Broker INTEREST AREA: BUSINESS This program prepares students to pursue entry-level careers in today’ s fast paced Real Estate industry. The program includes in"
+   },
+   {
+    "control_number": "01250",
+    "pages": [
+     87,
+     88,
+     89
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.714,
+    "opens": "[page 87] 148 2026-2027 OHLONE COLLEGE CATALOG "
+   },
+   {
+    "control_number": "01255",
+    "pages": [
+     25,
+     26
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 25] 86 2026-2027 OHLONE COLLEGE CATALOG "
+   },
+   {
+    "control_number": "01267",
+    "pages": [
+     43
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 43] Associate in Arts in Graphic and Interactive Design INTEREST AREA: ARTS AND CREATIVE INDUSTRIES The Associate in Arts in Graphic and Interactive Design offers a comprehensive range of educational opportuni"
+   },
+   {
+    "control_number": "01271",
+    "pages": [
+     67,
+     68,
+     69,
+     70
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 67] 128 2026-2027 OHLONE COLLEGE CATALOG "
+   },
+   {
+    "control_number": "01273",
+    "pages": [
+     68,
+     69,
+     70,
+     71
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 68] Associate in Science in Respiratory Therapist INTEREST AREA: HEALTH AND WELLNESS Respiratory care is a health care specialty directed at the diagnosis, treatment, management, and care of patients with defi"
+   },
+   {
+    "control_number": "01285",
+    "pages": [
+     6
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.5,
+    "opens": "[page 6] 2026-2027 OHLONE COLLEGE CATALOG "
+   },
+   {
+    "control_number": "01286",
+    "pages": [
+     29
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 29] Associate in Arts in Early Childhood Studies INTEREST AREA: SOCIAL SCIENCES The Early Childhood Studies program at Ohlone College prepares students for employment in child development programs including pr"
+   },
+   {
+    "control_number": "08336",
+    "pages": [
+     61
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 61] Associate in Science in Physical Therapist Assistant INTEREST AREA: HEALTH AND WELLNESS Ohlone’ s Physical Therapist Assistant (PTA) Program is a two calendar year course of study leading to an Associate i"
+   },
+   {
+    "control_number": "10401",
+    "pages": [
+     26,
+     27
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 26] 2026-2027 OHLONE COLLEGE CATALOG "
+   },
+   {
+    "control_number": "11810",
+    "pages": [
+     75
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.5,
+    "opens": "[page 75] 136 2026-2027 OHLONE COLLEGE CATALOG "
+   },
+   {
+    "control_number": "12148",
+    "pages": [
+     59
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 59] Associate in Science in Network Administrator INTEREST AREA: SCIENCE, TECHNOLOGY, ENGINEERING, AND MATHEMATICS (STEM) Network administrators manage all of the day-to-day aspects of a computer network. In a"
+   },
+   {
+    "control_number": "12149",
+    "pages": [
+     48,
+     49
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 48] 2026-2027 OHLONE COLLEGE CATALOG "
+   },
+   {
+    "control_number": "12555",
+    "pages": [
+     32,
+     33,
+     34
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 32] Associate in Arts in Entertainment Design and Technology INTEREST AREA: ARTS AND CREATIVE INDUSTRIES This unique program prepares students for jobs in the exciting world of Entertainment Design and Technol"
+   },
+   {
+    "control_number": "13256",
+    "pages": [
+     12
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 12] Associate in Science in Biology INTEREST AREA: SCIENCE, TECHNOLOGY, ENGINEERING, AND MATHEMATICS (STEM) The Associate in Science degree in Biology offered by Ohlone College is designed to prepare students "
+   },
+   {
+    "control_number": "14968",
+    "pages": [
+     20
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 20] Associate in Arts in Communication Studies INTEREST AREA: SOCIAL SCIENCES The Associate in Arts in Communication Studies is designed to empower students to be critical thinkers and active in community enga"
+   },
+   {
+    "control_number": "15551",
+    "pages": [
+     55,
+     56
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.743,
+    "opens": "[page 55] 116 2026-2027 OHLONE COLLEGE CATALOG "
+   },
+   {
+    "control_number": "15887",
+    "pages": [
+     10,
+     11
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 10] Associate in Arts in Art INTEREST AREA: ARTS AND CREATIVE INDUSTRIES The Associate in Arts in Art offered by Ohlone College is designed to prepare students for studying Fine Arts at most universities. Whil"
+   },
+   {
+    "control_number": "16663",
+    "pages": [
+     31,
+     32
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.885,
+    "opens": "[page 31] 92 2026-2027 OHLONE COLLEGE CATALOG "
+   },
+   {
+    "control_number": "18032",
+    "pages": [
+     15,
+     16
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 15] Associate in Arts in Business INTEREST AREA: BUSINESS The Associate in Arts in Business is designed to provide graduates with the skills and knowledge required to work effectively in a variety of business "
+   },
+   {
+    "control_number": "18034",
+    "pages": [
+     52
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 52] 2026-2027 OHLONE COLLEGE CATALOG "
+   },
+   {
+    "control_number": "18036",
+    "pages": [
+     51
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 51] Associate in Arts in Liberal Arts: Communication Emphasis INTEREST AREA: SOCIAL SCIENCES The Associate in Arts in Liberal Arts has three areas of emphasis: Communication, Humanities, and Language. A libera"
+   },
+   {
+    "control_number": "18037",
+    "pages": [
+     56
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 56] Associate in Arts in Natural Science: Biological Science Emphasis INTEREST AREA: SCIENCE, TECHNOLOGY, ENGINEERING, AND MATHEMATICS (STEM) The Associate in Arts in Natural Science has three areas of emphasis"
+   },
+   {
+    "control_number": "18039",
+    "pages": [
+     57,
+     58,
+     59,
+     60
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 57] 118 2026-2027 OHLONE COLLEGE CATALOG "
+   },
+   {
+    "control_number": "18040",
+    "pages": [
+     71,
+     72,
+     73
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 71] Associate in Arts in Social Science INTEREST AREA: SOCIAL SCIENCES The Associate in Arts in Social Science is an interdisciplinary program of study designed to prepare students to transfer to most universi"
+   },
+   {
+    "control_number": "18760",
+    "pages": [
+     36
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 36] Associate in Arts in Environmental Studies INTEREST AREA: SOCIAL SCIENCES The Associate in Arts in Environmental Studies offered by Ohlone College is designed to prepare students for studying Environmental"
+   },
+   {
+    "control_number": "18802",
+    "pages": [
+     13,
+     14,
+     15,
+     16
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 13] Associate in Science in Biotechnology INTEREST AREA: SCIENCE, TECHNOLOGY, ENGINEERING, AND MATHEMATICS The Associate in Science in Biotechnology is a program designed to train students in the methods and t"
+   },
+   {
+    "control_number": "18804",
+    "pages": [
+     13,
+     14,
+     15
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 13] 74 2026-2027 OHLONE COLLEGE CATALOG "
+   },
+   {
+    "control_number": "18805",
+    "pages": [
+     14,
+     15,
+     16
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 14] Certificate of Achievement in Biotechnology: Biostatistics INTEREST AREA: SCIENCE, TECHNOLOGY, ENGINEERING, AND MATHEMATICS (STEM) The Certificate of Achievement in Biotechnology: Biostatistics is a program"
+   },
+   {
+    "control_number": "18806",
+    "pages": [
+     13,
+     14,
+     15
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 13] Certificate of Achievement in Biotechnology: Bio-Manufacturing INTEREST AREA: SCIENCE, TECHNOLOGY, ENGINEERING, AND MATHEMATICS (STEM) The Certificate of Achievement in Biotechnology: Bio-Manufacturing prov"
+   },
+   {
+    "control_number": "22194",
+    "pages": [
+     66
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.8,
+    "opens": "[page 66] 2026-2027 OHLONE COLLEGE CATALOG "
+   },
+   {
+    "control_number": "22195",
+    "pages": [
+     87,
+     88,
+     89
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.714,
+    "opens": "[page 87] Certificate of Accomplishment in Journalism INTEREST AREA: HUMANITIES Upon completion of the Journalism Certificate of Accomplishment, students will have gained a basic knowledge of the newspaper, magazine"
+   },
+   {
+    "control_number": "22197",
+    "pages": [
+     26,
+     27
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 26] Certificate of Achievement in Digital Arts and Interactive Design INTEREST AREA: ARTS AND CREATIVE INDUSTRIES The Digital Arts and Interactive Design Certificate of Achievement provides students with a com"
+   },
+   {
+    "control_number": "22199",
+    "pages": [
+     75
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.5,
+    "opens": "[page 75] 136 2026-2027 OHLONE COLLEGE CATALOG "
+   },
+   {
+    "control_number": "22202",
+    "pages": [
+     58,
+     59
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 58] Certificate of Achievement in Network Administrator INTEREST AREA: SCIENCE, TECHNOLOGY, ENGINEERING, AND MATHEMATICS (STEM) Network administrators manage all of the day-to-day aspects of a computer network"
+   },
+   {
+    "control_number": "22203",
+    "pages": [
+     48,
+     49
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 48] Certificate of Achievement in IT Service and Support INTEREST AREA: SCIENCE, TECHNOLOGY, ENGINEERING, AND MATHEMATICS IT service and support technicians provide a single point of contact for end users to r"
+   },
+   {
+    "control_number": "22205",
+    "pages": [
+     8
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 8] 2026-2027 OHLONE COLLEGE CATALOG "
+   },
+   {
+    "control_number": "22206",
+    "pages": [
+     25,
+     26
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 25] Certificate of Achievement in Deaf-Centered Interpreting INTEREST AREA: HUMANITIES The Certificate of Achievement in Deaf-Centered Interpreting is designed to prepare students for entry-level positions tha"
+   },
+   {
+    "control_number": "22207",
+    "pages": [
+     33,
+     34
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 33] The Certificate of Achievement in Entertainment Design and Technology: Audio prepares students for jobs in the exciting world of sound and sound recording for the entertainment industry. Students completing t"
+   },
+   {
+    "control_number": "22208",
+    "pages": [
+     33,
+     34
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 33] 94 2026-2027 OHLONE COLLEGE CATALOG "
+   },
+   {
+    "control_number": "22209",
+    "pages": [
+     34
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 34] 2026-2027 OHLONE COLLEGE CATALOG "
+   },
+   {
+    "control_number": "22211",
+    "pages": [
+     34
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 34] 2026-2027 OHLONE COLLEGE CATALOG "
+   },
+   {
+    "control_number": "22212",
+    "pages": [
+     34
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 34] 2026-2027 OHLONE COLLEGE CATALOG "
+   },
+   {
+    "control_number": "22213",
+    "pages": [
+     43
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 43] Certificate of Achievement in Graphic Design INTEREST AREA: ARTS AND CREATIVE INDUSTRIES The Certificate of Achievement in Graphic Design provides students with conceptual and hands-on training preparing t"
+   },
+   {
+    "control_number": "22215",
+    "pages": [
+     28,
+     29
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 28] 2026-2027 OHLONE COLLEGE CATALOG "
+   },
+   {
+    "control_number": "22938",
+    "pages": [
+     45,
+     46
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 45] Associate in Arts in Human Development Studies INTEREST AREA: HUMANITIES The associate degree in Human Development Studies offered by Ohlone College is designed to prepare students for studying anthropolog"
+   },
+   {
+    "control_number": "30592",
+    "pages": [
+     64,
+     65
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 64] PSYCHOLOGY FOR TRANSFER Associate in Arts in Psychology for Transfer (ADT) INTEREST AREA: SOCIAL SCIENCES The Student Transfer Achievement Reform Act (Senate Bill 1440, codified in California Education Co"
+   },
+   {
+    "control_number": "31779",
+    "pages": [
+     50
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 50] Certificate of Achievement in Kinesiology: Fitness Professional INTEREST AREA: HEALTH AND WELLNESS The Certificate of Achievement in Kinesiology: Fitness Professional prepares students to pursue careers in"
+   },
+   {
+    "control_number": "32412",
+    "pages": [
+     40,
+     41,
+     42
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 40] certificate is also aligned with the Associate in Arts in Geography for Transfer, allowing students to easily pursue the associate in arts for transfer if they choose to do so. (continued on next column) REQ"
+   },
+   {
+    "control_number": "32414",
+    "pages": [
+     73
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 73] SPANISH FOR TRANSFER Associate in Arts in Spanish for Transfer (ADT) INTEREST AREA: HUMANITIES The Student Transfer Achievement Reform Act (Senate Bill 1440, codified in California Education Code sections"
+   },
+   {
+    "control_number": "32440",
+    "pages": [
+     44,
+     45,
+     46
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 44] HISTORY FOR TRANSFER Associate in Arts in History for Transfer (ADT) INTEREST AREA: SOCIAL SCIENCES The Student Transfer Achievement Reform Act (Senate Bill 1440, codified in California Education Code sec"
+   },
+   {
+    "control_number": "32441",
+    "pages": [
+     76
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 76] 2026-2027 OHLONE COLLEGE CATALOG "
+   },
+   {
+    "control_number": "32584",
+    "pages": [
+     15,
+     16
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.75,
+    "opens": "[page 15] 76 2026-2027 OHLONE COLLEGE CATALOG "
+   },
+   {
+    "control_number": "32585",
+    "pages": [
+     60
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 60] PHILOSOPHY FOR TRANSFER Associate in Arts in Philosophy for Transfer (ADT) INTEREST AREA: HUMANITIES The Student Transfer Achievement Reform Act (Senate Bill 1440, codified in California Education Code se"
+   },
+   {
+    "control_number": "32697",
+    "pages": [
+     55,
+     56
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 55] 116 2026-2027 OHLONE COLLEGE CATALOG "
+   },
+   {
+    "control_number": "32706",
+    "pages": [
+     10,
+     11
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 10] 2026-2027 OHLONE COLLEGE CATALOG "
+   },
+   {
+    "control_number": "32761",
+    "pages": [
+     28,
+     29
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 28] EARLY CHILDHOOD EDUCATION FOR TRANSFER Associate in Science in Early Childhood Education for Transfer (ADT) INTEREST AREA: SOCIAL SCIENCES The Student Transfer Achievement Reform Act (Senate Bill 1440, cod"
+   },
+   {
+    "control_number": "33318",
+    "pages": [
+     23,
+     24
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 23] Certificate of Achievement in Database Administration INTEREST AREA: SCIENCE, TECHNOLOGY, ENGINEERING, AND MATHEMATICS (STEM) The Certificate of Achievement in Database Administration prepares students to "
+   },
+   {
+    "control_number": "33319",
+    "pages": [
+     87
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.5,
+    "opens": "[page 87] Certificate of Accomplishment in Health Information Technology INTEREST AREA: SCIENCE, TECHNOLOGY, ENGINEERING, AND MATHEMATICS (STEM) Upon completion of the Health Information Technology Certificate of Ac"
+   },
+   {
+    "control_number": "33320",
+    "pages": [
+     74,
+     75
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 74] Certificate of Achievement in System Administration INTEREST AREA: SCIENCE, TECHNOLOGY, ENGINEERING, AND MATHEMATICS (STEM) The Certificate of Achievement in System Administration prepares students to eith"
+   },
+   {
+    "control_number": "33547",
+    "pages": [
+     21,
+     22,
+     23
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 21] COMPUTER SCIENCE FOR TRANSFER Associate in Science in Computer Science for Transfer (ADT) INTEREST AREA: SCIENCE, TECHNOLOGY, ENGINEERING, AND MATHEMATICS (STEM) The Student Transfer Achievement Reform Act"
+   },
+   {
+    "control_number": "33549",
+    "pages": [
+     6
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 6] 2026-2027 OHLONE COLLEGE CATALOG "
+   },
+   {
+    "control_number": "33643",
+    "pages": [
+     47,
+     48,
+     49
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 47] Associate in Science in Information Technology INTEREST AREA: SCIENCE, TECHNOLOGY, ENGINEERING, AND MATHEMATICS (STEM) The Associate in Science in Information Technology prepares students to either enter t"
+   },
+   {
+    "control_number": "33644",
+    "pages": [
+     24
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 24] Associate in Science in Database Administration INTEREST AREA: SCIENCE, TECHNOLOGY, ENGINEERING, AND MATHEMATICS (STEM) The Associate in Science in Database Administration prepares students to either enter"
+   },
+   {
+    "control_number": "33685",
+    "pages": [
+     75
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 75] Associate in Science in System Administration INTEREST AREA: SCIENCE, TECHNOLOGY, ENGINEERING, AND MATHEMATICS (STEM) The Associate in Science in System Administration prepares students to either enter the"
+   },
+   {
+    "control_number": "35532",
+    "pages": [
+     12
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 12] 2026-2027 OHLONE COLLEGE CATALOG "
+   },
+   {
+    "control_number": "35797",
+    "pages": [
+     30,
+     31
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.5,
+    "opens": "[page 30] 2026-2027 OHLONE COLLEGE CATALOG "
+   },
+   {
+    "control_number": "35933",
+    "pages": [
+     15
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 15] Certificate of Achievement in Biotechnology Operations INTEREST AREA: SCIENCE, TECHNOLOGY, ENGINEERING, AND MATHEMATICS (STEM) The Certificate of Achievement in Biotechnology Operations provides students w"
+   },
+   {
+    "control_number": "36009",
+    "pages": [
+     76,
+     77,
+     78
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.5,
+    "opens": "[page 76] for completion of the Associate in Arts in Studio Arts for Transfer. REQUIREMENTS FOR CERTIFICATE OF ACHIEVEMENT Complete Major Field courses. a) Complete at least six units at Ohlone College. b) Maintain a 2"
+   },
+   {
+    "control_number": "36016",
+    "pages": [
+     31,
+     32
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.885,
+    "opens": "[page 31] 92 2026-2027 OHLONE COLLEGE CATALOG "
+   },
+   {
+    "control_number": "36031",
+    "pages": [
+     32
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": false,
+    "coverage": 1.0,
+    "opens": "[page 32] 2026-2027 OHLONE COLLEGE CATALOG "
+   },
+   {
+    "control_number": "36062",
+    "pages": [
+     72,
+     73
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 72] SOCIOLOGY FOR TRANSFER Associate in Arts in Sociology for Transfer (ADT) INTEREST AREA: SOCIAL SCIENCES The Student Transfer Achievement Reform Act (Senate Bill 1440, now codified in California Education "
+   },
+   {
+    "control_number": "36096",
+    "pages": [
+     8
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 8] Associate in Arts in American Sign Language and Deaf Studies INTEREST AREA: HUMANITIES This degree is designed to prepare students for paraprofessional positions that require skills in American Sign Languag"
+   },
+   {
+    "control_number": "36120",
+    "pages": [
+     9
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 9] ANTHROPOLOGY FOR TRANSFER Associate in Arts in Anthropology for Transfer (ADT) INTEREST AREA: SCIENCE, TECHNOLOGY, ENGINEERING, AND MATHEMATICS The Student Transfer Achievement Reform Act (Senate Bill 1440,"
+   },
+   {
+    "control_number": "36285",
+    "pages": [
+     96
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 96] Certificate of Competency in English as a Second Language INTEREST AREA: HUMANITIES The noncredit English as a Second Language (ESL) program offers eight courses each semester which address reading, writin"
+   },
+   {
+    "control_number": "36299",
+    "pages": [
+     42,
+     43,
+     44,
+     45
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 42] 2026-2027 OHLONE COLLEGE CATALOG "
+   },
+   {
+    "control_number": "36521",
+    "pages": [
+     5
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 5] Certificate of Achievement in Accounting INTEREST AREA: BUSINESS The goal and objective of this program is to prepare students for entry-level accounting positions in business, industry, or government. The"
+   },
+   {
+    "control_number": "36523",
+    "pages": [
+     42,
+     43,
+     44,
+     45
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 42] Certificate of Achievement in Global Studies INTEREST AREA: SOCIAL SCIENCES The Certificate of Achievement in Global Studies is intended to offer students an opportunity to develop and appreciate a deeper "
+   },
+   {
+    "control_number": "37482",
+    "pages": [
+     70,
+     71,
+     72,
+     73
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 70] SOCIAL JUSTICE STUDIES FOR TRANSFER Associate in Arts in Social Justice Studies for Transfer (ADT) INTEREST AREA: SOCIAL SCIENCES The Student Transfer Achievement Reform Act (Senate Bill 1440, codified in "
+   },
+   {
+    "control_number": "37691",
+    "pages": [
+     35,
+     36
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 35] 96 2026-2027 OHLONE COLLEGE CATALOG "
+   },
+   {
+    "control_number": "37692",
+    "pages": [
+     40,
+     41,
+     42
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 40] Certificate of Achievement in Geography INTEREST AREA: SOCIAL SCIENCES The Certificate of Achievement in Geography allows students to receive basic training in regional variations of the world, as well as "
+   },
+   {
+    "control_number": "37693",
+    "pages": [
+     88
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.833,
+    "opens": "[page 88] Certificate of Accomplishment in Kinesiology: Sports Medicine INTEREST AREA: HEALTH AND WELLNESS The Certificate of Accomplishment in Kinesiology: Sports Medicine prepares students to pursue academic and p"
+   },
+   {
+    "control_number": "37694",
+    "pages": [
+     65
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 65] Certificate of Achievement in Pure Mathematics INTEREST AREA: SCIENCE, TECHNOLOGY, ENGINEERING, AND MATHEMATICS The Certificate of Achievement in Pure Mathematics provides students with the mathematical ba"
+   },
+   {
+    "control_number": "37898",
+    "pages": [
+     9
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 9] Certificate of Achievement in Applied Mathematics INTEREST AREA: SCIENCE, TECHNOLOGY, ENGINEERING, AND MATHEMATICS (STEM) The Certificate of Achievement in Applied Mathematics provides students with the mat"
+   },
+   {
+    "control_number": "37931",
+    "pages": [
+     39,
+     40
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 39] 100 2026-2027 OHLONE COLLEGE CATALOG "
+   },
+   {
+    "control_number": "37937",
+    "pages": [
+     63,
+     64,
+     65
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 63] POLITICAL SCIENCE FOR TRANSFER Associate in Arts in Political Science for Transfer (ADT) INTEREST AREA: SOCIAL SCIENCES The Student Transfer Achievement Reform Act (Senate Bill 1440, codified in Californi"
+   },
+   {
+    "control_number": "38441",
+    "pages": [
+     99
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.5,
+    "opens": "[page 99] 160 2026-2027 OHLONE COLLEGE CATALOG "
+   },
+   {
+    "control_number": "38755",
+    "pages": [
+     76
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 76] Certificate of Achievement in Three-Dimensional Foundations in Art INTEREST AREA: ARTS AND CREATIVE INDUSTRIES The Three-Dimensional Foundations in Art Certificate of Achievement signifies that students ha"
+   },
+   {
+    "control_number": "38974",
+    "pages": [
+     39,
+     40
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 39] 100 2026-2027 OHLONE COLLEGE CATALOG "
+   },
+   {
+    "control_number": "38976",
+    "pages": [
+     96
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 96] The Digital Media Essential Skills Certificate of Completion is designed to provide students with an overview of digital media tools and processes used in the industry. Through lectures and hands-on instructi"
+   },
+   {
+    "control_number": "39343",
+    "pages": [
+     50
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.708,
+    "opens": "[page 50] 2026-2027 OHLONE COLLEGE CATALOG "
+   },
+   {
+    "control_number": "39369",
+    "pages": [
+     96
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 96] Certificate of Competency in English as a Second Language INTEREST AREA: HUMANITIES The noncredit English as a Second Language (ESL) program offers eight courses each semester which address reading, writin"
+   },
+   {
+    "control_number": "39758",
+    "pages": [
+     95
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 95] Certificate of Competency in College Success Skills INTEREST AREA: HUMANITIES This noncredit College Success Skills program will help prepare students for college success through academic and college readi"
+   },
+   {
+    "control_number": "39792",
+    "pages": [
+     8
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 8] Certificate of Achievement in Animation and 3D Modeling INTEREST AREA: ARTS AND CREATIVE INDUSTRIES The Animation and 3D Modeling Certificate of Achievement introduces students to fundamental skills needed "
+   },
+   {
+    "control_number": "39799",
+    "pages": [
+     77,
+     78
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 77] The Certificate of Achievement in Video, Animation, and Motion Graphics provides comprehensive training for video production, computer animation, motion graphics, and virtual production. Students completing t"
+   },
+   {
+    "control_number": "39827",
+    "pages": [
+     95
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 95] Certificate of Completion in Digital Arts INTEREST AREA: ARTS AND CREATIVE INDUSTRIES The noncredit Digital Arts Certificate of Completion is intended for students wishing to acquire competencies in digita"
+   },
+   {
+    "control_number": "40030",
+    "pages": [
+     30,
+     31
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 30] 2026-2027 OHLONE COLLEGE CATALOG "
+   },
+   {
+    "control_number": "40034",
+    "pages": [
+     69
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 69] Certificate of Achievement in Smart Manufacturing Technology INTEREST AREA: SCIENCE, TECHNOLOGY, ENGINEERING, AND MATHEMATICS (STEM) The Certificate of Achievement in Smart Manufacturing Technology at Ohlon"
+   },
+   {
+    "control_number": "40035",
+    "pages": [
+     69
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 69] Associate in Science in Smart Manufacturing Technology. REQUIREMENTS FOR CERTIFICATE OF ACHIEVEMENT Complete Major Field courses. a) Complete at least six units at Ohlone College. b) Maintain a 2.0 grade poin"
+   },
+   {
+    "control_number": "40314",
+    "pages": [
+     22,
+     23
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 22] Certificate of Achievement in Computer Science Foundations INTEREST AREA: SCIENCE, TECHNOLOGY, ENGINEERING, AND MATHEMATICS (STEM) The Certificate of Achievement in Computer Science Foundations provides st"
+   },
+   {
+    "control_number": "41054",
+    "pages": [
+     97
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 97] 158 2026-2027 OHLONE COLLEGE CATALOG "
+   },
+   {
+    "control_number": "41055",
+    "pages": [
+     99,
+     100
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 99] Certificate of Completion in SLAM Concepts INTEREST AREA: SCIENCE, TECHNOLOGY, ENGINEERING, AND MATHEMATICS (STEM) This noncredit certificate provides students with review and remediation of the math skill"
+   },
+   {
+    "control_number": "41056",
+    "pages": [
+     99,
+     100
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 99] 160 2026-2027 OHLONE COLLEGE CATALOG "
+   },
+   {
+    "control_number": "41057",
+    "pages": [
+     95
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 95] 156 2026-2027 OHLONE COLLEGE CATALOG "
+   },
+   {
+    "control_number": "41112",
+    "pages": [
+     93
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 93] Certificate of Completion in Animation Essential Skills INTEREST AREA: ARTS AND CREATIVE INDUSTRIES The noncredit Animation Essential Skills Certificate of Completion is designed to provide students with a"
+   },
+   {
+    "control_number": "41113",
+    "pages": [
+     100
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 100] The noncredit User Experience (UX) and Interface Design Certificate of Completion is intended for students wishing to acquire skills in User Experience (UX) design, User Interface (UI) design, and front end "
+   },
+   {
+    "control_number": "41124",
+    "pages": [
+     98
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 98] 2026-2027 OHLONE COLLEGE CATALOG "
+   },
+   {
+    "control_number": "41245",
+    "pages": [
+     39
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 39] Certificate of Achievement in Fire Fighter I INTEREST AREA: SOCIAL SCIENCE This program trains students to become fire fighters. Students are challenged both physically and mentally while studying the cou"
+   },
+   {
+    "control_number": "41329",
+    "pages": [
+     35,
+     36
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 35] The Certificate of Achievement in Environmental Science and Technology is intended to offer students an opportunity to develop and appreciate a deeper and more meaningful understanding of environmental issues"
+   },
+   {
+    "control_number": "41470",
+    "pages": [
+     16
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 16] BUSINESS ADMINISTRATION 2.0 FOR TRANSFER Associate in Science in Business Administration 2.0 for Transfer (ADT) INTEREST AREA: BUSINESS The Student Transfer Achievement Reform Act (Senate Bill 1440, now co"
+   },
+   {
+    "control_number": "41658",
+    "pages": [
+     17
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 17] Certificate of Achievement in Ceramics INTEREST AREA: ARTS AND CREATIVE INDUSTRIES The Ceramics Certificate of Achievement will provide a solid foundation for students continuing on to a baccalaureate coll"
+   },
+   {
+    "control_number": "41659",
+    "pages": [
+     17
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 17] Ceramics. Students are well on their way to achieving an Associate in Arts in Ceramics once they’ve completed the Certificate of Achievement in Ceramics. REQUIREMENTS FOR CERTIFICATE OF ACHIEVEMENT Complete "
+   },
+   {
+    "control_number": "41833",
+    "pages": [
+     35,
+     36
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 35] the Associate in Science in Environmental Science and Technology, allowing students to easily pursue the associate in science if they choose to do so. REQUIREMENTS FOR CERTIFICATE OF ACHIEVEMENT Complete Maj"
+   },
+   {
+    "control_number": "41888",
+    "pages": [
+     77,
+     78
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 77] Certificate of Achievement in Video Game Development INTEREST AREA: ARTS AND CREATIVE INDUSTRIES The Certificate of Achievement in Video Game Development is designed to provide students with strong foundat"
+   },
+   {
+    "control_number": "42775",
+    "pages": [
+     99
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 99] Certificate of Completion in Smart Manufacturing Technology INTEREST AREA: SCIENCE, TECHNOLOGY, ENGINEERING, AND MATHEMATICS The Certificate of Completion in Smart Manufacturing Technology Program at Ohlon"
+   },
+   {
+    "control_number": "42917",
+    "pages": [
+     61
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 61] Certificate of Achievement in Photography INTEREST AREA: ARTS AND CREATIVE INDUSTRIES The Photography Certificate of Achievement signifies that students have acquired skills and competency in foundational "
+   },
+   {
+    "control_number": "42924",
+    "pages": [
+     47,
+     48
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 47] 108 2026-2027 OHLONE COLLEGE CATALOG "
+   },
+   {
+    "control_number": "43042",
+    "pages": [
+     24,
+     25
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 24] Certificate of Achievement in Deaf Education INTEREST AREA: HUMANITIES Courses for the Deaf Education Certificate of Achievement are designed to provide students with the necessary knowledge and background"
+   },
+   {
+    "control_number": "43090",
+    "pages": [
+     77,
+     78
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 77] 138 2026-2027 OHLONE COLLEGE CATALOG "
+   },
+   {
+    "control_number": "43403",
+    "pages": [
+     19,
+     20
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 19] COMMUNICATION STUDIES 2.0 FOR TRANSFER Associate in Arts in Communication Studies 2.0 for Transfer (ADT) INTEREST AREA: SOCIAL SCIENCES The Student Transfer Achievement Reform Act (Senate Bill 1440, codifi"
+   },
+   {
+    "control_number": "43778",
+    "pages": [
+     67,
+     68,
+     69,
+     70
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": false,
+    "coverage": 1.0,
+    "opens": "[page 67] 128 2026-2027 OHLONE COLLEGE CATALOG "
+   },
+   {
+    "control_number": "43833",
+    "pages": [
+     94
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 94] Certificate of Competency in Basic Communicative Competence in ESL INTEREST AREA: HUMANITIES The noncredit English as a Second Language (ESL) program offers courses that address reading, writing, grammar, "
+   },
+   {
+    "control_number": "44099",
+    "pages": [
+     100
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 100] Certificate of Completion in Virtual Production Fundamentals INTEREST AREA: ARTS AND CREATIVE INDUSTRIES The noncredit Virtual Production Fundamentals Certificate of Completion is designed to prepare stud"
+   },
+   {
+    "control_number": "44254",
+    "pages": [
+     78
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 78] Associate in Arts in Virtual Production INTEREST AREA: ARTS AND CREATIVE INDUSTRIES The Digital Arts and Interactive Design curriculum is designed to provide students with conceptual, aesthetic, and techni"
+   },
+   {
+    "control_number": "44383",
+    "pages": [
+     7,
+     8
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 7] Certificate of Achievement in Advanced Virtual Production INTEREST AREA: ARTS AND CREATIVE INDUSTRIES The Advanced Virtual Production Certificate of Achievement, presented in collaboration with the Regional"
+   },
+   {
+    "control_number": "44787",
+    "pages": [
+     37
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 37] 98 2026-2027 OHLONE COLLEGE CATALOG "
+   },
+   {
+    "control_number": "44852",
+    "pages": [
+     93
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 93] Certificate of Competency in Academic English Reading and Writing INTEREST AREA: HUMANITIES This noncredit certificate of competency is designed for students who wish to review and/or improve their academi"
+   },
+   {
+    "control_number": "44853",
+    "pages": [
+     94
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 94] Certificate of Completion in College and Career Advancement INTEREST AREA: HUMANITIES This noncredit program will help prepare students for college and career success through courses that include an introd"
+   },
+   {
+    "control_number": "44864",
+    "pages": [
+     65
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 65] PUBLIC HEALTH FOR TRANSFER Associate in Science in Public Health for Transfer (ADT) INTEREST AREA: HEALTH AND WELLNESS The Student Transfer Achievement Reform Act (Senate Bill 1440, codified in California"
+   },
+   {
+    "control_number": "45891",
+    "pages": [
+     22,
+     23
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 22] Associate in Science in Computer Science INTEREST AREA: SCIENCE, TECHNOLOGY, ENGINEERING, AND MATHEMATICS (STEM) The Associate in Science in Computer Science prepares students for a dynamic career in techn"
+   },
+   {
+    "control_number": "45892",
+    "pages": [
+     23,
+     24
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 23] Associate in Science in Data Science INTEREST AREA: SCIENCE, TECHNOLOGY, ENGINEERING, AND MATHEMATICS (STEM) The Associate in Science in Data Science program prepares students for a dynamic data science ca"
+   },
+   {
+    "control_number": "45893",
+    "pages": [
+     25
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 25] The courses in the Deaf Education - Early Intervention Studies Certificate of Achievement are designed to prepare students with essential knowledge about the educational needs of deaf and hard-of-hearing chil"
+   },
+   {
+    "control_number": "45894",
+    "pages": [
+     18
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 18] Associate in Science in Civil Engineering INTEREST AREA: SCIENCE, TECHNOLOGY, ENGINEERING, AND MATHEMATICS (STEM) The Associate in Science in Civil Engineering provides students with the foundational knowle"
+   },
+   {
+    "control_number": "45895",
+    "pages": [
+     21,
+     22,
+     23
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 21] 82 2026-2027 OHLONE COLLEGE CATALOG "
+   },
+   {
+    "control_number": "45896",
+    "pages": [
+     30,
+     31
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 30] Associate in Science in Electrical Engineering INTEREST AREA: SCIENCE, TECHNOLOGY, ENGINEERING, AND MATHEMATICS (STEM) The Associate in Science in Electrical Engineering prepares students for transfer to b"
+   },
+   {
+    "control_number": "45898",
+    "pages": [
+     54
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 54] 2026-2027 OHLONE COLLEGE CATALOG "
+   },
+   {
+    "control_number": "45932",
+    "pages": [
+     5
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 5] Certificate of Achievement in Acting INTEREST AREA: ARTS AND CREATIVE INDUSTRIES Aspiring actors seeking a solid foundation for professional performance will find it in the Acting Certificate of Achievement"
+   },
+   {
+    "control_number": "45933",
+    "pages": [
+     27
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 27] Certificate of Achievement in Directing INTEREST AREA: ARTS AND CREATIVE INDUSTRIES The Directing Certificate of Achievement offers a comprehensive pathway for emerging directors to cultivate their craft a"
+   },
+   {
+    "control_number": "46032",
+    "pages": [
+     93
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 93] Certificate of Completion in Advanced Virtual Production: Animation INTEREST AREA: ARTS AND CREATIVE INDUSTRIES The Advanced Virtual Production: Animation Certificate of Completion is designed to equip stu"
+   },
+   {
+    "control_number": "46033",
+    "pages": [
+     98
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 98] 2026-2027 OHLONE COLLEGE CATALOG "
+   },
+   {
+    "control_number": "46035",
+    "pages": [
+     95
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": false,
+    "coverage": 1.0,
+    "opens": "[page 95] 156 2026-2027 OHLONE COLLEGE CATALOG "
+   },
+   {
+    "control_number": "46103",
+    "pages": [
+     94
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 94] Certificate of Completion in Beginning Conversational ASL INTEREST AREA: HUMANITIES This noncredit program emphasizes the development of expressive and receptive skills in American Sign Language to enhance"
+   },
+   {
+    "control_number": "46107",
+    "pages": [
+     98
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 98] Certificate of Completion in Graphic and Interactive Design INTEREST AREA: ARTS AND CREATIVE INDUSTRIES The noncredit Graphic and Interactive Design Certificate of Completion is intended for students seeki"
+   },
+   {
+    "control_number": "46259",
+    "pages": [
+     99
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 99] 160 2026-2027 OHLONE COLLEGE CATALOG "
+   },
+   {
+    "control_number": "46265",
+    "pages": [
+     62,
+     63
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 62] PHYSICS 2.0 FOR TRANSFER Associate in Science in Physics 2.0 for Transfer (ADT) INTEREST AREA: SCIENCE, TECHNOLOGY, ENGINEERING, AND MATHEMATICS (STEM) The Student Transfer Achievement Reform Act (Senate B"
+   },
+   {
+    "control_number": "46267",
+    "pages": [
+     53,
+     54
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 53] MATHEMATICS 2.0 FOR TRANSFER Associate in Science in Mathematics 2.0 for Transfer (ADT) INTEREST AREA: SCIENCE, TECHNOLOGY, ENGINEERING, AND MATHEMATICS (STEM) The Student Transfer Achievement Reform Act ("
+   }
+  ],
+  "unproven": []
+ },
+ "loads": 1,
+ "seconds": 54.1,
+ "found": 146,
+ "by_method": {
+  "no_closed_list": 25,
+  "not_found": 33,
+  "pdf_pages": 146
+ },
+ "shared_pages": {
+  "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=66": [
+   "01248",
+   "22194"
+  ],
+  "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=87": [
+   "01250",
+   "22195",
+   "33319"
+  ],
+  "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=25": [
+   "01255",
+   "22206",
+   "45893"
+  ],
+  "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=43": [
+   "01267",
+   "22213"
+  ],
+  "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=67": [
+   "01271",
+   "43778"
+  ],
+  "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=6": [
+   "01285",
+   "33549"
+  ],
+  "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=61": [
+   "08336",
+   "42917"
+  ],
+  "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=26": [
+   "10401",
+   "22197"
+  ],
+  "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=75": [
+   "11810",
+   "22199",
+   "33685"
+  ],
+  "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=48": [
+   "12149",
+   "22203"
+  ],
+  "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=32": [
+   "12555",
+   "36031"
+  ],
+  "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=12": [
+   "13256",
+   "35532"
+  ],
+  "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=55": [
+   "15551",
+   "32697"
+  ],
+  "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=10": [
+   "15887",
+   "32706"
+  ],
+  "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=31": [
+   "16663",
+   "36016"
+  ],
+  "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=15": [
+   "18032",
+   "32584",
+   "35933"
+  ],
+  "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=13": [
+   "18802",
+   "18804",
+   "18806"
+  ],
+  "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=8": [
+   "22205",
+   "36096",
+   "39792"
+  ],
+  "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=33": [
+   "22207",
+   "22208"
+  ],
+  "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=34": [
+   "22209",
+   "22211",
+   "22212"
+  ],
+  "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=28": [
+   "22215",
+   "32761"
+  ],
+  "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=50": [
+   "31779",
+   "39343"
+  ],
+  "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=40": [
+   "32412",
+   "37692"
+  ],
+  "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=76": [
+   "32441",
+   "36009",
+   "38755"
+  ],
+  "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=23": [
+   "33318",
+   "45892"
+  ],
+  "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=21": [
+   "33547",
+   "45895"
+  ],
+  "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=47": [
+   "33643",
+   "42924"
+  ],
+  "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=24": [
+   "33644",
+   "43042"
+  ],
+  "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=30": [
+   "35797",
+   "40030",
+   "45896"
+  ],
+  "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=9": [
+   "36120",
+   "37898"
+  ],
+  "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=96": [
+   "36285",
+   "38976",
+   "39369"
+  ],
+  "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=42": [
+   "36299",
+   "36523"
+  ],
+  "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=5": [
+   "36521",
+   "45932"
+  ],
+  "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=35": [
+   "37691",
+   "41329",
+   "41833"
+  ],
+  "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=65": [
+   "37694",
+   "44864"
+  ],
+  "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=39": [
+   "37931",
+   "38974",
+   "41245"
+  ],
+  "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=99": [
+   "38441",
+   "41055",
+   "41056",
+   "42775",
+   "46259"
+  ],
+  "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=95": [
+   "39758",
+   "39827",
+   "41057",
+   "46035"
+  ],
+  "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=77": [
+   "39799",
+   "41888",
+   "43090"
+  ],
+  "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=69": [
+   "40034",
+   "40035"
+  ],
+  "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=22": [
+   "40314",
+   "45891"
+  ],
+  "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=93": [
+   "41112",
+   "44852",
+   "46032"
+  ],
+  "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=100": [
+   "41113",
+   "44099"
+  ],
+  "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=98": [
+   "41124",
+   "46033",
+   "46107"
+  ],
+  "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=17": [
+   "41658",
+   "41659"
+  ],
+  "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=94": [
+   "43833",
+   "44853",
+   "46103"
+  ]
+ },
+ "not_found": [
+  {
+   "control_number": "01245",
+   "title": "Business Supervision/Management",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=89",
+    "coverage": 0.2
+   }
+  },
+  {
+   "control_number": "01254",
+   "title": "Computer Studies",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=22",
+    "coverage": 0.25
+   }
+  },
+  {
+   "control_number": "01265",
+   "title": "Interior Design",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=10",
+    "coverage": 0.182
+   }
+  },
+  {
+   "control_number": "08524",
+   "title": "Fine Arts",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=10",
+    "coverage": 0.25
+   }
+  },
+  {
+   "control_number": "16631",
+   "title": "Kinesiology: Athletic Training",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=88",
+    "coverage": 0.4
+   }
+  },
+  {
+   "control_number": "16763",
+   "title": "Administrative Assistant with Supervisory Focus",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=5",
+    "coverage": 0.182
+   }
+  },
+  {
+   "control_number": "18035",
+   "title": "Liberal Arts: Language Emphasis",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=51",
+    "coverage": 0.026
+   }
+  },
+  {
+   "control_number": "18038",
+   "title": "Natural Science: Physical Science",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=41",
+    "coverage": 0.217
+   }
+  },
+  {
+   "control_number": "22192",
+   "title": "Administrative Assistant with Supervisory Focus",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=89",
+    "coverage": 0.333
+   }
+  },
+  {
+   "control_number": "22193",
+   "title": "Business Supervision/Management",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=89",
+    "coverage": 0.2
+   }
+  },
+  {
+   "control_number": "22198",
+   "title": "Computer Studies",
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+   "near_miss": {
+    "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=22",
+    "coverage": 0.25
+   }
+  },
+  {
+   "control_number": "22204",
+   "title": "Technical Support Specialist",
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+   "near_miss": {
+    "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=24",
+    "coverage": 0.333
+   }
+  },
+  {
+   "control_number": "22214",
+   "title": "Interior Design",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=10",
+    "coverage": 0.182
+   }
+  },
+  {
+   "control_number": "35542",
+   "title": "Personal Development Studies",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=16",
+    "coverage": 0.1
+   }
+  },
+  {
+   "control_number": "36533",
+   "title": "Journalism",
+   "award": "A.A- T Degree",
+   "near_miss": {
+    "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=87",
+    "coverage": 0.444
+   }
+  },
+  {
+   "control_number": "37259",
+   "title": "Customer Service Academy",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "37260",
+   "title": "Customer Service: Team Building",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "37261",
+   "title": "Customer Service: Communication and Writing",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "37490",
+   "title": "Computer Fundamentals",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "37491",
+   "title": "Beginning Technology Skills",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "38226",
+   "title": "Entrepreneurial Business Basics",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "38496",
+   "title": "Business Support Specialist I",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "38497",
+   "title": "Math Foundations",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "38660",
+   "title": "Effective Job Search Skills",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "38834",
+   "title": "Business Support Specialist II",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "38975",
+   "title": "Computer Aided Design Skills: AutoCAD and SolidWorks",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "40371",
+   "title": "DRE Exam Preparation",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "40405",
+   "title": "Entrepreneurial Business Advanced Food Services (EBB)",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "40609",
+   "title": "Green Business Entrepreneurs",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "41938",
+   "title": "Marketing for Entrepreneurs",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=96",
+    "coverage": 0.25
+   }
+  },
+  {
+   "control_number": "42090",
+   "title": "Entrepreneurship",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=66",
+    "coverage": 0.25
+   }
+  },
+  {
+   "control_number": "42325",
+   "title": "Fundamentals of Entrepreneurial Financing",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "42776",
+   "title": "Community Mental Health Preparation",
+   "award": "Noncredit program",
+   "near_miss": null
+  }
+ ],
+ "page_claimed": [],
+ "coverage_bands": {
+  "0.5-0.8": 12,
+  "0.8-1.0": 5,
+  "1.0": 129
+ },
+ "would_extract": {
+  "against": "kb/program_requirements_college/ohlone",
+  "kept": 146,
+  "programs": 0,
+  "list": []
+ },
+ "run": "39063337090"
+}

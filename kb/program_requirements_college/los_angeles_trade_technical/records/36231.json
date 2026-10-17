@@ -1,0 +1,628 @@
+{
+ "college": "Los Angeles Trade Technical College",
+ "control_number": "36231",
+ "shape": "certificate",
+ "title": "IGETC",
+ "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+ "source_url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=212",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 12890,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 12890,
+    "output_tokens": 4223,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 4223,
+  "output_tokens_details": {
+   "thinking_tokens": 818
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.13602,
+ "ms": 29495,
+ "seconds": 30.0,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 98,
+   "share": 0.0,
+   "missing": [
+    "ADMJUS4",
+    "ANTHRO101",
+    "ANTHRO102",
+    "ART101",
+    "ART102",
+    "ART103",
+    "ASL1",
+    "ASL2",
+    "ASL3",
+    "ASL4",
+    "ASTRON1",
+    "ASTRON5",
+    "BIOLOGY3",
+    "BIOLOGY6",
+    "BIOLOGY7",
+    "CHDEV1",
+    "CHEM101",
+    "CHEM102",
+    "CHEM211",
+    "CHEM212",
+    "CHEM221",
+    "CHEM51",
+    "CHEM70",
+    "COMMC1000",
+    "ECON1",
+    "ECON2",
+    "ENGLC1000",
+    "ENGLC1001",
+    "ENGLISH102",
+    "ENGLISH203",
+    "ENGLISH205",
+    "ENGLISH206",
+    "ENGLISH207",
+    "ENGLISH208",
+    "ENGLISH212",
+    "ENGLISH215",
+    "ENGLISH240",
+    "ENVSCI1",
+    "FRENCH1",
+    "FRENCH2",
+    "GEOG1",
+    "GEOG2",
+    "GEOLOGY1",
+    "GEOLOGY6",
+    "HISTORY11",
+    "HISTORY12",
+    "HISTORY41",
+    "HISTORY42",
+    "HISTORY43",
+    "HISTORY44",
+    "HISTORY52",
+    "HISTORY86",
+    "HISTORY87",
+    "HUMAN1",
+    "HUMAN2",
+    "HUMAN60",
+    "LABRST1",
+    "LABRST21",
+    "LABRST4",
+    "MATH235",
+    "MATH236",
+    "MATH245",
+    "MATH260",
+    "MATH265",
+    "MATH266",
+    "MATH267",
+    "MATH270",
+    "MATH275",
+    "MICRO20",
+    "MUSIC101",
+    "MUSIC116",
+    "MUSIC141",
+    "PHILOS1",
+    "PHYSICS101",
+    "PHYSICS102",
+    "PHYSICS103",
+    "PHYSICS11",
+    "PHYSICS12",
+    "PHYSICS14",
+    "PHYSICS6",
+    "PHYSICS7",
+    "POLSC1000",
+    "POLSCI2",
+    "POLSCI7",
+    "PSYCC1000",
+    "PSYCH14",
+    "PSYCH2",
+    "PSYCH32",
+    "PSYCH69",
+    "SOC1",
+    "SOC2",
+    "SOC28",
+    "SPANISH1",
+    "SPANISH2",
+    "SPANISH35",
+    "SPANISH36",
+    "STATC1000",
+    "THEATER100"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": true,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Not found: the supplied text has no IGETC Certificate of Achievement section",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ADM JUS004",
+    "why": "no IGETC section in text"
+   },
+   {
+    "code": "ANTHRO 101",
+    "why": "no IGETC section in text; appears only in another program's list"
+   },
+   {
+    "code": "ANTHRO 102",
+    "why": "no IGETC section in text"
+   },
+   {
+    "code": "ART 101",
+    "why": "no IGETC section in text"
+   },
+   {
+    "code": "ART 102",
+    "why": "no IGETC section in text"
+   },
+   {
+    "code": "ART 103",
+    "why": "no IGETC section in text"
+   },
+   {
+    "code": "ASL001",
+    "why": "no IGETC section in text"
+   },
+   {
+    "code": "ASL002",
+    "why": "no IGETC section in text"
+   },
+   {
+    "code": "ASL003",
+    "why": "no IGETC section in text"
+   },
+   {
+    "code": "ASL004",
+    "why": "no IGETC section in text"
+   },
+   {
+    "code": "ASTRON 1",
+    "why": "no IGETC section in text; appears only in another program's list"
+   },
+   {
+    "code": "ASTRON 5",
+    "why": "no IGETC section in text; appears only in another program's list"
+   },
+   {
+    "code": "BIOLOGY 3",
+    "why": "no IGETC section in text; appears only in another program's list"
+   },
+   {
+    "code": "BIOLOGY 6",
+    "why": "no IGETC section in text; appears only in another program's list"
+   },
+   {
+    "code": "BIOLOGY 7",
+    "why": "no IGETC section in text; appears only in another program's list"
+   },
+   {
+    "code": "CHDEV001",
+    "why": "no IGETC section in text"
+   },
+   {
+    "code": "CHEM 101",
+    "why": "no IGETC section in text; appears only in another program's list"
+   },
+   {
+    "code": "CHEM 102",
+    "why": "no IGETC section in text; appears only in another program's list"
+   },
+   {
+    "code": "CHEM 211",
+    "why": "no IGETC section in text; appears only in another program's list"
+   },
+   {
+    "code": "CHEM 212",
+    "why": "no IGETC section in text; appears only in another program's list"
+   },
+   {
+    "code": "CHEM 221",
+    "why": "no IGETC section in text; appears only in another program's list"
+   },
+   {
+    "code": "CHEM 51",
+    "why": "no IGETC section in text; appears only in another program's list"
+   },
+   {
+    "code": "CHEM 70",
+    "why": "no IGETC section in text; appears only in another program's list"
+   },
+   {
+    "code": "COMM C1000",
+    "why": "no IGETC section in text"
+   },
+   {
+    "code": "ECON 1",
+    "why": "no IGETC section in text; appears only in another program's list"
+   },
+   {
+    "code": "ECON 2",
+    "why": "no IGETC section in text; appears only in another program's list"
+   },
+   {
+    "code": "ENGL C1000",
+    "why": "no IGETC section in text"
+   },
+   {
+    "code": "ENGL C1001",
+    "why": "no IGETC section in text"
+   },
+   {
+    "code": "ENGLISH 102",
+    "why": "no IGETC section in text"
+   },
+   {
+    "code": "ENGLISH 203",
+    "why": "no IGETC section in text"
+   },
+   {
+    "code": "ENGLISH 205",
+    "why": "no IGETC section in text"
+   },
+   {
+    "code": "ENGLISH 206",
+    "why": "no IGETC section in text"
+   },
+   {
+    "code": "ENGLISH 207",
+    "why": "no IGETC section in text"
+   },
+   {
+    "code": "ENGLISH 208",
+    "why": "no IGETC section in text"
+   },
+   {
+    "code": "ENGLISH 212",
+    "why": "no IGETC section in text"
+   },
+   {
+    "code": "ENGLISH 215",
+    "why": "no IGETC section in text"
+   },
+   {
+    "code": "ENGLISH 240",
+    "why": "no IGETC section in text"
+   },
+   {
+    "code": "ENV SCI 1",
+    "why": "no IGETC section in text; appears only in another program's list"
+   },
+   {
+    "code": "FRENCH 1",
+    "why": "no IGETC section in text"
+   },
+   {
+    "code": "FRENCH 2",
+    "why": "no IGETC section in text"
+   },
+   {
+    "code": "GEOG 1",
+    "why": "no IGETC section in text; appears only in another program's list"
+   },
+   {
+    "code": "GEOG 2",
+    "why": "no IGETC section in text; appears only in another program's list"
+   },
+   {
+    "code": "GEOLOGY 1",
+    "why": "no IGETC section in text; appears only in another program's list"
+   },
+   {
+    "code": "GEOLOGY 6",
+    "why": "no IGETC section in text; appears only in another program's list"
+   },
+   {
+    "code": "HISTORY 11",
+    "why": "no IGETC section in text"
+   },
+   {
+    "code": "HISTORY 12",
+    "why": "no IGETC section in text"
+   },
+   {
+    "code": "HISTORY 41",
+    "why": "no IGETC section in text; appears only in another program's list"
+   },
+   {
+    "code": "HISTORY 42",
+    "why": "no IGETC section in text; appears only in another program's list"
+   },
+   {
+    "code": "HISTORY 43",
+    "why": "no IGETC section in text; appears only in another program's list"
+   },
+   {
+    "code": "HISTORY 44",
+    "why": "no IGETC section in text; appears only in another program's list"
+   },
+   {
+    "code": "HISTORY 52",
+    "why": "no IGETC section in text; appears only in another program's list"
+   },
+   {
+    "code": "HISTORY 86",
+    "why": "no IGETC section in text; appears only in another program's list"
+   },
+   {
+    "code": "HISTORY 87",
+    "why": "no IGETC section in text; appears only in another program's list"
+   },
+   {
+    "code": "HUMAN 1",
+    "why": "no IGETC section in text"
+   },
+   {
+    "code": "HUMAN 2",
+    "why": "no IGETC section in text"
+   },
+   {
+    "code": "HUMAN 60",
+    "why": "no IGETC section in text"
+   },
+   {
+    "code": "LABR ST 1",
+    "why": "no IGETC section in text; appears only in another program's list"
+   },
+   {
+    "code": "LABR ST 4",
+    "why": "no IGETC section in text; appears only in another program's list"
+   },
+   {
+    "code": "LABR ST021",
+    "why": "no IGETC section in text"
+   },
+   {
+    "code": "MATH 235",
+    "why": "no IGETC section in text; appears only in another program's list"
+   },
+   {
+    "code": "MATH 236",
+    "why": "no IGETC section in text; appears only in another program's list"
+   },
+   {
+    "code": "MATH 245",
+    "why": "no IGETC section in text; appears only in another program's list"
+   },
+   {
+    "code": "MATH 260",
+    "why": "no IGETC section in text; appears only in another program's list"
+   },
+   {
+    "code": "MATH 265",
+    "why": "no IGETC section in text"
+   },
+   {
+    "code": "MATH 266",
+    "why": "no IGETC section in text"
+   },
+   {
+    "code": "MATH 267",
+    "why": "no IGETC section in text"
+   },
+   {
+    "code": "MATH 270",
+    "why": "no IGETC section in text; appears only in other programs' lists"
+   },
+   {
+    "code": "MATH 275",
+    "why": "no IGETC section in text; appears only in other programs' lists"
+   },
+   {
+    "code": "MICRO 20",
+    "why": "no IGETC section in text; appears only in another program's list"
+   },
+   {
+    "code": "MUSIC 101",
+    "why": "no IGETC section in text"
+   },
+   {
+    "code": "MUSIC 116",
+    "why": "no IGETC section in text"
+   },
+   {
+    "code": "MUSIC 141",
+    "why": "no IGETC section in text"
+   },
+   {
+    "code": "PHILOS 1",
+    "why": "no IGETC section in text"
+   },
+   {
+    "code": "PHYSICS 101",
+    "why": "no IGETC section in text; appears only in another program's list"
+   },
+   {
+    "code": "PHYSICS 102",
+    "why": "no IGETC section in text; appears only in another program's list"
+   },
+   {
+    "code": "PHYSICS 103",
+    "why": "no IGETC section in text; appears only in another program's list"
+   },
+   {
+    "code": "PHYSICS 11",
+    "why": "no IGETC section in text; appears only in another program's list"
+   },
+   {
+    "code": "PHYSICS 12",
+    "why": "no IGETC section in text; appears only in another program's list"
+   },
+   {
+    "code": "PHYSICS 14",
+    "why": "no IGETC section in text; appears only in another program's list"
+   },
+   {
+    "code": "PHYSICS 6",
+    "why": "no IGETC section in text; appears only in another program's list"
+   },
+   {
+    "code": "PHYSICS 7",
+    "why": "no IGETC section in text; appears only in another program's list"
+   },
+   {
+    "code": "POLS C1000",
+    "why": "no IGETC section in text; appears only in another program's list"
+   },
+   {
+    "code": "POLSCI002",
+    "why": "no IGETC section in text"
+   },
+   {
+    "code": "POLSCI007",
+    "why": "no IGETC section in text"
+   },
+   {
+    "code": "PSYC C1000",
+    "why": "no IGETC section in text; appears only in another program's list"
+   },
+   {
+    "code": "PSYCH 14",
+    "why": "no IGETC section in text; appears only in another program's list"
+   },
+   {
+    "code": "PSYCH 2",
+    "why": "no IGETC section in text; appears only in another program's list"
+   },
+   {
+    "code": "PSYCH 32",
+    "why": "no IGETC section in text; appears only in another program's list"
+   },
+   {
+    "code": "PSYCH 69",
+    "why": "no IGETC section in text; appears only in another program's list"
+   },
+   {
+    "code": "SOC 1",
+    "why": "no IGETC section in text; appears only in another program's list"
+   },
+   {
+    "code": "SOC 2",
+    "why": "no IGETC section in text; appears only in another program's list"
+   },
+   {
+    "code": "SOC 28",
+    "why": "no IGETC section in text; appears only in another program's list"
+   },
+   {
+    "code": "SPANISH 1",
+    "why": "no IGETC section in text"
+   },
+   {
+    "code": "SPANISH 2",
+    "why": "no IGETC section in text"
+   },
+   {
+    "code": "SPANISH 35",
+    "why": "no IGETC section in text"
+   },
+   {
+    "code": "SPANISH 36",
+    "why": "no IGETC section in text"
+   },
+   {
+    "code": "STAT C1000",
+    "why": "no IGETC section in text; appears only in other programs' lists"
+   },
+   {
+    "code": "THEATER 100",
+    "why": "no IGETC section in text"
+   }
+  ],
+  "notes": [
+   "The supplied catalog text (pages 212-215) contains the end of a Liberal Arts emphasis list (social/behavioral sciences), the Liberal Arts & Sciences: Emphasis in Mathematics, Physical and Natural Sciences AA, and the Mathematics AS-T. None of these is the IGETC Certificate of Achievement, so no blocks, totals, outcomes or careers were recorded.",
+   "IGETC is mentioned only as a GE pattern option for continuing students in the degree sections; the IGETC certificate's own requirements page was not in the text. A reviewer should locate the correct page for this award.",
+   "Many closed-list courses appear in other programs' lists on these pages; they were not placed because those sections belong to other awards."
+  ]
+ },
+ "extracted_run": "39054673977"
+}

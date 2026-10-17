@@ -1,10 +1,10 @@
 window.CPL_PATHWAYS_ROEP = {
  "_generated_by": "kb/_build_roep_display.py",
  "_note": "Each harvested program's catalog record and its display facts: CPL in three kinds per course, the up-to figure, the gaps and the map's status. The same facts sit in program_requirement_records.display, where Sierra reads them; both carry this build stamp. Do not edit; rerun the builder.",
- "build": "fec9782a4dbc",
+ "build": "f949e7c0ea35",
  "built": "2026-10-17",
  "inputs": {
-  "records": 13851,
+  "records": 15336,
   "map_read_at": "2026-10-17",
   "registry_read_at": "2026-10-17",
   "articulations": "2026-09-03T20:19:16Z",
@@ -248,9 +248,9 @@ window.CPL_PATHWAYS_ROEP = {
     "map": {
      "host": null,
      "url": null,
-     "checked_run": "census-20261004T152831Z-s3of4",
+     "checked_run": "census-20261011T162427Z-s3of4",
      "status": "none",
-     "text": "The weekly census found no published term-by-term program map on Cerritos College's site (census run census-20261004T152831Z-s3of4)."
+     "text": "The weekly census found no published term-by-term program map on Cerritos College's site (census run census-20261011T162427Z-s3of4)."
     },
     "checks": {
      "checked": true,
@@ -262,7 +262,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "fec9782a4dbc",
+    "build": "f949e7c0ea35",
     "built": "2026-10-17"
    }
   },
@@ -743,9 +743,9 @@ window.CPL_PATHWAYS_ROEP = {
     "map": {
      "host": null,
      "url": null,
-     "checked_run": "census-20261004T152831Z-s3of4",
+     "checked_run": "census-20261011T162427Z-s3of4",
      "status": "none",
-     "text": "The weekly census found no published term-by-term program map on Cerritos College's site (census run census-20261004T152831Z-s3of4)."
+     "text": "The weekly census found no published term-by-term program map on Cerritos College's site (census run census-20261011T162427Z-s3of4)."
     },
     "checks": {
      "checked": true,
@@ -757,7 +757,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "fec9782a4dbc",
+    "build": "f949e7c0ea35",
     "built": "2026-10-17"
    }
   },
@@ -1773,9 +1773,9 @@ window.CPL_PATHWAYS_ROEP = {
     "map": {
      "host": null,
      "url": null,
-     "checked_run": "census-20261004T152831Z-s3of4",
+     "checked_run": "census-20261011T162427Z-s3of4",
      "status": "none",
-     "text": "The weekly census found no published term-by-term program map on Cerritos College's site (census run census-20261004T152831Z-s3of4)."
+     "text": "The weekly census found no published term-by-term program map on Cerritos College's site (census run census-20261011T162427Z-s3of4)."
     },
     "checks": {
      "checked": true,
@@ -1787,7 +1787,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "fec9782a4dbc",
+    "build": "f949e7c0ea35",
     "built": "2026-10-17"
    }
   },
@@ -2648,9 +2648,9 @@ window.CPL_PATHWAYS_ROEP = {
     "map": {
      "host": null,
      "url": null,
-     "checked_run": "census-20261004T152831Z-s3of4",
+     "checked_run": "census-20261011T162427Z-s3of4",
      "status": "none",
-     "text": "The weekly census found no published term-by-term program map on Cerritos College's site (census run census-20261004T152831Z-s3of4)."
+     "text": "The weekly census found no published term-by-term program map on Cerritos College's site (census run census-20261011T162427Z-s3of4)."
     },
     "checks": {
      "checked": true,
@@ -2662,7 +2662,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "fec9782a4dbc",
+    "build": "f949e7c0ea35",
     "built": "2026-10-17"
    }
   },
@@ -3733,7 +3733,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": null
     },
-    "build": "fec9782a4dbc",
+    "build": "f949e7c0ea35",
     "built": "2026-10-17"
    }
   },
@@ -4536,7 +4536,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "fec9782a4dbc",
+    "build": "f949e7c0ea35",
     "built": "2026-10-17"
    }
   },
@@ -5339,7 +5339,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "fec9782a4dbc",
+    "build": "f949e7c0ea35",
     "built": "2026-10-17"
    }
   },
@@ -6892,7 +6892,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "fec9782a4dbc",
+    "build": "f949e7c0ea35",
     "built": "2026-10-17"
    }
   },
@@ -7434,7 +7434,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "fec9782a4dbc",
+    "build": "f949e7c0ea35",
     "built": "2026-10-17"
    }
   },
@@ -8618,7 +8618,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "fix"
     },
-    "build": "fec9782a4dbc",
+    "build": "f949e7c0ea35",
     "built": "2026-10-17"
    }
   },
@@ -9836,11 +9836,11 @@ window.CPL_PATHWAYS_ROEP = {
      }
     ],
     "map": {
-     "host": null,
+     "host": "www.mtsac.edu",
      "url": null,
-     "checked_run": "census-20261004T152834Z-s2of4",
-     "status": "none",
-     "text": "The weekly census found no published term-by-term program map on Mt. San Antonio College's site (census run census-20261004T152834Z-s2of4)."
+     "checked_run": "college-page-read run 37810862182",
+     "status": "open",
+     "text": "The college publishes a suggested term-by-term sequence for each program on its own Guided Pathways pages (www.mtsac.edu/guided-pathways/, 455 programs), each keyed by the local program code the catalog prints in the program's title. The list and five program pages answered on 2026-10-08. The census does not score these pages, so its sequence source reads none found."
     },
     "checks": {
      "checked": true,
@@ -9852,7 +9852,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "fix"
     },
-    "build": "fec9782a4dbc",
+    "build": "f949e7c0ea35",
     "built": "2026-10-17"
    }
   },
@@ -10573,7 +10573,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "fec9782a4dbc",
+    "build": "f949e7c0ea35",
     "built": "2026-10-17"
    }
   },
@@ -10910,11 +10910,11 @@ window.CPL_PATHWAYS_ROEP = {
      }
     ],
     "map": {
-     "host": null,
+     "host": "www.mtsac.edu",
      "url": null,
-     "checked_run": "census-20261004T152834Z-s2of4",
-     "status": "none",
-     "text": "The weekly census found no published term-by-term program map on Mt. San Antonio College's site (census run census-20261004T152834Z-s2of4)."
+     "checked_run": "college-page-read run 37810862182",
+     "status": "open",
+     "text": "The college publishes a suggested term-by-term sequence for each program on its own Guided Pathways pages (www.mtsac.edu/guided-pathways/, 455 programs), each keyed by the local program code the catalog prints in the program's title. The list and five program pages answered on 2026-10-08. The census does not score these pages, so its sequence source reads none found."
     },
     "checks": {
      "checked": true,
@@ -10926,7 +10926,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "unstated",
      "reviewer": "ok"
     },
-    "build": "fec9782a4dbc",
+    "build": "f949e7c0ea35",
     "built": "2026-10-17"
    }
   },
@@ -11253,9 +11253,9 @@ window.CPL_PATHWAYS_ROEP = {
     "map": {
      "host": null,
      "url": null,
-     "checked_run": "census-20261004T152832Z-s4of4",
+     "checked_run": "census-20261011T162433Z-s4of4",
      "status": "none",
-     "text": "The weekly census found no published term-by-term program map on Riverside City College's site (census run census-20261004T152832Z-s4of4)."
+     "text": "The weekly census found no published term-by-term program map on Riverside City College's site (census run census-20261011T162433Z-s4of4)."
     },
     "checks": {
      "checked": true,
@@ -11267,7 +11267,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "fec9782a4dbc",
+    "build": "f949e7c0ea35",
     "built": "2026-10-17"
    }
   },
@@ -13103,9 +13103,9 @@ window.CPL_PATHWAYS_ROEP = {
     "map": {
      "host": null,
      "url": null,
-     "checked_run": "census-20261004T152832Z-s4of4",
+     "checked_run": "census-20261011T162433Z-s4of4",
      "status": "none",
-     "text": "The weekly census found no published term-by-term program map on Riverside City College's site (census run census-20261004T152832Z-s4of4)."
+     "text": "The weekly census found no published term-by-term program map on Riverside City College's site (census run census-20261011T162433Z-s4of4)."
     },
     "checks": {
      "checked": true,
@@ -13117,7 +13117,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "fec9782a4dbc",
+    "build": "f949e7c0ea35",
     "built": "2026-10-17"
    }
   },
@@ -13454,9 +13454,9 @@ window.CPL_PATHWAYS_ROEP = {
     "map": {
      "host": null,
      "url": null,
-     "checked_run": "census-20261004T152832Z-s4of4",
+     "checked_run": "census-20261011T162433Z-s4of4",
      "status": "none",
-     "text": "The weekly census found no published term-by-term program map on Riverside City College's site (census run census-20261004T152832Z-s4of4)."
+     "text": "The weekly census found no published term-by-term program map on Riverside City College's site (census run census-20261011T162433Z-s4of4)."
     },
     "checks": {
      "checked": true,
@@ -13468,7 +13468,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "fec9782a4dbc",
+    "build": "f949e7c0ea35",
     "built": "2026-10-17"
    }
   },
@@ -14183,9 +14183,9 @@ window.CPL_PATHWAYS_ROEP = {
     "map": {
      "host": null,
      "url": null,
-     "checked_run": "census-20261004T152832Z-s4of4",
+     "checked_run": "census-20261011T162433Z-s4of4",
      "status": "none",
-     "text": "The weekly census found no published term-by-term program map on Riverside City College's site (census run census-20261004T152832Z-s4of4)."
+     "text": "The weekly census found no published term-by-term program map on Riverside City College's site (census run census-20261011T162433Z-s4of4)."
     },
     "checks": {
      "checked": true,
@@ -14197,7 +14197,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "fec9782a4dbc",
+    "build": "f949e7c0ea35",
     "built": "2026-10-17"
    }
   },
@@ -15840,7 +15840,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "incomplete",
      "reviewer": null
     },
-    "build": "fec9782a4dbc",
+    "build": "f949e7c0ea35",
     "built": "2026-10-17"
    }
   },
@@ -16635,9 +16635,9 @@ window.CPL_PATHWAYS_ROEP = {
     "map": {
      "host": "programmap.wlac.edu",
      "url": "https://www.wlac.edu/academics/pathways/program-mapper",
-     "checked_run": "program-sequence-ppm run 37198225537",
-     "status": "not_read",
-     "text": "The college's page about its program mapper answered on 2026-10-04 and links to programmap.wlac.edu, which has not been read. Every mapper host probed that day refused the reader."
+     "checked_run": "college-page-read run 37799874023",
+     "status": "refused",
+     "text": "programmap.wlac.edu answered 403 Forbidden to the CPL Initiative's reader on 2026-10-08 (one load, S344), as every Program Mapper host read so far has: the refusal is the mapper service's. The college's own Program Mapper page says each degree shows a planned sequence of required and elective classes. The reader keeps its name and never retries a refusal another way. It looks for the sequence on the college's own pages and in its catalog (Sam, open-asks sheet 29 card 3, 2026-10-04)."
     },
     "checks": {
      "checked": true,
@@ -16649,7 +16649,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "fec9782a4dbc",
+    "build": "f949e7c0ea35",
     "built": "2026-10-17"
    }
   },
@@ -17625,9 +17625,9 @@ window.CPL_PATHWAYS_ROEP = {
     "map": {
      "host": "programmap.wlac.edu",
      "url": "https://www.wlac.edu/academics/pathways/program-mapper",
-     "checked_run": "program-sequence-ppm run 37198225537",
-     "status": "not_read",
-     "text": "The college's page about its program mapper answered on 2026-10-04 and links to programmap.wlac.edu, which has not been read. Every mapper host probed that day refused the reader."
+     "checked_run": "college-page-read run 37799874023",
+     "status": "refused",
+     "text": "programmap.wlac.edu answered 403 Forbidden to the CPL Initiative's reader on 2026-10-08 (one load, S344), as every Program Mapper host read so far has: the refusal is the mapper service's. The college's own Program Mapper page says each degree shows a planned sequence of required and elective classes. The reader keeps its name and never retries a refusal another way. It looks for the sequence on the college's own pages and in its catalog (Sam, open-asks sheet 29 card 3, 2026-10-04)."
     },
     "checks": {
      "checked": true,
@@ -17639,7 +17639,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "fec9782a4dbc",
+    "build": "f949e7c0ea35",
     "built": "2026-10-17"
    }
   },
@@ -18403,9 +18403,9 @@ window.CPL_PATHWAYS_ROEP = {
     "map": {
      "host": "programmap.wlac.edu",
      "url": "https://www.wlac.edu/academics/pathways/program-mapper",
-     "checked_run": "program-sequence-ppm run 37198225537",
-     "status": "not_read",
-     "text": "The college's page about its program mapper answered on 2026-10-04 and links to programmap.wlac.edu, which has not been read. Every mapper host probed that day refused the reader."
+     "checked_run": "college-page-read run 37799874023",
+     "status": "refused",
+     "text": "programmap.wlac.edu answered 403 Forbidden to the CPL Initiative's reader on 2026-10-08 (one load, S344), as every Program Mapper host read so far has: the refusal is the mapper service's. The college's own Program Mapper page says each degree shows a planned sequence of required and elective classes. The reader keeps its name and never retries a refusal another way. It looks for the sequence on the college's own pages and in its catalog (Sam, open-asks sheet 29 card 3, 2026-10-04)."
     },
     "checks": {
      "checked": true,
@@ -18417,7 +18417,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "fec9782a4dbc",
+    "build": "f949e7c0ea35",
     "built": "2026-10-17"
    }
   },
@@ -18571,9 +18571,9 @@ window.CPL_PATHWAYS_ROEP = {
     "map": {
      "host": "programmap.wlac.edu",
      "url": "https://www.wlac.edu/academics/pathways/program-mapper",
-     "checked_run": "program-sequence-ppm run 37198225537",
-     "status": "not_read",
-     "text": "The college's page about its program mapper answered on 2026-10-04 and links to programmap.wlac.edu, which has not been read. Every mapper host probed that day refused the reader."
+     "checked_run": "college-page-read run 37799874023",
+     "status": "refused",
+     "text": "programmap.wlac.edu answered 403 Forbidden to the CPL Initiative's reader on 2026-10-08 (one load, S344), as every Program Mapper host read so far has: the refusal is the mapper service's. The college's own Program Mapper page says each degree shows a planned sequence of required and elective classes. The reader keeps its name and never retries a refusal another way. It looks for the sequence on the college's own pages and in its catalog (Sam, open-asks sheet 29 card 3, 2026-10-04)."
     },
     "checks": {
      "checked": true,
@@ -18585,7 +18585,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "fec9782a4dbc",
+    "build": "f949e7c0ea35",
     "built": "2026-10-17"
    }
   }

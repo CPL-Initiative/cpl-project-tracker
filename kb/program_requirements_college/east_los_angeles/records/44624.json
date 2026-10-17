@@ -9,7 +9,7 @@
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 12228,
+  "input_tokens": 12400,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 12228,
-    "output_tokens": 2274,
+    "input_tokens": 12400,
+    "output_tokens": 2392,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 2274,
+  "output_tokens": 2392,
   "output_tokens_details": {
-   "thinking_tokens": 632
+   "thinking_tokens": 783
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.09439,
- "ms": 17550,
- "seconds": 17.9,
+ "cost_usd": 0.09744,
+ "ms": 18453,
+ "seconds": 18.8,
  "parts": null,
  "error": null,
  "score": {
@@ -346,14 +346,12 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The excerpt begins at '(Academic Plan E044624D)'; the 'Digital Film Production' heading itself is not shown in the text but the description names the Certificate of Achievement in Digital Film Production.",
-   "Catalog page headers read 2026-2027 General Catalog.",
-   "'BRDSCTG 015' as printed appears to be a typo for BRDCSTG 15 (Radio and Television Production) on the closed list; treated as that course.",
-   "Codes printed with leading zeros (PHOTO 047, ASIAN 020, CHICANO 036/057, FRENCH 026, PHOTO 010, SPANISH 026) treated as matching the closed-list codes without zeros.",
-   "MEDIART 101, MEDIART 211 and CAOT 001/032/082 are not on the closed list.",
-   "The same single program learning outcome is printed for several certificates in this department.",
-   "Careers read from the description phrase 'entry-level positions across the spectrum of film, television, video, broadcasting, commercials, streaming, and other new media'."
+   "The section's heading line is not in the extracted text, which begins at '(Academic Plan E044624D)'; the heading 'Digital Film Production' is taken from the description ('Certificate of Achievement in Digital Film Production').",
+   "The catalog prints 'BRDSCTG 015', apparently a misprint of BRDCSTG 15 (Radio and Television Production); recorded as printed and matched to the closed-list course.",
+   "Leading zeros in printed codes (PHOTO 047, ASIAN 020, etc.) were kept as printed; they match closed-list codes without the zeros.",
+   "MEDIART 101, MEDIART 211 and CAOT 001/032/082 are not in the closed list and are marked as catalog additions.",
+   "The careers are read from 'entry-level positions across the spectrum of film, television, video, broadcasting, commercials, streaming, and other new media'; a reviewer may check whether these should count as career fields."
   ]
  },
- "extracted_run": "39011319511"
+ "extracted_run": "39063389278"
 }

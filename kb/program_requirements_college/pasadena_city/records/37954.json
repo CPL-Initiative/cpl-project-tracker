@@ -1,0 +1,265 @@
+{
+ "college": "Pasadena City College",
+ "control_number": "37954",
+ "shape": "adt",
+ "title": "Biology",
+ "award": "A.S. T Degree",
+ "source_url": "https://curriculum.pasadena.edu/academic-programs/biology/biology2-ast/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7656,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7656,
+    "output_tokens": 1752,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1752,
+  "output_tokens_details": {
+   "thinking_tokens": 609
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.06566,
+ "ms": 14381,
+ "seconds": 14.8,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 7,
+   "listed": 11,
+   "share": 0.636,
+   "missing": [
+    "PHYS2A",
+    "PHYS2B",
+    "PHYS8A",
+    "PHYS8B"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "MATH5AE"
+   ],
+   "flagged": [
+    "MATH5AE"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    22.0,
+    24.5
+   ],
+   "stated": [
+    22.0,
+    24.5
+   ],
+   "against": "program",
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     56.0,
+     58.5
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     34.0,
+     34.0
+    ],
+    "why": [],
+    "fill": [
+     1.5,
+     4.0
+    ]
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 5,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Associate in Science in Biology 2.0 for Transfer Degree",
+   "measure": "units",
+   "total_units": {
+    "min": 22,
+    "max": 24.5
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": 34,
+    "max": 34
+   },
+   "electives_fill_degree": true,
+   "outcomes": [
+    "Create scientific presentations and/or papers based on the students’ own novel experimental findings and research.",
+    "Recognize biological problems, propose testable solutions, and implement those tests through diverse methods.",
+    "Analyze and summarize data and to infer conclusions based on those data.",
+    "Apply appropriate technological and computational tools to solve biological problems.",
+    "Diagnose and classify biological diversity, and understand of the functions and interactions of the components of diversity in ecosystems."
+   ],
+   "careers": [
+    "biological sciences",
+    "biomedical sciences",
+    "biotechnology",
+    "environmental biology",
+    "agriculture"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Core",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 22,
+     "max": 24.5
+    },
+    "courses": [
+     {
+      "code": "BIOL 010A",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL 010B",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 001A",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 001B",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 005A",
+      "units": 3,
+      "units_max": 5.5,
+      "alternatives": [
+       {
+        "code": "MATH 005AE",
+        "units": null,
+        "catalog_addition": true
+       },
+       {
+        "code": "MATH 005AH",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "MATH 006A",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "PHYS 002A",
+    "why": "not in the text"
+   },
+   {
+    "code": "PHYS 002B",
+    "why": "not in the text"
+   },
+   {
+    "code": "PHYS 008A",
+    "why": "not in the text"
+   },
+   {
+    "code": "PHYS 008B",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "The 3-5.5 unit range is printed once on the MATH 005A row and appears to cover the whole 'or' group (MATH 005A/005AE/005AH/006A); individual units for the alternatives are not printed.",
+   "MATH 005A is titled 'CALCULUS I: LATE TRANSCENDENTALS' in the catalog, differing from the closed list title 'Single Variable Calculus I'; MATH 005AE (embedded support) is not in the closed list.",
+   "'Required Subtotal 22-24.5' recorded as total_units and as the Required Core block's stated total.",
+   "Transferable electives are 'as needed to reach 60 transferable units' with no units printed; electives_fill_degree set true.",
+   "Program Outcomes are printed once for the program page and appear to apply to this award.",
+   "Catalog text begins mid-sentence (truncated description). This is the Biology 2.0 for Transfer version; physics courses on the closed list do not appear in it.",
+   "Careers list from description also ends with 'and other related fields', not recorded as a separate career."
+  ]
+ },
+ "extracted_run": "39061730187"
+}

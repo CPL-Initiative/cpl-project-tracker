@@ -9,7 +9,7 @@
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 8459,
+  "input_tokens": 8463,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 8459,
-    "output_tokens": 1263,
+    "input_tokens": 8463,
+    "output_tokens": 1319,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 1263,
+  "output_tokens": 1319,
   "output_tokens_details": {
-   "thinking_tokens": 522
+   "thinking_tokens": 526
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.0591,
- "ms": 11856,
- "seconds": 12.2,
+ "cost_usd": 0.06023,
+ "ms": 12170,
+ "seconds": 12.5,
  "parts": null,
  "error": null,
  "score": {
@@ -114,7 +114,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "(Academic Plan E038333D)",
+   "section_heading": "Executive Legal Assistant (Academic Plan E038333D)",
    "measure": "units",
    "total_units": {
     "min": 17,
@@ -142,7 +142,7 @@
   },
   "blocks": [
    {
-    "name": "Required Courses",
+    "name": "Required courses",
     "rule": "all",
     "minimum": null,
     "option_group": null,
@@ -204,12 +204,12 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The excerpt begins mid-section: the program title heading ('Executive Legal Assistant') is not in the text, which starts at '(Academic Plan E038333D)' on page 127; section identified by position before 'Global Business Relations' and the closed list.",
-   "The course list has no printed block heading; 'Required Courses' is a descriptive name. The printed 'Total 17' is recorded as the certificate total and the block total.",
-   "'LAW 00I' is printed with a letter I, likely a typo for LAW 001 (Business Law I); recorded as printed.",
-   "The outcomes list is the single generic PLO printed for this program; the same wording also appears under the other programs on these pages.",
-   "Catalog year appears to be 2026-2027 per the page header on page 128."
+   "The extracted text begins at '(Academic Plan E038333D)'; the program title heading itself is not in the text. This first section, preceding 'Global Business Relations', was read as the Executive Legal Assistant certificate. Reviewer should confirm the heading on the page.",
+   "The course list has no printed block name; 'Required courses' is a descriptive label. It is printed under 'SUBJECT & NO. COURSE UNITS' with 'Total 17'.",
+   "'LAW 00I' is recorded as printed. It is likely an OCR/typo rendering of LAW 001 (Business Law I).",
+   "The section's outcomes heading prints one generic outcome, recorded word for word with the line-break hyphenation removed. The same outcome is repeated for the other programs on the page.",
+   "No careers or job titles are named in the section; 'supporting role to attorneys' describes a function, not a named career."
   ]
  },
- "extracted_run": "39011319511"
+ "extracted_run": "39063389278"
 }

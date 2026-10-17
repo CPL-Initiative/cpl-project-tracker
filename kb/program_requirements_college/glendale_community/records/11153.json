@@ -1,0 +1,219 @@
+{
+ "college": "Glendale Community College",
+ "control_number": "11153",
+ "shape": "certificate",
+ "title": "Receptionist/Office Clerk",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=112",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7870,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7870,
+    "output_tokens": 1708,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1708,
+  "output_tokens_details": {
+   "thinking_tokens": 565
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.06564,
+ "ms": 14247,
+ "seconds": 14.8,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 6,
+   "listed": 6,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "CABOT208"
+   ],
+   "flagged": [
+    "CABOT208"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": [
+    18.0,
+    18.0
+   ],
+   "against": "program",
+   "why": [
+    "a required course in 'Required Courses' has no units"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 1,
+   "courses": 0,
+   "count": 1,
+   "not_verbatim": [
+    "use a variety of office procedures to perform such tasks as sorting mail, answering telephones, and filing and processing documents using the latest computer technologies; be able to identify the personal traits that lead to effective human relation skills in business and develop skills to work more effectively with customers and other employees in a business environment; be able to type by touch at a minimum of twenty-five (25) words a minute to produce cohesive, grammatically correct sentences, to create, edit, and format basic business letters, business reports, academic reports, memorandum, envelopes and labels; be able to identify the standard elements on the Windows 7 desktop and demonstrate basic mouse operations; to understand basic computer terminologies; and become familiar with Global information systems to be able to sign on to an account and use common utilities, including e-mail and Web browsers, and searching a variety of databases for information."
+   ],
+   "why": [
+    "not in the catalog text as printed: use a variety of office procedures to perform such tasks as sorting mail, answer"
+   ],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": false
+  },
+  "careers": {
+   "count": 2,
+   "not_verbatim": [
+    "office receptionists"
+   ],
+   "pass": false
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "RECEPTIONIST/OFFICE CLERK CERTIFICATE NON-DEGREE",
+   "measure": "units",
+   "total_units": {
+    "min": 18,
+    "max": 18
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "use a variety of office procedures to perform such tasks as sorting mail, answering telephones, and filing and processing documents using the latest computer technologies; be able to identify the personal traits that lead to effective human relation skills in business and develop skills to work more effectively with customers and other employees in a business environment; be able to type by touch at a minimum of twenty-five (25) words a minute to produce cohesive, grammatically correct sentences, to create, edit, and format basic business letters, business reports, academic reports, memorandum, envelopes and labels; be able to identify the standard elements on the Windows 7 desktop and demonstrate basic mouse operations; to understand basic computer terminologies; and become familiar with Global information systems to be able to sign on to an account and use common utilities, including e-mail and Web browsers, and searching a variety of databases for information."
+   ],
+   "careers": [
+    "office receptionists",
+    "clerks"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CABOT 101",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CABOT 102",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CABOT 103",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CABOT 104",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CABOT 110",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CABOT 205",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CABOT 208",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The catalog prints no units beside individual courses; course units left null.",
+   "Course codes printed as 'CABOT 101, 102, 103, 104, 110, 205, 208'; subject expanded to each code.",
+   "CABOT 208 is listed in the catalog's required courses but is not in the closed list; recorded as a catalog addition.",
+   "Stated total is 18 units; closed-list units for the six listed courses sum to 17, so CABOT 208 (units not printed) would need to be about 1 unit to match — reviewer should verify.",
+   "Program learning outcomes are printed as a single run-on sentence with semicolon-separated clauses; recorded as one entry without splitting, lead-in 'Upon completion of this program, the student will be able to' omitted. PDF ligature artifacts and line-break hyphens were normalized (e.g., 'oﬃ ce' -> 'office', 'gram-matically' -> 'grammatically').",
+   "Section is labeled CERTIFICATE NON-DEGREE while the award is listed as a Certificate of Achievement; reviewer may wish to confirm."
+  ]
+ },
+ "extracted_run": "39063367252"
+}

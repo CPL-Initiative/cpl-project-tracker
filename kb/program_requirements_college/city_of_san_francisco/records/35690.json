@@ -4,12 +4,12 @@
  "shape": "adt",
  "title": "Social Justice Studies: Ethnic Studies",
  "award": "A.A- T Degree",
- "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=389",
+ "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=386",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 12038,
+  "input_tokens": 12019,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 12038,
-    "output_tokens": 4446,
+    "input_tokens": 12019,
+    "output_tokens": 6090,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,107 +30,74 @@
     "model": null
    }
   ],
-  "output_tokens": 4446,
+  "output_tokens": 6090,
   "output_tokens_details": {
-   "thinking_tokens": 1629
+   "thinking_tokens": 2220
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.13707,
- "ms": 34333,
- "seconds": 35.1,
+ "cost_usd": 0.16988,
+ "ms": 44045,
+ "seconds": 44.4,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 22,
+   "placed": 53,
    "listed": 54,
-   "share": 0.407,
+   "share": 0.981,
    "missing": [
-    "AFAM30",
-    "AFAM40",
-    "AFAM60",
-    "ASAM10",
-    "ASAM6",
-    "ETHN37",
-    "HIST12B",
-    "HIST18A",
-    "HIST18B",
-    "HIST20",
-    "HIST21",
-    "HIST41A",
-    "HIST41B",
-    "HIST9",
-    "IDST14",
-    "IDST27B",
-    "IDST30",
-    "IDST31",
-    "IDST36",
-    "IDST37",
-    "IDST46",
-    "LALS/LGBT9",
-    "LALS11",
-    "LALS13",
-    "LALS14",
-    "LBCS70A",
-    "LBCS70B",
-    "LGBT11",
-    "LGBT20",
-    "LGBT55",
-    "POLS45",
-    "SOC7"
+    "LALS/LGBT9"
    ],
    "unexplained": [
-    "IDST46",
     "LALS/LGBT9"
    ],
    "none_placed": false,
    "pass": false
   },
   "invented": {
-   "count": 3,
+   "count": 4,
    "codes": [
     "ASAM8",
+    "IDST3",
     "LALS9",
     "LGBT9"
    ],
    "flagged": [
-    "ASAM8"
+    "ASAM8",
+    "IDST3"
    ],
    "pass": false
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    0.0,
-    0.0
+    18.0,
+    20.0
    ],
    "stated": [
     18.0,
     20.0
    ],
    "against": "program",
-   "why": [
-    "'Area list continued from previous page (area heading cut off before page 389)' chooses courses but names no minimum",
-    "'Area 4: Quantitative Reasoning & Research Methods' chooses courses but names no minimum"
-   ]
+   "why": []
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 5,
    "courses": 0,
-   "count": 0,
+   "count": 5,
    "not_verbatim": [],
    "why": [],
    "heading_printed": true,
-   "heading_without_outcomes": true,
+   "heading_without_outcomes": false,
    "pass": true
   },
   "careers": {
@@ -148,7 +115,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "Social Justice Studies: Ethnic Studies – AA-T Degree (heading not in the supplied text; only the tail of the section on page 389 is present)",
+   "section_heading": "Social Justice Studies: Ethnic Studies – AA-T Degree",
    "measure": "units",
    "total_units": {
     "min": 18,
@@ -159,7 +126,7 @@
     "min": null,
     "max": null
    },
-   "ge_pattern": null,
+   "ge_pattern": "Cal-GETC",
    "degree_total": {
     "min": null,
     "max": null
@@ -169,20 +136,349 @@
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [],
+   "outcomes": [
+    "Evaluate the social science, behavioral, or historical approaches and theories in the study of racial, ethnic, and cultural formations.",
+    "Analyze how intersections of social class, gender, sexuality, and religion pervade racial and ethnic identity formations.",
+    "Evaluate how changing definitions of race, social class, and ethnicity impact policies, cultures and societies.",
+    "Appraise artistic and cultural representations that speak to race, ethnicity, gender, and sexuality.",
+    "Compare the struggles for social justice of diverse ethnic and racial groups in the United States Diaspora."
+   ],
    "careers": []
   },
   "blocks": [
    {
-    "name": "Area list continued from previous page (area heading cut off before page 389)",
+    "name": "Choose one of the following",
     "rule": "choose_courses",
-    "minimum": null,
+    "minimum": 1,
     "option_group": null,
     "stated": {
-     "min": null,
-     "max": null
+     "min": 3,
+     "max": 3
     },
     "courses": [
+     {
+      "code": "ETHN 37",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "IDST 37",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC 7",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Choose one of the following",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "LGBT 5",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WGST 25",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Choose one of the following",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "AFAM 30",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ASAM 20",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "LALS 1",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select 3 courses from at least 2 areas",
+    "rule": "choose_courses",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 9,
+     "max": 11
+    },
+    "courses": [
+     {
+      "code": "ASAM 20",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 9",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 18A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 12B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 20",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 21",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 41A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 41B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "LBCS 70A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "LBCS 70B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "LALS 1",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "LALS 11",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "LALS 13",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "POLS 12",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "POLS 45",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AFAM 30",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AFAM 40",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AFAM 60",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ASAM 6",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ASAM 10",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ASAM 35",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 18B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "IDST 3",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "IDST 14",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "IDST 27B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "IDST 30",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "IDST 31",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "IDST 36",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "IDST 46",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "LALS 14",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "LGBT 11",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "LGBT 20",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "LGBT 55",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
      {
       "code": "AFAM 42",
       "units": 3,
@@ -212,13 +508,6 @@
       "catalog_addition": true
      },
      {
-      "code": "ASAM 20",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
       "code": "ASAM 22",
       "units": 3,
       "units_max": null,
@@ -234,13 +523,6 @@
      },
      {
       "code": "ASAM 30",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "ASAM 35",
       "units": 3,
       "units_max": null,
       "alternatives": [],
@@ -289,13 +571,6 @@
       "catalog_addition": false
      },
      {
-      "code": "LALS 1",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
       "code": "LALS 9",
       "units": 3,
       "units_max": null,
@@ -330,13 +605,6 @@
       "catalog_addition": false
      },
      {
-      "code": "POLS 12",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
       "code": "PSYC 23",
       "units": 3,
       "units_max": null,
@@ -349,19 +617,7 @@
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
-     }
-    ]
-   },
-   {
-    "name": "Area 4: Quantitative Reasoning & Research Methods",
-    "rule": "choose_courses",
-    "minimum": null,
-    "option_group": null,
-    "stated": {
-     "min": null,
-     "max": null
-    },
-    "courses": [
+     },
      {
       "code": "LALS 5",
       "units": 5,
@@ -373,136 +629,17 @@
    }
   ],
   "course_outcomes": [],
-  "missing_explained": [
-   {
-    "code": "AFAM 30",
-    "why": "not in the text; Ethnic Studies section begins before page 389"
-   },
-   {
-    "code": "AFAM 40",
-    "why": "not in the text; Ethnic Studies section begins before page 389"
-   },
-   {
-    "code": "AFAM 60",
-    "why": "named only in the Gender Studies and Labor Studies sections"
-   },
-   {
-    "code": "ASAM 6",
-    "why": "not in the text; Ethnic Studies section begins before page 389"
-   },
-   {
-    "code": "ASAM 10",
-    "why": "not in the text; Ethnic Studies section begins before page 389"
-   },
-   {
-    "code": "ETHN 37",
-    "why": "named only in the Labor and Community Studies section"
-   },
-   {
-    "code": "HIST 9",
-    "why": "not in the text; Ethnic Studies section begins before page 389"
-   },
-   {
-    "code": "HIST 12B",
-    "why": "named only in the Gender Studies section"
-   },
-   {
-    "code": "HIST 18A",
-    "why": "not in the text; Ethnic Studies section begins before page 389"
-   },
-   {
-    "code": "HIST 18B",
-    "why": "not in the text; Ethnic Studies section begins before page 389"
-   },
-   {
-    "code": "HIST 20",
-    "why": "not in the text; Ethnic Studies section begins before page 389"
-   },
-   {
-    "code": "HIST 21",
-    "why": "not in the text; Ethnic Studies section begins before page 389"
-   },
-   {
-    "code": "HIST 41A",
-    "why": "not in the text; Ethnic Studies section begins before page 389"
-   },
-   {
-    "code": "HIST 41B",
-    "why": "not in the text; Ethnic Studies section begins before page 389"
-   },
-   {
-    "code": "IDST 14",
-    "why": "not in the text; Ethnic Studies section begins before page 389"
-   },
-   {
-    "code": "IDST 30",
-    "why": "not in the text; Ethnic Studies section begins before page 389"
-   },
-   {
-    "code": "IDST 31",
-    "why": "named only in the Gender Studies section"
-   },
-   {
-    "code": "IDST 36",
-    "why": "not in the text; Ethnic Studies section begins before page 389"
-   },
-   {
-    "code": "IDST 37",
-    "why": "named only in the Gender Studies and Labor Studies sections"
-   },
-   {
-    "code": "IDST27B",
-    "why": "not in the text; Ethnic Studies section begins before page 389"
-   },
-   {
-    "code": "LALS 11",
-    "why": "not in the text; Ethnic Studies section begins before page 389"
-   },
-   {
-    "code": "LALS 13",
-    "why": "not in the text; Ethnic Studies section begins before page 389"
-   },
-   {
-    "code": "LALS 14",
-    "why": "not in the text; Ethnic Studies section begins before page 389"
-   },
-   {
-    "code": "LBCS 70A",
-    "why": "named only in the Gender Studies and Labor Studies sections"
-   },
-   {
-    "code": "LBCS 70B",
-    "why": "named only in the Labor and Community Studies section"
-   },
-   {
-    "code": "LGBT 11",
-    "why": "not in the text; Ethnic Studies section begins before page 389"
-   },
-   {
-    "code": "LGBT 55",
-    "why": "not in the text; Ethnic Studies section begins before page 389"
-   },
-   {
-    "code": "LGBT20",
-    "why": "not in the text; Ethnic Studies section begins before page 389"
-   },
-   {
-    "code": "POLS 45",
-    "why": "not in the text; Ethnic Studies section begins before page 389"
-   },
-   {
-    "code": "SOC 7",
-    "why": "named only in the Labor and Community Studies section"
-   }
-  ],
+  "missing_explained": [],
   "notes": [
-   "The supplied text starts mid-section: only the end of the Ethnic Studies AA-T course list (page 389) is present. The section heading, program summary, learning outcomes, completion requirements, required core courses, the earlier area headings, and the selection rule (likely 'choose N courses from at least N areas', as in the sibling Gender Studies AA-T) are on earlier pages and not included; reviewer should check page 388.",
-   "The first block's area name is cut off; by analogy with sibling programs it is likely 'Area 3: Social Science'. Rule and minimum for both area blocks are unknown, so minimum is null.",
-   "Total: 18.0-20.0 printed just before the Gender Studies heading is read as this award's major total.",
-   "LALS 9 and LGBT 9 are printed as separate rows with the same title (The Latinx LGBTQ+ Experience); recorded as one cross-listed entry matching closed-list 'LALS/LGBT 9'.",
-   "Units for PSYC 23 (3.0), WGST 25 (3.0) and LALS 5 (5.0) read from a units column printed after the Area 4 row.",
-   "No outcomes, careers, GE pattern or degree total for this award appear in the supplied text; the Gender Studies, Labor and Community Studies and LGBTQ Studies sections that follow were not read for this record."
+   "The 'Select 3 courses from at least 2 areas' block is recorded as one block; its courses are grouped in the catalog under Area 1: History and Government, Area 2: Arts and Humanities, Area 3: Social Science, and Area 4: Quantitative Reasoning & Research Methods, and the three courses must come from at least two areas. Courses listed in more than one area (ASAM 20, HIST 18A, HIST 20, HIST 21, HIST 41A, HIST 41B, LALS 1, POLS 12, AFAM 30 also in required choices, ASAM 35) are listed once, in order of first appearance. Area 1 holds ASAM 20 through POLS 45; Area 2 adds AFAM 30 through LGBT 55 (plus HIST 18A/20/21/41A/41B, IDST 36, LALS 1 repeated); Area 3 adds AFAM 42 through WGST 25 (plus ASAM 20, ASAM 35, LALS 1, POLS 12 repeated); Area 4 is LALS 5.",
+   "LALS 9 and LGBT 9 are printed as separate rows in Area 3 with the same title 'The Latinx LGBTQ+ Experience'; recorded as one cross-listed entry matching the closed-list entry 'LALS/LGBT 9', so catalog_addition is false for both.",
+   "LGBT 20 and IDST 27B match closed-list entries written 'LGBT20' and 'IDST27B'.",
+   "IDST 3 (Introduction to Museum Studies) and ASAM 8 (Filipino American Community) are not in the closed list; recorded as catalog additions.",
+   "The PDF prints course codes, titles and units in separate columns for multi-row groups; units were matched by position (all 3.0 except LALS 5 at 5.0). PSYC 23 and WGST 25 units at the end of Area 3 are printed apart from their rows.",
+   "The 60-unit requirement is a generic statement for all AA-T/AS-T degrees, so degree_total is null; no GE unit figure is printed.",
+   "The program summary lists transfer majors (e.g., Education, Social Work, Ethnic Studies), not careers; careers left empty.",
+   "The top of page 386 belongs to the preceding African American Studies AA-T section and was not read for this award."
   ]
  },
- "extracted_run": "39047128472"
+ "extracted_run": "39056434592"
 }

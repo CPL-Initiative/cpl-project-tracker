@@ -1,0 +1,186 @@
+{
+ "college": "Los Angeles Trade Technical College",
+ "control_number": "38737",
+ "shape": "certificate",
+ "title": "Industrial Safety, Regulatory and Biomanufacturing",
+ "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+ "source_url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=94",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6536,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6536,
+    "output_tokens": 1634,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1634,
+  "output_tokens_details": {
+   "thinking_tokens": 718
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.05882,
+ "ms": 14794,
+ "seconds": 15.1,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 3,
+   "listed": 3,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    11.0,
+    11.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 7,
+   "courses": 0,
+   "count": 7,
+   "not_verbatim": [
+    "Students will be able to identify the main areas affected by the validation process in the biomanufacturing industry and validation regulations that will require internal and external auditing."
+   ],
+   "why": [
+    "not in the catalog text as printed: Students will be able to identify the main areas affected by the validation proc"
+   ],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": false
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "PROGRAM OVERVIEW",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Students will be able to identify and describe industrial hazards, including hazards in the chemical, biomanufacturing and process industries",
+    "Students will be able to ID and describe GLP and cGMP regulations",
+    "Students will be able to identify the main areas affected by the validation process in the biomanufacturing industry and validation regulations that will require internal and external auditing.",
+    "Students will be able to demonstrate mastery of appropriate industrial protocols and documentation",
+    "Students will be able to demonstrate an understanding of the purpose, fundamentals and regulations of biomanufacturing",
+    "Students will be able to demonstrate an understanding of the science underlying biomanufacturing",
+    "Students will be able to apply techniques and procedures applicable to biomanufacturing."
+   ],
+   "careers": [
+    "industrial safety and regulatory industry"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "REQUIRED COURSES",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "PRPLTEK 104",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PRPLTEK 214",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOTECH 10",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The text prints no program title heading for this section; section_heading uses 'PROGRAM OVERVIEW', the first heading of the Industrial Safety, Regulatory and Biomanufacturing certificate section. The lines above it (T038737D C - 11 - 11, the 60-unit Associate degree sentence, GE note) appear to be the tail of the preceding program and were not used.",
+   "No total units are printed for the certificate; total_units left null (the listed courses sum to 11 units, not recorded).",
+   "The third outcome is printed with a stray bullet mid-sentence ('...validation process in the' / '• biomanufacturing industry and validation regulations...'), apparently a PDF layout artifact; it was recorded as one outcome. Reviewer should confirm.",
+   "Catalog prints 'PRPLTEK 104'; the closed list stores 'PRPLTEK104' (no space). Treated as the same course.",
+   "PRPLTEK 214 title is truncated in the catalog text ('Industry Trends: Employment and'), likely a line wrap."
+  ]
+ },
+ "extracted_run": "39054673977"
+}

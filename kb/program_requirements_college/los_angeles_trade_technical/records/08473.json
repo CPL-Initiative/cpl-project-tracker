@@ -1,0 +1,316 @@
+{
+ "college": "Los Angeles Trade Technical College",
+ "control_number": "08473",
+ "shape": "degree",
+ "title": "Information Technology",
+ "award": "A.S. Degree",
+ "source_url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=82",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7606,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7606,
+    "output_tokens": 2186,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2186,
+  "output_tokens_details": {
+   "thinking_tokens": 1010
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.07414,
+ "ms": 18268,
+ "seconds": 18.8,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 4,
+   "listed": 13,
+   "share": 0.308,
+   "missing": [
+    "MICROTK160",
+    "MICROTK162",
+    "MICROTK164",
+    "MICROTK165",
+    "MICROTK77",
+    "MICROTK78",
+    "MICROTK79",
+    "MICROTK80",
+    "PHYSICS11"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 7,
+   "codes": [
+    "IT160",
+    "IT162",
+    "IT164",
+    "IT165",
+    "IT77",
+    "IT78",
+    "IT79"
+   ],
+   "flagged": [
+    "IT160",
+    "IT162",
+    "IT164",
+    "IT165",
+    "IT77",
+    "IT78",
+    "IT79"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    35.0,
+    35.0
+   ],
+   "stated": [
+    35.0,
+    35.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "INFORMATION TECHNOLOGY Associate in Science Degree",
+   "measure": "units",
+   "total_units": {
+    "min": 35,
+    "max": 35
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": 24,
+    "max": 24
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Install, configure, and add auxiliary equipment for microcomputers.",
+    "Set up computers to certain specifications.",
+    "Configure and create network systems consisting of a number of computers."
+   ],
+   "careers": [
+    "Information Technicians"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses - Semester I",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "IT 160",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "IT 162",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "IT 164",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Required Courses - Semester II",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "IT 077",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "IT 078",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ETNTLGY 252",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ETNTLGY 253",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ELECTRN 002",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Required Courses - Semester III",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "IT 079",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "IT 165",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ETNTLGY 254",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "MICROTK 160",
+    "why": "printed only as the former code of IT 160, recorded as IT 160"
+   },
+   {
+    "code": "MICROTK 162",
+    "why": "printed only as the former code of IT 162, recorded as IT 162"
+   },
+   {
+    "code": "MICROTK 164",
+    "why": "printed only as the former code of IT 164, recorded as IT 164"
+   },
+   {
+    "code": "MICROTK 165",
+    "why": "printed only as the former code of IT 165, recorded as IT 165"
+   },
+   {
+    "code": "MICROTK 77",
+    "why": "printed only as the former code of IT 077 (MICROTK 077), recorded as IT 077"
+   },
+   {
+    "code": "MICROTK 78",
+    "why": "printed only as the former code of IT 078 (MICROTK 078), recorded as IT 078"
+   },
+   {
+    "code": "MICROTK 79",
+    "why": "printed only as the former code of IT 079 (MICROTK 079), recorded as IT 079"
+   },
+   {
+    "code": "MICROTK 80",
+    "why": "not in the text"
+   },
+   {
+    "code": "PHYSICS 11",
+    "why": "not in the text"
+   }
+  ],
+  "notes": []
+ },
+ "extracted_run": "39054673977"
+}

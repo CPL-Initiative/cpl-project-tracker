@@ -1,0 +1,292 @@
+{
+ "college": "Glendale Community College",
+ "control_number": "11151",
+ "shape": "degree",
+ "title": "Administrative Assistant",
+ "award": "A.S. Degree",
+ "source_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=70",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 11492,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 11492,
+    "output_tokens": 2325,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2325,
+  "output_tokens_details": {
+   "thinking_tokens": 662
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.09247,
+ "ms": 19037,
+ "seconds": 19.6,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 10,
+   "listed": 10,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 5,
+   "codes": [
+    "ACCTG110",
+    "BUSAD110",
+    "CABOT101",
+    "CABOT102",
+    "CABOT208"
+   ],
+   "flagged": [
+    "ACCTG110",
+    "BUSAD110",
+    "CABOT101",
+    "CABOT102",
+    "CABOT208"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    6.0,
+    6.0
+   ],
+   "stated": [
+    30.0,
+    31.0
+   ],
+   "against": "program",
+   "why": [
+    "a required course in 'Required Courses' has no units"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 1,
+   "courses": 0,
+   "count": 1,
+   "not_verbatim": [
+    "initiate and respond to correspondence effectively while using the latest automated technology, system software (Windows), and application software (Word, Excel, and Outlook) to perform more advanced skills; become familiar with Global information systems to be able to sign on to an account and use common utilities, including e-mail and Web browsers to search a variety of databases for information; acquire the necessary knowledge and skills of accounting and bookkeeping to be able to use journals and ledgers to prepare balance sheets and income statements and be able to translate accounting records into a basis for sound decision making in a variety of businesses; be able to use a variety of office procedures to perform such tasks as sorting mail, filing and processing documents; develop interpersonal skills to conduct and participate in job interviews, practice effective human relation skills in business, handle telephone conversations with ease, and develop skills to communicate more effectively with customers and other employees verbally; and type by touch at a minimum of thirty (30) words a minute and to create, edit, and format advanced features for any business document including forms, medical and legal forms, resumes, job applications, bibliographies, footnotes/endnotes, newsletters."
+   ],
+   "why": [
+    "not in the catalog text as printed: initiate and respond to correspondence effectively while using the latest automa"
+   ],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": false
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "COMPUTER APPLICATIONS AND BUSINESS OFFICE TECHNOLOGIES AS DEGREE OR CERTIFICATE — ADMINISTRATIVE ASSISTANT",
+   "measure": "units",
+   "total_units": {
+    "min": 30,
+    "max": 31
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "initiate and respond to correspondence effectively while using the latest automated technology, system software (Windows), and application software (Word, Excel, and Outlook) to perform more advanced skills; become familiar with Global information systems to be able to sign on to an account and use common utilities, including e-mail and Web browsers to search a variety of databases for information; acquire the necessary knowledge and skills of accounting and bookkeeping to be able to use journals and ledgers to prepare balance sheets and income statements and be able to translate accounting records into a basis for sound decision making in a variety of businesses; be able to use a variety of office procedures to perform such tasks as sorting mail, filing and processing documents; develop interpersonal skills to conduct and participate in job interviews, practice effective human relation skills in business, handle telephone conversations with ease, and develop skills to communicate more effectively with customers and other employees verbally; and type by touch at a minimum of thirty (30) words a minute and to create, edit, and format advanced features for any business document including forms, medical and legal forms, resumes, job applications, bibliographies, footnotes/endnotes, newsletters."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "BUSAD 106",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BUSAD 152",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "CABOT 101",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CABOT 102",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CABOT 103",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CABOT 104",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CABOT 205",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CABOT 208",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CABOT 265",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CABOT 270",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select two courses from the following",
+    "rule": "choose_courses",
+    "minimum": 2,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ACCTG 110",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BUSAD 110",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CABOT 110",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CABOT 266",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CABOT 285",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The section covers both the AS degree and the certificate (\"AS DEGREE OR CERTIFICATE\"); the same requirements, total (30-31 units) and outcomes apply to both.",
+   "The catalog prints no units beside individual courses, so course units are null.",
+   "The program learning outcomes are printed as one continuous sentence with semicolon-separated clauses after the lead-in \"Upon completion of this program, the student will be able\"; recorded as a single entry rather than splitting it. A reviewer may prefer splitting at semicolons.",
+   "PDF extraction artifacts were normalized in the outcome text: ligature spacing (e.g. \"eﬀ ectively\" -> \"effectively\", \"oﬃ  ce\" -> \"office\", \"newslett ers\" -> \"newsletters\") and line-break hyphenation (\"deci- sion\" -> \"decision\", \"utili- ties\" -> \"utilities\", \"includ- ing\" -> \"including\").",
+   "The description mentions employment in an office setting performing clerical job duties but names no specific job title, so careers is empty.",
+   "No general education pattern or degree total is printed in this section."
+  ]
+ },
+ "extracted_run": "39063367252"
+}

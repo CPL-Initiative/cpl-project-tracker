@@ -4,12 +4,12 @@
  "shape": "degree",
  "title": "Creative Writing",
  "award": "A.A. Degree",
- "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=78",
+ "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=77",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 10065,
+  "input_tokens": 11133,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 10065,
-    "output_tokens": 3543,
+    "input_tokens": 11133,
+    "output_tokens": 3499,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,81 +30,74 @@
     "model": null
    }
   ],
-  "output_tokens": 3543,
+  "output_tokens": 3499,
   "output_tokens_details": {
-   "thinking_tokens": 1095
+   "thinking_tokens": 768
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.11112,
- "ms": 28792,
- "seconds": 29.2,
+ "cost_usd": 0.11451,
+ "ms": 25176,
+ "seconds": 25.5,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 33,
+   "placed": 41,
    "listed": 41,
-   "share": 0.805,
-   "missing": [
-    "BCST110",
-    "ENGL35A",
-    "ENGL35B",
-    "ENGL35C",
-    "ENGL35D",
-    "ENGL35L",
-    "ENGL35M",
-    "IDST36"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
    "pass": true
   },
   "invented": {
-   "count": 1,
+   "count": 3,
    "codes": [
+    "ENGL35G",
+    "ENGL35H",
     "ENGL62"
    ],
    "flagged": [
+    "ENGL35G",
+    "ENGL35H",
     "ENGL62"
    ],
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    6.0,
-    6.0
+    18.0,
+    18.0
    ],
    "stated": [
     18.0,
     18.0
    ],
    "against": "program",
-   "why": [
-    "the blocks sum to 6.0-6.0; the catalog states 18.0-18.0"
-   ]
+   "why": []
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 6,
    "courses": 0,
-   "count": 0,
+   "count": 6,
    "not_verbatim": [],
    "why": [],
    "heading_printed": true,
-   "heading_without_outcomes": true,
+   "heading_without_outcomes": false,
    "pass": true
   },
   "careers": {
-   "count": 0,
+   "count": 8,
    "not_verbatim": [],
    "pass": true
   },
@@ -114,11 +107,11 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "Creative Writing – A.A. Degree (heading not in the supplied text; the section begins on an earlier page and only its end appears at the top of page 78)",
+   "section_heading": "Required Courses",
    "measure": "units",
    "total_units": {
     "min": 18,
@@ -139,20 +132,161 @@
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [],
-   "careers": []
+   "outcomes": [
+    "Identify and analyze craft elements of creative writing.",
+    "Analyze and appraise published and unpublished literary work for its literary merit.",
+    "Analyze and appraise the relationship between culture and literary expression.",
+    "Compose original creative works in various genres.",
+    "Apply skills used in the publication process.",
+    "Design and present literary expression in the community."
+   ],
+   "careers": [
+    "law",
+    "education",
+    "communication",
+    "writing",
+    "editing",
+    "publishing",
+    "advertising",
+    "business"
+   ]
   },
   "blocks": [
    {
-    "name": "Choose one course from the following (continued from previous page; heading not in text)",
+    "name": "Required Units",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "ENGL 35A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Choose one course from the following",
     "rule": "choose_courses",
     "minimum": 1,
     "option_group": null,
     "stated": {
-     "min": null,
-     "max": null
+     "min": 3,
+     "max": 3
     },
     "courses": [
+     {
+      "code": "ENGL 35C",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL 35G",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Choose one course from the following",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "ENGL 35L",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "IDST 36",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Choose one course from the following",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "ENGL 35B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL 35D",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL 35H",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ENGL 35M",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "IDST 36",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Choose one course from the following",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "BCST 110",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
      {
       "code": "CINE 75A",
       "units": 3,
@@ -407,48 +541,14 @@
    }
   ],
   "course_outcomes": [],
-  "missing_explained": [
-   {
-    "code": "BCST 110",
-    "why": "not in the supplied A.A. text (likely on the cut-off previous page); named only in the Certificate section"
-   },
-   {
-    "code": "ENGL 35A",
-    "why": "not in the supplied A.A. text; named only in the Certificate section"
-   },
-   {
-    "code": "ENGL 35B",
-    "why": "not in the supplied A.A. text; named only in the Certificate section"
-   },
-   {
-    "code": "ENGL 35C",
-    "why": "not in the supplied A.A. text; named only in the Certificate section"
-   },
-   {
-    "code": "ENGL 35D",
-    "why": "not in the supplied A.A. text; named only in the Certificate section"
-   },
-   {
-    "code": "ENGL 35L",
-    "why": "not in the supplied A.A. text; named only in the Certificate section"
-   },
-   {
-    "code": "ENGL 35M",
-    "why": "not in the supplied A.A. text; named only in the Certificate section"
-   },
-   {
-    "code": "IDST 36",
-    "why": "not in the supplied A.A. text; named only in the Certificate section"
-   }
-  ],
+  "missing_explained": [],
   "notes": [
-   "The supplied text starts mid-way through the A.A. Degree requirements at the top of page 78; the A.A. heading, program summary, learning outcomes, careers, GE pattern and the earlier requirement blocks (likely the ENGL 35 creative writing choices, IDST 36 and BCST 110) are on page 77, which was not supplied. Reviewer should check page 77.",
-   "The first block's name, rule and stated units are cut off at the page break; it was recorded as 'choose one course' by analogy with the parallel Certificate block ('Choose one course from the following*'), which is an inference.",
-   "'Total: 18.0' printed at the end of the A.A. section was recorded as total_units (the major total); no degree total or GE units appear in the supplied text.",
-   "PHOT 100 is printed with the title 'Design Fundamentals' while the closed list titles it 'Photography'.",
-   "ENGL 62 (Video Games and Literature) appears in the A.A. literature/humanities choice list but is not on the closed list; recorded as catalog addition.",
-   "The Learning Outcomes and careers (publishing, editing, web-editing, non-profit organizations in the arts/arts education) printed on page 78 belong to the Creative Writing Certificate of Achievement section and were not recorded for the A.A. Degree."
+   "The A.A. section's own heading is not printed in the excerpt (text begins with the program description on page 77); section_heading uses the requirements table heading 'Required Courses'. The section ends at 'Total: 18.0' before 'Creative Writing – Certificate of Achievement', which was not read.",
+   "IDST 36 appears in two separate choose-one blocks (introductory magazine/poetry block and intermediate block) as printed; a student presumably cannot count it twice.",
+   "PHOT 100 is printed with the title 'Design Fundamentals' while the state file titles it 'Photography'; reviewer may check.",
+   "The last choose-one list spans a page break and its PDF columns are scrambled; codes, titles and units were matched by order.",
+   "The page references CCSF general education requirements but names no GE pattern and prints no degree total."
   ]
  },
- "extracted_run": "39047128472"
+ "extracted_run": "39056434592"
 }

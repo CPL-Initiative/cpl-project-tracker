@@ -9,7 +9,7 @@
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 11024,
+  "input_tokens": 12120,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 11024,
-    "output_tokens": 1369,
+    "input_tokens": 12120,
+    "output_tokens": 1398,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 1369,
+  "output_tokens": 1398,
   "output_tokens_details": {
-   "thinking_tokens": 452
+   "thinking_tokens": 480
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.07148,
- "ms": 11472,
- "seconds": 11.8,
+ "cost_usd": 0.07644,
+ "ms": 12111,
+ "seconds": 12.5,
  "parts": null,
  "error": null,
  "score": {
@@ -229,12 +229,12 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The section's title heading is cut off before page 196 in the extracted text; the text begins at '(Academic Plan E038507D)'. Section heading reconstructed from the program name and the description's wording.",
-   "The course table has no printed block name; 'Required Courses' is a descriptive label. All listed courses appear required, with 'OR' rows recorded as alternatives.",
-   "Catalog prints CAOT 035 (closed list CAOT 35); treated as the same course.",
-   "ELECTRN 121, 122 and 126 are marked as having a corequisite.",
-   "Catalog appears to be the 2026-2027 General Catalog (page footer on following page)."
+   "The section's heading is cut off before '(Academic Plan E038507D)' in the extracted text; the heading is taken from the program title and the description.",
+   "The catalog prints no block name; the course table is headed only 'SUBJECT & NO. COURSE UNITS'. All listed courses are read as required, with the 'OR' rows recorded as alternatives.",
+   "The total of 23-24 reflects the choice between CAOT 032 (3 units) and IND TEK 103 (2 units).",
+   "CAOT 035 is read as the closed list's CAOT 35.",
+   "ELECTRN 121, 122 and 126 are marked ** (corequisite)."
   ]
  },
- "extracted_run": "39011319511"
+ "extracted_run": "39063389278"
 }

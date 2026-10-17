@@ -1,0 +1,276 @@
+{
+ "college": "Grossmont College",
+ "control_number": "45554",
+ "shape": "certificate",
+ "title": "Applied Artificial Intelligence",
+ "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+ "source_url": "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/stem/artificial-intelligence-as-cert-achievement/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7274,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7274,
+    "output_tokens": 1560,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1560,
+  "output_tokens_details": {
+   "thinking_tokens": 236
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.0603,
+ "ms": 12270,
+ "seconds": 12.6,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 12,
+   "listed": 12,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    32.0,
+    32.0
+   ],
+   "stated": [
+    32.0,
+    32.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 21,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Certificate of Achievement",
+   "measure": "units",
+   "total_units": {
+    "min": 32,
+    "max": 32
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Analyze and evaluate machine learning and artificial intelligence frameworks that best fit a problem, data set, or process automation in a business and/or scientific environment.",
+    "Design a technologically feasible and efficient solution.",
+    "Standup and implement the solution.",
+    "Demonstrate and explain the solution."
+   ],
+   "careers": [
+    "AI Systems Tester",
+    "Data Annotator/Labeler",
+    "Junior AI Developer",
+    "Automation Technician",
+    "Chatbot Maintenance Technician",
+    "AI Help Desk Support",
+    "Junior Data Analyst",
+    "Process Automation Assistant",
+    "AI Trainer",
+    "Data Scientist",
+    "Machine Learning Engineer",
+    "AI Researcher",
+    "AI Product Manager",
+    "Natural Language Processing (NLP) Specialist",
+    "Computer Vision Engineer",
+    "AI/ML Consultant",
+    "Deep Learning Engineer",
+    "Data Engineer",
+    "AI Ethics Specialist",
+    "Business Intelligence Analyst",
+    "AI Systems Architect"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Associate Degree Major Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CSIS-115",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CSIS-185",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CSIS-250",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CSIS-252",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CSIS-256",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CSIS-266",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CSIS-275",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CSIS-292",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHIL-142",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select at least 3 units from the following",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "CSIS-225",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CSIS-235",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CSIS-285",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The Certificate of Achievement section states that completing 'only the requirements listed above' (the Associate Degree Major Requirements) qualifies for the certificate; blocks and the 32-unit total are read from that shared list.",
+   "Program learning outcomes and career list are printed once for the program as a whole; the certificate shares them.",
+   "Career titles marked with footnote '1' (Bachelor's Degree or higher required) are recorded without the footnote marker.",
+   "Units are not printed beside CSIS-225, CSIS-235 and CSIS-285 in the elective list; left null.",
+   "Catalog prints CSIS-252 title as 'Cybersecurity and Al With Python' (likely typo for AI).",
+   "Introductory text mentions an Associate Degree with areas of emphasis; this record covers only the Certificate of Achievement."
+  ]
+ },
+ "extracted_run": "39061728041"
+}

@@ -1,0 +1,252 @@
+{
+ "college": "Pasadena City College",
+ "control_number": "30214",
+ "shape": "degree",
+ "title": "Anesthesia Technology",
+ "award": "A.S. Degree",
+ "source_url": "https://curriculum.pasadena.edu/academic-programs/anesthesia/anesthesia-technology-as-cert-achievement/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7272,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7272,
+    "output_tokens": 1788,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1788,
+  "output_tokens_details": {
+   "thinking_tokens": 543
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.06485,
+ "ms": 14937,
+ "seconds": 15.3,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 4,
+   "listed": 5,
+   "share": 0.8,
+   "missing": [
+    "AT117"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 6,
+   "codes": [
+    "AT110",
+    "AT112",
+    "AT114",
+    "AT115",
+    "AT117A",
+    "AT117B"
+   ],
+   "flagged": [
+    "AT110",
+    "AT112",
+    "AT114",
+    "AT115",
+    "AT117A",
+    "AT117B"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    32.0,
+    32.0
+   ],
+   "stated": [
+    32.0,
+    32.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Requirements for the Certificate of Achievement; General Education Requirements for the Associate in Science Degree",
+   "measure": "units",
+   "total_units": {
+    "min": 32,
+    "max": 32
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "PCC Local Gen Ed, Cal-GETC (or IGETC / CSU GE for students with rights to former patterns)",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Apply theory and knowledge of social sciences in effective communication with anesthesia care providers in the delivery of patient care.",
+    "Apply theory and knowledge of chemistry and biology to assist the anesthesia provider in the selection and operation of appropriate anesthesia equipment for patient care.",
+    "Apply theory and concepts in pharmacology specific to anesthesia surgical procedure in preparation of patient care.",
+    "Apply theory and knowledge of basic anatomy/physiology, and pathophysiology in assisting the anesthesia provider in the development of patient care plans."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Requirements for the Certificate of Achievement",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 32,
+     "max": 32
+    },
+    "courses": [
+     {
+      "code": "AT 110",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "AT 111",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AT 112",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "AT 113",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AT 114",
+      "units": 3.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "AT 115",
+      "units": 3.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "AT 116",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AT 117A",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "AT 117B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "AT 118",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "AT 117",
+    "why": "not in the text; the catalog lists AT 117A (2 units) and AT 117B (3 units) instead"
+   }
+  ],
+  "notes": [
+   "The page combines the A.S. degree and Certificate of Achievement. The only course list is headed 'Requirements for the Certificate of Achievement'; it is read here as the major requirements for the A.S., with the A.S. adding general education. Its 'Total Units 32' is recorded as total_units, though it is printed under the certificate heading.",
+   "No total for the whole A.S. degree and no GE unit count are printed.",
+   "The GE options are PCC Local Gen Ed or Cal-GETC; students with rights to former patterns may complete IGETC or CSU GE. A prior bachelor's degree satisfies GE and elective requirements.",
+   "The page prints a single Program Outcomes list for the program as a whole; the A.S. is taken to share it.",
+   "The closed list's AT 117 (5 units) appears split in the catalog into AT 117A and AT 117B; the closed list's AT 117 is therefore not placed.",
+   "The catalog text begins mid-sentence ('rk for an Associate of Science degree track'), so earlier content was cut off."
+  ]
+ },
+ "extracted_run": "39061730187"
+}

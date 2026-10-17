@@ -1,0 +1,176 @@
+{
+ "college": "Los Angeles Trade Technical College",
+ "programs": 211,
+ "with_closed_list": 188,
+ "found": 172,
+ "extracted": 172,
+ "errors": 0,
+ "passed_machine_checks": 127,
+ "failed": {
+  "coverage": 25,
+  "invented": 11,
+  "arithmetic": 37,
+  "repeated": 1,
+  "outcomes": 1
+ },
+ "cost_usd": 13.55,
+ "cost_per_program": 0.0788,
+ "not_found": [
+  {
+   "control_number": "02902",
+   "title": "Electronics Communications",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=78",
+    "coverage": 0.4
+   }
+  },
+  {
+   "control_number": "02904",
+   "title": "Heating, Ventilating, Air Conditioning (HVAC) & Refrigeration",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=140",
+    "coverage": 0.185
+   }
+  },
+  {
+   "control_number": "02916",
+   "title": "Welding, Gas and Electric",
+   "award": "A.S. Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "12068",
+   "title": "Electronics Engineering Technician",
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+   "near_miss": {
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=284",
+    "coverage": 0.353
+   }
+  },
+  {
+   "control_number": "21842",
+   "title": "Heating, Ventilating, Air Conditioning (HVAC) & Refrigeration",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=140",
+    "coverage": 0.185
+   }
+  },
+  {
+   "control_number": "21861",
+   "title": "Welding, Gas and Electric",
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+   "near_miss": null
+  },
+  {
+   "control_number": "24169",
+   "title": "Workplace Readiness Certificate of Completion",
+   "award": null,
+   "near_miss": {
+    "pages": [
+     348,
+     349
+    ],
+    "coverage": 1.0,
+    "why": "the page prints neither the control number nor the title and award"
+   }
+  },
+  {
+   "control_number": "30002",
+   "title": "Correctional Science",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "pages": [
+     239
+    ],
+    "coverage": 0.875,
+    "why": "the page prints neither the control number nor the title and award"
+   }
+  },
+  {
+   "control_number": "36134",
+   "title": "CSU General Education (CSU-GE-Breadth)",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "pages": [
+     209,
+     210,
+     211,
+     212
+    ],
+    "coverage": 0.812,
+    "why": "the page prints neither the control number nor the title and award"
+   }
+  },
+  {
+   "control_number": "41013",
+   "title": "Chassis Technician (ASE A4 & A5 Test Prep)",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "41754",
+   "title": "Gas Tungsten Arc Welding (GTAW) Ferrous and Non-Ferrous Metals",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "41759",
+   "title": "Shielded Metal Arc Welding (SMAW) Structural Steel",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "44291",
+   "title": "English as a Second Language (ESL): Advanced Grammar and Composition",
+   "award": "Noncredit program",
+   "near_miss": {
+    "pages": [
+     351
+    ],
+    "coverage": 1.0,
+    "why": "the page prints neither the control number nor the title and award"
+   }
+  },
+  {
+   "control_number": "44561",
+   "title": "UCTP Physics",
+   "award": "A.S. T Degree",
+   "near_miss": {
+    "pages": [
+     95,
+     96
+    ],
+    "coverage": 1.0,
+    "why": "the page prints neither the control number nor the title and award"
+   }
+  },
+  {
+   "control_number": "44562",
+   "title": "Peer Support Specialist Certification Training",
+   "award": "Noncredit program",
+   "near_miss": {
+    "pages": [
+     354
+    ],
+    "coverage": 0.5,
+    "why": "the page prints neither the control number nor the title and award"
+   }
+  },
+  {
+   "control_number": "45459",
+   "title": "Transportation Workforce Readiness",
+   "award": "Noncredit program",
+   "near_miss": {
+    "pages": [
+     357
+    ],
+    "coverage": 1.0,
+    "why": "the page prints neither the control number nor the title and award"
+   }
+  }
+ ],
+ "run": "39054673977"
+}

@@ -1,0 +1,197 @@
+{
+ "college": "Los Angeles Southwest College",
+ "control_number": "40819",
+ "shape": "certificate",
+ "title": "ICT Media Technology Essentials",
+ "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+ "source_url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=137",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8450,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8450,
+    "output_tokens": 1318,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1318,
+  "output_tokens_details": {
+   "thinking_tokens": 517
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.06016,
+ "ms": 11183,
+ "seconds": 11.8,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 2,
+   "listed": 3,
+   "share": 0.667,
+   "missing": [
+    "CS170"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 2,
+   "codes": [
+    "CIS146",
+    "CIS170"
+   ],
+   "flagged": [
+    "CIS146",
+    "CIS170"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    12.0,
+    12.0
+   ],
+   "stated": [
+    12.0,
+    12.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "CERTIFICATE OF ACHIEVEMENT ICT MEDIA TECHNOLOGY ESSENTIALS",
+   "measure": "units",
+   "total_units": {
+    "min": 12,
+    "max": 12
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Students will apply principles of visual communication and design to create digital media projects using industry-standard software and emerging technologies.",
+    "Students will design and develop interactive applications and content that integrate text, graphics, animation, sound, video, and digital imaging for diverse delivery platforms.",
+    "Students will demonstrate foundational skills in Web design, multimedia production, and gaming by producing creative projects that reflect best practices in digital media."
+   ],
+   "careers": [
+    "digital media specialist"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CIS 141",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS 144",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS 146",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CIS 170",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "CS170",
+    "why": "Not printed in this section; the section prints CIS 170 (Introduction to Computer Games Programming) instead, which may be the same course under a different subject code."
+   }
+  ],
+  "notes": [
+   "The catalog prints CIS 170 'Introduction to Computer Games Programming' in this certificate, while the closed list has CS170 'Computer Game Programming and Logic I'; recorded CIS 170 as a catalog addition. A reviewer should check whether these are the same course (CS 170 'Introduction to Computer Games' also appears in the Apple Coding Developer section).",
+   "CIS 146 is not in the closed list; recorded as a catalog addition.",
+   "Closed list title for CIS 144 is 'Multimedia E-Presentations Essentials'; catalog prints 'Multimedia E-Presentation Essentials'."
+  ]
+ },
+ "extracted_run": "39061735776"
+}

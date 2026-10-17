@@ -1,0 +1,187 @@
+{
+ "college": "Glendale Community College",
+ "control_number": "41826",
+ "shape": "certificate",
+ "title": "Digital Photography Technician",
+ "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+ "source_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=111",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7789,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7789,
+    "output_tokens": 1275,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1275,
+  "output_tokens_details": {
+   "thinking_tokens": 521
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.05666,
+ "ms": 10734,
+ "seconds": 11.1,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 3,
+   "listed": 3,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": [
+    9.0,
+    9.0
+   ],
+   "against": "program",
+   "why": [
+    "a required course in 'Required Courses' has no units"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 2,
+   "courses": 0,
+   "count": 2,
+   "not_verbatim": [
+    "create, use, develop, and integrate digital photography techniques and workflows into their photographic practice."
+   ],
+   "why": [
+    "not in the catalog text as printed: create, use, develop, and integrate digital photography techniques and workflows"
+   ],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": false
+  },
+  "careers": {
+   "count": 4,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "DIGITAL PHOTOGRAPHY TECHNICIAN",
+   "measure": "units",
+   "total_units": {
+    "min": 9,
+    "max": 9
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "create a cohesive photographic project that is conceptually and technically well developed",
+    "create, use, develop, and integrate digital photography techniques and workflows into their photographic practice."
+   ],
+   "careers": [
+    "digital photography",
+    "digital photography editing",
+    "digital assisting",
+    "retouching"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "PHOTO 100",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHOTO 130",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHOTO 132",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Section read: 'PHOTOGRAPHY CERTIFICATE NON-DEGREE / DIGITAL PHOTOGRAPHY TECHNICIAN'; the page also prints Digital Photography, Photography, Drone Photography and Photographic Lighting certificates, which were not used.",
+   "The catalog prints the requirement as 'PHOTO 100, 130, 132' with no units beside each course; course units are null. The program states it 'requires 9 units'.",
+   "Closed-list codes PHOTO130 and PHOTO132 are stored without a space; matched to the catalog's PHOTO 130 and PHOTO 132.",
+   "The outcomes are printed as one run-on sentence without separators; split into two outcomes at 'well developed' / 'create, use, ...'. Ligature characters ('workﬂ ows') and the line-break hyphen ('photogra-phy') were read as 'workflows' and 'photography'. Reviewer should confirm the split.",
+   "The certificate is marked '**Financial Aid Ineligible'."
+  ]
+ },
+ "extracted_run": "39063367252"
+}
