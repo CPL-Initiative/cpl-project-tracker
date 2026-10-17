@@ -120,6 +120,29 @@ check(P.text_window(export, ex_found, from_start=True).startswith("FIRE TECHNOLO
 check(P.coverage(P.find_codes("Culinary Arts overview, no courses", CUL), CUL) == 0.0,
       "a title match with none of the courses is not the page")
 
+# ── A run of numbers after one subject (Glendale's 2025-2026 PDF, S408) ───────
+# "ACCTG 101, 102; BUSAD 101, 106, 120; CS/IS 100 or 101" lists eight courses with
+# three subjects; kerning spaces a three-digit number's digits ("B IOL 1 42, 50").
+GCC = [{"code": c} for c in ["ACCTG101", "ACCTG 102", "BUSAD 101", "BUSAD 106", "BUSAD 120",
+                             "CS/IS 100", "CS/IS 101", "BUSAD 131", "BUSAD 162", "BUSAD 170",
+                             "BIOL 142", "BIOL 50", "CHEM 110", "ENGL 101", "WELD 118"]]
+gcc_page = ("Required  Courses : ACCTG 101, 102; BUSAD 101, 106, 120;\nCS/IS 100 or 101.\n"
+            "Select one course from the following: BUSAD 131, 141, 144,\n162, 170 \u00b7 BUSINESS "
+            "Required  C ourses : B IOL 1 42, 50; CHEM 1 1 0; ENGL 1 01 ;\n"
+            "Prerequisite: WELD 121 or WELD 117 and 118. Transfer Credit: CSU")
+gcc_found = P.find_codes(gcc_page, GCC)
+check(P.coverage(gcc_found, GCC) == 1.0,
+      "every course a run of numbers lists after its subject is found: missing %s"
+      % sorted({P.norm_code(c["code"]) for c in GCC} - set(gcc_found)))
+check(gcc_found["BUSAD162"] == [gcc_page.index("162, 170")],
+      "a number in a run is found where it is printed")
+for code, text in [("CHEM 3", "CHEM 101 and 3 units of electives"),
+                   ("MATH 3", "MATH 100 or 3 years of high school mathematics"),
+                   ("ART 13", "ART 1 3 Introduction"),
+                   ("BUSAD 102", "ACCTG 101, 102; BUSAD 101"),
+                   ("BUSAD 106", "BUSAD 101. Select 106 units")]:
+    check(not P.find_codes(text, [{"code": code}]), "%r must NOT be found in %r" % (code, text))
+
 prog = {"title": "Culinary Arts", "award": "Certificate of Achievement requiring 30S/45Q"}
 s_prog = P.score_link("Culinary Arts, Certificate of Achievement", "https://x/cul", prog)
 s_hub = P.score_link("Programs of Study", "https://x/programs", prog)
@@ -466,14 +489,19 @@ check(cr3.page.clicks == [NAV[1], FIRE_AS, FIRE_COA] and got3["url"].endswith("o
 
 # ── The filed fixtures: real catalog text the matcher must keep reading ──────
 fixtures = sorted(glob.glob(os.path.join(ROOT, "kb", "program_requirements_pilot", "sources", "*.json")))
+# Codes a later reading finds that the run did not: Mt. San Antonio prints "CHLD 67 & 67L", and a
+# run of numbers after one subject counts toward it since S408.
+FIXTURE_GAINS = {"mtsac_33876.json": {"CHLD67L"}}
 check(len(fixtures) >= 16, "the capture pass's 16 programs are filed (run 4)")
 for path in fixtures:
     with open(path) as fh:
         fx = json.load(fh)
     again = sorted(P.find_codes(fx["text"], fx["closed_list"]))
-    check(again == sorted(fx["codes_found"]),
-          "%s: the matcher still finds on the filed text what it found on the runner "
-          "(%d now, %d then)" % (os.path.basename(path), len(again), len(fx["codes_found"])))
+    gained = set(again) - set(fx["codes_found"])
+    check(set(fx["codes_found"]) <= set(again) and gained == FIXTURE_GAINS.get(os.path.basename(path), set()),
+          "%s: the matcher still finds on the filed text what it found on the runner, and only the "
+          "gains named here (%d now, %d then, gained %s)" % (os.path.basename(path), len(again),
+                                                          len(fx["codes_found"]), sorted(gained)))
     check(fx["coverage"] >= 0.5 and fx.get("captured_run"),
           "%s: only a page that named half the listed codes is filed, with its run" % os.path.basename(path))
 
@@ -914,6 +942,19 @@ lig = {**plo, "program": {**plo["program"], "outcomes": ["Design and draft lands
 LIG_TEXT = "Program Outcomes\n1. Design and draŌ  landscape plan.\n3. EsƟ mate the cost of a landscape construcƟ on project."
 check(S.outcomes_check(lig, LIG_TEXT)["pass"],
       "an outcome printed with Solano's stand-in ligature glyphs ('draŌ ', 'EsƟ mate') is verbatim (S405)")
+MARK_TEXT = ("STUDENT LEARNING OUTCOMES\nDemonstrate knowledge of basic laws and principles of California real estate. 1.\n"
+             "Demonstrate knowledge of real estate listings, deposit receipts, escrows, 2.\nand financing.\nMAJOR FIELD")
+marked = {**plo, "program": {**plo["program"], "outcomes": [
+    "Demonstrate knowledge of basic laws and principles of California real estate.",
+    "Demonstrate knowledge of real estate listings, deposit receipts, escrows, and financing."]}}
+check(S.outcomes_check(marked, MARK_TEXT)["pass"],
+      "an outcome whose list number Ohlone's PDF prints at its first line's end ('escrows, 2.') is verbatim (S408)")
+check(S.outcomes_check({**marked, "program": {**marked["program"], "outcomes": [
+    "Demonstrate knowledge of real estate listings, deposit receipts, escrows, 2. and financing."]}}, MARK_TEXT)["pass"],
+      "the marker reading adds a reading: the text as printed still reads")
+check(not S.outcomes_check({**marked, "program": {**marked["program"], "outcomes": [
+    "Demonstrate knowledge of real estate listings, escrows, and financing."]}}, MARK_TEXT)["pass"],
+      "an outcome missing words is still reworded with the marker reading")
 check(not S.outcomes_check({**lig, "program": {**lig["program"], "outcomes": ["Design and draft a landscape plan."]}},
                            LIG_TEXT)["pass"],
       "the ligature reading still refuses a word the text does not print")

@@ -717,3 +717,33 @@ it against a fingerprint computed in the same query, with nothing retyped.
   online catalog `catalog.canadacollege.edu/current/` refuses the reader in robots.txt.
 - The refusing hosts before S406: De Anza and CCSF (Cloudflare 403), American River, Cosumnes River, Folsom Lake and
   Sacramento City (404), Cerro Coso and Porterville (robots.txt on the PDF). All eight now read from Sam's copies.
+
+## S407 SkyMesquite (2026-10-17): catalog steps for own-HTML PDF colleges, the heading preference, the migrate path
+
+- **A row naming the catalog's page reads through a procedure catalog step.** LA Trade Tech and LA Mission name their
+  catalog pages; each page links its 2026-2027 PDF by words (`2026-2027 LATTC Catalog.pdf`, `2026/2027 Catalog | PDF`),
+  so a catalog step follows that link, as East LA's does, and the row stays as filed. Capture-only reads found 172 of 188
+  and 128 of 140; extraction $13.55 and $8.92; loads 158 and 125 unchecked. College of the Desert the same way (358 of
+  365 found in a 476-page PDF; its page calls the online catalog the most current, an open question on its record).
+- **A catalog step carries its file's year (#2202).** Rows naming a page name no year, so East LA's 120 records loaded
+  with none. `procedure_catalog()` passes a step's `catalog_year`, and `capture()` uses it when the row names none.
+- **The heading preference (#2203).** Among pages whose run covers the list: a clean heading (title and award on a line
+  naming no listed code) or the printed control number first, then a page that is not course descriptions (two or more
+  `CODE - Title (units)` entry lines), then the rest. A transfer degree's award words include a bare "transfer", which
+  every course line printing "Transfer: CSU, UC" carried, so course descriptions read as ADT headings. Free reconciles:
+  CCSF moved 44 picks, 43 onto named headings (Japanese AA from page 111 to 178); LA City 3 of 241. It recovers only 2 of
+  CCSF's 55 skipped: about half are noncredit programs that fall to the codes-only picker, the rest have no other page
+  covering their list. East LA's comparison mixed reader versions (its filed capture predates S403's merge).
+- **A forced re-extract after a reconcile must name its programs.** A reconcile files the new picks, so the next read
+  sees no change and extracts nothing (CCSF run 39055842443 kept 349). Pass `force=<control numbers>`.
+- **A held write goes through the runner, not to Sam.** The Supabase guard holds a session's UPDATE; S406 and S407 put
+  pastes on Sheets 90-91, and Sam (~18:10Z) pointed back to `supabase-migrate.yml`, built 2026-10-13 for exactly this.
+  One committed file per trigger, each statement keeping its receipt's guard, ending with a read-back; the receipt is
+  committed by the runner. Two applied this run, 13 rows.
+- **Procedure records written:** San Mateo, Coalinga, Copper Mountain, San Diego Continuing Education, Skyline, Solano,
+  Cerro Coso, CCSF, De Anza, Porterville (v1); the four Los Rios (v3 merges); LA Trade Tech, LA Mission, Desert (catalog
+  steps). A receipt built from a reconcile or a forced single-program run needs its step text corrected by hand (Solano,
+  American River): the builder labels every filed read as a full extraction.
+
+**Patterns that worked.** Page reads of the catalog pages before any capture (two runs named all six catalogs). Dated
+reads checked against fingerprints computed in SQL, counts and titles both.
