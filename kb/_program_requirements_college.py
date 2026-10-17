@@ -1273,35 +1273,76 @@ EL_WALK_CALLS = 250
 EL_WALK_DEPTH = 3          # menu page, its topic (26-27/degrees), the department it lists
 
 
-def el_page_slugs(html_text: str, catalog: str) -> list[str]:
-    """Every page a publish call links one segment under the catalog, each once, in
-    order: a subject (current/aj), a department listing (26-27/degrees), a policy."""
-    pat = re.compile(r'href="(?:/catalog/)?%s/([^"/?#]+)"' % re.escape(catalog or ""), re.I)
-    out = []
-    for slug in pat.findall(html_text or ""):
-        if slug not in out:
-            out.append(slug)
+# Los Medanos (S401, page reads 38979564864 and 38982992603): the walk read the
+# start page's 11 menu pages and found nothing (run 38982485062). A publish call
+# carries the menu opened around its own page, so the start page's menu holds the
+# top level alone, and a content call holds no menu: "courses" lists its topics
+# (Degrees, Certificates & Programs of Study, 26-27/degrees) only in its own full
+# call. And degrees links its departments one segment down (26-27/art) or two
+# (26-27/childdevelopment/earlychildhoodeducation). So a page whose address or link
+# names programs (a course does not: Understanding Course Descriptions is no hub) is
+# read through its full call when its content names nothing, the walk takes such
+# pages first, and a page may sit two segments under the catalog.
+EL_HUB_LIKE = re.compile(r"program|degree|certificate|major|department|discipline|area|pathway|award", re.I)
+EL_NOT_PAGE = re.compile(r"^(?:program|course|department|search)(?:/|$)", re.I)
+
+
+def el_page_links(html_text: str, catalog: str) -> list[tuple[str, str]]:
+    """Every page a publish call links one or two segments under the catalog, as
+    (path, link text), each once, in order: a subject (current/aj), a department
+    listing (26-27/degrees), a department two down, a policy. A program, course or
+    department page is never one."""
+    pat = re.compile(r'<a\b[^>]*?href="(?:/catalog/)?%s/([^"/?#]+(?:/[^"/?#]+)?)"[^>]*>(.*?)</a\s*>'
+                     % re.escape(catalog or ""), re.I | re.S)
+    out, seen = [], set()
+    for path, text in pat.findall(html_text or ""):
+        if path in seen or EL_NOT_PAGE.match(path):
+            continue
+        seen.add(path)
+        out.append((path, re.sub(r"<[^>]+>|\s+", " ", text).strip()))
     return out
+
+
+def el_hub_first(links: list[tuple[str, str]], depth: int) -> list[tuple[str, int]]:
+    """The links as (path, depth), those whose path or text names programs first."""
+    hub = [(p, depth) for p, t in links if EL_HUB_LIKE.search(p) or EL_HUB_LIKE.search(t)]
+    return hub + [(p, depth) for p, t in links if (p, depth) not in hub]
 
 
 def el_walk(reader, start: str, shell: str, catalog: str, slugs: list[str], skip: set,
             errors: list) -> dict:
-    """Adds to slugs every program the menu's one-segment pages link, and the pages
-    they link, EL_WALK_DEPTH steps deep; the account of the walk."""
-    queue = [(s, 1) for s in el_page_slugs(shell, catalog) if s not in skip]
-    seen = skip | {s for s, _ in queue}
-    calls, before = 0, len(slugs)
+    """Adds to slugs every program the menu's pages link, and the pages they link,
+    EL_WALK_DEPTH steps deep, hub-like pages first; the account of the walk."""
+    links = el_page_links(shell, catalog)
+    hubs = {p for p, t in links if EL_HUB_LIKE.search(p) or EL_HUB_LIKE.search(t)}
+    queue = [(p, d) for p, d in el_hub_first(links, 1) if p not in skip]
+    seen = skip | {p for p, _ in queue}
+    calls, menus, before = 0, 0, len(slugs)
     while queue and calls < EL_WALK_CALLS:
-        slug, depth = queue.pop(0)
-        page = el_html(el_fetch(reader, el_publish_url(start, [slug], content=True), errors))
+        path, depth = queue.pop(0)
+        page = el_html(el_fetch(reader, el_publish_url(start, path.split("/"), content=True), errors))
         calls += 1
-        slugs += [p for p in el_program_slugs(page, catalog) if p not in slugs]
-        if depth < EL_WALK_DEPTH:
-            for t in el_page_slugs(page, catalog):
-                if t not in seen:
-                    seen.add(t)
-                    queue.append((t, depth + 1))
-    return {"walk_pages": calls, "walk_programs": len(slugs) - before, "walk_stopped_at_cap": bool(queue)}
+        found = [p for p in el_program_slugs(page, catalog) if p not in slugs]
+        slugs += found
+        if depth >= EL_WALK_DEPTH:
+            continue
+        more = [(p, t) for p, t in el_page_links(page, catalog) if p not in seen]
+        if not found and not more and path in hubs and calls < EL_WALK_CALLS:
+            # The page's own full call: the menu opened around it (Los Medanos's courses).
+            page = el_html(el_fetch(reader, el_publish_url(start, path.split("/")), errors))
+            calls += 1
+            menus += 1
+            more = [(p, t) for p, t in el_page_links(page, catalog) if p not in seen]
+        for p, t in more:
+            if EL_HUB_LIKE.search(p) or EL_HUB_LIKE.search(t):
+                hubs.add(p)
+        add = el_hub_first(more, depth + 1)
+        seen.update(p for p, _ in add)
+        # Hub-like pages one step down go ahead of the plain pages still waiting.
+        lead = [x for x in add if x[0] in hubs]
+        queue = lead + queue + [x for x in add if x[0] not in hubs]
+    return {"walk_pages": calls, "walk_menus": menus, "walk_programs": len(slugs) - before,
+            "walk_stopped_at_cap": bool(queue)}
 
 
 def el_pages_fast(reader, start: str, report: dict) -> list[dict]:
