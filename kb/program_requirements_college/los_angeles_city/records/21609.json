@@ -1,0 +1,217 @@
+{
+ "college": "Los Angeles City College",
+ "control_number": "21609",
+ "shape": "certificate",
+ "title": "Business Administration",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=75",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 12830,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 12830,
+    "output_tokens": 1553,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1553,
+  "output_tokens_details": {
+   "thinking_tokens": 602
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.08238,
+ "ms": 13384,
+ "seconds": 13.8,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 7,
+   "listed": 7,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    22.0,
+    22.0
+   ],
+   "stated": [
+    22.0,
+    22.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [
+    "Identify how business operates in an international/global environment including legal, social, cultural, and interdependence and integrated financial markets.",
+    "Perform statistical calculations based on business scenarios involving sample space, probability descriptive statistics, frequency distribution, sampling distribution, estimation, and significance tests."
+   ],
+   "why": [
+    "not in the catalog text as printed: Identify how business operates in an international/global environment including ",
+    "not in the catalog text as printed: Perform statistical calculations based on business scenarios involving sample sp"
+   ],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": false
+  },
+  "careers": {
+   "count": 5,
+   "not_verbatim": [
+    "international business management"
+   ],
+   "pass": false
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Business Administration Certificate of Achievement",
+   "measure": "units",
+   "total_units": {
+    "min": 22,
+    "max": 22
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Identify how business operates in an international/global environment including legal, social, cultural, and interdependence and integrated financial markets.",
+    "Analyze the effects of government intervention in the economy.",
+    "Perform statistical calculations based on business scenarios involving sample space, probability descriptive statistics, frequency distribution, sampling distribution, estimation, and significance tests."
+   ],
+   "careers": [
+    "business commerce",
+    "finance",
+    "economics",
+    "international business management",
+    "marketing"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "REQUIRED COURSES (22 UNITS)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 22,
+     "max": 22
+    },
+    "courses": [
+     {
+      "code": "ACCTG 001",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACCTG 002",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "SUPV 012",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 015",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECON C2001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECON C2002",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The catalog prints codes with zero-padded numbers (ACCTG 001, BUS 015, SUPV 012); these are treated as the closed-list codes ACCTG 1, BUS 15, SUPV 12, not catalog additions.",
+   "Total 22 units taken from 'Major Units: 22' and 'REQUIRED COURSES (22 UNITS)' in the certificate section.",
+   "Outcomes copied with PDF line-break hyphenation joined (e.g., 'envi -ronment' read as 'environment', 'fre -quency' as 'frequency', 'sig -nificance' as 'significance').",
+   "Careers are career fields taken from the Business Administration OVERVIEW ('entry-level positions in general areas of business commerce, finance, economics, international business management, and marketing'), which describes all Business Administration programs including the certificate; the job titles listed in the AA section (administrative services managers, etc.) were not included since they belong to the AA degree section. Reviewer may wish to check."
+  ]
+ },
+ "extracted_run": "39006380342"
+}

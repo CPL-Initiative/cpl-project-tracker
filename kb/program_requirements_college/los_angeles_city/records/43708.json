@@ -1,0 +1,200 @@
+{
+ "college": "Los Angeles City College",
+ "control_number": "43708",
+ "shape": "noncredit",
+ "title": "WAREHOUSE & DISTRIBUTION: LEAD",
+ "award": "Noncredit program",
+ "source_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=230",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7975,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7975,
+    "output_tokens": 1091,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1091,
+  "output_tokens_details": {
+   "thinking_tokens": 341
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.05372,
+ "ms": 9574,
+ "seconds": 9.9,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 5,
+   "listed": 5,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    83.0,
+    83.0
+   ],
+   "stated": [
+    83.0,
+    83.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [
+    "Explain factors that influence the receiving, picking, and shipping processes.",
+    "Describe common metrics and systems used to evaluate warehouse and personal performance."
+   ],
+   "why": [
+    "not in the catalog text as printed: Explain factors that influence the receiving, picking, and shipping processes.",
+    "not in the catalog text as printed: Describe common metrics and systems used to evaluate warehouse and personal perf"
+   ],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": false
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Warehouse & Distribution: Lead Certificate of Completion",
+   "measure": "hours",
+   "total_units": {
+    "min": 83,
+    "max": 83
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Describe basic principles of movement, storage, control, and protection of material in the warehouse environment.",
+    "Explain factors that influence the receiving, picking, and shipping processes.",
+    "Describe common metrics and systems used to evaluate warehouse and personal performance.",
+    "Identify planning and organizational skills that help optimize the workflow.",
+    "Summarize employer and employee rights and responsibilities required by OSHA standards."
+   ],
+   "careers": [
+    "leadership positions in the warehousing industry"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "REQUIRED COURSES",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "VOC ED 530CE",
+      "units": 18,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VOC ED 531CE",
+      "units": 18,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VOC ED 532CE",
+      "units": 18,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VOC ED 441CE",
+      "units": 18,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VOC ED 085CE",
+      "units": 11,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Award counted in hours: 'Total Lecture Hrs: 83'; course hours sum to 83.",
+   "PDF line-end hyphenation ('ship -ping', 'ware -house') was joined into 'shipping' and 'warehouse' in the outcomes.",
+   "Career entry taken from the description phrase 'leadership positions in the warehousing industry'; reviewer may judge whether this counts as a named career.",
+   "Page also prints Roadmap to People Management and Warehouse & Distribution: Worker certificates; those were not read."
+  ]
+ },
+ "extracted_run": "39006380342"
+}

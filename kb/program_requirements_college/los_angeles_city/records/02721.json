@@ -1,0 +1,181 @@
+{
+ "college": "Los Angeles City College",
+ "control_number": "02721",
+ "shape": "degree",
+ "title": "MANAGEMENT",
+ "award": "A.A. Degree",
+ "source_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=76",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 12979,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 12979,
+    "output_tokens": 1029,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1029,
+  "output_tokens_details": {
+   "thinking_tokens": 297
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.0725,
+ "ms": 9574,
+ "seconds": 10.1,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 8,
+   "share": 0.0,
+   "missing": [
+    "ACCTG17",
+    "ACCTG31",
+    "BUS17",
+    "MARKET21",
+    "MGMT13",
+    "MGMT2",
+    "MGMT31",
+    "MGMT33"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": true,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ACCTG 17",
+    "why": "not in the text; Management A.A. section not in the excerpt"
+   },
+   {
+    "code": "ACCTG 31",
+    "why": "Management A.A. section not in the text; appears only in Business Administration A.A. and Finance and Banking sections"
+   },
+   {
+    "code": "BUS 17",
+    "why": "Management A.A. section not in the text; appears only in Business Administration A.A. and Economics sections"
+   },
+   {
+    "code": "MARKET 21",
+    "why": "Management A.A. section not in the text; appears only in Business Administration A.A. section"
+   },
+   {
+    "code": "MGMT 13",
+    "why": "Management A.A. section not in the text; appears only as an elective in Business Administration A.A."
+   },
+   {
+    "code": "MGMT 2",
+    "why": "Management A.A. section not in the text; appears only as an elective in Business Administration A.A."
+   },
+   {
+    "code": "MGMT 31",
+    "why": "Management A.A. section not in the text; appears only as an elective in Business Administration A.A."
+   },
+   {
+    "code": "MGMT 33",
+    "why": "Management A.A. section not in the text; appears only as an elective in Business Administration A.A."
+   }
+  ],
+  "notes": [
+   "The supplied catalog text (pages 76-79) contains Business Administration (A.A. and Certificate of Achievement), Economics (AA-T and Certificate), and Finance and Banking sections, but no Management A.A. Degree section. No requirements, totals, outcomes or careers were recorded for Management because none are printed in the text.",
+   "Business Administration A.A. requirements were not used as a substitute because they belong to a different program (State Code 02718). The source page reference (#page=76) may point to the wrong location; the Management section likely appears elsewhere in the catalog and should be checked.",
+   "The text ends mid-table in the Finance and Banking certificate (cut off at 'FINANCE 015 PRINCIPLES OF B')."
+  ]
+ },
+ "extracted_run": "39006380342"
+}

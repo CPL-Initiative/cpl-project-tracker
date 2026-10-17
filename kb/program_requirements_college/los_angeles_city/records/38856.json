@@ -1,0 +1,165 @@
+{
+ "college": "Los Angeles City College",
+ "control_number": "38856",
+ "shape": "certificate",
+ "title": "CHILDREN WITH SPECIAL NEEDS",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=88",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 13283,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 13283,
+    "output_tokens": 717,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 717,
+  "output_tokens_details": {
+   "thinking_tokens": 304
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.06747,
+ "ms": 7100,
+ "seconds": 7.5,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 5,
+   "share": 0.0,
+   "missing": [
+    "CHDEV1",
+    "CHDEV10",
+    "CHDEV44",
+    "CHDEV45",
+    "CHDEV48"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": [
+    18.0,
+    18.0
+   ],
+   "against": "program",
+   "why": [
+    "the blocks sum to 0.0-0.0; the catalog states 18.0-18.0"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": true,
+   "pass": true
+  },
+  "careers": {
+   "count": 2,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Children with Special Needs Certificate of Achievement",
+   "measure": "units",
+   "total_units": {
+    "min": 18,
+    "max": 18
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": [
+    "entry-level teacher",
+    "assistant"
+   ]
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "CH DEV 1",
+    "why": "Requirements for this certificate are cut off in the text; appears only in other Child Development sections."
+   },
+   {
+    "code": "CH DEV 10",
+    "why": "Requirements for this certificate are cut off in the text; appears only in other Child Development sections."
+   },
+   {
+    "code": "CH DEV 44",
+    "why": "Requirements for this certificate are cut off in the text; appears only in the AA and Master Teacher sections."
+   },
+   {
+    "code": "CH DEV 45",
+    "why": "Requirements for this certificate are cut off in the text; appears only in the AA and Master Teacher sections."
+   },
+   {
+    "code": "CH DEV 48",
+    "why": "Requirements for this certificate are cut off in the text; appears only in other Child Development sections."
+   }
+  ],
+  "notes": []
+ },
+ "extracted_run": "39006380342"
+}

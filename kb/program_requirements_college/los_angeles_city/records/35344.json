@@ -1,0 +1,192 @@
+{
+ "college": "Los Angeles City College",
+ "control_number": "35344",
+ "shape": "certificate",
+ "title": "JAPANESE LANGUAGE AND CIVILIZATION: ELEMENTARY LEVEL",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=130",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 9777,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 9777,
+    "output_tokens": 1063,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1063,
+  "output_tokens_details": {
+   "thinking_tokens": 352
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.06037,
+ "ms": 8949,
+ "seconds": 9.4,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 4,
+   "listed": 4,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    16.0,
+    16.0
+   ],
+   "stated": [
+    16.0,
+    16.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [
+    "Speak at the ACTFL (American Council on the Teaching of Foreign Languages) Proficiency Novice High Level.",
+    "Listen and comprehend spoken discourse at the ACTFL Proficiency Novice High Level.",
+    "Read and comprehend written discourse at the ACTFL Proficiency Novice High Level."
+   ],
+   "why": [
+    "not in the catalog text as printed: Speak at the ACTFL (American Council on the Teaching of Foreign Languages) Profi",
+    "not in the catalog text as printed: Listen and comprehend spoken discourse at the ACTFL Proficiency Novice High Leve",
+    "not in the catalog text as printed: Read and comprehend written discourse at the ACTFL Proficiency Novice High Level"
+   ],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": false
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Japanese Language and Civilization - Elementary Level Certificate of Achievement",
+   "measure": "units",
+   "total_units": {
+    "min": 16,
+    "max": 16
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Speak at the ACTFL (American Council on the Teaching of Foreign Languages) Proficiency Novice High Level.",
+    "Write at the ACTFL Proficiency Novice High Level.",
+    "Listen and comprehend spoken discourse at the ACTFL Proficiency Novice High Level.",
+    "Read and comprehend written discourse at the ACTFL Proficiency Novice High Level.",
+    "Define fundamental aspects of Japanese culture at the ACTFL Novice Level."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "REQUIRED COURSES (16 UNITS)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 16,
+     "max": 16
+    },
+    "courses": [
+     {
+      "code": "JAPAN 001",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "JAPAN 002",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "JAPAN 007",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "JAPAN 009",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Catalog codes JAPAN 001/002/007/009 are matched to closed-list JAPAN 1/2/7/9 (leading zeros only).",
+   "PDF line-break hyphenation in outcomes ('For -eign', 'Profi -ciency') was rejoined as 'Foreign' and 'Proficiency'.",
+   "Total 16 is printed as 'Major Units: 16' and in the required courses heading; the Programs Offered table also lists 16."
+  ]
+ },
+ "extracted_run": "39006380342"
+}

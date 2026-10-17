@@ -5,7 +5,7 @@
  "catalog_year": "2026-2027",
  "programs": 260,
  "with_closed_list": 258,
- "started": "2026-10-17T05:26:23Z",
+ "started": "2026-10-17T05:29:26Z",
  "pdf": {
   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf",
   "access": "ok",
@@ -22,7 +22,7 @@
   "extractor": "pypdf"
  },
  "loads": 1,
- "seconds": 56.1,
+ "seconds": 102.9,
  "found": 251,
  "by_method": {
   "no_closed_list": 2,
@@ -2968,5 +2968,5 @@
    }
   ]
  },
- "run": "39006194564"
+ "run": "39006380342"
 }
