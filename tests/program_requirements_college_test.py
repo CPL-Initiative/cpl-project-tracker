@@ -96,6 +96,14 @@ check(C.district_scope(start, REG) is None and C.program_candidates(pages, start
       "a host no other college shares keeps the whole host, as Cerritos read")
 check(C.district_scope("https://catalog.nocccd.edu/", REG) is None,
       "an address at a shared host's root names no scope rather than guessing one")
+# An own-HTML catalog keeps to its own year's path (Skyline, run 39024299478, S404).
+sky = "https://catalog.skylinecollege.edu/current/"
+SKY = [sky + "programs/biology-as/", "https://catalog.skylinecollege.edu/1718/programs/biology-as/"]
+check(C.year_scope(sky, "custom_html") == "/current/"
+      and C.program_candidates(SKY, sky, C.year_scope(sky, "custom_html")) == SKY[:1],
+      "an own-HTML catalog's sitemap keeps to its own path")
+check(C.year_scope(sky, "courseleaf") is None and C.year_scope("https://catalog.x.edu/", "custom_html") is None,
+      "the year scope is own-HTML only, and none at a host's root")
 check(C.in_scope("https://catalog.nocccd.edu/fullerton-college/x/", "/fullerton-college/")
       and not C.in_scope("https://catalog.nocccd.edu/cypress-college/x/", "/fullerton-college/")
       and C.in_scope("https://anything/", None),
