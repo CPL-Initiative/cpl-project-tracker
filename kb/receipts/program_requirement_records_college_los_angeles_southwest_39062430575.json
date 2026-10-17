@@ -1,0 +1,146 @@
+{
+ "college": "Los Angeles Southwest College",
+ "load_run": "39062430575",
+ "function": "program_requirement_records_college_load",
+ "at": "2026-10-17T19:27:13Z",
+ "records": 94,
+ "posted": 84,
+ "batches": 4,
+ "inserted": 84,
+ "kept": 0,
+ "skipped": [
+  {
+   "control_number": "02862",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "02877",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "10738",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "18903",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "19186",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "24277",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "33868",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "38597",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "40275",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "40947",
+   "why": "places none of its listed courses (another program's page)"
+  }
+ ],
+ "error": null,
+ "extracted_runs": [
+  "39061735776"
+ ],
+ "machine_pass": 74,
+ "inserted_keys": [
+  "02863",
+  "02866",
+  "02873",
+  "02874",
+  "02875",
+  "02879",
+  "02882",
+  "02883",
+  "02885",
+  "02886",
+  "02887",
+  "02888",
+  "08442",
+  "08446",
+  "08449",
+  "08451",
+  "08452",
+  "08453",
+  "11795",
+  "18796",
+  "19064",
+  "31022",
+  "31027",
+  "33167",
+  "33170",
+  "33604",
+  "33632",
+  "33635",
+  "33636",
+  "33640",
+  "33648",
+  "33658",
+  "33659",
+  "33816",
+  "33832",
+  "33881",
+  "33882",
+  "36962",
+  "36991",
+  "36992",
+  "37821",
+  "37874",
+  "37988",
+  "37997",
+  "38280",
+  "38545",
+  "38546",
+  "39632",
+  "39634",
+  "39648",
+  "39760",
+  "39766",
+  "40092",
+  "40375",
+  "40376",
+  "40377",
+  "40378",
+  "40626",
+  "40818",
+  "40819",
+  "40855",
+  "40918",
+  "40919",
+  "41386",
+  "41444",
+  "41445",
+  "41449",
+  "41453",
+  "41454",
+  "41457",
+  "41458",
+  "41462",
+  "41758",
+  "42658",
+  "42910",
+  "43834",
+  "44057",
+  "45368",
+  "45700",
+  "45701",
+  "45739",
+  "45740",
+  "45742",
+  "45883"
+ ],
+ "kept_keys": [],
+ "rollback": "delete from public.program_requirement_records where college = 'Los Angeles Southwest College' and checked = false and control_number in ('02863', '02866', '02873', '02874', '02875', '02879', '02882', '02883', '02885', '02886', '02887', '02888', '08442', '08446', '08449', '08451', '08452', '08453', '11795', '18796', '19064', '31022', '31027', '33167', '33170', '33604', '33632', '33635', '33636', '33640', '33648', '33658', '33659', '33816', '33832', '33881', '33882', '36962', '36991', '36992', '37821', '37874', '37988', '37997', '38280', '38545', '38546', '39632', '39634', '39648', '39760', '39766', '40092', '40375', '40376', '40377', '40378', '40626', '40818', '40819', '40855', '40918', '40919', '41386', '41444', '41445', '41449', '41453', '41454', '41457', '41458', '41462', '41758', '42658', '42910', '43834', '44057', '45368', '45700', '45701', '45739', '45740', '45742', '45883');"
+}
