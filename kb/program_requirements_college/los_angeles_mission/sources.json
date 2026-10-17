@@ -1,0 +1,4639 @@
+[
+ {
+  "control_number": "03339",
+  "title": "Business Administration",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ECONC2001",
+   "ECONC2002",
+   "FINANCE8",
+   "MARKET21",
+   "MGMT13",
+   "MGMT2",
+   "MGMT31",
+   "MGMT33"
+  ],
+  "source": {
+   "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=30",
+   "title": "Los Angeles Mission College Catalog 2026 / 2027",
+   "h1": "Los Angeles Mission College Catalog 2026 / 2027",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    30,
+    31,
+    32
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 8,
+  "text_chars": 15899
+ },
+ {
+  "control_number": "03340",
+  "title": "Accounting",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ECONC2001",
+   "ECONC2002",
+   "FINANCE8"
+  ],
+  "source": {
+   "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=30",
+   "title": "ASSOCIATE OF ARTS (AA) Accounting (M003340C)",
+   "h1": "ASSOCIATE OF ARTS (AA) Accounting (M003340C)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    30,
+    31
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 3,
+  "text_chars": 10087
+ },
+ {
+  "control_number": "03348",
+  "title": "Art",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART201",
+   "ART202",
+   "ART204",
+   "ART300",
+   "ART307",
+   "ART501",
+   "ART502",
+   "ART700",
+   "ARTHC1200",
+   "ARTHIST110",
+   "ARTHIST130",
+   "ARTHIST140",
+   "MULTIMD100",
+   "MULTIMD220",
+   "MULTIMD240",
+   "MULTIMD320",
+   "MULTIMD400"
+  ],
+  "source": {
+   "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=20",
+   "title": "ASSOCIATE OF ARTS (AA) Art (M003348C)",
+   "h1": "ASSOCIATE OF ARTS (AA) Art (M003348C)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    20,
+    21,
+    22,
+    23
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 17,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "03351",
+  "title": "Family Studies",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHDEV55",
+   "FAM&CS70",
+   "PSYCH41",
+   "SOC31"
+  ],
+  "source": {
+   "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=40",
+   "title": "(M003351C)",
+   "h1": "(M003351C)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    40,
+    41
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 4,
+  "text_chars": 5561
+ },
+ {
+  "control_number": "03359",
+  "title": "Child Development",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "03361",
+  "title": "Legal Assisting (Paralegal)",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "LAW11",
+   "LAW12",
+   "LAW13",
+   "LAW16",
+   "LAW17",
+   "LAW19",
+   "LAW20",
+   "LAW34"
+  ],
+  "source": {
+   "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=31",
+   "title": "(Paralegal) (M003361C)",
+   "h1": "(Paralegal) (M003361C)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    31
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 8,
+  "text_chars": 4097
+ },
+ {
+  "control_number": "07069",
+  "title": "Administration of Justice",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "08338",
+  "title": "Health Science",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANATOMY1",
+   "BIOLOGY3",
+   "BIOLOGY5",
+   "CHEM51",
+   "CHEM65",
+   "MICRO20",
+   "PHYSICS6",
+   "PHYSICS7",
+   "PHYSIOL1",
+   "PSYCC1000",
+   "SOC1",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=75",
+   "title": "(M008338C)",
+   "h1": "(M008338C)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    75,
+    76,
+    77
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 12,
+  "text_chars": 14740
+ },
+ {
+  "control_number": "08342",
+  "title": "Programming",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CIS124",
+   "CIS148",
+   "CIS219"
+  ],
+  "source": {
+   "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=84",
+   "title": "SKILLS CERTIFICATE Programming (M070100J)",
+   "h1": "SKILLS CERTIFICATE Programming (M070100J)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    84
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 3,
+  "text_chars": 717
+ },
+ {
+  "control_number": "08345",
+  "title": "Engineering",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.929,
+  "codes_found": [
+   "CS113",
+   "CS136",
+   "EGDTEK101",
+   "EGDTEK121",
+   "ENGGEN101",
+   "ENGGEN122",
+   "ENGGEN131",
+   "ENGGEN151",
+   "ENGGEN220",
+   "MATH272",
+   "MATH275",
+   "PHYSICS37",
+   "PHYSICS38"
+  ],
+  "source": {
+   "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=73",
+   "title": "Enroll now at www.lamission.edu",
+   "h1": "Enroll now at www.lamission.edu",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    73,
+    74
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 14,
+  "text_chars": 10687
+ },
+ {
+  "control_number": "08348",
+  "title": "Painting",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART202",
+   "ART204",
+   "ART300",
+   "ART304",
+   "ART305",
+   "ART306",
+   "ART307",
+   "ART308",
+   "ART309",
+   "ART501",
+   "ART502",
+   "ARTHC1200",
+   "ARTHIST110",
+   "ARTHIST130",
+   "ARTHIST140",
+   "MULTIMD100"
+  ],
+  "source": {
+   "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=24",
+   "title": "ASSOCIATE OF ARTS (AA) Painting (M008348C)",
+   "h1": "ASSOCIATE OF ARTS (AA) Painting (M008348C)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    24,
+    25,
+    26,
+    27
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 16,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "08352",
+  "title": "INTERIOR DESIGN",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "INTRDGN101",
+   "INTRDGN102",
+   "INTRDGN103",
+   "INTRDGN106",
+   "INTRDGN107",
+   "INTRDGN109",
+   "INTRDGN111",
+   "INTRDGN114",
+   "INTRDGN115",
+   "INTRDGN116",
+   "INTRDGN117"
+  ],
+  "source": {
+   "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=22",
+   "title": "(M008352C)",
+   "h1": "(M008352C)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    22
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 11,
+  "text_chars": 4772
+ },
+ {
+  "control_number": "08355",
+  "title": "Child Development",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHDEV14",
+   "CHDEV15",
+   "CHDEV172",
+   "CHDEV30",
+   "CHDEV44",
+   "CHDEV55",
+   "CHDEV60",
+   "CHDEV61",
+   "CHDEV62",
+   "CHDEV63"
+  ],
+  "source": {
+   "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=40",
+   "title": "(M008355C)",
+   "h1": "(M008355C)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    40,
+    41,
+    42,
+    43
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 10,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "08356",
+  "title": "Child Development Specializing in Family Child Care",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHDEV172",
+   "CHDEV60",
+   "CHDEV61",
+   "CHDEV62",
+   "CHDEV63"
+  ],
+  "source": {
+   "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=42",
+   "title": "(M008356D)",
+   "h1": "(M008356D)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    42,
+    43
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 5,
+  "text_chars": 7691
+ },
+ {
+  "control_number": "08358",
+  "title": "Gerontology",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHDEV55",
+   "FAM&CS70",
+   "HLTHOCC63",
+   "HLTHOCC65",
+   "PSYCH41",
+   "SOC2"
+  ],
+  "source": {
+   "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=41",
+   "title": "(M008358C)",
+   "h1": "(M008358C)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    41
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 6,
+  "text_chars": 4165
+ },
+ {
+  "control_number": "08362",
+  "title": "Restaurant Management",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CLNART103",
+   "CLNART104",
+   "CLNART106",
+   "CLNART108",
+   "CLNART155",
+   "MGMT13",
+   "MGMT2"
+  ],
+  "source": {
+   "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=32",
+   "title": "Management (M008362C)",
+   "h1": "Management (M008362C)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    32
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 7,
+  "text_chars": 5251
+ },
+ {
+  "control_number": "08364",
+  "title": "Culinary Arts",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CLNART102",
+   "CLNART103",
+   "CLNART104",
+   "CLNART106",
+   "CLNART108",
+   "CLNART110",
+   "CLNART150",
+   "CLNART155"
+  ],
+  "source": {
+   "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=49",
+   "title": "(M008364D)",
+   "h1": "(M008364D)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    49,
+    50,
+    51
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 8,
+  "text_chars": 15379
+ },
+ {
+  "control_number": "08368",
+  "title": "Probation/Correction Officer",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ADMJUS150",
+   "ADMJUS39",
+   "ADMJUS8"
+  ],
+  "source": {
+   "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=34",
+   "title": "Correction Officer (M008368D)",
+   "h1": "Correction Officer (M008368D)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    34
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 3,
+  "text_chars": 4935
+ },
+ {
+  "control_number": "08372",
+  "title": "Chicano Studies",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHICANO19",
+   "CHICANO2",
+   "CHICANO20",
+   "CHICANO37",
+   "CHICANO42",
+   "CHICANO44",
+   "CHICANO46",
+   "CHICANO47",
+   "CHICANO52",
+   "CHICANO54",
+   "CHICANO58",
+   "CHICANO7",
+   "CHICANO71",
+   "CHICANO8"
+  ],
+  "source": {
+   "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=58",
+   "title": "Los Angeles Mission College Catalog 2026 / 2027",
+   "h1": "Los Angeles Mission College Catalog 2026 / 2027",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    58,
+    59
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 14,
+  "text_chars": 12106
+ },
+ {
+  "control_number": "10713",
+  "title": "Child Development: Preschool",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHDEV172"
+  ],
+  "source": {
+   "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=43",
+   "title": "(M010713D)",
+   "h1": "(M010713D)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    43
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 1,
+  "text_chars": 5049
+ },
+ {
+  "control_number": "10714",
+  "title": "Child Development Specializing in Dual Language Learning",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHDEV14",
+   "CHDEV15",
+   "CHDEV172"
+  ],
+  "source": {
+   "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=42",
+   "title": "(M010714D)",
+   "h1": "(M010714D)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    42,
+    43,
+    44
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 3,
+  "text_chars": 13439
+ },
+ {
+  "control_number": "10715",
+  "title": "Child Development Certificate: Specializing in Infant & Toddler",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHDEV172",
+   "CHDEV30"
+  ],
+  "source": {
+   "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=42",
+   "title": "Specializing in Infant & Toddler (M010715D)",
+   "h1": "Specializing in Infant & Toddler (M010715D)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    42,
+    43
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 2,
+  "text_chars": 6374
+ },
+ {
+  "control_number": "10716",
+  "title": "School Age Care and Education",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "EDUC1",
+   "EDUC203"
+  ],
+  "source": {
+   "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=44",
+   "title": "and Education (M010716D)",
+   "h1": "and Education (M010716D)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    44
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 2,
+  "text_chars": 3345
+ },
+ {
+  "control_number": "11975",
+  "title": "Multimedia: Graphic and Web Design",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART201",
+   "ART501",
+   "ART502",
+   "MULTIMD100",
+   "MULTIMD110",
+   "MULTIMD200",
+   "MULTIMD210",
+   "MULTIMD220",
+   "MULTIMD240",
+   "MULTIMD320",
+   "MULTIMD340",
+   "MULTIMD500"
+  ],
+  "source": {
+   "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=23",
+   "title": "Web Design (M011975C)",
+   "h1": "Web Design (M011975C)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    23,
+    24,
+    25,
+    26
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 12,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "11977",
+  "title": "Multimedia: Animation and 3D Design Concentration",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.833,
+  "codes_found": [
+   "ART201",
+   "ART204",
+   "MULTIMD100",
+   "MULTIMD110",
+   "MULTIMD210",
+   "MULTIMD220",
+   "MULTIMD300",
+   "MULTIMD320",
+   "MULTIMD400",
+   "MULTIMD500"
+  ],
+  "source": {
+   "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=22",
+   "title": "& 3D Design (M011977C)",
+   "h1": "& 3D Design (M011977C)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    22,
+    23,
+    24,
+    25
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 12,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "11978",
+  "title": "Multimedia: Video Production",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CINEMA107",
+   "CINEMA125",
+   "CINEMA4",
+   "JOURNAL100",
+   "MULTIMD100",
+   "MULTIMD110",
+   "MULTIMD210",
+   "MULTIMD500",
+   "MULTIMD600",
+   "MULTIMD605",
+   "MULTIMD610",
+   "MULTIMD620"
+  ],
+  "source": {
+   "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=23",
+   "title": "Production (M011978C)",
+   "h1": "Production (M011978C)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    23,
+    24,
+    25,
+    26
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 12,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "15995",
+  "title": "Management",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.857,
+  "codes_found": [
+   "ECONC2001",
+   "MARKET21",
+   "MGMT13",
+   "MGMT2",
+   "MGMT31",
+   "MGMT33"
+  ],
+  "source": {
+   "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=31",
+   "title": "(M015995C)",
+   "h1": "(M015995C)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    31,
+    32
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 7,
+  "text_chars": 7267
+ },
+ {
+  "control_number": "17956",
+  "title": "CSU General Education",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "17957",
+  "title": "IGETC",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "18463",
+  "title": "General Studies: Arts and Humanities",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.556,
+  "codes_found": [
+   "ANTHRO104",
+   "ART201",
+   "CHICANO37",
+   "CHICANO52",
+   "ENGLISH102",
+   "HUMAN1",
+   "INTRDGN103",
+   "LING1",
+   "MUSIC111",
+   "PHYSIOL1"
+  ],
+  "source": {
+   "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=226",
+   "title": "Los Angeles Mission College Catalog 2026 / 2027",
+   "h1": "Los Angeles Mission College Catalog 2026 / 2027",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    226
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 18,
+  "text_chars": 5196
+ },
+ {
+  "control_number": "18464",
+  "title": "General Studies: Communication & Literature",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "18465",
+  "title": "General Studies: Natural Sciences",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "18466",
+  "title": "General Studies: Social and Behavioral Sciences",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "20792",
+  "title": "Biology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOLOGY6",
+   "BIOLOGY7",
+   "CHEM101",
+   "CHEM102",
+   "MATH240",
+   "MATH245",
+   "MATH260",
+   "STAT101",
+   "STATC1000",
+   "STATC1000E"
+  ],
+  "source": {
+   "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=72",
+   "title": "ASSOCIATE OF SCIENCE (AS) Biology (M020792C)",
+   "h1": "ASSOCIATE OF SCIENCE (AS) Biology (M020792C)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    72
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 10,
+  "text_chars": 3863
+ },
+ {
+  "control_number": "21760",
+  "title": "Multimedia: Graphic and Web Design",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART201",
+   "ART501",
+   "ART502",
+   "MULTIMD100",
+   "MULTIMD110",
+   "MULTIMD200",
+   "MULTIMD220",
+   "MULTIMD240",
+   "MULTIMD320",
+   "MULTIMD340",
+   "MULTIMD500"
+  ],
+  "source": {
+   "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=26",
+   "title": "Graphic & Web Design (M021760D)",
+   "h1": "Graphic & Web Design (M021760D)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    26,
+    27
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 11,
+  "text_chars": 9059
+ },
+ {
+  "control_number": "21762",
+  "title": "Multimedia: Video Production",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CINEMA107",
+   "CINEMA125",
+   "CINEMA4",
+   "JOURNAL100",
+   "MULTIMD100",
+   "MULTIMD110",
+   "MULTIMD210",
+   "MULTIMD500",
+   "MULTIMD600",
+   "MULTIMD605",
+   "MULTIMD610",
+   "MULTIMD620"
+  ],
+  "source": {
+   "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=26",
+   "title": "Los Angeles Mission College Catalog 2026 / 2027",
+   "h1": "Los Angeles Mission College Catalog 2026 / 2027",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    26,
+    27
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 12,
+  "text_chars": 11053
+ },
+ {
+  "control_number": "21764",
+  "title": "Multimedia: Animation and 3D Design",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "21767",
+  "title": "INTERIOR DESIGN",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "INTRDGN101",
+   "INTRDGN102",
+   "INTRDGN103",
+   "INTRDGN106",
+   "INTRDGN107",
+   "INTRDGN109",
+   "INTRDGN111",
+   "INTRDGN114",
+   "INTRDGN115",
+   "INTRDGN116",
+   "INTRDGN117"
+  ],
+  "source": {
+   "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=25",
+   "title": "(M021767D)",
+   "h1": "(M021767D)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    25
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 11,
+  "text_chars": 2111
+ },
+ {
+  "control_number": "21768",
+  "title": "Gerontology",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHDEV55",
+   "FAM&CS70",
+   "HLTHOCC63",
+   "HLTHOCC65",
+   "PSYCH41",
+   "SOC2"
+  ],
+  "source": {
+   "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=44",
+   "title": "(M021768D)",
+   "h1": "(M021768D)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    44
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 6,
+  "text_chars": 4352
+ },
+ {
+  "control_number": "21769",
+  "title": "Legal Assisting (Paralegal)",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "LAW11",
+   "LAW12",
+   "LAW13",
+   "LAW16",
+   "LAW17",
+   "LAW19",
+   "LAW20",
+   "LAW34",
+   "LAW35"
+  ],
+  "source": {
+   "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=33",
+   "title": "(Paralegal) (M021769D)",
+   "h1": "(Paralegal) (M021769D)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    33
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 9,
+  "text_chars": 2109
+ },
+ {
+  "control_number": "31007",
+  "title": "Mathematics",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "MATH270",
+   "MATH275",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=70",
+   "title": "Los Angeles Mission College Catalog 2026 / 2027",
+   "h1": "Los Angeles Mission College Catalog 2026 / 2027",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    70,
+    71,
+    72,
+    73
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 3,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "31977",
+  "title": "Early Childhood Education",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "32995",
+  "title": "Child Development: Special Needs",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHDEV172",
+   "CHDEV44",
+   "CHDEV55"
+  ],
+  "source": {
+   "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=43",
+   "title": "(M032995D)",
+   "h1": "(M032995D)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    43,
+    44
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 3,
+  "text_chars": 8307
+ },
+ {
+  "control_number": "33084",
+  "title": "English",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHICANO37",
+   "CHICANO42",
+   "ENGLC1001",
+   "ENGLISH102",
+   "ENGLISH127",
+   "ENGLISH203",
+   "ENGLISH205",
+   "ENGLISH206",
+   "ENGLISH208",
+   "ENGLISH218",
+   "ENGLISH240"
+  ],
+  "source": {
+   "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=54",
+   "title": "Los Angeles Mission College Catalog 2026 / 2027",
+   "h1": "Los Angeles Mission College Catalog 2026 / 2027",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    54,
+    55
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 11,
+  "text_chars": 10916
+ },
+ {
+  "control_number": "33109",
+  "title": "Administration of Justice",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 0.889,
+  "codes_found": [
+   "ADMJUS160",
+   "ADMJUS2",
+   "ADMJUS4",
+   "ADMJUS5",
+   "ADMJUS8",
+   "PSYCC1000",
+   "SOC1",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=29",
+   "title": "Administration of Justice (M033109H)",
+   "h1": "Administration of Justice (M033109H)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    29,
+    30
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 9,
+  "text_chars": 11566
+ },
+ {
+  "control_number": "33131",
+  "title": "Studio Arts",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 0.909,
+  "codes_found": [
+   "ART201",
+   "ART204",
+   "ART501",
+   "ART502",
+   "ART700",
+   "ARTHC1200",
+   "ARTHIST110",
+   "ARTHIST130",
+   "ARTHIST140",
+   "MULTIMD100"
+  ],
+  "source": {
+   "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=19",
+   "title": "Arts (M033131G)",
+   "h1": "Arts (M033131G)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    19,
+    20,
+    21,
+    22
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 11,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "33215",
+  "title": "Sociology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "SOC1",
+   "SOC11",
+   "SOC13",
+   "SOC2",
+   "SOC28",
+   "SOC3",
+   "SOC31",
+   "SOC4",
+   "STAT101",
+   "STATC1000",
+   "STATC1000E"
+  ],
+  "source": {
+   "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=57",
+   "title": "Enroll now at www.lamission.edu",
+   "h1": "Enroll now at www.lamission.edu",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    57,
+    58
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 11,
+  "text_chars": 11663
+ },
+ {
+  "control_number": "33216",
+  "title": "Philosophy",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "HISTORY1",
+   "HISTORY2",
+   "PHILOS1",
+   "PHILOS14",
+   "PHILOS20",
+   "PHILOS33",
+   "PHILOS6",
+   "PHILOS9"
+  ],
+  "source": {
+   "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=55",
+   "title": "Philosophy (M033216G)",
+   "h1": "Philosophy (M033216G)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    55
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 8,
+  "text_chars": 3140
+ },
+ {
+  "control_number": "33337",
+  "title": "Spanish",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHICANO37",
+   "CHICANO44",
+   "SPANISH1",
+   "SPANISH2",
+   "SPANISH3",
+   "SPANISH4",
+   "SPANISH5",
+   "SPANISH6"
+  ],
+  "source": {
+   "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=58",
+   "title": "Spanish (M033337G)",
+   "h1": "Spanish (M033337G)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    58,
+    59
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 8,
+  "text_chars": 10316
+ },
+ {
+  "control_number": "33340",
+  "title": "Political Science",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "HISTC1001",
+   "POLSC1000",
+   "POLSCI2",
+   "POLSCI3",
+   "POLSCI5",
+   "POLSCI7",
+   "PSYCC1000",
+   "SOC1",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=56",
+   "title": "Political Science (M033340G)",
+   "h1": "Political Science (M033340G)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    56,
+    57,
+    58
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 9,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "33365",
+  "title": "Restaurant Management",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CLNART103",
+   "CLNART104",
+   "CLNART106",
+   "CLNART108",
+   "CLNART155",
+   "MGMT13",
+   "MGMT2"
+  ],
+  "source": {
+   "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=34",
+   "title": "Management (M033365D)",
+   "h1": "Management (M033365D)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    34,
+    35
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 7,
+  "text_chars": 7938
+ },
+ {
+  "control_number": "33612",
+  "title": "Psychology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOLOGY3",
+   "BIOLOGY6",
+   "ENGLC1001",
+   "ENGLISH102",
+   "PHILOS6",
+   "PSYCC1000",
+   "PSYCH13",
+   "PSYCH14",
+   "PSYCH2",
+   "PSYCH41",
+   "PSYCH52",
+   "PSYCH74",
+   "PSYCH90",
+   "SOC1",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=56",
+   "title": "Los Angeles Mission College Catalog 2026 / 2027",
+   "h1": "Los Angeles Mission College Catalog 2026 / 2027",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    56,
+    57,
+    58
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 15,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "33613",
+  "title": "Elementary Teacher Education",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOLOGY3",
+   "CHEM51",
+   "CHEM65",
+   "EARTH1",
+   "EDUC1",
+   "EDUC203",
+   "ENGLC1000",
+   "ENGLC1001",
+   "ENGLISH102",
+   "GEOG7",
+   "HISTC1001",
+   "HISTORY86",
+   "MATH215",
+   "MUSIC111",
+   "PHYSSC1",
+   "PHYSSC14",
+   "POLSC1000"
+  ],
+  "source": {
+   "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=39",
+   "title": "Elementary Teacher Education (M033613G)",
+   "h1": "Elementary Teacher Education (M033613G)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    39,
+    40
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 17,
+  "text_chars": 10595
+ },
+ {
+  "control_number": "33689",
+  "title": "Art, Gallery and Museum Studies",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART501",
+   "ART502",
+   "ART519",
+   "ART92",
+   "ARTHC1200",
+   "ARTHIST110",
+   "ARTHIST126",
+   "ARTHIST130",
+   "ARTHIST140",
+   "ARTHIST170",
+   "MULTIMD100",
+   "MULTIMD240",
+   "MULTIMD320"
+  ],
+  "source": {
+   "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=21",
+   "title": "Museum Studies (M033689C)",
+   "h1": "Museum Studies (M033689C)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    21,
+    22,
+    23,
+    24
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 13,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "33950",
+  "title": "Biology",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOLOGY6",
+   "BIOLOGY7",
+   "CHEM101",
+   "CHEM102",
+   "PHYSICS6",
+   "PHYSICS7"
+  ],
+  "source": {
+   "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=67",
+   "title": "Biology (M033950H)",
+   "h1": "Biology (M033950H)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    67,
+    68
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 6,
+  "text_chars": 7625
+ },
+ {
+  "control_number": "35042",
+  "title": "CULINARY ARTS",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "35063",
+  "title": "PROFESSIONAL BAKING & PATISSERIE",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CLNART103",
+   "CLNART108",
+   "CLNART150",
+   "CLNART155",
+   "PROFBKG200",
+   "PROFBKG210"
+  ],
+  "source": {
+   "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=49",
+   "title": "Baking & Patisserie (M035063D)",
+   "h1": "Baking & Patisserie (M035063D)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    49,
+    50,
+    51
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 6,
+  "text_chars": 12743
+ },
+ {
+  "control_number": "35231",
+  "title": "Business Information Worker",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 1,
+  "text_chars": 0
+ },
+ {
+  "control_number": "35251",
+  "title": "Fundamentals of Medical Billing and Coding",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "HLTHOCC63",
+   "HLTHOCC65"
+  ],
+  "source": {
+   "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=33",
+   "title": "Medical Billing and Coding (M035251D)",
+   "h1": "Medical Billing and Coding (M035251D)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    33
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 2,
+  "text_chars": 3536
+ },
+ {
+  "control_number": "35254",
+  "title": "Certified Nurse Assistant and Home Health Aide",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "NRSHCA399A",
+   "NRSHCA399B",
+   "NRSHCA56"
+  ],
+  "source": {
+   "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=77",
+   "title": "Assistant and Home Health Aide (M035254D)",
+   "h1": "Assistant and Home Health Aide (M035254D)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    77
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 3,
+  "text_chars": 4432
+ },
+ {
+  "control_number": "35255",
+  "title": "Pharmacy Technician",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "PHRMCTK21",
+   "PHRMCTK23"
+  ],
+  "source": {
+   "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=76",
+   "title": "Technician (M035255C)",
+   "h1": "Technician (M035255C)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    76
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 2,
+  "text_chars": 4599
+ },
+ {
+  "control_number": "35287",
+  "title": "Pharmacy Technician - Basic",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "PHRMCTK21",
+   "PHRMCTK23"
+  ],
+  "source": {
+   "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=82",
+   "title": "Technician – Basic (M035287D)",
+   "h1": "Technician – Basic (M035287D)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    82
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 2,
+  "text_chars": 1639
+ },
+ {
+  "control_number": "35394",
+  "title": "Nutrition and Dietetics",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOLOGY3",
+   "CHEM101",
+   "CHEM102",
+   "MICRO20",
+   "PSYCC1000",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=70",
+   "title": "Los Angeles Mission College Catalog 2026 / 2027",
+   "h1": "Los Angeles Mission College Catalog 2026 / 2027",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    70,
+    71,
+    72
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 6,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "35436",
+  "title": "Kinesiology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANATOMY1",
+   "BIOLOGY3",
+   "CHEM101",
+   "CHEM51",
+   "CHEM65",
+   "DANCETQ121",
+   "DANCETQ122",
+   "DANCETQ141",
+   "DANCETQ142",
+   "DANCETQ462",
+   "KIN266",
+   "KIN2681",
+   "KIN286",
+   "KIN3161",
+   "KIN3162",
+   "KIN3291",
+   "KIN332",
+   "KIN3471",
+   "KIN3501",
+   "KIN3511",
+   "KIN3871",
+   "KIN3872",
+   "KINATH552",
+   "KINMAJ100",
+   "KINMAJ101",
+   "PHYSICS6",
+   "PHYSIOL1",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=69",
+   "title": "Kinesiology (M035436G)",
+   "h1": "Kinesiology (M035436G)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    69,
+    70,
+    71,
+    72
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 28,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "35600",
+  "title": "Biotechnology Research Lab Assistant",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOTECH2",
+   "BIOTECH3",
+   "BIOTECH8",
+   "CHEM51",
+   "CHEM65",
+   "MICRO20",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=76",
+   "title": "Research Lab Assistant (M035600D)",
+   "h1": "Research Lab Assistant (M035600D)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    76,
+    77
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 7,
+  "text_chars": 7097
+ },
+ {
+  "control_number": "35601",
+  "title": "Biotechnology Lab Assistant",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOTECH2",
+   "BIOTECH3",
+   "CHEM51",
+   "CHEM65"
+  ],
+  "source": {
+   "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=76",
+   "title": "Lab Assistant (M035601D)",
+   "h1": "Lab Assistant (M035601D)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    76,
+    77
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 4,
+  "text_chars": 8127
+ },
+ {
+  "control_number": "35603",
+  "title": "Biotechnology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOTECH2",
+   "BIOTECH3",
+   "BIOTECH6",
+   "BIOTECH8",
+   "CHEM51",
+   "CHEM65",
+   "MICRO20",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=72",
+   "title": "(M035603C)",
+   "h1": "(M035603C)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    72
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 8,
+  "text_chars": 1911
+ },
+ {
+  "control_number": "35616",
+  "title": "Accounting",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "35617",
+  "title": "Child Development Core",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "35913",
+  "title": "Theatre Arts",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "THEATER114",
+   "THEATER200",
+   "THEATER271",
+   "THEATER291",
+   "THEATER292",
+   "THEATER293",
+   "THEATER300",
+   "THEATER310",
+   "THEATER315",
+   "THEATER450"
+  ],
+  "source": {
+   "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=20",
+   "title": "Theatre Arts (M035913G)",
+   "h1": "Theatre Arts (M035913G)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    20
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 10,
+  "text_chars": 5627
+ },
+ {
+  "control_number": "35915",
+  "title": "Art History",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART201",
+   "ART204",
+   "ART300",
+   "ART501",
+   "ART502",
+   "ART700",
+   "ARTHC1200",
+   "ARTHIST110",
+   "ARTHIST126",
+   "ARTHIST130",
+   "ARTHIST140",
+   "ARTHIST161",
+   "ARTHIST170",
+   "MULTIMD100"
+  ],
+  "source": {
+   "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=18",
+   "title": "History (M035915G)",
+   "h1": "History (M035915G)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    18,
+    19,
+    20,
+    21
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 14,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "36193",
+  "title": "Job Readiness Skills",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "36317",
+  "title": "Cyber Security Associate",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CIS162",
+   "CIS165",
+   "CIS210",
+   "CIS211",
+   "CIS222"
+  ],
+  "source": {
+   "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=78",
+   "title": "Associate (M036317D)",
+   "h1": "Associate (M036317D)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    78
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 5,
+  "text_chars": 5133
+ },
+ {
+  "control_number": "36319",
+  "title": "Cyber Security Associate",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CIS124",
+   "CIS162",
+   "CIS165",
+   "CIS210",
+   "CIS211",
+   "CIS215",
+   "CIS219",
+   "CIS222"
+  ],
+  "source": {
+   "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=73",
+   "title": "Associate (M036319C)",
+   "h1": "Associate (M036319C)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    73,
+    74
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 8,
+  "text_chars": 8816
+ },
+ {
+  "control_number": "36321",
+  "title": "Computer Programmer",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CIS148",
+   "CS112",
+   "CS113",
+   "CS116",
+   "CS216"
+  ],
+  "source": {
+   "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=77",
+   "title": "Programmer (M036321D)",
+   "h1": "Programmer (M036321D)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    77
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 5,
+  "text_chars": 922
+ },
+ {
+  "control_number": "36322",
+  "title": "COMPUTER PROGRAMMER",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CIS124",
+   "CIS148",
+   "CIS219",
+   "CS112",
+   "CS113",
+   "CS116",
+   "CS130",
+   "CS136",
+   "CS216"
+  ],
+  "source": {
+   "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=73",
+   "title": "Programmer (M036322C)",
+   "h1": "Programmer (M036322C)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    73,
+    74
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 9,
+  "text_chars": 10568
+ },
+ {
+  "control_number": "36466",
+  "title": "Full Stack Developer",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CIS124",
+   "CIS148",
+   "CIS192",
+   "CIS193",
+   "CIS194",
+   "CIS219",
+   "CS112",
+   "CS157"
+  ],
+  "source": {
+   "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=74",
+   "title": "(M036466C)",
+   "h1": "(M036466C)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    74
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 8,
+  "text_chars": 4132
+ },
+ {
+  "control_number": "36467",
+  "title": "Full Stack Developer",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CIS148",
+   "CIS219",
+   "CS112",
+   "CS157"
+  ],
+  "source": {
+   "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=80",
+   "title": "Developer (M036467D)",
+   "h1": "Developer (M036467D)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    80
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 4,
+  "text_chars": 4579
+ },
+ {
+  "control_number": "36864",
+  "title": "Family Studies",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHDEV55",
+   "FAM&CS70",
+   "PSYCH41",
+   "SOC31"
+  ],
+  "source": {
+   "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=43",
+   "title": "(M036864D)",
+   "h1": "(M036864D)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    43,
+    44
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 4,
+  "text_chars": 5453
+ },
+ {
+  "control_number": "37870",
+  "title": "Social Justice Studies: Chicano/Chicana Studies",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHICANO19",
+   "CHICANO2",
+   "CHICANO20",
+   "CHICANO37",
+   "CHICANO42",
+   "CHICANO44",
+   "CHICANO46",
+   "CHICANO47",
+   "CHICANO52",
+   "CHICANO58",
+   "CHICANO7",
+   "CHICANO71",
+   "CHICANO8",
+   "SOC11",
+   "SOC31",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=57",
+   "title": "(M037870G)",
+   "h1": "(M037870G)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    57,
+    58,
+    59
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 16,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "38391",
+  "title": "STATISTICS SKILLS AND PREPARATION",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "38392",
+  "title": "INTRODUCTION TO CONSTRUCTION TECHNOLOGIES",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED252CE",
+   "VOCED259CE",
+   "VOCED8CE"
+  ],
+  "source": {
+   "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=85",
+   "title": "Construction Technologies (M038392E)",
+   "h1": "Construction Technologies (M038392E)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    85
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 3,
+  "text_chars": 1407
+ },
+ {
+  "control_number": "38612",
+  "title": "INTRODUCTION TO CSIT",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "38644",
+  "title": "CLOUD COMPUTING",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CIS192",
+   "CIS193",
+   "CIS194",
+   "CIS195",
+   "CIS210",
+   "CIS219",
+   "CIS222",
+   "CS112"
+  ],
+  "source": {
+   "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=77",
+   "title": "(M038644D)",
+   "h1": "(M038644D)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    77,
+    78
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 8,
+  "text_chars": 8040
+ },
+ {
+  "control_number": "39476",
+  "title": "UCTP PHYSICS",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 0.9,
+  "codes_found": [
+   "CHEM101",
+   "CHEM102",
+   "MATH261",
+   "MATH262",
+   "MATH263",
+   "MATH275",
+   "PHYSICS37",
+   "PHYSICS38",
+   "PHYSICS39"
+  ],
+  "source": {
+   "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=68",
+   "title": "Los Angeles Mission College Catalog 2026 / 2027",
+   "h1": "Los Angeles Mission College Catalog 2026 / 2027",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    68
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 10,
+  "text_chars": 5402
+ },
+ {
+  "control_number": "39524",
+  "title": "LAND  SURVEYING TECHNICIAN I",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "DRAFT16",
+   "EGDTEK101",
+   "EGDTEK111",
+   "ENGLC1000",
+   "ENGSUP121",
+   "ENGSUP200",
+   "INDTEK103",
+   "MATH240",
+   "MATH240S"
+  ],
+  "source": {
+   "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=81",
+   "title": "Technician I (M039524D)",
+   "h1": "Technician I (M039524D)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    81
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 9,
+  "text_chars": 5076
+ },
+ {
+  "control_number": "39525",
+  "title": "Engineering Drafting Technician",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "DRAFT16",
+   "DRAFT17",
+   "EGDTEK101",
+   "EGDTEK111",
+   "EGDTEK121",
+   "EGDTEK131",
+   "ENGLC1000",
+   "ENGSUP121",
+   "INDTEK103",
+   "MATH240",
+   "MATH240S"
+  ],
+  "source": {
+   "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=79",
+   "title": "Drafting Technician (M039525D)",
+   "h1": "Drafting Technician (M039525D)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    79
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 11,
+  "text_chars": 4777
+ },
+ {
+  "control_number": "39535",
+  "title": "LAND SURVEYING TECHNICIAN II",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "DRAFT16",
+   "EGDTEK101",
+   "EGDTEK111",
+   "ENGLC1000",
+   "ENGSUP121",
+   "ENGSUP200",
+   "ENGSUP224",
+   "ENGSUP225",
+   "INDTEK103",
+   "MATH240",
+   "MATH240S"
+  ],
+  "source": {
+   "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=81",
+   "title": "Technician II (M039535D)",
+   "h1": "Technician II (M039535D)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    81
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 11,
+  "text_chars": 3447
+ },
+ {
+  "control_number": "40331",
+  "title": "Child Development Administration",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHDEV38",
+   "CHDEV39"
+  ],
+  "source": {
+   "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=41",
+   "title": "Administration (M040331D)",
+   "h1": "Administration (M040331D)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    41
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 2,
+  "text_chars": 1025
+ },
+ {
+  "control_number": "40358",
+  "title": "SUSTAINABLE SMALL BUSINESS DEVELOPMENT",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED190CE",
+   "VOCED191CE",
+   "VOCED192CE",
+   "VOCED193CE",
+   "VOCED194CE",
+   "VOCED195CE"
+  ],
+  "source": {
+   "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=36",
+   "title": "Business Development (M040358F)",
+   "h1": "Business Development (M040358F)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    36
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 6,
+  "text_chars": 1027
+ },
+ {
+  "control_number": "40462",
+  "title": "ROBOTICS",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "40463",
+  "title": "SOCIAL MEDIA",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "40465",
+  "title": "PROGRAMMING",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "40788",
+  "title": "English for Academic Purposes Intermediate 2",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 3,
+  "text_chars": 0
+ },
+ {
+  "control_number": "40789",
+  "title": "English for Academic Purposes Intermediate 1",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 2,
+  "text_chars": 0
+ },
+ {
+  "control_number": "40790",
+  "title": "English for Academic Purposes Advanced 1",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "40791",
+  "title": "English for Academic Purposes Advanced 2",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 3,
+  "text_chars": 0
+ },
+ {
+  "control_number": "41141",
+  "title": "Business Administration 2.0",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ECONC2001",
+   "ECONC2002",
+   "MATH238",
+   "STATC1000",
+   "STATC1000E"
+  ],
+  "source": {
+   "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=29",
+   "title": "Business Administration for Transfer 2.0 (M041141H)",
+   "h1": "Business Administration for Transfer 2.0 (M041141H)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    29,
+    30,
+    31
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 5,
+  "text_chars": 13510
+ },
+ {
+  "control_number": "41336",
+  "title": "Digital Interior Design",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "INTRDGN101",
+   "INTRDGN106",
+   "INTRDGN116",
+   "INTRDGN117",
+   "MULTIMD100",
+   "MULTIMD340"
+  ],
+  "source": {
+   "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=25",
+   "title": "Design (M041336D)",
+   "h1": "Design (M041336D)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    25,
+    26,
+    27
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 6,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "41446",
+  "title": "Academic Readiness",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 0.923,
+  "codes_found": [
+   "BSICSKL200CE",
+   "BSICSKL201CE",
+   "BSICSKL202CE",
+   "BSICSKL204CE",
+   "BSICSKL205CE",
+   "BSICSKL206CE",
+   "BSICSKL208CE",
+   "BSICSKL209CE",
+   "BSICSKL83CE",
+   "BSICSKL84CE",
+   "BSICSKL85CE",
+   "BSICSKL86CE"
+  ],
+  "source": {
+   "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=45",
+   "title": "Readiness (M041446F)",
+   "h1": "Readiness (M041446F)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    45
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 13,
+  "text_chars": 3358
+ },
+ {
+  "control_number": "41447",
+  "title": "Academic Readiness, Bilingual GED Preparation",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 0.765,
+  "codes_found": [
+   "BSICSKL200CE",
+   "BSICSKL201CE",
+   "BSICSKL202CE",
+   "BSICSKL204CE",
+   "BSICSKL205CE",
+   "BSICSKL206CE",
+   "BSICSKL208CE",
+   "BSICSKL209CE",
+   "BSICSKL27CE",
+   "BSICSKL83CE",
+   "BSICSKL84CE",
+   "BSICSKL85CE",
+   "BSICSKL86CE"
+  ],
+  "source": {
+   "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=45",
+   "title": "Enroll now at www.lamission.edu",
+   "h1": "Enroll now at www.lamission.edu",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    45
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 17,
+  "text_chars": 4359
+ },
+ {
+  "control_number": "41463",
+  "title": "Competitive eSports Event Producer",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED881CE",
+   "VOCED882CE",
+   "VOCED883CE"
+  ],
+  "source": {
+   "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=27",
+   "title": "eSports Event Producer (M041463F)",
+   "h1": "eSports Event Producer (M041463F)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    27
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 3,
+  "text_chars": 2765
+ },
+ {
+  "control_number": "41501",
+  "title": "Psychology",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "PSYCC1000",
+   "PSYCH105",
+   "PSYCH13",
+   "PSYCH14",
+   "PSYCH2",
+   "PSYCH52",
+   "PSYCH74",
+   "PSYCH90"
+  ],
+  "source": {
+   "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=60",
+   "title": "(M041501D)",
+   "h1": "(M041501D)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    60
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 8,
+  "text_chars": 2553
+ },
+ {
+  "control_number": "41604",
+  "title": "Community Dental Health Coordinator",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED861CE",
+   "VOCED862CE",
+   "VOCED863CE",
+   "VOCED864CE"
+  ],
+  "source": {
+   "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=86",
+   "title": "Health Coordinator (M041604F)",
+   "h1": "Health Coordinator (M041604F)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    86
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 4,
+  "text_chars": 3065
+ },
+ {
+  "control_number": "41605",
+  "title": "Digital Literacy",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED181CE",
+   "VOCED182CE",
+   "VOCED183CE"
+  ],
+  "source": {
+   "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=36",
+   "title": "(M041605F)",
+   "h1": "(M041605F)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    36
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 3,
+  "text_chars": 5411
+ },
+ {
+  "control_number": "41606",
+  "title": "Digital Media Production & Streaming",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "41607",
+  "title": "Non-Traditional Leadership for Community Enhancement",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED800CE",
+   "VOCED801CE",
+   "VOCED802CE",
+   "VOCED803CE",
+   "VOCED804CE",
+   "VOCED805CE",
+   "VOCED806CE",
+   "VOCED807CE"
+  ],
+  "source": {
+   "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=36",
+   "title": "Enhancement (M041607F)",
+   "h1": "Enhancement (M041607F)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    36
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 8,
+  "text_chars": 4031
+ },
+ {
+  "control_number": "41608",
+  "title": "Pathway to Citizenship",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESLCVCS13CE",
+   "ESLCVCS14CE"
+  ],
+  "source": {
+   "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=36",
+   "title": "Citizenship (M041608F)",
+   "h1": "Citizenship (M041608F)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    36
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 2,
+  "text_chars": 2153
+ },
+ {
+  "control_number": "41609",
+  "title": "The Art and Practice of Conflict Resolution",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED804CE",
+   "VOCED821CE",
+   "VOCED822CE",
+   "VOCED823CE"
+  ],
+  "source": {
+   "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=35",
+   "title": "Practice of Conflict Resolution (M041609F)",
+   "h1": "Practice of Conflict Resolution (M041609F)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    35,
+    36
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 4,
+  "text_chars": 6946
+ },
+ {
+  "control_number": "41733",
+  "title": "Nutrition and Food Skills",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "NUTRTN1",
+   "NUTRTN24"
+  ],
+  "source": {
+   "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=82",
+   "title": "Food Skills (M041733D)",
+   "h1": "Food Skills (M041733D)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    82,
+    83
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 2,
+  "text_chars": 8297
+ },
+ {
+  "control_number": "42284",
+  "title": "Commercial Photography",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "MULTIMD100",
+   "PHOTO107",
+   "PHOTO121",
+   "PHOTO15",
+   "PHOTO16"
+  ],
+  "source": {
+   "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=24",
+   "title": "Photography (M042284D)",
+   "h1": "Photography (M042284D)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    24,
+    25,
+    26,
+    27
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 5,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "42285",
+  "title": "Health Occupations Fundamentals",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ALDHTH100",
+   "HLTHOCC62",
+   "HLTHOCC63",
+   "HLTHOCC65"
+  ],
+  "source": {
+   "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=80",
+   "title": "Occupations Fundamentals (M042285D)",
+   "h1": "Occupations Fundamentals (M042285D)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    80
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 4,
+  "text_chars": 1214
+ },
+ {
+  "control_number": "42561",
+  "title": "Film, Television, and Electronic Media",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CINEMA107",
+   "JOURNAL100",
+   "MULTIMD100",
+   "MULTIMD210",
+   "MULTIMD600",
+   "MULTIMD605",
+   "MULTIMD610",
+   "MULTIMD620"
+  ],
+  "source": {
+   "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=18",
+   "title": "Los Angeles Mission College Catalog 2026 / 2027",
+   "h1": "Los Angeles Mission College Catalog 2026 / 2027",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    18,
+    19,
+    20,
+    21
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 8,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "42628",
+  "title": "Medical Office Administrative Assistant",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ALDHTH100",
+   "BIOLOGY33",
+   "HLTHOCC62",
+   "HLTHOCC65",
+   "HTHTEK100",
+   "HTHTEK103"
+  ],
+  "source": {
+   "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=82",
+   "title": "Administrative Assistant (M042628D)",
+   "h1": "Administrative Assistant (M042628D)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    82
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 6,
+  "text_chars": 4718
+ },
+ {
+  "control_number": "42632",
+  "title": "Foundational ESL and Computer Skills",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 3,
+  "text_chars": 0
+ },
+ {
+  "control_number": "42633",
+  "title": "Beginning Level ESL",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 4,
+  "text_chars": 0
+ },
+ {
+  "control_number": "42634",
+  "title": "High-Beginning Level ESL",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 3,
+  "text_chars": 0
+ },
+ {
+  "control_number": "42906",
+  "title": "Cyber Security Practitioner",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CIS162",
+   "CIS210",
+   "CIS211",
+   "CIS222"
+  ],
+  "source": {
+   "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=78",
+   "title": "Practitioner (M042906D)",
+   "h1": "Practitioner (M042906D)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    78
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 4,
+  "text_chars": 4146
+ },
+ {
+  "control_number": "43091",
+  "title": "Public Health Science",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 0.778,
+  "codes_found": [
+   "ANATOMY1",
+   "BIOLOGY3",
+   "BIOLOGY5",
+   "BIOLOGY6",
+   "CHEM101",
+   "CHEM51",
+   "CHEM65",
+   "HEALTH101",
+   "HEALTH11",
+   "HEALTH8",
+   "PHYSIOL1",
+   "PSYCH52",
+   "STATC1000",
+   "STATC1000E"
+  ],
+  "source": {
+   "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=72",
+   "title": "Los Angeles Mission College Catalog 2026 / 2027",
+   "h1": "Los Angeles Mission College Catalog 2026 / 2027",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    72
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 18,
+  "text_chars": 5531
+ },
+ {
+  "control_number": "43125",
+  "title": "Real Estate Sales",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "REALES1",
+   "REALES3",
+   "REALES5"
+  ],
+  "source": {
+   "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=34",
+   "title": "(M043125D)",
+   "h1": "(M043125D)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    34
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 3,
+  "text_chars": 4111
+ },
+ {
+  "control_number": "43137",
+  "title": "Data Analytics",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CIS124",
+   "CIS192",
+   "CIS193",
+   "CIS194",
+   "CIS219",
+   "CS121",
+   "CS159"
+  ],
+  "source": {
+   "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=78",
+   "title": "(M043137D)",
+   "h1": "(M043137D)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    78
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 7,
+  "text_chars": 3430
+ },
+ {
+  "control_number": "43138",
+  "title": "Data Science",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CIS124",
+   "CIS192",
+   "CIS193",
+   "CIS194",
+   "CIS219",
+   "CS121",
+   "CS159",
+   "CS165",
+   "CS166"
+  ],
+  "source": {
+   "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=78",
+   "title": "(M043138D)",
+   "h1": "(M043138D)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    78
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 9,
+  "text_chars": 1844
+ },
+ {
+  "control_number": "43167",
+  "title": "Intermediate Level ESL",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 3,
+  "text_chars": 0
+ },
+ {
+  "control_number": "43322",
+  "title": "Electrocardiography (EKG) Technician Training",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED353CE",
+   "VOCED384CE"
+  ],
+  "source": {
+   "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=85",
+   "title": "(M043322E)",
+   "h1": "(M043322E)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    85
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 2,
+  "text_chars": 3401
+ },
+ {
+  "control_number": "43439",
+  "title": "Vocational Nursing Training Program",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "NURSING90",
+   "NURSING91",
+   "NURSING92",
+   "NURSING93",
+   "NURSING94",
+   "NURSING95",
+   "NURSING96",
+   "NURSING97"
+  ],
+  "source": {
+   "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=84",
+   "title": "Nursing Training Program (M043439D)",
+   "h1": "Nursing Training Program (M043439D)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    84
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 8,
+  "text_chars": 4617
+ },
+ {
+  "control_number": "43442",
+  "title": "Phlebotomy Technician Training",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED381CE",
+   "VOCED382CE"
+  ],
+  "source": {
+   "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=86",
+   "title": "Technician Training (M043442E)",
+   "h1": "Technician Training (M043442E)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    86
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 2,
+  "text_chars": 4498
+ },
+ {
+  "control_number": "43498",
+  "title": "Technical Theater",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "THEATER293",
+   "THEATER300",
+   "THEATER310",
+   "THEATER315",
+   "THEATER405"
+  ],
+  "source": {
+   "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=27",
+   "title": "(M043498D)",
+   "h1": "(M043498D)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    27
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 5,
+  "text_chars": 4562
+ },
+ {
+  "control_number": "43524",
+  "title": "Fire Technology",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "FIRETEK201",
+   "FIRETEK202",
+   "FIRETEK203",
+   "FIRETEK204",
+   "FIRETEK205",
+   "FIRETEK216"
+  ],
+  "source": {
+   "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=33",
+   "title": "(M043524D)",
+   "h1": "(M043524D)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    33
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 6,
+  "text_chars": 4474
+ },
+ {
+  "control_number": "43583",
+  "title": "High Intermediate Level ESL",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 0.667,
+  "codes_found": [
+   "BSICSKL126CE",
+   "BSICSKL127CE",
+   "BSICSKL128CE",
+   "BSICSKL27CE"
+  ],
+  "source": {
+   "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=64",
+   "title": "Level ESL (M043583F)",
+   "h1": "Level ESL (M043583F)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    64
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 6,
+  "text_chars": 4649
+ },
+ {
+  "control_number": "43599",
+  "title": "Biomanufacturing",
+  "award": "Baccalaureate of Science (B.S.) Degree.",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.92,
+  "codes_found": [
+   "ANTHRO322",
+   "BIOLOGY408",
+   "BIOLOGY6",
+   "BIOTECH2",
+   "BIOTECH3",
+   "BIOTECH300",
+   "BIOTECH310",
+   "BIOTECH320",
+   "BIOTECH330",
+   "BIOTECH340",
+   "BIOTECH360",
+   "BIOTECH400",
+   "BIOTECH410",
+   "BIOTECH460",
+   "BIOTECH470",
+   "BIOTECH6",
+   "BIOTECH8",
+   "CHEM101",
+   "CHEM102",
+   "ENGLISH420",
+   "MICRO20",
+   "STATC1000",
+   "STATC1000E"
+  ],
+  "source": {
+   "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=67",
+   "title": "(M043599B)",
+   "h1": "(M043599B)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    67,
+    68
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 25,
+  "text_chars": 10851
+ },
+ {
+  "control_number": "43619",
+  "title": "Communication Studies 2.0",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTHRO102",
+   "COMM102",
+   "COMM104",
+   "COMM121",
+   "COMM122",
+   "COMM151",
+   "COMMC1000",
+   "ENGLC1001",
+   "ENGLISH102",
+   "JOURNAL100",
+   "PSYCC1000",
+   "SOC1"
+  ],
+  "source": {
+   "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=54",
+   "title": "Communication Studies 2.0 (M043619G)",
+   "h1": "Communication Studies 2.0 (M043619G)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    54,
+    55,
+    56,
+    57
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 12,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "43738",
+  "title": "Creative Writing",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ENGLISH124",
+   "ENGLISH127",
+   "ENGLISH223",
+   "JOURNAL101",
+   "MULTIMD600",
+   "THEATER114"
+  ],
+  "source": {
+   "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=60",
+   "title": "(M043738D)",
+   "h1": "(M043738D)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    60
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 6,
+  "text_chars": 5030
+ },
+ {
+  "control_number": "43795",
+  "title": "In-Home Support Services (IHSS) Providers Training",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED2CE",
+   "VOCED353CE"
+  ],
+  "source": {
+   "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=85",
+   "title": "Services (IHSS) Providers Training (M043795E)",
+   "h1": "Services (IHSS) Providers Training (M043795E)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    85
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 2,
+  "text_chars": 2292
+ },
+ {
+  "control_number": "43929",
+  "title": "ESL Pathway to Biotechnology Careers",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 13,
+  "text_chars": 0
+ },
+ {
+  "control_number": "43930",
+  "title": "ESL Pathway to Health Occupations Careers",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 13,
+  "text_chars": 0
+ },
+ {
+  "control_number": "44073",
+  "title": "Cell and Gene Therapy",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOTECH102",
+   "BIOTECH2",
+   "BIOTECH3",
+   "CHEM65"
+  ],
+  "source": {
+   "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=77",
+   "title": "Therapy (M044073D)",
+   "h1": "Therapy (M044073D)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    77
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 4,
+  "text_chars": 5511
+ },
+ {
+  "control_number": "44267",
+  "title": "Medical Assistant Training",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ALDHTH35",
+   "ALDHTH36",
+   "ALDHTH37",
+   "ALDHTH38",
+   "ALDHTH39",
+   "BIOLOGY33",
+   "HTHTEK230"
+  ],
+  "source": {
+   "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=81",
+   "title": "Training (M044267D)",
+   "h1": "Training (M044267D)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    81,
+    82
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 7,
+  "text_chars": 6553
+ },
+ {
+  "control_number": "44268",
+  "title": "Medical Assistant Training",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ALDHTH100",
+   "ALDHTH35",
+   "ALDHTH36",
+   "ALDHTH37",
+   "ALDHTH38",
+   "ALDHTH39",
+   "BIOLOGY33",
+   "HTHTEK100",
+   "HTHTEK103",
+   "HTHTEK230"
+  ],
+  "source": {
+   "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=75",
+   "title": "Training (M044268C)",
+   "h1": "Training (M044268C)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    75
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 10,
+  "text_chars": 2021
+ },
+ {
+  "control_number": "44272",
+  "title": "Parenting II",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "PARENT21CE",
+   "PARENT22CE"
+  ],
+  "source": {
+   "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=45",
+   "title": "CERTIFICATE OF COMPLETION Parenting II (M044272E)",
+   "h1": "CERTIFICATE OF COMPLETION Parenting II (M044272E)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    45
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 2,
+  "text_chars": 4265
+ },
+ {
+  "control_number": "44274",
+  "title": "Parenting I",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "PARENT7CE",
+   "PARENT8CE"
+  ],
+  "source": {
+   "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=44",
+   "title": "CERTIFICATE OF COMPLETION Parenting I (M044274E)",
+   "h1": "CERTIFICATE OF COMPLETION Parenting I (M044274E)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    44
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 2,
+  "text_chars": 917
+ },
+ {
+  "control_number": "44604",
+  "title": "Transitional Kindergarten",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHDEV14",
+   "CHDEV15"
+  ],
+  "source": {
+   "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=44",
+   "title": "Kindergarten (M044604D)",
+   "h1": "Kindergarten (M044604D)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    44
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 2,
+  "text_chars": 2657
+ },
+ {
+  "control_number": "44777",
+  "title": "ESL Pathway to Child Development Careers",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 8,
+  "text_chars": 0
+ },
+ {
+  "control_number": "44781",
+  "title": "Public Health",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANATOMY1",
+   "BIOLOGY3",
+   "BIOLOGY5",
+   "BIOLOGY6",
+   "CHEM101",
+   "CHEM51",
+   "CHEM65",
+   "HEALTH101",
+   "HEALTH11",
+   "HEALTH113",
+   "HEALTH8",
+   "MICRO20",
+   "PHYSIOL1",
+   "PSYCH52",
+   "STAT101",
+   "STATC1000",
+   "STATC1000E"
+  ],
+  "source": {
+   "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=71",
+   "title": "Enroll now at www.lamission.edu",
+   "h1": "Enroll now at www.lamission.edu",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    71,
+    72
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 17,
+  "text_chars": 11788
+ },
+ {
+  "control_number": "44849",
+  "title": "Cal-GETC",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 146,
+  "text_chars": 0
+ },
+ {
+  "control_number": "44857",
+  "title": "Crime Scene Technology",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ADMJUS104",
+   "ADMJUS111",
+   "ADMJUS204",
+   "ADMJUS250",
+   "ADMJUS5"
+  ],
+  "source": {
+   "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=32",
+   "title": "Technology (M044857D)",
+   "h1": "Technology (M044857D)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    32
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 5,
+  "text_chars": 985
+ },
+ {
+  "control_number": "44977",
+  "title": "Professional Baking and Patisserie",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CLNART103",
+   "CLNART106",
+   "CLNART108",
+   "CLNART150",
+   "CLNART155",
+   "CLNART50",
+   "CLNART60",
+   "PROFBKG122",
+   "PROFBKG130",
+   "PROFBKG135",
+   "PROFBKG200",
+   "PROFBKG210",
+   "PROFBKG215",
+   "PROFBKG220"
+  ],
+  "source": {
+   "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=48",
+   "title": "and Patisserie (M044977C)",
+   "h1": "and Patisserie (M044977C)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    48,
+    49,
+    50,
+    51
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 14,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "45048",
+  "title": "Journalism",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ENGLISH223",
+   "JOURNAL100",
+   "JOURNAL101",
+   "JOURNAL202",
+   "JOURNAL43",
+   "MEDIART117",
+   "MEDIART801",
+   "MEDIART802",
+   "PHOTO7"
+  ],
+  "source": {
+   "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=60",
+   "title": "(M045048D)",
+   "h1": "(M045048D)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    60,
+    61
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 9,
+  "text_chars": 8715
+ },
+ {
+  "control_number": "45103",
+  "title": "Geography",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTHRO102",
+   "GEOG1",
+   "GEOG14",
+   "GEOG15",
+   "GEOG2",
+   "GEOG3",
+   "GEOG7",
+   "GEOLOGY1"
+  ],
+  "source": {
+   "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=69",
+   "title": "Geography (M045103G)",
+   "h1": "Geography (M045103G)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    69
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 8,
+  "text_chars": 5318
+ },
+ {
+  "control_number": "45104",
+  "title": "Chicana/o Studies, Latina/o Studies",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHICANO19",
+   "CHICANO2",
+   "CHICANO20",
+   "CHICANO37",
+   "CHICANO4",
+   "CHICANO42",
+   "CHICANO44",
+   "CHICANO46",
+   "CHICANO47",
+   "CHICANO52",
+   "CHICANO54",
+   "CHICANO57",
+   "CHICANO58",
+   "CHICANO7",
+   "CHICANO71",
+   "CHICANO8"
+  ],
+  "source": {
+   "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=53",
+   "title": "Chicana/o Studies, Latina/o Studies (M045104G)",
+   "h1": "Chicana/o Studies, Latina/o Studies (M045104G)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    53,
+    54,
+    55
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 16,
+  "text_chars": 13002
+ },
+ {
+  "control_number": "45350",
+  "title": "Sport and Exercise Nutrition Fundamentals",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "DANCETQ121",
+   "DANCETQ141",
+   "DANCETQ171",
+   "DANCETQ321",
+   "DANCETQ462",
+   "DNCESPC441",
+   "KIN291",
+   "KIN3161",
+   "KIN3291",
+   "KIN330",
+   "KIN332",
+   "KIN3341",
+   "KIN3361",
+   "KIN3471",
+   "KIN35",
+   "KIN3501",
+   "KIN3511",
+   "KIN3711",
+   "KIN3871",
+   "KIN3891",
+   "KINATH552",
+   "KINATH555",
+   "KINATH556",
+   "KINATH557",
+   "KINATH558",
+   "KINATH562",
+   "KINATH563",
+   "KINATH564",
+   "KINMAJ116",
+   "KINMAJ117",
+   "KINMAJ136",
+   "NUTRTN1",
+   "NUTRTN18",
+   "NUTRTN21"
+  ],
+  "source": {
+   "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=83",
+   "title": "Exercise Nutrition Fundamentals (M045350D)",
+   "h1": "Exercise Nutrition Fundamentals (M045350D)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    83,
+    84
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 34,
+  "text_chars": 9758
+ },
+ {
+  "control_number": "45351",
+  "title": "Sport and Exercise Nutrition Science",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANATOMY1",
+   "BIOLOGY3",
+   "BIOLOGY5",
+   "CHEM101",
+   "CHEM65",
+   "DANCETQ121",
+   "DANCETQ141",
+   "DANCETQ171",
+   "DANCETQ321",
+   "DANCETQ462",
+   "DNCESPC441",
+   "KIN291",
+   "KIN3161",
+   "KIN3291",
+   "KIN330",
+   "KIN332",
+   "KIN3341",
+   "KIN3361",
+   "KIN3471",
+   "KIN35",
+   "KIN3501",
+   "KIN3511",
+   "KIN3711",
+   "KIN3871",
+   "KIN3891",
+   "KINATH552",
+   "KINATH555",
+   "KINATH556",
+   "KINATH557",
+   "KINATH558",
+   "KINATH562",
+   "KINATH563",
+   "KINATH564",
+   "KINMAJ116",
+   "KINMAJ117",
+   "KINMAJ136",
+   "NUTRTN1",
+   "NUTRTN18",
+   "NUTRTN21"
+  ],
+  "source": {
+   "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=83",
+   "title": "Exercise Nutrition Science (M045351D)",
+   "h1": "Exercise Nutrition Science (M045351D)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    83,
+    84
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 39,
+  "text_chars": 7371
+ },
+ {
+  "control_number": "45582",
+  "title": "Community Health Worker",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED554CE",
+   "VOCED555CE"
+  ],
+  "source": {
+   "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=85",
+   "title": "Worker (M045582E)",
+   "h1": "Worker (M045582E)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    85
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 2,
+  "text_chars": 4441
+ },
+ {
+  "control_number": "45585",
+  "title": "Social Media Strategist",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "COMM109",
+   "COMM122",
+   "COMM190",
+   "ENGLISH109",
+   "JOURNAL43",
+   "MARKET21",
+   "MEDIART117",
+   "MULTIMD100"
+  ],
+  "source": {
+   "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=60",
+   "title": "Los Angeles Mission College Catalog 2026 / 2027",
+   "h1": "Los Angeles Mission College Catalog 2026 / 2027",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    60,
+    61
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 8,
+  "text_chars": 10175
+ },
+ {
+  "control_number": "45654",
+  "title": "Computer Science",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOLOGY6",
+   "BIOLOGY7",
+   "CHEM101",
+   "CS130",
+   "CS136",
+   "CS213",
+   "CS216",
+   "MATH261",
+   "MATH261S",
+   "MATH262",
+   "MATH272",
+   "PHYSICS37",
+   "PHYSICS38"
+  ],
+  "source": {
+   "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=68",
+   "title": "Computer Science (M045654H)",
+   "h1": "Computer Science (M045654H)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    68
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 13,
+  "text_chars": 2629
+ },
+ {
+  "control_number": "45666",
+  "title": "Mathematics 2.0",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CS119",
+   "CS213",
+   "CS216",
+   "MATH261",
+   "MATH261S",
+   "MATH262",
+   "MATH263",
+   "MATH270",
+   "MATH275",
+   "PHYSICS37"
+  ],
+  "source": {
+   "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=70",
+   "title": "Mathematics 2.0 (M045666H)",
+   "h1": "Mathematics 2.0 (M045666H)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    70,
+    71
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 10,
+  "text_chars": 10655
+ },
+ {
+  "control_number": "45667",
+  "title": "Physics 2.0",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CS119",
+   "CS213",
+   "CS216",
+   "MATH261",
+   "MATH261S",
+   "MATH262",
+   "MATH263",
+   "MATH270",
+   "MATH275",
+   "PHYSICS37",
+   "PHYSICS38",
+   "PHYSICS39"
+  ],
+  "source": {
+   "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=71",
+   "title": "Physics 2.0 (M045667H)",
+   "h1": "Physics 2.0 (M045667H)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    71
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 12,
+  "text_chars": 5110
+ },
+ {
+  "control_number": "45702",
+  "title": "Culinary and Baking Essentials",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED242CE",
+   "VOCED246CE",
+   "VOCED247CE",
+   "VOCED540CE"
+  ],
+  "source": {
+   "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=51",
+   "title": "Baking Essentials (M045702E)",
+   "h1": "Baking Essentials (M045702E)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    51
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 4,
+  "text_chars": 1188
+ },
+ {
+  "control_number": "45816",
+  "title": "Game Art Design",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANIMATN225",
+   "GAD101",
+   "GAD102",
+   "GAD103",
+   "GAD2101",
+   "MULTIMD100",
+   "MULTIMD200",
+   "MULTIMD300",
+   "MULTIMD430"
+  ],
+  "source": {
+   "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=25",
+   "title": "(M045816D)",
+   "h1": "(M045816D)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    25,
+    26,
+    27
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 9,
+  "text_chars": 14810
+ },
+ {
+  "control_number": "46146",
+  "title": "Hospitality Management",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCTG1",
+   "BUS5",
+   "CLNART50",
+   "ECONC2001",
+   "HOSPT100",
+   "HOSPT120",
+   "HOSPT140",
+   "HOSPT320",
+   "LAW1",
+   "STAT101",
+   "STATC1000",
+   "STATC1000E"
+  ],
+  "source": {
+   "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=47",
+   "title": "Hospitality Management (M046146H)",
+   "h1": "Hospitality Management (M046146H)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    47,
+    48,
+    49,
+    50
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 12,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "46235",
+  "title": "Elementary Teacher Education: Integrated Programs",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 0.966,
+  "codes_found": [
+   "ARTHC1200",
+   "ARTHIST103",
+   "ARTHIST110",
+   "ARTHIST126",
+   "ARTHIST130",
+   "ARTHIST140",
+   "ARTHIST161",
+   "ARTHIST170",
+   "BIOLOGY3",
+   "BIOLOGY5",
+   "CHDEV1",
+   "COMMC1000",
+   "DANCEST805",
+   "EARTH1",
+   "EARTH2",
+   "EDUC1",
+   "ENGLC1000",
+   "ENGLC1000E",
+   "ENGLISH101Y",
+   "ENGLISH101Z",
+   "ENGLISH102",
+   "ENGLISH218",
+   "HISTC1001",
+   "HISTORY86",
+   "MATH215",
+   "MUSIC111",
+   "POLSC1000",
+   "THEATER100"
+  ],
+  "source": {
+   "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=39",
+   "title": "Enroll now at www.lamission.edu",
+   "h1": "Enroll now at www.lamission.edu",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    39,
+    40,
+    41,
+    42
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 29,
+  "text_chars": 16000
+ }
+]

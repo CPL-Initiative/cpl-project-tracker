@@ -1,0 +1,182 @@
+{
+ "college": "Los Angeles Mission College",
+ "control_number": "38392",
+ "shape": "noncredit",
+ "title": "INTRODUCTION TO CONSTRUCTION TECHNOLOGIES",
+ "award": "Noncredit program",
+ "source_url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=85",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6357,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6357,
+    "output_tokens": 1005,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1005,
+  "output_tokens_details": {
+   "thinking_tokens": 327
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.04553,
+ "ms": 8948,
+ "seconds": 9.5,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 3,
+   "listed": 3,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    198.0,
+    198.0
+   ],
+   "stated": [
+    198.0,
+    198.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 6,
+   "courses": 0,
+   "count": 6,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 2,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Construction Technologies (M038392E)",
+   "measure": "hours",
+   "total_units": {
+    "min": 198,
+    "max": 198
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Demonstrate basic level carpentry skills and knowledge.",
+    "Pour cement foundations.",
+    "Demonstrate OSHA safety standards and practices.",
+    "Demonstrate basic First Aid and CPR.",
+    "Write a professional resume.",
+    "Display proper interviewing etiquette."
+   ],
+   "careers": [
+    "building trades",
+    "building industry"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "REQUIRED COURSES",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "VOC ED 008CE",
+      "units": 54,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VOC ED 252CE",
+      "units": 108,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VOC ED 259CE",
+      "units": 36,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The catalog heading reads 'Construction Technologies (M038392E)' rather than 'Introduction to Construction Technologies'; the closed-list courses match, so this section was read as the named noncredit program. A reviewer should confirm.",
+   "The noncredit program is counted in hours; the hours printed beside each course and the 'Total Hours 198' are recorded in the units fields.",
+   "The catalog prints codes as 'VOC ED 008CE' etc., which correspond to closed-list VOCED008CE, VOCED252CE and VOCED259CE.",
+   "Trade areas named in the description (carpentry, electrical, plumbing, brick masonry, landscaping, building construction technology, painting) are described as instruction areas and were not recorded as careers."
+  ]
+ },
+ "extracted_run": "39054675770"
+}

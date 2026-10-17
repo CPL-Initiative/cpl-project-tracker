@@ -1,0 +1,259 @@
+{
+ "college": "Los Angeles Mission College",
+ "control_number": "44977",
+ "shape": "degree",
+ "title": "Professional Baking and Patisserie",
+ "award": "A.A. Degree",
+ "source_url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=48",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 12311,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 12311,
+    "output_tokens": 1896,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1896,
+  "output_tokens_details": {
+   "thinking_tokens": 536
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.08716,
+ "ms": 16255,
+ "seconds": 16.7,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 14,
+   "listed": 14,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    44.0,
+    44.0
+   ],
+   "stated": [
+    44.0,
+    44.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "and Patisserie (M044977C)",
+   "measure": "units",
+   "total_units": {
+    "min": 44,
+    "max": 44
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Identify and adhere to industry standards for entry, supervisory, and management positions within the baking and pastry industry.",
+    "Apply professional baking and patisserie techniques across diverse categories, demonstrating skills that meet or exceed industry standards.",
+    "Evaluate and implement best practices in food safety, production and presentation within various segments of the baking and pastry industry."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "REQUIRED COURSES",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 44,
+     "max": 44
+    },
+    "courses": [
+     {
+      "code": "CLN ART 050",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CLN ART 060",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CLN ART 103",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CLN ART 106",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CLN ART 108",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CLN ART 150",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CLN ART 155",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PROFBKG 122",
+      "units": 6,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PROFBKG 130",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PROFBKG 135",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PROFBKG 200",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PROFBKG 210",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PROFBKG 215",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PROFBKG 220",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The section heading is cut off at the top of page 48; only 'and Patisserie (M044977C)' is visible. The full heading is presumably 'ASSOCIATE OF ARTS (AA) Professional Baking and Patisserie' on page 47.",
+   "The catalog prints codes with leading zeros (CLN ART 050, CLN ART 060); these match closed-list CLN ART 50 and CLN ART 60.",
+   "The catalog titles CLN ART 150 and 155 'Work Experience – Culinary Arts I/II', while the state file titles them 'Chefs Training for Apprenticeship I/II'. Codes and units match.",
+   "Total 44 is the major total. The note 'A minimum of 60 units ... to earn the Associate Degree' is a generic statement, so it is not recorded as degree_total. No GE pattern or GE units are printed in this section.",
+   "Outcomes rejoin words hyphenated at PDF line breaks ('supervi-sory', 'pas-try').",
+   "The description names workplaces (bakeries, pastry shops, hotels, fine dining restaurants) and 'supervisory or managerial positions' but no specific job titles. Careers is left empty; a reviewer may wish to check this.",
+   "The separate Certificate of Achievement Professional Baking & Patisserie (M035063D) on page 49 was not used."
+  ]
+ },
+ "extracted_run": "39054675770"
+}

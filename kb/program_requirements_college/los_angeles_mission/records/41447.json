@@ -1,0 +1,273 @@
+{
+ "college": "Los Angeles Mission College",
+ "control_number": "41447",
+ "shape": "noncredit",
+ "title": "Academic Readiness, Bilingual GED Preparation",
+ "award": "Noncredit program",
+ "source_url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=45",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8058,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8058,
+    "output_tokens": 1579,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1579,
+  "output_tokens_details": {
+   "thinking_tokens": 479
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.06381,
+ "ms": 13880,
+ "seconds": 14.4,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 0,
+   "listed": 17,
+   "share": 0.0,
+   "missing": [
+    "BSICSKL200CE",
+    "BSICSKL201CE",
+    "BSICSKL202CE",
+    "BSICSKL204CE",
+    "BSICSKL205CE",
+    "BSICSKL206CE",
+    "BSICSKL208CE",
+    "BSICSKL209CE",
+    "BSICSKL210CE",
+    "BSICSKL27CE",
+    "BSICSKL83CE",
+    "BSICSKL84CE",
+    "BSICSKL85CE",
+    "BSICSKL86CE",
+    "ESLNC161CE",
+    "ESLNC162CE",
+    "ESLNC163CE"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 4,
+   "codes": [
+    "BSICSKL129CE",
+    "BSICSKL130CE",
+    "BSICSKL131CE",
+    "BSICSKL132CE"
+   ],
+   "flagged": [
+    "BSICSKL129CE",
+    "BSICSKL130CE",
+    "BSICSKL131CE",
+    "BSICSKL132CE"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    216.0,
+    216.0
+   ],
+   "stated": [
+    216.0,
+    216.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 1,
+   "courses": 0,
+   "count": 1,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "CERTIFICATE OF COMPETENCY Academic Readiness, Bilingual GED Preparation (M041447F)",
+   "measure": "hours",
+   "total_units": {
+    "min": 216,
+    "max": 216
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Through pre- and post- practice exams, students will emonstrate learning gains that determine their readiness to successfully complete the 4 components of the GED exam with passing scores."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "REQUIRED COURSES",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "BSICSKL 129CE",
+      "units": 54,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BSICSKL 130CE",
+      "units": 54,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BSICSKL 131CE",
+      "units": 54,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BSICSKL 132CE",
+      "units": 54,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "BSICSKL 027CE",
+    "why": "named only in the Academic Readiness (M041446F) section"
+   },
+   {
+    "code": "BSICSKL 083CE",
+    "why": "named only in the Academic Readiness (M041446F) section"
+   },
+   {
+    "code": "BSICSKL 084CE",
+    "why": "named only in the Academic Readiness (M041446F) section"
+   },
+   {
+    "code": "BSICSKL 085CE",
+    "why": "named only in the Academic Readiness (M041446F) section"
+   },
+   {
+    "code": "BSICSKL 086CE",
+    "why": "named only in the Academic Readiness (M041446F) section"
+   },
+   {
+    "code": "BSICSKL 200CE",
+    "why": "named only in the Academic Readiness (M041446F) section"
+   },
+   {
+    "code": "BSICSKL 201CE",
+    "why": "named only in the Academic Readiness (M041446F) section"
+   },
+   {
+    "code": "BSICSKL 202CE",
+    "why": "named only in the Academic Readiness (M041446F) section"
+   },
+   {
+    "code": "BSICSKL 204CE",
+    "why": "named only in the Academic Readiness (M041446F) section"
+   },
+   {
+    "code": "BSICSKL 205CE",
+    "why": "named only in the Academic Readiness (M041446F) section"
+   },
+   {
+    "code": "BSICSKL 206CE",
+    "why": "named only in the Academic Readiness (M041446F) section"
+   },
+   {
+    "code": "BSICSKL 208CE",
+    "why": "named only in the Academic Readiness (M041446F) section"
+   },
+   {
+    "code": "BSICSKL 209CE",
+    "why": "named only in the Academic Readiness (M041446F) section"
+   },
+   {
+    "code": "BSICSKL 210 CE",
+    "why": "named only in the Academic Readiness (M041446F) section (printed as BSICSKL 210CE)"
+   },
+   {
+    "code": "ESLNC161CE",
+    "why": "not in the text"
+   },
+   {
+    "code": "ESLNC162CE",
+    "why": "not in the text"
+   },
+   {
+    "code": "ESLNC163CE",
+    "why": "not in the text"
+   }
+  ],
+  "notes": []
+ },
+ "extracted_run": "39054675770"
+}

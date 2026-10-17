@@ -1,0 +1,180 @@
+{
+ "college": "Los Angeles Mission College",
+ "control_number": "43322",
+ "shape": "noncredit",
+ "title": "Electrocardiography (EKG) Technician Training",
+ "award": "Noncredit program",
+ "source_url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=85",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7046,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7046,
+    "output_tokens": 1018,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1018,
+  "output_tokens_details": {
+   "thinking_tokens": 372
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.04854,
+ "ms": 9149,
+ "seconds": 9.6,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 2,
+   "listed": 2,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "VOCED475CE"
+   ],
+   "flagged": [
+    "VOCED475CE"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    63.0,
+    72.0
+   ],
+   "stated": [
+    63.0,
+    72.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 1,
+   "courses": 0,
+   "count": 1,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "(M043322E)",
+   "measure": "hours",
+   "total_units": {
+    "min": 63,
+    "max": 72
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Analyze and apply the EKG skills as required by the National Health career Association."
+   ],
+   "careers": [
+    "EKG Technicians"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "REQUIRED CORE",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "VOC ED 353CE",
+      "units": 9,
+      "units_max": 18,
+      "alternatives": [
+       {
+        "code": "VOC ED 475CE",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "VOC ED 384CE",
+      "units": 54,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The section's title line is not in the extracted text; page 85 begins with only the program code '(M043322E)', so the heading (likely 'CERTIFICATE OF COMPLETION Electrocardiography (EKG) Technician Training') appears to have been cut off at the previous page break. Recorded the code as printed.",
+   "Program counted in hours; total 'Total Hours 63-72'.",
+   "VOC ED 475CE (Basic Life Support for the Healthcare Provider) is printed as an 'or' option to VOC ED 353CE with no hours beside it; it is not in the closed list.",
+   "The 9-18 hours printed beside VOC ED 353CE appear to cover the 353CE/475CE choice. The IHSS section lists VOC ED 353CE at 18 hours.",
+   "Text following the Total Hours line belongs to other programs (IHSS Providers Training, Introduction to Construction Technologies) and was not read."
+  ]
+ },
+ "extracted_run": "39054675770"
+}

@@ -1,0 +1,239 @@
+{
+ "college": "Los Angeles Mission College",
+ "control_number": "45654",
+ "shape": "adt",
+ "title": "Computer Science",
+ "award": "A.S. T Degree",
+ "source_url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=68",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6976,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6976,
+    "output_tokens": 1787,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1787,
+  "output_tokens_details": {
+   "thinking_tokens": 616
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.06364,
+ "ms": 15554,
+ "seconds": 16.0,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 13,
+   "listed": 13,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    34.0,
+    34.0
+   ],
+   "stated": [
+    34.0,
+    34.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 2,
+   "courses": 0,
+   "count": 2,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Computer Science (M045654H)",
+   "measure": "units",
+   "total_units": {
+    "min": 34,
+    "max": 34
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": 34,
+    "max": 34
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Demonstrate a basic understanding of computer systems and programming.",
+    "Solve business needs using algorithmic thinking and software development methodology."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "REQUIRED CORE",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 34,
+     "max": 34
+    },
+    "courses": [
+     {
+      "code": "CS 130",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CS 136",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CS 213",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CS 216",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 272",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 261",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MATH 261S",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 262",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYSICS 037",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYSICS 038",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BIOLOGY 006",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "BIOLOGY 007",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "CHEM 101",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The catalog prints PHYSICS 037/038 and BIOLOGY 006/007 with leading zeros; these are treated as the closed-list courses PHYSICS 37/38 and BIOLOGY 6/7, not catalog additions.",
+   "The 'or BIOLOGY 006 / or BIOLOGY 007 / or CHEM 101' rows follow PHYSICS 038 only, so they are recorded as alternatives to PHYSICS 038; PHYSICS 037 is read as always required. A reviewer should check whether the intent was a choice of science sequence (e.g., PHYSICS 037+038, or BIOLOGY 006+007, or other), since the layout is ambiguous. The block total of 34 matches 3+3+3+5+5+5+5+5.",
+   "Alternatives (CS 216, MATH 261S, BIOLOGY 006, BIOLOGY 007, CHEM 101) have no units printed beside them in the text; units left null (closed list stores 3, 5, 5, 5, 5).",
+   "The 60-unit requirement is the generic ADT statement, not printed as this award's own total, so degree_total is null. Cal-GETC units (34 semester) come from the generic ADT requirements paragraph.",
+   "Outcome text 'soft -ware' is a PDF line-break hyphenation and was recorded as 'software'."
+  ]
+ },
+ "extracted_run": "39054675770"
+}

@@ -1,0 +1,236 @@
+{
+ "college": "Los Angeles Mission College",
+ "control_number": "33950",
+ "shape": "adt",
+ "title": "Biology",
+ "award": "A.S. T Degree",
+ "source_url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=67",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8853,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8853,
+    "output_tokens": 1469,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1469,
+  "output_tokens_details": {
+   "thinking_tokens": 415
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.06479,
+ "ms": 12951,
+ "seconds": 13.5,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 6,
+   "listed": 6,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 3,
+   "codes": [
+    "MATH247",
+    "MATH261",
+    "MATH261S"
+   ],
+   "flagged": [
+    "MATH247",
+    "MATH261",
+    "MATH261S"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    32.0,
+    33.0
+   ],
+   "stated": [
+    32.0,
+    33.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 2,
+   "courses": 0,
+   "count": 2,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Biology (M033950H)",
+   "measure": "units",
+   "total_units": {
+    "min": 32,
+    "max": 33
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": 34,
+    "max": 34
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Apply the scientific method by developing a hypothesis, designing a controlled experiment, collecting data and interpreting the results.",
+    "Make informed decisions regarding ethical concerns related to contemporary controversial issues in the life and/or biological sciences."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "REQUIRED CORE",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "BIOLOGY 006",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOLOGY 007",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List A: (Complete ALL Courses)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CHEM 101",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 102",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 261",
+      "units": 4,
+      "units_max": 5,
+      "alternatives": [
+       {
+        "code": "MATH 247",
+        "units": null,
+        "catalog_addition": true
+       },
+       {
+        "code": "MATH 261S",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "PHYSICS 006",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYSICS 007",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Section heading on page 67 lacks the 'ASSOCIATE IN SCIENCE FOR TRANSFER (AS-T)' banner (likely on prior page); text describes the Associate in Science in Biology for Transfer.",
+   "Catalog prints codes with leading zeros (BIOLOGY 006, PHYSICS 006); matched to closed-list BIOLOGY 6, PHYSICS 6 etc.",
+   "MATH 261 is printed with 4-5 units shared across its alternatives MATH 247 and MATH 261S; alternatives have no separate units printed.",
+   "Total 32–33 recorded as the major total. The 60-unit requirement is the generic ADT sentence, not recorded as degree_total. Cal-GETC 34 semester units taken from the generic requirements paragraph.",
+   "Outcome text rejoined across PDF line-break hyphens ('inter -preting' -> 'interpreting', 'bio -logical' -> 'biological').",
+   "Text following the Biology section (Chemistry UCTP, Computer Science AS-T) belongs to other programs and was ignored."
+  ]
+ },
+ "extracted_run": "39054675770"
+}

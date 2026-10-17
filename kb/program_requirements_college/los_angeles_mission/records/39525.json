@@ -1,0 +1,289 @@
+{
+ "college": "Los Angeles Mission College",
+ "control_number": "39525",
+ "shape": "certificate",
+ "title": "Engineering Drafting Technician",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=79",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8167,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8167,
+    "output_tokens": 1925,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1925,
+  "output_tokens_details": {
+   "thinking_tokens": 610
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.07117,
+ "ms": 15940,
+ "seconds": 16.5,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 11,
+   "listed": 11,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 7,
+   "codes": [
+    "CIS101",
+    "CS101",
+    "ENGLC1000E",
+    "ENGLISH101Y",
+    "ENGLISH101Z",
+    "ESL110",
+    "MATH242"
+   ],
+   "flagged": [
+    "CIS101",
+    "CS101",
+    "ENGLC1000E",
+    "ENGLISH101Y",
+    "ENGLISH101Z",
+    "ESL110",
+    "MATH242"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    27.0,
+    31.0
+   ],
+   "stated": [
+    27.0,
+    31.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 2,
+   "courses": 0,
+   "count": 2,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Drafting Technician (M039525D)",
+   "measure": "units",
+   "total_units": {
+    "min": 27,
+    "max": 31
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Demonstrate the ability to read blueprints and draft using a computer-aided software.",
+    "Solve engineering drafting related problems using critical thinking."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "REQUIRED CORE",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 27,
+     "max": 31
+    },
+    "courses": [
+     {
+      "code": "CS 101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CIS 101",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "DRAFT 016",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DRAFT 017",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "EGD TEK 101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "EGD TEK 111",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "EGD TEK 121",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "EGD TEK 131",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENG SUP 121",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL C1000",
+      "units": 3,
+      "units_max": 4,
+      "alternatives": [
+       {
+        "code": "ENGL C1000E",
+        "units": null,
+        "catalog_addition": true
+       },
+       {
+        "code": "ENGLISH 101Y",
+        "units": null,
+        "catalog_addition": true
+       },
+       {
+        "code": "ENGLISH 101Z",
+        "units": null,
+        "catalog_addition": true
+       },
+       {
+        "code": "E.S.L. 110",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "IND TEK 103",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 240",
+      "units": 1,
+      "units_max": 4,
+      "alternatives": [
+       {
+        "code": "MATH 240S",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "MATH 242",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The catalog heading is 'Drafting Technician (M039525D)'; the program is named 'Engineering Drafting Technician' in the state file. No explicit 'Certificate of Achievement' label precedes this heading on the page shown.",
+   "CIS 101 is recorded as an alternative to CS 101 based on the footnote 'Course can be substituted with CIS 101 Introduction to Computers and Their Uses'; no units printed for it.",
+   "EGD TEK 131 is printed with 2 units; the state file stores 1 unit.",
+   "MATH 240 row prints '1-4' units for the MATH 240 / MATH 240S / MATH 242 choice; recorded as printed (1-4), which a reviewer should verify since MATH 240 is stored as 3 units.",
+   "ENGL C1000 row prints '3-4' units covering the English/ESL alternatives.",
+   "DRAFT 016 and DRAFT 017 are printed with leading zeros; matched to closed-list DRAFT 16 and DRAFT 17.",
+   "The description names qualifications 'in engineering drafting related fields' and CSWA certification but no specific careers; careers left empty.",
+   "The block's stated total is the program 'Total 27-31', since the required core is the only block."
+  ]
+ },
+ "extracted_run": "39054675770"
+}
