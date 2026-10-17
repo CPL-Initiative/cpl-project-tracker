@@ -1,0 +1,315 @@
+{
+ "college": "Santa Rosa Junior College",
+ "control_number": "09692",
+ "shape": "certificate",
+ "title": "Theatre Arts: Stagecraft",
+ "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+ "source_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=373",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8189,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8189,
+    "output_tokens": 2378,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2378,
+  "output_tokens_details": {
+   "thinking_tokens": 768
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.08032,
+ "ms": 20286,
+ "seconds": 20.6,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 19,
+   "listed": 19,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    32.5,
+    32.5
+   ],
+   "stated": [
+    32.5,
+    32.5
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Theatre Arts: Stagecraft",
+   "measure": "units",
+   "total_units": {
+    "min": 32.5,
+    "max": 32.5
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Work effectively with lighting and scenery design plans;",
+    "Work competently with common materials and techniques when constructing theatrical elements;",
+    "Apply fundamental techniques of stagecraft when participating in the backstage functions of a performance;",
+    "Demonstrate basic skills in one or more of the following areas of specialization: running crew, lighting hang and focus, scenic carpentry, welding and/or scenic painting, audio set up and routing;",
+    "Integrate knowledge of theatre history and literature when constructing theatrical elements; and"
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Theatre Arts Core Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "THAR 1",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THAR 10A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Stagecraft Emphasis Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "THAR 20",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THAR 23",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THAR 24",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THAR 25.2",
+      "units": 4.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THAR 26",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THAR 27",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select any combination totaling at least 8.00 units from the following",
+    "rule": "choose_units",
+    "minimum": 8,
+    "option_group": null,
+    "stated": {
+     "min": 8,
+     "max": 8
+    },
+    "courses": [
+     {
+      "code": "ART 3",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 4",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 5",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 7A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 13",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THAR 25.5",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THAR 127.1",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THAR 127.2",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THAR 127.3",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THAR 127.4",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WELD 170",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The excerpt begins mid-page; the program heading itself is not printed in the excerpt, so section_heading uses the program title. The requirements table on page 373 is assumed to belong to Theatre Arts: Stagecraft (Stagecraft Emphasis Requirements, PSLOs about stagecraft).",
+   "THAR 25.2 is printed twice in the Stagecraft Emphasis list (3 units and 1.5 units); Notes 2 and 3 say it must be taken for a total of 4.5 units. Recorded once with 4.5 units; 3+3+3+3+3+4.5+3+2+8 = 32.5 matches the printed total.",
+   "Units are not printed beside the courses in the 8-unit choose list, so units are null.",
+   "The outcomes list appears cut off: outcome 5 ends with '; and', implying at least one more outcome on the next page not included in the text.",
+   "The opening lines about self-marketing, audition and portfolio preparation appear to be the tail of a preceding description; no careers are named in the excerpt."
+  ]
+ },
+ "extracted_run": "39006464249"
+}

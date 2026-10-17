@@ -1,0 +1,237 @@
+{
+ "college": "Santa Rosa Junior College",
+ "control_number": "21709",
+ "shape": "certificate",
+ "title": "AGWS: Wine Hosp & Marketing",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=560",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 11192,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 11192,
+    "output_tokens": 1056,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1056,
+  "output_tokens_details": {
+   "thinking_tokens": 229
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.06589,
+ "ms": 8320,
+ "seconds": 8.6,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 20,
+   "share": 0.0,
+   "missing": [
+    "AGRI56",
+    "AGRI98",
+    "AGRI99I",
+    "CUL2583",
+    "WINE101",
+    "WINE102",
+    "WINE103",
+    "WINE109",
+    "WINE1111",
+    "WINE1112",
+    "WINE112",
+    "WINE116",
+    "WINE117",
+    "WINE119",
+    "WINE124",
+    "WINE128",
+    "WINE130",
+    "WINE131",
+    "WINE1321",
+    "WINE1322"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Wine Studies (WINE)",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "AGRI 56",
+    "why": "not in the text"
+   },
+   {
+    "code": "AGRI 98",
+    "why": "not in the text"
+   },
+   {
+    "code": "AGRI99I",
+    "why": "not in the text"
+   },
+   {
+    "code": "CUL 258.3",
+    "why": "not in the text"
+   },
+   {
+    "code": "WINE 101",
+    "why": "not in the text"
+   },
+   {
+    "code": "WINE 102",
+    "why": "not in the text"
+   },
+   {
+    "code": "WINE 103",
+    "why": "not in the text"
+   },
+   {
+    "code": "WINE 109",
+    "why": "not in the text"
+   },
+   {
+    "code": "WINE 111.1",
+    "why": "only a course description; no program requirements in text"
+   },
+   {
+    "code": "WINE 111.2",
+    "why": "only a course description; no program requirements in text"
+   },
+   {
+    "code": "WINE 112",
+    "why": "only a course description; no program requirements in text"
+   },
+   {
+    "code": "WINE 116",
+    "why": "only a course description; no program requirements in text"
+   },
+   {
+    "code": "WINE 117",
+    "why": "only a course description; no program requirements in text"
+   },
+   {
+    "code": "WINE 119",
+    "why": "only a course description; no program requirements in text"
+   },
+   {
+    "code": "WINE 124",
+    "why": "only a course description; no program requirements in text"
+   },
+   {
+    "code": "WINE 128",
+    "why": "only a course description; no program requirements in text"
+   },
+   {
+    "code": "WINE 130",
+    "why": "only a course description; no program requirements in text"
+   },
+   {
+    "code": "WINE 131",
+    "why": "only a course description; no program requirements in text"
+   },
+   {
+    "code": "WINE 132.1",
+    "why": "only a course description; no program requirements in text"
+   },
+   {
+    "code": "WINE 132.2",
+    "why": "only a course description; no program requirements in text"
+   }
+  ],
+  "notes": [
+   "The supplied text (catalog pages 560-561) is the Wine Studies (WINE) and Work Experience Education (WEE) course description listing, not the program requirements section for the Wine Hospitality and Marketing Certificate of Achievement. No blocks, totals, outcomes or careers could be recorded; the program's requirements page should be located and reviewed.",
+   "WINE 124 is printed in the course listing as 'Cabernet Sauvignon', while the closed list titles it 'Cabernet Sauvignon Around the World'."
+  ]
+ },
+ "extracted_run": "39006464249"
+}

@@ -1,0 +1,256 @@
+{
+ "college": "Santa Rosa Junior College",
+ "control_number": "09704",
+ "shape": "degree",
+ "title": "Paramedic",
+ "award": "A.S. Degree",
+ "source_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=187",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7901,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7901,
+    "output_tokens": 1769,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1769,
+  "output_tokens_details": {
+   "thinking_tokens": 588
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.06698,
+ "ms": 16271,
+ "seconds": 16.7,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 9,
+   "listed": 9,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 2,
+   "codes": [
+    "EMC131A",
+    "EMC131B"
+   ],
+   "flagged": [
+    "EMC131A",
+    "EMC131B"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    51.75,
+    51.75
+   ],
+   "stated": [
+    51.75,
+    51.75
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 2,
+   "courses": 0,
+   "count": 2,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Major Requirements",
+   "measure": "units",
+   "total_units": {
+    "min": 51.75,
+    "max": 51.75
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Complete the National Registry computer adaptive exam; and",
+    "Demonstrate professional behavior consistent with criteria for employment as a licensed paramedic in the state of California."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Paramedic Major Prerequisites",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ANAT 40",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "EMC 103",
+      "units": 7.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "EMC 109",
+      "units": 0.25,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "EMC 114",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Paramedic Major Core Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "EMC 131A",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "EMC 131B",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "EMC 161",
+      "units": 8,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "EMC 161L",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "EMC 162",
+      "units": 8,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "EMC 162L",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "EMC 134",
+      "units": 10,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The excerpt begins on page 187 mid-section; the Paramedic program heading (likely 'Paramedic (AS)') is on the preceding page and not in the text, so section_heading uses the visible 'Major Requirements' heading.",
+   "The opening paragraph about 60 CSU-transferable units, Cal-GETC and 18 major units is ADT boilerplate apparently carried over from a preceding section; it does not appear to apply to this A.S. degree, so ge_pattern, degree_total and ge_units are left null.",
+   "Total Hours/Units 51.75 includes the prerequisite block (13.75) plus the core block (38); the column header reads 'Hours/Units' but values are units.",
+   "EMC 109 is printed at 0.25 units; the state file stores 0.3.",
+   "Notes state ANAT 58 may be considered as a substitute for ANAT 40; recorded here only, not as an alternative, since it is a case-by-case substitution.",
+   "Outside coursework for EMC 114 and ANAT 40 may be accepted case by case.",
+   "No program description or careers heading appears in the excerpt for Paramedic; careers left empty (outcome text mentions employment as a licensed paramedic).",
+   "Text following the outcomes belongs to the Pharmacy Technician (AS) program and was ignored."
+  ]
+ },
+ "extracted_run": "39006464249"
+}

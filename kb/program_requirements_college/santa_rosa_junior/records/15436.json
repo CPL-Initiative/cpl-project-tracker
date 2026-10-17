@@ -1,0 +1,754 @@
+{
+ "college": "Santa Rosa Junior College",
+ "control_number": "15436",
+ "shape": "degree",
+ "title": "Natural Sciences",
+ "award": "A.S. Degree",
+ "source_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=181",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 13321,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 13321,
+    "output_tokens": 5878,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 5878,
+  "output_tokens_details": {
+   "thinking_tokens": 1666
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.17084,
+ "ms": 46093,
+ "seconds": 46.4,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 58,
+   "listed": 71,
+   "share": 0.817,
+   "missing": [
+    "ANTHC1001",
+    "ANTHC1001L",
+    "BIOLC1000",
+    "CHEM12A",
+    "CHEM12B",
+    "CHEM3A",
+    "CHEM3AL",
+    "CHEM3B",
+    "CHEM42",
+    "CHEM8",
+    "LIR10",
+    "MATHC2210",
+    "MATHC2220"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 13,
+   "codes": [
+    "AGRI30",
+    "ANAT40",
+    "ANSC20",
+    "ANTH1",
+    "ANTH1L",
+    "BIO16",
+    "BIO20",
+    "GEOG10",
+    "MATH1A",
+    "MATH1B",
+    "MATH25",
+    "PHYS20A",
+    "PHYS20B"
+   ],
+   "flagged": [
+    "AGRI30",
+    "ANAT40",
+    "ANSC20",
+    "ANTH1",
+    "ANTH1L",
+    "BIO16",
+    "BIO20",
+    "GEOG10",
+    "MATH1A",
+    "MATH1B",
+    "MATH25",
+    "PHYS20A",
+    "PHYS20B"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    18.0,
+    18.0
+   ],
+   "stated": [
+    18.0,
+    18.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [
+    "Outline the scientific method and describe how this method is used to study the natural world; and",
+    "Apply critical thinking skills and knowledge of the scientific method to the observation and exploration of natural phenomena."
+   ],
+   "why": [
+    "not in the catalog text as printed: Outline the scientific method and describe how this method is used to study the ",
+    "not in the catalog text as printed: Apply critical thinking skills and knowledge of the scientific method to the obs"
+   ],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": false
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Natural Sciences (AS)",
+   "measure": "units",
+   "total_units": {
+    "min": 18,
+    "max": 18
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Describe the facts and principles that form the basis of one discipline within the natural sciences;",
+    "Outline the scientific method and describe how this method is used to study the natural world; and",
+    "Apply critical thinking skills and knowledge of the scientific method to the observation and exploration of natural phenomena."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Area Disciplines 1-5 (Chemistry, Earth and Space Science, Life Science, Mathematics, Physics)",
+    "rule": "choose_units",
+    "minimum": 18,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CHEM 60",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ASTR 3",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ASTR 3L",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ASTR 4",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ASTR 4L",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ASTR 12",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ASTR 42",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENVS 8",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENVS 12",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOG 4",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOG 4L",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOG 10",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "GEOG 10L",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOL 1",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOL 1L",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOL 11",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOL 20",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MTER 10",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MTER 10L",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NRM 12",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHSC 21",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AGRI 20",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AGRI 30",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ANAT 1",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ANAT 40",
+        "units": null,
+        "catalog_addition": true
+       },
+       {
+        "code": "ANAT 58",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANSC 20",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ANTH 1",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ANTH 1L",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ANTH 19",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIO 2.1",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIO 2.2",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIO 2.3",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIO 10",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIO 12",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIO 13",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIO 14",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIO 16",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BIO 20",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BIO 25",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIO 27",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIO 31",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BTNY 10",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BTNY 40",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FDNT 10",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MICR 5",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MICR 60",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYZ 1",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PHYZ 58",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "NRM 51",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SUAG 5",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 1A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MATH 1B",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MATH 4",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 9",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 10",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "STAT C1000",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 16",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 25",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MATH 27",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 58",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 74",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC 9",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS 1",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS 11",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS 20A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PHYS 20B",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PHYS 40",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS 41",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS 42",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS 43",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "CHEM 12A",
+    "why": "not in the excerpt; Area Discipline 1 (Chemistry) list likely on page 180, cut off"
+   },
+   {
+    "code": "CHEM 12B",
+    "why": "not in the excerpt; Chemistry list likely on page 180, cut off"
+   },
+   {
+    "code": "CHEM 3A",
+    "why": "not in the excerpt; Chemistry list likely on page 180, cut off"
+   },
+   {
+    "code": "CHEM 3AL",
+    "why": "not in the excerpt; Chemistry list likely on page 180, cut off"
+   },
+   {
+    "code": "CHEM 3B",
+    "why": "not in the excerpt; Chemistry list likely on page 180, cut off"
+   },
+   {
+    "code": "CHEM 42",
+    "why": "not in the excerpt; Chemistry list likely on page 180, cut off"
+   },
+   {
+    "code": "CHEM 8",
+    "why": "not in the excerpt; Chemistry list likely on page 180, cut off"
+   },
+   {
+    "code": "ANTH C1001",
+    "why": "catalog prints ANTH 1 Biological Anthropology instead (recorded as addition)"
+   },
+   {
+    "code": "ANTH C1001L",
+    "why": "catalog prints ANTH 1L Biological Anthropology Lab instead (recorded as addition)"
+   },
+   {
+    "code": "MATH C2210",
+    "why": "catalog prints MATH 1A Calculus, First Course instead (recorded as addition)"
+   },
+   {
+    "code": "MATH C2220",
+    "why": "catalog prints MATH 1B Calculus, Second Course instead (recorded as addition)"
+   },
+   {
+    "code": "BIOLC1000",
+    "why": "not in the text (may be on cut-off page 180)"
+   },
+   {
+    "code": "LIR 10",
+    "why": "not in the text (may be on cut-off page 180)"
+   }
+  ],
+  "notes": [
+   "The excerpt begins mid-section on page 181; the section heading, description, Area Discipline 1 (Chemistry) list and any total/GE lines on page 180 are not in the text. Section heading 'Natural Sciences (AS)' is inferred, not printed in the excerpt.",
+   "total_units 18 taken from the program's own rule 'Students must complete at least 18 units'; it is a minimum, and no 'Total Hours/Units' line appears in the excerpt.",
+   "Distribution rule: course choices must include at least one course from three different science area disciplines (chemistry, earth & space sciences, life sciences, math, physics). Recorded as a single choose_units block.",
+   "Only one course each may count from ANAT 1/ANAT 40/ANAT 58, MICR 5/MICR 60, and PHYZ 1/PHYZ 58; recorded as alternatives. Units 5 come from that restriction table; no units are printed beside other courses in the excerpt.",
+   "STAT is printed as 'STAT 1000 (STAT C1000)'; recorded as STAT C1000. MATH 9 and MATH 27 match closed-list MATH9 and MATH27.",
+   "GE pattern and degree total not printed in the visible Natural Sciences section; the Cal-GETC/60-unit text belongs to the Nursing and Nutrition sections and was ignored.",
+   "Program Student Learning Outcomes are printed for the program as a whole; recorded for this A.S. award."
+  ]
+ },
+ "extracted_run": "39006464249"
+}

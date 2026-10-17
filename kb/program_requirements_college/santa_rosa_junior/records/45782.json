@@ -1,0 +1,269 @@
+{
+ "college": "Santa Rosa Junior College",
+ "control_number": "45782",
+ "shape": "degree",
+ "title": "Architecture",
+ "award": "A.S. Degree",
+ "source_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=113",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 9564,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 9564,
+    "output_tokens": 2026,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2026,
+  "output_tokens_details": {
+   "thinking_tokens": 651
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.07878,
+ "ms": 19196,
+ "seconds": 19.6,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 11,
+   "listed": 12,
+   "share": 0.917,
+   "missing": [
+    "ARCH52"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "ARCH10"
+   ],
+   "flagged": [
+    "ARCH10"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    33.0,
+    33.0
+   ],
+   "stated": [
+    33.0,
+    33.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Architecture (AS)",
+   "measure": "units",
+   "total_units": {
+    "min": 33,
+    "max": 33
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Apply critical thinking skills to create, develop, and analyze relevant design solutions within a given criteria set.",
+    "Use a design language to effectively communicate analytical, ecological, and other design concepts through verbal and written language, diagrams, plans and sketches, digital and physical models, and other media.",
+    "Work collaboratively and contribute to a team, embracing culturally diverse critiques and contributions from cohorts to achieve holistic design solutions.",
+    "Identify preliminary materials, processes, sequencing, building systems, and structures related to basic construction activities.",
+    "Identify the pathways to licensure and the roles, responsibilities, and contributions of various design and construction professionals within the Architecture, Engineering and Construction (AEC) industries."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Architecture Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ARCH 2.1",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARCH 2.2",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARCH 2.3",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARCH 12",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARCH 25A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARCH 25B",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARCH 26A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARCH 10",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ARCH 60",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "INDE 73",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select any combination totaling at least 3.00 units from the following",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "CONS 103",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARCH 26B",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ARCH 52",
+    "why": "not in the text; the catalog prints ARCH 10 with the same title (Visual Communication in Architecture) instead"
+   }
+  ],
+  "notes": [
+   "The requirements heading reads 'Architecture Requirements - complete 32.00 units' but the table ends with 'Total Hours/Units 33'; total_units records the printed table total 33. Reviewer should check which is correct.",
+   "ARCH 25B is printed at 4 units; the state file stores 3.",
+   "ARCH 10 'Visual Communication in Architecture' appears where the closed list has ARCH 52 with the same title; possibly a renumbering. Recorded as catalog addition.",
+   "The section prints ADT-style boilerplate (60 CSU-transferable units including Cal-GETC, minimum 18 units in the major) although the award is an A.S.; ge_pattern records Cal-GETC as named, but no degree total or GE units are printed for this award.",
+   "Units for the elective courses CONS 103 and ARCH 26B are not printed beside them in the catalog.",
+   "The section spans a page break (pp. 113-114); the running header on p.114 names the next program."
+  ]
+ },
+ "extracted_run": "39006464249"
+}

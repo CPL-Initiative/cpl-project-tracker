@@ -1,0 +1,1045 @@
+{
+ "college": "Santa Rosa Junior College",
+ "control_number": "32357",
+ "shape": "adt",
+ "title": "Kinesiology",
+ "award": "A.A- T Degree",
+ "source_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=169",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 10695,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 10695,
+    "output_tokens": 8332,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 8332,
+  "output_tokens_details": {
+   "thinking_tokens": 2039
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.20942,
+ "ms": 60574,
+ "seconds": 60.9,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 72,
+   "listed": 135,
+   "share": 0.533,
+   "missing": [
+    "ANAT1",
+    "DANC101",
+    "DANC102",
+    "DANC111",
+    "DANC112",
+    "DANC113",
+    "DANC114",
+    "DANC131",
+    "DANC132",
+    "DANC133",
+    "DANC134",
+    "DANC141",
+    "DANC142",
+    "DANC143",
+    "DANC144",
+    "DANC161",
+    "DANC162",
+    "DANC163",
+    "DANC164",
+    "DANC211",
+    "DANC212",
+    "DANC213",
+    "DANC214",
+    "DANC35",
+    "DANC371",
+    "DANC372",
+    "DANC881",
+    "DANC882",
+    "DANC883",
+    "DANC884",
+    "KAQUA102",
+    "KFIT11",
+    "KFIT12",
+    "KFIT21",
+    "KFIT22",
+    "KIN1",
+    "KINA1",
+    "KINA101",
+    "KINA11",
+    "KINA12",
+    "KINA121",
+    "KINA123",
+    "KINA21",
+    "KINA23",
+    "KINA31",
+    "KINA32",
+    "KINA41",
+    "KINC10",
+    "KINC11",
+    "KINC12",
+    "KINC13",
+    "KINC14",
+    "KINC21",
+    "KINC22",
+    "KINC23",
+    "KINC4",
+    "KINC41",
+    "KINC42",
+    "KINC43",
+    "PHYZ1",
+    "PSYCC1000",
+    "SOCIC1000",
+    "STATC1000"
+   ],
+   "unexplained": [
+    "PSYCC1000",
+    "STATC1000"
+   ],
+   "none_placed": false,
+   "pass": false
+  },
+  "invented": {
+   "count": 5,
+   "codes": [
+    "BIO10",
+    "KIN53",
+    "PSYC1000(PSYCC1000)",
+    "SOC1",
+    "STAT1000(STATC1000)"
+   ],
+   "flagged": [
+    "BIO10",
+    "KIN53",
+    "SOC1"
+   ],
+   "pass": false
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    9.0,
+    10.5
+   ],
+   "stated": [
+    22.0,
+    22.0
+   ],
+   "against": "program",
+   "why": [
+    "the blocks sum to 9.0-10.5; the catalog states 22.0-22.0"
+   ]
+  },
+  "repeated": {
+   "codes": [
+    "KFIT32 in 'Movement-based Courses (Area 4 continued, Area 5: Individual Sports, Area 6: Team Sports)'"
+   ],
+   "pass": false
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Kinesiology for Transfer",
+   "measure": "units",
+   "total_units": {
+    "min": 22,
+    "max": 22
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Demonstrate proﬁciency in the principles and execution of movement-based activity and skills appropriate to the speciﬁc activities completed.",
+    "Explain the opportunities, pathways, and skills necessary for careers in the discipline of Kinesiology and related ﬁelds.",
+    "Apply anatomy, physiology, and biomechanics terminology and principles when describing the effects of exercise and performing physical skills and movement.",
+    "Explain the physiological and psychological/mental health beneﬁts of regular physical activity in maintaining a healthy lifestyle."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Movement-based Courses (Area 4 continued, Area 5: Individual Sports, Area 6: Team Sports)",
+    "rule": "choose_courses",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "KFIT 3.1",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KFIT 3.2",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KFIT 3.3",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KFIT 4.1",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KFIT 5",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KFIT 5.1",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KFIT 5.2",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KFIT 5.3",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KFIT 6",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KFIT 6.1",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KFIT 6.2",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KFIT 7.1",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KFIT 7.2",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KFIT 8",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KFIT 8.1",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KFIT 8.2",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KFIT 10.1",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KFIT 11.1",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KFIT 12.1",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KFIT 16.1",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KFIT 17.1",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KFIT 20.1",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KFIT 21.1",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KFIT 25.1",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KFIT 26.1",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KFIT 30.1",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KFIT 31.1",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KFIT 32",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KFIT 32.1",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KFIT 32.2",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KFIT 32.3",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KFIT 35.1",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KFIT 36.1",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KFIT 37",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KFIT 37.1",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KFIT 50",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KFIT 9",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KFIT 9.1",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KFIT 9.2",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KFIT 9.3",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KINI 2.1",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KINI 2.2",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KINI 2.3",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KINI 3.1",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KINI 3.2",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KINI 3.3",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KINI 4.1",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KINI 4.2",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KINI 4.3",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KINI 79.1",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KINI 79.2",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KINI 79.3",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KINT 1.1",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KINT 2.1",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KINT 4",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KINT 4.1",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KINT 4.2",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KINT 4.3",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KINT 6.1",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KINT 6.2",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KINT 7",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KINT 7.1",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KINT 7.2",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KINT 7.3",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KINT 8.1",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KINT 8.2",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KINT 8.3",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KINT 9.1",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Kinesiology for Transfer List A Requirement",
+    "rule": "choose_units",
+    "minimum": 6,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "BIO 10",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "KIN 53",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CHEM 3A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 3AL",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "STAT 1000 (STAT C1000)",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PSYC 9",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS 20A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PHYS 40",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC 1000 (PSYC C1000)",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "SOC 1",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "KIN 1",
+    "why": "core requirement section not in text (likely on previous page)"
+   },
+   {
+    "code": "ANAT 1",
+    "why": "core requirement section not in text (likely on previous page)"
+   },
+   {
+    "code": "PHYZ 1",
+    "why": "core requirement section not in text (likely on previous page)"
+   },
+   {
+    "code": "KFIT 1.1",
+    "why": "not in text; start of KFIT area likely on previous page"
+   },
+   {
+    "code": "KFIT 1.2",
+    "why": "not in text; start of KFIT area likely on previous page"
+   },
+   {
+    "code": "KFIT 2.1",
+    "why": "not in text; start of KFIT area likely on previous page"
+   },
+   {
+    "code": "KFIT 2.2",
+    "why": "not in text; start of KFIT area likely on previous page"
+   },
+   {
+    "code": "KINA 1",
+    "why": "not in text; KINA area likely on previous page"
+   },
+   {
+    "code": "KINA 1.1",
+    "why": "not in text; KINA area likely on previous page"
+   },
+   {
+    "code": "KINA 1.2",
+    "why": "not in text; KINA area likely on previous page"
+   },
+   {
+    "code": "KINA 10.1",
+    "why": "not in text; KINA area likely on previous page"
+   },
+   {
+    "code": "KINA 12.1",
+    "why": "not in text; KINA area likely on previous page"
+   },
+   {
+    "code": "KINA 12.3",
+    "why": "not in text; KINA area likely on previous page"
+   },
+   {
+    "code": "KINA 2.1",
+    "why": "not in text; KINA area likely on previous page"
+   },
+   {
+    "code": "KINA 2.3",
+    "why": "not in text; KINA area likely on previous page"
+   },
+   {
+    "code": "KINA 3.1",
+    "why": "not in text; KINA area likely on previous page"
+   },
+   {
+    "code": "KINA 3.2",
+    "why": "not in text; KINA area likely on previous page"
+   },
+   {
+    "code": "KINA 4.1",
+    "why": "not in text; KINA area likely on previous page"
+   },
+   {
+    "code": "KAQUA 10.2",
+    "why": "not in text; aquatics area likely on previous page"
+   },
+   {
+    "code": "KINC 1.1",
+    "why": "not in text; KINC area likely on previous page"
+   },
+   {
+    "code": "KINC 1.2",
+    "why": "not in text; KINC area likely on previous page"
+   },
+   {
+    "code": "KINC 1.3",
+    "why": "not in text; KINC area likely on previous page"
+   },
+   {
+    "code": "KINC 1.4",
+    "why": "not in text; KINC area likely on previous page"
+   },
+   {
+    "code": "KINC 10",
+    "why": "not in text; KINC area likely on previous page"
+   },
+   {
+    "code": "KINC 2.1",
+    "why": "not in text; KINC area likely on previous page"
+   },
+   {
+    "code": "KINC 2.2",
+    "why": "not in text; KINC area likely on previous page"
+   },
+   {
+    "code": "KINC 2.3",
+    "why": "not in text; KINC area likely on previous page"
+   },
+   {
+    "code": "KINC 4",
+    "why": "not in text; KINC area likely on previous page"
+   },
+   {
+    "code": "KINC 4.1",
+    "why": "not in text; KINC area likely on previous page"
+   },
+   {
+    "code": "KINC 4.2",
+    "why": "not in text; KINC area likely on previous page"
+   },
+   {
+    "code": "KINC 4.3",
+    "why": "not in text; KINC area likely on previous page"
+   },
+   {
+    "code": "DANC 10.1",
+    "why": "not in text; DANC area likely on previous page"
+   },
+   {
+    "code": "DANC 10.2",
+    "why": "not in text; DANC area likely on previous page"
+   },
+   {
+    "code": "DANC 11.1",
+    "why": "not in text; DANC area likely on previous page"
+   },
+   {
+    "code": "DANC 11.2",
+    "why": "not in text; DANC area likely on previous page"
+   },
+   {
+    "code": "DANC 11.3",
+    "why": "not in text; DANC area likely on previous page"
+   },
+   {
+    "code": "DANC 11.4",
+    "why": "not in text; DANC area likely on previous page"
+   },
+   {
+    "code": "DANC 13.1",
+    "why": "not in text; DANC area likely on previous page"
+   },
+   {
+    "code": "DANC 13.2",
+    "why": "not in text; DANC area likely on previous page"
+   },
+   {
+    "code": "DANC 13.3",
+    "why": "not in text; DANC area likely on previous page"
+   },
+   {
+    "code": "DANC 13.4",
+    "why": "not in text; DANC area likely on previous page"
+   },
+   {
+    "code": "DANC 14.1",
+    "why": "not in text; DANC area likely on previous page"
+   },
+   {
+    "code": "DANC 14.2",
+    "why": "not in text; DANC area likely on previous page"
+   },
+   {
+    "code": "DANC 14.3",
+    "why": "not in text; DANC area likely on previous page"
+   },
+   {
+    "code": "DANC 14.4",
+    "why": "not in text; DANC area likely on previous page"
+   },
+   {
+    "code": "DANC 16.1",
+    "why": "not in text; DANC area likely on previous page"
+   },
+   {
+    "code": "DANC 16.2",
+    "why": "not in text; DANC area likely on previous page"
+   },
+   {
+    "code": "DANC 16.3",
+    "why": "not in text; DANC area likely on previous page"
+   },
+   {
+    "code": "DANC 16.4",
+    "why": "not in text; DANC area likely on previous page"
+   },
+   {
+    "code": "DANC 21.1",
+    "why": "not in text; DANC area likely on previous page"
+   },
+   {
+    "code": "DANC 21.2",
+    "why": "not in text; DANC area likely on previous page"
+   },
+   {
+    "code": "DANC 21.3",
+    "why": "not in text; DANC area likely on previous page"
+   },
+   {
+    "code": "DANC 21.4",
+    "why": "not in text; DANC area likely on previous page"
+   },
+   {
+    "code": "DANC 35",
+    "why": "not in text; DANC area likely on previous page"
+   },
+   {
+    "code": "DANC 37.1",
+    "why": "not in text; DANC area likely on previous page"
+   },
+   {
+    "code": "DANC 37.2",
+    "why": "not in text; DANC area likely on previous page"
+   },
+   {
+    "code": "DANC 88.1",
+    "why": "not in text; DANC area likely on previous page"
+   },
+   {
+    "code": "DANC 88.2",
+    "why": "not in text; DANC area likely on previous page"
+   },
+   {
+    "code": "DANC 88.3",
+    "why": "not in text; DANC area likely on previous page"
+   },
+   {
+    "code": "DANC 88.4",
+    "why": "not in text; DANC area likely on previous page"
+   },
+   {
+    "code": "SOCIC1000",
+    "why": "catalog prints SOC 1 Introduction to Sociology instead; recorded SOC 1 as a catalog addition (likely the same course)"
+   }
+  ],
+  "notes": [
+   "The text begins mid-section on page 169: the program heading, description, core requirements (likely KIN 1, ANAT 1, PHYZ 1) and movement Areas 1-3 plus the start of the KFIT area are on the previous page and not in the text. Section heading 'Kinesiology for Transfer' is inferred from the List A heading.",
+   "Movement-based courses: per note 1, students take 3 movement-based courses for a minimum of 3 units, at most 1 course from any 3 of the areas (KINA, KINC, DANC, KFIT, KINI, KINT). Recorded the visible Area 4 (KFIT, heading cut off), Area 5: Individual Sports and Area 6: Team Sports as one choose_courses block of 3; the one-per-area restriction is not captured by the schema.",
+   "No units are printed beside any course in the text; all course units are null.",
+   "KINI 79.2 as printed matches closed-list code 'KINI792' (Intermediate Pickleball); treated as on the closed list.",
+   "CHEM 3A & 3AL are printed as one paired option in List A; recorded as two entries but they are taken together.",
+   "STAT 1000 (STAT C1000) and PSYC 1000 (PSYC C1000) are printed with both old and common course numbers; matched to closed-list STAT C1000 and PSYC C1000.",
+   "BIO 10 and KIN 53 are not on the closed list; recorded as catalog additions.",
+   "Total Hours/Units 22 recorded as the major total; no GE pattern or degree total printed in the visible text.",
+   "Program Student Learning Outcomes are copied with the PDF's ligature characters (ﬁ) as printed."
+  ]
+ },
+ "extracted_run": "39006464249"
+}

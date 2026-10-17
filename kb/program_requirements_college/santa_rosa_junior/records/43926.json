@@ -1,0 +1,238 @@
+{
+ "college": "Santa Rosa Junior College",
+ "control_number": "43926",
+ "shape": "noncredit",
+ "title": "EMLS NC: Intermediate",
+ "award": "Noncredit program",
+ "source_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=314",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7820,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7820,
+    "output_tokens": 1657,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1657,
+  "output_tokens_details": {
+   "thinking_tokens": 562
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.06442,
+ "ms": 13408,
+ "seconds": 13.9,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 8,
+   "listed": 8,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    393.75,
+    420.0
+   ],
+   "stated": [
+    393.75,
+    393.75
+   ],
+   "against": "program",
+   "why": [
+    "the blocks sum to 393.75-420.0; the catalog states 393.75-393.75"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Non-Credit Intermediate English for Academics and Careers - Complete 393.75 Hours",
+   "measure": "hours",
+   "total_units": {
+    "min": 393.75,
+    "max": 393.75
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Produce writings that demonstrate organization and content, critical thinking, vocabulary and fluency, and grammatical accuracy for a variety of audiences and purposes.",
+    "Comprehend reading passages in a range of contexts by identifying organizational strategies, main ideas, and details, as well as writing paraphrases and summaries.",
+    "Word-process writings of various types and access information on the Internet.",
+    "Demonstrate content knowledge of the vocation(s) introduced in chosen electives."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Complete 2 core courses (315 hours)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 315,
+     "max": 315
+    },
+    "courses": [
+     {
+      "code": "EMLS 771",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "EMLS 772",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Complete 1 elective course (52.50 hours)",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 52.5,
+     "max": 52.5
+    },
+    "courses": [
+     {
+      "code": "EMLS 771CP",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "EMLS 772CP",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Complete 1 elective course (26.25-52.50 hours)",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 26.25,
+     "max": 52.5
+    },
+    "courses": [
+     {
+      "code": "EMLS 732",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "EMLS 734",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "EMLS 735",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "EMLS 753",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The requirements table for this program appears on page 314 under the running header for 'EMLS NC: Literacy Foundations'; it is the tail of the Intermediate program's section, which likely begins on page 313 (description and heading not included in the text).",
+   "The catalog prints 0 in the Hours/Units column beside each course; this is not an hour figure, so per-course hours are left null. Block hours come from the printed headings (315; 52.50; 26.25-52.50).",
+   "The two core courses are printed as a combined row 'EMLS 771 & EMLS 772' with 315 hours for both.",
+   "Elective blocks are printed as 'or' rows; recorded as choose 1 course from each list."
+  ]
+ },
+ "extracted_run": "39006464249"
+}

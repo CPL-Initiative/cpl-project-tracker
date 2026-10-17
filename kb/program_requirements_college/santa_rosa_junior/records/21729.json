@@ -1,0 +1,294 @@
+{
+ "college": "Santa Rosa Junior College",
+ "control_number": "21729",
+ "shape": "certificate",
+ "title": "Medical Assisting",
+ "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+ "source_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=174",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8000,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8000,
+    "output_tokens": 2648,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2648,
+  "output_tokens_details": {
+   "thinking_tokens": 869
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.08496,
+ "ms": 22535,
+ "seconds": 22.9,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 14,
+   "listed": 15,
+   "share": 0.933,
+   "missing": [
+    "PSYCC1000"
+   ],
+   "unexplained": [
+    "PSYCC1000"
+   ],
+   "none_placed": false,
+   "pass": false
+  },
+  "invented": {
+   "count": 2,
+   "codes": [
+    "MA164",
+    "PSYC1000(PSYCC1000)"
+   ],
+   "flagged": [
+    "MA164"
+   ],
+   "pass": false
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    40.5,
+    40.5
+   ],
+   "stated": [
+    40.5,
+    40.5
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 6,
+   "courses": 0,
+   "count": 6,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Major Requirements (Medical Assisting; the program heading falls before page 174 and is not in the text)",
+   "measure": "units",
+   "total_units": {
+    "min": 40.5,
+    "max": 40.5
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Demonstrate ability to greet patients, answer telephones, schedule appointments, maintain and ﬁling client medical records, complete insurance forms, arrange hospital admissions and laboratory services, handle billing, bookkeeping, and physician correspondence;",
+    "Demonstrate ability to perform clinical tasks such as taking and recording vital signs and medical histories, explaining treatment procedures to clients, preparing clients for examinations, and assisting during examinations;",
+    "Collect and prepare laboratory specimens and perform basic laboratory tests on the premises, dispose of contaminated supplies, and sterilize medical instruments;",
+    "Present in an instructional manner information about medication and special diets;",
+    "Demonstrate ability to perform other clinical tasks such as preparing and administering medications as directed by a physician, authorizing drug reﬁlls as directed, telephoning prescriptions to a pharmacy, preparing clients for x-rays, taking EKG's, removing sutures and changing dressings; and",
+    "Arrange examining room instruments and equipment, purchase and maintain supplies and equipment, and keep waiting and examining rooms neat and clean."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Medical Assisting Core Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ANAT 140",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HLC 140",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HLC 160",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "LIR 10",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MA 160",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MA 161",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MA 162",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MA 168",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Medical Assisting: Administrative and Clinical",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "MA 163",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MA 164",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MA 165",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MA 167",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MA 169",
+      "units": 2.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MA 174",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MA 176",
+      "units": 4.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC 1000 (PSYC C1000)",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The text begins mid-section on page 174; the Medical Assisting program heading and description are on the previous page and not in the text, so the award type of this section cannot be confirmed. The section includes Associate Degree / ADT boilerplate (Cal-GETC, 60 transferable units, 18-unit major minimum) and a 'Major Requirements' heading, suggesting it may be the Medical Assisting degree section rather than the Certificate of Achievement; reviewer should check that the certificate shares these requirements.",
+   "The ADT boilerplate (60 CSU-transferable units, Cal-GETC) appears to be generic text and not this award's degree total or GE pattern, so degree_total and ge_pattern are left null.",
+   "Total Hours/Units 40.5 printed for the major/requirements recorded as total_units.",
+   "HLC 140, MA 168 and MA 176 match closed-list entries written without a space (HLC140, MA168, MA176). PSYC 1000 is printed with its C-ID code PSYC C1000, which matches the closed list.",
+   "MA 164 (Theories of the Clinical Laboratory, 2) is not in the closed list and is recorded as a catalog addition.",
+   "Program Student Learning Outcomes are printed once for this section; recorded with their trailing punctuation as printed.",
+   "No careers are named in the Medical Assisting text shown; 'Medium Heavy truck technicians' belongs to the next program and was not recorded."
+  ]
+ },
+ "extracted_run": "39006464249"
+}

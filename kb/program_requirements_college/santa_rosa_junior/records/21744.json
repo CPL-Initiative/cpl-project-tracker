@@ -1,0 +1,296 @@
+{
+ "college": "Santa Rosa Junior College",
+ "control_number": "21744",
+ "shape": "certificate",
+ "title": "CA: Restaurant Operations",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=271",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 9656,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 9656,
+    "output_tokens": 2129,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2129,
+  "output_tokens_details": {
+   "thinking_tokens": 739
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.0812,
+ "ms": 16499,
+ "seconds": 16.9,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 12,
+   "listed": 12,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 4,
+   "codes": [
+    "CUL254",
+    "CUL2544",
+    "CUL2552",
+    "CUL99I"
+   ],
+   "flagged": [
+    "CUL254",
+    "CUL2544",
+    "CUL2552",
+    "CUL99I"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    16.5,
+    16.5
+   ],
+   "stated": [
+    16.5,
+    16.5
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 7,
+   "courses": 0,
+   "count": 7,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "CA: Restaurant Operations (Certificate of Achievement)",
+   "measure": "units",
+   "total_units": {
+    "min": 16.5,
+    "max": 16.5
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Employ proper restaurant operations procedures to ensure compliance with safety and sanitation regulations;",
+    "Use basic math skills to accomplish cash management, labor, and food and beverage costing;",
+    "Develop employee professionalism in a restaurant setting;",
+    "Implement industry-standard human resource practices conforming to federal and state wage and labor laws;",
+    "Employ industry standards relating to service, sales, and alcoholic beverage service;",
+    "Apply human resource principles to manage a restaurant staff; and",
+    "Employ the diversity of cultural influences and values related to a professional culinary environment."
+   ],
+   "careers": [
+    "managerial roles"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Culinary Arts: Restaurant Management Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CUL 230",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CUL 255.2",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CUL 258.1",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CUL 258.4",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CUL 258.6",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CUL 258.3",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CUL 258.2",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select any combination totaling at least 4.50 units from the following",
+    "rule": "choose_units",
+    "minimum": 4.5,
+    "option_group": null,
+    "stated": {
+     "min": 4.5,
+     "max": 4.5
+    },
+    "courses": [
+     {
+      "code": "BGN 81",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BMG 61",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CUL 99I",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CUL 251A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CUL 254",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CUL 254.4",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HOSP 53",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HOSP 54",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPAN 1",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The requirements table under the CA: Restaurant Operations section is headed 'Culinary Arts: Restaurant Management Requirements - Complete 16.50 Units'; read as this award's requirements.",
+   "The elective list prints no units beside individual courses; units left null.",
+   "Catalog note: if CUL 99I Culinary Arts Internship is selected as an elective, it should be completed for 1 unit.",
+   "Page 272 running header reads 'Cal-GETC GE Pattern (Certificate of Achievement)' but the content continues the Restaurant Operations section.",
+   "Careers taken from the description: 'prepared to work in a variety of managerial roles in restaurants, hotels, catering companies and other similar food service businesses'."
+  ]
+ },
+ "extracted_run": "39006464249"
+}

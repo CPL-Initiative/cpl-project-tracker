@@ -1,0 +1,168 @@
+{
+ "college": "Santa Rosa Junior College",
+ "control_number": "30923",
+ "shape": "certificate",
+ "title": "Wastewater Treatment Operatns",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=214",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7662,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7662,
+    "output_tokens": 1343,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1343,
+  "output_tokens_details": {
+   "thinking_tokens": 589
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.05751,
+ "ms": 12285,
+ "seconds": 12.6,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 6,
+   "share": 0.0,
+   "missing": [
+    "WWTR112",
+    "WWTR120",
+    "WWTR121",
+    "WWTR122",
+    "WWTR123",
+    "WWTR124"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": true,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "WWTR 112",
+    "why": "named only in the A.S. section; certificate section not in the text"
+   },
+   {
+    "code": "WWTR 120",
+    "why": "named only in the A.S. section; certificate section not in the text"
+   },
+   {
+    "code": "WWTR 121",
+    "why": "named only in the A.S. section; certificate section not in the text"
+   },
+   {
+    "code": "WWTR 122",
+    "why": "named only in the A.S. section; certificate section not in the text"
+   },
+   {
+    "code": "WWTR 123",
+    "why": "named only in the A.S. section; certificate section not in the text"
+   },
+   {
+    "code": "WWTR 124",
+    "why": "named only in the A.S. section; certificate section not in the text"
+   }
+  ],
+  "notes": [
+   "The provided text (page 214) contains only the 'Wastewater Treatment Operatns (AS)' degree section, followed by 'Welding Technology (AS)'. No Certificate of Achievement section for Wastewater Treatment Operations appears, so no blocks, totals, outcomes or careers were recorded for the certificate. The certificate section is likely on another page of the catalog and should be checked.",
+   "For reference, the AS section lists: all of WWTR 112, 120, 121, 122, 123, 124 (3 units each); electives totaling at least 6 units from BGN 71, CHEM 42, CHEM 60, CS 60.1A, CS 61.1A, ENGL 1000 (ENGL C1000), ENVS 12, MATH 101, WTR 110, WTR 111, WWTR 125; LIR 10 (1 unit); Total Hours/Units 25. It also prints six Program Student Learning Outcomes. If the certificate's requirements match, these may apply, but the text does not state that.",
+   "The AS section's 'Associate Degree Requirements' text describes ADT/Cal-GETC requirements (60 CSU-transferable units, 18-unit major), which appears to be boilerplate that may not fit this local AS degree."
+  ]
+ },
+ "extracted_run": "39006464249"
+}
