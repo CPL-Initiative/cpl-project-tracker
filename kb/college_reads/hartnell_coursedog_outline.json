@@ -1,0 +1,26 @@
+{
+ "_readme": "S409 SkyOcotillo, 2026-10-17. Hartnell and Merced keep their catalogs on Coursedog (catalog.prod.coursedog.com and catalog.mccd.edu), a host the college read does not yet walk. A Coursedog catalog draws its pages from data its own scripts fetch, as curriQunet's and eLumen's do (S357, S380), so this read loads the programs view with \"network\": true and prints what the scripts fetched from the host. Pages only, no model call, no table write.",
+ "college": "Hartnell College",
+ "questions": {
+  "catalog_source": "Which addresses the catalog's scripts fetch its program list and one program's requirements from, and in what shape.",
+  "program_list": "What the Programs view lists: each program's title, award, id and the address of its page."
+ },
+ "keywords": [
+  "[Cc]ertificate",
+  "A\\.S\\.",
+  "A\\.A\\.",
+  "[Aa]ssociate",
+  "[Dd]egree",
+  "[Pp]rogram",
+  "[Uu]nits?",
+  "[Rr]equire"
+ ],
+ "pages": [
+  {
+   "answers": ["catalog_source", "program_list"],
+   "url": "https://hartnell.catalog.prod.coursedog.com/programs",
+   "network": true,
+   "links": "program|degree|certificate"
+  }
+ ]
+}

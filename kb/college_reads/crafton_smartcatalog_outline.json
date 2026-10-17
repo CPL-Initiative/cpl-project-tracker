@@ -1,0 +1,32 @@
+{
+ "_readme": "S409 SkyOcotillo, 2026-10-17. Crafton Hills and Taft keep their catalogs on SmartCatalog (smartcatalogiq.com), a host the college read does not yet walk. Before any reader change, this read prints the host's own outline: the catalog's front page and the pages its program links open, one level deep, and the sitemap SmartCatalog hosts publish. Pages only, no model call, no table write.",
+ "college": "Crafton Hills College",
+ "questions": {
+  "program_list": "Where the catalog lists its programs (degrees and certificates): the page, each program's title, award and address.",
+  "program_page": "What one program page prints: the course list as code, title and units, any choose-N block, and the total.",
+  "sitemap": "Whether the host publishes a sitemap naming each program page."
+ },
+ "keywords": [
+  "[Cc]ertificate",
+  "A\\.S\\.",
+  "A\\.A\\.",
+  "[Aa]ssociate",
+  "[Dd]egree",
+  "[Pp]rogram",
+  "[Uu]nits?",
+  "[Rr]equired",
+  "[Ss]elect"
+ ],
+ "pages": [
+  {
+   "answers": ["program_list"],
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog",
+   "links": "program|degree|certificate|associate|major",
+   "follow": "programs|degrees|certificates|degree-and-certificate|majors"
+  },
+  {
+   "answers": ["sitemap"],
+   "url": "https://craftonhills.smartcatalogiq.com/sitemap.xml"
+  }
+ ]
+}
