@@ -52,6 +52,12 @@ is his standing preference there too.
    same sheet as the S336 Sam had just opened (section *A signed-off session lets
    go*). A scheduled session that finds another one working ends its turn in one
    line instead: the next firing tries again.
+   **When `list_sessions` is not among your tools, read the open PRs** (newest
+   updated first, with their comments) and the commits on `main` since the
+   handoff. On 2026-10-17 the 05:12Z and 06:12Z firings both lacked it, both ran
+   as S403, and each wrote a PDF reader; the 08:12Z firing found the two PRs, read
+   the writer note in their comments, and merged the work (#2192). A PR updated in
+   the last half hour is a live session: end in one line.
 2. **Paused?** If the latest handoff carries a line `Scheduled run: paused —
    <reason>`, and nothing on the standing sheet has been answered since, end in
    one line. Sam lifts a pause by answering the sheet or by saying so.
