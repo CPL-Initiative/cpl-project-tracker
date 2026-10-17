@@ -333,7 +333,10 @@ def _readings(text: str) -> list[str]:
     reads ("self-\\nemployed" as "self-employed" and as "selfemployed"), so an
     outcome copied across a line break still matches."""
     flat = _flat(text)
-    return [flat, re.sub(r"(\w)- (\w)", r"\1-\2", flat), re.sub(r"(\w)- (\w)", r"\1\2", flat)]
+    # East LA's PDF breaks a word with a hyphen spaced on both sides ("tech - nicians",
+    # "profe - sional"); 82 of its 120 records failed the outcomes check on that (run 39011319511).
+    return [flat, re.sub(r"(\w)- (\w)", r"\1-\2", flat), re.sub(r"(\w)- (\w)", r"\1\2", flat),
+            re.sub(r"(\w) - (\w)", r"\1\2", flat)]
 
 
 def outcome_entries(record: dict) -> list[tuple[str | None, str]]:

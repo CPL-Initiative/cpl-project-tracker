@@ -905,6 +905,10 @@ o = S.outcomes_check(plo, PLO_TEXT)
 check(o["pass"] and o["program"] == 3,
       "outcomes copied across a PDF line break, a line-end hyphen and a curly apostrophe are verbatim: %s"
       % o["why"])
+spaced = {**plo, "program": {**plo["program"], "outcomes": [
+    "Interact with doctors, nurses and technicians in a professional manner."]}}
+check(S.outcomes_check(spaced, "Outcomes\nInteract with doctors, nurses and tech - nicians in a profes - sional manner.")["pass"],
+      "an outcome broken by East LA's spaced hyphen ('tech - nicians') is verbatim (S403)")
 reworded = {**plo, "program": {**plo["program"], "outcomes": [
     "Meet the education requirements for the DRE Real Estate Broker license exam."]}}
 check(not S.outcomes_check(reworded, PLO_TEXT)["pass"],

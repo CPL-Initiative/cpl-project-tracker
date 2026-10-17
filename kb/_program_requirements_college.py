@@ -2049,7 +2049,7 @@ def reconcile_filed(college: str, out_dir: str, run_id: str | None, keep_from: s
         if src.get("text"):
             sources[src["control_number"]] = src
     os.makedirs(os.path.join(out_dir, "records"), exist_ok=True)
-    changed, unread = [], 0
+    changed, unread, rescored = [], 0, 0
     for path in sorted(glob.glob(os.path.join(keep_from, "records", "*.json"))):
         with open(path) as fh:
             filed = json.load(fh)
@@ -2065,10 +2065,18 @@ def reconcile_filed(college: str, out_dir: str, run_id: str | None, keep_from: s
                 a = filed["score"]["arithmetic"]
                 print("%-6s reconciled %s; arith %s" % (filed["control_number"],
                       ", ".join(n["field"] for n in notes), a.get("status")), flush=True)
+            else:
+                # The scorer may have learned a reading since (East LA's spaced hyphens, S403):
+                # the fresh page rescores the record, and its requirements stay as read.
+                fresh = S.score(rec, src["closed_list"], src["text"], filed.get("award") or src.get("award"))
+                if fresh != filed.get("score"):
+                    filed = dict(filed, score=fresh)
+                    rescored += 1
         elif not src:
             unread += 1
         _write(os.path.join(out_dir, "records", os.path.basename(path)), filed)
-    print("reconcile: %d filed records changed, %d had no fresh page" % (len(changed), unread), flush=True)
+    print("reconcile: %d filed records changed, %d rescored, %d had no fresh page"
+          % (len(changed), rescored, unread), flush=True)
     return 0
 
 
