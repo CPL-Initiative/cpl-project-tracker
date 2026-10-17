@@ -1,0 +1,127 @@
+{
+ "college": "Compton College",
+ "load_run": "39007618934",
+ "function": "program_requirement_records_college_load",
+ "at": "2026-10-17T05:49:19Z",
+ "records": 81,
+ "posted": 73,
+ "batches": 3,
+ "inserted": 73,
+ "kept": 0,
+ "skipped": [
+  {
+   "control_number": "37374",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "37477",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "37970",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "38172",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "38175",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "38422",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "43216",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "43718",
+   "why": "places none of its listed courses (another program's page)"
+  }
+ ],
+ "error": null,
+ "extracted_runs": [
+  "39006336111"
+ ],
+ "machine_pass": 65,
+ "inserted_keys": [
+  "37317",
+  "37318",
+  "37320",
+  "37321",
+  "37323",
+  "37332",
+  "37333",
+  "37334",
+  "37335",
+  "37360",
+  "37361",
+  "37362",
+  "37363",
+  "37367",
+  "37369",
+  "37370",
+  "37373",
+  "37375",
+  "37376",
+  "37378",
+  "37379",
+  "37381",
+  "37559",
+  "37569",
+  "37570",
+  "37573",
+  "37574",
+  "37632",
+  "37633",
+  "37634",
+  "37920",
+  "38037",
+  "38069",
+  "38070",
+  "38089",
+  "38171",
+  "38173",
+  "38174",
+  "38176",
+  "38212",
+  "38213",
+  "38214",
+  "38215",
+  "38217",
+  "38218",
+  "38219",
+  "38220",
+  "38330",
+  "38387",
+  "38421",
+  "38424",
+  "38486",
+  "38547",
+  "38548",
+  "40270",
+  "41007",
+  "41026",
+  "41100",
+  "41438",
+  "41599",
+  "41600",
+  "41603",
+  "41625",
+  "42312",
+  "42372",
+  "42423",
+  "43700",
+  "43856",
+  "43857",
+  "44275",
+  "45460",
+  "45545",
+  "46580"
+ ],
+ "kept_keys": [],
+ "rollback": "delete from public.program_requirement_records where college = 'Compton College' and checked = false and control_number in ('37317', '37318', '37320', '37321', '37323', '37332', '37333', '37334', '37335', '37360', '37361', '37362', '37363', '37367', '37369', '37370', '37373', '37375', '37376', '37378', '37379', '37381', '37559', '37569', '37570', '37573', '37574', '37632', '37633', '37634', '37920', '38037', '38069', '38070', '38089', '38171', '38173', '38174', '38176', '38212', '38213', '38214', '38215', '38217', '38218', '38219', '38220', '38330', '38387', '38421', '38424', '38486', '38547', '38548', '40270', '41007', '41026', '41100', '41438', '41599', '41600', '41603', '41625', '42312', '42372', '42423', '43700', '43856', '43857', '44275', '45460', '45545', '46580');"
+}
