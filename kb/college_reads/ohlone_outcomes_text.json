@@ -1,0 +1,19 @@
+{
+ "_readme": "S408 SkyAgave, 2026-10-17. Ohlone's extraction (run 39061732843, chapter 7 PDF, 2026-2027) filed 146 records, and 125 fail the outcomes check: each program outcome the record copies is not in the catalog text as the scorer reads it (01248 'Demonstrate knowledge of real estate listings, deposit receipts, escrows, and fi...'; 01271 'Demonstrate leadership as a member of the interprofessional management team...'). This read prints the pages printing those words, to tell a text the PDF breaks from an outcome the model reworded. Pages only, no model call, no table write.",
+ "college": "Ohlone College",
+ "questions": {
+  "outcome_shape": "How the chapter prints a program's outcomes (line breaks, hyphens, ligatures, bullets, columns), beside the record's copy."
+ },
+ "keywords": [
+  "deposit\\s+receipts",
+  "interprofessional\\s+management"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "outcome_shape"
+   ],
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf"
+  }
+ ]
+}
