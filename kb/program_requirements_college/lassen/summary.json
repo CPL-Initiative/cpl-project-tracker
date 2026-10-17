@@ -2,7 +2,7 @@
  "college": "Lassen College",
  "programs": 78,
  "with_closed_list": 73,
- "found": 64,
+ "found": 0,
  "extracted": 64,
  "errors": 0,
  "passed_machine_checks": 35,
@@ -17,67 +17,286 @@
  "cost_per_program": 0.0709,
  "not_found": [
   {
+   "control_number": "02121",
+   "title": "Agriculture Science and Technology",
+   "award": "A.S. Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "02133",
+   "title": "Vocational Nursing",
+   "award": "A.S. Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "02134",
+   "title": "Administration of Justice",
+   "award": "A.A. Degree",
+   "near_miss": null
+  },
+  {
    "control_number": "09297",
    "title": "Accounting",
    "award": "A.S. Degree",
-   "near_miss": {
-    "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=58",
-    "coverage": 0.421
-   }
+   "near_miss": null
   },
   {
    "control_number": "09299",
    "title": "Administrative Office Technician",
    "award": "A.S. Degree",
-   "near_miss": {
-    "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=59",
-    "coverage": 0.211
-   }
+   "near_miss": null
+  },
+  {
+   "control_number": "09308",
+   "title": "Welding Technology",
+   "award": "A.S. Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "09316",
+   "title": "Child Development",
+   "award": "A.A. Degree",
+   "near_miss": null
   },
   {
    "control_number": "09319",
    "title": "Human Services",
    "award": "A.S. Degree",
-   "near_miss": {
-    "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=144",
-    "coverage": 0.267
-   }
+   "near_miss": null
+  },
+  {
+   "control_number": "12201",
+   "title": "Welding Technology - 1 Year",
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+   "near_miss": null
+  },
+  {
+   "control_number": "17742",
+   "title": "Fire Technology",
+   "award": "A.S. Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "18751",
+   "title": "General Studies Natural Science",
+   "award": "A.A. Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "18752",
+   "title": "University Studies Natural Science",
+   "award": "A.A. Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "18753",
+   "title": "General Studies Social Science",
+   "award": "A.A. Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "18754",
+   "title": "University Studies Social Science",
+   "award": "A.A. Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "18756",
+   "title": "University Studies Agriculture Science",
+   "award": "A.A. Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "18758",
+   "title": "University Studies Humanities",
+   "award": "A.A. Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "18848",
+   "title": "University Studies Allied Health",
+   "award": "A.A. Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "19321",
+   "title": "University Studies Physical Education",
+   "award": "A.A. Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "19375",
+   "title": "Child Development",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": null
   },
   {
    "control_number": "19376",
    "title": "Human Services",
    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
-   "near_miss": {
-    "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=144",
-    "coverage": 0.267
-   }
+   "near_miss": null
+  },
+  {
+   "control_number": "19377",
+   "title": "Fire Technology",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "21595",
+   "title": "Agriculture Science and  Technology",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "21602",
+   "title": "Welding Technology-Two Year",
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+   "near_miss": null
   },
   {
    "control_number": "21605",
    "title": "Drug & Alcohol Paraprofessional",
    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
-   "near_miss": {
-    "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=144",
-    "coverage": 0.267
-   }
+   "near_miss": null
+  },
+  {
+   "control_number": "21606",
+   "title": "Administration of Justice",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "30947",
+   "title": "Administration of Justice",
+   "award": "A.S. T Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "31015",
+   "title": "Early Childhood Education",
+   "award": "A.S. T Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "31037",
+   "title": "Sociology",
+   "award": "A.A- T Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "31132",
+   "title": "Studio Arts",
+   "award": "A.A- T Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "31178",
+   "title": "Art History",
+   "award": "A.A- T Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "31297",
+   "title": "Business Administration",
+   "award": "A.S. T Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "31379",
+   "title": "History",
+   "award": "A.A- T Degree",
+   "near_miss": null
   },
   {
    "control_number": "31407",
    "title": "Graphic Design",
    "award": "A.S. Degree",
-   "near_miss": {
-    "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=53",
-    "coverage": 0.333
-   }
+   "near_miss": null
   },
   {
    "control_number": "31411",
    "title": "Graphic Design",
    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
-   "near_miss": {
-    "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=117",
-    "coverage": 0.364
-   }
+   "near_miss": null
+  },
+  {
+   "control_number": "32083",
+   "title": "Psychology",
+   "award": "A.A- T Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "33263",
+   "title": "Economics",
+   "award": "A.A- T Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "33322",
+   "title": "Engine Repair",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "33323",
+   "title": "Advance Mechanics",
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+   "near_miss": null
+  },
+  {
+   "control_number": "33388",
+   "title": "Kinesiology",
+   "award": "A.A- T Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "33661",
+   "title": "Automotive Technology",
+   "award": "A.S. Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "33729",
+   "title": "Agriculture Animal Science",
+   "award": "A.S. T Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "33730",
+   "title": "Agriculture Business",
+   "award": "A.S. T Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "35106",
+   "title": "Nutrition and Dietetics",
+   "award": "A.S. T Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "36554",
+   "title": "Medical Assisting",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "36681",
+   "title": "Automotive Chassis and Maintenance",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "37760",
+   "title": "Small Business Management",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "40089",
+   "title": "Geographic Information Systems",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": null
   },
   {
    "control_number": "40583",
@@ -86,14 +305,155 @@
    "near_miss": null
   },
   {
+   "control_number": "40731",
+   "title": "Basic Wildland Firefighter",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "41739",
+   "title": "Computer Support Specialist",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "41912",
+   "title": "Social Work and Human Services",
+   "award": "A.A- T Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "42300",
+   "title": "Business Administration 2.0",
+   "award": "A.S. T Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "42798",
+   "title": "Registered Nursing",
+   "award": "A.S. Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "42929",
+   "title": "Computer Information Systems",
+   "award": "A.S. Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "43471",
+   "title": "Cal Fire Academy",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "43543",
+   "title": "Forestry Management",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "43544",
+   "title": "Forestry Management",
+   "award": "A.S. Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "43571",
+   "title": "Student Success Preparation",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "43938",
+   "title": "Registered Dental Assisting",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "44266",
+   "title": "Commercial Driver's Training",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "44457",
+   "title": "Advanced Placement Registered Nursing",
+   "award": "A.S. Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "44495",
+   "title": "Nursing Assistant",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
    "control_number": "45100",
    "title": "Cal-GETC",
    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-   "near_miss": {
-    "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=81",
-    "coverage": 0.369
-   }
+   "near_miss": null
+  },
+  {
+   "control_number": "45318",
+   "title": "Social Work and Human Services",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "45344",
+   "title": "Biology/Chemistry",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "45346",
+   "title": "Natural Science",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "45524",
+   "title": "Administration of Justice - Law Enforcement",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "45525",
+   "title": "Administration of Justice - Corrections",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "45611",
+   "title": "Social Science",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "45924",
+   "title": "Registered Nursing Prerequisite",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "45926",
+   "title": "Humanities",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "45927",
+   "title": "Registered Nursing Advanced Placement Prerequisite",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "46345",
+   "title": "Elementary Teacher Education: Integrated Programs",
+   "award": "A.A. Degree",
+   "near_miss": null
   }
  ],
- "run": "39006337658"
+ "run": "39019548524"
 }
