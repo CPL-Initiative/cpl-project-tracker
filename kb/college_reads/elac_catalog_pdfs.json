@@ -1,0 +1,21 @@
+{
+ "_readme": "S403 SkyYarrow, 2026-10-17. The registry files East Los Angeles College's catalog as PDFs by section. The college pass now reads a whole-catalog PDF (#2190); this read lists the catalog page's PDF links (shown, not followed) so a session can tell whether one file holds the 2026-2027 catalog or which section files hold its programs. One load, no model call.",
+ "college": "East Los Angeles College",
+ "questions": {
+  "catalog_pdfs": "Every PDF the catalog page links: its words and address, and which is the 2026-2027 catalog or its program sections."
+ },
+ "keywords": [
+  "2026",
+  "catalog",
+  "pdf"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "catalog_pdfs"
+   ],
+   "url": "https://www.elac.edu/academic-resources/catalog",
+   "links": "\\.pdf"
+  }
+ ]
+}
