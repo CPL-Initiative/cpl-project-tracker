@@ -1,0 +1,3172 @@
+{
+ "college": "Los Angeles Mission College",
+ "catalog_url": "https://www.lamc.edu/academics/calendar-schedules/schedules-catalog",
+ "platform": "custom_html",
+ "catalog_year": null,
+ "programs": 160,
+ "with_closed_list": 140,
+ "started": "2026-10-17T17:26:01Z",
+ "procedure_step": {
+  "start": "https://www.lamc.edu/academics/calendar-schedules/schedules-catalog",
+  "follow": "2026/2027 Catalog | PDF",
+  "href": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf",
+  "status": 200,
+  "access": "ok"
+ },
+ "pdf": {
+  "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf",
+  "access": "ok",
+  "status": 200,
+  "bytes": 7941524,
+  "pages_total": 238,
+  "error": null,
+  "chars_total": 1295549,
+  "pypdf_accepted": 129,
+  "sample": [
+   "p72: 'Los Angeles Mission College Catalog 2026 / 2027\\n72\\nEDUCATIONAL PROGRAM – STEM, HEALTH, AND FITNESS\\nother factors that impact human health and health dispari -\\nties; the importance of equitable access to health education \\nand healthcare; and'",
+   "p143: 'Enroll now at www.lamission.edu\\n143\\nCOURSE DESCRIPTIONS\\nMULTIMD 250 MULTIMEDIA INTERNSHIP VIDEO PRODUCTION \\n(CSU) 1 UNIT \\nPrerequisites:  MULTIMD 100 and MULTIMD 610 \\nLecture:  0.5 hours | Lab: 1.5 hours\\nStudents applying skills within the '"
+  ],
+  "extractor": "pypdf",
+  "picks": [
+   {
+    "control_number": "03339",
+    "pages": [
+     30,
+     31,
+     32
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 30] Los Angeles Mission College Catalog 2026 / 2027 30 EDUCATIONAL PROGRAMS – BUSINESS, LAW & PUBLIC SAFETY NOTE: A minimum of 60 units and a cumulative GPA of 2.0 or higher must be completed to earn the Associate"
+   },
+   {
+    "control_number": "03340",
+    "pages": [
+     30,
+     31
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 30] ASSOCIATE OF ARTS (AA) Accounting (M003340C) This degree serves as the basis for further undergraduate edu - cation in accounting as well as preparing students for entry- level positions in accounting and tax "
+   },
+   {
+    "control_number": "03348",
+    "pages": [
+     20,
+     21,
+     22,
+     23
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 20] ASSOCIATE OF ARTS (AA) Art (M003348C) The Associate of Arts - Art provides a foundation in studio art practice focusing on the elements and principles of art while exploring a variety of theories, techniques"
+   },
+   {
+    "control_number": "03351",
+    "pages": [
+     40,
+     41
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 40] (M003351C) Students will explore family development and family interac - tions, as well as current issues facing families. This degree will prepare the student for a career working with families in areas suc"
+   },
+   {
+    "control_number": "03361",
+    "pages": [
+     31
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 31] (Paralegal) (M003361C) A paralegal is qualified by education, training, or work experi- ence to work for a law office, corporation, governmental agency, or other entity, performing specifically delegated subst"
+   },
+   {
+    "control_number": "08338",
+    "pages": [
+     75,
+     76,
+     77
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 75] (M008338C) This curriculum provides an orientation to the health sciences while including the general background required for the allied health fields and family environmental sciences. Program Learning Out"
+   },
+   {
+    "control_number": "08342",
+    "pages": [
+     84
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 84] SKILLS CERTIFICATE Programming (M070100J) Core courses for programmer and web-based application pro - grammer. A skills certificate that augments computer science major and non-major researchers and scientist"
+   },
+   {
+    "control_number": "08345",
+    "pages": [
+     73,
+     74
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.929,
+    "opens": "[page 73] Enroll now at www.lamission.edu 73 EDUCATIONAL PROGRAM – STEM, HEALTH, AND FITNESS ASSOCIATE OF SCIENCE (AS) Computer Programmer (M036322C) The Associate of Science Degree in Computer Programming provides a "
+   },
+   {
+    "control_number": "08348",
+    "pages": [
+     24,
+     25,
+     26,
+     27
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 24] ASSOCIATE OF ARTS (AA) Painting (M008348C) The Associate of Arts - Painting provides a foundation in stu - dio art practice focusing on the elements and principles of art while exploring a variety of theories"
+   },
+   {
+    "control_number": "08352",
+    "pages": [
+     22
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 22] (M008352C) The Interior Design Associate of Arts Degree prepares stu - dents for employment and transfer. Students study the ele - ments and principles of design as applied to human and cultural needs for res"
+   },
+   {
+    "control_number": "08355",
+    "pages": [
+     40,
+     41,
+     42,
+     43
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 40] (M008355C) • Completion of any one of the six Child Development Certificates of Achievement with Specialization (36 units), as listed below: – Specializing in Dual Language Learning – Specializing in Family"
+   },
+   {
+    "control_number": "08356",
+    "pages": [
+     42,
+     43
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 42] (M008356D) This certificate is designed for current or prospective family child care providers (individuals who operate a licensed child care program in their homes). Program Learning Outcomes – Upon compl"
+   },
+   {
+    "control_number": "08358",
+    "pages": [
+     41
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 41] (M008358C) Students will explore social service and health care needs of the elderly as they apply to workforce opportunities. This degree will prepare the student for a career working with the aging or eld"
+   },
+   {
+    "control_number": "08362",
+    "pages": [
+     32
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 32] Management (M008362C) The Restaurant Management AA degree program is designed for students preparing for an upwardly mobile career in restaurant/food service management. Students learn the basic and advance"
+   },
+   {
+    "control_number": "08364",
+    "pages": [
+     49,
+     50,
+     51
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 49] (M008364D) The program is designed to train and prepare students for careers in all aspects of the culinary arts and hospitality fields. The design of the program is balanced between devel - oping the culina"
+   },
+   {
+    "control_number": "08368",
+    "pages": [
+     34
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 34] Correction Officer (M008368D) This program prepares students to work as a probation or cor - rections officer in a variety of settings including both public and private detention centers, prisons, juvenile co"
+   },
+   {
+    "control_number": "08372",
+    "pages": [
+     58,
+     59
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 58] Los Angeles Mission College Catalog 2026 / 2027 58 EDUCATIONAL PROGRAMS – SOCIETY, CULTURE, AND COMMUNICATION Program Learning Outcomes – Upon completion, students will be able to: • Evaluate the merits of so"
+   },
+   {
+    "control_number": "10713",
+    "pages": [
+     43
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 43] (M010713D) This certificate will prepare students to provide child care and education for preschool children in early childhood settings. Program Learning Outcomes – Upon completion, students will be able "
+   },
+   {
+    "control_number": "10714",
+    "pages": [
+     42,
+     43,
+     44
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 42] (M010714D) This certificate will prepare students to provide care and edu - cation for young children who are dual language learners in early childhood settings. Program Learning Outcomes – Upon completion,"
+   },
+   {
+    "control_number": "10715",
+    "pages": [
+     42,
+     43
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 42] Specializing in Infant & Toddler (M010715D) This certificate will prepare students to provide care and edu - cation for infants and toddlers in early childhood settings. Program Learning Outcomes – Upon comp"
+   },
+   {
+    "control_number": "10716",
+    "pages": [
+     44
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 44] and Education (M010716D) This certificate is for persons seeking employment or who are employed in school-age childcare programs. Program Learning Outcomes – Upon completion, students will be able to: • Ap"
+   },
+   {
+    "control_number": "11975",
+    "pages": [
+     23,
+     24,
+     25,
+     26
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 23] Web Design (M011975C) This program was created to prepare students for careers involving the Internet and graphic layout with a focus on marketing and design. It integrates the elements of illustra - tion, l"
+   },
+   {
+    "control_number": "11977",
+    "pages": [
+     22,
+     23,
+     24,
+     25
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": false,
+    "coverage": 0.833,
+    "opens": "[page 22] & 3D Design (M011977C) In Multimedia we have an amazing Animation and 3D Design program which is designed for students to examine both 2D and 3D animation principles, as well as story devel - opment, modelin"
+   },
+   {
+    "control_number": "11978",
+    "pages": [
+     23,
+     24,
+     25,
+     26
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 23] Production (M011978C) Students in the program are taught about cinematography, camera techniques, and postproduction. In our program, stu - dents take classes in cinema history, photography /visual sto- rytel"
+   },
+   {
+    "control_number": "15995",
+    "pages": [
+     31,
+     32
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.857,
+    "opens": "[page 31] (M015995C) This program is designed to meet the needs of 1) employed persons desiring to prepare for supervisory positions, and 2) supervisors and other management personnel who wish to gain knowledge which"
+   },
+   {
+    "control_number": "18463",
+    "pages": [
+     226
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.556,
+    "opens": "[page 226] Los Angeles Mission College Catalog 2026 / 2027 226 TRANSFER INFORMATION 1. ENGLISH COMMUNICATION (Three courses: one English Composition, one Critical Thinking and Composition, and one Oral Communication"
+   },
+   {
+    "control_number": "20792",
+    "pages": [
+     72
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 72] ASSOCIATE OF SCIENCE (AS) Biology (M020792C) The Associate of Science (AS) Degree in Biology will provide the student with a strong, basic foundation in the science. The curriculum is generally required of l"
+   },
+   {
+    "control_number": "21760",
+    "pages": [
+     26,
+     27
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 26] Graphic & Web Design (M021760D) This program was created to prepare students for careers involving the Internet and graphic layout with a focus on marketing and design. It integrates the elements of illustra"
+   },
+   {
+    "control_number": "21762",
+    "pages": [
+     26,
+     27
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 26] Los Angeles Mission College Catalog 2026 / 2027 26 EDUCATIONAL PROGRAMS – ARTS, MEDIA & PERFORMANCE CERTIFICATE OF ACHIEVEMENT Multimedia: Animation & 3D Design (M021764D) In Multimedia, we have an amazing An"
+   },
+   {
+    "control_number": "21767",
+    "pages": [
+     25
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 25] (M021767D) The Certificate of Achievement program is designed for stu - dents who have limited time or resources to commit to a full AA degree program and wish to concentrate only on interior design classes "
+   },
+   {
+    "control_number": "21768",
+    "pages": [
+     44
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 44] (M021768D) This certificate will prepare the student for a career working with the aging or elderly. Program Learning Outcomes – Upon completion, students will be able to: • Apply professional standards o"
+   },
+   {
+    "control_number": "21769",
+    "pages": [
+     33
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 33] (Paralegal) (M021769D) A paralegal is qualified by education, training, or work experi- ence to work for a law office, corporation, governmental agency, or other entity, performing specifically delegated subs"
+   },
+   {
+    "control_number": "31007",
+    "pages": [
+     70,
+     71,
+     72,
+     73
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 70] Los Angeles Mission College Catalog 2026 / 2027 70 EDUCATIONAL PROGRAM – STEM, HEALTH, AND FITNESS TEAM SPORTS KIN 286 Baseball Skills KIN 387-1 Basketball I KIN 387-2† Basketball II KIN ATH 511 Intercoll"
+   },
+   {
+    "control_number": "32995",
+    "pages": [
+     43,
+     44
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 43] (M032995D) This certificate will support teachers and paraprofessionals working with children with special needs and/or early inter - vention programs. Program Learning Outcomes – Upon completion, students "
+   },
+   {
+    "control_number": "33084",
+    "pages": [
+     54,
+     55
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 54] Los Angeles Mission College Catalog 2026 / 2027 54 EDUCATIONAL PROGRAMS – SOCIETY, CULTURE, AND COMMUNICATION List A: Select one (1) course: 3 CHICANO 002 The Mexican-American in Contemporary Society CHICANO 00"
+   },
+   {
+    "control_number": "33109",
+    "pages": [
+     29,
+     30
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.889,
+    "opens": "[page 29] Administration of Justice (M033109H) Students completing the Associate in Science in Administration of Justice for Transfer will have satisfied the lower division major preparation for bachelor’s degrees in "
+   },
+   {
+    "control_number": "33131",
+    "pages": [
+     19,
+     20,
+     21,
+     22
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.909,
+    "opens": "[page 19] Arts (M033131G) Students completing the Associate of Arts in Studio Arts for Transfer will have satisfied the lower division major prepara - tion for bachelor’s degrees in similar majors as determined by Cal"
+   },
+   {
+    "control_number": "33215",
+    "pages": [
+     57,
+     58
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 57] Enroll now at www.lamission.edu 57 EDUCATIONAL PROGRAMS – SOCIETY, CULTURE, AND COMMUNICATION List C: Select one (1) course: 3 ENGLISH 102† College Reading and Composition II or ENGL C1001† Critical Thinki"
+   },
+   {
+    "control_number": "33216",
+    "pages": [
+     55
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 55] Philosophy (M033216G) Students completing the Associate of Arts in Philosophy for Transfer will have satisfied the lower division major prepara - tion for bachelor’s degrees in similar majors as determined by"
+   },
+   {
+    "control_number": "33337",
+    "pages": [
+     58,
+     59
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 58] Spanish (M033337G) Students completing the Associate of Arts in Spanish for Transfer will have satisfied the lower division major prepara - tion for bachelor’s degrees in similar majors as determined by Cali"
+   },
+   {
+    "control_number": "33340",
+    "pages": [
+     56,
+     57,
+     58
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 56] Political Science (M033340G) Students completing the Associate of Arts in Political Science for Transfer will have satisfied the lower division major preparation for bachelor’s degrees in similar majors as d"
+   },
+   {
+    "control_number": "33365",
+    "pages": [
+     34,
+     35
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 34] Management (M033365D) The certificate program is designed to train and prepare stu- dents for careers in all aspects of the culinary arts and hos - pi-tality fields. The design of the program is balanced betwe"
+   },
+   {
+    "control_number": "33612",
+    "pages": [
+     56,
+     57,
+     58
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 56] Los Angeles Mission College Catalog 2026 / 2027 56 EDUCATIONAL PROGRAMS – SOCIETY, CULTURE, AND COMMUNICATION ASSOCIATE IN ARTS FOR TRANSFER (AA-T) Political Science (M033340G) Students completing the Associa"
+   },
+   {
+    "control_number": "33613",
+    "pages": [
+     39,
+     40
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 39] Elementary Teacher Education (M033613G) Students completing the Associate of Arts in Elementary Teacher Education for Transfer will have satisfied the lower division major preparation for bachelor’s degrees "
+   },
+   {
+    "control_number": "33689",
+    "pages": [
+     21,
+     22,
+     23,
+     24
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 21] Museum Studies (M033689C) Art, Gallery and Museum Studies Associate of Arts Degree prepares students to enter the field of gallery and museum work and to transfer to a Bachelor of Arts program in Art, Media"
+   },
+   {
+    "control_number": "33950",
+    "pages": [
+     67,
+     68
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 67] Biology (M033950H) Students completing the Associate in Science in Biology for Transfer will have satisfied the lower division major prepara- tion for bachelor’s degrees in similar majors as determined by Ca"
+   },
+   {
+    "control_number": "35063",
+    "pages": [
+     49,
+     50,
+     51
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 49] Baking & Patisserie (M035063D) The Baking & Patisserie Certificate of Achievement is designed for students preparing for an upwardly mobile career in the baking and patisserie industry. The Baking & Patisse"
+   },
+   {
+    "control_number": "35231",
+    "pages": [
+     31
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": false,
+    "coverage": 1.0,
+    "opens": "[page 31] Enroll now at www.lamission.edu 31 EDUCATIONAL PROGRAMS – BUSINESS, LAW & PUBLIC SAFETY Select one (1) course: 3 ECON C2001 Principles of Microeconomics 3 (formerly ECON 001 Principles of Microeconomics) or"
+   },
+   {
+    "control_number": "35251",
+    "pages": [
+     33
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 33] Medical Billing and Coding (M035251D) This certification prepares students to assume entry level med - ical office duties and responsibilities. It also prepares students for career advancement and training in"
+   },
+   {
+    "control_number": "35254",
+    "pages": [
+     77
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 77] Assistant and Home Health Aide (M035254D) NOTE: This program has the following requirements: • Required supplies: Scrubs with name tags, 2 boxes of gloves, gowns (10x), and face masks (100x), • Requirements:"
+   },
+   {
+    "control_number": "35255",
+    "pages": [
+     76
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 76] Technician (M035255C) NOTE: This program has the following requirements: • Required supplies: Scrubs with name tags, • Requirements: Live scan, High school diploma/GED. Hospital Pharmacy requires: Updated Immu"
+   },
+   {
+    "control_number": "35287",
+    "pages": [
+     82
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 82] Technician – Basic (M035287D) This program is designed to prepare students for a career in pharmacy. Upon successful completion of the required course- work students are eligible to apply for the State of Cal"
+   },
+   {
+    "control_number": "35394",
+    "pages": [
+     70,
+     71,
+     72
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 70] Los Angeles Mission College Catalog 2026 / 2027 70 EDUCATIONAL PROGRAM – STEM, HEALTH, AND FITNESS TEAM SPORTS KIN 286 Baseball Skills KIN 387-1 Basketball I KIN 387-2† Basketball II KIN ATH 511 Intercoll"
+   },
+   {
+    "control_number": "35436",
+    "pages": [
+     69,
+     70,
+     71,
+     72
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 69] Kinesiology (M035436G) Students completing the Associate of Arts in Kinesiology for Transfer will have satisfied the lower division major prepara- tion for bachelor’s degrees in similar majors as determined b"
+   },
+   {
+    "control_number": "35600",
+    "pages": [
+     76,
+     77
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 76] Research Lab Assistant (M035600D) This program is designed to prepare students for employment in biotechnology research. Upon successful completion of the required coursework, students will have acquired ski"
+   },
+   {
+    "control_number": "35601",
+    "pages": [
+     76,
+     77
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 76] Lab Assistant (M035601D) This program is designed to prepare students for employment in the field of biotechnology. Upon successful completion of the required coursework, students will have acquired skills i"
+   },
+   {
+    "control_number": "35603",
+    "pages": [
+     72
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 72] (M035603C) This program is designed to prepare students for employment in biotechnology research. Upon successful completion of the required coursework, students will have acquired skills in basic laborator"
+   },
+   {
+    "control_number": "35913",
+    "pages": [
+     20
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 20] Theatre Arts (M035913G) Students completing the Associate of Arts in Theater Arts for Transfer will have satisfied the lower division major prepara - tion for bachelor’s degrees in similar majors as determine"
+   },
+   {
+    "control_number": "35915",
+    "pages": [
+     18,
+     19,
+     20,
+     21
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 18] History (M035915G) Students completing the Associate of Arts in Art History for Transfer will have satisfied the lower division major prepara - tion for bachelor’s degrees in similar majors as determined by C"
+   },
+   {
+    "control_number": "36317",
+    "pages": [
+     78
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 78] Associate (M036317D) The Certification of Achievement in Cyber Security Associate provides necessary skills required to pass the A+, Network+ and Security+ certification. The program prepares students for e"
+   },
+   {
+    "control_number": "36319",
+    "pages": [
+     73,
+     74
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 73] Associate (M036319C) The Associate of Science in Cyber Security Associate Degree builds on the Certificate of Achievement in Cyber Security Associate. The additional courses provide basic skills required fo"
+   },
+   {
+    "control_number": "36321",
+    "pages": [
+     77
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 77] Programmer (M036321D) The Certificate of Achievement in Computer Programmer pro- vides the student methods to analyze, design, and implement an application. The program teaches structured programming languag"
+   },
+   {
+    "control_number": "36322",
+    "pages": [
+     73,
+     74
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 73] Programmer (M036322C) The Associate of Science Degree in Computer Programming provides a student with the necessary skills to become a pro- grammer. The program consists of core courses, programming language"
+   },
+   {
+    "control_number": "36466",
+    "pages": [
+     74
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 74] (M036466C) The Associate of Science in Full Stack Developer Degree pro - vides necessary skills required to design and code web appli - cations. Core skills include introduction to computers, databases, progr"
+   },
+   {
+    "control_number": "36467",
+    "pages": [
+     80
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 80] Developer (M036467D) The Full Stack Developer Certificate of Achievement provides skills required to code and maintain web applications, with two options: Option A – Use the .NET for client-side and serv- er"
+   },
+   {
+    "control_number": "36864",
+    "pages": [
+     43,
+     44
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 43] (M036864D) Students will explore family development and family interac - tions, as well as current issues facing families. This certificate will prepare the student for a career working with families in area"
+   },
+   {
+    "control_number": "37870",
+    "pages": [
+     57,
+     58,
+     59
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 57] (M037870G) Students completing the Associate of Arts in Social Justice Studies: Chicano/Chicana Studies for Transfer will have satis- fied the lower division major preparation for bachelor’s degrees in simil"
+   },
+   {
+    "control_number": "38392",
+    "pages": [
+     85
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 85] Construction Technologies (M038392E) The pre-apprenticeship certificate provides training and placement services to individuals seeking a career in the building trades. The program will lead to employment an"
+   },
+   {
+    "control_number": "38644",
+    "pages": [
+     77,
+     78
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 77] (M038644D) The Cloud Computing program prepares students to design solu- tions for Infrastructure as a Service (IaaS) architectures by provi- sioning computing instances, establishing virtual private networks"
+   },
+   {
+    "control_number": "39476",
+    "pages": [
+     68
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.9,
+    "opens": "[page 68] Los Angeles Mission College Catalog 2026 / 2027 68 EDUCATIONAL PROGRAM – STEM, HEALTH, AND FITNESS NOTE: A minimum of 60 units and a cumulative GPA of 2.0 or higher must be completed to earn the Associate Degr"
+   },
+   {
+    "control_number": "39524",
+    "pages": [
+     81
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 81] Technician I (M039524D) This career technical education pathway is the first level of the Land Surveying Technician program. It aims to prepare the prospective employees to meet and exceed employer’s expect"
+   },
+   {
+    "control_number": "39525",
+    "pages": [
+     79
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 79] Drafting Technician (M039525D) This career and technical education program addresses qualifi- cations in engineering drafting related fields that employers are looking for, including being a team player, bein"
+   },
+   {
+    "control_number": "39535",
+    "pages": [
+     81
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 81] Technician II (M039535D) This career technical education pathway is the level two of the Land Surveying Technician program, designed to further the individuals’ knowledge in plane surveying. The program aim"
+   },
+   {
+    "control_number": "40331",
+    "pages": [
+     41
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 41] Administration (M040331D) Students completing a Certificate of Child Development Administration have completed a specialization in the admin - istration and supervision of programs and staff that provide for"
+   },
+   {
+    "control_number": "40358",
+    "pages": [
+     36
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 36] Business Development (M040358F) Sustainable businesses are enterprises that strive to meet the triple bottom line, which is a social, environmental, and finan - cial framework to evaluate business performance"
+   },
+   {
+    "control_number": "41141",
+    "pages": [
+     29,
+     30,
+     31
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 29] Business Administration for Transfer 2.0 (M041141H) Students completing the Associate in Science in Business Administration 2.0 for Transfer will have satisfied the lower divi- sion major preparation for bach"
+   },
+   {
+    "control_number": "41336",
+    "pages": [
+     25,
+     26,
+     27
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 25] Design (M041336D) The Certificate of Achievement in Digital Interior Design is designed for students who want to focus on computer skills needed in the interior design industry. All courses in this pro - gra"
+   },
+   {
+    "control_number": "41446",
+    "pages": [
+     45
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.923,
+    "opens": "[page 45] Readiness (M041446F) The Academic Readiness Certificate of Competency helps stu - dents refresh their foundational skills in reading, writing and math to be ready for college-level courses. Learning these fou"
+   },
+   {
+    "control_number": "41447",
+    "pages": [
+     45
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.765,
+    "opens": "[page 45] Enroll now at www.lamission.edu 45 EDUCATIONAL PROGRAMS – CHILD, FAMILY & EDUCATIONAL STUDIES CERTIFICATE OF COMPLETION Parenting II (M044272E) The certificate is designed for all members of the community, es"
+   },
+   {
+    "control_number": "41463",
+    "pages": [
+     27
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 27] eSports Event Producer (M041463F) An eSports (Electronic Sports) event is a spectator sport where video game athletes compete and provide live entertainment as well as video streamed over the internet onto a"
+   },
+   {
+    "control_number": "41501",
+    "pages": [
+     60
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 60] (M041501D) The Certificate of Achievement in Psychology provides a pro- gram of study that prepares students for transfer and career pathways as a psychology major. Students will explore core concepts of hum"
+   },
+   {
+    "control_number": "41604",
+    "pages": [
+     86
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 86] Health Coordinator (M041604F) Community dental health coordinators (CDHC’s) are commu - nity health workers who work as members of dental teams. They focus on case management, navigation, oral health edu - cat"
+   },
+   {
+    "control_number": "41605",
+    "pages": [
+     36
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 36] (M041605F) Digital literacy is an essential skill for employment in the 21st century. This college and career prep program trains students through real-world exercises to increase their understanding of Micr"
+   },
+   {
+    "control_number": "41607",
+    "pages": [
+     36
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 36] Enhancement (M041607F) Non-traditional leadership is a social change metaphor intended to draw attention to individuals whose leadership skills emerge from cultural, social, and political conditions that shap"
+   },
+   {
+    "control_number": "41608",
+    "pages": [
+     36
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 36] Citizenship (M041608F) This certificate provides non-native adult learners with com - municative-based language that introduces students to U.S. history and government and promotes civic participation. The p"
+   },
+   {
+    "control_number": "41609",
+    "pages": [
+     35,
+     36
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 35] Practice of Conflict Resolution (M041609F) The Art and Practice of Conflict Resolution program includes four introductory courses that cover foundational theory and principles, practical tools for convening a"
+   },
+   {
+    "control_number": "41733",
+    "pages": [
+     82,
+     83
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 82] Food Skills (M041733D) The Nutrition and Food Skills Certificate of Achievement is designed to provide students with fundamental knowledge and skills in nutritional science, food science, food preparation, a"
+   },
+   {
+    "control_number": "42284",
+    "pages": [
+     24,
+     25,
+     26,
+     27
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 24] Photography (M042284D) The Commercial Photography Certificate of Achievement pro - gram offers a solid foundation for students to start a career in a range of photography and imaging-related fields which incl"
+   },
+   {
+    "control_number": "42285",
+    "pages": [
+     80
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 80] Occupations Fundamentals (M042285D) This Health Occupations Fundamentals Certificate of Achievement is designed to introduce students to various health care professions and obtain the basic information requ"
+   },
+   {
+    "control_number": "42561",
+    "pages": [
+     18,
+     19,
+     20,
+     21
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 18] Los Angeles Mission College Catalog 2026 / 2027 18 EDUCATIONAL PROGRAMS – ARTS, MEDIA & PERFORMANCE ASSOCIATE IN ARTS FOR TRANSFER (AA-T) Art History (M035915G) Students completing the Associate of Arts in Art"
+   },
+   {
+    "control_number": "42628",
+    "pages": [
+     82
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 82] Administrative Assistant (M042628D) This certificate is designed to prepare students to perform entry-level administrative tasks in the offices of healthcare practitioners or other healthcare facilities. The "
+   },
+   {
+    "control_number": "42906",
+    "pages": [
+     78
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 78] Practitioner (M042906D) The Cyber Security Practitioner Certificate of Achievement focuses on computer technology and work-based learning. This is a recommended introductory certificate for those interested "
+   },
+   {
+    "control_number": "43091",
+    "pages": [
+     72
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.778,
+    "opens": "[page 72] Los Angeles Mission College Catalog 2026 / 2027 72 EDUCATIONAL PROGRAM – STEM, HEALTH, AND FITNESS other factors that impact human health and health dispari - ties; the importance of equitable access to health "
+   },
+   {
+    "control_number": "43125",
+    "pages": [
+     34
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 34] (M043125D) The Real Estate Sales Certificate of Achievement will enable students to acquire the necessary education needed to partici - pate in the State of California Real Estate Salesperson exam. In additi"
+   },
+   {
+    "control_number": "43137",
+    "pages": [
+     78
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 78] (M043137D) This certificate program provides students with a basic founda- tion in the fields of data analytics, and prepares them for a potential career in Data Science. The program is designed to prepare s"
+   },
+   {
+    "control_number": "43138",
+    "pages": [
+     78
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 78] (M043138D) This certificate expands the Data Analytics Certificate of Achievement by providing students with more advanced skills in Data Science tools such as Machine Learning, and Deep Learning. The Data "
+   },
+   {
+    "control_number": "43322",
+    "pages": [
+     85
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 85] (M043322E) The EKG Technician Training program prepares students to gain the necessary skills required to work as entry-level EKG Technicians in healthcare settings. Students learn and prac - tice the fundam"
+   },
+   {
+    "control_number": "43439",
+    "pages": [
+     84
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 84] Nursing Training Program (M043439D) NOTE: This program has the following requirements: • Required supplies: Scrubs with name tags, 2 boxes of gloves, stethoscope, pen light, scissors, gowns (10x), and face ma"
+   },
+   {
+    "control_number": "43442",
+    "pages": [
+     86
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 86] Technician Training (M043442E) NOTE: This program has the following requirements: • Required supplies: Scrubs with name tags, 2 boxes of gloves, and gowns (2x), • Requirements: Live scan, FIT test, updated I"
+   },
+   {
+    "control_number": "43498",
+    "pages": [
+     27
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 27] (M043498D) The Technical Theater Certificate of Achievement program offers a solid foundation for students to start a career in a range of entertainment industry fields, including live theatre, music, and d"
+   },
+   {
+    "control_number": "43524",
+    "pages": [
+     33
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 33] (M043524D) This program is designed for those students seeking to gain employment as an entry level firefighter in a municipal, wild - land or private fire protection organization. Program Learning Outcomes "
+   },
+   {
+    "control_number": "43583",
+    "pages": [
+     64
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.667,
+    "opens": "[page 64] Level ESL (M043583F) This certificate helps non-English speaking students develop reading, writing, listening, and speaking skills to communi - cate in familiar situations they encounter at work, school, and "
+   },
+   {
+    "control_number": "43599",
+    "pages": [
+     67,
+     68
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.92,
+    "opens": "[page 67] (M043599B) The bachelor’s degree program in biomanufacturing will build seamlessly upon the associate degree program in bio - technology, allowing students who complete the associate degree or equivalent cour"
+   },
+   {
+    "control_number": "43619",
+    "pages": [
+     54,
+     55,
+     56,
+     57
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 54] Communication Studies 2.0 (M043619G) Students completing the Associate of Arts in Communication Studies for Transfer will have satisfied the lower division major preparation for bachelor’s degrees in similar"
+   },
+   {
+    "control_number": "43738",
+    "pages": [
+     60
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 60] (M043738D) LAMC’s Creative Writing Certificate invites aspiring writers to delve deep into the world of narrative creation. Through a curated blend of courses, students master the art of crafting compelling"
+   },
+   {
+    "control_number": "43795",
+    "pages": [
+     85
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 85] Services (IHSS) Providers Training (M043795E) The In-Home Support Services (IHSS) Providers Training pro - gram is designed to equip students with the necessary skills and knowledge to provide compassionate a"
+   },
+   {
+    "control_number": "44073",
+    "pages": [
+     77
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 77] Therapy (M044073D) The Cell & Gene Therapy certificate program will provide recipients with skills in culturing and manipulating mamma - lian cells that are essential for employment in more advanced research "
+   },
+   {
+    "control_number": "44267",
+    "pages": [
+     81,
+     82
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 81] Training (M044267D) NOTE: This program has the following requirements: Required supplies: Scrubs with name tags, 2 boxes of gloves, and gowns (2x), • Requirements: Live scan, FIT test, updated Immunizations "
+   },
+   {
+    "control_number": "44268",
+    "pages": [
+     75
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 75] Training (M044268C) NOTE: This program has the following requirements: • Required supplies: Scrubs with name tags, 2 boxes of gloves, and gowns (2x), • Requirements: Live scan, FIT test, updated Immunization"
+   },
+   {
+    "control_number": "44272",
+    "pages": [
+     45
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 45] CERTIFICATE OF COMPLETION Parenting II (M044272E) The certificate is designed for all members of the community, especially parents and primary caregivers raising a child(ren). The focus is on introducing top"
+   },
+   {
+    "control_number": "44274",
+    "pages": [
+     44
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 44] CERTIFICATE OF COMPLETION Parenting I (M044274E) The certificate is designed for all members of the community, especially parents and primary caregivers raising a child(ren). Emphasis is on the role of a pri"
+   },
+   {
+    "control_number": "44604",
+    "pages": [
+     44
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 44] Kindergarten (M044604D) This certificate provides a set of courses that serve as the foun - dation for understanding the context and the structure of the learning environment for transitional kindergarten set"
+   },
+   {
+    "control_number": "44781",
+    "pages": [
+     71,
+     72
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 71] Enroll now at www.lamission.edu 71 EDUCATIONAL PROGRAM – STEM, HEALTH, AND FITNESS REQUIRED CORE UNITS CHEM 101† General Chemistry I 5 MICRO 020† General Microbiology 4 NUTRTN 021 Introduction to Nutrit"
+   },
+   {
+    "control_number": "44857",
+    "pages": [
+     32
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 32] Technology (M044857D) The Crime Scene Technology Certificate of Achievement is designed for students preparing for an entry-level career in forensic science or crime scene investigation. Students learn the"
+   },
+   {
+    "control_number": "44977",
+    "pages": [
+     48,
+     49,
+     50,
+     51
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 48] and Patisserie (M044977C) The Professional Baking and Patisserie associate degree will provide students with advanced baking skills and expertise to pursue higher-level positions in the hospitality industry."
+   },
+   {
+    "control_number": "45048",
+    "pages": [
+     60,
+     61
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 60] (M045048D) Jumpstart your career in journalism and multimedia commu - nications with our Certificate of Achievement in Journalism. Tailored to meet the evolving demands of today’s media land - scape, this pro"
+   },
+   {
+    "control_number": "45103",
+    "pages": [
+     69
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 69] Geography (M045103G) Students completing the Associate in Arts in Geography for Transfer Degree will have satisfied the lower division major preparation for bachelor’s degrees in similar majors as deter - mi"
+   },
+   {
+    "control_number": "45104",
+    "pages": [
+     53,
+     54,
+     55
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 53] Chicana/o Studies, Latina/o Studies (M045104G) Students completing the Associate in Arts in Chicana/o Studies for Transfer will have satisfied the lower division major preparation for bachelor’s degrees in si"
+   },
+   {
+    "control_number": "45350",
+    "pages": [
+     83,
+     84
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 83] Exercise Nutrition Fundamentals (M045350D) The Certificate of Achievement in Sport and Exercise Nutrition Fundamentals introduces students to basic knowl - edge in nutrition, physiology, and fitness so they c"
+   },
+   {
+    "control_number": "45351",
+    "pages": [
+     83,
+     84
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 83] Exercise Nutrition Science (M045351D) The Certificate of Achievement in Sport and Exercise Nutrition Science builds on the fundamentals certificate and provides additional science courses needed for an assoc"
+   },
+   {
+    "control_number": "45582",
+    "pages": [
+     85
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 85] Worker (M045582E) The Community Health Worker (CHW) Program trains stu - dents to work as a CHW in their respective communities. Community Health Workers are trusted frontline public health workers that serv"
+   },
+   {
+    "control_number": "45585",
+    "pages": [
+     60,
+     61
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 60] Los Angeles Mission College Catalog 2026 / 2027 60 EDUCATIONAL PROGRAMS – SOCIETY, CULTURE, AND COMMUNICATION CERTIFICATE OF ACHIEVEMENT Cal-GETC (M044849D) See Transfer Information section for course requirem"
+   },
+   {
+    "control_number": "45654",
+    "pages": [
+     68
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 68] Computer Science (M045654H) Students completing the Associate in Science in Computer Science for Transfer will have satisfied the lower division major preparation for bachelor’s degrees in similar majors as "
+   },
+   {
+    "control_number": "45666",
+    "pages": [
+     70,
+     71
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 70] Mathematics 2.0 (M045666H) Students completing the Associate in Science in Mathematics for Transfer will have satisfied the lower division major preparation for bachelor’s degrees in similar majors as deter "
+   },
+   {
+    "control_number": "45667",
+    "pages": [
+     71
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 71] Physics 2.0 (M045667H) Students completing the Associate in Science in Physics for Transfer will have satisfied the lower division major prepara - tion for bachelor’s degrees in similar majors as determined b"
+   },
+   {
+    "control_number": "45702",
+    "pages": [
+     51
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 51] Baking Essentials (M045702E) The Culinary and Baking Essentials Certificate of Completion is designed for individuals seeking entry-level employment in the culinary and baking fields. Emphasis is placed on d"
+   },
+   {
+    "control_number": "45816",
+    "pages": [
+     25,
+     26,
+     27
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 25] (M045816D) The Game Art Design Certificate of Achievement prepares students for entry-level careers in the digital gaming industry with a focus on the artistic and conceptual aspects of game development. Di"
+   },
+   {
+    "control_number": "46146",
+    "pages": [
+     47,
+     48,
+     49,
+     50
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 47] Hospitality Management (M046146H) Students completing the Associate in Science in Hospitality Management for Transfer will have satisfied the lower division major preparation for bachelor’s degrees in similar"
+   },
+   {
+    "control_number": "46235",
+    "pages": [
+     39,
+     40,
+     41,
+     42
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.966,
+    "opens": "[page 39] Enroll now at www.lamission.edu 39 EDUCATIONAL PROGRAMS – CHILD, FAMILY & EDUCATIONAL STUDIES ASSOCIATE IN ARTS FOR TRANSFER (AA-T) Elementary Teacher Education (M033613G) Students completing the Associate of"
+   }
+  ],
+  "unproven": [
+   "35231"
+  ]
+ },
+ "loads": 2,
+ "seconds": 58.3,
+ "found": 128,
+ "by_method": {
+  "no_closed_list": 20,
+  "not_found": 12,
+  "pdf_pages": 128
+ },
+ "shared_pages": {
+  "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=30": [
+   "03339",
+   "03340"
+  ],
+  "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=20": [
+   "03348",
+   "35913"
+  ],
+  "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=40": [
+   "03351",
+   "08355"
+  ],
+  "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=31": [
+   "03361",
+   "15995"
+  ],
+  "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=75": [
+   "08338",
+   "44268"
+  ],
+  "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=84": [
+   "08342",
+   "43439"
+  ],
+  "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=73": [
+   "08345",
+   "36319",
+   "36322"
+  ],
+  "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=24": [
+   "08348",
+   "42284"
+  ],
+  "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=22": [
+   "08352",
+   "11977"
+  ],
+  "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=42": [
+   "08356",
+   "10714",
+   "10715"
+  ],
+  "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=41": [
+   "08358",
+   "40331"
+  ],
+  "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=32": [
+   "08362",
+   "44857"
+  ],
+  "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=49": [
+   "08364",
+   "35063"
+  ],
+  "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=34": [
+   "08368",
+   "33365",
+   "43125"
+  ],
+  "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=58": [
+   "08372",
+   "33337"
+  ],
+  "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=43": [
+   "10713",
+   "32995",
+   "36864"
+  ],
+  "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=44": [
+   "10716",
+   "21768",
+   "44274",
+   "44604"
+  ],
+  "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=23": [
+   "11975",
+   "11978"
+  ],
+  "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=72": [
+   "20792",
+   "35603",
+   "43091"
+  ],
+  "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=26": [
+   "21760",
+   "21762"
+  ],
+  "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=25": [
+   "21767",
+   "41336",
+   "45816"
+  ],
+  "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=33": [
+   "21769",
+   "35251",
+   "43524"
+  ],
+  "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=70": [
+   "31007",
+   "35394",
+   "45666"
+  ],
+  "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=54": [
+   "33084",
+   "43619"
+  ],
+  "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=29": [
+   "33109",
+   "41141"
+  ],
+  "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=57": [
+   "33215",
+   "37870"
+  ],
+  "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=56": [
+   "33340",
+   "33612"
+  ],
+  "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=39": [
+   "33613",
+   "46235"
+  ],
+  "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=67": [
+   "33950",
+   "43599"
+  ],
+  "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=77": [
+   "35254",
+   "36321",
+   "38644",
+   "44073"
+  ],
+  "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=76": [
+   "35255",
+   "35600",
+   "35601"
+  ],
+  "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=82": [
+   "35287",
+   "41733",
+   "42628"
+  ],
+  "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=69": [
+   "35436",
+   "45103"
+  ],
+  "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=18": [
+   "35915",
+   "42561"
+  ],
+  "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=78": [
+   "36317",
+   "42906",
+   "43137",
+   "43138"
+  ],
+  "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=80": [
+   "36467",
+   "42285"
+  ],
+  "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=85": [
+   "38392",
+   "43322",
+   "43795",
+   "45582"
+  ],
+  "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=68": [
+   "39476",
+   "45654"
+  ],
+  "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=81": [
+   "39524",
+   "39535",
+   "44267"
+  ],
+  "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=36": [
+   "40358",
+   "41605",
+   "41607",
+   "41608"
+  ],
+  "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=45": [
+   "41446",
+   "41447",
+   "44272"
+  ],
+  "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=27": [
+   "41463",
+   "43498"
+  ],
+  "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=60": [
+   "41501",
+   "43738",
+   "45048",
+   "45585"
+  ],
+  "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=86": [
+   "41604",
+   "43442"
+  ],
+  "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=71": [
+   "44781",
+   "45667"
+  ],
+  "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=83": [
+   "45350",
+   "45351"
+  ]
+ },
+ "not_found": [
+  {
+   "control_number": "35231",
+   "title": "Business Information Worker",
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+   "near_miss": {
+    "pages": [
+     31
+    ],
+    "coverage": 1.0,
+    "why": "the page prints neither the control number nor the title and award"
+   }
+  },
+  {
+   "control_number": "40788",
+   "title": "English for Academic Purposes Intermediate 2",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "40789",
+   "title": "English for Academic Purposes Intermediate 1",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "40791",
+   "title": "English for Academic Purposes Advanced 2",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "42632",
+   "title": "Foundational ESL and Computer Skills",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=63",
+    "coverage": 0.333
+   }
+  },
+  {
+   "control_number": "42633",
+   "title": "Beginning Level ESL",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "42634",
+   "title": "High-Beginning Level ESL",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "43167",
+   "title": "Intermediate Level ESL",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "43929",
+   "title": "ESL Pathway to Biotechnology Careers",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=79",
+    "coverage": 0.385
+   }
+  },
+  {
+   "control_number": "43930",
+   "title": "ESL Pathway to Health Occupations Careers",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=9",
+    "coverage": 0.154
+   }
+  },
+  {
+   "control_number": "44777",
+   "title": "ESL Pathway to Child Development Careers",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=8",
+    "coverage": 0.25
+   }
+  },
+  {
+   "control_number": "44849",
+   "title": "Cal-GETC",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=226",
+    "coverage": 0.411
+   }
+  }
+ ],
+ "page_claimed": [],
+ "coverage_bands": {
+  "0.5-0.8": 4,
+  "0.8-1.0": 9,
+  "1.0": 115
+ },
+ "would_extract": {
+  "against": null,
+  "kept": 0,
+  "programs": 128,
+  "list": [
+   {
+    "control_number": "03339",
+    "title": "Business Administration",
+    "award": "A.A. Degree",
+    "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=30",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "03340",
+    "title": "Accounting",
+    "award": "A.A. Degree",
+    "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=30",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "03348",
+    "title": "Art",
+    "award": "A.A. Degree",
+    "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=20",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "03351",
+    "title": "Family Studies",
+    "award": "A.A. Degree",
+    "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=40",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "03361",
+    "title": "Legal Assisting (Paralegal)",
+    "award": "A.A. Degree",
+    "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=31",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "08338",
+    "title": "Health Science",
+    "award": "A.S. Degree",
+    "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=75",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "08342",
+    "title": "Programming",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=84",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "08345",
+    "title": "Engineering",
+    "award": "A.S. Degree",
+    "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=73",
+    "coverage": 0.929,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "08348",
+    "title": "Painting",
+    "award": "A.A. Degree",
+    "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=24",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "08352",
+    "title": "INTERIOR DESIGN",
+    "award": "A.A. Degree",
+    "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=22",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "08355",
+    "title": "Child Development",
+    "award": "A.A. Degree",
+    "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=40",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "08356",
+    "title": "Child Development Specializing in Family Child Care",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=42",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "08358",
+    "title": "Gerontology",
+    "award": "A.A. Degree",
+    "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=41",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "08362",
+    "title": "Restaurant Management",
+    "award": "A.A. Degree",
+    "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=32",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "08364",
+    "title": "Culinary Arts",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=49",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "08368",
+    "title": "Probation/Correction Officer",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=34",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "08372",
+    "title": "Chicano Studies",
+    "award": "A.A. Degree",
+    "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=58",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "10713",
+    "title": "Child Development: Preschool",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=43",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "10714",
+    "title": "Child Development Specializing in Dual Language Learning",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=42",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "10715",
+    "title": "Child Development Certificate: Specializing in Infant & Toddler",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=42",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "10716",
+    "title": "School Age Care and Education",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=44",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "11975",
+    "title": "Multimedia: Graphic and Web Design",
+    "award": "A.A. Degree",
+    "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=23",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "11977",
+    "title": "Multimedia: Animation and 3D Design Concentration",
+    "award": "A.A. Degree",
+    "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=22",
+    "coverage": 0.833,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "11978",
+    "title": "Multimedia: Video Production",
+    "award": "A.A. Degree",
+    "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=23",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "15995",
+    "title": "Management",
+    "award": "A.A. Degree",
+    "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=31",
+    "coverage": 0.857,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "18463",
+    "title": "General Studies: Arts and Humanities",
+    "award": "A.A. Degree",
+    "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=226",
+    "coverage": 0.556,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20792",
+    "title": "Biology",
+    "award": "A.S. Degree",
+    "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=72",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21760",
+    "title": "Multimedia: Graphic and Web Design",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=26",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21762",
+    "title": "Multimedia: Video Production",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=26",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21767",
+    "title": "INTERIOR DESIGN",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=25",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21768",
+    "title": "Gerontology",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=44",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21769",
+    "title": "Legal Assisting (Paralegal)",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=33",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31007",
+    "title": "Mathematics",
+    "award": "A.S. T Degree",
+    "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=70",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32995",
+    "title": "Child Development: Special Needs",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=43",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33084",
+    "title": "English",
+    "award": "A.A- T Degree",
+    "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=54",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33109",
+    "title": "Administration of Justice",
+    "award": "A.S. T Degree",
+    "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=29",
+    "coverage": 0.889,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33131",
+    "title": "Studio Arts",
+    "award": "A.A- T Degree",
+    "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=19",
+    "coverage": 0.909,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33215",
+    "title": "Sociology",
+    "award": "A.A- T Degree",
+    "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=57",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33216",
+    "title": "Philosophy",
+    "award": "A.A- T Degree",
+    "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=55",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33337",
+    "title": "Spanish",
+    "award": "A.A- T Degree",
+    "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=58",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33340",
+    "title": "Political Science",
+    "award": "A.A- T Degree",
+    "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=56",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33365",
+    "title": "Restaurant Management",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=34",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33612",
+    "title": "Psychology",
+    "award": "A.A- T Degree",
+    "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=56",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33613",
+    "title": "Elementary Teacher Education",
+    "award": "A.A- T Degree",
+    "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=39",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33689",
+    "title": "Art, Gallery and Museum Studies",
+    "award": "A.A. Degree",
+    "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=21",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33950",
+    "title": "Biology",
+    "award": "A.S. T Degree",
+    "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=67",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35063",
+    "title": "PROFESSIONAL BAKING & PATISSERIE",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=49",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35251",
+    "title": "Fundamentals of Medical Billing and Coding",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=33",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35254",
+    "title": "Certified Nurse Assistant and Home Health Aide",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=77",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35255",
+    "title": "Pharmacy Technician",
+    "award": "A.S. Degree",
+    "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=76",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35287",
+    "title": "Pharmacy Technician - Basic",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=82",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35394",
+    "title": "Nutrition and Dietetics",
+    "award": "A.S. T Degree",
+    "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=70",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35436",
+    "title": "Kinesiology",
+    "award": "A.A- T Degree",
+    "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=69",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35600",
+    "title": "Biotechnology Research Lab Assistant",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=76",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35601",
+    "title": "Biotechnology Lab Assistant",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=76",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35603",
+    "title": "Biotechnology",
+    "award": "A.S. Degree",
+    "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=72",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35913",
+    "title": "Theatre Arts",
+    "award": "A.A- T Degree",
+    "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=20",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35915",
+    "title": "Art History",
+    "award": "A.A- T Degree",
+    "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=18",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36317",
+    "title": "Cyber Security Associate",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=78",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36319",
+    "title": "Cyber Security Associate",
+    "award": "A.S. Degree",
+    "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=73",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36321",
+    "title": "Computer Programmer",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=77",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36322",
+    "title": "COMPUTER PROGRAMMER",
+    "award": "A.S. Degree",
+    "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=73",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36466",
+    "title": "Full Stack Developer",
+    "award": "A.S. Degree",
+    "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=74",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36467",
+    "title": "Full Stack Developer",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=80",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36864",
+    "title": "Family Studies",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=43",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37870",
+    "title": "Social Justice Studies: Chicano/Chicana Studies",
+    "award": "A.A- T Degree",
+    "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=57",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38392",
+    "title": "INTRODUCTION TO CONSTRUCTION TECHNOLOGIES",
+    "award": "Noncredit program",
+    "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=85",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38644",
+    "title": "CLOUD COMPUTING",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=77",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39476",
+    "title": "UCTP PHYSICS",
+    "award": "A.S. T Degree",
+    "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=68",
+    "coverage": 0.9,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39524",
+    "title": "LAND  SURVEYING TECHNICIAN I",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=81",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39525",
+    "title": "Engineering Drafting Technician",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=79",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39535",
+    "title": "LAND SURVEYING TECHNICIAN II",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=81",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40331",
+    "title": "Child Development Administration",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=41",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40358",
+    "title": "SUSTAINABLE SMALL BUSINESS DEVELOPMENT",
+    "award": "Noncredit program",
+    "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=36",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41141",
+    "title": "Business Administration 2.0",
+    "award": "A.S. T Degree",
+    "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=29",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41336",
+    "title": "Digital Interior Design",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=25",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41446",
+    "title": "Academic Readiness",
+    "award": "Noncredit program",
+    "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=45",
+    "coverage": 0.923,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41447",
+    "title": "Academic Readiness, Bilingual GED Preparation",
+    "award": "Noncredit program",
+    "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=45",
+    "coverage": 0.765,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41463",
+    "title": "Competitive eSports Event Producer",
+    "award": "Noncredit program",
+    "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=27",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41501",
+    "title": "Psychology",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=60",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41604",
+    "title": "Community Dental Health Coordinator",
+    "award": "Noncredit program",
+    "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=86",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41605",
+    "title": "Digital Literacy",
+    "award": "Noncredit program",
+    "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=36",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41607",
+    "title": "Non-Traditional Leadership for Community Enhancement",
+    "award": "Noncredit program",
+    "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=36",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41608",
+    "title": "Pathway to Citizenship",
+    "award": "Noncredit program",
+    "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=36",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41609",
+    "title": "The Art and Practice of Conflict Resolution",
+    "award": "Noncredit program",
+    "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=35",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41733",
+    "title": "Nutrition and Food Skills",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=82",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42284",
+    "title": "Commercial Photography",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=24",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42285",
+    "title": "Health Occupations Fundamentals",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=80",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42561",
+    "title": "Film, Television, and Electronic Media",
+    "award": "A.S. T Degree",
+    "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=18",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42628",
+    "title": "Medical Office Administrative Assistant",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=82",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42906",
+    "title": "Cyber Security Practitioner",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=78",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43091",
+    "title": "Public Health Science",
+    "award": "A.S. T Degree",
+    "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=72",
+    "coverage": 0.778,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43125",
+    "title": "Real Estate Sales",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=34",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43137",
+    "title": "Data Analytics",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=78",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43138",
+    "title": "Data Science",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=78",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43322",
+    "title": "Electrocardiography (EKG) Technician Training",
+    "award": "Noncredit program",
+    "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=85",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43439",
+    "title": "Vocational Nursing Training Program",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=84",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43442",
+    "title": "Phlebotomy Technician Training",
+    "award": "Noncredit program",
+    "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=86",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43498",
+    "title": "Technical Theater",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=27",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43524",
+    "title": "Fire Technology",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=33",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43583",
+    "title": "High Intermediate Level ESL",
+    "award": "Noncredit program",
+    "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=64",
+    "coverage": 0.667,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43599",
+    "title": "Biomanufacturing",
+    "award": "Baccalaureate of Science (B.S.) Degree.",
+    "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=67",
+    "coverage": 0.92,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43619",
+    "title": "Communication Studies 2.0",
+    "award": "A.A- T Degree",
+    "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=54",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43738",
+    "title": "Creative Writing",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=60",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43795",
+    "title": "In-Home Support Services (IHSS) Providers Training",
+    "award": "Noncredit program",
+    "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=85",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44073",
+    "title": "Cell and Gene Therapy",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=77",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44267",
+    "title": "Medical Assistant Training",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=81",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44268",
+    "title": "Medical Assistant Training",
+    "award": "A.S. Degree",
+    "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=75",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44272",
+    "title": "Parenting II",
+    "award": "Noncredit program",
+    "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=45",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44274",
+    "title": "Parenting I",
+    "award": "Noncredit program",
+    "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=44",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44604",
+    "title": "Transitional Kindergarten",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=44",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44781",
+    "title": "Public Health",
+    "award": "A.S. T Degree",
+    "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=71",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44857",
+    "title": "Crime Scene Technology",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=32",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44977",
+    "title": "Professional Baking and Patisserie",
+    "award": "A.A. Degree",
+    "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=48",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45048",
+    "title": "Journalism",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=60",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45103",
+    "title": "Geography",
+    "award": "A.A- T Degree",
+    "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=69",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45104",
+    "title": "Chicana/o Studies, Latina/o Studies",
+    "award": "A.A- T Degree",
+    "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=53",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45350",
+    "title": "Sport and Exercise Nutrition Fundamentals",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=83",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45351",
+    "title": "Sport and Exercise Nutrition Science",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=83",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45582",
+    "title": "Community Health Worker",
+    "award": "Noncredit program",
+    "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=85",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45585",
+    "title": "Social Media Strategist",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=60",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45654",
+    "title": "Computer Science",
+    "award": "A.S. T Degree",
+    "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=68",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45666",
+    "title": "Mathematics 2.0",
+    "award": "A.S. T Degree",
+    "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=70",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45667",
+    "title": "Physics 2.0",
+    "award": "A.S. T Degree",
+    "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=71",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45702",
+    "title": "Culinary and Baking Essentials",
+    "award": "Noncredit program",
+    "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=51",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45816",
+    "title": "Game Art Design",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=25",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46146",
+    "title": "Hospitality Management",
+    "award": "A.S. T Degree",
+    "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=47",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46235",
+    "title": "Elementary Teacher Education: Integrated Programs",
+    "award": "A.A- T Degree",
+    "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=39",
+    "coverage": 0.966,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   }
+  ]
+ },
+ "run": "39053648120"
+}
