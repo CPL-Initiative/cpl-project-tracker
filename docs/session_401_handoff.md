@@ -4,6 +4,8 @@ date: 2026-10-16
 session: 400 (SkyBirch)
 tags: [handoff, sierra, my-college, program-requirements, catalog-sweep, display-build]
 status: current
+superseded: true
+superseded_by: session_402_handoff.md
 ---
 
 # You are Session 401
