@@ -690,8 +690,10 @@ reports showed. A page read of the PDF around one failing outcome named the faul
   76; Folsom Lake $9.43, 104; De Anza $19.66, 210; Sacramento City $18.50, 182; Cosumnes River $18.96, 182; CCSF
   $23.60, 294; American River $29.75, 326 (07230 took a Cloudflare 502 from the extraction gateway and is
   re-extracted on its own). Records placing none of their listed courses stay out of the load: 13, 6, 3, 17, 22,
-  35, 55 and 41; 1,426 loaded in all. CCSF's 55 (16%) is the highest share of the sweep; read a few before its
-  audit sweep.
+  35, 55 and 41; 1,426 loaded in all. CCSF's 55 (16%) is the highest share of the sweep. Four read at random are
+  wrong-page picks the extraction caught and reported as not found (Physics 2.0 drew course descriptions, pages
+  795-797; Editorial Management and Design drew the Journalism degrees page), so the title gate still admits a
+  one-subject program's course pages in a large catalog. Nothing false loaded; the reader item stays open.
 - **The arithmetic check fails on a degree with a local GE pattern whose units the page does not state**
   (`incomplete`): Cerro Coso 38 of 65. It is the known shape (record shape 5), not a reading fault.
 - **The registry rows wait on Sam (Open Asks Sheet 90 card 2).** The Supabase guard holds an UPDATE for a person, so
