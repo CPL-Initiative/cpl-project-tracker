@@ -1,0 +1,234 @@
+{
+ "college": "Folsom Lake College",
+ "control_number": "19184",
+ "shape": "certificate",
+ "title": "Water/Wastewater Management",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=284",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 9825,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 9825,
+    "output_tokens": 2331,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2331,
+  "output_tokens_details": {
+   "thinking_tokens": 984
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.08592,
+ "ms": 18166,
+ "seconds": 18.7,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 7,
+   "listed": 7,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 2,
+   "codes": [
+    "BUSTEC305",
+    "ENVT355"
+   ],
+   "flagged": [
+    "BUSTEC305",
+    "ENVT355"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    29.0,
+    29.0
+   ],
+   "stated": [
+    29.0,
+    29.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 10,
+   "courses": 0,
+   "count": 10,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Water/Wastewater Management Certificate",
+   "measure": "units",
+   "total_units": {
+    "min": 29,
+    "max": 29
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "review the history and importance of community water and wastewater systems, their social benefits, common operational challenges, and how they support and promote the welfare of all modern societies.",
+    "evaluate water and wastewater system regulations (federal and state), water pollution control and safe drinking water laws, environmental economics that influence pollution control strategies, the importance of environmental stewardship, application of scientific concepts in water/wastewater management, and other factors that influence programs that protect public health and the environment.",
+    "examine common water and wastewater treatment processes and principles, including fundamental physical, chemical, and biologic treatment processes common in the proper operation of water and wastewater facilities.",
+    "evaluate hydraulic and fluid dynamic principles of water, and application of these principles to wastewater collection and water distribution systems.",
+    "use, define, and apply industry terminology, nomenclature, and common water and wastewater treatment technical terms to classify, compare, and differentiate water and wastewater processes.",
+    "formulate mathematical models and equations to analyze, plan, evaluate, manage, troubleshoot, correct, and predict water and wastewater system processes.",
+    "assess professional and ethical responsibilities of a water/ wastewater treatment practitioner as it relates to the principle objectives of public and environmental health.",
+    "explain occupational health and safety protocols to address risks encountered in water/wastewater treatment, wastewater collection, water distribution, and water recycling operations.",
+    "apply personal safety practices which demonstrate an understanding of personal safety practices in the water, wastewater and recycled water industries.",
+    "seek employment in the water and wastewater industries in the region."
+   ],
+   "careers": [
+    "water and wastewater operators"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Certificate Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 29,
+     "max": 29
+    },
+    "courses": [
+     {
+      "code": "BUSTEC 305",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ENVT 351",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENVT 353",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENVT 354",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENVT 355",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ENVT 380",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENVT 381",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENVT 382",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENVT 383",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Total Units: 29 printed under the requirements list; recorded as total_units and as the block's stated total.",
+   "The certificate's 29 units place it at or above the 16S-to-fewer-than-30S award category, consistent with the award type.",
+   "BUSTEC 305 and ENVT 355 are required in the catalog but are not in the closed list; marked as catalog additions.",
+   "In the seventh outcome the PDF breaks 'water/' and 'wastewater' across lines; per the line-break rule it is recorded as 'water/ wastewater'. Reviewer may prefer 'water/wastewater'.",
+   "Career Information names only 'water and wastewater operators' as an occupation; general statements about private and public agency settings were not recorded as careers."
+  ]
+ },
+ "extracted_run": "39046850071"
+}

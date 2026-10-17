@@ -1,0 +1,2643 @@
+{
+ "college": "Folsom Lake College",
+ "catalog_url": "https://flc.losrios.edu/2026-2027-official-catalog",
+ "platform": "custom_html",
+ "catalog_year": "2026-2027",
+ "programs": 108,
+ "with_closed_list": 108,
+ "started": "2026-10-17T15:52:04Z",
+ "pdf": {
+  "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf",
+  "access": "hand_filed",
+  "status": null,
+  "bytes": 3823487,
+  "pages_total": 500,
+  "error": null,
+  "chars_total": 1766706,
+  "pypdf_accepted": 107,
+  "sample": [
+   "p151: 'Transferable: CSU \\nGeneral Education: Local GE L3 \\nThis course covers the use of materials and techniques of studio \\nactivities in the K-12 classroom. Topics include the elements of art, \\nprinciples of design, materials used in two and thre'",
+   "p301: 'environment. Successful completion of physical geology prepares the \\nstudent to recognize, understand, and appreciate processes which \\ncontinually change our Earth. \\nGEOL 301 Physical Geology Laboratory \\nUnits: 1 \\nHours: 54 hours LAB \\nPrere'"
+  ],
+  "extractor": "pypdf",
+  "hand_filed": {
+   "college": "Folsom Lake College",
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf",
+   "fetched_by": "Sam Lee",
+   "fetched_at": "2026-10-17",
+   "sha256": "c086177b9efed3b9163f0a88e16893c4d892db586dee7159f3ce7127a1c46e76",
+   "file": null,
+   "copy_url": "https://github.com/user-attachments/files/33599448/flc-catalog-26-27.pdf",
+   "note": "Sam downloaded it in a browser and posted it to the catalog-files release (2026-10-17); its host answers the reader 404 (since 2026-10-08). cpl_memory sam-hand-filed-catalog-pdf-links-2026-10-17.",
+   "addenda": []
+  },
+  "picks": [
+   {
+    "control_number": "15335",
+    "pages": [
+     165,
+     166,
+     167,
+     168
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 165] A.S. in Biological Sciences Biology programs at FLC seek to prepare lower division students for transfer to higher education institutions, entry into vocational programs, or science-related employment. All "
+   },
+   {
+    "control_number": "15338",
+    "pages": [
+     177,
+     178,
+     179,
+     180
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 177] A.A. in Business: General This program provides an overview of business fundamentals for students interested in business occupations including positions in finance, marketing, and management. The program is"
+   },
+   {
+    "control_number": "15340",
+    "pages": [
+     121,
+     122,
+     123,
+     124
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 121] Accounting Certificate Accounting Computer Applications Certificate Division Dean: Carlos Lopez Department Chair: Jennifer Black Phone: (916) 608-6849 Email: lopezc@flc.losrios.edu Associate Degree "
+   },
+   {
+    "control_number": "15341",
+    "pages": [
+     121,
+     122,
+     123,
+     124
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.769,
+    "opens": "[page 121] A.A. in Accounting Accounting Certificate Accounting Computer Applications Certificate Division Dean: Carlos Lopez Department Chair: Jennifer Black Phone: (916) 608-6849 Email: lopezc@flc.losrios.edu"
+   },
+   {
+    "control_number": "15343",
+    "pages": [
+     122,
+     123,
+     124
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 122] Accounting Computer Applications Certificate The Accounting Computer Applications program is designed for those individuals who wish to become proficient in the use of computers for business accounting purp"
+   },
+   {
+    "control_number": "15345",
+    "pages": [
+     180,
+     181,
+     182,
+     183
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.933,
+    "opens": "[page 180] • develop an understanding of the role of the public manager as it relates to organizational relations, leadership, ethics, fiscal management and policy-making. • develop an understanding of the political, "
+   },
+   {
+    "control_number": "15360",
+    "pages": [
+     208,
+     209,
+     210
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 208] A.S. in Computer Science A.S. in Information Technology Algorithmic and Logical Thinking Certificate Computer Programming Certificate Information Technology Certificate Division Dean: Dr. Lorena Navarro "
+   },
+   {
+    "control_number": "15361",
+    "pages": [
+     208,
+     209,
+     210,
+     211
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 208] Computer Programming Certificate Information Technology Certificate Division Dean: Dr. Lorena Navarro Department Chair: Dan Ross Phone: (916) 608-6615 Email: navarrl@flc.losrios.edu Associate Degrees"
+   },
+   {
+    "control_number": "15366",
+    "pages": [
+     152,
+     153,
+     154,
+     155
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 152] courses required for the major or area of emphasis. A \"P\" (Pass) grade is also an acceptable grade for courses in the major if the course is taken on a Pass/No Pass basis. Degree Requirements Course Code C"
+   },
+   {
+    "control_number": "15368",
+    "pages": [
+     143,
+     144,
+     145,
+     146
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.875,
+    "opens": "[page 143] Drawing Course Code Course Code Course Title Course Title Units Units A minimum of 9 units from the following: 9 ART 302 Drawing and Composition II (3) ART 305 Figure Drawing II (3) ART 308 Perspective Dr"
+   },
+   {
+    "control_number": "15370",
+    "pages": [
+     233,
+     234,
+     235,
+     236
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 233] A.A. in Early Childhood Education This program provides a foundation for in-depth early childhood teacher preparation both through strong general education and through introductory studies in child developm"
+   },
+   {
+    "control_number": "15373",
+    "pages": [
+     237,
+     238,
+     239,
+     240
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 237] ECE-Infant Specialist Certificate Upon successful completion of an Infant Specialist Certificate, and with appropriate documented experience, a student demonstrates knowledge, preparation and competencies t"
+   },
+   {
+    "control_number": "15374",
+    "pages": [
+     238,
+     239,
+     240,
+     241
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 238] ECE-Master Teacher Certificate The Master Teacher Certificate meets the requirements for teaching in a publicly funded early care and education program. Upon successful completion of the Master Teacher Cert"
+   },
+   {
+    "control_number": "15376",
+    "pages": [
+     234,
+     235,
+     236,
+     237
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 234] A.A. in ECE-Site Supervisor This program provides a foundation for in-depth early childhood teacher preparation both through strong general education and through introductory studies in child development an"
+   },
+   {
+    "control_number": "15377",
+    "pages": [
+     236,
+     237,
+     238,
+     239
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 236] Early Childhood Education Teacher Certificate Upon successful completion of the Teacher Certificate, a student demonstrates knowledge, preparation and competencies for teaching in a publicly funded early le"
+   },
+   {
+    "control_number": "15382",
+    "pages": [
+     262
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.923,
+    "opens": "[page 262] The Associate in Arts in English for Transfer (AA-T) degree may be obtained by completion of 60 transferable, semester units with a minimum 2.0 GPA, including (a) the major or area of emphasis described in t"
+   },
+   {
+    "control_number": "15385",
+    "pages": [
+     368,
+     369,
+     370,
+     371
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 368] A.S. in Mathematics This degree is designed to allow students to meet common lower division requirements for a major in mathematics at many four-year transfer institutions. Required courses for this degree "
+   },
+   {
+    "control_number": "15388",
+    "pages": [
+     455,
+     456,
+     457,
+     458
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.964,
+    "opens": "[page 455] Course Code Course Code Course Title Course Title Units Units SOC 321 Race, Ethnicity and Inequality in the United States (3) SOC 341 Sex and Gender in the U.S. (3) SOC 379 Making Social Change (3) SWHS 34"
+   },
+   {
+    "control_number": "15395",
+    "pages": [
+     250
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.952,
+    "opens": "[page 250] A.A. in Liberal Studies for Elementary Education Division Dean: Francis Fletcher Department Chair: Andrew Williamson Phone: (916) 608-6752 Email: fletchf@flc.losrios.edu Associate Degree A.A. in Libe"
+   },
+   {
+    "control_number": "16186",
+    "pages": [
+     436,
+     437,
+     438,
+     439
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 436] A.A.-T. in Psychology A.A. in Interdisciplinary Studies: Social and Behavioral Sciences A.A. in Psychology Division Dean: Dr. Rose Giordano Department Chair: Danielle Beck Phone: (916) 361-6330 Email:"
+   },
+   {
+    "control_number": "18836",
+    "pages": [
+     433,
+     434,
+     435
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 433] Project Management Certificate Division Dean: Carlos Lopez Department Chair: Jennifer Black Phone: (916) 608-6849 Email: lopezc@flc.losrios.edu Certificate of Achievement Project Management Certifica"
+   },
+   {
+    "control_number": "18841",
+    "pages": [
+     183,
+     184
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 183] Public Management/Civil Service Certificate This program is designed for students interested in careers in state, county, or municipal governments and community based non-profit organizations. The curriculu"
+   },
+   {
+    "control_number": "18934",
+    "pages": [
+     325,
+     326,
+     327
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.741,
+    "opens": "[page 325] Course Course Code Code Course Title Course Title Units Units ARTH 328 Survey of African Art (3) ARTH 330 Survey of African-American Art (3) ARTH 332 Asian Art (3) ARTH 333 Introduction to Islamic Art (3)"
+   },
+   {
+    "control_number": "18935",
+    "pages": [
+     203,
+     204,
+     205,
+     206
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.917,
+    "opens": "[page 203] It is highly recommended that students consult a counselor to determine the classes within each area that will best prepare them for their intended transfer major. Degree Requirements Course Code Course Co"
+   },
+   {
+    "control_number": "18936",
+    "pages": [
+     294
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.944,
+    "opens": "[page 294] Course Code Course Code Course Title Course Title Units Units ADMJ 320 Concepts of Criminal Law (3) ANTH 310 Cultural Anthropology (3) ANTH 319 Visual Anthropology: Introduction to Ethnographic Film (3) AN"
+   },
+   {
+    "control_number": "18937",
+    "pages": [
+     197,
+     198,
+     199,
+     200
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.798,
+    "opens": "[page 197] Course Course Code Code Course Title Course Title Units Units BIOL 430 Anatomy and Physiology (5) BIOL 431 Anatomy and Physiology (5) BIOL 440 General Microbiology (4) BIOL 442 General Microbiology and Pu"
+   },
+   {
+    "control_number": "19184",
+    "pages": [
+     284,
+     285,
+     286
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 284] Water/Wastewater Management Certificate This program is designed to meet competency areas for students interested in entering the field of Water and Wastewater Management, and to enhance the knowledge and a"
+   },
+   {
+    "control_number": "21193",
+    "pages": [
+     175,
+     176,
+     177,
+     178
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.857,
+    "opens": "[page 175] Small Business Management/Entrepreneurship Certificate Business Information Professional I Certificate Small Winery Marketing Certificate Division Dean: Carlos Lopez Department Chair: Jennifer Black Pho"
+   },
+   {
+    "control_number": "21196",
+    "pages": [
+     456,
+     457,
+     458,
+     459
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.967,
+    "opens": "[page 456] Human Services Specialist Certificate The Human Services Specialist certificate program in Social Work/ Human Services prepares students for employment in paraprofessional positions in human service settings"
+   },
+   {
+    "control_number": "30792",
+    "pages": [
+     366,
+     367,
+     368,
+     369
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 366] requirements may vary for each CSU and the degree may only transfer to specific institutions. This program has the following completion requirements: (1) Completion of 60 semester units or 90 quarter units "
+   },
+   {
+    "control_number": "30801",
+    "pages": [
+     436,
+     437,
+     438,
+     439
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 436] A.A.-T. in Psychology A.A. in Interdisciplinary Studies: Social and Behavioral Sciences A.A. in Psychology Division Dean: Dr. Rose Giordano Department Chair: Danielle Beck Phone: (916) 361-6330 Email:"
+   },
+   {
+    "control_number": "31174",
+    "pages": [
+     335,
+     336,
+     337,
+     338
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.951,
+    "opens": "[page 335] Course Code Course Code Course Title Course Title Units Units BIOL 431 Anatomy and Physiology 5 A minimum of 3 units from the following: 3 Select 3 courses, each from a different category listed below. Sele"
+   },
+   {
+    "control_number": "31623",
+    "pages": [
+     217,
+     218,
+     219,
+     220
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.96,
+    "opens": "[page 217] A.A. in Dance Studies Division Dean: Francis Fletcher Department Chair: Dr. Debi Worth Phone: (916) 608-6752 Email: fletchf@flc.losrios.edu Associate Degree A.A. in Dance Studies The Dance Studies p"
+   },
+   {
+    "control_number": "31783",
+    "pages": [
+     380,
+     381,
+     382,
+     383
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 380] A.S. in Medical Laboratory Technician Pre-Clinical Laboratory Scientist Trainee Certificate Division Dean: John Skellenger Department Chair: Jason Pedro Phone: (916) 608-6927 Email: skellej@flc.losrio"
+   },
+   {
+    "control_number": "32032",
+    "pages": [
+     126,
+     127,
+     128,
+     129
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.929,
+    "opens": "[page 126] their Folsom Lake College counselor to ensure that they are taking the appropriate coursework to prepare for majoring in Administration of Justice at the institution they wish to transfer to because major an"
+   },
+   {
+    "control_number": "32254",
+    "pages": [
+     232,
+     233,
+     234,
+     235
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 232] A.S.-T. in Early Childhood Education for Transfer The Associate in Science in Early Childhood Education for Transfer Degree program provides students with a major that fulfills the general requirements of "
+   },
+   {
+    "control_number": "32447",
+    "pages": [
+     175,
+     176,
+     177,
+     178
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 175] A.S.-T. in Business Administration 2.0 The Associate in Science in Business Administration 2.0 for Transfer Degree program provides students with a major that fulfills the general requirements for transfer "
+   },
+   {
+    "control_number": "32474",
+    "pages": [
+     424
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 424] A.S.-T. in Physics A.A. in Interdisciplinary Studies: Math and Science Division Dean: Dr. Lorena Navarro Department Chair: Daniel Hale Phone: (916) 608-6615 Email: navarrl@flc.losrios.edu Associate D"
+   },
+   {
+    "control_number": "32546",
+    "pages": [
+     262,
+     263,
+     264,
+     265
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.933,
+    "opens": "[page 262] Course Code Course Code Course Title Course Title Units Units List C: An additional 3-4 units from List C or any course not used in List A or B. ANTH 341 Introduction to Linguistics (3) BUS 310 Business Com"
+   },
+   {
+    "control_number": "32547",
+    "pages": [
+     152,
+     153,
+     154,
+     155
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 152] courses required for the major or area of emphasis. A \"P\" (Pass) grade is also an acceptable grade for courses in the major if the course is taken on a Pass/No Pass basis. Degree Requirements Course Code C"
+   },
+   {
+    "control_number": "33146",
+    "pages": [
+     469,
+     470,
+     471,
+     472
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 469] requirements may vary for each CSU and the degree may only transfer to specific institutions. This program has the following completion requirements: (1) Completion of 60 semester units or 90 quarter units "
+   },
+   {
+    "control_number": "33210",
+    "pages": [
+     298,
+     299,
+     300,
+     301
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 298] A.S.-T. in Geology Geology is an interdisciplinary science that combines geological observations and concepts with those of biology, chemistry, physics, and mathematics. Its goals are to study rocks, minera"
+   },
+   {
+    "control_number": "33235",
+    "pages": [
+     461,
+     462,
+     463,
+     464
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.929,
+    "opens": "[page 461] A.A.-T. in Sociology The Associate in Arts in Sociology for Transfer Degree program provides students with a major that fulfills the general requirements for transfer to the California State University. Stu"
+   },
+   {
+    "control_number": "33236",
+    "pages": [
+     293,
+     294,
+     295,
+     296
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 293] ADTs require that students must earn a “C” or better in all courses required for the major or area of emphasis. A “P” (Pass) grade is also an acceptable grade for courses in the major if the course is taken "
+   },
+   {
+    "control_number": "33791",
+    "pages": [
+     470
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 470] Theatre Arts: Technical Certificate The program in technical theatre prepares students for an entry-level career in technical theatre arts. Career options include roadhouse stagehand, rigger, audio engineer"
+   },
+   {
+    "control_number": "33883",
+    "pages": [
+     409,
+     410,
+     411,
+     412
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.958,
+    "opens": "[page 409] A.S.-T. in Nutrition and Dietetics The Associate in Science in Nutrition and Dietetics for Transfer (AS-T) program provides students with a major that fulfills the general requirements for transfer to the C"
+   },
+   {
+    "control_number": "35014",
+    "pages": [
+     135,
+     136,
+     137,
+     138
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 135] Heritage Interpretation Certificate Heritage Interpretation involves conveying meaningful information about historical, cultural, and natural events or sites to a broad audience. One may have encountered in"
+   },
+   {
+    "control_number": "35015",
+    "pages": [
+     330,
+     331,
+     332
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.947,
+    "opens": "[page 330] A.A. in Interdisciplinary Studies: Pre-Law The Pre-Law Degree Program introduces the student to the field of legal studies along with its relationship with and influence over closely related areas in busine"
+   },
+   {
+    "control_number": "35158",
+    "pages": [
+     161,
+     162,
+     163,
+     164
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 161] A.S.-T. in Biology A.S.-T. in Environmental Science A.A. in Interdisciplinary Studies: Math and Science A.S. in Biological Sciences A.S. in Environmental Science Biology UC Preparation Certificate Enviro"
+   },
+   {
+    "control_number": "35171",
+    "pages": [
+     144
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 144] Clay Arts Certificate This certificate provides theoretical foundation and practical experience for students interested gaining knowledge in ceramics and clay sculpture. Topics include the basic and interme"
+   },
+   {
+    "control_number": "35268",
+    "pages": [
+     319,
+     320,
+     321
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": false,
+    "coverage": 1.0,
+    "opens": "[page 319] HUM 495 Independent Studies in Humanities Units: 1 - 3 Hours: 54 - 162 hours LAB Prerequisite: None. Transferable: CSU HUM 499 Experimental Offering in Humanities Units: 0.5 - 4 Prerequisite: None. Tra"
+   },
+   {
+    "control_number": "35523",
+    "pages": [
+     246,
+     247,
+     248,
+     249
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 246] A.A.-T. in Economics A.A. in Interdisciplinary Studies: Social and Behavioral Sciences Division Dean: Carlos Lopez Department Chair: Jennifer Black Phone: (916) 608-6849 Email: lopezc@flc.losrios.edu "
+   },
+   {
+    "control_number": "35575",
+    "pages": [
+     416,
+     417,
+     418,
+     419
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 416] Course Code Course Code Course Title Course Title Units Units List B: Select two courses from the following, the required core, or List A not List B: Select two courses from the following, the required core, "
+   },
+   {
+    "control_number": "35577",
+    "pages": [
+     304
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.667,
+    "opens": "[page 304] Degree Requirements Course Code Course Code Course Title Course Title Units Units A minimum of 23 units from the following: 23 Required Core (13 units) HEED 300 Health Science (3) HEED 302 Introduction to"
+   },
+   {
+    "control_number": "35681",
+    "pages": [
+     320,
+     321,
+     322
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 320] Magnetic Resonance Imaging Certificate For certified Radiologic Technologists, there are a number of advanced forms of imaging that may be pursued. This certificate is designed for Magnetic Resonance Imagin"
+   },
+   {
+    "control_number": "36508",
+    "pages": [
+     131,
+     132,
+     133,
+     134
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.727,
+    "opens": "[page 131] Course Code Course Code Course Title Course Title Units Units or BIOL 442 General Microbiology and Public Health (5) CHEM 305 Introduction to Chemistry (5) CHEM 400 General Chemistry I (5) CHEM 401 Gene"
+   },
+   {
+    "control_number": "37124",
+    "pages": [
+     485,
+     486,
+     487,
+     488
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 485] A.S. in Viticulture and Enology Small Winery Marketing Certificate Division Dean: Dr. Lorena Navarro Department Chair: Dr. Ami Rose Phone: (916) 608-6615 Email: navarrl@flc.losrios.edu Associate Degr"
+   },
+   {
+    "control_number": "37165",
+    "pages": [
+     209,
+     210,
+     211
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 209] A.S. in Information Technology This degree allows students to acquire basic core Information Technology competencies that will prepare them for a career in Computer Networking, Cybersecurity, and related fi"
+   },
+   {
+    "control_number": "37166",
+    "pages": [
+     412,
+     413,
+     414
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.941,
+    "opens": "[page 412] science or any science related academic area. After transfer to and completion of a 4-year degree at a university-level institution, students can further their studies towards a Masterâ€™s (M.S.) and/or Doct"
+   },
+   {
+    "control_number": "37340",
+    "pages": [
+     322,
+     323
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 322] A.A.-T. in Law, Public Policy, and Society A.A. in Interdisciplinary Studies: Arts and Humanities A.A. in Interdisciplinary Studies: Communication and English A.A. in Interdisciplinary Studies: Math and Sci"
+   },
+   {
+    "control_number": "37417",
+    "pages": [
+     179,
+     180,
+     181,
+     182
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 179] A.A. in Public Management/Civil Service This program is designed for students interested in careers in state, county, or municipal governments and community-based nonprofit organizations. The curriculum foc"
+   },
+   {
+    "control_number": "37420",
+    "pages": [
+     331,
+     332
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": false,
+    "coverage": 1.0,
+    "opens": "[page 331] Student Learning Outcomes Upon completion of this program, the student will be able to: • recognize the impact that law and legal institutions have on political, economic, and social institutions. • differ"
+   },
+   {
+    "control_number": "37917",
+    "pages": [
+     412,
+     413,
+     414
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 412] science or any science related academic area. After transfer to and completion of a 4-year degree at a university-level institution, students can further their studies towards a Masterâ€™s (M.S.) and/or Doct"
+   },
+   {
+    "control_number": "38631",
+    "pages": [
+     306,
+     307,
+     308,
+     309
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.986,
+    "opens": "[page 306] (2) Obtainment of a minimum grade point average of 2.0. All ADTs also require that students must earn a \"C\" or better in all courses required for the major or area of emphasis. A \"P\" (Pass) grade is also an"
+   },
+   {
+    "control_number": "38702",
+    "pages": [
+     259,
+     260
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 259] A.S. in Engineering Division Dean: Dr. Lorena Navarro Department Chair: Daniel Hale Phone: (916) 608-6615 Email: navarrl@flc.losrios.edu Associate Degree A.S. in Engineering The Engineering A.S. deg"
+   },
+   {
+    "control_number": "38736",
+    "pages": [
+     177,
+     178,
+     179,
+     180
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.944,
+    "opens": "[page 177] Course Code Course Code Course Title Course Title Units Units or ACCT 342 Accounting Information Systems (SAP) (3) BUS 302 Introduction to Business Analysis 3 BUS 303 Introduction to Business Data and Data "
+   },
+   {
+    "control_number": "38741",
+    "pages": [
+     183,
+     184
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 183] New World of Work Certificate This program contains the skills and knowledge new entrants to the workforce need in preparation for entry-level, non-management, positions in both the private and public secto"
+   },
+   {
+    "control_number": "38744",
+    "pages": [
+     387,
+     388,
+     389
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 387] educators developing STEM activities for use in the classroom, hobbyists, makers, inventors, and anyone interested in enhancing job skills and solving real-world problems. Certificate Requirements Course C"
+   },
+   {
+    "control_number": "38897",
+    "pages": [
+     368,
+     369,
+     370,
+     371
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 368] Course Course Code Code Course Title Course Title Units Units PHYS 360 General Physics (4) PHYS 411 Mechanics of Solids and Fluids (4) PHYS 421 Electricity and Magnetism (4) PHYS 431 Heat, Waves, Light an"
+   },
+   {
+    "control_number": "38898",
+    "pages": [
+     380
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 380] Pre-Clinical Laboratory Scientist Trainee Certificate Division Dean: John Skellenger Department Chair: Jason Pedro Phone: (916) 608-6927 Email: skellej@flc.losrios.edu Associate Degree A.S. in Medica"
+   },
+   {
+    "control_number": "39117",
+    "pages": [
+     460,
+     461,
+     462,
+     463
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 460] A.A.-T. in Social Justice Studies The Associate in Arts in Social Justice Studies for Transfer Degree program provides students with a major that fulfills the general requirements of the California State Un"
+   },
+   {
+    "control_number": "39137",
+    "pages": [
+     453,
+     454,
+     455,
+     456
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.962,
+    "opens": "[page 453] A.A.-T. in Social Work & Human Services A.A. in Social Work/Human Services, General Human Services Paraprofessional Certificate Human Services Specialist Certificate Division Dean: Dr. Rose Giordano Depa"
+   },
+   {
+    "control_number": "39574",
+    "pages": [
+     166,
+     167,
+     168
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 166] Course Course Code Code Course Title Course Title Units Units CHEM 400 General Chemistry I 5 CHEM 401 General Chemistry II 5 A minimum of 30 units from the following: 30 BIOL 350 Environmental Biology (3)"
+   },
+   {
+    "control_number": "39579",
+    "pages": [
+     166,
+     167
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 166] Course Course Code Code Course Title Course Title Units Units CHEM 400 General Chemistry I 5 CHEM 401 General Chemistry II 5 A minimum of 30 units from the following: 30 BIOL 350 Environmental Biology (3)"
+   },
+   {
+    "control_number": "39580",
+    "pages": [
+     167,
+     168
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 167] Environmental Science Certificate Environmental Science prepares students to address the effects of climate change on our planet and on human interactions with our environment and each other. Students compl"
+   },
+   {
+    "control_number": "39664",
+    "pages": [
+     395,
+     396,
+     397,
+     398
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 395] • evaluate and interpret the ways in which people throughout the ages in different cultures have responded to themselves and the world around them in artistic and cultural creation and expression (Arts and "
+   },
+   {
+    "control_number": "40325",
+    "pages": [
+     162,
+     163,
+     164,
+     165
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 162] A.S.-T. in Environmental Science The Associate in Science in Environmental Science for Transfer Degree program provides students with a major that fulfills the general requirements for transfer to the Calif"
+   },
+   {
+    "control_number": "40763",
+    "pages": [
+     182,
+     183,
+     184
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 182] Business Analyst Certificate The program content includes: customer service and stakeholder analysis, problem solving and critical thinking, the role of the business analyst, business analyst tasks, written"
+   },
+   {
+    "control_number": "40859",
+    "pages": [
+     396,
+     397,
+     398,
+     399
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 396] Commercial Music: Music Entrepreneurship Certificate This program is designed to provide students with the diverse set of skills required of musicians in the rapidly evolving music industry, including perf"
+   },
+   {
+    "control_number": "42293",
+    "pages": [
+     411,
+     412,
+     413,
+     414
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 411] A.S. in Food Science The field of Food Science prepares students for several different areas of employment in the food industry, such as quality control, food product development, research, food safety, and"
+   },
+   {
+    "control_number": "42502",
+    "pages": [
+     361,
+     362,
+     363
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 361] Quality Technician Certificate The Certificate of Achievement Quality Technician prepares the student with skills specializing in quality control. Content includes inspection, testing, and evaluation of par"
+   },
+   {
+    "control_number": "42554",
+    "pages": [
+     455,
+     456,
+     457,
+     458
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.962,
+    "opens": "[page 455] Course Code Course Code Course Title Course Title Units Units SOC 321 Race, Ethnicity and Inequality in the United States (3) SOC 341 Sex and Gender in the U.S. (3) SOC 379 Making Social Change (3) SWHS 34"
+   },
+   {
+    "control_number": "42566",
+    "pages": [
+     358,
+     359,
+     360,
+     361
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 358] Manufacturing and Industrial Technology Certificate Production Planning Certificate Quality Technician Certificate Division Dean: Dr. Lorena Navarro Department Chair: Zack Dowell Phone: (916) 608-6615 "
+   },
+   {
+    "control_number": "42567",
+    "pages": [
+     360,
+     361,
+     362
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.875,
+    "opens": "[page 360] Production Planning Certificate The Certificate of Achievement in Production Planning prepares the student with skills specializing in production planning and control. This program prepares the student to a"
+   },
+   {
+    "control_number": "42602",
+    "pages": [
+     359,
+     360,
+     361,
+     362
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 359] CAD/CAM Programming Certificate The Certificate of Achievement CAD/CAM Programming prepares the student with skills specializing in Computer Aided Design/Computer Aided Manufacturing (CAD/CAM). This program"
+   },
+   {
+    "control_number": "42612",
+    "pages": [
+     359,
+     360,
+     361,
+     362
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.913,
+    "opens": "[page 359] Course Code Course Code Course Title Course Title Units Units MGMT 372 Human Relations and Organizational Behavior 3 MITECH 300 Introduction to Manufacturing and Industrial Technology 3 PHYS 350 General Phy"
+   },
+   {
+    "control_number": "42655",
+    "pages": [
+     175,
+     176,
+     177,
+     178
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 175] A.S.-T. in Business Administration 2.0 The Associate in Science in Business Administration 2.0 for Transfer Degree program provides students with a major that fulfills the general requirements for transfer "
+   },
+   {
+    "control_number": "42911",
+    "pages": [
+     184,
+     185
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 184] Business Information Professional I Certificate The Business Information Professional I Certificate prepares students for entry-level office, computer, and administrative support positions in a variety of i"
+   },
+   {
+    "control_number": "43272",
+    "pages": [
+     143,
+     144,
+     145,
+     146
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 143] Art Education for Children Certificate This certificate of achievement is intended to offer students a new certificate opportunity that will provide those interested in gaining basic and intermediate skills"
+   },
+   {
+    "control_number": "43728",
+    "pages": [
+     202,
+     203,
+     204,
+     205
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.722,
+    "opens": "[page 202] (2) Obtainment of a minimum grade point average of 2.0. ADTs also require that students must earn a C or better or a \"P\" in all courses required for the major or area of emphasis. Degree Requirements Cours"
+   },
+   {
+    "control_number": "43872",
+    "pages": [
+     466,
+     467
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.938,
+    "opens": "[page 466] GETC) Requirement. (B) A minimum of 18 semester units or 27 quarter units in a major or area of emphasis, as determined by the community college district. (2) Obtainment of a minimum grade point average of "
+   },
+   {
+    "control_number": "43878",
+    "pages": [
+     407,
+     408
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 407] Certified Nurse Assistant Certificate Division Dean: John Skellenger Department Chair: Jason Pedro Phone: (916) 608-6927 Email: skellej@flc.losrios.edu Certificate of Achievement Certified Nurse Assi"
+   },
+   {
+    "control_number": "43881",
+    "pages": [
+     209,
+     210,
+     211
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 209] • design, write, test and debug computer programs, using a low-level language, a structured language, and an object-oriented language. • evaluate various solutions to a proposed problem in terms of programm"
+   },
+   {
+    "control_number": "43900",
+    "pages": [
+     157,
+     158,
+     159
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 157] Certificate Requirements Course Code Course Code Course Title Course Title Units Units AI 300 Introduction to Artificial Intelligence and Machine Learning 3 AI 310 Machine Learning 3 AI 305 Ethics and Arti"
+   },
+   {
+    "control_number": "44580",
+    "pages": [
+     181,
+     182,
+     183,
+     184
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 181] degree. Students who complete this degree program will have met the requirements to earn the Business Information Professional I certificate and Business Information Professional II certificate. Degree Requ"
+   },
+   {
+    "control_number": "44855",
+    "pages": [
+     304
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.95,
+    "opens": "[page 304] Degree Requirements Course Code Course Code Course Title Course Title Units Units A minimum of 23 units from the following: 23 Required Core (13 units) HEED 300 Health Science (3) HEED 302 Introduction to"
+   },
+   {
+    "control_number": "44970",
+    "pages": [
+     181,
+     182,
+     183,
+     184
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 181] and Business Information Professional II certificate. Degree Requirements Course Code Course Code Course Title Course Title Units Units ACCT 301 Financial Accounting 4 ACCT 341 Computerized Accounting 3 B"
+   },
+   {
+    "control_number": "45247",
+    "pages": [
+     312
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.75,
+    "opens": "[page 312] Honors Certificate Certificate of Achievement Honors Certificate The Folsom Lake College Honors Program is a community of students and faculty who are dedicated to the pursuit of intellectual and personal "
+   },
+   {
+    "control_number": "45305",
+    "pages": [
+     391,
+     392
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 391] A.A. in Commercial Music, Entrepreneurship This program is designed to prepare students for the multiple musical and business skills required in the modern music industry including live- performance, self-pr"
+   },
+   {
+    "control_number": "45328",
+    "pages": [
+     97,
+     98
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 97] California General Education Transfer Curriculum Requirements The California General Education Transfer Curriculum (Cal-GETC) is a general education pattern designed to make transferring from a California Com"
+   },
+   {
+    "control_number": "45555",
+    "pages": [
+     397,
+     398,
+     399
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 397] Commercial Music: World Music Certificate This certificate is designed to prepare students for employment in the field of World Music performance and/or transfer to undergraduate programs in ethnomusicology"
+   },
+   {
+    "control_number": "45556",
+    "pages": [
+     396,
+     397,
+     398,
+     399
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 396] Commercial Music: Music Entrepreneurship Certificate This program is designed to provide students with the diverse set of skills required of musicians in the rapidly evolving music industry, including perf"
+   },
+   {
+    "control_number": "45568",
+    "pages": [
+     390,
+     391,
+     392
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.667,
+    "opens": "[page 390] Commercial Music: Live Sound Technician Certificate Commercial Music: Multimedia Music Composition Certificate Commercial Music: Music Entrepreneurship Certificate Commercial Music: Performance Certificate "
+   },
+   {
+    "control_number": "45569",
+    "pages": [
+     208,
+     209,
+     210,
+     211
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 208] Information Technology Certificate Division Dean: Dr. Lorena Navarro Department Chair: Dan Ross Phone: (916) 608-6615 Email: navarrl@flc.losrios.edu Associate Degrees A.S. in Computer Science The Co"
+   },
+   {
+    "control_number": "45570",
+    "pages": [
+     251,
+     252
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 251] Fire Technology Certificate Division Dean: John Skellenger Department Chair: Mark Swink Phone: (916) 608-6927 Email: skellej@flc.losrios.edu Associate Degree A.S. in Fire Technology Employment withi"
+   },
+   {
+    "control_number": "45612",
+    "pages": [
+     251,
+     252,
+     253,
+     254
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 251] A.S. in Fire Technology Fire Technology Certificate Division Dean: John Skellenger Department Chair: Mark Swink Phone: (916) 608-6927 Email: skellej@flc.losrios.edu Associate Degree A.S. in Fire Tec"
+   },
+   {
+    "control_number": "46145",
+    "pages": [
+     442,
+     443,
+     444,
+     445
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 442] A.S. in Radiologic Technology Division Dean: John Skellenger Department Chair: Jason Pedro Phone: (916) 608-6927 Email: CareerPrograms@flc.losrios.edu Associate Degree A.S. in Radiologic Technology "
+   }
+  ],
+  "unproven": []
+ },
+ "loads": 0,
+ "seconds": 85.9,
+ "found": 107,
+ "by_method": {
+  "not_found": 1,
+  "pdf_pages": 107
+ },
+ "shared_pages": {
+  "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=177": [
+   "15338",
+   "38736"
+  ],
+  "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=121": [
+   "15340",
+   "15341"
+  ],
+  "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=208": [
+   "15360",
+   "15361",
+   "45569"
+  ],
+  "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=152": [
+   "15366",
+   "32547"
+  ],
+  "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=143": [
+   "15368",
+   "43272"
+  ],
+  "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=262": [
+   "15382",
+   "32546"
+  ],
+  "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=368": [
+   "15385",
+   "38897"
+  ],
+  "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=455": [
+   "15388",
+   "42554"
+  ],
+  "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=436": [
+   "16186",
+   "30801"
+  ],
+  "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=183": [
+   "18841",
+   "38741"
+  ],
+  "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=175": [
+   "21193",
+   "32447",
+   "42655"
+  ],
+  "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=380": [
+   "31783",
+   "38898"
+  ],
+  "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=304": [
+   "35577",
+   "44855"
+  ],
+  "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=209": [
+   "37165",
+   "43881"
+  ],
+  "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=412": [
+   "37166",
+   "37917"
+  ],
+  "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=166": [
+   "39574",
+   "39579"
+  ],
+  "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=396": [
+   "40859",
+   "45556"
+  ],
+  "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=359": [
+   "42602",
+   "42612"
+  ],
+  "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=181": [
+   "44580",
+   "44970"
+  ],
+  "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=251": [
+   "45570",
+   "45612"
+  ]
+ },
+ "not_found": [
+  {
+   "control_number": "36574",
+   "title": "Vascular-Interventional Radiography",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": null
+  }
+ ],
+ "page_claimed": [],
+ "coverage_bands": {
+  "0.5-0.8": 8,
+  "0.8-1.0": 25,
+  "1.0": 74
+ },
+ "would_extract": {
+  "against": null,
+  "kept": 0,
+  "programs": 107,
+  "list": [
+   {
+    "control_number": "15335",
+    "title": "Biological Sciences",
+    "award": "A.S. Degree",
+    "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=165",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "15338",
+    "title": "Business: General",
+    "award": "A.A. Degree",
+    "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=177",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "15340",
+    "title": "Accounting",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=121",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "15341",
+    "title": "Accounting",
+    "award": "A.A. Degree",
+    "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=121",
+    "coverage": 0.769,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "15343",
+    "title": "Accounting Computer Applications",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=122",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "15345",
+    "title": "Small Business Management: Entrepreneurship",
+    "award": "A.A. Degree",
+    "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=180",
+    "coverage": 0.933,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "15360",
+    "title": "Computer Science",
+    "award": "A.S. Degree",
+    "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=208",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "15361",
+    "title": "Computer Programming",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=208",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "15366",
+    "title": "Art History",
+    "award": "A.A. Degree",
+    "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=152",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "15368",
+    "title": "Studio Art",
+    "award": "A.A. Degree",
+    "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=143",
+    "coverage": 0.875,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "15370",
+    "title": "Early Childhood Education",
+    "award": "A.A. Degree",
+    "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=233",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "15373",
+    "title": "ECE Infant Specialist",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=237",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "15374",
+    "title": "ECE-Master Teacher",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=238",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "15376",
+    "title": "ECE Site Supervisor",
+    "award": "A.A. Degree",
+    "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=234",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "15377",
+    "title": "Early Childhood Education Teacher",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=236",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "15382",
+    "title": "English",
+    "award": "A.A. Degree",
+    "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=262",
+    "coverage": 0.923,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "15385",
+    "title": "Mathematics",
+    "award": "A.S. Degree",
+    "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=368",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "15388",
+    "title": "Social Work/Human Services, General",
+    "award": "A.A. Degree",
+    "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=455",
+    "coverage": 0.964,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "15395",
+    "title": "Liberal Studies for Elementary Education",
+    "award": "A.A. Degree",
+    "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=250",
+    "coverage": 0.952,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "16186",
+    "title": "Psychology",
+    "award": "A.A. Degree",
+    "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=436",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "18836",
+    "title": "Project Management",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=433",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "18841",
+    "title": "Public Management/Civil Service",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=183",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "18934",
+    "title": "Interdisciplinary Studies: Arts and Humanities",
+    "award": "A.A. Degree",
+    "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=325",
+    "coverage": 0.741,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "18935",
+    "title": "Interdisciplinary Studies: Communication and English",
+    "award": "A.A. Degree",
+    "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=203",
+    "coverage": 0.917,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "18936",
+    "title": "Interdisciplinary Studies: Social and Behavioral Sciences",
+    "award": "A.A. Degree",
+    "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=294",
+    "coverage": 0.944,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "18937",
+    "title": "Interdisciplinary Studies: Math and Science",
+    "award": "A.A. Degree",
+    "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=197",
+    "coverage": 0.798,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "19184",
+    "title": "Water/Wastewater Management",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=284",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21193",
+    "title": "Small Business Management/Entrepreneurship",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=175",
+    "coverage": 0.857,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21196",
+    "title": "Human Services Specialist",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=456",
+    "coverage": 0.967,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "30792",
+    "title": "Mathematics",
+    "award": "A.S. T Degree",
+    "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=366",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "30801",
+    "title": "Psychology",
+    "award": "A.A- T Degree",
+    "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=436",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31174",
+    "title": "Kinesiology",
+    "award": "A.A- T Degree",
+    "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=335",
+    "coverage": 0.951,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31623",
+    "title": "Dance Studies",
+    "award": "A.A. Degree",
+    "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=217",
+    "coverage": 0.96,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31783",
+    "title": "Medical Laboratory Technician",
+    "award": "A.S. Degree",
+    "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=380",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32032",
+    "title": "Administration of Justice",
+    "award": "A.S. T Degree",
+    "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=126",
+    "coverage": 0.929,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32254",
+    "title": "Early Childhood Education",
+    "award": "A.S. T Degree",
+    "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=232",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32447",
+    "title": "Business Administration",
+    "award": "A.S. T Degree",
+    "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=175",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32474",
+    "title": "Physics",
+    "award": "A.S. T Degree",
+    "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=424",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32546",
+    "title": "English",
+    "award": "A.A- T Degree",
+    "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=262",
+    "coverage": 0.933,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32547",
+    "title": "Art History",
+    "award": "A.A- T Degree",
+    "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=152",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33146",
+    "title": "Theatre Arts",
+    "award": "A.A- T Degree",
+    "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=469",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33210",
+    "title": "Geology",
+    "award": "A.S. T Degree",
+    "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=298",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33235",
+    "title": "Sociology",
+    "award": "A.A- T Degree",
+    "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=461",
+    "coverage": 0.929,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33236",
+    "title": "Geography",
+    "award": "A.A- T Degree",
+    "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=293",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33791",
+    "title": "Theatre Arts: Technical",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=470",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33883",
+    "title": "Nutrition and Dietetics",
+    "award": "A.S. T Degree",
+    "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=409",
+    "coverage": 0.958,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35014",
+    "title": "Heritage Interpretation",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=135",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35015",
+    "title": "Interdisciplinary Studies: Pre-Law",
+    "award": "A.A. Degree",
+    "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=330",
+    "coverage": 0.947,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35158",
+    "title": "Biology",
+    "award": "A.S. T Degree",
+    "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=161",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35171",
+    "title": "Clay Arts",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=144",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35268",
+    "title": "Computed Tomagraphy",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=319",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35523",
+    "title": "Economics",
+    "award": "A.A- T Degree",
+    "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=246",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35575",
+    "title": "Philosophy",
+    "award": "A.A- T Degree",
+    "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=416",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35577",
+    "title": "Public Health Science",
+    "award": "A.S. T Degree",
+    "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=304",
+    "coverage": 0.667,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35681",
+    "title": "Magnetic Resonance Imaging",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=320",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36508",
+    "title": "Pre-Health Occupations",
+    "award": "A.S. Degree",
+    "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=131",
+    "coverage": 0.727,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37124",
+    "title": "Viticulture and Enology",
+    "award": "A.S. Degree",
+    "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=485",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37165",
+    "title": "Information Technology",
+    "award": "A.S. Degree",
+    "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=209",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37166",
+    "title": "Nutrition Science",
+    "award": "A.S. Degree",
+    "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=412",
+    "coverage": 0.941,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37340",
+    "title": "Law, Public Policy, and Society",
+    "award": "A.A- T Degree",
+    "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=322",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37417",
+    "title": "Public Management/Civil Service",
+    "award": "A.A. Degree",
+    "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=179",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37420",
+    "title": "Interdisciplinary Studies: STEM for Trans.",
+    "award": "A.S. Degree",
+    "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=331",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37917",
+    "title": "Nutrition Education",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=412",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38631",
+    "title": "History",
+    "award": "A.A- T Degree",
+    "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=306",
+    "coverage": 0.986,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38702",
+    "title": "Engineering",
+    "award": "A.S. Degree",
+    "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=259",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38736",
+    "title": "Business Analyst/Data Analytics",
+    "award": "A.A. Degree",
+    "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=177",
+    "coverage": 0.944,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38741",
+    "title": "New World of Work",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=183",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38744",
+    "title": "Modern Making",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=387",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38897",
+    "title": "STEM Math",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=368",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38898",
+    "title": "Pre-Clinical Laboratory Scientist Trainee",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=380",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39117",
+    "title": "Social Justice Studies",
+    "award": "A.A- T Degree",
+    "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=460",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39137",
+    "title": "Social Work & Human Services",
+    "award": "A.A- T Degree",
+    "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=453",
+    "coverage": 0.962,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39574",
+    "title": "Environmental Science",
+    "award": "A.S. Degree",
+    "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=166",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39579",
+    "title": "Biology UC Preparation",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=166",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39580",
+    "title": "Environmental Science",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=167",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39664",
+    "title": "Commercial Music: Multimedia Music Composition",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=395",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40325",
+    "title": "Environmental Science",
+    "award": "A.S. T Degree",
+    "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=162",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40763",
+    "title": "Business Analyst",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=182",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40859",
+    "title": "Commercial Music: Performance",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=396",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42293",
+    "title": "Food Science",
+    "award": "A.S. Degree",
+    "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=411",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42502",
+    "title": "Quality Technician",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=361",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42554",
+    "title": "Human Services Paraprofessional",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=455",
+    "coverage": 0.962,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42566",
+    "title": "Manufacturing and Industrial Technology",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=358",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42567",
+    "title": "Production Planning",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=360",
+    "coverage": 0.875,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42602",
+    "title": "CAD/CAM Programming",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=359",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42612",
+    "title": "Manufacturing and Industrial Technology",
+    "award": "A.S. Degree",
+    "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=359",
+    "coverage": 0.913,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42655",
+    "title": "Business Administration 2.0",
+    "award": "A.S. T Degree",
+    "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=175",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42911",
+    "title": "Business Information Professional I",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=184",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43272",
+    "title": "Art Education for Children",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=143",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43728",
+    "title": "Communication Studies 2.0",
+    "award": "A.A- T Degree",
+    "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=202",
+    "coverage": 0.722,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43872",
+    "title": "Spanish",
+    "award": "A.A- T Degree",
+    "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=466",
+    "coverage": 0.938,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43878",
+    "title": "Certified Nurse Assistant",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=407",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43881",
+    "title": "Algorithmic and Logical Thinking",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=209",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43900",
+    "title": "Artificial Intelligence and Machine Learning",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=157",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44580",
+    "title": "Business Information Technology",
+    "award": "A.S. Degree",
+    "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=181",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44855",
+    "title": "Public Health",
+    "award": "A.S. T Degree",
+    "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=304",
+    "coverage": 0.95,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44970",
+    "title": "Business Information Professional II",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=181",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45247",
+    "title": "Honors",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=312",
+    "coverage": 0.75,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45305",
+    "title": "Commercial Music, Entrepreneurship",
+    "award": "A.A. Degree",
+    "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=391",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45328",
+    "title": "California General Education  Curriculum (Cal-GETC)",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=97",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45555",
+    "title": "Commercial Music: World Music",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=397",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45556",
+    "title": "Commercial Music: Music Entrepreneurship",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=396",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45568",
+    "title": "Commercial Music: Live Sound Technician",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=390",
+    "coverage": 0.667,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45569",
+    "title": "Information Technology",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=208",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45570",
+    "title": "Fire Technology",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=251",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45612",
+    "title": "Fire Technology",
+    "award": "A.S. Degree",
+    "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=251",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46145",
+    "title": "Radiologic Technology",
+    "award": "A.S. Degree",
+    "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=442",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   }
+  ]
+ },
+ "run": "39046850071"
+}
