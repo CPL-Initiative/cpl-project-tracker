@@ -1,0 +1,3945 @@
+{
+ "college": "Solano Community College",
+ "catalog_url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf",
+ "platform": "pdf",
+ "catalog_year": "2026-2027",
+ "programs": 171,
+ "with_closed_list": 163,
+ "started": "2026-10-17T12:58:56Z",
+ "pdf": {
+  "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf",
+  "access": "ok",
+  "status": 200,
+  "bytes": 9098769,
+  "pages_total": 459,
+  "error": null,
+  "chars_total": 1495583,
+  "pypdf_accepted": 162,
+  "sample": [
+   "p138: '137\\nART - Art\\nC-ID DesignaƟ on may change periodically visit c-id.net/courses/search for current designaƟ on or consult with your counselor\\n**All Prerequisite courses must be completed with a minimum grade of C, or a P if taken on a Pass/No'",
+   "p276: '275\\nConsult with your counselor for guidance on custom course pathwayr\\n**All Prerequisite courses must be completed with a minimum grade of C, or a P if taken on a Pass/No Pass basis, unless otherwise noted\\nTo look up current secƟ on oﬀ eri'"
+  ],
+  "extractor": "pypdf",
+  "picks": [
+   {
+    "control_number": "06506",
+    "pages": [
+     297,
+     298,
+     299
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 297] 296 Horticulture HorƟ culture and Plant Science CerƟ ﬁ cate of Achievement and Associate in Science Program DescripƟ on This program is designed to provide theory and pracƟ cal experience needed to enter the h"
+   },
+   {
+    "control_number": "06509",
+    "pages": [
+     172,
+     173,
+     174
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 172] Students who complete the Business, General CerƟ ﬁ cate of Achievement/Associate in Science will be able to: 1. Recognize and describe the importance of markeƟ ng, law, economics, accounƟ ng, business administ"
+   },
+   {
+    "control_number": "06510",
+    "pages": [
+     107,
+     108
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 107] 106 AccounƟ ng CerƟ ﬁ cate of Achievement and Associate in Science Program DescripƟ on In recent years, accounƟ ng has been one of the fastest growing professions, and the monetary rewards for the individual "
+   },
+   {
+    "control_number": "06515",
+    "pages": [
+     418,
+     419
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 418] Students who complete the Real Estate CerƟ ﬁ cate of Achievement/Associate in Science will be able to: 1. Analyze common real estate problems, apply appropriate soluƟ ons, and interpret outcomes. "
+   },
+   {
+    "control_number": "06516",
+    "pages": [
+     183,
+     184,
+     185,
+     186
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": false,
+    "coverage": 0.812,
+    "opens": "[page 183] 182 Business - Oﬃ ce Technology AdministraƟ ve Assistant CerƟ ﬁ cate of Achievement and Associate in Science Program DescripƟ on This program is designed to develop technical and communicaƟ on skills require"
+   },
+   {
+    "control_number": "06517",
+    "pages": [
+     309,
+     310
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 309] Students who complete the Associate in Arts in Journalism for Transfer will be able to: 1. Understand and apply ethical principles and legal consideraƟ ons speciﬁ c to journalism to produce well-researched, c"
+   },
+   {
+    "control_number": "06518",
+    "pages": [
+     280,
+     281
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 280] Students who complete the Film and Television Associate in Arts will be able to: 1. Demonstrate knowledge of aestheƟ cs, theory, and history of ﬁ lm, television, and digital media. 2. Conceive, structure, or g"
+   },
+   {
+    "control_number": "06519",
+    "pages": [
+     209,
+     210,
+     211,
+     212
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 209] Students who complete the Computer Programming CerƟ ﬁ cate of Achievement/Associate in Science will be able to: 1. Construct applicaƟ ons that use GUI (graphical user interface) components and access database"
+   },
+   {
+    "control_number": "06522",
+    "pages": [
+     148,
+     149,
+     150,
+     151
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 148] 147 Automotive AutomoƟ ve Technician Associate in Science Program DescripƟ on The AutomoƟ ve Technician program is designed to prepare graduates for entry level employment in the automoƟ ve industry as appr"
+   },
+   {
+    "control_number": "06524",
+    "pages": [
+     123,
+     124,
+     125
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 123] 122 Airframe and Powerplant Maintenance Technician CerƟ ﬁ cates of Achievement and Associates in Science Program DescripƟ on PracƟ cal and theoreƟ cal knowledge in basic maintenance techniques, plus the speci"
+   },
+   {
+    "control_number": "06525",
+    "pages": [
+     123,
+     124
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 123] 122 Airframe and Powerplant Maintenance Technician CerƟ ﬁ cates of Achievement and Associates in Science Program DescripƟ on PracƟ cal and theoreƟ cal knowledge in basic maintenance techniques, plus the speci"
+   },
+   {
+    "control_number": "06526",
+    "pages": [
+     123,
+     124,
+     125
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 123] Powerplant Maintenance Technician CerƟ ﬁ cate of Achievement or Associate in Science will be able to: 1. Demonstrate proﬁ cient, entry-level aviaƟ on maintenance skills in airframe, powerplant, or airframe and"
+   },
+   {
+    "control_number": "06529",
+    "pages": [
+     447,
+     448
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 447] Students who complete the Welding Technician CerƟ ﬁ cate of Achievement/Associate in Science will be able to: 1. Demonstrate competency in major welding processes used in industry. "
+   },
+   {
+    "control_number": "06534",
+    "pages": [
+     359
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.792,
+    "opens": "[page 359] Students who complete the Music-Vocal Associate in Arts will be able to: 1. Analyze and perform the elements of music (rhythm, melody, harmony and form) with technical facility and arƟ stry as a soloist and as"
+   },
+   {
+    "control_number": "06535",
+    "pages": [
+     434,
+     435,
+     436,
+     437
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.966,
+    "opens": "[page 434] 433 Theatre Arts Theatre Arts Associate in Arts Program DescripƟ on This program is designed for students who are preparing to further their theatre educaƟ on at the CSU system, as well as those seeking a c"
+   },
+   {
+    "control_number": "06536",
+    "pages": [
+     76
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": false,
+    "coverage": 0.5,
+    "opens": "[page 76] 75 Course Identiﬁ cation Numbering System (C-ID) The Course IdenƟ ﬁ caƟ on Numbering System (C-ID) is a statewide numbering system that is diﬀerent from the course numbers assigned by individual California Comm"
+   },
+   {
+    "control_number": "06538",
+    "pages": [
+     341,
+     342,
+     343,
+     344
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.87,
+    "opens": "[page 341] 340 Modern Languages World Languages Associate in Arts Program DescripƟ on This program introduces the fundamentals of language learning (listening, speaking, reading, wriƟ ng, and culture) with emphasis on l"
+   },
+   {
+    "control_number": "06539",
+    "pages": [
+     347,
+     348,
+     349
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 347] The French Associate in Arts can be obtained by compleƟ ng the 23-24-unit major, general educaƟ on requirements, and elecƟ ves as needed to complete a minimum of 60 units. All courses in the major must be com"
+   },
+   {
+    "control_number": "06541",
+    "pages": [
+     350,
+     351,
+     352,
+     353
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.833,
+    "opens": "[page 350] Associate in Arts in Spanish for Transfer (ADT: A.A.-T) Program DescripƟ on The Associate in Arts Degree in Spanish for Transfer is for students who intend to complete a bachelor’s degree in Spanish at a CSU."
+   },
+   {
+    "control_number": "06542",
+    "pages": [
+     373
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 373] 372 REQUIRED COURSES First Semester Courses (First Year) ..........................Units NURS 071A FoundaƟ ons of Nursing ............................. 11 NURS 071S Nursing Skills Lab I ......................."
+   },
+   {
+    "control_number": "06545",
+    "pages": [
+     267,
+     268,
+     269,
+     270
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 267] The Associate in Arts in English provides the academic and pracƟ cal experience for further educaƟ on in English at a four- year insƟ tuƟ on or a career in English or further educaƟ on or careers in ﬁ elds rel"
+   },
+   {
+    "control_number": "06547",
+    "pages": [
+     404,
+     405
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 404] Students who complete the Physics Associate in Science will be able to: 1. Demonstrate analyƟ cal and/or conceptual problem solving skills related to the study of Physics. 2. Carry out experiments and criƟ cal"
+   },
+   {
+    "control_number": "06548",
+    "pages": [
+     189,
+     190,
+     191
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 189] An Associate in Science in Chemistry for UC Transfer is designed for students who plan to complete a bachelor’s degree in a similar major at a UC campus. Within the Associate in Science in Chemistry for UC Tra"
+   },
+   {
+    "control_number": "06549",
+    "pages": [
+     413,
+     414,
+     415,
+     416
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.933,
+    "opens": "[page 413] Associate in Arts in Psychology for Transfer (ADT: A.A.-T) Program DescripƟ on The psychology program provides academic instrucƟ on in basic psychological concepts, theories, terminology, and research methods,"
+   },
+   {
+    "control_number": "06550",
+    "pages": [
+     111,
+     112,
+     113,
+     114
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 111] 110 Administration of Justice Criminal JusƟ ce, CorrecƟ ons CerƟ ﬁ cate of Achievement and Associate in Science Program DescripƟ on This program oﬀ ers core and selecƟ ve courses which provide the student wit"
+   },
+   {
+    "control_number": "06551",
+    "pages": [
+     111,
+     112,
+     113,
+     114
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": false,
+    "coverage": 1.0,
+    "opens": "[page 111] 110 Administration of Justice Criminal JusƟ ce, CorrecƟ ons CerƟ ﬁ cate of Achievement and Associate in Science Program DescripƟ on This program oﬀ ers core and selecƟ ve courses which provide the student wit"
+   },
+   {
+    "control_number": "06552",
+    "pages": [
+     77
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.727,
+    "opens": "[page 77] 76 Course Identiﬁ cation Numbering System (C-ID) SCC Course SCC Course Title C-ID Desi gnator SCC Course SCC Course Title C-ID Desi gnator NOTE: This list will "
+   },
+   {
+    "control_number": "06553",
+    "pages": [
+     283,
+     284,
+     285
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 283] Students who complete the Fire Technology CerƟ ﬁ cate of Achievement/Associate in Science will be able to: 1. IdenƟ fy and comprehend laws, regulaƟ ons, codes and standards that inﬂ uence ﬁ re department oper"
+   },
+   {
+    "control_number": "06555",
+    "pages": [
+     85
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.704,
+    "opens": "[page 85] 84 Solano Community College General Education2026–2027 (Local/Non-Transfer Pathway) CPL* = Credit for Prior Learning C = Completed IP = In Progress P = Planned AREA 4 – Social and Behavioral Science"
+   },
+   {
+    "control_number": "06559",
+    "pages": [
+     422
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 422] Students who complete the Science, General Associate in Arts will be able to: 1. Demonstrate analyƟ cal and/or conceptual problem solving skills. "
+   },
+   {
+    "control_number": "07790",
+    "pages": [
+     178,
+     179
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 178] Students who complete the Small Business Management CerƟ ﬁ cate of Achievement/Associate in Science will be able to: 1. Demonstrate oral and wriƩ en skills unique in the business community. "
+   },
+   {
+    "control_number": "07793",
+    "pages": [
+     210,
+     211,
+     212,
+     213
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": false,
+    "coverage": 1.0,
+    "opens": "[page 210] 209 Computer Information Science Microcomputer ApplicaƟ ons CerƟ ﬁ cate of Achievement and Associate in Science Program DescripƟ on This program is designed to prepare the student for employment as a micro"
+   },
+   {
+    "control_number": "07795",
+    "pages": [
+     331,
+     332
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": false,
+    "coverage": 1.0,
+    "opens": "[page 331] 330 Kinesiology - Sports Medicine Sports Medicine/AthleƟ c Training Associate in Science Program DescripƟ on The Department of Kinesiology at Solano Community College oﬀ ers a Sports Medicine Program. We are"
+   },
+   {
+    "control_number": "07800",
+    "pages": [
+     390,
+     391,
+     392,
+     393
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 390] 389 Photography Photography, Professional CerƟ ﬁ cate of Achievement and Associate in Arts Program DescripƟ on CreaƟ ve and technical coursework designed to prepare students for self-employment and employment "
+   },
+   {
+    "control_number": "07808",
+    "pages": [
+     162,
+     163
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 162] Students who complete the Industrial Biotechnology Associate in Science will be able to: 1. Explain how the structure and funcƟ on of protein pharmaceuƟ cals and evaluate which protein properƟ es a producƟ on "
+   },
+   {
+    "control_number": "08337",
+    "pages": [
+     303,
+     304,
+     305
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.938,
+    "opens": "[page 303] Associate in Arts in Social Work and Human Services for Transfer (ADT: A.A.-T) Program DescripƟ on The Social Work and Human Services program provides comprehensive training resulƟ ng in well-rounded Social W"
+   },
+   {
+    "control_number": "10463",
+    "pages": [
+     358,
+     359
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.783,
+    "opens": "[page 358] Students who complete the Music-Instrumental Associate in Arts will be able to: 1. Analyze and perform the elements of music (rhythm, melody, harmony and form) with technical facility and arƟ stry as a soloist"
+   },
+   {
+    "control_number": "16541",
+    "pages": [
+     210,
+     211,
+     212,
+     213
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 210] 209 Computer Information Science Microcomputer ApplicaƟ ons CerƟ ﬁ cate of Achievement and Associate in Science Program DescripƟ on This program is designed to prepare the student for employment as a micro"
+   },
+   {
+    "control_number": "16819",
+    "pages": [
+     173,
+     174
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 173] Students who complete the Business-Insurance: Property & Casualty CerƟ ﬁ cate of Achievement/Associate in Science will be able to: 1. Understand the insurance process, the segments of insurance, and the conse"
+   },
+   {
+    "control_number": "18535",
+    "pages": [
+     155
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": false,
+    "coverage": 1.0,
+    "opens": "[page 155] 154 Biology Biology Associate in Science Program DescripƟ on This degree has been designed for students planning on transferring to a University of California (UC) campus as a Biology, Cell Biology, Molecul"
+   },
+   {
+    "control_number": "19450",
+    "pages": [
+     429,
+     430,
+     431
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 429] Students who complete the Sociology Associate in Arts will be able to: 1. Demonstrate knowledge of cultural, social, poliƟ cal, environmental, and economic forces within the world they live. 2. Demonstrate awa"
+   },
+   {
+    "control_number": "19633",
+    "pages": [
+     163,
+     164,
+     165,
+     166
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 163] 162 Biotechnology Industrial Biotechnology CerƟ ﬁ cate of Achievement Program DescripƟ on This program prepares graduates to work in the biotechnology industry as producƟ on technicians. A producƟ on technici"
+   },
+   {
+    "control_number": "20947",
+    "pages": [
+     297,
+     298,
+     299
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 297] 296 Horticulture HorƟ culture and Plant Science CerƟ ﬁ cate of Achievement and Associate in Science Program DescripƟ on This program is designed to provide theory and pracƟ cal experience needed to enter the h"
+   },
+   {
+    "control_number": "20953",
+    "pages": [
+     107,
+     108
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 107] 106 AccounƟ ng CerƟ ﬁ cate of Achievement and Associate in Science Program DescripƟ on In recent years, accounƟ ng has been one of the fastest growing professions, and the monetary rewards for the individual "
+   },
+   {
+    "control_number": "20955",
+    "pages": [
+     172,
+     173,
+     174
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 172] 171 Business Business, General CerƟ ﬁ cate of Achievement and Associate in Science Program DescripƟ on This program is designed for business students planning to transfer to the University of California and/o"
+   },
+   {
+    "control_number": "20956",
+    "pages": [
+     176,
+     177,
+     178,
+     179
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 176] 175 Business - Management Management CerƟ ﬁ cate of Achievement and Associate in Science Program DescripƟ on This program is designed to emphasize training to improve thought processes and to provide familiar"
+   },
+   {
+    "control_number": "20957",
+    "pages": [
+     178,
+     179
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 178] 177 Business - Management Management: Small Business Management CerƟ ﬁ cate of Achievement and Associate in Science Program DescripƟ on This program is designed for those planning to start their own business,"
+   },
+   {
+    "control_number": "20958",
+    "pages": [
+     177,
+     178,
+     179,
+     180
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 177] 176 Business - Management Management: Retail Management CerƟ ﬁ cate of Achievement and Associate in Science Program DescripƟ on Designed to serve the needs of the employees and employers within the retail indu"
+   },
+   {
+    "control_number": "20959",
+    "pages": [
+     181,
+     182,
+     183,
+     184
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 181] 180 Business - Marketing MarkeƟ ng CerƟ ﬁ cate of Achievement and Associate in Science Program DescripƟ on MarkeƟ ng involves a variety of acƟ viƟ es including selecƟ on of target customer, product developmen"
+   },
+   {
+    "control_number": "20960",
+    "pages": [
+     418,
+     419
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 418] 417 Real Estate Real Estate CerƟ ﬁ cate of Achievement and Associate in Science Program DescripƟ on This program oﬀ ers courses needed to qualify for the state of California salesperson license examinaƟ on as"
+   },
+   {
+    "control_number": "20961",
+    "pages": [
+     173,
+     174
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 173] 172 Business Business-Insurance: Property & Casualty CerƟ ﬁ cate of Achievement and Associate in Science Program DescripƟ on This program provides essenƟ al background informaƟ on needed by those wishing to w"
+   },
+   {
+    "control_number": "20962",
+    "pages": [
+     183
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": false,
+    "coverage": 0.545,
+    "opens": "[page 183] 182 Business - Oﬃ ce Technology AdministraƟ ve Assistant CerƟ ﬁ cate of Achievement and Associate in Science Program DescripƟ on This program is designed to develop technical and communicaƟ on skills require"
+   },
+   {
+    "control_number": "20966",
+    "pages": [
+     210,
+     211,
+     212,
+     213
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": false,
+    "coverage": 1.0,
+    "opens": "[page 210] 209 Computer Information Science Microcomputer ApplicaƟ ons CerƟ ﬁ cate of Achievement and Associate in Science Program DescripƟ on This program is designed to prepare the student for employment as a micro"
+   },
+   {
+    "control_number": "20967",
+    "pages": [
+     209,
+     210,
+     211,
+     212
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 209] 208 Computer Information Science Computer Programming CerƟ ﬁ cate of Achievement and Associate in Science Program DescripƟ on This program is designed to prepare the student for employment as a computer progr"
+   },
+   {
+    "control_number": "20968",
+    "pages": [
+     210,
+     211,
+     212,
+     213
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 210] 209 Computer Information Science Microcomputer ApplicaƟ ons CerƟ ﬁ cate of Achievement and Associate in Science Program DescripƟ on This program is designed to prepare the student for employment as a micro"
+   },
+   {
+    "control_number": "20971",
+    "pages": [
+     149,
+     150,
+     151,
+     152
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 149] 148 Automotive AutomoƟ ve Electrical and Body Systems CerƟ ﬁ cate of Achievement Program DescripƟ on This program is designed to prepare graduates for entry level employment in the automoƟ ve industry as an "
+   },
+   {
+    "control_number": "20973",
+    "pages": [
+     123,
+     124,
+     125
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 123] 122 Airframe and Powerplant Maintenance Technician CerƟ ﬁ cates of Achievement and Associates in Science Program DescripƟ on PracƟ cal and theoreƟ cal knowledge in basic maintenance techniques, plus the speci"
+   },
+   {
+    "control_number": "20974",
+    "pages": [
+     123,
+     124
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 123] 122 Airframe and Powerplant Maintenance Technician CerƟ ﬁ cates of Achievement and Associates in Science Program DescripƟ on PracƟ cal and theoreƟ cal knowledge in basic maintenance techniques, plus the speci"
+   },
+   {
+    "control_number": "20975",
+    "pages": [
+     123,
+     124,
+     125
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 123] 122 Airframe and Powerplant Maintenance Technician CerƟ ﬁ cates of Achievement and Associates in Science Program DescripƟ on PracƟ cal and theoreƟ cal knowledge in basic maintenance techniques, plus the speci"
+   },
+   {
+    "control_number": "20977",
+    "pages": [
+     249,
+     250,
+     251,
+     252
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 249] 248 Drafting DraŌ ing and Design Technician CerƟ ﬁ cate of Achievement and Associate in Science Program DescripƟ on This program is designed to provide students with entry level skills in the ﬁ elds of mechan"
+   },
+   {
+    "control_number": "20978",
+    "pages": [
+     447,
+     448
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 447] 446 Welding Welding Technician CerƟ ﬁ cate of Achievement and Associate in Science Program DescripƟ on Designed to prepare the graduate for employment as a welder or a welder helper in the metal trades. The m"
+   },
+   {
+    "control_number": "20981",
+    "pages": [
+     443,
+     444,
+     445
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.929,
+    "opens": "[page 443] 442 Water and Wastewater Technology Water and Wastewater Technology CerƟ ﬁ cate of Achievement and Associate in Science Program DescripƟ on A study of the principles of water and wastewater disposal and puri"
+   },
+   {
+    "control_number": "20982",
+    "pages": [
+     390,
+     391,
+     392,
+     393
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 390] 389 Photography Photography, Professional CerƟ ﬁ cate of Achievement and Associate in Arts Program DescripƟ on CreaƟ ve and technical coursework designed to prepare students for self-employment and employment "
+   },
+   {
+    "control_number": "20988",
+    "pages": [
+     77
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.667,
+    "opens": "[page 77] 76 Course Identiﬁ cation Numbering System (C-ID) SCC Course SCC Course Title C-ID Desi gnator SCC Course SCC Course Title C-ID Desi gnator NOTE: This list will "
+   },
+   {
+    "control_number": "20989",
+    "pages": [
+     304,
+     305
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 304] 303 Human Services and Social Work Human Services and Social Work CerƟ ﬁ cate of Achievement and Associate in Arts Program DescripƟ on The Human Services and Social Work program provides comprehensive traini"
+   },
+   {
+    "control_number": "20990",
+    "pages": [
+     111,
+     112,
+     113,
+     114
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 111] 110 Administration of Justice Criminal JusƟ ce, CorrecƟ ons CerƟ ﬁ cate of Achievement and Associate in Science Program DescripƟ on This program oﬀ ers core and selecƟ ve courses which provide the student wit"
+   },
+   {
+    "control_number": "20991",
+    "pages": [
+     111,
+     112,
+     113,
+     114
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": false,
+    "coverage": 1.0,
+    "opens": "[page 111] 110 Administration of Justice Criminal JusƟ ce, CorrecƟ ons CerƟ ﬁ cate of Achievement and Associate in Science Program DescripƟ on This program oﬀ ers core and selecƟ ve courses which provide the student wit"
+   },
+   {
+    "control_number": "20992",
+    "pages": [
+     285
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.778,
+    "opens": "[page 285] 284 FIRE - Fire Technologygy FIRE 050 Principles of Emergency Services 3.0 Units Transferable to CSU Hours: 48-54 lecture This course provides an overview of ﬁ re protecƟ on; career opportuniƟ es"
+   },
+   {
+    "control_number": "30034",
+    "pages": [
+     250,
+     251,
+     252
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 250] 249 Drafting Survey and Civil DraŌ ing Technician CerƟ ﬁ cate of Achievement and Associate in Science Program DescripƟ on This program is designed to provide students with entry-level skills in the ﬁ elds of "
+   },
+   {
+    "control_number": "30184",
+    "pages": [
+     118,
+     119,
+     120,
+     121
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 118] Students who complete the Mechatronics CerƟ ﬁ cate of Achievement/Associate in Science will be able to: 1. Troubleshoot and solve basic problems involving electrical wiring, connecƟ ons, and distribuƟ on at b"
+   },
+   {
+    "control_number": "30185",
+    "pages": [
+     118,
+     119,
+     120,
+     121
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 118] 117 Advanced Manufacturing Mechatronics CerƟ ﬁ cate of Achievement and Associate in Science Program DescripƟ on Mechatronics is the study of electronics, mechanics, electrical, and control systems to produce a"
+   },
+   {
+    "control_number": "30417",
+    "pages": [
+     183
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": false,
+    "coverage": 1.0,
+    "opens": "[page 183] 182 Business - Oﬃ ce Technology AdministraƟ ve Assistant CerƟ ﬁ cate of Achievement and Associate in Science Program DescripƟ on This program is designed to develop technical and communicaƟ on skills require"
+   },
+   {
+    "control_number": "30671",
+    "pages": [
+     78
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 78] 77 Course Identiﬁ cation Numbering System (C-ID) NOTE: This list will change periodically. Consult a counselor or visit hƩ p://www.c-id.net/courses/search for the most current list of Solano Community College c"
+   },
+   {
+    "control_number": "30678",
+    "pages": [
+     428,
+     429,
+     430,
+     431
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 428] Associate in Arts in Sociology for Transfer (ADT: A.A.-T) Program DescripƟ on Sociology is the study of society and human behavior. Students who obtain a degree in Sociology gain a fundamental understanding o"
+   },
+   {
+    "control_number": "31659",
+    "pages": [
+     203,
+     204,
+     205,
+     206
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 203] 202 Communication Studies Associate in Arts in fs.0 for Transfer (ADT: A.A.-T) Program DescripƟ on The Associate in Arts in CommunicaƟ on Studies 2.0 for Transfer Program is broad-based and concerned with the"
+   },
+   {
+    "control_number": "31761",
+    "pages": [
+     77
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 77] 76 Course Identiﬁ cation Numbering System (C-ID) SCC Course SCC Course Title C-ID Desi gnator SCC Course SCC Course Title C-ID Desi gnator NOTE: This list will "
+   },
+   {
+    "control_number": "32121",
+    "pages": [
+     131,
+     132,
+     133,
+     134
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.938,
+    "opens": "[page 131] Associate in Arts in Studio Arts for Transfer (ADT: A.A.-T) Program DescripƟ on This program provides the academic and pracƟ cal experience to prepare students for a career, or further educaƟ on at a four-ye"
+   },
+   {
+    "control_number": "32126",
+    "pages": [
+     142,
+     143
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.952,
+    "opens": "[page 142] Associate in Arts in Art History for Transfer (ADT: A.A.-T) Program DescripƟ on This program provides the academic and pracƟ cal experience to prepare students for a career, or further educaƟ on at a four-y"
+   },
+   {
+    "control_number": "32475",
+    "pages": [
+     145
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 145] major in astronomy/astrophysics or double major in astronomy and physics to the university. Transfer level astronomy curricula stress very strong preparaƟ on in physics and mathemaƟ cs. While most astronomy co"
+   },
+   {
+    "control_number": "32495",
+    "pages": [
+     307,
+     308,
+     309,
+     310
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 307] Associate in Arts in Journalism for Transfer (ADT: A.A.-T) Program DescripƟ on Journalism teaches criƟ cal thinking and communicaƟ on skills that enable students to translate events and issues of importance "
+   },
+   {
+    "control_number": "32903",
+    "pages": [
+     110,
+     111,
+     112,
+     113
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 110] 109 Administration of Justice Associate in Science in AdministraƟ on of JusƟ ce for Transfer (ADT: A.S.-T) Program DescripƟ on This program oﬀ ers core and selecƟ ve courses which provide the student with a b"
+   },
+   {
+    "control_number": "32917",
+    "pages": [
+     413,
+     414,
+     415,
+     416
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 413] Associate in Arts in Psychology for Transfer (ADT: A.A.-T) Program DescripƟ on The psychology program provides academic instrucƟ on in basic psychological concepts, theories, terminology, and research methods,"
+   },
+   {
+    "control_number": "32918",
+    "pages": [
+     324,
+     325,
+     326,
+     327
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.808,
+    "opens": "[page 324] 323 Kinesiology MOVEMENT ͳBASED COURSES AquaƟ cs: (maximum of one course) ..................... Units KINE 002A Swimming - Beginning .................................. 1 KINE 002B Swimming - Intermediate ...."
+   },
+   {
+    "control_number": "32919",
+    "pages": [
+     266,
+     267,
+     268,
+     269
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 266] Associate in Arts in English for Transfer (ADT: A.A.-T) Program DescripƟ on This program is for students who intend to complete a bachelor’s degree in English at a CSU. Students will take courses in English a"
+   },
+   {
+    "control_number": "32927",
+    "pages": [
+     287,
+     288
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 287] Associate in Arts in Geography for Transfer (ADT: A.A.-T) Program DescripƟ on Solano Community College oﬀ ers an Associate in Arts in Geography for Transfer to introduce students to principles, theory, and ap"
+   },
+   {
+    "control_number": "32937",
+    "pages": [
+     292,
+     293,
+     294
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 292] Associate in Arts in History for Transfer (ADT: A.A.-T) Program DescripƟ on This program emphasizes the development of various socieƟ es through a chronological study of the major social, poliƟ cal, economic"
+   },
+   {
+    "control_number": "32992",
+    "pages": [
+     433,
+     434,
+     435,
+     436
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 433] Associate in Arts in Theatre Arts for Transfer (ADT: A.A.-T) Program DescripƟ on Theatre teaches pracƟ cal skills, performance techniques, and creaƟ vity. It is the goal of this department to provide student"
+   },
+   {
+    "control_number": "33291",
+    "pages": [
+     350,
+     351,
+     352,
+     353
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 350] Associate in Arts in Spanish for Transfer (ADT: A.A.-T) Program DescripƟ on The Associate in Arts Degree in Spanish for Transfer is for students who intend to complete a bachelor’s degree in Spanish at a CSU."
+   },
+   {
+    "control_number": "33305",
+    "pages": [
+     76,
+     77,
+     78
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.778,
+    "opens": "[page 76] 75 Course Identiﬁ cation Numbering System (C-ID) The Course IdenƟ ﬁ caƟ on Numbering System (C-ID) is a statewide numbering system that is diﬀerent from the course numbers assigned by individual California Comm"
+   },
+   {
+    "control_number": "33373",
+    "pages": [
+     127,
+     128,
+     129
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 127] Associate in Arts in Anthropology for Transfer (ADT: AA-T) Program DescripƟ on This program emphasizes the development and diversity of, and adaptaƟ ons in, human behavior and biology. Students in this progr"
+   },
+   {
+    "control_number": "33378",
+    "pages": [
+     409,
+     410,
+     411
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 409] 408 Political Science Associate in Arts in PoliƟ cal Science for Transfer (ADT: A.A.-T) Program DescripƟ on This program examines the theory and pracƟ ce of government and the powerful personaliƟ es that aﬀ e"
+   },
+   {
+    "control_number": "35213",
+    "pages": [
+     231
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.903,
+    "opens": "[page 231] preparaƟ on and general educaƟ on for transfer while simultaneously compleƟ ng the Liberal Studies Associate in Arts. This program provides opportuniƟ es for students who are exploring degree opƟ ons and are "
+   },
+   {
+    "control_number": "35259",
+    "pages": [
+     204
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": false,
+    "coverage": 1.0,
+    "opens": "[page 204] 203 Communication Studies Sports BroadcasƟ ng CerƟ ﬁ cate of Achievement Program DescripƟ on This program oﬀ ers students hands-on experience in the basics of television and internet sports broadcasƟ ng. Area"
+   },
+   {
+    "control_number": "35517",
+    "pages": [
+     195,
+     196,
+     197,
+     198
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 195] 194 Child Development and Family Studies Associate in Science in Early Childhood EducaƟ on for Transfer (ADT: A.S.-T) Program DescripƟ on Successful compleƟ on of this major prepares students to work in the ﬁ"
+   },
+   {
+    "control_number": "35683",
+    "pages": [
+     262,
+     263,
+     264
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 262] universiƟ es throughout California. As part of our Engineering Program, an Associate in Science in Engineering is available. Although most engineering students transfer to a four-year university, those with a"
+   },
+   {
+    "control_number": "35707",
+    "pages": [
+     164
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 164] 163 Biotechnology Biotechnology Laboratory Assistant CerƟ ﬁ cate of Achievement Program DescripƟ on This program serves as a Bridge to Biosciences, enabling graduates to enter the Solano College Industrial Bi"
+   },
+   {
+    "control_number": "35747",
+    "pages": [
+     149,
+     150,
+     151,
+     152
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 149] 148 Automotive AutomoƟ ve Electrical and Body Systems CerƟ ﬁ cate of Achievement Program DescripƟ on This program is designed to prepare graduates for entry level employment in the automoƟ ve industry as an "
+   },
+   {
+    "control_number": "35748",
+    "pages": [
+     148,
+     149,
+     150,
+     151
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": false,
+    "coverage": 1.0,
+    "opens": "[page 148] 147 Automotive AutomoƟ ve Technician Associate in Science Program DescripƟ on The AutomoƟ ve Technician program is designed to prepare graduates for entry level employment in the automoƟ ve industry as appr"
+   },
+   {
+    "control_number": "35808",
+    "pages": [
+     357,
+     358,
+     359
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.762,
+    "opens": "[page 357] Associate in Arts in Music for Transfer (ADT: A.A.-T) Program DescripƟ on The Associate in Arts in Music for Transfer provides students with the foundaƟ ons for a broad range of musical specializaƟ ons such as"
+   },
+   {
+    "control_number": "35982",
+    "pages": [
+     382,
+     383
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 382] 381 Nutrition Associate in Science in NutriƟ on and DieteƟ cs for Transfer (A.S.-T) Program DescripƟ on This program is designed to meet the general educaƟ on requirements at California State UniversiƟ es and "
+   },
+   {
+    "control_number": "36034",
+    "pages": [
+     145,
+     146
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 145] The Associate in Science in Astronomy can be obtained by compleƟ ng the 39-unit major, General EducaƟ on, and elecƟ ves as needed to complete a minimum of 60 units. All courses for the major must be completed "
+   },
+   {
+    "control_number": "36249",
+    "pages": [
+     435,
+     436,
+     437,
+     438
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 435] 434 Theatre Arts Theatre Arts Technical CerƟ ﬁ cate of Achievement Program DescripƟ on The Theatre Arts Technical CerƟ ﬁ cate program prepares students for an entry-level career in Community and Professional "
+   },
+   {
+    "control_number": "36302",
+    "pages": [
+     155,
+     156,
+     157,
+     158
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 155] 154 Biology Biology Associate in Science Program DescripƟ on This degree has been designed for students planning on transferring to a University of California (UC) campus as a Biology, Cell Biology, Molecul"
+   },
+   {
+    "control_number": "36420",
+    "pages": [
+     221
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.667,
+    "opens": "[page 221] Students who complete the Cosmetology CerƟ ﬁ cate of Achievement/Associate in Science will be able to: 1. Compare and contrast the skills as required by the California State Board of Barbering and Cosmetology"
+   },
+   {
+    "control_number": "36421",
+    "pages": [
+     249,
+     250,
+     251,
+     252
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 249] 248 Drafting DraŌ ing and Design Technician CerƟ ﬁ cate of Achievement and Associate in Science Program DescripƟ on This program is designed to provide students with entry level skills in the ﬁ elds of mechan"
+   },
+   {
+    "control_number": "36428",
+    "pages": [
+     250,
+     251,
+     252
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 250] 249 Drafting Survey and Civil DraŌ ing Technician CerƟ ﬁ cate of Achievement and Associate in Science Program DescripƟ on This program is designed to provide students with entry-level skills in the ﬁ elds of "
+   },
+   {
+    "control_number": "36455",
+    "pages": [
+     343,
+     344,
+     345,
+     346
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 343] Students who complete the ASL/English Interpreter Training CerƟ ﬁ cate of Achievement/Associate in Arts will be able to: 1. Sign eﬀ ecƟ vely, using appropriate skills, in working with the Deaf and Hard of Hear"
+   },
+   {
+    "control_number": "36457",
+    "pages": [
+     343,
+     344,
+     345,
+     346
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 343] 342 Modern Languages - American Sign Language ASL/English Interpreter Training CerƟ ﬁ cate of Achievement and Associate in Arts Program DescripƟ on The ASL program provides a foundaƟ on of interpreƟ ng skills"
+   },
+   {
+    "control_number": "36511",
+    "pages": [
+     154,
+     155,
+     156,
+     157
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 154] Associate in Science in Biology for Transfer (ADT: A.S.-T.) Program DescripƟ on The Associate in Science in Biology for Transfer prepares students to seamlessly transfer to the California State University (C"
+   },
+   {
+    "control_number": "37103",
+    "pages": [
+     254,
+     255
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 254] Associate in Arts in Economics for Transfer (ADT: A.A.-T) Program DescripƟ on This curriculum is designed to provide an opportunity for economics majors to achieve an Associate in Arts Degree in Economics whil"
+   },
+   {
+    "control_number": "37158",
+    "pages": [
+     424,
+     425
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.696,
+    "opens": "[page 424] 423 Social Justice Studies Associate in Arts in Social JusƟ ce: General for Transfer (ADT: A.A.-T) Program DescripƟ on The Associate in Arts in Social JusƟ ce: General for Transfer at Solano Community College"
+   },
+   {
+    "control_number": "37187",
+    "pages": [
+     132,
+     133,
+     134,
+     135
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 132] Students who complete the Studio Arts with Emphasis Associate in Arts will be able to: 1. Demonstrate advanced skills in selecƟ ng a broad range of appropriate materials and techniques to solve creaƟ ve probl"
+   },
+   {
+    "control_number": "37212",
+    "pages": [
+     251,
+     252
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 251] 250 Drafting Maker Space Technology CerƟ ﬁ cate of Achievement Program DescripƟ on This program is an overview of basic design of manufacturing skills and concepts. Students will learn basic 2D and 3D CAD (Co"
+   },
+   {
+    "control_number": "37919",
+    "pages": [
+     236,
+     237,
+     238,
+     239
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 236] Students who complete the Dance Associate in Arts will be able to: 1. Demonstrate the skills required to perform at a proﬁ cient level in a variety of dance styles including ballet, jazz, hip-hop, and modern d"
+   },
+   {
+    "control_number": "38141",
+    "pages": [
+     155,
+     156,
+     157,
+     158
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 155] 154 Biology Biology Associate in Science Program DescripƟ on This degree has been designed for students planning on transferring to a University of California (UC) campus as a Biology, Cell Biology, Molecul"
+   },
+   {
+    "control_number": "38142",
+    "pages": [
+     155,
+     156,
+     157,
+     158
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 155] Students who complete the Biomedical Sciences CerƟ ﬁ cate of Achievement/Associate in Science will be able to: 1. Demonstrate knowledge of the structure and funcƟ on of the major organ systems of the human bo"
+   },
+   {
+    "control_number": "38146",
+    "pages": [
+     400,
+     401
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 400] 399 Physical Science Physical Science Associate in Science Program DescripƟ on This program provides students the opportunity to invesƟ gate methods of scienƟ ﬁ c inquiry, and to gain scienƟ ﬁ c knowledge, th"
+   },
+   {
+    "control_number": "38221",
+    "pages": [
+     116,
+     117,
+     118,
+     119
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": false,
+    "coverage": 1.0,
+    "opens": "[page 116] 115 Advanced Manufacturing AutomaƟ on CerƟ ﬁ cate of Achievement and Associate in Science Program DescripƟ on The AutomaƟ on degree program provides an introducƟ on to industrial automaƟ on including digital e"
+   },
+   {
+    "control_number": "38229",
+    "pages": [
+     116,
+     117,
+     118,
+     119
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": false,
+    "coverage": 1.0,
+    "opens": "[page 116] 115 Advanced Manufacturing AutomaƟ on CerƟ ﬁ cate of Achievement and Associate in Science Program DescripƟ on The AutomaƟ on degree program provides an introducƟ on to industrial automaƟ on including digital e"
+   },
+   {
+    "control_number": "38230",
+    "pages": [
+     165,
+     166,
+     167,
+     168
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 165] 164 Biotechnology Cell and Gene Therapies CerƟ ﬁ cate of Achievement Program DescripƟ on This program trains students to enter the emerging ﬁ elds of gene therapy (with the producƟ on of viral vectors) and ce"
+   },
+   {
+    "control_number": "38231",
+    "pages": [
+     116,
+     117,
+     118,
+     119
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 116] 115 Advanced Manufacturing AutomaƟ on CerƟ ﬁ cate of Achievement and Associate in Science Program DescripƟ on The AutomaƟ on degree program provides an introducƟ on to industrial automaƟ on including digital e"
+   },
+   {
+    "control_number": "38404",
+    "pages": [
+     217
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 217] Associate in Science in Computer Science for Transfer (ADT: A.S.-T) Program DescripƟ on The Associate in Science for Transfer is especially appropriate for students who plan to complete a bachelor’s degree in "
+   },
+   {
+    "control_number": "38591",
+    "pages": [
+     342,
+     343,
+     344,
+     345
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 342] The American Sign Language Associate in Arts can be obtained by compleƟ ng the 27-unit major, general educaƟ on requirements, and elecƟ ves as needed to complete a minimum of 60 units. All courses in the major"
+   },
+   {
+    "control_number": "38652",
+    "pages": [
+     257,
+     258
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.895,
+    "opens": "[page 257] 256 Education Associate in Arts in Elementary Teacher EducaƟ on: Integrated Programs for Transfer (ADT: A.A.-T) Program DescripƟ on The Associate in Arts in Elementary Teacher EducaƟ on: Integrated Programs f"
+   },
+   {
+    "control_number": "39445",
+    "pages": [
+     391,
+     392,
+     393,
+     394
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": false,
+    "coverage": 1.0,
+    "opens": "[page 391] 390 Photography Photo IllustraƟ on CerƟ ﬁ cate of Achievement Program DescripƟ on Students learn a range of photographic, design and graphic design skills, including camera operaƟ on, light control, principle"
+   },
+   {
+    "control_number": "40392",
+    "pages": [
+     198,
+     199,
+     200,
+     201
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 198] 197 Infant/Toddler Teacher CerƟ ﬁ cate of Achievement Program DescripƟ on This program provides foundaƟ onal skills in the care of infants and toddlers. Students gain knowledge of young children’s social an"
+   },
+   {
+    "control_number": "41377",
+    "pages": [
+     76,
+     77,
+     78
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 76] 75 Course Identiﬁ cation Numbering System (C-ID) The Course IdenƟ ﬁ caƟ on Numbering System (C-ID) is a statewide numbering system that is diﬀerent from the course numbers assigned by individual California Comm"
+   },
+   {
+    "control_number": "41524",
+    "pages": [
+     284,
+     285
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": false,
+    "coverage": 1.0,
+    "opens": "[page 284] 283 Fire Technology Fireﬁ ghter 1 & 2 CerƟ ﬁ cate of Achievement Program DescripƟ on Solano Community College’s Fireﬁ ghter 1 & 2 CerƟ ﬁ cate of Achievement will cover the principles, procedures, and tech"
+   },
+   {
+    "control_number": "42041",
+    "pages": [
+     303,
+     304,
+     305
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.96,
+    "opens": "[page 303] Associate in Arts in Social Work and Human Services for Transfer (ADT: A.A.-T) Program DescripƟ on The Social Work and Human Services program provides comprehensive training resulƟ ng in well-rounded Social W"
+   },
+   {
+    "control_number": "42203",
+    "pages": [
+     352,
+     353,
+     354,
+     355
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 352] 351 Modern Languages - Spanish Spanish/English Healthcare Interpreter Training CerƟ ﬁ cate of Achievement Program DescripƟ on This program provides a foundaƟ on of interpreƟ ng skills for students seeking to "
+   },
+   {
+    "control_number": "42204",
+    "pages": [
+     351,
+     352,
+     353,
+     354
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": false,
+    "coverage": 1.0,
+    "opens": "[page 351] 350 Modern Languages - Spanish Spanish/English CommunicaƟ on Specialist CerƟ ﬁ cate of Achievement Program DescripƟ on This program prepares students to communicate in the workforce with increased cultural re"
+   },
+   {
+    "control_number": "42205",
+    "pages": [
+     221
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 221] 220 Cosmetology Cosmetology CerƟ ﬁ cate of Achievement Program DescripƟ on The Cosmetology program is approved by the Board of Barbering and Cosmetology. It is designed to prepare the student to take the Ca"
+   },
+   {
+    "control_number": "42206",
+    "pages": [
+     223
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 223] 222 Cosmetology Nail Technology CerƟ ﬁ cate of Achievement Program DescripƟ on The Nail Technology Program is approved by the California Board of Barbering and Cosmetology. The program consists of Cosm 131,"
+   },
+   {
+    "control_number": "42207",
+    "pages": [
+     222
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": false,
+    "coverage": 1.0,
+    "opens": "[page 222] 221 Cosmetology EstheƟ cs CerƟ ﬁ cate of Achievement Program DescripƟ on The EstheƟ cs program is approved by the California Board of Barbering and Cosmetology. It is designed to prepare the student to take "
+   },
+   {
+    "control_number": "42912",
+    "pages": [
+     241,
+     242
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 241] 240 Data Science Data Science Associate in Science Program DescripƟ on The Data Science program is primarily designed to prepare students to transfer to a data science B.S. degree at a four- year university. "
+   },
+   {
+    "control_number": "42914",
+    "pages": [
+     241,
+     242
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 241] The Associate in Science in Data Science can be obtained by compleƟ ng the 35-unit major and general educaƟ on. All courses for the major must be completed with a minimum grade of C or P if taken on a Pass/No "
+   },
+   {
+    "control_number": "42947",
+    "pages": [
+     404,
+     405
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.967,
+    "opens": "[page 404] Students who complete the Physics Associate in Science will be able to: 1. Demonstrate analyƟ cal and/or conceptual problem solving skills related to the study of Physics. 2. Carry out experiments and criƟ cal"
+   },
+   {
+    "control_number": "43134",
+    "pages": [
+     341,
+     342,
+     343,
+     344
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 341] 340 Modern Languages World Languages Associate in Arts Program DescripƟ on This program introduces the fundamentals of language learning (listening, speaking, reading, wriƟ ng, and culture) with emphasis on l"
+   },
+   {
+    "control_number": "43144",
+    "pages": [
+     321,
+     322,
+     323
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.933,
+    "opens": "[page 321] Associate in Science in Public Health for Transfer (ADT: A.S.-T) Program DescripƟ on The Associate in Science in Public Health for Transfer degree prepares leaders who promote community health, prevent disea"
+   },
+   {
+    "control_number": "43145",
+    "pages": [
+     203,
+     204,
+     205,
+     206
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 203] 202 Communication Studies Associate in Arts in fs.0 for Transfer (ADT: A.A.-T) Program DescripƟ on The Associate in Arts in CommunicaƟ on Studies 2.0 for Transfer Program is broad-based and concerned with the"
+   },
+   {
+    "control_number": "43166",
+    "pages": [
+     189,
+     190,
+     191,
+     192
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": false,
+    "coverage": 0.9,
+    "opens": "[page 189] 188 Chemistry Chemistry (AS-T-UCTP) Associate in Science for Tranfer - UC Transfer Pathway Program DescripƟ on An Associate in Science in Chemistry for UC Transfer is designed for students who plan to complet"
+   },
+   {
+    "control_number": "43948",
+    "pages": [
+     283,
+     284,
+     285
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 283] 282 Fire Technology Fire Technology CerƟ ﬁ cate of Achievement and Associate in Science Program DescripƟ on This program of study was developed to assist students who desire to advance as a ﬁ reﬁ ghter, or to"
+   },
+   {
+    "control_number": "43949",
+    "pages": [
+     283,
+     284,
+     285
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 283] Students who complete the Fire Technology CerƟ ﬁ cate of Achievement/Associate in Science will be able to: 1. IdenƟ fy and comprehend laws, regulaƟ ons, codes and standards that inﬂ uence ﬁ re department oper"
+   },
+   {
+    "control_number": "44069",
+    "pages": [
+     296,
+     297,
+     298,
+     299
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 296] Associate in Science in Agriculture Plant Science for Transfer (ADT: A.S.-T) Program DescripƟ on The Associate in Science in Agriculture Plant Science for Transfer is an interdisciplinary degree that includes "
+   },
+   {
+    "control_number": "44185",
+    "pages": [
+     360,
+     361
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": false,
+    "coverage": 1.0,
+    "opens": "[page 360] 359 Music Sound ProducƟ on Specialist CerƟ ﬁ cate of Achievement Program DescripƟ on The Sound ProducƟ on Specialist cerƟ ﬁ cate teaches the craŌ and techniques of sound recording. Students will learn the in"
+   },
+   {
+    "control_number": "44365",
+    "pages": [
+     360,
+     361
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": false,
+    "coverage": 1.0,
+    "opens": "[page 360] 359 Music Sound ProducƟ on Specialist CerƟ ﬁ cate of Achievement Program DescripƟ on The Sound ProducƟ on Specialist cerƟ ﬁ cate teaches the craŌ and techniques of sound recording. Students will learn the in"
+   },
+   {
+    "control_number": "44532",
+    "pages": [
+     183,
+     184,
+     185,
+     186
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": false,
+    "coverage": 1.0,
+    "opens": "[page 183] 182 Business - Oﬃ ce Technology AdministraƟ ve Assistant CerƟ ﬁ cate of Achievement and Associate in Science Program DescripƟ on This program is designed to develop technical and communicaƟ on skills require"
+   },
+   {
+    "control_number": "44533",
+    "pages": [
+     183,
+     184,
+     185,
+     186
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": false,
+    "coverage": 1.0,
+    "opens": "[page 183] 182 Business - Oﬃ ce Technology AdministraƟ ve Assistant CerƟ ﬁ cate of Achievement and Associate in Science Program DescripƟ on This program is designed to develop technical and communicaƟ on skills require"
+   },
+   {
+    "control_number": "44578",
+    "pages": [
+     244,
+     245,
+     246,
+     247
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": false,
+    "coverage": 1.0,
+    "opens": "[page 244] 243 Digital Media Arts REQUIRED C OURSES ........................................... Units DMA 009 IntroducƟ on to Digital Design......................... 3 DMA 010 Graphic Design - Beginning.................."
+   },
+   {
+    "control_number": "44579",
+    "pages": [
+     244,
+     245,
+     246,
+     247
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": false,
+    "coverage": 1.0,
+    "opens": "[page 244] 243 Digital Media Arts REQUIRED C OURSES ........................................... Units DMA 009 IntroducƟ on to Digital Design......................... 3 DMA 010 Graphic Design - Beginning.................."
+   },
+   {
+    "control_number": "44820",
+    "pages": [
+     407,
+     408,
+     409,
+     410
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 407] Associate in Arts in Law, Public Policy, and Society for Transfer (ADT: A.A.-T) Program DescripƟ on The Associate in Arts in Law, Public Policy, and Society for Transfer Degree is designed for students who pl"
+   },
+   {
+    "control_number": "44832",
+    "pages": [
+     309,
+     310
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": false,
+    "coverage": 1.0,
+    "opens": "[page 309] 308 Journalism MulƟ media Journalism CerƟ ﬁ cate of Achievement Program DescripƟ on The CerƟ ﬁ cate of Achievement MulƟ media Journalism provides students with the knowledge and skills needed to work as a fre"
+   },
+   {
+    "control_number": "44833",
+    "pages": [
+     78
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 78] 77 Course Identiﬁ cation Numbering System (C-ID) NOTE: This list will change periodically. Consult a counselor or visit hƩ p://www.c-id.net/courses/search for the most current list of Solano Community College c"
+   },
+   {
+    "control_number": "45686",
+    "pages": [
+     112,
+     113,
+     114
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 112] The Associate of Science in Modern Policing is designed to meet the State of California and California Commission on Peace Oﬃ cer Standards and Training (POST) minimum educaƟ on preparaƟ on requirements to be"
+   },
+   {
+    "control_number": "45915",
+    "pages": [
+     374
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 374] The Pre-Nursing Associate in Science Degree gives students the necessary background needed to enter the ﬁ eld of nursing. This degree includes the prerequisite courses for Solano Community College's Registere"
+   },
+   {
+    "control_number": "45917",
+    "pages": [
+     362,
+     363,
+     364
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 362] 361 Music Music (Non-performance) CerƟ ﬁ cate of Achievement Program DescripƟ on The CerƟ ﬁ cate in Music (Non-Performance) provides students with a broad foundaƟ on in music theory, history, and cultural stu"
+   },
+   {
+    "control_number": "46127",
+    "pages": [
+     78
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.857,
+    "opens": "[page 78] 77 Course Identiﬁ cation Numbering System (C-ID) NOTE: This list will change periodically. Consult a counselor or visit hƩ p://www.c-id.net/courses/search for the most current list of Solano Community College c"
+   },
+   {
+    "control_number": "46128",
+    "pages": [
+     189,
+     190,
+     191,
+     192
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 189] Chemistry (AS-T-UCTP) Associate in Science for Tranfer - UC Transfer Pathway Program DescripƟ on An Associate in Science in Chemistry for UC Transfer is designed for students who plan to complete a bachelor’s"
+   },
+   {
+    "control_number": "46201",
+    "pages": [
+     257,
+     258
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 257] 256 Education Associate in Arts in Elementary Teacher EducaƟ on: Integrated Programs for Transfer (ADT: A.A.-T) Program DescripƟ on The Associate in Arts in Elementary Teacher EducaƟ on: Integrated Programs f"
+   },
+   {
+    "control_number": "46370",
+    "pages": [
+     380
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": false,
+    "coverage": 1.0,
+    "opens": "[page 380] 379 NURS - Nursingg NURS 104 Home Health Aide 2.0 Units Equivalent Course: NURS 504 Prerequisite**: Student must be currently licensed as a CNA Non-transferable to UC or CSU"
+   },
+   {
+    "control_number": "46517",
+    "pages": [
+     380
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 380] 379 NURS - Nursingg NURS 104 Home Health Aide 2.0 Units Equivalent Course: NURS 504 Prerequisite**: Student must be currently licensed as a CNA Non-transferable to UC or CSU"
+   },
+   {
+    "control_number": "46518",
+    "pages": [
+     380
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 380] 379 NURS - Nursingg NURS 104 Home Health Aide 2.0 Units Equivalent Course: NURS 504 Prerequisite**: Student must be currently licensed as a CNA Non-transferable to UC or CSU"
+   }
+  ],
+  "unproven": []
+ },
+ "loads": 1,
+ "seconds": 132.4,
+ "found": 162,
+ "by_method": {
+  "no_closed_list": 8,
+  "not_found": 1,
+  "pdf_pages": 162
+ },
+ "shared_pages": {
+  "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=297": [
+   "06506",
+   "20947"
+  ],
+  "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=172": [
+   "06509",
+   "20955"
+  ],
+  "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=107": [
+   "06510",
+   "20953"
+  ],
+  "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=418": [
+   "06515",
+   "20960"
+  ],
+  "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=183": [
+   "06516",
+   "20962",
+   "30417",
+   "44532",
+   "44533"
+  ],
+  "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=309": [
+   "06517",
+   "44832"
+  ],
+  "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=209": [
+   "06519",
+   "20967"
+  ],
+  "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=148": [
+   "06522",
+   "35748"
+  ],
+  "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=123": [
+   "06524",
+   "06525",
+   "06526",
+   "20973",
+   "20974",
+   "20975"
+  ],
+  "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=447": [
+   "06529",
+   "20978"
+  ],
+  "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=76": [
+   "06536",
+   "33305",
+   "41377"
+  ],
+  "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=341": [
+   "06538",
+   "43134"
+  ],
+  "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=350": [
+   "06541",
+   "33291"
+  ],
+  "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=404": [
+   "06547",
+   "42947"
+  ],
+  "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=189": [
+   "06548",
+   "43166",
+   "46128"
+  ],
+  "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=413": [
+   "06549",
+   "32917"
+  ],
+  "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=111": [
+   "06550",
+   "06551",
+   "20990",
+   "20991"
+  ],
+  "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=77": [
+   "06552",
+   "20988",
+   "31761"
+  ],
+  "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=283": [
+   "06553",
+   "43948",
+   "43949"
+  ],
+  "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=178": [
+   "07790",
+   "20957"
+  ],
+  "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=210": [
+   "07793",
+   "16541",
+   "20966",
+   "20968"
+  ],
+  "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=390": [
+   "07800",
+   "20982"
+  ],
+  "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=303": [
+   "08337",
+   "42041"
+  ],
+  "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=173": [
+   "16819",
+   "20961"
+  ],
+  "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=155": [
+   "18535",
+   "36302",
+   "38141",
+   "38142"
+  ],
+  "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=149": [
+   "20971",
+   "35747"
+  ],
+  "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=249": [
+   "20977",
+   "36421"
+  ],
+  "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=250": [
+   "30034",
+   "36428"
+  ],
+  "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=118": [
+   "30184",
+   "30185"
+  ],
+  "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=78": [
+   "30671",
+   "44833",
+   "46127"
+  ],
+  "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=203": [
+   "31659",
+   "43145"
+  ],
+  "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=145": [
+   "32475",
+   "36034"
+  ],
+  "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=221": [
+   "36420",
+   "42205"
+  ],
+  "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=343": [
+   "36455",
+   "36457"
+  ],
+  "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=116": [
+   "38221",
+   "38229",
+   "38231"
+  ],
+  "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=257": [
+   "38652",
+   "46201"
+  ],
+  "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=241": [
+   "42912",
+   "42914"
+  ],
+  "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=360": [
+   "44185",
+   "44365"
+  ],
+  "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=244": [
+   "44578",
+   "44579"
+  ],
+  "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=380": [
+   "46370",
+   "46517",
+   "46518"
+  ]
+ },
+ "not_found": [
+  {
+   "control_number": "18616",
+   "title": "Interdisciplinary Studies: Wellness & Self Development",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=230",
+    "coverage": 0.241
+   }
+  }
+ ],
+ "page_claimed": [],
+ "coverage_bands": {
+  "0.5-0.8": 12,
+  "0.8-1.0": 17,
+  "1.0": 133
+ },
+ "would_extract": {
+  "against": null,
+  "kept": 0,
+  "programs": 162,
+  "list": [
+   {
+    "control_number": "06506",
+    "title": "Horticulture and Plant Science",
+    "award": "A.S. Degree",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=297",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "06509",
+    "title": "Business, General",
+    "award": "A.S. Degree",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=172",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "06510",
+    "title": "Accounting",
+    "award": "A.S. Degree",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=107",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "06515",
+    "title": "Real Estate",
+    "award": "A.S. Degree",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=418",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "06516",
+    "title": "Administrative Assistant",
+    "award": "A.S. Degree",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=183",
+    "coverage": 0.812,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "06517",
+    "title": "Journalism",
+    "award": "A.A. Degree",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=309",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "06518",
+    "title": "Film & Television",
+    "award": "A.A. Degree",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=280",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "06519",
+    "title": "Computer Programming",
+    "award": "A.S. Degree",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=209",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "06522",
+    "title": "Automotive Technician",
+    "award": "A.S. Degree",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=148",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "06524",
+    "title": "Airframe and Powerplant Maintenance Technician",
+    "award": "A.S. Degree",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=123",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "06525",
+    "title": "Airframe Maintenance Technician",
+    "award": "A.S. Degree",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=123",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "06526",
+    "title": "Powerplant Maintenance Technician",
+    "award": "A.S. Degree",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=123",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "06529",
+    "title": "Welding Technician",
+    "award": "A.S. Degree",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=447",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "06534",
+    "title": "Music: Vocal",
+    "award": "A.A. Degree",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=359",
+    "coverage": 0.792,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "06535",
+    "title": "Theatre Arts",
+    "award": "A.A. Degree",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=434",
+    "coverage": 0.966,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "06536",
+    "title": "Graphic Design & Illustration",
+    "award": "A.A. Degree",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=76",
+    "coverage": 0.5,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "06538",
+    "title": "World Languages",
+    "award": "A.A. Degree",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=341",
+    "coverage": 0.87,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "06539",
+    "title": "French",
+    "award": "A.A. Degree",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=347",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "06541",
+    "title": "Spanish",
+    "award": "A.A. Degree",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=350",
+    "coverage": 0.833,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "06542",
+    "title": "Nursing, Registered",
+    "award": "A.S. Degree",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=373",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "06545",
+    "title": "English",
+    "award": "A.A. Degree",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=267",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "06547",
+    "title": "Physics",
+    "award": "A.S. Degree",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=404",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "06548",
+    "title": "Chemistry",
+    "award": "A.S. Degree",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=189",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "06549",
+    "title": "Psychology",
+    "award": "A.A. Degree",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=413",
+    "coverage": 0.933,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "06550",
+    "title": "Criminal Justice: Law Enforcement",
+    "award": "A.S. Degree",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=111",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "06551",
+    "title": "Criminal Justice: Corrections",
+    "award": "A.S. Degree",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=111",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "06552",
+    "title": "Early Childhood Education",
+    "award": "A.S. Degree",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=77",
+    "coverage": 0.727,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "06553",
+    "title": "Fire Technology",
+    "award": "A.S. Degree",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=283",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "06555",
+    "title": "Ethnic Studies",
+    "award": "A.A. Degree",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=85",
+    "coverage": 0.704,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "06559",
+    "title": "Science, General",
+    "award": "A.A. Degree",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=422",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "07790",
+    "title": "Small Business Management",
+    "award": "A.S. Degree",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=178",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "07793",
+    "title": "Computer & Info Science: Microcomputer Applications",
+    "award": "A.S. Degree",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=210",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "07795",
+    "title": "Sports Medicine-Athletic Training",
+    "award": "A.S. Degree",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=331",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "07800",
+    "title": "Photography, Professional",
+    "award": "A.A. Degree",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=390",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "07808",
+    "title": "Industrial Biotechnology",
+    "award": "A.S. Degree",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=162",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "08337",
+    "title": "Human Services and Social Work",
+    "award": "A.A. Degree",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=303",
+    "coverage": 0.938,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "10463",
+    "title": "Music: Instrumental",
+    "award": "A.A. Degree",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=358",
+    "coverage": 0.783,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "16541",
+    "title": "Web Design and Development",
+    "award": "A.S. Degree",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=210",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "16819",
+    "title": "Business Insurance: Property & Casualty",
+    "award": "A.S. Degree",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=173",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "18535",
+    "title": "Interdisciplinary Studies: Science & Quantitative Reasoning",
+    "award": "A.A. Degree",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=155",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "19450",
+    "title": "Sociology",
+    "award": "A.A. Degree",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=429",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "19633",
+    "title": "Industrial Biotechnology",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=163",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20947",
+    "title": "Horticulture and Plant Science",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=297",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20953",
+    "title": "Accounting",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=107",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20955",
+    "title": "Business, General",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=172",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20956",
+    "title": "Management",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=176",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20957",
+    "title": "Small Business Management",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=178",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20958",
+    "title": "Retail Management",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=177",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20959",
+    "title": "Marketing",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=181",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20960",
+    "title": "Real Estate",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=418",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20961",
+    "title": "Business Insurance: Property & Casualty",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=173",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20962",
+    "title": "Administrative Assistant",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=183",
+    "coverage": 0.545,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20966",
+    "title": "Microcomputer Applications",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=210",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20967",
+    "title": "Computer Programming",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=209",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20968",
+    "title": "Web Design and Development",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=210",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20971",
+    "title": "Automotive Maintenance and Light Repair Technician",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=149",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20973",
+    "title": "Airframe and Powerplant Maintenance Technician",
+    "award": "Certificate of Achievement requiring 60+S/90+Q units",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=123",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20974",
+    "title": "Airframe Maintenance Technician",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=123",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20975",
+    "title": "Powerplant Maintenance Technician",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=123",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20977",
+    "title": "Drafting and Design Technician",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=249",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20978",
+    "title": "Welding Technician",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=447",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20981",
+    "title": "Water & Wastewater Technology",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=443",
+    "coverage": 0.929,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20982",
+    "title": "Photography, Professional",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=390",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20988",
+    "title": "Early Childhood Education",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=77",
+    "coverage": 0.667,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20989",
+    "title": "Human Services and Social Work",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=304",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20990",
+    "title": "Criminal Justice: Law Enforcement",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=111",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20991",
+    "title": "Criminal Justice: Corrections",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=111",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20992",
+    "title": "Fire Technology",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=285",
+    "coverage": 0.778,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "30034",
+    "title": "Survey and Civil Drafting Technician",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=250",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "30184",
+    "title": "Mechatronics",
+    "award": "A.S. Degree",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=118",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "30185",
+    "title": "Mechatronics",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=118",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "30417",
+    "title": "Medical Administrative Assistant",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=183",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "30671",
+    "title": "Mathematics",
+    "award": "A.S. T Degree",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=78",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "30678",
+    "title": "Sociology",
+    "award": "A.A- T Degree",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=428",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31659",
+    "title": "Communication Studies",
+    "award": "A.A- T Degree",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=203",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31761",
+    "title": "Early Childhood Education",
+    "award": "A.S. T Degree",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=77",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32121",
+    "title": "Studio Arts",
+    "award": "A.A- T Degree",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=131",
+    "coverage": 0.938,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32126",
+    "title": "Art History",
+    "award": "A.A- T Degree",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=142",
+    "coverage": 0.952,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32475",
+    "title": "Physics",
+    "award": "A.S. T Degree",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=145",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32495",
+    "title": "Journalism",
+    "award": "A.A- T Degree",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=307",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32903",
+    "title": "Administration of Justice",
+    "award": "A.S. T Degree",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=110",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32917",
+    "title": "Psychology",
+    "award": "A.A- T Degree",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=413",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32918",
+    "title": "Kinesiology",
+    "award": "A.A- T Degree",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=324",
+    "coverage": 0.808,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32919",
+    "title": "English",
+    "award": "A.A- T Degree",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=266",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32927",
+    "title": "Geography",
+    "award": "A.A- T Degree",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=287",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32937",
+    "title": "History",
+    "award": "A.A- T Degree",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=292",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32992",
+    "title": "Theatre Arts",
+    "award": "A.A- T Degree",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=433",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33291",
+    "title": "Spanish",
+    "award": "A.A- T Degree",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=350",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33305",
+    "title": "Business Administration",
+    "award": "A.S. T Degree",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=76",
+    "coverage": 0.778,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33373",
+    "title": "Anthropology",
+    "award": "A.A- T Degree",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=127",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33378",
+    "title": "Political Science",
+    "award": "A.A- T Degree",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=409",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35213",
+    "title": "Liberal Studies",
+    "award": "A.A. Degree",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=231",
+    "coverage": 0.903,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35259",
+    "title": "Sports Broadcasting",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=204",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35517",
+    "title": "Associate Teacher",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=195",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35683",
+    "title": "Engineering",
+    "award": "A.S. Degree",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=262",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35707",
+    "title": "Biotechnology Laboratory Assistant",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=164",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35747",
+    "title": "Automotive Electrical and Body Systems",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=149",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35748",
+    "title": "Automotive Automatic Transmissions and Transaxles",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=148",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35808",
+    "title": "Music",
+    "award": "A.A- T Degree",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=357",
+    "coverage": 0.762,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35982",
+    "title": "Nutrition",
+    "award": "A.S. T Degree",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=382",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36034",
+    "title": "Astronomy",
+    "award": "A.S. Degree",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=145",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36249",
+    "title": "Theatre Arts Technical",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=435",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36302",
+    "title": "Biology",
+    "award": "A.S. Degree",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=155",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36420",
+    "title": "Cosmetology",
+    "award": "A.S. Degree",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=221",
+    "coverage": 0.667,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36421",
+    "title": "Drafting and Design Technician",
+    "award": "A.S. Degree",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=249",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36428",
+    "title": "Survey and Civil Drafting Technician",
+    "award": "A.S. Degree",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=250",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36455",
+    "title": "ASL/English Interpreter Training",
+    "award": "A.A. Degree",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=343",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36457",
+    "title": "ASL/English Interpreter Training",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=343",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36511",
+    "title": "Biology",
+    "award": "A.S. T Degree",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=154",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37103",
+    "title": "Economics",
+    "award": "A.A- T Degree",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=254",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37158",
+    "title": "Social Justice: General",
+    "award": "A.A- T Degree",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=424",
+    "coverage": 0.696,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37187",
+    "title": "Studio Arts with Emphasis",
+    "award": "A.A. Degree",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=132",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37212",
+    "title": "Maker Space Technology",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=251",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37919",
+    "title": "Dance",
+    "award": "A.A. Degree",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=236",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38141",
+    "title": "Biomedical Sciences",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=155",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38142",
+    "title": "Biomedical Sciences",
+    "award": "A.S. Degree",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=155",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38146",
+    "title": "Physical Science",
+    "award": "A.S. Degree",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=400",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38221",
+    "title": "Automation",
+    "award": "A.S. Degree",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=116",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38229",
+    "title": "Automation",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=116",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38230",
+    "title": "Cell and Gene Therapies",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=165",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38231",
+    "title": "Maintenance Technician",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=116",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38404",
+    "title": "Computer Science",
+    "award": "A.S. T Degree",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=217",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38591",
+    "title": "American Sign Language",
+    "award": "A.A. Degree",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=342",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38652",
+    "title": "Elementary Teacher Education",
+    "award": "A.A- T Degree",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=257",
+    "coverage": 0.895,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39445",
+    "title": "Photo Illustration",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=391",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40392",
+    "title": "Infant/Toddler Teacher",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=198",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41377",
+    "title": "Business Administration 2.0",
+    "award": "A.S. T Degree",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=76",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41524",
+    "title": "Firefighter 1 & 2",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=284",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42041",
+    "title": "Social Work and Human Services",
+    "award": "A.A- T Degree",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=303",
+    "coverage": 0.96,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42203",
+    "title": "Spanish/English Healthcare Interpreter Training",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=352",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42204",
+    "title": "Spanish/English Communication Specialist",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=351",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42205",
+    "title": "Cosmetology",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=221",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42206",
+    "title": "Nail Technology",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=223",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42207",
+    "title": "Esthetics",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=222",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42912",
+    "title": "Data Science",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=241",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42914",
+    "title": "Data Science",
+    "award": "A.S. Degree",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=241",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42947",
+    "title": "Physics",
+    "award": "A.S. Degree",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=404",
+    "coverage": 0.967,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43134",
+    "title": "World Languages",
+    "award": "A.A. Degree",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=341",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43144",
+    "title": "Public Health",
+    "award": "A.S. T Degree",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=321",
+    "coverage": 0.933,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43145",
+    "title": "Communication Studies 2.0",
+    "award": "A.A- T Degree",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=203",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43166",
+    "title": "UCTP Physics",
+    "award": "A.S. T Degree",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=189",
+    "coverage": 0.9,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43948",
+    "title": "Fire Technology",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=283",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43949",
+    "title": "Fire Technology",
+    "award": "A.S. Degree",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=283",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44069",
+    "title": "Agriculture Plant Science",
+    "award": "A.S. T Degree",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=296",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44185",
+    "title": "Sound Production",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=360",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44365",
+    "title": "Sound Production Specialist",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=360",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44532",
+    "title": "Administrative Assistant",
+    "award": "A.S. Degree",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=183",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44533",
+    "title": "Administrative Assistant",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=183",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44578",
+    "title": "Graphic and Interactive Design",
+    "award": "A.A. Degree",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=244",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44579",
+    "title": "Graphic and Interactive Design",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=244",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44820",
+    "title": "Law, Public Policy, and Society",
+    "award": "A.A- T Degree",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=407",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44832",
+    "title": "Multimedia Journalism",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=309",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44833",
+    "title": "Journalism",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=78",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45686",
+    "title": "Modern Policing",
+    "award": "A.S. Degree",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=112",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45915",
+    "title": "Pre-Nursing",
+    "award": "A.S. Degree",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=374",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45917",
+    "title": "Music (Non-Performance)",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=362",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46127",
+    "title": "Mathematics 2.0",
+    "award": "A.S. T Degree",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=78",
+    "coverage": 0.857,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46128",
+    "title": "UCTP Chemistry",
+    "award": "A.S. T Degree",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=189",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46201",
+    "title": "Elementary Teacher Education: Integrated Programs",
+    "award": "A.A- T Degree",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=257",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46370",
+    "title": "Certified Nursing Assistant",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=380",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46517",
+    "title": "Home Health Aide",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=380",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46518",
+    "title": "Home Health Aide",
+    "award": "Noncredit program",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=380",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   }
+  ]
+ },
+ "run": "39034617226"
+}
