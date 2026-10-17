@@ -1,0 +1,832 @@
+{
+ "college": "Mission College",
+ "control_number": "41494",
+ "shape": "adt",
+ "title": "Anthropology",
+ "award": "A.A- T Degree",
+ "source_url": "https://mission.elumenapp.com/catalog/24-25/program/anthropology-aa-t-2026fa",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 9150,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 9150,
+    "output_tokens": 5471,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 5471,
+  "output_tokens_details": {
+   "thinking_tokens": 1501
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.14602,
+ "ms": 39643,
+ "seconds": 40.2,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 33,
+   "listed": 38,
+   "share": 0.868,
+   "missing": [
+    "ANT1L",
+    "CHD13",
+    "ETH16A",
+    "ETH18",
+    "ETH18H"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 44,
+   "codes": [
+    "ANT55",
+    "CHD1",
+    "COM14",
+    "ECN6",
+    "ECONC2001",
+    "ECONC2002",
+    "ENG11",
+    "ETH1A",
+    "GEO1",
+    "GEO1L",
+    "HIS15",
+    "HIS15H",
+    "HIS16",
+    "HIS16H",
+    "HIS20",
+    "HIS33",
+    "HIS33H",
+    "HIS4A",
+    "HIS4AH",
+    "HIS4B",
+    "HIS4BH",
+    "KIN81",
+    "PHI5",
+    "POL2",
+    "POL4",
+    "POLSC1000",
+    "POLSC1000H",
+    "PSY10",
+    "PSY12",
+    "PSY25",
+    "PSY45",
+    "PSY7",
+    "PSYCC1000",
+    "PSYCC1000H",
+    "SJS3",
+    "SOC1",
+    "SOC1H",
+    "SOC2",
+    "SOC2H",
+    "SOC40",
+    "SOC45",
+    "SOC47",
+    "SOC50",
+    "SOC60"
+   ],
+   "flagged": [
+    "ANT55",
+    "CHD1",
+    "COM14",
+    "ECN6",
+    "ECONC2001",
+    "ECONC2002",
+    "ENG11",
+    "ETH1A",
+    "GEO1",
+    "GEO1L",
+    "HIS15",
+    "HIS15H",
+    "HIS16",
+    "HIS16H",
+    "HIS20",
+    "HIS33",
+    "HIS33H",
+    "HIS4A",
+    "HIS4AH",
+    "HIS4B",
+    "HIS4BH",
+    "KIN81",
+    "PHI5",
+    "POL2",
+    "POL4",
+    "POLSC1000",
+    "POLSC1000H",
+    "PSY10",
+    "PSY12",
+    "PSY25",
+    "PSY45",
+    "PSY7",
+    "PSYCC1000",
+    "PSYCC1000H",
+    "SJS3",
+    "SOC1",
+    "SOC1H",
+    "SOC2",
+    "SOC2H",
+    "SOC40",
+    "SOC45",
+    "SOC47",
+    "SOC50",
+    "SOC60"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    21.0,
+    29.0
+   ],
+   "stated": [
+    21.0,
+    29.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Anthropology AA-T",
+   "measure": "units",
+   "total_units": {
+    "min": 21,
+    "max": 29
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Demonstrate in written or oral work, or lab exercise, knowledge and application of the scientific method, and the development of cultural and biological theory about humans.",
+    "Classify universal shared elements of culture and assess alternative ways that human groups meet needs for stability, reproduction, and social control.",
+    "Identify ethnocentrism (centered in one’s own culture) in self and others, and assess the effects of ethnocentrism on cross-cultural relations among individuals, groups, and nations.",
+    "Name, describe, and compare living patterns and world views of several groups in the world today as well as that of their own group."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required Core",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 9,
+     "max": 9
+    },
+    "courses": [
+     {
+      "code": "ANT001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANT002",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANT003",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List A",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "LIN001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "STATC1000",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "STATC1000H",
+        "units": 4,
+        "catalog_addition": false
+       },
+       {
+        "code": "STATC1000E",
+        "units": 6,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC016",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List B",
+    "rule": "choose_units",
+    "minimum": 6,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 8
+    },
+    "courses": [
+     {
+      "code": "ANT055",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CHD001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "COM012",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COM014",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ENG011",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ETH001A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ECONC2002",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ECONC2001",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ECN006",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HIS020",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HIS031",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HUM016",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HUM020",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HUM022",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HUM024",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN081",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MUS017",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHI005",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "POL002",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "POL004",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PSY007",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PSY010",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PSY012",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PSY025",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "SJS001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SJS002",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SJS003",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "SOC021",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC040",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "SOC047",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "SOC050",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "SOC060",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ENG013",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ETH013",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ETH044",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ETH044H",
+        "units": 3,
+        "catalog_addition": false
+       },
+       {
+        "code": "HIS044",
+        "units": 3,
+        "catalog_addition": false
+       },
+       {
+        "code": "HIS044H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIS004A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HIS004AH",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "HIS004B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HIS004BH",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "HIS015",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HIS015H",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "HIS016",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HIS016H",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "HISTC1001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HISTC1001H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "HISTC1002",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HISTC1002H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIS033",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HIS033H",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "HUM018",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HUM018H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "POLSC1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "POLSC1000H",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "PSYCC1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PSYCC1000H",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "PSY015",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PSY015H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSY045",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "SOC045",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "SOC001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "SOC001H",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "SOC002",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "SOC002H",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "List C",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "BIO047",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEO001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "GEO001L",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ANT 001L",
+    "why": "not in the text"
+   },
+   {
+    "code": "CHD 13",
+    "why": "not in the text (List B prints CHD001 instead)"
+   },
+   {
+    "code": "ETH 016A",
+    "why": "not in the text"
+   },
+   {
+    "code": "ETH 018H",
+    "why": "not in the text"
+   },
+   {
+    "code": "ETH 18",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "Degree requirements state 60 CSU-transferable units and Cal-GETC as generic AA-T requirements; no award-specific degree total or GE unit figure printed, so degree_total and ge_units left null.",
+   "The '18 semester units in the major' line is a generic minimum, not the major total; total_units taken from 'Complete the following number of credits: 21-29'.",
+   "List B begins 'Any course not selected from List A or' and List C begins 'Any course not selected from List A or List B or' — courses from earlier lists may count in later lists; not recorded as separate entries.",
+   "List C prints 'Physical Geology with lab' as a heading over GEO001 (3) and GEO001L (1); these likely are taken together as one lecture+lab choice. Recorded as separate entries; reviewer should check.",
+   "STATC1000E recorded as an alternative to STATC1000 along with the honors twin STATC1000H, though the catalog prints them as separate rows.",
+   "Selection labels contain typos: 'Select HIS004A or HIS044AH' (courses printed HIS004A/HIS004AH), 'Select HIST C1000 or HIST C1001H' (courses HISTC1001/HISTC1001H), 'Select HIST C10002 or HIST C1002H' (courses HISTC1002/HISTC1002H). Codes recorded as printed in the course rows.",
+   "Source URL path says catalog/24-25 while slug says 2026fa; Program Curriculum Changes section lists HIST C1001/C1001H/C1002/C1002H added and HIS 017A/017AH/017B/017BH deleted.",
+   "Program Outcomes printed for the program as a whole; recorded for this award. No careers named."
+  ]
+ },
+ "extracted_run": "39000023893"
+}

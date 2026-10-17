@@ -741,6 +741,11 @@ check("startsWith(github.event.head_commit.message, '[read]')" in read_job.split
 check("startsWith(github.event.head_commit.message, '[load]')" in load_job.split("runs-on:")[0]
       and "github.event.inputs.step == 'load'" in load_job.split("runs-on:")[0],
       "the load runs only on a dispatch with step=load or a commit whose message STARTS with [load]")
+# S402: a push carries no college input, and the Cerritos fallback read Cerritos on Los Medanos's
+# branch (run 38997845641); an [extract] push would have paid for it. Both jobs refuse a run naming none.
+check(all("COLLEGE: ${{ github.event.inputs.college }}\n" in j and "|| 'Cerritos College'" not in j
+          and j.index("The run names its college") < j.index("actions/checkout") for j in (read_job, load_job)),
+      "the read and load jobs name their college from the dispatch alone, and stop first when none is named")
 display_if = display_job.split("runs-on:")[0]
 check("github.event.inputs.step == 'display'" in display_if and "github.event_name == 'workflow_dispatch'" in display_if
       and "head_commit" not in display_if,
@@ -1355,6 +1360,32 @@ check(C.el_page_links('<a href="2026-2027/program/x">P</a><a href="2026-2027/cou
                       '<a href="2026-2027/department/z">D</a><a href="2026-2027/a/b/c">Deep</a><a href="2026-2027/ok">Ok</a>',
                       "2026-2027") == [("ok", "Ok")],
       "a program, course or department page is never a page to walk, nor one three segments down")
+# Los Medanos (S402, page read 38997368468): courses's own topic list writes its links whole,
+# with the host and a fragment, so the relative-only pattern never saw degrees (7 of 97 found,
+# run 38986123746). These are the raw links the full call printed.
+LMC_PAGENAV = ('<pagenav>\n\t<ul>\n\t<li><a href="https://lmc.elumenapp.com/catalog/26-27/understanding#mainContent">'
+               'Understanding Course Descriptions</a></li>\n\t<li><a href="https://lmc.elumenapp.com/catalog/26-27/'
+               'guidelinesonunits#mainContent">Guidelines on Units of Credit</a></li>\n\n \n\n\t<li><a href="https://'
+               'lmc.elumenapp.com/catalog/26-27/degrees#mainContent">Degrees, Certificates &amp; Programs of Study</a></li>'
+               '<li><a href="https://lmc.elumenapp.com/catalog/26-27/childdevelopment/earlychildhoodeducation#mainContent">'
+               '&gt; catalog</a></li><li><a href="https://other.elumenapp.com/catalog/26-27/degrees">Elsewhere</a></li>')
+check(C.el_page_links(LMC_PAGENAV, "26-27", "lmc.elumenapp.com") ==
+      [("understanding", "Understanding Course Descriptions"), ("guidelinesonunits", "Guidelines on Units of Credit"),
+       ("degrees", "Degrees, Certificates &amp; Programs of Study"), ("childdevelopment/earlychildhoodeducation", "&gt; catalog")],
+      "a link written whole on the catalog's own host, ending in a fragment, is a page to walk; "
+      "another host's catalog never is: %r" % C.el_page_links(LMC_PAGENAV, "26-27", "lmc.elumenapp.com"))
+check(C.el_page_links(LMC_PAGENAV, "26-27") == [],
+      "with no host named, only relative and /catalog/ links count")
+check(C.el_program_slugs('<a href="https://lmc.elumenapp.com/catalog/26-27/program/art-history-aa-t#mainContent">A</a>'
+                         '<a href="26-27/program/studio-arts-aa-t?x=1">S</a><a href="/catalog/26-27/program/ceramics">C</a>'
+                         '<a href="https://other.elumenapp.com/catalog/26-27/program/elsewhere">E</a>',
+                         "26-27", "lmc.elumenapp.com") == ["art-history-aa-t", "studio-arts-aa-t", "ceramics"],
+      "a program link may be relative, rooted or whole on the host, with a query or a fragment; another host's is not taken")
+check(C.el_department_slugs('<a href="https://ccc.elumenapp.com/catalog/2026-2027/department/art#mainContent">Art</a>',
+                            "2026-2027", "ccc.elumenapp.com") == ["art"]
+      and C.el_hub_slugs('<a href="https://mjc.elumenapp.com/catalog/2026-2027/programs#mainContent">A-Z</a>',
+                         "2026-2027", "mjc.elumenapp.com") == ["programs"],
+      "department and hub links written whole on the host count as the relative ones do")
 
 sql = open(os.path.join(ROOT, "chatbox", "supabase_program_requirement_records_college_load.sql")).read()
 body = sql.split("as $$")[1].split("$$;")[0]

@@ -78,9 +78,11 @@ def found_text(cap: dict, s: dict) -> str:
         ways.append("%d by link search" % bm["link_search"])
     if bm.get("sitemap_page"):
         # The reader files a curriQunet program's page under the same key, but it comes from
-        # the catalog's own JSON index (cq_index): the host serves no sitemap.
-        ways.append("%d %s" % (bm["sitemap_page"], "from the catalog's own index"
-                               if cap.get("platform") == "curriqunet" else "by sitemap page"))
+        # the catalog's own JSON index (cq_index), and an eLumen one from the catalog's own
+        # publish calls (its menu and the pages it walks): neither host serves a sitemap.
+        ways.append("%d %s" % (bm["sitemap_page"], {
+            "curriqunet": "from the catalog's own index",
+            "elumen": "from the catalog's own menu"}.get(cap.get("platform"), "by sitemap page")))
     return ("%d pages in %d loads (%d min). %d of %d programs with a course list found a page (%s); "
             "%d extracted with function v10 for $%.2f; %d pass the machine checks."
             % (cap["pages_read"], cap["loads"], round(cap["seconds"] / 60), s["found"],

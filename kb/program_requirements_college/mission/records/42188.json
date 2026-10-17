@@ -1,0 +1,167 @@
+{
+ "college": "Mission College",
+ "control_number": "42188",
+ "shape": "noncredit",
+ "title": "Preparation for Academic Success in ESL",
+ "award": "Noncredit program",
+ "source_url": "https://mission.elumenapp.com/catalog/24-25/program/preparation-for-academic-success-in-esl-cc-2022fa",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6070,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6070,
+    "output_tokens": 724,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 724,
+  "output_tokens_details": {
+   "thinking_tokens": 168
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.03876,
+ "ms": 6802,
+ "seconds": 7.3,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 2,
+   "listed": 2,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    64.0,
+    64.0
+   ],
+   "stated": [
+    64.0,
+    64.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 1,
+   "courses": 0,
+   "count": 1,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Preparation for Academic Success in ESL CC",
+   "measure": "hours",
+   "total_units": {
+    "min": 64,
+    "max": 64
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Students will demonstrate the English language skills, study skills, college success skills, and the computer skills needed to access 21st century learning materials and to succeed in an academic ESL program at the intermediate level."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Core Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 64,
+     "max": 64
+    },
+    "courses": [
+     {
+      "code": "NCE924",
+      "units": 32,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NCE934",
+      "units": 32,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The catalog prints totals (64) and course values (32 each) without naming the measure. Recorded as hours because this is a noncredit program and the state file stores 0 units for both courses.",
+   "The source URL points to the 24-25 catalog, but the requested catalog year is 2026-2027. Check that the requirements are current.",
+   "The requirement group is titled 'Academic Success Strategies for ESL CC (Total 64)' and contains the single block 'Core Requirements (Total 64)'.",
+   "Codes are recorded as printed without a space ('NCE924', 'NCE934'); they match closed-list NCE 924 and NCE 934."
+  ]
+ },
+ "extracted_run": "39000023893"
+}

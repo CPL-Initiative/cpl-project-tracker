@@ -13,7 +13,8 @@ name: Program requirements, one college
 #            sheet 23) and gives each program the page naming its listed
 #            courses. Anon reads only. Free in model calls, but about 360 page
 #            loads at a college, so a push reads only when its message starts
-#            with [read] (capture alone) or [extract].
+#            with [read] (capture alone) or [extract]. A push names no college,
+#            so since S402 it stops at its first step: dispatch with college=.
 #   extract  posts each source to the program-requirements-extract Edge Function
 #            (Sam's call 6: the function holds the Anthropic key), six calls at
 #            a time, and scores each record. It SPENDS MODEL CALLS (about $0.06
@@ -110,12 +111,21 @@ jobs:
     permissions:
       contents: write
     env:
-      COLLEGE: ${{ github.event.inputs.college || 'Cerritos College' }}
+      # A push carries no college input. Until S402 it fell back to Cerritos, so a
+      # [read] push on Los Medanos's branch read and filed Cerritos (run 38997845641),
+      # and an [extract] push would have paid for Cerritos. A run must name its college.
+      COLLEGE: ${{ github.event.inputs.college }}
       LIMIT: ${{ github.event.inputs.limit || '0' }}
       # A push extracts only when its message STARTS with [extract]: the first
       # run's commit merely described the marker, and contains() spent $15.80.
       EXTRACT: ${{ github.event.inputs.extract == '1' || (github.event_name == 'push' && startsWith(github.event.head_commit.message, '[extract]')) }}
     steps:
+      - name: The run names its college
+        run: |
+          if [ -z "$COLLEGE" ]; then
+            echo "::error::No college named: a push carries no college input. Dispatch with college=<the registry's name> instead."
+            exit 1
+          fi
       - uses: actions/checkout@v7
       - uses: actions/setup-python@v7
         with:
@@ -168,9 +178,18 @@ jobs:
     permissions:
       contents: write
     env:
-      COLLEGE: ${{ github.event.inputs.college || 'Cerritos College' }}
+      # A push carries no college input. Until S402 it fell back to Cerritos, so a
+      # [read] push on Los Medanos's branch read and filed Cerritos (run 38997845641),
+      # and an [extract] push would have paid for Cerritos. A run must name its college.
+      COLLEGE: ${{ github.event.inputs.college }}
       STEP: ${{ github.event.inputs.step == 'reread' && 'reread' || 'load' }}
     steps:
+      - name: The run names its college
+        run: |
+          if [ -z "$COLLEGE" ]; then
+            echo "::error::No college named: a push carries no college input. Dispatch with college=<the registry's name> instead."
+            exit 1
+          fi
       - uses: actions/checkout@v7
       - uses: actions/setup-python@v7
         with:

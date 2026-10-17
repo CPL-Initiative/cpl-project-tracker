@@ -1,0 +1,257 @@
+{
+ "college": "Mission College",
+ "control_number": "41325",
+ "shape": "degree",
+ "title": "Culinary Arts",
+ "award": "A.S. Degree",
+ "source_url": "https://mission.elumenapp.com/catalog/24-25/program/culinary-arts-ca-2026fa",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7589,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7589,
+    "output_tokens": 2370,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2370,
+  "output_tokens_details": {
+   "thinking_tokens": 681
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.07776,
+ "ms": 19280,
+ "seconds": 19.8,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 23,
+   "share": 0.0,
+   "missing": [
+    "FDR105",
+    "FDR106A",
+    "FDR106B",
+    "FDR50",
+    "FDR51A",
+    "FDR51B",
+    "FDR54",
+    "FDR55",
+    "FDR56",
+    "FDR58",
+    "FDR59",
+    "FDR60",
+    "FDR72",
+    "FDR73",
+    "FDR74",
+    "FDR75",
+    "FDR76",
+    "FDR78",
+    "FDR79",
+    "FDR81",
+    "FDR82",
+    "FDR85",
+    "FDR86"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": true,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Culinary Arts CA",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "FDR 051A",
+    "why": "named only in the Culinary Arts CA section; text has no A.S. section"
+   },
+   {
+    "code": "FDR 051B",
+    "why": "named only in the Culinary Arts CA section; text has no A.S. section"
+   },
+   {
+    "code": "FDR 105",
+    "why": "named only in the Culinary Arts CA section; text has no A.S. section"
+   },
+   {
+    "code": "FDR 106A",
+    "why": "named only in the Culinary Arts CA section; text has no A.S. section"
+   },
+   {
+    "code": "FDR 106B",
+    "why": "named only in the Culinary Arts CA section; text has no A.S. section"
+   },
+   {
+    "code": "FDR 50",
+    "why": "named only in the Culinary Arts CA section; text has no A.S. section"
+   },
+   {
+    "code": "FDR 54",
+    "why": "named only in the Culinary Arts CA section; text has no A.S. section"
+   },
+   {
+    "code": "FDR 55",
+    "why": "named only in the Culinary Arts CA section; text has no A.S. section"
+   },
+   {
+    "code": "FDR 56",
+    "why": "named only in the Culinary Arts CA section; text has no A.S. section"
+   },
+   {
+    "code": "FDR 58",
+    "why": "named only in the Culinary Arts CA section; text has no A.S. section"
+   },
+   {
+    "code": "FDR 59",
+    "why": "named only in the Culinary Arts CA section; text has no A.S. section"
+   },
+   {
+    "code": "FDR 60",
+    "why": "named only in the Culinary Arts CA section; text has no A.S. section"
+   },
+   {
+    "code": "FDR 72",
+    "why": "named only in the Culinary Arts CA section; text has no A.S. section"
+   },
+   {
+    "code": "FDR 73",
+    "why": "named only in the Culinary Arts CA section; text has no A.S. section"
+   },
+   {
+    "code": "FDR 74",
+    "why": "named only in the Culinary Arts CA section; text has no A.S. section"
+   },
+   {
+    "code": "FDR 76",
+    "why": "named only in the Culinary Arts CA section; text has no A.S. section"
+   },
+   {
+    "code": "FDR 78",
+    "why": "named only in the Culinary Arts CA section; text has no A.S. section"
+   },
+   {
+    "code": "FDR 79",
+    "why": "named only in the Culinary Arts CA section; text has no A.S. section"
+   },
+   {
+    "code": "FDR 81",
+    "why": "named only in the Culinary Arts CA section; text has no A.S. section"
+   },
+   {
+    "code": "FDR 82",
+    "why": "named only in the Culinary Arts CA section; text has no A.S. section"
+   },
+   {
+    "code": "FDR 85",
+    "why": "named only in the Culinary Arts CA section; text has no A.S. section"
+   },
+   {
+    "code": "FDR 86",
+    "why": "named only in the Culinary Arts CA section; text has no A.S. section"
+   },
+   {
+    "code": "FDR075",
+    "why": "named only in the Culinary Arts CA section; text has no A.S. section"
+   }
+  ],
+  "notes": [
+   "The requested award is the A.S. Degree, but the catalog text (URL slug 'culinary-arts-ca') contains only the Culinary Arts Certificate of Achievement (heading 'Culinary Arts CA'). No A.S. degree section is printed, so no blocks, totals, outcomes or careers were recorded for the A.S. Reviewer should locate the A.S. degree page.",
+   "For reference, the CA section prints: total 47.5 units; Core Requirements (complete all, 41.5): FDR050 3, FDR051A 3, FDR051B 3, FDR056 2, FDR058 3, FDR059 4, FDR072 3, FDR073 2, FDR075 2, FDR079 3, FDR096 3, FDR153 3 and FDR153L 4.5 (taken concurrently), WRK300HM 3; Electives (complete 6 units): FDR054 3, FDR055 3, FDR060 3, FDR074 2, FDR076 3, FDR078 2, FDR081 2, FDR082 2, FDR085 3, FDR086 2, FDR105 2, FDR106A 2, FDR106B 2, additional WRK300HM 1-8 (1-2 not counted for core). FDR096, FDR153, FDR153L and WRK300HM are not in the closed list.",
+   "The CA section names careers (Prep Cook, Line Cook, Short-order Cook, Chef de Partie (station supervisor), Assistant Baker or Pastry, Sous Chef, Chef, Kitchen Supervisor, Food and Beverage Supervisor, Event Supervisor, Catering Supervisor, Banquet Lead) and five Program Outcomes, but these are printed for the Certificate of Achievement (one outcome explicitly references the certificate), so they were not attributed to the A.S. degree.",
+   "The source URL path says catalog 24-25 while the program slug says 2026fa; catalog year should be verified."
+  ]
+ },
+ "extracted_run": "39000023893"
+}

@@ -1,0 +1,31 @@
+{
+ "_readme": "S402 SkyToyon, 2026-10-17. Los Medanos's eLumen read found 7 of 97 programs under #2183 (run 38986123746): the walk made 12 calls (11 content calls, 1 full call) and added no program. S401's page reads (38979564864, 38982992603) showed the rendered pages: courses's menu entry reads 'Program Requirements, Courses, and Student Learning Outcomes' (so the walk takes it as a hub), its topic 'Degrees, Certificates & Programs of Study' is 26-27/degrees, and degrees links 29 or more departments with '> catalog' buttons (26-27/art, 26-27/childdevelopment/earlychildhoodeducation). The handoff's cause (courses never read through its full call) does not hold, since courses is hub-like. This read tests another: that the department buttons on degrees are written as absolute addresses (https://lmc.elumenapp.com/catalog/26-27/art), which el_page_links does not take (it takes href=\"26-27/...\" or href=\"/catalog/26-27/...\"). Four loads, no model call: the content calls the reader itself makes for degrees, art and courses, and courses's full call, each printed with its raw hrefs.",
+ "college": "Los Medanos College",
+ "questions": {
+  "degrees_hrefs": "How degrees's content call writes its department buttons: the raw href of each (absolute with the host, /catalog/26-27/..., or 26-27/...).",
+  "art_programs": "Whether art's content call links its programs, and the raw href of one (26-27/program/<slug> or another form).",
+  "courses_topics": "Whether courses's content call or its full call links 26-27/degrees, and the raw href."
+ },
+ "keywords": [
+  "href",
+  "26-27/"
+ ],
+ "pages": [
+  {
+   "answers": ["degrees_hrefs"],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/26-27,degrees?tenant=lmc.elumenapp.com"
+  },
+  {
+   "answers": ["art_programs"],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/26-27,art?tenant=lmc.elumenapp.com"
+  },
+  {
+   "answers": ["courses_topics"],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/26-27,courses?tenant=lmc.elumenapp.com"
+  },
+  {
+   "answers": ["courses_topics"],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/26-27,courses?tenant=lmc.elumenapp.com&api=https://api-prod.elumenapp.com:443"
+  }
+ ]
+}

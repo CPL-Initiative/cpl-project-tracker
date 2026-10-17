@@ -1,0 +1,320 @@
+{
+ "college": "Mission College",
+ "control_number": "46351",
+ "shape": "degree",
+ "title": "Emergency Services Administration",
+ "award": "Baccalaureate of Science (B.S.) Degree.",
+ "source_url": "https://mission.elumenapp.com/catalog/24-25/program/emergency-services-administration-bs-2026fa",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7761,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7761,
+    "output_tokens": 2669,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2669,
+  "output_tokens_details": {
+   "thinking_tokens": 979
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.08442,
+ "ms": 21100,
+ "seconds": 23.8,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 18,
+   "listed": 19,
+   "share": 0.947,
+   "missing": [
+    "SOC4401"
+   ],
+   "unexplained": [
+    "SOC4401"
+   ],
+   "none_placed": false,
+   "pass": false
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "SOCI4401"
+   ],
+   "flagged": [],
+   "pass": false
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    57.0,
+    57.0
+   ],
+   "stated": [
+    57.0,
+    57.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 7,
+   "courses": 0,
+   "count": 7,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 7,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Emergency Services Administration BS",
+   "measure": "units",
+   "total_units": {
+    "min": 57,
+    "max": 57
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Mission College Local GE Pattern or CalGETC",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Analyze complex situations and make informed decisions in high-stakes emergency scenarios.",
+    "Demonstrate effective leadership, team management, and conflict resolution skills.",
+    "Apply knowledge of local, state, and federal emergency policies, procedures, and best practices.",
+    "Communicate effectively with diverse audiences, particularly under high-stress conditions.",
+    "Engage communities in emergency preparedness and foster strong public relations.",
+    "Collaborate with multidisciplinary teams and agencies in planning and response efforts.",
+    "Utilize advanced technologies and data management tools for emergency operations."
+   ],
+   "careers": [
+    "company officer",
+    "lieutenant",
+    "captain",
+    "district officer",
+    "battalion chief",
+    "deputy chief",
+    "department chief officer"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Core Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 48,
+     "max": 48
+    },
+    "courses": [
+     {
+      "code": "EMSA4401",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "EMSA4402",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "EMSA4403",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "EMSA4404",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "EMSA4405",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "EMSA4406",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "EMSA4407",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "EMSA4408",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "EMSA4409",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "EMSA4411",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "EMSA4412",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "EMSA4413",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "EMSA4416",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "EMSA4417",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "EMSA4418",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOCI4401",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Upper Division General Education",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 9,
+     "max": 9
+    },
+    "courses": [
+     {
+      "code": "COMM3401",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC3401",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOCI3402",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The catalog prints SOCI4401 (Police, Community & Problem-Oriented Strategies); the closed list has SOC 4401 with the same title and number. Treated as the same course (catalog_addition false); reviewer should confirm the subject-code difference.",
+   "The 'Upper Division General Education' block (COMM3401, PSYC3401, SOCI3402, 9 units) is printed as specific required courses inside the 57-unit program total, so it is recorded as a block rather than as a GE pattern.",
+   "Lower-division GE line is garbled: 'Completion of 27 units of lower-division General Education courses. 24 units from Mission College Local GE Pattern. One Critical Thinking Course and One Oral Communication Course from Area A-1B 34 units (CalGETC)' printed with 0 units. ge_units left null because the GE unit figure (27, 24 or 34) is ambiguous.",
+   "The 120 semester unit minimum is a general baccalaureate requirement sentence, not printed as this award's total; degree_total left null.",
+   "Admission/completion requirement: an associate degree in a Public Safety field (printed with 0 units).",
+   "Source URL references catalog 24-25 with a 2026fa suffix; reviewer should verify catalog year."
+  ]
+ },
+ "extracted_run": "39000023893"
+}
