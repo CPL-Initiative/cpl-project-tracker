@@ -1,0 +1,73 @@
+{
+ "college": "Butte College",
+ "programs": 192,
+ "with_closed_list": 168,
+ "found": 165,
+ "extracted": 165,
+ "errors": 0,
+ "passed_machine_checks": 87,
+ "failed": {
+  "coverage": 1,
+  "invented": 0,
+  "arithmetic": 78,
+  "repeated": 0,
+  "outcomes": 0
+ },
+ "cost_usd": 10.69,
+ "cost_per_program": 0.0648,
+ "not_found": [
+  {
+   "control_number": "30774",
+   "title": "Noncredit Certificate of Competency in ESL",
+   "award": null,
+   "near_miss": {
+    "url": "https://butte.curriqunet.com/catalog/iq/25398/28120/28293",
+    "label": {
+     "award": 0,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 4,
+    "why": "coarse net: the page's code tokens name 0 of 4 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2051,
+     "content": 2051,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "44891",
+   "title": "Cal-GETC",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "url": "https://butte.curriqunet.com/catalog/iq/25399/28171/27949/27989",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 149,
+    "why": "coarse net: the page's code tokens name 0 of 149 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2596,
+     "content": 2596,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  }
+ ],
+ "run": "38981247046"
+}
