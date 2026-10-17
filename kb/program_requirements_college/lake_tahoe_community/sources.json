@@ -1,0 +1,2801 @@
+[
+ {
+  "control_number": "01594",
+  "title": "Business- Accounting & Finance",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.833,
+  "codes_found": [
+   "BSN100",
+   "BSN101A",
+   "BSN102",
+   "BSN104",
+   "BSN110A",
+   "BSN110B",
+   "BSN110C",
+   "BSN111",
+   "BSN115",
+   "BSN117"
+  ],
+  "source": {
+   "url": "https://ltcc.elumenapp.com/catalog/2026-2027/program/business-accounting-finance-aa-summer-2018",
+   "title": "Business-Accounting & Finance AA",
+   "h1": "Business-Accounting & Finance AA",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 2137
+ },
+ {
+  "control_number": "01595",
+  "title": "Business Management",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.818,
+  "codes_found": [
+   "BSN100",
+   "BSN101A",
+   "BSN102",
+   "BSN104",
+   "BSN110A",
+   "BSN110B",
+   "BSN120",
+   "BSN122",
+   "BSN125"
+  ],
+  "source": {
+   "url": "https://ltcc.elumenapp.com/catalog/2026-2027/program/business-management-aa-fall-2023",
+   "title": "Business-Management AA",
+   "h1": "Business-Management AA",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 2063
+ },
+ {
+  "control_number": "01596",
+  "title": "Business- Marketing",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.8,
+  "codes_found": [
+   "BSN100",
+   "BSN101A",
+   "BSN102",
+   "BSN104",
+   "BSN110A",
+   "BSN110B",
+   "BSN135",
+   "BSN136"
+  ],
+  "source": {
+   "url": "https://ltcc.elumenapp.com/catalog/2026-2027/program/business-marketing-aa-summer-2022",
+   "title": "Business-Marketing AA",
+   "h1": "Business-Marketing AA",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 2124
+ },
+ {
+  "control_number": "01614",
+  "title": "Business- General Business",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.8,
+  "codes_found": [
+   "BSN100",
+   "BSN101A",
+   "BSN102",
+   "BSN104",
+   "BSN107",
+   "BSN110A",
+   "BSN110B",
+   "BSN110C",
+   "BSN115",
+   "BSN125",
+   "BSN135",
+   "MAT118"
+  ],
+  "source": {
+   "url": "https://ltcc.elumenapp.com/catalog/2026-2027/program/business-general-business-aa-summer-2021",
+   "title": "Business-General Business AA",
+   "h1": "Business-General Business AA",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 3116
+ },
+ {
+  "control_number": "01615",
+  "title": "Criminal Justice",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.818,
+  "codes_found": [
+   "CRJ101",
+   "CRJ102",
+   "CRJ103",
+   "CRJ104",
+   "CRJ105",
+   "CRJ108",
+   "CRJ110",
+   "CRJ112",
+   "SOC101"
+  ],
+  "source": {
+   "url": "https://ltcc.elumenapp.com/catalog/2026-2027/program/criminal-justice-aa-summer-2019",
+   "title": "Criminal Justice AA",
+   "h1": "Criminal Justice AA",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 2206
+ },
+ {
+  "control_number": "01616",
+  "title": "Early Childhood Education",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.944,
+  "codes_found": [
+   "ECE100",
+   "ECE101",
+   "ECE102",
+   "ECE103",
+   "ECE109",
+   "ECE110",
+   "ECE120",
+   "ECE121",
+   "ECE124",
+   "ECE125",
+   "ECE126",
+   "ECE127",
+   "ECE129",
+   "ECE202",
+   "ECE203",
+   "ECE204",
+   "ECE205"
+  ],
+  "source": {
+   "url": "https://ltcc.elumenapp.com/catalog/2026-2027/program/early-childhood-education-aa-fall-2022",
+   "title": "Early Childhood Education AA",
+   "h1": "Early Childhood Education AA",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 18,
+  "text_chars": 3086
+ },
+ {
+  "control_number": "01617",
+  "title": "Fire Science",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "FIR101",
+   "FIR102",
+   "FIR103",
+   "FIR104",
+   "FIR105",
+   "FIR106",
+   "FIR153",
+   "FIR167",
+   "HEA140E"
+  ],
+  "source": {
+   "url": "https://ltcc.elumenapp.com/catalog/2026-2027/program/fire-science-aa-summer-2024",
+   "title": "Fire Science AA",
+   "h1": "Fire Science AA",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 2592
+ },
+ {
+  "control_number": "01618",
+  "title": "Social Science",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.957,
+  "codes_found": [
+   "ANT101",
+   "ANT102",
+   "ANT106",
+   "ANT107",
+   "ANT108",
+   "BSN100",
+   "BSN101A",
+   "BSN107",
+   "BSN120",
+   "BSN125",
+   "COU120",
+   "CRJ101",
+   "CRJ102",
+   "CRJ105",
+   "ECE101",
+   "ECE102",
+   "ECE103",
+   "GEG102",
+   "GEG103",
+   "GEG106",
+   "HIS109",
+   "HIS110",
+   "HIS111",
+   "HIS112",
+   "HIS113",
+   "HIS118",
+   "HIS127A",
+   "HIS127B",
+   "HIS127C",
+   "POL107",
+   "POL204",
+   "POL206",
+   "PSY102",
+   "PSY103",
+   "PSY104",
+   "PSY107",
+   "PSY109",
+   "SOC101",
+   "SOC102",
+   "SOC103",
+   "SOC104",
+   "SOC106",
+   "SOC107",
+   "SOC114"
+  ],
+  "source": {
+   "url": "https://ltcc.elumenapp.com/catalog/2026-2027/program/social-science-aa-summer-2022",
+   "title": "Social Science AA",
+   "h1": "Social Science AA",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 46,
+  "text_chars": 3849
+ },
+ {
+  "control_number": "09128",
+  "title": "Medical Office Assistant: Administrative",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BSN104",
+   "MOA235",
+   "MOA236A",
+   "MOA236B",
+   "MOA236C",
+   "MOA237",
+   "MOA241",
+   "MOA249"
+  ],
+  "source": {
+   "url": "https://ltcc.elumenapp.com/catalog/2026-2027/program/medical-office-assistant-administrative-aa-summer-2021",
+   "title": "Medical Office Assistant: Administrative AA",
+   "h1": "Medical Office Assistant: Administrative AA",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 2025
+ },
+ {
+  "control_number": "11529",
+  "title": "Addiction Studies",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.923,
+  "codes_found": [
+   "COU109",
+   "COU120",
+   "COU121",
+   "COU122",
+   "COU123",
+   "COU124",
+   "COU125",
+   "COU126",
+   "COU127",
+   "COU128",
+   "PSY202",
+   "SOC101"
+  ],
+  "source": {
+   "url": "https://ltcc.elumenapp.com/catalog/2026-2027/program/addiction-studies-aa-winter-2024",
+   "title": "Addiction Studies AA",
+   "h1": "Addiction Studies AA",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 2771
+ },
+ {
+  "control_number": "19200",
+  "title": "Liberal Arts: Arts and Humanities",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.988,
+  "codes_found": [
+   "ANT107",
+   "ART101",
+   "ART102",
+   "ART103",
+   "ART107",
+   "ART111",
+   "ART113",
+   "ART114A",
+   "ART118",
+   "ART119A",
+   "ART141",
+   "ART210A",
+   "ART211",
+   "ART212",
+   "ART213",
+   "ART221A",
+   "ART221B",
+   "ASL101",
+   "ASL102",
+   "ASL103",
+   "ASL108",
+   "ASL201",
+   "COM130",
+   "ENG108",
+   "ENG200",
+   "ENG201",
+   "ENG202",
+   "ENG206",
+   "ENG207",
+   "ENG209",
+   "ENG212",
+   "ENG213",
+   "ENG214",
+   "ENG215",
+   "ENG216",
+   "ENG217",
+   "ETH202A",
+   "ETH202B",
+   "ETH202C",
+   "HIS109",
+   "HIS110",
+   "HIS111",
+   "HIS112",
+   "HIS113",
+   "HIS127A",
+   "HIS127B",
+   "HIS127C",
+   "HUM101",
+   "HUM102",
+   "HUM103",
+   "HUM105",
+   "JPN101",
+   "JPN102",
+   "JPN103",
+   "JPN201",
+   "JPN202",
+   "JPN203",
+   "MUS101",
+   "MUS104B",
+   "MUS104C",
+   "MUS104E",
+   "MUS104F",
+   "PHI101",
+   "PHI205",
+   "REL103",
+   "REL107",
+   "SPA101",
+   "SPA102",
+   "SPA103",
+   "SPA110",
+   "SPA201",
+   "SPA202",
+   "SPA203",
+   "SPA214",
+   "SPA221A",
+   "SPA221B",
+   "SPA222",
+   "THE101",
+   "THE105D",
+   "THE108A",
+   "THE112C"
+  ],
+  "source": {
+   "url": "https://ltcc.elumenapp.com/catalog/2026-2027/program/liberal-arts-arts-and-humanities-aa-spring-2024",
+   "title": "Liberal Arts: Arts and Humanities AA",
+   "h1": "Liberal Arts: Arts and Humanities AA",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 82,
+  "text_chars": 5745
+ },
+ {
+  "control_number": "19201",
+  "title": "Liberal Arts: Social Sciences",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "19202",
+  "title": "Liberal Arts: Mathematics and Science",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "19265",
+  "title": "Fire Academy",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "FIR170L",
+   "FIR170M"
+  ],
+  "source": {
+   "url": "https://ltcc.elumenapp.com/catalog/2026-2027/program/fire-academy-certificate-summer-2024",
+   "title": "Fire Academy Certificate",
+   "h1": "Fire Academy Certificate",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 3495
+ },
+ {
+  "control_number": "19282",
+  "title": "Culinary Arts: Wine Studies",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "20039",
+  "title": "Accounting Technician",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BSN100",
+   "BSN102",
+   "BSN110A",
+   "BSN110B",
+   "BSN111",
+   "BSN152A",
+   "BSN152B",
+   "BSN155",
+   "BSN158",
+   "BSN190"
+  ],
+  "source": {
+   "url": "https://ltcc.elumenapp.com/catalog/2026-2027/program/accounting-technician-certificate-summer-2023",
+   "title": "Accounting Technician Certificate",
+   "h1": "Accounting Technician Certificate",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 1757
+ },
+ {
+  "control_number": "20045",
+  "title": "Spanish",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "SPA101",
+   "SPA102",
+   "SPA103",
+   "SPA110",
+   "SPA121A",
+   "SPA121B",
+   "SPA121D",
+   "SPA122A",
+   "SPA122B",
+   "SPA122C",
+   "SPA122CA",
+   "SPA122D",
+   "SPA122E",
+   "SPA122EA",
+   "SPA123A",
+   "SPA123B",
+   "SPA123D",
+   "SPA124",
+   "SPA124A",
+   "SPA155",
+   "SPA201",
+   "SPA202",
+   "SPA214",
+   "SPA221A",
+   "SPA221B",
+   "SPA222"
+  ],
+  "source": {
+   "url": "https://ltcc.elumenapp.com/catalog/2026-2027/program/spanish-certificate-fall-2024",
+   "title": "Spanish Certificate",
+   "h1": "Spanish Certificate",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 26,
+  "text_chars": 2674
+ },
+ {
+  "control_number": "20047",
+  "title": "Medical Office Assistant: Administrative",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BSN104",
+   "MOA235",
+   "MOA236A",
+   "MOA236B",
+   "MOA236C",
+   "MOA237",
+   "MOA241",
+   "MOA249"
+  ],
+  "source": {
+   "url": "https://ltcc.elumenapp.com/catalog/2026-2027/program/medical-office-assistant-administrative-certificate-summer-2024",
+   "title": "Medical Office Assistant: Administrative Certificate",
+   "h1": "Medical Office Assistant: Administrative Certificate",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 1788
+ },
+ {
+  "control_number": "20048",
+  "title": "Early Childhood Education",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 9,
+  "text_chars": 0
+ },
+ {
+  "control_number": "20050",
+  "title": "Addiction Studies",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.923,
+  "codes_found": [
+   "COU109",
+   "COU120",
+   "COU121",
+   "COU122",
+   "COU123",
+   "COU124",
+   "COU125",
+   "COU126",
+   "COU127",
+   "COU128",
+   "PSY202",
+   "SOC101"
+  ],
+  "source": {
+   "url": "https://ltcc.elumenapp.com/catalog/2026-2027/program/addiction-studies-certificate-winter-2024",
+   "title": "Addiction Studies Certificate",
+   "h1": "Addiction Studies Certificate",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 2659
+ },
+ {
+  "control_number": "20051",
+  "title": "Criminal Justice",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.9,
+  "codes_found": [
+   "CRJ101",
+   "CRJ102",
+   "CRJ103",
+   "CRJ104",
+   "CRJ105",
+   "CRJ108",
+   "CRJ110",
+   "CRJ112",
+   "SOC101"
+  ],
+  "source": {
+   "url": "https://ltcc.elumenapp.com/catalog/2026-2027/program/criminal-justice-certificate-of-achievement-summer-2022",
+   "title": "Criminal Justice Certificate of Achievement",
+   "h1": "Criminal Justice Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 2475
+ },
+ {
+  "control_number": "20054",
+  "title": "Fire Science",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "FIR101",
+   "FIR102",
+   "FIR103",
+   "FIR104",
+   "FIR105",
+   "FIR106",
+   "FIR153",
+   "FIR167",
+   "HEA140E"
+  ],
+  "source": {
+   "url": "https://ltcc.elumenapp.com/catalog/2026-2027/program/fire-science-certificate-summer-2024",
+   "title": "Fire Science Certificate",
+   "h1": "Fire Science Certificate",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 2487
+ },
+ {
+  "control_number": "24410",
+  "title": "ESL Proficiency",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 0.9,
+  "codes_found": [
+   "ESL561A",
+   "ESL562A",
+   "ESL563A",
+   "ESL564A",
+   "ESL564B",
+   "ESL565",
+   "ESL572A",
+   "ESL573A",
+   "ESL592B"
+  ],
+  "source": {
+   "url": "https://ltcc.elumenapp.com/catalog/2026-2027/program/esl-proficiency-certificate-summer-2022",
+   "title": "ESL Proficiency Certificate",
+   "h1": "ESL Proficiency Certificate",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 1381
+ },
+ {
+  "control_number": "30942",
+  "title": "Sociology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANT102",
+   "PSY104",
+   "PSY211",
+   "PSYCC1000",
+   "SOC101",
+   "SOC102",
+   "SOC103",
+   "SOC104",
+   "SOC106",
+   "SOC107",
+   "SOC111",
+   "SOC114",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://ltcc.elumenapp.com/catalog/2026-2027/program/sociology-aa-t-fall-2025",
+   "title": "Sociology AA-T",
+   "h1": "Sociology AA-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 3321
+ },
+ {
+  "control_number": "30973",
+  "title": "Mathematics",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CIS120A",
+   "CIS120B",
+   "MAT105",
+   "MAT106",
+   "MAT107",
+   "MAT202",
+   "MAT203",
+   "MAT204"
+  ],
+  "source": {
+   "url": "https://ltcc.elumenapp.com/catalog/2026-2027/program/mathematics-as-t-fall-2025",
+   "title": "Mathematics AS-T",
+   "h1": "Mathematics AS-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 2643
+ },
+ {
+  "control_number": "31213",
+  "title": "Fire Officer",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "FIR172D",
+   "FIR172E",
+   "FIR181A",
+   "FIR181B",
+   "FIR181C",
+   "FIR181D",
+   "FIR181E",
+   "FIR182A",
+   "FIR182B",
+   "FIR182C",
+   "FIR182E"
+  ],
+  "source": {
+   "url": "https://ltcc.elumenapp.com/catalog/2026-2027/program/fire-officer-aa-summer-2021",
+   "title": "Fire Officer AA",
+   "h1": "Fire Officer AA",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 3247
+ },
+ {
+  "control_number": "31326",
+  "title": "Fire Officer",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "FIR172D",
+   "FIR172E",
+   "FIR181A",
+   "FIR181B",
+   "FIR181C",
+   "FIR181D",
+   "FIR181E",
+   "FIR182A",
+   "FIR182B",
+   "FIR182C",
+   "FIR182E"
+  ],
+  "source": {
+   "url": "https://ltcc.elumenapp.com/catalog/2026-2027/program/fire-officer-certificate-summer-2021",
+   "title": "Fire Officer Certificate",
+   "h1": "Fire Officer Certificate",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 3203
+ },
+ {
+  "control_number": "31829",
+  "title": "Early Childhood Education",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ECE100",
+   "ECE101",
+   "ECE102",
+   "ECE103",
+   "ECE110",
+   "ECE124",
+   "ECE126",
+   "ECE202"
+  ],
+  "source": {
+   "url": "https://ltcc.elumenapp.com/catalog/2026-2027/program/early-childhood-education-as-t-fall-2025",
+   "title": "Early Childhood Education AS-T",
+   "h1": "Early Childhood Education AS-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 2972
+ },
+ {
+  "control_number": "32172",
+  "title": "Administration of Justice",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CRJ101",
+   "CRJ102",
+   "CRJ103",
+   "CRJ104",
+   "CRJ105",
+   "CRJ108",
+   "CRJ110",
+   "CRJ112",
+   "PSYCC1000",
+   "SOC101",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://ltcc.elumenapp.com/catalog/2026-2027/program/administration-of-justice-as-t-fall-2025",
+   "title": "Administration of Justice AS-T",
+   "h1": "Administration of Justice AS-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 3174
+ },
+ {
+  "control_number": "32552",
+  "title": "English",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.944,
+  "codes_found": [
+   "ENG108",
+   "ENG200",
+   "ENG201",
+   "ENG202",
+   "ENG206",
+   "ENG207",
+   "ENG208A",
+   "ENG209",
+   "ENG211",
+   "ENG212",
+   "ENG213",
+   "ENG214",
+   "ENG215",
+   "ENG216",
+   "ENG217",
+   "ENG218",
+   "ENGLC1001"
+  ],
+  "source": {
+   "url": "https://ltcc.elumenapp.com/catalog/2026-2027/program/english-aa-t-fall-2025",
+   "title": "English AA-T",
+   "h1": "English AA-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 18,
+  "text_chars": 3736
+ },
+ {
+  "control_number": "32586",
+  "title": "Studio Arts",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART101",
+   "ART102",
+   "ART103",
+   "ART111",
+   "ART113",
+   "ART114A",
+   "ART118",
+   "ART119A",
+   "ART142",
+   "ART146",
+   "ART201A",
+   "ART211",
+   "ART213",
+   "ART221A",
+   "DMA112"
+  ],
+  "source": {
+   "url": "https://ltcc.elumenapp.com/catalog/2026-2027/program/studio-arts-aa-t-fall-2025",
+   "title": "Studio Arts AA-T",
+   "h1": "Studio Arts AA-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 3164
+ },
+ {
+  "control_number": "32646",
+  "title": "Kinesiology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.979,
+  "codes_found": [
+   "BIO203",
+   "BIO204",
+   "BIO205",
+   "PEF100C",
+   "PEF100CA",
+   "PEF100G",
+   "PEF100GA",
+   "PEF101A",
+   "PEF101AA",
+   "PEF101B",
+   "PEF101BA",
+   "PEF101C",
+   "PEF101CA",
+   "PEF101F",
+   "PEF101FA",
+   "PEF101H",
+   "PEF101HA",
+   "PEF104F",
+   "PEF104G",
+   "PEF118A",
+   "PEF118B",
+   "PEF118C",
+   "PEF123A",
+   "PEF123B",
+   "PEF123C",
+   "PEF124A",
+   "PEF124B",
+   "PEF124C",
+   "PEF125A",
+   "PEF125B",
+   "PEF125C",
+   "PEF126A",
+   "PEF126B",
+   "PEF126C",
+   "PEF135A",
+   "PEF135F",
+   "PEF135G",
+   "PEF135H",
+   "PEF135M",
+   "PEF140A",
+   "PEF140B",
+   "PEF140E",
+   "PEF140F",
+   "PET104",
+   "PET106",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://ltcc.elumenapp.com/catalog/2026-2027/program/kinesiology-aa-t-fall-2025",
+   "title": "Kinesiology AA-T",
+   "h1": "Kinesiology AA-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 47,
+  "text_chars": 4346
+ },
+ {
+  "control_number": "33694",
+  "title": "Fire Academy",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "FIR170L",
+   "FIR170M",
+   "HEA140E"
+  ],
+  "source": {
+   "url": "https://ltcc.elumenapp.com/catalog/2026-2027/program/fire-academy-aa-summer-2024",
+   "title": "Fire Academy AA",
+   "h1": "Fire Academy AA",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 4978
+ },
+ {
+  "control_number": "35531",
+  "title": "Elementary Teacher Education",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.947,
+  "codes_found": [
+   "BIO110",
+   "COMMC1000",
+   "ECE102",
+   "EDU100",
+   "ENGLC1000",
+   "ENGLC1001",
+   "GEG103",
+   "GEL114",
+   "HIS111",
+   "HIS112",
+   "HIS127A",
+   "HIS127B",
+   "MAT109",
+   "MUS101",
+   "PHS102",
+   "POLSC1000",
+   "PSY102",
+   "THE101"
+  ],
+  "source": {
+   "url": "https://ltcc.elumenapp.com/catalog/2026-2027/program/elementary-teacher-education-aa-t-fall-2025",
+   "title": "Elementary Teacher Education AA-T",
+   "h1": "Elementary Teacher Education AA-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 19,
+  "text_chars": 3594
+ },
+ {
+  "control_number": "36069",
+  "title": "Anthropology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANT101",
+   "ANT102",
+   "ANT103",
+   "ANT106",
+   "ANT107",
+   "ANT108",
+   "ANT109",
+   "ANT110",
+   "ANT112",
+   "GEG102",
+   "GEG103",
+   "GEG134",
+   "GEL102",
+   "GEL114",
+   "HIS110",
+   "REL103",
+   "SOC107",
+   "SOC111",
+   "SOC114",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://ltcc.elumenapp.com/catalog/2026-2027/program/anthropology-transfer-degree-aa-t-summer-2026",
+   "title": "Anthropology Transfer Degree AA-T",
+   "h1": "Anthropology Transfer Degree AA-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 20,
+  "text_chars": 3743
+ },
+ {
+  "control_number": "36498",
+  "title": "Accounting and Finance",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BSN102",
+   "BSN110A",
+   "BSN110B",
+   "BSN111",
+   "BSN115",
+   "BSN117"
+  ],
+  "source": {
+   "url": "https://ltcc.elumenapp.com/catalog/2026-2027/program/accounting-and-finance-certificate-summer-2021",
+   "title": "Accounting and Finance Certificate",
+   "h1": "Accounting and Finance Certificate",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 1103
+ },
+ {
+  "control_number": "36499",
+  "title": "General Business",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.714,
+  "codes_found": [
+   "BSN100",
+   "BSN101A",
+   "BSN102",
+   "BSN104",
+   "BSN110A"
+  ],
+  "source": {
+   "url": "https://ltcc.elumenapp.com/catalog/2026-2027/program/general-business-certificate-summer-2021",
+   "title": "General Business Certificate",
+   "h1": "General Business Certificate",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 1311
+ },
+ {
+  "control_number": "36500",
+  "title": "Marketing",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BSN100",
+   "BSN102",
+   "BSN104",
+   "BSN135",
+   "BSN136",
+   "BSN137"
+  ],
+  "source": {
+   "url": "https://ltcc.elumenapp.com/catalog/2026-2027/program/marketing-certificate-summer-2021",
+   "title": "Marketing Certificate",
+   "h1": "Marketing Certificate",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 1083
+ },
+ {
+  "control_number": "36502",
+  "title": "Management",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BSN100",
+   "BSN102",
+   "BSN104",
+   "BSN120",
+   "BSN122",
+   "BSN125"
+  ],
+  "source": {
+   "url": "https://ltcc.elumenapp.com/catalog/2026-2027/program/management-certificate-summer-2021",
+   "title": "Management Certificate",
+   "h1": "Management Certificate",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 1091
+ },
+ {
+  "control_number": "37215",
+  "title": "Psychology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.917,
+  "codes_found": [
+   "PSY102",
+   "PSY103",
+   "PSY104",
+   "PSY106",
+   "PSY107",
+   "PSY109",
+   "PSY202",
+   "PSY210",
+   "PSY211",
+   "PSYCC1000",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://ltcc.elumenapp.com/catalog/2026-2027/program/psychology-aa-t-fall-2025",
+   "title": "Psychology AA-T",
+   "h1": "Psychology AA-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 2780
+ },
+ {
+  "control_number": "37220",
+  "title": "Geography",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANT102",
+   "GEG101",
+   "GEG102",
+   "GEG103",
+   "GEG106",
+   "GEG108",
+   "GEG113",
+   "GEG134",
+   "GEG135",
+   "GEL102"
+  ],
+  "source": {
+   "url": "https://ltcc.elumenapp.com/catalog/2026-2027/program/geography-aa-t-fall-2025",
+   "title": "Geography AA-T",
+   "h1": "Geography AA-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 2950
+ },
+ {
+  "control_number": "37225",
+  "title": "Spanish",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "SPA101",
+   "SPA102",
+   "SPA103",
+   "SPA110",
+   "SPA201",
+   "SPA202",
+   "SPA203",
+   "SPA214",
+   "SPA221A",
+   "SPA221B",
+   "SPA222"
+  ],
+  "source": {
+   "url": "https://ltcc.elumenapp.com/catalog/2026-2027/program/spanish-aa-t-fall-2025",
+   "title": "Spanish AA-T",
+   "h1": "Spanish AA-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 3300
+ },
+ {
+  "control_number": "37879",
+  "title": "Geology",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHM101",
+   "CHM102",
+   "CHM103",
+   "GEL102",
+   "GEL103",
+   "MAT105",
+   "MAT106",
+   "MAT107"
+  ],
+  "source": {
+   "url": "https://ltcc.elumenapp.com/catalog/2026-2027/program/geology-as-t-fall-2025",
+   "title": "Geology AS-T",
+   "h1": "Geology AS-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 1950
+ },
+ {
+  "control_number": "38493",
+  "title": "Hospitality Management",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.875,
+  "codes_found": [
+   "BSN101A",
+   "CUL102",
+   "CUL103A",
+   "HSP100",
+   "HSP120",
+   "HSP130",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://ltcc.elumenapp.com/catalog/2026-2027/program/hospitality-management-as-t-fall-2025",
+   "title": "Hospitality Management AS-T",
+   "h1": "Hospitality Management AS-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 3612
+ },
+ {
+  "control_number": "38747",
+  "title": "Wilderness Education and Outdoor Leadership",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BSN100",
+   "WLD103",
+   "WLD105A",
+   "WLD105B",
+   "WLD105C",
+   "WLD107B",
+   "WLD110B",
+   "WLD116",
+   "WLD133",
+   "WLD200",
+   "WLD201",
+   "WLD240"
+  ],
+  "source": {
+   "url": "https://ltcc.elumenapp.com/catalog/2026-2027/program/wilderness-education-and-outdoor-leadership-aa-summer-2021",
+   "title": "Wilderness Education and Outdoor Leadership AA",
+   "h1": "Wilderness Education and Outdoor Leadership AA",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 3389
+ },
+ {
+  "control_number": "38759",
+  "title": "Wilderness Education and Outdoor Leadership",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BSN100",
+   "WLD103",
+   "WLD105A",
+   "WLD105B",
+   "WLD105C",
+   "WLD110B",
+   "WLD116",
+   "WLD133",
+   "WLD200",
+   "WLD201",
+   "WLD240"
+  ],
+  "source": {
+   "url": "https://ltcc.elumenapp.com/catalog/2026-2027/program/wilderness-education-and-outdoor-leadership-certificate-summer-2021",
+   "title": "Wilderness Education and Outdoor Leadership Certificate",
+   "h1": "Wilderness Education and Outdoor Leadership Certificate",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 3146
+ },
+ {
+  "control_number": "38760",
+  "title": "Hospitality Management",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.75,
+  "codes_found": [
+   "BSN101A",
+   "CUL102",
+   "CUL103A",
+   "HSP100",
+   "HSP120",
+   "HSP130"
+  ],
+  "source": {
+   "url": "https://ltcc.elumenapp.com/catalog/2026-2027/program/hospitality-management-certificate-summer-2021",
+   "title": "Hospitality Management: Certificate",
+   "h1": "Hospitality Management: Certificate",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 2790
+ },
+ {
+  "control_number": "39383",
+  "title": "Computer Information Systems: Information Technology (IT) Technician - Cybersecurity",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BOT122",
+   "CIS104",
+   "CIS105",
+   "CIS106",
+   "CIS107",
+   "CIS108"
+  ],
+  "source": {
+   "url": "https://ltcc.elumenapp.com/catalog/2026-2027/program/computer-information-systems-information-technology-it-technician-cybersecurity-as-summer-2021",
+   "title": "Computer Information Systems: Information Technology (IT) Technician - Cybersecurity - AS",
+   "h1": "Computer Information Systems: Information Technology (IT) Technician - Cybersecurity - AS",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 2074
+ },
+ {
+  "control_number": "39384",
+  "title": "Computer Information Systems: Information Technology (IT) Technician - Cybersecurity",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BOT122",
+   "CIS104",
+   "CIS105",
+   "CIS106",
+   "CIS107",
+   "CIS108"
+  ],
+  "source": {
+   "url": "https://ltcc.elumenapp.com/catalog/2026-2027/program/computer-information-systems-cis-information-technology-it-technician-cybersecurity-certificate-of-achievement-summer-2021",
+   "title": "Computer Information Systems (CIS): Information Technology (IT) Technician - Cybersecurity Certificate of Achievement",
+   "h1": "Computer Information Systems (CIS): Information Technology (IT) Technician - Cybersecurity Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 2017
+ },
+ {
+  "control_number": "39442",
+  "title": "Environmental Science and Technology",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.87,
+  "codes_found": [
+   "BIO101",
+   "BIO149",
+   "BIO201",
+   "BIO212",
+   "CHM100",
+   "CHM101",
+   "EVS101",
+   "EVS101L",
+   "EVS106",
+   "EVS133",
+   "GEG101",
+   "GEG107",
+   "GEG108",
+   "GEG113",
+   "GEG134",
+   "GEG135",
+   "GEL102",
+   "PHS102",
+   "PHS117",
+   "PHY104"
+  ],
+  "source": {
+   "url": "https://ltcc.elumenapp.com/catalog/2026-2027/program/environmental-science-technology-certificate-fall-2020",
+   "title": "Environmental Science & Technology - Certificate",
+   "h1": "Environmental Science & Technology - Certificate",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 23,
+  "text_chars": 2394
+ },
+ {
+  "control_number": "39443",
+  "title": "Environmental Studies",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.853,
+  "codes_found": [
+   "BIO101",
+   "BIO102",
+   "BIO103",
+   "BIO110",
+   "BIO111",
+   "BIO149",
+   "BIO201",
+   "BIO212",
+   "CHM100",
+   "CHM101",
+   "CHM102",
+   "CHM103",
+   "EVS101",
+   "EVS101L",
+   "EVS106",
+   "EVS110",
+   "EVS133",
+   "GEG101",
+   "GEG102",
+   "GEG103",
+   "GEG107",
+   "GEG108",
+   "GEG113",
+   "GEG134",
+   "GEG135",
+   "GEL102",
+   "GEL103",
+   "MAT118",
+   "PHS102"
+  ],
+  "source": {
+   "url": "https://ltcc.elumenapp.com/catalog/2026-2027/program/environmental-studies-aa-fall-2020",
+   "title": "Environmental Studies - AA",
+   "h1": "Environmental Studies - AA",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 34,
+  "text_chars": 3178
+ },
+ {
+  "control_number": "39613",
+  "title": "Environmental Science",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.912,
+  "codes_found": [
+   "BIO101",
+   "BIO102",
+   "BIO103",
+   "CHM101",
+   "CHM102",
+   "CHM103",
+   "CIS135A",
+   "CIS135B",
+   "EVS101",
+   "EVS101L",
+   "EVS106",
+   "EVS133",
+   "GEG101",
+   "GEG102",
+   "GEG103",
+   "GEG108",
+   "GEG113",
+   "GEG134",
+   "GEG135",
+   "GEL102",
+   "GEL103",
+   "MAT105",
+   "MAT106",
+   "MAT107",
+   "PHS117",
+   "PHY104",
+   "PHY105",
+   "PHY106",
+   "PHY107",
+   "PHY108",
+   "PHY207"
+  ],
+  "source": {
+   "url": "https://ltcc.elumenapp.com/catalog/2026-2027/program/environmental-science-as-summer-2021",
+   "title": "Environmental Science - AS",
+   "h1": "Environmental Science - AS",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 34,
+  "text_chars": 2896
+ },
+ {
+  "control_number": "39988",
+  "title": "Small Business Ownership",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BSN100",
+   "BSN102",
+   "BSN104",
+   "BSN110A",
+   "BSN125",
+   "BSN135",
+   "BSN152A",
+   "BSN155",
+   "BSN210"
+  ],
+  "source": {
+   "url": "https://ltcc.elumenapp.com/catalog/2026-2027/program/small-business-ownership-certificate-summer-2023",
+   "title": "Small Business Ownership Certificate",
+   "h1": "Small Business Ownership Certificate",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 1327
+ },
+ {
+  "control_number": "40529",
+  "title": "California State University General Education Certification (CSUGE)",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 176,
+  "text_chars": 0
+ },
+ {
+  "control_number": "40530",
+  "title": "Intersegmental General Education Transfer Curriculum (IGETC) for Transfer to California State University (IGETC/CSU)",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 132,
+  "text_chars": 0
+ },
+ {
+  "control_number": "40531",
+  "title": "Intersegmental General Education Transfer Curriculum for Transfer to University of California (IGETC/UC)",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 133,
+  "text_chars": 0
+ },
+ {
+  "control_number": "40938",
+  "title": "Political Science",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "HIS113",
+   "HIS127C",
+   "POL100",
+   "POL107",
+   "POL204",
+   "POL206",
+   "POLSC1000",
+   "PSYCC1000",
+   "SOC101",
+   "SOC103",
+   "SOC106",
+   "SOC107",
+   "SOC114",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://ltcc.elumenapp.com/catalog/2026-2027/program/political-science-aa-t-fall-2025",
+   "title": "Political Science AA-T",
+   "h1": "Political Science AA-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 14,
+  "text_chars": 3363
+ },
+ {
+  "control_number": "41126",
+  "title": "Geographic Information Systems",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CIS550",
+   "CIS551",
+   "CIS552",
+   "CIS553"
+  ],
+  "source": {
+   "url": "https://ltcc.elumenapp.com/catalog/2026-2027/program/geographic-information-systems-non-credit-certificate-summer-2021",
+   "title": "Geographic Information Systems: Non-Credit Certificate",
+   "h1": "Geographic Information Systems: Non-Credit Certificate",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 1402
+ },
+ {
+  "control_number": "41392",
+  "title": "General Conservation",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "EVS110",
+   "FIR101",
+   "FIR102",
+   "FIR167",
+   "FOR132",
+   "WLD102",
+   "WLD110B"
+  ],
+  "source": {
+   "url": "https://ltcc.elumenapp.com/catalog/2026-2027/program/general-conservation-certificate-summer-2021",
+   "title": "General Conservation Certificate",
+   "h1": "General Conservation Certificate",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 2208
+ },
+ {
+  "control_number": "41705",
+  "title": "Real Estate Salesperson",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "41735",
+  "title": "Dental Assisting and Radiology",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "HEA147A",
+   "HEA147B",
+   "HEA147C"
+  ],
+  "source": {
+   "url": "https://ltcc.elumenapp.com/catalog/2026-2027/program/dental-assisting-and-radiology-summer-2022",
+   "title": "Dental Assisting and Radiology",
+   "h1": "Dental Assisting and Radiology",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 1758
+ },
+ {
+  "control_number": "42053",
+  "title": "Culinary Arts",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CUL101",
+   "CUL102",
+   "CUL103A",
+   "CUL104",
+   "CUL107",
+   "CUL109",
+   "HSP140"
+  ],
+  "source": {
+   "url": "https://ltcc.elumenapp.com/catalog/2026-2027/program/culinary-arts-certificate-of-achievement-summer-2022",
+   "title": "Culinary Arts Certificate of Achievement",
+   "h1": "Culinary Arts Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 2741
+ },
+ {
+  "control_number": "42054",
+  "title": "Culinary Arts",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CUL101",
+   "CUL102",
+   "CUL103A",
+   "CUL104",
+   "CUL107",
+   "CUL109",
+   "HSP140"
+  ],
+  "source": {
+   "url": "https://ltcc.elumenapp.com/catalog/2026-2027/program/culinary-arts-aa-summer-2022",
+   "title": "Culinary Arts AA",
+   "h1": "Culinary Arts AA",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 2715
+ },
+ {
+  "control_number": "42297",
+  "title": "Forestry",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.833,
+  "codes_found": [
+   "BIO101",
+   "BIO149",
+   "BIO201",
+   "EVS101",
+   "EVS110",
+   "FIR167",
+   "FOR110",
+   "FOR110L",
+   "FOR111",
+   "FOR112",
+   "FOR133",
+   "GEG108",
+   "GEG134",
+   "GEG135",
+   "WLD105C"
+  ],
+  "source": {
+   "url": "https://ltcc.elumenapp.com/catalog/2026-2027/program/forestry-certificate-of-achievement-fall-2022",
+   "title": "Forestry - Certificate of Achievement",
+   "h1": "Forestry - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 18,
+  "text_chars": 1812
+ },
+ {
+  "control_number": "42298",
+  "title": "Forestry",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.842,
+  "codes_found": [
+   "BIO101",
+   "BIO102",
+   "BIO103",
+   "BIO149",
+   "BIO201",
+   "EVS101",
+   "EVS110",
+   "FIR167",
+   "FOR110",
+   "FOR110L",
+   "FOR111",
+   "FOR112",
+   "FOR133",
+   "GEG108",
+   "GEG135",
+   "WLD105C"
+  ],
+  "source": {
+   "url": "https://ltcc.elumenapp.com/catalog/2026-2027/program/forestry-as-degree-fall-2022",
+   "title": "Forestry - AS Degree",
+   "h1": "Forestry - AS Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 19,
+  "text_chars": 2054
+ },
+ {
+  "control_number": "42332",
+  "title": "Business Administration 2.0",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.8,
+  "codes_found": [
+   "BSN100",
+   "BSN101A",
+   "BSN107",
+   "BSN110A",
+   "BSN110B",
+   "BSN110C",
+   "MAT118",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://ltcc.elumenapp.com/catalog/2026-2027/program/business-administration-2-0-ast-fall-2025",
+   "title": "Business Administration 2.0 AST",
+   "h1": "Business Administration 2.0 AST",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 3110
+ },
+ {
+  "control_number": "42729",
+  "title": "Firefighter I Academy (South Bay JPA)",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "FIR150N",
+   "FIR170D"
+  ],
+  "source": {
+   "url": "https://ltcc.elumenapp.com/catalog/2026-2027/program/firefighter-i-academy-south-bay-jpa-certificate-of-achievement-summer-2025",
+   "title": "Firefighter I Academy (South Bay JPA) Certificate of Achievement",
+   "h1": "Firefighter I Academy (South Bay JPA) Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 1861
+ },
+ {
+  "control_number": "42943",
+  "title": "Early Childhood Education: Site Supervisor",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ECE202",
+   "ECE203",
+   "ECE204",
+   "ECE205"
+  ],
+  "source": {
+   "url": "https://ltcc.elumenapp.com/catalog/2026-2027/program/early-childhood-education-site-supervisor-certificate-of-achievement-fall-2022",
+   "title": "Early Childhood Education: Site Supervisor Certificate of Achievement",
+   "h1": "Early Childhood Education: Site Supervisor Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 1344
+ },
+ {
+  "control_number": "43521",
+  "title": "Environmental Science & Technology Foundational Skills",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIO113",
+   "CIS135A",
+   "CIS135B",
+   "EVS101",
+   "EVS101L",
+   "EVS106",
+   "EVS110",
+   "GEG107",
+   "GEG134",
+   "GEG135"
+  ],
+  "source": {
+   "url": "https://ltcc.elumenapp.com/catalog/2026-2027/program/environmental-science-technology-foundational-skills-certificate-fsc-winter-2024",
+   "title": "Environmental Science & Technology - Foundational Skills Certificate (FSC)",
+   "h1": "Environmental Science & Technology - Foundational Skills Certificate (FSC)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 1765
+ },
+ {
+  "control_number": "43635",
+  "title": "Forestry Foundational Skills",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "EVS110",
+   "FIR167",
+   "FOR110",
+   "FOR110L",
+   "FOR133",
+   "GEG134",
+   "GEG135",
+   "WLD105C"
+  ],
+  "source": {
+   "url": "https://ltcc.elumenapp.com/catalog/2026-2027/program/forestry-foundational-skills-certificate-fsc-winter-2024",
+   "title": "Forestry - Foundational Skills Certificate (FSC)",
+   "h1": "Forestry - Foundational Skills Certificate (FSC)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 1431
+ },
+ {
+  "control_number": "43644",
+  "title": "Medical Office Assisting, Part 1 Foundational Skills",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MOA235",
+   "MOA237",
+   "MOA241",
+   "MOA249"
+  ],
+  "source": {
+   "url": "https://ltcc.elumenapp.com/catalog/2026-2027/program/medical-office-assisting-part-1-foundational-skills-certificate-winter-2024",
+   "title": "Medical Office Assisting, Part 1 Foundational Skills Certificate",
+   "h1": "Medical Office Assisting, Part 1 Foundational Skills Certificate",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 1574
+ },
+ {
+  "control_number": "43645",
+  "title": "Culinary Arts Level II Foundational Skills",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CUL107",
+   "CUL108",
+   "CUL109",
+   "HSP140"
+  ],
+  "source": {
+   "url": "https://ltcc.elumenapp.com/catalog/2026-2027/program/culinary-arts-level-ii-foundational-skills-certificate-winter-2024",
+   "title": "Culinary Arts Level II Foundational Skills Certificate",
+   "h1": "Culinary Arts Level II Foundational Skills Certificate",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 2200
+ },
+ {
+  "control_number": "43646",
+  "title": "Culinary Arts Level I Foundational Skills",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CUL101",
+   "CUL102",
+   "CUL103A",
+   "CUL104"
+  ],
+  "source": {
+   "url": "https://ltcc.elumenapp.com/catalog/2026-2027/program/culinary-arts-level-i-foundational-skills-certificate-winter-2024",
+   "title": "Culinary Arts Level I Foundational Skills Certificate",
+   "h1": "Culinary Arts Level I Foundational Skills Certificate",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 2246
+ },
+ {
+  "control_number": "43647",
+  "title": "Computer Programming Foundational Skills",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CIS120A",
+   "CIS120B",
+   "CIS120C"
+  ],
+  "source": {
+   "url": "https://ltcc.elumenapp.com/catalog/2026-2027/program/computer-programming-foundational-skills-certificate-summer-2024",
+   "title": "Computer Programming Foundational Skills Certificate",
+   "h1": "Computer Programming Foundational Skills Certificate",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 837
+ },
+ {
+  "control_number": "43648",
+  "title": "Certified Bookkeeper Foundational Skills",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BSN152A",
+   "BSN152B",
+   "BSN152C"
+  ],
+  "source": {
+   "url": "https://ltcc.elumenapp.com/catalog/2026-2027/program/certified-bookkeeper-foundational-skills-certificate-winter-2024",
+   "title": "Certified Bookkeeper Foundational Skills Certificate",
+   "h1": "Certified Bookkeeper Foundational Skills Certificate",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 1580
+ },
+ {
+  "control_number": "43928",
+  "title": "Nutrition and Dietetics",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIO203",
+   "BIO204",
+   "BIO205",
+   "BIO210",
+   "CHM101",
+   "CHM102",
+   "CHM103",
+   "PEH101",
+   "PSYCC1000",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://ltcc.elumenapp.com/catalog/2026-2027/program/nutrition-and-dietetics-as-t-fall-2025",
+   "title": "Nutrition and Dietetics AS-T",
+   "h1": "Nutrition and Dietetics AS-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 2715
+ },
+ {
+  "control_number": "44208",
+  "title": "Art-Business Entrepreneurship",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART103",
+   "ART111",
+   "ART114A",
+   "ART246",
+   "BSN135",
+   "BSN137",
+   "BSN155",
+   "BSN210"
+  ],
+  "source": {
+   "url": "https://ltcc.elumenapp.com/catalog/2026-2027/program/art-business-entrepreneurship-certificate-summer-2024",
+   "title": "Art-Business Entrepreneurship Certificate",
+   "h1": "Art-Business Entrepreneurship Certificate",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 1797
+ },
+ {
+  "control_number": "44210",
+  "title": "Art-Digital Media Arts",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.909,
+  "codes_found": [
+   "ART103",
+   "ART111",
+   "ART114A",
+   "ART135A",
+   "ART146",
+   "ART148",
+   "ART246",
+   "DMA112",
+   "DMA121",
+   "DMA125"
+  ],
+  "source": {
+   "url": "https://ltcc.elumenapp.com/catalog/2026-2027/program/art-digital-media-arts-certificate-summer-2024",
+   "title": "Art-Digital Media Arts Certificate",
+   "h1": "Art-Digital Media Arts Certificate",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 1970
+ },
+ {
+  "control_number": "44211",
+  "title": "Art-Pictorial Arts",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART103",
+   "ART111",
+   "ART114A",
+   "ART118",
+   "ART210A",
+   "ART211",
+   "ART212",
+   "ART213",
+   "ART214A",
+   "ART221A",
+   "ART223",
+   "ART234",
+   "ART246"
+  ],
+  "source": {
+   "url": "https://ltcc.elumenapp.com/catalog/2026-2027/program/art-pictorial-arts-certificate-summer-2024",
+   "title": "Art-Pictorial Arts Certificate",
+   "h1": "Art-Pictorial Arts Certificate",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 1968
+ },
+ {
+  "control_number": "44212",
+  "title": "Art-Spatial Arts",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART103",
+   "ART111",
+   "ART113",
+   "ART114A",
+   "ART119A",
+   "ART120A",
+   "ART201A",
+   "ART219A",
+   "ART220A",
+   "ART239A",
+   "ART246"
+  ],
+  "source": {
+   "url": "https://ltcc.elumenapp.com/catalog/2026-2027/program/art-spatial-arts-certificate-summer-2024",
+   "title": "Art-Spatial Arts Certificate",
+   "h1": "Art-Spatial Arts Certificate",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 1839
+ },
+ {
+  "control_number": "44213",
+  "title": "Music",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MUS101",
+   "MUS104B",
+   "MUS104C",
+   "MUS104E",
+   "MUS104F",
+   "MUS111",
+   "MUS116A",
+   "MUS116B",
+   "MUS116C",
+   "MUS116D",
+   "MUS116E",
+   "MUS116F",
+   "MUS119C",
+   "MUS120C",
+   "MUS120D",
+   "MUS248A"
+  ],
+  "source": {
+   "url": "https://ltcc.elumenapp.com/catalog/2026-2027/program/music-certificate-of-achievement-summer-2025",
+   "title": "Music Certificate of Achievement",
+   "h1": "Music Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 16,
+  "text_chars": 1587
+ },
+ {
+  "control_number": "44433",
+  "title": "Business Information Worker--Quick Start",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BOT150",
+   "BOT151",
+   "BOT152",
+   "BOT155",
+   "BOT160",
+   "BOT165",
+   "BOT175"
+  ],
+  "source": {
+   "url": "https://ltcc.elumenapp.com/catalog/2026-2027/program/business-information-worker-quick-start-summer-2025",
+   "title": "Business Information Worker--Quick Start",
+   "h1": "Business Information Worker--Quick Start",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 1446
+ },
+ {
+  "control_number": "45269",
+  "title": "Outdoor Foundational Skills-Wilderness Medicine",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "HEA140E",
+   "WLD107B"
+  ],
+  "source": {
+   "url": "https://ltcc.elumenapp.com/catalog/2026-2027/program/outdoor-foundational-skills-wilderness-medicine-summer-2026",
+   "title": "Outdoor Foundational Skills- Wilderness Medicine",
+   "h1": "Outdoor Foundational Skills- Wilderness Medicine",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 1955
+ },
+ {
+  "control_number": "45577",
+  "title": "California General Education Transfer Curriculum - CalGETC",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 147,
+  "text_chars": 0
+ },
+ {
+  "control_number": "46042",
+  "title": "Art-Photography",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART103",
+   "ART111",
+   "ART114A",
+   "ART135A",
+   "ART142",
+   "ART146",
+   "ART147",
+   "ART148",
+   "ART246"
+  ],
+  "source": {
+   "url": "https://ltcc.elumenapp.com/catalog/2026-2027/program/art-photography-certificate-summer-2026",
+   "title": "Art-Photography Certificate",
+   "h1": "Art-Photography Certificate",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 1779
+ },
+ {
+  "control_number": "46228",
+  "title": "Art History",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANT107",
+   "ANT112",
+   "ART101",
+   "ART102",
+   "ART103",
+   "ART107",
+   "ART110",
+   "ART111",
+   "ART113",
+   "ART114A",
+   "ART119A",
+   "ART141",
+   "ART142",
+   "ART146",
+   "ART201A",
+   "ART211",
+   "ART213",
+   "ART221A",
+   "DMA112",
+   "ENG108",
+   "ENG200",
+   "ENG201",
+   "ENG202",
+   "ENG206",
+   "ENG212",
+   "ENG213",
+   "ENG214",
+   "ENG215",
+   "ENG216",
+   "ENG217",
+   "ENG218",
+   "ENGLC1002",
+   "ETH202A",
+   "ETH202B",
+   "ETH202C",
+   "HIS109",
+   "HIS110",
+   "HIS111",
+   "HIS112",
+   "HIS113",
+   "HIS127A",
+   "HIS127B",
+   "HIS127C",
+   "HUM101",
+   "HUM102",
+   "HUM103",
+   "HUM105",
+   "MUS101",
+   "MUS104B",
+   "MUS104C",
+   "MUS104E",
+   "PHI101",
+   "PHI205",
+   "REL103",
+   "REL107",
+   "SPA110",
+   "SPA201",
+   "SPA202",
+   "SPA203",
+   "THE101",
+   "THE105A",
+   "THE112C",
+   "THE116"
+  ],
+  "source": {
+   "url": "https://ltcc.elumenapp.com/catalog/2026-2027/program/art-history-aa-t-summer-2026",
+   "title": "Art History AA-T",
+   "h1": "Art History AA-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 63,
+  "text_chars": 5388
+ },
+ {
+  "control_number": "46567",
+  "title": "Chemistry AS",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHM101",
+   "CHM102",
+   "CHM103",
+   "CHM221",
+   "CHM221L",
+   "CHM222",
+   "CHM222L",
+   "CHM223",
+   "CHM223L",
+   "MAT105",
+   "MAT106",
+   "MAT107",
+   "MAT202",
+   "MAT204",
+   "PHY107",
+   "PHY108",
+   "PHY207",
+   "PHY208"
+  ],
+  "source": {
+   "url": "https://ltcc.elumenapp.com/catalog/2026-2027/program/chemistry-as-summer-2026",
+   "title": "Chemistry AS",
+   "h1": "Chemistry AS",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 18,
+  "text_chars": 2265
+ }
+]

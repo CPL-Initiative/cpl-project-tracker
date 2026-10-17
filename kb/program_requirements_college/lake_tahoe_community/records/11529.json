@@ -1,0 +1,296 @@
+{
+ "college": "Lake Tahoe Community College",
+ "control_number": "11529",
+ "shape": "degree",
+ "title": "Addiction Studies",
+ "award": "A.A. Degree",
+ "source_url": "https://ltcc.elumenapp.com/catalog/2026-2027/program/addiction-studies-aa-winter-2024",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6978,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6978,
+    "output_tokens": 1989,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1989,
+  "output_tokens_details": {
+   "thinking_tokens": 647
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.06769,
+ "ms": 15943,
+ "seconds": 16.5,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 12,
+   "listed": 13,
+   "share": 0.923,
+   "missing": [
+    "PSYCC1000"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "PSY101"
+   ],
+   "flagged": [
+    "PSY101"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    44.0,
+    44.0
+   ],
+   "stated": [
+    44.0,
+    44.0
+   ],
+   "against": "program",
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     44.0,
+     44.0
+    ],
+    "stated": [
+     90.0,
+     90.0
+    ],
+    "against": "degree",
+    "ge": null,
+    "why": [],
+    "fill": [
+     46.0,
+     46.0
+    ]
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 7,
+   "courses": 0,
+   "count": 7,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Addiction Studies AA",
+   "measure": "units",
+   "total_units": {
+    "min": 44,
+    "max": 44
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": 90,
+    "max": 90
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": true,
+   "outcomes": [
+    "Correctly define and explain abuse, addiction and dependency as key concepts in the discipline.",
+    "Explain the interaction between genetic, biological, psychological, and environmental factors in the causes of substance misuse problems.",
+    "Describe the role of family dynamics in addiction and recovery and identify the characteristics of codependency within a family system.",
+    "Describe the legal and ethical issues of chemical dependency counseling.",
+    "Demonstrate effective counseling and group leadership skills.",
+    "Appreciate multiculturalism as it relates to the field of addiction counseling.",
+    "Apply principles of effective oral and written communication skills with clients, their families, and colleagues."
+   ],
+   "careers": [
+    "alcohol and drug treatment programs"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "B.1. Take all ten courses (40 units)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 40,
+     "max": 40
+    },
+    "courses": [
+     {
+      "code": "COU109",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COU120",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COU121",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COU122",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COU123",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COU124",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COU125",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COU126",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COU127",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COU128",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "B.2. Select one course",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 4,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "PSY101",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PSY202",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC101",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "PSYC C1000",
+    "why": "not in the text; catalog lists PSY101 General Psychology in B.2 instead, possibly its renumbered equivalent"
+   }
+  ],
+  "notes": [
+   "Lake Tahoe Community College uses quarter units; the page states 'Units: 90 units' and 'ELECTIVE UNITS to bring the total to 90', recorded as degree_total 90 with electives_fill_degree true.",
+   "Major total 'Addiction Studies AA (Total 44)' recorded as total_units.",
+   "Codes are printed without spaces (e.g. COU109); they match closed-list codes such as COU 109.",
+   "PSY101 General Psychology is not on the closed list (marked catalog_addition); closed list has PSYC C1000 Introduction to Psychology, which may be its common-course-numbered replacement — reviewer should check.",
+   "General education section names only 'General Education Patterns' without a specific pattern or units; ge_pattern and ge_units left null.",
+   "Career entry taken from 'entry-level employment in alcohol and drug treatment programs'."
+  ]
+ },
+ "extracted_run": "38984692790"
+}

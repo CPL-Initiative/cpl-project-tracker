@@ -1,0 +1,190 @@
+{
+ "college": "Lake Tahoe Community College",
+ "control_number": "43645",
+ "shape": "certificate",
+ "title": "Culinary Arts Level II Foundational Skills",
+ "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+ "source_url": "https://ltcc.elumenapp.com/catalog/2026-2027/program/culinary-arts-level-ii-foundational-skills-certificate-winter-2024",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6589,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6589,
+    "output_tokens": 1228,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1228,
+  "output_tokens_details": {
+   "thinking_tokens": 309
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.05092,
+ "ms": 14635,
+ "seconds": 15.1,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 4,
+   "listed": 4,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    15.0,
+    15.0
+   ],
+   "stated": [
+    15.0,
+    15.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 10,
+   "courses": 0,
+   "count": 10,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Culinary Arts Level II Foundational Skills Certificate",
+   "measure": "units",
+   "total_units": {
+    "min": 15,
+    "max": 15
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Practice the principles of sanitation and food safety to prevent the spread of food-borne illness.",
+    "Practice and understand culinary fundamentals that include cooking methods, food quality discernment, preparation techniques, flavor development, sensory evaluation, and recipe literacy.",
+    "Manage and make informed business decisions to control costs and promote profitability.",
+    "Understand and practice human resource management principles.",
+    "Understand how to communicate, prepare, plan, and execute food and service that is nutritionally mindful.",
+    "Understand advanced cooking methods that include sous vide, molecular gastronomy, charcuterie, restaurant-style cooking and their applications in various food service establishments and settings.",
+    "Understand domestic and international food cultures, traditions, norms, authenticity, ingredients, preparations, and techniques.",
+    "Identify the food-service industry’s styles of service and the functions of service personnel.",
+    "Understand the functions of beverage management and basic principles of food and beverage pairings.",
+    "Work as a team member and leader to achieve common goals and objectives."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Culinary Arts Level II Certificate",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 15,
+     "max": 15
+    },
+    "courses": [
+     {
+      "code": "CUL107",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CUL108",
+      "units": 4.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CUL109",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HSP140",
+      "units": 4.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The catalog prints codes without a space (CUL107, HSP140); these match closed-list CUL 107, CUL 108, CUL 109 and HSP 140.",
+   "The program description refers to the 'Culinary Arts Foundational Skills Certificate Level I', though the page is for Level II; the description may have been copied from the Level I page. Reviewer should check.",
+   "The Program Learning Outcomes list printed on the page is recorded as this certificate's outcomes; it appears to cover the program as a whole.",
+   "The description mentions 'employment or promotion within the culinary industry' but names no specific career or job title, so careers is left empty."
+  ]
+ },
+ "extracted_run": "38984692790"
+}
