@@ -1,0 +1,202 @@
+{
+ "college": "American River College",
+ "control_number": "35637",
+ "shape": "certificate",
+ "title": "Marketing Essentials",
+ "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+ "source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=750",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 9005,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 9005,
+    "output_tokens": 1175,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1175,
+  "output_tokens_details": {
+   "thinking_tokens": 302
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.05952,
+ "ms": 10593,
+ "seconds": 11.0,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 5,
+   "listed": 5,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    15.0,
+    15.0
+   ],
+   "stated": [
+    15.0,
+    15.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 6,
+   "courses": 0,
+   "count": 6,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 8,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Marketing Essentials Certificate",
+   "measure": "units",
+   "total_units": {
+    "min": 15,
+    "max": 15
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "analyze the philosophy of the marketing concept, and the importance of customer satisfaction.",
+    "discover the function and elements of the marketing mix.",
+    "incorporate strategies for planning, producing, and selecting the appropriate advertising media, and creating an advertising campaign.",
+    "demonstrate professional selling skills, including sales presentations.",
+    "evaluate principles of retailing, such as store location, store layout and design, pricing, human resource management, and promotional methods.",
+    "compare and contrast various e-marketing tools, such as websites and social media."
+   ],
+   "careers": [
+    "Marketing",
+    "selling",
+    "advertising",
+    "public relations",
+    "marketing management positions",
+    "entrepreneur",
+    "small business owner",
+    "entry-level marketing positions"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Certificate Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 15,
+     "max": 15
+    },
+    "courses": [
+     {
+      "code": "MKT 300",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MKT 310",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MKT 312",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MKT 314",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MKT 330",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The 'Career Information' heading at the top of page 751 follows the Marketing Essentials outcomes across the page break and was read as belonging to this certificate, not to the Retail Management (WAFC) Certificate that follows.",
+   "Careers split from 'Marketing, selling, advertising, public relations, and marketing management positions'; 'positions' may apply to each item. 'entrepreneur' and 'small business owner' come from 'enhancing marketing skills for the entrepreneur and small business owner'; 'entry-level marketing positions' from the description. Reviewer may want to check this split.",
+   "The 'Total Units: 15' line printed under the course table was recorded both as total_units and as the block's stated total.",
+   "The Retail Management (WAFC) Certificate section was ignored."
+  ]
+ },
+ "extracted_run": "39047245752"
+}

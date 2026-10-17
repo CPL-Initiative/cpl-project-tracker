@@ -1,0 +1,268 @@
+{
+ "college": "American River College",
+ "control_number": "30480",
+ "shape": "degree",
+ "title": "Physical Education",
+ "award": "A.S. Degree",
+ "source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=714",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8385,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8385,
+    "output_tokens": 2255,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2255,
+  "output_tokens_details": {
+   "thinking_tokens": 890
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.07864,
+ "ms": 18623,
+ "seconds": 19.0,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 13,
+   "listed": 13,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    19.0,
+    20.5
+   ],
+   "stated": [
+    19.0,
+    20.5
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 12,
+   "courses": 0,
+   "count": 12,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 3,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "A.S. in Physical Education",
+   "measure": "units",
+   "total_units": {
+    "min": 19,
+    "max": 20.5
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Local General Education Pattern or California General Education Transfer Curriculum (Cal-GETC)",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": true,
+   "outcomes": [
+    "list various occupations in the field of physical education",
+    "identify basic bones, muscles, and ligaments of the human body",
+    "compare key aspects of personal fitness as it relates to physical fitness programs",
+    "construct a philosophy of physical education that includes goals for lifetime fitness",
+    "evaluate current theories, philosophies, and trends in physical education",
+    "recognize current job opportunities in the field of physical education",
+    "summarize the education requirements for employment as a professional physical educator",
+    "evaluate common athletically-related injuries in the field of physical education",
+    "outline the basic principles of current accepted nutritional standards for physically active individuals",
+    "discuss the role of physical and psychological health as it relates to physical education",
+    "recount the historical evolution of physical education",
+    "demonstrate skills needed to meet the minimal certification standards when performing first aid and CPR as required by a nationally recognized organization"
+   ],
+   "careers": [
+    "coaching",
+    "health and fitness",
+    "personal training"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Degree Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "BIOL 300",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BIOL 310",
+        "units": 4,
+        "catalog_addition": false
+       },
+       {
+        "code": "PSYC 310",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "HEED 310",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HEED 311",
+        "units": 1.5,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "KINES 300",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KINES 330",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NUTRI 300",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "NUTRI 302",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PSYC 305",
+        "units": 3,
+        "catalog_addition": false
+       },
+       {
+        "code": "KINES 307",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "A minimum of 3 units from the following",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "HEED 300",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The BIOL 300 row prints a unit range of 3 - 4 for the choice (BIOL 300 3, BIOL 310 4, PSYC 310 3); the HEED 310 row prints 1 - 1.5 (HEED 310 1, HEED 311 1.5). Each course's own printed units are recorded.",
+   "Footnote 1: the HEED 310 or HEED 311 requirement may be waived with Community CPR certification (American Red Cross) or Basic Life Support certification (American Heart Association).",
+   "The 3-unit block allows HEED 300 OR three units from any DANCE, FITNS, PACT, SPORT, or TMACT courses; these subject areas are not listed as individual codes.",
+   "The page says the degree requires the program plus Local GE or Cal-GETC plus sufficient electives for a total of at least 60 units; this is read as the general degree rule, so degree_total is null and electives_fill_degree is true.",
+   "The outcomes list continues across the page break from page 714 to 715.",
+   "The following A.S. in Sports Medicine section was not used."
+  ]
+ },
+ "extracted_run": "39047245752"
+}

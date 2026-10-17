@@ -1,0 +1,228 @@
+{
+ "college": "American River College",
+ "control_number": "20138",
+ "shape": "certificate",
+ "title": "Gerontology: Recreation",
+ "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+ "source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=635",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 11884,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 11884,
+    "output_tokens": 2233,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2233,
+  "output_tokens_details": {
+   "thinking_tokens": 917
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.0922,
+ "ms": 18819,
+ "seconds": 19.1,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 18,
+   "share": 0.0,
+   "missing": [
+    "COMM321",
+    "COMM325",
+    "GERON303",
+    "GERON305",
+    "GERON306",
+    "GERON490",
+    "GERON498",
+    "HEED300",
+    "HSER300",
+    "HSER310",
+    "HSER330",
+    "KINES300",
+    "NUTRI324",
+    "PSYC365",
+    "PSYC375",
+    "RECR300",
+    "RECR310",
+    "RECR320"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": true,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Gerontology: Recreation Certificate (section not in the provided text)",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "COMM 321",
+    "why": "not in the text; catalog prints COMM C1004 Interpersonal Communication, and only in other awards' sections"
+   },
+   {
+    "code": "COMM 325",
+    "why": "certificate section not in the text; named only in the A.A. and other certificates' sections"
+   },
+   {
+    "code": "GERON 303",
+    "why": "certificate section not in the text; named only in the A.A. and other certificates' sections"
+   },
+   {
+    "code": "GERON 305",
+    "why": "certificate section not in the text; named only in the A.A. and other certificates' sections"
+   },
+   {
+    "code": "GERON 306",
+    "why": "certificate section not in the text; named only in the A.A. and other certificates' sections"
+   },
+   {
+    "code": "GERON 490",
+    "why": "certificate section not in the text; named only in the A.A. and other certificates' sections"
+   },
+   {
+    "code": "GERON 498",
+    "why": "certificate section not in the text; named only in the A.A. and other certificates' sections"
+   },
+   {
+    "code": "HEED 300",
+    "why": "certificate section not in the text; named only in the A.A. section"
+   },
+   {
+    "code": "HSER 300",
+    "why": "not in the text; catalog prints SWCD 300 Introduction to Social Work in other awards' sections"
+   },
+   {
+    "code": "HSER 310",
+    "why": "not in the text; catalog prints SWCD 310 Ethical Issues and Client's Rights in other awards' sections"
+   },
+   {
+    "code": "HSER 330",
+    "why": "not in the text; catalog prints SWCD 330 Issues of Diverse Populations in other awards' sections"
+   },
+   {
+    "code": "KINES 300",
+    "why": "certificate section not in the text; named only in the A.A. section"
+   },
+   {
+    "code": "NUTRI 324",
+    "why": "certificate section not in the text; named only in the A.A. section"
+   },
+   {
+    "code": "PSYC 365",
+    "why": "certificate section not in the text; named only in the A.A. and other certificates' sections"
+   },
+   {
+    "code": "PSYC 375",
+    "why": "certificate section not in the text; named only in the A.A. and other certificates' sections"
+   },
+   {
+    "code": "RECR 300",
+    "why": "certificate section not in the text; named only in the A.A. section"
+   },
+   {
+    "code": "RECR 310",
+    "why": "certificate section not in the text; named only in the A.A. section"
+   },
+   {
+    "code": "RECR 320",
+    "why": "certificate section not in the text; named only in the A.A. section"
+   }
+  ],
+  "notes": [
+   "The provided text (pages 635-638) contains the A.A. in Gerontology: Recreation and the Gerontology: Administrative, Advocacy and Social Policy, and Case Management and Social Services certificates; the text is cut off mid-way through the Case Management certificate. The Gerontology: Recreation Certificate of Achievement section is not in the provided text and likely appears on a later page, so no blocks, totals, outcomes or careers were recorded.",
+   "The A.A. in Gerontology: Recreation section prints Total Units: 36 with required COMM C1004, COMM 325 (or SWCD 330 or PSYC 365), GERON 303, GERON 305 (or PSYC 375), GERON 306, GERON 490, SWCD 300, SWCD 310, a minimum of 3 units of GERON 498, and a minimum of 9 units from HEED 300/KINES 300/NUTRI 324/RECR 310, RECR 300, RECR 320. The certificate likely mirrors this, but a reviewer should confirm against the certificate's own section (around page 639).",
+   "The catalog prints SWCD 300/310/330 and COMM C1004 where the closed list has HSER 300/310/330 and COMM 321; these appear to be renumbered courses."
+  ]
+ },
+ "extracted_run": "39047245752"
+}

@@ -1,0 +1,177 @@
+{
+ "college": "American River College",
+ "control_number": "16596",
+ "shape": "certificate",
+ "title": "Firefighter Recruit Academy",
+ "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+ "source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=590",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6992,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6992,
+    "output_tokens": 827,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 827,
+  "output_tokens_details": {
+   "thinking_tokens": 0
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.04451,
+ "ms": 7183,
+ "seconds": 7.7,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 1,
+   "listed": 1,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    11.0,
+    15.0
+   ],
+   "stated": [
+    11.0,
+    15.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 16,
+   "courses": 0,
+   "count": 16,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Firefighter Recruit Academy Certificate",
+   "measure": "units",
+   "total_units": {
+    "min": 11,
+    "max": 15
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "identify and describe the history, development, structure, organization and responsibility of the Fire Service",
+    "define, identify and apply the components and principles of the Incident Command System",
+    "explain the core values of the fire service and its duty of providing service delivery to the public",
+    "perform preventative maintenance to fire station, apparatus and equipment",
+    "demonstrate the use of fire department apparatus and tools within the scope of assignment",
+    "explain and apply the basic concept of fire control, fire and arson investigation and fire communication systems",
+    "identify and demonstrate basic skills in public education procedures and instruction",
+    "interpret work place rules and laws regarding harassment/ discrimination policies and mandated reporting procedures",
+    "relate to wellness programs, stress management and approved academy physical fitness programs",
+    "identify and demonstrate first responder responsibilities for handling medical emergencies",
+    "identify first responder responsibilities for mitigation of hazardous material incidents",
+    "choose safe driving procedures for emergency response vehicles",
+    "apply principles of vehicle extraction",
+    "apply fire suppression tactics and strategies",
+    "interpret wild land fire behavior, suppression techniques and safety measures",
+    "demonstrate firefighter rescue and survival skills"
+   ],
+   "careers": [
+    "firefighter"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Certificate Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "FIRE 1500",
+      "units": 11,
+      "units_max": 15,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "FIRE 1500 printed as 11-15 units in the catalog; the state file stores 11.",
+   "The outcome 'interpret work place rules and laws regarding harassment/discrimination policies...' breaks across lines after 'harassment/'; the line break was read as a space per instructions, giving 'harassment/ discrimination'. A reviewer may prefer 'harassment/discrimination'.",
+   "The Fire Inspector 1 Certificate that follows on the same page was not read.",
+   "'firefighter' is taken from the description ('assume the role of firefighter'); a reviewer should confirm it counts as a named career."
+  ]
+ },
+ "extracted_run": "39047245752"
+}

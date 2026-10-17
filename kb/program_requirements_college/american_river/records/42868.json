@@ -1,0 +1,211 @@
+{
+ "college": "American River College",
+ "control_number": "42868",
+ "shape": "certificate",
+ "title": "Enterprise Software Engineering and Development Apprenticeship",
+ "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+ "source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=442",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8582,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8582,
+    "output_tokens": 1206,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1206,
+  "output_tokens_details": {
+   "thinking_tokens": 351
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.05845,
+ "ms": 10108,
+ "seconds": 10.5,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 5,
+   "listed": 6,
+   "share": 0.833,
+   "missing": [
+    "CISP451"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    23.5,
+    25.5
+   ],
+   "stated": [
+    23.5,
+    25.5
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 2,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Enterprise Software Engineering and Development Apprenticeship Certificate",
+   "measure": "units",
+   "total_units": {
+    "min": 23.5,
+    "max": 25.5
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "utilize techniques that are unique to enterprise level software engineering and development.",
+    "utilize techniques and principles such as Agile and DevOps.",
+    "synthesize enterprise level software solutions.",
+    "analyze enterprise data to identify problems or room for improvement."
+   ],
+   "careers": [
+    "Enterprise Software Engineers",
+    "Enterprise Software Developers"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Certificate Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CISP 300",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CISP 370",
+        "units": 4,
+        "catalog_addition": false
+       },
+       {
+        "code": "CISP 480",
+        "units": 5,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "CISP 455",
+      "units": 4.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "A minimum of 16 units from the following",
+    "rule": "choose_units",
+    "minimum": 16,
+    "option_group": null,
+    "stated": {
+     "min": 16,
+     "max": 16
+    },
+    "courses": [
+     {
+      "code": "APPRT 498",
+      "units": 0.5,
+      "units_max": 4,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "CISP 451",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "The CISP 300 / CISP 370 / CISP 480 choice row prints a range of 3 - 5 units for the row as a whole; each course's own units (3, 4, 5) are recorded on the course and its alternatives.",
+   "APPRT 498 is printed as (0.5 - 4) units in this section, whereas the adjacent Enterprise Mainframe System Administration section prints it as (0.5 - 6); the closed list stores 0.5.",
+   "The printed total of 23.5 - 25.5 units matches 3-5 + 4.5 + 16.",
+   "The section's career information is taken from the description ('for the occupations of Enterprise Software Engineers and Enterprise Software Developers'); no separate Career Information heading is printed for this certificate.",
+   "The section text continues onto page 443 (enrollment eligibility, enrollment process and outcomes)."
+  ]
+ },
+ "extracted_run": "39047245752"
+}

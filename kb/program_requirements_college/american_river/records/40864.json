@@ -1,0 +1,225 @@
+{
+ "college": "American River College",
+ "control_number": "40864",
+ "shape": "certificate",
+ "title": "Sheet Metal Apprenticeship Level III",
+ "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+ "source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=216",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 11465,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 11465,
+    "output_tokens": 1636,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1636,
+  "output_tokens_details": {
+   "thinking_tokens": 531
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.07858,
+ "ms": 13438,
+ "seconds": 14.3,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 3,
+   "listed": 7,
+   "share": 0.429,
+   "missing": [
+    "SHME100",
+    "SHME101",
+    "SHME110",
+    "SHME111"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    31.0,
+    31.0
+   ],
+   "stated": [
+    31.0,
+    31.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Sheet Metal Apprenticeship Level III Certificate",
+   "measure": "units",
+   "total_units": {
+    "min": 31,
+    "max": 31
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "measure the moisture content of air and relative humidity using a sling psychrometer and a psychometric chart.",
+    "calculate ventilation requirements for a given space.",
+    "demonstrate the use of an air duct calculator to design a duct system.",
+    "identify and avoid unsafe conditions and unsafe acts, and observe safety laws and regulations on construction job sites.",
+    "demonstrate proper layout of a roof curb and duct penetrations."
+   ],
+   "careers": [
+    "Sheet metal technicians"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Certificate Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "SHME 120",
+      "units": 3.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SHME 121",
+      "units": 3.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "A minimum of 20 units from the following: Sheet Metal Apprenticeship Level II Certificate",
+    "rule": "choose_units",
+    "minimum": 20,
+    "option_group": null,
+    "stated": {
+     "min": 20,
+     "max": 20
+    },
+    "courses": []
+   },
+   {
+    "name": "A minimum of 4 units from the following",
+    "rule": "choose_units",
+    "minimum": 4,
+    "option_group": null,
+    "stated": {
+     "min": 4,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "SHME 298",
+      "units": 0.5,
+      "units_max": 6,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "SHME 100",
+    "why": "not named in this section; presumably covered by the Level II Certificate requirement (named only in the Service Technician section)"
+   },
+   {
+    "code": "SHME 101",
+    "why": "not named in this section; presumably covered by the Level II Certificate requirement (named only in the Service Technician section)"
+   },
+   {
+    "code": "SHME 110",
+    "why": "not named in this section; presumably covered by the Level II Certificate requirement (named only in the Service Technician section)"
+   },
+   {
+    "code": "SHME 111",
+    "why": "not named in this section; presumably covered by the Level II Certificate requirement (named only in the Service Technician section)"
+   }
+  ],
+  "notes": [
+   "The 20-unit block lists no courses; it requires completion of the Sheet Metal Apprenticeship Level II Certificate (prior certificate), recorded as a choose_units block with no courses. The Level II section is not in the provided text, so its courses (likely SHME 100, 101, 110, 111 plus SHME 298) cannot be confirmed.",
+   "SHME 298 is printed as 'SHME 298' in the catalog; the closed list stores it as 'SHME298' — treated as the same course.",
+   "Career Information paragraph used is the one printed after this section's outcomes (each program's Career Information follows its outcomes in this layout); it names only 'Sheet metal technicians'. An identical paragraph precedes the section heading and belongs to the preceding program.",
+   "Enrollment eligibility: must be a registered sheet metal apprentice."
+  ]
+ },
+ "extracted_run": "39047245752"
+}

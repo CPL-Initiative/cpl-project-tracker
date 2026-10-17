@@ -1,0 +1,427 @@
+{
+ "college": "American River College",
+ "control_number": "12238",
+ "shape": "degree",
+ "title": "CIS: Computer Networking Management",
+ "award": "A.S. Degree",
+ "source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=430",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 11960,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 11960,
+    "output_tokens": 4667,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 4667,
+  "output_tokens_details": {
+   "thinking_tokens": 1876
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.14118,
+ "ms": 38295,
+ "seconds": 38.6,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 18,
+   "listed": 29,
+   "share": 0.621,
+   "missing": [
+    "BUS310",
+    "CISA315",
+    "CISC320",
+    "CISC323",
+    "CISC350",
+    "CISC361",
+    "CISN340",
+    "CISS310",
+    "ENGLC1000",
+    "ENGLC1000H",
+    "ESLW340"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    3.0,
+    16.0
+   ],
+   "stated": [
+    31.0,
+    34.0
+   ],
+   "against": "program",
+   "why": [
+    "the blocks sum to 3.0-16.0; the catalog states 31.0-34.0"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 10,
+   "courses": 0,
+   "count": 10,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 6,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "A.S. in CIS: Computer Networking Management",
+   "measure": "units",
+   "total_units": {
+    "min": 31,
+    "max": 34
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Local General Education Pattern or California General Education Transfer Curriculum (Cal-GETC)",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": true,
+   "outcomes": [
+    "install, configure, monitor, manage, backup, and customize a Microsoft server.",
+    "design, construct and apply group policies and NTFS file system permissions to secure files and network resources.",
+    "design, construct and troubleshoot a Microsoft Active Directory network using Microsoft workstation and server operating systems.",
+    "design, evaluate, construct and implement a routed IP network using industry standard routing protocols and routing equipment, in a wired or wireless configuration.",
+    "design, evaluate, construct and implement a multilayer switching network using switching protocols, such as Ethernet, in a wired or wireless configuration.",
+    "design, install and test Wide Area Network (WAN) connectivity solutions.",
+    "design and evaluate basic security and access solutions in a switched or routed LAN or WAN.",
+    "design, evaluate, specify, and install various types of network media.",
+    "install, configure, monitor, manage, backup, and customize a Linux server.",
+    "design, evaluate and implement and troubleshoot typical Linux server services in the areas of user accounts and security, printing, web server, telnet server, firewall, email server, domain name service, dynamic host configuration protocol, network file system, and Microsoft Windows compatibility."
+   ],
+   "careers": [
+    "network technical support staff",
+    "network administrators",
+    "network designers",
+    "network systems engineer",
+    "network troubleshooters",
+    "information systems security specialists"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "CISCO Concentration",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Concentration",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CISN 341",
+      "units": 3.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CISN 342",
+      "units": 3.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CISS 330",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Linux Concentration",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Concentration",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CISC 324",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CISN 110",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CISN 111",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CISN 119",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CISN 120",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CISN 121",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CISN 122",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Linux Concentration: A minimum of 3 units from the following",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": "Concentration",
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "CISP 400",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CISS 342",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Windows Concentration",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Concentration",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CISN 110",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CISN 111",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CISN 300",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CISN 302",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CISN 307",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CISN 308",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CISN 119",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Windows Concentration: A minimum of 3 units from the following",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": "Concentration",
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "CISP 370",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CISS 341",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "BUS 310",
+    "why": "not in this section of the text; appears only in the Database Management section (core requirements likely on the cut-off previous page)"
+   },
+   {
+    "code": "CISA 315",
+    "why": "not in this section of the text; appears only in Database Management and IT Technician sections (core likely on cut-off previous page)"
+   },
+   {
+    "code": "CISC 320",
+    "why": "not in this section of the text; appears only in other programs' sections (core likely on cut-off previous page)"
+   },
+   {
+    "code": "CISC 323",
+    "why": "not in this section of the text; appears only in other programs' sections (core likely on cut-off previous page)"
+   },
+   {
+    "code": "CISC 350",
+    "why": "not in the text; likely in core requirements on cut-off previous page"
+   },
+   {
+    "code": "CISC 361",
+    "why": "not in this section of the text; appears only in the IT Technician section (core likely on cut-off previous page)"
+   },
+   {
+    "code": "CISN 340",
+    "why": "not in this section of the text; likely in the start of the CISCO Concentration on cut-off previous page"
+   },
+   {
+    "code": "CISS 310",
+    "why": "not in the text; likely in core requirements on cut-off previous page"
+   },
+   {
+    "code": "ENGL C1000",
+    "why": "not in this section of the text; likely an alternative in core on cut-off previous page"
+   },
+   {
+    "code": "ENGL C1000H",
+    "why": "not in the text; likely an alternative in core on cut-off previous page"
+   },
+   {
+    "code": "ESLW 340",
+    "why": "not in the text; likely an alternative in core on cut-off previous page"
+   }
+  ],
+  "notes": [
+   "The text begins mid-section on page 430: the section heading, program description, core degree requirements and the start of the CISCO Concentration (page 429) are not included. Section heading is inferred from the catalog's pattern ('A.S. in CIS: ...') and the closing paragraph naming 'The CIS: Computer Networking Management Associate in Science (A.S.) degree'.",
+   "CISCO Concentration block is partial: only CISN 341, CISN 342 and CISS 330 are visible; the printed concentration units are 17.5-18.5, suggesting earlier courses and possibly a choice that were cut off.",
+   "Each concentration is one option (option_group 'Concentration'); the Linux and Windows concentrations each consist of their required block plus their 'minimum of 3 units' choice block, which belong together rather than being alternatives to each other.",
+   "Printed concentration units: CISCO 17.5-18.5, Linux 17, Windows 19; printed Total Units per concentration: CISCO 31.5-33.5, Linux 31-32, Windows 33-34. total_units 31-34 spans the lowest and highest printed concentration totals; reviewer should check.",
+   "Degree completed with Local GE or Cal-GETC 'plus sufficient electives for a total of at least 60 units'; recorded as electives_fill_degree true, degree_total left null as boilerplate minimum.",
+   "The SLO list includes concentration header bullets ('WINDOWS CONCENTRATION:', 'CISCO CONCENTRATION:', 'LINUX/UNIX CONCENTRATION:') which were omitted as they are not outcomes; outcomes are grouped by concentration in that order (3 Windows, 5 Cisco, 2 Linux/Unix)."
+  ]
+ },
+ "extracted_run": "39047245752"
+}

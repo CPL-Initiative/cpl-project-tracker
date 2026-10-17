@@ -1,0 +1,282 @@
+{
+ "college": "American River College",
+ "control_number": "30842",
+ "shape": "certificate",
+ "title": "Freelance Photography",
+ "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+ "source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=313",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8902,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8902,
+    "output_tokens": 1841,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1841,
+  "output_tokens_details": {
+   "thinking_tokens": 465
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.07243,
+ "ms": 14689,
+ "seconds": 15.3,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 17,
+   "listed": 17,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    30.0,
+    33.5
+   ],
+   "stated": [
+    30.0,
+    33.5
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 11,
+   "courses": 0,
+   "count": 11,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 6,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Certificate Requirements",
+   "measure": "units",
+   "total_units": {
+    "min": 30,
+    "max": 33.5
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "select appropriate digital and film camera equipment and software for various client-based shooting assignments",
+    "utilize a variety of studio lighting techniques for fine art photography or commercial photography",
+    "organize a workflow for storing and editing photographs",
+    "apply design knowledge and skill in the use of photo editing on the computer",
+    "evaluate digital and film photographs for aesthetic quality",
+    "design and create photographic compositions using the principles of visual organization: unity, balance, harmony-variety, rhythm, pattern, proportion/scale, movement, and economy",
+    "compare and contrast historical works of art as they relate to an overall formal assessment of photography",
+    "analyze the different photographic genres throughout history",
+    "develop portfolios of photographs for specific clients",
+    "develop a plan for launching a career in freelance photography",
+    "make effective decisions, use workforce information, and manage his/her personal career plans"
+   ],
+   "careers": [
+    "studio assistant",
+    "studio photographer",
+    "freelance photographer",
+    "editorial photographer",
+    "stock photographer",
+    "photo lab manager"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Certificate Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ART 101",
+      "units": 0.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 320",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ARTPH 340",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARTH 300",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ARTH 335",
+        "units": 3,
+        "catalog_addition": false
+       },
+       {
+        "code": "ARTPH 345",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARTPH 300",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARTPH 305",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARTPH 310",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARTPH 315",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARTPH 322",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARTPH 350",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ARTPH 370",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARTPH 360",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARTPH 375",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARTPH 376",
+      "units": 0.5,
+      "units_max": 4,
+      "alternatives": [
+       {
+        "code": "ARTPH 498",
+        "units": 0.5,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The text begins mid-section at page 313; the Freelance Photography program heading and description appear to be on the preceding page and are not in the text, so section_heading records the first printed heading, 'Certificate Requirements'. The section is identified as Freelance Photography by its course list, its outcomes and career text.",
+   "ARTPH 376 shows '(1)' beside its title but '0.5 - 4' in the units column (shared with the 'or ARTPH 498 (0.5 -4)' alternative); recorded the units column range 0.5-4. ARTPH 498 is variable 0.5-4 units; its low end is recorded.",
+   "The Gallery Management and Sculpture certificates that follow on the page were not read for this record."
+  ]
+ },
+ "extracted_run": "39047245752"
+}

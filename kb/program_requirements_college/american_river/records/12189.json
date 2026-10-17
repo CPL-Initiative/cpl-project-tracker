@@ -1,0 +1,238 @@
+{
+ "college": "American River College",
+ "control_number": "12189",
+ "shape": "certificate",
+ "title": "Teacher",
+ "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+ "source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=505",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 11488,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 11488,
+    "output_tokens": 1883,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1883,
+  "output_tokens_details": {
+   "thinking_tokens": 611
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.08361,
+ "ms": 16115,
+ "seconds": 16.5,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 11,
+   "listed": 11,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    29.0,
+    29.0
+   ],
+   "stated": [
+    45.0,
+    45.0
+   ],
+   "against": "program",
+   "why": [
+    "the blocks sum to 29.0-29.0; the catalog states 45.0-45.0"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 7,
+   "courses": 0,
+   "count": 7,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Teacher Certificate",
+   "measure": "units",
+   "total_units": {
+    "min": 45,
+    "max": 45
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "ARC General Education",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": 16,
+    "max": 16
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "confirm child development principles in creating environments that are healthy, respectful, supportive, and challenging for all children, from infancy through adolescence.",
+    "design early childhood programs that build respectful, reciprocal family relationships with the intention of involving families in their childrenâ€™s development and learning.",
+    "utilize systematic child assessment strategies in order to guide decisions about curriculum and teaching strategies.",
+    "evaluate and implement curriculum and teaching plans, as evidenced through documentation, that support foundational skills and concepts in language, math, science, art, and social relationships.",
+    "demonstrate practices in maintaining health/safety standards and preventing infectious disease in group-care settings.",
+    "analyze principles of culturally relevant and anti-biased education in developing and analyzing early childhood curriculum and environments that respond to and respect diverse cultures and individual needs of children.",
+    "develop a continuing professional growth plan and advocate for public policy that supports children, families and the profession of early childhood education."
+   ],
+   "careers": [
+    "teacher"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Certificate Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ECE 300",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECE 312",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PSYC 372",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECE 314",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECE 320",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECE 321",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECE 326",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECE 331",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECE 415",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "NUTRI 320",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECE 430",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Teacher Certificate section (page 507) read alone; the Master Teacher and Site Supervisor certificates printed before it were ignored.",
+   "The certificate also requires 'A minimum of 16 units' of ARC General Education courses, at least one from each of four areas (Natural Science or Mathematical Concepts & Quantitative Reasoning; English Composition or Oral Communication & Critical Thinking; Arts & Humanities; Social & Behavioral Sciences). These GE units are recorded in ge_pattern/ge_units rather than as a block; they count toward the printed 45-unit certificate total (29 required core units + 16 GE units).",
+   "Outcomes copied as printed, including the encoding artifact 'childrenâ€™s' (likely children's) in the second outcome.",
+   "Career text: 'employment as a teacher in publicly funded early care and education programs ... work as a teacher in a privately funded early care and education program, as well as in a before-and-after school-age program'; recorded the job title 'teacher' once."
+  ]
+ },
+ "extracted_run": "39047245752"
+}

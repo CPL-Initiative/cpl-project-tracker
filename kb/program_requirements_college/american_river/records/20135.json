@@ -1,0 +1,362 @@
+{
+ "college": "American River College",
+ "control_number": "20135",
+ "shape": "certificate",
+ "title": "Gerontology: Case Management and Social Services",
+ "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+ "source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=633",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 12025,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 12025,
+    "output_tokens": 3826,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 3826,
+  "output_tokens_details": {
+   "thinking_tokens": 1467
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.12462,
+ "ms": 32286,
+ "seconds": 32.6,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 10,
+   "listed": 17,
+   "share": 0.588,
+   "missing": [
+    "COMM321",
+    "HSER300",
+    "HSER310",
+    "HSER330",
+    "HSER340",
+    "HSER360",
+    "HSER365"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 7,
+   "codes": [
+    "COMMC1004",
+    "SWCD300",
+    "SWCD310",
+    "SWCD330",
+    "SWCD340",
+    "SWCD360",
+    "SWCD365"
+   ],
+   "flagged": [
+    "COMMC1004",
+    "SWCD300",
+    "SWCD310",
+    "SWCD330",
+    "SWCD340",
+    "SWCD360",
+    "SWCD365"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    36.0,
+    36.0
+   ],
+   "stated": [
+    36.0,
+    36.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 15,
+   "courses": 0,
+   "count": 15,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Degree Requirements",
+   "measure": "units",
+   "total_units": {
+    "min": 36,
+    "max": 36
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "associate social conditions in the current and recent past with their potential impact on future aging cohorts.",
+    "evaluate the impact of diversity in terms of race, ethnicity, religion, sex, gender and sexual orientation, and citizenship on well-being during aging and on aging outcomes.",
+    "generalize knowledge about cognition and memory during aging to how people learn and remember at any age.",
+    "recognize macro, mezzo, and micro-level ageism messages that marginalize and stigmatize older people.",
+    "enumerate the functions of social service delivery systems.",
+    "synthesize knowledge of existing California professional codes of ethics for the helping professions.",
+    "analyze legal and ethical issues related to aging, including the mandatory reporting of abuse, neglect, and exploitation, value imposition, and end-of-life decisions.",
+    "demonstrate ease, confidence, rapport, and listening skills during interactions with older adults at various levels of function.",
+    "differentiate between aging-related changes and the effects of social conditions and deprivations, and physical and mental diseases, disorders, deficits, injuries, and disabilities.",
+    "assess the impacts of the social determinants of health on the biopsychosocial domains of function during aging.",
+    "apply biopsychosocial gerontological knowledge to case studies and real-life situations.",
+    "list services for older people and adults with disabilities available within a community.",
+    "assess the psychological, physiological, and sociocultural issues related to substance use, misuse, and abuse.",
+    "demonstrate the techniques of interviewing and counseling individuals or groups appropriate for associate-level helpers in social service agency settings.",
+    "describe the psychological, social, philosophical, and legal issues related to death."
+   ],
+   "careers": [
+    "Entry to mid-level care management and social services positions"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Degree Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "COMM C1004",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "COMM 325",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "SWCD 330",
+        "units": 3,
+        "catalog_addition": true
+       },
+       {
+        "code": "PSYC 365",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "GERON 303",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GERON 305",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PSYC 375",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "GERON 306",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GERON 490",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SWCD 300",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "SWCD 310",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "A minimum of 3 units from the following:",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "GERON 498",
+      "units": 0.5,
+      "units_max": 4,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "A minimum of 9 units from the following:",
+    "rule": "choose_units",
+    "minimum": 9,
+    "option_group": null,
+    "stated": {
+     "min": 9,
+     "max": 9
+    },
+    "courses": [
+     {
+      "code": "PSYC 390",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SWCD 340",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PSYC 400",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "SWCD 360",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "SWCD 365",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "COMM 321",
+    "why": "not in the text; catalog prints COMM C1004 Interpersonal Communication instead"
+   },
+   {
+    "code": "HSER 300",
+    "why": "not in the text; catalog prints SWCD 300 Introduction to Social Work instead"
+   },
+   {
+    "code": "HSER 310",
+    "why": "not in the text; catalog prints SWCD 310 Ethical Issues and Client's Rights instead"
+   },
+   {
+    "code": "HSER 330",
+    "why": "not in the text; catalog prints SWCD 330 Issues of Diverse Populations instead"
+   },
+   {
+    "code": "HSER 340",
+    "why": "not in the text; catalog prints SWCD 340 Introduction to Chemical Dependency instead"
+   },
+   {
+    "code": "HSER 360",
+    "why": "not in the text; catalog prints SWCD 360 Techniques of Interviewing and Counseling instead"
+   },
+   {
+    "code": "HSER 365",
+    "why": "not in the text; catalog prints SWCD 365 Techniques of Group Counseling instead"
+   }
+  ],
+  "notes": [
+   "The text does not contain a Certificate of Achievement section for Gerontology: Case Management and Social Services. The excerpt begins mid-section on page 633 with the 'Degree Requirements' table of the A.A. in Gerontology: Case Management and Social Services; its program heading is cut off before the excerpt. The certificates section begins on page 636 and the excerpt ends partway through the Gerontology: Administrative Certificate, before the Case Management certificate would appear.",
+   "Blocks, total (36 units), outcomes and careers are taken from the A.A. section for this program, the only Case Management and Social Services section in the text. The parallel Administrative certificate on page 636 prints the same core as the A.A. pattern, which suggests the certificate matches. A reviewer should verify this against the certificate's own page.",
+   "Because the record is for the certificate, degree_total, ge_pattern and ge_units are left null. The A.A. text names the Local GE Pattern or Cal-GETC plus electives for a total of at least 60 units; that applies to the degree only.",
+   "The student learning outcomes are the A.A. section's list for the program and are assumed to be shared by the certificate.",
+   "The closed list's HSER courses appear in the catalog as SWCD courses with the same titles. COMM 321 appears as COMM C1004 (common course numbering). These are recorded as catalog additions.",
+   "In the outcome 'demonstrate the techniques of interviewing...', the catalog breaks the line after 'associate-'; it is recorded as 'associate-level'.",
+   "The Career Information paragraph also says 'Graduates with this focus may also become self-employed'. Self-employment was not recorded as a named career."
+  ]
+ },
+ "extracted_run": "39047245752"
+}

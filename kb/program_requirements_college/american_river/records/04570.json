@@ -1,0 +1,342 @@
+{
+ "college": "American River College",
+ "control_number": "04570",
+ "shape": "degree",
+ "title": "Gerontology: Administrative",
+ "award": "A.A. Degree",
+ "source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=630",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 11757,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 11757,
+    "output_tokens": 2761,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2761,
+  "output_tokens_details": {
+   "thinking_tokens": 666
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.10225,
+ "ms": 20469,
+ "seconds": 20.9,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 13,
+   "listed": 17,
+   "share": 0.765,
+   "missing": [
+    "COMM321",
+    "HSER300",
+    "HSER310",
+    "HSER330"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 4,
+   "codes": [
+    "COMMC1004",
+    "SWCD300",
+    "SWCD310",
+    "SWCD330"
+   ],
+   "flagged": [
+    "COMMC1004",
+    "SWCD300",
+    "SWCD310",
+    "SWCD330"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    36.0,
+    36.0
+   ],
+   "stated": [
+    36.0,
+    36.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 15,
+   "courses": 0,
+   "count": 15,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "A.A. in Gerontology: Administrative",
+   "measure": "units",
+   "total_units": {
+    "min": 36,
+    "max": 36
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Local General Education Pattern or California General Education Transfer Curriculum (Cal-GETC)",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": true,
+   "outcomes": [
+    "associate social conditions in the current and recent past with their potential impact on future aging cohorts.",
+    "evaluate the impact of diversity in terms of race, ethnicity, religion, sex, gender and sexual orientation, and citizenship on well-being during aging and on aging outcomes.",
+    "generalize knowledge about cognition and memory during aging to how people learn and remember at any age.",
+    "recognize macro, mezzo, and micro-level ageism messages that marginalize and stigmatize older people.",
+    "enumerate the functions of social service delivery systems.",
+    "synthesize knowledge of existing California professional codes of ethics for the helping professions.",
+    "analyze legal and ethical issues related to aging including the mandatory reporting of abuse, neglect, and exploitation, value imposition, and end-of-life decisions.",
+    "demonstrate ease, confidence, rapport, and listening skills during interactions with older adults at various levels of function.",
+    "differentiate between aging-related changes and the effects of social conditions and deprivations, and physical and mental diseases, disorders, deficits, injuries, and disabilities.",
+    "assess the impacts of the social determinants of health on the biopsychosocial domains of function during aging.",
+    "apply biopsychosocial gerontological knowledge to case studies and real-life situations.",
+    "list services for older people and adults with disabilities available within a community.",
+    "compose sentences and paragraphs in business documents using critical thinking to paraphrase, summarize, and make attribution.",
+    "demonstrate accuracy, neatness, thoroughness, and speed when adding, subtracting, multiplying, and dividing whole numbers, fractions, and decimals; solving written application problems, using formulas, variables, and equations; and creating and interpreting graphs.",
+    "describe the key management functions of planning, organizing, leading, and controlling, including ethical, regulatory/legal, social, and cultural factors."
+   ],
+   "careers": [
+    "Entry to mid-level administrative positions"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Degree Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "COMM C1004",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "COMM 325",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "SWCD 330",
+        "units": 3,
+        "catalog_addition": true
+       },
+       {
+        "code": "PSYC 365",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "GERON 303",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GERON 305",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PSYC 375",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "GERON 306",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GERON 490",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SWCD 300",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "SWCD 310",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "A minimum of 3 units from the following",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "GERON 498",
+      "units": 0.5,
+      "units_max": 4,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "A minimum of 9 units from the following",
+    "rule": "choose_units",
+    "minimum": 9,
+    "option_group": null,
+    "stated": {
+     "min": 9,
+     "max": 9
+    },
+    "courses": [
+     {
+      "code": "BUS 100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 105",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MATH 300",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 300",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BUS 350",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "COMM 321",
+    "why": "not in the text; catalog prints COMM C1004 Interpersonal Communication instead"
+   },
+   {
+    "code": "HSER 300",
+    "why": "not in the text; catalog prints SWCD 300 Introduction to Social Work instead"
+   },
+   {
+    "code": "HSER 310",
+    "why": "not in the text; catalog prints SWCD 310 Ethical Issues and Client's Rights instead"
+   },
+   {
+    "code": "HSER 330",
+    "why": "not in the text; catalog prints SWCD 330 Issues of Diverse Populations instead"
+   }
+  ],
+  "notes": [
+   "The page states the degree requires the program plus Local GE or Cal-GETC 'plus sufficient electives for a total of at least 60 units'; this generic sentence is not recorded as degree_total, and electives_fill_degree is set true.",
+   "SWCD 300, SWCD 310 and SWCD 330 appear to be renumbered HSER 300, HSER 310 and HSER 330; COMM C1004 appears to replace COMM 321 (common course numbering). Reviewer should confirm.",
+   "The 9-unit block lists three choices of 3 units each, so in effect all three choices (BUS 100; BUS 105 or MATH 300; BUS 300 or BUS 350) are needed.",
+   "GERON 498 is variable 0.5-4 units; the block requires a minimum of 3 units of it.",
+   "Career information names entry to mid-level administrative positions in state and local government agencies, non-profit organizations, institutions, and private sector businesses serving older people and adults with disabilities; recorded as one career field."
+  ]
+ },
+ "extracted_run": "39047245752"
+}

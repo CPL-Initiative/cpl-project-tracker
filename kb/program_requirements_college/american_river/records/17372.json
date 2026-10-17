@@ -1,0 +1,237 @@
+{
+ "college": "American River College",
+ "control_number": "17372",
+ "shape": "certificate",
+ "title": "Law Office Clerical Assistant",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=741",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7331,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7331,
+    "output_tokens": 1429,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1429,
+  "output_tokens_details": {
+   "thinking_tokens": 399
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.0579,
+ "ms": 15229,
+ "seconds": 15.8,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 7,
+   "listed": 9,
+   "share": 0.778,
+   "missing": [
+    "LA300",
+    "LA350"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 2,
+   "codes": [
+    "PLGL300",
+    "PLGL350"
+   ],
+   "flagged": [
+    "PLGL300",
+    "PLGL350"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    17.0,
+    17.0
+   ],
+   "stated": [
+    17.0,
+    17.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Law Office Clerical Assistant Certificate",
+   "measure": "units",
+   "total_units": {
+    "min": 17,
+    "max": 17
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "demonstrate keyboarding competence in the legal workplace.",
+    "solve common office problems using current business technology and software applications.",
+    "practice effective communication with law office personnel and clients.",
+    "apply appropriate ethical standards to the special situations encountered in a law office.",
+    "produce written documents in appropriate formats using typical legal office technology."
+   ],
+   "careers": [
+    "entry-level clerical positions in a law office"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Certificate Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 17,
+     "max": 17
+    },
+    "courses": [
+     {
+      "code": "BUS 312",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUSTEC 100.1",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BUSTEC 300.1",
+        "units": 1,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUSTEC 100.2",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BUSTEC 300.2",
+        "units": 1,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUSTEC 305",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUSTEC 310",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PLGL 300",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PLGL 350",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "LA 300",
+    "why": "this section prints PLGL 300 with the same title instead; LA 300 named only in the Paralegal Studies Certificate section"
+   },
+   {
+    "code": "LA 350",
+    "why": "this section prints PLGL 350 with the same title instead; LA 350 named only in the Paralegal Studies Certificate section"
+   }
+  ],
+  "notes": [
+   "The certificate section lists PLGL 300 (Introduction to Law and the American Legal System) and PLGL 350 (Law Office Management), while the closed list and the adjacent Paralegal Studies section use LA 300 and LA 350 with identical titles; likely a subject-code rename (LA to PLGL) or inconsistency. Reviewer should confirm.",
+   "The block stated total of 17 is the certificate's printed Total Units.",
+   "The description also says the certificate provides skills for 'entry-level clerical positions in law offices'; the career entry is taken from the Career Information heading. Legal Assistant/Paralegal is named only as a different program, which this certificate does not prepare for, so it is not recorded as a career."
+  ]
+ },
+ "extracted_run": "39047245752"
+}

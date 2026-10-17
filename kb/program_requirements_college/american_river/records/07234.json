@@ -1,0 +1,724 @@
+{
+ "college": "American River College",
+ "control_number": "07234",
+ "shape": "degree",
+ "title": "General Science",
+ "award": "A.S. Degree",
+ "source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=101",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 10430,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 10430,
+    "output_tokens": 5082,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 5082,
+  "output_tokens_details": {
+   "thinking_tokens": 990
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.14336,
+ "ms": 36532,
+ "seconds": 36.9,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 115,
+   "share": 0.0,
+   "missing": [
+    "ANTH300",
+    "ANTH301",
+    "ANTH303",
+    "ANTH370",
+    "ANTH480",
+    "ANTH495",
+    "ANTH499",
+    "ASTR300",
+    "ASTR310",
+    "ASTR320",
+    "ASTR330",
+    "ASTR400",
+    "ASTR481",
+    "ASTR495",
+    "ASTR499",
+    "BIOL300",
+    "BIOL301",
+    "BIOL303",
+    "BIOL304",
+    "BIOL305",
+    "BIOL310",
+    "BIOL322",
+    "BIOL332",
+    "BIOL342",
+    "BIOL352",
+    "BIOL370",
+    "BIOL375",
+    "BIOL390",
+    "BIOL400",
+    "BIOL410",
+    "BIOL415",
+    "BIOL420",
+    "BIOL430",
+    "BIOL431",
+    "BIOL440",
+    "BIOL442",
+    "BIOL482",
+    "BIOL495",
+    "BIOL499",
+    "BIOT301",
+    "BIOT305",
+    "BIOT307",
+    "BIOT311",
+    "BIOT312",
+    "BIOT499",
+    "CHEM305",
+    "CHEM306",
+    "CHEM309",
+    "CHEM310",
+    "CHEM338",
+    "CHEM400",
+    "CHEM401",
+    "CHEM420",
+    "CHEM421",
+    "CHEM423",
+    "CHEM495",
+    "CHEM499",
+    "GEOG300",
+    "GEOG301",
+    "GEOG305",
+    "GEOG306",
+    "GEOG307",
+    "GEOG308",
+    "GEOG309",
+    "GEOG391",
+    "GEOG392",
+    "GEOG393",
+    "GEOG394",
+    "GEOG495",
+    "GEOG499",
+    "GEOL300",
+    "GEOL301",
+    "GEOL305",
+    "GEOL306",
+    "GEOL310",
+    "GEOL311",
+    "GEOL320",
+    "GEOL325",
+    "GEOL330",
+    "GEOL331",
+    "GEOL345",
+    "GEOL392",
+    "GEOL393",
+    "GEOL394",
+    "GEOL495",
+    "GEOL499",
+    "NATR300",
+    "NATR301",
+    "NATR302",
+    "NATR303",
+    "NATR304",
+    "NATR305",
+    "NATR306",
+    "NATR307",
+    "NATR310",
+    "NATR320",
+    "NATR322",
+    "NATR324",
+    "NATR330",
+    "NATR332",
+    "NATR346",
+    "NATR495",
+    "NATR499",
+    "PHYS310",
+    "PHYS311",
+    "PHYS312",
+    "PHYS350",
+    "PHYS360",
+    "PHYS410",
+    "PHYS421",
+    "PHYS431",
+    "PHYS495",
+    "PHYS499",
+    "PSYC310",
+    "PSYC311"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Graduation and Transfer – Preparing to Transfer",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ANTH 300",
+    "why": "only in Cal-GETC area 5B list, not program requirements"
+   },
+   {
+    "code": "ANTH 301",
+    "why": "only in Cal-GETC area 5C list, not program requirements"
+   },
+   {
+    "code": "ANTH 303",
+    "why": "only in Cal-GETC area 5B list, not program requirements"
+   },
+   {
+    "code": "ANTH 370",
+    "why": "not in the text"
+   },
+   {
+    "code": "ANTH 480",
+    "why": "only in Cal-GETC area 5B list, not program requirements"
+   },
+   {
+    "code": "ANTH 495",
+    "why": "not in the text"
+   },
+   {
+    "code": "ANTH 499",
+    "why": "not in the text"
+   },
+   {
+    "code": "ASTR 300",
+    "why": "only in Cal-GETC area 5A list (as ASTR C1001), not program requirements"
+   },
+   {
+    "code": "ASTR 310",
+    "why": "only in Cal-GETC area 5A list, not program requirements"
+   },
+   {
+    "code": "ASTR 320",
+    "why": "only in Cal-GETC area 5A list, not program requirements"
+   },
+   {
+    "code": "ASTR 330",
+    "why": "only in Cal-GETC area 5A list, not program requirements"
+   },
+   {
+    "code": "ASTR 400",
+    "why": "only in Cal-GETC area 5C list (as ASTR C1001L), not program requirements"
+   },
+   {
+    "code": "ASTR 481",
+    "why": "only in Cal-GETC area 5A/5C lists, not program requirements"
+   },
+   {
+    "code": "ASTR 495",
+    "why": "not in the text"
+   },
+   {
+    "code": "ASTR 499",
+    "why": "not in the text"
+   },
+   {
+    "code": "BIOL 300",
+    "why": "only in Cal-GETC area 5B list, not program requirements"
+   },
+   {
+    "code": "BIOL 301",
+    "why": "only in Cal-GETC area 5B list, not program requirements"
+   },
+   {
+    "code": "BIOL 303",
+    "why": "only in Cal-GETC area 5B/5C lists (as BIOL C1000), not program requirements"
+   },
+   {
+    "code": "BIOL 304",
+    "why": "only in Cal-GETC area 5B/5C lists, not program requirements"
+   },
+   {
+    "code": "BIOL 305",
+    "why": "only in Cal-GETC area 5B/5C lists, not program requirements"
+   },
+   {
+    "code": "BIOL 310",
+    "why": "only in Cal-GETC area 5B/5C lists, not program requirements"
+   },
+   {
+    "code": "BIOL 322",
+    "why": "not in the text"
+   },
+   {
+    "code": "BIOL 332",
+    "why": "only in Cal-GETC area 5B/5C lists, not program requirements"
+   },
+   {
+    "code": "BIOL 342",
+    "why": "only in Cal-GETC area 5B list, not program requirements"
+   },
+   {
+    "code": "BIOL 352",
+    "why": "only in Cal-GETC area 5B list, not program requirements"
+   },
+   {
+    "code": "BIOL 370",
+    "why": "only in Cal-GETC area 5B/5C lists, not program requirements"
+   },
+   {
+    "code": "BIOL 375",
+    "why": "only in Cal-GETC area 5B list, not program requirements"
+   },
+   {
+    "code": "BIOL 390",
+    "why": "not in the text"
+   },
+   {
+    "code": "BIOL 400",
+    "why": "only in Cal-GETC area 5B/5C lists, not program requirements"
+   },
+   {
+    "code": "BIOL 410",
+    "why": "only in Cal-GETC area 5B/5C lists, not program requirements"
+   },
+   {
+    "code": "BIOL 415",
+    "why": "only in Cal-GETC area 5B/5C lists, not program requirements"
+   },
+   {
+    "code": "BIOL 420",
+    "why": "only in Cal-GETC area 5B/5C lists, not program requirements"
+   },
+   {
+    "code": "BIOL 430",
+    "why": "only in Cal-GETC area 5B/5C lists, not program requirements"
+   },
+   {
+    "code": "BIOL 431",
+    "why": "only in Cal-GETC area 5B/5C lists, not program requirements"
+   },
+   {
+    "code": "BIOL 440",
+    "why": "only in Cal-GETC area 5B/5C lists, not program requirements"
+   },
+   {
+    "code": "BIOL 442",
+    "why": "only in Cal-GETC area 5B/5C lists, not program requirements"
+   },
+   {
+    "code": "BIOL 482",
+    "why": "only in Cal-GETC area 5B/5C lists, not program requirements"
+   },
+   {
+    "code": "BIOL 495",
+    "why": "not in the text"
+   },
+   {
+    "code": "BIOL 499",
+    "why": "not in the text"
+   },
+   {
+    "code": "BIOT 301",
+    "why": "not in the text"
+   },
+   {
+    "code": "BIOT 305",
+    "why": "not in the text"
+   },
+   {
+    "code": "BIOT 307",
+    "why": "not in the text"
+   },
+   {
+    "code": "BIOT 311",
+    "why": "not in the text"
+   },
+   {
+    "code": "BIOT 312",
+    "why": "not in the text"
+   },
+   {
+    "code": "BIOT 499",
+    "why": "not in the text"
+   },
+   {
+    "code": "CHEM 305",
+    "why": "only in Cal-GETC area 5A/5C lists, not program requirements"
+   },
+   {
+    "code": "CHEM 306",
+    "why": "only in Cal-GETC area 5A/5C lists, not program requirements"
+   },
+   {
+    "code": "CHEM 309",
+    "why": "only in Cal-GETC area 5A/5C lists, not program requirements"
+   },
+   {
+    "code": "CHEM 310",
+    "why": "not in the text"
+   },
+   {
+    "code": "CHEM 338",
+    "why": "only in Cal-GETC area 5A/5C lists, not program requirements"
+   },
+   {
+    "code": "CHEM 400",
+    "why": "only in Cal-GETC area 5A/5C lists, not program requirements"
+   },
+   {
+    "code": "CHEM 401",
+    "why": "only in Cal-GETC area 5A/5C lists, not program requirements"
+   },
+   {
+    "code": "CHEM 420",
+    "why": "only in Cal-GETC area 5A/5C lists, not program requirements"
+   },
+   {
+    "code": "CHEM 421",
+    "why": "only in Cal-GETC area 5A/5C lists, not program requirements"
+   },
+   {
+    "code": "CHEM 423",
+    "why": "only in Cal-GETC area 5A/5C lists, not program requirements"
+   },
+   {
+    "code": "CHEM 495",
+    "why": "not in the text"
+   },
+   {
+    "code": "CHEM 499",
+    "why": "not in the text"
+   },
+   {
+    "code": "CHEM499",
+    "why": "not in the text"
+   },
+   {
+    "code": "GEOG 300",
+    "why": "only in Cal-GETC area 5A list, not program requirements"
+   },
+   {
+    "code": "GEOG 301",
+    "why": "only in Cal-GETC area 5C list, not program requirements"
+   },
+   {
+    "code": "GEOG 305",
+    "why": "only in Cal-GETC area 5A list, not program requirements"
+   },
+   {
+    "code": "GEOG 306",
+    "why": "only in Cal-GETC area 5A list, not program requirements"
+   },
+   {
+    "code": "GEOG 307",
+    "why": "only in Cal-GETC area 5A list, not program requirements"
+   },
+   {
+    "code": "GEOG 308",
+    "why": "only in Cal-GETC area 5A list, not program requirements"
+   },
+   {
+    "code": "GEOG 309",
+    "why": "only in Cal-GETC area 5C list, not program requirements"
+   },
+   {
+    "code": "GEOG 391",
+    "why": "not in the text"
+   },
+   {
+    "code": "GEOG 392",
+    "why": "not in the text"
+   },
+   {
+    "code": "GEOG 393",
+    "why": "not in the text"
+   },
+   {
+    "code": "GEOG 394",
+    "why": "not in the text"
+   },
+   {
+    "code": "GEOG 495",
+    "why": "not in the text"
+   },
+   {
+    "code": "GEOG 499",
+    "why": "not in the text"
+   },
+   {
+    "code": "GEOL 300",
+    "why": "only in Cal-GETC area 5A list, not program requirements"
+   },
+   {
+    "code": "GEOL 301",
+    "why": "only in Cal-GETC area 5C list, not program requirements"
+   },
+   {
+    "code": "GEOL 305",
+    "why": "only in Cal-GETC area 5A list, not program requirements"
+   },
+   {
+    "code": "GEOL 306",
+    "why": "only in Cal-GETC area 5C list, not program requirements"
+   },
+   {
+    "code": "GEOL 310",
+    "why": "only in Cal-GETC area 5A list, not program requirements"
+   },
+   {
+    "code": "GEOL 311",
+    "why": "only in Cal-GETC area 5C list, not program requirements"
+   },
+   {
+    "code": "GEOL 320",
+    "why": "only in Cal-GETC area 5A list, not program requirements"
+   },
+   {
+    "code": "GEOL 325",
+    "why": "only in Cal-GETC area 5A list, not program requirements"
+   },
+   {
+    "code": "GEOL 330",
+    "why": "only in Cal-GETC area 5A list, not program requirements"
+   },
+   {
+    "code": "GEOL 331",
+    "why": "only in Cal-GETC area 5C list, not program requirements"
+   },
+   {
+    "code": "GEOL 345",
+    "why": "only in Cal-GETC area 5A list, not program requirements"
+   },
+   {
+    "code": "GEOL 392",
+    "why": "not in the text"
+   },
+   {
+    "code": "GEOL 393",
+    "why": "not in the text"
+   },
+   {
+    "code": "GEOL 394",
+    "why": "not in the text"
+   },
+   {
+    "code": "GEOL 495",
+    "why": "not in the text"
+   },
+   {
+    "code": "GEOL 499",
+    "why": "not in the text"
+   },
+   {
+    "code": "NATR 300",
+    "why": "not in the text"
+   },
+   {
+    "code": "NATR 301",
+    "why": "only in Cal-GETC area 5B/5C lists, not program requirements"
+   },
+   {
+    "code": "NATR 302",
+    "why": "only in Cal-GETC area 5B/5C lists, not program requirements"
+   },
+   {
+    "code": "NATR 303",
+    "why": "not in the text"
+   },
+   {
+    "code": "NATR 304",
+    "why": "not in the text"
+   },
+   {
+    "code": "NATR 305",
+    "why": "not in the text"
+   },
+   {
+    "code": "NATR 307",
+    "why": "only in Cal-GETC area 4 list, not program requirements"
+   },
+   {
+    "code": "NATR 310",
+    "why": "not in the text"
+   },
+   {
+    "code": "NATR 320",
+    "why": "only in Cal-GETC area 5B/5C lists, not program requirements"
+   },
+   {
+    "code": "NATR 322",
+    "why": "not in the text"
+   },
+   {
+    "code": "NATR 330",
+    "why": "not in the text"
+   },
+   {
+    "code": "NATR 332",
+    "why": "not in the text"
+   },
+   {
+    "code": "NATR 346",
+    "why": "not in the text"
+   },
+   {
+    "code": "NATR 495",
+    "why": "not in the text"
+   },
+   {
+    "code": "NATR 499",
+    "why": "not in the text"
+   },
+   {
+    "code": "NATR306",
+    "why": "not in the text"
+   },
+   {
+    "code": "NATR324",
+    "why": "not in the text"
+   },
+   {
+    "code": "NATR499",
+    "why": "not in the text"
+   },
+   {
+    "code": "PHYS 310",
+    "why": "only in Cal-GETC area 5A list, not program requirements"
+   },
+   {
+    "code": "PHYS 311",
+    "why": "only in Cal-GETC area 5A list, not program requirements"
+   },
+   {
+    "code": "PHYS 312",
+    "why": "only in Cal-GETC area 5C list, not program requirements"
+   },
+   {
+    "code": "PHYS 350",
+    "why": "only in Cal-GETC area 5A/5C lists, not program requirements"
+   },
+   {
+    "code": "PHYS 360",
+    "why": "only in Cal-GETC area 5A/5C lists, not program requirements"
+   },
+   {
+    "code": "PHYS 410",
+    "why": "only in Cal-GETC area 5A/5C lists, not program requirements"
+   },
+   {
+    "code": "PHYS 421",
+    "why": "only in Cal-GETC area 5A/5C lists, not program requirements"
+   },
+   {
+    "code": "PHYS 431",
+    "why": "only in Cal-GETC area 5A/5C lists, not program requirements"
+   },
+   {
+    "code": "PHYS 495",
+    "why": "not in the text"
+   },
+   {
+    "code": "PHYS 499",
+    "why": "not in the text"
+   },
+   {
+    "code": "PSYC 310",
+    "why": "only in Cal-GETC area 5B list, not program requirements"
+   },
+   {
+    "code": "PSYC 311",
+    "why": "only in Cal-GETC area 5C list, not program requirements"
+   }
+  ],
+  "notes": [
+   "The supplied text (catalog page 101) is the Cal-GETC general education area list (Areas 4, 5 and 6) from the 'Graduation and Transfer – Preparing to Transfer' chapter, not the General Science A.S. Degree program section. No program requirements, totals, outcomes or careers for General Science appear, so no blocks were recorded.",
+   "Many closed-list courses appear in the Cal-GETC Area 5 lists; these are general education lists and were not placed in blocks.",
+   "A reviewer should locate the actual General Science A.S. section in the 2026-2027 ARC catalog (likely a different page) and re-extract."
+  ]
+ },
+ "extracted_run": "39047245752"
+}

@@ -1,0 +1,278 @@
+{
+ "college": "American River College",
+ "control_number": "12686",
+ "shape": "degree",
+ "title": "ASL-English Interpreter Preparation Program",
+ "award": "A.A. Degree",
+ "source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=345",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 12121,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 12121,
+    "output_tokens": 2602,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2602,
+  "output_tokens_details": {
+   "thinking_tokens": 968
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.10052,
+ "ms": 21794,
+ "seconds": 22.2,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 27,
+   "share": 0.0,
+   "missing": [
+    "DEAF318",
+    "DEAF352",
+    "DEAF355",
+    "DEAF370",
+    "INTRP300",
+    "INTRP301",
+    "INTRP303",
+    "INTRP305",
+    "INTRP307",
+    "INTRP310",
+    "INTRP312",
+    "INTRP314",
+    "INTRP320",
+    "INTRP325",
+    "INTRP330",
+    "INTRP332",
+    "INTRP334",
+    "INTRP336",
+    "INTRP338",
+    "INTRP340",
+    "INTRP342",
+    "INTRP344",
+    "INTRP349",
+    "INTRP350",
+    "INTRP352",
+    "INTRP354",
+    "INTRP356"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": true,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "A.A. section not in the text; only the 'Certificate Requirements' section is printed",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "DEAF 318",
+    "why": "A.A. section not in the text; named only under Certificate Requirements"
+   },
+   {
+    "code": "DEAF 352",
+    "why": "A.A. section not in the text; named only under Certificate Requirements"
+   },
+   {
+    "code": "DEAF 355",
+    "why": "A.A. section not in the text; named only under Certificate Requirements"
+   },
+   {
+    "code": "DEAF 370",
+    "why": "A.A. section not in the text; named only under Certificate Requirements"
+   },
+   {
+    "code": "INTRP 300",
+    "why": "A.A. section not in the text; named only under Certificate Requirements"
+   },
+   {
+    "code": "INTRP 301",
+    "why": "A.A. section not in the text; named only under Certificate Requirements"
+   },
+   {
+    "code": "INTRP 303",
+    "why": "A.A. section not in the text; named only under Certificate Requirements"
+   },
+   {
+    "code": "INTRP 305",
+    "why": "A.A. section not in the text; named only under Certificate Requirements"
+   },
+   {
+    "code": "INTRP 307",
+    "why": "A.A. section not in the text; named only under Certificate Requirements"
+   },
+   {
+    "code": "INTRP 310",
+    "why": "A.A. section not in the text; named only under Certificate Requirements"
+   },
+   {
+    "code": "INTRP 312",
+    "why": "A.A. section not in the text; named only in the certificate's 4-unit elective list"
+   },
+   {
+    "code": "INTRP 314",
+    "why": "A.A. section not in the text; named only under Certificate Requirements"
+   },
+   {
+    "code": "INTRP 320",
+    "why": "A.A. section not in the text; named only under Certificate Requirements"
+   },
+   {
+    "code": "INTRP 325",
+    "why": "A.A. section not in the text; named only under Certificate Requirements"
+   },
+   {
+    "code": "INTRP 330",
+    "why": "A.A. section not in the text; named only in the certificate's 4-unit elective list"
+   },
+   {
+    "code": "INTRP 332",
+    "why": "A.A. section not in the text; named only in the certificate's 4-unit elective list"
+   },
+   {
+    "code": "INTRP 334",
+    "why": "A.A. section not in the text; named only in the certificate's 4-unit elective list"
+   },
+   {
+    "code": "INTRP 336",
+    "why": "A.A. section not in the text; named only in the certificate's 4-unit elective list"
+   },
+   {
+    "code": "INTRP 338",
+    "why": "A.A. section not in the text; named only in the certificate's 4-unit elective list"
+   },
+   {
+    "code": "INTRP 340",
+    "why": "A.A. section not in the text; named only in the certificate's 4-unit elective list"
+   },
+   {
+    "code": "INTRP 342",
+    "why": "A.A. section not in the text; named only in the certificate's 4-unit elective list"
+   },
+   {
+    "code": "INTRP 344",
+    "why": "A.A. section not in the text; named only in the certificate's 4-unit elective list"
+   },
+   {
+    "code": "INTRP 349",
+    "why": "A.A. section not in the text; named only in the certificate's 4-unit elective list (printed there as 'Introduction to Behavioral Health Interpreting')"
+   },
+   {
+    "code": "INTRP 350",
+    "why": "A.A. section not in the text; named only under Certificate Requirements"
+   },
+   {
+    "code": "INTRP 352",
+    "why": "A.A. section not in the text; named only under Certificate Requirements"
+   },
+   {
+    "code": "INTRP 354",
+    "why": "A.A. section not in the text; named only under Certificate Requirements"
+   },
+   {
+    "code": "INTRP 356",
+    "why": "A.A. section not in the text; named only under Certificate Requirements"
+   }
+  ],
+  "notes": [
+   "The excerpt starts on page 345 mid-description and prints only 'Certificate Requirements' (Total Units: 48). The A.A. degree section, likely on page 344, is not in the text, so no blocks were recorded for the A.A. A reviewer should check page 344.",
+   "The certificate list matches the closed list exactly: 17 required courses plus 'A minimum of 4 units from the following' (INTRP 312, 330, 332, 334, 336, 338, 340, 342, 344, 349). The A.A. major may be identical, but the text does not show it.",
+   "In the certificate list, INTRP 349 is titled 'Introduction to Behavioral Health Interpreting'. The state file title is 'Signing for Dependency Situations'.",
+   "Student Learning Outcomes (six bullets) and Career Information appear after the certificate's Enrollment Process, so they were read as belonging to the certificate section. They were not recorded for the A.A.; check whether the A.A. section prints the same outcomes.",
+   "Career Information names no specific job titles beyond 'American Sign Language-English interpreters'. It was not recorded because it appears in the certificate section."
+  ]
+ },
+ "extracted_run": "39047245752"
+}

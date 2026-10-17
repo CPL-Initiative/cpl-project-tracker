@@ -1,0 +1,323 @@
+{
+ "college": "American River College",
+ "control_number": "46017",
+ "shape": "certificate",
+ "title": "Welder Apprenticeship Level IV",
+ "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+ "source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=229",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7477,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7477,
+    "output_tokens": 2574,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2574,
+  "output_tokens_details": {
+   "thinking_tokens": 699
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.08139,
+ "ms": 20775,
+ "seconds": 21.2,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 20,
+   "listed": 20,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    48.0,
+    48.0
+   ],
+   "stated": [
+    48.0,
+    48.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 16,
+   "courses": 0,
+   "count": 16,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Welder Apprenticeship Level IV Certificate",
+   "measure": "units",
+   "total_units": {
+    "min": 48,
+    "max": 48
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "discuss the role the steamfitter plays in a safe work site.",
+    "demonstrate all the major safety responsibilities of the steamfitter.",
+    "interpret technical drawings and piping and plumbing diagrams in orthographic and isometric views.",
+    "identify types of flanges and gaskets and their common standards, ratings and design.",
+    "identify welding methods and applications.",
+    "identify methods of soldering and joining metals.",
+    "recognize types of brazing methods and their applications.",
+    "use an Oxy-Fuel torch to cut and weld materials properly and safely.",
+    "use a shielded metal arc welder properly and safely.",
+    "solve complex cutting torch problems.",
+    "demonstrate proper set up for and execution of a single overhead vee groove weld.",
+    "demonstrate proper set up for and execution of a single vertical vee groove weld.",
+    "demonstrate proper set up for and execution of a single horizontal vee groove weld.",
+    "create a root bead in a welding coupon in 6G position.",
+    "set up and calibrate orbital welders properly.",
+    "use formulas to determine areas, angles, and volumes of pipes and vessels."
+   ],
+   "careers": [
+    "Plumber, pipefitter, and steamfitter welders"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "A minimum of 32 units from the following:",
+    "rule": "choose_units",
+    "minimum": 32,
+    "option_group": null,
+    "stated": {
+     "min": 32,
+     "max": 32
+    },
+    "courses": [
+     {
+      "code": "PLUMB 241",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "STMFT 100",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "STMFT 104",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "STMFT 110",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "STMFT 120",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "STMFT 130",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "STMFT 131",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "STMFT 140",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "STMFT 141",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "STMFT 145",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "STMFT 150",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "STMFT 151",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "STMFT 152",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "STMFT 153",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "STMFT 160",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "STMFT 161",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "STMFT 164",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "A minimum of 16 units from the following:",
+    "rule": "choose_units",
+    "minimum": 16,
+    "option_group": null,
+    "stated": {
+     "min": 16,
+     "max": 16
+    },
+    "courses": [
+     {
+      "code": "HVACR 298",
+      "units": 0.5,
+      "units_max": 6,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PLUMB 298",
+      "units": 0.5,
+      "units_max": 6,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "STMFT 298",
+      "units": 0.5,
+      "units_max": 6,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The Student Learning Outcomes and Career Information appear on the page just before the 'Welder Apprenticeship Level IV Certificate' heading; they appear to be the shared program-level text for the Welder Apprenticeship (enrollment requires being a registered Welder apprentice). Recorded for this award; reviewer should confirm they are not from a preceding program's section on page 228.",
+   "Catalog titles for STMFT 150-161 differ from the closed list: catalog prints STMFT 150 Welding V, 151 Welding VI, 152 Welding VII, 153 Welding VIII, 160 Welding IX, 161 Welding X, while the closed list stores Welding I-VI. Codes match, so they were treated as closed-list courses.",
+   "Closed list writes 'PLUMB298' without a space; catalog prints 'PLUMB 298'. Treated as the same course.",
+   "Work experience courses (HVACR 298, PLUMB 298, STMFT 298) are printed with variable units 0.5-6.",
+   "Careers entry kept as printed ('Plumber, pipefitter, and steamfitter welders'); it names plumber welders, pipefitter welders and steamfitter welders as one phrase."
+  ]
+ },
+ "extracted_run": "39047245752"
+}

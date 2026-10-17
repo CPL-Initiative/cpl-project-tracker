@@ -1,0 +1,204 @@
+{
+ "college": "American River College",
+ "control_number": "41297",
+ "shape": "certificate",
+ "title": "Environmental Conservation Technician (Vegetation)",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=799",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 11114,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 11114,
+    "output_tokens": 1251,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1251,
+  "output_tokens_details": {
+   "thinking_tokens": 325
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.06948,
+ "ms": 9874,
+ "seconds": 10.2,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 5,
+   "listed": 5,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    16.0,
+    16.0
+   ],
+   "stated": [
+    16.0,
+    16.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 13,
+   "courses": 0,
+   "count": 13,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 5,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Environmental Conservation Technician (Vegetation) Certificate",
+   "measure": "units",
+   "total_units": {
+    "min": 16,
+    "max": 16
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "apply the scientific method and critical analysis to environmental investigations",
+    "evaluate natural resource systems, including their past and present use and management and future sustainability",
+    "analyze social, ethical, and biological implications of environmental management alternatives",
+    "identify ecological phenomena in one's everyday experiences and apply ecological principles to understand local, national and global environmental issues",
+    "assess the relationships of plants and animals to their environment and to each other",
+    "measure and analyze the physical environment of plant and animal populations",
+    "evaluate basic land survey, water quality, vegetation, and wildlife data",
+    "examine the significance of biodiversity conservation",
+    "assess the structure and function of vegetative communities of California",
+    "interpret plant keys and develop skills in their use in plant identification",
+    "collect and prepare a plant collection of representative native California plants",
+    "analyze plant adaptations and environmental gradients in a variety of ecosystems",
+    "investigate the implications of plant conservation, restoration, and community management alternatives"
+   ],
+   "careers": [
+    "plant ecologist aide/technician",
+    "plant taxonomy",
+    "dendrology",
+    "research and management",
+    "environmental restoration"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Certificate Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "NATR 300",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NATR 310",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NATR 320",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NATR 330",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "NATR 332",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Read only the Environmental Conservation Technician (Vegetation) Certificate section on page 801; adjacent sections (Fisheries, Sustainability, Wildlife, and an unnamed certificate on page 799 with a 22-unit total) were ignored.",
+   "NATR 330 or NATR 332 recorded as one required choice with NATR 332 as the alternative.",
+   "Careers 'plant taxonomy', 'dendrology', 'research and management', and 'environmental restoration' are taken from 'positions related to ...' in the Career Information; reviewer may judge whether these are career fields."
+  ]
+ },
+ "extracted_run": "39047245752"
+}

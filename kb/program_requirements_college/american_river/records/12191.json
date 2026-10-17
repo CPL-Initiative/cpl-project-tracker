@@ -1,0 +1,260 @@
+{
+ "college": "American River College",
+ "control_number": "12191",
+ "shape": "certificate",
+ "title": "Site Supervisor",
+ "award": "Certificate of Achievement requiring 60+S/90+Q units",
+ "source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=506",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 11375,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 11375,
+    "output_tokens": 1900,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1900,
+  "output_tokens_details": {
+   "thinking_tokens": 547
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.0835,
+ "ms": 15805,
+ "seconds": 18.5,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 14,
+   "listed": 14,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    37.0,
+    37.0
+   ],
+   "stated": [
+    60.0,
+    60.0
+   ],
+   "against": "program",
+   "why": [
+    "the blocks sum to 37.0-37.0; the catalog states 60.0-60.0"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 6,
+   "courses": 0,
+   "count": 6,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Site Supervisor Certificate",
+   "measure": "units",
+   "total_units": {
+    "min": 60,
+    "max": 60
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "ARC General Education",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": 16,
+    "max": 16
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "formulate an educational philosophy to guide the operation of an early childhood program.",
+    "support culturally respectful interactions among children, parents, teachers and the community.",
+    "evaluate curriculum for sound pedagogy, content, and breadth, including planning for the learning environment, the daily routines, and the individual needs of children.",
+    "manage program planning, budgeting, governing boards, enrollment, and personnel in accordance with the regulations of Title 5 (California Education Code of Regulations) and Title 22 (California Social Services Code of Regulations).",
+    "create procedures for implementing standards of health, nutrition, and safety in group care early childhood education settings.",
+    "plan professional and personal growth and advocacy activities to support children, families and teachers."
+   ],
+   "careers": [
+    "director/site supervisor"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Certificate Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ECE 300",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECE 312",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PSYC 372",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECE 314",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECE 320",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECE 321",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECE 326",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECE 331",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECE 415",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "NUTRI 320",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECE 420",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECE 422",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECE 424",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECE 430",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The certificate also requires 'A minimum of 23 units from the following: 23': at least 16 units including one course from each of four ARC General Education areas (Natural Science or Mathematical Concepts & Quantitative Reasoning; English Composition or Oral Communication & Critical Thinking; Arts & Humanities; Social & Behavioral Sciences), plus 7 additional units that may be GE courses or any other ECE courses. No courses are listed, so no block was recorded; the 16 GE units are recorded in ge_units and the pattern as ARC General Education.",
+   "The additional 7 units (GE or any ECE course) are not fully open electives, so open_elective_units is left null; reviewer may wish to treat them as restricted electives.",
+   "Required core courses sum to 37 units; 37 + 23 = 60, matching the printed Total Units: 60.",
+   "Career information names 'director/site supervisor' in privately and publicly funded early care and education programs.",
+   "Award label '60+S/90+Q units' from the state file; catalog prints Total Units: 60.",
+   "The Teacher Certificate section that follows on page 507 was not read for this record."
+  ]
+ },
+ "extracted_run": "39047245752"
+}

@@ -5,7 +5,7 @@
  "catalog_year": "2026-2027",
  "programs": 371,
  "with_closed_list": 368,
- "started": "2026-10-17T15:49:01Z",
+ "started": "2026-10-17T15:57:40Z",
  "pdf": {
   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf",
   "access": "hand_filed",
@@ -4869,7 +4869,7 @@
   "unproven": []
  },
  "loads": 0,
- "seconds": 423.8,
+ "seconds": 229.9,
  "found": 368,
  "by_method": {
   "no_closed_list": 3,
@@ -8996,5 +8996,5 @@
    }
   ]
  },
- "run": "39046625137"
+ "run": "39047245752"
 }

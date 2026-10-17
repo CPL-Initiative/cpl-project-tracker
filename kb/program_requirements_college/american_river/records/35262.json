@@ -1,0 +1,300 @@
+{
+ "college": "American River College",
+ "control_number": "35262",
+ "shape": "certificate",
+ "title": "Welding Technology",
+ "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+ "source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=969",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 11646,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 11646,
+    "output_tokens": 2298,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2298,
+  "output_tokens_details": {
+   "thinking_tokens": 691
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.09254,
+ "ms": 17570,
+ "seconds": 18.2,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 16,
+   "listed": 16,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    34.5,
+    38.0
+   ],
+   "stated": [
+    34.5,
+    38.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 14,
+   "courses": 0,
+   "count": 14,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 11,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Welding Technology Certificate",
+   "measure": "units",
+   "total_units": {
+    "min": 34.5,
+    "max": 38
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "list the factors that must be considered before a welding process is selected.",
+    "evaluate a weld according to a given standard or code.",
+    "compare the three types of welding current used for Gas Tungsten Arc Welding.",
+    "define voltage, electrical potential, amperage, and electrical current as related to Gas Metal Arc Welding.",
+    "discuss how the Gas Metal Arc Welding molten weld pool can be controlled by varying the shielding gas, power settings, weave pattern, travel speed, electrode extension, and gun angle.",
+    "explain what each of the digits in a standard Flux Cored Arc Welding electrode identification number mean.",
+    "list and define the three units used to measure a welding current.",
+    "give the characteristics of the three filler metal groups E6010 and E6011, E6012 and E6013, and E7016 and E7018.",
+    "discuss three general categories of pipe welds including how they are used and what type of weld root penetration and strength they require.",
+    "make a single V-groove butt welded joint on a pipe in any position to code specifications.",
+    "list the crystalline structures of metals and explain how grains form.",
+    "describe practical applications of metallurgy.",
+    "solve basic welding fabrication math problems.",
+    "read a set of welding blueprint drawings and explain each item shown and its dimensioning."
+   ],
+   "careers": [
+    "pipeline construction",
+    "oil refining",
+    "aerospace",
+    "structural building",
+    "bridge construction",
+    "automotive",
+    "small commercial fabricating",
+    "welding shop supervisors",
+    "welding sales persons",
+    "welding shop owners",
+    "welding inspectors"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Certificate Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "WELD 140",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WELD 300",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "WELD 301",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "WELD 302",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WELD 316",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WELD 320",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WELD 322",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WELD 330",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WELD 332",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WELD 333",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WELD 334",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WELD 335",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WELD 342",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "A minimum of 1 unit from the following courses",
+    "rule": "choose_units",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 0.5,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "WELD 155",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WELD 115",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WELD 298",
+      "units": 0.5,
+      "units_max": 4,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Section read is the 'Welding Technology Certificate' under 'Certificates of Achievement' (pages 970-971); the A.S. degree and other certificates on the page were not used.",
+   "The row 'WELD 155 Industry Training (3) 0.5 - 41' was read as units range 0.5-4 with footnote marker 1; footnote reads 'A minimum of 1 unit from the following courses.' The printed range 0.5-4 (and Total Units 34.5-38 = 34 core units + 0.5-4) conflicts with the footnote's 1-unit minimum; reviewer should check.",
+   "WELD 155, WELD 115 and WELD 298 are printed as 'or' rows; recorded as a choose_units block per the footnote."
+  ]
+ },
+ "extracted_run": "39047245752"
+}

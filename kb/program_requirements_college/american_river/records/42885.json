@@ -1,0 +1,258 @@
+{
+ "college": "American River College",
+ "control_number": "42885",
+ "shape": "certificate",
+ "title": "Cybersecurity and Information Security Administration",
+ "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+ "source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=441",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7296,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7296,
+    "output_tokens": 2074,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2074,
+  "output_tokens_details": {
+   "thinking_tokens": 774
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.07066,
+ "ms": 17198,
+ "seconds": 17.7,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 11,
+   "listed": 12,
+   "share": 0.917,
+   "missing": [
+    "APPRT298"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "APPRT498"
+   ],
+   "flagged": [
+    "APPRT498"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    31.0,
+    36.5
+   ],
+   "stated": [
+    31.0,
+    36.5
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 10,
+   "courses": 0,
+   "count": 10,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Cybersecurity and Information Security Administration Certificate",
+   "measure": "units",
+   "total_units": {
+    "min": 31,
+    "max": 36.5
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "define best practices for configuring cyber defense and countermeasures.",
+    "design organizational plans for securing data while maintaining the Confidentiality, Integrity, and Availability (CIA) of the information transmitted over communication networks.",
+    "explain how security principles and cyber defense concepts impact organizational policies and practices.",
+    "analyze security risks mitigation processes to identify, evaluate, prioritize, and prevent potential security threats.",
+    "critique plans to secure and manage physical and virtual infrastructures for legal and secure cloud operations.",
+    "outline legal issues that should be included within the security awareness training and education program of an organization.",
+    "analyze applicable laws and policies to legally protect the organization against security incidents.",
+    "determine how to address vulnerabilities and threats in cellular and mobile network technologies.",
+    "prioritize and establish a disaster recovery plan for the enterprise.",
+    "develop security incident response plans that align to an organization’s security goals and objectives and maintain business continuity."
+   ],
+   "careers": [
+    "journey-workers in the information security industry"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Certificate Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "APPRT 498",
+      "units": 0.5,
+      "units_max": 6,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CISN 300",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CISN 340",
+      "units": 3.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CISS 310",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CISS 315",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CISS 316",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CISS 321",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CISS 330",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CISS 341",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CISS 342",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "CISS 350",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CISS 360",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "APPRT 298",
+    "why": "not in the text; the catalog prints APPRT 498 (Work Experience in Apprenticeable (Occupation), 0.5-6) instead"
+   }
+  ],
+  "notes": [
+   "The outcomes list and the career list (Cybersecurity Engineer, Cyber Operations Planner, etc.) at the top of page 441 belong to the preceding section (likely a degree or another award), not to this certificate; they were not used.",
+   "The catalog prints APPRT 498 where the state file lists APPRT 298 with the same title; recorded as printed with catalog_addition true. Reviewer should confirm the course number.",
+   "The page break splits the requirements table before CISS 360; the table resumes and the total (31 - 36.5) matches the listed courses.",
+   "The certificate's own student learning outcomes list differs slightly from the preceding section's (e.g., 'security incidents' vs 'security incident'); the certificate's text was copied."
+  ]
+ },
+ "extracted_run": "39047245752"
+}
