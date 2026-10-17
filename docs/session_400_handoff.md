@@ -4,6 +4,8 @@ date: 2026-10-16
 session: 399 (SkyRowan)
 tags: [handoff, program-requirements, catalog-sweep, display-build, sierra]
 status: current
+superseded: true
+superseded_by: session_402_handoff.md
 ---
 
 # You are Session 400
