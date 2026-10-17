@@ -1,0 +1,402 @@
+[
+ {
+  "control_number": "38571",
+  "title": "Medical Coding",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "HC510",
+   "MC500"
+  ],
+  "source": {
+   "url": "https://www.calbright.edu/wp-content/uploads/2026/09/Final-Calbright-College-Academic-Catalog-2026-2027-September-18-2026.docx.pdf#page=15",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    15
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 2,
+  "text_chars": 1309
+ },
+ {
+  "control_number": "38572",
+  "title": "Defensive Cybersecurity",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "IT510",
+   "IT511"
+  ],
+  "source": {
+   "url": "https://www.calbright.edu/wp-content/uploads/2026/09/Final-Calbright-College-Academic-Catalog-2026-2027-September-18-2026.docx.pdf#page=16",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    16
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 2,
+  "text_chars": 1742
+ },
+ {
+  "control_number": "38573",
+  "title": "Information Technology Support",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 0.667,
+  "codes_found": [
+   "IT501",
+   "IT502"
+  ],
+  "source": {
+   "url": "https://www.calbright.edu/wp-content/uploads/2026/09/Final-Calbright-College-Academic-Catalog-2026-2027-September-18-2026.docx.pdf#page=16",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    16
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 3,
+  "text_chars": 1742
+ },
+ {
+  "control_number": "41215",
+  "title": "Transition to Technology: IT Help Desk Technician",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 2,
+  "text_chars": 0
+ },
+ {
+  "control_number": "41516",
+  "title": "Network Technology",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "IT532",
+   "IT533"
+  ],
+  "source": {
+   "url": "https://www.calbright.edu/wp-content/uploads/2026/09/Final-Calbright-College-Academic-Catalog-2026-2027-September-18-2026.docx.pdf#page=16",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    16
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 2,
+  "text_chars": 1742
+ },
+ {
+  "control_number": "42338",
+  "title": "Data Analysis",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "42862",
+  "title": "Licensed Vocational Nursing (LVN) Program",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 4,
+  "text_chars": 0
+ },
+ {
+  "control_number": "43231",
+  "title": "Project Management",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS520",
+   "BUS521",
+   "BUS522"
+  ],
+  "source": {
+   "url": "https://www.calbright.edu/wp-content/uploads/2026/09/Final-Calbright-College-Academic-Catalog-2026-2027-September-18-2026.docx.pdf#page=17",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    17
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 3,
+  "text_chars": 1609
+ },
+ {
+  "control_number": "43232",
+  "title": "Junior Developer",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 8,
+  "text_chars": 0
+ },
+ {
+  "control_number": "43233",
+  "title": "User Experience/User Interface",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 4,
+  "text_chars": 0
+ },
+ {
+  "control_number": "43528",
+  "title": "Human Resources: Talent Acquisition",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS510",
+   "BUS511"
+  ],
+  "source": {
+   "url": "https://www.calbright.edu/wp-content/uploads/2026/09/Final-Calbright-College-Academic-Catalog-2026-2027-September-18-2026.docx.pdf#page=17",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    17
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 2,
+  "text_chars": 1609
+ },
+ {
+  "control_number": "43529",
+  "title": "Human Resources: Learning and Development",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS515",
+   "BUS516"
+  ],
+  "source": {
+   "url": "https://www.calbright.edu/wp-content/uploads/2026/09/Final-Calbright-College-Academic-Catalog-2026-2027-September-18-2026.docx.pdf#page=17",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    17
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 2,
+  "text_chars": 1609
+ },
+ {
+  "control_number": "44230",
+  "title": "3D Animation and Game Design",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 4,
+  "text_chars": 0
+ },
+ {
+  "control_number": "44618",
+  "title": "Community Health Worker",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHW501",
+   "CHW502",
+   "CHW503",
+   "CHW504",
+   "CHW505",
+   "CHW506"
+  ],
+  "source": {
+   "url": "https://www.calbright.edu/wp-content/uploads/2026/09/Final-Calbright-College-Academic-Catalog-2026-2027-September-18-2026.docx.pdf#page=15",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    15
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 6,
+  "text_chars": 1309
+ },
+ {
+  "control_number": "44719",
+  "title": "Medical Billing",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 0.5,
+  "codes_found": [
+   "HC510"
+  ],
+  "source": {
+   "url": "https://www.calbright.edu/wp-content/uploads/2026/09/Final-Calbright-College-Academic-Catalog-2026-2027-September-18-2026.docx.pdf#page=15",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    15
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 2,
+  "text_chars": 1309
+ },
+ {
+  "control_number": "44851",
+  "title": "Offensive Cybersecurity",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "IT510",
+   "IT512"
+  ],
+  "source": {
+   "url": "https://www.calbright.edu/wp-content/uploads/2026/09/Final-Calbright-College-Academic-Catalog-2026-2027-September-18-2026.docx.pdf#page=16",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    16
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 2,
+  "text_chars": 1742
+ },
+ {
+  "control_number": "46233",
+  "title": "CRM Platform Administration",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS530",
+   "BUS531"
+  ],
+  "source": {
+   "url": "https://www.calbright.edu/wp-content/uploads/2026/09/Final-Calbright-College-Academic-Catalog-2026-2027-September-18-2026.docx.pdf#page=16",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    16
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 2,
+  "text_chars": 1742
+ },
+ {
+  "control_number": "46480",
+  "title": "Information Technology Support Program",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 0.667,
+  "codes_found": [
+   "IT501",
+   "IT502"
+  ],
+  "source": {
+   "url": "https://www.calbright.edu/wp-content/uploads/2026/09/Final-Calbright-College-Academic-Catalog-2026-2027-September-18-2026.docx.pdf#page=16",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    16
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 3,
+  "text_chars": 1742
+ },
+ {
+  "control_number": "46534",
+  "title": "Nonprofit Management and Leadership",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 2,
+  "text_chars": 0
+ },
+ {
+  "control_number": "46535",
+  "title": "Generative AI for Career Productivity",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 2,
+  "text_chars": 0
+ }
+]

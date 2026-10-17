@@ -1,0 +1,66 @@
+{
+ "college": "Calbright College Credit",
+ "programs": 20,
+ "with_closed_list": 19,
+ "found": 12,
+ "extracted": 12,
+ "errors": 0,
+ "passed_machine_checks": 11,
+ "failed": {
+  "coverage": 1,
+  "invented": 0,
+  "arithmetic": 0,
+  "repeated": 0,
+  "outcomes": 0
+ },
+ "cost_usd": 0.5,
+ "cost_per_program": 0.0419,
+ "not_found": [
+  {
+   "control_number": "41215",
+   "title": "Transition to Technology: IT Help Desk Technician",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "42862",
+   "title": "Licensed Vocational Nursing (LVN) Program",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "43232",
+   "title": "Junior Developer",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://www.calbright.edu/wp-content/uploads/2026/09/Final-Calbright-College-Academic-Catalog-2026-2027-September-18-2026.docx.pdf#page=17",
+    "coverage": 0.125
+   }
+  },
+  {
+   "control_number": "43233",
+   "title": "User Experience/User Interface",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "44230",
+   "title": "3D Animation and Game Design",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "46534",
+   "title": "Nonprofit Management and Leadership",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "46535",
+   "title": "Generative AI for Career Productivity",
+   "award": "Noncredit program",
+   "near_miss": null
+  }
+ ],
+ "run": "39006334571"
+}
