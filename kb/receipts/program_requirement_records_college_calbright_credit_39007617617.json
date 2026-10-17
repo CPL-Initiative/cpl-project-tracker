@@ -1,0 +1,37 @@
+{
+ "college": "Calbright College Credit",
+ "load_run": "39007617617",
+ "function": "program_requirement_records_college_load",
+ "at": "2026-10-17T05:49:16Z",
+ "records": 12,
+ "posted": 11,
+ "batches": 1,
+ "inserted": 11,
+ "kept": 0,
+ "skipped": [
+  {
+   "control_number": "44719",
+   "why": "places none of its listed courses (another program's page)"
+  }
+ ],
+ "error": null,
+ "extracted_runs": [
+  "39006334571"
+ ],
+ "machine_pass": 11,
+ "inserted_keys": [
+  "38571",
+  "38572",
+  "38573",
+  "41516",
+  "43231",
+  "43528",
+  "43529",
+  "44618",
+  "44851",
+  "46233",
+  "46480"
+ ],
+ "kept_keys": [],
+ "rollback": "delete from public.program_requirement_records where college = 'Calbright College Credit' and checked = false and control_number in ('38571', '38572', '38573', '41516', '43231', '43528', '43529', '44618', '44851', '46233', '46480');"
+}
