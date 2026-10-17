@@ -1,0 +1,311 @@
+{
+ "college": "College of the Canyons",
+ "control_number": "33581",
+ "shape": "adt",
+ "title": "Journalism",
+ "award": "A.A- T Degree",
+ "source_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=202",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 11841,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 11841,
+    "output_tokens": 2027,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2027,
+  "output_tokens_details": {
+   "thinking_tokens": 797
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.0879,
+ "ms": 16748,
+ "seconds": 16.9,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 12,
+   "listed": 14,
+   "share": 0.857,
+   "missing": [
+    "COMS100",
+    "COMS225"
+   ],
+   "unexplained": [
+    "COMS100",
+    "COMS225"
+   ],
+   "none_placed": false,
+   "pass": false
+  },
+  "invented": {
+   "count": 5,
+   "codes": [
+    "COMM100",
+    "COMM225",
+    "MEA110",
+    "MEA210",
+    "STATC1000E"
+   ],
+   "flagged": [
+    "MEA110",
+    "MEA210",
+    "STATC1000E"
+   ],
+   "pass": false
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    18.0,
+    18.0
+   ],
+   "stated": [
+    18.0,
+    20.0
+   ],
+   "against": "program",
+   "why": [
+    "the blocks sum to 18.0-18.0; the catalog states 18.0-20.0"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 1,
+   "courses": 0,
+   "count": 1,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Associate in Arts for Transfer Degree: Journalism",
+   "measure": "units",
+   "total_units": {
+    "min": 18,
+    "max": 20
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "CalGETC",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Students will be able to demonstrate proficiency in the cores skills and knowledge required for journalism."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Program Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "MEA-100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MEA-110",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MEA-225",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Plus three units from the following",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "MEA-125",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MEA-210",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PHOTO-215",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Plus a minimum of six units from the following",
+    "rule": "choose_units",
+    "minimum": 6,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "COMM-100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COMM-225",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL-C1001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ENGL-C1001H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHOTO-155",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "POLS-C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "POLS-C1000H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOCI-137",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "STAT-C1000",
+        "units": 4,
+        "catalog_addition": false
+       },
+       {
+        "code": "STAT-C1000E",
+        "units": 5,
+        "catalog_addition": true
+       },
+       {
+        "code": "STAT-C1000H",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The catalog prints COMM-100 Process of Communication and COMM-225 Strategies of Argumentation; the closed list names them COMS 100 and COMS 225 with the same numbers and titles. They are recorded as the closed-list courses (catalog_addition false); a reviewer should confirm the subject prefix.",
+   "The 60-unit / CalGETC statement is the general requirement for all AA-T/AS-T degrees, not a printed total for this award, so degree_total and ge_units are null.",
+   "PHOTO-155 is printed as 'Photography' (closed list: Photography I).",
+   "STAT-C1000E (5 units) is not in the closed list and is recorded as a catalog addition alternative.",
+   "Outcome copied verbatim including the catalog's 'cores skills' wording."
+  ]
+ },
+ "extracted_run": "39006378829"
+}

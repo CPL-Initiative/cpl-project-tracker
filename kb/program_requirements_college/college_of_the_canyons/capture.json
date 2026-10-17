@@ -5,7 +5,7 @@
  "catalog_year": "2026-2027",
  "programs": 283,
  "with_closed_list": 264,
- "started": "2026-10-17T05:26:15Z",
+ "started": "2026-10-17T05:29:27Z",
  "pdf": {
   "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf",
   "access": "ok",
@@ -22,7 +22,7 @@
   "extractor": "pypdf"
  },
  "loads": 1,
- "seconds": 97.1,
+ "seconds": 94.6,
  "found": 160,
  "by_method": {
   "no_closed_list": 19,
@@ -2488,5 +2488,5 @@
    }
   ]
  },
- "run": "39006189975"
+ "run": "39006378829"
 }

@@ -1,0 +1,799 @@
+{
+ "college": "College of the Canyons",
+ "control_number": "40090",
+ "shape": "certificate",
+ "title": "Applied GIS and Spatial Studies",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=156",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 13055,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 13055,
+    "output_tokens": 5884,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 5884,
+  "output_tokens_details": {
+   "thinking_tokens": 1626
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.1699,
+ "ms": 43176,
+ "seconds": 43.5,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 58,
+   "listed": 61,
+   "share": 0.951,
+   "missing": [
+    "ANTHRO105",
+    "POLISC270",
+    "PSYCH104"
+   ],
+   "unexplained": [
+    "ANTHRO105",
+    "POLISC270",
+    "PSYCH104"
+   ],
+   "none_placed": false,
+   "pass": false
+  },
+  "invented": {
+   "count": 7,
+   "codes": [
+    "ATNHRO105",
+    "ENVRMT101",
+    "GEOLOGY111",
+    "OCEAN119",
+    "POLS270",
+    "PSCYH104",
+    "SOCI250"
+   ],
+   "flagged": [
+    "ENVRMT101",
+    "GEOLOGY111",
+    "OCEAN119",
+    "SOCI250"
+   ],
+   "pass": false
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    19.0,
+    20.0
+   ],
+   "stated": [
+    19.0,
+    22.0
+   ],
+   "against": "program",
+   "why": [
+    "the blocks sum to 19.0-20.0; the catalog states 19.0-22.0"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 1,
+   "courses": 0,
+   "count": 1,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Certificate of Achievement: Applied GIS and Spatial Studies",
+   "measure": "units",
+   "total_units": {
+    "min": 19,
+    "max": 22
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Students will apply principles of spatial science and GIS to solve spatial problems and inquiries in their field of study."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Programs Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "GIS-101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GIS-102",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOGRPH-110",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSCYH-104",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "SOCI-137",
+        "units": 4,
+        "catalog_addition": false
+       },
+       {
+        "code": "STAT-C1000",
+        "units": 4,
+        "catalog_addition": false
+       },
+       {
+        "code": "STAT-C1000E",
+        "units": 5,
+        "catalog_addition": false
+       },
+       {
+        "code": "STAT-C1000H",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Administration of Justice Focus",
+    "rule": "choose_units",
+    "minimum": 6,
+    "option_group": "Focus area",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ADMJUS-101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADMJUS-155",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Anthropology and Archeology Focus",
+    "rule": "choose_units",
+    "minimum": 6,
+    "option_group": "Focus area",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ANTHRO-101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ANTHRO-101H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANTHRO-103",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ANTHRO-103H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ATNHRO-105",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANTHRO-210",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Architecture Focus",
+    "rule": "choose_units",
+    "minimum": 6,
+    "option_group": "Focus area",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ARCHT-120",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARCHT-200A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Biology Focus",
+    "rule": "choose_units",
+    "minimum": 6,
+    "option_group": "Focus area",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "BIOSCI-106",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BIOSCI-106H",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOSCI-115",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOSCI-116",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOSCI-130",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Business Focus",
+    "rule": "choose_units",
+    "minimum": 6,
+    "option_group": "Focus area",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "BUS-100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS-117A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS-117B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS-140",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS-141",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Environment Focus",
+    "rule": "choose_units",
+    "minimum": 6,
+    "option_group": "Focus area",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ENVRMT-101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ENVRMT-103",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENVRMT-104",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Fire Technology Focus",
+    "rule": "choose_units",
+    "minimum": 6,
+    "option_group": "Focus area",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "FIRETC-101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FIRETC-102",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FIRETC-110",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FIRETC-123",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Geography Focus",
+    "rule": "choose_units",
+    "minimum": 6,
+    "option_group": "Focus area",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "GEOGRPH-100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOGRPH-101",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOGRPH-102",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOGRPH-103",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOGRPH-104",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOGRPH-105",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Geology Focus",
+    "rule": "choose_units",
+    "minimum": 6,
+    "option_group": "Focus area",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "GEOLOGY-100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOLOGY-101",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOLOGY-102",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOLOGY-104",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOLOGY-105",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOLOGY-111",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Global Studies Focus",
+    "rule": "choose_units",
+    "minimum": 6,
+    "option_group": "Focus area",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "GLST-101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GLST-102",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOGRPH-104",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "POLS-270",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Marine Sciences Focus",
+    "rule": "choose_units",
+    "minimum": 6,
+    "option_group": "Focus area",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "BIOSCI-119",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "OCEAN-119",
+        "units": 4,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "OCEAN-101",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Public Health Science Focus",
+    "rule": "choose_units",
+    "minimum": 6,
+    "option_group": "Focus area",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "HLHSCI-100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HLHSCI-140",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Real Estate Focus",
+    "rule": "choose_units",
+    "minimum": 6,
+    "option_group": "Focus area",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "REAL-100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "REAL-101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "REAL-120",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Sociology Focus",
+    "rule": "choose_units",
+    "minimum": 6,
+    "option_group": "Focus area",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "SOCI-101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "SOCI-101H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOCI-102",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOCI-104",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOCI-207",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOCI-210",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOCI-250",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The catalog says 'Plus six to eight units from one of the following focus areas'; each focus area is recorded as a choose_units block with minimum 6 in option_group 'Focus area'. The 6-8 range applies to the choice as a whole, so no per-block stated total was recorded.",
+   "The four core courses are read as all required, with the statistics requirement satisfied by one of PSCYH-104, SOCI-137, STAT-C1000, STAT-C1000E or STAT-C1000H (OR rows).",
+   "'PSCYH-104' is printed as is and appears to be a typo for PSYCH 104 (Statistics for the Behavioral Sciences); it is treated as the closed-list course.",
+   "'ATNHRO-105' is printed as is and appears to be a typo for ANTHRO 105 (Introduction to Archaeology); it is treated as the closed-list course.",
+   "POLS-270 International Relations is treated as the closed-list POLISC 270 International Relations, since the title matches and only the subject abbreviation differs. A reviewer should confirm.",
+   "ENVRMT-101, GEOLOGY-111, OCEAN-119 and SOCI-250 are not in the closed list and are marked as catalog additions.",
+   "FIRETC-101 is printed as 'Principles of Emergency Services', while the closed list title is 'Fire Protection Organization'. ARCHT-120 is printed as 'Elements of Architectural Drafting' against the closed list's 'Architectural Design'. GEOLOGY-105 is printed as 'California Geology'.",
+   "The section continues across a page break from page 156 to page 157. The Anthropology focus spans the break, with ANTHRO-103 OR 103H split across the two pages.",
+   "The certificate prints a single Certificate Student Learning Outcome, which is recorded. The section names disciplines such as earth sciences, business and urban planning, but no careers, so careers is left empty."
+  ]
+ },
+ "extracted_run": "39006378829"
+}

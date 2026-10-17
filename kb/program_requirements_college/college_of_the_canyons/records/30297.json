@@ -1,0 +1,278 @@
+{
+ "college": "College of the Canyons",
+ "control_number": "30297",
+ "shape": "degree",
+ "title": "Communication Studies",
+ "award": "A.A. Degree",
+ "source_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=105",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 9258,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 9258,
+    "output_tokens": 1867,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1867,
+  "output_tokens_details": {
+   "thinking_tokens": 702
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.07437,
+ "ms": 17053,
+ "seconds": 17.2,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 13,
+   "share": 0.0,
+   "missing": [
+    "COMMC1000",
+    "COMMC1000H",
+    "COMS100",
+    "COMS120",
+    "COMS150",
+    "COMS190",
+    "COMS225",
+    "COMS227",
+    "COMS235",
+    "COMS246",
+    "COMS256",
+    "COMS260",
+    "COMS270"
+   ],
+   "unexplained": [
+    "COMS225",
+    "COMS227",
+    "COMS235",
+    "COMS246",
+    "COMS256",
+    "COMS260",
+    "COMS270"
+   ],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 8,
+   "codes": [
+    "COMM200",
+    "COMM225",
+    "COMM227",
+    "COMM235",
+    "COMM246",
+    "COMM256",
+    "COMM260",
+    "COMM270"
+   ],
+   "flagged": [
+    "COMM200"
+   ],
+   "pass": false
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    12.0,
+    12.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": true,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "COMMUNICATION STUDIES",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Plus three units from the following",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "COMM-225",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "COMM-227",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Plus nine units from the following",
+    "rule": "choose_units",
+    "minimum": 9,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "COMM-200",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "COMM-235",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COMM-246",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COMM-256",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COMM-260",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COMM-270",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "COMM C1000",
+    "why": "requirement list not in the text (cut off before page 105); appears only in course descriptions"
+   },
+   {
+    "code": "COMM C1000H",
+    "why": "requirement list not in the text (cut off before page 105); appears only in course descriptions"
+   },
+   {
+    "code": "COMS 100",
+    "why": "not in the visible requirement list; only course description (COMM 100, formerly COMS-100)"
+   },
+   {
+    "code": "COMS 120",
+    "why": "not in the visible requirement list; only course description (COMM 120, formerly COMS-120)"
+   },
+   {
+    "code": "COMS 150",
+    "why": "not in the visible requirement list; only course description (COMM 150, formerly COMS-150)"
+   },
+   {
+    "code": "COMS 190",
+    "why": "not in the visible requirement list; only course description (COMM 190, formerly COMS-190)"
+   }
+  ],
+  "notes": [
+   "The excerpt begins mid-section on page 105: the program heading, description, outcomes, careers, earlier required courses and any total are on the preceding page and are not in the text. It cannot be confirmed whether these two blocks belong to the A.A. Degree or to an A.A.-T in Communication Studies; a reviewer should check page 104.",
+   "The catalog prints codes as COMM-xxx while the closed list uses COMS xxx; course descriptions state 'Formerly COMS-xxx', so COMM-225, 227, 235, 246, 256, 260, 270 were treated as the closed-list courses (catalog_addition false). COMM-200 has no former COMS code and is not in the closed list, so it is marked as a catalog addition.",
+   "Closed-list COMS 225 is matched to COMM-225, whose description gives no former code; COMM-227 is described as 'Formerly COMS-225', so the renumbering mapping for 225/227 is ambiguous.",
+   "No section total, degree total, GE pattern, outcomes or careers appear in the visible text for this award."
+  ]
+ },
+ "extracted_run": "39006378829"
+}

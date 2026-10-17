@@ -1,0 +1,449 @@
+{
+ "college": "College of the Canyons",
+ "control_number": "36570",
+ "shape": "degree",
+ "title": "Environmental Studies",
+ "award": "A.A. Degree",
+ "source_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=149",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 11689,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 11689,
+    "output_tokens": 3236,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 3236,
+  "output_tokens_details": {
+   "thinking_tokens": 1117
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.11148,
+ "ms": 23677,
+ "seconds": 24.0,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 23,
+   "listed": 28,
+   "share": 0.821,
+   "missing": [
+    "ECON201",
+    "ECON202",
+    "GEOGRPH100",
+    "POLISC230",
+    "POLISC270"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 8,
+   "codes": [
+    "ECON291",
+    "ECONC2001",
+    "ECONC2002",
+    "GEOGRPH101",
+    "OCEAN119",
+    "POLS230",
+    "POLS270",
+    "WE186ENVR"
+   ],
+   "flagged": [
+    "ECON291",
+    "ECONC2001",
+    "ECONC2002",
+    "GEOGRPH101",
+    "OCEAN119",
+    "POLS230",
+    "POLS270",
+    "WE186ENVR"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    26.5,
+    32.0
+   ],
+   "stated": [
+    29.0,
+    32.0
+   ],
+   "against": "program",
+   "why": [
+    "the blocks sum to 26.5-32.0; the catalog states 29.0-32.0"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 1,
+   "courses": 0,
+   "count": 1,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Associate in Arts: Environmental Studies",
+   "measure": "units",
+   "total_units": {
+    "min": 29,
+    "max": 32
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Students will be able to critically analyze the intersection of nature and social systems."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Program Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ENVRMT-101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOSCI-130",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECON-C2002",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ECON-C2002H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "PHILOS-120",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PHILOS-250",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "POLS-C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "POLS-C1000H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Plus one course from the following",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ECON-291",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "STAT-C1000",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "STAT-C1000E",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "STAT-C1000H",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Plus four units from the following",
+    "rule": "choose_units",
+    "minimum": 4,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ENVRMT-103",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "GEOGRPH-101",
+        "units": 4,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Plus two courses from the following for six to eight units",
+    "rule": "choose_courses",
+    "minimum": 2,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 8
+    },
+    "courses": [
+     {
+      "code": "ANTHRO-103",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ANTHRO-103H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOSCI-106",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOSCI-115",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOSCI-116",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOSCI-119",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "OCEAN-119",
+        "units": 4,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOSCI-132",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WE-186ENVR",
+      "units": 0.5,
+      "units_max": 4,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ECON-C2001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ECON-C2001H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "ENVRMT-104",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOGRPH-102",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "POLS-230",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "POLS-270",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "SOCI-101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "SOCI-101H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ECON 201",
+    "why": "not in the text; catalog prints ECON-C2001/C2002 instead"
+   },
+   {
+    "code": "ECON 202",
+    "why": "not in the text; catalog prints ECON-C2001/C2002 instead"
+   },
+   {
+    "code": "GEOGRPH 100",
+    "why": "named only in the certificate sections"
+   },
+   {
+    "code": "POLISC 230",
+    "why": "not in the text as printed; catalog prints POLS-230 Political Theory, recorded as addition"
+   },
+   {
+    "code": "POLISC 270",
+    "why": "not in the text as printed; catalog prints POLS-270 International Relations, recorded as addition"
+   }
+  ],
+  "notes": [
+   "The heading 'Plus two courses from the following for six to eight units:' and ANTHRO-103 are printed twice in a row (apparent layout duplication); recorded once.",
+   "Catalog prints ECON-C2002 and ECON-C2002H both titled 'Principles of Microeconomics' in the required list, and ECON-C2001/C2001H also titled 'Principles of Microeconomics' in the elective list; the closed list names ECON C2002H as Macroeconomics Honors and ECON C2001H as Microeconomics Honors. Titles in the catalog may be misprinted.",
+   "POLS-230 and POLS-270 likely correspond to closed-list POLISC 230 and POLISC 270 (same titles) but are printed with a different subject code, so they are marked as catalog additions.",
+   "The degree's single outcome is printed under 'Degree Student Learning Outcome'.",
+   "No degree total or general education pattern is printed in this section; 'Units Required: 29-32' recorded as the major total."
+  ]
+ },
+ "extracted_run": "39006378829"
+}
