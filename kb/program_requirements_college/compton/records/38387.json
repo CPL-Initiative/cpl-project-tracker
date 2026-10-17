@@ -1,0 +1,625 @@
+{
+ "college": "Compton College",
+ "control_number": "38387",
+ "shape": "adt",
+ "title": "Kinesiology",
+ "award": "A.A- T Degree",
+ "source_url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=107",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 13387,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 13387,
+    "output_tokens": 4495,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 4495,
+  "output_tokens_details": {
+   "thinking_tokens": 1117
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.14345,
+ "ms": 33866,
+ "seconds": 34.1,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 44,
+   "listed": 64,
+   "share": 0.688,
+   "missing": [
+    "ANAT132",
+    "DANC110",
+    "DANC120A",
+    "DANC120B",
+    "DANC130A",
+    "DANC130B",
+    "DANC140",
+    "DANC161",
+    "DANC162",
+    "DANC165",
+    "DANC168",
+    "DANC220A",
+    "DANC220B",
+    "DANC230A",
+    "DANC230B",
+    "DANC240",
+    "DANC262",
+    "PE118",
+    "PE119",
+    "PHYO131"
+   ],
+   "unexplained": [
+    "PE118",
+    "PE119"
+   ],
+   "none_placed": false,
+   "pass": false
+  },
+  "invented": {
+   "count": 3,
+   "codes": [
+    "PE110",
+    "PE125",
+    "PE131"
+   ],
+   "flagged": [
+    "PE110",
+    "PE125",
+    "PE131"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    6.0,
+    9.0
+   ],
+   "stated": [
+    20.0,
+    28.0
+   ],
+   "against": "program",
+   "why": [
+    "'Area 3 Fitness' chooses courses but names no minimum",
+    "'Area 4 Individual Sports' chooses courses but names no minimum",
+    "'Area 5 Team Sports' chooses courses but names no minimum"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": true,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Kinesiology (heading not in the excerpt; text begins mid-section at 'Area 3 Fitness')",
+   "measure": "units",
+   "total_units": {
+    "min": 20,
+    "max": 28
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Area 3 Fitness",
+    "rule": "choose_courses",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "DANC 250",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PE 102",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PE 103",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PE 110",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PE 110A",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PE 110B",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PE 110C",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PE 122",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PE 125",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PE 125A",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PE 125B",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PE 125C",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PE 127",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PE 128",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PE 138",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Area 4 Individual Sports",
+    "rule": "choose_courses",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "PE 134",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Area 5 Team Sports",
+    "rule": "choose_courses",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "PE 104",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PE 107",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PE 108",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PE 113",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PE 130",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PE 131",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PE 154",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PE 155",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PE 162",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PE 163",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PE 164",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PE 165",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PE 174",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PE 175",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PE 177",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PE 178",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PE 180",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PE 181",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PE 186",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PE 187",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List A",
+    "rule": "choose_courses",
+    "minimum": 2,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 9
+    },
+    "courses": [
+     {
+      "code": "CHEM 102",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CHEM 150",
+        "units": 5,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "FAID 101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS 120",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PSYC C1000H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOCI 101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "SOCI 101H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC 120",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "STAT C1000",
+        "units": 4,
+        "catalog_addition": false
+       },
+       {
+        "code": "STAT C1000H",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ANAT 132",
+    "why": "not in the text; likely in the required core on the preceding page (106), not provided"
+   },
+   {
+    "code": "PHYO 131",
+    "why": "not in the text; likely in the required core on the preceding page (106), not provided"
+   },
+   {
+    "code": "DANC 110",
+    "why": "not in the text; likely in Areas 1-2 on the preceding page, not provided"
+   },
+   {
+    "code": "DANC 120A",
+    "why": "not in the text; likely in Areas 1-2 on the preceding page, not provided"
+   },
+   {
+    "code": "DANC 120B",
+    "why": "not in the text; likely in Areas 1-2 on the preceding page, not provided"
+   },
+   {
+    "code": "DANC 130A",
+    "why": "not in the text; likely in Areas 1-2 on the preceding page, not provided"
+   },
+   {
+    "code": "DANC 130B",
+    "why": "not in the text; likely in Areas 1-2 on the preceding page, not provided"
+   },
+   {
+    "code": "DANC 140",
+    "why": "not in the text; likely in Areas 1-2 on the preceding page, not provided"
+   },
+   {
+    "code": "DANC 161",
+    "why": "not in the text; likely in Areas 1-2 on the preceding page, not provided"
+   },
+   {
+    "code": "DANC 162",
+    "why": "not in the text; likely in Areas 1-2 on the preceding page, not provided"
+   },
+   {
+    "code": "DANC 165",
+    "why": "not in the text; likely in Areas 1-2 on the preceding page, not provided"
+   },
+   {
+    "code": "DANC 168",
+    "why": "not in the text; likely in Areas 1-2 on the preceding page, not provided"
+   },
+   {
+    "code": "DANC 220A",
+    "why": "not in the text; likely in Areas 1-2 on the preceding page, not provided"
+   },
+   {
+    "code": "DANC 220B",
+    "why": "not in the text; likely in Areas 1-2 on the preceding page, not provided"
+   },
+   {
+    "code": "DANC 230A",
+    "why": "not in the text; likely in Areas 1-2 on the preceding page, not provided"
+   },
+   {
+    "code": "DANC 230B",
+    "why": "not in the text; likely in Areas 1-2 on the preceding page, not provided"
+   },
+   {
+    "code": "DANC 240",
+    "why": "not in the text; likely in Areas 1-2 on the preceding page, not provided"
+   },
+   {
+    "code": "DANC 262",
+    "why": "not in the text; likely in Areas 1-2 on the preceding page, not provided"
+   }
+  ],
+  "notes": [
+   "The excerpt begins on page 107 mid-section with 'Area 3 Fitness'; the Kinesiology heading, description, transfer degree requirements (GE pattern), outcomes, required core, the movement-based selection rule and Areas 1-2 are on the preceding page and were not provided. Reviewer should check page 106.",
+   "The selection rule governing Areas 3-5 (probably part of a movement-based courses requirement, e.g. one course from each of several areas) is not in the excerpt, so these area blocks are recorded as choose_courses with minimum null.",
+   "Codes printed with a PDF spacing artifact ('PE 1 10', 'PE 1 10A', 'PE 1 13') are recorded as PE 110, PE 110A, PE 113, etc.",
+   "PE 110, PE 125 and PE 131 are printed in the section but absent from the closed list; recorded as catalog additions.",
+   "Total Units: 20-28 is printed at the end of the section and recorded as total_units (major total).",
+   "ge_pattern left null because the Cal-GETC statement for this degree is not in the excerpt (it is presumably on page 106).",
+   "No outcomes or careers for Kinesiology appear in the excerpt; the Fitness Trainer certificate, Physical Science, Physics, Political Science and Psychology sections that follow were not read for this record."
+  ]
+ },
+ "extracted_run": "39006336111"
+}

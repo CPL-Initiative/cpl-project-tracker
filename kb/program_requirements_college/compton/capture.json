@@ -5,7 +5,7 @@
  "catalog_year": "2026-2027",
  "programs": 87,
  "with_closed_list": 86,
- "started": "2026-10-17T05:26:16Z",
+ "started": "2026-10-17T05:28:42Z",
  "pdf": {
   "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf",
   "access": "ok",
@@ -22,7 +22,7 @@
   "extractor": "pypdf"
  },
  "loads": 1,
- "seconds": 34.3,
+ "seconds": 34.1,
  "found": 81,
  "by_method": {
   "no_closed_list": 1,
@@ -1023,5 +1023,5 @@
    }
   ]
  },
- "run": "39006191453"
+ "run": "39006336111"
 }
