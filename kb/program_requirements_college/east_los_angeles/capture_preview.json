@@ -5,7 +5,7 @@
  "catalog_year": null,
  "programs": 234,
  "with_closed_list": 147,
- "started": "2026-10-17T06:33:30Z",
+ "started": "2026-10-17T06:42:50Z",
  "procedure_step": {
   "start": "https://www.elac.edu/academic-resources/catalog",
   "follow": "2026 - 2027",
@@ -21,16 +21,18 @@
   "pages": 521,
   "error": null,
   "chars": 2577221,
-  "pdfminer_used": 1,
+  "pdfminer_used": 0,
   "picks": [
    {
     "control_number": "02430",
     "pages": [
-     30
+     102,
+     103
     ],
     "named": false,
-    "coverage": 0.833,
-    "opens": "[page 30] Academic Resources/Programs 26 EAST LOS ANGELES COLLEGE | GENERAL CATALOG | 2026-2027 Online Learning website at https://www.elac.edu/online. For further information, please call (323) 415-5313 or email us a"
+    "cn_printed": true,
+    "coverage": 0.5,
+    "opens": "[page 102] (Academic Plan E002430C) This program is for students interested in design-related aspects of architecture. Students will develop skills to cre - ate architectural design solutions for the built environ - men"
    },
    {
     "control_number": "02456",
@@ -38,35 +40,41 @@
      84
     ],
     "named": false,
+    "cn_printed": true,
     "coverage": 1.0,
-    "opens": "[page 84] Medical Assistant, Associate in Science Degree (Academic Plan E002456C) A medical assistant interacts with doctors, nurses, tech - nicians and patients. These professionals require spe - cific technical knowle"
+    "opens": "[page 84] (Academic Plan E002456C) A medical assistant interacts with doctors, nurses, tech - nicians and patients. These professionals require spe - cific technical knowledge and skills needed in the evolving healthcar"
    },
    {
     "control_number": "08252",
     "pages": [
-     30
+     103
     ],
     "named": false,
-    "coverage": 0.9,
-    "opens": "[page 30] Academic Resources/Programs 26 EAST LOS ANGELES COLLEGE | GENERAL CATALOG | 2026-2027 Online Learning website at https://www.elac.edu/online. For further information, please call (323) 415-5313 or email us a"
+    "cn_printed": true,
+    "coverage": 0.5,
+    "opens": "[page 103] (Academic Plan E008252C) This program is for students interested in the techni - cal aspects of architecture. Students will develop skills in building technology and construction documents, includ - ing drawi"
    },
    {
     "control_number": "13340",
     "pages": [
-     30
+     70,
+     71,
+     72
     ],
     "named": false,
+    "cn_printed": true,
     "coverage": 1.0,
-    "opens": "[page 30] Academic Resources/Programs 26 EAST LOS ANGELES COLLEGE | GENERAL CATALOG | 2026-2027 Online Learning website at https://www.elac.edu/online. For further information, please call (323) 415-5313 or email us a"
+    "opens": "[page 70] (Academic Plan E013340D) This certificate program is designed to prepare entry-level crime scene response and evidence processing personnel for employment positions such as Crime Scene Techni - cian, Evidence"
    },
    {
     "control_number": "13341",
     "pages": [
-     30
+     68
     ],
     "named": false,
+    "cn_printed": true,
     "coverage": 1.0,
-    "opens": "[page 30] Academic Resources/Programs 26 EAST LOS ANGELES COLLEGE | GENERAL CATALOG | 2026-2027 Online Learning website at https://www.elac.edu/online. For further information, please call (323) 415-5313 or email us a"
+    "opens": "[page 68] (Academic Plan E013341D) (with Psychology & Addiction Studies Department) This certificate program is designed for students seeking entry-level employment positions in settings that provide assessment and tre"
    },
    {
     "control_number": "13343",
@@ -75,47 +83,55 @@
      70
     ],
     "named": false,
+    "cn_printed": true,
     "coverage": 1.0,
-    "opens": "[page 69] Basic Police Academy Preparation (Academic Plan E013343D) This certificate program is designed for students that are currently in or anticipating entry into the police hiring and background process. This cert"
+    "opens": "[page 69] (Academic Plan E013343D) This certificate program is designed for students that are currently in or anticipating entry into the police hiring and background process. This certificate emphasizes those courses"
    },
    {
     "control_number": "14869",
     "pages": [
+     373,
+     374,
+     375,
      376
     ],
     "named": false,
-    "coverage": 1.0,
-    "opens": "[page 376] Theater Arts Department 372 EAST LOS ANGELES COLLEGE | GENERAL CATALOG | 2026-2027 1. Major/Area of Emphasis: A minimum of 18 semes - ter units (27 quarter units) of coursework, with a C or higher earned in"
+    "cn_printed": true,
+    "coverage": 0.75,
+    "opens": "[page 373] (Academic Plan E014869D) The Certificate of Achievement in Stage Management and Production is designed to teach students how to work as stage managers or production managers. These courses provide an aspiri"
    },
    {
     "control_number": "21157",
     "pages": [
-     101,
      102,
      103
     ],
     "named": false,
-    "coverage": 1.0,
-    "opens": "[page 101] • Architectural Technology Skills Certificates The Architecture department encourages students seeking to earn any Skills Certificate to complete the requirements for their chosen Skills Certificate within "
+    "cn_printed": true,
+    "coverage": 0.833,
+    "opens": "[page 102] (Academic Plan E021157D) This program is for students interested in the technical aspects of architecture. Students develop skills in build - ing technology and construction documents, including drawing, dra"
    },
    {
     "control_number": "21174",
     "pages": [
+     197,
      198,
      199
     ],
     "named": false,
-    "coverage": 0.684,
-    "opens": "[page 198] Engineering and Technologies Department 194 EAST LOS ANGELES COLLEGE | GENERAL CATALOG | 2026-2027 ENG GEN 225* Digital Circuit Analysis .......................... 3 ENG GEN 231* Dynamics ..................."
+    "cn_printed": true,
+    "coverage": 1.0,
+    "opens": "[page 197] (Academic Plan E021174C) The Engineering & Technologies Department offers an Associate in Science Degree in Engineering Graphics & Design Technology. Upon completion of the Comput - er-Aided Drafting (CAD) C"
    },
    {
     "control_number": "24040",
     "pages": [
-     30
+     387
     ],
     "named": false,
+    "cn_printed": true,
     "coverage": 1.0,
-    "opens": "[page 30] Academic Resources/Programs 26 EAST LOS ANGELES COLLEGE | GENERAL CATALOG | 2026-2027 Online Learning website at https://www.elac.edu/online. For further information, please call (323) 415-5313 or email us a"
+    "opens": "[page 387] (Academic Plan E024040E) Clear written expression is a critical skill for academic suc - cess as well as professional success. This three course sequence in basic grammar and writing prepares stu - dents for "
    },
    {
     "control_number": "24129",
@@ -123,6 +139,7 @@
      31
     ],
     "named": false,
+    "cn_printed": false,
     "coverage": 1.0,
     "opens": "[page 31] Academic Resources/Programs EAST LOS ANGELES COLLEGE | GENERAL CATALOG | 2026-2027 27 ARC 271* Architectural Drawing III ........................ 3 ARC 272* Architectural Drawing IV ........................ "
    },
@@ -134,8 +151,9 @@
      242
     ],
     "named": true,
+    "cn_printed": true,
     "coverage": 0.972,
-    "opens": "[page 240] Kinesiology for Transfer (Academic Plan E031017G) Students completing the Associate in Arts in Kinesiology for Transfer Degree will have satisfied the lower division major preparation for bachelor’s degrees "
+    "opens": "[page 240] (Academic Plan E031017G) Students completing the Associate in Arts in Kinesiology for Transfer Degree will have satisfied the lower division major preparation for bachelor’s degrees in similar majors as det"
    },
    {
     "control_number": "32154",
@@ -144,17 +162,20 @@
      168
     ],
     "named": true,
+    "cn_printed": false,
     "coverage": 1.0,
     "opens": "[page 167] • Communication Studies 2.0 for Transfer Associate Degree Program Associate in Arts in Communication Studies 2.0 for Transfer (Academic Plan E042672G) Students completing the Associate in Arts in Communica - "
    },
    {
     "control_number": "32170",
     "pages": [
+     359,
      360
     ],
-    "named": false,
+    "named": true,
+    "cn_printed": true,
     "coverage": 1.0,
-    "opens": "[page 360] Social Sciences Department 356 EAST LOS ANGELES COLLEGE | GENERAL CATALOG | 2026-2027 • Garner a critical understanding of the complex inter - play between social circumstances and individual experience. • U"
+    "opens": "[page 359] (Academic Plan E032170G) Students completing the Associate in Arts in Sociology for Transfer Degree will have satisfied the lower division major preparation for bachelor’s degrees in similar majors as deter"
    },
    {
     "control_number": "32193",
@@ -163,8 +184,9 @@
      178
     ],
     "named": false,
+    "cn_printed": true,
     "coverage": 1.0,
-    "opens": "[page 177] Technology & Logistics, Associate in Science Degree (Academic Plan E032193C) The Technology & Logistics Associate Degree is designed for students who intend to pursue the field of logistics as a career path"
+    "opens": "[page 177] (Academic Plan E032193C) The Technology & Logistics Associate Degree is designed for students who intend to pursue the field of logistics as a career path and with the goal of transferring to a uni - versity"
    },
    {
     "control_number": "32194",
@@ -175,8 +197,9 @@
      178
     ],
     "named": true,
+    "cn_printed": true,
     "coverage": 1.0,
-    "opens": "[page 175] The Technology & Logistics Certificate of Achievement is designed for students who intend to pursue the field of logistics as a career path. Logistics is the management and control of all aspects of the mov"
+    "opens": "[page 175] (Academic Plan E032194D) The Technology & Logistics Certificate of Achievement is designed for students who intend to pursue the field of logistics as a career path. Logistics is the management and control "
    },
    {
     "control_number": "32902",
@@ -185,8 +208,9 @@
      73
     ],
     "named": false,
+    "cn_printed": true,
     "coverage": 1.0,
-    "opens": "[page 72] Administration of Justice Department 68 EAST LOS ANGELES COLLEGE | GENERAL CATALOG | 2026-2027 Associate of Science in Administration of Justice for Transfer (Academic Plan E032902H) Students completing the A"
+    "opens": "[page 72] (Academic Plan E032902H) Students completing the Associate in Science in Adminis - tration of Justice for Transfer Degree will have satisfied the lower division major preparation for bachelor’s degrees in sim"
    },
    {
     "control_number": "32980",
@@ -194,8 +218,9 @@
      231
     ],
     "named": true,
+    "cn_printed": true,
     "coverage": 1.0,
-    "opens": "[page 231] Journalism for Transfer (Academic Plan E032980G) Students completing the Associate in Arts in Journalism for Transfer Degree will have satisfied the lower division major preparation for bachelor’s degrees in"
+    "opens": "[page 231] (Academic Plan E032980G) Students completing the Associate in Arts in Journalism for Transfer Degree will have satisfied the lower division major preparation for bachelor’s degrees in similar majors as dete"
    },
    {
     "control_number": "33013",
@@ -206,8 +231,9 @@
      94
     ],
     "named": true,
+    "cn_printed": true,
     "coverage": 1.0,
-    "opens": "[page 91] • Anthropology for Transfer • Environmental Science for Transfer • Environmental Studies: The Science in Sustainability • Geography for Transfer • Geology for Transfer Associate Degree Programs Associate in Ar"
+    "opens": "[page 91] (Academic Plan E033013G) Students completing the Associate in Arts in Anthropology for Transfer Degree will have satisfied the lower division major preparation for bachelor’s degrees in similar majors as det"
    },
    {
     "control_number": "33382",
@@ -218,17 +244,20 @@
      294
     ],
     "named": true,
+    "cn_printed": true,
     "coverage": 1.0,
-    "opens": "[page 291] Associate in Arts in Music for Transfer (Academic Plan E033382G) Students completing the Associate in Arts in Music for Transfer Degree will have satisfied the lower division major preparation for bachelor’s"
+    "opens": "[page 291] (Academic Plan E033382G) Students completing the Associate in Arts in Music for Transfer Degree will have satisfied the lower division major preparation for bachelor’s degrees in similar majors as determine"
    },
    {
     "control_number": "33641",
     "pages": [
+     375,
      376
     ],
     "named": false,
+    "cn_printed": true,
     "coverage": 1.0,
-    "opens": "[page 376] Theater Arts Department 372 EAST LOS ANGELES COLLEGE | GENERAL CATALOG | 2026-2027 1. Major/Area of Emphasis: A minimum of 18 semes - ter units (27 quarter units) of coursework, with a C or higher earned in"
+    "opens": "[page 375] (Academic Plan E033641G) Students completing the Associate in Arts in Theatre Arts for Transfer Degree will have satisfied the lower division major preparation for bachelor’s degrees in similar majors as de"
    },
    {
     "control_number": "33681",
@@ -236,17 +265,20 @@
      265
     ],
     "named": true,
+    "cn_printed": false,
     "coverage": 0.714,
     "opens": "[page 265] Mathematics 2.0 for Transfer (Academic Plan E046343H) Students completing the Associate in Science in Math - ematics 2.0 for Transfer Degree will have satisfied the lower division major preparation for bachel"
    },
    {
     "control_number": "33915",
     "pages": [
-     35
+     78,
+     79
     ],
     "named": false,
+    "cn_printed": true,
     "coverage": 1.0,
-    "opens": "[page 35] Academic Resources/Programs EAST LOS ANGELES COLLEGE | GENERAL CATALOG | 2026-2027 31 HEALTH 103 Cultural Compentence in Health and Social Services ................................. 3 HIST C1001 United State"
+    "opens": "[page 78] (Academic Plan E033915D) (with the Child, Family and Education Studies Department) Satisfactory completion of all courses with a “C” or better is required for all Certificates of Achievement. This certificate"
    },
    {
     "control_number": "35087",
@@ -257,6 +289,7 @@
      357
     ],
     "named": false,
+    "cn_printed": false,
     "coverage": 1.0,
     "opens": "[page 354] Social Sciences Department 350 EAST LOS ANGELES COLLEGE | GENERAL CATALOG | 2026-2027 with the complex environmental problems that confront society by providing a broad, basic understanding of how physical,"
    },
@@ -268,20 +301,22 @@
      95
     ],
     "named": false,
+    "cn_printed": true,
     "coverage": 0.737,
-    "opens": "[page 93] Anthropology, Geography and Geology Department EAST LOS ANGELES COLLEGE | GENERAL CATALOG | 2026-2027 89 OR STAT C1000E Introduction to Statistics ....................... 4 MATH 261* Calculus I ............"
+    "opens": "[page 93] (Academic Plan E035088C) Environmental Studies is a multidisciplinary course of study that focuses on the interrelationship between humans and nature by examining the impact of human activities on natural ph"
    },
    {
     "control_number": "35309",
     "pages": [
+     257,
      258,
      259,
-     260,
-     261
+     260
     ],
     "named": false,
+    "cn_printed": true,
     "coverage": 1.0,
-    "opens": "[page 258] Life Sciences Department 254 EAST LOS ANGELES COLLEGE | GENERAL CATALOG | 2026-2027 physical, biological and human components of the envi - ronment interact. The degree’s core courses examine the relationsh"
+    "opens": "[page 257] (Academic Plan E035309C) The Environmental Studies: Biology Program is an interdis - ciplinary and multidisciplinary course of study that pres - ents an overview of environmental biology issues and studies th"
    },
    {
     "control_number": "35397",
@@ -289,6 +324,7 @@
      54
     ],
     "named": false,
+    "cn_printed": false,
     "coverage": 1.0,
     "opens": "[page 54] Graduation Requirements 50 EAST LOS ANGELES COLLEGE | GENERAL CATALOG | 2026-2027 C-ID APPROVED COURSES FOR EAST LOS ANGELES COLLEGE Note: This chart is subject to change . Please check https://c-idsystem.org"
    },
@@ -298,6 +334,7 @@
      161
     ],
     "named": false,
+    "cn_printed": false,
     "coverage": 1.0,
     "opens": "[page 161] Child, Family, and Education Studies Department EAST LOS ANGELES COLLEGE | GENERAL CATALOG | 2026-2027 157 Upon successful completion of this program, students will be able to: • Analyze data to determine th"
    },
@@ -307,35 +344,40 @@
      391
     ],
     "named": false,
+    "cn_printed": true,
     "coverage": 1.0,
-    "opens": "[page 391] Programming and Apps (Academic Plan E035757E) This Certificate of Completion is designed to prepare stu - dents for entry-level courses in the Engineering and Tech - nologies Department at ELAC. These three co"
+    "opens": "[page 391] (Academic Plan E035757E) This Certificate of Completion is designed to prepare stu - dents for entry-level courses in the Engineering and Tech - nologies Department at ELAC. These three courses help students "
    },
    {
     "control_number": "35758",
     "pages": [
-     34
+     392
     ],
     "named": false,
+    "cn_printed": true,
     "coverage": 1.0,
-    "opens": "[page 34] Academic Resources/Programs 30 EAST LOS ANGELES COLLEGE | GENERAL CATALOG | 2026-2027 ENGLISH 204* World Literature II ................................. 3 ENGLISH 205* British Literature I .................."
+    "opens": "[page 392] (Academic Plan E035758F) This English as a Second Language communication com - petency program is designed to strengthen students’ lis - tening comprehension and speaking skills. Listening skills to be addres"
    },
    {
     "control_number": "35759",
     "pages": [
-     30
+     393
     ],
     "named": false,
+    "cn_printed": true,
     "coverage": 1.0,
-    "opens": "[page 30] Academic Resources/Programs 26 EAST LOS ANGELES COLLEGE | GENERAL CATALOG | 2026-2027 Online Learning website at https://www.elac.edu/online. For further information, please call (323) 415-5313 or email us a"
+    "opens": "[page 393] (Academic Plan E035759F) The certificate is designed to prepare students for the entry-level credit courses in the English department. These two courses help students to build a solid foundation of basic vo"
    },
    {
     "control_number": "35771",
     "pages": [
-     32
+     176,
+     177
     ],
     "named": false,
+    "cn_printed": true,
     "coverage": 1.0,
-    "opens": "[page 32] Academic Resources/Programs 28 EAST LOS ANGELES COLLEGE | GENERAL CATALOG | 2026-2027 BUS 001 Introduction to Business ........................ 3 BUS 011 Job Retention and Responsibility ............. 1 BUS "
+    "opens": "[page 176] (Academic Plan E035771D) The Technology for E-Commerce and Entrepreneurs Cer - tificate of Achievement is designed for students, aspir - ing entrepreneurs, and the general workforce who wish to become success"
    },
    {
     "control_number": "35798",
@@ -344,8 +386,9 @@
      173
     ],
     "named": true,
+    "cn_printed": true,
     "coverage": 1.0,
-    "opens": "[page 172] The Business Information Worker (BIW) Certificate of Achievement is designed to prepare students for entry- level office and administrative support in a variety of job positions, including general office cle"
+    "opens": "[page 172] (Academic Plan E035798D) The Business Information Worker (BIW) Certificate of Achievement is designed to prepare students for entry- level office and administrative support in a variety of job positions, inc"
    },
    {
     "control_number": "35888",
@@ -353,46 +396,56 @@
      360
     ],
     "named": false,
+    "cn_printed": true,
     "coverage": 1.0,
-    "opens": "[page 360] Women/Gender Studies, Associate in Arts Degree (Academic Plan E035888C) Women/Gender Studies at East Los Angeles College is an interdisciplinary academic program which aims to expand students’ understanding"
+    "opens": "[page 360] (Academic Plan E035888C) Women/Gender Studies at East Los Angeles College is an interdisciplinary academic program which aims to expand students’ understanding and appreciation of women’s lives and experien"
    },
    {
     "control_number": "35902",
     "pages": [
+     81,
      82,
      83,
      84
     ],
-    "named": true,
+    "named": false,
+    "cn_printed": true,
     "coverage": 1.0,
-    "opens": "[page 82] The Interventional Radiology Coding certificate prepares individuals seeking to work as coders for a radiology department or other healthcare setting where procedures are performed on the gastrointestinal, g"
+    "opens": "[page 81] (Academic Plan E035902D) To enroll into the Interventional Radiology Coding pro - gram, students must first apply online at www.elac.edu. After enrolling at ELAC, the student must apply to the [page 82] Al"
    },
    {
     "control_number": "36177",
     "pages": [
-     54
+     94,
+     95
     ],
-    "named": false,
-    "coverage": 0.833,
-    "opens": "[page 54] GEOL 100 GEOLOGY 001 GEOL 100L GEOLOGY 006 GEOL 101 GEOLOGY 004 GEOL 110 GEOLOGY 002 GEOL 110 L GEOLOGY 007 GEOL 120 EARTH 001 GEOL 120L EARTH 002 HIST 130 HIST C1001 HIST 140 HIST C1002 HIST 150 HISTORY 086 HI"
+    "named": true,
+    "cn_printed": true,
+    "coverage": 1.0,
+    "opens": "[page 94] (Academic Plan E036177H) Students completing the Associate in Science in Geology for Transfer Degree will have satisfied the lower division major preparation for bachelor’s degrees in similar majors as deter"
    },
    {
     "control_number": "36345",
     "pages": [
-     54
+     354,
+     355,
+     356,
+     357
     ],
-    "named": false,
-    "coverage": 0.706,
-    "opens": "[page 54] Graduation Requirements 50 EAST LOS ANGELES COLLEGE | GENERAL CATALOG | 2026-2027 C-ID APPROVED COURSES FOR EAST LOS ANGELES COLLEGE Note: This chart is subject to change . Please check https://c-idsystem.org"
+    "named": true,
+    "cn_printed": true,
+    "coverage": 1.0,
+    "opens": "[page 354] (Academic Plan E036345G) Students completing the Associate in Arts in Economics for Transfer Degree will have satisfied the lower division major preparation for bachelor’s degrees in similar majors as deter"
    },
    {
     "control_number": "36377",
     "pages": [
-     41
+     390
     ],
     "named": false,
+    "cn_printed": true,
     "coverage": 1.0,
-    "opens": "[page 41] Academic Resources/Programs EAST LOS ANGELES COLLEGE | GENERAL CATALOG | 2026-2027 37 CAOT 111 Microsoft Outlook ....................... 2 CAOT 133 How to Succeed in an Online Course .... 1 CH DEV 001 Child"
+    "opens": "[page 390] (Academic Plan E036377E) This certificate is designed to prepare students for entry- level courses in the Health & Kinesiology fields. These three courses help students develop knowledge and of nutri - tional"
    },
    {
     "control_number": "36378",
@@ -400,8 +453,9 @@
      392
     ],
     "named": true,
+    "cn_printed": true,
     "coverage": 1.0,
-    "opens": "[page 392] The Workplace Skills Certificate of Completion is designed to prepare students for entry-level office and administra - tive support in a variety of job positions, including general office clerks, receptionis"
+    "opens": "[page 392] (Academic Plan E036378E) The Workplace Skills Certificate of Completion is designed to prepare students for entry-level office and administra - tive support in a variety of job positions, including general o"
    },
    {
     "control_number": "36534",
@@ -409,17 +463,20 @@
      40
     ],
     "named": false,
+    "cn_printed": false,
     "coverage": 1.0,
     "opens": "[page 40] Academic Resources/Programs 36 EAST LOS ANGELES COLLEGE | GENERAL CATALOG | 2026-2027 First-Year Students: U.S. high school graduate with a 3.2 unweighted GPA (grades 9-12), and eligibility for ENGL C1000. "
    },
    {
     "control_number": "37391",
     "pages": [
-     41
+     390,
+     391
     ],
     "named": false,
+    "cn_printed": true,
     "coverage": 1.0,
-    "opens": "[page 41] Academic Resources/Programs EAST LOS ANGELES COLLEGE | GENERAL CATALOG | 2026-2027 37 CAOT 111 Microsoft Outlook ....................... 2 CAOT 133 How to Succeed in an Online Course .... 1 CH DEV 001 Child"
+    "opens": "[page 390] (Academic Plan E037391E) This certificate is designed to prepare students for entry- level courses in the Health, Kinesiology, and Nursing fields. These two courses help students develop knowledge of CPR te"
    },
    {
     "control_number": "37510",
@@ -428,8 +485,9 @@
      387
     ],
     "named": false,
+    "cn_printed": true,
     "coverage": 0.667,
-    "opens": "[page 386] Automotive Fundamentals (Academic Plan E037510E) This certificate is designed to prepare students for entry- level positions in the Automotive industry and, upon suc - cessful completion, satisty the pre-requi"
+    "opens": "[page 386] (Academic Plan E037510E) This certificate is designed to prepare students for entry- level positions in the Automotive industry and, upon suc - cessful completion, satisty the pre-requisite to enter into the "
    },
    {
     "control_number": "37923",
@@ -440,8 +498,9 @@
      261
     ],
     "named": true,
+    "cn_printed": true,
     "coverage": 1.0,
-    "opens": "[page 258] Biology for Transfer (Academic Plan E037923H) Students completing the Associate in Science in Biology for Transfer Degree will have satisfied the lower division major preparation for bachelor’s degrees in si"
+    "opens": "[page 258] (Academic Plan E037923H) Students completing the Associate in Science in Biology for Transfer Degree will have satisfied the lower division major preparation for bachelor’s degrees in similar majors as dete"
    },
    {
     "control_number": "37924",
@@ -451,27 +510,33 @@
      261
     ],
     "named": false,
+    "cn_printed": false,
     "coverage": 0.875,
     "opens": "[page 259] Life Sciences Department EAST LOS ANGELES COLLEGE | GENERAL CATALOG | 2026-2027 255 Students completing the Associate in Science in Pub - lic Health for Transfer Degree will have satisfied the lower divisio"
    },
    {
     "control_number": "37956",
     "pages": [
-     39
+     143,
+     144,
+     145
     ],
     "named": false,
+    "cn_printed": true,
     "coverage": 0.833,
-    "opens": "[page 39] Academic Resources/Programs EAST LOS ANGELES COLLEGE | GENERAL CATALOG | 2026-2027 35 Distance Education - Hybrid Only Courses The following courses have been approved to be offered through Distance Educatio"
+    "opens": "[page 143] (Academic Plan E037956C) The Chemistry Technician program prepares individuals to become chemical technicians. The program is highly hands-on, promotes teamwork, and trains students with analytical, practic"
    },
    {
     "control_number": "37965",
     "pages": [
+     289,
      290,
      291
     ],
     "named": false,
+    "cn_printed": true,
     "coverage": 0.947,
-    "opens": "[page 290] Music Department 286 EAST LOS ANGELES COLLEGE | GENERAL CATALOG | 2026-2027 a field related to the discipline of Music. The degree pro - gram can lead to careers in music composition, song writing, performa"
+    "opens": "[page 289] (Academic Plan E037965C) This program provides the student a comprehensive study in commercial music and recording arts. It is designed to award the Associate in Arts degree to those students who have compl"
    },
    {
     "control_number": "37969",
@@ -479,18 +544,9 @@
      219
     ],
     "named": false,
+    "cn_printed": true,
     "coverage": 1.0,
-    "opens": "[page 219] Interpreter Education, Associate in Arts Degree (Academic Plan E037969C) The American Sign Language Interpreter Education Pro - gram (IEP) degree prepares students for a career work - ing as an entry level si"
-   },
-   {
-    "control_number": "38090",
-    "pages": [
-     240,
-     241
-    ],
-    "named": false,
-    "coverage": 0.833,
-    "opens": "[page 240] Kinesiology Department 236 EAST LOS ANGELES COLLEGE | GENERAL CATALOG | 2026-2027 KIN MAJ 117 Personal Trainer Instructor ..................... 3 KIN MAJ 134 Lifeguard Training and Certification ........ 2"
+    "opens": "[page 219] (Academic Plan E037969C) The American Sign Language Interpreter Education Pro - gram (IEP) degree prepares students for a career work - ing as an entry level sign language interpreter for people who are Deaf "
    },
    {
     "control_number": "38093",
@@ -500,17 +556,22 @@
      313
     ],
     "named": true,
+    "cn_printed": false,
     "coverage": 1.0,
     "opens": "[page 311] • Physics 2.0 for Transfer Associate Degree Program Associate in Science in Physics 2.0 for Transfer (Academic Plan E046348H) Students completing the Associate in Science in Physics 2.0 for Transfer Degree w"
    },
    {
     "control_number": "38159",
     "pages": [
-     30
+     69,
+     70,
+     71,
+     72
     ],
     "named": false,
+    "cn_printed": true,
     "coverage": 1.0,
-    "opens": "[page 30] Academic Resources/Programs 26 EAST LOS ANGELES COLLEGE | GENERAL CATALOG | 2026-2027 Online Learning website at https://www.elac.edu/online. For further information, please call (323) 415-5313 or email us a"
+    "opens": "[page 69] (Academic Plan E038159D) This certificate program is designed for those students seeking to gain a broad law-based perspective in their Administration of Justice studies. Program Learning Outcomes: Upon succe"
    },
    {
     "control_number": "38163",
@@ -521,8 +582,9 @@
      318
     ],
     "named": true,
+    "cn_printed": true,
     "coverage": 1.0,
-    "opens": "[page 315] Achievement for a Substance Abuse Assessor Certificate. This certificate provides academic preparation and field - work experience for individuals to conduct assessments for clients with alcohol and substan"
+    "opens": "[page 315] (Academic Plan E038163D) The Addiction Studies Program offers a Certificate of Achievement for a Substance Abuse Assessor Certificate. This certificate provides academic preparation and field - work experie"
    },
    {
     "control_number": "38166",
@@ -530,8 +592,9 @@
      374
     ],
     "named": false,
+    "cn_printed": true,
     "coverage": 1.0,
-    "opens": "[page 374] Theatre in the Community (Academic Plan E038166D) This certificate provides the student with the skills to enter the educational, health, recreational, or social service industry as a Creative Theatre Specia"
+    "opens": "[page 374] (Academic Plan E038166D) This certificate provides the student with the skills to enter the educational, health, recreational, or social service industry as a Creative Theatre Specialist or to continue on t"
    },
    {
     "control_number": "38168",
@@ -542,6 +605,7 @@
      294
     ],
     "named": false,
+    "cn_printed": false,
     "coverage": 0.846,
     "opens": "[page 291] Music Department EAST LOS ANGELES COLLEGE | GENERAL CATALOG | 2026-2027 287 MUSIC 745# Symphonic Band ................................... 1 MUSIC 775# Jazz Ensemble ...................................... 1 "
    },
@@ -554,38 +618,48 @@
      291
     ],
     "named": false,
+    "cn_printed": true,
     "coverage": 0.75,
-    "opens": "[page 288] Commercial Music: Jazz Studies (Academic Plan E038169D) The Certificate of Achievement in Jazz Studies provides the student with career preparation for entry-level positions in the growing fields of jazz stu"
+    "opens": "[page 288] (Academic Plan E038169D) The Certificate of Achievement in Jazz Studies provides the student with career preparation for entry-level positions in the growing fields of jazz studies. Students gain requisite "
    },
    {
     "control_number": "38170",
     "pages": [
-     370,
-     371,
      372,
-     373
+     373,
+     374,
+     375
     ],
     "named": false,
+    "cn_printed": true,
     "coverage": 0.857,
-    "opens": "[page 370] Theater Arts Department 366 EAST LOS ANGELES COLLEGE | GENERAL CATALOG | 2026-2027 Acting Students completing this skills certificate will acquire skills to pursue job opportunities in the performing arts o"
+    "opens": "[page 372] (Academic Plan E038170D) Students completing this certificate acquire the appli - cable design and technical skills to pursue entry-level positions in entertainment costuming, including: The - atre, dance, th"
    },
    {
     "control_number": "38205",
     "pages": [
-     36
+     289,
+     290,
+     291,
+     292
     ],
     "named": false,
+    "cn_printed": true,
     "coverage": 0.833,
-    "opens": "[page 36] Academic Resources/Programs 32 EAST LOS ANGELES COLLEGE | GENERAL CATALOG | 2026-2027 KIN MAJ 121 Lifespan Motor Development ................. 3 KIN MAJ 128 Care And Prevention of Athletic Injuries ... 3 KI"
+    "opens": "[page 289] (Academic Plan E038205D) The Certificate of Achievement in Songwriting & Arranging is designed to assist students who are pursuing or plan - ning to pursue careers in the field of Commercial Music Arranging."
    },
    {
     "control_number": "38206",
     "pages": [
-     36
+     288,
+     289,
+     290,
+     291
     ],
     "named": false,
-    "coverage": 0.714,
-    "opens": "[page 36] Academic Resources/Programs 32 EAST LOS ANGELES COLLEGE | GENERAL CATALOG | 2026-2027 KIN MAJ 121 Lifespan Motor Development ................. 3 KIN MAJ 128 Care And Prevention of Athletic Injuries ... 3 KI"
+    "cn_printed": true,
+    "coverage": 0.857,
+    "opens": "[page 288] (Academic Plan E038206D) The Certificate of Achievement in Music Technology is designed to assist students who are pursuing careers in the field of Music Technology and Production. Designed and managed by v"
    },
    {
     "control_number": "38234",
@@ -593,8 +667,9 @@
      173
     ],
     "named": true,
+    "cn_printed": true,
     "coverage": 1.0,
-    "opens": "[page 173] The Business Information Worker II (BIW II) Certificate of Achievement is designed to prepare students for mid- level office and administrative support in a variety of job positions, including office and exe"
+    "opens": "[page 173] (Academic Plan E038234D) The Business Information Worker II (BIW II) Certificate of Achievement is designed to prepare students for mid- level office and administrative support in a variety of job positions,"
    },
    {
     "control_number": "38317",
@@ -602,6 +677,7 @@
      390
     ],
     "named": false,
+    "cn_printed": false,
     "coverage": 1.0,
     "opens": "[page 390] Career and Continuing Education Department 386 EAST LOS ANGELES COLLEGE | GENERAL CATALOG | 2026-2027 SUBJECT & NO. COURSE UNITS VOC ED 429CE Technical Skills Training for Patient Transporters ............."
    },
@@ -611,6 +687,7 @@
      196
     ],
     "named": false,
+    "cn_printed": false,
     "coverage": 1.0,
     "opens": "[page 196] Engineering and Technologies Department 192 EAST LOS ANGELES COLLEGE | GENERAL CATALOG | 2026-2027 Upon successful completion of this program, students will be able to: • Apply math computations as they pert"
    },
@@ -621,8 +698,9 @@
      128
     ],
     "named": false,
+    "cn_printed": true,
     "coverage": 1.0,
-    "opens": "[page 127] Executive Legal Assistant (Academic Plan E038333D) This program is designed to give the student essential knowledge of the skills necessary to manage the business aspects of law office operations, together w"
+    "opens": "[page 127] (Academic Plan E038333D) This program is designed to give the student essential knowledge of the skills necessary to manage the business aspects of law office operations, together with a funda - mental under"
    },
    {
     "control_number": "38334",
@@ -630,17 +708,21 @@
      128
     ],
     "named": false,
+    "cn_printed": true,
     "coverage": 1.0,
-    "opens": "[page 128] The International Law and Public Policy Administration Certificate of Achievement provides the student essential knowledge of the skills necessary to manage the business aspects of an international law, bus"
+    "opens": "[page 128] (Academic Plan E038334D) The International Law and Public Policy Administration Certificate of Achievement provides the student essential knowledge of the skills necessary to manage the business aspects of "
    },
    {
     "control_number": "38336",
     "pages": [
-     39
+     143,
+     144,
+     145
     ],
     "named": false,
+    "cn_printed": true,
     "coverage": 0.833,
-    "opens": "[page 39] Academic Resources/Programs EAST LOS ANGELES COLLEGE | GENERAL CATALOG | 2026-2027 35 Distance Education - Hybrid Only Courses The following courses have been approved to be offered through Distance Educatio"
+    "opens": "[page 143] (Academic Plan E038336D) The Chemistry Technician program prepares individuals to become chemistry technicians. The program is highly hands-on, promotes teamwork, and trains students with analytical, practi"
    },
    {
     "control_number": "38337",
@@ -648,17 +730,22 @@
      199
     ],
     "named": false,
+    "cn_printed": false,
     "coverage": 1.0,
     "opens": "[page 199] Engineering and Technologies Department EAST LOS ANGELES COLLEGE | GENERAL CATALOG | 2026-2027 195 Upon successful completion of this program, students will be able to: • Perform test taking strategies for b"
    },
    {
     "control_number": "38373",
     "pages": [
-     185
+     373,
+     374,
+     375,
+     376
     ],
     "named": false,
+    "cn_printed": true,
     "coverage": 1.0,
-    "opens": "[page 185] Dance Department EAST LOS ANGELES COLLEGE | GENERAL CATALOG | 2026-2027 181 CHICANO 030 Chicano Theater ................................. 3 THEATER 123 Theater for Social Justice ...................... 3 "
+    "opens": "[page 373] (Academic Plan E038373D) Students completing this certificate acquire the appli - cable design and technical skills to pursue entry-level positions in entertainment costuming, including: The - atre, dance, th"
    },
    {
     "control_number": "38374",
@@ -666,8 +753,9 @@
      82
     ],
     "named": false,
+    "cn_printed": true,
     "coverage": 1.0,
-    "opens": "[page 82] Phlebotomy Technician (Academic Plan E038374D) Certified Phlebotomy Technicians (CPT) and Limited Phle - botomy Technicians (LPT) are allied health profession - als who perform skin puncture and venipuncture b"
+    "opens": "[page 82] (Academic Plan E038374D) Certified Phlebotomy Technicians (CPT) and Limited Phle - botomy Technicians (LPT) are allied health profession - als who perform skin puncture and venipuncture blood collection in a "
    },
    {
     "control_number": "38427",
@@ -678,6 +766,7 @@
      323
     ],
     "named": false,
+    "cn_printed": false,
     "coverage": 1.0,
     "opens": "[page 320] • Basic Training Academy • Criminal Investigations • Custody Assistant Training • Emergency Medical Awareness and Response • Field Probation Officer Core (FPOC) • Field Training Officer • Fire Academy Training"
    },
@@ -690,17 +779,22 @@
      199
     ],
     "named": false,
+    "cn_printed": true,
     "coverage": 1.0,
-    "opens": "[page 196] Engineering and Technologies Department 192 EAST LOS ANGELES COLLEGE | GENERAL CATALOG | 2026-2027 Upon successful completion of this program, students will be able to: • Apply math computations as they pert"
+    "opens": "[page 196] (Academic Plan E038507D) The IT Technician Pathway: Stage I Computer Retail Sales and Support Certificate of Achievement is the first stage of the statewide IT Technician pathway and prepares stu - dents to"
    },
    {
     "control_number": "38704",
     "pages": [
-     35
+     235,
+     236,
+     237,
+     238
     ],
     "named": false,
+    "cn_printed": true,
     "coverage": 0.667,
-    "opens": "[page 35] Academic Resources/Programs EAST LOS ANGELES COLLEGE | GENERAL CATALOG | 2026-2027 31 HEALTH 103 Cultural Compentence in Health and Social Services ................................. 3 HIST C1001 United State"
+    "opens": "[page 235] (Academic Plan E038704D) The East Los Angeles College Kinesiology Physical Therapy (PT) Aide Certification of Achievement program will pro - vide students with the education, training, and hands on experienc"
    },
    {
     "control_number": "38778",
@@ -709,8 +803,9 @@
      175
     ],
     "named": true,
+    "cn_printed": true,
     "coverage": 1.0,
-    "opens": "[page 174] The Industry Safety Standards Certificate of Achievement is designed to provide students with the safety fundamen - tal skills that will directly impact their existing and future workforce. The course is des"
+    "opens": "[page 174] (Academic Plan E038778D) The Industry Safety Standards Certificate of Achievement is designed to provide students with the safety fundamen - tal skills that will directly impact their existing and future wor"
    },
    {
     "control_number": "39523",
@@ -718,8 +813,9 @@
      128
     ],
     "named": false,
+    "cn_printed": true,
     "coverage": 1.0,
-    "opens": "[page 128] Legal Support Professional (Academic Plan E039523D) This program is an interdisciplinary program designed to increase students’ understanding of the knowledge and skills needed in the legal industry and law-"
+    "opens": "[page 128] (Academic Plan E039523D) This program is an interdisciplinary program designed to increase students’ understanding of the knowledge and skills needed in the legal industry and law-related fields. Upon compl"
    },
    {
     "control_number": "39601",
@@ -727,17 +823,20 @@
      322
     ],
     "named": false,
+    "cn_printed": true,
     "coverage": 1.0,
-    "opens": "[page 322] Fire Academy Training (Academic Plan E039601D) This program meets the minimum training requirements established by California State Fire Marshal’s Office for individuals entering a career in law enforcement."
+    "opens": "[page 322] (Academic Plan E039601D) This program meets the minimum training requirements established by California State Fire Marshal’s Office for individuals entering a career in law enforcement. Program Learning Outc"
    },
    {
     "control_number": "39608",
     "pages": [
+     322,
      323
     ],
     "named": false,
+    "cn_printed": true,
     "coverage": 1.0,
-    "opens": "[page 323] 101 Police Academy Extended (23.5) CSU LECTURE, 7 HOURS; LABORATORY, 50 HOURS. This course meets the minimum training standards estab- lished by the California Peace Officers Standards and Training (P.O.S.T.)"
+    "opens": "[page 322] (Academic Plan E039608D) This program meets the minimum training requirements established by California Peace Officer Standards and Training (POST) for individuals entering a career in law enforcement. Prog"
    },
    {
     "control_number": "39649",
@@ -746,8 +845,9 @@
      323
     ],
     "named": false,
+    "cn_printed": true,
     "coverage": 1.0,
-    "opens": "[page 322] Juvenile Corrections Officer Core (Academic Plan E039649D) This program meets the minimum training requirements established by the California Standards and Training for Corrections. Program Learning Outcomes"
+    "opens": "[page 322] (Academic Plan E039649D) This program meets the minimum training requirements established by the California Standards and Training for Corrections. Program Learning Outcomes: Upon successful completion of th"
    },
    {
     "control_number": "39711",
@@ -757,19 +857,22 @@
      323
     ],
     "named": false,
+    "cn_printed": true,
     "coverage": 1.0,
-    "opens": "[page 321] Field Probation Officer Core (FPOC) (Academic Plan E039711D) This program meets the minimum training requirements established by the California Standards and Training for Corrections. Program Learning Outcom"
+    "opens": "[page 321] (Academic Plan E039711D) This program meets the minimum training requirements established by the California Standards and Training for Corrections. Program Learning Outcomes: Upon successful completion of th"
    },
    {
     "control_number": "39795",
     "pages": [
+     195,
+     196,
      197,
-     198,
-     199
+     198
     ],
     "named": false,
-    "coverage": 0.857,
-    "opens": "[page 197] Engineering and Technologies Department EAST LOS ANGELES COLLEGE | GENERAL CATALOG | 2026-2027 193 **This course has a corequisite . IT Technician Pathway: Stage 3 IT Technician (Academic Plan E039824D) Th"
+    "cn_printed": true,
+    "coverage": 0.714,
+    "opens": "[page 195] (Academic Plan E039795D) The Advanced Manufacturing Engineering Technician pro - gram is designed to train the students and the workforce in high growth and high demand technologies such as; Additive Manufac"
    },
    {
     "control_number": "39796",
@@ -778,8 +881,9 @@
      78
     ],
     "named": false,
+    "cn_printed": true,
     "coverage": 1.0,
-    "opens": "[page 77] • Administrative Medical Assistant • Clinical Medical Assistant • Community Health Worker • Gerontology/Health • Health Information Clerk Typist • Health Information Coding Specialist • Health Information Cod"
+    "opens": "[page 77] (Academic Plan E039796D) Administrative Medical Assistant is a front-office profes - sional who performs the clerical work in doctors’ and hos - pital offices. These professionals are responsible for mul - tipl"
    },
    {
     "control_number": "39800",
@@ -790,19 +894,19 @@
      198
     ],
     "named": false,
+    "cn_printed": false,
     "coverage": 0.6,
     "opens": "[page 195] Engineering and Technologies Department EAST LOS ANGELES COLLEGE | GENERAL CATALOG | 2026-2027 191 propulsion operation in space. A detailed investigation of rocket fundamentals is necessary to acquaint the "
    },
    {
     "control_number": "39823",
     "pages": [
-     197,
-     198,
      199
     ],
     "named": false,
+    "cn_printed": true,
     "coverage": 1.0,
-    "opens": "[page 197] IT Technician Pathway: Stage 3 IT Technician (Academic Plan E039824D) The IT (Information Technology) Technician Certificate of Achievement is the third stage of the statewide IT Techni - cian pathway and e"
+    "opens": "[page 199] (Academic Plan E039823C) The IT (Information Technology) Technician AS Degree is the final stage of the statewide IT Technician pathway and equips students with the advanced IT skills required of an IT Tech"
    },
    {
     "control_number": "39824",
@@ -812,8 +916,9 @@
      199
     ],
     "named": false,
+    "cn_printed": true,
     "coverage": 1.0,
-    "opens": "[page 197] Engineering and Technologies Department EAST LOS ANGELES COLLEGE | GENERAL CATALOG | 2026-2027 193 **This course has a corequisite . IT Technician Pathway: Stage 3 IT Technician (Academic Plan E039824D) Th"
+    "opens": "[page 197] (Academic Plan E039824D) The IT (Information Technology) Technician Certificate of Achievement is the third stage of the statewide IT Techni - cian pathway and equips students with the advanced IT skills req"
    },
    {
     "control_number": "39881",
@@ -824,8 +929,9 @@
      199
     ],
     "named": false,
+    "cn_printed": true,
     "coverage": 1.0,
-    "opens": "[page 196] Engineering and Technologies Department 192 EAST LOS ANGELES COLLEGE | GENERAL CATALOG | 2026-2027 Upon successful completion of this program, students will be able to: • Apply math computations as they pert"
+    "opens": "[page 196] (Academic Plan E039881D) The Help Desk User Support Certificate of Achievement is the second stage of the statewide IT Technician pathway and prepares students to further develop their IT Tech - nician Skill"
    },
    {
     "control_number": "39970",
@@ -834,20 +940,20 @@
      109
     ],
     "named": false,
+    "cn_printed": true,
     "coverage": 1.0,
-    "opens": "[page 108] Museum Studies (Academic Plan E039970D) The Museum Studies Program is aimed at educating, training, and exposing students to diverse careers within museums of all types, and to creating career pipelines thr"
+    "opens": "[page 108] (Academic Plan E039970D) The Museum Studies Program is aimed at educating, training, and exposing students to diverse careers within museums of all types, and to creating career pipelines through academic s"
    },
    {
     "control_number": "40042",
     "pages": [
-     195,
-     196,
-     197,
-     198
+     198,
+     199
     ],
     "named": false,
-    "coverage": 0.636,
-    "opens": "[page 195] Engineering and Technologies Department EAST LOS ANGELES COLLEGE | GENERAL CATALOG | 2026-2027 191 propulsion operation in space. A detailed investigation of rocket fundamentals is necessary to acquaint the "
+    "cn_printed": true,
+    "coverage": 0.727,
+    "opens": "[page 198] (Academic Plan E040042C) The Engineering Technician: Advanced Manufacturing program is designed to train the students and the work - force in high-growth and high-demand technologies such as; Additive Manufa"
    },
    {
     "control_number": "40598",
@@ -856,8 +962,9 @@
      387
     ],
     "named": false,
+    "cn_printed": true,
     "coverage": 1.0,
-    "opens": "[page 386] Administrative Medical Assistant (Academic Plan E040598E) This certificate is designed to prepare students for entry- level courses in the Allied Health and Health Occupation departments. These three courses "
+    "opens": "[page 386] (Academic Plan E040598E) This certificate is designed to prepare students for entry- level courses in the Allied Health and Health Occupation departments. These three courses help students develop knowledge "
    },
    {
     "control_number": "40599",
@@ -865,8 +972,9 @@
      387
     ],
     "named": false,
+    "cn_printed": true,
     "coverage": 1.0,
-    "opens": "[page 387] Emergency First Responder Basic Training (Academic Plan E040599E) This certificate is designed to prepare students for entry- level courses in the Fire Technology program. These five courses help students dev"
+    "opens": "[page 387] (Academic Plan E040599E) This certificate is designed to prepare students for entry- level courses in the Fire Technology program. These five courses help students develop knowledge of lifesaving skills thro"
    },
    {
     "control_number": "40601",
@@ -874,8 +982,9 @@
      391
     ],
     "named": false,
+    "cn_printed": true,
     "coverage": 1.0,
-    "opens": "[page 391] Phlebotomy Technician (Academic Plan E040601E) This certificate is designed to prepare students for entry- level courses in the Allied Health and Health Occupation departments. These four courses help student"
+    "opens": "[page 391] (Academic Plan E040601E) This certificate is designed to prepare students for entry- level courses in the Allied Health and Health Occupation departments. These four courses help students develop knowledge o"
    },
    {
     "control_number": "40602",
@@ -883,8 +992,9 @@
      391
     ],
     "named": false,
+    "cn_printed": true,
     "coverage": 1.0,
-    "opens": "[page 391] Physical Therapist Aide (Academic Plan E040602E) This certificate is designed to prepare students for entry-level courses in the Kinesiology and Allied Health departments. These four courses help students de"
+    "opens": "[page 391] (Academic Plan E040602E) This certificate is designed to prepare students for entry-level courses in the Kinesiology and Allied Health departments. These four courses help students develop knowledge of life"
    },
    {
     "control_number": "40637",
@@ -892,6 +1002,7 @@
      38
     ],
     "named": false,
+    "cn_printed": false,
     "coverage": 1.0,
     "opens": "[page 38] Academic Resources/Programs 34 EAST LOS ANGELES COLLEGE | GENERAL CATALOG | 2026-2027 SOC 012 Marriage and Family Life ....................... 3 SOC 013 Society and Personality ......................... 3 SO"
    },
@@ -901,6 +1012,7 @@
      128
     ],
     "named": false,
+    "cn_printed": false,
     "coverage": 1.0,
     "opens": "[page 128] Business Administration Department 124 EAST LOS ANGELES COLLEGE | GENERAL CATALOG | 2026-2027 Upon successful completion of this program, students will be able to: • Exhibit proficiency in core competencies,"
    },
@@ -910,8 +1022,9 @@
      78
     ],
     "named": false,
+    "cn_printed": true,
     "coverage": 1.0,
-    "opens": "[page 78] Clinical Medical Assistant (Academic Plan E040899D) A Clinical Medical Assistant is a medical support profes - sional that performs a variety of tasks to assist physicians in providing patient care, while ensu"
+    "opens": "[page 78] (Academic Plan E040899D) A Clinical Medical Assistant is a medical support profes - sional that performs a variety of tasks to assist physicians in providing patient care, while ensuring that clinics and hosp"
    },
    {
     "control_number": "41097",
@@ -922,6 +1035,7 @@
      133
     ],
     "named": false,
+    "cn_printed": false,
     "coverage": 1.0,
     "opens": "[page 130] Business Administration Department 126 EAST LOS ANGELES COLLEGE | GENERAL CATALOG | 2026-2027 University system, although not to a particular campus or major. Students can use the website ADT Search by CSU "
    },
@@ -932,8 +1046,9 @@
      72
     ],
     "named": false,
+    "cn_printed": true,
     "coverage": 1.0,
-    "opens": "[page 71] Forensic Crime Scene Investigation, Associate of Science Degree (Academic Plan E041132C) The Associate of Science in Forensic Crime Scene Inves - tigation, offered by the Administration of Justice Depart - men"
+    "opens": "[page 71] (Academic Plan E041132C) The Associate of Science in Forensic Crime Scene Inves - tigation, offered by the Administration of Justice Depart - ment, is intended for students who are interested in pur - suing a c"
    },
    {
     "control_number": "41139",
@@ -943,8 +1058,9 @@
      323
     ],
     "named": false,
+    "cn_printed": true,
     "coverage": 1.0,
-    "opens": "[page 321] Custody Assistant Training (Academic Plan E041139D) This program meets the minimum training requirements established by California Standards and Training for Corrections. Program Learning Outcomes: Upon suc"
+    "opens": "[page 321] (Academic Plan E041139D) This program meets the minimum training requirements established by California Standards and Training for Corrections. Program Learning Outcomes: Upon successful completion of this "
    },
    {
     "control_number": "41218",
@@ -952,26 +1068,32 @@
      257
     ],
     "named": true,
+    "cn_printed": true,
     "coverage": 1.0,
-    "opens": "[page 257] The Health Sciences Certificate, offered by the Life Sci - ences Department, is intended for students planning to apply to accredited nursing schools and/or seeking employment as a nursing assistant or home "
+    "opens": "[page 257] (Academic Plan E041218D) The Health Sciences Certificate, offered by the Life Sci - ences Department, is intended for students planning to apply to accredited nursing schools and/or seeking employment as a n"
    },
    {
     "control_number": "41231",
     "pages": [
-     54
+     92,
+     93,
+     94,
+     95
     ],
     "named": false,
+    "cn_printed": true,
     "coverage": 0.933,
-    "opens": "[page 54] Graduation Requirements 50 EAST LOS ANGELES COLLEGE | GENERAL CATALOG | 2026-2027 C-ID APPROVED COURSES FOR EAST LOS ANGELES COLLEGE Note: This chart is subject to change . Please check https://c-idsystem.org"
+    "opens": "[page 92] (Academic Plan E041231H) Students completing the Associate in Science in Environ - mental Science for Transfer Degree will have satisfied the lower division major preparation for bachelor’s degrees in similar"
    },
    {
     "control_number": "42013",
     "pages": [
-     34
+     392
     ],
     "named": false,
+    "cn_printed": true,
     "coverage": 1.0,
-    "opens": "[page 34] Academic Resources/Programs 30 EAST LOS ANGELES COLLEGE | GENERAL CATALOG | 2026-2027 ENGLISH 204* World Literature II ................................. 3 ENGLISH 205* British Literature I .................."
+    "opens": "[page 392] (Academic Plan E042013F) The Certificate of Competency in English as a Second Lan - guage Academic Bridge prepares second language stu - dents to transition to college credit and degree applica - ble courses a"
    },
    {
     "control_number": "42014",
@@ -979,17 +1101,19 @@
      392
     ],
     "named": true,
+    "cn_printed": true,
     "coverage": 1.0,
-    "opens": "[page 392] This Certificate of Competency in English for Citizenship enhances the English language skills of limited-English speaking students while preparing them for the United States Naturalization examination. The"
+    "opens": "[page 392] (Academic Plan E042014F) This Certificate of Competency in English for Citizenship enhances the English language skills of limited-English speaking students while preparing them for the United States Natura"
    },
    {
     "control_number": "42017",
     "pages": [
-     31
+     393
     ],
     "named": false,
+    "cn_printed": true,
     "coverage": 1.0,
-    "opens": "[page 31] BSICSKL 034CE High School Equivalency Test Preparation 0 BSICSKL 075CE Introduction to Post-Secondary Education ........................................ 0 BSICSKL 082CE GED Preparation: Reading Skills ......"
+    "opens": "[page 393] (Academic Plan E042017F) The Certificate of Competency in High School Equivalency Test Preparation prepares students to pass subject tests in reading, writing, mathematics, sciences, and social stud - ies in"
    },
    {
     "control_number": "42065",
@@ -997,8 +1121,9 @@
      389
     ],
     "named": false,
+    "cn_printed": true,
     "coverage": 1.0,
-    "opens": "[page 389] Career and Continuing Education Department EAST LOS ANGELES COLLEGE | GENERAL CATALOG | 2026-2027 385 course covers the literacy skills, reading and writing, as well as the oral skills, listening and speakin"
+    "opens": "[page 389] (Academic Plan E042065E) The Healthcare Professions Preparations Certificate of Completion program provides students with an overview and job readiness skills for healthcare careers. Students explore health"
    },
    {
     "control_number": "42174",
@@ -1009,8 +1134,9 @@
      356
     ],
     "named": true,
+    "cn_printed": true,
     "coverage": 1.0,
-    "opens": "[page 353] The Pathway to Law School certificate of achievement enhances a student’s academic preparation for law school. A law school accredited by the American Bar Association will typically require the completion o"
+    "opens": "[page 353] (Academic Plan E042174D) The Pathway to Law School certificate of achievement enhances a student’s academic preparation for law school. A law school accredited by the American Bar Association will typically"
    },
    {
     "control_number": "42672",
@@ -1019,27 +1145,31 @@
      168
     ],
     "named": true,
+    "cn_printed": true,
     "coverage": 1.0,
-    "opens": "[page 167] • Communication Studies 2.0 for Transfer Associate Degree Program Associate in Arts in Communication Studies 2.0 for Transfer (Academic Plan E042672G) Students completing the Associate in Arts in Communica - "
+    "opens": "[page 167] (Academic Plan E042672G) Students completing the Associate in Arts in Communica - tion Studies for Transfer Degree 2.0 will have satisfied the lower division major preparation for bachelor’s degrees in simil"
    },
    {
     "control_number": "43039",
     "pages": [
+     146,
      147,
      148
     ],
     "named": false,
+    "cn_printed": true,
     "coverage": 1.0,
-    "opens": "[page 147] CHICANO 033 Introduction to Central American Studies 3 CHICANO 034 Central American Arts .......................... 3 CHICANO 036 Central American Film .......................... 3 ARTHIST 140 Survey of the"
+    "opens": "[page 146] (Academic Plan E043039C) Central American Studies at East Los Angeles College is an interdisciplinary academic program which aims to expand students’ understanding and appreciation of Central American lives"
    },
    {
     "control_number": "43152",
     "pages": [
-     39
+     390
     ],
     "named": false,
+    "cn_printed": true,
     "coverage": 1.0,
-    "opens": "[page 39] Academic Resources/Programs EAST LOS ANGELES COLLEGE | GENERAL CATALOG | 2026-2027 35 Distance Education - Hybrid Only Courses The following courses have been approved to be offered through Distance Educatio"
+    "opens": "[page 390] (Academic Plan E043152E) This program examines makeup design and application for the fashion and entertainment industries. Students create a makeup portfolio with their makeup designs and brands. Learn abou"
    },
    {
     "control_number": "43632",
@@ -1048,17 +1178,20 @@
      360
     ],
     "named": false,
+    "cn_printed": false,
     "coverage": 1.0,
     "opens": "[page 359] shape social work and human services practice. • Apply culturally responsive approaches when work - ing with diverse populations across the human lifespan. • Evaluate social policies, social justice issues, a"
    },
    {
     "control_number": "43634",
     "pages": [
-     32
+     155,
+     156
     ],
     "named": false,
+    "cn_printed": true,
     "coverage": 1.0,
-    "opens": "[page 32] Academic Resources/Programs 28 EAST LOS ANGELES COLLEGE | GENERAL CATALOG | 2026-2027 BUS 001 Introduction to Business ........................ 3 BUS 011 Job Retention and Responsibility ............. 1 BUS "
+    "opens": "[page 155] (Academic Plan E043634D) This certificate of achievement is for students who wish to specialize in the early childhood curriculum areas of science, technology, engineering, arts, and mathemat - ics (STEAM). "
    },
    {
     "control_number": "43649",
@@ -1066,8 +1199,9 @@
      133
     ],
     "named": false,
+    "cn_printed": true,
     "coverage": 1.0,
-    "opens": "[page 133] Paralegal Studies, Associate in Arts Degree (Academic Plan E043649C) The Paralegal Program is designed to prepare the student to assist attorneys and legal professionals in all phases of legal work. The pro"
+    "opens": "[page 133] (Academic Plan E043649C) The Paralegal Program is designed to prepare the student to assist attorneys and legal professionals in all phases of legal work. The program also equips students with the knowledge"
    },
    {
     "control_number": "43725",
@@ -1078,26 +1212,32 @@
      242
     ],
     "named": false,
+    "cn_printed": false,
     "coverage": 1.0,
     "opens": "[page 239] Kinesiology Department EAST LOS ANGELES COLLEGE | GENERAL CATALOG | 2026-2027 235 • Apply outdoor recreation techniques and principles to facilitate enjoyable and sustainable outdoor expe - riences, emphasi"
    },
    {
     "control_number": "44329",
     "pages": [
-     38
+     371,
+     372,
+     373,
+     374
     ],
     "named": false,
+    "cn_printed": true,
     "coverage": 1.0,
-    "opens": "[page 38] Academic Resources/Programs 34 EAST LOS ANGELES COLLEGE | GENERAL CATALOG | 2026-2027 SOC 012 Marriage and Family Life ....................... 3 SOC 013 Society and Personality ......................... 3 SO"
+    "opens": "[page 371] (Academic Plan E044329D) The Certificate of Achievement in Acting for Stage and Screen provides students with fundamental performance skills to pursue acting careers in theater, film, television, commercial"
    },
    {
     "control_number": "44368",
     "pages": [
-     32
+     155
     ],
     "named": false,
+    "cn_printed": true,
     "coverage": 1.0,
-    "opens": "[page 32] Academic Resources/Programs 28 EAST LOS ANGELES COLLEGE | GENERAL CATALOG | 2026-2027 BUS 001 Introduction to Business ........................ 3 BUS 011 Job Retention and Responsibility ............. 1 BUS "
+    "opens": "[page 155] (Academic Plan E044368D) This certificate of achievement is for students who aspire to specialize in the standardized assessment tools used in early childhood education programs. This certificate is designe"
    },
    {
     "control_number": "44375",
@@ -1105,17 +1245,21 @@
      127
     ],
     "named": true,
+    "cn_printed": true,
     "coverage": 0.6,
-    "opens": "[page 127] The Data Analytics Certificate of Achievement at ELAC offers an immersive educational experience, equipping students with the necessary skills in data analytics to transform raw data into insightful busines"
+    "opens": "[page 127] (Academic Plan E044375D) The Data Analytics Certificate of Achievement at ELAC offers an immersive educational experience, equipping students with the necessary skills in data analytics to transform raw dat"
    },
    {
     "control_number": "44539",
     "pages": [
-     32
+     156,
+     157,
+     158
     ],
     "named": false,
+    "cn_printed": true,
     "coverage": 1.0,
-    "opens": "[page 32] Academic Resources/Programs 28 EAST LOS ANGELES COLLEGE | GENERAL CATALOG | 2026-2027 BUS 001 Introduction to Business ........................ 3 BUS 011 Job Retention and Responsibility ............. 1 BUS "
+    "opens": "[page 156] (Academic Plan E044539D) This certificate of achievement is designed for Early Child - hood Education students wanting to enhance their under - standing of equity, inclusion, access and diversity. It will pre"
    },
    {
     "control_number": "44540",
@@ -1123,20 +1267,22 @@
      274
     ],
     "named": false,
+    "cn_printed": true,
     "coverage": 1.0,
-    "opens": "[page 274] Animation and VFX Apprenticeship (Academic Plan E044540D) This is an apprenticeship certificate program that will focus on further preparing students entering careers in animation, visual effects (VFX) and o"
+    "opens": "[page 274] (Academic Plan E044540D) This is an apprenticeship certificate program that will focus on further preparing students entering careers in animation, visual effects (VFX) and other entertain - ment technologie"
    },
    {
     "control_number": "44541",
     "pages": [
+     372,
      373,
      374,
-     375,
-     376
+     375
     ],
-    "named": false,
-    "coverage": 0.829,
-    "opens": "[page 373] Theater Arts Department EAST LOS ANGELES COLLEGE | GENERAL CATALOG | 2026-2027 369 TECTHTR 345 Costume Practicum .............................. 2 OR TECTHTR 346 Lighting Practicum ........................."
+    "named": true,
+    "cn_printed": true,
+    "coverage": 1.0,
+    "opens": "[page 372] (Academic Plan E044541D) The Certificate of Achievement in Entertainment Craft pre - pares students with foundational skills for entry-level posi - tions in the following entertainment, film, television, and "
    },
    {
     "control_number": "44595",
@@ -1146,6 +1292,7 @@
      261
     ],
     "named": false,
+    "cn_printed": false,
     "coverage": 0.92,
     "opens": "[page 259] BIOLOGY 051 Introduction to Public Health for Scientists and Health Professionals ................... 3 OR HEALTH 101 Introduction to Public Health .................. 3 STAT C1000 Introduction to Statistics"
    },
@@ -1158,8 +1305,9 @@
      278
     ],
     "named": false,
+    "cn_printed": true,
     "coverage": 0.941,
-    "opens": "[page 275] Digital Film Production (Academic Plan E044624D) Students earning the Certificate of Achievement in Digital Film Production gain hands-on experience for entry-level positions across the spectrum of film, tel"
+    "opens": "[page 275] (Academic Plan E044624D) Students earning the Certificate of Achievement in Digital Film Production gain hands-on experience for entry-level positions across the spectrum of film, television, video, broadca"
    },
    {
     "control_number": "44840",
@@ -1170,17 +1318,19 @@
      131
     ],
     "named": true,
+    "cn_printed": true,
     "coverage": 1.0,
-    "opens": "[page 128] The Paralegal Certificate of Achievement course of study includes a combination of classes covering a broad range of paralegal and law topics designed to produce a pro - fessional, competent, paralegal prepa"
+    "opens": "[page 128] (Academic Plan E044840D) The Paralegal Certificate of Achievement course of study includes a combination of classes covering a broad range of paralegal and law topics designed to produce a pro - fessional, c"
    },
    {
     "control_number": "44913",
     "pages": [
-     34
+     393
     ],
     "named": false,
+    "cn_printed": true,
     "coverage": 1.0,
-    "opens": "[page 34] Academic Resources/Programs 30 EAST LOS ANGELES COLLEGE | GENERAL CATALOG | 2026-2027 ENGLISH 204* World Literature II ................................. 3 ENGLISH 205* British Literature I .................."
+    "opens": "[page 393] (Academic Plan E044913F) This Certificate of Competency in English through Cultural Competency is designed to enhance the English language skills of limited-English speaking students while introduc - ing the"
    },
    {
     "control_number": "45051",
@@ -1188,6 +1338,7 @@
      35
     ],
     "named": false,
+    "cn_printed": false,
     "coverage": 1.0,
     "opens": "[page 35] Academic Resources/Programs EAST LOS ANGELES COLLEGE | GENERAL CATALOG | 2026-2027 31 HEALTH 103 Cultural Compentence in Health and Social Services ................................. 3 HIST C1001 United State"
    },
@@ -1199,17 +1350,22 @@
      239
     ],
     "named": false,
+    "cn_printed": true,
     "coverage": 1.0,
-    "opens": "[page 237] Yoga Teacher Training (Academic Plan E045406D) The Yoga Teacher Training Program (200-hour certifica - tion) at East Los Angeles College is designed to meet the standards set by Yoga Alliance, enabling gradua"
+    "opens": "[page 237] (Academic Plan E045406D) The Yoga Teacher Training Program (200-hour certifica - tion) at East Los Angeles College is designed to meet the standards set by Yoga Alliance, enabling graduates to register as ce"
    },
    {
     "control_number": "45413",
     "pages": [
-     32
+     157,
+     158,
+     159,
+     160
     ],
     "named": false,
+    "cn_printed": true,
     "coverage": 1.0,
-    "opens": "[page 32] Academic Resources/Programs 28 EAST LOS ANGELES COLLEGE | GENERAL CATALOG | 2026-2027 BUS 001 Introduction to Business ........................ 3 BUS 011 Job Retention and Responsibility ............. 1 BUS "
+    "opens": "[page 157] (Academic Plan E045413D) This certificate of achievement is designed for Early Child - hood Education students wanting to enhance their under - standing of equity, inclusion, access and diversity. It will pre"
    },
    {
     "control_number": "45414",
@@ -1220,8 +1376,9 @@
      239
     ],
     "named": true,
+    "cn_printed": true,
     "coverage": 1.0,
-    "opens": "[page 236] The Recreation Specialist Certificate of Achievement pro - gram prepares students with essential knowledge and practical skills to embark on entry-level careers in the dynamic recreation industry. This progr"
+    "opens": "[page 236] (Academic Plan E045414D) The Recreation Specialist Certificate of Achievement pro - gram prepares students with essential knowledge and practical skills to embark on entry-level careers in the dynamic recrea"
    },
    {
     "control_number": "45491",
@@ -1229,8 +1386,9 @@
      274
     ],
     "named": false,
+    "cn_printed": true,
     "coverage": 1.0,
-    "opens": "[page 274] Character Animation (Academic Plan E045491D) This is a program certificate that serves as a continua - tion for Animation Level I, providing an emphasis in both 2D and 3D character animation. This program is "
+    "opens": "[page 274] (Academic Plan E045491D) This is a program certificate that serves as a continua - tion for Animation Level I, providing an emphasis in both 2D and 3D character animation. This program is recom - mended for s"
    },
    {
     "control_number": "45540",
@@ -1238,18 +1396,22 @@
      345
     ],
     "named": false,
+    "cn_printed": false,
     "coverage": 0.625,
     "opens": "[page 345] Respiratory Therapy Department EAST LOS ANGELES COLLEGE | GENERAL CATALOG | 2026-2027 341 Upon successful completion of this program, students will be able to: • Demonstrate competent and safe equipment man"
    },
    {
     "control_number": "45587",
     "pages": [
-     278,
-     279
+     275,
+     276,
+     277,
+     278
     ],
     "named": false,
+    "cn_printed": true,
     "coverage": 1.0,
-    "opens": "[page 278] Media Arts and Technologies Department 274 EAST LOS ANGELES COLLEGE | GENERAL CATALOG | 2026-2027 and technical skills using industry-standard software. The curriculum is designed to reflect industry workflo"
+    "opens": "[page 275] (Academic Plan E045587D) This is a certificate program that serves as a continuation for Animation Level I, providing an emphasis in Entertain - ment technology and Visual Effects. This program is rec - ommen"
    },
    {
     "control_number": "45588",
@@ -1259,17 +1421,20 @@
      279
     ],
     "named": false,
+    "cn_printed": true,
     "coverage": 1.0,
-    "opens": "[page 277] Visual Development for Animation (Academic Plan E045588D) This is a certificate program that serves as a continua - tion for Animation Level I, providing an emphasis in Visual Development. This program is rec"
+    "opens": "[page 277] (Academic Plan E045588D) This is a certificate program that serves as a continua - tion for Animation Level I, providing an emphasis in Visual Development. This program is recommended for students with a des"
    },
    {
     "control_number": "45589",
     "pages": [
-     54
+     353,
+     354
     ],
     "named": false,
+    "cn_printed": true,
     "coverage": 1.0,
-    "opens": "[page 54] Graduation Requirements 50 EAST LOS ANGELES COLLEGE | GENERAL CATALOG | 2026-2027 C-ID APPROVED COURSES FOR EAST LOS ANGELES COLLEGE Note: This chart is subject to change . Please check https://c-idsystem.org"
+    "opens": "[page 353] (Academic Plan E045589D) The Certificate of Achievement in Social Work and Human Services is a certificate offered by the Social Science Department. The proposed Certificate of Achievement in Social Work an"
    },
    {
     "control_number": "45591",
@@ -1278,8 +1443,9 @@
      71
     ],
     "named": false,
+    "cn_printed": true,
     "coverage": 1.0,
-    "opens": "[page 70] Wildland Firefighting (Academic Plan E045591D) (with Public Safety Affiliation Department) This certificate program meets the minimum training requirements extablished by the US Forest Service in the wildland"
+    "opens": "[page 70] (Academic Plan E045591D) (with Public Safety Affiliation Department) This certificate program meets the minimum training requirements extablished by the US Forest Service in the wildland firefighting sector a"
    },
    {
     "control_number": "45602",
@@ -1289,8 +1455,9 @@
      291
     ],
     "named": false,
+    "cn_printed": true,
     "coverage": 1.0,
-    "opens": "[page 289] Recording and Sound Design (Academic Plan E045602D) The Certificate of Achievement in Recording and Sound Design is designed to assist students who are pursuing careers in the field of Recording Arts and Sou"
+    "opens": "[page 289] (Academic Plan E045602D) The Certificate of Achievement in Recording and Sound Design is designed to assist students who are pursuing careers in the field of Recording Arts and Sound Design. Designed and ma"
    },
    {
     "control_number": "45715",
@@ -1298,8 +1465,9 @@
      322
     ],
     "named": false,
+    "cn_printed": true,
     "coverage": 1.0,
-    "opens": "[page 322] Paramedic (Academic Plan E045715D) This program meets the minimum training requirements established by the California Emergency Medical Services Authority. This Certificate is designed to help prepare stu - "
+    "opens": "[page 322] (Academic Plan E045715D) This program meets the minimum training requirements established by the California Emergency Medical Services Authority. This Certificate is designed to help prepare stu - dents to b"
    },
    {
     "control_number": "45716",
@@ -1309,30 +1477,32 @@
      323
     ],
     "named": false,
+    "cn_printed": true,
     "coverage": 1.0,
-    "opens": "[page 321] Field Training Officer (Academic Plan E045716D) This program meets the minimum training requirements established by the California Standards and Training for Public Safety Officers. This Certificate is desig"
+    "opens": "[page 321] (Academic Plan E045716D) This program meets the minimum training requirements established by the California Standards and Training for Public Safety Officers. This Certificate is designed to help prepare st"
    },
    {
     "control_number": "45717",
     "pages": [
+     320,
      321,
      322
     ],
     "named": false,
-    "coverage": 0.833,
-    "opens": "[page 321] Public Safety Affiliation Department EAST LOS ANGELES COLLEGE | GENERAL CATALOG | 2026-2027 317 PUBSERV 302 Advanced Criminal Investigation ........... 2 PUBSERV 303 Analytical Interviewing-Basic .........."
+    "cn_printed": true,
+    "coverage": 1.0,
+    "opens": "[page 320] (Academic Plan E045717D) This program meets the minimum training requirements established by the California Standards and Training for Public Safety Officers to help prepare students for the challenges face"
    },
    {
     "control_number": "45718",
     "pages": [
-     320,
-     321,
      322,
      323
     ],
     "named": false,
+    "cn_printed": true,
     "coverage": 1.0,
-    "opens": "[page 320] • Patrol Procedures • Police Academy Extended • Supervision • Traffic Investigations • Wildland Firefighting Certificates of Achievement Basic Training Academy (Academic Plan E038472D) This course meets the mi"
+    "opens": "[page 322] (Academic Plan E045718D) This program meets the minimum training requirements established by the California Standards and Training for Public Safety Officers. This Certificate is designed to help prepare st"
    },
    {
     "control_number": "45752",
@@ -1340,8 +1510,9 @@
      323
     ],
     "named": false,
+    "cn_printed": true,
     "coverage": 1.0,
-    "opens": "[page 323] Supervision (Academic Plan E045752D) This program meets the minimum training requirements established by the California Standards and Training for Public Safety Officers. This Certificate is designed to help"
+    "opens": "[page 323] (Academic Plan E045752D) This program meets the minimum training requirements established by the California Standards and Training for Public Safety Officers. This Certificate is designed to help prepare st"
    },
    {
     "control_number": "45753",
@@ -1349,8 +1520,9 @@
      323
     ],
     "named": false,
+    "cn_printed": true,
     "coverage": 1.0,
-    "opens": "[page 323] Traffic Investigations (Academic Plan E045753D) This program meets the minimum training requirements established by the California Standards and Training for Public Safety Officers or those officers engaged "
+    "opens": "[page 323] (Academic Plan E045753D) This program meets the minimum training requirements established by the California Standards and Training for Public Safety Officers or those officers engaged in traffic investigati"
    },
    {
     "control_number": "45935",
@@ -1358,6 +1530,7 @@
      54
     ],
     "named": false,
+    "cn_printed": false,
     "coverage": 1.0,
     "opens": "[page 54] Graduation Requirements 50 EAST LOS ANGELES COLLEGE | GENERAL CATALOG | 2026-2027 C-ID APPROVED COURSES FOR EAST LOS ANGELES COLLEGE Note: This chart is subject to change . Please check https://c-idsystem.org"
    },
@@ -1370,6 +1543,7 @@
      238
     ],
     "named": true,
+    "cn_printed": false,
     "coverage": 0.857,
     "opens": "[page 235] The Sports Medicine Skills Certificate provides an intro - ductory education and training for individuals pursu - ing careers in the dynamic field of sports health and injury management. This Skills Certifica"
    },
@@ -1382,8 +1556,9 @@
      242
     ],
     "named": true,
+    "cn_printed": true,
     "coverage": 1.0,
-    "opens": "[page 239] Sports Medicine, Associate in Arts Degree (Academic Plan E045987C) The Sports Medicine Associate Degree program provides comprehensive education and training for individuals pursuing careers in the dynamic f"
+    "opens": "[page 239] (Academic Plan E045987C) The Sports Medicine Associate Degree program provides comprehensive education and training for individuals pursuing careers in the dynamic field of sports health and injury manageme"
    },
    {
     "control_number": "46264",
@@ -1391,8 +1566,9 @@
      386
     ],
     "named": true,
+    "cn_printed": true,
     "coverage": 1.0,
-    "opens": "[page 386] The AI Essentials for College and Career Success noncredit certificate program is designed to introduce learners to the foundational concepts of artificial intelligence (AI) and its growing role in both aca"
+    "opens": "[page 386] (Academic Plan E046264E) The AI Essentials for College and Career Success noncredit certificate program is designed to introduce learners to the foundational concepts of artificial intelligence (AI) and its"
    },
    {
     "control_number": "46328",
@@ -1402,8 +1578,9 @@
      71
     ],
     "named": false,
+    "cn_printed": true,
     "coverage": 1.0,
-    "opens": "[page 69] Administration of Justice Department EAST LOS ANGELES COLLEGE | GENERAL CATALOG | 2026-2027 65 Administration of Justice, Law Emphasis (Academic Plan E038159D) This certificate program is designed for those st"
+    "opens": "[page 69] (Academic Plan E046328D) (with Public Safety Affiliation Department) This program meets the minimum training requirements established by the California Emergency Medical Services Authority. This Certificate "
    },
    {
     "control_number": "46343",
@@ -1411,73 +1588,78 @@
      265
     ],
     "named": true,
+    "cn_printed": true,
     "coverage": 1.0,
-    "opens": "[page 265] Mathematics 2.0 for Transfer (Academic Plan E046343H) Students completing the Associate in Science in Math - ematics 2.0 for Transfer Degree will have satisfied the lower division major preparation for bachel"
+    "opens": "[page 265] (Academic Plan E046343H) Students completing the Associate in Science in Math - ematics 2.0 for Transfer Degree will have satisfied the lower division major preparation for bachelor’s degrees in similar majo"
    },
    {
     "control_number": "46348",
     "pages": [
-     265
+     311,
+     312,
+     313
     ],
-    "named": false,
-    "coverage": 0.941,
-    "opens": "[page 265] Mathematics Department EAST LOS ANGELES COLLEGE | GENERAL CATALOG | 2026-2027 261 COMPLETE FOURTEEN UNITS FROM THE FOLLOWING: 14 BIOLOGY 006* General Biology I .................................. 5 BIOLOGY 00"
+    "named": true,
+    "cn_printed": true,
+    "coverage": 1.0,
+    "opens": "[page 311] (Academic Plan E046348H) Students completing the Associate in Science in Physics 2.0 for Transfer Degree will have satisfied the lower division major preparation for bachelor’s degrees in similar majors as "
    },
    {
     "control_number": "46461",
     "pages": [
+     277,
      278,
      279,
-     280,
-     281
+     280
     ],
-    "named": false,
+    "named": true,
+    "cn_printed": true,
     "coverage": 1.0,
-    "opens": "[page 278] mensional content for animation, visual effects, and interactive entertainment work. • Employ industry-standard digital tools, workflows, and practices in the creation of digital media. • Develop characters,"
+    "opens": "[page 277] (Academic Plan E046461C) This program provides students with a strong founda - tion in different areas of digital entertainment industry. Through hands-on training in 3D production, character animation, VFX,"
    }
   ]
  },
  "loads": 2,
- "seconds": 259.6,
- "found": 142,
+ "seconds": 267.0,
+ "found": 141,
  "by_method": {
   "no_closed_list": 87,
-  "not_found": 5,
-  "pdf_pages": 142
+  "not_found": 6,
+  "pdf_pages": 141
  },
  "shared_pages": {
-  "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=30": [
+  "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=102": [
    "02430",
-   "08252",
+   "21157"
+  ],
+  "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=70": [
    "13340",
-   "13341",
-   "24040",
-   "35759",
-   "38159"
+   "45591"
   ],
   "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=69": [
    "13343",
+   "38159",
    "46328"
   ],
-  "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=376": [
+  "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=373": [
    "14869",
-   "33641"
+   "38373"
   ],
-  "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=31": [
-   "24129",
-   "42017"
+  "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=197": [
+   "21174",
+   "39824"
   ],
-  "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=240": [
-   "31017",
-   "38090"
+  "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=387": [
+   "24040",
+   "40599"
   ],
   "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=167": [
    "32154",
    "42672"
   ],
-  "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=360": [
+  "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=359": [
    "32170",
-   "35888"
+   "43632"
   ],
   "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=291": [
    "33382",
@@ -1485,24 +1667,22 @@
   ],
   "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=265": [
    "33681",
-   "46343",
-   "46348"
+   "46343"
   ],
-  "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=35": [
+  "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=78": [
    "33915",
-   "38704",
-   "45051"
+   "40899"
   ],
-  "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=258": [
+  "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=354": [
+   "35087",
+   "36345"
+  ],
+  "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=257": [
    "35309",
-   "37923"
+   "41218"
   ],
   "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=54": [
    "35397",
-   "36177",
-   "36345",
-   "41231",
-   "45589",
    "45935"
   ],
   "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=391": [
@@ -1510,29 +1690,22 @@
    "40601",
    "40602"
   ],
-  "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=34": [
+  "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=392": [
    "35758",
+   "36378",
    "42013",
+   "42014"
+  ],
+  "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=393": [
+   "35759",
+   "42017",
    "44913"
   ],
-  "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=32": [
-   "35771",
-   "43634",
-   "44368",
-   "44539",
-   "45413"
-  ],
-  "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=82": [
-   "35902",
-   "38374"
-  ],
-  "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=41": [
+  "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=390": [
    "36377",
-   "37391"
-  ],
-  "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=392": [
-   "36378",
-   "42014"
+   "37391",
+   "38317",
+   "43152"
   ],
   "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=386": [
    "37510",
@@ -1543,14 +1716,26 @@
    "37924",
    "44595"
   ],
-  "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=39": [
+  "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=143": [
    "37956",
-   "38336",
-   "43152"
+   "38336"
   ],
-  "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=36": [
+  "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=289": [
+   "37965",
    "38205",
+   "45602"
+  ],
+  "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=311": [
+   "38093",
+   "46348"
+  ],
+  "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=288": [
+   "38169",
    "38206"
+  ],
+  "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=372": [
+   "38170",
+   "44541"
   ],
   "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=196": [
    "38332",
@@ -1567,38 +1752,41 @@
    "40898",
    "44840"
   ],
+  "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=199": [
+   "38337",
+   "39823"
+  ],
   "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=320": [
    "38427",
-   "45718"
+   "45717"
+  ],
+  "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=235": [
+   "38704",
+   "45986"
   ],
   "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=322": [
    "39601",
-   "39649",
-   "45715"
-  ],
-  "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=323": [
    "39608",
-   "45752",
-   "45753"
+   "39649",
+   "45715",
+   "45718"
   ],
   "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=321": [
    "39711",
    "41139",
-   "45716",
-   "45717"
-  ],
-  "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=197": [
-   "39795",
-   "39823",
-   "39824"
+   "45716"
   ],
   "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=195": [
-   "39800",
-   "40042"
+   "39795",
+   "39800"
   ],
-  "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=38": [
-   "40637",
-   "44329"
+  "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=353": [
+   "42174",
+   "45589"
+  ],
+  "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=155": [
+   "43634",
+   "44368"
   ],
   "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=239": [
    "43725",
@@ -1608,12 +1796,35 @@
    "44540",
    "45491"
   ],
-  "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=278": [
-   "45587",
+  "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=275": [
+   "44624",
+   "45587"
+  ],
+  "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=277": [
+   "45588",
    "46461"
+  ],
+  "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=323": [
+   "45752",
+   "45753"
   ]
  },
  "not_found": [
+  {
+   "control_number": "38090",
+   "title": "Fitness Specialist Certification",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "pages": [
+     235,
+     236,
+     237,
+     238
+    ],
+    "coverage": 0.222,
+    "heading": "(Academic Plan E038090D)"
+   }
+  },
   {
    "control_number": "38165",
    "title": "Cloud Computing",
@@ -1674,21 +1885,21 @@
  ],
  "page_claimed": [],
  "coverage_bands": {
-  "0.5-0.8": 12,
-  "0.8-1.0": 20,
-  "1.0": 110
+  "0.5-0.8": 13,
+  "0.8-1.0": 14,
+  "1.0": 114
  },
  "would_extract": {
   "against": null,
   "kept": 0,
-  "programs": 142,
+  "programs": 141,
   "list": [
    {
     "control_number": "02430",
     "title": "Architectural Design",
     "award": "A.A. Degree",
-    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=30",
-    "coverage": 0.833,
+    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=102",
+    "coverage": 0.5,
     "was_url": null,
     "was_coverage": null,
     "was_method": null
@@ -1707,8 +1918,8 @@
     "control_number": "08252",
     "title": "Architectural Technology",
     "award": "A.A. Degree",
-    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=30",
-    "coverage": 0.9,
+    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=103",
+    "coverage": 0.5,
     "was_url": null,
     "was_coverage": null,
     "was_method": null
@@ -1717,7 +1928,7 @@
     "control_number": "13340",
     "title": "Forensic Crime Scene Investigation",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=30",
+    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=70",
     "coverage": 1.0,
     "was_url": null,
     "was_coverage": null,
@@ -1727,7 +1938,7 @@
     "control_number": "13341",
     "title": "Chemical Dependency Specialist in Criminal Justice",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=30",
+    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=68",
     "coverage": 1.0,
     "was_url": null,
     "was_coverage": null,
@@ -1747,8 +1958,8 @@
     "control_number": "14869",
     "title": "Stage Management and Production",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=376",
-    "coverage": 1.0,
+    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=373",
+    "coverage": 0.75,
     "was_url": null,
     "was_coverage": null,
     "was_method": null
@@ -1757,8 +1968,8 @@
     "control_number": "21157",
     "title": "Architectural Technology",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=101",
-    "coverage": 1.0,
+    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=102",
+    "coverage": 0.833,
     "was_url": null,
     "was_coverage": null,
     "was_method": null
@@ -1767,8 +1978,8 @@
     "control_number": "21174",
     "title": "Engineering Graphics & Design Technology",
     "award": "A.S. Degree",
-    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=198",
-    "coverage": 0.684,
+    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=197",
+    "coverage": 1.0,
     "was_url": null,
     "was_coverage": null,
     "was_method": null
@@ -1777,7 +1988,7 @@
     "control_number": "24040",
     "title": "Basic Writing Success",
     "award": "Noncredit program",
-    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=30",
+    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=387",
     "coverage": 1.0,
     "was_url": null,
     "was_coverage": null,
@@ -1817,7 +2028,7 @@
     "control_number": "32170",
     "title": "Sociology",
     "award": "A.A- T Degree",
-    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=360",
+    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=359",
     "coverage": 1.0,
     "was_url": null,
     "was_coverage": null,
@@ -1887,7 +2098,7 @@
     "control_number": "33641",
     "title": "Theatre Arts",
     "award": "A.A- T Degree",
-    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=376",
+    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=375",
     "coverage": 1.0,
     "was_url": null,
     "was_coverage": null,
@@ -1907,7 +2118,7 @@
     "control_number": "33915",
     "title": "Gerontology - Health",
     "award": "Certificate of Achievement: 12 to fewer than 18 semester(or 18 to fewer than 27 ",
-    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=35",
+    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=78",
     "coverage": 1.0,
     "was_url": null,
     "was_coverage": null,
@@ -1937,7 +2148,7 @@
     "control_number": "35309",
     "title": "Environmental Studies- Biology",
     "award": "A.A. Degree",
-    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=258",
+    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=257",
     "coverage": 1.0,
     "was_url": null,
     "was_coverage": null,
@@ -1977,7 +2188,7 @@
     "control_number": "35758",
     "title": "English as a Second Language Communication Competency",
     "award": "Noncredit program",
-    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=34",
+    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=392",
     "coverage": 1.0,
     "was_url": null,
     "was_coverage": null,
@@ -1987,7 +2198,7 @@
     "control_number": "35759",
     "title": "Reading and Writing Foundations",
     "award": null,
-    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=30",
+    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=393",
     "coverage": 1.0,
     "was_url": null,
     "was_coverage": null,
@@ -1997,7 +2208,7 @@
     "control_number": "35771",
     "title": "Technology for E-Commerce & Entrepreneurs",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=32",
+    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=176",
     "coverage": 1.0,
     "was_url": null,
     "was_coverage": null,
@@ -2027,7 +2238,7 @@
     "control_number": "35902",
     "title": "Interventional Radiology Coding",
     "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
-    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=82",
+    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=81",
     "coverage": 1.0,
     "was_url": null,
     "was_coverage": null,
@@ -2037,8 +2248,8 @@
     "control_number": "36177",
     "title": "Geology",
     "award": "A.S. T Degree",
-    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=54",
-    "coverage": 0.833,
+    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=94",
+    "coverage": 1.0,
     "was_url": null,
     "was_coverage": null,
     "was_method": null
@@ -2047,8 +2258,8 @@
     "control_number": "36345",
     "title": "Economics",
     "award": "A.A- T Degree",
-    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=54",
-    "coverage": 0.706,
+    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=354",
+    "coverage": 1.0,
     "was_url": null,
     "was_coverage": null,
     "was_method": null
@@ -2057,7 +2268,7 @@
     "control_number": "36377",
     "title": "Nutrition for a Healthy Lifestyle",
     "award": "Noncredit program",
-    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=41",
+    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=390",
     "coverage": 1.0,
     "was_url": null,
     "was_coverage": null,
@@ -2087,7 +2298,7 @@
     "control_number": "37391",
     "title": "Non-Medical In-Home Health Care Aide",
     "award": "Noncredit program",
-    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=41",
+    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=390",
     "coverage": 1.0,
     "was_url": null,
     "was_coverage": null,
@@ -2127,7 +2338,7 @@
     "control_number": "37956",
     "title": "Chemistry Technician",
     "award": "A.S. Degree",
-    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=39",
+    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=143",
     "coverage": 0.833,
     "was_url": null,
     "was_coverage": null,
@@ -2137,7 +2348,7 @@
     "control_number": "37965",
     "title": "Commercial Music and Recording Arts",
     "award": "A.A. Degree",
-    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=290",
+    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=289",
     "coverage": 0.947,
     "was_url": null,
     "was_coverage": null,
@@ -2149,16 +2360,6 @@
     "award": "A.A. Degree",
     "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=219",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "38090",
-    "title": "Fitness Specialist Certification",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=240",
-    "coverage": 0.833,
     "was_url": null,
     "was_coverage": null,
     "was_method": null
@@ -2177,7 +2378,7 @@
     "control_number": "38159",
     "title": "Administration of Justice, Law Emphasis",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=30",
+    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=69",
     "coverage": 1.0,
     "was_url": null,
     "was_coverage": null,
@@ -2227,7 +2428,7 @@
     "control_number": "38170",
     "title": "Costume Design and Technology",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=370",
+    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=372",
     "coverage": 0.857,
     "was_url": null,
     "was_coverage": null,
@@ -2237,7 +2438,7 @@
     "control_number": "38205",
     "title": "Commercial Music: Music Arranging",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=36",
+    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=289",
     "coverage": 0.833,
     "was_url": null,
     "was_coverage": null,
@@ -2247,8 +2448,8 @@
     "control_number": "38206",
     "title": "Commercial Music: Music Technology",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=36",
-    "coverage": 0.714,
+    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=288",
+    "coverage": 0.857,
     "was_url": null,
     "was_coverage": null,
     "was_method": null
@@ -2307,7 +2508,7 @@
     "control_number": "38336",
     "title": "Chemistry Technician",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=39",
+    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=143",
     "coverage": 0.833,
     "was_url": null,
     "was_coverage": null,
@@ -2327,7 +2528,7 @@
     "control_number": "38373",
     "title": "Technical Theatre and Entertainment Technology",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=185",
+    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=373",
     "coverage": 1.0,
     "was_url": null,
     "was_coverage": null,
@@ -2367,7 +2568,7 @@
     "control_number": "38704",
     "title": "Physical Therapy Aide",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=35",
+    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=235",
     "coverage": 0.667,
     "was_url": null,
     "was_coverage": null,
@@ -2407,7 +2608,7 @@
     "control_number": "39608",
     "title": "Police Academy Extended",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=323",
+    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=322",
     "coverage": 1.0,
     "was_url": null,
     "was_coverage": null,
@@ -2437,8 +2638,8 @@
     "control_number": "39795",
     "title": "Advanced Manufacturing Engineering Technician",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=197",
-    "coverage": 0.857,
+    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=195",
+    "coverage": 0.714,
     "was_url": null,
     "was_coverage": null,
     "was_method": null
@@ -2467,7 +2668,7 @@
     "control_number": "39823",
     "title": "IT Technician Pathway",
     "award": "A.S. Degree",
-    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=197",
+    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=199",
     "coverage": 1.0,
     "was_url": null,
     "was_coverage": null,
@@ -2507,8 +2708,8 @@
     "control_number": "40042",
     "title": "Engineering Technology: Advanced Manufacturing",
     "award": "A.S. Degree",
-    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=195",
-    "coverage": 0.636,
+    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=198",
+    "coverage": 0.727,
     "was_url": null,
     "was_coverage": null,
     "was_method": null
@@ -2627,7 +2828,7 @@
     "control_number": "41231",
     "title": "Environmental Science",
     "award": "A.S. T Degree",
-    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=54",
+    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=92",
     "coverage": 0.933,
     "was_url": null,
     "was_coverage": null,
@@ -2637,7 +2838,7 @@
     "control_number": "42013",
     "title": "English as a Second Language Academic Bridge",
     "award": "Noncredit program",
-    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=34",
+    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=392",
     "coverage": 1.0,
     "was_url": null,
     "was_coverage": null,
@@ -2657,7 +2858,7 @@
     "control_number": "42017",
     "title": "High School Equivalency Test Preparation",
     "award": "Noncredit program",
-    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=31",
+    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=393",
     "coverage": 1.0,
     "was_url": null,
     "was_coverage": null,
@@ -2697,7 +2898,7 @@
     "control_number": "43039",
     "title": "Central American Studies",
     "award": "A.A. Degree",
-    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=147",
+    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=146",
     "coverage": 1.0,
     "was_url": null,
     "was_coverage": null,
@@ -2707,7 +2908,7 @@
     "control_number": "43152",
     "title": "Makeup for Fashion and Entertainment",
     "award": "Noncredit program",
-    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=39",
+    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=390",
     "coverage": 1.0,
     "was_url": null,
     "was_coverage": null,
@@ -2727,7 +2928,7 @@
     "control_number": "43634",
     "title": "Child Development STEAM",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=32",
+    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=155",
     "coverage": 1.0,
     "was_url": null,
     "was_coverage": null,
@@ -2757,7 +2958,7 @@
     "control_number": "44329",
     "title": "Acting for Stage and Screen",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=38",
+    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=371",
     "coverage": 1.0,
     "was_url": null,
     "was_coverage": null,
@@ -2767,7 +2968,7 @@
     "control_number": "44368",
     "title": "Child Development Assessment in ECE",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=32",
+    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=155",
     "coverage": 1.0,
     "was_url": null,
     "was_coverage": null,
@@ -2787,7 +2988,7 @@
     "control_number": "44539",
     "title": "Equity and Social Justice in Early Education",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=32",
+    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=156",
     "coverage": 1.0,
     "was_url": null,
     "was_coverage": null,
@@ -2807,8 +3008,8 @@
     "control_number": "44541",
     "title": "Entertainment Craft",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=373",
-    "coverage": 0.829,
+    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=372",
+    "coverage": 1.0,
     "was_url": null,
     "was_coverage": null,
     "was_method": null
@@ -2847,7 +3048,7 @@
     "control_number": "44913",
     "title": "English Through Cultural Awareness",
     "award": "Noncredit program",
-    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=34",
+    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=393",
     "coverage": 1.0,
     "was_url": null,
     "was_coverage": null,
@@ -2877,7 +3078,7 @@
     "control_number": "45413",
     "title": "Equity-Minded Education in Early Childhood Classroom",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=32",
+    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=157",
     "coverage": 1.0,
     "was_url": null,
     "was_coverage": null,
@@ -2917,7 +3118,7 @@
     "control_number": "45587",
     "title": "Entertainment Technology and VFX",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=278",
+    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=275",
     "coverage": 1.0,
     "was_url": null,
     "was_coverage": null,
@@ -2937,7 +3138,7 @@
     "control_number": "45589",
     "title": "Social Work and Human Services",
     "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=54",
+    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=353",
     "coverage": 1.0,
     "was_url": null,
     "was_coverage": null,
@@ -2987,8 +3188,8 @@
     "control_number": "45717",
     "title": "Criminal Investigations",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=321",
-    "coverage": 0.833,
+    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=320",
+    "coverage": 1.0,
     "was_url": null,
     "was_coverage": null,
     "was_method": null
@@ -2997,7 +3198,7 @@
     "control_number": "45718",
     "title": "Patrol Procedures",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=320",
+    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=322",
     "coverage": 1.0,
     "was_url": null,
     "was_coverage": null,
@@ -3087,8 +3288,8 @@
     "control_number": "46348",
     "title": "Physics 2.0",
     "award": "A.S. T Degree",
-    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=265",
-    "coverage": 0.941,
+    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=311",
+    "coverage": 1.0,
     "was_url": null,
     "was_coverage": null,
     "was_method": null
@@ -3097,7 +3298,7 @@
     "control_number": "46461",
     "title": "Animation",
     "award": "A.S. Degree",
-    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=278",
+    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=277",
     "coverage": 1.0,
     "was_url": null,
     "was_coverage": null,
@@ -3105,5 +3306,5 @@
    }
   ]
  },
- "run": "39010291816"
+ "run": "39010864052"
 }
