@@ -1,0 +1,343 @@
+{
+ "college": "Los Angeles Mission College",
+ "control_number": "43599",
+ "shape": "degree",
+ "title": "Biomanufacturing",
+ "award": "Baccalaureate of Science (B.S.) Degree.",
+ "source_url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=67",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 10750,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 10750,
+    "output_tokens": 3649,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 3649,
+  "output_tokens_details": {
+   "thinking_tokens": 1559
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.11598,
+ "ms": 28561,
+ "seconds": 29.1,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 19,
+   "listed": 25,
+   "share": 0.76,
+   "missing": [
+    "ANTHRO322",
+    "BIOLOGY3",
+    "BIOLOGY408",
+    "BIOLOGY5",
+    "BIOLOGY6",
+    "ENGLISH420"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "STAT101"
+   ],
+   "flagged": [
+    "STAT101"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    61.0,
+    62.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 2,
+   "courses": 0,
+   "count": 2,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "(M043599B)",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "LAMC GE Plan or Cal-GETC (lower division), plus upper division general education courses completed at LAMC",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": 27,
+    "max": 34
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Design and execute a project that identifies possible options of new biomanufacturing technologies that serve as process improvements, including technical and financial benefits, and write a report evaluation those options with a final recommendation.",
+    "Demonstrate a knowledge of quality principles that enables them to perform an investigation that requires them to analyze an Out of Specification (OOS) occurrence during a production step in the manufacture of a biological substance, perform the analysis to justify the batch disposition, and incorporate this into a CAPA (Corrective Action Preventative Action) report."
+   ],
+   "careers": [
+    "technical or quality positions in the manufacturing sector of the biotechnology industry"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "LOWER DIVISION COURSEWORK",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "BIOTECH 002",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOTECH 003",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOTECH 006",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOTECH 008",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 101",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "STAT C1000",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "STAT C1000E",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "STAT 101",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "MICRO 020",
+      "units": 4,
+      "units_max": 5,
+      "alternatives": [
+       {
+        "code": "CHEM 102",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "UPPER DIVISION COURSEWORK",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "BIOTECH 300",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOTECH 310",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOTECH 320",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOTECH 330",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOTECH 340",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOTECH 360",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOTECH 400",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOTECH 410",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOTECH 460",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOTECH 470",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ANTHRO 322",
+    "why": "listed under Upper Division General Education Courses (GE courses not placed in blocks)"
+   },
+   {
+    "code": "BIOLOGY 408",
+    "why": "listed under Upper Division General Education Courses (GE courses not placed in blocks)"
+   },
+   {
+    "code": "English 420",
+    "why": "listed as ENGLISH 420 under Upper Division General Education Courses (GE courses not placed in blocks)"
+   },
+   {
+    "code": "BIOLOGY 3",
+    "why": "not in the text"
+   },
+   {
+    "code": "BIOLOGY 5",
+    "why": "not in the text"
+   },
+   {
+    "code": "BIOLOGY 6",
+    "why": "named only in the Biology AS-T section"
+   }
+  ],
+  "notes": [
+   "The section's title heading is cut off before page 67; only the program code '(M043599B)' is printed at the start of the section.",
+   "The page prints 'Total 60' twice: once for the lower division (coursework + LAMC GE Plan 27 or Cal-GETC 34 + additional degree applicable elective units 1-8) and once for the upper division (coursework + upper division GE 9 units + additional degree applicable elective units 15). No total for the whole B.S. (presumably 120) or for the major is printed, so total_units and degree_total are null.",
+   "ge_units 27-34 reflects the two alternative lower division GE patterns printed (LAMC GE Plan 27, Cal-GETC 34); upper division GE (ANTHRO 322, BIOLOGY 408, ENGLISH 420, 9 units, must be completed at LAMC) is additional.",
+   "Additional degree applicable elective units (1-8 lower division, 15 upper division) are printed but not recorded in open_elective_units because no major or whole-degree total is printed to check against.",
+   "The specific upper division GE courses ANTHRO 322, BIOLOGY 408 and ENGLISH 420 appear required but were kept out of blocks as general education; reviewer may wish to check.",
+   "STAT 101 (Statistics for the Social Sciences) is an alternative to STAT C1000 not on the closed list; units for alternatives are not printed separately.",
+   "Course codes printed with leading zeros (e.g., BIOTECH 002, MICRO 020) were matched to closed-list codes (BIOTECH 2, MICRO 20).",
+   "Hyphenated PDF line breaks in the outcomes (e.g., 'ana -lyze', 'pro -duction') were rejoined."
+  ]
+ },
+ "extracted_run": "39054675770"
+}

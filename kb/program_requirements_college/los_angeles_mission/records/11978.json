@@ -1,0 +1,277 @@
+{
+ "college": "Los Angeles Mission College",
+ "control_number": "11978",
+ "shape": "degree",
+ "title": "Multimedia: Video Production",
+ "award": "A.A. Degree",
+ "source_url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=23",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 12153,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 12153,
+    "output_tokens": 2100,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2100,
+  "output_tokens_details": {
+   "thinking_tokens": 694
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.09061,
+ "ms": 17877,
+ "seconds": 18.5,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 12,
+   "listed": 12,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 3,
+   "codes": [
+    "CINEMA3",
+    "MULTIMD640",
+    "PHOTO7"
+   ],
+   "flagged": [
+    "CINEMA3",
+    "MULTIMD640",
+    "PHOTO7"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    37.0,
+    37.0
+   ],
+   "stated": [
+    37.0,
+    37.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 5,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Production (M011978C)",
+   "measure": "units",
+   "total_units": {
+    "min": 37,
+    "max": 37
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Analyze and apply the elements and principles of production design with competent skill and technique with production equipment such as cameras and computer editing software.",
+    "Appraise historical, cultural, and aesthetic factors that led to rise of popular narrative and documentary filmmaking and how its model of production became the dominant form practiced by popular cinemas worldwide.",
+    "Recognize, articulate, and judge the visual, verbal, and audio conventions through which images, words, and sounds make meaning in film and media texts."
+   ],
+   "careers": [
+    "cinematographer",
+    "video editor",
+    "scriptwriter",
+    "producer",
+    "camera operator"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "REQUIRED COURSES",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 37,
+     "max": 37
+    },
+    "courses": [
+     {
+      "code": "CINEMA 003",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CINEMA 004",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "CINEMA 107",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CINEMA 125",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "JOURNAL 100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MULTIMD 100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MULTIMD 110",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MULTIMD 210",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "MULTIMD 500",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MULTIMD 600",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MULTIMD 605",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MULTIMD 610",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MULTIMD 620",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MULTIMD 640",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PHOTO 007",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The excerpt begins mid-heading at the top of page 23: only 'Production (M011978C)' is printed; the award type (presumably 'ASSOCIATE OF ARTS (AA) Multimedia: Video') is cut off. Reviewer should confirm this section is the A.A. in Multimedia: Video Production.",
+   "The page 'Total 37' is printed as the major's total and recorded as total_units/block stated; it equals the sum of the listed units with one course counted from each 'or' row.",
+   "Units are printed only beside the first course of each 'or' row (CINEMA 003 / CINEMA 004; MULTIMD 110 / MULTIMD 210); alternatives' units left null as not printed.",
+   "CINEMA 004 matched to closed-list CINEMA 4; CINEMA 003 (History of Motion Pictures), MULTIMD 640 and PHOTO 007 are not in the closed list and are marked catalog additions.",
+   "CINEMA 125 is printed with title 'Thesis Film Production Workshop' (closed list: Film Production Workshop) and carries a prerequisite/corequisite mark.",
+   "The 60-unit associate degree note is a general requirement, not printed as this award's degree total; no GE pattern is named."
+  ]
+ },
+ "extracted_run": "39054675770"
+}

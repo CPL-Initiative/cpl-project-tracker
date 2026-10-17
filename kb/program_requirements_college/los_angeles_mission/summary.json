@@ -1,0 +1,114 @@
+{
+ "college": "Los Angeles Mission College",
+ "programs": 160,
+ "with_closed_list": 140,
+ "found": 128,
+ "extracted": 128,
+ "errors": 0,
+ "passed_machine_checks": 109,
+ "failed": {
+  "coverage": 5,
+  "invented": 2,
+  "arithmetic": 11,
+  "repeated": 0,
+  "outcomes": 5
+ },
+ "cost_usd": 8.92,
+ "cost_per_program": 0.0697,
+ "not_found": [
+  {
+   "control_number": "35231",
+   "title": "Business Information Worker",
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+   "near_miss": {
+    "pages": [
+     31
+    ],
+    "coverage": 1.0,
+    "why": "the page prints neither the control number nor the title and award"
+   }
+  },
+  {
+   "control_number": "40788",
+   "title": "English for Academic Purposes Intermediate 2",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "40789",
+   "title": "English for Academic Purposes Intermediate 1",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "40791",
+   "title": "English for Academic Purposes Advanced 2",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "42632",
+   "title": "Foundational ESL and Computer Skills",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=63",
+    "coverage": 0.333
+   }
+  },
+  {
+   "control_number": "42633",
+   "title": "Beginning Level ESL",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "42634",
+   "title": "High-Beginning Level ESL",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "43167",
+   "title": "Intermediate Level ESL",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "43929",
+   "title": "ESL Pathway to Biotechnology Careers",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=79",
+    "coverage": 0.385
+   }
+  },
+  {
+   "control_number": "43930",
+   "title": "ESL Pathway to Health Occupations Careers",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=9",
+    "coverage": 0.154
+   }
+  },
+  {
+   "control_number": "44777",
+   "title": "ESL Pathway to Child Development Careers",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=8",
+    "coverage": 0.25
+   }
+  },
+  {
+   "control_number": "44849",
+   "title": "Cal-GETC",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=226",
+    "coverage": 0.411
+   }
+  }
+ ],
+ "run": "39054675770"
+}
