@@ -6,15 +6,264 @@
  "award": "A.S. Degree",
  "source_url": "https://catalog.skylinecollege.edu/current/programs/data-science-ca.xml",
  "record_shape": 6,
- "model": null,
- "stop_reason": null,
- "usage": null,
- "cost_usd": null,
- "ms": null,
- "seconds": 1.6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 11587,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 11587,
+    "output_tokens": 1870,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1870,
+  "output_tokens_details": {
+   "thinking_tokens": 773
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.08375,
+ "ms": 16504,
+ "seconds": 17.4,
  "parts": null,
- "error": "HTTP 401: {\"error\":\"unauthorized\"}",
- "score": null,
- "record": null,
- "extracted_run": "39032119511"
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 9,
+   "listed": 14,
+   "share": 0.643,
+   "missing": [
+    "CIS262",
+    "MATH253",
+    "MATH270",
+    "MATH275",
+    "MATHC2220"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "MATH212"
+   ],
+   "flagged": [
+    "MATH212"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    16.0,
+    19.0
+   ],
+   "stated": [
+    16.0,
+    19.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 2,
+   "courses": 0,
+   "count": 2,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "(no heading in the excerpt; text begins mid-outcomes list)",
+   "measure": "units",
+   "total_units": {
+    "min": 16,
+    "max": 19
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Use foundational programming concepts to explore and analyze real-world datasets using problem decomposition, and code design strategies.",
+    "Design, create, and query databases for analytic processing using SQL."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Core Courses (10 units)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 10,
+     "max": 10
+    },
+    "courses": [
+     {
+      "code": "CIS 122",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS 132",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 211",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select two courses from the following (6-9 units):",
+    "rule": "choose_courses",
+    "minimum": 2,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 9
+    },
+    "courses": [
+     {
+      "code": "CIS 250",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS 252",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS 274",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS 286",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "STAT C1000",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 212",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MATH C2210",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "CIS 262",
+    "why": "not in the text"
+   },
+   {
+    "code": "MATH 253",
+    "why": "not in the text"
+   },
+   {
+    "code": "MATH 270",
+    "why": "not in the text"
+   },
+   {
+    "code": "MATH 275",
+    "why": "not in the text"
+   },
+   {
+    "code": "MATH C2220",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "The excerpt begins mid-way through an outcomes list; outcome 1 and the section heading are cut off. Only outcomes 2 and 3 are recorded.",
+   "Award identity uncertain: the source URL ends in 'data-science-ca' (likely Certificate of Achievement), the total is only 16-19 units, and no general education pattern or degree total is printed. Five closed-list courses for the A.S. (CIS 262, MATH 253, MATH 270, MATH 275, MATH C2220) do not appear. This section may be the certificate rather than the A.S. Degree; reviewer should verify against the A.S. section.",
+   "MATH 212 (Computational and Applied Calculus, 4 units) is listed in the choice block but is not in the closed list."
+  ]
+ },
+ "extracted_run": "39035209486"
 }

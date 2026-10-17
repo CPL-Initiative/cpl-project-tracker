@@ -6,15 +6,237 @@
  "award": "A.S. Degree",
  "source_url": "https://catalog.skylinecollege.edu/current/_compare.new.programs.php",
  "record_shape": 6,
- "model": null,
- "stop_reason": null,
- "usage": null,
- "cost_usd": null,
- "ms": null,
- "seconds": 1.5,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 13328,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 13328,
+    "output_tokens": 1363,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1363,
+  "output_tokens_details": {
+   "thinking_tokens": 264
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.08057,
+ "ms": 11810,
+ "seconds": 12.4,
  "parts": null,
- "error": "HTTP 401: {\"error\":\"unauthorized\"}",
- "score": null,
- "record": null,
- "extracted_run": "39032119511"
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 20,
+   "share": 0.0,
+   "missing": [
+    "CHEM210",
+    "CHEM220",
+    "CIS250",
+    "CIS257",
+    "ENGR100",
+    "ENGR210",
+    "ENGR215",
+    "ENGR230",
+    "ENGR240",
+    "ENGR260",
+    "ENGR261",
+    "ENGR270",
+    "MATH253",
+    "MATH270",
+    "MATH275",
+    "MATHC2210",
+    "MATHC2220",
+    "PHYS250",
+    "PHYS260",
+    "PHYS270"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Not present in the provided text",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "CHEM 210",
+    "why": "not in the text; no Mechanical Engineering section"
+   },
+   {
+    "code": "CHEM 220",
+    "why": "not in the text; no Mechanical Engineering section"
+   },
+   {
+    "code": "CIS 250",
+    "why": "not in the text; no Mechanical Engineering section"
+   },
+   {
+    "code": "CIS 257",
+    "why": "not in the text; no Mechanical Engineering section"
+   },
+   {
+    "code": "ENGR 100",
+    "why": "not in the text; no Mechanical Engineering section"
+   },
+   {
+    "code": "ENGR 210",
+    "why": "not in the text; no Mechanical Engineering section"
+   },
+   {
+    "code": "ENGR 215",
+    "why": "not in the text; no Mechanical Engineering section"
+   },
+   {
+    "code": "ENGR 230",
+    "why": "not in the text; no Mechanical Engineering section"
+   },
+   {
+    "code": "ENGR 240",
+    "why": "not in the text; no Mechanical Engineering section"
+   },
+   {
+    "code": "ENGR 260",
+    "why": "not in the text; no Mechanical Engineering section"
+   },
+   {
+    "code": "ENGR 261",
+    "why": "not in the text; no Mechanical Engineering section"
+   },
+   {
+    "code": "ENGR 270",
+    "why": "not in the text; no Mechanical Engineering section"
+   },
+   {
+    "code": "MATH 253",
+    "why": "not in the text; no Mechanical Engineering section"
+   },
+   {
+    "code": "MATH 270",
+    "why": "not in the text; no Mechanical Engineering section"
+   },
+   {
+    "code": "MATH 275",
+    "why": "not in the text; no Mechanical Engineering section"
+   },
+   {
+    "code": "MATH C2210",
+    "why": "named only in other programs' change lists (e.g., Electrical Engineering); no Mechanical Engineering section"
+   },
+   {
+    "code": "MATH C2220",
+    "why": "named only in other programs' change lists (e.g., Electrical Engineering); no Mechanical Engineering section"
+   },
+   {
+    "code": "PHYS 250",
+    "why": "not in the text; no Mechanical Engineering section"
+   },
+   {
+    "code": "PHYS 260",
+    "why": "not in the text; no Mechanical Engineering section"
+   },
+   {
+    "code": "PHYS 270",
+    "why": "not in the text; no Mechanical Engineering section"
+   }
+  ],
+  "notes": [
+   "The provided text is a catalog 'compare programs' change log (old requirements removed / new requirements added), not a program requirements page.",
+   "The text is cut off alphabetically at 'Interdisciplinary Studies: Letters and Science' (ending mid-word 'POLS 280 - New Req'), before any Mechanical Engineering entry would appear; no section for the Mechanical Engineering A.S. Degree is present.",
+   "Even if a Mechanical Engineering change entry existed, a change log would not list full requirements, totals, outcomes or careers; the actual program page should be consulted.",
+   "The Electrical Engineering A.S. entry shows MATH 251/252 replaced by MATH C2210/C2220, which likely applies similarly to Mechanical Engineering, but this is not stated for this award and was not recorded."
+  ]
+ },
+ "extracted_run": "39035209486"
 }
