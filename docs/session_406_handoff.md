@@ -49,8 +49,9 @@ tool, read the open PRs and their comments before you write anything.
 
 1. **The wave PR:** merge once `test` passes on its head. Then dispatch `program-requirements-college.yml` from
    `main` with `step=display` (build `c111c9b05ca0`, about 50 minutes) and confirm the applied record on `main`.
-2. **Cuesta** (branch `claude/s405-cuesta`): a capture-only read started 12:55Z on the whole host (its registry row
-   names a class-search page). Read its capture report; if it found little, a page read of its catalog address first.
+2. **Cuesta** (branch `claude/s405-cuesta`): the capture-only read found 2 of 198 in 89 minutes (16,529-page main-site
+   sitemap, 830 pages read). Its registry row names a class-search page. Page-read the college's catalog page for the
+   catalog's own address (`kb/college_reads/`), then a correction card on the next sheet.
 3. **Ohlone, Cañada, Grossmont**: wait on Sheet 89. Once corrected, Grossmont reads as CourseLeaf on the district host
    and Ohlone as one PDF (chapter 7); Cañada stays refused.
 
