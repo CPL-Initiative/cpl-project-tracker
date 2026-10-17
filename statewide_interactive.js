@@ -349,6 +349,7 @@
     var s = {}; arr.forEach(function (v) { s[v] = 1; }); return Object.keys(s).sort();
   }
   function fmt(n) { return n.toLocaleString(); }
+  function nColleges(n) { n = n || 0; return fmt(n) + (n === 1 ? " college" : " colleges"); }
 
   // The four college-shaped filters. They narrow ROWS to what the matching
   // colleges adopted and narrow the matrix's COLUMN axis; content filters
@@ -435,11 +436,13 @@
     // The CIP Sectors dropdown carries "43 · Homeland Security, Law Enforcement…"
     // — a 220px list would wrap every line twice.
     + '.sw-filter-group[data-filter="cipSector"] .sw-filter-dropdown{min-width:360px;}'
-    + '.sw-subtabs{display:flex;flex-wrap:wrap;gap:4px;margin:0 0 0.6rem;}'
-    + '.sw-subtabs button{background:var(--surface-opaque);color:var(--text-body);border:1px solid var(--border-strong);'
-      + 'border-bottom:none;border-radius:8px 8px 0 0;padding:8px 16px;min-height:40px;font-size:0.85rem;'
-      + 'font-family:inherit;cursor:pointer;font-weight:600;}'
-    + '.sw-subtabs button.on{background:var(--seal-blue);color:var(--white);border-color:var(--seal-blue);}'
+    // The view switch is underlined words (Sam, 2026-10-09); the view in use
+    // reads heavier and darker, as Program Requirements' switch does.
+    + '.sw-subtabs{display:flex;flex-wrap:wrap;gap:6px 18px;margin:0 0 0.6rem;}'
+    + '.sw-subtabs button{font:inherit;font-size:0.9rem;font-weight:600;color:var(--cobalt);background:none;border:0;'
+      + 'padding:2px 0;min-height:24px;cursor:pointer;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px;}'
+    + '.sw-subtabs button:hover{text-decoration-thickness:2px;}'
+    + '.sw-subtabs button.on{color:var(--text-strong);font-weight:700;text-decoration-thickness:2px;}'
     + '.sw-subtabs button:focus-visible{outline:3px solid var(--accent-link);outline-offset:2px;}'
     + '.sw-view:focus-visible{outline:2px solid var(--accent-link);outline-offset:2px;}'
     // Could-adopt column: the claim is carried by a TEXT LABEL, not a colour.
@@ -447,7 +450,7 @@
     + '.sw-could-group:last-child{margin-bottom:0;}'
     + '.sw-could-label{display:block;font-size:0.6rem;font-weight:700;color:var(--text-muted);'
       + 'text-transform:uppercase;letter-spacing:0.02em;}'
-    + '.sw-col-empty{opacity:0.55;font-style:italic;}'
+    + '.sw-col-empty{color:var(--text-muted);font-style:italic;}'
     // Chips are <abbr>; suppress the UA dotted underline on the pill variants
     // (the pill is already the affordance) and keep it on the plain table lists,
     // where it is the only cue that a full name is available.
@@ -482,10 +485,14 @@
     + '.cv-others-label{font-size:0.66rem;font-weight:600;color:var(--text-muted);margin-bottom:0.2rem;}'
     + '.cv-variant{padding:0.15rem 0 0.15rem 0.6rem;border-left:2px solid var(--border);margin:0.25rem 0;}'
     + '.cv-meta{font-size:0.66rem;color:var(--text-muted);}'
-    + '.cv-badge{font-size:0.6rem;padding:1px 5px;border-radius:3px;font-weight:600;white-space:nowrap;}'
-    + '.cv-ccc{background:rgba(76,175,120,0.2);color:var(--hunter);}'
-    + '.cv-synth{background:rgba(227,179,65,0.18);color:var(--mustard-text);}'
-    + '.cv-local{background:var(--surface-subtle);color:var(--text-body);}'
+    // A badge is a category, not a control: no fill, an outline, the role's
+    // text token. The tinted fills read 4.27:1 (Suggested, light) and 4.05:1
+    // (Statewide, dark); on the card's own ground both clear AA in each theme.
+    + '.cv-badge{font-size:0.6rem;padding:1px 5px;border-radius:3px;font-weight:600;white-space:nowrap;'
+      + 'background:none;border:1px solid var(--border-strong);}'
+    + '.cv-ccc{color:var(--hunter);}'
+    + '.cv-synth{color:var(--mustard-text);}'
+    + '.cv-local{color:var(--text-body);}'
     // Prescriptive adoption layer (PR-4) — green "adopt" accent.
     + '.cv-rx{margin-top:0.45rem;border-top:1px dashed rgba(127,208,160,0.28);padding-top:0.35rem;}'
     + '.cv-rx>summary{cursor:pointer;font-size:0.7rem;font-weight:600;color:var(--hunter);list-style:none;}'
@@ -550,7 +557,7 @@
       + '.sw-filter-dropdown label{min-height:40px;padding:0.5rem 0.7rem;font-size:0.8rem;}'
       + '.sw-handout{padding:0 0.6rem 0.6rem;}'
       + '.sw-handout .sw-action-btn{min-height:44px;}'
-      + '.sw-subtabs button{flex:1 1 auto;min-height:44px;padding:10px 12px;}'
+      + '.sw-subtabs button{min-height:44px;}'
       + '.sw-action-btn,.sw-page-btn{min-height:40px;}'
       // Cards: give the text room back that the desktop padding takes.
       + '.cv-body{padding:0.6rem 0.55rem 0.8rem;}'
@@ -563,7 +570,7 @@
       // back some of the phone's width so the cells are not squeezed off.
       + '.mx-table{--mx-title-w:180px;}'
       + '.mx-box{max-height:70vh;-webkit-overflow-scrolling:touch;}'
-      + '.mx-seg label{min-height:40px;padding:8px 13px;}'
+      + '.mx-seg label{min-height:40px;}'
       // The cell panel anchors to the viewport on a phone rather than beside a
       // 30px cell it would overhang, and never exceeds the screen.
       + '.mx-tip{left:12px!important;right:12px;max-width:none;width:auto;}'
@@ -583,17 +590,18 @@
     + '.mx-fs{border:0;margin:0;padding:0;display:flex;flex-direction:column;gap:4px;min-width:0;}'
     + '.mx-lg{padding:0;float:none;font-size:0.62rem;text-transform:uppercase;letter-spacing:0.09em;'
       + 'color:var(--text-muted);font-weight:700;}'
-    + '.mx-seg{display:flex;border:1px solid var(--border-strong);border-radius:4px;overflow:hidden;'
-      + 'background:var(--surface-opaque);}'
-    + '.mx-seg label{padding:6px 12px;font-size:0.74rem;cursor:pointer;color:var(--text-body);'
-      + 'border-right:1px solid var(--border);min-height:36px;display:flex;align-items:center;}'
-    + '.mx-seg label:last-of-type{border-right:0;}'
+    // Underlined words, like every control (Sam, 2026-10-09); the choice in
+    // use reads heavier and darker.
+    + '.mx-seg{display:flex;flex-wrap:wrap;gap:6px 18px;}'
+    + '.mx-seg label{padding:2px 0;font-size:0.78rem;font-weight:600;cursor:pointer;color:var(--cobalt);'
+      + 'min-height:24px;display:flex;align-items:center;text-decoration:underline;'
+      + 'text-decoration-thickness:1px;text-underline-offset:3px;}'
+    + '.mx-seg label:hover{text-decoration-thickness:2px;}'
     // Visually hidden but NOT display:none — same rule as the sub-tabs, so
     // arrow-key navigation and the focus ring keep working.
     + '.mx-seg input{position:absolute;opacity:0;width:0;height:0;}'
-    + '.mx-seg input:checked + label{background:var(--seal-blue);color:var(--white);font-weight:700;'
-      + 'box-shadow:inset 0 0 0 1px var(--white);}'
-    + '.mx-seg input:focus-visible + label{outline:3px solid var(--accent-link);outline-offset:-3px;}'
+    + '.mx-seg input:checked + label{color:var(--text-strong);font-weight:700;text-decoration-thickness:2px;}'
+    + '.mx-seg input:focus-visible + label{outline:3px solid var(--accent-link);outline-offset:2px;}'
     + '.mx-key{display:flex;flex-wrap:wrap;gap:1rem;font-size:0.72rem;color:var(--text-body);'
       + 'align-items:center;margin-bottom:0.45rem;}'
     + '.mx-key b{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;}'
@@ -644,7 +652,8 @@
       + 'display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}'
     + '.mx-rmeta{font-size:0.66rem;color:var(--text-muted);margin-top:2px;}'
     + '.mx-disc{border:0;background:none;padding:0;cursor:pointer;color:var(--cobalt);font:inherit;'
-      + 'font-size:0.66rem;text-decoration:underline;text-underline-offset:2px;}'
+      + 'font-size:0.66rem;text-decoration:underline;text-underline-offset:2px;'
+      + 'display:inline-flex;align-items:center;min-height:24px;margin:-4px 0;vertical-align:middle;}'
     + '.mx-disc:focus-visible{outline:2px solid var(--accent-link);outline-offset:2px;}'
     + '.mx-cell{width:var(--mx-col-w);min-width:var(--mx-col-w);max-width:var(--mx-col-w);text-align:center;'
       + 'border-left:1px solid var(--border);border-bottom:1px solid var(--border);'
@@ -675,7 +684,7 @@
     // greyscale, in forced colours and when read aloud (WCAG 1.4.1).
     + '.mx-has{color:var(--hunter);font-weight:700;}'
     + '.mx-opp-cell{color:var(--mustard-text);}'
-    + '.mx-none{color:var(--text-muted);opacity:0.5;}'
+    + '.mx-none{color:var(--text-muted);}'
     + '.mx-exp td{border-bottom:1px solid var(--border-strong);background:var(--surface-subtle);'
       + 'padding:8px 12px;font-size:0.72rem;color:var(--text-muted);}'
     // The drill-down lists each MAP record's TITLE and TOTAL UNITS (Sam,
@@ -691,6 +700,46 @@
     // caption rendered in full at the top of the grid.
     + '.mx-sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;'
       + 'clip:rect(0 0 0 0);white-space:nowrap;border:0;}'
+
+    // ── Controls are underlined words (Sam, 2026-10-09) ────────────────────
+    // The generator's exhibit CSS block (excel_to_dashboard.py, rewritten by
+    // the daily run) boxes and fills .sw-filter-btn, .sw-action-btn and
+    // .sw-page-btn. These rules come later in the document at the same
+    // specificity, so they win without touching the generated block. A filled
+    // lead is retired: the order of the words carries the lead.
+    // ⚠️ transition:none is LOAD-BEARING: the generator's transition:all
+    // animated the focus ring's width up from 0px, so a ring measured as
+    // focus landed read as absent (S408, #sw-handout).
+    + '.sw-filterbar .sw-toolbar{gap:0.5rem 18px;}'
+    + '.sw-filter-btn,.sw-action-btn,.sw-action-btn.primary,.sw-page-btn{font:inherit;font-size:0.78rem;font-weight:600;'
+      + 'color:var(--cobalt);background:none;border:0;border-radius:0;padding:2px 0;min-height:24px;cursor:pointer;'
+      + 'text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px;transition:none;}'
+    + '.sw-filter-btn:hover,.sw-action-btn:hover,.sw-action-btn.primary:hover,.sw-page-btn:hover:not([disabled]){'
+      + 'background:none;border-color:transparent;color:var(--cobalt);text-decoration-thickness:2px;}'
+    // A filter holding a choice, and the page in view, read heavier and darker.
+    + '.sw-filter-btn.active{color:var(--text-strong);font-weight:700;text-decoration-thickness:2px;}'
+    + '.sw-page-btn{min-width:24px;padding:2px 4px;}'
+    + '.sw-page-btn.active{background:none;border-color:transparent;color:var(--text-strong);font-weight:700;text-decoration:none;}'
+    + '.sw-page-btn[disabled]{text-decoration:none;}'
+    + '.sw-pagination{gap:6px 10px;flex-wrap:wrap;}'
+    + '.sw-filter-btn:focus-visible,.sw-action-btn:focus-visible,.sw-page-btn:focus-visible{'
+      + 'outline:3px solid var(--accent-link);outline-offset:2px;}'
+    + '.sw-show-more{color:var(--cobalt);text-decoration:underline;text-underline-offset:2px;}'
+    // The search field keeps its outline (a field needs a boundary to be
+    // found) and gains the ring the generator's outline:none took away.
+    + '.sw-toolbar input[type=text]:focus-visible{outline:2px solid var(--accent-link);outline-offset:2px;}'
+    // A page out of reach reads muted and plain; opacity took it to 1.7:1.
+    + '.sw-page-btn[disabled]{opacity:1;color:var(--text-muted);cursor:default;}'
+    // Checkboxes: the label is the hit area (24px), the box keeps its size.
+    + '.sw-chk-hit{display:inline-flex;align-items:center;justify-content:center;min-width:24px;min-height:24px;cursor:pointer;}'
+    + '.sw-chk-all{min-height:24px;}'
+    // The flag column. index.html's rules were written for a dark card
+    // (white at 22% and 85%, a raw pink); these put it on the theme's tokens.
+    + '.sw-flag-none{color:var(--text-muted);}'
+    + '.sw-flag-select{border:1px solid var(--border-strong);background:var(--surface-opaque);color:var(--text-body);min-height:24px;}'
+    + '.sw-flag-select:hover{border-color:var(--cobalt);}'
+    + '.sw-flag-select:focus-visible{outline:2px solid var(--accent-link);outline-offset:2px;}'
+    + '.sw-flag-readonly{color:var(--crimson);background:none;border:1px solid var(--crimson);}'
     + '</style>';
 
   // ── Prescriptive adoption layer (PR-4) ──
@@ -980,6 +1029,9 @@
       })[0] || "";
       if (r.nAdopt >= 1) rows.push(r);
     });
+    // A title no college has adopted has no cell to fill. The stats line names
+    // how many, so this count reconciles with the Credentials view's.
+    rows.noAdopter = order.length - rows.length;
     // Section order: CIP sector code ascending, the no-CIP bucket last;
     // alphabetical within (Sam, 2026-09-24).
     rows.sort(function (a, b) {
@@ -1175,14 +1227,17 @@
       '<table class="mx-table" style="width:calc(var(--mx-title-w) + ' + cols.length + ' * var(--mx-col-w))">' +
       '<colgroup><col style="width:var(--mx-title-w)" /><col span="' + cols.length + '" style="width:var(--mx-col-w)" /></colgroup>' +
       '<caption class="mx-sr-only">Credit-recommendation units by credential and college, ' +
-      'grouped by CIP sector. A bare figure is what a college has articulated; a parenthesised figure is what the ' +
+      'grouped by CIP sector. A bare figure is what a college has articulated; a parenthesized figure is what the ' +
       'median adopting peer obtained and this college has not.</caption>' + head + '<tbody></tbody></table></div>');
     out.push('<div class="mx-stats">' + fmt(rows.length) + ' credentials × ' + fmt(cols.length) +
       ' colleges = ' + fmt(cells) + ' cells · ' +
       ((green + brown) / cells * 100).toFixed(1) + '% inked (' +
       (green / cells * 100).toFixed(1) + '% adopted, ' + (brown / cells * 100).toFixed(1) +
       '% opportunity) · ' + Math.round(oppRows / rows.length * 100) +
-      '% of rows carry an opportunity.</div>');
+      '% of rows carry an opportunity.' +
+      (rows.noAdopter ? ' ' + fmt(rows.noAdopter) + ' of the ' + fmt(rows.length + rows.noAdopter) +
+        ' common titles ' + (rows.noAdopter === 1 ? 'has no adopting college and carries no row.'
+          : 'have no adopting college and carry no row.') : '') + '</div>');
     out.push('<div class="mx-note" id="mx-keys">Scroll sideways for the rest of the colleges — ' + fmt(cols.length) +
       ' numeric columns is about twice a desktop viewport, so the title column stays frozen. ' +
       'Hover or focus a cell to see what that college articulated; inside the grid the arrow keys move between cells ' +
@@ -1491,13 +1546,13 @@
       var isCCC = ccc.length > 0;
       var anchor = isCCC ? ccc[0] : cards.slice().sort(byAdopt)[0];
       var stdBadge = isCCC
-        ? '<span class="cv-badge cv-ccc">🏛 Statewide CCC standard</span>'
+        ? '<span class="cv-badge cv-ccc">Statewide CCC standard</span>'
         : '<span class="cv-badge cv-synth">⚙ Suggested standard (local) — not yet official</span>';
       var head = '<div class="cv-title">' + esc(title) +
         (issuer ? ' <span class="cv-issuer">· ' + esc(issuer) + '</span>' : '') + '</div>';
       var std = '<div class="cv-standard">' + stdBadge +
         ' <span class="cv-meta">' + esc(anchor.cpl_type || "") + ' · ' +
-        (anchor.adopters || 0) + ' colleges · ' + (anchor.potential || 0) + ' potential</span>' +
+        nColleges(anchor.adopters) + ' · ' + (anchor.potential || 0) + ' potential</span>' +
         buildCreditRecsHtml(anchor.credit_recs) + '</div>';
       var others = cards.filter(function (e) { return e !== anchor; }).sort(byAdopt);
       var othersHtml = "";
@@ -1508,7 +1563,7 @@
               ? '<span class="cv-badge cv-ccc">CCC</span>'
               : '<span class="cv-badge cv-local">' + esc(e.collaborative_type || "Local") + '</span>';
             return '<div class="cv-variant"><div class="cv-meta">' + esc(e.cpl_type || "") + ' ' + badge +
-              ' · ' + (e.adopters || 0) + ' colleges · ' + (e.potential || 0) + ' potential</div>' +
+              ' · ' + nColleges(e.adopters) + ' · ' + (e.potential || 0) + ' potential</div>' +
               buildCreditRecsHtml(e.credit_recs) + '</div>';
           }).join("") + '</div>';
       }
@@ -1617,7 +1672,7 @@
       + '</div>';
 
     html += '<div class="sw-action-bar">';
-    html += '<label style="font-size:0.72rem;color:var(--text-body);cursor:pointer;display:flex;align-items:center;gap:0.3rem;">' +
+    html += '<label class="sw-chk-all" style="font-size:0.72rem;color:var(--text-body);cursor:pointer;display:flex;align-items:center;gap:0.3rem;">' +
       '<input type="checkbox" class="sw-chk" id="sw-select-all" /> Select All</label>';
     html += '<button class="sw-action-btn primary" id="sw-gen-report">Generate Word Report</button>';
     html += '<button class="sw-action-btn" id="sw-export-excel">Export Excel</button>';
@@ -1863,7 +1918,7 @@
     if (ta.award) {
       headline =
         '<div style="font-size:0.66rem;color:var(--mustard-text);font-weight:600;margin:0.15rem 0 0.05rem;">' +
-          '💡 Typical CPL: ' + ta.award.text +
+          'Typical CPL: ' + ta.award.text +
         '</div>' +
         '<div style="font-size:0.57rem;color:var(--text-muted);font-style:italic;margin-bottom:0.15rem;">' +
           'a student earns one college’s mapping below — not the sum' +
@@ -1997,7 +2052,8 @@
       }
 
       rows.push('<tr class="' + (state.selected[eid] ? 'sw-row-selected' : '') + '" data-eid="' + escAttr(eid) + '">' +
-        '<td><input type="checkbox" class="sw-chk sw-row-chk"' + checked + ' /></td>' +
+        '<td><label class="sw-chk-hit"><input type="checkbox" class="sw-chk sw-row-chk"' + checked +
+          ' aria-label="Select ' + escAttr(e.title || "") + '" /></label></td>' +
         '<td style="max-width:350px;">' + titleBits + recsHtml + '</td>' +
         '<td>' + typeBadge + '</td>' +
         '<td>' + esc(e.cpl_type || "") + '</td>' +

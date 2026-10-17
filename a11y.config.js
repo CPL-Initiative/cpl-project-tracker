@@ -537,6 +537,18 @@ async function seedSplit(page, theme) {
   await page.waitForTimeout(300);
 }
 
+// Exhibit Adoption's table and matrix (S409): the tab opens on Credentials, so
+// its other two views were never measured. The seed presses the view's own
+// switch (a script click, so :focus-visible still behaves as for a keyboard).
+async function seedExhibitView(page, theme, view) {
+  await page.evaluate((th) => { if (th === "dark" && window.CPL_THEME) window.CPL_THEME.set("dark"); }, theme);
+  await page.evaluate((v) => {
+    const b = document.querySelector('.sw-subtab[data-view="' + v + '"]');
+    if (b) b.click();
+  }, view);
+  await page.waitForTimeout(view === "matrix" ? 1500 : 400);
+}
+
 // The Common Course Reference list (S378): wait for its table, then set the theme.
 async function seedCcrList(page, theme) {
   await page.waitForSelector("#tab-unified-courses table.uc-table tbody tr", { timeout: 30000 }).catch(() => {});
@@ -2408,6 +2420,38 @@ module.exports = {
     widths: [390, 1440],
     settle: 1500,
     seed: (page) => seedCcrList(page, "dark"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  "exhibit-adoption-table": {
+    file: "index.html",
+    title: "Exhibit Adoption, the adoption table",
+    routes: [{ hash: "exhibit-adoption", name: "table" }],
+    widths: [390, 1440],
+    seed: (page) => seedExhibitView(page, "light", "table"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  "exhibit-adoption-table-dark": {
+    file: "index.html",
+    title: "Exhibit Adoption, the adoption table, dark",
+    routes: [{ hash: "exhibit-adoption", name: "table-dark" }],
+    widths: [390, 1440],
+    seed: (page) => seedExhibitView(page, "dark", "table"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  "exhibit-adoption-matrix": {
+    file: "index.html",
+    title: "Exhibit Adoption, the adoption matrix",
+    routes: [{ hash: "exhibit-adoption", name: "matrix" }],
+    widths: [390, 1440],
+    seed: (page) => seedExhibitView(page, "light", "matrix"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  "exhibit-adoption-matrix-dark": {
+    file: "index.html",
+    title: "Exhibit Adoption, the adoption matrix, dark",
+    routes: [{ hash: "exhibit-adoption", name: "matrix-dark" }],
+    widths: [390, 1440],
+    seed: (page) => seedExhibitView(page, "dark", "matrix"),
     mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
   },
   },

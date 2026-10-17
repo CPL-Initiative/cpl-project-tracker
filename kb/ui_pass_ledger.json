@@ -294,8 +294,8 @@
    "name": "Exhibit Adoption",
    "page": "index.html#exhibit-adoption",
    "audience": "staff",
-   "last": null,
-   "outcome": null
+   "last": "2026-10-17",
+   "outcome": "S409: first pass. The sweep had measured only the Credentials view; new seeded targets exhibit-adoption-table and -matrix (light, dark) reach the other two through the view switch. Before: Credentials 2 contrast (Suggested badge 4.27:1 light, Statewide 4.05:1 dark) and 2 missing rings (the search field's outline:none; the handout button's ring animated up from 0px by the generator's transition:all); table 59 targets under 24px (13px row checkboxes, 22px pager), 5 contrast (none identified 3.09:1, the flag dash white on white, disabled Prev 1.73:1), 5 missing rings; matrix 17 targets (the N exhibits disclosure 16.8px), 3 contrast (no-signal dots 2.2:1). After: all six routes clean at 390 and 1440 in both themes. Every control is an underlined cobalt word (filters, Create Handout, Word report, Excel, JSON, Matrix CSV, pager, the view switch and the matrix's cell choice, the item in use heavier and darker), injected from CV_STYLE over the generator's exhibit block; badges paint no fill; row checkboxes sit in a 24px label named for the row; the flag column on tokens. Glyphs: the building and light-bulb emoji out, the suggested-standard gear kept. Words: 1 college (was 1 colleges), parenthesized, the intro without its aside. Wiring: the matrix counted 3,120 credentials beside the other views' 3,189 without saying why; its count line now names the 69 titles no college has adopted (3,120 + 69 = 3,189). Guard: tests/eacr_ui_pass.test.js."
   },
   {
    "id": "cobi:tmc-builder",
