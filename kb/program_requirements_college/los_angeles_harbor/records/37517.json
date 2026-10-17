@@ -1,0 +1,370 @@
+{
+ "college": "Los Angeles Harbor College",
+ "control_number": "37517",
+ "shape": "adt",
+ "title": "Spanish",
+ "award": "A.A- T Degree",
+ "source_url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=162",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8662,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8662,
+    "output_tokens": 3364,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 3364,
+  "output_tokens_details": {
+   "thinking_tokens": 1354
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.10193,
+ "ms": 26766,
+ "seconds": 27.1,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 21,
+   "listed": 28,
+   "share": 0.75,
+   "missing": [
+    "ANTHRO102",
+    "ANTHRO104",
+    "CHICANO19",
+    "COMM122",
+    "SOC1",
+    "SOC11",
+    "SOC31"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    21.0,
+    25.0
+   ],
+   "stated": [
+    23.0,
+    25.0
+   ],
+   "against": "program",
+   "why": [
+    "the blocks sum to 21.0-25.0; the catalog states 23.0-25.0"
+   ],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     53.0,
+     65.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     28.0,
+     31.0
+    ],
+    "why": [],
+    "within": true
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 2,
+   "courses": 0,
+   "count": 2,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Spanish - Associate in Arts for Transfer (AA-T) Degree",
+   "measure": "units",
+   "total_units": {
+    "min": 23,
+    "max": 25
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": 4,
+    "max": 9
+   },
+   "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": 28,
+    "max": 31
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "demonstrate effective skills in the four major areas of language study (reading, writing, speaking, listening comprehension).",
+    "demonstrate knowledge of the global society, and the role of Spanish-speaking nations, and of the Spanish language and Hispanic cultures in the contemporary world."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "REQUIRED CORE COURSES",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 20,
+     "max": 20
+    },
+    "courses": [
+     {
+      "code": "SPANISH 001",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "SPANISH 021",
+        "units": 3,
+        "catalog_addition": false
+       },
+       {
+        "code": "SPANISH 022",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPANISH 002",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPANISH 003",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "SPANISH 035",
+        "units": 5,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPANISH 004",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "SPANISH 036",
+        "units": 5,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List A (select ONE)",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 5
+    },
+    "courses": [
+     {
+      "code": "CHICANO 002",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHICANO 007",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHICANO 008",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGLISH 203",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGLISH 204",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FRENCH 002",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FRENCH 003",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FRENCH 004",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HISTORY 005",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HISTORY 006",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HISTORY 043",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HISTORY 044",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPANISH 012",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ANTHRO 102",
+    "why": "listed only as an Additional Approved Substitution Course for students who place out of core courses"
+   },
+   {
+    "code": "ANTHRO 104",
+    "why": "listed only as an Additional Approved Substitution Course for students who place out of core courses"
+   },
+   {
+    "code": "CHICANO 19",
+    "why": "listed only as an Additional Approved Substitution Course (CHICANO 019) for students who place out of core courses"
+   },
+   {
+    "code": "COMM 122",
+    "why": "listed only as an Additional Approved Substitution Course for students who place out of core courses"
+   },
+   {
+    "code": "SOC 1",
+    "why": "listed only as an Additional Approved Substitution Course (SOC 001) for students who place out of core courses"
+   },
+   {
+    "code": "SOC 11",
+    "why": "listed only as an Additional Approved Substitution Course (SOC 011) for students who place out of core courses"
+   },
+   {
+    "code": "SOC 31",
+    "why": "listed only as an Additional Approved Substitution Course (SOC 031) for students who place out of core courses"
+   }
+  ],
+  "notes": [
+   "SPANISH 001 may be replaced by BOTH SPANISH 021 and SPANISH 022 (3 units each); the two alternatives together form one path, not either one alone.",
+   "Core block printed as 20 units; with the SPANISH 021+022 path the core totals 21 units.",
+   "ENGLISH 203 and ENGLISH 204 are printed in List A without units.",
+   "Additional Approved Substitution Courses (ANTHRO 102, ANTHRO 104, CHICANO 019, CHICANO 032, COMM 122, SOC 001, SOC 011, SOC 031) apply only when a student places out of a core course without units; not recorded as a block. CHICANO 032 Central American Literature (3) is not in the closed list.",
+   "ge_units recorded from the totals table line 'Additional Cal-GETC Requirements 28-31' (excluding 3-6 double-countable major units); the page also states Cal-GETC is 34 semester units.",
+   "degree_elective_units from 'Additional CSU-Transferable Unit 4-9'.",
+   "Outcomes lead-in ('Upon completion of the program, students will be able to demonstrate mastery of the following outcomes: the ability to:') omitted.",
+   "Students with catalog rights prior to Fall 2025 may follow CSU GE Breadth or IGETC instead of Cal-GETC."
+  ]
+ },
+ "extracted_run": "39006381839"
+}

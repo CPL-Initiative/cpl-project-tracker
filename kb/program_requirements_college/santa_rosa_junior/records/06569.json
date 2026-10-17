@@ -1,0 +1,260 @@
+{
+ "college": "Santa Rosa Junior College",
+ "control_number": "06569",
+ "shape": "certificate",
+ "title": "Business: Accountant Assistant",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=260",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 11625,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 11625,
+    "output_tokens": 1992,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1992,
+  "output_tokens_details": {
+   "thinking_tokens": 736
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.08634,
+ "ms": 15377,
+ "seconds": 15.8,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 10,
+   "listed": 10,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    17.0,
+    17.0
+   ],
+   "stated": [
+    17.0,
+    17.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 6,
+   "courses": 0,
+   "count": 6,
+   "not_verbatim": [
+    "Analyze, record, summarize, and report the effects of transactions in financial, managerial and tax reports and interpret the accounting information for internal or external decision making purposes;"
+   ],
+   "why": [
+    "not in the catalog text as printed: Analyze, record, summarize, and report the effects of transactions in financial,"
+   ],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": false
+  },
+  "careers": {
+   "count": 12,
+   "not_verbatim": [
+    "fixed asset clerk",
+    "office manager"
+   ],
+   "pass": false
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Business: Accountant Assistant (Certificate of Achievement)",
+   "measure": "units",
+   "total_units": {
+    "min": 17,
+    "max": 17
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Complete the steps in the accounting cycle and know generally accepted accounting principles that determine how transactions are recorded and reported;",
+    "Analyze, record, summarize, and report the effects of transactions in financial, managerial and tax reports and interpret the accounting information for internal or external decision making purposes;",
+    "Complete and use managerial and cost accounting documents and reports to plan, evaluate, and control the operations of a company and interpret those reports for management;",
+    "Prepare personal tax returns demonstrating knowledge of tax rules, tax research sources, and tax forms;",
+    "Complete professional assignments using computer technology in such applications as word, excel, power point, general ledger software and tax preparation software; and",
+    "Demonstrate critical thinking skills, analytical ability, interpersonal and collaborative skills, and the ability to write business reports."
+   ],
+   "careers": [
+    "staff accountant",
+    "accounting clerk",
+    "accounts payable clerk",
+    "accounts receivable clerk",
+    "cost accounting clerk",
+    "fixed asset clerk",
+    "junior accountant",
+    "data processing clerk",
+    "bookkeeper",
+    "office manager",
+    "tax clerk",
+    "payroll clerk"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Requirements - complete 17.00 units",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "BAD 1",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BAD 2",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BAD 53",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BAD 55",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select any combination totaling at least 4.50 units from the following",
+    "rule": "choose_units",
+    "minimum": 4.5,
+    "option_group": null,
+    "stated": {
+     "min": 4.5,
+     "max": 4.5
+    },
+    "courses": [
+     {
+      "code": "BAD 57",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BAD 59",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BAD 120",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BAD 156",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BBK 53.1",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BBK 53.2",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Units are not printed beside the courses in the 4.50-unit elective list, so their units are null.",
+   "The Program Student Learning Outcomes list continues across the page break from page 260 to page 261; outcomes 5 and 6 are on page 261.",
+   "The PDF text uses 'fi' ligatures (e.g., 'ﬁxed', 'ofﬁce', 'ﬁnancial'); these were transcribed as plain 'fi'.",
+   "The description recommends the fund accounting class (BAD 156) for government service and cost accounting (BAD 57) for private industry/CPA; both remain in the elective choose block, as they are listed there."
+  ]
+ },
+ "extracted_run": "39006464249"
+}

@@ -1,0 +1,171 @@
+{
+ "college": "Mendocino College",
+ "control_number": "36290",
+ "shape": "noncredit",
+ "title": "Basic Academic Skills",
+ "award": "Noncredit program",
+ "source_url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=110",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6765,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6765,
+    "output_tokens": 773,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 773,
+  "output_tokens_details": {
+   "thinking_tokens": 117
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.04252,
+ "ms": 6424,
+ "seconds": 6.6,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 2,
+   "listed": 2,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    170.0,
+    170.0
+   ],
+   "stated": [
+    170.0,
+    170.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "BASIC ACADEMIC SKILLS CERTIFICATE OF COMPETENCY",
+   "measure": "hours",
+   "total_units": {
+    "min": 170,
+    "max": 170
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Solve multi-step numerical and word math problems from basic operations through beginning concepts in geometry and algebra.",
+    "Identify and summarize the main ideas and important details in short (1-2 page) reading selections, including fiction, essays, newspaper articles, material from textbooks, and informational websites.",
+    "Explain the basic concepts in the area of biology, chemistry, physics, space science, US history, geography, basic economic systems, and civics.",
+    "Demonstrate critical thinking and problem-solving skills.",
+    "Prepare for and apply appropriate test-taking strategies to standardized tests such as the GED, HiSET, English and Math Placement Tests and occupational skills tests."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "BSK 501",
+      "units": 85,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BSK 502",
+      "units": 85,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Noncredit Certificate of Competency counted in hours; total hours 170 as printed.",
+   "Catalog states students must complete BSK 501 and BSK 502 with a noncredit grade of P.",
+   "The page also prints a Basic Computer Skills Certificate of Competency (CSC 520, CSC 526); not recorded as it belongs to a different award.",
+   "The description mentions entering the workforce but names no specific career, so careers is empty."
+  ]
+ },
+ "extracted_run": "39006339282"
+}

@@ -1,0 +1,7597 @@
+[
+ {
+  "control_number": "02941",
+  "title": "Biology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOLOGY6",
+   "BIOLOGY7",
+   "CHEM101",
+   "CHEM102"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=138",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    138,
+    139,
+    140,
+    141
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 4,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "02942",
+  "title": "Accounting",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCTG1",
+   "ACCTG11",
+   "ACCTG18",
+   "ACCTG19",
+   "ACCTG2",
+   "ACCTG3",
+   "ACCTG8",
+   "BUS1",
+   "BUS38",
+   "CAOT78",
+   "CAOT82",
+   "LAW1",
+   "MGMT1"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=82",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    82,
+    83,
+    84,
+    85
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 13,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "02943",
+  "title": "Banking and Finance",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCTG1",
+   "ACCTG2",
+   "BUS1",
+   "BUS38",
+   "CAOT82",
+   "ECONC2001",
+   "FINANCE2",
+   "LAW1",
+   "MGMT1",
+   "MGMT13",
+   "REALES7"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=84",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    84,
+    85,
+    86,
+    87
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 11,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "02944",
+  "title": "Business Management",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCTG1",
+   "BUS1",
+   "LAW1",
+   "MARKET21",
+   "MGMT1",
+   "MGMT13",
+   "MGMT31"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=84",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    84,
+    85,
+    86
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 7,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "02945",
+  "title": "Management",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCTG1",
+   "ACCTG2",
+   "BUS1",
+   "BUS38",
+   "CAOT82",
+   "FINANCE2",
+   "INTBUS1",
+   "LAW1",
+   "MARKET21",
+   "MGMT1",
+   "MGMT13",
+   "MGMT31",
+   "MGMT33",
+   "REALES14"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=84",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    84,
+    85,
+    86,
+    87
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 14,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "02947",
+  "title": "Marketing",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCTG1",
+   "BUS1",
+   "BUS38",
+   "CAOT82",
+   "INTBUS1",
+   "LAW1",
+   "LAW2",
+   "MARKET1",
+   "MARKET11",
+   "MARKET21",
+   "MARKET31",
+   "MGMT1",
+   "MGMT13",
+   "REALES1"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=84",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    84,
+    85,
+    86,
+    87
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 14,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "02948",
+  "title": "Real Estate",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCTG1",
+   "BUS1",
+   "BUS38",
+   "CAOT82",
+   "LAW1",
+   "LAW2",
+   "MGMT1",
+   "REALES1",
+   "REALES14",
+   "REALES21",
+   "REALES3",
+   "REALES5",
+   "REALES7",
+   "REALES9"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=91",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    91
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 14,
+  "text_chars": 4929
+ },
+ {
+  "control_number": "02950",
+  "title": "Journalism: Newspaper",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART619",
+   "JOURNAL101",
+   "JOURNAL105",
+   "JOURNAL106",
+   "JOURNAL202",
+   "JOURNAL2181"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=123",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    123
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 6,
+  "text_chars": 5762
+ },
+ {
+  "control_number": "02951",
+  "title": "Cinema Production",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CINEMA101",
+   "CINEMA105",
+   "CINEMA107",
+   "CINEMA110",
+   "CINEMA115",
+   "CINEMA120",
+   "CINEMA125",
+   "MEDIART100",
+   "MEDIART101",
+   "MEDIART110",
+   "MEDIART115",
+   "MEDIART116",
+   "MEDIART118",
+   "MEDIART120"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=58",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    58,
+    59,
+    60,
+    61
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 14,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "02952",
+  "title": "Computer Science",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CIS112",
+   "CIS210",
+   "CS111",
+   "CS115",
+   "CS117",
+   "CS119",
+   "CS130",
+   "CS136",
+   "CS150",
+   "CS213",
+   "CS216",
+   "CS220",
+   "CS236"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=141",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    141,
+    142,
+    143
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 13,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "02954",
+  "title": "Engineering",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEM101",
+   "CHEM102",
+   "CHEM211",
+   "CHEM212",
+   "CS101",
+   "CS117",
+   "CS136",
+   "CS213",
+   "CS216",
+   "CS236",
+   "EGDTEK101",
+   "EGDTEK121",
+   "ELECTRN22",
+   "ENGGEN101",
+   "ENGGEN122",
+   "ENGGEN131",
+   "ENGGEN151",
+   "ENGGEN220",
+   "MATH261",
+   "MATH262",
+   "MATH263",
+   "MATH270",
+   "MATH275",
+   "PHYSICS37",
+   "PHYSICS38",
+   "PHYSICS39"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=145",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    145
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 26,
+  "text_chars": 4784
+ },
+ {
+  "control_number": "02955",
+  "title": "Electronics",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ELECTRN2",
+   "ELECTRN20",
+   "ELECTRN22",
+   "ELECTRN4",
+   "ELECTRN54",
+   "ELECTRN6"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=131",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    131,
+    132
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 6,
+  "text_chars": 11001
+ },
+ {
+  "control_number": "02957",
+  "title": "Electronics: Biomedical Instrumentation",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ELECTRN113",
+   "ELECTRN2",
+   "ELECTRN20",
+   "ELECTRN22",
+   "ELECTRN34",
+   "ELECTRN36",
+   "ELECTRN38",
+   "ELECTRN4",
+   "ELECTRN54",
+   "ELECTRN6",
+   "ELECTRN941"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=131",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    131,
+    132
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 11,
+  "text_chars": 11001
+ },
+ {
+  "control_number": "02958",
+  "title": "Mechanical Drafting/Design",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.75,
+  "codes_found": [
+   "EGDTEK101",
+   "EGDTEK102",
+   "ENGGEN101",
+   "MATH240",
+   "MSCNC114",
+   "MSCNC124"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=135",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    135,
+    136
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 8,
+  "text_chars": 10775
+ },
+ {
+  "control_number": "02959",
+  "title": "Engineering Technology: Industrial/Manufacturing",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.7,
+  "codes_found": [
+   "CHEM60",
+   "CIS104",
+   "EGDTEK101",
+   "ENGGEN101",
+   "MATH240",
+   "MSCNC124",
+   "NUMCON21"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=133",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    133,
+    134,
+    135,
+    136
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 10,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "02960",
+  "title": "Manufacturing Technology: Metal Machining",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.636,
+  "codes_found": [
+   "ELECTRN2",
+   "ENGGEN101",
+   "MSCNC114",
+   "MSCNC124",
+   "NUMCON21",
+   "NUMCON22",
+   "NUMCON23"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=134",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    134,
+    135,
+    136
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 11,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "02961",
+  "title": "Art History",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART103",
+   "ART105",
+   "ART109",
+   "ART111",
+   "ART115",
+   "ART116",
+   "ART125",
+   "ART201",
+   "ART93",
+   "ART94",
+   "ARTHC1100",
+   "ARTHC1200"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=52",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    52,
+    53,
+    54
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 12,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "02962",
+  "title": "Music",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "MUSIC111",
+   "MUSIC121",
+   "MUSIC122",
+   "MUSIC136",
+   "MUSIC137",
+   "MUSIC141",
+   "MUSIC152",
+   "MUSIC161",
+   "MUSIC165",
+   "MUSIC182",
+   "MUSIC183",
+   "MUSIC184",
+   "MUSIC201",
+   "MUSIC202",
+   "MUSIC203",
+   "MUSIC205",
+   "MUSIC206",
+   "MUSIC211",
+   "MUSIC212",
+   "MUSIC213",
+   "MUSIC241",
+   "MUSIC2501",
+   "MUSIC2502",
+   "MUSIC271",
+   "MUSIC281",
+   "MUSIC324",
+   "MUSIC501",
+   "MUSIC531",
+   "MUSIC563",
+   "MUSIC721",
+   "MUSIC751",
+   "MUSIC771"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=71",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    71,
+    72
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 32,
+  "text_chars": 13665
+ },
+ {
+  "control_number": "02963",
+  "title": "Theater Arts",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "THEATER100",
+   "THEATER110",
+   "THEATER112",
+   "THEATER185",
+   "THEATER225",
+   "THEATER232",
+   "THEATER233",
+   "THEATER240",
+   "THEATER270",
+   "THEATER272",
+   "THEATER275",
+   "THEATER291",
+   "THEATER292",
+   "THEATER293",
+   "THEATER317",
+   "THEATER450"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=74",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    74,
+    75,
+    76,
+    77
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 16,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "02964",
+  "title": "Foreign Languages",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "FRENCH1",
+   "FRENCH2",
+   "FRENCH3",
+   "FRENCH4",
+   "FRENCH5",
+   "FRENCH6",
+   "GERMAN1",
+   "GERMAN2",
+   "GERMAN3",
+   "GERMAN4",
+   "GERMAN5",
+   "GERMAN6",
+   "ITALIAN1",
+   "ITALIAN2",
+   "ITALIAN3",
+   "LING1",
+   "SPANISH1",
+   "SPANISH2",
+   "SPANISH3",
+   "SPANISH35",
+   "SPANISH36",
+   "SPANISH37",
+   "SPANISH4",
+   "SPANISH5",
+   "SPANISH6"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=126",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    126,
+    127,
+    128
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 25,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "02965",
+  "title": "French",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "FRENCH1",
+   "FRENCH10",
+   "FRENCH2",
+   "FRENCH21",
+   "FRENCH22",
+   "FRENCH25",
+   "FRENCH3",
+   "FRENCH4",
+   "FRENCH5",
+   "FRENCH6",
+   "FRENCH63",
+   "FRENCH64",
+   "FRENCH66",
+   "LING1"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=127",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    127,
+    128
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 14,
+  "text_chars": 11154
+ },
+ {
+  "control_number": "02966",
+  "title": "Italian",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ITALIAN1",
+   "ITALIAN2",
+   "ITALIAN3",
+   "LING1"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=128",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    128
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 4,
+  "text_chars": 5488
+ },
+ {
+  "control_number": "02967",
+  "title": "Spanish",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "LING1",
+   "SPANISH1",
+   "SPANISH12",
+   "SPANISH16",
+   "SPANISH2",
+   "SPANISH3",
+   "SPANISH35",
+   "SPANISH36",
+   "SPANISH37",
+   "SPANISH4",
+   "SPANISH48",
+   "SPANISH5",
+   "SPANISH6",
+   "SPANISH9"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=126",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    126,
+    127,
+    128
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 14,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "02969",
+  "title": "Registered Nurse",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "02970",
+  "title": "Respiratory Therapy",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.875,
+  "codes_found": [
+   "ANATOMY1",
+   "CHEM51",
+   "MICRO20",
+   "PHYSIOL1",
+   "PSYCC1000",
+   "RESPTH1",
+   "RESPTH6"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=109",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    109,
+    110
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 8,
+  "text_chars": 13061
+ },
+ {
+  "control_number": "02974",
+  "title": "Philosophy",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "PHILOS1",
+   "PHILOS12",
+   "PHILOS14",
+   "PHILOS20",
+   "PHILOS30",
+   "PHILOS35",
+   "PHILOS6",
+   "PHILOS9"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=124",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    124
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 8,
+  "text_chars": 5847
+ },
+ {
+  "control_number": "02976",
+  "title": "Physics",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEM101",
+   "CHEM102",
+   "CS115",
+   "CS117",
+   "CS119",
+   "CS136",
+   "CS216",
+   "MATH261",
+   "MATH262",
+   "MATH263",
+   "MATH270",
+   "MATH275",
+   "PHYSICS37",
+   "PHYSICS38",
+   "PHYSICS39"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=150",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    150,
+    151
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 15,
+  "text_chars": 8640
+ },
+ {
+  "control_number": "02977",
+  "title": "Chemistry",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEM101",
+   "CHEM102",
+   "CHEM211",
+   "CHEM212",
+   "MATH261",
+   "MATH262",
+   "PHYSICS37",
+   "PHYSICS38"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=139",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    139,
+    140,
+    141
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 8,
+  "text_chars": 15636
+ },
+ {
+  "control_number": "02980",
+  "title": "Child Development: Early Childhood Education",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHDEV1",
+   "CHDEV10",
+   "CHDEV11",
+   "CHDEV2",
+   "CHDEV29",
+   "CHDEV3",
+   "CHDEV30",
+   "CHDEV31",
+   "CHDEV34",
+   "CHDEV35",
+   "CHDEV36",
+   "CHDEV37",
+   "CHDEV38",
+   "CHDEV39",
+   "CHDEV42",
+   "CHDEV47",
+   "CHDEV48",
+   "CHDEV53",
+   "CHDEV7",
+   "SOC12"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=98",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    98,
+    99,
+    100,
+    101
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 20,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "02981",
+  "title": "Fire Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "FIRETEK202",
+   "FIRETEK203",
+   "FIRETEK204",
+   "FIRETEK205",
+   "FIRETEK27",
+   "FIRETEK96"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=102",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    102
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 6,
+  "text_chars": 4396
+ },
+ {
+  "control_number": "02983",
+  "title": "Ethnic Studies",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "AFROAM2",
+   "AFROAM20",
+   "CHICANO2",
+   "CHICANO37",
+   "CHICANO54",
+   "CHICANO7",
+   "CHICANO8",
+   "JEWISH25",
+   "SOC11",
+   "SOC2"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=157",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    157
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 10,
+  "text_chars": 6205
+ },
+ {
+  "control_number": "02984",
+  "title": "Economics",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCTG1",
+   "ACCTG2",
+   "CIS101",
+   "ECONC2001",
+   "ECONC2002",
+   "MATH238",
+   "MATH245",
+   "MATH261",
+   "MATH262",
+   "PHILOS9",
+   "STAT101",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=156",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    156
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 12,
+  "text_chars": 6721
+ },
+ {
+  "control_number": "02985",
+  "title": "History",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.889,
+  "codes_found": [
+   "HISTC1001",
+   "HISTC1002",
+   "HISTORY1",
+   "HISTORY2",
+   "HISTORY20",
+   "HISTORY5",
+   "HISTORY6",
+   "HISTORY7"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=159",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    159,
+    160
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 9,
+  "text_chars": 12051
+ },
+ {
+  "control_number": "02986",
+  "title": "Geography",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "GEOG1",
+   "GEOG14",
+   "GEOG15",
+   "GEOG2",
+   "GEOG3",
+   "GEOG45",
+   "GEOLOGY1",
+   "OCEANO1"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=158",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    158
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 8,
+  "text_chars": 5841
+ },
+ {
+  "control_number": "02987",
+  "title": "Political Science",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "HISTC1002",
+   "HISTORY20",
+   "POLSC1000",
+   "POLSCI2",
+   "POLSCI5",
+   "POLSCI7"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=160",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    160
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 6,
+  "text_chars": 6039
+ },
+ {
+  "control_number": "02988",
+  "title": "Sociology",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "SOC1",
+   "SOC11",
+   "SOC12",
+   "SOC17",
+   "SOC2",
+   "SOC21",
+   "SOC25",
+   "SOC3",
+   "SOC31",
+   "SOC4",
+   "SOC84",
+   "STAT101"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=163",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    163,
+    164
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 12,
+  "text_chars": 9920
+ },
+ {
+  "control_number": "02989",
+  "title": "Humanities",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTHRO102",
+   "ART109",
+   "ARTHC1200",
+   "CINEMA103",
+   "ENGLISH204",
+   "HISTORY86",
+   "HUMAN1",
+   "HUMAN2",
+   "HUMAN3",
+   "HUMAN30",
+   "MUSIC111",
+   "PHILOS1",
+   "PHILOS14",
+   "THEATER110"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=121",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    121
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 14,
+  "text_chars": 3366
+ },
+ {
+  "control_number": "08526",
+  "title": "Architecture",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ARC172",
+   "ARC173",
+   "ARC221",
+   "ARC271",
+   "EGDTEK101",
+   "EGT100",
+   "ENGGEN101"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=129",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    129,
+    130
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 7,
+  "text_chars": 9163
+ },
+ {
+  "control_number": "08530",
+  "title": "Banking and Finance",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCTG1",
+   "ACCTG2",
+   "ACCTG8",
+   "BUS1",
+   "BUS38",
+   "FINANCE2",
+   "LAW1",
+   "REALES7"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=85",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    85,
+    86
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 8,
+  "text_chars": 11055
+ },
+ {
+  "control_number": "08531",
+  "title": "CAOT: Administrative Assistant",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CAOT1",
+   "CAOT108",
+   "CAOT123",
+   "CAOT124",
+   "CAOT2",
+   "CAOT31",
+   "CAOT32",
+   "CAOT33",
+   "CAOT37",
+   "CAOT43",
+   "CAOT47",
+   "CAOT78",
+   "CAOT82",
+   "CAOT84",
+   "CAOT85",
+   "CAOT86",
+   "CAOT92",
+   "CAOT97"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=87",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    87,
+    88,
+    89,
+    90
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 18,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "08532",
+  "title": "CAOT: Computer Applications Specialist",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CAOT1",
+   "CAOT108",
+   "CAOT123",
+   "CAOT124",
+   "CAOT2",
+   "CAOT31",
+   "CAOT32",
+   "CAOT33",
+   "CAOT37",
+   "CAOT43",
+   "CAOT47",
+   "CAOT78",
+   "CAOT82",
+   "CAOT84",
+   "CAOT85",
+   "CAOT86",
+   "CAOT92",
+   "CAOT97"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=87",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    87,
+    88,
+    89,
+    90
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 18,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "08533",
+  "title": "Journalism: Magazine",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART619",
+   "JOURNAL101",
+   "JOURNAL105",
+   "JOURNAL106",
+   "JOURNAL108",
+   "JOURNAL220"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=123",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    123
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 6,
+  "text_chars": 5762
+ },
+ {
+  "control_number": "08535",
+  "title": "Broadcasting: Television",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BRDCSTG1",
+   "BRDCSTG21",
+   "BRDCSTG23",
+   "BRDCSTG25",
+   "BRDCSTG26",
+   "BRDCSTG28",
+   "BRDCSTG3",
+   "BRDCSTG46",
+   "BRDCSTG47",
+   "BRDCSTG5"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=56",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    56,
+    57
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 10,
+  "text_chars": 10450
+ },
+ {
+  "control_number": "08536",
+  "title": "Broadcasting: Radio",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BRDCSTG1",
+   "BRDCSTG10",
+   "BRDCSTG11",
+   "BRDCSTG17",
+   "BRDCSTG21",
+   "BRDCSTG221",
+   "BRDCSTG222",
+   "BRDCSTG23",
+   "BRDCSTG24",
+   "BRDCSTG25",
+   "BRDCSTG26",
+   "BRDCSTG3"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=56",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    56,
+    57
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 12,
+  "text_chars": 10450
+ },
+ {
+  "control_number": "08537",
+  "title": "Broadcasting: Performance",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BRDCSTG1",
+   "BRDCSTG10",
+   "BRDCSTG17",
+   "BRDCSTG21",
+   "BRDCSTG221",
+   "BRDCSTG222",
+   "BRDCSTG23",
+   "BRDCSTG25",
+   "BRDCSTG26",
+   "BRDCSTG28",
+   "BRDCSTG3",
+   "BRDCSTG5"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=55",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    55,
+    56,
+    57
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 12,
+  "text_chars": 15634
+ },
+ {
+  "control_number": "08541",
+  "title": "Engineering Technology: Mechanical Engineering",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.818,
+  "codes_found": [
+   "CIS104",
+   "EGDTEK101",
+   "EGDTEK102",
+   "ELECTRN2",
+   "ENGGEN101",
+   "MATH240",
+   "MSCNC114",
+   "MSCNC124",
+   "NUMCON21"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=134",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    134,
+    135,
+    136
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 11,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "08542",
+  "title": "Manufacturing Technology: Numerical Control",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.6,
+  "codes_found": [
+   "ELECTRN2",
+   "ENGGEN101",
+   "MSCNC124",
+   "NUMCON21",
+   "NUMCON22",
+   "NUMCON23"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=134",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    134,
+    135,
+    136
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 10,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "08543",
+  "title": "Art: Studio",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART111",
+   "ART115",
+   "ART201",
+   "ART202",
+   "ART203",
+   "ART204",
+   "ART205",
+   "ART206",
+   "ART207",
+   "ART213",
+   "ART300",
+   "ART301",
+   "ART302",
+   "ART303",
+   "ART304",
+   "ART305",
+   "ART306",
+   "ART307",
+   "ART308",
+   "ART309",
+   "ART501",
+   "ART502",
+   "ART600",
+   "ART604",
+   "ART618",
+   "ART700",
+   "ART701",
+   "ART702",
+   "ART708",
+   "ART709",
+   "ART710",
+   "ART711",
+   "ART93",
+   "ARTHC1200"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=53",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    53,
+    54
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 34,
+  "text_chars": 13683
+ },
+ {
+  "control_number": "08545",
+  "title": "Commercial Music",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "MUSIC137",
+   "MUSIC141",
+   "MUSIC161",
+   "MUSIC165",
+   "MUSIC205",
+   "MUSIC206",
+   "MUSIC241",
+   "MUSIC242",
+   "MUSIC2651",
+   "MUSIC271",
+   "MUSIC281",
+   "MUSIC321",
+   "MUSIC322",
+   "MUSIC501",
+   "MUSIC531",
+   "MUSIC563",
+   "MUSIC721",
+   "MUSIC751",
+   "MUSIC771"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=71",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    71,
+    72
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 19,
+  "text_chars": 13665
+ },
+ {
+  "control_number": "08546",
+  "title": "Music Technology",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "MUSIC101",
+   "MUSIC137",
+   "MUSIC161",
+   "MUSIC165",
+   "MUSIC241",
+   "MUSIC2651",
+   "MUSIC270",
+   "MUSIC321"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=72",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    72
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 8,
+  "text_chars": 6165
+ },
+ {
+  "control_number": "08548",
+  "title": "Theater Arts:Technical",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ARTHC1100",
+   "ARTHC1200",
+   "THEATER100",
+   "THEATER110",
+   "THEATER112",
+   "THEATER185",
+   "THEATER225",
+   "THEATER232",
+   "THEATER233",
+   "THEATER270",
+   "THEATER285",
+   "THEATER291",
+   "THEATER292",
+   "THEATER293",
+   "THEATER315",
+   "THEATER317",
+   "THEATER385",
+   "THEATER405",
+   "THEATER450",
+   "THEATER451"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=76",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    76,
+    77
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 20,
+  "text_chars": 10360
+ },
+ {
+  "control_number": "08549",
+  "title": "Broadcasting",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BRDCSTG1",
+   "BRDCSTG11",
+   "BRDCSTG26",
+   "BRDCSTG3",
+   "BRDCSTG32",
+   "BRDCSTG6"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=55",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    55,
+    56,
+    57
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 6,
+  "text_chars": 15634
+ },
+ {
+  "control_number": "08550",
+  "title": "Theater Arts: Directing",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ARTHC1200",
+   "THEATER100",
+   "THEATER110",
+   "THEATER112",
+   "THEATER185",
+   "THEATER225",
+   "THEATER227",
+   "THEATER232",
+   "THEATER233",
+   "THEATER270",
+   "THEATER272",
+   "THEATER275",
+   "THEATER285",
+   "THEATER291",
+   "THEATER292",
+   "THEATER293",
+   "THEATER315",
+   "THEATER317",
+   "THEATER385",
+   "THEATER450"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=75",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    75,
+    76,
+    77
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 20,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "08551",
+  "title": "Theater Production",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART501",
+   "THEATER110",
+   "THEATER225",
+   "THEATER227",
+   "THEATER232",
+   "THEATER233",
+   "THEATER270",
+   "THEATER291",
+   "THEATER292",
+   "THEATER293",
+   "THEATER315",
+   "THEATER317",
+   "THEATER450"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=76",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    76,
+    77
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 13,
+  "text_chars": 10360
+ },
+ {
+  "control_number": "08553",
+  "title": "Art: Graphic Design",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART125",
+   "ART201",
+   "ART202",
+   "ART204",
+   "ART205",
+   "ART250",
+   "ART300",
+   "ART501",
+   "ART502",
+   "ART600",
+   "ART604",
+   "ART605",
+   "ART606",
+   "ART618",
+   "ART619",
+   "ART620",
+   "ART621",
+   "ARTHC1100",
+   "ARTHC1200"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=53",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    53,
+    54
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 19,
+  "text_chars": 13683
+ },
+ {
+  "control_number": "08554",
+  "title": "Art: Graphic Design",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART201",
+   "ART250",
+   "ART501",
+   "ART600",
+   "ART604",
+   "ART605",
+   "ART606",
+   "ART618",
+   "ART619"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=53",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    53,
+    54
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 9,
+  "text_chars": 13683
+ },
+ {
+  "control_number": "08555",
+  "title": "German",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "GERMAN1",
+   "GERMAN2",
+   "GERMAN3",
+   "GERMAN4",
+   "GERMAN5",
+   "LING1"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=128",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    128
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 6,
+  "text_chars": 5488
+ },
+ {
+  "control_number": "08558",
+  "title": "Child Development: Special Education",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHDEV1",
+   "CHDEV10",
+   "CHDEV11",
+   "CHDEV3",
+   "CHDEV34",
+   "CHDEV42",
+   "CHDEV44",
+   "CHDEV45",
+   "CHDEV48",
+   "CHDEV7",
+   "PSYCH14",
+   "PSYCH17",
+   "SOC12"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=99",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    99,
+    100,
+    101
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 13,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "08559",
+  "title": "Child Development",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHDEV1",
+   "CHDEV10",
+   "CHDEV11",
+   "CHDEV2",
+   "CHDEV22",
+   "CHDEV23",
+   "CHDEV29",
+   "CHDEV3",
+   "CHDEV30",
+   "CHDEV31",
+   "CHDEV34",
+   "CHDEV35",
+   "CHDEV36",
+   "CHDEV37",
+   "CHDEV38",
+   "CHDEV39",
+   "CHDEV42",
+   "CHDEV44",
+   "CHDEV45",
+   "CHDEV47",
+   "CHDEV48",
+   "CHDEV53",
+   "CHDEV7",
+   "SOC12"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=98",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    98,
+    99,
+    100,
+    101
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 24,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "08560",
+  "title": "Geology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOLOGY7",
+   "CHEM101",
+   "CHEM102",
+   "GEOLOGY1",
+   "GEOLOGY6",
+   "MATH261",
+   "OCEANO1",
+   "OCEANO10",
+   "PHYSICS37",
+   "PHYSICS38",
+   "PHYSICS39",
+   "PHYSICS6",
+   "PHYSICS7",
+   "STAT101"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=147",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    147,
+    148,
+    149,
+    150
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 14,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "08561",
+  "title": "Earth Science",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ASTRON1",
+   "CHEM101",
+   "CHEM102",
+   "ENVSCI1",
+   "GEOG1",
+   "GEOG15",
+   "GEOG3",
+   "GEOLOGY1",
+   "GEOLOGY6",
+   "OCEANO1",
+   "PHYSICS37",
+   "PHYSICS38",
+   "PHYSICS39",
+   "STAT101",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=144",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    144,
+    145,
+    146,
+    147
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 15,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "08563",
+  "title": "Jewish Studies",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "HEBREW1",
+   "HEBREW2",
+   "JEWISH2",
+   "JEWISH25",
+   "PHILOS35"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=162",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    162
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 5,
+  "text_chars": 5001
+ },
+ {
+  "control_number": "10757",
+  "title": "Electronics Technology",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ELECTRN2",
+   "ELECTRN20",
+   "ELECTRN4",
+   "ELECTRN54",
+   "ELECTRN6"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=131",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    131,
+    132
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 5,
+  "text_chars": 11001
+ },
+ {
+  "control_number": "10758",
+  "title": "Electronics Technician",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ELECTRN109",
+   "ELECTRN113",
+   "ELECTRN2",
+   "ELECTRN20",
+   "ELECTRN22",
+   "ELECTRN34",
+   "ELECTRN36",
+   "ELECTRN38",
+   "ELECTRN4",
+   "ELECTRN54",
+   "ELECTRN6"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=132",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    132
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 11,
+  "text_chars": 6738
+ },
+ {
+  "control_number": "10759",
+  "title": "Computer Graphics/Design",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "EGDTEK101",
+   "EGDTEK102",
+   "ENGGEN101",
+   "MATH240",
+   "MSCNC114",
+   "MSCNC124"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=129",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    129,
+    130
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 6,
+  "text_chars": 9163
+ },
+ {
+  "control_number": "10760",
+  "title": "Theater Arts: Acting",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "THEATER100",
+   "THEATER110",
+   "THEATER112",
+   "THEATER185",
+   "THEATER232",
+   "THEATER233",
+   "THEATER240",
+   "THEATER270",
+   "THEATER272",
+   "THEATER274",
+   "THEATER285",
+   "THEATER291",
+   "THEATER292",
+   "THEATER293",
+   "THEATER385",
+   "THEATER450"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=75",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    75,
+    76,
+    77
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 16,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "10761",
+  "title": "Child Development: Teacher",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHDEV1",
+   "CHDEV10",
+   "CHDEV11",
+   "CHDEV2",
+   "CHDEV22",
+   "CHDEV23",
+   "CHDEV29",
+   "CHDEV3",
+   "CHDEV30",
+   "CHDEV31",
+   "CHDEV34",
+   "CHDEV35",
+   "CHDEV36",
+   "CHDEV37",
+   "CHDEV38",
+   "CHDEV39",
+   "CHDEV42",
+   "CHDEV44",
+   "CHDEV45",
+   "CHDEV47",
+   "CHDEV48",
+   "CHDEV53",
+   "CHDEV7",
+   "ENGLC1000"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=101",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    101
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 24,
+  "text_chars": 6475
+ },
+ {
+  "control_number": "10762",
+  "title": "Child Development: Associate Teacher, Preschool ( A)",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHDEV1",
+   "CHDEV10",
+   "CHDEV11",
+   "CHDEV2",
+   "CHDEV3",
+   "CHDEV35",
+   "CHDEV42",
+   "CHDEV48",
+   "CHDEV7"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=99",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    99,
+    100,
+    101
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 9,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "10763",
+  "title": "Child Development: Director, Preschool (B)",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHDEV1",
+   "CHDEV10",
+   "CHDEV11",
+   "CHDEV2",
+   "CHDEV3",
+   "CHDEV34",
+   "CHDEV35",
+   "CHDEV38",
+   "CHDEV39",
+   "CHDEV42",
+   "CHDEV44",
+   "CHDEV45",
+   "CHDEV48",
+   "CHDEV7"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=100",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    100,
+    101
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 14,
+  "text_chars": 12180
+ },
+ {
+  "control_number": "10764",
+  "title": "Child Development: School Age Programs Teacher Day Care (C)",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHDEV1",
+   "CHDEV10",
+   "CHDEV11",
+   "CHDEV2",
+   "CHDEV3",
+   "CHDEV35",
+   "CHDEV36",
+   "CHDEV37",
+   "CHDEV42",
+   "CHDEV44",
+   "CHDEV45",
+   "CHDEV47",
+   "CHDEV48",
+   "CHDEV7"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=100",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    100,
+    101
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 14,
+  "text_chars": 12180
+ },
+ {
+  "control_number": "10765",
+  "title": "Child Development: Infant/Toddler Care Teacher (D)",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHDEV1",
+   "CHDEV11",
+   "CHDEV29",
+   "CHDEV3",
+   "CHDEV30",
+   "CHDEV31"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=99",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    99,
+    100,
+    101
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 6,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "10768",
+  "title": "Sociology: Social Welfare",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "SOC1",
+   "SOC11",
+   "SOC12",
+   "SOC17",
+   "SOC19",
+   "SOC2",
+   "SOC20",
+   "SOC21",
+   "SOC25",
+   "SOC3",
+   "SOC31",
+   "SOC4",
+   "SOC84",
+   "STAT101"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=164",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    164
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 14,
+  "text_chars": 3533
+ },
+ {
+  "control_number": "11545",
+  "title": "Commercial Music: Music Arranging",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 11,
+  "text_chars": 0
+ },
+ {
+  "control_number": "11546",
+  "title": "Commercial Music: Instrumental/Vocal Performer",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 0.725,
+  "codes_found": [
+   "MUSIC111",
+   "MUSIC121",
+   "MUSIC122",
+   "MUSIC137",
+   "MUSIC141",
+   "MUSIC161",
+   "MUSIC165",
+   "MUSIC200",
+   "MUSIC201",
+   "MUSIC202",
+   "MUSIC203",
+   "MUSIC205",
+   "MUSIC206",
+   "MUSIC211",
+   "MUSIC212",
+   "MUSIC213",
+   "MUSIC241",
+   "MUSIC242",
+   "MUSIC2651",
+   "MUSIC281",
+   "MUSIC321",
+   "MUSIC322",
+   "MUSIC324",
+   "MUSIC501",
+   "MUSIC531",
+   "MUSIC563",
+   "MUSIC721",
+   "MUSIC751",
+   "MUSIC771"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=71",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    71,
+    72
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 40,
+  "text_chars": 13665
+ },
+ {
+  "control_number": "17624",
+  "title": "Media Arts: Directing",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.889,
+  "codes_found": [
+   "CINEMA101",
+   "CINEMA105",
+   "CINEMA107",
+   "CINEMA114",
+   "MEDIART100",
+   "MEDIART101",
+   "MEDIART116",
+   "MEDIART118"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=64",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    64,
+    65,
+    66,
+    67
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 9,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "17625",
+  "title": "Media Arts - Post-Production",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CINEMA101",
+   "CINEMA105",
+   "CINEMA107",
+   "CINEMA110",
+   "CINEMA120",
+   "MEDIART100",
+   "MEDIART101",
+   "MEDIART110",
+   "MEDIART120"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=58",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    58,
+    59,
+    60,
+    61
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 9,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "17626",
+  "title": "Media Arts - Producing",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CINEMA101",
+   "CINEMA105",
+   "CINEMA107",
+   "CINEMA111",
+   "MEDIART100",
+   "MEDIART101",
+   "MEDIART113"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=65",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    65,
+    66,
+    67,
+    68
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 7,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "17627",
+  "title": "Media Arts - Screenwriting",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.75,
+  "codes_found": [
+   "CINEMA101",
+   "CINEMA105",
+   "MEDIART101",
+   "MEDIART129",
+   "MEDIART130",
+   "MEDIART131"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=62",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    62
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 8,
+  "text_chars": 5593
+ },
+ {
+  "control_number": "17958",
+  "title": "CSU General Education Breadth",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 41,
+  "text_chars": 0
+ },
+ {
+  "control_number": "17959",
+  "title": "IGETC",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 0.5,
+  "codes_found": [
+   "COMM151",
+   "COMMC1000"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=49",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    49
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 4,
+  "text_chars": 6630
+ },
+ {
+  "control_number": "18168",
+  "title": "Liberal Studies: Multiple Subject Teacher Prep",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "AFROAM20",
+   "ART103",
+   "ART105",
+   "ART109",
+   "ARTHC1100",
+   "ARTHC1200",
+   "BIOLOGY3",
+   "CHDEV1",
+   "CHDEV44",
+   "CHICANO42",
+   "COMM105",
+   "COMMC1000",
+   "EDUC203",
+   "ENGLC1000",
+   "ENGLC1001",
+   "ENGLISH102",
+   "ENGLISH105",
+   "ENGLISH203",
+   "ENGLISH204",
+   "ENGLISH205",
+   "ENGLISH206",
+   "ENGLISH207",
+   "ENGLISH208",
+   "GEOG2",
+   "HISTC1001",
+   "HISTORY86",
+   "LING1",
+   "MATH215",
+   "MUSIC111",
+   "PHILOS6",
+   "PHYSSC4",
+   "POLSC1000",
+   "PSYCH11"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=112",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    112
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 33,
+  "text_chars": 7187
+ },
+ {
+  "control_number": "18169",
+  "title": "General Studies: Arts",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 38,
+  "text_chars": 0
+ },
+ {
+  "control_number": "18170",
+  "title": "General Studies: Natural Science",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 15,
+  "text_chars": 0
+ },
+ {
+  "control_number": "18171",
+  "title": "General Studies: Social and Behavioral Science",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 46,
+  "text_chars": 0
+ },
+ {
+  "control_number": "21326",
+  "title": "Sustainable Construction Management",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ARC172",
+   "ARC173",
+   "EGT100",
+   "EGT103",
+   "EGT104",
+   "ENGGEN101",
+   "GEOLOGY10",
+   "MGMT33"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=130",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    130
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 8,
+  "text_chars": 5163
+ },
+ {
+  "control_number": "21327",
+  "title": "Sustainable Construction Management",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ARC172",
+   "ARC173",
+   "EGT100",
+   "EGT103",
+   "EGT104",
+   "ENGGEN101",
+   "GEOLOGY10",
+   "MGMT33"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=130",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    130
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 8,
+  "text_chars": 5163
+ },
+ {
+  "control_number": "21411",
+  "title": "Property Management",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCTG1",
+   "BUS1",
+   "MGMT1",
+   "REALES1",
+   "REALES14",
+   "REALES21",
+   "REALES5",
+   "REALES7"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=86",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    86
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 8,
+  "text_chars": 4650
+ },
+ {
+  "control_number": "21874",
+  "title": "Accounting",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCTG1",
+   "ACCTG11",
+   "ACCTG18",
+   "ACCTG19",
+   "ACCTG2",
+   "ACCTG3",
+   "ACCTG8",
+   "CAOT78",
+   "CAOT82",
+   "CAOT85"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=82",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    82,
+    83,
+    84,
+    85
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 10,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "21876",
+  "title": "Marketing",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "MARKET21"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=84",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    84,
+    85,
+    86
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 1,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "21877",
+  "title": "Real Estate",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "REALES1",
+   "REALES14",
+   "REALES21",
+   "REALES3",
+   "REALES5",
+   "REALES7",
+   "REALES9"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=91",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    91
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 7,
+  "text_chars": 4929
+ },
+ {
+  "control_number": "21878",
+  "title": "CAOT: Administrative Assistant",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CAOT108",
+   "CAOT2",
+   "CAOT31",
+   "CAOT32",
+   "CAOT33",
+   "CAOT47",
+   "CAOT82",
+   "CAOT84",
+   "CAOT85",
+   "CAOT92",
+   "CAOT97"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=87",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    87,
+    88,
+    89,
+    90
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 11,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "21879",
+  "title": "CAOT: Computer Applications Specialist",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CAOT108",
+   "CAOT123",
+   "CAOT124",
+   "CAOT2",
+   "CAOT31",
+   "CAOT32",
+   "CAOT37",
+   "CAOT78",
+   "CAOT82",
+   "CAOT84",
+   "CAOT85",
+   "CAOT86",
+   "CAOT92",
+   "CAOT97"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=87",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    87,
+    88,
+    89,
+    90
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 14,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "21880",
+  "title": "Media Arts: Directing",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 0.889,
+  "codes_found": [
+   "CINEMA101",
+   "CINEMA105",
+   "CINEMA107",
+   "CINEMA114",
+   "MEDIART100",
+   "MEDIART101",
+   "MEDIART116",
+   "MEDIART118"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=64",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    64,
+    65,
+    66,
+    67
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 9,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "21881",
+  "title": "Media Arts - Post-Production",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CINEMA101",
+   "CINEMA105",
+   "CINEMA107",
+   "CINEMA110",
+   "CINEMA120",
+   "MEDIART100",
+   "MEDIART101",
+   "MEDIART110",
+   "MEDIART120"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=58",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    58,
+    59,
+    60,
+    61
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 9,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "21882",
+  "title": "Media Arts - Producing",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CINEMA101",
+   "CINEMA105",
+   "CINEMA107",
+   "CINEMA111",
+   "MEDIART100",
+   "MEDIART101",
+   "MEDIART113"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=65",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    65,
+    66,
+    67,
+    68
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 7,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "21883",
+  "title": "Media Arts - Screenwriting",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 0.75,
+  "codes_found": [
+   "CINEMA101",
+   "CINEMA105",
+   "MEDIART101",
+   "MEDIART129",
+   "MEDIART130",
+   "MEDIART131"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=62",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    62
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 8,
+  "text_chars": 5593
+ },
+ {
+  "control_number": "21884",
+  "title": "Journalism: Magazine",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "JOURNAL101",
+   "JOURNAL105",
+   "JOURNAL106",
+   "JOURNAL108",
+   "JOURNAL220"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=123",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    123
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 5,
+  "text_chars": 5762
+ },
+ {
+  "control_number": "21885",
+  "title": "Journalism: Newspaper",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "JOURNAL2181"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=122",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    122,
+    123
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 1,
+  "text_chars": 9790
+ },
+ {
+  "control_number": "21887",
+  "title": "Broadcasting: Performance",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BRDCSTG1",
+   "BRDCSTG10",
+   "BRDCSTG17",
+   "BRDCSTG21",
+   "BRDCSTG221",
+   "BRDCSTG23",
+   "BRDCSTG28",
+   "BRDCSTG3",
+   "BRDCSTG5"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=55",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    55,
+    56,
+    57
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 9,
+  "text_chars": 15634
+ },
+ {
+  "control_number": "21888",
+  "title": "Broadcasting: Radio",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BRDCSTG1",
+   "BRDCSTG10",
+   "BRDCSTG11",
+   "BRDCSTG17",
+   "BRDCSTG21",
+   "BRDCSTG221",
+   "BRDCSTG23",
+   "BRDCSTG24",
+   "BRDCSTG3"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=56",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    56,
+    57
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 9,
+  "text_chars": 10450
+ },
+ {
+  "control_number": "21889",
+  "title": "Broadcasting: Television",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BRDCSTG1",
+   "BRDCSTG21",
+   "BRDCSTG23",
+   "BRDCSTG26",
+   "BRDCSTG28",
+   "BRDCSTG3",
+   "BRDCSTG46",
+   "BRDCSTG5"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=56",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    56,
+    57
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 8,
+  "text_chars": 10450
+ },
+ {
+  "control_number": "21890",
+  "title": "Cinema Production",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CINEMA101",
+   "CINEMA105",
+   "CINEMA107",
+   "CINEMA110",
+   "CINEMA115",
+   "CINEMA120",
+   "CINEMA125",
+   "MEDIART100",
+   "MEDIART101",
+   "MEDIART110",
+   "MEDIART115",
+   "MEDIART116",
+   "MEDIART118",
+   "MEDIART120"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=58",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    58,
+    59,
+    60,
+    61
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 14,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "21893",
+  "title": "Electronics: Biomedical Instrumentation",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ELECTRN113",
+   "ELECTRN2",
+   "ELECTRN20",
+   "ELECTRN22",
+   "ELECTRN34",
+   "ELECTRN36",
+   "ELECTRN38",
+   "ELECTRN4",
+   "ELECTRN54",
+   "ELECTRN6",
+   "ELECTRN941"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=131",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    131,
+    132
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 11,
+  "text_chars": 11001
+ },
+ {
+  "control_number": "21894",
+  "title": "Mechanical Drafting/Design",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 0.8,
+  "codes_found": [
+   "EGDTEK101",
+   "EGDTEK102",
+   "ENGGEN101",
+   "MSCNC124"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=135",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    135,
+    136
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 5,
+  "text_chars": 10775
+ },
+ {
+  "control_number": "21895",
+  "title": "Engineering Technology: Industrial/Manufacturing",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 0.75,
+  "codes_found": [
+   "CIS104",
+   "EGDTEK101",
+   "ELECTRN4",
+   "ENGGEN101",
+   "MSCNC124",
+   "NUMCON21"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=135",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    135,
+    136
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 8,
+  "text_chars": 10775
+ },
+ {
+  "control_number": "21896",
+  "title": "Engineering Technology: Mechanical Engineering",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 0.714,
+  "codes_found": [
+   "EGDTEK101",
+   "EGDTEK102",
+   "ENGGEN101",
+   "MATH240",
+   "MSCNC124"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=134",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    134,
+    135,
+    136
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 7,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "21897",
+  "title": "Manufacturing Technology: Metal Machining",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 0.571,
+  "codes_found": [
+   "ENGGEN101",
+   "MSCNC114",
+   "NUMCON21",
+   "NUMCON22"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=134",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    134,
+    135,
+    136
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 7,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "21898",
+  "title": "Manufacturing Technology: Numerical Control",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 0.778,
+  "codes_found": [
+   "CIS104",
+   "ENGGEN101",
+   "MSCNC114",
+   "MSCNC124",
+   "NUMCON21",
+   "NUMCON22",
+   "NUMCON23"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=134",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    134,
+    135,
+    136
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 9,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "21899",
+  "title": "Respiratory Therapy",
+  "award": "Certificate of Achievement requiring 60+S/90+Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 0.875,
+  "codes_found": [
+   "ANATOMY1",
+   "CHEM51",
+   "MICRO20",
+   "PHYSIOL1",
+   "PSYCC1000",
+   "RESPTH1",
+   "RESPTH6"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=109",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    109,
+    110
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 8,
+  "text_chars": 13061
+ },
+ {
+  "control_number": "21900",
+  "title": "Administration of Justice",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ADMJUS1",
+   "ADMJUS2",
+   "ADMJUS3",
+   "ADMJUS5",
+   "ADMJUS911"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=96",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    96
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 5,
+  "text_chars": 4875
+ },
+ {
+  "control_number": "21901",
+  "title": "Fire Technology",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "EDA9",
+   "FIRETEK201",
+   "FIRETEK202",
+   "FIRETEK203",
+   "FIRETEK204",
+   "FIRETEK205",
+   "KIN3051",
+   "KIN3261",
+   "KIN3291",
+   "KIN3501"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=102",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    102
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 10,
+  "text_chars": 4396
+ },
+ {
+  "control_number": "24103",
+  "title": "Microcomputer Literacy",
+  "award": null,
+  "shape": "other",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED114CE",
+   "VOCED115CE"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=148",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    148
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 2,
+  "text_chars": 5001
+ },
+ {
+  "control_number": "24116",
+  "title": "English as a Second Language IV",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESLNC15CE",
+   "ESLNC16CE",
+   "ESLNC17CE"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=119",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    119
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 3,
+  "text_chars": 4306
+ },
+ {
+  "control_number": "24139",
+  "title": "ESL Civics 2",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "24170",
+  "title": "English as a Second Language I",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESLNC1CE",
+   "ESLNC2CE"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=119",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    119
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 2,
+  "text_chars": 4306
+ },
+ {
+  "control_number": "24216",
+  "title": "English as a Second Language II",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESLNC6CE",
+   "ESLNC7CE"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=119",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    119
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 2,
+  "text_chars": 4306
+ },
+ {
+  "control_number": "24247",
+  "title": "Workplace Success",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "24283",
+  "title": "ESL Civics 1",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "24315",
+  "title": "English as a Second Language III",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 10,
+  "text_chars": 0
+ },
+ {
+  "control_number": "24464",
+  "title": "English as a Second Language - Speech",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESLNC23CE",
+   "ESLNC24CE"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=120",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    120
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 2,
+  "text_chars": 4507
+ },
+ {
+  "control_number": "30425",
+  "title": "Computer Science Programming",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CIS112",
+   "CIS210",
+   "CS111",
+   "CS115",
+   "CS117",
+   "CS119",
+   "CS136",
+   "CS150",
+   "CS213",
+   "CS216",
+   "CS220",
+   "CS236"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=141",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    141,
+    142,
+    143
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 12,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "30499",
+  "title": "CAOT: General Office Assistant",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CAOT1",
+   "CAOT2",
+   "CAOT31",
+   "CAOT33",
+   "CAOT43",
+   "CAOT47",
+   "CAOT82",
+   "CAOT84",
+   "CAOT92"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=87",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    87,
+    88,
+    89,
+    90
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 9,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "30699",
+  "title": "Communication Studies",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "COMM102",
+   "COMM104",
+   "COMM105",
+   "COMM106",
+   "COMM121",
+   "COMM122",
+   "COMM130",
+   "COMM151",
+   "COMMC1000",
+   "ENGLC1001"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=116",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    116,
+    117,
+    118
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 10,
+  "text_chars": 14384
+ },
+ {
+  "control_number": "30799",
+  "title": "Sociology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "SOC1",
+   "SOC11",
+   "SOC12",
+   "SOC2",
+   "SOC21",
+   "SOC25",
+   "SOC3",
+   "SOC31",
+   "SOC4",
+   "SOC86",
+   "STAT101",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=163",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    163,
+    164
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 12,
+  "text_chars": 9920
+ },
+ {
+  "control_number": "31036",
+  "title": "Mathematics",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 0.857,
+  "codes_found": [
+   "MATH261",
+   "MATH262",
+   "MATH263",
+   "MATH270",
+   "MATH275",
+   "PHYSICS37"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=145",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    145
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 7,
+  "text_chars": 4784
+ },
+ {
+  "control_number": "31399",
+  "title": "Commercial Music: Music Notation",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "MUSIC101",
+   "MUSIC137",
+   "MUSIC161",
+   "MUSIC241",
+   "MUSIC242",
+   "MUSIC321"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=71",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    71,
+    72
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 6,
+  "text_chars": 13665
+ },
+ {
+  "control_number": "31765",
+  "title": "Commercial Music: Jazz Studies",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 0.875,
+  "codes_found": [
+   "MUSIC137",
+   "MUSIC141",
+   "MUSIC205",
+   "MUSIC206",
+   "MUSIC281",
+   "MUSIC321",
+   "MUSIC322"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=71",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    71,
+    72
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 8,
+  "text_chars": 13665
+ },
+ {
+  "control_number": "31905",
+  "title": "Cinema Theory & Criticism",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CINEMA102",
+   "CINEMA103",
+   "CINEMA104",
+   "CINEMA105",
+   "CINEMA106",
+   "CINEMA107",
+   "CINEMA113",
+   "CINEMA114",
+   "JOURNAL101",
+   "MEDIART129"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=59",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    59
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 10,
+  "text_chars": 6752
+ },
+ {
+  "control_number": "32117",
+  "title": "ART HISTORY",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART105",
+   "ART109",
+   "ART111",
+   "ART115",
+   "ART116",
+   "ART125",
+   "ART201",
+   "ART204",
+   "ART250",
+   "ART501",
+   "ART502",
+   "ART700",
+   "ART708",
+   "ART93",
+   "ART94",
+   "ARTHC1100",
+   "ARTHC1200"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=51",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    51,
+    52,
+    53,
+    54
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 17,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "32212",
+  "title": "Studio Arts",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART105",
+   "ART109",
+   "ART201",
+   "ART202",
+   "ART204",
+   "ART205",
+   "ART213",
+   "ART250",
+   "ART300",
+   "ART304",
+   "ART400",
+   "ART501",
+   "ART502",
+   "ART700",
+   "ART701",
+   "ART702",
+   "ART708",
+   "ART709",
+   "ARTHC1100",
+   "ARTHC1200"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=52",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    52,
+    53,
+    54
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 20,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "32368",
+  "title": "English",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ENGLC1001",
+   "ENGLISH102",
+   "ENGLISH124",
+   "ENGLISH127",
+   "ENGLISH203",
+   "ENGLISH204",
+   "ENGLISH205",
+   "ENGLISH206",
+   "ENGLISH207",
+   "ENGLISH208",
+   "ENGLISH253"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=117",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    117
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 11,
+  "text_chars": 4364
+ },
+ {
+  "control_number": "32379",
+  "title": "Philosophy",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "PHILOS1",
+   "PHILOS12",
+   "PHILOS14",
+   "PHILOS20",
+   "PHILOS28",
+   "PHILOS30",
+   "PHILOS31",
+   "PHILOS35",
+   "PHILOS9"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=124",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    124
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 9,
+  "text_chars": 5847
+ },
+ {
+  "control_number": "32410",
+  "title": "Anthropology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTHRO101",
+   "ANTHRO102",
+   "ANTHRO103",
+   "ANTHRO104",
+   "ANTHRO121",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=155",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    155,
+    156
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 6,
+  "text_chars": 11092
+ },
+ {
+  "control_number": "32740",
+  "title": "Physics",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "PHYSICS37",
+   "PHYSICS38",
+   "PHYSICS39"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=49",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    49
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 3,
+  "text_chars": 6630
+ },
+ {
+  "control_number": "32741",
+  "title": "Early Childhood Education",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHDEV1",
+   "CHDEV10",
+   "CHDEV11",
+   "CHDEV2",
+   "CHDEV22",
+   "CHDEV42",
+   "CHDEV7"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=98",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    98,
+    99,
+    100,
+    101
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 7,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "32849",
+  "title": "History",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "HISTC1001",
+   "HISTC1002",
+   "HISTORY1",
+   "HISTORY2",
+   "HISTORY20",
+   "HISTORY5",
+   "HISTORY6",
+   "HISTORY7",
+   "HISTORY86"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=159",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    159,
+    160
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 9,
+  "text_chars": 12051
+ },
+ {
+  "control_number": "32850",
+  "title": "Geography",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTHRO102",
+   "GEOG1",
+   "GEOG14",
+   "GEOG15",
+   "GEOG2",
+   "GEOG3",
+   "GEOG45",
+   "GEOLOGY1"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=158",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    158
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 8,
+  "text_chars": 5841
+ },
+ {
+  "control_number": "32851",
+  "title": "Political Science",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "HISTORY1",
+   "HISTORY2",
+   "POLSC1000",
+   "POLSCI2",
+   "POLSCI5",
+   "POLSCI7",
+   "STAT101",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=160",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    160,
+    161
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 8,
+  "text_chars": 10489
+ },
+ {
+  "control_number": "32852",
+  "title": "Theatre Arts",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "THEATER100",
+   "THEATER110",
+   "THEATER270",
+   "THEATER272",
+   "THEATER291",
+   "THEATER292",
+   "THEATER342",
+   "THEATER411"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=74",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    74,
+    75,
+    76,
+    77
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 8,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "32853",
+  "title": "Spanish",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "HISTORY5",
+   "HISTORY6",
+   "LING1",
+   "SPANISH1",
+   "SPANISH12",
+   "SPANISH16",
+   "SPANISH2",
+   "SPANISH3",
+   "SPANISH35",
+   "SPANISH36",
+   "SPANISH37",
+   "SPANISH4",
+   "SPANISH5",
+   "SPANISH6",
+   "SPANISH9"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=126",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    126,
+    127,
+    128
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 15,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "32854",
+  "title": "Kinesiology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 0.958,
+  "codes_found": [
+   "ANATOMY1",
+   "CHEM51",
+   "HEALTH11",
+   "KIN3011",
+   "KIN3031",
+   "KIN3151",
+   "KIN3261",
+   "KIN3291",
+   "KIN3501",
+   "KIN3511",
+   "KIN3641",
+   "KIN3711",
+   "KIN3731",
+   "KIN3871",
+   "KIN3891",
+   "KINMAJ100",
+   "KINMAJ101",
+   "PHYSICS6",
+   "PHYSIOL1",
+   "PSYCC1000",
+   "SOC1",
+   "STAT101",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=110",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    110,
+    111,
+    112
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 24,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "33386",
+  "title": "Administration of Justice",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ADMJUS1",
+   "ADMJUS14",
+   "ADMJUS2",
+   "ADMJUS3",
+   "ADMJUS39",
+   "ADMJUS4",
+   "ADMJUS49",
+   "ADMJUS5",
+   "ADMJUS6",
+   "ADMJUS75",
+   "ADMJUS8",
+   "PSYCC1000",
+   "SOC1",
+   "STAT101",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=95",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    95,
+    96,
+    97
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 15,
+  "text_chars": 13693
+ },
+ {
+  "control_number": "33566",
+  "title": "Psychology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "PSYCC1000",
+   "PSYCH11",
+   "PSYCH12",
+   "PSYCH13",
+   "PSYCH14",
+   "PSYCH17",
+   "PSYCH2",
+   "PSYCH3",
+   "PSYCH41",
+   "PSYCH52",
+   "PSYCH60",
+   "PSYCH74",
+   "PSYCH75",
+   "PSYCH90",
+   "STAT101",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=161",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    161
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 16,
+  "text_chars": 4448
+ },
+ {
+  "control_number": "33572",
+  "title": "Journalism",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "JOURNAL101",
+   "JOURNAL105",
+   "JOURNAL202",
+   "JOURNAL2181",
+   "JOURNAL2182",
+   "JOURNAL43",
+   "PHOTO10"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=122",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    122,
+    123
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 7,
+  "text_chars": 9790
+ },
+ {
+  "control_number": "33593",
+  "title": "Elementary Teacher Education",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART103",
+   "BIOLOGY3",
+   "BIOLOGY5",
+   "CHDEV1",
+   "COMMC1000",
+   "DANCEST801",
+   "DANCEST805",
+   "EDUC203",
+   "ENGLC1000",
+   "ENGLISH102",
+   "GEOG1",
+   "GEOG15",
+   "HISTC1001",
+   "HISTORY86",
+   "MATH215",
+   "MUSIC111",
+   "PHYSICS11",
+   "PHYSSC4",
+   "POLSC1000",
+   "THEATER100"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=112",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    112
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 20,
+  "text_chars": 7187
+ },
+ {
+  "control_number": "33615",
+  "title": "Music",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "MUSIC181",
+   "MUSIC182",
+   "MUSIC183",
+   "MUSIC184",
+   "MUSIC200",
+   "MUSIC201",
+   "MUSIC202",
+   "MUSIC203",
+   "MUSIC211",
+   "MUSIC212",
+   "MUSIC213",
+   "MUSIC501",
+   "MUSIC531",
+   "MUSIC563",
+   "MUSIC721",
+   "MUSIC751",
+   "MUSIC771"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=70",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    70,
+    71
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 17,
+  "text_chars": 12578
+ },
+ {
+  "control_number": "33629",
+  "title": "Film, Television, and Electronic Media",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 0.607,
+  "codes_found": [
+   "BRDCSTG10",
+   "BRDCSTG17",
+   "BRDCSTG21",
+   "BRDCSTG23",
+   "BRDCSTG26",
+   "BRDCSTG28",
+   "BRDCSTG3",
+   "BRDCSTG47",
+   "BRDCSTG5",
+   "CINEMA101",
+   "CINEMA105",
+   "CINEMA107",
+   "CINEMA110",
+   "CINEMA115",
+   "CINEMA120",
+   "CINEMA125",
+   "MEDIART118"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=55",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    55,
+    56,
+    57,
+    58
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 28,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "33859",
+  "title": "Retail Management",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS38",
+   "CAOT82",
+   "MARKET21",
+   "MARKET31",
+   "MGMT1",
+   "MGMT31",
+   "MGMT33"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=84",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    84,
+    85,
+    86,
+    87
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 7,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "35201",
+  "title": "Chicano Studies",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHICANO2",
+   "CHICANO37",
+   "CHICANO42",
+   "CHICANO44",
+   "CHICANO54",
+   "CHICANO7",
+   "CHICANO8",
+   "SPANISH2",
+   "SPANISH3",
+   "SPANISH35",
+   "SPANISH36",
+   "SPANISH37",
+   "SPANISH4"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=157",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    157
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 13,
+  "text_chars": 6205
+ },
+ {
+  "control_number": "35395",
+  "title": "Biology",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOLOGY6",
+   "BIOLOGY7",
+   "CHEM101",
+   "CHEM102",
+   "PHYSICS37",
+   "PHYSICS38",
+   "PHYSICS6",
+   "PHYSICS66",
+   "PHYSICS67",
+   "PHYSICS7"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=138",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    138,
+    139,
+    140,
+    141
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 10,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "35427",
+  "title": "Business Administration",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 0.667,
+  "codes_found": [
+   "ECONC2001",
+   "ECONC2002",
+   "MATH238",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=21",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    21
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 6,
+  "text_chars": 3165
+ },
+ {
+  "control_number": "35526",
+  "title": "Economics",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCTG1",
+   "ACCTG2",
+   "BUS32",
+   "CAOT32",
+   "ECON10",
+   "ECONC2001",
+   "ECONC2002",
+   "MATH238",
+   "MATH261",
+   "MATH262",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=156",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    156
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 11,
+  "text_chars": 6721
+ },
+ {
+  "control_number": "36004",
+  "title": "Geology",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEM101",
+   "CHEM102",
+   "GEOLOGY1",
+   "GEOLOGY2"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=147",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    147
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 4,
+  "text_chars": 6342
+ },
+ {
+  "control_number": "37295",
+  "title": "Cinema Theory & Criticism",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CINEMA102",
+   "CINEMA103",
+   "CINEMA104",
+   "CINEMA105",
+   "CINEMA106",
+   "CINEMA107",
+   "CINEMA113",
+   "CINEMA114",
+   "JOURNAL101",
+   "MEDIART129"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=59",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    59
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 10,
+  "text_chars": 6752
+ },
+ {
+  "control_number": "37296",
+  "title": "Media Arts: Visual Effects",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CINEMA101",
+   "CINEMA105",
+   "CINEMA107",
+   "MEDIART100",
+   "MEDIART101",
+   "MEDIART104"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=66",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    66,
+    67,
+    68,
+    69
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 6,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "37297",
+  "title": "Media Arts: Core Studies",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CINEMA101",
+   "CINEMA105",
+   "CINEMA107",
+   "MEDIART100",
+   "MEDIART101"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=67",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    67,
+    68,
+    69
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 5,
+  "text_chars": 15898
+ },
+ {
+  "control_number": "37298",
+  "title": "Media Arts: Visual Effects",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CINEMA101",
+   "CINEMA105",
+   "CINEMA107",
+   "MEDIART100",
+   "MEDIART101",
+   "MEDIART104"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=66",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    66,
+    67,
+    68,
+    69
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 6,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "38959",
+  "title": "Religious Studies",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTHRO121",
+   "ENGLISH252",
+   "HISTORY7",
+   "JEWISH2",
+   "JEWISH25",
+   "PHILOS12",
+   "PHILOS30",
+   "PHILOS31",
+   "PHILOS35"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=162",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    162
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 9,
+  "text_chars": 5001
+ },
+ {
+  "control_number": "39152",
+  "title": "Computerized Bookkeeping",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CAOT2",
+   "CAOT32",
+   "CAOT37",
+   "CAOT43",
+   "CAOT78",
+   "CAOT85"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=87",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    87,
+    88,
+    89,
+    90
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 6,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "39583",
+  "title": "ESL Milestone - Pathway to Language Arts / Spoken Communication",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 0.833,
+  "codes_found": [
+   "COMM102",
+   "COMMC1000",
+   "COUNSEL1",
+   "ESL8",
+   "LIBSCI101"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=118",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    118,
+    119,
+    120
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 6,
+  "text_chars": 14186
+ },
+ {
+  "control_number": "39584",
+  "title": "ESL Milestone - Pathway to Language Arts / Written Communication",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "COUNSEL1",
+   "ENGLC1000",
+   "ESL8",
+   "LIBSCI101"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=118",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    118,
+    119,
+    120
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 4,
+  "text_chars": 14186
+ },
+ {
+  "control_number": "39619",
+  "title": "21st Century Employability Skills - Basic",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BSICSKL108CE",
+   "BSICSKL109CE",
+   "BSICSKL110CE",
+   "BSICSKL111CE",
+   "BSICSKL112CE",
+   "BSICSKL113CE",
+   "BSICSKL114CE",
+   "BSICSKL115CE",
+   "BSICSKL116CE",
+   "BSICSKL117CE"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=92",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    92,
+    93
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 10,
+  "text_chars": 8520
+ },
+ {
+  "control_number": "39620",
+  "title": "21st Century Employability Skills - Basic / Intermediate",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BSICSKL108CE",
+   "BSICSKL109CE",
+   "BSICSKL110CE",
+   "BSICSKL111CE",
+   "BSICSKL112CE",
+   "BSICSKL113CE",
+   "BSICSKL114CE",
+   "BSICSKL115CE",
+   "BSICSKL116CE",
+   "BSICSKL117CE"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=92",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    92,
+    93
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 10,
+  "text_chars": 8520
+ },
+ {
+  "control_number": "39621",
+  "title": "21st Century Employability Skills - Intermediate",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BSICSKL108CE",
+   "BSICSKL109CE",
+   "BSICSKL110CE",
+   "BSICSKL111CE",
+   "BSICSKL112CE",
+   "BSICSKL113CE",
+   "BSICSKL114CE",
+   "BSICSKL115CE",
+   "BSICSKL116CE",
+   "BSICSKL117CE"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=92",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    92,
+    93
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 10,
+  "text_chars": 8520
+ },
+ {
+  "control_number": "39622",
+  "title": "21st Century Employability Skills - Intermediate / Advanced",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BSICSKL108CE",
+   "BSICSKL109CE",
+   "BSICSKL110CE",
+   "BSICSKL111CE",
+   "BSICSKL112CE",
+   "BSICSKL113CE",
+   "BSICSKL114CE",
+   "BSICSKL115CE",
+   "BSICSKL116CE",
+   "BSICSKL117CE"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=92",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    92,
+    93
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 10,
+  "text_chars": 8520
+ },
+ {
+  "control_number": "39623",
+  "title": "21st Century Employability Skills - Advanced",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BSICSKL108CE",
+   "BSICSKL109CE",
+   "BSICSKL110CE",
+   "BSICSKL111CE",
+   "BSICSKL112CE",
+   "BSICSKL113CE",
+   "BSICSKL114CE",
+   "BSICSKL115CE",
+   "BSICSKL116CE",
+   "BSICSKL117CE"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=92",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    92,
+    93
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 10,
+  "text_chars": 8520
+ },
+ {
+  "control_number": "39765",
+  "title": "Gig Economy Careers in Entertainment",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED152CE",
+   "VOCED153CE",
+   "VOCED154CE",
+   "VOCED155CE"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=79",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    79
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 4,
+  "text_chars": 5603
+ },
+ {
+  "control_number": "40533",
+  "title": "Cloud Computing",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CIS101",
+   "CIS192",
+   "CIS193",
+   "CIS194",
+   "CIS195",
+   "CS119"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=142",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    142,
+    143
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 6,
+  "text_chars": 12544
+ },
+ {
+  "control_number": "40662",
+  "title": "Photography",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART125",
+   "JOURNAL101",
+   "MEDIART104",
+   "PHOTO11",
+   "PHOTO15",
+   "PHOTO150",
+   "PHOTO16",
+   "PHOTO20",
+   "PHOTO21"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=72",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    72,
+    73
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 9,
+  "text_chars": 9383
+ },
+ {
+  "control_number": "40793",
+  "title": "Advanced ESL Milestone - Pathway to Broadcasting",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 0.833,
+  "codes_found": [
+   "BRDCSTG1",
+   "BRDCSTG221",
+   "COLLEGE101",
+   "ESL8",
+   "LIBSCI101"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=60",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    60,
+    61
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 6,
+  "text_chars": 11505
+ },
+ {
+  "control_number": "40794",
+  "title": "Advanced ESL Milestone - Pathway to Cinema/Media Arts",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 0.833,
+  "codes_found": [
+   "COLLEGE101",
+   "COUNSEL4",
+   "ESL8",
+   "LIBSCI101",
+   "MEDIART100"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=60",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    60,
+    61
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 6,
+  "text_chars": 11505
+ },
+ {
+  "control_number": "40871",
+  "title": "Advanced ESL Milestone - Pathway to Music",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 0.833,
+  "codes_found": [
+   "COLLEGE101",
+   "COUNSEL4",
+   "ESL8",
+   "LIBSCI101",
+   "MUSIC101"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=61",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    61
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 6,
+  "text_chars": 6449
+ },
+ {
+  "control_number": "40988",
+  "title": "African American Studies",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "AFROAM2",
+   "AFROAM20",
+   "SOC11",
+   "SOC2"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=154",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    154
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 4,
+  "text_chars": 2719
+ },
+ {
+  "control_number": "40989",
+  "title": "ESL Milestone - Pathway to Environmental Science",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 7,
+  "text_chars": 0
+ },
+ {
+  "control_number": "41005",
+  "title": "Business Essentials",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCTG1",
+   "ACCTG2",
+   "BUS1",
+   "LAW1",
+   "MARKET21",
+   "MGMT1"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=85",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    85,
+    86
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 6,
+  "text_chars": 11055
+ },
+ {
+  "control_number": "41008",
+  "title": "Photography",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART125",
+   "JOURNAL101",
+   "MEDIART104",
+   "PHOTO11",
+   "PHOTO15",
+   "PHOTO150",
+   "PHOTO16",
+   "PHOTO20",
+   "PHOTO21"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=72",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    72,
+    73
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 9,
+  "text_chars": 9383
+ },
+ {
+  "control_number": "41492",
+  "title": "STEM Foundation",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOLOGY6",
+   "BIOLOGY7",
+   "CHEM101",
+   "CHEM60",
+   "CS117",
+   "GEOLOGY2",
+   "GEOLOGY7",
+   "PHYSICS37",
+   "PHYSICS6",
+   "PHYSICS66"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=150",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    150,
+    151
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 10,
+  "text_chars": 8640
+ },
+ {
+  "control_number": "41493",
+  "title": "STEM Foundation",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOLOGY6",
+   "BIOLOGY7",
+   "CHEM101",
+   "CHEM60",
+   "CS117",
+   "GEOLOGY2",
+   "GEOLOGY7",
+   "PHYSICS37",
+   "PHYSICS6",
+   "PHYSICS66"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=150",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    150,
+    151
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 10,
+  "text_chars": 8640
+ },
+ {
+  "control_number": "41578",
+  "title": "Allied Health Preparation",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANATOMY1",
+   "BIOLOGY3",
+   "BIOLOGY5",
+   "BIOLOGY6",
+   "CHEM101",
+   "CHEM51",
+   "CHEM60",
+   "MICRO20",
+   "PHYSIOL1",
+   "PSYCC1000"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=96",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    96,
+    97
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 10,
+  "text_chars": 8753
+ },
+ {
+  "control_number": "41579",
+  "title": "Allied Health Preparation",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANATOMY1",
+   "BIOLOGY3",
+   "BIOLOGY5",
+   "BIOLOGY6",
+   "CHEM101",
+   "CHEM51",
+   "CHEM60",
+   "MICRO20",
+   "PHYSIOL1",
+   "PSYCC1000"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=96",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    96,
+    97
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 10,
+  "text_chars": 8753
+ },
+ {
+  "control_number": "42328",
+  "title": "On-Set Camera and DIT Skills",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED762CE",
+   "VOCED763CE"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=79",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    79
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 2,
+  "text_chars": 5603
+ },
+ {
+  "control_number": "42380",
+  "title": "DaVinci Resolve Techniques",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED760CE",
+   "VOCED761CE"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=78",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    78
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 2,
+  "text_chars": 4766
+ },
+ {
+  "control_number": "42382",
+  "title": "Community Health Worker",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 0.875,
+  "codes_found": [
+   "BSICSKL110CE",
+   "BSICSKL112CE",
+   "BSICSKL115CE",
+   "BSICSKL116CE",
+   "ESLNC17CE",
+   "VOCED554CE",
+   "VOCED555CE"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=114",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    114
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 8,
+  "text_chars": 5646
+ },
+ {
+  "control_number": "43336",
+  "title": "TV/Video Industry",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED911CE",
+   "VOCED912CE"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=81",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    81
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 2,
+  "text_chars": 3123
+ },
+ {
+  "control_number": "43337",
+  "title": "Working with Actors",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED764CE",
+   "VOCED765CE"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=81",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    81
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 2,
+  "text_chars": 3123
+ },
+ {
+  "control_number": "43338",
+  "title": "Digital Film Editing Techniques",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED899CE",
+   "VOCED900CE"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=78",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    78
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 2,
+  "text_chars": 4766
+ },
+ {
+  "control_number": "43339",
+  "title": "Entertainment Industry Entry Level Preparation",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED903CE",
+   "VOCED904CE"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=78",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    78
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 2,
+  "text_chars": 4766
+ },
+ {
+  "control_number": "43340",
+  "title": "Line Producing & Unit Production Management (UPM) Skills",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED901CE",
+   "VOCED902CE"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=79",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    79
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 2,
+  "text_chars": 5603
+ },
+ {
+  "control_number": "43341",
+  "title": "Motion Picture & Television Grip and Electric",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED905CE",
+   "VOCED906CE"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=79",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    79
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 2,
+  "text_chars": 5603
+ },
+ {
+  "control_number": "43342",
+  "title": "Motion Picture Sound Techniques",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED897CE",
+   "VOCED898CE"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=79",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    79
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 2,
+  "text_chars": 5603
+ },
+ {
+  "control_number": "43343",
+  "title": "Photography: Basic Techniques",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED915CE",
+   "VOCED916CE"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=80",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    80
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 2,
+  "text_chars": 5835
+ },
+ {
+  "control_number": "43344",
+  "title": "Screenwriting",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED907CE",
+   "VOCED908CE"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=80",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    80
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 2,
+  "text_chars": 5835
+ },
+ {
+  "control_number": "43345",
+  "title": "The Mass Media and the Law",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED913CE",
+   "VOCED914CE"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=81",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    81
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 2,
+  "text_chars": 3123
+ },
+ {
+  "control_number": "43454",
+  "title": "Radio/Audio Industry",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED909CE",
+   "VOCED910CE"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=80",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    80
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 2,
+  "text_chars": 5835
+ },
+ {
+  "control_number": "43579",
+  "title": "English as a Second Language - Communication Competency",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESLNC50CE",
+   "ESLNC51CE"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=120",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    120
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 2,
+  "text_chars": 4507
+ },
+ {
+  "control_number": "43774",
+  "title": "Communication Studies 2.0",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTHRO102",
+   "COMM102",
+   "COMM104",
+   "COMM105",
+   "COMM106",
+   "COMM121",
+   "COMM122",
+   "COMM130",
+   "COMM151",
+   "COMMC1000",
+   "ENGLC1001",
+   "ENGLISH102",
+   "JOURNAL101",
+   "JOURNAL105",
+   "PSYCC1000",
+   "SOC1"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=116",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    116,
+    117,
+    118
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 16,
+  "text_chars": 14384
+ },
+ {
+  "control_number": "43994",
+  "title": "Data Science and Analytics",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CIS124",
+   "CS119",
+   "CS131",
+   "CS159",
+   "CS165"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=143",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    143
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 5,
+  "text_chars": 5643
+ },
+ {
+  "control_number": "43998",
+  "title": "UCTP Chemistry",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEM101",
+   "CHEM102",
+   "CHEM211",
+   "CHEM212",
+   "MATH261",
+   "MATH262",
+   "MATH263",
+   "MATH275",
+   "PHYSICS37",
+   "PHYSICS38",
+   "PHYSICS39"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=139",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    139,
+    140,
+    141
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 11,
+  "text_chars": 15636
+ },
+ {
+  "control_number": "44162",
+  "title": "English as a Second Language – Reading and Writing",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESLNC18CE",
+   "ESLNC19CE"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=120",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    120
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 2,
+  "text_chars": 4507
+ },
+ {
+  "control_number": "44265",
+  "title": "Workplace Diversity, Equity, and Inclusion",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED148CE",
+   "VOCED149CE"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=164",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    164
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 2,
+  "text_chars": 3533
+ },
+ {
+  "control_number": "44328",
+  "title": "Respiratory Therapy",
+  "award": "Baccalaureate of Science (B.S.) Degree.",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.667,
+  "codes_found": [
+   "PSYCC1000",
+   "RESPTH1",
+   "RESPTH11",
+   "RESPTH15",
+   "RESPTH3",
+   "RESPTH310",
+   "RESPTH320",
+   "RESPTH330",
+   "RESPTH340",
+   "RESPTH350",
+   "RESPTH4",
+   "RESPTH410",
+   "RESPTH420",
+   "RESPTH430",
+   "RESPTH440",
+   "RESPTH450",
+   "RESPTH6",
+   "SOC325"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=248",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    248,
+    249,
+    250
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 27,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "44379",
+  "title": "Media Arts: Virtual Production, Motion Capture, and Advanced Visual Effects",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CINEMA101",
+   "CINEMA105",
+   "CINEMA107",
+   "MEDIART100",
+   "MEDIART101",
+   "MEDIART104",
+   "MEDIART107",
+   "MEDIART108"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=66",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    66,
+    67,
+    68,
+    69
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 8,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "44391",
+  "title": "Media Arts: Virtual Production, Motion Capture, and Advanced Visual Effects",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CINEMA101",
+   "CINEMA105",
+   "CINEMA107",
+   "MEDIART100",
+   "MEDIART101",
+   "MEDIART104",
+   "MEDIART107",
+   "MEDIART108"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=66",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    66,
+    67,
+    68,
+    69
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 8,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "44481",
+  "title": "Cybersecurity Support Technician",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED924CE",
+   "VOCED925CE"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=152",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    152
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 2,
+  "text_chars": 5210
+ },
+ {
+  "control_number": "44483",
+  "title": "UCTP Physics",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 0.9,
+  "codes_found": [
+   "CHEM101",
+   "CHEM102",
+   "MATH261",
+   "MATH262",
+   "MATH263",
+   "MATH275",
+   "PHYSICS37",
+   "PHYSICS38",
+   "PHYSICS39"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=139",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    139,
+    140,
+    141
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 10,
+  "text_chars": 15636
+ },
+ {
+  "control_number": "44542",
+  "title": "Computer Science",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOLOGY6",
+   "BIOLOGY7",
+   "CHEM101",
+   "CS113",
+   "CS130",
+   "CS131",
+   "CS136",
+   "MATH261",
+   "MATH262",
+   "PHYSICS37",
+   "PHYSICS38"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=141",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    141,
+    142,
+    143,
+    144
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 11,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "45024",
+  "title": "California General Education Transfer Curriculum (Cal-GETC)",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "45136",
+  "title": "Human Resource Management",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS1",
+   "BUS32",
+   "LAW1",
+   "MGMT1",
+   "MGMT31",
+   "MGMT33"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=83",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    83,
+    84,
+    85,
+    86
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 6,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "45137",
+  "title": "Legal Administrative Assistant",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "LAW1",
+   "PALEGAL11",
+   "PALEGAL12",
+   "PALEGAL14",
+   "PALEGAL17",
+   "PALEGAL41"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=90",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    90,
+    91
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 6,
+  "text_chars": 10757
+ },
+ {
+  "control_number": "45159",
+  "title": "Behavior Technician",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED421CE",
+   "VOCED422CE"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=113",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    113
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 2,
+  "text_chars": 4561
+ },
+ {
+  "control_number": "45160",
+  "title": "Behavior Technician: Autism",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED421CE",
+   "VOCED422CE",
+   "VOCED425CE"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=113",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    113
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 3,
+  "text_chars": 4561
+ },
+ {
+  "control_number": "45161",
+  "title": "Childcare: Nannying",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED510CE",
+   "VOCED511CE",
+   "VOCED512CE"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=114",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    114
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 3,
+  "text_chars": 5646
+ },
+ {
+  "control_number": "45174",
+  "title": "Networking Support Technician",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED919CE",
+   "VOCED920CE",
+   "VOCED921CE",
+   "VOCED922CE",
+   "VOCED923CE"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=152",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    152
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 5,
+  "text_chars": 5210
+ },
+ {
+  "control_number": "45178",
+  "title": "Introduction to Nonprofit",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED652CE",
+   "VOCED800CE"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=114",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    114,
+    115
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 2,
+  "text_chars": 11277
+ },
+ {
+  "control_number": "45179",
+  "title": "Nonprofit Management",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED651CE",
+   "VOCED652CE",
+   "VOCED653CE",
+   "VOCED800CE"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=115",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    115
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 4,
+  "text_chars": 5629
+ },
+ {
+  "control_number": "45192",
+  "title": "Banquet and Restaurant Server",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED242CE",
+   "VOCED246CE",
+   "VOCED98CE"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=93",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    93,
+    94
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 3,
+  "text_chars": 7796
+ },
+ {
+  "control_number": "45201",
+  "title": "Certified Nursing Assistant",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED342CE",
+   "VOCED343CE"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=114",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    114
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 2,
+  "text_chars": 5646
+ },
+ {
+  "control_number": "45202",
+  "title": "In-Home Supportive Services",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED2CE",
+   "VOCED59CE"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=114",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    114
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 2,
+  "text_chars": 5646
+ },
+ {
+  "control_number": "45216",
+  "title": "Media Arts: Cinematography",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CINEMA101",
+   "CINEMA105",
+   "CINEMA107",
+   "CINEMA115",
+   "CINEMA117",
+   "MEDIART100",
+   "MEDIART101",
+   "MEDIART115",
+   "MEDIART116"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=64",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    64,
+    65,
+    66,
+    67
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 9,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "45217",
+  "title": "Media Arts: Sound Design",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CINEMA101",
+   "CINEMA105",
+   "CINEMA107",
+   "CINEMA110",
+   "MEDIART100",
+   "MEDIART101",
+   "MEDIART110",
+   "MEDIART112",
+   "MEDIART116"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=65",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    65,
+    66,
+    67,
+    68
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 9,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "45218",
+  "title": "Media Arts: Editing and Color Grading",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CINEMA101",
+   "CINEMA105",
+   "CINEMA107",
+   "CINEMA120",
+   "MEDIART100",
+   "MEDIART101",
+   "MEDIART116",
+   "MEDIART120",
+   "MEDIART121",
+   "MEDIART122"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=64",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    64,
+    65,
+    66,
+    67
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 10,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "45256",
+  "title": "Media Arts: Cinematography",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CINEMA101",
+   "CINEMA105",
+   "CINEMA107",
+   "CINEMA115",
+   "CINEMA117",
+   "MEDIART100",
+   "MEDIART101",
+   "MEDIART115",
+   "MEDIART116"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=64",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    64,
+    65,
+    66,
+    67
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 9,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "45257",
+  "title": "Media Arts: Editing and Color Grading",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CINEMA101",
+   "CINEMA105",
+   "CINEMA107",
+   "CINEMA120",
+   "MEDIART100",
+   "MEDIART101",
+   "MEDIART116",
+   "MEDIART120",
+   "MEDIART121",
+   "MEDIART122"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=64",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    64,
+    65,
+    66,
+    67
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 10,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "45258",
+  "title": "Media Arts: Sound Design",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CINEMA101",
+   "CINEMA105",
+   "CINEMA107",
+   "CINEMA110",
+   "MEDIART100",
+   "MEDIART101",
+   "MEDIART110",
+   "MEDIART112",
+   "MEDIART116"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=65",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    65,
+    66,
+    67,
+    68
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 9,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "46196",
+  "title": "Mathematics 2.0",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CS113",
+   "MATH261",
+   "MATH262",
+   "MATH263",
+   "MATH270",
+   "MATH275",
+   "PHYSICS37"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=148",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    148,
+    149,
+    150,
+    151
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 7,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "46258",
+  "title": "College Success",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BSICSKL105CE",
+   "BSICSKL75CE"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=125",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    125
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 2,
+  "text_chars": 1932
+ },
+ {
+  "control_number": "46270",
+  "title": "Physics 2.0",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CS115",
+   "CS117",
+   "CS119",
+   "CS136",
+   "CS216",
+   "MATH261",
+   "MATH262",
+   "MATH263",
+   "MATH270",
+   "MATH275",
+   "PHYSICS37",
+   "PHYSICS38",
+   "PHYSICS39"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=149",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    149,
+    150,
+    151
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 13,
+  "text_chars": 13015
+ },
+ {
+  "control_number": "46277",
+  "title": "Artificial Intelligence for Business",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED749CE",
+   "VOCED750CE",
+   "VOCED751CE"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=93",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    93
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 3,
+  "text_chars": 4379
+ },
+ {
+  "control_number": "46280",
+  "title": "Tutor Training",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED144CE",
+   "VOCED88CE",
+   "VOCED89CE"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=115",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    115
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 3,
+  "text_chars": 5629
+ },
+ {
+  "control_number": "46281",
+  "title": "Photography: Aerial Drone Photography and Basic Spatial Photogrammetry",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED719CE",
+   "VOCED720CE",
+   "VOCED721CE",
+   "VOCED722CE"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=80",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    80
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 4,
+  "text_chars": 5835
+ },
+ {
+  "control_number": "46282",
+  "title": "Photography: Digital Imaging",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED513CE",
+   "VOCED915CE",
+   "VOCED916CE"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=80",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    80
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 3,
+  "text_chars": 5835
+ },
+ {
+  "control_number": "46333",
+  "title": "Physical Fitness and Body Movement",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "HEALTH11",
+   "HEALTH2",
+   "HEALTH46",
+   "KIN3051",
+   "KIN3261",
+   "KIN3291",
+   "KIN3501",
+   "KINMAJ100",
+   "KINMAJ116"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=111",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    111
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 9,
+  "text_chars": 5448
+ },
+ {
+  "control_number": "46437",
+  "title": "Cybersecurity and Networking Support",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 0.833,
+  "codes_found": [
+   "CIS170",
+   "CIS210",
+   "CIS211",
+   "CIS225",
+   "CIS240"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=142",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    142
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 6,
+  "text_chars": 6899
+ },
+ {
+  "control_number": "46442",
+  "title": "Palo Alto Networks Cybersecurity Fundamentals",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED713CE",
+   "VOCED714CE",
+   "VOCED715CE"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=153",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    153
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 3,
+  "text_chars": 5688
+ },
+ {
+  "control_number": "46443",
+  "title": "Palo Alto Networks Security Operations and Automation Specialist",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED716CE",
+   "VOCED717CE",
+   "VOCED718CE"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=153",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    153
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 3,
+  "text_chars": 5688
+ },
+ {
+  "control_number": "46444",
+  "title": "Splunk Security Operations Analyst",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED710CE",
+   "VOCED711CE",
+   "VOCED712CE"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=153",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    153
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 3,
+  "text_chars": 5688
+ },
+ {
+  "control_number": "46445",
+  "title": "AI for Cybersecurity Support Technician",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED707CE",
+   "VOCED708CE",
+   "VOCED709CE"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=152",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    152
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 3,
+  "text_chars": 5210
+ }
+]

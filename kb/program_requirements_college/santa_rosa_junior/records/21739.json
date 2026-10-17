@@ -1,0 +1,261 @@
+{
+ "college": "Santa Rosa Junior College",
+ "control_number": "21739",
+ "shape": "certificate",
+ "title": "Fashion Design",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=148",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7805,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7805,
+    "output_tokens": 2101,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2101,
+  "output_tokens_details": {
+   "thinking_tokens": 834
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.07324,
+ "ms": 18248,
+ "seconds": 18.5,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 12,
+   "listed": 12,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "FASH60"
+   ],
+   "flagged": [
+    "FASH60"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    28.5,
+    28.5
+   ],
+   "stated": [
+    28.5,
+    28.5
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 9,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Fashion Design (AA)",
+   "measure": "units",
+   "total_units": {
+    "min": 28.5,
+    "max": 28.5
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Communicate design concepts through technical sketches and illustrations.",
+    "Translate garment designs from sketch to pattern to ﬁnished garment using apparel industry techniques.",
+    "Select appropriate fabrics for apparel based on ﬁber content, textile construction, and environmental impact."
+   ],
+   "careers": [
+    "the fashion industry",
+    "assistant designer",
+    "apparel business owner",
+    "production manager",
+    "sample room coordinator",
+    "pattern maker",
+    "sales assistant",
+    "fabric buyer",
+    "visual merchandiser"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Fashion Design Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "FASH 8",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FASH 52.2",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FASH 56",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FASH 60",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "FASH 62A",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FASH 70A",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FASH 70B",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FASH 112",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FASH 121",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FASH 139",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FASH 141",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FASH 152",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FASH 152L",
+      "units": 0.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The text contains no section headed for the Fashion Design Certificate of Achievement; only the 'Fashion Design (AA)' section is present. Its major requirements were recorded because they are the only Fashion Design requirements in the text, and the closed list matches them (all 12 closed-list courses appear; total 28.5 units falls within the 16 to fewer than 30 unit certificate range). A reviewer should confirm against the certificate's own catalog section, likely on a following page.",
+   "GE pattern, degree total and the 60-unit/Cal-GETC/ADT boilerplate in the AA section were not recorded, since they are degree requirements, not certificate requirements; that boilerplate also appears inconsistent with a local AA.",
+   "FASH 60 Draped Design (2 units) is not in the closed list; recorded as catalog addition.",
+   "Closed list prints 'FASH70B' without a space; matched to catalog 'FASH 70B'.",
+   "Program Student Learning Outcomes recorded are those printed under the Fashion Design (AA) section; they may be shared with the certificate. The outcomes at the top of page 148 belong to the preceding Environmental Studies program and were not recorded."
+  ]
+ },
+ "extracted_run": "39006464249"
+}

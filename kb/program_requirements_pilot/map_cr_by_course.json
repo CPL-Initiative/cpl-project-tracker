@@ -1,8 +1,8 @@
 {
- "_what": "MAP's credit recommendations per course at the harvest's sixty-nine colleges (the pilot's five, Santa Monica, Irvine Valley, Moreno Valley, Norco, Long Beach City, Chaffey, San Diego City, San Diego Mesa, Bakersfield, Coastline, Cabrillo, Modesto Junior, Palo Verde, Southwestern, Fresno City, El Camino, San Joaquin Delta, Santa Barbara City, Orange Coast, Foothill, Sierra, Fullerton, Citrus, Victor Valley, Monterey Peninsula, Golden West, Cuyamaca, Mt. San Jacinto, MiraCosta, College of the Sequoias, Napa Valley, San Bernardino Valley, Moorpark, Cypress, Evergreen Valley, Ventura, Oxnard, Santa Ana, Rio Hondo, Palomar, Saddleback, Allan Hancock, Reedley, Chabot, College of Alameda, Feather River, Imperial Valley, Laney, Las Positas, Madera, Merritt, Berkeley City, Gavilan, Antelope Valley, Columbia, Contra Costa, Lemoore, Redwoods, Siskiyous, Lake Tahoe, Marin, Butte, Los Medanos and Mission): how many credit recommendations and exhibits MAP holds against each course code, and the exhibit titles behind them. Counts and credential titles only; no student column is read or carried. The ROEP display builder (kb/_build_roep_display.py) reads it as the 'articulated here' kind beside the CER's industry-credential lines.",
+ "_what": "MAP's credit recommendations per course at the harvest's eighty-four colleges (the pilot's five, Santa Monica, Irvine Valley, Moreno Valley, Norco, Long Beach City, Chaffey, San Diego City, San Diego Mesa, Bakersfield, Coastline, Cabrillo, Modesto Junior, Palo Verde, Southwestern, Fresno City, El Camino, San Joaquin Delta, Santa Barbara City, Orange Coast, Foothill, Sierra, Fullerton, Citrus, Victor Valley, Monterey Peninsula, Golden West, Cuyamaca, Mt. San Jacinto, MiraCosta, College of the Sequoias, Napa Valley, San Bernardino Valley, Moorpark, Cypress, Evergreen Valley, Ventura, Oxnard, Santa Ana, Rio Hondo, Palomar, Saddleback, Allan Hancock, Reedley, Chabot, College of Alameda, Feather River, Imperial Valley, Laney, Las Positas, Madera, Merritt, Berkeley City, Gavilan, Antelope Valley, Columbia, Contra Costa, Lemoore, Redwoods, Siskiyous, Lake Tahoe, Marin, Butte, Los Medanos, Mission, Clovis, Barstow, Calbright, Compton, Lassen, Mendocino, Woodland, Canyons, Los Angeles City, Los Angeles Harbor, Pierce, Shasta, Los Angeles Valley, Santa Rosa and Yuba): how many credit recommendations and exhibits MAP holds against each course code, and the exhibit titles behind them. Counts and credential titles only; no student column is read or carried. The ROEP display builder (kb/_build_roep_display.py) reads it as the 'articulated here' kind beside the CER's industry-credential lines.",
  "_source": "public.map_college_cr_unit (reviewer-gated) joined to map_colleges by college_id; exhibit titles from map_ace_exhibit_titles, else chatbox_exhibits. A college_course string naming several courses ('ADJ-13 ...(3.0), ADJ-19 ...(3.0)') counts toward each course it names. Course code = the SUBJ-NUM token with the hyphen read as a space.",
  "_read_at": "2026-10-17",
- "_read_by": "SkyToyon (S402) through the Supabase MCP, the S402 second wave: Los Medanos (7 course codes; md5 0e75e79e counts, e88bf855 titles) and Mission (3, each on one untitled exhibit; 74922763, no titles) added, each matched in SQL (two CTEs, counts and titles) and over the filed rows. SkyToyon (S402) through the Supabase MCP, the S402 wave: Lake Tahoe, Marin and Butte added, none naming a course (no map_college_cr_unit row at any of the three names a college_course; Butte holds 1,170 rows, Marin 13); Las Positas re-read, its three course codes (AUTO A9, CNT 52, CNT 69) unchanged, matched over the filed rows. SkyManzanita (S401) through the Supabase MCP, the eLumen wave: Antelope Valley (4 course codes; md5 2a10a9b9 counts, c39cfb0b titles), Columbia (4; e5456494, 0d495ac7), Contra Costa (1; 0330a719, 47f6d052), Lemoore (13; 2041ff49, c1e38b8b), Siskiyous (2; 813036cf, 81489319) and Redwoods (none: no map_college_cr_unit row names a college_course) added, each matched in SQL (two CTEs, counts and titles) and over the filed rows. SkyBirch (S400) through the Supabase MCP, wave 5's second half: Merritt (25 course codes; md5 ff9ac653 counts, 61638b16 titles), Berkeley City (3; c31979ed, 6a4bcd9a), Gavilan (3; 7766ec6e, 75d342d1) added, each matched in SQL (two CTEs, counts and titles) and over the filed rows after its load; Butte (none: its map_college_cr_unit rows name no college_course) held until its records load. SkyRowan (S399) through the Supabase MCP, wave 5: Laney (7 course codes; md5 2b0dacf8 counts, 70f4d0f9 titles), Madera (4; 6ae2737b, cb29a40d), Las Positas (3; 43b0da84, bb8ede61); College of Alameda, Feather River and Imperial Valley (none: their few college_course strings name no SUBJ-NUM code) added, each matched in SQL after its load. SkyJacaranda (S396) through the Supabase MCP, wave 4: Santa Ana (83 course codes; md5 8cc90680 counts, 51ec66e8 titles, 05f6a23e exhibits by source), Reedley (24; 10515015, ed3bf609, d817484a), Ventura (4; 959aa3a8, b7841475, 74b4ac39), Allan Hancock (3; f784b555, 456ddf45, f07e8cd7), Oxnard (2; e3758fea, e3fdf5c4, 685d8c10); Rio Hondo, Palomar, Saddleback and Chabot (none: their few college_course strings name no SUBJ-NUM code) added, each matched in SQL ahead of its load. SkyHawthorn (S395) through the Supabase MCP, wave 3: Cypress (41 course codes; md5 f23dc34b counts, 09bded16 titles), Napa Valley (25; 46024a39, 1cb28039), San Bernardino Valley (83; f18f1313, 4e38c8e4), Moorpark (4; 61571f0e, 0064e895), College of the Sequoias (3; 80563542, 0bba198e), Evergreen Valley (2; d32576cf, 0540a44c); Golden West, Cuyamaca, Mt. San Jacinto and MiraCosta (none) added. SkyMadrone (S394) through the Supabase MCP, second batch: Fullerton (6 course codes; md5 057fed7f counts, 11d31a76 titles), Monterey Peninsula (3; eb85fce8, 1794bde6), Citrus and Victor Valley (none) added. SkyMadrone (S394) through the Supabase MCP: Santa Barbara City, Orange Coast, Foothill and Sierra added; MAP names no course code at any of the four (map_college_cr_unit rows carry no SUBJ-NUM college_course there). Fullerton (6 course codes; md5 057fed7f counts, 11d31a76 titles) and Diablo Valley (2; 0daebf68, f20f5e51) were read the same day, matched in SQL, and are held until their records load. Earlier: SkyTamarack (S392) through the Supabase MCP: El Camino (no course code: its one college_course reads \"-\") and San Joaquin Delta (1 course code; md5 c814004d counts, d7d7ab68 titles; its \"CSU GE E\" line names no course) added. Earlier: SkyPersimmon (S389) through the Supabase MCP: Southwestern (3 course codes; md5 220de7f7 counts, b4f52863 titles) and Fresno City (2; afd80e74, 6b4b8433) added. Earlier: SkyHazel (S385) through the Supabase MCP: Modesto Junior (162 course codes) and Palo Verde (58) added; the per-college md5 over code|recs|exhibits|untitled (codes in C order, newline-joined) reads 44f69ec1a24823e14935781dbd760bd8 and 4acabc5730dedeb1e0f28194796eb23c, and the md5 over each code's titles (code#title#source#recs, in the read's order) 30765bf9ceef64b44a2e862b58111469 and 83bbe816ab4eb109b72be382c170d47a, in SQL and over the filed rows. Earlier: SkySpruce (S383) through the Supabase MCP: Cabrillo added (112 course codes); the per-college md5 over code|recs|exhibits|untitled (codes in C order, newline-joined) reads 51b488541fdab60ea9e4d093eb052c0a and the md5 over each code's titles (code#title#source#recs, in the read's order) d71fa73bd6952487451eaeafb878f3eb, in SQL and over the filed rows. Earlier: SkyRowan (S381) through the Supabase MCP: Bakersfield (100 course codes) and Coastline (26) added; per-college md5 over code|recs|exhibits|untitled (codes in C order, newline-joined) reads c58de704f09a7b58007336979431dace and 8bccde4ad1bae0d610b6de34413e24e9 in SQL and over the filed rows. Earlier: SkyCypress (S373) through the Supabase MCP: San Diego Mesa added (44 course codes); the per-college md5 over code|recs|exhibits|untitled reads 9ad02bf038663b2c19ac0c6b8aed2574 and the md5 over each code's titles (title#source#recs, in the read's order) 38e86115426ffd0ca2856d3ad6713150, in SQL and over the filed rows. Earlier: SkyLaurel (S369) through the Supabase MCP: Chaffey (94 course codes) and San Diego City (33) added; per-college md5 over code|recs|exhibits|untitled reads 115340c8a405300f47c2bd0223964f68 and 249410c6592148fbf3beb7b68b7f1cd0 in SQL and over the filed rows. Earlier: SkyCedar (S363) through the Supabase MCP: Long Beach City added (33 course codes; the per-course fingerprint over code, recs, exhibits, untitled exhibits and titles reads 5c7d3a90393e710daa4f686a2f56c917 in SQL and over the filed rows). Earlier: SkyFern (S358) through the Supabase MCP: Moreno Valley (106 course codes) and Norco (82) added; Riverside City re-read in full and equal to the 2026-10-06 read on all 34 codes (md5 feff937a5b5c8320029a06ab06a97243). Earlier: SkyLedger (S340) through the Supabase MCP. Santa Monica and Irvine Valley were read in full. The pilot's five were proved against the 2026-10-04 read by a fingerprint per course; the four courses that differed (Riverside MAG 51; West LA AVIATEK 002, 005 and 017: one exhibit title each, and one credit recommendation fewer on AVIATEK 002) were re-read. Every college's fingerprint matches the live read.",
+ "_read_by": "SkyYarrow (S403) through the Supabase MCP, the PDF wave: Clovis (4 course codes; e53da6e3 counts, c1b5af06 titles), Barstow (17 course codes; f73f6fe1 counts, 451abb2f titles), Compton (15 course codes; 0372785a counts, 41de27b9 titles), Mendocino (2 course codes; 4bf17982 counts, ab2b512c titles), Woodland (3 course codes; c3e9f7ab counts, cf6856c7 titles), College of the Canyons (5 course codes; 4a961d0d counts, cac75a9e titles), Los Angeles City (1 course codes; 29ced49c counts, ae657c1d titles), Los Angeles Harbor (7 course codes; 163aa2f5 counts, 8a73d807 titles), Los Angeles Pierce (23 course codes; 6e747337 counts, 3cf5f81e titles), Shasta (2 course codes; f5b2e58b counts, e06203a4 titles), Santa Rosa (1 course codes; 69c2ee9c counts, d8318abc titles) added, each matched in SQL (two CTEs, counts and titles) and over the filed rows. Lassen, Los Angeles Valley and Yuba name no course (Lassen holds 1 row with a college_course that names no SUBJ-NUM token, Valley 6, Yuba none); Calbright College Credit has no map_colleges id. SkyToyon (S402) through the Supabase MCP, the S402 second wave: Los Medanos (7 course codes; md5 0e75e79e counts, e88bf855 titles) and Mission (3, each on one untitled exhibit; 74922763, no titles) added, each matched in SQL (two CTEs, counts and titles) and over the filed rows. SkyToyon (S402) through the Supabase MCP, the S402 wave: Lake Tahoe, Marin and Butte added, none naming a course (no map_college_cr_unit row at any of the three names a college_course; Butte holds 1,170 rows, Marin 13); Las Positas re-read, its three course codes (AUTO A9, CNT 52, CNT 69) unchanged, matched over the filed rows. SkyManzanita (S401) through the Supabase MCP, the eLumen wave: Antelope Valley (4 course codes; md5 2a10a9b9 counts, c39cfb0b titles), Columbia (4; e5456494, 0d495ac7), Contra Costa (1; 0330a719, 47f6d052), Lemoore (13; 2041ff49, c1e38b8b), Siskiyous (2; 813036cf, 81489319) and Redwoods (none: no map_college_cr_unit row names a college_course) added, each matched in SQL (two CTEs, counts and titles) and over the filed rows. SkyBirch (S400) through the Supabase MCP, wave 5's second half: Merritt (25 course codes; md5 ff9ac653 counts, 61638b16 titles), Berkeley City (3; c31979ed, 6a4bcd9a), Gavilan (3; 7766ec6e, 75d342d1) added, each matched in SQL (two CTEs, counts and titles) and over the filed rows after its load; Butte (none: its map_college_cr_unit rows name no college_course) held until its records load. SkyRowan (S399) through the Supabase MCP, wave 5: Laney (7 course codes; md5 2b0dacf8 counts, 70f4d0f9 titles), Madera (4; 6ae2737b, cb29a40d), Las Positas (3; 43b0da84, bb8ede61); College of Alameda, Feather River and Imperial Valley (none: their few college_course strings name no SUBJ-NUM code) added, each matched in SQL after its load. SkyJacaranda (S396) through the Supabase MCP, wave 4: Santa Ana (83 course codes; md5 8cc90680 counts, 51ec66e8 titles, 05f6a23e exhibits by source), Reedley (24; 10515015, ed3bf609, d817484a), Ventura (4; 959aa3a8, b7841475, 74b4ac39), Allan Hancock (3; f784b555, 456ddf45, f07e8cd7), Oxnard (2; e3758fea, e3fdf5c4, 685d8c10); Rio Hondo, Palomar, Saddleback and Chabot (none: their few college_course strings name no SUBJ-NUM code) added, each matched in SQL ahead of its load. SkyHawthorn (S395) through the Supabase MCP, wave 3: Cypress (41 course codes; md5 f23dc34b counts, 09bded16 titles), Napa Valley (25; 46024a39, 1cb28039), San Bernardino Valley (83; f18f1313, 4e38c8e4), Moorpark (4; 61571f0e, 0064e895), College of the Sequoias (3; 80563542, 0bba198e), Evergreen Valley (2; d32576cf, 0540a44c); Golden West, Cuyamaca, Mt. San Jacinto and MiraCosta (none) added. SkyMadrone (S394) through the Supabase MCP, second batch: Fullerton (6 course codes; md5 057fed7f counts, 11d31a76 titles), Monterey Peninsula (3; eb85fce8, 1794bde6), Citrus and Victor Valley (none) added. SkyMadrone (S394) through the Supabase MCP: Santa Barbara City, Orange Coast, Foothill and Sierra added; MAP names no course code at any of the four (map_college_cr_unit rows carry no SUBJ-NUM college_course there). Fullerton (6 course codes; md5 057fed7f counts, 11d31a76 titles) and Diablo Valley (2; 0daebf68, f20f5e51) were read the same day, matched in SQL, and are held until their records load. Earlier: SkyTamarack (S392) through the Supabase MCP: El Camino (no course code: its one college_course reads \"-\") and San Joaquin Delta (1 course code; md5 c814004d counts, d7d7ab68 titles; its \"CSU GE E\" line names no course) added. Earlier: SkyPersimmon (S389) through the Supabase MCP: Southwestern (3 course codes; md5 220de7f7 counts, b4f52863 titles) and Fresno City (2; afd80e74, 6b4b8433) added. Earlier: SkyHazel (S385) through the Supabase MCP: Modesto Junior (162 course codes) and Palo Verde (58) added; the per-college md5 over code|recs|exhibits|untitled (codes in C order, newline-joined) reads 44f69ec1a24823e14935781dbd760bd8 and 4acabc5730dedeb1e0f28194796eb23c, and the md5 over each code's titles (code#title#source#recs, in the read's order) 30765bf9ceef64b44a2e862b58111469 and 83bbe816ab4eb109b72be382c170d47a, in SQL and over the filed rows. Earlier: SkySpruce (S383) through the Supabase MCP: Cabrillo added (112 course codes); the per-college md5 over code|recs|exhibits|untitled (codes in C order, newline-joined) reads 51b488541fdab60ea9e4d093eb052c0a and the md5 over each code's titles (code#title#source#recs, in the read's order) d71fa73bd6952487451eaeafb878f3eb, in SQL and over the filed rows. Earlier: SkyRowan (S381) through the Supabase MCP: Bakersfield (100 course codes) and Coastline (26) added; per-college md5 over code|recs|exhibits|untitled (codes in C order, newline-joined) reads c58de704f09a7b58007336979431dace and 8bccde4ad1bae0d610b6de34413e24e9 in SQL and over the filed rows. Earlier: SkyCypress (S373) through the Supabase MCP: San Diego Mesa added (44 course codes); the per-college md5 over code|recs|exhibits|untitled reads 9ad02bf038663b2c19ac0c6b8aed2574 and the md5 over each code's titles (title#source#recs, in the read's order) 38e86115426ffd0ca2856d3ad6713150, in SQL and over the filed rows. Earlier: SkyLaurel (S369) through the Supabase MCP: Chaffey (94 course codes) and San Diego City (33) added; per-college md5 over code|recs|exhibits|untitled reads 115340c8a405300f47c2bd0223964f68 and 249410c6592148fbf3beb7b68b7f1cd0 in SQL and over the filed rows. Earlier: SkyCedar (S363) through the Supabase MCP: Long Beach City added (33 course codes; the per-course fingerprint over code, recs, exhibits, untitled exhibits and titles reads 5c7d3a90393e710daa4f686a2f56c917 in SQL and over the filed rows). Earlier: SkyFern (S358) through the Supabase MCP: Moreno Valley (106 course codes) and Norco (82) added; Riverside City re-read in full and equal to the 2026-10-06 read on all 34 codes (md5 feff937a5b5c8320029a06ab06a97243). Earlier: SkyLedger (S340) through the Supabase MCP. Santa Monica and Irvine Valley were read in full. The pilot's five were proved against the 2026-10-04 read by a fingerprint per course; the four courses that differed (Riverside MAG 51; West LA AVIATEK 002, 005 and 017: one exhibit title each, and one credit recommendation fewer on AVIATEK 002) were re-read. Every college's fingerprint matches the live read.",
  "_refresh": "By hand, the way kb/ccr_cpl_funnel.json is refreshed: run kb/program_requirements_pilot/map_cr_by_course.sql through the Supabase MCP when the funnel reloads (map-custom-report-load.yml) or the harvest adds a college, and file the rows here.",
  "colleges": {
   "Bakersfield College": {
@@ -33393,6 +33393,2408 @@
     "titles": null,
     "untitled_exhibits": 1
    }
-  }
+  },
+  "Clovis Community College": {
+   "IS 15": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "ACE": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Basic Electronics",
+      "source": "ACE"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "IS 62": {
+    "recs": 2,
+    "exhibits": 2,
+    "exhibits_by_source": {
+     "ACE": 1,
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "CompTIA A+ Certification",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "Tactical Data Systems Administration",
+      "source": "ACE"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "IS 63": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Cisco Certified Network Associate (CCNA) Certification",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "IS 64": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Cisco Certified Network Associate (CCNA) Certification",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   }
+  },
+  "Barstow Community College": {
+   "ADJU 14": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "ACE": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Internment/Resettlement Specialist Advanced Individual Training",
+      "source": "ACE"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "AHLT 51": {
+    "recs": 2,
+    "exhibits": 7,
+    "exhibits_by_source": {
+     "ACE": 7
+    },
+    "titles": [
+     {
+      "recs": 2,
+      "title": "Basic Combat Training",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "21B10 Combat Engineer",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Basic Military Police One Station Unit Training (OSUT)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Infantryman",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "M1 Armor Crewman",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Motor Transport Operator Advanced Leader (ALC)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Recruit Training Master FY11",
+      "source": "ACE"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "AHLT 63": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "ACE": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Basic Combat Training",
+      "source": "ACE"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "AUTO 52": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "ACE": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Wheeled Vehicle Mechanic",
+      "source": "ACE"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "AUTO 53": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "ACE": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Wheeled Vehicle Mechanic",
+      "source": "ACE"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "AUTO 54": {
+    "recs": 1,
+    "exhibits": 2,
+    "exhibits_by_source": {
+     "ACE": 2
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Construction Equipment Repairer",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Wheeled Vehicle Mechanic",
+      "source": "ACE"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "AUTO 55": {
+    "recs": 2,
+    "exhibits": 2,
+    "exhibits_by_source": {
+     "ACE": 2
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Tracked Vehicle Repairer",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Wheeled Vehicle Mechanic",
+      "source": "ACE"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "BADM 6": {
+    "recs": 2,
+    "exhibits": 5,
+    "exhibits_by_source": {
+     "ACE": 5
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Human Resources Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Human Resources Specialist Advanced Leader",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Infantryman Advanced Leader (ALC)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Supply Chain and Materials Specialist (11/21-Pres)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Transportation Management Coordinator",
+      "source": "ACE"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "CBIS 1": {
+    "recs": 2,
+    "exhibits": 8,
+    "exhibits_by_source": {
+     "ACE": 8
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Assault Amphibious Vehicle (AAV)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Automated Logistical Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Human Resources Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Human Resources Specialist Advanced Leaders (ALC)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Transportation Management Coordinator",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Unit Supply Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Warehouse Clerk",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Wheeled Vehicle Mechanic",
+      "source": "ACE"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "COMM C1000": {
+    "recs": 2,
+    "exhibits": 6,
+    "exhibits_by_source": {
+     "ACE": 6
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Aviation Machinist's Mate",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Distributed Leader II",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Fire Support Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Support Equipment Electrician/Refrigeration and Engine/ Gas Turbine Technician",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Warrior Leader (AC)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Wheeled Vehicle Mechanic",
+      "source": "ACE"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "COUN 5": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "ACE": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Basic Combat Training",
+      "source": "ACE"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "DESL 63": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "ACE": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Wheeled Vehicle Mechanic",
+      "source": "ACE"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "KINA 10A": {
+    "recs": 4,
+    "exhibits": 11,
+    "exhibits_by_source": {
+     "ACE": 11
+    },
+    "titles": [
+     {
+      "recs": 2,
+      "title": "Basic Combat Training",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Airborne",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Basic Military Police One Station Unit Training (OSUT)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Cavalry Scout",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Drill Sergeant",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Infantryman",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "M1A1 Abrams Armor Crewman One Station Unit Training (OSUT)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Marine Combat Training (MCT)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Recruit Basic Military Training (BMT)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Recruit Training Master FY11",
+      "source": "ACE"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "KINA 2A": {
+    "recs": 1,
+    "exhibits": 2,
+    "exhibits_by_source": {
+     "ACE": 2
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Basic Combat Training",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Recruit Training Master FY11",
+      "source": "ACE"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "MGMT 1": {
+    "recs": 2,
+    "exhibits": 4,
+    "exhibits_by_source": {
+     "ACE": 4
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Assault Amphibious Vehicle (AAV)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Combat Engineer",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Structured Self Development (SSD-II)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Warrior Leader (AC)",
+      "source": "ACE"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "MGMT 3": {
+    "recs": 4,
+    "exhibits": 10,
+    "exhibits_by_source": {
+     "ACE": 10
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Assault Amphibious Vehicle (AAV)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Automated Logistical Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Field Artillery (FA) Firefinder Radar Operator",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Human Resources Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Human Resources Specialist Advanced Leader",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "M1 Armor Crewman",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Support Equipment Electrician/Refrigeration and Engine/ Gas Turbine Technician",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Unit Supply Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Warehouse Clerk",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Warrior Leader (AC)",
+      "source": "ACE"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "MGMT 5": {
+    "recs": 4,
+    "exhibits": 22,
+    "exhibits_by_source": {
+     "ACE": 22
+    },
+    "titles": [
+     {
+      "recs": 2,
+      "title": "M1 Armor Crewman",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Cryptologic Technician (Collection)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Distributed Leader I",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Field Artillery (FA) Firefinder Radar Operator",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Field Artillery Cannon Section Chief Basic Noncommissioned Officer (NCO)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Fire Support Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Infantryman",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Infantryman Advanced Leader (ALC)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Jumpmaster",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "M1A2/M1A2 Sep Abrams Armor Crewman Basic Noncommissioned Officer (NCO), Phase 2",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Military Police",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Ordnance Officer Basic Ordnance Maintenance Management",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Sergeants DEP",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Signal Support Systems Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Structured Self Development (SSD-1)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Support Equipment Electrician/Refrigeration and Engine/ Gas Turbine Technician",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Transportation Management Coordinator",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Unit Supply Specialist Basic Noncommissioned Officer (NCO)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Warehouse Clerk",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Warrior Leader (AC)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Wheeled Vehicle Mechanic",
+      "source": "ACE"
+     }
+    ],
+    "untitled_exhibits": 0
+   }
+  },
+  "Calbright College Credit": {},
+  "Compton College": {
+   "ACR 121": {
+    "recs": 1,
+    "exhibits": 2,
+    "exhibits_by_source": {
+     "ACE": 2
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Basic Combat Training",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Recruit Training Master FY11",
+      "source": "ACE"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "AJ 100": {
+    "recs": 1,
+    "exhibits": 2,
+    "exhibits_by_source": {
+     "ACE": 2
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Basic Combat Training",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Recruit Training Master FY11",
+      "source": "ACE"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "AJ 103": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "ACE": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Master-At-Arms",
+      "source": "ACE"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "AJ 134": {
+    "recs": 3,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "ACE": 1
+    },
+    "titles": [
+     {
+      "recs": 3,
+      "title": "Master-At-Arms",
+      "source": "ACE"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "ATEC 101": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "ACE": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Aviation Support Equipment Technician, Class A1",
+      "source": "ACE"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "BUS 117": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "ACE": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Personal Financial Management by Correspondence",
+      "source": "ACE"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "BUS 122": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "ACE": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Supporting Arms Coordination Center (SACC)",
+      "source": "ACE"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "CIS 132": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "ACE": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Air Defense Battle Management Systems Operator",
+      "source": "ACE"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "COMS 140": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "ACE": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Warrior Leader (AC)",
+      "source": "ACE"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "CPL 1": {
+    "recs": 7,
+    "exhibits": 4,
+    "exhibits_by_source": {
+     "ACE": 4
+    },
+    "titles": [
+     {
+      "recs": 3,
+      "title": "Basic Military Training",
+      "source": "ACE"
+     },
+     {
+      "recs": 2,
+      "title": "Basic Combat Training",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Recruit Basic Military Training (BMT)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Recruit Training Master FY11",
+      "source": "ACE"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "CPL 2": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "ACE": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Recruit Basic Military Training (BMT)",
+      "source": "ACE"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "CPL 3": {
+    "recs": 6,
+    "exhibits": 3,
+    "exhibits_by_source": {
+     "ACE": 3
+    },
+    "titles": [
+     {
+      "recs": 4,
+      "title": "Support Equipment Electrician/Refrigeration and Engine/ Gas Turbine Technician",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Master-at-Arms 'A' School",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Recruit Training Master FY11",
+      "source": "ACE"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "MTEC 175": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "ACE": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Aviation Support Equipment Technician, Class A1",
+      "source": "ACE"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "PE 103": {
+    "recs": 4,
+    "exhibits": 5,
+    "exhibits_by_source": {
+     "ACE": 5
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Basic Combat Training",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Basic Military Training",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Cavalry Scout",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Infantryman",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Marine Combat Training (MCT)",
+      "source": "ACE"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "PE 260": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "ACE": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Basic Military Training",
+      "source": "ACE"
+     }
+    ],
+    "untitled_exhibits": 0
+   }
+  },
+  "Lassen College": {},
+  "Mendocino College": {
+   "CPL 1": {
+    "recs": 5,
+    "exhibits": 3,
+    "exhibits_by_source": {
+     "ACE": 3
+    },
+    "titles": [
+     {
+      "recs": 3,
+      "title": "Recruit Training Master FY11",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Infantry Patrolling",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "The M240G Machine Gunner by Correspondence",
+      "source": "ACE"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "CPL 3": {
+    "recs": 3,
+    "exhibits": 2,
+    "exhibits_by_source": {
+     "ACE": 2
+    },
+    "titles": [
+     {
+      "recs": 2,
+      "title": "Recruit Training Master FY11",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Marine Combat Training (MCT)",
+      "source": "ACE"
+     }
+    ],
+    "untitled_exhibits": 0
+   }
+  },
+  "Woodland Community College": {
+   "AJ 40": {
+    "recs": 4,
+    "exhibits": 4,
+    "exhibits_by_source": {
+     "ACE": 4
+    },
+    "titles": [
+     {
+      "recs": 3,
+      "title": "Basic Combat Training",
+      "source": "ACE"
+     },
+     {
+      "recs": 2,
+      "title": "Recruit Training Master FY11",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Infantryman",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Recruit Basic Military Training (BMT)",
+      "source": "ACE"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "BCA 15": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "ACE": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Assault Amphibious Vehicle (AAV) Repairer/Technician",
+      "source": "ACE"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "EMT 61": {
+    "recs": 2,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "ACE": 1
+    },
+    "titles": [
+     {
+      "recs": 2,
+      "title": "Health Care Specialist",
+      "source": "ACE"
+     }
+    ],
+    "untitled_exhibits": 0
+   }
+  },
+  "College of the Canyons": {
+   "ART 125B": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Portfolio Review - ART 125B",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "SPAN 101": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "AP Spanish Literature and Culture (Score 5)",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "SPAN 102": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "AP Spanish Literature and Culture (Score 5)",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "SPAN 201": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "AP Spanish Literature and Culture (Score 5)",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "SPAN 202": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "AP Spanish Literature and Culture (Score 5)",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   }
+  },
+  "Los Angeles City College": {
+   "COMM 121": {
+    "recs": 1,
+    "exhibits": 4,
+    "exhibits_by_source": {
+     "ACE": 4
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Instructional Delivery Continuum (IDC) - Journeyman Instructor Training (JIT)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Instructor",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Recruiter Canvasser",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Recruiting and Retention NCO (Army National Guard)",
+      "source": "ACE"
+     }
+    ],
+    "untitled_exhibits": 0
+   }
+  },
+  "Los Angeles Harbor College": {
+   "ADM JUS 075": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "ACE": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Corrections by Correspondence",
+      "source": "ACE"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "BUS 001": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "ACE": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Electronics Technician",
+      "source": "ACE"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "CSU GE A1": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "ACE": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Military Intelligence Advanced Noncommissioned Officer (NCO)",
+      "source": "ACE"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "IGETC 4": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "ACE": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Human Intelligence Collector",
+      "source": "ACE"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "KIN 217": {
+    "recs": 1,
+    "exhibits": 3,
+    "exhibits_by_source": {
+     "ACE": 3
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Basic Combat Training",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Martial Arts Instructor",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Recruit Training Master FY11",
+      "source": "ACE"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "MGMT 002": {
+    "recs": 2,
+    "exhibits": 3,
+    "exhibits_by_source": {
+     "ACE": 3
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Military Intelligence Advanced Noncommissioned Officer (NCO)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Structured Self Development (SSD-II)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Warrior Leader (AC)",
+      "source": "ACE"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "SUPV 001": {
+    "recs": 5,
+    "exhibits": 17,
+    "exhibits_by_source": {
+     "ACE": 17
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "AN/TRC-170 Technician",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Aviation Ordnanceman (AO)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Cannon Crewmember",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Chemical, Biological, Radiological, and Nuclear Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Distributed Leader I",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Electrician's Mate",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Finance Technician",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Flight Equipment Technician",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Helicopter Crew Chief, UH-1",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Human Intelligence Collector",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Infantry Squad Leader (East)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Infantryman",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Maintenance Management Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Radio Chief",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Recruiting and Retention NCO (Army National Guard)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Structured Self Development (SSD-1)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Warrior Leader (AC)",
+      "source": "ACE"
+     }
+    ],
+    "untitled_exhibits": 0
+   }
+  },
+  "Los Angeles Pierce College": {
+   "ART 201": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "HIGH SCHOOL ARTICULATION - BIRMINGHAM CCHS: ART 201 Drawing I",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "ART 501": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "HIGH SCHOOL ARTICULATION - BIRMINGHAM CCHS: ART 501 Beginning Two-Dimensional Design",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "ART 604": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "HIGH SCHOOL ARTICULATION -  BIRMINGHAM CCHS: ART 604 Graphic Design I",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "CIS 101": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "HIGH SCHOOL ARTICULATION - BIRMINGHAM CCHS: CIS 101 Introduction to Computers and Their Uses",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "COMM 121": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "ACE": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Mass Communication Specialist",
+      "source": "ACE"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "CPL 1": {
+    "recs": 17,
+    "exhibits": 85,
+    "exhibits_by_source": {
+     "ACE": 8,
+     "MAP": 77
+    },
+    "titles": [
+     {
+      "recs": 4,
+      "title": "Basic Combat Training",
+      "source": "ACE"
+     },
+     {
+      "recs": 4,
+      "title": "Recruit Training Master FY11",
+      "source": "ACE"
+     },
+     {
+      "recs": 3,
+      "title": "Infantryman",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "AP 2-D Art and Design - Score of 3 or higher - HISTORICAL Type 1",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "AP 3-D Art and Design - Score of 3 or higher - HISTORICAL Type 1",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "AP Art History - Score of 3 or higher - HISTORICAL Type 1",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "AP Art History - Score of 3 or higher - HISTORICAL Type 2",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "AP Biology - Score of 3 or higher - HISTORICAL Type 1",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "AP Biology - Score of 3 or higher - HISTORICAL Type 2",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "AP Calculus AB - Score of 3 or higher - HISTORICAL Type 1",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "AP Calculus BC - Score of 3 or higher - HISTORICAL Type 1",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "AP Calculus BC - Score of 3 or higher - HISTORICAL Type 2",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "AP Calculus BC - Score of 3 or higher - HISTORICAL Type 3",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "AP Calculus BC/AB Subscore - Score of 3 or higher - HISTORICAL Type 1",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "AP Chemistry - Score of 3 or higher - HISTORICAL Type 1",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "AP Chemistry - Score of 3 or higher - HISTORICAL Type 2",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "AP Chinese Language and Culture - Score of 3 or higher - HISTORICAL Type 1",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "AP Chinese Language and Culture - Score of 3 or higher - HISTORICAL Type 2",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "AP Comparative Government and Politics - Score of 3 or higher - HISTORICAL Type 1",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "AP Computer Science A - Score of 3 or higher - HISTORICAL Type 1",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "AP Computer Science Principles - Score of 3 or higher - HISTORICAL Type 1",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "AP Computer Science Principles - Score of 3 or higher - HISTORICAL Type 2",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "AP Drawing - Score of 3 or higher - HISTORICAL Type 1",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "AP English Language and Composition - Score of 3 or higher - HISTORICAL Type 1",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "AP English Language and Composition - Score of 3 or higher - HISTORICAL Type 2",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "AP English Literature and Composition - Score of 3 or higher - HISTORICAL Type 1",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "AP English Literature and Composition - Score of 3 or higher - HISTORICAL Type 2",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "AP Environmental Science - Score of 3 or higher - HISTORICAL Type 1",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "AP Environmental Science - Score of 3 or higher - HISTORICAL Type 2",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "AP European History - Score of 3 or higher - HISTORICAL Type 1",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "AP European History - Score of 3 or higher - HISTORICAL Type 2",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "AP French Language and Culture - Score of 3 or higher - HISTORICAL Type 1",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "AP German Language and Culture - Score of 3 or higher - HISTORICAL Type 1",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "AP Human Geography - Score of 3 or higher - HISTORICAL Type 1",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "AP Latin - Score of 3 or higher - HISTORICAL Type 1",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "AP Latin: Virgil - Score of 3 or higher - HISTORICAL Type 1",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "AP Macroeconomics - Score of 3 or higher - HISTORICAL Type 1",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "AP Microeconomics - Score of 3 or higher - HISTORICAL Type 1",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "AP Music Theory - Score of 3 or higher - HISTORICAL Type 1",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "AP Physics 1: Algebra-Based - Score of 3 - HISTORICAL Type 1",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "AP Physics 1: Algebra-Based - Score of 3 - HISTORICAL Type 2",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "AP Physics 1: Algebra-Based - Score of 4-5 - HISTORICAL Type 1",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "AP Physics 2: Algebra-Based - Score of 3 - HISTORICAL Type 1",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "AP Physics 2: Algebra-Based - Score of 4-5 - HISTORICAL Type 1",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "AP Physics C: Electricity and Magnetism - Score of 3 - HISTORICAL Type 1",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "AP Physics C: Electricity and Magnetism - Score of 4-5 - HISTORICAL Type 1",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "AP Physics C: Electricity and Magnetism - Score of 4-5 - HISTORICAL Type 2",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "AP Physics C: Mechanics - Score of 3 - HISTORICAL Type 1",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "AP Physics C: Mechanics - Score of 4-5 - HISTORICAL Type 1",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "AP Precalculus - Score of 3 or higher - HISTORICAL Type 1",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "AP Psychology - Score of 3 or higher - HISTORICAL Type 1",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "AP Seminar - Score of 3 or higher - HISTORICAL Type 1",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "AP Spanish Language and Culture - Score of 3 - HISTORICAL Type 1",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "AP Spanish Language and Culture - Score of 4-5 - HISTORICAL Type 1",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "AP Spanish Language and Culture - Score of 4-5 - HISTORICAL Type 2",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "AP Spanish Literature and Culture - Score of 3 - HISTORICAL Type 1",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "AP Spanish Literature and Culture - Score of 3 - HISTORICAL Type 2",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "AP Spanish Literature and Culture - Score of 4-5 - HISTORICAL Type 1",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "AP Statistics - Score of 3 or higher - HISTORICAL Type 1",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "AP U.S. Government and Politics - Score of 3 or higher - HISTORICAL Type 1",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "AP U.S. History - Score of 3 or higher - HISTORICAL Type 1",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "AP U.S. History - Score of 3 or higher - HISTORICAL Type 2",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "AP World History: Modern - Score of 3 or higher - HISTORICAL Type 1",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "AP World History: Modern - Score of 3 or higher - HISTORICAL Type 2",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "CLEP American Government - Score of 50 or higher - HISTORICAL Type 1",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "CLEP History, United States I - Score of 50 or higher - HISTORICAL Type 1",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "CLEP Introductory Business Law - Score of 50 or higher - HISTORICAL Type 1",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "CLEP Introductory Sociology - Score of 50 or higher - HISTORICAL Type 1",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "CLEP Principles of Management - Score of 50 or higher - HISTORICAL Type 1",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "CLEP Principles of Marketing - Score of 50 or higher - HISTORICAL Type 1",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "Fundamentals of Marine Corps Leadership by Correspondence",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "IB Biology HL - Score of 5 or higher - HISTORICAL Type 1",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "IB Economics HL - Score of 5 or higher - HISTORICAL Type 1",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "IB History - any region HL - Score of 5 or higher - HISTORICAL Type 1",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "IB History - any region HL - Score of 5 or higher - HISTORICAL Type 2",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "IB Language A: Language and Literature HL - Score of 4 or higher - HISTORICAL Type 1",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "IB Language B - any language HL - Score of 4 or higher - HISTORICAL Type 1",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "IB Language B - any language HL - Score of 4 or higher - HISTORICAL Type 2",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "IB Math Higher Level - Score of 4 or higher - HISTORICAL Type 1",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "IB Physics HL - Score of 5 or higher - HISTORICAL Type 1",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "IB Psychology HL - Score of 5 or higher - HISTORICAL Type 1",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "Infantry Patrolling by Correspondence",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Principles of Instruction for the Marine Noncommissioned Officer (NCO) by Correspondence",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Structured Self Development (SSD-1)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "United States Marine Corps Ground Intelligence Officer",
+      "source": "ACE"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "CPL 2": {
+    "recs": 10,
+    "exhibits": 6,
+    "exhibits_by_source": {
+     "ACE": 6
+    },
+    "titles": [
+     {
+      "recs": 2,
+      "title": "10-Week Commissioning Program",
+      "source": "ACE"
+     },
+     {
+      "recs": 2,
+      "title": "Basic Combat Training",
+      "source": "ACE"
+     },
+     {
+      "recs": 2,
+      "title": "Ground Intelligence Officer",
+      "source": "ACE"
+     },
+     {
+      "recs": 2,
+      "title": "Recruit Training Master FY11",
+      "source": "ACE"
+     },
+     {
+      "recs": 2,
+      "title": "United States Marine Corps Ground Intelligence Officer",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Automotive Engine Maintenance and Repair by Correspondence",
+      "source": "ACE"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "CPL 3": {
+    "recs": 23,
+    "exhibits": 13,
+    "exhibits_by_source": {
+     "ACE": 13
+    },
+    "titles": [
+     {
+      "recs": 6,
+      "title": "Infantryman",
+      "source": "ACE"
+     },
+     {
+      "recs": 3,
+      "title": "Human Resources Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 3,
+      "title": "TATS Signal Support Systems Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 2,
+      "title": "Aircrew Survival Equipment Class A1",
+      "source": "ACE"
+     },
+     {
+      "recs": 2,
+      "title": "Recruit Training Master FY11",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Administrative Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Corporals",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Distributed Leader I",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Marine Combat Training (MCT)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Marine Rifleman: Combat Skills by Correspondence",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Personal Financial Management by Correspondence",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Scout Sniper Commanders",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Warrior Leader (AC)",
+      "source": "ACE"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "CSU GE E": {
+    "recs": 7,
+    "exhibits": 6,
+    "exhibits_by_source": {
+     "ACE": 6
+    },
+    "titles": [
+     {
+      "recs": 4,
+      "title": "Recruit Basic Military Training (BMT)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Basic Military Training",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Infantryman",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Recruit Training Master FY11",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Surface Common Core (SCC)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Total Army Training System (TATS) Cannon Crewmember",
+      "source": "ACE"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "LACCD GE 7": {
+    "recs": 6,
+    "exhibits": 11,
+    "exhibits_by_source": {
+     "ACE": 11
+    },
+    "titles": [
+     {
+      "recs": 2,
+      "title": "Basic Combat Training",
+      "source": "ACE"
+     },
+     {
+      "recs": 2,
+      "title": "Basic Military Police One Station Unit Training (OSUT)",
+      "source": "ACE"
+     },
+     {
+      "recs": 2,
+      "title": "Infantryman",
+      "source": "ACE"
+     },
+     {
+      "recs": 2,
+      "title": "Recruit Basic Military Training (BMT)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Expeditionary Combat Skills",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Indirect Fire Infantryman",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Naval Special Warfare Preparatory",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Recruit Training",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Recruit Training Master FY11",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Staff Noncommissioned Officer (NCO) Academy Sergeants",
+      "source": "ACE"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "MEDIART 101": {
+    "recs": 1,
+    "exhibits": 3,
+    "exhibits_by_source": {
+     "MAP": 3
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "HIGH SCHOOL ARTICULATION - CANOGA HS: MEDIART 101 Introduction to Digital Film Production",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "HIGH SCHOOL ARTICULATION - CHATSWORTH HS: MEDIART 101 Introduction to Digital Film Production",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "HIGH SCHOOL ARTICULATION - CLEVELAND HS: MEDIART 101 Introduction to Digital Film Production",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "MUSIC 101": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "MUSIC 101 - Fundamentals of Music",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "MUSIC 216": {
+    "recs": 2,
+    "exhibits": 2,
+    "exhibits_by_source": {
+     "MAP": 2
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "MUSIC 216-1 - Music Theory I",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "MUSIC 216-2 - Music Theory II",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "MUSIC 217": {
+    "recs": 2,
+    "exhibits": 2,
+    "exhibits_by_source": {
+     "MAP": 2
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "MUSIC 217-2 - Musicianship II",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "Musicianship I",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "MUSIC 321": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "MUSIC 321 -Elementary Piano I",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "NURSING 400": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Licensed Vocational Nurse (LVN) - Active license within the last two years",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "NURSING 402": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Licensed Vocational Nurse (LVN) - Active license within the last two years",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "NURSING 403": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Licensed Vocational Nurse (LVN) - Active license within the last two years",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "NURSING 404": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Licensed Vocational Nurse (LVN) - Active license within the last two years",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "NURSING 407": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Licensed Vocational Nurse (LVN) - Active license within the last two years",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "NURSING 415": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Licensed Vocational Nurse (LVN) - Active license within the last two years",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "PLNT SC 812": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "PLNT SC 812 - Landscape Installation and Maintenance I",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "SUPV 001": {
+    "recs": 4,
+    "exhibits": 11,
+    "exhibits_by_source": {
+     "ACE": 11
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Advanced Assaultman",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Assault Amphibious Vehicle (AAV) Repairer/Technician",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Aviation Electrician's Mate",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Aviation Support Equipment Technician (AS)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Distributed Leader I",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Electrician's Mate",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Mass Communication Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Structured Self Development (SSD-1)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Supply Administration and Operations Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Support Equipment Electrician/Refrigeration and Engine/ Gas Turbine Technician",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Warrior Leader (AC)",
+      "source": "ACE"
+     }
+    ],
+    "untitled_exhibits": 0
+   }
+  },
+  "Shasta College": {
+   "BUAD 41": {
+    "recs": 5,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "ACE": 1
+    },
+    "titles": [
+     {
+      "recs": 5,
+      "title": "Infantry Squad Leader (East)",
+      "source": "ACE"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "CPL 1": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "unnamed": 1
+    },
+    "titles": [],
+    "untitled_exhibits": 1
+   }
+  },
+  "Los Angeles Valley College": {},
+  "Santa Rosa Junior College": {
+   "EMC 100": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "ACE": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Hospital Corpsman",
+      "source": "ACE"
+     }
+    ],
+    "untitled_exhibits": 0
+   }
+  },
+  "Yuba College": {}
  }
 }

@@ -1,0 +1,237 @@
+{
+ "college": "Santa Rosa Junior College",
+ "control_number": "30635",
+ "shape": "degree",
+ "title": "Theatre Arts",
+ "award": "A.A. Degree",
+ "source_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=212",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 11244,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 11244,
+    "output_tokens": 1774,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1774,
+  "output_tokens_details": {
+   "thinking_tokens": 635
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.08046,
+ "ms": 15456,
+ "seconds": 16.0,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 6,
+   "listed": 6,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 2,
+   "codes": [
+    "THAR10A",
+    "THAR21A"
+   ],
+   "flagged": [
+    "THAR10A",
+    "THAR21A"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    19.0,
+    19.0
+   ],
+   "stated": [
+    19.0,
+    19.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 8,
+   "courses": 0,
+   "count": 8,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Theatre Arts (AA)",
+   "measure": "units",
+   "total_units": {
+    "min": 19,
+    "max": 19
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Develop self-awareness and conﬁdence through creative expression;",
+    "Collaborate and effectively communicate in a theatre setting;",
+    "Demonstrate an understanding of time management, commitment, follow-through, and responsibility to achieve a common goal in a theatre setting;",
+    "Creatively analyze, critique, and interpret works of theatrical art;",
+    "Identify, summarize, compare and contrast the principal movements in World theatre history and literature;",
+    "Serve in a production position to gain understanding of the collaborative and complex nature of a live performance;",
+    "Demonstrate an understanding of and empathy for the racial, ethnic, and cultural diversity of U.S. and World theatre; and",
+    "Utilize current theatrical technology."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Theatre Arts Major Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "THAR 1",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THAR 6",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THAR 10A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "THAR 20",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THAR 25.2",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THAR 21A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "THAR 25.1",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Information Learning Resources Requirement",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "LIR 10",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Section read: 'Theatre Arts (AA)' on catalog pages 212-213; the program student learning outcomes list continues across the page break (items 4-8 on page 213).",
+   "The AA section includes boilerplate stating students must complete 60 CSU-transferable units, including Cal-GETC and a minimum of 18 major units, plus ADT grade rules. This appears to be ADT (transfer degree) text repeated on a local AA page. ge_pattern is recorded as Cal-GETC because the section names it, but a reviewer should confirm it. The generic 60-unit statement is not recorded as degree_total.",
+   "Note 2 says the units taken for THAR 25.1 and THAR 25.2 depend on the type of position and the number of productions. The catalog prints 1.5 units for each.",
+   "The description mentions 'related disciplines, such as television, ﬁlm, and other media' as an area of interest. These were read as academic disciplines, not named careers, so careers is left empty."
+  ]
+ },
+ "extracted_run": "39006464249"
+}

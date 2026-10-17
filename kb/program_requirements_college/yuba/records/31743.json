@@ -1,0 +1,317 @@
+{
+ "college": "Yuba College",
+ "control_number": "31743",
+ "shape": "degree",
+ "title": "Biology",
+ "award": "A.S. Degree",
+ "source_url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=74",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 10689,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 10689,
+    "output_tokens": 3026,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 3026,
+  "output_tokens_details": {
+   "thinking_tokens": 1215
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.10328,
+ "ms": 24038,
+ "seconds": 24.3,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 6,
+   "listed": 7,
+   "share": 0.857,
+   "missing": [
+    "STATC1000"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 8,
+   "codes": [
+    "BIOL1",
+    "CHEM1A",
+    "CHEM1B",
+    "PHYS2B",
+    "PHYS3A",
+    "PHYS3B",
+    "PHYS4B",
+    "STAT1"
+   ],
+   "flagged": [
+    "BIOL1",
+    "CHEM1A",
+    "CHEM1B",
+    "PHYS2B",
+    "PHYS3A",
+    "PHYS3B",
+    "PHYS4B",
+    "STAT1"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    35.0,
+    35.0
+   ],
+   "stated": [
+    35.0,
+    35.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "BIOLOGY ASSOCIATE IN SCIENCE",
+   "measure": "units",
+   "total_units": {
+    "min": 35,
+    "max": 35
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": 21,
+    "max": 21
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Demonstrate an understanding of the fundamental principles of Biology as it relates to their degree path. These fundamental principles include: cell theory, gene theory and homeostasis.  Varied courses can assess these principles at any level of biological hierarchy from molecular structure through organismal structure to complete ecosystems.",
+    "Demonstrate an understanding of topics revolving around the interactions that organisms have with each other, other organisms and their abiotic surroundings including the flow and use of energy within their environment.  Students should show knowledge of larger scale biological topics including diversity, population dynamics, and competition within ecosystems.",
+    "Apply the scientific method to original or pre-designed biological experiments.  Students should be able to create or assess a hypothesis, conduct experiments, correctly interpret results, and effectively communicate findings while relating each step of the scientific method.",
+    "Show proficiency using biological laboratory techniques practiced within a given course curriculum. Students should show knowledge in applied techniques such as, but not limited to, microscopy, dissection, sterile technique, sample identification and chemical assays. Students will use varied instrumentation to obtain experimental results."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "REQUIRED COURSES",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "BIOL 1",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BIOL 2",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL 3",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 1A",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CHEM 1B",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Complete eight units from one of the following groups: Group 1 (PHYS 2A/3A/2B/3B)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Physics",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "PHYS 2A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS 3A",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PHYS 2B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PHYS 3B",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Complete eight units from one of the following groups: Group 2 (PHYS 4A/4B)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Physics",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "PHYS 4A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS 4B",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Complete one course from the following",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "MATH 1A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 9",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "STAT 1",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "STAT C1000",
+    "why": "named only in the Biology-Allied Health section; the Biology A.S. lists STAT 1 instead"
+   }
+  ],
+  "notes": [
+   "The physics requirement reads 'Complete eight units from one of the following groups'; each group (PHYS 2A/3A/2B/3B or PHYS 4A/4B) totals 8 units and is recorded as an 'all' block in option_group 'Physics'. The 8 units is the rule, not a printed block total, so stated is null.",
+   "Biology A.S. lists 'STAT 1 Introduction to Statistical Methods' while the closed list has STAT C1000 Introduction to Statistics; STAT 1 may be the pre-common-numbering code. Recorded as printed with catalog_addition true.",
+   "The catalog states a minimum of 21 units of General Education plus the health graduation requirement, without naming a GE pattern; ge_units set to 21 and ge_pattern left null.",
+   "The 60 degree-applicable-unit sentence is a general AA/AS rule, not printed as this award's total, so degree_total is null.",
+   "Total units required for the degree major is printed as 35, which matches 23 required + 8 physics + 4 math.",
+   "The description mentions pre-professional studies in medical, dental and pharmacy programs; these are transfer study paths, not named careers, so careers is empty."
+  ]
+ },
+ "extracted_run": "39006517642"
+}

@@ -1,0 +1,247 @@
+{
+ "college": "Woodland Community College",
+ "control_number": "19229",
+ "shape": "degree",
+ "title": "Chemical Dependency Counselor",
+ "award": "A.S. Degree",
+ "source_url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=178",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 12188,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 12188,
+    "output_tokens": 1828,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1828,
+  "output_tokens_details": {
+   "thinking_tokens": 552
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.08531,
+ "ms": 15377,
+ "seconds": 15.9,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 10,
+   "listed": 10,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "HUSEV28"
+   ],
+   "flagged": [
+    "HUSEV28"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    37.0,
+    37.0
+   ],
+   "stated": [
+    37.0,
+    37.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 4,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "CHEMICAL DEPENDENCY COUNSELOR (A.S.)",
+   "measure": "units",
+   "total_units": {
+    "min": 37,
+    "max": 37
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Students will acquire sufficient hours of experience in the twelve core counseling functions as required by California certification agencies in the context of a field work practicum.",
+    "Students will demonstrate communication skills (verbal, non-verbal and written) that insure that they can work effectively with clients and other professionals in diverse communities.",
+    "Students will demonstrate skills and abilities and appropriately apply knowledge to chemical dependency counseling settings and situations.",
+    "Students will display an appreciation and respect for people from diverse backgrounds, including, but not limited to, cultural elements such as age, gender, race/ethnicity, sexual orientation/identification, religion, ability/disability, and socio-economic status.",
+    "Students will understand and demonstrate ethical behavior in a variety of challenging and diverse environments and situations."
+   ],
+   "careers": [
+    "Behavioral Health and Chemical Dependency Case Manager",
+    "Behavioral Health Counselor",
+    "Chemical Dependency Counselor",
+    "Treatment Facilities Counselor"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses for Major",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "HUSEV11",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HUSEV20",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HUSEV21",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HUSEV22",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HUSEV23",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HUSEV24",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HUSEV25",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HUSEV28",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HUSEV40",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HUSEV41",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HUSEV44R",
+      "units": 7,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Read only the CHEMICAL DEPENDENCY COUNSELOR (A.S.) section on page 181; the Certificate of Achievement section on page 178 (40 units, with an elective block) is a different award and was not used.",
+   "HUSEV44R is printed at 7 units; a footnote says it should be taken for two semesters (3.5 units each) to complete the 7-unit requirement. The state file stores 3.5 units.",
+   "HUSEV28 (Skills and Techniques of Group Counseling) is required in the catalog but is not in the closed list; recorded as a catalog addition.",
+   "Codes are printed without a space (e.g., HUSEV11) and correspond to closed-list codes like HUSEV 11.",
+   "The footnote stating associate degrees require at least 60 units is generic, not a printed degree total for this award; degree_total left null. General Education is mentioned generically without naming a pattern."
+  ]
+ },
+ "extracted_run": "39006340803"
+}

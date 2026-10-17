@@ -1,0 +1,397 @@
+{
+ "college": "Los Angeles Harbor College",
+ "control_number": "02790",
+ "shape": "degree",
+ "title": "Nursing Professional RN",
+ "award": "A.S. Degree",
+ "source_url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=139",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7685,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7685,
+    "output_tokens": 3290,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 3290,
+  "output_tokens_details": {
+   "thinking_tokens": 1147
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.09654,
+ "ms": 25673,
+ "seconds": 26.2,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 9,
+   "listed": 10,
+   "share": 0.9,
+   "missing": [
+    "COMM121"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 12,
+   "codes": [
+    "NURSING311",
+    "NURSING313",
+    "NURSING315",
+    "NURSING321",
+    "NURSING323",
+    "NURSING325",
+    "NURSING333",
+    "NURSING335",
+    "NURSING339",
+    "PSYCC1000",
+    "PSYCH41",
+    "SOC1"
+   ],
+   "flagged": [
+    "NURSING311",
+    "NURSING313",
+    "NURSING315",
+    "NURSING321",
+    "NURSING323",
+    "NURSING325",
+    "NURSING333",
+    "NURSING335",
+    "NURSING339",
+    "PSYCC1000",
+    "PSYCH41",
+    "SOC1"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    64.0,
+    64.0
+   ],
+   "stated": [
+    73.0,
+    73.0
+   ],
+   "against": "program",
+   "why": [
+    "the blocks sum to 64.0-64.0; the catalog states 73.0-73.0"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 8,
+   "courses": 0,
+   "count": 8,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Degrees and Certificates – NURSING AND HEALTH PROFESSIONS",
+   "measure": "units",
+   "total_units": {
+    "min": 73,
+    "max": 73
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "LACCD GE",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Integrate the nursing process using the Roy Adaptation Model to promote adaptation of individuals, families, and the community.",
+    "Internalize professional behaviors in the practice of nursing.",
+    "Formulate clinical judgments that promote the health of patients and families",
+    "Provide safe, patient-centered care.",
+    "Assimilate effectively within nursing and inter-professional teams fostering effective communication to achieve quality patient care.",
+    "Integrate best current evidence with clinical expertise for optimal health care",
+    "Describe strategies for improving outcomes of care in clinical practice.",
+    "Incorporate information and technology to communicate, manage knowledge, mitigate error, and support decision making"
+   ],
+   "careers": [
+    "Registered Nurse"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "PREREQUISITE REQUIREMENTS (24 UNITS)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 24,
+     "max": 24
+    },
+    "courses": [
+     {
+      "code": "ANATOMY 001",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MICRO 020",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYSIOL 001",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PSYCH 041",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "FIRST SEMETER REQUIREMENTS (13 units)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 13,
+     "max": 13
+    },
+    "courses": [
+     {
+      "code": "NURSING 311",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "NURSING 313",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "NURSING 315",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "NURSING 321",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "SOC 001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ANTHRO 102",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "SECOND SEMESTER REQUIREMENTS (13 units)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 13,
+     "max": 13
+    },
+    "courses": [
+     {
+      "code": "NURSING 323",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "NURSING 325",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "THIRD SEMESTER REQUIREMENTS (11 units)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 11,
+     "max": 11
+    },
+    "courses": [
+     {
+      "code": "NURSING 333",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "NURSING 335",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "NURSING 339",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "COMM C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "FOURTH SEMESTER REQUIREMENTS (12 units)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 12,
+     "max": 12
+    },
+    "courses": [
+     {
+      "code": "NURSING 343",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NURSING 345",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NURSING 347",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "COMM 121",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "The excerpt begins mid-section on page 139; the program's own heading is not in the text, so the page header is used as section_heading.",
+   "Codes are written as printed with leading zeros (ANATOMY 001, MICRO 020, PHYSIOL 001); these were matched to closed-list ANATOMY 1, MICRO 20, PHYSIOL 1 and marked catalog_addition false.",
+   "GE area placeholders inside the semester blocks are not recorded as courses: Mathematical Concepts and Quantitative Reasoning LACCD GE Area 2 (3) in Prerequisites, Arts and Humanities LACCD GE Area 3 (3) in Second Semester, Ethnic Studies LACCD GE Area 6 (3) in Fourth Semester. Their units are included in each block's stated total and in Total Major Units 73.",
+   "American Institutions LACCD GE Area 4A (3) is stated as waived for nursing degrees (per AP 4100).",
+   "Total Major Units 73 equals the sum of the block totals (24+13+13+11+12) and includes GE-area units; no degree total including the full GE pattern is printed.",
+   "Outcome 5 prints 'inter-' at a line break before 'professional'; recorded as 'inter-professional' treating the hyphen as part of the word. Outcomes are printed for the Associate Degree Nursing Program.",
+   "SOC 001, ANTHRO 102 and COMM C1000 are marked with * (general education courses recommended before entering the program) but are named specifically as requirements, so they are recorded in blocks."
+  ]
+ },
+ "extracted_run": "39006381839"
+}

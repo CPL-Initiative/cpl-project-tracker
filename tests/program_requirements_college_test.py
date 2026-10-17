@@ -1553,6 +1553,36 @@ for final in (FlakyResp(404, None), Exception("Timeout 60000ms exceeded")):
     check(C.cq_json(fr, "https://x.curriqunet.com/b", ferr) is None and fr.loads == 1,
           "an HTTP status or another error is final, never retried: %r" % ferr)
 
+# ── a whole-catalog PDF (S403): the program's own page, not its course descriptions ──
+# Sixteen colleges publish one PDF. A one-subject program's codes fill the
+# course-description pages too, often more of them than the program page names;
+# the page that carries the program's title words wins, and the pages after it
+# join while they still name its codes.
+PDF_COURSES = [{"code": "WELD 101"}, {"code": "WELD 102"}, {"code": "WELD 150"}, {"code": "WELD 201"}]
+PDF_PAGES = [
+    "Welcome to the college. Table of contents.",
+    "Welding Technology\nCertificate of Achievement\nRequired courses WELD 101 Intro WELD 102 Gas",
+    "WELD 150 Blueprint reading\nTotal units 18",
+    "General education requirements",
+    "Course descriptions\nWELD 101 Intro 3 units WELD 102 Gas 3 units WELD 150 Blueprint 2 units WELD 201 Pipe 3 units",
+]
+prog = {"title": "Welding Technology", "award": "Certificate of Achievement"}
+check(C.pdf_program_pages(PDF_PAGES, prog, PDF_COURSES) == [1, 2],
+      "the titled program page and the page its table runs onto, never the description page: %r"
+      % C.pdf_program_pages(PDF_PAGES, prog, PDF_COURSES))
+b = C.pdf_best("https://x.edu/catalog.pdf", PDF_PAGES, prog, PDF_COURSES, "pypdf")
+check(b and b["url"] == "https://x.edu/catalog.pdf#page=2" and b["pages"] == [2, 3]
+      and abs(b["coverage"] - 0.75) < 1e-9 and "[page 2]" in b["text"],
+      "a PDF source names its first page in the address and every page it read: %r" % (b and b["url"]))
+check(C.pdf_program_pages(PDF_PAGES, {"title": "Pipe Fitting", "award": None}, PDF_COURSES) == [4],
+      "with no page carrying the title words, the pilot's picker reads the most codes")
+check(C.pdf_best("https://x.edu/c.pdf", ["no codes here"], prog, PDF_COURSES, None) is None,
+      "a PDF naming no listed course gives no source")
+check(C.is_pdf_catalog({"catalog_format": "single_pdf", "catalog_url": "https://x.edu/Cat%202026.PDF"})
+      and not C.is_pdf_catalog({"catalog_format": "single_pdf", "catalog_url": "https://www.ccsf.edu/catalog"})
+      and not C.is_pdf_catalog({"catalog_format": "pdf_by_section", "catalog_url": "https://x.edu/a.pdf"}),
+      "only a registry row naming one PDF file reads as a whole-catalog PDF")
+
 if failures:
     print("FAIL: %d" % len(failures))
     for f in failures:

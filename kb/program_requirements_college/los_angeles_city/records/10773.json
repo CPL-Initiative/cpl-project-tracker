@@ -1,0 +1,334 @@
+{
+ "college": "Los Angeles City College",
+ "control_number": "10773",
+ "shape": "certificate",
+ "title": "Cinema/Video Production",
+ "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+ "source_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=188",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 12892,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 12892,
+    "output_tokens": 2253,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2253,
+  "output_tokens_details": {
+   "thinking_tokens": 709
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.09663,
+ "ms": 17485,
+ "seconds": 17.9,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 20,
+   "listed": 20,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "CINEMA3"
+   ],
+   "flagged": [
+    "CINEMA3"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    33.0,
+    33.0
+   ],
+   "stated": [
+    33.0,
+    33.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [
+    "Combine both narrative and documentary knowledge of the historical, cultural and economic influences on the motion picture and television.",
+    "Formulate knowledge of the processes of writing, directing, production, post-production and distribution of motion pictures and television, including live switched and edited programs.",
+    "Compile knowledge of the job market pathways into motion pictures and television.",
+    "Perform the duties of various technical crew positions in a single- or multiple-camera production environment."
+   ],
+   "why": [
+    "not in the catalog text as printed: Combine both narrative and documentary knowledge of the historical, cultural and",
+    "not in the catalog text as printed: Formulate knowledge of the processes of writing, directing, production, post-pro",
+    "not in the catalog text as printed: Compile knowledge of the job market pathways into motion pictures and television",
+    "not in the catalog text as printed: Perform the duties of various technical crew positions in a single- or multiple-"
+   ],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": false
+  },
+  "careers": {
+   "count": 6,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Cinema/Video Production Certificate of Achievement",
+   "measure": "units",
+   "total_units": {
+    "min": 33,
+    "max": 33
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Combine both narrative and documentary knowledge of the historical, cultural and economic influences on the motion picture and television.",
+    "Formulate knowledge of the processes of writing, directing, production, post-production and distribution of motion pictures and television, including live switched and edited programs.",
+    "Compile knowledge of the job market pathways into motion pictures and television.",
+    "Perform the duties of various technical crew positions in a single- or multiple-camera production environment."
+   ],
+   "careers": [
+    "producers",
+    "writers",
+    "directors",
+    "cinematographers",
+    "sound and picture editors",
+    "production assistants"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "REQUIRED COURSES (SELECT 18 UNITS)",
+    "rule": "choose_units",
+    "minimum": 18,
+    "option_group": null,
+    "stated": {
+     "min": 18,
+     "max": 18
+    },
+    "courses": [
+     {
+      "code": "CINEMA 001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CINEMA 002",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CINEMA 003",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CINEMA 004",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CINEMA 018",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "CINEMA 032-1",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "T V 009",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "ELECTIVE COURSES (CHOOSE 15 UNITS)",
+    "rule": "choose_units",
+    "minimum": 15,
+    "option_group": null,
+    "stated": {
+     "min": 15,
+     "max": 15
+    },
+    "courses": [
+     {
+      "code": "CINEMA 006",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CINEMA 009-1",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CINEMA 010",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CINEMA 022",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CINEMA 103",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "T V 004",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "T V 006",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "T V 007",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "T V 025-1",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "T V 025-2",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "T V 046",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "T V 048",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "T V 049",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "T V 055",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The required block is headed 'SELECT 18 UNITS', but its six entries (counting CINEMA 004 or CINEMA 018 as one) total exactly 18 units, so in effect every listed course is required; recorded as choose_units 18 as printed.",
+   "CINEMA 003 (History of Motion Pictures) is not in the closed list; marked catalog_addition.",
+   "Catalog prints zero-padded codes (e.g., CINEMA 001, T V 009) that correspond to closed-list codes CINEMA 1, T V 9, etc.",
+   "Section read is the Cinema/Video Production certificate on catalog page 187 (PDF page 188); adjacent Cinema Producing and Cinematography sections were ignored."
+  ]
+ },
+ "extracted_run": "39006380342"
+}

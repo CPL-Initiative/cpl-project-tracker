@@ -1,0 +1,494 @@
+{
+ "college": "Lassen College",
+ "control_number": "17742",
+ "shape": "degree",
+ "title": "Fire Technology",
+ "award": "A.S. Degree",
+ "source_url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=69",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 12423,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 12423,
+    "output_tokens": 4263,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 4263,
+  "output_tokens_details": {
+   "thinking_tokens": 1150
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.13495,
+ "ms": 31213,
+ "seconds": 31.6,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 66,
+   "share": 0.0,
+   "missing": [
+    "BUS25",
+    "BUS27",
+    "EMT21",
+    "FS13",
+    "FS132",
+    "FS14",
+    "FS20",
+    "FS23",
+    "FS26",
+    "FS3",
+    "FS4",
+    "FS49",
+    "FS5",
+    "FS50",
+    "FS51",
+    "FS52",
+    "FS56",
+    "FS57",
+    "FS581",
+    "FS59",
+    "FS6",
+    "FS601",
+    "FS60C",
+    "FS61",
+    "FS64",
+    "FS64B",
+    "FS65A",
+    "FS65B",
+    "FS65C",
+    "FS7",
+    "FS70",
+    "FS70A",
+    "FS70B",
+    "FS70C",
+    "FS72",
+    "FS72A",
+    "FS72B",
+    "FS72C",
+    "FS72IC",
+    "FS73A",
+    "FS74",
+    "FS75",
+    "FS76",
+    "FS78",
+    "FS8",
+    "FS80",
+    "FS81",
+    "FS84",
+    "FS85",
+    "FS87",
+    "FS89",
+    "FS90",
+    "FS92A",
+    "FS92B",
+    "FS92C",
+    "FS92D",
+    "FS92E",
+    "FS94",
+    "FS95",
+    "FS96",
+    "FS96A",
+    "FS97A",
+    "FS97B",
+    "FS9818",
+    "FS982",
+    "FS9821"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 1,
+   "courses": 0,
+   "count": 1,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Program Student Learning Outcomes",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Safely perform basic firefighting skills as part of the Incident Command System in preparation for an entry-level position at most firefighting agencies."
+   ],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "BUS 25",
+    "why": "A.S. section not in the text; named only in the Certificate of Achievement section"
+   },
+   {
+    "code": "BUS 27",
+    "why": "A.S. section not in the text; named only in the Certificate of Achievement section"
+   },
+   {
+    "code": "EMT 21",
+    "why": "A.S. section not in the text; named only in the Certificate of Achievement section"
+   },
+   {
+    "code": "FS 13",
+    "why": "A.S. section not in the text; named only in the Certificate of Achievement section"
+   },
+   {
+    "code": "FS 132",
+    "why": "not in the text"
+   },
+   {
+    "code": "FS 14",
+    "why": "A.S. section not in the text; named only in the Certificate of Achievement section"
+   },
+   {
+    "code": "FS 20",
+    "why": "A.S. section not in the text; named only in certificate sections"
+   },
+   {
+    "code": "FS 23",
+    "why": "A.S. section not in the text; named only in the Certificate of Achievement section"
+   },
+   {
+    "code": "FS 26",
+    "why": "A.S. section not in the text; named only in the Certificate of Achievement section"
+   },
+   {
+    "code": "FS 3",
+    "why": "A.S. section not in the text; named only in the Certificate of Achievement section"
+   },
+   {
+    "code": "FS 4",
+    "why": "A.S. section not in the text; named only in the Certificate of Achievement section"
+   },
+   {
+    "code": "FS 49",
+    "why": "A.S. section not in the text; named only in the Certificate of Achievement section"
+   },
+   {
+    "code": "FS 5",
+    "why": "A.S. section not in the text; named only in certificate sections"
+   },
+   {
+    "code": "FS 50",
+    "why": "A.S. section not in the text; named only in the Certificate of Achievement section"
+   },
+   {
+    "code": "FS 51",
+    "why": "A.S. section not in the text; named only in certificate sections"
+   },
+   {
+    "code": "FS 52",
+    "why": "A.S. section not in the text; named only in the Certificate of Achievement section"
+   },
+   {
+    "code": "FS 56",
+    "why": "A.S. section not in the text; named only in the Certificate of Achievement section"
+   },
+   {
+    "code": "FS 57",
+    "why": "A.S. section not in the text; named only in the Certificate of Achievement section"
+   },
+   {
+    "code": "FS 58.1",
+    "why": "A.S. section not in the text; named only in the Certificate of Achievement section"
+   },
+   {
+    "code": "FS 59",
+    "why": "A.S. section not in the text; named only in certificate sections"
+   },
+   {
+    "code": "FS 6",
+    "why": "A.S. section not in the text; named only in the Certificate of Achievement section"
+   },
+   {
+    "code": "FS 60.1",
+    "why": "A.S. section not in the text; named only in certificate sections"
+   },
+   {
+    "code": "FS 60C",
+    "why": "A.S. section not in the text; named only in certificate sections"
+   },
+   {
+    "code": "FS 61",
+    "why": "A.S. section not in the text; named only in certificate and Forestry sections"
+   },
+   {
+    "code": "FS 64",
+    "why": "A.S. section not in the text; named only in the Certificate of Achievement section"
+   },
+   {
+    "code": "FS 64B",
+    "why": "A.S. section not in the text; named only in the Certificate of Achievement section"
+   },
+   {
+    "code": "FS 65A",
+    "why": "A.S. section not in the text; named only in the Certificate of Achievement section"
+   },
+   {
+    "code": "FS 65B",
+    "why": "A.S. section not in the text; named only in the Certificate of Achievement section"
+   },
+   {
+    "code": "FS 65C",
+    "why": "A.S. section not in the text; named only in the Certificate of Achievement section"
+   },
+   {
+    "code": "FS 7",
+    "why": "not in the text"
+   },
+   {
+    "code": "FS 70",
+    "why": "A.S. section not in the text; named only in the Certificate of Achievement section"
+   },
+   {
+    "code": "FS 70A",
+    "why": "A.S. section not in the text; named only in the Certificate of Achievement section"
+   },
+   {
+    "code": "FS 70B",
+    "why": "A.S. section not in the text; named only in the Certificate of Achievement section"
+   },
+   {
+    "code": "FS 70C",
+    "why": "A.S. section not in the text; named only in the Certificate of Achievement section"
+   },
+   {
+    "code": "FS 72",
+    "why": "A.S. section not in the text; named only in certificate and Forestry sections"
+   },
+   {
+    "code": "FS 72A",
+    "why": "A.S. section not in the text; named only in the Certificate of Achievement section"
+   },
+   {
+    "code": "FS 72B",
+    "why": "A.S. section not in the text; named only in the Certificate of Achievement section"
+   },
+   {
+    "code": "FS 72C",
+    "why": "A.S. section not in the text; named only in the Certificate of Achievement section"
+   },
+   {
+    "code": "FS 72IC",
+    "why": "A.S. section not in the text; named only in the Certificate of Achievement section"
+   },
+   {
+    "code": "FS 73A",
+    "why": "A.S. section not in the text; named only in the Certificate of Achievement section"
+   },
+   {
+    "code": "FS 74",
+    "why": "A.S. section not in the text; named only in certificate sections"
+   },
+   {
+    "code": "FS 75",
+    "why": "A.S. section not in the text; named only in the Certificate of Achievement section"
+   },
+   {
+    "code": "FS 76",
+    "why": "A.S. section not in the text; named only in the Certificate of Achievement section"
+   },
+   {
+    "code": "FS 78",
+    "why": "A.S. section not in the text; named only in the Certificate of Achievement section"
+   },
+   {
+    "code": "FS 8",
+    "why": "A.S. section not in the text; named only in certificate sections"
+   },
+   {
+    "code": "FS 80",
+    "why": "A.S. section not in the text; named only in certificate sections"
+   },
+   {
+    "code": "FS 81",
+    "why": "A.S. section not in the text; named only in certificate sections"
+   },
+   {
+    "code": "FS 84",
+    "why": "A.S. section not in the text; named only in the Certificate of Achievement section"
+   },
+   {
+    "code": "FS 85",
+    "why": "A.S. section not in the text; named only in certificate and Forestry sections"
+   },
+   {
+    "code": "FS 87",
+    "why": "A.S. section not in the text; named only in the Certificate of Achievement section"
+   },
+   {
+    "code": "FS 89",
+    "why": "A.S. section not in the text; named only in certificate and Forestry sections"
+   },
+   {
+    "code": "FS 90",
+    "why": "A.S. section not in the text; named only in certificate sections"
+   },
+   {
+    "code": "FS 92A",
+    "why": "A.S. section not in the text; named only in the Certificate of Achievement section"
+   },
+   {
+    "code": "FS 92B",
+    "why": "A.S. section not in the text; named only in the Certificate of Achievement section"
+   },
+   {
+    "code": "FS 92C",
+    "why": "A.S. section not in the text; named only in the Certificate of Achievement section"
+   },
+   {
+    "code": "FS 92D",
+    "why": "A.S. section not in the text; named only in the Certificate of Achievement section"
+   },
+   {
+    "code": "FS 92E",
+    "why": "A.S. section not in the text; named only in the Certificate of Achievement section"
+   },
+   {
+    "code": "FS 94",
+    "why": "A.S. section not in the text; named only in the Certificate of Achievement section"
+   },
+   {
+    "code": "FS 95",
+    "why": "A.S. section not in the text; named only in the Certificate of Achievement section"
+   },
+   {
+    "code": "FS 96",
+    "why": "A.S. section not in the text; named only in the Certificate of Achievement section"
+   },
+   {
+    "code": "FS 96A",
+    "why": "A.S. section not in the text; named only in the Certificate of Achievement section"
+   },
+   {
+    "code": "FS 97A",
+    "why": "A.S. section not in the text; named only in the Certificate of Achievement section"
+   },
+   {
+    "code": "FS 97B",
+    "why": "A.S. section not in the text; named only in the Certificate of Achievement section"
+   },
+   {
+    "code": "FS 98.18",
+    "why": "A.S. section not in the text; named only in the Certificate of Achievement section"
+   },
+   {
+    "code": "FS 98.2",
+    "why": "A.S. section not in the text; certificate section prints it as FS 98.20"
+   },
+   {
+    "code": "FS 98.21",
+    "why": "A.S. section not in the text; named only in certificate sections"
+   },
+   {
+    "code": "FS49",
+    "why": "duplicate of FS 49 without space; A.S. section not in the text"
+   },
+   {
+    "code": "FS51",
+    "why": "duplicate of FS 51 without space; A.S. section not in the text"
+   },
+   {
+    "code": "FS52",
+    "why": "duplicate of FS 52 without space; A.S. section not in the text"
+   },
+   {
+    "code": "FS72",
+    "why": "duplicate of FS 72 without space; A.S. section not in the text"
+   },
+   {
+    "code": "FS85",
+    "why": "duplicate of FS 85 without space; A.S. section not in the text"
+   }
+  ],
+  "notes": [
+   "The excerpt begins at catalog page 67 with the Certificate of Achievement Fire Technology section; the A.S. Degree Fire Technology section (likely on the preceding page) is not in the text, so no blocks or totals are recorded for the A.S. degree.",
+   "The single Program Student Learning Outcome is printed once for both the Associate in Science Degree and the Certificate of Achievement in Fire Technology; the A.S. shares it, so it is recorded here.",
+   "Reviewer should fetch the preceding catalog page to read the A.S. Degree requirements (core, electives, GE pattern, totals).",
+   "Certificate section (not used) prints a 30-unit total with an 18-unit core and 12 elective units; it also names EMT 60, absent from the closed list."
+  ]
+ },
+ "extracted_run": "39006337658"
+}

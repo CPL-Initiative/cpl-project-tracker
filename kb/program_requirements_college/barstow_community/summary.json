@@ -1,0 +1,66 @@
+{
+ "college": "Barstow Community College",
+ "programs": 76,
+ "with_closed_list": 76,
+ "found": 71,
+ "extracted": 71,
+ "errors": 0,
+ "passed_machine_checks": 51,
+ "failed": {
+  "coverage": 15,
+  "invented": 0,
+  "arithmetic": 20,
+  "repeated": 0,
+  "outcomes": 0
+ },
+ "cost_usd": 4.68,
+ "cost_per_program": 0.0659,
+ "not_found": [
+  {
+   "control_number": "04750",
+   "title": "Child Development Level II",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=83",
+    "coverage": 0.125
+   }
+  },
+  {
+   "control_number": "35710",
+   "title": "Child Development Level III",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=86",
+    "coverage": 0.059
+   }
+  },
+  {
+   "control_number": "35769",
+   "title": "Child Development Level IV",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=86",
+    "coverage": 0.182
+   }
+  },
+  {
+   "control_number": "42759",
+   "title": "Theatre Arts",
+   "award": "A.A- T Degree",
+   "near_miss": {
+    "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=66",
+    "coverage": 0.353
+   }
+  },
+  {
+   "control_number": "46575",
+   "title": "Cal-GETC",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=84",
+    "coverage": 0.333
+   }
+  }
+ ],
+ "run": "39006332820"
+}

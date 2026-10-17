@@ -1,0 +1,99 @@
+{
+ "college": "Lassen College",
+ "programs": 78,
+ "with_closed_list": 73,
+ "found": 64,
+ "extracted": 64,
+ "errors": 0,
+ "passed_machine_checks": 35,
+ "failed": {
+  "coverage": 5,
+  "invented": 0,
+  "arithmetic": 29,
+  "repeated": 0,
+  "outcomes": 0
+ },
+ "cost_usd": 4.54,
+ "cost_per_program": 0.0709,
+ "not_found": [
+  {
+   "control_number": "09297",
+   "title": "Accounting",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=58",
+    "coverage": 0.421
+   }
+  },
+  {
+   "control_number": "09299",
+   "title": "Administrative Office Technician",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=59",
+    "coverage": 0.211
+   }
+  },
+  {
+   "control_number": "09319",
+   "title": "Human Services",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=144",
+    "coverage": 0.267
+   }
+  },
+  {
+   "control_number": "19376",
+   "title": "Human Services",
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+   "near_miss": {
+    "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=144",
+    "coverage": 0.267
+   }
+  },
+  {
+   "control_number": "21605",
+   "title": "Drug & Alcohol Paraprofessional",
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+   "near_miss": {
+    "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=144",
+    "coverage": 0.267
+   }
+  },
+  {
+   "control_number": "31407",
+   "title": "Graphic Design",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=53",
+    "coverage": 0.333
+   }
+  },
+  {
+   "control_number": "31411",
+   "title": "Graphic Design",
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+   "near_miss": {
+    "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=117",
+    "coverage": 0.364
+   }
+  },
+  {
+   "control_number": "40583",
+   "title": "IT Support Professional",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "45100",
+   "title": "Cal-GETC",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=81",
+    "coverage": 0.369
+   }
+  }
+ ],
+ "run": "39006337658"
+}

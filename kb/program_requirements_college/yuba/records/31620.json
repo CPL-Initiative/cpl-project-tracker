@@ -1,0 +1,234 @@
+{
+ "college": "Yuba College",
+ "control_number": "31620",
+ "shape": "degree",
+ "title": "Chemistry",
+ "award": "A.S. Degree",
+ "source_url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=85",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 10769,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 10769,
+    "output_tokens": 1765,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1765,
+  "output_tokens_details": {
+   "thinking_tokens": 911
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.07838,
+ "ms": 21736,
+ "seconds": 22.2,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 6,
+   "listed": 12,
+   "share": 0.5,
+   "missing": [
+    "CHEM18A",
+    "CHEM18B",
+    "CHEM1A",
+    "CHEM1B",
+    "MATH1A",
+    "MATH1B"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    8.0,
+    8.0
+   ],
+   "stated": [
+    36.0,
+    36.0
+   ],
+   "against": "program",
+   "why": [
+    "the blocks sum to 8.0-8.0; the catalog states 36.0-36.0"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Chemistry A.S. Degree (heading printed on page 84, not in the text; the section continues onto page 85)",
+   "measure": "units",
+   "total_units": {
+    "min": 36,
+    "max": 36
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Yuba College General Education (local)",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": 21,
+    "max": 21
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Complete eight units from one of the following groups: Group 1",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Physics groups",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "PHYS 2A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS 2B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS 3A",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS 3B",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Complete eight units from one of the following groups: Group 2",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Physics groups",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "PHYS 4A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS 4B",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "CHEM 1A",
+    "why": "not in the text's section; appears only in course descriptions (requirements likely on page 84)"
+   },
+   {
+    "code": "CHEM 1B",
+    "why": "not in the text's section; appears only in course descriptions (requirements likely on page 84)"
+   },
+   {
+    "code": "CHEM 18A",
+    "why": "not in the text's section; appears only in course descriptions (requirements likely on page 84)"
+   },
+   {
+    "code": "CHEM 18B",
+    "why": "not in the text's section; appears only in course descriptions (requirements likely on page 84)"
+   },
+   {
+    "code": "MATH 1A",
+    "why": "not in the text's Chemistry section; named only in the Computer Science AS-T section (likely on page 84)"
+   },
+   {
+    "code": "MATH 1B",
+    "why": "not in the text's Chemistry section; named only in the Computer Science AS-T section (likely on page 84)"
+   }
+  ],
+  "notes": []
+ },
+ "extracted_run": "39006517642"
+}

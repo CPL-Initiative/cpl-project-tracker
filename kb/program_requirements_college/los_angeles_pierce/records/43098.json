@@ -1,0 +1,271 @@
+{
+ "college": "Los Angeles Pierce College",
+ "control_number": "43098",
+ "shape": "degree",
+ "title": "Biotechnology",
+ "award": "A.S. Degree",
+ "source_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=128",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 11693,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 11693,
+    "output_tokens": 2085,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2085,
+  "output_tokens_details": {
+   "thinking_tokens": 605
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.08847,
+ "ms": 16815,
+ "seconds": 17.4,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 12,
+   "listed": 12,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    29.0,
+    31.0
+   ],
+   "stated": [
+    29.0,
+    31.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 4,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "BIOTECHNOLOGY Associate of Science Degree (STATE CODE 43098)",
+   "measure": "units",
+   "total_units": {
+    "min": 29,
+    "max": 31
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Cal-GETC or LACCD GE",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Employ the appropriate laboratory techniques effectively and safely with proper documentation, including the appropriate use of equipment and tools to produce an acceptable outcome when performing a technical laboratory task.",
+    "Apply the knowledge of biological science to distinguish between observations, inferences, relationships, and testimonials under investigation.",
+    "Demonstrate the ability to use sound ethical reasoning when discussing biological science and the use of biotechnological techniques."
+   ],
+   "careers": [
+    "Research Associate",
+    "Manufacturing Technician",
+    "Quality Associates",
+    "Cell Culture Technicians"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "MAJOR - REQUIRED COURSES",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "BIOTECH 002",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOTECH 003",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 051",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CHEM 060",
+        "units": 5,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "MICRO 020",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "STAT C1000",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Option 1: General Biotechnology",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Biotech path",
+    "stated": {
+     "min": 8,
+     "max": 8
+    },
+    "courses": [
+     {
+      "code": "BIOLOGY 006",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOTECH 385",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Option 2: Plant Biotechnology",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Biotech path",
+    "stated": {
+     "min": 10,
+     "max": 10
+    },
+    "courses": [
+     {
+      "code": "PLNT SC 103",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PLNT SC 711",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PLNT SC 726",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PLNT SC 727",
+        "units": 2,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Catalog prints codes with leading zeros (BIOTECH 002, CHEM 051, MICRO 020, BIOLOGY 006); these match closed-list BIOTECH 2, CHEM 51, MICRO 20, BIOLOGY 6. 'ST A T C1000' is a PDF spacing artifact for STAT C1000.",
+   "CHEM 051 and CHEM 060 are each listed as 'or higher'; BIOTECH 385 is listed as 'Directed Study - Biotechnology or equivalent'.",
+   "Option 1 and Option 2 are alternative paths ('General Biotech' path vs 'Plant Biotech' path); the student completes one. Core 21 units + 8 or 10 matches the printed MAJOR - TOTAL UNITS 29-31.",
+   "GE: award table lists 'Cal-GETC (34 units)' and 'LACCD GE (21 units)' as alternative patterns, while the program description says 'a minimum of 32 units of General Education courses'. Because the figures conflict and two patterns are offered, ge_units left null; reviewer should check.",
+   "No degree total (e.g., 60 units) is printed for this award.",
+   "The same three program learning outcomes are printed for the Biotechnology Lab Assistant and Biotechnology Research Lab Assistant certificates; recorded here as printed under the A.S. section."
+  ]
+ },
+ "extracted_run": "39006383070"
+}

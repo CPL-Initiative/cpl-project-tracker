@@ -1,0 +1,190 @@
+{
+ "college": "Santa Rosa Junior College",
+ "control_number": "21734",
+ "shape": "certificate",
+ "title": "Pharmacy Technician",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=188",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7905,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7905,
+    "output_tokens": 2433,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2433,
+  "output_tokens_details": {
+   "thinking_tokens": 1380
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.08028,
+ "ms": 22202,
+ "seconds": 22.7,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 10,
+   "share": 0.0,
+   "missing": [
+    "PHT102",
+    "PHT103",
+    "PHT150",
+    "PHT152",
+    "PHT154A",
+    "PHT154B",
+    "PHT155",
+    "PHT156",
+    "PHT157",
+    "PHT157L"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": true,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Pharmacy Technician — Associate Degree section only (certificate section not in the text)",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "PHT 102",
+    "why": "named only in the Associate Degree section; certificate section not in the text"
+   },
+   {
+    "code": "PHT 103",
+    "why": "named only in the Associate Degree section; certificate section not in the text"
+   },
+   {
+    "code": "PHT 150",
+    "why": "named only in the Associate Degree section; certificate section not in the text"
+   },
+   {
+    "code": "PHT 152",
+    "why": "named only in the Associate Degree section; certificate section not in the text"
+   },
+   {
+    "code": "PHT 154A",
+    "why": "named only in the Associate Degree section; certificate section not in the text"
+   },
+   {
+    "code": "PHT 154B",
+    "why": "named only in the Associate Degree section; certificate section not in the text"
+   },
+   {
+    "code": "PHT 155",
+    "why": "named only in the Associate Degree section; certificate section not in the text"
+   },
+   {
+    "code": "PHT 156",
+    "why": "named only in the Associate Degree section; certificate section not in the text"
+   },
+   {
+    "code": "PHT 157",
+    "why": "named only in the Associate Degree section; certificate section not in the text"
+   },
+   {
+    "code": "PHT 157L",
+    "why": "named only in the Associate Degree section; certificate section not in the text"
+   }
+  ],
+  "notes": [
+   "The supplied text (page 188) is the tail of the Pharmacy Technician Associate Degree page: it prints 'Associate Degree Requirements' and 'Major Requirements' (Total Hours/Units 19.5), followed by the start of Philosophy (AA). No 'Certificate Requirements' section for the Certificate of Achievement appears, so no blocks, totals, outcomes or careers were recorded for the certificate.",
+   "The degree section lists all ten closed-list PHT courses (PHT 102 2, PHT 103 2, PHT 150 3, PHT 152 2, PHT 154A 1, PHT 154B 2, PHT 155 4, PHT 156 2.5, PHT 157 0.5, PHT 157L 0.5; total 19.5). The certificate likely uses the same courses, but this should be verified against the certificate's own page (probably an adjacent page).",
+   "The degree section prints seven Program Student Learning Outcomes and a description naming pharmacy technician employment settings; these were not attributed to the certificate because the text does not show the certificate sharing them.",
+   "The degree section contains ADT boilerplate (60 CSU-transferable units, Cal-GETC, 18-unit major) that appears misplaced for a non-ADT Pharmacy Technician degree.",
+   "Catalog titles differ slightly from the closed list: PHT 154A printed as 'Retail Externship 1' (list: 'Retail Clinical 1'); PHT 157L printed as 'Hospital Pharmacy Externship' (list: 'Hospital Pharmacy Clinical Experience')."
+  ]
+ },
+ "extracted_run": "39006464249"
+}

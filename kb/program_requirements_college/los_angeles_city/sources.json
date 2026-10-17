@@ -1,0 +1,9386 @@
+[
+ {
+  "control_number": "02718",
+  "title": "Business Administration",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCTG21",
+   "ACCTG31",
+   "BUS1",
+   "BUS17",
+   "BUS38",
+   "ECONC2001",
+   "ECONC2002",
+   "FINANCE1",
+   "FINANCE15",
+   "FINANCE2",
+   "FINANCE8",
+   "INTBUS1",
+   "INTBUS6",
+   "MARKET1",
+   "MARKET11",
+   "MARKET21",
+   "MARKET31",
+   "MGMT13",
+   "MGMT2",
+   "MGMT31",
+   "MGMT33",
+   "REALES1",
+   "REALES11",
+   "REALES14",
+   "REALES18",
+   "REALES21",
+   "REALES3",
+   "REALES5",
+   "REALES6",
+   "REALES7",
+   "REALES9",
+   "SUPV1",
+   "SUPV12"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=76",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    76,
+    77,
+    78,
+    79
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 33,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "02719",
+  "title": "Accounting",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCTG1",
+   "ACCTG11",
+   "ACCTG12",
+   "ACCTG15",
+   "ACCTG16",
+   "ACCTG17",
+   "ACCTG19",
+   "ACCTG2",
+   "ACCTG23",
+   "ACCTG31",
+   "BUS1",
+   "BUS17",
+   "BUS38",
+   "FINANCE1",
+   "FINANCE2",
+   "INTBUS1"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=73",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    73,
+    74,
+    75,
+    76
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 16,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "02720",
+  "title": "FINANCE AND BANKING",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCTG21",
+   "BUS1",
+   "BUS15",
+   "BUS17",
+   "ECONC2001",
+   "ECONC2002",
+   "FINANCE15",
+   "FINANCE2",
+   "INTBUS1",
+   "SUPV1"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=76",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    76,
+    77,
+    78,
+    79
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 10,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "02721",
+  "title": "MANAGEMENT",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.875,
+  "codes_found": [
+   "ACCTG31",
+   "BUS17",
+   "MARKET21",
+   "MGMT13",
+   "MGMT2",
+   "MGMT31",
+   "MGMT33"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=76",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    76,
+    77,
+    78,
+    79
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 8,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "02724",
+  "title": "MARKETING",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCTG31",
+   "BUS17",
+   "INTBUS6",
+   "MARKET21",
+   "MARKET31",
+   "MGMT13",
+   "MGMT2",
+   "MGMT31"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=76",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    76,
+    77,
+    78,
+    79
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 8,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "02726",
+  "title": "REAL ESTATE",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "REALES11",
+   "REALES14",
+   "REALES21",
+   "REALES3",
+   "REALES5",
+   "REALES6",
+   "REALES7",
+   "REALES9"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=76",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    76
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 8,
+  "text_chars": 5616
+ },
+ {
+  "control_number": "02727",
+  "title": "Business Information Worker",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CAOT1",
+   "CAOT14",
+   "CAOT2",
+   "CAOT31",
+   "CAOT32",
+   "CAOT33",
+   "CAOT43",
+   "CAOT48",
+   "CAOT50",
+   "CAOT82",
+   "CAOT84",
+   "CAOT85",
+   "CAOT98"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=83",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    83,
+    84,
+    85
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 13,
+  "text_chars": 12431
+ },
+ {
+  "control_number": "02728",
+  "title": "JOURNALISM",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "JOURNAL2171",
+   "JOURNAL2172",
+   "JOURNAL2181",
+   "JOURNAL2182",
+   "JOURNAL2191",
+   "JOURNAL2192",
+   "LIBSCI101",
+   "PHOTO20",
+   "PHOTO7"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=123",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    123
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 9,
+  "text_chars": 2434
+ },
+ {
+  "control_number": "02729",
+  "title": "Cinema Production",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CINEMA1",
+   "CINEMA10",
+   "CINEMA103",
+   "CINEMA18",
+   "CINEMA2",
+   "CINEMA20",
+   "CINEMA25",
+   "CINEMA321",
+   "CINEMA322",
+   "CINEMA34",
+   "CINEMA381",
+   "CINEMA382",
+   "CINEMA4",
+   "CINEMA5",
+   "CINEMA6",
+   "CINEMA7",
+   "CINEMA91",
+   "CINEMA92",
+   "TV1",
+   "TV251",
+   "TV252",
+   "TV4",
+   "TV9"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=186",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    186,
+    187,
+    188,
+    189
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 23,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "02730",
+  "title": "COMPUTER INFORMATION SYSTEMS (CIS)",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CIS112",
+   "CIS148",
+   "CIS219",
+   "CS102",
+   "CS103",
+   "CS113",
+   "CS116",
+   "CS130",
+   "CS136",
+   "CS213",
+   "CS216"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=144",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    144,
+    145,
+    146,
+    147
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 11,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "02735",
+  "title": "Art - General",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.978,
+  "codes_found": [
+   "ANIMATN218",
+   "ART100",
+   "ART201",
+   "ART202",
+   "ART204",
+   "ART205",
+   "ART209",
+   "ART250",
+   "ART300",
+   "ART301",
+   "ART304",
+   "ART305",
+   "ART306",
+   "ART307",
+   "ART308",
+   "ART309",
+   "ART400",
+   "ART401",
+   "ART407",
+   "ART501",
+   "ART502",
+   "ART620",
+   "ART621",
+   "ART634",
+   "ART648",
+   "ART649",
+   "ART700",
+   "ART701",
+   "ART702",
+   "ART708",
+   "ART709",
+   "ART710",
+   "ART932",
+   "ARTHC1100",
+   "ARTHC1200",
+   "ARTHIST103",
+   "ARTHIST122",
+   "ARTHIST130",
+   "ARTHIST139",
+   "ARTHIST140",
+   "ARTHIST151",
+   "ARTHIST171",
+   "GAD101",
+   "GAD103"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=207",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    207,
+    208,
+    209,
+    210
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 45,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "02736",
+  "title": "Music",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "MUSIC111",
+   "MUSIC116",
+   "MUSIC121",
+   "MUSIC122",
+   "MUSIC135",
+   "MUSIC136",
+   "MUSIC200",
+   "MUSIC201",
+   "MUSIC202",
+   "MUSIC203",
+   "MUSIC211",
+   "MUSIC212",
+   "MUSIC213",
+   "MUSIC311",
+   "MUSIC312",
+   "MUSIC313",
+   "MUSIC314",
+   "MUSIC501",
+   "MUSIC531",
+   "MUSIC561",
+   "MUSIC702",
+   "MUSIC705",
+   "MUSIC751",
+   "MUSIC765",
+   "MUSIC771",
+   "MUSIC781",
+   "MUSIC782"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=196",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    196,
+    197,
+    198,
+    199
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 27,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "02739",
+  "title": "GRAPHIC DESIGN",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART201",
+   "ART204",
+   "ART209",
+   "ART501",
+   "ART603",
+   "ART648",
+   "ARTHC1200",
+   "ARTHIST103",
+   "ARTHIST130",
+   "ARTHIST140",
+   "ARTHIST151",
+   "ARTHIST171"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=208",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    208,
+    209,
+    210,
+    211
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 12,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "02741",
+  "title": "FRENCH",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ARTHC1200",
+   "FRENCH1",
+   "FRENCH10",
+   "FRENCH2",
+   "FRENCH3",
+   "FRENCH4",
+   "FRENCH7",
+   "LING1",
+   "PHILOS14"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=129",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    129,
+    130
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 9,
+  "text_chars": 7881
+ },
+ {
+  "control_number": "02744",
+  "title": "Spanish",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ARTHIST151",
+   "CHICANO44",
+   "DNCESPC311",
+   "LING1",
+   "SPANISH1",
+   "SPANISH10",
+   "SPANISH2",
+   "SPANISH21",
+   "SPANISH22",
+   "SPANISH3",
+   "SPANISH4",
+   "SPANISH7",
+   "SPANISH9"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=135",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    135,
+    136
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 13,
+  "text_chars": 7889
+ },
+ {
+  "control_number": "02745",
+  "title": "CHINESE",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ARTHIST130",
+   "CHINESE1",
+   "CHINESE10",
+   "CHINESE2",
+   "CHINESE3",
+   "CHINESE4",
+   "CHINESE7",
+   "JAPAN9",
+   "KOREAN10",
+   "LING1",
+   "PHILOS30"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=127",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    127,
+    128,
+    129,
+    130
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 11,
+  "text_chars": 15557
+ },
+ {
+  "control_number": "02746",
+  "title": "JAPANESE",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "JAPAN1",
+   "JAPAN14",
+   "JAPAN2",
+   "JAPAN3",
+   "JAPAN4",
+   "JAPAN7",
+   "JAPAN9"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=130",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    130,
+    131
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 7,
+  "text_chars": 9222
+ },
+ {
+  "control_number": "02748",
+  "title": "Dental Prosthetic Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "DENTEK100",
+   "DENTEK102",
+   "DENTEK103",
+   "DENTEK105",
+   "DENTEK106",
+   "DENTEK108",
+   "DENTEK109",
+   "DENTEK111",
+   "DENTEK112",
+   "DENTEK185",
+   "DENTEK202",
+   "DENTEK203",
+   "DENTEK204",
+   "DENTEK206",
+   "DENTEK207",
+   "DENTEK208",
+   "DENTEK285",
+   "DENTEK401"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=95",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    95,
+    96,
+    97
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 18,
+  "text_chars": 15024
+ },
+ {
+  "control_number": "02749",
+  "title": "Radiologic Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANATOMY1",
+   "ENGLC1000",
+   "MATH245",
+   "PHYSIOL1",
+   "RADTEC103",
+   "RADTEC104",
+   "RADTEC108",
+   "RADTEC200",
+   "RADTEC201",
+   "RADTEC202",
+   "RADTEC205",
+   "RADTEC206",
+   "RADTEC207",
+   "RADTEC209",
+   "RADTEC210",
+   "RADTEC240",
+   "RADTEC280",
+   "RADTEC281",
+   "RADTEC282",
+   "RADTEC283"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=110",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    110,
+    111
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 20,
+  "text_chars": 8809
+ },
+ {
+  "control_number": "02750",
+  "title": "PARALEGAL STUDIES",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "COMMC1000",
+   "LAW11",
+   "LAW12",
+   "LAW13",
+   "LAW14",
+   "LAW17",
+   "LAW19",
+   "LAW2",
+   "LAW35",
+   "LAW37",
+   "LAW38",
+   "LAW4",
+   "LAW7",
+   "LIBSCI101"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=166",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    166,
+    167
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 14,
+  "text_chars": 10145
+ },
+ {
+  "control_number": "02751",
+  "title": "English",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ENGLC1000",
+   "ENGLISH102",
+   "ENGLISH127",
+   "ENGLISH203",
+   "ENGLISH204",
+   "ENGLISH205",
+   "ENGLISH206",
+   "ENGLISH207",
+   "ENGLISH208",
+   "ENGLISH211",
+   "ENGLISH212",
+   "ENGLISH214",
+   "ENGLISH215",
+   "ENGLISH218",
+   "ENGLISH239",
+   "ENGLISH240",
+   "ENGLISH255",
+   "ENGLISH270"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=116",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    116,
+    117,
+    118,
+    119
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 18,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "02754",
+  "title": "Mathematics",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "MATH261",
+   "MATH261S",
+   "MATH262",
+   "MATH263",
+   "MATH270",
+   "MATH275"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=153",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    153,
+    154,
+    155
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 6,
+  "text_chars": 11637
+ },
+ {
+  "control_number": "02755",
+  "title": "PHYSICS",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEM101",
+   "CS113",
+   "CS116",
+   "ENGGEN120",
+   "MATH261",
+   "MATH262",
+   "MATH263",
+   "MATH270",
+   "MATH275",
+   "PHYSICS101",
+   "PHYSICS102",
+   "PHYSICS103"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=158",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    158,
+    159,
+    160
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 12,
+  "text_chars": 10740
+ },
+ {
+  "control_number": "02756",
+  "title": "CHEMISTRY",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEM101",
+   "CHEM102",
+   "CHEM211",
+   "CHEM212",
+   "MATH261",
+   "MATH262",
+   "PHYSICS101",
+   "PHYSICS102"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=140",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    140,
+    141
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 8,
+  "text_chars": 8307
+ },
+ {
+  "control_number": "02759",
+  "title": "ADMINISTRATION OF JUSTICE",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ADMJUS160",
+   "ADMJUS180",
+   "ADMJUS2",
+   "ADMJUS3",
+   "ADMJUS4",
+   "ADMJUS5",
+   "ADMJUS62",
+   "ADMJUS67",
+   "ADMJUS8"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=163",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    163,
+    164,
+    165
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 9,
+  "text_chars": 14683
+ },
+ {
+  "control_number": "02760",
+  "title": "Human Services: Generalist",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ADDICST1",
+   "ADDICST4",
+   "HEALTH60",
+   "PSYCC1000",
+   "PSYCH14",
+   "PSYCH3",
+   "PSYCH41",
+   "PSYCH43",
+   "PSYCH45",
+   "PSYCH81",
+   "PSYCH82"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=175",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    175,
+    176
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 11,
+  "text_chars": 8731
+ },
+ {
+  "control_number": "02765",
+  "title": "MODERN POLITICAL STUDIES",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ECONC2001",
+   "ECONC2002",
+   "HISTC1001",
+   "POLSC1000",
+   "POLSCI2",
+   "POLSCI7",
+   "SOC1",
+   "SOC11"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=169",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    169,
+    170,
+    171
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 8,
+  "text_chars": 12003
+ },
+ {
+  "control_number": "02767",
+  "title": "Humanities",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.513,
+  "codes_found": [
+   "ARTHIST130",
+   "CHINESE10",
+   "ENGLC1001",
+   "ENGLISH214",
+   "ENGLISH215",
+   "ENGLISH218",
+   "ENGLISH239",
+   "ENGLISH240",
+   "ENGLISH255",
+   "ENGLISH270",
+   "FRENCH10",
+   "HISTORY7",
+   "HISTORY73",
+   "HUMAN30",
+   "HUMAN31",
+   "HUMAN6",
+   "HUMAN61",
+   "HUMAN8",
+   "JAPAN9",
+   "KOREAN10",
+   "LING1",
+   "MUSIC111",
+   "MUSIC116",
+   "MUSIC121",
+   "MUSIC122",
+   "MUSIC135",
+   "MUSIC136",
+   "MUSIC141",
+   "PHILOS14",
+   "PHILOS30",
+   "PHILOS32",
+   "PHILOS40",
+   "PHOTO34",
+   "PHOTO501",
+   "RUSSIAN10",
+   "SPANISH10",
+   "SPANISH9",
+   "THEATER100",
+   "THEATER110"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=125",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    125,
+    126,
+    127,
+    128
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 76,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "08211",
+  "title": "Computerized Bookkeeping and Accounting Technician",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCTG17",
+   "ACCTG19",
+   "ACCTG21",
+   "ACCTG22",
+   "ACCTG23",
+   "ACCTG31",
+   "BUS17",
+   "BUS38"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=74",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    74
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 8,
+  "text_chars": 2748
+ },
+ {
+  "control_number": "08215",
+  "title": "CLERICAL OFFICE ASSISTANT",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CAOT1",
+   "CAOT2",
+   "CAOT31",
+   "CAOT32",
+   "CAOT43",
+   "CAOT82",
+   "CAOT84",
+   "CAOT85",
+   "CAOT98"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=85",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    85
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 9,
+  "text_chars": 2121
+ },
+ {
+  "control_number": "08216",
+  "title": "Computer Applications Specialist",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CAOT1",
+   "CAOT14",
+   "CAOT2",
+   "CAOT31",
+   "CAOT32",
+   "CAOT50",
+   "CAOT82",
+   "CAOT84",
+   "CAOT85",
+   "CAOT98"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=82",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    82,
+    83,
+    84,
+    85
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 10,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "08220",
+  "title": "TELEVISION PRODUCTION",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CINEMA1",
+   "CINEMA10",
+   "CINEMA18",
+   "CINEMA185",
+   "CINEMA20",
+   "CINEMA25",
+   "CINEMA321",
+   "CINEMA381",
+   "CINEMA382",
+   "CINEMA4",
+   "CINEMA5",
+   "CINEMA6",
+   "CINEMA7",
+   "CINEMA91",
+   "CINEMA911",
+   "CINEMA92",
+   "TV1",
+   "TV185",
+   "TV251",
+   "TV252",
+   "TV46",
+   "TV48",
+   "TV49",
+   "TV55",
+   "TV6",
+   "TV7"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=193",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    193
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 26,
+  "text_chars": 5477
+ },
+ {
+  "control_number": "08224",
+  "title": "APPLICATIONS SOFTWARE",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CIS112",
+   "CIS148",
+   "CIS192",
+   "CIS193",
+   "CIS219",
+   "CS102",
+   "CS103",
+   "CS113",
+   "CS116"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=145",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    145,
+    146,
+    147,
+    148
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 9,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "08225",
+  "title": "PROGRAMMING LANGUAGES",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CIS112",
+   "CIS192",
+   "CIS193",
+   "CIS194",
+   "CIS219",
+   "CS102",
+   "CS103",
+   "CS113",
+   "CS116",
+   "CS136",
+   "CS213",
+   "CS216"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=149",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    149
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 12,
+  "text_chars": 5722
+ },
+ {
+  "control_number": "08226",
+  "title": "ENGINEERING",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.95,
+  "codes_found": [
+   "CHEM101",
+   "CHEM102",
+   "CS113",
+   "CS116",
+   "CS216",
+   "EGDTEK101",
+   "ENGGEN101",
+   "ENGGEN120",
+   "ENGGEN131",
+   "ENGGEN151",
+   "MATH261S",
+   "MATH262",
+   "MATH263",
+   "MATH270",
+   "MATH272",
+   "MATH275",
+   "PHYSICS101",
+   "PHYSICS102",
+   "PHYSICS103"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=158",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    158,
+    159,
+    160
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 20,
+  "text_chars": 10740
+ },
+ {
+  "control_number": "08229",
+  "title": "COMPUTER TECHNOLOGY",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 9,
+  "text_chars": 0
+ },
+ {
+  "control_number": "08234",
+  "title": "THEATER ACADEMY ACTING",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "THEATER100",
+   "THEATER1051",
+   "THEATER1052",
+   "THEATER1053",
+   "THEATER1054",
+   "THEATER110",
+   "THEATER2351",
+   "THEATER2421",
+   "THEATER2422",
+   "THEATER2423",
+   "THEATER2424",
+   "THEATER270",
+   "THEATER272",
+   "THEATER2741",
+   "THEATER2761",
+   "THEATER277",
+   "THEATER2941",
+   "THEATER2942",
+   "THEATER300",
+   "THEATER345"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=201",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    201,
+    202
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 20,
+  "text_chars": 9457
+ },
+ {
+  "control_number": "08235",
+  "title": "APPLIED PHOTOGRAPHY",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART201",
+   "ART501",
+   "ART648",
+   "ART931",
+   "PHOTO107",
+   "PHOTO15",
+   "PHOTO16",
+   "PHOTO20",
+   "PHOTO49",
+   "PHOTO501",
+   "PHOTO7"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=213",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    213
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 11,
+  "text_chars": 4701
+ },
+ {
+  "control_number": "08236",
+  "title": "CHILD DEVELOPMENT ASSOCIATE TEACHER",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHDEV1",
+   "CHDEV10",
+   "CHDEV2",
+   "CHDEV7",
+   "CHDEV841",
+   "CHDEV842"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=88",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    88,
+    89,
+    90,
+    91
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 6,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "08237",
+  "title": "CHILD DEVELOPMENT TEACHER",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHDEV1",
+   "CHDEV10",
+   "CHDEV2",
+   "CHDEV22",
+   "CHDEV34",
+   "CHDEV42",
+   "CHDEV7",
+   "ENGLC1000"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=89",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    89,
+    90,
+    91,
+    92
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 8,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "08238",
+  "title": "CHILD DEVELOPMENT MASTER TEACHER",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHDEV1",
+   "CHDEV10",
+   "CHDEV2",
+   "CHDEV22",
+   "CHDEV23",
+   "CHDEV30",
+   "CHDEV31",
+   "CHDEV34",
+   "CHDEV42",
+   "CHDEV44",
+   "CHDEV45",
+   "CHDEV48",
+   "CHDEV65",
+   "CHDEV7",
+   "ENGLC1000",
+   "FAM&CS31"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=89",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    89,
+    90,
+    91,
+    92
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 16,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "08239",
+  "title": "CHILD DEVELOPMENT SITE SUPERVISOR",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHDEV1",
+   "CHDEV10",
+   "CHDEV2",
+   "CHDEV22",
+   "CHDEV34",
+   "CHDEV38",
+   "CHDEV39",
+   "CHDEV42",
+   "CHDEV65",
+   "CHDEV7",
+   "ENGLC1000"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=90",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    90,
+    91,
+    92
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 11,
+  "text_chars": 14803
+ },
+ {
+  "control_number": "08242",
+  "title": "DIETETIC SERVICE SUPERVISOR",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "FAM&CS151",
+   "FAM&CS156",
+   "FAM&CS21",
+   "FAM&CS50",
+   "FAM&CS51",
+   "FAM&CS52",
+   "FAM&CS55",
+   "FAM&CS56"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=93",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    93
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 8,
+  "text_chars": 4852
+ },
+ {
+  "control_number": "08246",
+  "title": "Addiction Studies",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ADDICST1",
+   "ADDICST2",
+   "ADDICST25",
+   "ADDICST30",
+   "ADDICST4",
+   "ADDICST7",
+   "ADDICST84",
+   "ADDICST85",
+   "PSYCC1000",
+   "PSYCH14",
+   "PSYCH3",
+   "PSYCH43",
+   "PSYCH45"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=175",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    175,
+    176
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 13,
+  "text_chars": 8731
+ },
+ {
+  "control_number": "10771",
+  "title": "REAL ESTATE BROKER LICENSE",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 0.9,
+  "codes_found": [
+   "REALES11",
+   "REALES14",
+   "REALES18",
+   "REALES21",
+   "REALES3",
+   "REALES5",
+   "REALES6",
+   "REALES7",
+   "REALES9"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=327",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    327
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 10,
+  "text_chars": 5385
+ },
+ {
+  "control_number": "10773",
+  "title": "Cinema/Video Production",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CINEMA1",
+   "CINEMA10",
+   "CINEMA103",
+   "CINEMA18",
+   "CINEMA2",
+   "CINEMA22",
+   "CINEMA321",
+   "CINEMA4",
+   "CINEMA6",
+   "CINEMA91",
+   "TV251",
+   "TV252",
+   "TV4",
+   "TV46",
+   "TV48",
+   "TV49",
+   "TV55",
+   "TV6",
+   "TV7",
+   "TV9"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=188",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    188,
+    189,
+    190,
+    191
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 20,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "10774",
+  "title": "COMPUTER SCIENCE",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CS113",
+   "CS116",
+   "CS130",
+   "CS131",
+   "CS136",
+   "CS213",
+   "CS216",
+   "MATH261",
+   "MATH262",
+   "MATH272",
+   "PHYSICS101",
+   "PHYSICS102"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=143",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    143,
+    144,
+    145,
+    146
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 12,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "10777",
+  "title": "Instrumental Performer",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 0.917,
+  "codes_found": [
+   "MUSIC111",
+   "MUSIC116",
+   "MUSIC118",
+   "MUSIC137",
+   "MUSIC141",
+   "MUSIC1801",
+   "MUSIC1802",
+   "MUSIC1803",
+   "MUSIC1804",
+   "MUSIC181",
+   "MUSIC182",
+   "MUSIC183",
+   "MUSIC184",
+   "MUSIC200",
+   "MUSIC201",
+   "MUSIC205",
+   "MUSIC211",
+   "MUSIC311",
+   "MUSIC312",
+   "MUSIC3612",
+   "MUSIC3613",
+   "MUSIC3614",
+   "MUSIC501",
+   "MUSIC531",
+   "MUSIC561",
+   "MUSIC611",
+   "MUSIC612",
+   "MUSIC613",
+   "MUSIC614",
+   "MUSIC631",
+   "MUSIC632",
+   "MUSIC633",
+   "MUSIC634",
+   "MUSIC650",
+   "MUSIC651",
+   "MUSIC652",
+   "MUSIC653",
+   "MUSIC702",
+   "MUSIC705",
+   "MUSIC751",
+   "MUSIC765",
+   "MUSIC771",
+   "MUSIC781",
+   "MUSIC782"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=197",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    197,
+    198,
+    199
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 48,
+  "text_chars": 11563
+ },
+ {
+  "control_number": "10778",
+  "title": "VOCAL PERFORMER",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 0.784,
+  "codes_found": [
+   "MUSIC111",
+   "MUSIC116",
+   "MUSIC118",
+   "MUSIC137",
+   "MUSIC141",
+   "MUSIC1801",
+   "MUSIC1802",
+   "MUSIC1803",
+   "MUSIC1804",
+   "MUSIC181",
+   "MUSIC182",
+   "MUSIC183",
+   "MUSIC184",
+   "MUSIC200",
+   "MUSIC201",
+   "MUSIC205",
+   "MUSIC211",
+   "MUSIC311",
+   "MUSIC312",
+   "MUSIC501",
+   "MUSIC531",
+   "MUSIC561",
+   "MUSIC702",
+   "MUSIC705",
+   "MUSIC751",
+   "MUSIC765",
+   "MUSIC771",
+   "MUSIC781",
+   "MUSIC782"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=197",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    197,
+    198,
+    199
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 37,
+  "text_chars": 11563
+ },
+ {
+  "control_number": "10780",
+  "title": "PHOTOGRAPHY: DIGITAL",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "PHOTO107",
+   "PHOTO15",
+   "PHOTO49",
+   "PHOTO501",
+   "PHOTO7"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=213",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    213
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 5,
+  "text_chars": 4701
+ },
+ {
+  "control_number": "10781",
+  "title": "PHOTOGRAPHY: PHOTOJOURNALISM",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 0.889,
+  "codes_found": [
+   "JOURNAL101",
+   "JOURNAL2171",
+   "JOURNAL2172",
+   "JOURNAL2181",
+   "JOURNAL2182",
+   "JOURNAL2201",
+   "PHOTO20",
+   "PHOTO7"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=123",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    123
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 9,
+  "text_chars": 2434
+ },
+ {
+  "control_number": "10783",
+  "title": "CHILD DEVELOPMENT",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHDEV1",
+   "CHDEV10",
+   "CHDEV2",
+   "CHDEV22",
+   "CHDEV23",
+   "CHDEV30",
+   "CHDEV31",
+   "CHDEV34",
+   "CHDEV38",
+   "CHDEV39",
+   "CHDEV42",
+   "CHDEV44",
+   "CHDEV45",
+   "CHDEV48",
+   "CHDEV65",
+   "CHDEV7",
+   "CHDEV841",
+   "CHDEV842",
+   "ENGLISH218",
+   "FAM&CS21",
+   "FAM&CS31"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=88",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    88,
+    89,
+    90,
+    91
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 21,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "14232",
+  "title": "RETAIL MANAGEMENT (WAFC)",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCTG21",
+   "BUS17",
+   "MARKET21",
+   "MARKET31",
+   "MGMT2",
+   "MGMT31",
+   "MGMT33",
+   "SUPV12"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=79",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    79,
+    80
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 8,
+  "text_chars": 9600
+ },
+ {
+  "control_number": "14274",
+  "title": "REGISTERED NURSING",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANATOMY1",
+   "ANTHRO102",
+   "COMMC1000",
+   "ENGLC1000",
+   "MICRO20",
+   "PHYSIOL1",
+   "PSYCC1000",
+   "PSYCH41",
+   "REGNRSG200",
+   "REGNRSG201",
+   "REGNRSG202",
+   "REGNRSG203",
+   "REGNRSG204",
+   "REGNRSG205",
+   "REGNRSG206",
+   "REGNRSG207",
+   "REGNRSG208",
+   "REGNRSG209",
+   "REGNRSG210",
+   "SOC1"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=108",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    108,
+    109,
+    110,
+    111
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 20,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "18809",
+  "title": "KOREAN",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "KOREAN1",
+   "KOREAN10",
+   "KOREAN13",
+   "KOREAN2",
+   "KOREAN21",
+   "KOREAN22",
+   "KOREAN26",
+   "KOREAN3",
+   "KOREAN4",
+   "KOREAN7"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=132",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    132,
+    133
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 10,
+  "text_chars": 7451
+ },
+ {
+  "control_number": "19591",
+  "title": "Administration of Justice",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ADMJUS1",
+   "ADMJUS180",
+   "ADMJUS2",
+   "ADMJUS3",
+   "ADMJUS4",
+   "ADMJUS67"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=162",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    162,
+    163
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 6,
+  "text_chars": 8618
+ },
+ {
+  "control_number": "19842",
+  "title": "IGETC",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 123,
+  "text_chars": 0
+ },
+ {
+  "control_number": "19843",
+  "title": "Liberal Arts: Arts and Humanities",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "AFROAM19",
+   "AFROAM20",
+   "AFROAM7",
+   "ANIMATN118",
+   "ARABIC1",
+   "ARMEN1",
+   "ARMEN11",
+   "ARMEN12",
+   "ARMEN2",
+   "ARMEN35",
+   "ARMEN36",
+   "ARMEN37",
+   "ART100",
+   "ART201",
+   "ART209",
+   "ART250",
+   "ART501",
+   "ARTHC1100",
+   "ARTHC1200",
+   "ARTHIST103",
+   "ARTHIST122",
+   "ARTHIST130",
+   "ARTHIST139",
+   "ARTHIST140",
+   "ARTHIST151",
+   "ARTHIST171",
+   "ASIAN1",
+   "ASL1",
+   "ASL2",
+   "ASL3",
+   "ASL30",
+   "ASL40",
+   "CHICANO4",
+   "CHICANO44",
+   "CHICANO47",
+   "CHICANO7",
+   "CHICANO8",
+   "CHINESE1",
+   "CHINESE10",
+   "CHINESE2",
+   "CHINESE3",
+   "CHINESE4",
+   "CINEMA103",
+   "CINEMA18",
+   "CINEMA3",
+   "CINEMA4",
+   "COMM130",
+   "COMM226",
+   "DANCEST805",
+   "ENGLISH102",
+   "ENGLISH128",
+   "ENGLISH203",
+   "ENGLISH204",
+   "ENGLISH205",
+   "ENGLISH206",
+   "ENGLISH207",
+   "ENGLISH208",
+   "ENGLISH211",
+   "ENGLISH212",
+   "ENGLISH214",
+   "ENGLISH215",
+   "ENGLISH218",
+   "ENGLISH239",
+   "ENGLISH240",
+   "ENGLISH255",
+   "ENGLISH270",
+   "FRENCH1",
+   "FRENCH10",
+   "FRENCH2",
+   "FRENCH3",
+   "FRENCH4",
+   "FRENCH7",
+   "HISTORY7",
+   "HISTORY86",
+   "HISTORY87",
+   "HUMAN1",
+   "HUMAN30",
+   "HUMAN31",
+   "HUMAN6",
+   "HUMAN61",
+   "HUMAN8",
+   "JAPAN1",
+   "JAPAN2",
+   "JAPAN3",
+   "JAPAN4",
+   "JOURNAL101",
+   "JOURNAL108",
+   "JOURNAL123",
+   "KOREAN1",
+   "KOREAN10",
+   "KOREAN11",
+   "KOREAN13",
+   "KOREAN2",
+   "KOREAN21",
+   "KOREAN22",
+   "KOREAN26",
+   "KOREAN3",
+   "KOREAN4",
+   "LING1",
+   "MUSIC101",
+   "MUSIC111",
+   "MUSIC116",
+   "MUSIC121",
+   "MUSIC122",
+   "MUSIC135",
+   "MUSIC136",
+   "MUSIC141",
+   "MUSIC200",
+   "PHILOS1",
+   "PHILOS14",
+   "PHILOS20",
+   "PHILOS30",
+   "PHILOS32",
+   "PHILOS40",
+   "PHILOS42",
+   "PHOTO10",
+   "PHOTO34",
+   "PHOTO501",
+   "POLSCI5",
+   "RUSSIAN1",
+   "RUSSIAN10",
+   "RUSSIAN2",
+   "RUSSIAN3",
+   "RUSSIAN4",
+   "SPANISH1",
+   "SPANISH10",
+   "SPANISH2",
+   "SPANISH21",
+   "SPANISH22",
+   "SPANISH3",
+   "SPANISH4",
+   "SPANISH9",
+   "THEATER100",
+   "THEATER110",
+   "THEATER338",
+   "THEATER400"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=124",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    124,
+    125,
+    126,
+    127
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 136,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "19844",
+  "title": "Liberal Arts: Natural and Applied Sciences and Mathematics",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.963,
+  "codes_found": [
+   "ANATOMY1",
+   "ANTHRO101",
+   "ASTRON1",
+   "ASTRON11",
+   "ASTRON5",
+   "BIOLOGY25",
+   "BIOLOGY3",
+   "BIOLOGY6",
+   "BIOLOGY7",
+   "CHEM101",
+   "CHEM102",
+   "CHEM211",
+   "CHEM212",
+   "CHEM221",
+   "CHEM60",
+   "CHEM71",
+   "CHEM72",
+   "CHEM73",
+   "CIS213",
+   "CS103",
+   "CS112",
+   "CS131",
+   "CS213",
+   "CS216",
+   "EARTH1",
+   "ENGELC220",
+   "ENGGEN101",
+   "ENGGEN120",
+   "ENGGEN131",
+   "ENGGEN151",
+   "ENVSCI1",
+   "FAM&CS21",
+   "GEOG1",
+   "GEOG15",
+   "GEOLOGY1",
+   "GEOLOGY6",
+   "MATH215",
+   "MATH216",
+   "MATH217",
+   "MATH229",
+   "MATH230",
+   "MATH236",
+   "MATH239",
+   "MATH245",
+   "MATH251",
+   "MATH260",
+   "MATH260S",
+   "MATH261",
+   "MATH261S",
+   "MATH262",
+   "MATH263",
+   "MATH270",
+   "MATH272",
+   "MATH275",
+   "MATH279",
+   "MICRO1",
+   "MICRO20",
+   "MICRO40",
+   "PHYSICS101",
+   "PHYSICS102",
+   "PHYSICS103",
+   "PHYSICS11",
+   "PHYSICS12",
+   "PHYSICS120",
+   "PHYSICS14",
+   "PHYSICS161",
+   "PHYSICS21",
+   "PHYSICS22",
+   "PHYSICS6",
+   "PHYSICS7",
+   "PHYSIOL1",
+   "PHYSSC10",
+   "PHYSSC4",
+   "PSYCH2",
+   "SOC125",
+   "STATC1000",
+   "STATC1000E"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=153",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    153,
+    154,
+    155
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 80,
+  "text_chars": 11637
+ },
+ {
+  "control_number": "19845",
+  "title": "Liberal Arts: Social and Behavioral Sciences",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ADMJUS1",
+   "ADMJUS2",
+   "ADMJUS67",
+   "AFROAM7",
+   "ANTHRO102",
+   "ANTHRO121",
+   "ANTHRO151",
+   "ASIAN1",
+   "BUS1",
+   "CHDEV1",
+   "CHDEV11",
+   "CHDEV42",
+   "CHICANO4",
+   "CHICANO44",
+   "CHICANO47",
+   "CHICANO7",
+   "CHICANO8",
+   "CINEMA103",
+   "COMM100",
+   "COMM121",
+   "COMM122",
+   "COMM190",
+   "CS101",
+   "ECONC2001",
+   "ECONC2002",
+   "FAM&CS31",
+   "GEOG2",
+   "GEOG7",
+   "HISTC1001",
+   "HISTC1002",
+   "HISTORY5",
+   "HISTORY59",
+   "HISTORY6",
+   "HISTORY7",
+   "HISTORY73",
+   "HISTORY81",
+   "HISTORY82",
+   "HISTORY86",
+   "HISTORY87",
+   "JOURNAL101",
+   "JOURNAL105",
+   "JOURNAL108",
+   "JOURNAL123",
+   "KINMAJ109",
+   "LAW7",
+   "LING2",
+   "POLSC1000",
+   "POLSCI14",
+   "POLSCI19",
+   "POLSCI2",
+   "POLSCI5",
+   "POLSCI60",
+   "POLSCI7",
+   "PSYCC1000",
+   "PSYCH13",
+   "PSYCH3",
+   "PSYCH52",
+   "PSYCH74",
+   "SOC1",
+   "SOC11",
+   "SOC12",
+   "SOC2",
+   "SOC22",
+   "SOC31",
+   "SOC32"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=170",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    170,
+    171
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 65,
+  "text_chars": 7337
+ },
+ {
+  "control_number": "21609",
+  "title": "Business Administration",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCTG1",
+   "ACCTG2",
+   "BUS1",
+   "BUS15",
+   "ECONC2001",
+   "ECONC2002",
+   "SUPV12"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=75",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    75,
+    76,
+    77,
+    78
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 7,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "21610",
+  "title": "Finance and Banking",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCTG31",
+   "BUS1",
+   "BUS38",
+   "FINANCE1",
+   "FINANCE15",
+   "FINANCE2",
+   "FINANCE8",
+   "SUPV12"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=76",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    76,
+    77,
+    78,
+    79
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 8,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "21611",
+  "title": "MANAGEMENT",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "MGMT13",
+   "MGMT2",
+   "MGMT31",
+   "MGMT33"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=76",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    76
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 4,
+  "text_chars": 5616
+ },
+ {
+  "control_number": "21612",
+  "title": "MANAGEMENT: SMALL BUSINESS",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 0.9,
+  "codes_found": [
+   "ACCTG31",
+   "BUS1",
+   "BUS17",
+   "BUS38",
+   "MGMT13",
+   "MGMT2",
+   "MGMT31",
+   "MGMT33",
+   "SUPV1"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=76",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    76,
+    77,
+    78,
+    79
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 10,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "21613",
+  "title": "Marketing",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "INTBUS6",
+   "MARKET21",
+   "MARKET31",
+   "SUPV12"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=76",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    76,
+    77,
+    78,
+    79
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 4,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "21614",
+  "title": "Administrative Office Assistant",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CAOT1",
+   "CAOT14",
+   "CAOT2",
+   "CAOT31",
+   "CAOT32",
+   "CAOT33",
+   "CAOT43",
+   "CAOT48",
+   "CAOT50",
+   "CAOT82",
+   "CAOT84",
+   "CAOT85",
+   "CAOT98"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=84",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    84,
+    85
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 13,
+  "text_chars": 6754
+ },
+ {
+  "control_number": "21619",
+  "title": "Unscripted Television Production",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CINEMA1",
+   "CINEMA2",
+   "CINEMA321",
+   "CINEMA322",
+   "CINEMA381",
+   "CINEMA382",
+   "CINEMA4",
+   "CINEMA6",
+   "CINEMA91",
+   "CINEMA911",
+   "CINEMA92",
+   "TV1",
+   "TV4",
+   "TV46",
+   "TV48",
+   "TV49",
+   "TV55",
+   "TV6",
+   "TV7",
+   "TV9"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=193",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    193,
+    194
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 20,
+  "text_chars": 10929
+ },
+ {
+  "control_number": "21620",
+  "title": "Cinema Production",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CINEMA1",
+   "CINEMA10",
+   "CINEMA103",
+   "CINEMA12",
+   "CINEMA18",
+   "CINEMA2",
+   "CINEMA20",
+   "CINEMA22",
+   "CINEMA25",
+   "CINEMA321",
+   "CINEMA34",
+   "CINEMA4",
+   "CINEMA5",
+   "CINEMA6",
+   "CINEMA60",
+   "CINEMA7",
+   "CINEMA91"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=186",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    186,
+    187,
+    188,
+    189
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 17,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "21624",
+  "title": "COMPUTER TECHNOLOGY",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 9,
+  "text_chars": 0
+ },
+ {
+  "control_number": "21626",
+  "title": "Dental Prosthetic Technology",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "DENTEK100",
+   "DENTEK102",
+   "DENTEK103",
+   "DENTEK105",
+   "DENTEK106",
+   "DENTEK108",
+   "DENTEK109",
+   "DENTEK111",
+   "DENTEK112",
+   "DENTEK185",
+   "DENTEK202",
+   "DENTEK203",
+   "DENTEK204",
+   "DENTEK206",
+   "DENTEK207",
+   "DENTEK208",
+   "DENTEK285",
+   "DENTEK401"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=95",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    95,
+    96,
+    97
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 18,
+  "text_chars": 15024
+ },
+ {
+  "control_number": "21628",
+  "title": "Human Services: Generalist",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ADDICST1",
+   "ADDICST4",
+   "HEALTH60",
+   "PSYCC1000",
+   "PSYCH14",
+   "PSYCH3",
+   "PSYCH41",
+   "PSYCH43",
+   "PSYCH45",
+   "PSYCH81",
+   "PSYCH82"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=175",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    175,
+    176
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 11,
+  "text_chars": 8731
+ },
+ {
+  "control_number": "21629",
+  "title": "Addiction Studies",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 0.929,
+  "codes_found": [
+   "ADDICST1",
+   "ADDICST2",
+   "ADDICST25",
+   "ADDICST30",
+   "ADDICST4",
+   "ADDICST7",
+   "ADDICST84",
+   "ADDICST85",
+   "PSYCC1000",
+   "PSYCH14",
+   "PSYCH3",
+   "PSYCH43",
+   "PSYCH45"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=175",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    175,
+    176
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 14,
+  "text_chars": 8731
+ },
+ {
+  "control_number": "24016",
+  "title": "WORKFORCE LITERACY SKILLS",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 0.5,
+  "codes_found": [
+   "BSICSKL6CE",
+   "BSICSKL7CE",
+   "VOCED3CE"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=219",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    219
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 6,
+  "text_chars": 4002
+ },
+ {
+  "control_number": "24069",
+  "title": "ENTREPRENEURSHIP SKILLS",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED239CE"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=227",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    227,
+    228
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 1,
+  "text_chars": 8095
+ },
+ {
+  "control_number": "24071",
+  "title": "JOB READINESS",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED230CE",
+   "VOCED236CE",
+   "VOCED238CE",
+   "VOCED239CE"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=228",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    228,
+    229
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 4,
+  "text_chars": 9626
+ },
+ {
+  "control_number": "24099",
+  "title": "VOCATIONAL ENGLISH AS A SECOND LANGUAGE I",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED55CE",
+   "VOCED78CE",
+   "VOCED79CE"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=239",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    239,
+    240,
+    241,
+    242
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 3,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "24118",
+  "title": "HOSPITALITY",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED242CE",
+   "VOCED243CE",
+   "VOCED244CE",
+   "VOCED245CE",
+   "VOCED246CE",
+   "VOCED247CE",
+   "VOCED248CE",
+   "VOCED249CE",
+   "VOCED250CE"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=242",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    242
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 9,
+  "text_chars": 4164
+ },
+ {
+  "control_number": "24294",
+  "title": "CUSTOMER SERVICE SKILLS",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED236CE",
+   "VOCED238CE",
+   "VOCED239CE"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=228",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    228,
+    229
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 3,
+  "text_chars": 9626
+ },
+ {
+  "control_number": "24344",
+  "title": "English as a Second Language - Civics",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESLCVCS30CE",
+   "ESLCVCS31CE",
+   "ESLCVCS32CE",
+   "ESLCVCS33CE",
+   "ESLCVCS34CE",
+   "ESLCVCS41CE",
+   "ESLCVCS42CE",
+   "ESLCVCS43CE",
+   "ESLCVCS44CE"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=237",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    237,
+    238,
+    239
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 9,
+  "text_chars": 12980
+ },
+ {
+  "control_number": "24387",
+  "title": "CAREER DISCOVERY SKILLS",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED236CE",
+   "VOCED238CE"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=231",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    231
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 2,
+  "text_chars": 4191
+ },
+ {
+  "control_number": "24446",
+  "title": "In-Home Supportive Services Skills",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESLNC360CE",
+   "VOCED238CE",
+   "VOCED2CE",
+   "VOCED405CE",
+   "VOCED460CE",
+   "VOCED59CE"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=223",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    223,
+    224
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 6,
+  "text_chars": 7356
+ },
+ {
+  "control_number": "30211",
+  "title": "Liberal Arts: Performing and Visual Arts",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART100",
+   "ART201",
+   "ART250",
+   "ART501",
+   "ART932",
+   "CINEMA2",
+   "DANCEST185",
+   "DANCEST301",
+   "DANCEST302",
+   "DANCEST303",
+   "DANCEST304",
+   "DANCEST825",
+   "DANCETQ111",
+   "DANCETQ112",
+   "DANCETQ113",
+   "DANCETQ114",
+   "DANCETQ121",
+   "DANCETQ122",
+   "DANCETQ123",
+   "DANCETQ124",
+   "DANCETQ141",
+   "DANCETQ142",
+   "DANCETQ143",
+   "DANCETQ144",
+   "DNCESPC311",
+   "DNCESPC321",
+   "DNCESPC331",
+   "MUSIC311",
+   "MUSIC400",
+   "MUSIC431",
+   "MUSIC501",
+   "MUSIC611",
+   "MUSIC631",
+   "MUSIC650",
+   "MUSIC661",
+   "PHOTO10",
+   "PHOTO107",
+   "PHOTO7",
+   "THEATER200",
+   "THEATER225",
+   "THEATER240",
+   "THEATER271",
+   "THEATER300",
+   "THEATER311",
+   "THEATER313",
+   "THEATER314",
+   "THEATER315",
+   "THEATER325",
+   "THEATER338",
+   "THEATER400",
+   "THEATER416",
+   "THEATER417"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=194",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    194
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 52,
+  "text_chars": 5450
+ },
+ {
+  "control_number": "31030",
+  "title": "EARLY CHILDHOOD EDUCATION",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHDEV1",
+   "CHDEV10",
+   "CHDEV11",
+   "CHDEV2",
+   "CHDEV22",
+   "CHDEV23",
+   "CHDEV30",
+   "CHDEV31",
+   "CHDEV34",
+   "CHDEV42",
+   "CHDEV48",
+   "CHDEV7"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=88",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    88,
+    89,
+    90,
+    91
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 12,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "31547",
+  "title": "TECHNICAL THEATER LEVEL 2",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 0.857,
+  "codes_found": [
+   "THEATER1051",
+   "THEATER1052",
+   "THEATER1053",
+   "THEATER1054",
+   "THEATER302",
+   "THEATER311",
+   "THEATER313",
+   "THEATER314",
+   "THEATER315",
+   "THEATER3353",
+   "THEATER3354",
+   "THEATER338"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=205",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    205
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 14,
+  "text_chars": 3122
+ },
+ {
+  "control_number": "31738",
+  "title": "COSTUME DESIGN LEVEL 2",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "THEATER2621",
+   "THEATER2622",
+   "THEATER411",
+   "THEATER413",
+   "THEATER414",
+   "THEATER415",
+   "THEATER416",
+   "THEATER417",
+   "THEATER419",
+   "THEATER420",
+   "THEATER4251",
+   "THEATER4252",
+   "THEATER4253",
+   "THEATER4254"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=203",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    203,
+    204
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 14,
+  "text_chars": 8247
+ },
+ {
+  "control_number": "32496",
+  "title": "Music",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "MUSIC111",
+   "MUSIC121",
+   "MUSIC122",
+   "MUSIC161",
+   "MUSIC181",
+   "MUSIC182",
+   "MUSIC183",
+   "MUSIC184",
+   "MUSIC200",
+   "MUSIC201",
+   "MUSIC202",
+   "MUSIC203",
+   "MUSIC211",
+   "MUSIC212",
+   "MUSIC213",
+   "MUSIC311",
+   "MUSIC312",
+   "MUSIC313",
+   "MUSIC501",
+   "MUSIC531",
+   "MUSIC561",
+   "MUSIC702",
+   "MUSIC705",
+   "MUSIC751",
+   "MUSIC765",
+   "MUSIC771",
+   "MUSIC781",
+   "MUSIC782"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=196",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    196,
+    197,
+    198,
+    199
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 28,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "32502",
+  "title": "PSYCHOLOGY",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOLOGY3",
+   "BIOLOGY6",
+   "BUS15",
+   "MATH229",
+   "POLSC1000",
+   "PSYCC1000",
+   "PSYCH13",
+   "PSYCH14",
+   "PSYCH2",
+   "PSYCH3",
+   "PSYCH41",
+   "PSYCH43",
+   "PSYCH45",
+   "PSYCH52",
+   "PSYCH66",
+   "PSYCH74",
+   "PSYCH75",
+   "SOC125",
+   "STATC1000",
+   "STATC1000E"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=173",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    173,
+    174,
+    175,
+    176
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 20,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "32832",
+  "title": "ART HISTORY",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 0.511,
+  "codes_found": [
+   "FRENCH1",
+   "FRENCH10",
+   "FRENCH2",
+   "FRENCH3",
+   "FRENCH4",
+   "HISTC1001",
+   "HISTC1002",
+   "HISTORY5",
+   "HISTORY59",
+   "HISTORY6",
+   "HISTORY7",
+   "HISTORY73",
+   "HISTORY81",
+   "HISTORY82",
+   "HISTORY86",
+   "HISTORY87",
+   "HUMAN30",
+   "HUMAN31",
+   "HUMAN6",
+   "HUMAN8",
+   "JAPAN1",
+   "JAPAN14",
+   "JAPAN2",
+   "JAPAN3",
+   "JAPAN4",
+   "JAPAN9",
+   "KOREAN1",
+   "KOREAN10",
+   "KOREAN13",
+   "KOREAN2",
+   "KOREAN21",
+   "KOREAN22",
+   "KOREAN26",
+   "KOREAN3",
+   "KOREAN4",
+   "LING1",
+   "MUSIC101",
+   "MUSIC111",
+   "MUSIC116",
+   "MUSIC121",
+   "MUSIC122",
+   "MUSIC135",
+   "MUSIC136",
+   "MUSIC141",
+   "PHILOS1",
+   "PHILOS14",
+   "PHILOS20",
+   "PHILOS30",
+   "PHILOS32",
+   "PHILOS40",
+   "PHOTO10",
+   "PHOTO34",
+   "PHOTO501",
+   "POLSCI5",
+   "RUSSIAN1",
+   "RUSSIAN10",
+   "RUSSIAN2",
+   "RUSSIAN3",
+   "RUSSIAN4",
+   "SPANISH1",
+   "SPANISH10",
+   "SPANISH2",
+   "SPANISH21",
+   "SPANISH22",
+   "SPANISH3",
+   "SPANISH4",
+   "SPANISH9",
+   "THEATER100",
+   "THEATER110",
+   "THEATER338",
+   "THEATER400"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=125",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    125
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 139,
+  "text_chars": 6103
+ },
+ {
+  "control_number": "32923",
+  "title": "POLITICAL SCIENCE",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 0.952,
+  "codes_found": [
+   "ADMJUS1",
+   "ADMJUS2",
+   "AFROAM7",
+   "ANTHRO102",
+   "ANTHRO121",
+   "ANTHRO151",
+   "ASIAN1",
+   "BUS15",
+   "CHDEV1",
+   "CHDEV11",
+   "CHICANO4",
+   "CHICANO47",
+   "CHICANO7",
+   "CHICANO8",
+   "COMM121",
+   "COMM122",
+   "ECONC2001",
+   "ECONC2002",
+   "GEOG14",
+   "GEOG2",
+   "GEOG7",
+   "HISTC1001",
+   "HISTC1002",
+   "HISTORY5",
+   "HISTORY59",
+   "HISTORY6",
+   "HISTORY7",
+   "HISTORY73",
+   "HISTORY81",
+   "HISTORY82",
+   "HISTORY86",
+   "HISTORY87",
+   "LAW1",
+   "LAW3",
+   "LING2",
+   "LING3",
+   "MATH229",
+   "POLSC1000",
+   "POLSCI14",
+   "POLSCI19",
+   "POLSCI2",
+   "POLSCI5",
+   "POLSCI7",
+   "PSYCC1000",
+   "PSYCH13",
+   "PSYCH14",
+   "PSYCH41",
+   "PSYCH52",
+   "PSYCH74",
+   "SOC1",
+   "SOC11",
+   "SOC12",
+   "SOC125",
+   "SOC2",
+   "SOC22",
+   "SOC31",
+   "SOC32",
+   "STATC1000",
+   "STATC1000E"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=179",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    179,
+    180,
+    181,
+    182
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 62,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "33120",
+  "title": "STUDIO ARTS",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 0.868,
+  "codes_found": [
+   "ANIMATN218",
+   "ART201",
+   "ART202",
+   "ART204",
+   "ART205",
+   "ART209",
+   "ART282",
+   "ART300",
+   "ART301",
+   "ART302",
+   "ART304",
+   "ART305",
+   "ART306",
+   "ART307",
+   "ART308",
+   "ART309",
+   "ART400",
+   "ART407",
+   "ART501",
+   "ART502",
+   "ART603",
+   "ART606",
+   "ART620",
+   "ART634",
+   "ART701",
+   "ART702",
+   "ART709",
+   "ART710",
+   "ARTHC1100",
+   "ARTHC1200",
+   "ARTHIST130",
+   "ARTHIST139",
+   "ARTHIST140"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=208",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    208,
+    209,
+    210,
+    211
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 38,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "33121",
+  "title": "ADMINISTRATION OF JUSTICE",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ADMJUS16",
+   "ADMJUS160",
+   "ADMJUS180",
+   "ADMJUS2",
+   "ADMJUS3",
+   "ADMJUS4",
+   "ADMJUS5",
+   "ADMJUS62",
+   "ADMJUS67",
+   "ADMJUS8",
+   "BUS15",
+   "POLSC1000",
+   "PSYCC1000",
+   "SOC1",
+   "SOC125",
+   "STATC1000",
+   "STATC1000E"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=163",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    163,
+    164,
+    165
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 17,
+  "text_chars": 14683
+ },
+ {
+  "control_number": "33147",
+  "title": "ENGLISH",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 0.857,
+  "codes_found": [
+   "ENGLC1001",
+   "ENGLISH102",
+   "ENGLISH127",
+   "ENGLISH203",
+   "ENGLISH204",
+   "ENGLISH205",
+   "ENGLISH206",
+   "ENGLISH207",
+   "ENGLISH208",
+   "ENGLISH211",
+   "ENGLISH212",
+   "ENGLISH214",
+   "ENGLISH215",
+   "ENGLISH218",
+   "ENGLISH239",
+   "ENGLISH240",
+   "ENGLISH255",
+   "ENGLISH270"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=116",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    116,
+    117,
+    118,
+    119
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 21,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "33155",
+  "title": "JOURNALISM",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "COMM104",
+   "ECONC2001",
+   "ECONC2002",
+   "JOURNAL101",
+   "JOURNAL2181",
+   "JOURNAL2182",
+   "PHOTO20",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=122",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    122,
+    123
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 8,
+  "text_chars": 6790
+ },
+ {
+  "control_number": "33157",
+  "title": "THEATRE ARTS",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "THEATER100",
+   "THEATER110",
+   "THEATER200",
+   "THEATER270",
+   "THEATER272",
+   "THEATER2941",
+   "THEATER300",
+   "THEATER311",
+   "THEATER3351",
+   "THEATER338",
+   "THEATER345",
+   "THEATER415",
+   "THEATER4251"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=201",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    201
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 13,
+  "text_chars": 5449
+ },
+ {
+  "control_number": "35337",
+  "title": "SPANISH LANGUAGE AND CIVILIZATION: INTERMEDIATE LEVEL",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "SPANISH10",
+   "SPANISH3",
+   "SPANISH4",
+   "SPANISH7",
+   "SPANISH9"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=135",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    135,
+    136
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 5,
+  "text_chars": 7889
+ },
+ {
+  "control_number": "35338",
+  "title": "SPANISH LANGUAGE AND CIVILIZATION: ELEMENTARY LEVEL",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "SPANISH1",
+   "SPANISH10",
+   "SPANISH2",
+   "SPANISH7",
+   "SPANISH9"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=135",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    135,
+    136
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 5,
+  "text_chars": 7889
+ },
+ {
+  "control_number": "35339",
+  "title": "JAPANESE LANGUAGE AND CIVILIZATION: INTERMEDIATE LEVEL",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "JAPAN14",
+   "JAPAN3",
+   "JAPAN4",
+   "JAPAN7"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=130",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    130,
+    131
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 4,
+  "text_chars": 9222
+ },
+ {
+  "control_number": "35340",
+  "title": "KOREAN LANGUAGE AND CIVILIZATION – ELEMENTARY LEVEL",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "KOREAN1",
+   "KOREAN10",
+   "KOREAN2",
+   "KOREAN7"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=132",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    132,
+    133
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 4,
+  "text_chars": 7451
+ },
+ {
+  "control_number": "35341",
+  "title": "KOREAN LANGUAGE AND CIVILIZATION - INTERMEDIATE LEVEL",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "KOREAN10",
+   "KOREAN13",
+   "KOREAN26",
+   "KOREAN3",
+   "KOREAN4",
+   "KOREAN7"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=132",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    132,
+    133
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 6,
+  "text_chars": 7451
+ },
+ {
+  "control_number": "35344",
+  "title": "JAPANESE LANGUAGE AND CIVILIZATION: ELEMENTARY LEVEL",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "JAPAN1",
+   "JAPAN2",
+   "JAPAN7",
+   "JAPAN9"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=130",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    130,
+    131
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 4,
+  "text_chars": 9222
+ },
+ {
+  "control_number": "35349",
+  "title": "ARTS GRAPHIC COMMUNICATION",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART501",
+   "ART603",
+   "ART648"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=113",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    113
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 3,
+  "text_chars": 1922
+ },
+ {
+  "control_number": "35936",
+  "title": "HEALTH CAREERS READINESS",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED230CE",
+   "VOCED56CE"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=222",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    222
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 2,
+  "text_chars": 4663
+ },
+ {
+  "control_number": "36007",
+  "title": "AMERICAN SIGN LANGUAGE",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ASL1",
+   "ASL2",
+   "ASL3",
+   "ASL30"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=126",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    126
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 4,
+  "text_chars": 4126
+ },
+ {
+  "control_number": "36026",
+  "title": "Kinesiology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 0.943,
+  "codes_found": [
+   "ANATOMY1",
+   "BUS15",
+   "CHEM101",
+   "CHEM60",
+   "DANCETQ111",
+   "DANCETQ121",
+   "DANCETQ141",
+   "HEALTH11",
+   "HEALTH12",
+   "KIN2011",
+   "KIN202",
+   "KIN2151",
+   "KIN217",
+   "KIN229",
+   "KIN230",
+   "KIN237",
+   "KIN246",
+   "KIN2501",
+   "KIN2511",
+   "KIN2661",
+   "KIN2711",
+   "KIN2871",
+   "KIN2891",
+   "KIN2911",
+   "KIN300",
+   "KIN3001",
+   "KIN303",
+   "KIN307",
+   "KIN326",
+   "KIN327",
+   "KIN328",
+   "KIN3281",
+   "KIN331",
+   "KIN333",
+   "KIN334",
+   "KIN3721",
+   "KINATH556",
+   "KINATH558",
+   "KINATH563",
+   "KINMAJ100",
+   "MATH229",
+   "PHYSICS101",
+   "PHYSICS21",
+   "PHYSICS6",
+   "PHYSIOL1",
+   "PSYCC1000",
+   "SOC1",
+   "SOC125",
+   "STATC1000",
+   "STATC1000E"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=99",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    99,
+    100,
+    101,
+    102
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 53,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "36049",
+  "title": "BIOLOGY",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOLOGY6",
+   "BIOLOGY7",
+   "CHEM101",
+   "CHEM102",
+   "MATH261",
+   "PHYSICS101",
+   "PHYSICS102",
+   "PHYSICS6",
+   "PHYSICS7"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=155",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    155
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 9,
+  "text_chars": 4036
+ },
+ {
+  "control_number": "36275",
+  "title": "VOCATIONAL ENGLISH AS A SECOND  LANGUAGE II",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESLCVCS30CE",
+   "ESLCVCS31CE",
+   "ESLCVCS32CE",
+   "ESLCVCS33CE",
+   "ESLNC1CE",
+   "ESLNC2CE"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=239",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    239
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 6,
+  "text_chars": 4170
+ },
+ {
+  "control_number": "36276",
+  "title": "HIGH SCHOOL EQUIVALENCY TEST PREPARATION",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BSICSKL83CE",
+   "BSICSKL84CE",
+   "BSICSKL85CE",
+   "BSICSKL86CE"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=220",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    220
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 4,
+  "text_chars": 4290
+ },
+ {
+  "control_number": "36277",
+  "title": "CHILD DEVELOPMENT READINESS",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED230CE",
+   "VOCED54CE"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=239",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    239,
+    240,
+    241,
+    242
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 2,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "36347",
+  "title": "RUSSIAN LANGUAGE AND CIVILIZATION: ELEMENTARY LEVEL",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "RUSSIAN1",
+   "RUSSIAN10",
+   "RUSSIAN2",
+   "RUSSIAN7"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=134",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    134
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 4,
+  "text_chars": 4481
+ },
+ {
+  "control_number": "36348",
+  "title": "RUSSIAN LANGUAGE AND CIVILIZATION: INTERMEDIATE LEVEL",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "RUSSIAN10",
+   "RUSSIAN3",
+   "RUSSIAN4",
+   "RUSSIAN7"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=134",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    134
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 4,
+  "text_chars": 4481
+ },
+ {
+  "control_number": "36581",
+  "title": "Academic Preparation",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BSICSKL6CE",
+   "BSICSKL75CE",
+   "BSICSKL7CE",
+   "VOCED290CE",
+   "VOCED3CE"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=219",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    219
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 5,
+  "text_chars": 4002
+ },
+ {
+  "control_number": "36658",
+  "title": "Music Songwriting and Composition",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 0.959,
+  "codes_found": [
+   "MUSIC111",
+   "MUSIC116",
+   "MUSIC118",
+   "MUSIC121",
+   "MUSIC122",
+   "MUSIC137",
+   "MUSIC141",
+   "MUSIC200",
+   "MUSIC201",
+   "MUSIC202",
+   "MUSIC203",
+   "MUSIC205",
+   "MUSIC206",
+   "MUSIC207",
+   "MUSIC211",
+   "MUSIC212",
+   "MUSIC213",
+   "MUSIC221",
+   "MUSIC223",
+   "MUSIC224",
+   "MUSIC231",
+   "MUSIC271",
+   "MUSIC272",
+   "MUSIC311",
+   "MUSIC312",
+   "MUSIC313",
+   "MUSIC314",
+   "MUSIC3611",
+   "MUSIC3612",
+   "MUSIC3613",
+   "MUSIC3614",
+   "MUSIC501",
+   "MUSIC531",
+   "MUSIC561",
+   "MUSIC611",
+   "MUSIC612",
+   "MUSIC631",
+   "MUSIC632",
+   "MUSIC650",
+   "MUSIC651",
+   "MUSIC702",
+   "MUSIC705",
+   "MUSIC751",
+   "MUSIC765",
+   "MUSIC771",
+   "MUSIC781",
+   "MUSIC782"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=198",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    198,
+    199
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 49,
+  "text_chars": 6780
+ },
+ {
+  "control_number": "36668",
+  "title": "BEGINNING ENGLISH AS A SECOND LANGUAGE",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESLNC1CE",
+   "ESLNC2CE"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=236",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    236
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 2,
+  "text_chars": 5130
+ },
+ {
+  "control_number": "37221",
+  "title": "FILM, TELEVISION, AND ELECTRONIC MEDIA",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 0.545,
+  "codes_found": [
+   "ARMEN1",
+   "ARMEN11",
+   "ARMEN12",
+   "ARMEN2",
+   "ARMEN35",
+   "ARMEN36",
+   "ARTHIST130",
+   "ASL1",
+   "ASL2",
+   "ASL3",
+   "CHINESE1",
+   "CHINESE10",
+   "CHINESE2",
+   "CHINESE3",
+   "CHINESE4",
+   "ENGLISH214",
+   "ENGLISH215",
+   "ENGLISH218",
+   "ENGLISH239",
+   "ENGLISH240",
+   "ENGLISH255",
+   "ENGLISH270",
+   "FRENCH1",
+   "FRENCH10",
+   "FRENCH2",
+   "FRENCH3",
+   "FRENCH4",
+   "HISTC1001",
+   "HISTC1002",
+   "HISTORY6",
+   "HISTORY7",
+   "HISTORY86",
+   "HISTORY87",
+   "HUMAN30",
+   "HUMAN31",
+   "HUMAN6",
+   "HUMAN61",
+   "HUMAN8",
+   "JAPAN1",
+   "JAPAN2",
+   "JAPAN3",
+   "JAPAN4",
+   "JAPAN9",
+   "KOREAN1",
+   "KOREAN10",
+   "KOREAN13",
+   "KOREAN2",
+   "KOREAN21",
+   "KOREAN22",
+   "KOREAN26",
+   "KOREAN3",
+   "KOREAN4",
+   "LING1",
+   "MUSIC101",
+   "MUSIC111",
+   "MUSIC121",
+   "MUSIC122",
+   "MUSIC135",
+   "MUSIC136",
+   "MUSIC141",
+   "MUSIC200",
+   "PHILOS1",
+   "PHILOS14",
+   "PHILOS20",
+   "PHILOS30",
+   "PHILOS32",
+   "PHILOS40",
+   "PHOTO501",
+   "POLSCI5",
+   "RUSSIAN1",
+   "RUSSIAN10",
+   "RUSSIAN2",
+   "RUSSIAN3",
+   "RUSSIAN4",
+   "SPANISH1",
+   "SPANISH10",
+   "SPANISH2",
+   "SPANISH21",
+   "SPANISH22",
+   "SPANISH3",
+   "SPANISH4",
+   "SPANISH9",
+   "THEATER100",
+   "THEATER110",
+   "THEATER338"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=125",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    125,
+    126,
+    127,
+    128
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 156,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "38010",
+  "title": "SOCIAL JUSTICE STUDIES: GENERAL",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "AFROAM20",
+   "CHICANO44",
+   "POLSCI19",
+   "SOC11",
+   "SOC22",
+   "SOC31",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=180",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    180,
+    181,
+    182
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 7,
+  "text_chars": 12637
+ },
+ {
+  "control_number": "38156",
+  "title": "INFANT & TODDLER STUDIES",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHDEV1",
+   "CHDEV10",
+   "CHDEV30",
+   "CHDEV31",
+   "CHDEV34",
+   "ENGLC1000"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=92",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    92
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 6,
+  "text_chars": 4816
+ },
+ {
+  "control_number": "38233",
+  "title": "Music Production and Technology",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "MUSIC101",
+   "MUSIC137",
+   "MUSIC161",
+   "MUSIC200",
+   "MUSIC2611",
+   "MUSIC2612",
+   "MUSIC2613",
+   "MUSIC271",
+   "MUSIC291",
+   "MUSIC292",
+   "MUSIC311",
+   "MUSIC312",
+   "MUSIC501",
+   "MUSIC531",
+   "MUSIC561",
+   "MUSIC702",
+   "MUSIC705",
+   "MUSIC751",
+   "MUSIC765",
+   "MUSIC771",
+   "MUSIC781",
+   "MUSIC782"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=198",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    198,
+    199
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 22,
+  "text_chars": 6780
+ },
+ {
+  "control_number": "38385",
+  "title": "Spanish",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHICANO44",
+   "CHICANO47",
+   "CHICANO7",
+   "CHICANO8",
+   "ENGLISH203",
+   "ENGLISH204",
+   "ENGLISH255",
+   "FRENCH1",
+   "FRENCH2",
+   "FRENCH3",
+   "FRENCH4",
+   "HISTORY5",
+   "HISTORY6",
+   "SPANISH1",
+   "SPANISH10",
+   "SPANISH2",
+   "SPANISH21",
+   "SPANISH22",
+   "SPANISH3",
+   "SPANISH4",
+   "SPANISH9"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=135",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    135,
+    136
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 21,
+  "text_chars": 7889
+ },
+ {
+  "control_number": "38605",
+  "title": "ANIMATION - FOUNDATION",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANIMATN218",
+   "ANIMATN225",
+   "ART201",
+   "ART209",
+   "ART649"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=209",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    209,
+    210,
+    211
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 5,
+  "text_chars": 14936
+ },
+ {
+  "control_number": "38651",
+  "title": "DIGITAL PROSTHETIC DENTISTRY",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "38723",
+  "title": "LITERACY LEVEL ESL",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESLCVCS33CE",
+   "ESLNC2CE",
+   "ESLNC50CE"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=238",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    238,
+    239
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 3,
+  "text_chars": 8776
+ },
+ {
+  "control_number": "38827",
+  "title": "CYBERSECURITY",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CIS112",
+   "CIS166",
+   "CIS170",
+   "CIS210",
+   "CIS211",
+   "CIS212",
+   "CIS213",
+   "CIS214"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=144",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    144,
+    145
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 8,
+  "text_chars": 11811
+ },
+ {
+  "control_number": "38828",
+  "title": "CYBERSECURITY",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CIS112",
+   "CIS166",
+   "CIS170",
+   "CIS210",
+   "CIS211",
+   "CIS212",
+   "CIS213",
+   "CIS214"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=144",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    144,
+    145
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 8,
+  "text_chars": 11811
+ },
+ {
+  "control_number": "38829",
+  "title": "Applied Movement and Personal Training Specialist",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 0.964,
+  "codes_found": [
+   "HEALTH46",
+   "HEALTH55",
+   "HEALTH60",
+   "KIN229",
+   "KIN237",
+   "KIN246",
+   "KIN2491",
+   "KIN2501",
+   "KIN2502",
+   "KIN2503",
+   "KIN2511",
+   "KIN2512",
+   "KIN2513",
+   "KIN3281",
+   "KIN331",
+   "KINMAJ100",
+   "KINMAJ113",
+   "KINMAJ114",
+   "KINMAJ115",
+   "KINMAJ117",
+   "KINMAJ131",
+   "KINMAJ132",
+   "KINMAJ150",
+   "KINMAJ175",
+   "KINMAJ217",
+   "KINMAJ218",
+   "KINMAJ220"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=102",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    102,
+    103,
+    104
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 28,
+  "text_chars": 13830
+ },
+ {
+  "control_number": "38856",
+  "title": "CHILDREN WITH SPECIAL NEEDS",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHDEV1",
+   "CHDEV10",
+   "CHDEV44",
+   "CHDEV45",
+   "CHDEV48"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=88",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    88,
+    89,
+    90,
+    91
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 5,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "38857",
+  "title": "PHILOSOPHY",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "PHILOS1",
+   "PHILOS14",
+   "PHILOS20",
+   "PHILOS30",
+   "PHILOS32",
+   "PHILOS40",
+   "PHILOS5",
+   "PHILOS6",
+   "PHILOS8",
+   "PHILOS9"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=137",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    137
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 10,
+  "text_chars": 4423
+ },
+ {
+  "control_number": "38859",
+  "title": "PRE-ALLIED HEALTH",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANATOMY1",
+   "CHEM101",
+   "CHEM60",
+   "COMMC1000",
+   "ENGLC1000",
+   "FAM&CS21",
+   "HEALTH2",
+   "HEALTH21",
+   "HEALTH8",
+   "MICRO1",
+   "MICRO20",
+   "PHYSIOL1",
+   "PSYCC1000",
+   "SOC1",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=106",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    106
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 15,
+  "text_chars": 2480
+ },
+ {
+  "control_number": "38860",
+  "title": "PRE-ALLIED HEALTH",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANATOMY1",
+   "CHEM101",
+   "CHEM60",
+   "COMMC1000",
+   "ENGLC1000",
+   "FAM&CS21",
+   "HEALTH2",
+   "HEALTH21",
+   "HEALTH8",
+   "MICRO1",
+   "MICRO20",
+   "PHYSIOL1",
+   "PSYCC1000",
+   "SOC1",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=106",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    106
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 15,
+  "text_chars": 2480
+ },
+ {
+  "control_number": "38867",
+  "title": "Nutrition and Dietetics",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANATOMY1",
+   "CHEM101",
+   "FAM&CS21",
+   "FAM&CS50",
+   "MICRO20",
+   "PHYSIOL1",
+   "PSYCC1000",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=93",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    93
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 8,
+  "text_chars": 4852
+ },
+ {
+  "control_number": "39043",
+  "title": "WORKPLACE SUCCESS II - CREATIVE LEADERSHIP",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BSICSKL72CE",
+   "BSICSKL79CE"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=233",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    233
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 2,
+  "text_chars": 4190
+ },
+ {
+  "control_number": "39190",
+  "title": "WORKPLACE SUCCESS I – CREATIVITY IN THE WORKPLACE",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BSICSKL70CE",
+   "BSICSKL76CE"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=233",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    233
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 2,
+  "text_chars": 4190
+ },
+ {
+  "control_number": "39316",
+  "title": "Fixed Prosthodontics",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "DENTEK100",
+   "DENTEK102",
+   "DENTEK106",
+   "DENTEK108",
+   "DENTEK109",
+   "DENTEK111",
+   "DENTEK185",
+   "DENTEK203",
+   "DENTEK206",
+   "DENTEK208",
+   "DENTEK285"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=95",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    95,
+    96,
+    97
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 11,
+  "text_chars": 15024
+ },
+ {
+  "control_number": "39327",
+  "title": "Office Career Readiness",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED108CE",
+   "VOCED109CE",
+   "VOCED174CE",
+   "VOCED175CE",
+   "VOCED176CE",
+   "VOCED279CE",
+   "VOCED294CE",
+   "VOCED3CE"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=232",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    232,
+    233
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 8,
+  "text_chars": 8213
+ },
+ {
+  "control_number": "39348",
+  "title": "PATHWAY TO LAW SCHOOL",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "COMM104",
+   "COMM121",
+   "COMM122",
+   "COMMC1000",
+   "COUNSEL40",
+   "ENGLC1000",
+   "ENGLC1001",
+   "ENGLISH102",
+   "HISTC1001",
+   "HISTC1002",
+   "LAW7",
+   "PHILOS5",
+   "POLSC1000",
+   "PSYCC1000",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=167",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    167,
+    168,
+    169,
+    170
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 15,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "39349",
+  "title": "Removable Prosthodontics",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "DENTEK100",
+   "DENTEK102",
+   "DENTEK103",
+   "DENTEK105",
+   "DENTEK106",
+   "DENTEK112",
+   "DENTEK185",
+   "DENTEK204",
+   "DENTEK207",
+   "DENTEK285"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=95",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    95,
+    96,
+    97
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 10,
+  "text_chars": 15024
+ },
+ {
+  "control_number": "39561",
+  "title": "PARALEGAL STUDIES",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CAOT84",
+   "COMM104",
+   "COMM121",
+   "COMM122",
+   "COMM151",
+   "COMM190",
+   "COMMC1000",
+   "ENGLC1000",
+   "LAW1",
+   "LAW11",
+   "LAW12",
+   "LAW13",
+   "LAW14",
+   "LAW17",
+   "LAW19",
+   "LAW2",
+   "LAW35",
+   "LAW37",
+   "LAW38",
+   "LAW4",
+   "LAW7",
+   "LIBSCI101"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=166",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    166,
+    167
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 22,
+  "text_chars": 10145
+ },
+ {
+  "control_number": "39577",
+  "title": "PUBLIC HEALTH SCIENCE",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 0.667,
+  "codes_found": [
+   "ANATOMY1",
+   "BIOLOGY3",
+   "CHEM101",
+   "CHEM60",
+   "HEALTH101",
+   "HEALTH11",
+   "HEALTH21",
+   "HEALTH51",
+   "PHYSIOL1",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=100",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    100,
+    101
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 15,
+  "text_chars": 11169
+ },
+ {
+  "control_number": "39614",
+  "title": "BANQUET & RESTAURANT SERVER",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BSICSKL6CE",
+   "VOCED230CE",
+   "VOCED239CE",
+   "VOCED242CE",
+   "VOCED246CE",
+   "VOCED247CE"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=240",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    240,
+    241,
+    242
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 6,
+  "text_chars": 12502
+ },
+ {
+  "control_number": "39615",
+  "title": "Technology for Success",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED103CE",
+   "VOCED104CE",
+   "VOCED105CE",
+   "VOCED129CE",
+   "VOCED175CE",
+   "VOCED3CE"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=232",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    232,
+    233
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 6,
+  "text_chars": 8213
+ },
+ {
+  "control_number": "39616",
+  "title": "FRONT DESK REPRESENTATIVE & RESERVATIONIST",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BSICSKL6CE",
+   "VOCED230CE",
+   "VOCED239CE",
+   "VOCED243CE",
+   "VOCED249CE",
+   "VOCED3CE",
+   "VOCED79CE"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=241",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    241,
+    242
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 7,
+  "text_chars": 8966
+ },
+ {
+  "control_number": "39617",
+  "title": "GUESTROOM ATTENDANT",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BSICSKL6CE",
+   "VOCED230CE",
+   "VOCED238CE",
+   "VOCED239CE",
+   "VOCED244CE",
+   "VOCED245CE",
+   "VOCED250CE"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=242",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    242
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 7,
+  "text_chars": 4164
+ },
+ {
+  "control_number": "39702",
+  "title": "COMPUTER SKILLS FOR THE WORKPLACE",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED103CE",
+   "VOCED104CE",
+   "VOCED105CE"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=231",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    231,
+    232
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 3,
+  "text_chars": 8214
+ },
+ {
+  "control_number": "39703",
+  "title": "INTRODUCTION TO COMPUTERS",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED128CE",
+   "VOCED129CE"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=232",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    232
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 2,
+  "text_chars": 4021
+ },
+ {
+  "control_number": "39789",
+  "title": "GEOLOGY",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEM101",
+   "CHEM102",
+   "GEOLOGY1",
+   "GEOLOGY2",
+   "GEOLOGY6",
+   "GEOLOGY7",
+   "MATH261",
+   "MATH262"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=152",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    152,
+    153,
+    154,
+    155
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 8,
+  "text_chars": 15095
+ },
+ {
+  "control_number": "39854",
+  "title": "CLOUD COMPUTING",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CIS192",
+   "CIS193",
+   "CIS194",
+   "CIS195",
+   "CIS219",
+   "CS112"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=146",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    146,
+    147,
+    148,
+    149
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 6,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "40127",
+  "title": "COLLEGE READINESS  MATH FUNDAMENTALS I",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BSICSKL200CE",
+   "BSICSKL201CE"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=219",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    219
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 2,
+  "text_chars": 4002
+ },
+ {
+  "control_number": "40128",
+  "title": "COLLEGE READINESS  MATH FUNDAMENTALS II",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BSICSKL202CE",
+   "BSICSKL203CE"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=220",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    220
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 2,
+  "text_chars": 4290
+ },
+ {
+  "control_number": "40132",
+  "title": "MEDICAL TERMINOLOGY FOR  CAREER READINESS",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED400CE",
+   "VOCED435CE"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=225",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    225
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 2,
+  "text_chars": 4706
+ },
+ {
+  "control_number": "40138",
+  "title": "Phlebotomy Technician",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED381CE",
+   "VOCED382CE"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=226",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    226
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 2,
+  "text_chars": 2866
+ },
+ {
+  "control_number": "40139",
+  "title": "THE URBAN AMBASSADORS",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 0.5,
+  "codes_found": [
+   "VOCED237CE"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=229",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    229
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 2,
+  "text_chars": 4946
+ },
+ {
+  "control_number": "40193",
+  "title": "GIG ECONOMY SUCCESS KIT",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED63CE",
+   "VOCED84CE"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=227",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    227
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 2,
+  "text_chars": 3415
+ },
+ {
+  "control_number": "40199",
+  "title": "MEDICAL INTERPRETATION",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED400CE",
+   "VOCED461CE",
+   "VOCED462CE"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=225",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    225
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 3,
+  "text_chars": 4706
+ },
+ {
+  "control_number": "40232",
+  "title": "UCTP CHEMISTRY",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEM101",
+   "CHEM102",
+   "CHEM211",
+   "CHEM212",
+   "MATH261",
+   "MATH262",
+   "MATH263",
+   "MATH275",
+   "PHYSICS101",
+   "PHYSICS102",
+   "PHYSICS103"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=139",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    139,
+    140,
+    141
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 11,
+  "text_chars": 12727
+ },
+ {
+  "control_number": "40237",
+  "title": "FULL STACK WEB APPLICATION DEVELOPER",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CIS148",
+   "CIS219",
+   "CS112",
+   "CS113",
+   "CS116",
+   "CS157"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=148",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    148,
+    149
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 6,
+  "text_chars": 10010
+ },
+ {
+  "control_number": "40524",
+  "title": "FOOD HANDLER'S PREPARATION",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED230CE",
+   "VOCED247CE",
+   "VOCED253CE"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=241",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    241,
+    242
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 3,
+  "text_chars": 8966
+ },
+ {
+  "control_number": "40543",
+  "title": "FOOD SERVICE MANAGER SKILLS PREPARATION",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED247CE",
+   "VOCED254CE"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=241",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    241,
+    242
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 2,
+  "text_chars": 8966
+ },
+ {
+  "control_number": "40566",
+  "title": "Economics",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 0.5,
+  "codes_found": [
+   "ADMJUS67",
+   "AFROAM7",
+   "ANTHRO102",
+   "ASIAN1",
+   "BUS1",
+   "BUS15",
+   "CHICANO4",
+   "CHICANO47",
+   "CHICANO7",
+   "CHICANO8",
+   "COMM121",
+   "COMM122",
+   "ECONC2001",
+   "ECONC2002",
+   "GEOG2",
+   "HISTC1001",
+   "HISTC1002",
+   "HISTORY5",
+   "HISTORY6",
+   "HISTORY73",
+   "HISTORY86",
+   "HISTORY87",
+   "LAW3",
+   "LAW7",
+   "MATH229",
+   "POLSC1000",
+   "POLSCI2",
+   "POLSCI60",
+   "POLSCI7",
+   "PSYCC1000",
+   "SOC11",
+   "SOC125",
+   "SOC2",
+   "SOC31",
+   "SOC32",
+   "STATC1000",
+   "STATC1000E"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=165",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    165,
+    166,
+    167,
+    168
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 74,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "40592",
+  "title": "PROFESSIONAL ACTOR TRAINING LEVEL 1",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "THEATER1051",
+   "THEATER1052",
+   "THEATER2421",
+   "THEATER2422",
+   "THEATER270",
+   "THEATER272",
+   "THEATER2941",
+   "THEATER345"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=201",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    201
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 8,
+  "text_chars": 5449
+ },
+ {
+  "control_number": "40593",
+  "title": "PROFESSIONAL ACTOR TRAINING LEVEL 2",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "THEATER1051",
+   "THEATER1052",
+   "THEATER1053",
+   "THEATER1054",
+   "THEATER2351",
+   "THEATER2421",
+   "THEATER2422",
+   "THEATER2423",
+   "THEATER2424",
+   "THEATER270",
+   "THEATER272",
+   "THEATER2741",
+   "THEATER2761",
+   "THEATER2941",
+   "THEATER2942",
+   "THEATER345"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=201",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    201,
+    202
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 16,
+  "text_chars": 9457
+ },
+ {
+  "control_number": "40596",
+  "title": "PROFESSIONAL ACTOR TRAINING LEVEL 3",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "THEATER1051",
+   "THEATER1052",
+   "THEATER1053",
+   "THEATER1054",
+   "THEATER210",
+   "THEATER212",
+   "THEATER225",
+   "THEATER2351",
+   "THEATER2352",
+   "THEATER2421",
+   "THEATER2422",
+   "THEATER2423",
+   "THEATER2424",
+   "THEATER2621",
+   "THEATER270",
+   "THEATER272",
+   "THEATER2741",
+   "THEATER275",
+   "THEATER2761",
+   "THEATER277",
+   "THEATER2941",
+   "THEATER2942",
+   "THEATER345"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=201",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    201,
+    202,
+    203,
+    204
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 23,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "40642",
+  "title": "CINEMA PRODUCING",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS1",
+   "CINEMA1",
+   "CINEMA18",
+   "CINEMA20",
+   "CINEMA25",
+   "CINEMA4",
+   "CINEMA5",
+   "TV251"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=188",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    188,
+    189,
+    190,
+    191
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 8,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "40643",
+  "title": "Cinema Directing",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART649",
+   "CINEMA1",
+   "CINEMA10",
+   "CINEMA12",
+   "CINEMA2",
+   "CINEMA5",
+   "CINEMA6",
+   "THEATER100",
+   "THEATER200",
+   "THEATER225"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=187",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    187,
+    188,
+    189,
+    190
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 10,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "40644",
+  "title": "CINEMATOGRAPHY",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CINEMA1",
+   "CINEMA18",
+   "CINEMA381",
+   "CINEMA382",
+   "CINEMA4",
+   "CINEMA6",
+   "CINEMA7"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=185",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    185,
+    186,
+    187,
+    188
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 7,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "40661",
+  "title": "Cinema Post Production",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CINEMA1",
+   "CINEMA17",
+   "CINEMA18",
+   "CINEMA2",
+   "CINEMA22",
+   "CINEMA321",
+   "CINEMA322",
+   "CINEMA4",
+   "CINEMA91",
+   "CINEMA92"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=187",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    187,
+    188,
+    189,
+    190
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 10,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "40886",
+  "title": "CHINESE LANGUAGE AND CIVILIZATION – ELEMENTARY LEVEL",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHINESE1",
+   "CHINESE10",
+   "CHINESE2",
+   "CHINESE7"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=127",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    127,
+    128
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 4,
+  "text_chars": 7674
+ },
+ {
+  "control_number": "40887",
+  "title": "CHINESE LANGUAGE AND CIVILIZATION – INTERMEDIATE LEVEL",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHINESE10",
+   "CHINESE3",
+   "CHINESE4",
+   "CHINESE7"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=127",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    127,
+    128
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 4,
+  "text_chars": 7674
+ },
+ {
+  "control_number": "40888",
+  "title": "FRENCH LANGUAGE AND CIVILIZATION – ELEMENTARY LEVEL",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "FRENCH1",
+   "FRENCH10",
+   "FRENCH2",
+   "FRENCH7"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=125",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    125
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 4,
+  "text_chars": 6103
+ },
+ {
+  "control_number": "40889",
+  "title": "FRENCH LANGUAGE AND CIVILIZATION – INTERMEDIATE LEVEL",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "FRENCH10",
+   "FRENCH3",
+   "FRENCH4",
+   "FRENCH7"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=125",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    125
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 4,
+  "text_chars": 6103
+ },
+ {
+  "control_number": "40897",
+  "title": "GEOGRAPHY",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTHRO102",
+   "GEOG1",
+   "GEOG14",
+   "GEOG15",
+   "GEOG2",
+   "GEOG201",
+   "GEOG4",
+   "GEOLOGY1"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=152",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    152,
+    153
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 8,
+  "text_chars": 8987
+ },
+ {
+  "control_number": "40907",
+  "title": "ADULT BASIC EDUCATION",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BSICSKL23CE",
+   "BSICSKL34CE"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=219",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    219
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 2,
+  "text_chars": 4002
+ },
+ {
+  "control_number": "40987",
+  "title": "COSTUME DESIGN LEVEL 1",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "THEATER2621",
+   "THEATER411",
+   "THEATER413",
+   "THEATER414",
+   "THEATER415",
+   "THEATER416",
+   "THEATER417",
+   "THEATER419",
+   "THEATER420",
+   "THEATER4251",
+   "THEATER4252"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=203",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    203,
+    204
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 11,
+  "text_chars": 8247
+ },
+ {
+  "control_number": "40996",
+  "title": "TECHNICAL THEATER LEVEL 1",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "THEATER1051",
+   "THEATER1052",
+   "THEATER300",
+   "THEATER302",
+   "THEATER311",
+   "THEATER313",
+   "THEATER314",
+   "THEATER315",
+   "THEATER3351",
+   "THEATER338"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=204",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    204,
+    205
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 10,
+  "text_chars": 6779
+ },
+ {
+  "control_number": "40997",
+  "title": "SCREENWRITING",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CINEMA1",
+   "CINEMA18",
+   "CINEMA5",
+   "ENGLC1000",
+   "ENGLISH127",
+   "ENGLISH240",
+   "TV251",
+   "TV252"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=191",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    191,
+    192,
+    193
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 8,
+  "text_chars": 13717
+ },
+ {
+  "control_number": "40998",
+  "title": "ENTERTAINMENT INDUSTRY: PRODUCTION ASSISTANT",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CINEMA1",
+   "CINEMA60"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=189",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    189
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 2,
+  "text_chars": 3951
+ },
+ {
+  "control_number": "40999",
+  "title": "C++ PROGRAMMING",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CS102",
+   "CS103",
+   "CS116",
+   "CS136",
+   "CS216"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=144",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    144,
+    145,
+    146
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 5,
+  "text_chars": 15558
+ },
+ {
+  "control_number": "41000",
+  "title": "JAVA PROGRAMMING",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CS102",
+   "CS103",
+   "CS113",
+   "CS130",
+   "CS213"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=144",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    144,
+    145,
+    146
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 5,
+  "text_chars": 15558
+ },
+ {
+  "control_number": "41002",
+  "title": "ILLUSTRATION",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART201",
+   "ART204",
+   "ART209",
+   "ART304",
+   "ART648",
+   "ART649"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=210",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    210,
+    211
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 6,
+  "text_chars": 10196
+ },
+ {
+  "control_number": "41090",
+  "title": "BUSINESS ADMINISTRATION 2.0",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCTG1",
+   "ACCTG2",
+   "BUS1",
+   "BUS15",
+   "CAOT32",
+   "ECONC2001",
+   "ECONC2002",
+   "LAW1",
+   "MATH229",
+   "MATH230",
+   "MATH236",
+   "MATH261",
+   "MATH261S",
+   "SOC125",
+   "STATC1000",
+   "STATC1000E",
+   "SUPV12"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=75",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    75,
+    76,
+    77,
+    78
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 17,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "41252",
+  "title": "ENGLISH AS A SECOND LANGUAGE - PRONUNCIATION",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESLNC48CE",
+   "ESLNC49CE"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=236",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    236,
+    237
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 2,
+  "text_chars": 9334
+ },
+ {
+  "control_number": "41255",
+  "title": "HEALTHCARE SERVICES",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED400CE",
+   "VOCED403CE"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=222",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    222
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 2,
+  "text_chars": 4663
+ },
+ {
+  "control_number": "41256",
+  "title": "PROFESSIONALISM & SUCCESS IN HEALTHCARE OCCUPATIONS",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED404CE",
+   "VOCED405CE"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=226",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    226
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 2,
+  "text_chars": 2866
+ },
+ {
+  "control_number": "41257",
+  "title": "E-COMMERCE",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED446CE",
+   "VOCED447CE"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=226",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    226
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 2,
+  "text_chars": 2866
+ },
+ {
+  "control_number": "41258",
+  "title": "GLOBAL BUSINESS",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED444CE",
+   "VOCED445CE"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=227",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    227
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 2,
+  "text_chars": 3415
+ },
+ {
+  "control_number": "41259",
+  "title": "INTERNATIONAL MARKETING PROFESSIONAL",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED536CE",
+   "VOCED537CE",
+   "VOCED538CE"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=228",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    228
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 3,
+  "text_chars": 4678
+ },
+ {
+  "control_number": "41271",
+  "title": "LAW AND ETHICS IN BUSINESS",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "41478",
+  "title": "Sociology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 0.983,
+  "codes_found": [
+   "AFROAM7",
+   "ANTHRO102",
+   "ANTHRO121",
+   "ANTHRO151",
+   "ASIAN1",
+   "BUS15",
+   "CHDEV1",
+   "CHDEV11",
+   "CHDEV42",
+   "CHICANO4",
+   "CHICANO47",
+   "CHICANO7",
+   "CHICANO8",
+   "COMM121",
+   "COMM122",
+   "ECONC2001",
+   "ECONC2002",
+   "GEOG14",
+   "GEOG2",
+   "GEOG7",
+   "HISTC1001",
+   "HISTC1002",
+   "HISTORY5",
+   "HISTORY59",
+   "HISTORY6",
+   "HISTORY7",
+   "HISTORY73",
+   "HISTORY81",
+   "HISTORY82",
+   "HISTORY86",
+   "HISTORY87",
+   "LAW3",
+   "LAW7",
+   "LING2",
+   "LING3",
+   "MATH229",
+   "POLSC1000",
+   "POLSCI14",
+   "POLSCI19",
+   "POLSCI2",
+   "POLSCI5",
+   "POLSCI7",
+   "PSYCC1000",
+   "PSYCH13",
+   "PSYCH14",
+   "PSYCH41",
+   "PSYCH52",
+   "PSYCH74",
+   "SOC1",
+   "SOC11",
+   "SOC12",
+   "SOC125",
+   "SOC2",
+   "SOC22",
+   "SOC31",
+   "SOC32",
+   "STATC1000",
+   "STATC1000E"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=179",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    179,
+    180,
+    181,
+    182
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 59,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "41527",
+  "title": "ARMENIAN LANGUAGE AND LITERATURE",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ARMEN1",
+   "ARMEN11",
+   "ARMEN12",
+   "ARMEN2",
+   "ARMEN35",
+   "ARMEN36"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=124",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    124
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 6,
+  "text_chars": 6112
+ },
+ {
+  "control_number": "42057",
+  "title": "ENGLISH AS A SECOND LANGUAGE - CONVERSATION",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESLNC50CE",
+   "ESLNC60CE"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=236",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    236,
+    237,
+    238
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 2,
+  "text_chars": 13940
+ },
+ {
+  "control_number": "42058",
+  "title": "ENGLISH FOR SPEAKERS OF OTHER LANGUAGES - LEVEL I",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESLNC110CE",
+   "ESLNC221CE"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=238",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    238
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 2,
+  "text_chars": 4604
+ },
+ {
+  "control_number": "42059",
+  "title": "ENGLISH FOR SPEAKERS OF OTHER LANGUAGES - LEVEL II",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESLNC210CE",
+   "ESLNC222CE"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=238",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    238
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 2,
+  "text_chars": 4604
+ },
+ {
+  "control_number": "42068",
+  "title": "INTERPERSONAL SKILLS FOR THE WORKPLACE",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED122CE"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=228",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    228
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 1,
+  "text_chars": 4678
+ },
+ {
+  "control_number": "42201",
+  "title": "MEDICAL ASSISTANT: BACK OFFICE",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED372CE",
+   "VOCED375CE",
+   "VOCED379CE",
+   "VOCED391CE",
+   "VOCED435CE"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=224",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    224,
+    225
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 5,
+  "text_chars": 9078
+ },
+ {
+  "control_number": "42224",
+  "title": "MACHINE LEARNING",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CIS192",
+   "CIS194",
+   "CS121",
+   "CS166"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=149",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    149
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 4,
+  "text_chars": 5722
+ },
+ {
+  "control_number": "42225",
+  "title": "DATA SCIENCE",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CIS192",
+   "CIS193",
+   "CIS219",
+   "CS121",
+   "CS165",
+   "MATH229"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=147",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    147,
+    148,
+    149
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 6,
+  "text_chars": 14981
+ },
+ {
+  "control_number": "42227",
+  "title": "MEDICAL ASSISTANT: FRONT OFFICE",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESLNC360CE",
+   "VOCED236CE",
+   "VOCED372CE",
+   "VOCED373CE",
+   "VOCED379CE",
+   "VOCED400CE"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=224",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    224,
+    225
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 6,
+  "text_chars": 9078
+ },
+ {
+  "control_number": "42239",
+  "title": "CYBERSECURITY ANALYST",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CIS112",
+   "CIS162",
+   "CIS170",
+   "CIS191",
+   "CIS210",
+   "CIS211"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=147",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    147
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 6,
+  "text_chars": 4969
+ },
+ {
+  "control_number": "42299",
+  "title": "OPTICIAN TECHNICIAN",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED335CE",
+   "VOCED336CE",
+   "VOCED337CE",
+   "VOCED338CE"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=225",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    225
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 4,
+  "text_chars": 4706
+ },
+ {
+  "control_number": "42506",
+  "title": "GAME ART & DESIGN FOUNDATION",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANIMATN225",
+   "GAD101",
+   "GAD102",
+   "GAD103",
+   "GAD2101"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=209",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    209
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 5,
+  "text_chars": 4738
+ },
+ {
+  "control_number": "42507",
+  "title": "GAME ART & DESIGN PRODUCTION",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANIMATN226",
+   "GAD104",
+   "GAD106",
+   "GAD203",
+   "GAD2102",
+   "GAD2103"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=210",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    210
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 6,
+  "text_chars": 4193
+ },
+ {
+  "control_number": "42564",
+  "title": "SOUND FOR FILM",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CINEMA1",
+   "CINEMA22",
+   "CINEMA91",
+   "CINEMA92",
+   "MUSIC118",
+   "MUSIC137"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=191",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    191,
+    192,
+    193
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 6,
+  "text_chars": 13717
+ },
+ {
+  "control_number": "42568",
+  "title": "Business Information Worker: Level II",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CAOT1",
+   "CAOT31",
+   "CAOT32",
+   "CAOT43",
+   "CAOT48",
+   "CAOT82",
+   "CAOT84",
+   "CAOT85",
+   "CAOT98"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=83",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    83,
+    84,
+    85
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 9,
+  "text_chars": 12431
+ },
+ {
+  "control_number": "42649",
+  "title": "RETAIL SALES AND CUSTOMER SERVICE",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED128CE",
+   "VOCED230CE",
+   "VOCED231CE",
+   "VOCED236CE",
+   "VOCED237CE",
+   "VOCED238CE",
+   "VOCED3CE",
+   "VOCED53CE"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=229",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    229
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 8,
+  "text_chars": 4946
+ },
+ {
+  "control_number": "42650",
+  "title": "RETAIL SUPERVISORY AND MANAGEMENT",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BSICSKL72CE",
+   "VOCED128CE",
+   "VOCED230CE",
+   "VOCED236CE",
+   "VOCED238CE",
+   "VOCED3CE",
+   "VOCED53CE",
+   "VOCED94CE"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=229",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    229
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 8,
+  "text_chars": 4946
+ },
+ {
+  "control_number": "42651",
+  "title": "Business Information Worker",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CAOT1",
+   "CAOT14",
+   "CAOT2",
+   "CAOT31",
+   "CAOT32",
+   "CAOT33",
+   "CAOT43",
+   "CAOT50",
+   "CAOT82",
+   "CAOT84",
+   "CAOT85",
+   "CAOT98"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=83",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    83,
+    84,
+    85
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 12,
+  "text_chars": 12431
+ },
+ {
+  "control_number": "42797",
+  "title": "Linguistics – English/ESL",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 0.933,
+  "codes_found": [
+   "ENGLC1000",
+   "ENGLISH102",
+   "ENGLISH203",
+   "ENGLISH204",
+   "ENGLISH205",
+   "ENGLISH206",
+   "ENGLISH207",
+   "ENGLISH208",
+   "ENGLISH214",
+   "ENGLISH255",
+   "ESL8",
+   "LING1",
+   "LING2",
+   "LING3"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=119",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    119,
+    120,
+    121
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 15,
+  "text_chars": 13930
+ },
+ {
+  "control_number": "42800",
+  "title": "LINGUISTICS - MODERN LANGUAGES",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ARMEN1",
+   "ARMEN2",
+   "ARMEN35",
+   "ARMEN36",
+   "ASL1",
+   "ASL2",
+   "ASL3",
+   "CHINESE1",
+   "CHINESE2",
+   "CHINESE3",
+   "CHINESE4",
+   "FRENCH1",
+   "FRENCH2",
+   "FRENCH3",
+   "FRENCH4",
+   "JAPAN1",
+   "JAPAN2",
+   "JAPAN3",
+   "JAPAN4",
+   "KOREAN1",
+   "KOREAN2",
+   "KOREAN3",
+   "KOREAN4",
+   "LING1",
+   "LING2",
+   "LING3",
+   "RUSSIAN1",
+   "RUSSIAN2",
+   "RUSSIAN3",
+   "RUSSIAN4",
+   "SPANISH1",
+   "SPANISH2",
+   "SPANISH3",
+   "SPANISH4"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=119",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    119,
+    120,
+    121
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 34,
+  "text_chars": 13930
+ },
+ {
+  "control_number": "43016",
+  "title": "Physical Therapy Aide",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "HEALTH60",
+   "KINMAJ102",
+   "KINMAJ116",
+   "KINMAJ125",
+   "KINMAJ131",
+   "KINMAJ133",
+   "KINMAJ150",
+   "KINMAJ217",
+   "KINMAJ218"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=103",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    103
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 9,
+  "text_chars": 5612
+ },
+ {
+  "control_number": "43107",
+  "title": "LAW, PUBLIC POLICY, AND SOCIETY",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ADMJUS2",
+   "ADMJUS3",
+   "ADMJUS4",
+   "ADMJUS67",
+   "ADMJUS8",
+   "AFROAM7",
+   "ANTHRO102",
+   "ASIAN1",
+   "BUS1",
+   "BUS15",
+   "CHICANO4",
+   "CHICANO47",
+   "CHICANO7",
+   "CHICANO8",
+   "COMM104",
+   "COMM122",
+   "COMM151",
+   "COMMC1000",
+   "COOPED395",
+   "COUNSEL40",
+   "ECONC2001",
+   "ECONC2002",
+   "ENGLC1000",
+   "ENGLC1001",
+   "GEOG2",
+   "HEALTH101",
+   "HEALTH51",
+   "HISTC1001",
+   "HISTC1002",
+   "INTBUS1",
+   "LAW1",
+   "LAW2",
+   "LAW7",
+   "MATH229",
+   "PHILOS20",
+   "PHILOS8",
+   "POLSC1000",
+   "POLSCI2",
+   "POLSCI5",
+   "POLSCI60",
+   "POLSCI7",
+   "PUBREL1",
+   "SOC11",
+   "SOC125",
+   "SOC2",
+   "SOC31",
+   "SOC32",
+   "STATC1000",
+   "STATC1000E"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=165",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    165,
+    166,
+    167,
+    168
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 49,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "43160",
+  "title": "Creative Writing",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ENGLC1000",
+   "ENGLISH102",
+   "ENGLISH124",
+   "ENGLISH127",
+   "ENGLISH128",
+   "ENGLISH211",
+   "ENGLISH212",
+   "ENGLISH214",
+   "ENGLISH218",
+   "ENGLISH227",
+   "ENGLISH240",
+   "ENGLISH270",
+   "ENGLISH78"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=117",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    117,
+    118,
+    119
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 13,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "43169",
+  "title": "COMMUNICATION STUDIES 2.0",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTHRO102",
+   "CAOT32",
+   "COMM100",
+   "COMM104",
+   "COMM105",
+   "COMM106",
+   "COMM121",
+   "COMM122",
+   "COMM130",
+   "COMM151",
+   "COMM190",
+   "COMMC1000",
+   "ENGLC1001",
+   "ENGLISH102",
+   "JOURNAL101",
+   "PHILOS5",
+   "PHOTO20",
+   "PSYCC1000",
+   "PSYCH43",
+   "SOC1"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=114",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    114,
+    115,
+    116,
+    117
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 20,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "43211",
+  "title": "SOCIAL WORK AND HUMAN SERVICES",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ADDICST1",
+   "ADDICST22",
+   "ADDICST4",
+   "ADDICST67",
+   "ADDICST7",
+   "ANATOMY1",
+   "ANTHRO102",
+   "BUS15",
+   "CHDEV1",
+   "CHDEV11",
+   "COMM122",
+   "ECONC2001",
+   "ECONC2002",
+   "ENGLC1001",
+   "HEALTH51",
+   "HISTC1001",
+   "HISTC1002",
+   "MATH229",
+   "PHYSIOL1",
+   "PSYCC1000",
+   "PSYCH14",
+   "PSYCH41",
+   "PSYCH45",
+   "SOC1",
+   "SOC11",
+   "SOC125",
+   "SOC2",
+   "STATC1000",
+   "STATC1000E"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=173",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    173,
+    174,
+    175,
+    176
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 29,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "43226",
+  "title": "ROADMAP TO PEOPLE MANAGEMENT",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED440CE",
+   "VOCED441CE",
+   "VOCED442CE",
+   "VOCED443CE"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=230",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    230
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 4,
+  "text_chars": 4527
+ },
+ {
+  "control_number": "43526",
+  "title": "ESL MILESTONE - LANGUAGE ARTS, ORAL COMMUNICATION",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 0.889,
+  "codes_found": [
+   "COMM111",
+   "COMM121",
+   "COMMC1000",
+   "ENGLC1000",
+   "ENGLISH101Z",
+   "ESL110",
+   "ESL6C",
+   "ESL8"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=117",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    117,
+    118,
+    119
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 9,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "43527",
+  "title": "ESL MILESTONE - LANGUAGE ARTS, WRITTEN COMMUNICATION",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 0.857,
+  "codes_found": [
+   "ENGLC1000",
+   "ENGLC1001",
+   "ENGLISH101Z",
+   "ENGLISH102",
+   "ESL110",
+   "ESL8"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=118",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    118,
+    119
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 7,
+  "text_chars": 10559
+ },
+ {
+  "control_number": "43631",
+  "title": "WAREHOUSE & DISTRIBUTION: WORKER",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED530CE",
+   "VOCED531CE",
+   "VOCED85CE"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=230",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    230
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 3,
+  "text_chars": 4527
+ },
+ {
+  "control_number": "43708",
+  "title": "WAREHOUSE & DISTRIBUTION: LEAD",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED441CE",
+   "VOCED530CE",
+   "VOCED531CE",
+   "VOCED532CE",
+   "VOCED85CE"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=230",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    230
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 5,
+  "text_chars": 4527
+ },
+ {
+  "control_number": "43793",
+  "title": "Personal Financial Responsibility",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BSICSKL123CE",
+   "BSICSKL124CE"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=229",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    229
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 2,
+  "text_chars": 4946
+ },
+ {
+  "control_number": "43855",
+  "title": "Creative Writing",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CINEMA3",
+   "ENGLC1000",
+   "ENGLISH102",
+   "ENGLISH124",
+   "ENGLISH127",
+   "ENGLISH128",
+   "ENGLISH211",
+   "ENGLISH212",
+   "ENGLISH214",
+   "ENGLISH218",
+   "ENGLISH227",
+   "ENGLISH240",
+   "ENGLISH270",
+   "ENGLISH78",
+   "THEATER100"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=117",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    117,
+    118,
+    119
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 15,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "43866",
+  "title": "Behavior Technician Preparation",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED421CE",
+   "VOCED422CE"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=220",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    220,
+    221,
+    222
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 2,
+  "text_chars": 13112
+ },
+ {
+  "control_number": "43867",
+  "title": "Behavior Technician: Autism",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED421CE",
+   "VOCED422CE",
+   "VOCED425CE"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=220",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    220,
+    221,
+    222
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 3,
+  "text_chars": 13112
+ },
+ {
+  "control_number": "44022",
+  "title": "Pathway to Citizenship",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESLCVCS13CE",
+   "ESLCVCS14CE"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=346",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    346
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 2,
+  "text_chars": 6635
+ },
+ {
+  "control_number": "44023",
+  "title": "Beginning ESL & Civics with Technology II",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESLCVCS32CE",
+   "ESLNC49CE",
+   "ESLNC60CE",
+   "VOCED128CE",
+   "VOCED129CE",
+   "VOCED290CE"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=236",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    236,
+    237
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 6,
+  "text_chars": 9334
+ },
+ {
+  "control_number": "44024",
+  "title": "Beginning ESL & Civics with Technology I",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESLCVCS31CE",
+   "ESLNC48CE",
+   "ESLNC50CE",
+   "VOCED128CE",
+   "VOCED129CE",
+   "VOCED290CE"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=236",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    236,
+    237,
+    238,
+    239
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 6,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "44061",
+  "title": "Statistical Data Analytics",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CIS219",
+   "MATH217",
+   "MATH229",
+   "MATH239",
+   "MATH279"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=157",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    157
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 5,
+  "text_chars": 4397
+ },
+ {
+  "control_number": "44082",
+  "title": "Introduction to Patient Transporting",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED379CE",
+   "VOCED400CE",
+   "VOCED429CE"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=224",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    224,
+    225
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 3,
+  "text_chars": 9078
+ },
+ {
+  "control_number": "44581",
+  "title": "Human Movement and Applied Fitness",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "HEALTH101",
+   "HEALTH11",
+   "HEALTH2",
+   "HEALTH43",
+   "HEALTH46",
+   "HEALTH55",
+   "HEALTH60",
+   "HEALTH8",
+   "KINMAJ100",
+   "KINMAJ102",
+   "KINMAJ113",
+   "KINMAJ114",
+   "KINMAJ115",
+   "KINMAJ116",
+   "KINMAJ117",
+   "KINMAJ118",
+   "KINMAJ125",
+   "KINMAJ128",
+   "KINMAJ131",
+   "KINMAJ132",
+   "KINMAJ150",
+   "KINMAJ175",
+   "KINMAJ201",
+   "KINMAJ217",
+   "KINMAJ218",
+   "KINMAJ220",
+   "KINMAJ225"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=100",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    100,
+    101,
+    102,
+    103
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 27,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "44589",
+  "title": "American Language & Culture Series A",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESLCVCS31CE",
+   "ESLCVCS32CE",
+   "ESLCVCS33CE",
+   "ESLCVCS34CE"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=233",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    233,
+    234,
+    235,
+    236
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 4,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "44590",
+  "title": "American Language & Culture Series B",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESLCVCS41CE",
+   "ESLCVCS42CE",
+   "ESLCVCS43CE",
+   "ESLCVCS44CE"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=234",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    234,
+    235,
+    236,
+    237
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 4,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "44591",
+  "title": "American Language & Culture: Beginning",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESLCVCS31CE",
+   "ESLCVCS41CE",
+   "ESLNC48CE",
+   "ESLNC49CE",
+   "ESLNC50CE"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=234",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    234,
+    235,
+    236,
+    237
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 5,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "44592",
+  "title": "American Language & Culture: Beginning High",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESLCVCS32CE",
+   "ESLCVCS42CE",
+   "ESLNC48CE",
+   "ESLNC49CE",
+   "ESLNC50CE"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=235",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    235,
+    236,
+    237,
+    238
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 5,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "44593",
+  "title": "American Language & Culture: Foundational",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESLCVCS30CE",
+   "ESLNC40CE",
+   "ESLNC48CE"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=235",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    235,
+    236,
+    237
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 3,
+  "text_chars": 14466
+ },
+ {
+  "control_number": "44594",
+  "title": "American Language & Culture: Intermediate",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESLCVCS33CE",
+   "ESLCVCS43CE",
+   "ESLNC48CE",
+   "ESLNC49CE",
+   "ESLNC60CE"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=235",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    235,
+    236,
+    237,
+    238
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 5,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "44599",
+  "title": "American Language & Culture: Intermediate High",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESLCVCS34CE",
+   "ESLCVCS44CE",
+   "ESLNC48CE",
+   "ESLNC49CE",
+   "ESLNC60CE"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=234",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    234,
+    235,
+    236,
+    237
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 5,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "44603",
+  "title": "Health & Fitness Center Management",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS1",
+   "HEALTH101",
+   "HEALTH11",
+   "HEALTH2",
+   "HEALTH55",
+   "HEALTH60",
+   "KINMAJ114",
+   "KINMAJ115",
+   "KINMAJ117",
+   "KINMAJ201",
+   "MARKET1",
+   "MARKET21",
+   "MGMT13"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=103",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    103
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 13,
+  "text_chars": 5612
+ },
+ {
+  "control_number": "44630",
+  "title": "Community Health Worker",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 5,
+  "text_chars": 0
+ },
+ {
+  "control_number": "44631",
+  "title": "IHSS Care for People with Chronic Illnesses",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED2CE",
+   "VOCED352CE"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=222",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    222,
+    223
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 2,
+  "text_chars": 7649
+ },
+ {
+  "control_number": "44632",
+  "title": "IHSS Care for People with Dementia",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED207CE",
+   "VOCED208CE",
+   "VOCED2CE"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=223",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    223
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 3,
+  "text_chars": 2984
+ },
+ {
+  "control_number": "44638",
+  "title": "Public Health",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANATOMY1",
+   "BIOLOGY3",
+   "BUS15",
+   "CHEM101",
+   "CHEM60",
+   "HEALTH101",
+   "HEALTH102",
+   "HEALTH11",
+   "HEALTH12",
+   "HEALTH2",
+   "HEALTH21",
+   "HEALTH51",
+   "HEALTH8",
+   "MATH229",
+   "MICRO1",
+   "MICRO20",
+   "PHYSIOL1",
+   "PSYCH52",
+   "SOC125",
+   "STATC1000",
+   "STATC1000E"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=100",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    100,
+    101
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 21,
+  "text_chars": 11169
+ },
+ {
+  "control_number": "44705",
+  "title": "Tutor Training I",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED88CE",
+   "VOCED89CE"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=349",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    349
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 2,
+  "text_chars": 5539
+ },
+ {
+  "control_number": "44915",
+  "title": "Early Childhood Curriculum",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHDEV1",
+   "CHDEV11",
+   "CHDEV2",
+   "CHDEV22",
+   "CHDEV34",
+   "CHDEV35",
+   "CHDEV7",
+   "CHDEV8",
+   "ENGLC1000"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=91",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    91,
+    92
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 9,
+  "text_chars": 9116
+ },
+ {
+  "control_number": "44931",
+  "title": "Athletic Coaching",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "HEALTH55",
+   "KIN2871",
+   "KIN2872",
+   "KIN2891",
+   "KIN2892",
+   "KIN2911",
+   "KIN2912",
+   "KINATH504",
+   "KINATH511",
+   "KINATH516",
+   "KINATH552",
+   "KINATH556",
+   "KINATH558",
+   "KINATH563",
+   "KINMAJ100",
+   "KINMAJ103",
+   "KINMAJ104",
+   "KINMAJ106",
+   "KINMAJ109",
+   "KINMAJ111",
+   "KINMAJ118",
+   "KINMAJ128",
+   "KINMAJ200",
+   "KINMAJ225"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=101",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    101,
+    102,
+    103
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 24,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "44946",
+  "title": "Cal-GETC",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 203,
+  "text_chars": 0
+ },
+ {
+  "control_number": "44963",
+  "title": "Introduction to Hospitality Supervision",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED441CE",
+   "VOCED930CE"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=242",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    242
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 2,
+  "text_chars": 4164
+ },
+ {
+  "control_number": "44987",
+  "title": "Computer Science",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOLOGY6",
+   "BIOLOGY7",
+   "CHEM101",
+   "CS113",
+   "CS116",
+   "CS119",
+   "CS130",
+   "CS131",
+   "CS136",
+   "MATH261",
+   "MATH261S",
+   "MATH262",
+   "PHYSICS101",
+   "PHYSICS102"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=143",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    143,
+    144,
+    145,
+    146
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 14,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "45008",
+  "title": "Essential Skills",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 206,
+  "text_chars": 0
+ },
+ {
+  "control_number": "45172",
+  "title": "Sports Medicine",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "HEALTH46",
+   "KINMAJ100",
+   "KINMAJ102",
+   "KINMAJ116",
+   "KINMAJ128",
+   "KINMAJ130",
+   "KINMAJ217",
+   "KINMAJ218"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=103",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    103
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 8,
+  "text_chars": 5612
+ },
+ {
+  "control_number": "45792",
+  "title": "​​College & Career Readiness: Document Essentials​",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED103CE",
+   "VOCED128CE",
+   "VOCED174CE"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=231",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    231,
+    232
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 3,
+  "text_chars": 8214
+ },
+ {
+  "control_number": "45934",
+  "title": "Doula Training Program",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED379CE",
+   "VOCED404CE",
+   "VOCED435CE",
+   "VOCED483CE"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=221",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    221,
+    222
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 4,
+  "text_chars": 8820
+ },
+ {
+  "control_number": "46097",
+  "title": "​​Physics 2.0​",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CS113",
+   "CS116",
+   "CS119",
+   "MATH261",
+   "MATH261S",
+   "MATH262",
+   "MATH263",
+   "MATH270",
+   "MATH275",
+   "PHYSICS101",
+   "PHYSICS102",
+   "PHYSICS103"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=158",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    158,
+    159,
+    160
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 12,
+  "text_chars": 10740
+ },
+ {
+  "control_number": "46117",
+  "title": "Economics",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCTG1",
+   "ACCTG2",
+   "BUS1",
+   "BUS15",
+   "BUS17",
+   "CAOT32",
+   "CIS101",
+   "ECONC2001",
+   "ECONC2002",
+   "MATH229",
+   "MATH230",
+   "MATH236",
+   "MATH261",
+   "MATH261S",
+   "MATH262",
+   "SOC125",
+   "STATC1000",
+   "STATC1000E",
+   "SUPV12"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=78",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    78,
+    79,
+    80
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 19,
+  "text_chars": 14184
+ },
+ {
+  "control_number": "46149",
+  "title": "​​Introduction to Fixed and Removable Prosthodontics​",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "DENTEK100",
+   "DENTEK102",
+   "DENTEK103",
+   "DENTEK105",
+   "DENTEK106",
+   "DENTEK108",
+   "DENTEK109",
+   "DENTEK111",
+   "DENTEK285"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=95",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    95,
+    96,
+    97
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 9,
+  "text_chars": 15024
+ },
+ {
+  "control_number": "46188",
+  "title": "Food Chemistry",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEM101",
+   "CHEM60",
+   "CHEM71",
+   "CHEM72"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=141",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    141
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 4,
+  "text_chars": 5165
+ },
+ {
+  "control_number": "46272",
+  "title": "Entrepreneurship for Care Providers",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED2CE",
+   "VOCED421CE",
+   "VOCED483CE",
+   "VOCED84CE"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=222",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    222,
+    223
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 4,
+  "text_chars": 7649
+ },
+ {
+  "control_number": "46355",
+  "title": "Mathematics 2.0",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CS102",
+   "CS113",
+   "CS116",
+   "CS119",
+   "MATH217",
+   "MATH261",
+   "MATH261S",
+   "MATH262",
+   "MATH263",
+   "MATH270",
+   "MATH275",
+   "PHYSICS101"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=157",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    157,
+    158,
+    159,
+    160
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 12,
+  "text_chars": 15139
+ },
+ {
+  "control_number": "46374",
+  "title": "Food, Science and Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOLOGY6",
+   "BIOLOGY7",
+   "CHEM101",
+   "CHEM102",
+   "CHEM211",
+   "CHEM212",
+   "CHEM71",
+   "CHEM72",
+   "FAM&CS21",
+   "MATH239",
+   "MATH261",
+   "MATH261S",
+   "MICRO1",
+   "MICRO20",
+   "PHYSICS101",
+   "PHYSICS6"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=153",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    153,
+    154,
+    155
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 16,
+  "text_chars": 11637
+ },
+ {
+  "control_number": "46381",
+  "title": "Social Work and Human Services",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ADDICST1",
+   "ADDICST30",
+   "ADDICST4",
+   "HEALTH60",
+   "PSYCC1000",
+   "PSYCH14",
+   "PSYCH41",
+   "PSYCH45",
+   "PSYCH81",
+   "PSYCH82"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=174",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    174,
+    175,
+    176
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 10,
+  "text_chars": 14969
+ },
+ {
+  "control_number": "46432",
+  "title": "Mammography",
+  "award": "Certificate of Achievement requiring 60+S/90+Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 0.944,
+  "codes_found": [
+   "ANATOMY1",
+   "ENGLC1000",
+   "MATH245",
+   "PHYSIOL1",
+   "RADTEC103",
+   "RADTEC104",
+   "RADTEC108",
+   "RADTEC200",
+   "RADTEC201",
+   "RADTEC202",
+   "RADTEC205",
+   "RADTEC206",
+   "RADTEC207",
+   "RADTEC210",
+   "RADTEC212",
+   "RADTEC240",
+   "RADTEC280"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=110",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    110,
+    111
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 18,
+  "text_chars": 8809
+ },
+ {
+  "control_number": "46433",
+  "title": "Production Design",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART209",
+   "ART385",
+   "ART501",
+   "ART634",
+   "CINEMA18",
+   "CINEMA2",
+   "CINEMA931",
+   "GAD103",
+   "THEATER100",
+   "THEATER311",
+   "THEATER313",
+   "THEATER315",
+   "THEATER321",
+   "THEATER338",
+   "THEATER385",
+   "THEATER400",
+   "TV4",
+   "TV46"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=190",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    190,
+    191,
+    192,
+    193
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 18,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "46526",
+  "title": "Chicana/o Studies, Latina/o Studies",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 22,
+  "text_chars": 0
+ },
+ {
+  "control_number": "46527",
+  "title": "History",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 0.921,
+  "codes_found": [
+   "AFROAM4",
+   "AFROAM5",
+   "AFROAM7",
+   "ANTHRO102",
+   "ANTHRO103",
+   "ANTHRO121",
+   "ANTHRO151",
+   "ASIAN1",
+   "CHDEV1",
+   "CHDEV11",
+   "CHICANO4",
+   "CHICANO44",
+   "CHICANO47",
+   "CHICANO7",
+   "CHICANO8",
+   "CHINESE10",
+   "COMM100",
+   "COMM121",
+   "COMM122",
+   "ECONC2001",
+   "ECONC2002",
+   "FAM&CS31",
+   "FRENCH10",
+   "GEOG14",
+   "GEOG2",
+   "GEOG7",
+   "HISTC1001",
+   "HISTC1002",
+   "HISTORY5",
+   "HISTORY6",
+   "HISTORY73",
+   "HISTORY81",
+   "HISTORY82",
+   "HISTORY86",
+   "HISTORY87",
+   "HUMAN30",
+   "HUMAN31",
+   "HUMAN6",
+   "HUMAN61",
+   "HUMAN8",
+   "JAPAN14",
+   "JAPAN4",
+   "JAPAN9",
+   "JOURNAL105",
+   "KOREAN10",
+   "KOREAN13",
+   "KOREAN3",
+   "KOREAN4",
+   "LAW3",
+   "LING2",
+   "LING3",
+   "PHILOS14",
+   "PHILOS20",
+   "PHILOS30",
+   "PHILOS32",
+   "PHILOS40",
+   "POLSC1000",
+   "POLSCI14",
+   "POLSCI19",
+   "POLSCI2",
+   "POLSCI5",
+   "POLSCI7",
+   "PSYCC1000",
+   "PSYCH13",
+   "PSYCH14",
+   "PSYCH41",
+   "PSYCH52",
+   "PSYCH74",
+   "RUSSIAN10",
+   "RUSSIAN3",
+   "RUSSIAN4",
+   "SOC1",
+   "SOC11",
+   "SOC12",
+   "SOC2",
+   "SOC22",
+   "SOC31",
+   "SOC32",
+   "SPANISH10",
+   "SPANISH3",
+   "SPANISH4",
+   "SPANISH9"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=169",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    169,
+    170,
+    171
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 89,
+  "text_chars": 12003
+ }
+]

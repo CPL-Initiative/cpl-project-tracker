@@ -1,0 +1,84 @@
+{
+ "college": "Los Angeles City College",
+ "programs": 260,
+ "with_closed_list": 258,
+ "found": 251,
+ "extracted": 251,
+ "errors": 0,
+ "passed_machine_checks": 49,
+ "failed": {
+  "coverage": 33,
+  "invented": 5,
+  "arithmetic": 94,
+  "repeated": 0,
+  "outcomes": 145
+ },
+ "cost_usd": 19.27,
+ "cost_per_program": 0.0768,
+ "not_found": [
+  {
+   "control_number": "08229",
+   "title": "COMPUTER TECHNOLOGY",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=150",
+    "coverage": 0.333
+   }
+  },
+  {
+   "control_number": "19842",
+   "title": "IGETC",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=61",
+    "coverage": 0.317
+   }
+  },
+  {
+   "control_number": "21624",
+   "title": "COMPUTER TECHNOLOGY",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=150",
+    "coverage": 0.333
+   }
+  },
+  {
+   "control_number": "44630",
+   "title": "Community Health Worker",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=221",
+    "coverage": 0.4
+   }
+  },
+  {
+   "control_number": "44946",
+   "title": "Cal-GETC",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=125",
+    "coverage": 0.35
+   }
+  },
+  {
+   "control_number": "45008",
+   "title": "Essential Skills",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=141",
+    "coverage": 0.073
+   }
+  },
+  {
+   "control_number": "46526",
+   "title": "Chicana/o Studies, Latina/o Studies",
+   "award": "A.A- T Degree",
+   "near_miss": {
+    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=263",
+    "coverage": 0.227
+   }
+  }
+ ],
+ "run": "39006380342"
+}

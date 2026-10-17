@@ -1,0 +1,180 @@
+{
+ "college": "Compton College",
+ "control_number": "41625",
+ "shape": "noncredit",
+ "title": "ESL Level 2",
+ "award": "Noncredit program",
+ "source_url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=90",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7582,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7582,
+    "output_tokens": 1395,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1395,
+  "output_tokens_details": {
+   "thinking_tokens": 354
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.05823,
+ "ms": 11408,
+ "seconds": 11.7,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 2,
+   "listed": 2,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "unstated",
+   "computed": null,
+   "stated": null,
+   "against": null,
+   "why": [
+    "the catalog prints no total, no hours and no units"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 17,
+   "courses": 0,
+   "count": 17,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "ESL Level 2 - Certificate of Completion",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Articulate and decode pronunciation when reading aloud",
+    "Engage in simple conversations on familiar topics with only minor grammatical errors.",
+    "Identify the main idea and locate answers to information questions in written texts, reading texts, and listening passages related to everyday topics.",
+    "Infer the meaning of unfamiliar vocabulary using contextual clues.",
+    "Produce short paragraphs that include topic sentences, supporting ideas, and concluding sentences with coherence.",
+    "Use present perfect, present perfect progressive, past perfect progressive, future perfect and modals in speaking and writing.",
+    "Write sentences using verbs followed by gerunds and infinitives.",
+    "Produce a sequence of events in the past or future on a familiar topic using adverbial clauses.",
+    "Edit and revise sentences and questions for spelling, basic grammatical structures, and mechanics.",
+    "Prepare and answer questions using relevant vocabulary regarding short texts and career-related topics.",
+    "Use clarifying strategies, such as rewording, repeating, and asking questions through conversations.",
+    "Draw conclusions and make simple inferences from simple texts.",
+    "Distinguish connections between ideas by interpreting transitional words in simple authentic materials.",
+    "Use the passive voice correctly in the present and past tenses.",
+    "Use phrasal verbs, tag questions, and adjective clauses accurately in conversation and writing.",
+    "Use real conditionals in present and future tenses in conversation and writing.",
+    "Synthesize academic and workplace information from research and report in writing or speaking."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Program Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ESL 14",
+      "units": 0,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ESL15",
+      "units": 0,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The ESL Level 2 section's 'Program Requirements' list is printed after its outcomes: ESL 14 Level 3 (0) and ESL15 Level 4 (0); the description also says 'Upon completing ESL 14 and ESL 15, students will receive a Level 2 Certificate of Completion.'",
+   "'ESL15' is printed without a space; it is read as ESL 15 from the closed list.",
+   "The catalog prints no hours for this noncredit certificate; the (0) beside each course is recorded as printed, measure left as 'units'. No total is stated.",
+   "The requirements list printed above the ESL Level 2 heading (ESL 11, ESL 12, ESL 13) belongs to the preceding Level 1 section and is not recorded.",
+   "The description mentions a '7-course sequence' and 'career-focused courses'; no careers are named."
+  ]
+ },
+ "extracted_run": "39006336111"
+}

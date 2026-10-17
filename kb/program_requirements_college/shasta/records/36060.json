@@ -1,0 +1,267 @@
+{
+ "college": "Shasta College",
+ "control_number": "36060",
+ "shape": "degree",
+ "title": "Physical Therapist Assistant",
+ "award": "A.S. Degree",
+ "source_url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=197",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 12660,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 12660,
+    "output_tokens": 1240,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1240,
+  "output_tokens_details": {
+   "thinking_tokens": 321
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.07544,
+ "ms": 10822,
+ "seconds": 11.3,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 26,
+   "share": 0.0,
+   "missing": [
+    "ANAT1",
+    "HEOC1",
+    "HEOC11",
+    "PHY1",
+    "PTA1",
+    "PTA10",
+    "PTA10L",
+    "PTA11",
+    "PTA2",
+    "PTA20",
+    "PTA21",
+    "PTA22",
+    "PTA3",
+    "PTA3L",
+    "PTA4",
+    "PTA4L",
+    "PTA5",
+    "PTA5L",
+    "PTA6",
+    "PTA6L",
+    "PTA7",
+    "PTA7L",
+    "PTA8",
+    "PTA8L",
+    "PTA9",
+    "PTA9L"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "PHYSICAL THERAPIST ASSISTANT (PTA)",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ANAT 1",
+    "why": "not in the text; program requirements not included"
+   },
+   {
+    "code": "HEOC 1",
+    "why": "not in the text; program requirements not included"
+   },
+   {
+    "code": "HEOC 11",
+    "why": "not in the text; program requirements not included"
+   },
+   {
+    "code": "PHY 1",
+    "why": "not in the text; program requirements not included"
+   },
+   {
+    "code": "PTA 1",
+    "why": "only a course description; no requirements list in text"
+   },
+   {
+    "code": "PTA 2",
+    "why": "only a course description; no requirements list in text"
+   },
+   {
+    "code": "PTA 3",
+    "why": "only a course description; no requirements list in text"
+   },
+   {
+    "code": "PTA 3L",
+    "why": "only a course description; no requirements list in text"
+   },
+   {
+    "code": "PTA 4",
+    "why": "only a course description; no requirements list in text"
+   },
+   {
+    "code": "PTA 4L",
+    "why": "only a course description; no requirements list in text"
+   },
+   {
+    "code": "PTA 5",
+    "why": "only a course description; no requirements list in text"
+   },
+   {
+    "code": "PTA 5L",
+    "why": "only a course description; no requirements list in text"
+   },
+   {
+    "code": "PTA 6",
+    "why": "only a course description; no requirements list in text"
+   },
+   {
+    "code": "PTA 6L",
+    "why": "only a course description; no requirements list in text"
+   },
+   {
+    "code": "PTA 7",
+    "why": "only a course description; no requirements list in text"
+   },
+   {
+    "code": "PTA 7L",
+    "why": "only a course description; no requirements list in text"
+   },
+   {
+    "code": "PTA 8",
+    "why": "only a course description; no requirements list in text"
+   },
+   {
+    "code": "PTA 8L",
+    "why": "only a course description; no requirements list in text"
+   },
+   {
+    "code": "PTA 9",
+    "why": "only a course description; no requirements list in text"
+   },
+   {
+    "code": "PTA 9L",
+    "why": "only a course description; no requirements list in text"
+   },
+   {
+    "code": "PTA 10",
+    "why": "only a course description; no requirements list in text"
+   },
+   {
+    "code": "PTA 10L",
+    "why": "only a course description; no requirements list in text"
+   },
+   {
+    "code": "PTA 11",
+    "why": "only a course description; no requirements list in text"
+   },
+   {
+    "code": "PTA 20",
+    "why": "only a course description (cut off); no requirements list in text"
+   },
+   {
+    "code": "PTA 21",
+    "why": "named only in other courses' prerequisites/corequisites; no requirements list in text"
+   },
+   {
+    "code": "PTA 22",
+    "why": "named only in other courses' corequisites; no requirements list in text"
+   }
+  ],
+  "notes": []
+ },
+ "extracted_run": "39006384701"
+}

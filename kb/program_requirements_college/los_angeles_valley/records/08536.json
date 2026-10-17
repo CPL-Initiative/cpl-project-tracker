@@ -1,0 +1,263 @@
+{
+ "college": "Los Angeles Valley College",
+ "control_number": "08536",
+ "shape": "degree",
+ "title": "Broadcasting: Radio",
+ "award": "A.A. Degree",
+ "source_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=56",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 9925,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 9925,
+    "output_tokens": 2106,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2106,
+  "output_tokens_details": {
+   "thinking_tokens": 674
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.08182,
+ "ms": 16761,
+ "seconds": 17.1,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 12,
+   "listed": 12,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    32.0,
+    32.0
+   ],
+   "stated": [
+    60.0,
+    60.0
+   ],
+   "against": "degree",
+   "ge": null,
+   "why": [
+    "the blocks and general education sum to 32.0-32.0; the catalog prints 60.0-60.0 for the degree"
+   ],
+   "major": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     32.0,
+     32.0
+    ],
+    "stated": [
+     32.0,
+     32.0
+    ],
+    "against": "program",
+    "why": []
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 3,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "BROADCASTING: PODCASTING AND RADIO Associate of Arts Degree (AA)",
+   "measure": "units",
+   "total_units": {
+    "min": 32,
+    "max": 32
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Students will write broadcast copy for audio and video, including news, sports, entertainment, promos, commercials, and public service announcements with emphasis on audio production.",
+    "Students will identify and apply theory and practice to create radio, podcasting, and television programs with emphasis on performance with emphasis on audio production.",
+    "Students will demonstrate producing, programming, and hosting skills within a studio, radio station, or television station structure with emphasis on audio production."
+   ],
+   "careers": [
+    "radio",
+    "TV",
+    "voice-over"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "COMPLETE THE FOLLOWING 12 REQUIRED COURSES",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "BRDCSTG 001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BRDCSTG 003",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BRDCSTG 010",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BRDCSTG 011",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BRDCSTG 017",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BRDCSTG 021",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BRDCSTG 022-1",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BRDCSTG 022-2",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BRDCSTG 023",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BRDCSTG 024",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BRDCSTG 025",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BRDCSTG 026",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The program is titled 'Broadcasting: Radio' in the request, but the catalog prints this degree as 'BROADCASTING: PODCASTING AND RADIO' Associate of Arts Degree (Program Code 060410, State Code 08536); the closed list matches this section. A separate certificate of the same name on page 57 was not read.",
+   "The catalog prints codes zero-padded (BRDCSTG 001, 003, 010...), treated as the same courses as the closed list's BRDCSTG 1, 3, 10, etc., so catalog_addition is false.",
+   "Several catalog course titles differ from the closed-list titles (e.g., BRDCSTG 011 'Social Media Audio Production' vs 'Digital Audio Editing and Production'; BRDCSTG 023 'Live Streaming Production' vs 'News, Sports, and Live Remote Broadcasting'); reviewer may confirm these are renamed courses.",
+   "BRDCSTG 022-2 is marked * in the catalog (prerequisite or corequisite); the asterisk was dropped from the code.",
+   "'Major Units: 32' recorded as total_units; 'Total Minimum Units: 60' recorded as degree_total. No GE pattern or GE units are printed in this section.",
+   "Careers taken from 'develop skills for working in radio, TV, and voice-over' in the degree description; reviewer may judge whether these count as career fields.",
+   "The outcomes list for this degree is identical to the one printed for the Podcasting and Radio certificate."
+  ]
+ },
+ "extracted_run": "39006418426"
+}

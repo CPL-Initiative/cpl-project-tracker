@@ -1,0 +1,159 @@
+{
+ "college": "Santa Rosa Junior College",
+ "control_number": "39901",
+ "shape": "certificate",
+ "title": "Weld: Gas Tungsten Arc: GTAW",
+ "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+ "source_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=215",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6860,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6860,
+    "output_tokens": 1064,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1064,
+  "output_tokens_details": {
+   "thinking_tokens": 421
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.04872,
+ "ms": 10620,
+ "seconds": 11.0,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 4,
+   "share": 0.0,
+   "missing": [
+    "MACH161",
+    "WELD104",
+    "WELD113",
+    "WELD170"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": true,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "(GTAW certificate section not found; text shows another program's 'Major Requirements')",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "MACH 161",
+    "why": "Named only in another program's 25-unit Major Requirements list; GTAW certificate section not in the text"
+   },
+   {
+    "code": "WELD 104",
+    "why": "Named only in another program's 25-unit Major Requirements list; GTAW certificate section not in the text"
+   },
+   {
+    "code": "WELD 113",
+    "why": "Named only in another program's 25-unit Major Requirements list; GTAW certificate section not in the text"
+   },
+   {
+    "code": "WELD 170",
+    "why": "Named only in another program's 25-unit Major Requirements list; GTAW certificate section not in the text"
+   }
+  ],
+  "notes": [
+   "The supplied text (page 215) does not contain the Weld: Gas Tungsten Arc: GTAW Certificate of Achievement section. It shows the end of a degree section: associate degree and ADT boilerplate, a 'Major Requirements' list totaling 25 units, and Program Student Learning Outcomes.",
+   "That 25-unit list cannot be this award. The award is described as 8S to fewer than 16S units, and the list includes courses not on the closed list (MACH 51.1A, MACH 162, WELD 101, WELD 102, WELD 103, WELD 114A, WELD 114B). It likely belongs to a welding or fabrication degree.",
+   "No blocks, totals or outcomes were recorded, because the outcomes printed belong to that other program.",
+   "A reviewer should locate the GTAW certificate section, possibly on a nearby page of the PDF, and re-extract it."
+  ]
+ },
+ "extracted_run": "39006464249"
+}

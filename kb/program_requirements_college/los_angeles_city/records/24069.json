@@ -1,0 +1,179 @@
+{
+ "college": "Los Angeles City College",
+ "control_number": "24069",
+ "shape": "noncredit",
+ "title": "ENTREPRENEURSHIP SKILLS",
+ "award": "Noncredit program",
+ "source_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=227",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8998,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8998,
+    "output_tokens": 999,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 999,
+  "output_tokens_details": {
+   "thinking_tokens": 366
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.05597,
+ "ms": 8784,
+ "seconds": 9.3,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 1,
+   "listed": 1,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "VOCED84CE"
+   ],
+   "flagged": [
+    "VOCED84CE"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    54.0,
+    54.0
+   ],
+   "stated": [
+    54.0,
+    54.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 2,
+   "courses": 0,
+   "count": 2,
+   "not_verbatim": [
+    "Apply entrepreneurship and customer service concepts to analyze and improve various business ideas."
+   ],
+   "why": [
+    "not in the catalog text as printed: Apply entrepreneurship and customer service concepts to analyze and improve vari"
+   ],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": false
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Entrepreneurship Skills Certificate of Completion",
+   "measure": "hours",
+   "total_units": {
+    "min": 54,
+    "max": 54
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Apply entrepreneurship and customer service concepts to analyze and improve various business ideas.",
+    "Develop a business plan, marketing strategies, and measure business success."
+   ],
+   "careers": [
+    "business entrepreneur"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "REQUIRED COURSES",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "VOC ED 084CE",
+      "units": 36,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "VOC ED 239CE",
+      "units": 18,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Noncredit certificate of completion counted in hours; total_units is the printed 'Total Lecture Hrs: 54', and course figures are the hours printed in the HRS column.",
+   "VOC ED 084CE is required in the catalog but is not on the closed list; recorded as a catalog addition.",
+   "Outcome 1 was printed with a line-break hyphen ('ana -lyze'); it is recorded as 'analyze'.",
+   "'business entrepreneur' is taken from the program description ('The business entrepreneur utilizes...'); a reviewer may want to check whether it should count as a named career.",
+   "The page continues with other noncredit certificates (Gig Economy Success Kit, Global Business, Job Readiness, etc.); only the Entrepreneurship Skills section was read. VOC ED 239CE also appears in the Job Readiness certificate."
+  ]
+ },
+ "extracted_run": "39006380342"
+}

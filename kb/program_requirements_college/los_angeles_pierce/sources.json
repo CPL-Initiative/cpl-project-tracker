@@ -1,0 +1,7336 @@
+[
+ {
+  "control_number": "02808",
+  "title": "Agriculture: General",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.962,
+  "codes_found": [
+   "ANMLSC181A",
+   "ANMLSC181B",
+   "ANMLSC181C",
+   "ANMLSC181D",
+   "ANMLSC501",
+   "ANMLSC505",
+   "ANMLSC506",
+   "ANMLSC510",
+   "ANMLSC511",
+   "ANMLSC512",
+   "ANMLSC520",
+   "ANMLSC521",
+   "ANMLSC530",
+   "ANMLSC531",
+   "ANMLSC535",
+   "ANMLSC537",
+   "ANMLSC540",
+   "ANMLSC596A",
+   "ANMLSC596B",
+   "ANMLSC596C",
+   "ANMLSC596D",
+   "ANMLSC601",
+   "ANMLSC602",
+   "ANMLSC603A",
+   "ANMLSC603B",
+   "ANMLSC603C",
+   "ANMLSC603D",
+   "ANMLSC620",
+   "ANMLSC621",
+   "ANMLSC630",
+   "ANMLSC631",
+   "ANMLSC650",
+   "GIS25",
+   "PLNTSC103",
+   "PLNTSC701",
+   "PLNTSC711",
+   "PLNTSC714",
+   "PLNTSC716",
+   "PLNTSC756",
+   "PLNTSC757",
+   "PLNTSC800",
+   "PLNTSC801",
+   "PLNTSC827",
+   "PLNTSC828",
+   "PLNTSC829",
+   "PLNTSC830",
+   "PLNTSC896A",
+   "PLNTSC896B",
+   "PLNTSC901",
+   "VETTECH180",
+   "VETTECH401"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=75",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    75,
+    76,
+    77,
+    78
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 53,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "02809",
+  "title": "Equine Science",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.977,
+  "codes_found": [
+   "ANMLSC185",
+   "ANMLSC285",
+   "ANMLSC385",
+   "ANMLSC501",
+   "ANMLSC505",
+   "ANMLSC510",
+   "ANMLSC511",
+   "ANMLSC512",
+   "ANMLSC596A",
+   "ANMLSC596B",
+   "ANMLSC596C",
+   "ANMLSC596D",
+   "ANMLSC601",
+   "ANMLSC602",
+   "ANMLSC603A",
+   "ANMLSC603B",
+   "ANMLSC603C",
+   "ANMLSC603D",
+   "ANMLSC604",
+   "ANMLSC620",
+   "ANMLSC621",
+   "ANMLSC622",
+   "ANMLSC623",
+   "ANMLSC630",
+   "ANMLSC631",
+   "ANMLSC650",
+   "CAOT32",
+   "CAOT78",
+   "CAOT85",
+   "COMM121",
+   "COMM122",
+   "COMM151",
+   "COMMC1000",
+   "JOURNAL100",
+   "JOURNAL251",
+   "MARKET1",
+   "MGMT13",
+   "PHOTO101",
+   "PHOTO20",
+   "PHOTO9",
+   "PLNTSC103",
+   "SPANISH2",
+   "SPANISH35"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=77",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    77,
+    78,
+    79,
+    80
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 44,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "02810",
+  "title": "Veterinary Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.838,
+  "codes_found": [
+   "ANMLSC181A",
+   "ANMLSC181B",
+   "ANMLSC181C",
+   "ANMLSC181D",
+   "ANMLSC501",
+   "ANMLSC510",
+   "ANMLSC511",
+   "ANMLSC512",
+   "BIOLOGY3",
+   "CHEM51",
+   "MICRO1",
+   "MICRO20",
+   "VETTECH180",
+   "VETTECH401",
+   "VETTECH410",
+   "VETTECH411",
+   "VETTECH412",
+   "VETTECH413",
+   "VETTECH420",
+   "VETTECH421",
+   "VETTECH422",
+   "VETTECH423",
+   "VETTECH424",
+   "VETTECH430",
+   "VETTECH431",
+   "VETTECH435",
+   "VETTECH436",
+   "VETTECH441",
+   "VETTECH470",
+   "VETTECH480",
+   "VETTECH481"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=82",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    82
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 37,
+  "text_chars": 5583
+ },
+ {
+  "control_number": "02811",
+  "title": "Horticulture: General",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "PLNTSC103",
+   "PLNTSC110",
+   "PLNTSC701",
+   "PLNTSC710",
+   "PLNTSC711",
+   "PLNTSC714",
+   "PLNTSC716",
+   "PLNTSC726",
+   "PLNTSC727",
+   "PLNTSC756",
+   "PLNTSC757",
+   "PLNTSC800",
+   "PLNTSC801",
+   "PLNTSC828",
+   "PLNTSC829",
+   "PLNTSC830",
+   "PLNTSC896A",
+   "PLNTSC896B",
+   "PLNTSC901",
+   "PLNTSC913"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=79",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    79,
+    80
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 20,
+  "text_chars": 11856
+ },
+ {
+  "control_number": "02814",
+  "title": "Architectural Technology",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ARC110",
+   "ARC111",
+   "ARC121",
+   "ARC151",
+   "ARC152",
+   "ARC162",
+   "ARC172",
+   "ARC173",
+   "ARC201",
+   "ARC202",
+   "ARC221",
+   "ARC271",
+   "ARC272",
+   "ENV101"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=83",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    83,
+    84
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 14,
+  "text_chars": 10679
+ },
+ {
+  "control_number": "02816",
+  "title": "General Business",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCTG1",
+   "ACCTG2",
+   "BUS5",
+   "CAOT32",
+   "FINANCE2",
+   "FINANCE8",
+   "INTBUS1",
+   "MARKET1",
+   "MARKET11",
+   "MARKET21",
+   "MARKET31",
+   "MGMT13",
+   "MGMT2",
+   "MGMT31",
+   "MGMT33",
+   "PUBREL1",
+   "REALES1",
+   "SUPV1"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=89",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    89,
+    90,
+    91,
+    92
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 18,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "02817",
+  "title": "Accounting",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCTG1",
+   "ACCTG15",
+   "ACCTG17",
+   "ACCTG2",
+   "BUS1",
+   "BUS5",
+   "CAOT32",
+   "CAOT78",
+   "FINANCE1",
+   "FINANCE2",
+   "FINANCE8",
+   "INTBUS1",
+   "MARKET1",
+   "MARKET21",
+   "MGMT13",
+   "MGMT2",
+   "MGMT33",
+   "SUPV1"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=88",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    88,
+    89,
+    90,
+    91
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 18,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "02818",
+  "title": "Marketing",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCTG1",
+   "BUS5",
+   "CAOT32",
+   "INTBUS1",
+   "INTBUS6",
+   "MARKET1",
+   "MARKET11",
+   "MARKET21",
+   "MARKET31",
+   "MGMT13",
+   "MGMT2",
+   "MGMT31",
+   "PUBREL1",
+   "SUPV1"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=92",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    92,
+    93,
+    94
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 14,
+  "text_chars": 15298
+ },
+ {
+  "control_number": "02820",
+  "title": "Administrative Professional",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCTG1",
+   "CAOT2",
+   "CAOT31",
+   "CAOT32",
+   "CAOT39",
+   "CAOT67",
+   "CAOT78",
+   "CAOT79",
+   "CAOT82",
+   "CAOT85",
+   "CAOT86",
+   "CAOT92",
+   "MGMT2"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=101",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    101,
+    102,
+    103,
+    104
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 13,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "02821",
+  "title": "Legal Office Procedures",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.857,
+  "codes_found": [
+   "ACCTG1",
+   "BUS5",
+   "CAOT2",
+   "CAOT31",
+   "CAOT32",
+   "CAOT34",
+   "CAOT39",
+   "CAOT67",
+   "CAOT79",
+   "CAOT82",
+   "CAOT85",
+   "CAOT92"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=106",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    106,
+    107,
+    108,
+    109
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 14,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "02822",
+  "title": "Journalism",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CIS101",
+   "ENGLISH102",
+   "GEOG2",
+   "JOURNAL100",
+   "JOURNAL101",
+   "JOURNAL108",
+   "JOURNAL202",
+   "JOURNAL2171",
+   "JOURNAL218",
+   "JOURNAL219",
+   "JOURNAL220",
+   "LIBSCI102",
+   "MEDIART801",
+   "PHOTO101",
+   "PHOTO20",
+   "PHOTO21",
+   "POLSC1000",
+   "POLSCI7",
+   "PUBREL1"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=131",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    131,
+    132,
+    133,
+    134
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 19,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "02824",
+  "title": "Programming for Computer Science",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CIS101",
+   "CIS173",
+   "COUNSEL4",
+   "CS114",
+   "CS116",
+   "CS130",
+   "CS131",
+   "CS136",
+   "CS213",
+   "CS216",
+   "CS230",
+   "ENGGEN101",
+   "MATH261",
+   "MATH262",
+   "PHILOS9",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=114",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    114,
+    115,
+    116
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 16,
+  "text_chars": 15313
+ },
+ {
+  "control_number": "02826",
+  "title": "Engineering",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOLOGY6",
+   "BIOLOGY7",
+   "CHEM101",
+   "CHEM102",
+   "CS111",
+   "CS114",
+   "CS116",
+   "CS130",
+   "CS131",
+   "CS136",
+   "CS216",
+   "ECONC2001",
+   "EGDTEK101",
+   "EGDTEK210",
+   "EGDTEK310",
+   "ELECTRN4A",
+   "ELECTRN4B",
+   "ENGGEN101",
+   "ENGGEN122",
+   "ENGGEN131",
+   "ENGGEN151",
+   "ENGGEN220",
+   "GEOLOGY1",
+   "MATH261",
+   "MATH262",
+   "MATH263",
+   "MATH270",
+   "MATH275",
+   "PHYSICS101",
+   "PHYSICS102",
+   "PHYSICS103"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=149",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    149,
+    150,
+    151
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 31,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "02827",
+  "title": "Electronics and Electric Technology: Electronics",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ELECTRN26",
+   "ELECTRN28",
+   "ELECTRN44",
+   "ELECTRN45",
+   "ELECTRN48A",
+   "ELECTRN48B",
+   "ELECTRN4A",
+   "ELECTRN4B",
+   "ELECTRN60",
+   "ELECTRN61",
+   "ELECTRN63",
+   "ELECTRN6A",
+   "ELECTRN6B",
+   "ELECTRN72A",
+   "ELECTRN72B",
+   "ELECTRN74A",
+   "ELECTRN74B",
+   "ELECTRN8A",
+   "ELECTRN8B"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=123",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    123,
+    124
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 19,
+  "text_chars": 10683
+ },
+ {
+  "control_number": "02828",
+  "title": "Automotive Service Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "AST1",
+   "AST2",
+   "AST20",
+   "AST23",
+   "AST25",
+   "AST3",
+   "AST4",
+   "AST41",
+   "AST42",
+   "AST43",
+   "AST44",
+   "AST45",
+   "AST5",
+   "AST53",
+   "AST55",
+   "AST6",
+   "AST7",
+   "AST8",
+   "AST9"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=122",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    122,
+    123
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 19,
+  "text_chars": 11536
+ },
+ {
+  "control_number": "02831",
+  "title": "Numerical Control Programming",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "EGDTEK101",
+   "INDTEK105",
+   "INDTEK130",
+   "INDTEK140",
+   "INDTEK230",
+   "INDTEK244",
+   "INDTEK248",
+   "INDTEK330",
+   "INDTEK332",
+   "INDTEK346",
+   "INDTEK444",
+   "INDTEK448"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=126",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    126
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 12,
+  "text_chars": 5491
+ },
+ {
+  "control_number": "02834",
+  "title": "Art",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.8,
+  "codes_found": [
+   "ART201",
+   "ART202",
+   "ART204",
+   "ART307",
+   "ART501",
+   "ART502",
+   "ART700",
+   "ART708"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=84",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    84,
+    85,
+    86,
+    87
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 10,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "02835",
+  "title": "Music",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.783,
+  "codes_found": [
+   "MUSIC121",
+   "MUSIC122",
+   "MUSIC181",
+   "MUSIC182",
+   "MUSIC183",
+   "MUSIC2161",
+   "MUSIC2162",
+   "MUSIC2163",
+   "MUSIC2171",
+   "MUSIC2172",
+   "MUSIC2173",
+   "MUSIC321",
+   "MUSIC501",
+   "MUSIC705",
+   "MUSIC721",
+   "MUSIC745",
+   "MUSIC755",
+   "MUSIC781"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=33",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    33
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 23,
+  "text_chars": 6589
+ },
+ {
+  "control_number": "02836",
+  "title": "Theater",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "THEATER100",
+   "THEATER232",
+   "THEATER240",
+   "THEATER250",
+   "THEATER270",
+   "THEATER271",
+   "THEATER292",
+   "THEATER342",
+   "THEATER411"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=147",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    147,
+    148,
+    149
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 9,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "02837",
+  "title": "Theater: Technical",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "COMMC1000",
+   "THEATER100",
+   "THEATER270",
+   "THEATER300",
+   "THEATER315",
+   "THEATER342",
+   "THEATER411",
+   "THEATER450"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=149",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    149
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 8,
+  "text_chars": 6197
+ },
+ {
+  "control_number": "02838",
+  "title": "French",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "FRENCH10",
+   "FRENCH2",
+   "FRENCH3",
+   "FRENCH4"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=138",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    138
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 4,
+  "text_chars": 5506
+ },
+ {
+  "control_number": "02839",
+  "title": "Italian",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ITALIAN1",
+   "ITALIAN10",
+   "ITALIAN2",
+   "ITALIAN3",
+   "ITALIAN4",
+   "ITALIAN5",
+   "ITALIAN8"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=138",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    138
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 7,
+  "text_chars": 5506
+ },
+ {
+  "control_number": "02841",
+  "title": "Nursing",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "NURSING402",
+   "NURSING403",
+   "NURSING404",
+   "NURSING405",
+   "NURSING406",
+   "NURSING407",
+   "NURSING408",
+   "NURSING414",
+   "NURSING415",
+   "NURSING441"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=144",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    144
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 10,
+  "text_chars": 5833
+ },
+ {
+  "control_number": "08308",
+  "title": "Pre-Veterinary Medicine",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.972,
+  "codes_found": [
+   "ANMLSC181A",
+   "ANMLSC501",
+   "ANMLSC505",
+   "ANMLSC506",
+   "ANMLSC511",
+   "ANMLSC512",
+   "ANMLSC521",
+   "ANMLSC531",
+   "ANMLSC537",
+   "ANMLSC540",
+   "ANMLSC596A",
+   "ANMLSC596B",
+   "ANMLSC596C",
+   "ANMLSC596D",
+   "ANMLSC650",
+   "BIOLOGY6",
+   "BIOLOGY7",
+   "CHEM101",
+   "CHEM102",
+   "CHEM211",
+   "CHEM221",
+   "ENGLC1001",
+   "ENGLISH102",
+   "MICRO1",
+   "MICRO20",
+   "PHYSICS6",
+   "PHYSICS7",
+   "PHYSIOL1",
+   "STATC1000",
+   "VETTECH401",
+   "VETTECH411",
+   "VETTECH421",
+   "VETTECH431",
+   "VETTECH436",
+   "VETTECH441"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=81",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    81,
+    82
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 36,
+  "text_chars": 11591
+ },
+ {
+  "control_number": "08311",
+  "title": "Landscape Design and Management",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ARC161",
+   "ARC162",
+   "ARC172",
+   "PLNTSC103",
+   "PLNTSC711",
+   "PLNTSC714",
+   "PLNTSC716",
+   "PLNTSC800",
+   "PLNTSC801",
+   "PLNTSC827",
+   "PLNTSC828",
+   "PLNTSC830",
+   "PLNTSC901"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=80",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    80
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 13,
+  "text_chars": 6067
+ },
+ {
+  "control_number": "08315",
+  "title": "Management and Supervision",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCTG1",
+   "ACCTG2",
+   "BUS5",
+   "CAOT32",
+   "FINANCE2",
+   "FINANCE8",
+   "INTBUS1",
+   "INTBUS22",
+   "INTBUS6",
+   "MARKET1",
+   "MARKET21",
+   "MGMT13",
+   "MGMT2",
+   "MGMT31",
+   "MGMT33",
+   "PUBREL1",
+   "SUPV1"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=91",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    91,
+    92,
+    93,
+    94
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 17,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "08316",
+  "title": "International Business",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "GEOG2",
+   "INTBUS1",
+   "INTBUS18",
+   "INTBUS19",
+   "INTBUS22",
+   "INTBUS6",
+   "MARKET21"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=90",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    90,
+    91,
+    92,
+    93
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 7,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "08318",
+  "title": "CAOT: General Administrative",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCTG1",
+   "CAOT113",
+   "CAOT2",
+   "CAOT31",
+   "CAOT32",
+   "CAOT34",
+   "CAOT39",
+   "CAOT67",
+   "CAOT78",
+   "CAOT79",
+   "CAOT82",
+   "CAOT85",
+   "CAOT86",
+   "CAOT88",
+   "CAOT92",
+   "CAOT96"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=102",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    102,
+    103,
+    104,
+    105
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 16,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "08319",
+  "title": "Office Communications",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CAOT128",
+   "CAOT2",
+   "CAOT31",
+   "CAOT32",
+   "CAOT34",
+   "CAOT39"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=102",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    102,
+    103,
+    104,
+    105
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 6,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "08320",
+  "title": "Computer Applications",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CAOT2",
+   "CAOT31",
+   "CAOT34",
+   "CAOT39",
+   "CAOT67",
+   "CAOT82",
+   "CAOT85",
+   "CAOT92"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=102",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    102,
+    103,
+    104,
+    105
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 8,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "08321",
+  "title": "Photojournalism",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.95,
+  "codes_found": [
+   "ART502",
+   "BRDCSTG10",
+   "CINEMA104",
+   "CINEMA107",
+   "CINEMA3",
+   "CIS101",
+   "JOURNAL100",
+   "JOURNAL202",
+   "JOURNAL2171",
+   "JOURNAL218",
+   "JOURNAL220",
+   "MEDIART801",
+   "PHOTO101",
+   "PHOTO102",
+   "PHOTO16",
+   "PHOTO20",
+   "PHOTO21",
+   "PHOTO49A",
+   "PUBREL1"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=133",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    133,
+    134,
+    135
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 20,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "08322",
+  "title": "Programming for Business",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCTG1",
+   "ACCTG2",
+   "BUS5",
+   "CAOT32",
+   "CIS101",
+   "CIS111",
+   "CIS113",
+   "CIS120",
+   "CIS127",
+   "CIS129",
+   "CIS130",
+   "CIS148",
+   "CIS149",
+   "CIS150",
+   "CIS172",
+   "CIS173",
+   "CIS190",
+   "CIS192",
+   "CIS193",
+   "CIS194",
+   "CIS195",
+   "CIS210",
+   "CIS227",
+   "CIS238",
+   "CIS239",
+   "CS111",
+   "CS112",
+   "CS114",
+   "CS116",
+   "CS130",
+   "CS131",
+   "CS136",
+   "CS213",
+   "CS215",
+   "CS216",
+   "CS230",
+   "CS243",
+   "CS244",
+   "ECONC2001",
+   "ECONC2002",
+   "MULTIMD200",
+   "MULTIMD650",
+   "MULTIMD651",
+   "PHOTO49A"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=113",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    113,
+    114,
+    115,
+    116
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 44,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "08323",
+  "title": "Cybersecurity & Networking Technology",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CIS113",
+   "CIS170",
+   "CIS210",
+   "CIS227"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=112",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    112,
+    113
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 4,
+  "text_chars": 9836
+ },
+ {
+  "control_number": "08325",
+  "title": "American Sign Language/Interpreting",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ASL10",
+   "ASL16",
+   "ASL23",
+   "ASL25",
+   "ASL30",
+   "ASL31",
+   "ASL4",
+   "ASL40",
+   "ASL5"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=136",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    136,
+    137
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 9,
+  "text_chars": 11203
+ },
+ {
+  "control_number": "08326",
+  "title": "Cloud, Networking, and Cybersecurity",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CIS101",
+   "CIS113",
+   "CIS120",
+   "CIS150",
+   "CIS170",
+   "CIS173",
+   "CIS192",
+   "CIS193",
+   "CIS194",
+   "CIS195",
+   "CIS210",
+   "CIS216",
+   "CIS224",
+   "CIS225",
+   "CIS227",
+   "CIS238",
+   "CIS239",
+   "CIS240",
+   "CIS241"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=111",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    111,
+    112,
+    113,
+    114
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 19,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "08327",
+  "title": "Theater: Costume",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "THEATER100",
+   "THEATER270",
+   "THEATER300",
+   "THEATER315",
+   "THEATER411",
+   "THEATER450"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=147",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    147,
+    148,
+    149
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 6,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "08328",
+  "title": "Graphic Design",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.895,
+  "codes_found": [
+   "ART111",
+   "ART201",
+   "ART204",
+   "ART501",
+   "ART603",
+   "ART604",
+   "ART605",
+   "ART606",
+   "ART620",
+   "ART621",
+   "ART622",
+   "MULTIMD110",
+   "MULTIMD200",
+   "MULTIMD210",
+   "MULTIMD340",
+   "MULTIMD650",
+   "MULTIMD651"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=86",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    86,
+    87,
+    88
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 19,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "08330",
+  "title": "Child Development",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHDEV1",
+   "CHDEV10",
+   "CHDEV11",
+   "CHDEV2",
+   "CHDEV22",
+   "CHDEV27",
+   "CHDEV28",
+   "CHDEV30",
+   "CHDEV31",
+   "CHDEV33",
+   "CHDEV34",
+   "CHDEV38",
+   "CHDEV42",
+   "CHDEV44",
+   "CHDEV45",
+   "CHDEV46",
+   "CHDEV65",
+   "CHDEV7",
+   "CHDEV9"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=96",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    96,
+    97,
+    98,
+    99
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 19,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "08333",
+  "title": "Latin American Studies",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTHRO102",
+   "ART107",
+   "GEOG2",
+   "GEOG7",
+   "HISTORY19",
+   "HISTORY5",
+   "HISTORY6",
+   "SPANISH10",
+   "SPANISH12",
+   "SPANISH15",
+   "SPANISH16",
+   "SPANISH25",
+   "SPANISH26",
+   "SPANISH27",
+   "SPANISH36",
+   "SPANISH4",
+   "SPANISH5",
+   "SPANISH6",
+   "SPANISH65",
+   "SPANISH9"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=140",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    140
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 20,
+  "text_chars": 5804
+ },
+ {
+  "control_number": "10349",
+  "title": "Preschool Teacher",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHDEV1",
+   "CHDEV10",
+   "CHDEV2",
+   "CHDEV22",
+   "CHDEV30",
+   "CHDEV31",
+   "CHDEV33",
+   "CHDEV34",
+   "CHDEV38",
+   "CHDEV42",
+   "CHDEV44",
+   "CHDEV45",
+   "CHDEV46",
+   "CHDEV7",
+   "ENGLISH28"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=99",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    99,
+    100
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 15,
+  "text_chars": 11164
+ },
+ {
+  "control_number": "10350",
+  "title": "Child Development: Associate Teacher",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHDEV1",
+   "CHDEV10",
+   "CHDEV2",
+   "CHDEV22",
+   "CHDEV30",
+   "CHDEV31",
+   "CHDEV33",
+   "CHDEV34",
+   "CHDEV38",
+   "CHDEV44",
+   "CHDEV45",
+   "CHDEV46",
+   "CHDEV7"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=97",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    97,
+    98,
+    99,
+    100
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 13,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "10726",
+  "title": "Gardening: Advanced",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "PLNTSC103",
+   "PLNTSC110",
+   "PLNTSC701",
+   "PLNTSC710",
+   "PLNTSC711",
+   "PLNTSC714",
+   "PLNTSC716",
+   "PLNTSC756",
+   "PLNTSC800",
+   "PLNTSC801",
+   "PLNTSC827",
+   "PLNTSC829",
+   "PLNTSC830",
+   "PLNTSC896A",
+   "PLNTSC896B",
+   "PLNTSC913"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=79",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    79,
+    80
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 16,
+  "text_chars": 11856
+ },
+ {
+  "control_number": "10729",
+  "title": "Electronics: Digital",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ELECTRN4A",
+   "ELECTRN4B",
+   "ELECTRN6A",
+   "ELECTRN6B",
+   "ELECTRN72A",
+   "ELECTRN72B",
+   "ELECTRN74A",
+   "ELECTRN74B",
+   "ELECTRN8A",
+   "ELECTRN8B"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=123",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    123,
+    124
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 10,
+  "text_chars": 10683
+ },
+ {
+  "control_number": "10730",
+  "title": "Electronics: Communications",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ELECTRN44",
+   "ELECTRN45",
+   "ELECTRN4A",
+   "ELECTRN4B",
+   "ELECTRN60",
+   "ELECTRN61",
+   "ELECTRN6A",
+   "ELECTRN6B",
+   "ELECTRN8A",
+   "ELECTRN8B"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=123",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    123,
+    124
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 10,
+  "text_chars": 10683
+ },
+ {
+  "control_number": "10731",
+  "title": "Electronics: Analog",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ELECTRN26",
+   "ELECTRN48A",
+   "ELECTRN48B",
+   "ELECTRN4A",
+   "ELECTRN4B",
+   "ELECTRN63",
+   "ELECTRN6A",
+   "ELECTRN6B",
+   "ELECTRN8A",
+   "ELECTRN8B"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=123",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    123,
+    124
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 10,
+  "text_chars": 10683
+ },
+ {
+  "control_number": "10733",
+  "title": "Drawing",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART201",
+   "ART202",
+   "ART203",
+   "ART204",
+   "ART205",
+   "ART206",
+   "ART207",
+   "ART307",
+   "ART400",
+   "ART501",
+   "ART502",
+   "ARTHC1100",
+   "ARTHC1200"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=85",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    85,
+    86,
+    87,
+    88
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 13,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "10734",
+  "title": "Painting",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART201",
+   "ART202",
+   "ART203",
+   "ART204",
+   "ART205",
+   "ART206",
+   "ART307",
+   "ART308",
+   "ART309",
+   "ART400",
+   "ART501",
+   "ART502",
+   "ARTHC1100",
+   "ARTHC1200"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=87",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    87,
+    88
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 14,
+  "text_chars": 10651
+ },
+ {
+  "control_number": "10735",
+  "title": "Sculpture",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.75,
+  "codes_found": [
+   "ART111",
+   "ART201",
+   "ART202",
+   "ART204",
+   "ART501",
+   "ART502",
+   "ART700",
+   "ARTHC1100",
+   "ARTHC1200"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=84",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    84,
+    85,
+    86,
+    87
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 12,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "10736",
+  "title": "Ceramic Design",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART111",
+   "ART201",
+   "ART202",
+   "ART501",
+   "ART502",
+   "ART700",
+   "ART708",
+   "ART709",
+   "ART710",
+   "ART711",
+   "ARTHC1100",
+   "ARTHC1200"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=85",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    85,
+    86,
+    87,
+    88
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 12,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "11814",
+  "title": "Office Administration: Advanced Computer Applications",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CAOT113",
+   "CAOT114",
+   "CAOT120",
+   "CAOT2",
+   "CAOT31",
+   "CAOT34",
+   "CAOT39",
+   "CAOT67",
+   "CAOT79",
+   "CAOT82",
+   "CAOT85",
+   "CAOT86",
+   "CAOT88",
+   "CAOT92",
+   "CAOT96"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=107",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    107,
+    108,
+    109
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 15,
+  "text_chars": 15206
+ },
+ {
+  "control_number": "12188",
+  "title": "Addiction Studies",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ADDICST1",
+   "ADDICST10",
+   "ADDICST11",
+   "ADDICST13",
+   "ADDICST14",
+   "ADDICST15",
+   "ADDICST16",
+   "ADDICST17",
+   "ADDICST18",
+   "ADDICST2",
+   "ADDICST20",
+   "ADDICST23",
+   "ADDICST25",
+   "ADDICST4",
+   "ADDICST5",
+   "ADDICST7",
+   "ADDICST9",
+   "ADDICST91",
+   "PSYCC1000",
+   "PSYCH13",
+   "PSYCH14",
+   "PSYCH16",
+   "PSYCH2",
+   "PSYCH32",
+   "PSYCH41",
+   "PSYCH52",
+   "PSYCH60",
+   "PSYCH66"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=154",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    154,
+    155
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 28,
+  "text_chars": 11072
+ },
+ {
+  "control_number": "14233",
+  "title": "Retail Management (WAFC)",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCTG1",
+   "CAOT85",
+   "COMMC1000",
+   "MARKET21",
+   "MARKET31",
+   "MGMT2",
+   "MGMT31",
+   "MGMT33"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=93",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    93,
+    94
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 8,
+  "text_chars": 10109
+ },
+ {
+  "control_number": "15032",
+  "title": "Preschool Director",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHDEV1",
+   "CHDEV10",
+   "CHDEV11",
+   "CHDEV2",
+   "CHDEV38",
+   "CHDEV42",
+   "CHDEV7"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=98",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    98,
+    99,
+    100
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 7,
+  "text_chars": 15869
+ },
+ {
+  "control_number": "15057",
+  "title": "Infant Care Teacher",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHDEV1",
+   "CHDEV10",
+   "CHDEV2",
+   "CHDEV30",
+   "CHDEV31",
+   "CHDEV42"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=96",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    96,
+    97,
+    98,
+    99
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 6,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "15058",
+  "title": "School Age Child Care Teacher",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHDEV1",
+   "CHDEV10",
+   "CHDEV2",
+   "CHDEV42",
+   "CHDEV46",
+   "CHDEV7"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=97",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    97,
+    98,
+    99,
+    100
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 6,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "15074",
+  "title": "Word Processing: Microsoft Word for Windows",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CAOT2",
+   "CAOT31",
+   "CAOT34",
+   "CAOT39",
+   "CAOT79",
+   "CAOT82"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=109",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    109
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 6,
+  "text_chars": 4668
+ },
+ {
+  "control_number": "15079",
+  "title": "Personal Computer Service Technology",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CIS101",
+   "CIS111",
+   "CIS192",
+   "CIS194",
+   "CIS210",
+   "CIS238"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=112",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    112,
+    113,
+    114,
+    115
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 6,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "15084",
+  "title": "Graphic Design for the Web",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART604",
+   "ART605",
+   "MULTIMD110",
+   "MULTIMD200",
+   "MULTIMD210",
+   "MULTIMD340",
+   "MULTIMD650",
+   "MULTIMD651"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=86",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    86,
+    87
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 8,
+  "text_chars": 10722
+ },
+ {
+  "control_number": "15085",
+  "title": "Web Development, Programming and Scripting",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CIS120",
+   "CIS127",
+   "CIS129",
+   "CIS130",
+   "CIS148",
+   "CIS149",
+   "CIS150",
+   "CS111",
+   "CS112",
+   "CS116",
+   "MEDIART104",
+   "MULTIMD200",
+   "MULTIMD650",
+   "MULTIMD651",
+   "PHOTO49A"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=116",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    116
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 15,
+  "text_chars": 4775
+ },
+ {
+  "control_number": "15092",
+  "title": "Automotive Emission Specialist",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "AST20",
+   "AST23",
+   "AST3",
+   "AST4"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=120",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    120,
+    121,
+    122,
+    123
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 4,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "15093",
+  "title": "Automotive Light Service Technician",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "AST2",
+   "AST4",
+   "AST7"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=121",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    121,
+    122,
+    123
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 3,
+  "text_chars": 15580
+ },
+ {
+  "control_number": "15094",
+  "title": "Automotive Powertrain Specialist",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "AST1",
+   "AST5",
+   "AST6"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=121",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    121,
+    122,
+    123
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 3,
+  "text_chars": 15580
+ },
+ {
+  "control_number": "15097",
+  "title": "Marketing",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "INTBUS6",
+   "MARKET1",
+   "MARKET11",
+   "MARKET21",
+   "PUBREL1"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=92",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    92,
+    93
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 5,
+  "text_chars": 9777
+ },
+ {
+  "control_number": "15101",
+  "title": "Tax Preparation",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCTG1",
+   "ACCTG15",
+   "ACCTG2",
+   "BUS1"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=94",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    94
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 4,
+  "text_chars": 5519
+ },
+ {
+  "control_number": "16756",
+  "title": "Criminal Justice",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ADMJUS160",
+   "ADMJUS2",
+   "ADMJUS4",
+   "ADMJUS5",
+   "ADMJUS67",
+   "ADMJUS8"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=42",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    42
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 6,
+  "text_chars": 5821
+ },
+ {
+  "control_number": "17794",
+  "title": "Computerized Accounting",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCTG1",
+   "CAOT32",
+   "CAOT78",
+   "CAOT82",
+   "CAOT85",
+   "CAOT92"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=103",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    103,
+    104,
+    105,
+    106
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 6,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "17797",
+  "title": "Website Development",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CIS129",
+   "CIS130",
+   "CIS148",
+   "CIS150",
+   "CS111",
+   "CS112",
+   "CS116",
+   "MEDIART104",
+   "MULTIMD200",
+   "MULTIMD650",
+   "MULTIMD651",
+   "PHOTO49A"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=116",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    116
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 12,
+  "text_chars": 4775
+ },
+ {
+  "control_number": "17800",
+  "title": "Office Clerical",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CAOT1",
+   "CAOT100",
+   "CAOT31",
+   "CAOT55"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=108",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    108,
+    109
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 4,
+  "text_chars": 9603
+ },
+ {
+  "control_number": "18837",
+  "title": "Legal Office Skills",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 0.833,
+  "codes_found": [
+   "CAOT23F",
+   "CAOT23G",
+   "CAOT31",
+   "CAOT32",
+   "CAOT39"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=200",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    200
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 6,
+  "text_chars": 6511
+ },
+ {
+  "control_number": "19006",
+  "title": "Desktop Publishing",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART604",
+   "CAOT113",
+   "CAOT114",
+   "CAOT120",
+   "CAOT39",
+   "CAOT79",
+   "CAOT88",
+   "CAOT96"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=105",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    105,
+    106,
+    107,
+    108
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 8,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "19007",
+  "title": "Automotive Performance Applications",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "AST41",
+   "AST42",
+   "AST43",
+   "AST44",
+   "AST45"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=121",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    121,
+    122,
+    123
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 5,
+  "text_chars": 15580
+ },
+ {
+  "control_number": "19008",
+  "title": "Preschool",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHDEV1",
+   "CHDEV2",
+   "CHDEV7"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=97",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    97,
+    98,
+    99,
+    100
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 3,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "19015",
+  "title": "Technical Theatre",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "THEATER300",
+   "THEATER315",
+   "THEATER320",
+   "THEATER340",
+   "THEATER342",
+   "THEATER411",
+   "THEATER450"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=146",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    146,
+    147,
+    148,
+    149
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 7,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "19181",
+  "title": "General Studies: Arts and Humanities",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 227,
+  "text_chars": 0
+ },
+ {
+  "control_number": "19182",
+  "title": "General Studies: Science, Technology, Engineering & Mathematics",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 106,
+  "text_chars": 0
+ },
+ {
+  "control_number": "19183",
+  "title": "General Studies: Social and Behavioral Sciences",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.68,
+  "codes_found": [
+   "ADMJUS1",
+   "ADMJUS2",
+   "ADMJUS4",
+   "ADMJUS67",
+   "AFROAM4",
+   "ANTHRO101",
+   "ANTHRO102",
+   "ANTHRO103",
+   "ANTHRO106",
+   "ANTHRO111",
+   "ANTHRO121",
+   "ANTHRO161",
+   "ART101",
+   "ART102",
+   "ART103",
+   "ART105",
+   "ART109",
+   "BUS5",
+   "CAOT32",
+   "CAOT82",
+   "CHDEV1",
+   "CHDEV11",
+   "CHICANO2",
+   "CHICANO47",
+   "CHICANO7",
+   "CHICANO8",
+   "COMM100",
+   "COMM104",
+   "COMM121",
+   "COMM122",
+   "COMM151",
+   "COMM189",
+   "COMMC1000",
+   "COUNSEL20",
+   "ECON1",
+   "ECON10",
+   "ECON2",
+   "ENGLC1000",
+   "ENGLC1001",
+   "ENGLISH102",
+   "ENVSCI1",
+   "FINANCE8",
+   "GEOG1",
+   "GEOG14",
+   "GEOG15",
+   "GEOG2",
+   "GEOG25",
+   "GEOG3",
+   "GEOG7",
+   "GIS25",
+   "HISTORY1",
+   "HISTORY11",
+   "HISTORY12",
+   "HISTORY2",
+   "HISTORY41",
+   "HISTORY5",
+   "HISTORY86",
+   "HISTORY87",
+   "JAPAN9",
+   "JOURNAL100",
+   "JOURNAL109",
+   "JOURNAL251",
+   "MATH215",
+   "MATH228B",
+   "MATH238",
+   "MATH240",
+   "MATH261",
+   "MATH262",
+   "MATH263",
+   "MEDIART117",
+   "NATIVAM170",
+   "PHILOS5",
+   "PHILOS6",
+   "PHILOS9",
+   "POLSC1000",
+   "POLSCI19",
+   "POLSCI2",
+   "POLSCI5",
+   "POLSCI50",
+   "POLSCI7",
+   "PSYCC1000",
+   "PSYCH13",
+   "PSYCH14",
+   "PSYCH2",
+   "PSYCH41",
+   "PSYCH52",
+   "PSYCH66",
+   "PSYCH74",
+   "SOC1",
+   "SOC11",
+   "SOC125",
+   "SOC13",
+   "SOC2",
+   "SOC21",
+   "SOC28",
+   "SOC3",
+   "SOC31",
+   "SOC4",
+   "SOC86",
+   "SPANISH9",
+   "STAT101",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=31",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    31,
+    32,
+    33
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 150,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "21781",
+  "title": "Equine Science",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANMLSC185",
+   "ANMLSC285",
+   "ANMLSC385",
+   "ANMLSC501",
+   "ANMLSC505",
+   "ANMLSC510",
+   "ANMLSC511",
+   "ANMLSC512",
+   "ANMLSC596A",
+   "ANMLSC596B",
+   "ANMLSC596C",
+   "ANMLSC596D",
+   "ANMLSC601",
+   "ANMLSC602",
+   "ANMLSC603A",
+   "ANMLSC603B",
+   "ANMLSC603C",
+   "ANMLSC603D",
+   "ANMLSC604",
+   "ANMLSC620",
+   "ANMLSC621",
+   "ANMLSC622",
+   "ANMLSC623",
+   "ANMLSC630",
+   "ANMLSC631",
+   "ANMLSC650",
+   "CAOT32",
+   "CAOT78",
+   "CAOT85",
+   "COMM121",
+   "COMM122",
+   "COMM151",
+   "COMMC1000",
+   "JOURNAL100",
+   "JOURNAL251",
+   "MARKET1",
+   "MGMT13",
+   "PHOTO101",
+   "PHOTO20",
+   "PHOTO9",
+   "PLNTSC103",
+   "SPANISH2",
+   "SPANISH35"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=77",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    77,
+    78,
+    79,
+    80
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 43,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "21800",
+  "title": "Floral Design and Management",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCTG1",
+   "ART201",
+   "BUS5",
+   "MGMT13",
+   "PLNTSC701",
+   "PLNTSC711",
+   "PLNTSC714",
+   "PLNTSC757",
+   "PLNTSC829",
+   "PLNTSC896A",
+   "PLNTSC896B"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=78",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    78,
+    79,
+    80
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 11,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "21801",
+  "title": "Architectural Technology",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ARC110",
+   "ARC111",
+   "ARC121",
+   "ARC151",
+   "ARC152",
+   "ARC162",
+   "ARC172",
+   "ARC173",
+   "ARC201",
+   "ARC202",
+   "ARC221",
+   "ARC271",
+   "ENV101"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=83",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    83,
+    84
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 13,
+  "text_chars": 10679
+ },
+ {
+  "control_number": "21806",
+  "title": "Administrative Professional",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCTG1",
+   "CAOT2",
+   "CAOT31",
+   "CAOT32",
+   "CAOT39",
+   "CAOT67",
+   "CAOT78",
+   "CAOT79",
+   "CAOT82",
+   "CAOT85",
+   "CAOT86",
+   "CAOT92",
+   "MGMT2"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=101",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    101,
+    102,
+    103,
+    104
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 13,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "21807",
+  "title": "CAOT: General Administrative",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCTG1",
+   "CAOT113",
+   "CAOT2",
+   "CAOT31",
+   "CAOT32",
+   "CAOT34",
+   "CAOT39",
+   "CAOT67",
+   "CAOT78",
+   "CAOT79",
+   "CAOT82",
+   "CAOT85",
+   "CAOT86",
+   "CAOT88",
+   "CAOT92",
+   "CAOT96"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=102",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    102,
+    103,
+    104,
+    105
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 16,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "21808",
+  "title": "Legal Office Procedures",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 0.857,
+  "codes_found": [
+   "ACCTG1",
+   "BUS5",
+   "CAOT2",
+   "CAOT31",
+   "CAOT32",
+   "CAOT34",
+   "CAOT39",
+   "CAOT67",
+   "CAOT79",
+   "CAOT82",
+   "CAOT85",
+   "CAOT92"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=106",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    106,
+    107,
+    108,
+    109
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 14,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "21810",
+  "title": "Programming for Business",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCTG1",
+   "BUS5",
+   "CAOT32",
+   "CIS101",
+   "CIS120",
+   "CIS148",
+   "CIS172",
+   "CIS173",
+   "CIS192",
+   "CIS193",
+   "CS111",
+   "CS112",
+   "CS116",
+   "CS213",
+   "CS215",
+   "CS243",
+   "CS244",
+   "ECONC2001"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=113",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    113,
+    114
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 18,
+  "text_chars": 11466
+ },
+ {
+  "control_number": "21812",
+  "title": "Automotive Service Technology",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "AST1",
+   "AST2",
+   "AST20",
+   "AST23",
+   "AST25",
+   "AST3",
+   "AST4",
+   "AST41",
+   "AST42",
+   "AST43",
+   "AST44",
+   "AST45",
+   "AST5",
+   "AST6",
+   "AST7",
+   "AST8",
+   "AST9"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=122",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    122,
+    123
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 17,
+  "text_chars": 11536
+ },
+ {
+  "control_number": "21814",
+  "title": "Numerical Control Programming",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "EGDTEK101",
+   "INDTEK105",
+   "INDTEK130",
+   "INDTEK140",
+   "INDTEK230",
+   "INDTEK244",
+   "INDTEK248",
+   "INDTEK330",
+   "INDTEK332",
+   "INDTEK346",
+   "INDTEK444",
+   "INDTEK448"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=126",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    126
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 12,
+  "text_chars": 5491
+ },
+ {
+  "control_number": "21816",
+  "title": "Graphic Design",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART603",
+   "ART604",
+   "ART605",
+   "MULTIMD110",
+   "MULTIMD200",
+   "MULTIMD210",
+   "MULTIMD340"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=86",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    86
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 7,
+  "text_chars": 5476
+ },
+ {
+  "control_number": "21817",
+  "title": "Addiction Studies",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ADDICST1",
+   "ADDICST10",
+   "ADDICST11",
+   "ADDICST13",
+   "ADDICST14",
+   "ADDICST15",
+   "ADDICST16",
+   "ADDICST17",
+   "ADDICST18",
+   "ADDICST2",
+   "ADDICST20",
+   "ADDICST23",
+   "ADDICST25",
+   "ADDICST4",
+   "ADDICST5",
+   "ADDICST7",
+   "ADDICST9",
+   "ADDICST91"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=154",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    154,
+    155
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 18,
+  "text_chars": 11072
+ },
+ {
+  "control_number": "22923",
+  "title": "Mathematics",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "MATH261",
+   "MATH262",
+   "MATH263",
+   "MATH270",
+   "MATH275",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=130",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    130
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 6,
+  "text_chars": 5320
+ },
+ {
+  "control_number": "30477",
+  "title": "General Studies: Gender Studies",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.933,
+  "codes_found": [
+   "ANTHRO109",
+   "ART116",
+   "CHICANO47",
+   "ENGLISH239",
+   "ENGLISH245",
+   "HEALTH8",
+   "HISTORY52",
+   "POLSCI19",
+   "PSYCH16",
+   "PSYCH32",
+   "PSYCH52",
+   "SOC21",
+   "SOC28",
+   "SOC31"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=69",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    69,
+    70,
+    71
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 15,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "30908",
+  "title": "Mathematics",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 0.545,
+  "codes_found": [
+   "MATH261",
+   "MATH262",
+   "MATH263",
+   "MATH270",
+   "MATH275",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=130",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    130
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 11,
+  "text_chars": 5320
+ },
+ {
+  "control_number": "32244",
+  "title": "Public Relations",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.864,
+  "codes_found": [
+   "JOURNAL100",
+   "JOURNAL185",
+   "JOURNAL202",
+   "JOURNAL2171",
+   "JOURNAL219",
+   "JOURNAL220",
+   "JOURNAL251",
+   "MARKET1",
+   "MARKET21",
+   "MEDIART117",
+   "MEDIART801",
+   "MEDIART802",
+   "PHOTO101",
+   "PHOTO102",
+   "PHOTO20",
+   "PHOTO49A",
+   "PHOTO9",
+   "PUBREL1",
+   "PUBREL2"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=134",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    134,
+    135
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 22,
+  "text_chars": 10720
+ },
+ {
+  "control_number": "32318",
+  "title": "Engineering Graphics and Design Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.88,
+  "codes_found": [
+   "ARC162",
+   "ARC271",
+   "ARC272",
+   "CAOT55",
+   "EGDTEK101",
+   "EGDTEK111",
+   "EGDTEK210",
+   "EGDTEK310",
+   "ELECTRN4A",
+   "ELECTRN4B",
+   "ENGGEN101",
+   "ENGGEN122",
+   "ENGGEN131",
+   "ENGGEN151",
+   "GIS25",
+   "INDTEK105",
+   "INDTEK130",
+   "INDTEK230",
+   "MATH240S",
+   "MATH260",
+   "MATH261",
+   "WELDING161"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=151",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    151
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 25,
+  "text_chars": 5261
+ },
+ {
+  "control_number": "32336",
+  "title": "Engineering Graphics and Design Technology",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 0.857,
+  "codes_found": [
+   "EGDTEK101",
+   "EGDTEK111",
+   "EGDTEK210",
+   "EGDTEK310",
+   "INDTEK105",
+   "INDTEK130"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=150",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    150,
+    151
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 7,
+  "text_chars": 11518
+ },
+ {
+  "control_number": "32408",
+  "title": "Early Childhood Education",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHDEV1",
+   "CHDEV10",
+   "CHDEV2",
+   "CHDEV22",
+   "CHDEV34",
+   "CHDEV42",
+   "CHDEV7"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=50",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    50
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 7,
+  "text_chars": 6011
+ },
+ {
+  "control_number": "32484",
+  "title": "Studio Arts",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "32520",
+  "title": "Political Science",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "32523",
+  "title": "Administration of Justice",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ADMJUS1",
+   "ADMJUS104",
+   "ADMJUS160",
+   "ADMJUS174",
+   "ADMJUS2",
+   "ADMJUS3",
+   "ADMJUS305",
+   "ADMJUS319",
+   "ADMJUS383",
+   "ADMJUS4",
+   "ADMJUS5",
+   "ADMJUS67",
+   "ADMJUS75",
+   "ADMJUS8",
+   "ADMJUS97",
+   "CAOT82",
+   "CIS101",
+   "MATH228B",
+   "MATH229",
+   "PSYCC1000",
+   "SOC1",
+   "SOC125",
+   "STAT101",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=42",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    42,
+    43,
+    44,
+    45
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 24,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "32620",
+  "title": "Spanish",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "COMM100",
+   "COMM121",
+   "ENGLC1001",
+   "ENGLISH102",
+   "ENGLISH203",
+   "HISTORY5",
+   "HISTORY6",
+   "PHILOS5",
+   "SPANISH1",
+   "SPANISH10",
+   "SPANISH11",
+   "SPANISH12",
+   "SPANISH15",
+   "SPANISH16",
+   "SPANISH2",
+   "SPANISH25",
+   "SPANISH26",
+   "SPANISH3",
+   "SPANISH35",
+   "SPANISH36",
+   "SPANISH37",
+   "SPANISH4",
+   "SPANISH5",
+   "SPANISH6",
+   "SPANISH65",
+   "SPANISH9"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=72",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    72
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 26,
+  "text_chars": 5989
+ },
+ {
+  "control_number": "32621",
+  "title": "Journalism",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "33036",
+  "title": "Theatre Arts",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 0.714,
+  "codes_found": [
+   "THEATER100",
+   "THEATER270",
+   "THEATER271",
+   "THEATER291",
+   "THEATER292",
+   "THEATER293",
+   "THEATER300",
+   "THEATER342",
+   "THEATER411",
+   "THEATER450"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=145",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    145,
+    146,
+    147,
+    148
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 14,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "33055",
+  "title": "Music",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "33088",
+  "title": "Geography",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 0.958,
+  "codes_found": [
+   "ANTHRO102",
+   "GEOG1",
+   "GEOG14",
+   "GEOG17",
+   "GEOG19",
+   "GEOG2",
+   "GEOG23",
+   "GEOG25",
+   "GEOG3",
+   "GEOG33",
+   "GEOG36",
+   "GEOG37",
+   "GEOG38",
+   "GEOG7",
+   "GEOLOGY1",
+   "GIS25",
+   "GIS36",
+   "GIS37",
+   "GIS38",
+   "MATH228B",
+   "METEOR3",
+   "POLSCI7",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=55",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    55,
+    56,
+    57,
+    58
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 24,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "33110",
+  "title": "Anthropology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANATOMY1",
+   "ANTHRO101",
+   "ANTHRO102",
+   "ANTHRO103",
+   "ANTHRO105",
+   "ANTHRO106",
+   "ANTHRO109",
+   "ANTHRO118",
+   "ANTHRO121",
+   "ANTHRO132",
+   "ANTHRO141",
+   "ANTHRO161",
+   "CHICANO4",
+   "CHICANO7",
+   "CHICANO8",
+   "EARTH3",
+   "GEOG2",
+   "GEOG25",
+   "GEOG7",
+   "GEOLOGY1",
+   "GEOLOGY6",
+   "GIS25",
+   "HISTORY41",
+   "HISTORY42",
+   "HISTORY44",
+   "HISTORY52",
+   "MATH228B",
+   "MATH229",
+   "NATIVAM170",
+   "NATIVAM171",
+   "NATIVAM173",
+   "NATIVAM175",
+   "SOC125",
+   "STAT101",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=45",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    45
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 35,
+  "text_chars": 6217
+ },
+ {
+  "control_number": "33253",
+  "title": "Public Relations",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "JOURNAL100",
+   "MARKET1",
+   "MARKET21",
+   "MEDIART117",
+   "MEDIART801",
+   "PHOTO101",
+   "PHOTO9",
+   "PUBREL1",
+   "PUBREL2"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=134",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    134,
+    135
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 9,
+  "text_chars": 10720
+ },
+ {
+  "control_number": "33721",
+  "title": "History",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "33773",
+  "title": "Economics",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "35018",
+  "title": "Routing Technology",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CIS170",
+   "CIS210",
+   "CIS216",
+   "CIS224",
+   "CIS225",
+   "CIS240",
+   "CIS241"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=115",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    115
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 7,
+  "text_chars": 5068
+ },
+ {
+  "control_number": "35019",
+  "title": "Geographic Information Systems",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "GEOG25",
+   "GEOG33",
+   "GEOG36",
+   "GEOG37",
+   "GEOG38",
+   "GIS25",
+   "GIS33",
+   "GIS36",
+   "GIS37",
+   "GIS38",
+   "GIS40"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=231",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    231,
+    232,
+    233
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 11,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "35196",
+  "title": "Philosophy",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "PHILOS1",
+   "PHILOS12",
+   "PHILOS14",
+   "PHILOS15",
+   "PHILOS19",
+   "PHILOS2",
+   "PHILOS20",
+   "PHILOS28",
+   "PHILOS30",
+   "PHILOS37",
+   "PHILOS40",
+   "PHILOS41",
+   "PHILOS42",
+   "PHILOS46",
+   "PHILOS5",
+   "PHILOS6",
+   "PHILOS9"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=64",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    64
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 17,
+  "text_chars": 6063
+ },
+ {
+  "control_number": "35282",
+  "title": "Geology",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEM101",
+   "CHEM102",
+   "GEOLOGY1",
+   "GEOLOGY2",
+   "GEOLOGY6",
+   "GEOLOGY7",
+   "MATH261",
+   "MATH262"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=56",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    56
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 8,
+  "text_chars": 5648
+ },
+ {
+  "control_number": "35307",
+  "title": "Agriculture Plant Science",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEM101",
+   "CHEM211",
+   "ECONC2001",
+   "MATH228B",
+   "PLNTSC103",
+   "PLNTSC711",
+   "PLNTSC714",
+   "PLNTSC757",
+   "PLNTSC800",
+   "PLNTSC801",
+   "STAT101",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=44",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    44,
+    45,
+    46,
+    47
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 12,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "35334",
+  "title": "Physics",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "MATH261",
+   "MATH262",
+   "MATH263",
+   "PHYSICS101",
+   "PHYSICS102",
+   "PHYSICS103"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=33",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    33
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 6,
+  "text_chars": 6589
+ },
+ {
+  "control_number": "35460",
+  "title": "Kinesiology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 0.981,
+  "codes_found": [
+   "ANATOMY1",
+   "CHEM101",
+   "CHEM51",
+   "CHEM60",
+   "DANCETQ101",
+   "DANCETQ111",
+   "DANCETQ121",
+   "DANCETQ141",
+   "DANCETQ231",
+   "DNCESPC171",
+   "DNCESPC331",
+   "DNCESPC441",
+   "HEALTH11",
+   "KIN201",
+   "KIN2171",
+   "KIN229",
+   "KIN250",
+   "KIN251",
+   "KIN266",
+   "KIN268",
+   "KIN271",
+   "KIN287",
+   "KIN289",
+   "KIN2911",
+   "KIN3011",
+   "KIN3031",
+   "KIN316",
+   "KIN327",
+   "KIN329",
+   "KIN332",
+   "KIN3341",
+   "KIN3401",
+   "KIN347",
+   "KIN350",
+   "KIN351",
+   "KIN3521",
+   "KIN3711",
+   "KIN3871",
+   "KINATH511",
+   "KINATH512",
+   "KINATH516",
+   "KINATH552",
+   "KINMAJ100",
+   "KINMAJ101",
+   "MATH228B",
+   "MATH229",
+   "PHYSICS6",
+   "PHYSIOL1",
+   "PSYCC1000",
+   "SOC1",
+   "SOC125",
+   "STAT101",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=60",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    60,
+    61
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 54,
+  "text_chars": 12420
+ },
+ {
+  "control_number": "35462",
+  "title": "Film, Television, and Electronic Media",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BRDCSTG1",
+   "BRDCSTG10",
+   "BRDCSTG103",
+   "BRDCSTG114",
+   "BRDCSTG22",
+   "BRDCSTG50",
+   "CINEMA104",
+   "CINEMA107",
+   "CINEMA108",
+   "CINEMA109",
+   "CINEMA113",
+   "CINEMA119",
+   "CINEMA3",
+   "CINEMA5",
+   "JOURNAL100",
+   "MEDIART101",
+   "MEDIART104",
+   "MEDIART109",
+   "MEDIART110",
+   "MEDIART117",
+   "MEDIART120",
+   "MEDIART801",
+   "MEDIART802",
+   "MEDIART803",
+   "MEDIART805",
+   "MEDIART807",
+   "MEDIART809",
+   "PHOTO20",
+   "PHOTO21",
+   "PHOTO27A",
+   "PHOTO27B",
+   "PHOTO35",
+   "PHOTO36",
+   "PHOTO37",
+   "PHOTO9"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=54",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    54,
+    55
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 35,
+  "text_chars": 12418
+ },
+ {
+  "control_number": "35464",
+  "title": "Elementary Teacher Education",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 0.783,
+  "codes_found": [
+   "ART103",
+   "ART105",
+   "ART109",
+   "BIOLOGY3",
+   "CHDEV1",
+   "COMMC1000",
+   "EARTH3",
+   "EDUC1",
+   "EDUC203",
+   "ENGLC1000",
+   "ENGLC1001",
+   "ENGLISH102",
+   "GEOG7",
+   "HISTORY86",
+   "MATH215",
+   "MUSIC111",
+   "POLSC1000",
+   "THEATER100"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=52",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    52,
+    53
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 23,
+  "text_chars": 12631
+ },
+ {
+  "control_number": "35897",
+  "title": "Sociology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "MATH228B",
+   "MATH229",
+   "SOC1",
+   "SOC11",
+   "SOC125",
+   "SOC13",
+   "SOC15",
+   "SOC2",
+   "SOC21",
+   "SOC28",
+   "SOC29",
+   "SOC3",
+   "SOC31",
+   "SOC35",
+   "SOC37",
+   "SOC4",
+   "SOC86",
+   "SOC87",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=71",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    71
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 19,
+  "text_chars": 6102
+ },
+ {
+  "control_number": "35898",
+  "title": "English",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTHRO161",
+   "ENGLC1001",
+   "ENGLISH102",
+   "ENGLISH124",
+   "ENGLISH127",
+   "ENGLISH205",
+   "ENGLISH206",
+   "ENGLISH207",
+   "ENGLISH208",
+   "ENGLISH210",
+   "ENGLISH211",
+   "ENGLISH214",
+   "ENGLISH215",
+   "ENGLISH216",
+   "ENGLISH218",
+   "ENGLISH219",
+   "ENGLISH239",
+   "ENGLISH240",
+   "ENGLISH245",
+   "ENGLISH250",
+   "ENGLISH252",
+   "ENGLISH270",
+   "HUMAN31",
+   "NATIVAM174",
+   "SPANISH12",
+   "SPANISH15",
+   "SPANISH2",
+   "SPANISH25",
+   "SPANISH3",
+   "SPANISH35",
+   "SPANISH36",
+   "SPANISH4",
+   "THEATER100"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=53",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    53
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 33,
+  "text_chars": 6466
+ },
+ {
+  "control_number": "35975",
+  "title": "Art History",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART103",
+   "ART105",
+   "ART107",
+   "ART109",
+   "ART111",
+   "ART116",
+   "ART121",
+   "ART141",
+   "ART201",
+   "ART204",
+   "ART307",
+   "ART501",
+   "ART502",
+   "ART604",
+   "ART620",
+   "ART700",
+   "ART708",
+   "ARTHC1100",
+   "ARTHC1200"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=46",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    46
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 19,
+  "text_chars": 5115
+ },
+ {
+  "control_number": "35979",
+  "title": "Biology",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 0.818,
+  "codes_found": [
+   "BIOLOGY6",
+   "CHEM101",
+   "MATH261",
+   "PHYSICS101",
+   "PHYSICS102",
+   "PHYSICS6",
+   "PHYSICS66",
+   "PHYSICS67",
+   "PHYSICS7"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=33",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    33
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 11,
+  "text_chars": 6589
+ },
+ {
+  "control_number": "36027",
+  "title": "Social Justice: General",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "36038",
+  "title": "Workplace Success",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "36039",
+  "title": "Essential English Communication Skills",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESLNC1CE",
+   "ESLNC2CE"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=157",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    157
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 2,
+  "text_chars": 4935
+ },
+ {
+  "control_number": "36040",
+  "title": "Speaking English as a Second Language",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESLNC23CE",
+   "ESLNC24CE"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=160",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    160
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 2,
+  "text_chars": 1590
+ },
+ {
+  "control_number": "36044",
+  "title": "Chicana and Chicano Studies",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTHRO102",
+   "CHICANO2",
+   "CHICANO20",
+   "CHICANO37",
+   "CHICANO47",
+   "CHICANO54",
+   "CHICANO57",
+   "CHICANO7",
+   "CHICANO8",
+   "CHICANO80",
+   "SOC11",
+   "SPANISH12"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=152",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    152
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 12,
+  "text_chars": 5853
+ },
+ {
+  "control_number": "36137",
+  "title": "Business Information Worker",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CAOT1",
+   "CAOT128",
+   "CAOT2",
+   "CAOT31",
+   "CAOT32",
+   "CAOT39",
+   "CAOT55",
+   "CAOT67",
+   "CAOT82",
+   "CAOT85",
+   "CAOT92",
+   "MGMT31"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=102",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    102,
+    103,
+    104,
+    105
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 12,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "36294",
+  "title": "Psychology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "PSYCC1000",
+   "PSYCH13",
+   "PSYCH14",
+   "PSYCH16",
+   "PSYCH2",
+   "PSYCH32",
+   "PSYCH41",
+   "PSYCH52",
+   "PSYCH60",
+   "PSYCH69",
+   "PSYCH74",
+   "STAT101"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=66",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    66,
+    67,
+    68,
+    69
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 12,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "36587",
+  "title": "Custodial Technician Preparation",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "36613",
+  "title": "Phlebotomy Technician I",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED381CE",
+   "VOCED382CE"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=166",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    166
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 2,
+  "text_chars": 5251
+ },
+ {
+  "control_number": "36785",
+  "title": "American Sign Language Studies",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ASL1",
+   "ASL2",
+   "ASL3",
+   "ASL4",
+   "ASL40"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=135",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    135,
+    136,
+    137
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 5,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "36879",
+  "title": "Geriatric Caregiver",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED370CE",
+   "VOCED371CE",
+   "VOCED379CE"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=164",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    164
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 3,
+  "text_chars": 4946
+ },
+ {
+  "control_number": "36910",
+  "title": "Gas and Electric Welding",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "WELDING161",
+   "WELDING162",
+   "WELDING261",
+   "WELDING262",
+   "WELDING361",
+   "WELDING362",
+   "WELDING461",
+   "WELDING462"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=125",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    125
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 8,
+  "text_chars": 5331
+ },
+ {
+  "control_number": "36911",
+  "title": "Gas and Electric Welding",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "WELDING161",
+   "WELDING162",
+   "WELDING261",
+   "WELDING262",
+   "WELDING361",
+   "WELDING362",
+   "WELDING461",
+   "WELDING462"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=125",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    125
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 8,
+  "text_chars": 5331
+ },
+ {
+  "control_number": "36946",
+  "title": "Photography",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "PHOTO101",
+   "PHOTO102",
+   "PHOTO16",
+   "PHOTO20",
+   "PHOTO21",
+   "PHOTO27A",
+   "PHOTO27B",
+   "PHOTO35",
+   "PHOTO36",
+   "PHOTO37",
+   "PHOTO49A",
+   "PHOTO49B",
+   "PHOTO9"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=131",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    131,
+    132,
+    133,
+    134
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 13,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "36947",
+  "title": "Photography",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "PHOTO101",
+   "PHOTO102",
+   "PHOTO16",
+   "PHOTO20",
+   "PHOTO21",
+   "PHOTO27A",
+   "PHOTO27B",
+   "PHOTO35",
+   "PHOTO36",
+   "PHOTO37",
+   "PHOTO49A",
+   "PHOTO49B",
+   "PHOTO9"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=131",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    131,
+    132,
+    133,
+    134
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 13,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "37084",
+  "title": "Medical Assistant: Front and Back Office",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED372CE",
+   "VOCED373CE",
+   "VOCED374CE",
+   "VOCED375CE",
+   "VOCED376CE",
+   "VOCED377CE",
+   "VOCED378CE",
+   "VOCED379CE"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=285",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    285
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 8,
+  "text_chars": 7304
+ },
+ {
+  "control_number": "37184",
+  "title": "EKG Technician",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED379CE",
+   "VOCED384CE"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=163",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    163,
+    164
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 2,
+  "text_chars": 9729
+ },
+ {
+  "control_number": "37217",
+  "title": "Agriculture Animal Sciences",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANMLSC501",
+   "ANMLSC507",
+   "ANMLSC510",
+   "ANMLSC520",
+   "ANMLSC521",
+   "ANMLSC530",
+   "ANMLSC531",
+   "ANMLSC596C",
+   "ANMLSC596D",
+   "CHEM101",
+   "ECONC2001",
+   "MATH228B",
+   "MATH229",
+   "STAT101",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=43",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    43,
+    44,
+    45,
+    46
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 15,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "37234",
+  "title": "American Sign Language/Interpreting",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ASL10",
+   "ASL16",
+   "ASL23",
+   "ASL25",
+   "ASL30",
+   "ASL31",
+   "ASL4",
+   "ASL40",
+   "ASL5"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=136",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    136,
+    137
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 9,
+  "text_chars": 11203
+ },
+ {
+  "control_number": "37835",
+  "title": "Custodial Scheduling Supervisor Training",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED550CE",
+   "VOCED96CE"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=162",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    162
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 2,
+  "text_chars": 5188
+ },
+ {
+  "control_number": "37957",
+  "title": "Japanese",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "JAPAN2",
+   "JAPAN3",
+   "JAPAN4",
+   "JAPAN9"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=139",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    139
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 4,
+  "text_chars": 5253
+ },
+ {
+  "control_number": "37976",
+  "title": "Cybersecurity",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CIS113",
+   "CIS170",
+   "CIS192",
+   "CIS195",
+   "CIS210",
+   "CIS216",
+   "CIS224",
+   "CIS225",
+   "CIS227",
+   "CIS238",
+   "CIS239",
+   "CIS240",
+   "CIS241"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=111",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    111,
+    112,
+    113,
+    114
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 13,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "38338",
+  "title": "Bookkeeper",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED560CE",
+   "VOCED96CE"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=161",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    161,
+    162
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 2,
+  "text_chars": 10123
+ },
+ {
+  "control_number": "38339",
+  "title": "Community Health Worker",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED551CE",
+   "VOCED96CE"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=162",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    162
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 2,
+  "text_chars": 5188
+ },
+ {
+  "control_number": "38606",
+  "title": "Cloud Computing and Networking for Amazon Web Services",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CIS113",
+   "CIS120",
+   "CIS173",
+   "CIS192",
+   "CIS193",
+   "CIS194",
+   "CIS195",
+   "CIS210",
+   "CIS227"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=110",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    110,
+    111,
+    112,
+    113
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 9,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "38673",
+  "title": "Hospitality Management",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 0.9,
+  "codes_found": [
+   "ACCTG1",
+   "CAOT82",
+   "HOSPT100",
+   "HOSPT120",
+   "HOSPT136",
+   "HOSPT140",
+   "MATH228B",
+   "STAT101",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=58",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    58,
+    59,
+    60,
+    61
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 10,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "39277",
+  "title": "Theater: Dance",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "DANCEST301",
+   "DANCEST801",
+   "DANCEST805",
+   "DANCEST806",
+   "DANCEST814",
+   "DANCEST815",
+   "DANCETQ111",
+   "DANCETQ121",
+   "DANCETQ141",
+   "DANCETQ142",
+   "DANCETQ151",
+   "DANCETQ152",
+   "DANCETQ231",
+   "DANCETQ535",
+   "DNCESPC171",
+   "DNCESPC331",
+   "DNCESPC441",
+   "THEATER100",
+   "THEATER270",
+   "THEATER411"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=148",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    148,
+    149
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 20,
+  "text_chars": 12463
+ },
+ {
+  "control_number": "39501",
+  "title": "Workplace Success: Managing Anger",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BSICSKL212CE"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=168",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    168
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 1,
+  "text_chars": 3608
+ },
+ {
+  "control_number": "39954",
+  "title": "Landscape Technician",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED620CE",
+   "VOCED621CE",
+   "VOCED622CE",
+   "VOCED623CE"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=165",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    165
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 4,
+  "text_chars": 5655
+ },
+ {
+  "control_number": "39969",
+  "title": "Cloud Computing Fundamentals for Amazon Web Services",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CIS120",
+   "CIS192",
+   "CIS193",
+   "CIS194",
+   "CIS195"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=110",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    110,
+    111,
+    112,
+    113
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 5,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "40273",
+  "title": "Social Media",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "COMM190",
+   "JOURNAL109",
+   "JOURNAL251",
+   "MARKET21",
+   "MEDIART117",
+   "MEDIART801",
+   "MEDIART805",
+   "PHOTO9"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=135",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    135
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 8,
+  "text_chars": 5070
+ },
+ {
+  "control_number": "40634",
+  "title": "Teacher Assistant Paraprofessional",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHDEV1",
+   "EDUC1",
+   "EDUC10",
+   "EDUC203"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=100",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    100
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 4,
+  "text_chars": 5781
+ },
+ {
+  "control_number": "41088",
+  "title": "Business Administration 2.0",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCTG1",
+   "ACCTG2",
+   "BUS1",
+   "BUS5",
+   "CAOT32",
+   "ECONC2001",
+   "ECONC2002",
+   "MATH228B",
+   "MATH229",
+   "MATH238",
+   "MATH261",
+   "STAT101",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=47",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    47,
+    48
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 13,
+  "text_chars": 11770
+ },
+ {
+  "control_number": "41780",
+  "title": "Law, Public Policy, and Society",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "41890",
+  "title": "Payroll Accounting",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCTG1",
+   "ACCTG17",
+   "ACCTG2"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=88",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    88,
+    89
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 3,
+  "text_chars": 10763
+ },
+ {
+  "control_number": "41891",
+  "title": "Small Business Accounting",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCTG1",
+   "ACCTG2",
+   "CAOT78"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=93",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    93,
+    94
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 3,
+  "text_chars": 10109
+ },
+ {
+  "control_number": "41935",
+  "title": "Financial Literacy",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "41946",
+  "title": "Citizenship",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESLCVCS13CE"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=156",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    156
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 1,
+  "text_chars": 4566
+ },
+ {
+  "control_number": "42018",
+  "title": "GED Preparation and Foundational Skills",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BSICSKL23CE",
+   "BSICSKL38CE"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=157",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    157,
+    158
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 2,
+  "text_chars": 10312
+ },
+ {
+  "control_number": "42270",
+  "title": "Level 4 - English as a Second Language for Life Skills",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 0.5,
+  "codes_found": [
+   "ESLNC15CE"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=228",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    228
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 2,
+  "text_chars": 6613
+ },
+ {
+  "control_number": "42274",
+  "title": "Level 2 - English as a Second Language for Life Skills",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESLNC50CE",
+   "ESLNC8CE"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=159",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    159
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 2,
+  "text_chars": 5900
+ },
+ {
+  "control_number": "42275",
+  "title": "Level 3 - English as a Second Language for Life Skills",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESLNC51CE",
+   "ESLNC9CE"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=159",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    159
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 2,
+  "text_chars": 5900
+ },
+ {
+  "control_number": "42276",
+  "title": "Level 1 - English as a Second Language for Life Skills",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESLCVCS10CE",
+   "ESLNC7CE"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=158",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    158
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 2,
+  "text_chars": 5375
+ },
+ {
+  "control_number": "42404",
+  "title": "Career Exploration: Biotechnology Careers",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED660CE",
+   "VOCED661CE"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=161",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    161
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 2,
+  "text_chars": 4933
+ },
+ {
+  "control_number": "42426",
+  "title": "Integrated Education Training for Community Health Worker",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED551CE",
+   "VOCED96CE"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=164",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    164
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 2,
+  "text_chars": 4946
+ },
+ {
+  "control_number": "42427",
+  "title": "Tutor Training",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED88CE"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=167",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    167
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 1,
+  "text_chars": 5121
+ },
+ {
+  "control_number": "42428",
+  "title": "Medical Front Office Assistant",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED372CE",
+   "VOCED373CE",
+   "VOCED374CE",
+   "VOCED377CE",
+   "VOCED378CE",
+   "VOCED379CE",
+   "VOCED98CE"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=166",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    166,
+    167,
+    168
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 7,
+  "text_chars": 13984
+ },
+ {
+  "control_number": "42439",
+  "title": "Real Estate Fundamentals",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED667CE",
+   "VOCED668CE"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=166",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    166
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 2,
+  "text_chars": 5251
+ },
+ {
+  "control_number": "42512",
+  "title": "UCTP Chemistry",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEM101",
+   "CHEM102",
+   "CHEM211",
+   "CHEM212",
+   "MATH261",
+   "MATH262",
+   "MATH263",
+   "MATH275",
+   "PHYSICS101",
+   "PHYSICS102",
+   "PHYSICS103"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=74",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    74
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 11,
+  "text_chars": 5614
+ },
+ {
+  "control_number": "42533",
+  "title": "UCTP Physics",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 0.9,
+  "codes_found": [
+   "CHEM101",
+   "CHEM102",
+   "MATH261",
+   "MATH262",
+   "MATH263",
+   "MATH275",
+   "PHYSICS101",
+   "PHYSICS102",
+   "PHYSICS103"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=74",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    74
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 10,
+  "text_chars": 5614
+ },
+ {
+  "control_number": "42945",
+  "title": "Biotechnology Lab Assistant",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOTECH2",
+   "BIOTECH3",
+   "CHEM51",
+   "CHEM60"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=128",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    128,
+    129
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 4,
+  "text_chars": 10178
+ },
+ {
+  "control_number": "43098",
+  "title": "Biotechnology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOLOGY6",
+   "BIOTECH2",
+   "BIOTECH3",
+   "BIOTECH385",
+   "CHEM51",
+   "CHEM60",
+   "MICRO20",
+   "PLNTSC103",
+   "PLNTSC711",
+   "PLNTSC726",
+   "PLNTSC727",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=128",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    128,
+    129,
+    130
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 12,
+  "text_chars": 15500
+ },
+ {
+  "control_number": "43219",
+  "title": "Biotechnology Research Lab Assistant",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOTECH2",
+   "BIOTECH3",
+   "BIOTECH385",
+   "CHEM51",
+   "CHEM60",
+   "MICRO20"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=128",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    128,
+    129
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 6,
+  "text_chars": 10178
+ },
+ {
+  "control_number": "43458",
+  "title": "Communication Studies 2.0",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTHRO102",
+   "COMM100",
+   "COMM103",
+   "COMM104",
+   "COMM121",
+   "COMM122",
+   "COMM130",
+   "COMM151",
+   "COMM189",
+   "COMM190",
+   "COMMC1000",
+   "ENGLC1001",
+   "PSYCC1000",
+   "SOC1"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=49",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    49
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 14,
+  "text_chars": 5871
+ },
+ {
+  "control_number": "43510",
+  "title": "Acting",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "THEATER100",
+   "THEATER225",
+   "THEATER230",
+   "THEATER232",
+   "THEATER240",
+   "THEATER265",
+   "THEATER270",
+   "THEATER271",
+   "THEATER273",
+   "THEATER291",
+   "THEATER292",
+   "THEATER293",
+   "THEATER340",
+   "THEATER342",
+   "THEATER411",
+   "THEATER450"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=145",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    145,
+    146,
+    147,
+    148
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 16,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "43713",
+  "title": "Crime and Intelligence Analysis",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ADMJUS1",
+   "ADMJUS174",
+   "ADMJUS305",
+   "ADMJUS383",
+   "ADMJUS5"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=42",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    42
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 5,
+  "text_chars": 5821
+ },
+ {
+  "control_number": "43745",
+  "title": "GED Preparation for Spanish Speakers",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BSICSKL217CE",
+   "BSICSKL23CE"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=158",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    158
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 2,
+  "text_chars": 5375
+ },
+ {
+  "control_number": "43746",
+  "title": "Internship Workplace Support",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED650CE",
+   "VOCED98CE"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=164",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    164
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 2,
+  "text_chars": 4946
+ },
+ {
+  "control_number": "43779",
+  "title": "Electric Vehicle Services for Light-Duty Zero-Emission Vehicles",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED565CE",
+   "VOCED566CE"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=164",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    164
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 2,
+  "text_chars": 4946
+ },
+ {
+  "control_number": "43780",
+  "title": "Early Childhood Fundamentals for Success",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED669CE",
+   "VOCED670CE",
+   "VOCED671CE"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=163",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    163
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 3,
+  "text_chars": 4781
+ },
+ {
+  "control_number": "44232",
+  "title": "Environmental Science",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "44966",
+  "title": "Commercial Music",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS1",
+   "CAOT82",
+   "MUSIC101",
+   "MUSIC111",
+   "MUSIC121",
+   "MUSIC122",
+   "MUSIC161",
+   "MUSIC165",
+   "MUSIC261",
+   "MUSIC2651",
+   "MUSIC321",
+   "MUSIC411",
+   "MUSIC650",
+   "MUSIC781"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=141",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    141,
+    142,
+    143
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 14,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "44998",
+  "title": "Music Theory and Musicianship",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "MUSIC2161",
+   "MUSIC2162",
+   "MUSIC2163",
+   "MUSIC2164",
+   "MUSIC2171",
+   "MUSIC2172",
+   "MUSIC2173",
+   "MUSIC2174"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=63",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    63
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 8,
+  "text_chars": 6053
+ },
+ {
+  "control_number": "45035",
+  "title": "Cal-GETC",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 0.596,
+  "codes_found": [
+   "ADMJUS1",
+   "ADMJUS2",
+   "ADMJUS4",
+   "ADMJUS67",
+   "AFROAM4",
+   "ANATOMY1",
+   "ANMLSC511",
+   "ANTHRO101",
+   "ANTHRO102",
+   "ANTHRO106",
+   "ANTHRO111",
+   "ANTHRO121",
+   "ANTHRO161",
+   "ART101",
+   "ART102",
+   "ART103",
+   "ART105",
+   "ART109",
+   "ART501",
+   "ART502",
+   "ASL1",
+   "ASL3",
+   "ASL40",
+   "ASTRON1",
+   "ASTRON2",
+   "BIOLOGY121",
+   "BIOLOGY3",
+   "BIOLOGY6",
+   "CHDEV1",
+   "CHDEV11",
+   "CHEM101",
+   "CHEM211",
+   "CHEM51",
+   "CHEM60",
+   "CHICANO2",
+   "CHICANO4",
+   "CHICANO47",
+   "CHICANO7",
+   "CHICANO8",
+   "CINEMA3",
+   "COMM100",
+   "COMM121",
+   "COMM122",
+   "COMMC1000",
+   "CS131",
+   "EARTH3",
+   "ECON1",
+   "ECON10",
+   "ECON2",
+   "ENGLC1000",
+   "ENGLC1001",
+   "ENGLISH102",
+   "ENGLISH203",
+   "ENGLISH204",
+   "ENGLISH205",
+   "ENGLISH206",
+   "ENGLISH207",
+   "ENGLISH208",
+   "ENGLISH218",
+   "ENVSCI1",
+   "FRENCH1",
+   "GEOG1",
+   "GEOG14",
+   "GEOG15",
+   "GEOG17",
+   "GEOG19",
+   "GEOG2",
+   "GEOG23",
+   "GEOG3",
+   "GEOG7",
+   "GEOLOGY1",
+   "GEOLOGY10",
+   "GEOLOGY2",
+   "GEOLOGY6",
+   "GEOLOGY7",
+   "HISTORY1",
+   "HISTORY11",
+   "HISTORY12",
+   "HISTORY2",
+   "HISTORY41",
+   "HISTORY5",
+   "HISTORY86",
+   "HISTORY87",
+   "HUMAN6",
+   "ITALIAN1",
+   "JAPAN1",
+   "JAPAN3",
+   "JAPAN9",
+   "JOURNAL100",
+   "JOURNAL109",
+   "JOURNAL251",
+   "MATH228B",
+   "MATH238",
+   "MATH261",
+   "MATH262",
+   "MATH275",
+   "METEOR3",
+   "METEOR4",
+   "METEOR5",
+   "MICRO1",
+   "MULTIMD110",
+   "MUSIC111",
+   "MUSIC121",
+   "MUSIC122",
+   "MUSIC2161",
+   "OCEANO1",
+   "OCEANO10",
+   "PHILOS1",
+   "PHILOS12",
+   "PHILOS14",
+   "PHILOS19",
+   "PHILOS20",
+   "PHILOS5",
+   "PHYSICS101",
+   "PHYSICS102",
+   "PHYSICS103",
+   "PHYSICS6",
+   "PHYSICS66",
+   "PHYSICS67",
+   "PHYSICS7",
+   "PHYSIOL1",
+   "PHYSSC4",
+   "PLNTSC103",
+   "PLNTSC711",
+   "POLSC1000",
+   "POLSCI19",
+   "POLSCI2",
+   "POLSCI5",
+   "POLSCI50",
+   "POLSCI7",
+   "PSYCC1000",
+   "PSYCH13",
+   "PSYCH14",
+   "PSYCH2",
+   "PSYCH41",
+   "PSYCH52",
+   "PSYCH66",
+   "PSYCH74",
+   "SOC1",
+   "SOC11",
+   "SOC125",
+   "SOC13",
+   "SOC2",
+   "SOC21",
+   "SOC28",
+   "SOC3",
+   "SOC31",
+   "SOC4",
+   "SOC86",
+   "SPANISH1",
+   "SPANISH2",
+   "SPANISH3",
+   "SPANISH35",
+   "SPANISH36",
+   "SPANISH4",
+   "SPANISH9",
+   "STAT101",
+   "STATC1000",
+   "THEATER100",
+   "THEATER110",
+   "THEATER114",
+   "THEATER125"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=31",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    31,
+    32,
+    33
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 272,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "45038",
+  "title": "Applied Music",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "MUSIC101",
+   "MUSIC181",
+   "MUSIC182",
+   "MUSIC2161",
+   "MUSIC2162",
+   "MUSIC2171",
+   "MUSIC2172",
+   "MUSIC2501",
+   "MUSIC2502",
+   "MUSIC501",
+   "MUSIC705",
+   "MUSIC721",
+   "MUSIC745",
+   "MUSIC755",
+   "MUSIC781"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=140",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    140,
+    141,
+    142,
+    143
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 15,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "45475",
+  "title": "Success Skills for the First-Time Hospitality Supervisor",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED930CE",
+   "VOCED98CE"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=167",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    167,
+    168
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 2,
+  "text_chars": 8731
+ },
+ {
+  "control_number": "45479",
+  "title": "Health Science",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.556,
+  "codes_found": [
+   "ANATOMY1",
+   "HEALTH11",
+   "KIN201",
+   "KIN2171",
+   "KIN229",
+   "KIN250",
+   "KIN251",
+   "KIN266",
+   "KIN268",
+   "KIN271",
+   "KIN287",
+   "KIN289",
+   "KIN2911",
+   "KIN3011",
+   "KIN3031",
+   "KIN316",
+   "KIN327",
+   "KIN329",
+   "KIN332",
+   "KIN3341",
+   "KIN3401",
+   "KIN347",
+   "KIN350",
+   "KIN351",
+   "KIN3521",
+   "KIN3711",
+   "KIN3871",
+   "PSYCC1000",
+   "STAT101",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=60",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    60,
+    61
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 54,
+  "text_chars": 12420
+ },
+ {
+  "control_number": "45502",
+  "title": "Dance Studio Management",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCTG1",
+   "BUS1",
+   "DANCEST801",
+   "DANCEST806",
+   "DANCEST820",
+   "DANCEST822",
+   "DANCETQ121",
+   "DANCETQ231",
+   "DNCESPC171",
+   "DNCESPC331",
+   "DNCESPC441",
+   "MGMT13",
+   "THEATER411"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=145",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    145,
+    146,
+    147,
+    148
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 13,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "45546",
+  "title": "Recording Arts",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS1",
+   "CAOT32",
+   "CAOT39",
+   "MUSIC111",
+   "MUSIC121",
+   "MUSIC122",
+   "MUSIC161",
+   "MUSIC165",
+   "MUSIC2161",
+   "MUSIC2171",
+   "MUSIC2651",
+   "MUSIC2652",
+   "MUSIC2653",
+   "MUSIC321",
+   "MUSIC411",
+   "MUSIC650",
+   "MUSIC781"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=141",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    141,
+    142,
+    143
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 17,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "45551",
+  "title": "Hospitality Management",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CAOT48",
+   "CAOT82",
+   "ECONC2001",
+   "HOSPT100",
+   "HOSPT120",
+   "HOSPT136",
+   "HOSPT140"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=105",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    105,
+    106,
+    107,
+    108
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 7,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "45552",
+  "title": "Biomanufacturing Technician",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOLOGY6",
+   "BIOTECH1",
+   "BIOTECH102",
+   "BIOTECH2",
+   "BIOTECH6",
+   "CHEM51",
+   "CHEM60"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=128",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    128,
+    129
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 7,
+  "text_chars": 10178
+ },
+ {
+  "control_number": "45605",
+  "title": "English Pronunciation for the English Language Learner",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESLNC48CE",
+   "ESLNC49CE"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=156",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    156
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 2,
+  "text_chars": 4566
+ },
+ {
+  "control_number": "45608",
+  "title": "Vocational Education Exploration and Foundational Skills",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BSICSKL23CE",
+   "VOCED383CE"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=168",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    168
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 2,
+  "text_chars": 3608
+ },
+ {
+  "control_number": "45703",
+  "title": "Basic GIS and GPS Skills",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED126CE",
+   "VOCED127CE"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=161",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    161
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 2,
+  "text_chars": 4933
+ },
+ {
+  "control_number": "45705",
+  "title": "Tutor Leadership Skills",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED139CE",
+   "VOCED88CE",
+   "VOCED89CE"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=167",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    167
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 3,
+  "text_chars": 5121
+ },
+ {
+  "control_number": "45726",
+  "title": "Automotive Electric Vehicle Technician",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "AST60",
+   "AST70",
+   "AST80",
+   "AST90"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=120",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    120
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 4,
+  "text_chars": 4416
+ },
+ {
+  "control_number": "46078",
+  "title": "Computer Science",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOLOGY6",
+   "BIOLOGY7",
+   "CHEM101",
+   "CS116",
+   "CS130",
+   "CS131",
+   "CS136",
+   "MATH261",
+   "MATH262",
+   "PHYSICS101",
+   "PHYSICS102"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=50",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    50,
+    51
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 11,
+  "text_chars": 11832
+ },
+ {
+  "control_number": "46088",
+  "title": "Mathematics 2.0",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CS114",
+   "CS116",
+   "MATH261",
+   "MATH262",
+   "MATH263",
+   "MATH270",
+   "MATH275",
+   "PHYSICS101"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=62",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    62,
+    63
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 8,
+  "text_chars": 11663
+ },
+ {
+  "control_number": "46089",
+  "title": "Physics 2.0",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CS116",
+   "MATH261",
+   "MATH262",
+   "MATH263",
+   "MATH270",
+   "MATH275",
+   "PHYSICS101",
+   "PHYSICS102",
+   "PHYSICS103"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=33",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    33
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 9,
+  "text_chars": 6589
+ },
+ {
+  "control_number": "46100",
+  "title": "Everyday English Conversation for ESL Students",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESLNC50CE",
+   "ESLNC51CE"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=157",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    157
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 2,
+  "text_chars": 4935
+ },
+ {
+  "control_number": "46329",
+  "title": "Chemical Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOTECH2",
+   "BIOTECH6",
+   "CHEM101",
+   "CHEM102",
+   "CHEM211",
+   "CHEM212",
+   "PLNTSC103",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=95",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    95,
+    96
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 8,
+  "text_chars": 12212
+ },
+ {
+  "control_number": "46331",
+  "title": "Chemical Technology",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOTECH2",
+   "BIOTECH6",
+   "CHEM101",
+   "CHEM102",
+   "PLNTSC103"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=95",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    95,
+    96
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 5,
+  "text_chars": 12212
+ },
+ {
+  "control_number": "46335",
+  "title": "Elementary Teacher Education: Integrated Programs",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 0.85,
+  "codes_found": [
+   "ART103",
+   "ART105",
+   "ART109",
+   "BIOLOGY3",
+   "CHDEV1",
+   "COMMC1000",
+   "EARTH3",
+   "EDUC1",
+   "EDUC203",
+   "ENGLC1000",
+   "ENGLISH102",
+   "GEOG7",
+   "HISTORY86",
+   "MATH215",
+   "MUSIC111",
+   "POLSC1000",
+   "THEATER100"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=52",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    52,
+    53
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 20,
+  "text_chars": 12631
+ },
+ {
+  "control_number": "46342",
+  "title": "Public Health",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANATOMY1",
+   "BIOLOGY3",
+   "CHEM101",
+   "CHEM60",
+   "HEALTH101",
+   "HEALTH102",
+   "HEALTH11",
+   "HEALTH8",
+   "MATH228B",
+   "MICRO1",
+   "MICRO20",
+   "PHYSIOL1",
+   "PSYCH52",
+   "SOC125",
+   "STAT101",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=67",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    67,
+    68,
+    69,
+    70
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 16,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "46407",
+  "title": "College Readiness",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BSICSKL100CE",
+   "BSICSKL27CE"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=162",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    162
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 2,
+  "text_chars": 5188
+ },
+ {
+  "control_number": "46408",
+  "title": "Academic Bridge",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BSICSKL64CE",
+   "BSICSKL90CE",
+   "BSICSKL97CE"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=156",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    156
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 3,
+  "text_chars": 4566
+ },
+ {
+  "control_number": "46459",
+  "title": "Biomanufacturing",
+  "award": "Baccalaureate of Science (B.S.) Degree.",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.833,
+  "codes_found": [
+   "BIOLOGY6",
+   "BIOTECH102",
+   "BIOTECH2",
+   "BIOTECH3",
+   "BIOTECH300",
+   "BIOTECH310",
+   "BIOTECH320",
+   "BIOTECH330",
+   "BIOTECH340",
+   "BIOTECH360",
+   "BIOTECH400",
+   "BIOTECH410",
+   "BIOTECH460",
+   "BIOTECH470",
+   "BIOTECH6",
+   "CHEM60",
+   "COMM400",
+   "ENGLISH420",
+   "MICRO20",
+   "PHILOS400",
+   "PLNTSC103",
+   "PLNTSC711",
+   "PLNTSC726",
+   "PLNTSC727",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=41",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    41,
+    42,
+    43,
+    44
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 30,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "46477",
+  "title": "Forensics, Evidence and Investigation",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ADMJUS1",
+   "ADMJUS104",
+   "ADMJUS3",
+   "ADMJUS5",
+   "ANTHRO118",
+   "ANTHRO119"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=154",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    154
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 6,
+  "text_chars": 6117
+ },
+ {
+  "control_number": "46549",
+  "title": "Chicana/o Studies, Latina/o Studies",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHICANO2",
+   "CHICANO20",
+   "CHICANO4",
+   "CHICANO47",
+   "CHICANO54",
+   "CHICANO57",
+   "CHICANO7",
+   "CHICANO8",
+   "CHICANO80",
+   "SPANISH12",
+   "SPANISH2",
+   "SPANISH35"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=48",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    48
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 12,
+  "text_chars": 5927
+ }
+]

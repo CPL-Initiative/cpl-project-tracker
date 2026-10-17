@@ -1,0 +1,158 @@
+{
+ "college": "Los Angeles City College",
+ "control_number": "21611",
+ "shape": "certificate",
+ "title": "MANAGEMENT",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=76",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8324,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8324,
+    "output_tokens": 718,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 718,
+  "output_tokens_details": {
+   "thinking_tokens": 250
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.04766,
+ "ms": 6654,
+ "seconds": 7.2,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 4,
+   "share": 0.0,
+   "missing": [
+    "MGMT13",
+    "MGMT2",
+    "MGMT31",
+    "MGMT33"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": true,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "(Management Certificate of Achievement section not in text)",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "MGMT 2",
+    "why": "Management certificate section not in text; MGMT 002 appears only among the Business Administration AA electives"
+   },
+   {
+    "code": "MGMT 13",
+    "why": "Management certificate section not in text; MGMT 013 appears only among the Business Administration AA electives"
+   },
+   {
+    "code": "MGMT 31",
+    "why": "Management certificate section not in text; MGMT 031 appears only among the Business Administration AA electives"
+   },
+   {
+    "code": "MGMT 33",
+    "why": "Management certificate section not in text; MGMT 033 appears only among the Business Administration AA electives"
+   }
+  ],
+  "notes": [
+   "The supplied text (catalog page 76) contains only the Business Administration Associate of Arts degree and the Business Administration Certificate of Achievement. It has no section for the Management Certificate of Achievement.",
+   "No requirements, totals, outcomes or careers were recorded because they belong to other awards.",
+   "A reviewer should check the following catalog pages for the Management Certificate of Achievement section."
+  ]
+ },
+ "extracted_run": "39006380342"
+}

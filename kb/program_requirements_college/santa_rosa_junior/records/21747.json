@@ -1,0 +1,405 @@
+{
+ "college": "Santa Rosa Junior College",
+ "control_number": "21747",
+ "shape": "certificate",
+ "title": "Fire Technology",
+ "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+ "source_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=321",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 12397,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 12397,
+    "output_tokens": 2862,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2862,
+  "output_tokens_details": {
+   "thinking_tokens": 687
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.10683,
+ "ms": 22494,
+ "seconds": 22.8,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 29,
+   "listed": 29,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "FIRE84"
+   ],
+   "flagged": [
+    "FIRE84"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    30.0,
+    30.0
+   ],
+   "stated": [
+    30.0,
+    30.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 7,
+   "courses": 0,
+   "count": 7,
+   "not_verbatim": [
+    "Describe all elements of the fire service including: fire service history, culture and diversity; minimum qualifications and entry level skills; and all elements of the application, hiring and probationary process.",
+    "Analyze, appraise and evaluate fire and emergency incidents and identify components of emergency management and firefighter safety.",
+    "Identify and comprehend laws, regulations, codes and standards that influence fire department operations and identify regulatory and advisory organizations that create and mandate them, especially in the areas of fire prevention, building codes and ordinances and firefighter health and safety;",
+    "Analyze the causes of fire, determine extinguishing agents and methods; differentiate the stages of the fire and fire development, and compare methods of heat transfer;",
+    "Identify and describe the equipment and apparatus used in the fire service and the maintenance of said equipment and apparatus;",
+    "Identify and describe common types of building construction and conditions associated with structural collapse and firefighter safety; and",
+    "Differentiate between fire detection and alarm systems and identify common health and safety concerns of firefighters and first responders."
+   ],
+   "why": [
+    "not in the catalog text as printed: Describe all elements of the fire service including: fire service history, cultu",
+    "not in the catalog text as printed: Analyze, appraise and evaluate fire and emergency incidents and identify compone",
+    "not in the catalog text as printed: Identify and comprehend laws, regulations, codes and standards that influence fi",
+    "not in the catalog text as printed: Analyze the causes of fire, determine extinguishing agents and methods; differen",
+    "not in the catalog text as printed: Identify and describe the equipment and apparatus used in the fire service and t",
+    "not in the catalog text as printed: Identify and describe common types of building construction and conditions assoc",
+    "not in the catalog text as printed: Differentiate between fire detection and alarm systems and identify common healt"
+   ],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": false
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Fire Technology (Certificate of Achievement)",
+   "measure": "units",
+   "total_units": {
+    "min": 30,
+    "max": 30
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Describe all elements of the fire service including: fire service history, culture and diversity; minimum qualifications and entry level skills; and all elements of the application, hiring and probationary process.",
+    "Analyze, appraise and evaluate fire and emergency incidents and identify components of emergency management and firefighter safety.",
+    "Identify and comprehend laws, regulations, codes and standards that influence fire department operations and identify regulatory and advisory organizations that create and mandate them, especially in the areas of fire prevention, building codes and ordinances and firefighter health and safety;",
+    "Analyze the causes of fire, determine extinguishing agents and methods; differentiate the stages of the fire and fire development, and compare methods of heat transfer;",
+    "Identify and describe the equipment and apparatus used in the fire service and the maintenance of said equipment and apparatus;",
+    "Identify and describe common types of building construction and conditions associated with structural collapse and firefighter safety; and",
+    "Differentiate between fire detection and alarm systems and identify common health and safety concerns of firefighters and first responders."
+   ],
+   "careers": [
+    "fire service"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Fire Technology Requirements - Complete 30.00 Units",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "FIRE 71",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FIRE 72",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FIRE 73",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FIRE 74",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FIRE 76",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FIRE 78",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select any combination totaling at least 12.00 units from the following",
+    "rule": "choose_units",
+    "minimum": 12,
+    "option_group": null,
+    "stated": {
+     "min": 12,
+     "max": 12
+    },
+    "courses": [
+     {
+      "code": "EMC 100",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "EMC 103",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FIRE 50",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FIRE 61",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FIRE 69",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FIRE 77",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FIRE 80",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FIRE 81",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FIRE 82",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FIRE 83",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FIRE 84",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "FIRE 85",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FIRE 86A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FIRE 86B",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FIRE 86C",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FIRE 107.1",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FIRE 107.2",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FIRE 206",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FIRE 208",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FIRE 208.5",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FIRE 241",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FIRE 258",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FIRE 284.1",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FIRE 290",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Closed-list code 'FIRE83' is read as the catalog's 'FIRE 83 All Risk Command Operations for Company Officers' (same title); recorded as FIRE 83 with catalog_addition false.",
+   "FIRE 84 Wildland Incident Operations for Company Officers is in the catalog elective list but not in the closed list; recorded as catalog addition.",
+   "The elective list prints no units beside individual courses, only the block total of 12; course units left null.",
+   "The elective list continues across a page break (FIRE 290 appears at the top of page 322 under the Firefighter Academy running header) before 'Total Hours/Units 30'; FIRE 290 read as the last item of this Fire Technology elective list.",
+   "PDF ligature characters (e.g., 'ﬁ') were rendered as plain 'fi' in outcomes and careers.",
+   "The Firefighter Academy Certificate of Achievement section that follows was not used."
+  ]
+ },
+ "extracted_run": "39006464249"
+}

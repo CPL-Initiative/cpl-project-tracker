@@ -1,0 +1,182 @@
+{
+ "college": "Clovis Community College",
+ "load_run": "39006758162",
+ "function": "program_requirement_records_college_load",
+ "at": "2026-10-17T05:35:09Z",
+ "records": 115,
+ "posted": 100,
+ "batches": 4,
+ "inserted": 100,
+ "kept": 0,
+ "skipped": [
+  {
+   "control_number": "33431",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "33434",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "33460",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "33461",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "33484",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "33485",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "33489",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "33500",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "33503",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "33505",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "36539",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "38394",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "43376",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "44475",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "46537",
+   "why": "places none of its listed courses (another program's page)"
+  }
+ ],
+ "error": null,
+ "extracted_runs": [
+  "39006155986"
+ ],
+ "machine_pass": 68,
+ "inserted_keys": [
+  "33347",
+  "33367",
+  "33429",
+  "33430",
+  "33432",
+  "33433",
+  "33458",
+  "33459",
+  "33462",
+  "33464",
+  "33465",
+  "33466",
+  "33467",
+  "33468",
+  "33469",
+  "33470",
+  "33475",
+  "33476",
+  "33478",
+  "33479",
+  "33480",
+  "33481",
+  "33482",
+  "33483",
+  "33486",
+  "33487",
+  "33491",
+  "33492",
+  "33493",
+  "33494",
+  "33495",
+  "33497",
+  "33498",
+  "33499",
+  "33501",
+  "33502",
+  "33504",
+  "33506",
+  "33508",
+  "33768",
+  "33961",
+  "35129",
+  "35209",
+  "35535",
+  "35886",
+  "36050",
+  "36326",
+  "36632",
+  "36909",
+  "37030",
+  "37031",
+  "37033",
+  "37035",
+  "37039",
+  "37043",
+  "37044",
+  "37045",
+  "37227",
+  "37286",
+  "37289",
+  "37352",
+  "37948",
+  "37949",
+  "38401",
+  "38402",
+  "38403",
+  "39539",
+  "40009",
+  "40316",
+  "40703",
+  "41135",
+  "41136",
+  "41137",
+  "41138",
+  "41298",
+  "41534",
+  "42232",
+  "42234",
+  "42235",
+  "42379",
+  "42405",
+  "42706",
+  "42888",
+  "43015",
+  "43174",
+  "43175",
+  "43179",
+  "43501",
+  "43534",
+  "44139",
+  "44421",
+  "44422",
+  "44551",
+  "45315",
+  "45319",
+  "45325",
+  "45571",
+  "45746",
+  "45957",
+  "46536"
+ ],
+ "kept_keys": [],
+ "rollback": "delete from public.program_requirement_records where college = 'Clovis Community College' and checked = false and control_number in ('33347', '33367', '33429', '33430', '33432', '33433', '33458', '33459', '33462', '33464', '33465', '33466', '33467', '33468', '33469', '33470', '33475', '33476', '33478', '33479', '33480', '33481', '33482', '33483', '33486', '33487', '33491', '33492', '33493', '33494', '33495', '33497', '33498', '33499', '33501', '33502', '33504', '33506', '33508', '33768', '33961', '35129', '35209', '35535', '35886', '36050', '36326', '36632', '36909', '37030', '37031', '37033', '37035', '37039', '37043', '37044', '37045', '37227', '37286', '37289', '37352', '37948', '37949', '38401', '38402', '38403', '39539', '40009', '40316', '40703', '41135', '41136', '41137', '41138', '41298', '41534', '42232', '42234', '42235', '42379', '42405', '42706', '42888', '43015', '43174', '43175', '43179', '43501', '43534', '44139', '44421', '44422', '44551', '45315', '45319', '45325', '45571', '45746', '45957', '46536');"
+}

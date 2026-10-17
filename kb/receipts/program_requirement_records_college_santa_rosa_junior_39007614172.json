@@ -1,0 +1,428 @@
+{
+ "college": "Santa Rosa Junior College",
+ "load_run": "39007614172",
+ "function": "program_requirement_records_college_load",
+ "at": "2026-10-17T05:49:16Z",
+ "records": 268,
+ "posted": 222,
+ "batches": 9,
+ "inserted": 222,
+ "kept": 0,
+ "skipped": [
+  {
+   "control_number": "06606",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "06623",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "06626",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "09605",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "09616",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "13898",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "14704",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "15434",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "15494",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "16937",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "19287",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "19328",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "19329",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "21706",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "21709",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "21710",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "21719",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "21722",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "21724",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "21734",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "21737",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "21742",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "30732",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "30923",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "31201",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "31378",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "32253",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "32301",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "32328",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "32330",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "35252",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "37016",
+   "why": "extraction error: part 1 of 3: the record ran past max_tokens"
+  },
+  {
+   "control_number": "37254",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "39418",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "39901",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "39902",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "39903",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "39904",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "39939",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "39940",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "39941",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "39942",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "43236",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "44248",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "44303",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "44304",
+   "why": "places none of its listed courses (another program's page)"
+  }
+ ],
+ "error": null,
+ "extracted_runs": [
+  "39006464249"
+ ],
+ "machine_pass": 182,
+ "inserted_keys": [
+  "06563",
+  "06566",
+  "06569",
+  "06572",
+  "06573",
+  "06574",
+  "06586",
+  "06587",
+  "06590",
+  "06591",
+  "06592",
+  "06593",
+  "06596",
+  "06602",
+  "06605",
+  "06610",
+  "06633",
+  "09613",
+  "09626",
+  "09627",
+  "09690",
+  "09691",
+  "09692",
+  "09694",
+  "09704",
+  "09772",
+  "09791",
+  "12069",
+  "12072",
+  "13887",
+  "14148",
+  "14402",
+  "14416",
+  "14662",
+  "14703",
+  "14998",
+  "15243",
+  "15403",
+  "15430",
+  "15436",
+  "15461",
+  "15463",
+  "15499",
+  "15579",
+  "16498",
+  "16562",
+  "16567",
+  "16694",
+  "16695",
+  "16696",
+  "16699",
+  "16867",
+  "16906",
+  "16965",
+  "16986",
+  "17620",
+  "17637",
+  "17638",
+  "17639",
+  "17968",
+  "17969",
+  "18478",
+  "18745",
+  "18764",
+  "18922",
+  "18923",
+  "19288",
+  "19289",
+  "19402",
+  "19596",
+  "19597",
+  "19598",
+  "19599",
+  "19600",
+  "19616",
+  "19617",
+  "21708",
+  "21712",
+  "21713",
+  "21714",
+  "21718",
+  "21720",
+  "21726",
+  "21727",
+  "21728",
+  "21729",
+  "21738",
+  "21739",
+  "21740",
+  "21743",
+  "21744",
+  "21746",
+  "21747",
+  "24201",
+  "30346",
+  "30569",
+  "30602",
+  "30635",
+  "30750",
+  "30768",
+  "30769",
+  "30770",
+  "30816",
+  "30840",
+  "30913",
+  "31035",
+  "31080",
+  "31096",
+  "31097",
+  "31104",
+  "31461",
+  "31462",
+  "31463",
+  "32268",
+  "32298",
+  "32299",
+  "32300",
+  "32357",
+  "32559",
+  "32571",
+  "32758",
+  "32770",
+  "33166",
+  "33316",
+  "33553",
+  "35044",
+  "35248",
+  "35400",
+  "35401",
+  "35429",
+  "35738",
+  "35873",
+  "35875",
+  "35904",
+  "35935",
+  "35972",
+  "36075",
+  "36078",
+  "36088",
+  "36114",
+  "36190",
+  "36379",
+  "36450",
+  "36633",
+  "36666",
+  "36875",
+  "37040",
+  "37299",
+  "37824",
+  "37929",
+  "37968",
+  "37990",
+  "38023",
+  "38025",
+  "38436",
+  "38700",
+  "38721",
+  "38722",
+  "39242",
+  "39244",
+  "39472",
+  "39900",
+  "39943",
+  "40690",
+  "40890",
+  "41201",
+  "41202",
+  "41203",
+  "41204",
+  "41631",
+  "42243",
+  "42268",
+  "42269",
+  "42341",
+  "42467",
+  "42624",
+  "42626",
+  "42752",
+  "42870",
+  "42871",
+  "42873",
+  "43237",
+  "43241",
+  "43242",
+  "43243",
+  "43253",
+  "43254",
+  "43255",
+  "43383",
+  "43387",
+  "43926",
+  "43952",
+  "44043",
+  "44199",
+  "44201",
+  "44203",
+  "44226",
+  "44227",
+  "44269",
+  "44276",
+  "44277",
+  "44293",
+  "44294",
+  "44295",
+  "44305",
+  "44306",
+  "44307",
+  "44308",
+  "44309",
+  "44788",
+  "44893",
+  "45234",
+  "45477",
+  "45486",
+  "45522",
+  "45523",
+  "45558",
+  "45559",
+  "45601",
+  "45782",
+  "46133",
+  "46305"
+ ],
+ "kept_keys": [],
+ "rollback": "delete from public.program_requirement_records where college = 'Santa Rosa Junior College' and checked = false and control_number in ('06563', '06566', '06569', '06572', '06573', '06574', '06586', '06587', '06590', '06591', '06592', '06593', '06596', '06602', '06605', '06610', '06633', '09613', '09626', '09627', '09690', '09691', '09692', '09694', '09704', '09772', '09791', '12069', '12072', '13887', '14148', '14402', '14416', '14662', '14703', '14998', '15243', '15403', '15430', '15436', '15461', '15463', '15499', '15579', '16498', '16562', '16567', '16694', '16695', '16696', '16699', '16867', '16906', '16965', '16986', '17620', '17637', '17638', '17639', '17968', '17969', '18478', '18745', '18764', '18922', '18923', '19288', '19289', '19402', '19596', '19597', '19598', '19599', '19600', '19616', '19617', '21708', '21712', '21713', '21714', '21718', '21720', '21726', '21727', '21728', '21729', '21738', '21739', '21740', '21743', '21744', '21746', '21747', '24201', '30346', '30569', '30602', '30635', '30750', '30768', '30769', '30770', '30816', '30840', '30913', '31035', '31080', '31096', '31097', '31104', '31461', '31462', '31463', '32268', '32298', '32299', '32300', '32357', '32559', '32571', '32758', '32770', '33166', '33316', '33553', '35044', '35248', '35400', '35401', '35429', '35738', '35873', '35875', '35904', '35935', '35972', '36075', '36078', '36088', '36114', '36190', '36379', '36450', '36633', '36666', '36875', '37040', '37299', '37824', '37929', '37968', '37990', '38023', '38025', '38436', '38700', '38721', '38722', '39242', '39244', '39472', '39900', '39943', '40690', '40890', '41201', '41202', '41203', '41204', '41631', '42243', '42268', '42269', '42341', '42467', '42624', '42626', '42752', '42870', '42871', '42873', '43237', '43241', '43242', '43243', '43253', '43254', '43255', '43383', '43387', '43926', '43952', '44043', '44199', '44201', '44203', '44226', '44227', '44269', '44276', '44277', '44293', '44294', '44295', '44305', '44306', '44307', '44308', '44309', '44788', '44893', '45234', '45477', '45486', '45522', '45523', '45558', '45559', '45601', '45782', '46133', '46305');"
+}

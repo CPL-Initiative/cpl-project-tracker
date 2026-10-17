@@ -1,0 +1,221 @@
+{
+ "college": "Los Angeles City College",
+ "control_number": "46374",
+ "shape": "degree",
+ "title": "Food, Science and Technology",
+ "award": "A.S. Degree",
+ "source_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=153",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 11775,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 11775,
+    "output_tokens": 1397,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1397,
+  "output_tokens_details": {
+   "thinking_tokens": 247
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.07504,
+ "ms": 12155,
+ "seconds": 12.5,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 16,
+   "share": 0.0,
+   "missing": [
+    "BIOLOGY6",
+    "BIOLOGY7",
+    "CHEM101",
+    "CHEM102",
+    "CHEM211",
+    "CHEM212",
+    "CHEM71",
+    "CHEM72",
+    "FAM&CS21",
+    "MATH239",
+    "MATH261",
+    "MATH261S",
+    "MICRO1",
+    "MICRO20",
+    "PHYSICS101",
+    "PHYSICS6"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": true,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "BIOLOGY 6",
+    "why": "Food Science A.S. section not in the text; named only in the Liberal Arts AA and Biology AS-T sections"
+   },
+   {
+    "code": "BIOLOGY 7",
+    "why": "Food Science A.S. section not in the text; named only in the Liberal Arts AA and Biology AS-T sections"
+   },
+   {
+    "code": "CHEM 101",
+    "why": "Food Science A.S. section not in the text; named only in the Liberal Arts AA and Biology AS-T sections"
+   },
+   {
+    "code": "CHEM 102",
+    "why": "Food Science A.S. section not in the text; named only in the Liberal Arts AA and Biology AS-T sections"
+   },
+   {
+    "code": "CHEM 211",
+    "why": "Food Science A.S. section not in the text; named only in the Liberal Arts AA section"
+   },
+   {
+    "code": "CHEM 212",
+    "why": "Food Science A.S. section not in the text; named only in the Liberal Arts AA section"
+   },
+   {
+    "code": "CHEM 72",
+    "why": "Food Science A.S. section not in the text; named only in the Liberal Arts AA section"
+   },
+   {
+    "code": "CHEM071",
+    "why": "Food Science A.S. section not in the text; named only in the Liberal Arts AA section (as CHEM 071)"
+   },
+   {
+    "code": "FAM &CS 21",
+    "why": "Food Science A.S. section not in the text; named only in the Liberal Arts AA section"
+   },
+   {
+    "code": "MATH 239",
+    "why": "Food Science A.S. section not in the text; named only in the Liberal Arts AA section"
+   },
+   {
+    "code": "MATH 261",
+    "why": "Food Science A.S. section not in the text; named only in the Liberal Arts AA and Biology AS-T sections"
+   },
+   {
+    "code": "MATH 261S",
+    "why": "Food Science A.S. section not in the text; named only in the Liberal Arts AA section"
+   },
+   {
+    "code": "MICRO 1",
+    "why": "Food Science A.S. section not in the text; named only in the Liberal Arts AA section"
+   },
+   {
+    "code": "MICRO 20",
+    "why": "Food Science A.S. section not in the text; named only in the Liberal Arts AA section"
+   },
+   {
+    "code": "PHYSICS 101",
+    "why": "Food Science A.S. section not in the text; named only in the Liberal Arts AA and Biology AS-T sections"
+   },
+   {
+    "code": "PHYSICS 6",
+    "why": "Food Science A.S. section not in the text; named only in the Liberal Arts AA and Biology AS-T sections"
+   }
+  ],
+  "notes": [
+   "The supplied catalog text (pages 153-155) contains only the Liberal Arts: Natural and Applied Sciences and Mathematics AA section and the Biology AS-T section; no section for the Food, Science and Technology A.S. Degree appears, so no section heading, blocks, totals, outcomes or careers were recorded.",
+   "The source link points to page 153; the Food Science program likely appears elsewhere in the catalog (e.g., under Chemistry or Family and Consumer Studies). A reviewer should locate the correct page and re-extract.",
+   "Courses from other programs' sections were deliberately not recorded to avoid attributing another award's requirements to this program."
+  ]
+ },
+ "extracted_run": "39006380342"
+}

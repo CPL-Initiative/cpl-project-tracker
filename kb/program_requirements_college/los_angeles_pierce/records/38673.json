@@ -1,0 +1,275 @@
+{
+ "college": "Los Angeles Pierce College",
+ "control_number": "38673",
+ "shape": "adt",
+ "title": "Hospitality Management",
+ "award": "A.S. T Degree",
+ "source_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=58",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 11800,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 11800,
+    "output_tokens": 1955,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1955,
+  "output_tokens_details": {
+   "thinking_tokens": 610
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.0863,
+ "ms": 16734,
+ "seconds": 17.0,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 9,
+   "listed": 10,
+   "share": 0.9,
+   "missing": [
+    "ECON1"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 2,
+   "codes": [
+    "ECONC2001",
+    "MATH229"
+   ],
+   "flagged": [
+    "ECONC2001",
+    "MATH229"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    18.0,
+    22.0
+   ],
+   "stated": [
+    18.0,
+    22.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 6,
+   "courses": 0,
+   "count": 6,
+   "not_verbatim": [
+    "Communicate effectively and confidently in the classroom, community, and industry.",
+    "Use knowledge of best practices to further sustainability (economic, environmental, and cultural/social) in the industry."
+   ],
+   "why": [
+    "not in the catalog text as printed: Communicate effectively and confidently in the classroom, community, and industr",
+    "not in the catalog text as printed: Use knowledge of best practices to further sustainability (economic, environment"
+   ],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": false
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "HOSPITALITY MANAGEMENT",
+   "measure": "units",
+   "total_units": {
+    "min": 18,
+    "max": 22
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": 34,
+    "max": 34
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Use the knowledge and skills associated with problem solving, critical thinking, and decision making to function effectively in the classroom, community, and industry.",
+    "Demonstrate leadership and teamwork to achieve common goals.",
+    "Communicate effectively and confidently in the classroom, community, and industry.",
+    "Demonstrate knowledge of multicultural perspectives to meet the needs of guests and employees.",
+    "Use knowledge of best practices to further sustainability (economic, environmental, and cultural/social) in the industry.",
+    "Demonstrate ability to perform basic and supervisory level job functions in travel/tourism careers."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "MAJOR - REQUIRED COURSES",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "HOSPT 100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List A: Select three courses from the following",
+    "rule": "choose_courses",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 9,
+     "max": 9
+    },
+    "courses": [
+     {
+      "code": "ECON C2001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HOSPT 120",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HOSPT 140",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List B: Select two courses from the following",
+    "rule": "choose_courses",
+    "minimum": 2,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 10
+    },
+    "courses": [
+     {
+      "code": "ACCTG 001",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CAOT 082",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HOSPT 136",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 228B",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MATH 229",
+        "units": 4,
+        "catalog_addition": true
+       },
+       {
+        "code": "STAT 101",
+        "units": 4,
+        "catalog_addition": false
+       },
+       {
+        "code": "STAT C1000",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ECON 1",
+    "why": "not in the text; catalog prints ECON C2001 Principles of Microeconomics (common course number) in List A instead"
+   }
+  ],
+  "notes": [
+   "List B also allows 'Any course from List A not already used' (ECON C2001, HOSPT 120, HOSPT 140); those courses are recorded once, in List A.",
+   "ACCTG 001 and CAOT 082 are read as the closed list's ACCTG 1 and CAOT 82 (leading zeros).",
+   "ECON C2001 recorded as a catalog addition; it appears to be the common-course-numbered successor of closed-list ECON 1 Principles of Microeconomics. Reviewer should confirm.",
+   "The 60-unit sentence is the generic ADT requirement, not printed as this award's total, so degree_total is null. GE units (34) taken from the award table 'Cal-GETC (34 units)'.",
+   "'travel/tourism careers' appears only inside a program learning outcome, not as a named career list; careers left empty.",
+   "PDF text shows spacing artifacts (e.g., 'MA TH 228B', 'ST A T 101'); codes normalized to MATH 228B, STAT 101, STAT C1000."
+  ]
+ },
+ "extracted_run": "39006383070"
+}

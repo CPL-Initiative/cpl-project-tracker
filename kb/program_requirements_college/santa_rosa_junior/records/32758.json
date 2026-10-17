@@ -1,0 +1,394 @@
+{
+ "college": "Santa Rosa Junior College",
+ "control_number": "32758",
+ "shape": "adt",
+ "title": "Economics",
+ "award": "A.A- T Degree",
+ "source_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=143",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7895,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7895,
+    "output_tokens": 4073,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 4073,
+  "output_tokens_details": {
+   "thinking_tokens": 1804
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.11304,
+ "ms": 34352,
+ "seconds": 34.7,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 12,
+   "listed": 19,
+   "share": 0.632,
+   "missing": [
+    "ECONC2001",
+    "ECONC2002",
+    "MATH16",
+    "MATHC2210",
+    "MATHC2220",
+    "SOCIC1000",
+    "STATC1000"
+   ],
+   "unexplained": [
+    "SOCIC1000"
+   ],
+   "none_placed": false,
+   "pass": false
+  },
+  "invented": {
+   "count": 3,
+   "codes": [
+    "AGBU7",
+    "MATH5",
+    "SOC1"
+   ],
+   "flagged": [
+    "AGBU7",
+    "MATH5"
+   ],
+   "pass": false
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    3.0,
+    3.0
+   ],
+   "stated": [
+    19.0,
+    19.0
+   ],
+   "against": "program",
+   "why": [
+    "'List A' chooses units but names no minimum"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Economics for Transfer List B Requirements",
+   "measure": "units",
+   "total_units": {
+    "min": 19,
+    "max": 19
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Apply economic theories and economic reasoning to real life situations using the concepts of scarcity, marginal analysis, opportunity cost for individual and collective decision-making;",
+    "Use analytical techniques to measure economic conditions related to the individual, business ﬁrms, industries, and economic systems;",
+    "Explain the role that households, business organizations, governments, and the international sector, play in free markets, command economics, and mixed economies; and",
+    "Evaluate the objectives, limitations, and mechanics of regulation, taxation, tariffs, quotas, and monetary and ﬁscal policies."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "List A",
+    "rule": "choose_units",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "BAD 2",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BAD 18",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BMG 52",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COMM 3",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COMM 9",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CS 84.21",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL C1001",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 9",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHIL 5",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC 1",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Economics for Transfer List B Requirements",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "AGBU 7",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BAD 1",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BAD 2",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BAD 18",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BMG 52",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COMM 3",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COMM 9",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CS 84.21",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECON 12",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECON 30",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL C1001",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 5",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MATH 9",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHIL 5",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC 1",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ECON C2001",
+    "why": "not in the text; likely in the core on the previous page (142), which was not provided"
+   },
+   {
+    "code": "ECON C2002",
+    "why": "not in the text; likely in the core on the previous page (142), which was not provided"
+   },
+   {
+    "code": "STAT C1000",
+    "why": "not in the text; likely in the core or List A start on page 142, not provided"
+   },
+   {
+    "code": "MATH 16",
+    "why": "not in the text; likely in the core or List A start on page 142, not provided"
+   },
+   {
+    "code": "MATH C2210",
+    "why": "not in the text; likely in the core or List A start on page 142, not provided"
+   },
+   {
+    "code": "MATH C2220",
+    "why": "not in the text; likely in the core or List A start on page 142, not provided"
+   }
+  ],
+  "notes": [
+   "The text starts mid-section on page 143: the Economics AA-T heading, program description, core requirements and the List A heading/rule are on the previous page and were not provided. The first block (BAD 2 through SOC 1) is the tail of List A; its name is taken from the note referencing 'List A', and its rule and minimum are unknown (recorded as choose_units with null minimum). Reviewer should check page 142.",
+   "Section heading recorded as the only Economics heading visible in the text ('Economics for Transfer List B Requirements'); the award's main heading is not in the text.",
+   "Total Hours/Units 19 recorded as the major total. No degree total or GE units are printed in the Economics section; the 60-unit/Cal-GETC ADT text appears under the following Electrical Union Apprentice (AS) section and was not applied to this award. ge_pattern left null because the Economics portion shown does not name a GE pattern.",
+   "No units are printed beside individual courses on this page, so course units are null.",
+   "ENGL 1001 is printed as 'ENGL 1001 (ENGL C1001)'; recorded as ENGL C1001 matching the closed list.",
+   "Catalog prints 'SOC 1 Introduction to Sociology'; treated as the closed list's SOCIC1000 (Introduction to Sociology, same title, common course numbering) and not flagged as an addition. Catalog prints 'MATH 9', matched to closed-list 'MATH9'. Reviewer should confirm.",
+   "Note printed: a course used to satisfy List A may not also be used to satisfy List B.",
+   "Program Student Learning Outcomes printed after the Economics requirements were recorded for this award; the ligature characters in 'ﬁrms' and 'ﬁscal' are kept as printed."
+  ]
+ },
+ "extracted_run": "39006464249"
+}

@@ -1,0 +1,208 @@
+{
+ "college": "Los Angeles Pierce College",
+ "control_number": "46331",
+ "shape": "certificate",
+ "title": "Chemical Technology",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=95",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 10086,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 10086,
+    "output_tokens": 1962,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1962,
+  "output_tokens_details": {
+   "thinking_tokens": 605
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.07958,
+ "ms": 16261,
+ "seconds": 17.0,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 5,
+   "listed": 5,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    20.0,
+    20.0
+   ],
+   "stated": [
+    20.0,
+    20.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 7,
+   "courses": 0,
+   "count": 7,
+   "not_verbatim": [
+    "Demonstrate professional workplace competencies including reliability, punctuality, organizational skills, attention to detail, and professional attitudes consistent with quality control laboratory environments.",
+    "Collaborate effectively as contributing members of laboratory teams by communicating clearly, sharing responsibilities, following protocols, and supporting collaborative problem-solving in quality control operations.",
+    "Apply analytical and problem-solving skills by performing quality control testing, designing and conducting experiments, interpreting analytical results, executing chemical calculations, utilizing laboratory information management systems (LIMS), and applying appropriate analytical techniques including spectrophotometric, gravimetric, and volumetric methods.",
+    "Communicate technical information effectively in written and oral formats using appropriate chemical and biotechnology terminology, including preparation of laboratory reports, standard operating procedures, and documentation meeting industry standards.",
+    "Possess foundational skills, knowledge, and laboratory competencies needed for entry-level employment as chemical technology laboratory technicians and for continued academic advancement through the Associate of Science Degree in Chemical Technology or transfer to four-year institutions pursuing bachelor’s degrees in chemistry, biotechnology, or related fields."
+   ],
+   "why": [
+    "not in the catalog text as printed: Demonstrate professional workplace competencies including reliability, punctuali",
+    "not in the catalog text as printed: Collaborate effectively as contributing members of laboratory teams by communica",
+    "not in the catalog text as printed: Apply analytical and problem-solving skills by performing quality control testin",
+    "not in the catalog text as printed: Communicate technical information effectively in written and oral formats using ",
+    "not in the catalog text as printed: Possess foundational skills, knowledge, and laboratory competencies needed for e"
+   ],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": false
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "CHEMICAL TECHNOLOGY Certificate of Achievement (STATE CODE 46331)",
+   "measure": "units",
+   "total_units": {
+    "min": 20,
+    "max": 20
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Demonstrate professional workplace competencies including reliability, punctuality, organizational skills, attention to detail, and professional attitudes consistent with quality control laboratory environments.",
+    "Collaborate effectively as contributing members of laboratory teams by communicating clearly, sharing responsibilities, following protocols, and supporting collaborative problem-solving in quality control operations.",
+    "Apply analytical and problem-solving skills by performing quality control testing, designing and conducting experiments, interpreting analytical results, executing chemical calculations, utilizing laboratory information management systems (LIMS), and applying appropriate analytical techniques including spectrophotometric, gravimetric, and volumetric methods.",
+    "Maintain safe laboratory practices and compliance by identifying chemical hazards, assessing and mitigating risks, properly using Safety Data Sheets, selecting appropriate personal protective equipment, implementing engineering controls, and responding appropriately to laboratory emergencies in accordance with good manufacturing practices (GMP).",
+    "Communicate technical information effectively in written and oral formats using appropriate chemical and biotechnology terminology, including preparation of laboratory reports, standard operating procedures, and documentation meeting industry standards.",
+    "Conduct technical research by performing literature searches and gathering information related to quality control methods, analytical procedures, validation protocols, and biotechnology applications relevant to pharmaceutical, food, agricultural, and chemical industries.",
+    "Possess foundational skills, knowledge, and laboratory competencies needed for entry-level employment as chemical technology laboratory technicians and for continued academic advancement through the Associate of Science Degree in Chemical Technology or transfer to four-year institutions pursuing bachelor’s degrees in chemistry, biotechnology, or related fields."
+   ],
+   "careers": [
+    "laboratory technicians"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "CERTIFICATE - REQUIRED COURSES",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "BIOTECH 002",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOTECH 006",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 101",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 102",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PLNT SC 103",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Read only the Certificate of Achievement section (State Code 46331, major code P046331D); the A.S. degree section above it (34 major units, adds CHEM 211, CHEM 212, STAT C1000) was not used.",
+   "Catalog prints codes with leading zeros (BIOTECH 002, BIOTECH 006), matched to closed-list BIOTECH 2 and BIOTECH 6.",
+   "Outcomes copied with PDF line-break hyphenation removed (e.g., 'reli -ability' read as 'reliability', 'competen -cies' as 'competencies'); the last outcome continues across the page break from page 95 to 96.",
+   "Career taken from the program description ('entry-level employment as laboratory technicians in pharmaceutical, biotechnology, food, agricultural, and chemical industries'); the last outcome also mentions 'chemical technology laboratory technicians'. Gainful Employment section refers to an external website for careers."
+  ]
+ },
+ "extracted_run": "39006383070"
+}

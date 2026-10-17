@@ -1,0 +1,158 @@
+{
+ "college": "Los Angeles City College",
+ "control_number": "40889",
+ "shape": "certificate",
+ "title": "FRENCH LANGUAGE AND CIVILIZATION – INTERMEDIATE LEVEL",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=125",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 9123,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 9123,
+    "output_tokens": 877,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 877,
+  "output_tokens_details": {
+   "thinking_tokens": 201
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.05403,
+ "ms": 8364,
+ "seconds": 8.7,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 4,
+   "share": 0.0,
+   "missing": [
+    "FRENCH10",
+    "FRENCH3",
+    "FRENCH4",
+    "FRENCH7"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Not found in the text (page 125 shows only a course list under the running header 'ABOUT OUR CAREER AND ACADEMIC PATHWAYS')",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "FRENCH 3",
+    "why": "Certificate section not in the text; FRENCH 003 appears only in another program's humanities elective list"
+   },
+   {
+    "code": "FRENCH 4",
+    "why": "Certificate section not in the text; FRENCH 004 appears only in another program's humanities elective list"
+   },
+   {
+    "code": "FRENCH 7",
+    "why": "Certificate section not in the text; FRENCH 007 appears only in another program's humanities elective list"
+   },
+   {
+    "code": "FRENCH 10",
+    "why": "Certificate section not in the text; FRENCH 010 appears only in another program's humanities elective list"
+   }
+  ],
+  "notes": [
+   "The supplied text (PDF page 125) does not contain the French Language and Civilization – Intermediate Level Certificate of Achievement section. It is the continuation of a long elective list from another program (likely an arts/humanities degree), which ends with 'OR ANY COURSES NOT LISTED ABOVE APPROVED FOR LACCD GE AREA 3; CAL-GETC AREA 3A, 3B; CSU GE-BREADTH AREA C1, C2; IGETC AREA 3A, 3B.'",
+   "FRENCH 001, 002, 003, 004, 007 and 010 appear in that list, but its heading, rule and units requirement are on a previous page and it is not this certificate's requirement list, so no blocks were recorded.",
+   "Reviewer should check the catalog's French program page (likely a different page number) for the certificate's actual requirements, total units, outcomes and careers."
+  ]
+ },
+ "extracted_run": "39006380342"
+}

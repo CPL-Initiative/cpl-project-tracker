@@ -1,0 +1,1140 @@
+{
+ "college": "Los Angeles City College",
+ "control_number": "32832",
+ "shape": "adt",
+ "title": "ART HISTORY",
+ "award": "A.A- T Degree",
+ "source_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=125",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 12258,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 12258,
+    "output_tokens": 7610,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 7610,
+  "output_tokens_details": {
+   "thinking_tokens": 1560
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.20123,
+ "ms": 53968,
+ "seconds": 54.3,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 71,
+   "listed": 139,
+   "share": 0.511,
+   "missing": [
+    "AFROAM7",
+    "ANTHRO102",
+    "ANTHRO121",
+    "ANTHRO151",
+    "ARMEN1",
+    "ARMEN11",
+    "ARMEN12",
+    "ARMEN2",
+    "ARMEN35",
+    "ARMEN36",
+    "ART201",
+    "ART202",
+    "ART204",
+    "ART205",
+    "ART209",
+    "ART282",
+    "ART300",
+    "ART301",
+    "ART302",
+    "ART304",
+    "ART305",
+    "ART306",
+    "ART307",
+    "ART308",
+    "ART309",
+    "ART407",
+    "ART501",
+    "ART502",
+    "ART603",
+    "ART606",
+    "ART620",
+    "ART634",
+    "ART700",
+    "ART701",
+    "ART702",
+    "ART708",
+    "ART709",
+    "ART710",
+    "ARTHC1100",
+    "ARTHC1200",
+    "ARTHIST103",
+    "ARTHIST130",
+    "ARTHIST139",
+    "ARTHIST140",
+    "ARTHIST151",
+    "ARTHIST171",
+    "ASIAN1",
+    "CHICANO4",
+    "CHICANO47",
+    "CHICANO7",
+    "CHICANO8",
+    "CHINESE1",
+    "CHINESE10",
+    "CHINESE2",
+    "CHINESE3",
+    "CHINESE4",
+    "CINEMA18",
+    "CINEMA4",
+    "DANCEST805",
+    "PHOTO7",
+    "POLSCI19",
+    "SOC22",
+    "SOC31",
+    "SPANISH11",
+    "SPANISH15",
+    "SPANISH35",
+    "SPANISH36",
+    "SPANISH6"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 16,
+   "codes": [
+    "ENGLISH214",
+    "ENGLISH215",
+    "ENGLISH218",
+    "ENGLISH239",
+    "ENGLISH240",
+    "ENGLISH255",
+    "ENGLISH270",
+    "FRENCH7",
+    "HUMAN1",
+    "HUMAN61",
+    "JOURNAL101",
+    "JOURNAL108",
+    "JOURNAL123",
+    "KOREAN11",
+    "MUSIC200",
+    "PHILOS42"
+   ],
+   "flagged": [
+    "ENGLISH214",
+    "ENGLISH215",
+    "ENGLISH218",
+    "ENGLISH239",
+    "ENGLISH240",
+    "ENGLISH255",
+    "ENGLISH270",
+    "FRENCH7",
+    "HUMAN1",
+    "HUMAN61",
+    "JOURNAL101",
+    "JOURNAL108",
+    "JOURNAL123",
+    "KOREAN11",
+    "MUSIC200",
+    "PHILOS42"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "'Continuation list (heading not in supplied text)' chooses courses but names no minimum",
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Not printed in supplied text (page 125 shows only the continuation of a course list)",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Continuation list (heading not in supplied text)",
+    "rule": "choose_courses",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ENGLISH 214",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ENGLISH 215",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ENGLISH 218",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ENGLISH 239",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ENGLISH 240",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ENGLISH 255",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ENGLISH 270",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "FRENCH 001",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FRENCH 002",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FRENCH 003",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FRENCH 004",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FRENCH 007",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "FRENCH 010",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HISTORY 005",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HISTORY 006",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HISTORY 007",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HISTORY 059",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HISTORY 073",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HISTORY 081",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HISTORY 082",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HISTORY 086",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HISTORY 087",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST C1001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST C1002",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HUMAN 001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HUMAN 006",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HUMAN 008",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HUMAN 030",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HUMAN 031",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HUMAN 061",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "JAPAN 001",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "JAPAN 002",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "JAPAN 003",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "JAPAN 004",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "JAPAN 009",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "JAPAN 014",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "JOURNAL 101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "JOURNAL 108",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "JOURNAL 123",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "KOREAN 001",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KOREAN 002",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KOREAN 003",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KOREAN 004",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KOREAN 010",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KOREAN 011",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "KOREAN 013",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KOREAN 021",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KOREAN 022",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KOREAN 026",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "LING 001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSIC 101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSIC 111",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSIC 116",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSIC 121",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSIC 122",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSIC 135",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSIC 136",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSIC 141",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSIC 200",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PHILOS 001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHILOS 014",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHILOS 020",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHILOS 030",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHILOS 032",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHILOS 040",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHILOS 042",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PHOTO 010",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHOTO 034",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHOTO 501",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "POL SCI 005",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "RUSSIAN 001",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "RUSSIAN 002",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "RUSSIAN 003",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "RUSSIAN 004",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "RUSSIAN 010",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPANISH 001",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPANISH 002",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPANISH 003",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPANISH 004",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPANISH 009",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPANISH 010",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPANISH 021",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPANISH 022",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THEATER 100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THEATER 110",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THEATER 338",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THEATER 400",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "AFRO AM 7",
+    "why": "not in the text (likely on cut-off preceding page)"
+   },
+   {
+    "code": "ANTHRO 102",
+    "why": "not in the text (likely on cut-off preceding page)"
+   },
+   {
+    "code": "ANTHRO 121",
+    "why": "not in the text (likely on cut-off preceding page)"
+   },
+   {
+    "code": "ANTHRO 151",
+    "why": "not in the text (likely on cut-off preceding page)"
+   },
+   {
+    "code": "ARMEN 1",
+    "why": "not in the text (likely on cut-off preceding page)"
+   },
+   {
+    "code": "ARMEN 11",
+    "why": "not in the text (likely on cut-off preceding page)"
+   },
+   {
+    "code": "ARMEN 12",
+    "why": "not in the text (likely on cut-off preceding page)"
+   },
+   {
+    "code": "ARMEN 2",
+    "why": "not in the text (likely on cut-off preceding page)"
+   },
+   {
+    "code": "ARMEN 35",
+    "why": "not in the text (likely on cut-off preceding page)"
+   },
+   {
+    "code": "ARMEN 36",
+    "why": "not in the text (likely on cut-off preceding page)"
+   },
+   {
+    "code": "ART 201",
+    "why": "not in the text"
+   },
+   {
+    "code": "ART 202",
+    "why": "not in the text"
+   },
+   {
+    "code": "ART 204",
+    "why": "not in the text"
+   },
+   {
+    "code": "ART 205",
+    "why": "not in the text"
+   },
+   {
+    "code": "ART 209",
+    "why": "not in the text"
+   },
+   {
+    "code": "ART 282",
+    "why": "not in the text"
+   },
+   {
+    "code": "ART 300",
+    "why": "not in the text"
+   },
+   {
+    "code": "ART 301",
+    "why": "not in the text"
+   },
+   {
+    "code": "ART 302",
+    "why": "not in the text"
+   },
+   {
+    "code": "ART 304",
+    "why": "not in the text"
+   },
+   {
+    "code": "ART 305",
+    "why": "not in the text"
+   },
+   {
+    "code": "ART 306",
+    "why": "not in the text"
+   },
+   {
+    "code": "ART 307",
+    "why": "not in the text"
+   },
+   {
+    "code": "ART 308",
+    "why": "not in the text"
+   },
+   {
+    "code": "ART 309",
+    "why": "not in the text"
+   },
+   {
+    "code": "ART 407",
+    "why": "not in the text"
+   },
+   {
+    "code": "ART 501",
+    "why": "not in the text"
+   },
+   {
+    "code": "ART 502",
+    "why": "not in the text"
+   },
+   {
+    "code": "ART 603",
+    "why": "not in the text"
+   },
+   {
+    "code": "ART 606",
+    "why": "not in the text"
+   },
+   {
+    "code": "ART 620",
+    "why": "not in the text"
+   },
+   {
+    "code": "ART 634",
+    "why": "not in the text"
+   },
+   {
+    "code": "ART 700",
+    "why": "not in the text"
+   },
+   {
+    "code": "ART 701",
+    "why": "not in the text"
+   },
+   {
+    "code": "ART 702",
+    "why": "not in the text"
+   },
+   {
+    "code": "ART 708",
+    "why": "not in the text"
+   },
+   {
+    "code": "ART 709",
+    "why": "not in the text"
+   },
+   {
+    "code": "ART 710",
+    "why": "not in the text"
+   },
+   {
+    "code": "ARTHC1100",
+    "why": "not in the text (core likely on preceding page)"
+   },
+   {
+    "code": "ARTHC1200",
+    "why": "not in the text (core likely on preceding page)"
+   },
+   {
+    "code": "ARTHIST 103",
+    "why": "not in the text"
+   },
+   {
+    "code": "ARTHIST 130",
+    "why": "not in the text"
+   },
+   {
+    "code": "ARTHIST 139",
+    "why": "not in the text"
+   },
+   {
+    "code": "ARTHIST 140",
+    "why": "not in the text"
+   },
+   {
+    "code": "ARTHIST 151",
+    "why": "not in the text"
+   },
+   {
+    "code": "ARTHIST 171",
+    "why": "not in the text"
+   },
+   {
+    "code": "ASIAN 1",
+    "why": "not in the text (likely on cut-off preceding page)"
+   },
+   {
+    "code": "CHICANO 4",
+    "why": "not in the text (likely on cut-off preceding page)"
+   },
+   {
+    "code": "CHICANO 47",
+    "why": "not in the text (likely on cut-off preceding page)"
+   },
+   {
+    "code": "CHICANO 7",
+    "why": "not in the text (likely on cut-off preceding page)"
+   },
+   {
+    "code": "CHICANO 8",
+    "why": "not in the text (likely on cut-off preceding page)"
+   },
+   {
+    "code": "CHINESE 1",
+    "why": "not in the text (likely on cut-off preceding page)"
+   },
+   {
+    "code": "CHINESE 10",
+    "why": "not in the text (likely on cut-off preceding page)"
+   },
+   {
+    "code": "CHINESE 2",
+    "why": "not in the text (likely on cut-off preceding page)"
+   },
+   {
+    "code": "CHINESE 3",
+    "why": "not in the text (likely on cut-off preceding page)"
+   },
+   {
+    "code": "CHINESE 4",
+    "why": "not in the text (likely on cut-off preceding page)"
+   },
+   {
+    "code": "CINEMA 18",
+    "why": "not in the text (likely on cut-off preceding page)"
+   },
+   {
+    "code": "CINEMA 4",
+    "why": "not in the text (likely on cut-off preceding page)"
+   },
+   {
+    "code": "DANCEST 805",
+    "why": "not in the text (likely on cut-off preceding page)"
+   },
+   {
+    "code": "PHOTO 7",
+    "why": "not in the text"
+   },
+   {
+    "code": "POL SCI 19",
+    "why": "not in the text"
+   },
+   {
+    "code": "SOC 22",
+    "why": "not in the text"
+   },
+   {
+    "code": "SOC 31",
+    "why": "not in the text"
+   },
+   {
+    "code": "SPANISH 11",
+    "why": "not in the text"
+   },
+   {
+    "code": "SPANISH 15",
+    "why": "not in the text"
+   },
+   {
+    "code": "SPANISH 35",
+    "why": "not in the text"
+   },
+   {
+    "code": "SPANISH 36",
+    "why": "not in the text"
+   },
+   {
+    "code": "SPANISH 6",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "The supplied text is only page 125, which begins mid-list; the Art History A.A.-T heading, description, core courses, other lists, totals, outcomes and careers are not in the text (likely on page 124 or earlier). The section could not be confirmed as the Art History A.A.-T; it is read as such because the list overlaps the closed list heavily and ends with the Area 3 catch-all typical of the Art History TMC List C.",
+   "Block name, rule and minimum are not printed in the supplied text; rule recorded as choose_courses with minimum null. Reviewer should check the preceding page for the list heading and number of courses/units required.",
+   "The list ends with 'OR ANY COURSES NOT LISTED ABOVE APPROVED FOR LACCD GE AREA 3; CAL-GETC AREA 3A, 3B; CSU GE-BREADTH AREA C1, C2; IGETC AREA 3A, 3B.' — this open option belongs to this block, not open electives.",
+   "Catalog codes are printed with leading zeros (e.g., FRENCH 001) and were matched to closed-list codes without them (FRENCH 1); HIST C1001/C1002 (formerly HISTORY 011/012) matched HISTC1001/HISTC1002.",
+   "No outcomes or careers appear in the supplied text."
+  ]
+ },
+ "extracted_run": "39006380342"
+}

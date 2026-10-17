@@ -1,0 +1,671 @@
+{
+ "college": "Santa Rosa Junior College",
+ "control_number": "32301",
+ "shape": "adt",
+ "title": "Art History",
+ "award": "A.A- T Degree",
+ "source_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=88",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 11987,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 11987,
+    "output_tokens": 4779,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 4779,
+  "output_tokens_details": {
+   "thinking_tokens": 750
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.14353,
+ "ms": 33037,
+ "seconds": 33.5,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 106,
+   "share": 0.0,
+   "missing": [
+    "ANTH21",
+    "ANTH3",
+    "ANTH30",
+    "ANTH31",
+    "ANTH32",
+    "ANTH34",
+    "ANTH43",
+    "ART12",
+    "ART14A",
+    "ART19",
+    "ART23",
+    "ART24",
+    "ART26",
+    "ART27A",
+    "ART28A",
+    "ART3",
+    "ART31A",
+    "ART33A",
+    "ART4",
+    "ART5",
+    "ART7A",
+    "ARTH11",
+    "ARTH12",
+    "ARTH13",
+    "ARTH14",
+    "ARTH15",
+    "ARTH16",
+    "ARTH17",
+    "ARTH25",
+    "ARTHC1100",
+    "ARTHC1200",
+    "COMM2",
+    "DANC2",
+    "ENGL10",
+    "ENGL12",
+    "ENGL2",
+    "ENGL25",
+    "ENGL27",
+    "ENGL3",
+    "ENGL301",
+    "ENGL302",
+    "ENGL31",
+    "ENGL33",
+    "ENGL461",
+    "ENGL462",
+    "ENGL7",
+    "ENGLC1002",
+    "FMA14",
+    "FMA15",
+    "FMA4",
+    "FREN1",
+    "FREN2",
+    "FREN3",
+    "FREN4",
+    "GD15",
+    "GERM1",
+    "GERM2",
+    "GERM3",
+    "GERM4",
+    "HIST11",
+    "HIST12",
+    "HIST22",
+    "HIST26",
+    "HIST30",
+    "HIST33",
+    "HIST41",
+    "HIST42",
+    "HIST81",
+    "HIST82",
+    "HUM41",
+    "HUM5",
+    "HUM6",
+    "HUM7",
+    "HUM8",
+    "ITAL1",
+    "ITAL2",
+    "ITAL3",
+    "ITAL4",
+    "MUSC61",
+    "MUSC62",
+    "MUSC7",
+    "MUSC8",
+    "MUSC9",
+    "PHIL10",
+    "PHIL11",
+    "PHIL12",
+    "PHIL20",
+    "PHIL21",
+    "PHIL6",
+    "PHIL7",
+    "PHIL9",
+    "RELS1",
+    "RELS15",
+    "RELS2",
+    "RELS21",
+    "RELS22",
+    "RELS3",
+    "RELS32",
+    "RELS666",
+    "SPAN1",
+    "SPAN2",
+    "SPAN3",
+    "SPAN4",
+    "THAR1",
+    "THAR2",
+    "THAR6"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "General Education- 2026-27 Cal-GETC GE",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ANTH 21",
+    "why": "only in Cal-GETC Area 4 GE list, not an Art History section"
+   },
+   {
+    "code": "ANTH 3",
+    "why": "only in Cal-GETC Area 4 GE list, not an Art History section"
+   },
+   {
+    "code": "ANTH 30",
+    "why": "only in Cal-GETC Area 4 GE list, not an Art History section"
+   },
+   {
+    "code": "ANTH 31",
+    "why": "only in Cal-GETC 3B GE list, not an Art History section"
+   },
+   {
+    "code": "ANTH 32",
+    "why": "only in Cal-GETC Area 4 GE list, not an Art History section"
+   },
+   {
+    "code": "ANTH 34",
+    "why": "only in Cal-GETC Area 4 GE list, not an Art History section"
+   },
+   {
+    "code": "ANTH 43",
+    "why": "not in the text"
+   },
+   {
+    "code": "ART 12",
+    "why": "not in the text"
+   },
+   {
+    "code": "ART 14A",
+    "why": "not in the text"
+   },
+   {
+    "code": "ART 19",
+    "why": "not in the text"
+   },
+   {
+    "code": "ART 2.3",
+    "why": "not in the text"
+   },
+   {
+    "code": "ART 24",
+    "why": "not in the text"
+   },
+   {
+    "code": "ART 26",
+    "why": "not in the text"
+   },
+   {
+    "code": "ART 27A",
+    "why": "not in the text"
+   },
+   {
+    "code": "ART 28A",
+    "why": "not in the text"
+   },
+   {
+    "code": "ART 3",
+    "why": "not in the text"
+   },
+   {
+    "code": "ART 31A",
+    "why": "not in the text"
+   },
+   {
+    "code": "ART 33A",
+    "why": "not in the text"
+   },
+   {
+    "code": "ART 4",
+    "why": "not in the text"
+   },
+   {
+    "code": "ART 5",
+    "why": "not in the text"
+   },
+   {
+    "code": "ART 7A",
+    "why": "not in the text"
+   },
+   {
+    "code": "ARTH 1.1",
+    "why": "not in the text"
+   },
+   {
+    "code": "ARTH 1.2",
+    "why": "not in the text"
+   },
+   {
+    "code": "ARTH 1.3",
+    "why": "not in the text"
+   },
+   {
+    "code": "ARTH 1.4",
+    "why": "not in the text"
+   },
+   {
+    "code": "ARTH 1.5",
+    "why": "not in the text"
+   },
+   {
+    "code": "ARTH 1.6",
+    "why": "not in the text"
+   },
+   {
+    "code": "ARTH 1.7",
+    "why": "not in the text"
+   },
+   {
+    "code": "ARTH 2.5",
+    "why": "not in the text"
+   },
+   {
+    "code": "ARTH C1100",
+    "why": "not in the text"
+   },
+   {
+    "code": "ARTH C1200",
+    "why": "only in Cal-GETC 3A GE list (as ARTH 1200), not an Art History section"
+   },
+   {
+    "code": "COMM 2",
+    "why": "only in Cal-GETC 3A GE list, not an Art History section"
+   },
+   {
+    "code": "DANC 2",
+    "why": "only in Cal-GETC 3A GE list, not an Art History section"
+   },
+   {
+    "code": "ENGL 10",
+    "why": "only in Cal-GETC 3B GE list, not an Art History section"
+   },
+   {
+    "code": "ENGL 12",
+    "why": "only in Cal-GETC 3B GE list, not an Art History section"
+   },
+   {
+    "code": "ENGL 2",
+    "why": "only in Cal-GETC 3B GE list, not an Art History section"
+   },
+   {
+    "code": "ENGL 25",
+    "why": "only in Cal-GETC 3B GE list, not an Art History section"
+   },
+   {
+    "code": "ENGL 27",
+    "why": "only in Cal-GETC 3B GE list, not an Art History section"
+   },
+   {
+    "code": "ENGL 3",
+    "why": "only in Cal-GETC 3B GE list, not an Art History section"
+   },
+   {
+    "code": "ENGL 30.1",
+    "why": "only in Cal-GETC 3B GE list, not an Art History section"
+   },
+   {
+    "code": "ENGL 30.2",
+    "why": "only in Cal-GETC 3B GE list, not an Art History section"
+   },
+   {
+    "code": "ENGL 31",
+    "why": "only in Cal-GETC 3B GE list, not an Art History section"
+   },
+   {
+    "code": "ENGL 33",
+    "why": "only in Cal-GETC 3B GE list, not an Art History section"
+   },
+   {
+    "code": "ENGL 46.1",
+    "why": "only in Cal-GETC 3B GE list, not an Art History section"
+   },
+   {
+    "code": "ENGL 46.2",
+    "why": "only in Cal-GETC 3B GE list, not an Art History section"
+   },
+   {
+    "code": "ENGL 7",
+    "why": "only in Cal-GETC 3B GE list, not an Art History section"
+   },
+   {
+    "code": "ENGL C1002",
+    "why": "only in Cal-GETC 3B GE list (as ENGL 1002), not an Art History section"
+   },
+   {
+    "code": "FMA 14",
+    "why": "only in Cal-GETC 3A GE list, not an Art History section"
+   },
+   {
+    "code": "FMA 15",
+    "why": "only in Cal-GETC 3A GE list, not an Art History section"
+   },
+   {
+    "code": "FMA 4",
+    "why": "only in Cal-GETC 3A GE list, not an Art History section"
+   },
+   {
+    "code": "FREN 1",
+    "why": "not in the text"
+   },
+   {
+    "code": "FREN 2",
+    "why": "only in Cal-GETC 3B GE list, not an Art History section"
+   },
+   {
+    "code": "FREN 3",
+    "why": "only in Cal-GETC 3B GE list, not an Art History section"
+   },
+   {
+    "code": "FREN 4",
+    "why": "only in Cal-GETC 3B GE list, not an Art History section"
+   },
+   {
+    "code": "GD 15",
+    "why": "only in Cal-GETC 3A GE list, not an Art History section"
+   },
+   {
+    "code": "GERM 1",
+    "why": "not in the text"
+   },
+   {
+    "code": "GERM 2",
+    "why": "only in Cal-GETC 3B GE list, not an Art History section"
+   },
+   {
+    "code": "GERM 3",
+    "why": "only in Cal-GETC 3B GE list, not an Art History section"
+   },
+   {
+    "code": "GERM 4",
+    "why": "only in Cal-GETC 3B GE list, not an Art History section"
+   },
+   {
+    "code": "HIST 1.1",
+    "why": "only in Cal-GETC 3B GE list, not an Art History section"
+   },
+   {
+    "code": "HIST 1.2",
+    "why": "only in Cal-GETC 3B GE list, not an Art History section"
+   },
+   {
+    "code": "HIST 22",
+    "why": "only in Cal-GETC Area 4 GE list, not an Art History section"
+   },
+   {
+    "code": "HIST 26",
+    "why": "only in Cal-GETC Area 4 GE list, not an Art History section"
+   },
+   {
+    "code": "HIST 30",
+    "why": "only in Cal-GETC Area 4 GE list, not an Art History section"
+   },
+   {
+    "code": "HIST 33",
+    "why": "only in Cal-GETC Area 4 GE list, not an Art History section"
+   },
+   {
+    "code": "HIST 4.1",
+    "why": "only in Cal-GETC 3B GE list, not an Art History section"
+   },
+   {
+    "code": "HIST 4.2",
+    "why": "only in Cal-GETC 3B GE list, not an Art History section"
+   },
+   {
+    "code": "HIST 8.1",
+    "why": "only in Cal-GETC Area 4 GE list, not an Art History section"
+   },
+   {
+    "code": "HIST 8.2",
+    "why": "only in Cal-GETC Area 4 GE list, not an Art History section"
+   },
+   {
+    "code": "HUM 4.1",
+    "why": "only in Cal-GETC 3B GE list, not an Art History section"
+   },
+   {
+    "code": "HUM 5",
+    "why": "only in Cal-GETC 3B GE list, not an Art History section"
+   },
+   {
+    "code": "HUM 6",
+    "why": "only in Cal-GETC 3B GE list, not an Art History section"
+   },
+   {
+    "code": "HUM 7",
+    "why": "only in Cal-GETC 3B GE list, not an Art History section"
+   },
+   {
+    "code": "HUM 8",
+    "why": "only in Cal-GETC 3B GE list, not an Art History section"
+   },
+   {
+    "code": "ITAL 1",
+    "why": "not in the text"
+   },
+   {
+    "code": "ITAL 2",
+    "why": "only in Cal-GETC 3B GE list, not an Art History section"
+   },
+   {
+    "code": "ITAL 3",
+    "why": "only in Cal-GETC 3B GE list, not an Art History section"
+   },
+   {
+    "code": "ITAL 4",
+    "why": "only in Cal-GETC 3B GE list, not an Art History section"
+   },
+   {
+    "code": "MUSC 6.1",
+    "why": "only in Cal-GETC 3A GE list, not an Art History section"
+   },
+   {
+    "code": "MUSC 6.2",
+    "why": "only in Cal-GETC 3A GE list, not an Art History section"
+   },
+   {
+    "code": "MUSC 7",
+    "why": "only in Cal-GETC 3A GE list, not an Art History section"
+   },
+   {
+    "code": "MUSC 8",
+    "why": "only in Cal-GETC 3A GE list, not an Art History section"
+   },
+   {
+    "code": "MUSC 9",
+    "why": "only in Cal-GETC 3A GE list, not an Art History section"
+   },
+   {
+    "code": "PHIL 10",
+    "why": "only in Cal-GETC 3B GE list, not an Art History section"
+   },
+   {
+    "code": "PHIL 11",
+    "why": "only in Cal-GETC 3B GE list, not an Art History section"
+   },
+   {
+    "code": "PHIL 12",
+    "why": "only in Cal-GETC 3B GE list, not an Art History section"
+   },
+   {
+    "code": "PHIL 20",
+    "why": "only in Cal-GETC 3B GE list, not an Art History section"
+   },
+   {
+    "code": "PHIL 21",
+    "why": "only in Cal-GETC 3B GE list, not an Art History section"
+   },
+   {
+    "code": "PHIL 6",
+    "why": "only in Cal-GETC 3B GE list, not an Art History section"
+   },
+   {
+    "code": "PHIL 7",
+    "why": "only in Cal-GETC 3B GE list, not an Art History section"
+   },
+   {
+    "code": "PHIL 9",
+    "why": "only in Cal-GETC 3B GE list, not an Art History section"
+   },
+   {
+    "code": "RELS 1",
+    "why": "only in Cal-GETC 3B GE list, not an Art History section"
+   },
+   {
+    "code": "RELS 15",
+    "why": "only in Cal-GETC 3B GE list, not an Art History section"
+   },
+   {
+    "code": "RELS 2",
+    "why": "only in Cal-GETC 3B GE list, not an Art History section"
+   },
+   {
+    "code": "RELS 21",
+    "why": "only in Cal-GETC 3B GE list, not an Art History section"
+   },
+   {
+    "code": "RELS 22",
+    "why": "only in Cal-GETC 3B GE list, not an Art History section"
+   },
+   {
+    "code": "RELS 3",
+    "why": "only in Cal-GETC 3B GE list, not an Art History section"
+   },
+   {
+    "code": "RELS 32",
+    "why": "only in Cal-GETC 3B GE list, not an Art History section"
+   },
+   {
+    "code": "RELS 6.66",
+    "why": "only in Cal-GETC 3B GE list, not an Art History section"
+   },
+   {
+    "code": "SPAN 1",
+    "why": "not in the text"
+   },
+   {
+    "code": "SPAN 2",
+    "why": "only in Cal-GETC 3B GE list, not an Art History section"
+   },
+   {
+    "code": "SPAN 3",
+    "why": "only in Cal-GETC 3B GE list, not an Art History section"
+   },
+   {
+    "code": "SPAN 4",
+    "why": "only in Cal-GETC 3B GE list, not an Art History section"
+   },
+   {
+    "code": "THAR 1",
+    "why": "only in Cal-GETC 3A GE list, not an Art History section"
+   },
+   {
+    "code": "THAR 2",
+    "why": "only in Cal-GETC 3A GE list, not an Art History section"
+   },
+   {
+    "code": "THAR 6",
+    "why": "only in Cal-GETC 3A GE list, not an Art History section"
+   }
+  ],
+  "notes": [
+   "The supplied text (pages 88-89) is the catalog's Cal-GETC General Education course list (Areas 3A, 3B, 4, 5A), not the Art History A.A.-T program section. No program requirements, totals, outcomes or careers for Art History are printed, so no blocks were recorded.",
+   "section_heading records the page's running heading 'General Education- 2026-27 Cal-GETC GE'; the source link likely points to the wrong page. A reviewer should locate the Art History A.A.-T section elsewhere in the 2026-2027 catalog.",
+   "GE courses never go in blocks; closed-list courses appearing in the GE lists are explained in missing_explained."
+  ]
+ },
+ "extracted_run": "39006464249"
+}

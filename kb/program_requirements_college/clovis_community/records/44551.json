@@ -1,0 +1,291 @@
+{
+ "college": "Clovis Community College",
+ "control_number": "44551",
+ "shape": "degree",
+ "title": "Data Science",
+ "award": "A.S. Degree",
+ "source_url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=112",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8164,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8164,
+    "output_tokens": 1935,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1935,
+  "output_tokens_details": {
+   "thinking_tokens": 711
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.07136,
+ "ms": 15432,
+ "seconds": 15.9,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 3,
+   "listed": 7,
+   "share": 0.429,
+   "missing": [
+    "CSCI26",
+    "MATH5A",
+    "MATH5B",
+    "STATC1000"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 8,
+   "codes": [
+    "CSCI25",
+    "CSCI45",
+    "MATHC2210",
+    "MATHC2220",
+    "PHYS2A",
+    "PHYS2B",
+    "PHYS4A",
+    "PHYS4B"
+   ],
+   "flagged": [
+    "CSCI25",
+    "CSCI45",
+    "MATHC2210",
+    "MATHC2220",
+    "PHYS2A",
+    "PHYS2B",
+    "PHYS4A",
+    "PHYS4B"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    24.0,
+    25.0
+   ],
+   "stated": [
+    20.0,
+    21.0
+   ],
+   "against": "program",
+   "why": [
+    "the blocks sum to 24.0-25.0; the catalog states 20.0-21.0"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 6,
+   "courses": 0,
+   "count": 6,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "DATA SCIENCE (Major #C.6921.AS) ASSOCIATE IN SCIENCE DEGREE",
+   "measure": "units",
+   "total_units": {
+    "min": 20,
+    "max": 21
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Understand the social impact of computers on human society",
+    "Carry out computer related tasks with professional ethics",
+    "Write programs using procedural programming language",
+    "Write programs using object oriented programming language",
+    "Analyze and solve application problems in science and engineering",
+    "Write programs using advanced programming concepts"
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required Core Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CSCI 40",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CSCI 41",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DATA 8",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select an additional 12-13 courses",
+    "rule": "choose_units",
+    "minimum": 12,
+    "option_group": null,
+    "stated": {
+     "min": 12,
+     "max": 13
+    },
+    "courses": [
+     {
+      "code": "CSCI 25",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CSCI 45",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MATH C2210",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MATH C2220",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PHYS 2A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PHYS 4A",
+        "units": 4,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "PHYS 2B",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PHYS 4B",
+        "units": 4,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "CSCI 26",
+    "why": "Data Science section prints CSCI 25 (Discrete Mathematics for Computer Science) instead; CSCI 26 appears only in the Computer Science section"
+   },
+   {
+    "code": "MATH 5A",
+    "why": "named only as recommended in the Computer Science A.S. section"
+   },
+   {
+    "code": "MATH 5B",
+    "why": "named only as recommended in the Computer Science A.S. section"
+   },
+   {
+    "code": "STAT C1000",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "The elective heading reads 'Select an additional 12-13 courses'; only six choices are listed, so it was read as 12-13 units (choose_units, minimum 12). Reviewer should check.",
+   "The printed major total (20-21) does not match the core (12 units) plus 12-13 elective units (24-25); totals recorded as printed.",
+   "CSCI 25 is printed with the title 'Discrete Mathematics for Computer Science', which matches closed-list CSCI 26; likely a catalog typo. Recorded as printed with catalog_addition true.",
+   "Program Learning Outcomes are printed once under the COMPUTER SCIENCE discipline heading that precedes both the Computer Science and Data Science majors; recorded as shared by this award.",
+   "No general education pattern, degree total or careers printed for this award."
+  ]
+ },
+ "extracted_run": "39006155986"
+}

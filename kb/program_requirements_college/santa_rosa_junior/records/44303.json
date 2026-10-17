@@ -1,0 +1,164 @@
+{
+ "college": "Santa Rosa Junior College",
+ "control_number": "44303",
+ "shape": "certificate",
+ "title": "Automotive Fundamental",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=118",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 9986,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 9986,
+    "output_tokens": 768,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 768,
+  "output_tokens_details": {
+   "thinking_tokens": 227
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.0553,
+ "ms": 8430,
+ "seconds": 8.8,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 6,
+   "share": 0.0,
+   "missing": [
+    "ATL101",
+    "ATL105",
+    "ATL110",
+    "ATL161",
+    "ATL162",
+    "ATL170"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": true,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "(Automotive Fundamental Certificate of Achievement section not found in the provided text)",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ATL 101",
+    "why": "Automotive Fundamental section not in text; course appears only in the Automotive Diagnostic Technician and Automotive Technology (AS) sections"
+   },
+   {
+    "code": "ATL 105",
+    "why": "Automotive Fundamental section not in text; course appears only in the Automotive Diagnostic Technician and Automotive Technology (AS) sections"
+   },
+   {
+    "code": "ATL 110",
+    "why": "Automotive Fundamental section not in text; course appears only in the Automotive Diagnostic Technician and Automotive Technology (AS) sections"
+   },
+   {
+    "code": "ATL 161",
+    "why": "Automotive Fundamental section not in text; course appears only in the Automotive Diagnostic Technician and Automotive Technology (AS) sections"
+   },
+   {
+    "code": "ATL 162",
+    "why": "Automotive Fundamental section not in text; course appears only in the Automotive Diagnostic Technician and Automotive Technology (AS) sections"
+   },
+   {
+    "code": "ATL 170",
+    "why": "Automotive Fundamental section not in text; course appears only in the Automotive Diagnostic Technician and Automotive Technology (AS) sections"
+   }
+  ],
+  "notes": []
+ },
+ "extracted_run": "39006464249"
+}

@@ -1,0 +1,215 @@
+{
+ "college": "Los Angeles Pierce College",
+ "control_number": "30477",
+ "shape": "degree",
+ "title": "General Studies: Gender Studies",
+ "award": "A.A. Degree",
+ "source_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=69",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 11780,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 11780,
+    "output_tokens": 1728,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1728,
+  "output_tokens_details": {
+   "thinking_tokens": 607
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.08168,
+ "ms": 13990,
+ "seconds": 14.3,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 15,
+   "share": 0.0,
+   "missing": [
+    "ANTHRO109",
+    "ART116",
+    "CHICANO47",
+    "ENGLISH239",
+    "ENGLISH245",
+    "HEALTH43",
+    "HEALTH8",
+    "HISTORY52",
+    "POLSCI19",
+    "PSYCH16",
+    "PSYCH32",
+    "PSYCH52",
+    "SOC21",
+    "SOC28",
+    "SOC31"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": true,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ANTHRO 109",
+    "why": "General Studies: Gender Studies A.A. section not in text; named only in Social Justice Studies sections"
+   },
+   {
+    "code": "ART 116",
+    "why": "General Studies: Gender Studies A.A. section not in text; named only in Social Justice Studies: Gender Studies AS-T section"
+   },
+   {
+    "code": "CHICANO 47",
+    "why": "General Studies: Gender Studies A.A. section not in text; named only in Social Justice Studies: Gender Studies AS-T section"
+   },
+   {
+    "code": "ENGLISH 239",
+    "why": "General Studies: Gender Studies A.A. section not in text; named only in Social Justice Studies sections"
+   },
+   {
+    "code": "ENGLISH 245",
+    "why": "General Studies: Gender Studies A.A. section not in text; named only in Social Justice Studies: Gender Studies AS-T section"
+   },
+   {
+    "code": "HEALTH 43",
+    "why": "not in the text"
+   },
+   {
+    "code": "HEALTH 8",
+    "why": "General Studies: Gender Studies A.A. section not in text; named only in Social Justice Studies sections"
+   },
+   {
+    "code": "HISTORY 52",
+    "why": "General Studies: Gender Studies A.A. section not in text; named only in Social Justice Studies sections"
+   },
+   {
+    "code": "POL SCI 19",
+    "why": "General Studies: Gender Studies A.A. section not in text; named only in Social Justice Studies sections"
+   },
+   {
+    "code": "PSYCH 16",
+    "why": "General Studies: Gender Studies A.A. section not in text; named only in Social Justice Studies: Gender Studies AS-T section"
+   },
+   {
+    "code": "PSYCH 32",
+    "why": "General Studies: Gender Studies A.A. section not in text; named only in Social Justice Studies sections"
+   },
+   {
+    "code": "PSYCH 52",
+    "why": "General Studies: Gender Studies A.A. section not in text; named only in Social Justice Studies: Gender Studies AS-T section"
+   },
+   {
+    "code": "SOC 21",
+    "why": "General Studies: Gender Studies A.A. section not in text; named only in Social Justice Studies sections"
+   },
+   {
+    "code": "SOC 28",
+    "why": "General Studies: Gender Studies A.A. section not in text; named only in Social Justice Studies and Sociology AA-T sections"
+   },
+   {
+    "code": "SOC 31",
+    "why": "General Studies: Gender Studies A.A. section not in text; named only in Social Justice Studies: General AA-T and Sociology AA-T sections"
+   }
+  ],
+  "notes": [
+   "The supplied text (catalog pages 69-71) does not contain a section for General Studies: Gender Studies A.A. Degree. It holds the end of Social Justice Studies: Gender Studies (AS-T, P046839H), all of Social Justice Studies: General (AA-T), and the start of Sociology (AA-T). These are different awards, so no blocks, totals, outcomes or careers were recorded.",
+   "The correct section is probably on another page of the 2026-2027 catalog, likely in the General Studies programs. A reviewer should find that page and re-extract."
+  ]
+ },
+ "extracted_run": "39006383070"
+}

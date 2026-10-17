@@ -1,0 +1,175 @@
+{
+ "college": "Los Angeles Pierce College",
+ "control_number": "43745",
+ "shape": "noncredit",
+ "title": "GED Preparation for Spanish Speakers",
+ "award": "Noncredit program",
+ "source_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=158",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7828,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7828,
+    "output_tokens": 960,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 960,
+  "output_tokens_details": {
+   "thinking_tokens": 286
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.05051,
+ "ms": 8220,
+ "seconds": 8.5,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 2,
+   "listed": 2,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    180.0,
+    180.0
+   ],
+   "stated": [
+    180.0,
+    180.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [
+    "Demonstrate an understanding of the concepts tested in Razonamiento a Través de las Artes Del Lenguaje, Razonamiento Matemático, Ciencia, and Estudios Sociales of the General Education Development (GED) exam."
+   ],
+   "why": [
+    "not in the catalog text as printed: Demonstrate an understanding of the concepts tested in Razonamiento a Través de "
+   ],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": false
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "GED PREPARATION FOR SPANISH SPEAKERS",
+   "measure": "hours",
+   "total_units": {
+    "min": 180,
+    "max": 180
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Demonstrate an understanding of the concepts tested in Razonamiento a Través de las Artes Del Lenguaje, Razonamiento Matemático, Ciencia, and Estudios Sociales of the General Education Development (GED) exam.",
+    "Demonstrate critical thinking skills and test taking strategies necessary to evaluate ideas and information.",
+    "Demonstrate knowledge of how to use the GED exam calculator."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "CERTIFICATE - REQUIRED COURSES",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "BSICSKL 023CE",
+      "units": 108,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BSICSKL 217CE",
+      "units": 72,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The closed list writes BSICSKL023CE without a space; the catalog prints BSICSKL 023CE. Both were treated as the same course.",
+   "All values are in hours, from 'CERTIFICATE - TOTAL HOURS... 180'.",
+   "The heading says Certificate of Competency (State Code 43745), but the program description calls it a 'Certificate of completion'.",
+   "In the first outcome, the line-break hyphenation 'Educa -tion' was joined as 'Education'.",
+   "The text names no careers for this program; it says only that the certificate is a gateway into other noncredit and credit programs.",
+   "The preceding section (the GED Preparation certificate, 216 hours) was not used."
+  ]
+ },
+ "extracted_run": "39006383070"
+}

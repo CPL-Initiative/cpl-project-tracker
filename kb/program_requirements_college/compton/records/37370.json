@@ -1,0 +1,225 @@
+{
+ "college": "Compton College",
+ "control_number": "37370",
+ "shape": "certificate",
+ "title": "Commercial Music",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=103",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7975,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7975,
+    "output_tokens": 1712,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1712,
+  "output_tokens_details": {
+   "thinking_tokens": 590
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.06614,
+ "ms": 13180,
+ "seconds": 13.5,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 6,
+   "listed": 6,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 2,
+   "codes": [
+    "MUSI180",
+    "MUSI181A"
+   ],
+   "flagged": [
+    "MUSI180",
+    "MUSI181A"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    20.0,
+    20.0
+   ],
+   "stated": [
+    20.0,
+    20.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 7,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Commercial Music – Certificate of Achievement",
+   "measure": "units",
+   "total_units": {
+    "min": 20,
+    "max": 20
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Examine and explain the entrepreneurial Challenges in entering the field of Commercial Music /Technology, Audio Sciences, and Multimedia Entertainment, in the following areas: A. Music Business/Publishing B. Music Production/ Composition C. Audio Technology/ Sound Design",
+    "Analyze music example recordings based on elements of music including Lyrics, Form, Style, Rhythm, Harmony, Melody, Timbre, Texture, and Dynamics, with an intermediate level of proficiency.",
+    "Recognize the underlying Acoustic (Physics of sound) and Sound Wave Characteristics and concepts in a given context (Analog, Digital Recording) and apply them accordingly using the computer, microphones, and other hardware/software’s, as the means for creating final Mixing, Mastering and Post Production."
+   ],
+   "careers": [
+    "Commercial Music Technology",
+    "Film Scoring",
+    "Video Game/ Audio Development",
+    "Music Business Entrepreneurship",
+    "Audio Forensics",
+    "Digital and Multi- Media Entertainment and Serious industries",
+    "music/audio technicians"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Program Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 20,
+     "max": 20
+    },
+    "courses": [
+     {
+      "code": "MUSI 101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSI 180",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MUSI 181A",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MUSI 181B",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSI 182",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSI 183",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSI 284",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSI 285",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The first program learning outcome prints sub-items A–C (Music Business/Publishing; Music Production/ Composition; Audio Technology/ Sound Design); they are kept inside that single outcome entry.",
+   "MUSI 180 and MUSI 181A are listed as required in the catalog but are not in the closed list; recorded as catalog additions.",
+   "The catalog's 'Total Units: 20' was recorded as both total_units and the block's stated total; the listed course units sum to 20.",
+   "Careers were taken from the description's list of fields of employment; 'Digital and Multi- Media Entertainment and Serious industries' is printed as written ('Serious' likely refers to serious games) and should be reviewed."
+  ]
+ },
+ "extracted_run": "39006336111"
+}

@@ -1,0 +1,262 @@
+{
+ "college": "Clovis Community College",
+ "control_number": "45746",
+ "shape": "adt",
+ "title": "Hospitality Management",
+ "award": "A.S. T Degree",
+ "source_url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=160",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7262,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7262,
+    "output_tokens": 1962,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1962,
+  "output_tokens_details": {
+   "thinking_tokens": 668
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.06829,
+ "ms": 16549,
+ "seconds": 17.0,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 8,
+   "listed": 9,
+   "share": 0.889,
+   "missing": [
+    "PSYC42"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "PYSC42"
+   ],
+   "flagged": [
+    "PYSC42"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    20.0,
+    20.0
+   ],
+   "stated": [
+    20.0,
+    20.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 6,
+   "courses": 0,
+   "count": 6,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 4,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "ASSOCIATE IN SCIENCE IN HOSPITALITY MANAGEMENT FOR TRANSFER DEGREE (MAJOR #C.2061.AS-T)",
+   "measure": "units",
+   "total_units": {
+    "min": 20,
+    "max": 20
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Explain the structure, functions, and responsibilities across various hospitality sectors, including lodging, food, and beverage, and tourism.",
+    "Analyze financial, marketing, and operational data using cost control techniques, economic principles, and statistical analysis to improve business performance.",
+    "Identify key laws and regulations affecting hospitality operations, including contracts, liability, employment law, and consumer protection.",
+    "Demonstrate strong written and verbal communication for customer interactions, teamwork, and business reporting in hospitality settings.",
+    "Apply guest service principles to improve customer satisfaction, resolve conflicts, and create a positive hospitality environment.",
+    "Identify career opportunities in the hospitality industry and develop strategies for professional advancement and lifelong learning."
+   ],
+   "careers": [
+    "restaurant",
+    "lodging",
+    "food service",
+    "gaming industries"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Core Course",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "BA 12",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select 3 courses from the list below",
+    "rule": "choose_courses",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ECON C2001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HOSP 20",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HOSP 30",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select 2 courses from the list below",
+    "rule": "choose_courses",
+    "minimum": 2,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ACCTG 4A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BA 23",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PYSC 42",
+        "units": 4,
+        "catalog_addition": true
+       },
+       {
+        "code": "STAT C1000",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "BA 18",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "PSYC 42",
+    "why": "catalog prints it as 'PYSC 42' (apparent typo); recorded under that printed code as an alternative to BA 23"
+   }
+  ],
+  "notes": [
+   "The catalog prints 'PYSC 42' as an OR alternative to BA 23 and STAT C1000; this appears to be a typo for PSYC 42 (Statistics for the Behavioral Sciences), which is on the closed list. Recorded as printed with catalog_addition true.",
+   "The 60-unit statement is the generic ADT requirement, not printed as this award's total, so degree_total is null.",
+   "The description sentence says 'Associate in Arts in Hospitality Management for Transfer Degree' although the heading and award are Associate in Science; likely a catalog wording error.",
+   "The 'Select 3 courses' list contains exactly three courses, so all are effectively required.",
+   "Careers recorded from 'entry level management employment in the restaurant, lodging, food service, and gaming industries'; reviewer may check whether these industries should be counted as career fields."
+  ]
+ },
+ "extracted_run": "39006155986"
+}

@@ -1,0 +1,405 @@
+{
+ "college": "Shasta College",
+ "control_number": "18142",
+ "shape": "degree",
+ "title": "General Studies - Agriculture Trades",
+ "award": "A.S. Degree",
+ "source_url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=53",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 13339,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 13339,
+    "output_tokens": 2806,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2806,
+  "output_tokens_details": {
+   "thinking_tokens": 867
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.10948,
+ "ms": 22186,
+ "seconds": 22.9,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 53,
+   "share": 0.0,
+   "missing": [
+    "AG1",
+    "AG58",
+    "AG6",
+    "AG71",
+    "AG72",
+    "AG9A",
+    "AGAB51",
+    "AGAB53",
+    "AGAB54",
+    "AGAS11",
+    "AGAS15",
+    "AGAS19",
+    "AGAS30",
+    "AGEH10",
+    "AGEH130",
+    "AGEH22",
+    "AGEH23",
+    "AGEH26",
+    "AGEH31",
+    "AGEH33",
+    "AGEH35",
+    "AGEH38",
+    "AGEH50",
+    "AGEH52",
+    "AGEH60",
+    "AGEH61",
+    "AGEH71",
+    "AGEQ12",
+    "AGEQ13",
+    "AGEQ21",
+    "AGMA42",
+    "AGMA44",
+    "AGNR1",
+    "AGNR11",
+    "AGNR12",
+    "AGNR50",
+    "AGNR51",
+    "AGNR52",
+    "AGNR53",
+    "AGNR55",
+    "AGNR6",
+    "AGNR60",
+    "AGNR61",
+    "AGNR64",
+    "AGNR65",
+    "AGNR66",
+    "AGNR70",
+    "AGPS20",
+    "AGPS24",
+    "AGPS25",
+    "AGSA56",
+    "AGVIT80",
+    "AGVIT81"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": true,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Not found: no General Studies - Agriculture Trades section appears in the provided text",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "AG 1",
+    "why": "section for this award not in the text"
+   },
+   {
+    "code": "AG 58",
+    "why": "section for this award not in the text"
+   },
+   {
+    "code": "AG 6",
+    "why": "section for this award not in the text"
+   },
+   {
+    "code": "AG 71",
+    "why": "section for this award not in the text"
+   },
+   {
+    "code": "AG 72",
+    "why": "section for this award not in the text"
+   },
+   {
+    "code": "AG 9A",
+    "why": "section for this award not in the text"
+   },
+   {
+    "code": "AGAB 51",
+    "why": "section for this award not in the text"
+   },
+   {
+    "code": "AGAB 53",
+    "why": "section for this award not in the text"
+   },
+   {
+    "code": "AGAB 54",
+    "why": "section for this award not in the text"
+   },
+   {
+    "code": "AGAS 11",
+    "why": "section for this award not in the text"
+   },
+   {
+    "code": "AGAS 15",
+    "why": "section for this award not in the text"
+   },
+   {
+    "code": "AGAS 19",
+    "why": "section for this award not in the text"
+   },
+   {
+    "code": "AGAS 30",
+    "why": "section for this award not in the text"
+   },
+   {
+    "code": "AGEH 10",
+    "why": "section for this award not in the text"
+   },
+   {
+    "code": "AGEH 130",
+    "why": "section for this award not in the text"
+   },
+   {
+    "code": "AGEH 22",
+    "why": "section for this award not in the text"
+   },
+   {
+    "code": "AGEH 23",
+    "why": "section for this award not in the text"
+   },
+   {
+    "code": "AGEH 26",
+    "why": "section for this award not in the text"
+   },
+   {
+    "code": "AGEH 31",
+    "why": "section for this award not in the text"
+   },
+   {
+    "code": "AGEH 33",
+    "why": "section for this award not in the text"
+   },
+   {
+    "code": "AGEH 35",
+    "why": "section for this award not in the text"
+   },
+   {
+    "code": "AGEH 38",
+    "why": "section for this award not in the text"
+   },
+   {
+    "code": "AGEH 50",
+    "why": "section for this award not in the text"
+   },
+   {
+    "code": "AGEH 52",
+    "why": "section for this award not in the text"
+   },
+   {
+    "code": "AGEH 60",
+    "why": "section for this award not in the text"
+   },
+   {
+    "code": "AGEH 61",
+    "why": "section for this award not in the text"
+   },
+   {
+    "code": "AGEH 71",
+    "why": "section for this award not in the text"
+   },
+   {
+    "code": "AGEQ 12",
+    "why": "section for this award not in the text"
+   },
+   {
+    "code": "AGEQ 13",
+    "why": "section for this award not in the text"
+   },
+   {
+    "code": "AGEQ 21",
+    "why": "section for this award not in the text"
+   },
+   {
+    "code": "AGMA 42",
+    "why": "section for this award not in the text"
+   },
+   {
+    "code": "AGMA 44",
+    "why": "section for this award not in the text"
+   },
+   {
+    "code": "AGNR 1",
+    "why": "section for this award not in the text"
+   },
+   {
+    "code": "AGNR 11",
+    "why": "section for this award not in the text"
+   },
+   {
+    "code": "AGNR 12",
+    "why": "section for this award not in the text"
+   },
+   {
+    "code": "AGNR 50",
+    "why": "section for this award not in the text"
+   },
+   {
+    "code": "AGNR 52",
+    "why": "section for this award not in the text"
+   },
+   {
+    "code": "AGNR 53",
+    "why": "section for this award not in the text"
+   },
+   {
+    "code": "AGNR 55",
+    "why": "section for this award not in the text"
+   },
+   {
+    "code": "AGNR 6",
+    "why": "section for this award not in the text"
+   },
+   {
+    "code": "AGNR 60",
+    "why": "section for this award not in the text"
+   },
+   {
+    "code": "AGNR 61",
+    "why": "section for this award not in the text"
+   },
+   {
+    "code": "AGNR 64",
+    "why": "section for this award not in the text"
+   },
+   {
+    "code": "AGNR 65",
+    "why": "section for this award not in the text"
+   },
+   {
+    "code": "AGNR 66",
+    "why": "section for this award not in the text"
+   },
+   {
+    "code": "AGNR 70",
+    "why": "section for this award not in the text"
+   },
+   {
+    "code": "AGNR51",
+    "why": "section for this award not in the text"
+   },
+   {
+    "code": "AGPS 20",
+    "why": "section for this award not in the text"
+   },
+   {
+    "code": "AGPS 24",
+    "why": "section for this award not in the text"
+   },
+   {
+    "code": "AGPS 25",
+    "why": "section for this award not in the text"
+   },
+   {
+    "code": "AGSA 56",
+    "why": "section for this award not in the text"
+   },
+   {
+    "code": "AGVIT 80",
+    "why": "section for this award not in the text"
+   },
+   {
+    "code": "AGVIT 81",
+    "why": "section for this award not in the text"
+   }
+  ],
+  "notes": [
+   "The provided text (catalog pages 53-55) contains no section titled General Studies - Agriculture Trades. It holds the tail of the A.S.-T in Agriculture Plant Science, the Agriculture Science, Education, and Management A.S. (AS.1519), the Agriculture Sciences University Studies 18 Unit Emphasis (AA.1491), the Pest Control Advisor Preparation Certificate, the Small Farm Operations Noncredit Certificate, the Sustainable Landscape Certificate, and the start of Addiction Studies A.S. None of these is the named award, so no blocks were recorded.",
+   "The closed list closely matches the course list of the Agriculture Sciences University Studies 18 Unit Emphasis (AA.1491): 'Choose 12 - 18 units' from AGAB 51, AGAB 54, AGAS 11, AGAS 19, AGPS 20, AGPS 24, CHEM 2A, and 'remaining 0 - 6 units' from a long AG/AGAB/AGAS/AGEH/AGEQ/AGMA/AGNR/AGPS/AGSA/AGVIT list. AG 58 and AGEH 130 do not appear even there. The General Studies - Agriculture Trades emphasis is likely printed in a General Studies section elsewhere in the catalog. A reviewer should locate that page and re-extract."
+  ]
+ },
+ "extracted_run": "39006384701"
+}

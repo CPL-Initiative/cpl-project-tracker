@@ -1,0 +1,180 @@
+{
+ "college": "Los Angeles City College",
+ "control_number": "44632",
+ "shape": "noncredit",
+ "title": "IHSS Care for People with Dementia",
+ "award": "Noncredit program",
+ "source_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=223",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7132,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7132,
+    "output_tokens": 1222,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1222,
+  "output_tokens_details": {
+   "thinking_tokens": 480
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.05297,
+ "ms": 10271,
+ "seconds": 10.8,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 3,
+   "listed": 3,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    90.0,
+    90.0
+   ],
+   "stated": [
+    90.0,
+    90.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "IHSS Care for People with Dementia Certificate of Completion",
+   "measure": "hours",
+   "total_units": {
+    "min": 90,
+    "max": 90
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Define safety measures and protocols in providing in-home care for people with common types of dementia.",
+    "Apply effective caregiving strategies tailored to the unique needs of individuals with dementia",
+    "Explain the providers’ and clients’ responsibilities and rights in the context of dementia care.",
+    "Identify the symptoms and progression of Alzheimer’s disease and differentiate between Alzheimer’s disease and various types of dementia.",
+    "Describe self- care strategies to maintain well-being at the workplace."
+   ],
+   "careers": [
+    "IHSS providers specializing in dementia care"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "REQUIRED COURSES",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "VOC ED 002CE",
+      "units": 72,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VOC ED 207CE",
+      "units": 9,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VOC ED 208CE",
+      "units": 9,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Award counted in hours (noncredit): 'Total Lecture Hrs: 90'; course hours from the HRS column.",
+   "VOC ED 002CE is printed in the catalog as 'VOC ED 002CE IN-HOME SUPPORTIVE SERVICE PROVIDER'; matched to closed-list entry 'VOCED002CE' (same course, code spacing differs), so catalog_addition is false.",
+   "The page also prints the In-Home Supportive Services Skills certificate (90-126 hrs) directly below; it was not read for this record.",
+   "Outcome 5 is copied as printed, including the space in 'self- care'; outcome 2 has no terminal period in the text."
+  ]
+ },
+ "extracted_run": "39006380342"
+}

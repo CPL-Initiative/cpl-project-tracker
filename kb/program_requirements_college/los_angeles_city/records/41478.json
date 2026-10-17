@@ -1,0 +1,560 @@
+{
+ "college": "Los Angeles City College",
+ "control_number": "41478",
+ "shape": "adt",
+ "title": "Sociology",
+ "award": "A.A- T Degree",
+ "source_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=179",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 14492,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 14492,
+    "output_tokens": 4467,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 4467,
+  "output_tokens_details": {
+   "thinking_tokens": 1361
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.14731,
+ "ms": 32644,
+ "seconds": 33.0,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 17,
+   "listed": 59,
+   "share": 0.288,
+   "missing": [
+    "ANTHRO151",
+    "ASIAN1",
+    "CHDEV1",
+    "CHDEV11",
+    "CHDEV42",
+    "CHICANO4",
+    "CHICANO47",
+    "CHICANO7",
+    "CHICANO8",
+    "COMM100",
+    "COMM121",
+    "COMM122",
+    "ECONC2001",
+    "ECONC2002",
+    "GEOG14",
+    "GEOG2",
+    "GEOG7",
+    "HISTC1001",
+    "HISTC1002",
+    "HISTORY5",
+    "HISTORY59",
+    "HISTORY6",
+    "HISTORY7",
+    "HISTORY73",
+    "HISTORY81",
+    "HISTORY82",
+    "HISTORY86",
+    "HISTORY87",
+    "LAW3",
+    "LAW7",
+    "LING2",
+    "LING3",
+    "POLSC1000",
+    "POLSCI14",
+    "POLSCI19",
+    "POLSCI2",
+    "POLSCI5",
+    "POLSCI7",
+    "PSYCC1000",
+    "PSYCH14",
+    "PSYCH41",
+    "PSYCH52"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 3,
+   "codes": [
+    "AFROAM4",
+    "AFROAM5",
+    "SOC4"
+   ],
+   "flagged": [
+    "AFROAM4",
+    "AFROAM5",
+    "SOC4"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    18.0,
+    19.0
+   ],
+   "stated": [
+    18.0,
+    19.0
+   ],
+   "against": "program",
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     52.0,
+     53.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     34.0,
+     34.0
+    ],
+    "why": [],
+    "transfer": true,
+    "fill": [
+     7.0,
+     8.0
+    ]
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [
+    "Demonstrate understanding of the three main sociological theoretical perspectives and use them to examine current or past events and social issues."
+   ],
+   "why": [
+    "not in the catalog text as printed: Demonstrate understanding of the three main sociological theoretical perspective"
+   ],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": false
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Sociology Associate in Arts (AA-T) Degree",
+   "measure": "units",
+   "total_units": {
+    "min": 18,
+    "max": 19
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "CalGETC",
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": 34,
+    "max": 34
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Demonstrate understanding of the three main sociological theoretical perspectives and use them to examine current or past events and social issues.",
+    "Exhibit proficiency in key sociological research techniques, including interviewing, content analysis, survey design, and statistical analysis, while understanding their applications and constraints.",
+    "Recognize how social institutions, systemic inequalities, and cultural norms influence and shape individual life experiences."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 9,
+     "max": 10
+    },
+    "courses": [
+     {
+      "code": "SOC 001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC 002",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC 125",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BUS 015",
+        "units": 3,
+        "catalog_addition": false
+       },
+       {
+        "code": "STAT C1000",
+        "units": 4,
+        "catalog_addition": false
+       },
+       {
+        "code": "STAT C1000E",
+        "units": 4,
+        "catalog_addition": false
+       },
+       {
+        "code": "MATH 229",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List A: Select Two",
+    "rule": "choose_courses",
+    "minimum": 2,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "SOC 004",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PSYCH 074",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "SOC 011",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC 012",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC 031",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC 032",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYCH 013",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List B: Select One",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "SOC 022",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AFRO AM 004",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "AFRO AM 005",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "AFRO AM 007",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANTHRO 102",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANTHRO 121",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ANTHRO 151",
+    "why": "Sociology List B cut off in text; named only in Political Science section"
+   },
+   {
+    "code": "ASIAN 1",
+    "why": "Sociology List B cut off in text; named only in Political Science section"
+   },
+   {
+    "code": "CH DEV 1",
+    "why": "Sociology List B cut off in text; named only in Political Science section"
+   },
+   {
+    "code": "CH DEV 11",
+    "why": "Sociology List B cut off in text; named only in Political Science section"
+   },
+   {
+    "code": "CH DEV 42",
+    "why": "not in the text (Sociology List B cut off)"
+   },
+   {
+    "code": "CHICANO 4",
+    "why": "Sociology List B cut off in text; named only in Political Science section"
+   },
+   {
+    "code": "CHICANO 47",
+    "why": "Sociology List B cut off in text; named only in Political Science section"
+   },
+   {
+    "code": "CHICANO 7",
+    "why": "Sociology List B cut off in text; named only in Political Science section"
+   },
+   {
+    "code": "CHICANO 8",
+    "why": "Sociology List B cut off in text; named only in Political Science section"
+   },
+   {
+    "code": "COMM 100",
+    "why": "not in the text (Sociology List B cut off)"
+   },
+   {
+    "code": "COMM 121",
+    "why": "not in the text (Sociology List B cut off)"
+   },
+   {
+    "code": "COMM 122",
+    "why": "Sociology List B cut off in text; named only in Political Science section"
+   },
+   {
+    "code": "ECON C2001",
+    "why": "Sociology List B cut off in text; named only in Political Science section"
+   },
+   {
+    "code": "ECON C2002",
+    "why": "Sociology List B cut off in text; named only in Political Science section"
+   },
+   {
+    "code": "GEOG 14",
+    "why": "Sociology List B cut off in text; named only in Political Science section"
+   },
+   {
+    "code": "GEOG 2",
+    "why": "Sociology List B cut off in text; named only in Political Science section"
+   },
+   {
+    "code": "GEOG 7",
+    "why": "Sociology List B cut off in text; named only in Political Science section"
+   },
+   {
+    "code": "HISTC1001",
+    "why": "Sociology List B cut off in text; named only in Political Science section"
+   },
+   {
+    "code": "HISTC1002",
+    "why": "Sociology List B cut off in text; named only in Political Science section"
+   },
+   {
+    "code": "HISTORY 5",
+    "why": "Sociology List B cut off in text; named only in Political Science section"
+   },
+   {
+    "code": "HISTORY 59",
+    "why": "Sociology List B cut off in text; named only in Political Science section"
+   },
+   {
+    "code": "HISTORY 6",
+    "why": "Sociology List B cut off in text; named only in Political Science section"
+   },
+   {
+    "code": "HISTORY 7",
+    "why": "Sociology List B cut off in text; named only in Political Science section"
+   },
+   {
+    "code": "HISTORY 73",
+    "why": "Sociology List B cut off in text; named only in Political Science section"
+   },
+   {
+    "code": "HISTORY 81",
+    "why": "Sociology List B cut off in text; named only in Political Science section"
+   },
+   {
+    "code": "HISTORY 82",
+    "why": "Sociology List B cut off in text; named only in Political Science section"
+   },
+   {
+    "code": "HISTORY 86",
+    "why": "Sociology List B cut off in text; named only in Political Science section"
+   },
+   {
+    "code": "HISTORY 87",
+    "why": "Sociology List B cut off in text; named only in Political Science section"
+   },
+   {
+    "code": "LAW 3",
+    "why": "Sociology List B cut off in text; named only in Political Science section"
+   },
+   {
+    "code": "LAW 7",
+    "why": "not in the text (Sociology List B cut off)"
+   },
+   {
+    "code": "LING 2",
+    "why": "Sociology List B cut off in text; named only in Political Science section"
+   },
+   {
+    "code": "LING 3",
+    "why": "Sociology List B cut off in text; named only in Political Science section"
+   },
+   {
+    "code": "POL SCI 14",
+    "why": "named only in Political Science section; Sociology List B cut off"
+   },
+   {
+    "code": "POL SCI 19",
+    "why": "named only in Political Science and Social Justice sections; Sociology List B cut off"
+   },
+   {
+    "code": "POL SCI 2",
+    "why": "named only in Political Science section; Sociology List B cut off"
+   },
+   {
+    "code": "POL SCI 5",
+    "why": "named only in Political Science section; Sociology List B cut off"
+   },
+   {
+    "code": "POL SCI 7",
+    "why": "named only in Political Science section; Sociology List B cut off"
+   },
+   {
+    "code": "POLS C1000",
+    "why": "named only in Political Science section; Sociology List B cut off"
+   },
+   {
+    "code": "PSYC C1000",
+    "why": "not in the text (Sociology List B cut off)"
+   },
+   {
+    "code": "PSYCH 14",
+    "why": "Sociology List B cut off in text; named only in Political Science section"
+   },
+   {
+    "code": "PSYCH 41",
+    "why": "Sociology List B cut off in text; named only in Political Science section"
+   },
+   {
+    "code": "PSYCH 52",
+    "why": "Sociology List B cut off in text; named only in Political Science section"
+   }
+  ],
+  "notes": [
+   "The catalog text ends mid-way through Sociology List B at 'ANTHRO 121 ANTHROPOLOGY' (page 181 cut off); ANTHRO 121's units are not printed in the excerpt and the rest of List B is missing. Many closed-list courses likely belong to the remainder of List B; reviewer should check the next page.",
+   "degree_total recorded from 'Total Units: Minimum of 60' printed in this award's header; ge_units 34 from the CalGETC requirement sentence (34 semester/45 quarter units).",
+   "total_units from 'Major Units: 18-19'.",
+   "Required Courses: SOC 001 and SOC 002 plus one statistics course (SOC 125 or BUS 015 or STAT C1000 or STAT C1000E or MATH 229).",
+   "SOC 004 and AFRO AM 004/005 are not in the closed list and are marked catalog additions.",
+   "The overview mentions 'sociologists' describing the discipline, not as a career for program graduates; careers left empty."
+  ]
+ },
+ "extracted_run": "39006380342"
+}

@@ -1,0 +1,301 @@
+{
+ "college": "Los Angeles City College",
+ "control_number": "02719",
+ "shape": "degree",
+ "title": "Accounting",
+ "award": "A.A. Degree",
+ "source_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=73",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 12821,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 12821,
+    "output_tokens": 2165,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2165,
+  "output_tokens_details": {
+   "thinking_tokens": 878
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.09458,
+ "ms": 17449,
+ "seconds": 17.9,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 15,
+   "listed": 16,
+   "share": 0.938,
+   "missing": [
+    "ACCTG31"
+   ],
+   "unexplained": [
+    "ACCTG31"
+   ],
+   "none_placed": false,
+   "pass": false
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "ACCT31"
+   ],
+   "flagged": [],
+   "pass": false
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    42.0,
+    42.0
+   ],
+   "stated": [
+    60.0,
+    60.0
+   ],
+   "against": "degree",
+   "ge": null,
+   "why": [
+    "the blocks and general education sum to 42.0-42.0; the catalog prints 60.0-60.0 for the degree"
+   ],
+   "major": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     42.0,
+     42.0
+    ],
+    "stated": [
+     42.0,
+     42.0
+    ],
+    "against": "program",
+    "why": []
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 6,
+   "courses": 0,
+   "count": 6,
+   "not_verbatim": [
+    "Prepare traditional and contribution-margin income statements and define related terms.",
+    "Demonstrate an understanding on how cost accounting methods, procedures, and techniques are used to determine product or service cost."
+   ],
+   "why": [
+    "not in the catalog text as printed: Prepare traditional and contribution-margin income statements and define related",
+    "not in the catalog text as printed: Demonstrate an understanding on how cost accounting methods, procedures, and tec"
+   ],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": false
+  },
+  "careers": {
+   "count": 5,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Accounting Associate of Arts (AA) Degree",
+   "measure": "units",
+   "total_units": {
+    "min": 42,
+    "max": 42
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Practice and implement ethical guidelines in dealing with related party transactions per current AICPA guidelines.",
+    "Prepare a set of financial statements for a sole proprietorship form of business.",
+    "Prepare traditional and contribution-margin income statements and define related terms.",
+    "Examine the relationship between audit risk, audit evidence and financial statement assertions.",
+    "Prepare payroll tax returns and reports.",
+    "Demonstrate an understanding on how cost accounting methods, procedures, and techniques are used to determine product or service cost."
+   ],
+   "careers": [
+    "public accountant",
+    "junior accountants",
+    "auditing clerks",
+    "payroll clerks",
+    "tax preparers"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "MAJOR CORE COURSES (42 UNITS)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 42,
+     "max": 42
+    },
+    "courses": [
+     {
+      "code": "ACCTG 001",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACCTG 002",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACCTG 011",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACCTG 012",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACCTG 015",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACCTG 016",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACCTG 017",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACCTG 019",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACCTG 023",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACCT 031",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BUS 038",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 017",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FINANCE 001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "FINANCE 002",
+        "units": 3,
+        "catalog_addition": false
+       },
+       {
+        "code": "INT BUS 001",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The AA section prints 'ACCT 031 MATHEMATICS OF ACCOUNTING'; recorded as printed but treated as the closed list's ACCTG 31 (apparent misprint of the subject; the certificate section prints ACCTG 031). Reviewer may wish to confirm.",
+   "'INT BUS 001 INTERNATIONAL TRADE' treated as closed-list INTBUS 1.",
+   "degree_total recorded from 'Total Units: Minimum of 60' printed in the award header; it is stated as a minimum. No general education pattern or GE units are named on the page.",
+   "Core courses sum to 42 units with one course chosen from each 'OR' group, matching the stated 42 major units."
+  ]
+ },
+ "extracted_run": "39006380342"
+}

@@ -1,0 +1,210 @@
+{
+ "college": "Clovis Community College",
+ "control_number": "33461",
+ "shape": "degree",
+ "title": "Business Administration: Information Systems Management",
+ "award": "A.S. Degree",
+ "source_url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=109",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8677,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8677,
+    "output_tokens": 1099,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1099,
+  "output_tokens_details": {
+   "thinking_tokens": 309
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.05669,
+ "ms": 9825,
+ "seconds": 10.3,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 14,
+   "share": 0.0,
+   "missing": [
+    "ACCTG40",
+    "ACCTG4A",
+    "BA10",
+    "BA19V",
+    "BA23",
+    "BA33",
+    "BA39",
+    "BA47",
+    "BA5",
+    "ECONC2001",
+    "ECONC2002",
+    "IS15",
+    "IS18",
+    "IS40A"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": true,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ACCTG 40",
+    "why": "award section not in text; appears only in Management A.S., Managerial Assistant and Small Business sections"
+   },
+   {
+    "code": "ACCTG 4A",
+    "why": "award section not in text; named only as a substitute in other programs' sections"
+   },
+   {
+    "code": "BA 10",
+    "why": "award section not in text; appears only in other programs' sections"
+   },
+   {
+    "code": "BA 19V",
+    "why": "award section not in text; named only as former number of BA 19 in Managerial Assistant certificate"
+   },
+   {
+    "code": "BA 23",
+    "why": "award section not in text; appears only in Management and Small Business Management A.S. sections"
+   },
+   {
+    "code": "BA 33",
+    "why": "award section not in text; appears only in other programs' sections"
+   },
+   {
+    "code": "BA 39",
+    "why": "award section not in text; appears only in Management and Small Business Management A.S. sections"
+   },
+   {
+    "code": "BA 47",
+    "why": "award section not in text; appears only in other programs' sections"
+   },
+   {
+    "code": "BA 5",
+    "why": "award section not in text; appears only in other programs' sections"
+   },
+   {
+    "code": "ECON C2001",
+    "why": "not in the text"
+   },
+   {
+    "code": "ECON C2002",
+    "why": "not in the text"
+   },
+   {
+    "code": "IS 15",
+    "why": "award section not in text; appears only in other programs' sections"
+   },
+   {
+    "code": "IS 18",
+    "why": "not in the text"
+   },
+   {
+    "code": "IS 40A",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "The supplied catalog text (pages 109-110) does not contain the Business Administration: Information Systems Management A.S. Degree section. It contains the end of a noncredit job-skills program, Management A.S. (C.2180.AS), Managerial Assistant Certificate of Achievement (C.2180.CA), Small Business Management A.S. (C.2030.AS) and Certificate of Achievement (C.2030.CA), and the start of Communication. No requirements were recorded; the source page reference likely points to the wrong page and should be checked.",
+   "The Communication program learning outcomes printed on page 110 belong to another program and were not recorded."
+  ]
+ },
+ "extracted_run": "39006155986"
+}
