@@ -1,0 +1,488 @@
+{
+ "college": "Cerro Coso Community College",
+ "catalog_url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf",
+ "platform": "pdf",
+ "catalog_year": "2026-2027",
+ "programs": 80,
+ "with_closed_list": 74,
+ "started": "2026-10-17T05:22:01Z",
+ "pdf": {
+  "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf",
+  "access": "robots_disallow",
+  "status": null,
+  "bytes": null,
+  "pages_total": 0,
+  "error": null,
+  "chars_total": 0,
+  "pypdf_accepted": 0,
+  "sample": [],
+  "extractor": null
+ },
+ "loads": 0,
+ "seconds": 2.9,
+ "found": 0,
+ "by_method": {
+  "no_closed_list": 6,
+  "not_found": 74
+ },
+ "shared_pages": {},
+ "not_found": [
+  {
+   "control_number": "01930",
+   "title": "Management",
+   "award": "A.S. Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "01933",
+   "title": "Business Office Technology",
+   "award": "A.S. Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "01946",
+   "title": "Welding Technology",
+   "award": "A.S. Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "01980",
+   "title": "General Sciences",
+   "award": "A.A. Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "10976",
+   "title": "Business",
+   "award": "A.S. Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "10977",
+   "title": "CC Information Technology",
+   "award": "A.S. Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "11577",
+   "title": "Child Development Associate Teacher",
+   "award": "Certificate of Achievement: 12 to fewer than 18 semester(or 18 to fewer than 27 ",
+   "near_miss": null
+  },
+  {
+   "control_number": "11578",
+   "title": "Child Development Teacher",
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+   "near_miss": null
+  },
+  {
+   "control_number": "11579",
+   "title": "Child Development Master Teacher",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "11580",
+   "title": "Child Development Site Supervisor",
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+   "near_miss": null
+  },
+  {
+   "control_number": "15576",
+   "title": "Paralegal Studies",
+   "award": "A.S. Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "18915",
+   "title": "Human Services",
+   "award": "A.S. Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "18917",
+   "title": "Social Work and Human Services",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "18952",
+   "title": "Business",
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+   "near_miss": null
+  },
+  {
+   "control_number": "18953",
+   "title": "Management",
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+   "near_miss": null
+  },
+  {
+   "control_number": "20629",
+   "title": "Business Office Technology",
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+   "near_miss": null
+  },
+  {
+   "control_number": "20632",
+   "title": "CC Information Technology",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "20640",
+   "title": "Vocational Nursing",
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+   "near_miss": null
+  },
+  {
+   "control_number": "30766",
+   "title": "Administration of Justice",
+   "award": "A.S. T Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "30793",
+   "title": "Mathematics",
+   "award": "A.S. T Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "31064",
+   "title": "Office Clerk",
+   "award": "Certificate of Achievement: 12 to fewer than 18 semester(or 18 to fewer than 27 ",
+   "near_miss": null
+  },
+  {
+   "control_number": "31065",
+   "title": "Administrative Office Assistant",
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+   "near_miss": null
+  },
+  {
+   "control_number": "31066",
+   "title": "Welding Processes",
+   "award": "Certificate of Achievement: 12 to fewer than 18 semester(or 18 to fewer than 27 ",
+   "near_miss": null
+  },
+  {
+   "control_number": "31159",
+   "title": "Paralegal Studies",
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+   "near_miss": null
+  },
+  {
+   "control_number": "31540",
+   "title": "Studio Arts",
+   "award": "A.A- T Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "31855",
+   "title": "Medical Assisting",
+   "award": "A.S. Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "31961",
+   "title": "Clinical Medical Assisting",
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+   "near_miss": null
+  },
+  {
+   "control_number": "31962",
+   "title": "Administrative Medical Assisting",
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+   "near_miss": null
+  },
+  {
+   "control_number": "32606",
+   "title": "Early Childhood Education",
+   "award": "A.S. T Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "32777",
+   "title": "English",
+   "award": "A.A- T Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "33516",
+   "title": "Welding Technology",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "33715",
+   "title": "Art History",
+   "award": "A.A- T Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "33718",
+   "title": "Anthropology",
+   "award": "A.A- T Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "33776",
+   "title": "Data Analyst I",
+   "award": "Certificate of Achievement: 12 to fewer than 18 semester(or 18 to fewer than 27 ",
+   "near_miss": null
+  },
+  {
+   "control_number": "33889",
+   "title": "Information Technology Plus",
+   "award": "Certificate of Achievement: 12 to fewer than 18 semester(or 18 to fewer than 27 ",
+   "near_miss": null
+  },
+  {
+   "control_number": "35195",
+   "title": "Cyber Security Technology",
+   "award": "A.S. Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "35273",
+   "title": "Cyber Security Technology -",
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+   "near_miss": null
+  },
+  {
+   "control_number": "38665",
+   "title": "Sociology",
+   "award": "A.A- T Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "38666",
+   "title": "Political Science",
+   "award": "A.A- T Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "38705",
+   "title": "History",
+   "award": "A.A- T Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "40250",
+   "title": "Medical Billing",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "40447",
+   "title": "Linux Operating System",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "40448",
+   "title": "Cloud Computing",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "40449",
+   "title": "Medical Coding",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "40707",
+   "title": "Entrepreneurship",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "40868",
+   "title": "Spanish",
+   "award": "A.A- T Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "40922",
+   "title": "Law, Public Policy, and Society",
+   "award": "A.A- T Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "40972",
+   "title": "Digital Media and Marketing",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "41740",
+   "title": "Industrial Process Technician",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "41968",
+   "title": "Addiction Counseling Studies",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "42678",
+   "title": "Business Administration 2.0",
+   "award": "A.S. T Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "43206",
+   "title": "Nutrition and Dietetics",
+   "award": "A.S. T Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "43663",
+   "title": "English as a Second Language for the Workforce",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "43671",
+   "title": "Addiction Counseling Studies",
+   "award": "A.S. Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "44085",
+   "title": "Computer Application Specialist",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "44097",
+   "title": "Microsoft Applications Specialist",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "44364",
+   "title": "Computer Applications Specialist",
+   "award": "A.S. Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "44450",
+   "title": "Registered Nursing",
+   "award": "A.S. Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "44598",
+   "title": "Corrections Officer",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "44726",
+   "title": "Word and Excel Office Skills",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "44727",
+   "title": "PowerPoint and Outlook Office Skills",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "44728",
+   "title": "Social Work and Human Services",
+   "award": "A.A- T Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "44884",
+   "title": "Peace Officer",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "44885",
+   "title": "Reserve Officer",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "44996",
+   "title": "Computer Basics",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "45087",
+   "title": "Commercial Truck Driving",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "45235",
+   "title": "Sports Studies: Coaching",
+   "award": "A.A. Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "45236",
+   "title": "Sports Studies: Coaching",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "45237",
+   "title": "Developing a Family Childcare Program",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "46168",
+   "title": "Sustainable Outdoor Recreation Leadership",
+   "award": "A.S. Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "46179",
+   "title": "Sustainable Outdoor Recreation Leadership",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "46220",
+   "title": "Forestry Conservation",
+   "award": "A.S. Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "46361",
+   "title": "Wildland Firefighter Technician",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "46375",
+   "title": "Forestry Conservation Technician I",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": null
+  }
+ ],
+ "page_claimed": [],
+ "coverage_bands": {
+  "0.5-0.8": 0,
+  "0.8-1.0": 0,
+  "1.0": 0
+ },
+ "would_extract": {
+  "against": null,
+  "kept": 0,
+  "programs": 0,
+  "list": []
+ },
+ "run": "39005930970"
+}
