@@ -82,19 +82,11 @@
    "program": 6,
    "courses": 0,
    "count": 6,
-   "not_verbatim": [
-    "Demonstrate competence in standard legal procedures to communicate effectively with law office personnel and clients and produce appropriate legal correspondence, documents, and records accurately using correct legal vocabulary and format.",
-    "Demonstrate competence in the use of state-of-the-art business-related software to create documents, spreadsheets, presentations, and databases.",
-    "Compose and create business documents—such as letters, memos, e-mail messages, reports, graphs and charts—using correct grammar, spelling, punctuation, language style, and formats."
-   ],
-   "why": [
-    "not in the catalog text as printed: Demonstrate competence in standard legal procedures to communicate effectively w",
-    "not in the catalog text as printed: Demonstrate competence in the use of state-of-the-art business-related software ",
-    "not in the catalog text as printed: Compose and create business documents-such as letters, memos, e-mail messages, r"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 0,
@@ -104,7 +96,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -285,5 +277,6 @@
    "No specific career titles named; the description only says the program prepares students for employment in a legal office and refers to a Gainful Employment website."
   ]
  },
- "extracted_run": "39006383070"
+ "extracted_run": 39018421038,
+ "read_run": "39006383070"
 }

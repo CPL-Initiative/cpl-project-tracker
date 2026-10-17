@@ -2,16 +2,16 @@
  "college": "Los Angeles Pierce College",
  "programs": 208,
  "with_closed_list": 196,
- "found": 194,
+ "found": 191,
  "extracted": 194,
  "errors": 1,
- "passed_machine_checks": 76,
+ "passed_machine_checks": 141,
  "failed": {
   "coverage": 20,
   "invented": 0,
   "arithmetic": 37,
   "repeated": 0,
-  "outcomes": 85
+  "outcomes": 15
  },
  "cost_usd": 15.01,
  "cost_per_program": 0.0774,
@@ -33,7 +33,40 @@
     "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=119",
     "coverage": 0.264
    }
+  },
+  {
+   "control_number": "42533",
+   "title": "UCTP Physics",
+   "award": "A.S. T Degree",
+   "near_miss": {
+    "pages": [
+     74
+    ],
+    "coverage": 0.9,
+    "why": "the page prints neither the control number nor the title and award"
+   }
+  },
+  {
+   "control_number": "43779",
+   "title": "Electric Vehicle Services for Light-Duty Zero-Emission Vehicles",
+   "award": "Noncredit program",
+   "near_miss": {
+    "pages": [
+     164
+    ],
+    "coverage": 1.0,
+    "why": "the page prints neither the control number nor the title and award"
+   }
+  },
+  {
+   "control_number": "45479",
+   "title": "Health Science",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=127",
+    "coverage": 0.093
+   }
   }
  ],
- "run": "39006383070"
+ "run": "39018421038"
 }

@@ -82,17 +82,11 @@
    "program": 3,
    "courses": 0,
    "count": 3,
-   "not_verbatim": [
-    "Apply essential learning habits, such as time management, help-seeking, study skills, and growth mindset strategies to support academic success across different course modalities (in-person, synchronous online, asynchronous online).",
-    "Analyze and apply effective reading and writing strategies for understanding assignments, interpreting essay prompts, and organizing academic writing in college-level coursework."
-   ],
-   "why": [
-    "not in the catalog text as printed: Apply essential learning habits, such as time management, help-seeking, study sk",
-    "not in the catalog text as printed: Analyze and apply effective reading and writing strategies for understanding ass"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 0,
@@ -102,7 +96,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -177,5 +171,6 @@
    "Only the Academic Bridge section was read; Citizenship and English Pronunciation sections on the same page belong to other programs."
   ]
  },
- "extracted_run": "39006383070"
+ "extracted_run": 39018421038,
+ "read_run": "39006383070"
 }

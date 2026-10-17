@@ -83,14 +83,10 @@
    "courses": 0,
    "count": 4,
    "not_verbatim": [
-    "Students apply vendor-neutral industry standards to designing and implementing IPv4 and IPv6 (Internet Protocol versions 4 and 6 [there is no version 5 in use in production networks]) addressing schemes for local area and wide area networks (LAN and WAN).",
-    "Students utilize vendor-neutral standards and Cisco-specific commands to configure network routers and network switches to provide stable, reliable, scalable, and functional access to Internetworks and apply basic controls to access of the network.",
-    "Students optionally seek industry certifications such as CompTIA’s Network+, and Cisco’s CCENT and CCNA R&S. These certifications are well respected and serve to help students gain entry or advancement in the computer networking world."
+    "Students apply vendor-neutral industry standards to designing and implementing IPv4 and IPv6 (Internet Protocol versions 4 and 6 [there is no version 5 in use in production networks]) addressing schemes for local area and wide area networks (LAN and WAN)."
    ],
    "why": [
-    "not in the catalog text as printed: Students apply vendor-neutral industry standards to designing and implementing I",
-    "not in the catalog text as printed: Students utilize vendor-neutral standards and Cisco-specific commands to configu",
-    "not in the catalog text as printed: Students optionally seek industry certifications such as CompTIA's Network+, and"
+    "not in the catalog text as printed: Students apply vendor-neutral industry standards to designing and implementing I"
    ],
    "heading_printed": true,
    "heading_without_outcomes": false,
@@ -232,5 +228,6 @@
    "Careers left empty: the text only says the certificate prepares students for careers in 'the support, design, implementation, maintenance and troubleshooting of local and wide area networks' and points to a Gainful Employment website for specific careers; no job titles are named."
   ]
  },
- "extracted_run": "39006383070"
+ "extracted_run": 39018421038,
+ "read_run": "39006383070"
 }

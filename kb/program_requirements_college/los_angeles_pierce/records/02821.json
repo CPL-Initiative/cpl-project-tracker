@@ -82,17 +82,11 @@
    "program": 4,
    "courses": 0,
    "count": 4,
-   "not_verbatim": [
-    "Demonstrate competence in the use of state-of-the-art business-related software to create documents, spreadsheets, presentations, and databases.",
-    "Compose and create business documents—such as letters, memos, e-mail messages, reports, graphs and charts—using correct grammar, spelling, punctuation, language style, and formats."
-   ],
-   "why": [
-    "not in the catalog text as printed: Demonstrate competence in the use of state-of-the-art business-related software ",
-    "not in the catalog text as printed: Compose and create business documents-such as letters, memos, e-mail messages, r"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 0,
@@ -105,7 +99,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -285,5 +279,6 @@
    "No careers named; the page only refers to a Gainful Employment Disclosure website (and that reference is in the certificate section)."
   ]
  },
- "extracted_run": "39006383070"
+ "extracted_run": 39018421038,
+ "read_run": "39006383070"
 }

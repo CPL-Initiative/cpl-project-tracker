@@ -82,19 +82,11 @@
    "program": 4,
    "courses": 0,
    "count": 4,
-   "not_verbatim": [
-    "Integrate knowledge from foundational and advanced tutoring training with key leadership principles, including group dynamics, learning theories, and equity-minded practices.",
-    "Demonstrate proficiency in leading and managing group interactions, including setting norms, resolving conflicts, and utilizing effective inquiry techniques. Analyze campus demographics to identify student needs and develop targeted support plans and training sessions to improve student outcomes.",
-    "Critically assess personal leadership skills, evaluate the effectiveness of tutoring strategies, and create professional development plans for future leadership roles in higher education."
-   ],
-   "why": [
-    "not in the catalog text as printed: Integrate knowledge from foundational and advanced tutoring training with key le",
-    "not in the catalog text as printed: Demonstrate proficiency in leading and managing group interactions, including se",
-    "not in the catalog text as printed: Critically assess personal leadership skills, evaluate the effectiveness of tuto"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 1,
@@ -104,7 +96,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -183,5 +175,6 @@
    "Program description also mentions 'future opportunities in higher education'; not recorded as a distinct career since it names no occupation."
   ]
  },
- "extracted_run": "39006383070"
+ "extracted_run": 39018421038,
+ "read_run": "39006383070"
 }

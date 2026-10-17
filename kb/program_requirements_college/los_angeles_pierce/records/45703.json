@@ -82,15 +82,11 @@
    "program": 2,
    "courses": 0,
    "count": 2,
-   "not_verbatim": [
-    "Apply fundamental principles and concepts underpinning sound geographic analysis with GIS, including computer representation of geographic data, vector and raster data models, map projections, coordinate systems, spatial analysis, and map design."
-   ],
-   "why": [
-    "not in the catalog text as printed: Apply fundamental principles and concepts underpinning sound geographic analysis"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 1,
@@ -100,7 +96,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -170,5 +166,6 @@
    "The page also prints the Bookkeeper and Biotechnology Careers certificates; they were not read."
   ]
  },
- "extracted_run": "39006383070"
+ "extracted_run": 39018421038,
+ "read_run": "39006383070"
 }

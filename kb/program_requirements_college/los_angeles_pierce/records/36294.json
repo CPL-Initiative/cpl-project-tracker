@@ -82,15 +82,11 @@
    "program": 5,
    "courses": 0,
    "count": 5,
-   "not_verbatim": [
-    "Develop scientific reasoning and problem-solving in interpreting behavior, studying research, and applying research design principles to drawing conclusions about psychological phenomena."
-   ],
-   "why": [
-    "not in the catalog text as printed: Develop scientific reasoning and problem-solving in interpreting behavior, study"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 0,
@@ -100,7 +96,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -278,5 +274,6 @@
    "Section header lists Effective: Fall 2018 (Revised Fall 2019) within the 2026-2027 catalog."
   ]
  },
- "extracted_run": "39006383070"
+ "extracted_run": 39018421038,
+ "read_run": "39006383070"
 }

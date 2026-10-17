@@ -82,15 +82,11 @@
    "program": 3,
    "courses": 0,
    "count": 3,
-   "not_verbatim": [
-    "Apply security concepts, tools, and procedures in evaluating environments to identify, exploit, report and recommend corrective actions to be taken in respect to threats and vulnerabilities."
-   ],
-   "why": [
-    "not in the catalog text as printed: Apply security concepts, tools, and procedures in evaluating environments to ide"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 1,
@@ -100,7 +96,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -185,5 +181,6 @@
    "Outcome 2 is copied as printed ('a variety of operating system')."
   ]
  },
- "extracted_run": "39006383070"
+ "extracted_run": 39018421038,
+ "read_run": "39006383070"
 }

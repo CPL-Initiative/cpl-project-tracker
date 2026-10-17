@@ -86,29 +86,21 @@
    "program": 3,
    "courses": 0,
    "count": 3,
-   "not_verbatim": [
-    "Apply public relations communication theory in order to create essential public relations tools including news releases and strategic public relations plan for a client."
-   ],
-   "why": [
-    "not in the catalog text as printed: Apply public relations communication theory in order to create essential public "
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 18,
-   "not_verbatim": [
-    "public relations professionals",
-    "communications analysts or representatives",
-    "communication/marketing specialists or managers"
-   ],
-   "pass": false
+   "not_verbatim": [],
+   "pass": true
   },
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -250,5 +242,6 @@
    "Career list for 'publicity manager, coordinator or assistant' kept as one printed title."
   ]
  },
- "extracted_run": "39006383070"
+ "extracted_run": 39018421038,
+ "read_run": "39006383070"
 }

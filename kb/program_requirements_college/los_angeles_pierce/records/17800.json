@@ -86,15 +86,11 @@
    "program": 4,
    "courses": 0,
    "count": 4,
-   "not_verbatim": [
-    "Demonstrate basic competence in the use of the Internet, the Windows computer operating system, and state-of-the-art business-related software to create documents and spreadsheets."
-   ],
-   "why": [
-    "not in the catalog text as printed: Demonstrate basic competence in the use of the Internet, the Windows computer op"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 1,
@@ -104,7 +100,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -195,5 +191,6 @@
    "Careers: the section refers to a Gainful Employment website for careers; only 'entry-level office positions' is named in the program description."
   ]
  },
- "extracted_run": "39006383070"
+ "extracted_run": 39018421038,
+ "read_run": "39006383070"
 }

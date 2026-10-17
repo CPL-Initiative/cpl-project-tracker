@@ -82,17 +82,11 @@
    "program": 3,
    "courses": 0,
    "count": 3,
-   "not_verbatim": [
-    "Communicate technical information effectively in written and oral formats using appropriate chemical and biotechnology terminology, including preparation of laboratory reports, standard operating procedures, and documentation meeting industry standards.",
-    "Possess foundational skills, knowledge, and laboratory competencies needed for entry-level employment as Industrial Quality Control Technicians and for continued academic advancement through transfer to four-year institutions pursuing bachelor's degrees in chemistry, biotechnology, or related fields."
-   ],
-   "why": [
-    "not in the catalog text as printed: Communicate technical information effectively in written and oral formats using ",
-    "not in the catalog text as printed: Possess foundational skills, knowledge, and laboratory competencies needed for e"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 1,
@@ -105,7 +99,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -221,5 +215,6 @@
    "Courses are marked with * in the catalog for prerequisites/corequisites."
   ]
  },
- "extracted_run": "39006383070"
+ "extracted_run": 39018421038,
+ "read_run": "39006383070"
 }

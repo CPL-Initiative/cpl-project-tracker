@@ -84,15 +84,11 @@
    "program": 4,
    "courses": 0,
    "count": 4,
-   "not_verbatim": [
-    "Maintain equestrian facilities in a manner consistent with industry standards."
-   ],
-   "why": [
-    "not in the catalog text as printed: Maintain equestrian facilities in a manner consistent with industry standards."
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 7,
@@ -506,5 +502,6 @@
    "Careers taken from the program information paragraph; the Gainful Employment section only points to an external website."
   ]
  },
- "extracted_run": "39006383070"
+ "extracted_run": 39018421038,
+ "read_run": "39006383070"
 }

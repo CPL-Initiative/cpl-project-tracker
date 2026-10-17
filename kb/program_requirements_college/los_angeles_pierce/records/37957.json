@@ -82,15 +82,11 @@
    "program": 4,
    "courses": 0,
    "count": 4,
-   "not_verbatim": [
-    "Demonstrate intermediate-level proficiency in writing and reading comprehension in the Japanese language."
-   ],
-   "why": [
-    "not in the catalog text as printed: Demonstrate intermediate-level proficiency in writing and reading comprehension "
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 0,
@@ -103,7 +99,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -188,5 +184,6 @@
    "Hyphenated line-break words in the outcomes (e.g. 'read -ing') were joined as 'reading'."
   ]
  },
- "extracted_run": "39006383070"
+ "extracted_run": 39018421038,
+ "read_run": "39006383070"
 }

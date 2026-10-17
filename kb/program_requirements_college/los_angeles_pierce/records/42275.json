@@ -83,12 +83,16 @@
    "courses": 0,
    "count": 3,
    "not_verbatim": [
-    "Identify main ideas and isolate specific details from authentic listening and reading passages, while using macro-strategies to make predictions and infer the meaning of unfamiliar vocabulary."
+    "Demonstrate intermediate-level competence in the language domains of listening, speaking, reading, and writing to navigate everyday, social, and occupational contexts with independence.",
+    "Identify main ideas and isolate specific details from authentic listening and reading passages, while using macro-strategies to make predictions and infer the meaning of unfamiliar vocabulary.",
+    "Engage in diverse conversational functions—such as persuading, giving clear directions, and expressing professional courtesy—utilizing appropriate formality, stress, and intonation patterns to maintain effective workplace and community relationships."
    ],
    "why": [
-    "not in the catalog text as printed: Identify main ideas and isolate specific details from authentic listening and re"
+    "not in the catalog text as printed: Demonstrate intermediate-level competence in the language domains of listening, ",
+    "not in the catalog text as printed: Identify main ideas and isolate specific details from authentic listening and re",
+    "not in the catalog text as printed: Engage in diverse conversational functions-such as persuading, giving clear dire"
    ],
-   "heading_printed": true,
+   "heading_printed": false,
    "heading_without_outcomes": false,
    "pass": false
   },
@@ -168,5 +172,6 @@
    "The text names no specific careers; it mentions only 'immediate career advancement' and the workforce generally."
   ]
  },
- "extracted_run": "39006383070"
+ "extracted_run": 39018421038,
+ "read_run": "39006383070"
 }

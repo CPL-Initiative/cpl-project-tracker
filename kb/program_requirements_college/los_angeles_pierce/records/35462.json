@@ -84,17 +84,11 @@
    "program": 3,
    "courses": 0,
    "count": 3,
-   "not_verbatim": [
-    "Demonstrate knowledge of the historical, cultural, and economic influences on the cinema, broadcasting and digital media industries in relationship to global mass communications in society.",
-    "Demonstrate the ability to apply tools and technologies appropriate for the production, editing and presentation of motion pictures, visual, aural, textual, or other media content."
-   ],
-   "why": [
-    "not in the catalog text as printed: Demonstrate knowledge of the historical, cultural, and economic influences on th",
-    "not in the catalog text as printed: Demonstrate the ability to apply tools and technologies appropriate for the prod"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 0,
@@ -455,5 +449,6 @@
    "Header says 'Effective: Spring 2023 (Revised Fall 2020; Spring 2023)' within the 2026-2027 catalog; major code P035462."
   ]
  },
- "extracted_run": "39006383070"
+ "extracted_run": 39018421038,
+ "read_run": "39006383070"
 }

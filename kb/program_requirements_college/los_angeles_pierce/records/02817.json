@@ -82,15 +82,11 @@
    "program": 5,
    "courses": 0,
    "count": 5,
-   "not_verbatim": [
-    "Classify an individual’s tax data into the components of an individual tax return."
-   ],
-   "why": [
-    "not in the catalog text as printed: Classify an individual's tax data into the components of an individual tax retur"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 6,
@@ -103,7 +99,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -307,5 +303,6 @@
    "Hyphenation artifacts from the PDF (e.g. 'indi -vidual') were rejoined in outcomes."
   ]
  },
- "extracted_run": "39006383070"
+ "extracted_run": 39018421038,
+ "read_run": "39006383070"
 }

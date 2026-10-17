@@ -99,8 +99,8 @@
    "count": 0,
    "not_verbatim": [],
    "why": [],
-   "heading_printed": true,
-   "heading_without_outcomes": true,
+   "heading_printed": false,
+   "heading_without_outcomes": false,
    "pass": true
   },
   "careers": {
@@ -211,5 +211,6 @@
    "The correct section is probably on another page of the 2026-2027 catalog, likely in the General Studies programs. A reviewer should find that page and re-extract."
   ]
  },
- "extracted_run": "39006383070"
+ "extracted_run": 39018421038,
+ "read_run": "39006383070"
 }

@@ -82,27 +82,21 @@
    "program": 3,
    "courses": 0,
    "count": 3,
-   "not_verbatim": [
-    "Students demonstrate the technological, professional, and business skills required to work and perform in the commercial music industry."
-   ],
-   "why": [
-    "not in the catalog text as printed: Students demonstrate the technological, professional, and business skills requir"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 3,
-   "not_verbatim": [
-    "audio postproduction"
-   ],
-   "pass": false
+   "not_verbatim": [],
+   "pass": true
   },
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -270,5 +264,6 @@
    "Only the Commercial Music Certificate section (page 141) was read; the following Music AA, Music Theory and Musicianship, and Recording Arts sections were ignored."
   ]
  },
- "extracted_run": "39006383070"
+ "extracted_run": 39018421038,
+ "read_run": "39006383070"
 }

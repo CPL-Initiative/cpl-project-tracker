@@ -82,15 +82,11 @@
    "program": 3,
    "courses": 0,
    "count": 3,
-   "not_verbatim": [
-    "Use qualitative and quantitative analysis techniques to solve physical science problems through integration of multiple ideas that demonstrates reasoning completely and clearly."
-   ],
-   "why": [
-    "not in the catalog text as printed: Use qualitative and quantitative analysis techniques to solve physical science p"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 0,
@@ -100,7 +96,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -235,5 +231,6 @@
    "The preceding Theatre Arts AA-T text belongs to another program and was ignored."
   ]
  },
- "extracted_run": "39006383070"
+ "extracted_run": 39018421038,
+ "read_run": "39006383070"
 }

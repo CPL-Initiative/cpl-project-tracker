@@ -82,15 +82,11 @@
    "program": 4,
    "courses": 0,
    "count": 4,
-   "not_verbatim": [
-    "Develop teaching assistant strategies that are culturally responsive and focused on student success and building positive relationships."
-   ],
-   "why": [
-    "not in the catalog text as printed: Develop teaching assistant strategies that are culturally responsive and focused"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 0,
@@ -100,7 +96,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -185,5 +181,6 @@
    "The text following the award table (Administrative Professional A.A.) belongs to another program and was ignored."
   ]
  },
- "extracted_run": "39006383070"
+ "extracted_run": 39018421038,
+ "read_run": "39006383070"
 }

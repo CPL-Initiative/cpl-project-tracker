@@ -98,8 +98,10 @@
   },
   "careers": {
    "count": 1,
-   "not_verbatim": [],
-   "pass": true
+   "not_verbatim": [
+    "Child Care Center fully qualified teacher"
+   ],
+   "pass": false
   },
   "degree": {
    "status": "n/a"
@@ -190,5 +192,6 @@
    "Career entry taken from program information: 'meets the State Department of Social Services minimum requirements for Child Care Center fully qualified teacher'; reviewer may check whether this counts as a job title. Gainful Employment text only refers to an external website for careers."
   ]
  },
- "extracted_run": "39006383070"
+ "extracted_run": 39018421038,
+ "read_run": "39006383070"
 }

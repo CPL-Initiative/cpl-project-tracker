@@ -86,15 +86,11 @@
    "program": 2,
    "courses": 0,
    "count": 2,
-   "not_verbatim": [
-    "Demonstrate knowledge of policies, procedures, and ethics necessary to work in the Center for Academic Success."
-   ],
-   "why": [
-    "not in the catalog text as printed: Demonstrate knowledge of policies, procedures, and ethics necessary to work in t"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 1,
@@ -104,7 +100,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -175,5 +171,6 @@
    "Line-break hyphenation in the outcomes ('neces -sary') was rejoined as 'necessary'."
   ]
  },
- "extracted_run": "39006383070"
+ "extracted_run": 39018421038,
+ "read_run": "39006383070"
 }

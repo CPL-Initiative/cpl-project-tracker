@@ -82,15 +82,11 @@
    "program": 3,
    "courses": 0,
    "count": 3,
-   "not_verbatim": [
-    "Design Infrastructure as a Service (IaaS) solutions by provisioning computing instances, establishing virtual private networks, managing databases and storage within a secure online environment."
-   ],
-   "why": [
-    "not in the catalog text as printed: Design Infrastructure as a Service (IaaS) solutions by provisioning computing in"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 4,
@@ -100,7 +96,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -194,5 +190,6 @@
    "Hyphenated line breaks in the outcomes ('man -aging') were read as single words."
   ]
  },
- "extracted_run": "39006383070"
+ "extracted_run": 39018421038,
+ "read_run": "39006383070"
 }

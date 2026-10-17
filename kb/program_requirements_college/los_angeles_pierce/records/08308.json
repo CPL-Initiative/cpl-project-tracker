@@ -82,15 +82,11 @@
    "program": 1,
    "courses": 0,
    "count": 1,
-   "not_verbatim": [
-    "Students will demonstrate a clear understanding in using common SOAP protocol in the assessment, observations, diagnosis, treatment of very common disorders in companion animals, livestock and poultry under the direction of a CA licensed veterinarian."
-   ],
-   "why": [
-    "not in the catalog text as printed: Students will demonstrate a clear understanding in using common SOAP protocol in"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 0,
@@ -103,7 +99,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -421,5 +417,6 @@
    "High Unit Major Waiver: waives LACCD GE Areas 4A and 7."
   ]
  },
- "extracted_run": "39006383070"
+ "extracted_run": 39018421038,
+ "read_run": "39006383070"
 }

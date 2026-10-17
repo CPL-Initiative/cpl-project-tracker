@@ -86,19 +86,11 @@
    "program": 4,
    "courses": 0,
    "count": 4,
-   "not_verbatim": [
-    "Explain and apply basic physiological principles of human movement in physical activity, exercise, and sports settings.",
-    "Analyze the history, research, and current information in kinesiology and their current applications.",
-    "Recognize and appraise the pervasiveness, diversity, and significance of physical activity within kinesiology sub-disciplines, professional careers, and human experience."
-   ],
-   "why": [
-    "not in the catalog text as printed: Explain and apply basic physiological principles of human movement in physical a",
-    "not in the catalog text as printed: Analyze the history, research, and current information in kinesiology and their ",
-    "not in the catalog text as printed: Recognize and appraise the pervasiveness, diversity, and significance of physica"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 0,
@@ -555,5 +547,6 @@
    "Program learning outcomes are printed for the program; this AA-T is the only award in the section."
   ]
  },
- "extracted_run": "39006383070"
+ "extracted_run": 39018421038,
+ "read_run": "39006383070"
 }

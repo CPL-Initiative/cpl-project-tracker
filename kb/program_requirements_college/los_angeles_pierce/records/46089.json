@@ -93,8 +93,8 @@
    "count": 0,
    "not_verbatim": [],
    "why": [],
-   "heading_printed": false,
-   "heading_without_outcomes": false,
+   "heading_printed": true,
+   "heading_without_outcomes": true,
    "pass": true
   },
   "careers": {
@@ -181,5 +181,6 @@
    "The C-ID table lists all closed-list courses (e.g., PHYS 205 = PHYSICS 101, MATH 210/211 = MATH 261, COMP 122 = CS 116), but a cross-reference table is not a statement of program requirements. A reviewer should locate the correct page for the Physics A.S.-T in the 2026-2027 catalog."
   ]
  },
- "extracted_run": "39006383070"
+ "extracted_run": 39018421038,
+ "read_run": "39006383070"
 }

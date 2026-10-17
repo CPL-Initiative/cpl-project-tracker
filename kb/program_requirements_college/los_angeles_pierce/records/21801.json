@@ -82,11 +82,25 @@
    "program": 6,
    "courses": 0,
    "count": 6,
-   "not_verbatim": [],
-   "why": [],
+   "not_verbatim": [
+    "Recognize and critically analyze the elements and principles of architectural design and construction.",
+    "Display competency with graphic communication of ideas.",
+    "Create architectural projects utilizing research, planning, analysis, and concept.",
+    "Develop critical understanding of the practice of architecture and its components.",
+    "Recognize and express structural, material and building system components as well as the code, safety, and site factors that go into construction and design.",
+    "Recognize and execute cognitive, cultural, physical, social and sustainable factors in planning construction and the execution of architectural designs."
+   ],
+   "why": [
+    "not in the catalog text as printed: Recognize and critically analyze the elements and principles of architectural de",
+    "not in the catalog text as printed: Display competency with graphic communication of ideas.",
+    "not in the catalog text as printed: Create architectural projects utilizing research, planning, analysis, and concep",
+    "not in the catalog text as printed: Develop critical understanding of the practice of architecture and its component",
+    "not in the catalog text as printed: Recognize and express structural, material and building system components as wel",
+    "not in the catalog text as printed: Recognize and execute cognitive, cultural, physical, social and sustainable fact"
+   ],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": true
+   "pass": false
   },
   "careers": {
    "count": 0,
@@ -96,7 +110,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": true
+  "pass": false
  },
  "record": {
   "program": {
@@ -246,5 +260,6 @@
    "Asterisks on course codes mark prerequisites/corequisites and were dropped from the codes."
   ]
  },
- "extracted_run": "39006383070"
+ "extracted_run": 39018421038,
+ "read_run": "39006383070"
 }

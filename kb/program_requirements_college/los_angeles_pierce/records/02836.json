@@ -82,15 +82,11 @@
    "program": 6,
    "courses": 0,
    "count": 6,
-   "not_verbatim": [
-    "Critically analyze and interpret a theatrical text; distinguish a play’s various dramatic components, such as plot, character, language, action, imagery, structure, style, genre, and theme."
-   ],
-   "why": [
-    "not in the catalog text as printed: Critically analyze and interpret a theatrical text; distinguish a play's various"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 0,
@@ -103,7 +99,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -223,5 +219,6 @@
    "Major total of 19 units matches the sum of required courses with one of THEATER 232/250/292."
   ]
  },
- "extracted_run": "39006383070"
+ "extracted_run": 39018421038,
+ "read_run": "39006383070"
 }

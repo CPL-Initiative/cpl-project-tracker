@@ -82,19 +82,11 @@
    "program": 6,
    "courses": 0,
    "count": 6,
-   "not_verbatim": [
-    "Develop a broad base knowledge of major historical periods, literary styles, significant plays and authors, cultural influences, and social customs inherent in the development of world theatre.",
-    "Recognize the roles, responsibilities, and collaborative contributions of each member of a professional theatrical production team.",
-    "Recognize, categorize, and safely work with the basic tools, equipment, and materials used in costume and scenic construction, and makeup application."
-   ],
-   "why": [
-    "not in the catalog text as printed: Develop a broad base knowledge of major historical periods, literary styles, sig",
-    "not in the catalog text as printed: Recognize the roles, responsibilities, and collaborative contributions of each m",
-    "not in the catalog text as printed: Recognize, categorize, and safely work with the basic tools, equipment, and mate"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 1,
@@ -107,7 +99,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -211,5 +203,6 @@
    "Program information says 'six Major required classes', matching the six courses listed."
   ]
  },
- "extracted_run": "39006383070"
+ "extracted_run": 39018421038,
+ "read_run": "39006383070"
 }
