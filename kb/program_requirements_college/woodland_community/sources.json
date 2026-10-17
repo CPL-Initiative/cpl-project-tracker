@@ -54,8 +54,8 @@
   ],
   "source": {
    "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=96",
-   "title": null,
-   "h1": null,
+   "title": "ENVIRONMENTAL HORTICULTURE (CERTIFICATE)",
+   "h1": "ENVIRONMENTAL HORTICULTURE (CERTIFICATE)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -64,7 +64,8 @@
     98,
     99
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 20,
   "text_chars": 16000
@@ -85,15 +86,16 @@
   ],
   "source": {
    "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=95",
-   "title": null,
-   "h1": null,
+   "title": "AGRICULTURE BUSINESS (CERTIFICATE)",
+   "h1": "AGRICULTURE BUSINESS (CERTIFICATE)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     95,
     96
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 5,
   "text_chars": 8194
@@ -119,8 +121,8 @@
   ],
   "source": {
    "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=86",
-   "title": null,
-   "h1": null,
+   "title": "»Accounting (Certificate)",
+   "h1": "»Accounting (Certificate)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -129,10 +131,11 @@
     88,
     89
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 10,
-  "text_chars": 10410
+  "text_chars": 10239
  },
  {
   "control_number": "18877",
@@ -156,8 +159,8 @@
   ],
   "source": {
    "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=139",
-   "title": null,
-   "h1": null,
+   "title": "CHILD DEVELOPMENT TEACHER (CERTIFICATE)",
+   "h1": "CHILD DEVELOPMENT TEACHER (CERTIFICATE)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -166,7 +169,8 @@
     141,
     142
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 11,
   "text_chars": 14765
@@ -199,8 +203,8 @@
   ],
   "source": {
    "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=178",
-   "title": null,
-   "h1": null,
+   "title": "CHEMICAL DEPENDENCY COUNSELOR (CERTIFICATE)",
+   "h1": "CHEMICAL DEPENDENCY COUNSELOR (CERTIFICATE)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -209,7 +213,8 @@
     180,
     181
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 17,
   "text_chars": 15445
@@ -232,8 +237,8 @@
   ],
   "source": {
    "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=98",
-   "title": null,
-   "h1": null,
+   "title": "AGRICULTURE SCIENCE (A.S.)",
+   "h1": "AGRICULTURE SCIENCE (A.S.)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -241,7 +246,8 @@
     99,
     100
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 9,
   "text_chars": 13492
@@ -271,21 +277,22 @@
    "PLSCI34"
   ],
   "source": {
-   "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=96",
-   "title": null,
-   "h1": null,
+   "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=98",
+   "title": "ENVIRONMENTAL HORTICULTURE (A.S.)",
+   "h1": "ENVIRONMENTAL HORTICULTURE (A.S.)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    96,
-    97,
     98,
-    99
+    99,
+    100,
+    101
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 15,
-  "text_chars": 16000
+  "text_chars": 14751
  },
  {
   "control_number": "19215",
@@ -310,8 +317,8 @@
   ],
   "source": {
    "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=87",
-   "title": null,
-   "h1": null,
+   "title": "ACCOUNTING (A.S.)",
+   "h1": "ACCOUNTING (A.S.)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -319,7 +326,8 @@
     88,
     89
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 12,
   "text_chars": 7760
@@ -351,8 +359,8 @@
   ],
   "source": {
    "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=121",
-   "title": null,
-   "h1": null,
+   "title": "BUSINESS MANAGEMENT (A.S.)",
+   "h1": "BUSINESS MANAGEMENT (A.S.)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -361,7 +369,8 @@
     123,
     124
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 17,
   "text_chars": 13631
@@ -390,8 +399,8 @@
   ],
   "source": {
    "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=142",
-   "title": null,
-   "h1": null,
+   "title": "EARLY CHILDHOOD EDUCATION (A.S.)",
+   "h1": "EARLY CHILDHOOD EDUCATION (A.S.)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -400,7 +409,8 @@
     144,
     145
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 13,
   "text_chars": 13640
@@ -425,21 +435,22 @@
    "HUSEV44R"
   ],
   "source": {
-   "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=178",
-   "title": null,
-   "h1": null,
+   "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=181",
+   "title": "CHEMICAL DEPENDENCY COUNSELOR (A.S.)",
+   "h1": "CHEMICAL DEPENDENCY COUNSELOR (A.S.)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    178,
-    179,
-    180,
-    181
+    181,
+    182,
+    183,
+    184
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 10,
-  "text_chars": 15445
+  "text_chars": 13570
  },
  {
   "control_number": "19230",
@@ -461,8 +472,8 @@
   ],
   "source": {
    "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=91",
-   "title": null,
-   "h1": null,
+   "title": "CRIMINAL JUSTICE STUDIES (A.S.)",
+   "h1": "CRIMINAL JUSTICE STUDIES (A.S.)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -470,7 +481,8 @@
     92,
     93
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 9,
   "text_chars": 12506
@@ -512,8 +524,8 @@
   ],
   "source": {
    "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=179",
-   "title": null,
-   "h1": null,
+   "title": "HUMAN SERVICES (A.S.)",
+   "h1": "HUMAN SERVICES (A.S.)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -522,7 +534,8 @@
     181,
     182
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 14,
   "text_chars": 14127
@@ -549,8 +562,8 @@
   ],
   "source": {
    "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=213",
-   "title": null,
-   "h1": null,
+   "title": "»Psychology (A.A.-T)",
+   "h1": "»Psychology (A.A.-T)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -558,10 +571,11 @@
     214,
     215
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 12,
-  "text_chars": 9718
+  "text_chars": 9575
  },
  {
   "control_number": "31402",
@@ -586,8 +600,8 @@
   ],
   "source": {
    "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=171",
-   "title": null,
-   "h1": null,
+   "title": "»Earth Science (A.S.)",
+   "h1": "»Earth Science (A.S.)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -595,10 +609,11 @@
     172,
     173
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 14,
-  "text_chars": 10208
+  "text_chars": 10082
  },
  {
   "control_number": "31433",
@@ -615,8 +630,8 @@
   ],
   "source": {
    "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=171",
-   "title": null,
-   "h1": null,
+   "title": "»Geology (A.S.-T)",
+   "h1": "»Geology (A.S.-T)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -624,10 +639,11 @@
     172,
     173
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 6,
-  "text_chars": 10208
+  "text_chars": 10059
  },
  {
   "control_number": "32164",
@@ -644,8 +660,8 @@
   ],
   "source": {
    "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=217",
-   "title": null,
-   "h1": null,
+   "title": "»Sociology (A.A.-T)",
+   "h1": "»Sociology (A.A.-T)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -653,10 +669,11 @@
     218,
     219
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 4,
-  "text_chars": 8142
+  "text_chars": 8000
  },
  {
   "control_number": "32248",
@@ -681,8 +698,8 @@
   ],
   "source": {
    "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=95",
-   "title": null,
-   "h1": null,
+   "title": "Community College Sustainable Agriculture Certificate of",
+   "h1": "Community College Sustainable Agriculture Certificate of",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -691,7 +708,8 @@
     97,
     98
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 12,
   "text_chars": 16000
@@ -713,21 +731,22 @@
    "ECE45"
   ],
   "source": {
-   "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=139",
-   "title": null,
-   "h1": null,
+   "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=141",
+   "title": "EARLY CHILDHOOD EDUCATION (A.S.-T)",
+   "h1": "EARLY CHILDHOOD EDUCATION (A.S.-T)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    139,
-    140,
     141,
-    142
+    142,
+    143,
+    144
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 7,
-  "text_chars": 14765
+  "text_chars": 13293
  },
  {
   "control_number": "32322",
@@ -753,18 +772,19 @@
   ],
   "source": {
    "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=175",
-   "title": null,
-   "h1": null,
+   "title": "»History (A.A.-T)",
+   "h1": "»History (A.A.-T)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     175,
     176
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 13,
-  "text_chars": 6958
+  "text_chars": 6818
  },
  {
   "control_number": "32340",
@@ -785,17 +805,18 @@
   ],
   "source": {
    "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=152",
-   "title": null,
-   "h1": null,
+   "title": "»English (A.A.-T)",
+   "h1": "»English (A.A.-T)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     152
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 8,
-  "text_chars": 3731
+  "text_chars": 3591
  },
  {
   "control_number": "32345",
@@ -803,26 +824,31 @@
   "award": "A.S. T Degree",
   "shape": "adt",
   "method": "pdf_pages",
-  "coverage": 0.571,
+  "coverage": 0.857,
   "codes_found": [
+   "MATH1A",
+   "MATH1B",
    "MATH1C",
    "MATH2",
    "MATH3",
-   "STATC1000"
+   "PHYS4A"
   ],
   "source": {
-   "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=81",
-   "title": null,
-   "h1": null,
+   "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=196",
+   "title": "»Mathematics (AS-T)",
+   "h1": "»Mathematics (AS-T)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    81
+    196,
+    197,
+    198
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 7,
-  "text_chars": 1355
+  "text_chars": 8137
  },
  {
   "control_number": "32388",
@@ -845,8 +871,8 @@
   ],
   "source": {
    "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=90",
-   "title": null,
-   "h1": null,
+   "title": "»Administration of Justice (A.S.-T)",
+   "h1": "»Administration of Justice (A.S.-T)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -855,7 +881,8 @@
     92,
     93
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 10,
   "text_chars": 16000
@@ -877,8 +904,8 @@
   ],
   "source": {
    "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=163",
-   "title": null,
-   "h1": null,
+   "title": "DRINKING WATER AND WASTEWATER TECHNOLOGY (CERTIFICATE)",
+   "h1": "DRINKING WATER AND WASTEWATER TECHNOLOGY (CERTIFICATE)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -887,10 +914,11 @@
     165,
     166
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 6,
-  "text_chars": 10583
+  "text_chars": 10310
  },
  {
   "control_number": "35089",
@@ -914,8 +942,8 @@
   ],
   "source": {
    "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=167",
-   "title": null,
-   "h1": null,
+   "title": "»Chicana/o Studies (A.A.)",
+   "h1": "»Chicana/o Studies (A.A.)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -923,10 +951,11 @@
     168,
     169
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 11,
-  "text_chars": 9516
+  "text_chars": 9369
  },
  {
   "control_number": "35279",
@@ -942,8 +971,8 @@
   ],
   "source": {
    "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=224",
-   "title": null,
-   "h1": null,
+   "title": "»Welding Technologies (Certificate)",
+   "h1": "»Welding Technologies (Certificate)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -951,10 +980,11 @@
     225,
     226
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 3,
-  "text_chars": 6496
+  "text_chars": 6365
  },
  {
   "control_number": "35333",
@@ -976,8 +1006,8 @@
   ],
   "source": {
    "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=133",
-   "title": null,
-   "h1": null,
+   "title": "»Baking (Certificate)",
+   "h1": "»Baking (Certificate)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -986,10 +1016,11 @@
     135,
     136
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 9,
-  "text_chars": 14595
+  "text_chars": 14418
  },
  {
   "control_number": "35343",
@@ -1005,8 +1036,8 @@
   ],
   "source": {
    "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=138",
-   "title": null,
-   "h1": null,
+   "title": "»Child Development Associate Teacher (Certificate)",
+   "h1": "»Child Development Associate Teacher (Certificate)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -1015,10 +1046,11 @@
     140,
     141
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 3,
-  "text_chars": 12198
+  "text_chars": 11946
  },
  {
   "control_number": "35369",
@@ -1040,8 +1072,8 @@
   ],
   "source": {
    "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=113",
-   "title": null,
-   "h1": null,
+   "title": "»Biology (A.S.-T)",
+   "h1": "»Biology (A.S.-T)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -1049,10 +1081,11 @@
     114,
     115
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 10,
-  "text_chars": 9779
+  "text_chars": 9653
  },
  {
   "control_number": "35370",
@@ -1088,18 +1121,19 @@
   ],
   "source": {
    "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=108",
-   "title": null,
-   "h1": null,
+   "title": "»Anthropology (A.A.-T)",
+   "h1": "»Anthropology (A.A.-T)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     108,
     109
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 23,
-  "text_chars": 6562
+  "text_chars": 6417
  },
  {
   "control_number": "35387",
@@ -1124,8 +1158,8 @@
   ],
   "source": {
    "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=133",
-   "title": null,
-   "h1": null,
+   "title": "»Culinary Arts (Certificate)",
+   "h1": "»Culinary Arts (Certificate)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -1134,10 +1168,11 @@
     135,
     136
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 12,
-  "text_chars": 14595
+  "text_chars": 14395
  },
  {
   "control_number": "35438",
@@ -1163,8 +1198,8 @@
   ],
   "source": {
    "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=133",
-   "title": null,
-   "h1": null,
+   "title": "»Culinary Arts (A.A.)",
+   "h1": "»Culinary Arts (A.A.)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -1173,10 +1208,11 @@
     135,
     136
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 13,
-  "text_chars": 14595
+  "text_chars": 14463
  },
  {
   "control_number": "35518",
@@ -1201,14 +1237,15 @@
   ],
   "source": {
    "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=119",
-   "title": null,
-   "h1": null,
+   "title": "EXECUTIVE ADMINISTRATIVE ASSISTANT (CERTIFICATE)",
+   "h1": "EXECUTIVE ADMINISTRATIVE ASSISTANT (CERTIFICATE)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     119
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 12,
   "text_chars": 2931
@@ -1230,18 +1267,19 @@
   ],
   "source": {
    "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=100",
-   "title": null,
-   "h1": null,
+   "title": "AGRICULTURE PLANT SCIENCE (A.S.-T)",
+   "h1": "AGRICULTURE PLANT SCIENCE (A.S.-T)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     100,
     101
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 6,
-  "text_chars": 8722
+  "text_chars": 6161
  },
  {
   "control_number": "35722",
@@ -1262,15 +1300,16 @@
   ],
   "source": {
    "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=100",
-   "title": null,
-   "h1": null,
+   "title": "AGRICULTURE ANIMAL SCIENCE (A.S.-T)",
+   "h1": "AGRICULTURE ANIMAL SCIENCE (A.S.-T)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     100,
     101
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 8,
   "text_chars": 8722
@@ -1298,8 +1337,8 @@
   ],
   "source": {
    "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=99",
-   "title": null,
-   "h1": null,
+   "title": "AGRICULTURE BUSINESS (A.S.-T)",
+   "h1": "AGRICULTURE BUSINESS (A.S.-T)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -1307,7 +1346,8 @@
     100,
     101
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 13,
   "text_chars": 11890
@@ -1331,18 +1371,19 @@
   ],
   "source": {
    "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=148",
-   "title": null,
-   "h1": null,
+   "title": "»Economics (A.A.-T)",
+   "h1": "»Economics (A.A.-T)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     148,
     149
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 10,
-  "text_chars": 4918
+  "text_chars": 4790
  },
  {
   "control_number": "35736",
@@ -1367,18 +1408,19 @@
   ],
   "source": {
    "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=204",
-   "title": null,
-   "h1": null,
+   "title": "»Nutrition and Dietetics (A.S.-T)",
+   "h1": "»Nutrition and Dietetics (A.S.-T)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     204,
     205
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 12,
-  "text_chars": 4343
+  "text_chars": 4215
  },
  {
   "control_number": "35743",
@@ -1404,17 +1446,18 @@
   ],
   "source": {
    "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=190",
-   "title": null,
-   "h1": null,
+   "title": "SOCIAL JUSTICE STUDIES (A.A.-T)  18 UNITS",
+   "h1": "SOCIAL JUSTICE STUDIES (A.A.-T)  18 UNITS",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     190
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 13,
-  "text_chars": 2110
+  "text_chars": 1629
  },
  {
   "control_number": "35956",
@@ -1433,8 +1476,8 @@
   ],
   "source": {
    "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=127",
-   "title": null,
-   "h1": null,
+   "title": "»Chemistry (A.S.-T)",
+   "h1": "»Chemistry (A.S.-T)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -1442,10 +1485,11 @@
     128,
     129
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 8,
-  "text_chars": 8242
+  "text_chars": 8114
  },
  {
   "control_number": "35961",
@@ -1490,8 +1534,8 @@
   ],
   "source": {
    "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=97",
-   "title": null,
-   "h1": null,
+   "title": "PLANT PROTECTION (CERTIFICATE)",
+   "h1": "PLANT PROTECTION (CERTIFICATE)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -1500,7 +1544,8 @@
     99,
     100
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 33,
   "text_chars": 16000
@@ -1526,8 +1571,8 @@
   ],
   "source": {
    "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=211",
-   "title": null,
-   "h1": null,
+   "title": "»Political Science (A.A.-T)",
+   "h1": "»Political Science (A.A.-T)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -1536,10 +1581,11 @@
     213,
     214
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 11,
-  "text_chars": 13418
+  "text_chars": 13267
  },
  {
   "control_number": "36036",
@@ -1558,8 +1604,8 @@
   ],
   "source": {
    "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=224",
-   "title": null,
-   "h1": null,
+   "title": "»Welding Technologies - Advanced (Certificate)",
+   "h1": "»Welding Technologies - Advanced (Certificate)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -1567,10 +1613,11 @@
     225,
     226
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 6,
-  "text_chars": 6496
+  "text_chars": 6328
  },
  {
   "control_number": "36606",
@@ -1591,8 +1638,8 @@
   ],
   "source": {
    "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=191",
-   "title": null,
-   "h1": null,
+   "title": "CHILD AND ADOLESCENT DEVELOPMENT (A.A.-T)",
+   "h1": "CHILD AND ADOLESCENT DEVELOPMENT (A.A.-T)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -1600,7 +1647,8 @@
     192,
     193
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 9,
   "text_chars": 13191
@@ -1637,14 +1685,15 @@
   ],
   "source": {
    "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=193",
-   "title": null,
-   "h1": null,
+   "title": "LAW, PUBLIC POLICY, AND SOCIETY (A.A.-T)",
+   "h1": "LAW, PUBLIC POLICY, AND SOCIETY (A.A.-T)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     193
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 23,
   "text_chars": 5535
@@ -1684,8 +1733,8 @@
   ],
   "source": {
    "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=164",
-   "title": null,
-   "h1": null,
+   "title": "DRINKING WATER AND WASTEWATER TECHNOLOGY (A.S.)",
+   "h1": "DRINKING WATER AND WASTEWATER TECHNOLOGY (A.S.)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -1693,7 +1742,8 @@
     165,
     166
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 12,
   "text_chars": 7957
@@ -1711,17 +1761,18 @@
   ],
   "source": {
    "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=116",
-   "title": null,
-   "h1": null,
+   "title": "BUSINESS COMPUTER APPLICATIONS BASICS (NONCREDIT CERTIFICATE)",
+   "h1": "BUSINESS COMPUTER APPLICATIONS BASICS (NONCREDIT CERTIFICATE)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     116
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 2,
-  "text_chars": 1405
+  "text_chars": 985
  },
  {
   "control_number": "38282",
@@ -1738,17 +1789,18 @@
   ],
   "source": {
    "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=156",
-   "title": null,
-   "h1": null,
+   "title": "ACADEMIC PREPAREDNESS AND CAREER DEVELOPMENT (NONCREDIT CERTIFICATE)",
+   "h1": "ACADEMIC PREPAREDNESS AND CAREER DEVELOPMENT (NONCREDIT CERTIFICATE)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     156
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 4,
-  "text_chars": 2410
+  "text_chars": 2053
  },
  {
   "control_number": "38283",
@@ -1764,17 +1816,18 @@
   ],
   "source": {
    "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=157",
-   "title": null,
-   "h1": null,
+   "title": "The Certificate of Competency in Foundational English Skills",
+   "h1": "The Certificate of Competency in Foundational English Skills",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     157
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 3,
-  "text_chars": 2301
+  "text_chars": 2210
  },
  {
   "control_number": "38284",
@@ -1790,17 +1843,18 @@
   ],
   "source": {
    "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=157",
-   "title": null,
-   "h1": null,
+   "title": "The Certificate of Competency in intermediate English Skills",
+   "h1": "The Certificate of Competency in intermediate English Skills",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     157
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 3,
-  "text_chars": 2301
+  "text_chars": 1165
  },
  {
   "control_number": "38793",
@@ -1819,8 +1873,8 @@
   ],
   "source": {
    "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=117",
-   "title": null,
-   "h1": null,
+   "title": "The Administrative Assistant Certificate of Achievement will",
+   "h1": "The Administrative Assistant Certificate of Achievement will",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -1828,10 +1882,11 @@
     118,
     119
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 6,
-  "text_chars": 11989
+  "text_chars": 9625
  },
  {
   "control_number": "38794",
@@ -1858,8 +1913,8 @@
   ],
   "source": {
    "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=118",
-   "title": null,
-   "h1": null,
+   "title": "BUSINESS MANAGEMENT (CERTIFICATE)",
+   "h1": "BUSINESS MANAGEMENT (CERTIFICATE)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -1868,10 +1923,11 @@
     120,
     121
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 15,
-  "text_chars": 14380
+  "text_chars": 12492
  },
  {
   "control_number": "38835",
@@ -1891,18 +1947,19 @@
   ],
   "source": {
    "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=118",
-   "title": null,
-   "h1": null,
+   "title": "The Medical Office Specialist Certificate of Achievement will",
+   "h1": "The Medical Office Specialist Certificate of Achievement will",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     118,
     119
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 7,
-  "text_chars": 7539
+  "text_chars": 7471
  },
  {
   "control_number": "40050",
@@ -1925,8 +1982,8 @@
   ],
   "source": {
    "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=117",
-   "title": null,
-   "h1": null,
+   "title": "ENTREPRENEURSHIP (CERTIFICATE)",
+   "h1": "ENTREPRENEURSHIP (CERTIFICATE)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -1935,7 +1992,8 @@
     119,
     120
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 10,
   "text_chars": 15474
@@ -1962,8 +2020,8 @@
   ],
   "source": {
    "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=140",
-   "title": null,
-   "h1": null,
+   "title": "CHILD DEVELOPMENT MASTER TEACHER (CERTIFICATE)",
+   "h1": "CHILD DEVELOPMENT MASTER TEACHER (CERTIFICATE)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -1972,7 +2030,8 @@
     142,
     143
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 11,
   "text_chars": 14468
@@ -2010,15 +2069,16 @@
   ],
   "source": {
    "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=192",
-   "title": null,
-   "h1": null,
+   "title": "PRE-HEALTH OCCUPATIONS (A.S.)",
+   "h1": "PRE-HEALTH OCCUPATIONS (A.S.)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     192,
     193
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 22,
   "text_chars": 9312
@@ -2040,18 +2100,19 @@
   ],
   "source": {
    "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=220",
-   "title": null,
-   "h1": null,
+   "title": "»Spanish (A.A.-T)",
+   "h1": "»Spanish (A.A.-T)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     220,
     221
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 6,
-  "text_chars": 6743
+  "text_chars": 6602
  },
  {
   "control_number": "41416",
@@ -2070,8 +2131,8 @@
   ],
   "source": {
    "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=120",
-   "title": null,
-   "h1": null,
+   "title": "BUSINESS ADMINISTRATION 2.0 (A.S.-T)",
+   "h1": "BUSINESS ADMINISTRATION 2.0 (A.S.-T)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -2079,7 +2140,8 @@
     121,
     122
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 9,
   "text_chars": 10292
@@ -2102,18 +2164,19 @@
   ],
   "source": {
    "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=130",
-   "title": null,
-   "h1": null,
+   "title": "»Communication Studies 2.0 (A.A.-T)",
+   "h1": "»Communication Studies 2.0 (A.A.-T)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     130,
     131
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 7,
-  "text_chars": 6801
+  "text_chars": 6647
  },
  {
   "control_number": "43104",
@@ -2139,8 +2202,8 @@
   ],
   "source": {
    "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=180",
-   "title": null,
-   "h1": null,
+   "title": "SOCIAL WORK AND HUMAN SERVICES (A.A.-T)",
+   "h1": "SOCIAL WORK AND HUMAN SERVICES (A.A.-T)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -2148,7 +2211,8 @@
     181,
     182
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 16,
   "text_chars": 10712
@@ -2167,18 +2231,19 @@
   ],
   "source": {
    "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=150",
-   "title": null,
-   "h1": null,
+   "title": "»Emergency Medical Technician Certificate",
+   "h1": "»Emergency Medical Technician Certificate",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     150,
     151
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 3,
-  "text_chars": 6522
+  "text_chars": 6370
  },
  {
   "control_number": "44759",
@@ -2195,17 +2260,18 @@
   ],
   "source": {
    "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=94",
-   "title": null,
-   "h1": null,
+   "title": "»Agriculture Mechanics (Certificate)",
+   "h1": "»Agriculture Mechanics (Certificate)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     94
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 4,
-  "text_chars": 2998
+  "text_chars": 2637
  },
  {
   "control_number": "44838",
@@ -2220,17 +2286,18 @@
   ],
   "source": {
    "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=94",
-   "title": null,
-   "h1": null,
+   "title": "The certificate of competency in floral design prepares students",
+   "h1": "The certificate of competency in floral design prepares students",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     94
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 2,
-  "text_chars": 2998
+  "text_chars": 2328
  },
  {
   "control_number": "46380",
@@ -2248,8 +2315,8 @@
   ],
   "source": {
    "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=177",
-   "title": null,
-   "h1": null,
+   "title": "HUMAN SERVICES",
+   "h1": "HUMAN SERVICES",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -2258,7 +2325,8 @@
     179,
     180
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 5,
   "text_chars": 14346
@@ -2292,8 +2360,8 @@
   ],
   "source": {
    "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=91",
-   "title": null,
-   "h1": null,
+   "title": "The Associate of Science in Modern Policing program provides",
+   "h1": "The Associate of Science in Modern Policing program provides",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -2301,9 +2369,10 @@
     92,
     93
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 18,
-  "text_chars": 12506
+  "text_chars": 9951
  }
 ]

@@ -84,8 +84,8 @@
    "count": 0,
    "not_verbatim": [],
    "why": [],
-   "heading_printed": true,
-   "heading_without_outcomes": true,
+   "heading_printed": false,
+   "heading_without_outcomes": false,
    "pass": true
   },
   "careers": {
@@ -303,5 +303,6 @@
    "Codes are printed without a space in the catalog (e.g., AJ1, COMMC1000); they match closed-list codes AJ 1, COMM C1000, etc."
   ]
  },
- "extracted_run": "39006340803"
+ "extracted_run": 39019551739,
+ "read_run": "39006340803"
 }

@@ -90,11 +90,19 @@
    "program": 3,
    "courses": 0,
    "count": 3,
-   "not_verbatim": [],
-   "why": [],
-   "heading_printed": true,
+   "not_verbatim": [
+    "Recognize and connect the ways individuals and institutions may be beneficiaries and/or victims of social injustice.",
+    "Identify and analyze the ways injustices are institutionalized in social, political, and economic structures.",
+    "Identify and practice the methods people use to fight for social justice at local, national, and international levels."
+   ],
+   "why": [
+    "not in the catalog text as printed: Recognize and connect the ways individuals and institutions may be beneficiaries",
+    "not in the catalog text as printed: Identify and analyze the ways injustices are institutionalized in social, politi",
+    "not in the catalog text as printed: Identify and practice the methods people use to fight for social justice at loca"
+   ],
+   "heading_printed": false,
    "heading_without_outcomes": false,
-   "pass": true
+   "pass": false
   },
   "careers": {
    "count": 0,
@@ -107,7 +115,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": true
+  "pass": false
  },
  "record": {
   "program": {
@@ -286,5 +294,6 @@
    "The page prints no general education pattern, GE units or degree total; only the 18-unit major total."
   ]
  },
- "extracted_run": "39006340803"
+ "extracted_run": 39019551739,
+ "read_run": "39006340803"
 }
