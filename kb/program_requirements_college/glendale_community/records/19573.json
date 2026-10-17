@@ -1,0 +1,273 @@
+{
+ "college": "Glendale Community College",
+ "control_number": "19573",
+ "shape": "certificate",
+ "title": "Registered Nursing",
+ "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+ "source_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=86",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 10722,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 10722,
+    "output_tokens": 2469,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2469,
+  "output_tokens_details": {
+   "thinking_tokens": 1205
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.09227,
+ "ms": 21833,
+ "seconds": 22.3,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 13,
+   "listed": 17,
+   "share": 0.765,
+   "missing": [
+    "COMMC1000",
+    "NS202",
+    "NS203",
+    "NS204"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "a required course in 'Coursework required for certificate/licensure' has no units",
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "C. Certificate in Registered Nursing",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Complete the nursing program with the requisite knowledge of the discipline including evidenced-based practice within a required time frame;",
+    "Demonstrate requisite knowledge of the profession of registered nursing by successfully passing the NCLEX-RN;",
+    "Acquire employment in the field of registered nursing within one year of completing the nursing program;."
+   ],
+   "careers": [
+    "registered nursing"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Coursework required for certificate/licensure",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "NS 200",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NS 201",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NS 205",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NS 208",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NS 210",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NS 211",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NS 212",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NS 213",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NS 214",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NS 215",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NS 216",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NS 222",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NS 223",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "COMM C1000",
+    "why": "named only as a prerequisite for the Generic ADN (A.S.) section, not the certificate"
+   },
+   {
+    "code": "NS 202",
+    "why": "not in the text"
+   },
+   {
+    "code": "NS 203",
+    "why": "not in the text"
+   },
+   {
+    "code": "NS 204",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "The catalog prints no units beside any course; units left null.",
+   "The page's general description says 'Students must complete 48.5 required units' in the paragraph about the A.S. degree; the certificate section prints no total of its own, so total_units is left null. Reviewer should check whether 48.5 applies to the certificate.",
+   "Program learning outcomes are printed once for the Registered Nursing program as a whole; the certificate shares that list. Trailing separators ('and') between outcomes omitted.",
+   "Catalog prints NS 213 (as '213' in the NS list); matched to closed-list code 'NS213'.",
+   "Prerequisite courses (BIOL 112, BIOL 120, BIOL 121, PSYC C1000, ENGL C1000, STAT C1000) are admission prerequisites, not recorded as blocks.",
+   "NS 217 and NS 218 appear only in the LVN Career Ladder and 30-Unit Option sections, not in this certificate.",
+   "The certificate is described as a 'certificate of completion'; the state award is Certificate of Achievement."
+  ]
+ },
+ "extracted_run": "39063367252"
+}

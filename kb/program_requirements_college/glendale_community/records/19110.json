@@ -1,0 +1,438 @@
+{
+ "college": "Glendale Community College",
+ "control_number": "19110",
+ "shape": "certificate",
+ "title": "Dance Teaching",
+ "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+ "source_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=72",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8246,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8246,
+    "output_tokens": 3283,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 3283,
+  "output_tokens_details": {
+   "thinking_tokens": 1150
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.09864,
+ "ms": 25500,
+ "seconds": 26.0,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 23,
+   "listed": 26,
+   "share": 0.885,
+   "missing": [
+    "HLTH110",
+    "PSYC106",
+    "THTR173"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 3,
+   "codes": [
+    "HLTH101",
+    "PSYCH106",
+    "TART173"
+   ],
+   "flagged": [
+    "HLTH101",
+    "PSYCH106",
+    "TART173"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    12.0,
+    12.0
+   ],
+   "stated": [
+    30.0,
+    31.0
+   ],
+   "against": "program",
+   "why": [
+    "a required course in 'Required Courses' has no units"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 1,
+   "courses": 0,
+   "count": 1,
+   "not_verbatim": [
+    "teach technical dance skills using correct body alignment and muscle coordination, design dance lesson plans for children, adults, and seniors, and create dance programs for private studios, fitness centers, and community centers."
+   ],
+   "why": [
+    "not in the catalog text as printed: teach technical dance skills using correct body alignment and muscle coordinatio"
+   ],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": false
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "DANCE TEACHING — AS DEGREE OR CERTIFICATE",
+   "measure": "units",
+   "total_units": {
+    "min": 30,
+    "max": 31
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "teach technical dance skills using correct body alignment and muscle coordination, design dance lesson plans for children, adults, and seniors, and create dance programs for private studios, fitness centers, and community centers."
+   ],
+   "careers": [
+    "teaching dance"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "DANCE 100",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANCE 107",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANCE 130",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANCE 135",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "DANCE 136",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANCE 158",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HLTH 101",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "KIN 157",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BIOL 120",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANCE 50",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Option One",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Technique option",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "DANCE 114",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANCE 116",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANCE 121",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Option Two",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Technique option",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "DANCE 111",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANCE 117",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANCE 121",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Option Three",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Technique option",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "DANCE 111",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANCE 116",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANCE 137",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select six units from the following courses",
+    "rule": "choose_units",
+    "minimum": 6,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "DANCE 124",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANCE 125",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANCE 127",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANCE 131",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUSAD 158",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUSAD 162",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSIC 101",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYCH 106",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "SOC S 101",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "T ART 173",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "HLTH 110",
+    "why": "not in the text; catalog prints HLTH 101 (possibly a typo for HLTH 110)"
+   },
+   {
+    "code": "PSYC 106",
+    "why": "catalog prints PSYCH 106, recorded as printed"
+   },
+   {
+    "code": "THTR 173",
+    "why": "catalog prints T ART 173, recorded as printed"
+   }
+  ],
+  "notes": [
+   "The section covers both the AS degree and the certificate with one set of requirements, one total (30 - 31 units) and one program learning outcomes statement; the certificate shares them.",
+   "The outcome is printed as a single sentence after the lead-in 'Upon completion of this program, students will be able to'; recorded as one outcome without the lead-in.",
+   "The catalog prints no units beside any course; all course units are null.",
+   "'HLTH 101 and KIN 157 or BIOL 120' is ambiguous: read as HLTH 101 required plus KIN 157 or BIOL 120. It could also mean (HLTH 101 and KIN 157) or BIOL 120. HLTH 101 is not in the closed list (closed list has HLTH 110).",
+   "'Select ix units' read as 'Select six units' (typo in the PDF text).",
+   "PSYCH 106 and T ART 173 are likely the closed list's PSYC 106 and THTR 173 under different subject abbreviations; recorded as printed with catalog_addition true.",
+   "Career 'teaching dance' taken from the description: 'enter the workforce teaching dance to all age groups in private studios, fitness centers, community centers, and school and after school programs'."
+  ]
+ },
+ "extracted_run": "39063367252"
+}

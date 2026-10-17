@@ -1,0 +1,338 @@
+{
+ "college": "Glendale Community College",
+ "control_number": "44488",
+ "shape": "certificate",
+ "title": "Advanced ESL: STEM Pathway",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=102",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 12354,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 12354,
+    "output_tokens": 2705,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2705,
+  "output_tokens_details": {
+   "thinking_tokens": 1135
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.10352,
+ "ms": 22462,
+ "seconds": 23.0,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 13,
+   "listed": 16,
+   "share": 0.812,
+   "missing": [
+    "STATC1000",
+    "STATC1000E",
+    "STATC1000H"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 7,
+   "codes": [
+    "ESL156",
+    "MATH102+",
+    "MATH110A",
+    "MATH110B",
+    "MATH136",
+    "MATH136+",
+    "MATH136H"
+   ],
+   "flagged": [
+    "ESL156",
+    "MATH110A",
+    "MATH110B",
+    "MATH136",
+    "MATH136+",
+    "MATH136H"
+   ],
+   "pass": false
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    5.0,
+    5.0
+   ],
+   "stated": [
+    16.0,
+    19.5
+   ],
+   "against": "program",
+   "why": [
+    "a required course in 'Required Courses' has no units"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 2,
+   "courses": 0,
+   "count": 2,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "ADVANCED ESL: STEM PATHWAY",
+   "measure": "units",
+   "total_units": {
+    "min": 16,
+    "max": 19.5
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "use English reading, writing, listening, and speaking skills at an advanced level of academic proficiency",
+    "apply content knowledge of chosen electives in order to select a degree and/or career pathway."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ESL 151",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ESL 155",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ESL 156",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ESL 159",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select one or two courses from the following (minimum 5 units)",
+    "rule": "choose_units",
+    "minimum": 5,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "BIOL 122",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 110",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CS/IS 101",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CS/IS 112",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGR 100",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ESL 146",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 100",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MATH 100+",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 102",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MATH 102+",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 103E",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 110A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MATH 110B",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MATH 136",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MATH 136+",
+        "units": null,
+        "catalog_addition": true
+       },
+       {
+        "code": "MATH 136H",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "STAT C1000",
+    "why": "not in the text; catalog lists MATH 136 instead (possibly the same statistics course under an older number)"
+   },
+   {
+    "code": "STAT C1000E",
+    "why": "not in the text; catalog lists MATH 136+ (possibly the support version)"
+   },
+   {
+    "code": "STAT C1000H",
+    "why": "not in the text; catalog lists MATH 136H (possibly the honors version)"
+   }
+  ],
+  "notes": [
+   "Heading printed with broken spacing as 'ADVA NC ED ESL: ST EM PAT H WAY'; read as ADVANCED ESL: STEM PATHWAY.",
+   "The catalog prints no units beside individual courses, so course units are null.",
+   "ESL 155 and ESL 146 matched to closed-list codes ESL155 and ESL146 (printed without space).",
+   "MATH 102+ matched to closed-list entry 'MATH102 Trigonometry with Support'; MATH 102 matched to 'MATH 102 TRIGONOMETRY'. Reviewer should confirm.",
+   "Elective rule is 'Select one or two courses ... (minimum 5 units)', recorded as choose_units with minimum 5.",
+   "Outcomes are printed as one sentence separated by a semicolon after the lead-in 'Upon completion of this program, the student will'; split into two outcomes. The same outcome wording is shared by the other Advanced ESL pathway certificates on the page.",
+   "Total 'minimum of 16-19.5 units' recorded as total_units 16-19.5."
+  ]
+ },
+ "extracted_run": "39063367252"
+}

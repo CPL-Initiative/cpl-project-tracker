@@ -1,0 +1,205 @@
+{
+ "college": "Glendale Community College",
+ "control_number": "19571",
+ "shape": "certificate",
+ "title": "Machinist",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=81",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7985,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7985,
+    "output_tokens": 1428,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1428,
+  "output_tokens_details": {
+   "thinking_tokens": 555
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.0605,
+ "ms": 12686,
+ "seconds": 13.2,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 5,
+   "listed": 7,
+   "share": 0.714,
+   "missing": [
+    "ENGR101",
+    "ENGR102"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "a required course in 'Required Courses' has no units",
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 1,
+   "courses": 0,
+   "count": 1,
+   "not_verbatim": [
+    "students will demonstrate the skills required in the field of machine and manufacturing technology, such as computer numerical machining (CNC) for various machine tools; demonstrate the skills required in the field of machine and manufacturing technology, such as use of manual machining equipment; demonstrate the skills required in the field of machine and manufacturing technology, such as metallurgy and heat treating; and demonstrate the skills required in the field of machine and manufacturing technology, such as technical mathematics."
+   ],
+   "why": [
+    "not in the catalog text as printed: students will demonstrate the skills required in the field of machine and manufa"
+   ],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": false
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "MACHINIST AS DEGREE OR CERTIFICATE",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "students will demonstrate the skills required in the field of machine and manufacturing technology, such as computer numerical machining (CNC) for various machine tools; demonstrate the skills required in the field of machine and manufacturing technology, such as use of manual machining equipment; demonstrate the skills required in the field of machine and manufacturing technology, such as metallurgy and heat treating; and demonstrate the skills required in the field of machine and manufacturing technology, such as technical mathematics."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "MACH 101",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MACH 102",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MACH 103",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MACH 104",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MTLGY 150",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ENGR 101",
+    "why": "not in the text"
+   },
+   {
+    "code": "ENGR 102",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "The section covers both the AS degree and the certificate with one shared requirement list and one outcomes paragraph; both are recorded for the certificate.",
+   "The catalog prints no units beside courses and no program total; units and total_units are null.",
+   "Catalog prints 'MACH 101, 102, 103, 104'; MACH 102 and MACH 104 were matched to closed-list codes MACH102 and MACH104 (spacing difference only).",
+   "The outcomes paragraph prints four 'demonstrate the skills...' clauses in a single sentence; it is recorded as one entry word for word rather than split. Hyphenation and letter-spacing artifacts from the PDF were joined.",
+   "Closed-list courses ENGR 101 and ENGR 102 do not appear in this catalog section; a reviewer may check whether the certificate requirements are printed elsewhere."
+  ]
+ },
+ "extracted_run": "39063367252"
+}

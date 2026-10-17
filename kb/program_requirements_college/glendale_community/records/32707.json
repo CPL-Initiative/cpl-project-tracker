@@ -1,0 +1,252 @@
+{
+ "college": "Glendale Community College",
+ "control_number": "32707",
+ "shape": "adt",
+ "title": "Theatre Arts",
+ "award": "A.A- T Degree",
+ "source_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=263",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 12962,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 12962,
+    "output_tokens": 1473,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1473,
+  "output_tokens_details": {
+   "thinking_tokens": 401
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.08131,
+ "ms": 13137,
+ "seconds": 13.5,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 22,
+   "share": 0.0,
+   "missing": [
+    "THTR100",
+    "THTR101",
+    "THTR102",
+    "THTR103",
+    "THTR104",
+    "THTR107",
+    "THTR109",
+    "THTR110",
+    "THTR123",
+    "THTR160",
+    "THTR161",
+    "THTR162",
+    "THTR163",
+    "THTR164",
+    "THTR171",
+    "THTR172",
+    "THTR173",
+    "THTR180",
+    "THTR181",
+    "THTR182",
+    "THTR183",
+    "THTR184"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "THEATRE ARTS (course descriptions only; no A.A-T requirements section in the text)",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "THTR 100",
+    "why": "not in the text"
+   },
+   {
+    "code": "THTR 101",
+    "why": "named only as recommended preparation in a course description; no requirements list in text"
+   },
+   {
+    "code": "THTR 102",
+    "why": "not in the text"
+   },
+   {
+    "code": "THTR 103",
+    "why": "named only in a course description; no requirements list in text"
+   },
+   {
+    "code": "THTR 104",
+    "why": "course description only; no requirements list in text"
+   },
+   {
+    "code": "THTR 107",
+    "why": "course description only; no requirements list in text"
+   },
+   {
+    "code": "THTR 109",
+    "why": "course description only; it says the AA-T requires THTR 109 and 110 together for 3.0 units, but the degree's requirement list is not in the text"
+   },
+   {
+    "code": "THTR 110",
+    "why": "course description only; same note as THTR 109; degree requirement list not in text"
+   },
+   {
+    "code": "THTR 123",
+    "why": "course description only; no requirements list in text"
+   },
+   {
+    "code": "THTR 160",
+    "why": "course description only; no requirements list in text"
+   },
+   {
+    "code": "THTR 161",
+    "why": "course description only; no requirements list in text"
+   },
+   {
+    "code": "THTR 162",
+    "why": "course description only; no requirements list in text"
+   },
+   {
+    "code": "THTR 163",
+    "why": "course description only; no requirements list in text"
+   },
+   {
+    "code": "THTR 164",
+    "why": "course description only; no requirements list in text"
+   },
+   {
+    "code": "THTR 171",
+    "why": "course description only (cut off); no requirements list in text"
+   },
+   {
+    "code": "THTR 172",
+    "why": "not in the text (text cut off)"
+   },
+   {
+    "code": "THTR 173",
+    "why": "not in the text (text cut off)"
+   },
+   {
+    "code": "THTR 180",
+    "why": "not in the text (text cut off)"
+   },
+   {
+    "code": "THTR 181",
+    "why": "not in the text (text cut off)"
+   },
+   {
+    "code": "THTR 182",
+    "why": "not in the text (text cut off)"
+   },
+   {
+    "code": "THTR 183",
+    "why": "not in the text (text cut off)"
+   },
+   {
+    "code": "THTR 184",
+    "why": "not in the text (text cut off)"
+   }
+  ],
+  "notes": [
+   "The supplied text (catalog pages 263-265) contains only Theatre Arts course descriptions; the A.A-T in Theatre Arts requirements section, totals, outcomes and careers are not present. The source page anchor likely points past the program section; a reviewer should check earlier pages of the Theatre Arts section.",
+   "Course descriptions for THTR 109 and THTR 110 state: 'The AA-T Theatre Arts Degree requires both THTR 109 and THTR 110 to add up to the 3.0 units.' This suggests the pair counts as one 3-unit choice in the degree, but the block it belongs to is not shown, so it was not placed.",
+   "THTR 160-164 are printed as 2.0 to 4.0 units in the descriptions (state file stores 2).",
+   "The text is cut off mid-description of THTR 171."
+  ]
+ },
+ "extracted_run": "39063367252"
+}

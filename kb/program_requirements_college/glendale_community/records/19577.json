@@ -1,0 +1,262 @@
+{
+ "college": "Glendale Community College",
+ "control_number": "19577",
+ "shape": "certificate",
+ "title": "Child Development: Site Supervisor",
+ "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+ "source_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=69",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7989,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7989,
+    "output_tokens": 2481,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2481,
+  "output_tokens_details": {
+   "thinking_tokens": 1052
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.08158,
+ "ms": 22150,
+ "seconds": 22.5,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 14,
+   "listed": 14,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    33.0,
+    33.0
+   ],
+   "stated": [
+    33.0,
+    33.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 6,
+   "courses": 0,
+   "count": 6,
+   "not_verbatim": [
+    "develop an understanding of young children, and of the multiple interacting influences on children’s development and learning in order to create environments that are healthy, respectful, supportive and challenging for all children"
+   ],
+   "why": [
+    "not in the catalog text as printed: develop an understanding of young children, and of the multiple interacting infl"
+   ],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": false
+  },
+  "careers": {
+   "count": 3,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "SITE SUPERVISOR",
+   "measure": "units",
+   "total_units": {
+    "min": 33,
+    "max": 33
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "develop an understanding of young children, and of the multiple interacting influences on children’s development and learning in order to create environments that are healthy, respectful, supportive and challenging for all children",
+    "understand and value the importance and complex characteristics of children’s families and communities",
+    "use this understanding to create respectful, reciprocal relationships that support and empower families and involve families in their children’s learning and development",
+    "articulate and understand the goals, benefits, and uses of observation and assessment, develop competence in the use of observation, documentation and assessment techniques and tools to support teaching and learning in partnership with families and other professionals",
+    "plan and implement developmentally appropriate, culturally and linguistically relevant experiences that promote and/or support development and learning for all young children",
+    "and identify as a member of the early childhood profession, understand and use ethical guidelines and other professional standards related to early childhood practice"
+   ],
+   "careers": [
+    "early childhood administration and supervision",
+    "Infant, Toddler, and/or Preschool Education",
+    "School Age Child Care"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CHLDV 133",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHLDV 135",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHLDV 138",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHLDV 140",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHLDV 141",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHLDV 142",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHLDV 150",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHLDV 156",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHLDV 174",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHLDV 175",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHLDV 176",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHLDV 180",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CHLDV 181",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "CHLDV 182",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The catalog prints course numbers only (e.g., 'CHLDV 133, 135, 138...') with no units beside them, so course units are null.",
+   "Total of 33 units is the Child Development coursework stated for Site Supervisor; the section also requires 'completion of the requirements for the Associate in Science degree', but no degree total or GE units are printed, so degree_total, ge_units and ge_pattern are null.",
+   "Program Learning Outcomes are printed once for the Child Development program as a whole (a single semicolon-separated sentence after 'Upon completion of this program, students will'); recorded here as shared by this certificate, split at the semicolons. Reviewer may prefer it as a single entry.",
+   "The 16-unit General Education requirement stated in the general section applies to the Teacher, Infant/Toddler, School Age and Master Teacher certificates, not explicitly to Site Supervisor.",
+   "Careers 'Infant, Toddler, and/or Preschool Education' and 'School Age Child Care' come from the shared Child Development introduction; 'early childhood administration and supervision' comes from the Site Supervisor section."
+  ]
+ },
+ "extracted_run": "39063367252"
+}

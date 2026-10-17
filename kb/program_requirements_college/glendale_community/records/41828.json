@@ -1,0 +1,199 @@
+{
+ "college": "Glendale Community College",
+ "control_number": "41828",
+ "shape": "certificate",
+ "title": "Drone Photography",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=111",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7809,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7809,
+    "output_tokens": 1416,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1416,
+  "output_tokens_details": {
+   "thinking_tokens": 495
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.05956,
+ "ms": 12542,
+ "seconds": 12.9,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 4,
+   "listed": 4,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "PHOTO100"
+   ],
+   "flagged": [
+    "PHOTO100"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": [
+    16.0,
+    16.0
+   ],
+   "against": "program",
+   "why": [
+    "a required course in 'Required Courses' has no units"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "DRONE PHOTOGRAPHY",
+   "measure": "units",
+   "total_units": {
+    "min": 16,
+    "max": 16
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "create a cohesive photographic project that is conceptually and technically well developed using aerial stills and videos",
+    "capture, edit, and integrate drone photography techniques and workflows into their photographic practice",
+    "legally and safely operate a drone for photography."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "AT 120",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHOTO 100",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PHOTO 111",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHOTO 130",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHOTO 136",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The Drone Photography section sits under the heading 'PHOTOGRAPHY CERTIFICATE NON-DEGREE' and is marked '**Financial Aid Ineligible'. The requested award is a Certificate of Achievement, so a reviewer should confirm the award type.",
+   "The catalog prints no units beside the individual courses, so every course's units are null. The stated program total is 16 units.",
+   "The catalog prints the outcomes as one run-on sentence with no separators between items. I split it into three outcomes at the apparent boundaries ('...aerial stills and videos,' / '...photographic practice' / 'legally and safely...'). The text shows the first boundary only as a comma and the second with no separator at all, so the split should be checked.",
+   "Outcome text was normalized from PDF extraction: line-break hyphens were removed ('techni-cally' became 'technically') and ligature spacing was fixed ('workﬂ ows' became 'workflows').",
+   "The closed list prints 'PHOTO130' without a space. It matches 'PHOTO 130' in the catalog, so that course is not marked as a catalog addition.",
+   "PHOTO 100 is required in the catalog but is not on the closed list, so it is marked catalog_addition true.",
+   "The description mentions 'practicing photographers' as the program's audience, not as a career outcome, so careers is empty."
+  ]
+ },
+ "extracted_run": "39063367252"
+}

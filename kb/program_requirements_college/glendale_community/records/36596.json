@@ -1,0 +1,168 @@
+{
+ "college": "Glendale Community College",
+ "control_number": "36596",
+ "shape": "certificate",
+ "title": "IT Technician I: Computer Retail Sales and Support",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=79",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 12850,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 12850,
+    "output_tokens": 1028,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1028,
+  "output_tokens_details": {
+   "thinking_tokens": 215
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.07196,
+ "ms": 10036,
+ "seconds": 10.4,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 6,
+   "share": 0.0,
+   "missing": [
+    "BUSAD101",
+    "BUSAD106",
+    "BUSAD204",
+    "CABOT260",
+    "CS/IS101",
+    "CSIS194"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": true,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "(not found: no IT TECHNICIAN I: COMPUTER RETAIL SALES AND SUPPORT section in the provided text)",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "BUSAD 101",
+    "why": "No IT Technician I section in the text; named only in other programs (IT Technician II/III AS, Insurance, Management, Marketing)"
+   },
+   {
+    "code": "BUSAD 106",
+    "why": "No IT Technician I section in the text; named only in other programs (IT Technician II/III AS, Insurance, Management, Marketing)"
+   },
+   {
+    "code": "BUSAD 204",
+    "why": "No IT Technician I section in the text; named only in other programs (Information Technology AS, IT Technician II/III AS, Insurance recommended)"
+   },
+   {
+    "code": "CABOT 260",
+    "why": "No IT Technician I section in the text; named only in other programs (IT Technician II/III AS, Insurance, Management, Marketing)"
+   },
+   {
+    "code": "CS/IS 101",
+    "why": "No IT Technician I section in the text; named only in other programs (Information Technology AS, IT Technician II/III AS, Management, Marketing)"
+   },
+   {
+    "code": "CSIS 194",
+    "why": "No IT Technician I section in the text; CS/IS 194 named only in Information Technology AS and IT Technician II/III AS"
+   }
+  ],
+  "notes": [
+   "The provided catalog text (pages 79-82) contains no section for IT Technician I: Computer Retail Sales and Support. It runs alphabetically from Information Technology AS through Insurance Specialist, Interdisciplinary Humanities, then IT Technician II: Help Desk User Support AS and IT Technician III AS; IT Technician I's certificate appears to be printed elsewhere (possibly in a certificate section or on a different page). No blocks, totals, outcomes or careers were recorded.",
+   "The IT Technician II section describes itself as the second stage of the statewide IT Technician pathway and refers to 'Stage 1', but prints no requirements for Stage 1.",
+   "A reviewer should locate the correct page for the IT Technician I certificate of achievement in the 2025-2026 GCC catalog."
+  ]
+ },
+ "extracted_run": "39063367252"
+}

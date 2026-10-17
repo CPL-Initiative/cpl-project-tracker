@@ -1,0 +1,217 @@
+{
+ "college": "Glendale Community College",
+ "control_number": "02587",
+ "shape": "degree",
+ "title": "English",
+ "award": "A.A. Degree",
+ "source_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=75",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7896,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7896,
+    "output_tokens": 2052,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2052,
+  "output_tokens_details": {
+   "thinking_tokens": 1014
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.07262,
+ "ms": 18247,
+ "seconds": 18.8,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 15,
+   "share": 0.0,
+   "missing": [
+    "ENGL102",
+    "ENGL103",
+    "ENGL105",
+    "ENGL106",
+    "ENGL109",
+    "ENGL110",
+    "ENGL112",
+    "ENGL117",
+    "ENGL122",
+    "ENGL123",
+    "ENGL125",
+    "ENGL127",
+    "ENGL130",
+    "ENGLC1000",
+    "ENGLC1001"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": true,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ENGL 102",
+    "why": "English A.A. section not in the text; ENGL 102 appears only in the English Creative Writing AA section"
+   },
+   {
+    "code": "ENGL 103",
+    "why": "English A.A. section not in the text; ENGL 103 appears only in the English Creative Writing AA section"
+   },
+   {
+    "code": "ENGL 105",
+    "why": "English A.A. section not in the text; ENGL 105 appears only in the English Creative Writing AA section"
+   },
+   {
+    "code": "ENGL 106",
+    "why": "English A.A. section not in the text; ENGL 106 appears only in the English Creative Writing AA section"
+   },
+   {
+    "code": "ENGL 109",
+    "why": "not in the text"
+   },
+   {
+    "code": "ENGL 110",
+    "why": "English A.A. section not in the text; ENGL 110 appears only in the English Creative Writing AA section"
+   },
+   {
+    "code": "ENGL 112",
+    "why": "English A.A. section not in the text; ENGL 112 appears only in the English Creative Writing AA section"
+   },
+   {
+    "code": "ENGL 117",
+    "why": "English A.A. section not in the text; ENGL 117 appears only in the Film Studies section"
+   },
+   {
+    "code": "ENGL 122",
+    "why": "not in the text"
+   },
+   {
+    "code": "ENGL 123",
+    "why": "English A.A. section not in the text; ENGL 123 appears only in the English Creative Writing AA section"
+   },
+   {
+    "code": "ENGL 125",
+    "why": "not in the text"
+   },
+   {
+    "code": "ENGL 127",
+    "why": "not in the text"
+   },
+   {
+    "code": "ENGL 130",
+    "why": "not in the text"
+   },
+   {
+    "code": "ENGL C1000",
+    "why": "not in the text"
+   },
+   {
+    "code": "ENGL C1001",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "The text begins mid-section with the English Creative Writing AA degree (its heading falls on the previous page and is not in the text), followed by Entertainment Art, Documentary Film Production and Film Studies. No section for the English A.A. degree itself appears.",
+   "The Creative Writing section looks like a separate award. It requires ENGL 104 and offers ENGL 114, 115 and 118 and HUMAN 105/105H, none of which are on the closed list. The closed list holds literature courses (ENGL 109, 122, 125, 127, 130) and ENGL C1000/C1001, which the Creative Writing section never names. So no blocks were recorded from it.",
+   "For a reviewer, the English Creative Writing AA section reads: minimum of 18 units. Required: ENGL 102, 103, 104. Select 6 units from ENGL 105, 106, 110, 123. Select 3 units from ENGL 112, 114, 115, 118, HUMAN 105, 105H.",
+   "The English A.A. section is probably on page 74 or an adjacent page of the 2025-2026 catalog. Check there."
+  ]
+ },
+ "extracted_run": "39063367252"
+}

@@ -1,0 +1,283 @@
+{
+ "college": "Glendale Community College",
+ "control_number": "41767",
+ "shape": "degree",
+ "title": "Biotechnology",
+ "award": "A.S. Degree",
+ "source_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=67",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7965,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7965,
+    "output_tokens": 2092,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2092,
+  "output_tokens_details": {
+   "thinking_tokens": 763
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.0737,
+ "ms": 16739,
+ "seconds": 17.1,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 10,
+   "listed": 11,
+   "share": 0.909,
+   "missing": [
+    "ENGLC1000"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "ENGL101"
+   ],
+   "flagged": [
+    "ENGL101"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    7.0,
+    9.0
+   ],
+   "stated": [
+    28.0,
+    30.0
+   ],
+   "against": "program",
+   "why": [
+    "a required course in 'Required Courses' has no units"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [
+    "Fulfill requirements for transfer to a college with a BS in Biotechnology."
+   ],
+   "why": [
+    "not in the catalog text as printed: Fulfill requirements for transfer to a college with a BS in Biotechnology."
+   ],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": false
+  },
+  "careers": {
+   "count": 2,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Biotechnology AS Degree (heading not printed in the excerpt; text begins with 'The AS degree in Biotechnology')",
+   "measure": "units",
+   "total_units": {
+    "min": 28,
+    "max": 30
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "local GE",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Learn skills necessary for a lab technician job.",
+    "Fulfill requirements for transfer to a college with a BS in Biotechnology.",
+    "Master advanced biotechnology laboratory skills and good documentation practices.",
+    "Acquire work-readiness skills"
+   ],
+   "careers": [
+    "life science technician",
+    "biological science technician"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "BIOL 142",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL 50",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 110",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL 101",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MATH 100",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select one of the following",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 4,
+     "max": 5
+    },
+    "courses": [
+     {
+      "code": "BIOL 101",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL 112",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL 122",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL 140",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select one of the following",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "BIOL 141",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL 298",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ENGL C1000",
+    "why": "not in the text; catalog lists ENGL 101 as the required English course"
+   }
+  ],
+  "notes": [
+   "The section heading for the Biotechnology AS degree is not included in the excerpt (likely on the preceding page); the text begins mid-column with the program description.",
+   "The catalog prints no units beside individual courses; course units are null. Block totals (4-5 and 3-4 units) and the program total 28-30 units are as printed.",
+   "Catalog prints 'ENGL 101' where the closed list has ENGL C1000; recorded ENGL 101 as a catalog addition. Reviewer may check whether ENGL 101 corresponds to ENGL C1000.",
+   "Closed list code 'BIOL298' matched to catalog 'BIOL 298'.",
+   "Students may petition to use IGETC for STEM majors in place of the local GE requirements; ge_pattern recorded as local GE.",
+   "The description recommends the BIOL 298 path and the BIOL 50 internship at a four-year college; BIOL 50 is already required and BIOL 298 is one choice in the second select-one block, so no separate recommended block was created.",
+   "Outcomes were run together in the PDF text; split at sentence boundaries, with ligature 'Fulﬁ ll' read as 'Fulfill' and the line-break hyphen in 'col-lege' read as 'college'."
+  ]
+ },
+ "extracted_run": "39063367252"
+}

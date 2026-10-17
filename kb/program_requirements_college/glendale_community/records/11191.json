@@ -1,0 +1,249 @@
+{
+ "college": "Glendale Community College",
+ "control_number": "11191",
+ "shape": "degree",
+ "title": "Child Development: Master Teacher",
+ "award": "A.S. Degree",
+ "source_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=69",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7913,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7913,
+    "output_tokens": 2690,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2690,
+  "output_tokens_details": {
+   "thinking_tokens": 1242
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.08545,
+ "ms": 23126,
+ "seconds": 23.6,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 12,
+   "listed": 12,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    27.0,
+    27.0
+   ],
+   "stated": [
+    27.0,
+    27.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 6,
+   "courses": 0,
+   "count": 6,
+   "not_verbatim": [
+    "develop an understanding of young children, and of the multiple interacting influences on children’s development and learning in order to create environments that are healthy, respectful, supportive and challenging for all children"
+   ],
+   "why": [
+    "not in the catalog text as printed: develop an understanding of young children, and of the multiple interacting infl"
+   ],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": false
+  },
+  "careers": {
+   "count": 3,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "MASTER TEACHER",
+   "measure": "units",
+   "total_units": {
+    "min": 27,
+    "max": 27
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Glendale College Associate Degree General Education",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": 16,
+    "max": 16
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "develop an understanding of young children, and of the multiple interacting influences on children’s development and learning in order to create environments that are healthy, respectful, supportive and challenging for all children",
+    "understand and value the importance and complex characteristics of children’s families and communities",
+    "use this understanding to create respectful, reciprocal relationships that support and empower families and involve families in their children’s learning and development",
+    "articulate and understand the goals, benefits, and uses of observation and assessment, develop competence in the use of observation, documentation and assessment techniques and tools to support teaching and learning in partnership with families and other professionals",
+    "plan and implement developmentally appropriate, culturally and linguistically relevant experiences that promote and/or support development and learning for all young children",
+    "identify as a member of the early childhood profession, understand and use ethical guidelines and other professional standards related to early childhood practice."
+   ],
+   "careers": [
+    "Infant, Toddler, and/or Preschool Education",
+    "School Age Child Care",
+    "Early Childhood Administration and Supervision"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CHLDV 133",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHLDV 135",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHLDV 138",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHLDV 140",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHLDV 141",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHLDV 142",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHLDV 150",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHLDV 156",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHLDV 176",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHLDV 180",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CHLDV 181",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "CHLDV 182",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The catalog prints no units beside individual courses; course units are null.",
+   "total_units 27 is from 'completion of the 27 units of Child Development curriculum' in the Master Teacher section.",
+   "ge_units 16 is the GE stated for the Master Teacher certificate ('plus 16 units of General Education courses'); the page says AS degree students must also satisfy Graduation Requirements areas 1-8 (American Institutions, U.S. History, Mathematics, Health, PE, First Aid, Cultural Diversity), so the AS degree GE likely exceeds 16 units. No degree total is printed.",
+   "The section is written for the certificate/permit; the page heading 'AS DEGREE OR CERTIFICATE' indicates the same course list applies to the A.S. degree.",
+   "Program Learning Outcomes are printed once for the whole Child Development page as one run-on sentence with semicolon-separated clauses after the lead-in 'Upon completion of this program, students will'; the Master Teacher award shares it. Recorded as six outcomes split at the semicolons, with the connecting 'and' before the last clause omitted; hyphenation and ligature breaks in the PDF text were rejoined. Reviewer may prefer a single entry.",
+   "Careers taken from the page-wide description; the Master Teacher section also mentions 'teaching careers in an early childhood setting'."
+  ]
+ },
+ "extracted_run": "39063367252"
+}

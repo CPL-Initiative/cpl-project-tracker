@@ -1,0 +1,233 @@
+{
+ "college": "Glendale Community College",
+ "control_number": "35628",
+ "shape": "degree",
+ "title": "Administrative Medical Assistant",
+ "award": "A.S. Degree",
+ "source_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=82",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 9937,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 9937,
+    "output_tokens": 1832,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1832,
+  "output_tokens_details": {
+   "thinking_tokens": 744
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.07639,
+ "ms": 15099,
+ "seconds": 15.5,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 10,
+   "listed": 10,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    29.0,
+    29.0
+   ],
+   "stated": [
+    29.0,
+    29.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 1,
+   "courses": 0,
+   "count": 1,
+   "not_verbatim": [
+    "schedule appointments, perform medical office duties, handle financial matters including medical insurance collection, manage electronic health records and other ancillary medical records, and to complete the insurance and reimbursement process."
+   ],
+   "why": [
+    "not in the catalog text as printed: schedule appointments, perform medical office duties, handle financial matters i"
+   ],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": false
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "MEDICAL OFFICE AS DEGREE OR CERTIFICATE — ADMINISTRATIVE MEDICAL ASSISTANT",
+   "measure": "units",
+   "total_units": {
+    "min": 29,
+    "max": 29
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "schedule appointments, perform medical office duties, handle financial matters including medical insurance collection, manage electronic health records and other ancillary medical records, and to complete the insurance and reimbursement process."
+   ],
+   "careers": [
+    "medical assistant"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 29,
+     "max": 29
+    },
+    "courses": [
+     {
+      "code": "MOA 180",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MOA 182",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MOA 183",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MOA 184",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MOA 185",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MOA 188",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MOA 193",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MOA 197",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MOA 50",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUSAD 204",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The section is headed 'MEDICAL OFFICE AS DEGREE OR CERTIFICATE' with sub-heading 'ADMINISTRATIVE MEDICAL ASSISTANT'; the degree and certificate share the same requirements, outcomes and description.",
+   "Total of 29 units comes from 'Students will complete 29 core required units.'; recorded as total_units and as the block's stated total.",
+   "The catalog prints units only for MOA 50 ('(3 units)'); other courses have no units printed beside them, so their units are null. The closed list stores MOA 50 at 1 unit, but the catalog requires 3 units of it. Using closed-list units for the others (25 + BUSAD 204 1) plus MOA 50 at 3 gives 29, matching the stated total.",
+   "Outcome text was normalized for PDF extraction artifacts (ligature splits such as 'oﬃ ce', 'ﬁ nancial matt ers', and line-break hyphen 'insur-ance'). The following sentence about the required internship was treated as description, not an outcome.",
+   "No general education pattern or degree total is printed in this section."
+  ]
+ },
+ "extracted_run": "39063367252"
+}

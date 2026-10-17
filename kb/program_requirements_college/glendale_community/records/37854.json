@@ -1,0 +1,257 @@
+{
+ "college": "Glendale Community College",
+ "control_number": "37854",
+ "shape": "degree",
+ "title": "Computer Engineering",
+ "award": "A.S. Degree",
+ "source_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=73",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8543,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8543,
+    "output_tokens": 1965,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1965,
+  "output_tokens_details": {
+   "thinking_tokens": 709
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.07347,
+ "ms": 17537,
+ "seconds": 18.1,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 9,
+   "listed": 10,
+   "share": 0.9,
+   "missing": [
+    "CSIS211"
+   ],
+   "unexplained": [
+    "CSIS211"
+   ],
+   "none_placed": false,
+   "pass": false
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "CS/IS211"
+   ],
+   "flagged": [],
+   "pass": false
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    37.0,
+    37.0
+   ],
+   "stated": [
+    37.0,
+    37.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [
+    "function effectively on a team whose members together provide leadership, create a collaborative and inclusive environment, establish goals, plan tasks, and meet technical objectives"
+   ],
+   "why": [
+    "not in the catalog text as printed: function effectively on a team whose members together provide leadership, create"
+   ],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": false
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "COMPUTER ENGINEERING",
+   "measure": "units",
+   "total_units": {
+    "min": 37,
+    "max": 37
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "identify, formulate, and solve engineering problems by applying principles of engineering, science, and mathematics",
+    "apply the engineering design process to create engineering solutions that meet specified needs that integrates consideration of public health, safety, and welfare, as well as global, cultural, social, environmental, and economic factors",
+    "communicate technical information effectively with a range of audiences",
+    "function effectively on a team whose members together provide leadership, create a collaborative and inclusive environment, establish goals, plan tasks, and meet technical objectives",
+    "transfer to a bachelor’s degree program in order to finish preparing for a career in a specific discipline of computer engineering"
+   ],
+   "careers": [
+    "computer engineering"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "MATH 103E",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 104E",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 108",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHY 101",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHY 102",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "A minimum of twelve units from the following courses",
+    "rule": "choose_units",
+    "minimum": 12,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ENGR 100",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGR 125",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGR 240",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CS/IS 125",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CS/IS 211",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The excerpt begins mid-section on page 73; the program heading itself is not printed in the text, so section_heading 'COMPUTER ENGINEERING' is inferred from the description and the program title. Reviewer should confirm.",
+   "The catalog prints no units beside individual courses, so course units are null.",
+   "The catalog prints 'CS/IS 125, 211'; CS/IS 211 is matched to closed-list CSIS211 (Data Structures).",
+   "The outcomes are printed as one run-on sentence separated by semicolons after the lead-in 'Upon completion of this program, students will'. They are recorded one per clause, with the final 'and' dropped.",
+   "In the outcomes, PDF ligature gaps ('speciﬁ ed', 'eﬀ ectively', 'ﬁ nish') and line-break hyphenations (engi-neering, leader-ship, tech-nical) were rejoined.",
+   "The careers entry 'computer engineering' comes from the outcome phrase 'a career in a specific discipline of computer engineering'.",
+   "The total of 37 units is stated as 'complete all required courses for a total of 37 units'. No degree total or GE pattern is printed in this section."
+  ]
+ },
+ "extracted_run": "39063367252"
+}

@@ -1,0 +1,296 @@
+{
+ "college": "Glendale Community College",
+ "control_number": "12500",
+ "shape": "degree",
+ "title": "Three-Dimensional Art",
+ "award": "A.A. Degree",
+ "source_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=66",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8102,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8102,
+    "output_tokens": 2313,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2313,
+  "output_tokens_details": {
+   "thinking_tokens": 852
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.07867,
+ "ms": 18743,
+ "seconds": 19.2,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 10,
+   "listed": 14,
+   "share": 0.714,
+   "missing": [
+    "ARTH101",
+    "ARTH101H",
+    "ARTH102",
+    "ARTH102H"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 3,
+   "codes": [
+    "ART101",
+    "ART102",
+    "ART130"
+   ],
+   "flagged": [
+    "ART101",
+    "ART102",
+    "ART130"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    9.0,
+    9.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "a required course in 'Three-dimensional: Required Courses' has no units",
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 8,
+   "courses": 0,
+   "count": 8,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "VISUAL ARTS - TWO/THREE DIMENSIONAL AA DEGREE (Three-dimensional)",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "define and use core concepts in 2D and 3D art",
+    "demonstrate skill in a broad range of media, materials and processes",
+    "describe, analyze and provide criticism of works of art in various media",
+    "prepare and organize art works for exhibition, if applicable",
+    "understand safe and hazard-free use of art materials and equipment",
+    "produce original work the demonstrate a high level of craft",
+    "prepare artist statements, resumes and collateral written materials",
+    "relate works of art to ideas from the study of art history and the humanities"
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Three-dimensional: Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ART 101",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ART 102",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "ART 130",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ART 138",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Three-dimensional: Select three courses from the following",
+    "rule": "choose_courses",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ART 152",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 157",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 179",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 180",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 181",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 186",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 187",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 190",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 280",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ARTH 101",
+    "why": "named only in the Art History A.A. section"
+   },
+   {
+    "code": "ARTH 101H",
+    "why": "not in the text"
+   },
+   {
+    "code": "ARTH 102",
+    "why": "named only in the Art History A.A. section"
+   },
+   {
+    "code": "ARTH 102H",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "The catalog prints one A.A. degree, Visual Arts - Two/Three Dimensional, with 'Select one of the following:' Two-dimensional or Three-dimensional. Only the Three-dimensional option is recorded, as this program is Three-Dimensional Art; the Two-dimensional option (ART 101 or 102, 130, 150; three of ART 131, 151, 152, 160, 164, 166, 170, 179, 280, PHOTO 101) is not recorded.",
+   "The program learning outcomes are printed once for the combined Two/Three Dimensional degree and are shared by the Three-dimensional option.",
+   "The outcomes are printed as one run-in sentence separated by semicolons. They are split at the semicolons, the lead-in and the final 'and' are dropped, and PDF extraction artifacts are normalized: ligature splits 'deﬁ ne' to 'define' and 'writt en' to 'written', and line-break hyphens 'criti-cism' to 'criticism'. The catalog's typo 'the demonstrate' is kept as printed.",
+   "No units are printed beside any course and no program, degree or GE total is stated; all units fields are null.",
+   "ART 101, ART 102 and ART 130 appear in the required courses but are not in the closed list, so they are flagged as catalog additions."
+  ]
+ },
+ "extracted_run": "39063367252"
+}
