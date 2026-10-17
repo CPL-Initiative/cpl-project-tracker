@@ -1,0 +1,213 @@
+{
+ "college": "Folsom Lake College",
+ "control_number": "15373",
+ "shape": "certificate",
+ "title": "ECE Infant Specialist",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=237",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 10738,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 10738,
+    "output_tokens": 1487,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1487,
+  "output_tokens_details": {
+   "thinking_tokens": 368
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.07269,
+ "ms": 12071,
+ "seconds": 12.5,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 7,
+   "listed": 7,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    22.0,
+    22.0
+   ],
+   "stated": [
+    22.0,
+    22.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 7,
+   "courses": 0,
+   "count": 7,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 4,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "ECE-Infant Specialist Certificate",
+   "measure": "units",
+   "total_units": {
+    "min": 22,
+    "max": 22
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "evaluate and apply knowledge of infant development and the multiple influences on early development and learning to create infant and family programs that are healthy, respectful, supportive, and challenging for children from the prenatal period through the first three years after birth.",
+    "design infant and toddler programs that build respectful, reciprocal family relationships that support optimal infant and toddler development and learning both at home and in group care settings.",
+    "incorporate systematic assessment strategies using observation, documentation, and interpretation in order to guide decisions about support for infant and toddler development and curriculum.",
+    "design, implement, and evaluate developmentally effective curriculum and teaching plans that tie knowledge of academic content to meaningful and challenging learning environments for infants and toddlers in a collaborative effort with colleagues.",
+    "develop continuing professional growth plan and advocate public policy that supports infants, toddlers, their families and the profession of early childhood education.",
+    "apply acquired knowledge, skills, and abilities of certificate coursework toward successful completion of an A.A. degree in Early Childhood Education.",
+    "seek employment as an infant or toddler teacher in a private or public early childhood educational setting."
+   ],
+   "careers": [
+    "infant and toddler teacher",
+    "teacher of infants and toddlers",
+    "associate teacher of infants and toddlers",
+    "infant specialists"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Certificate Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 22,
+     "max": 22
+    },
+    "courses": [
+     {
+      "code": "ECE 300",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECE 312",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECE 314",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECE 320",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECE 330",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECE 331",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECE 415",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Section read: 'ECE-Infant Specialist Certificate' on pages 237-238; its Student Learning Outcomes list continues from page 237 onto page 238 and ends before 'Career Information'.",
+   "The 'Total Units: 22' printed for the requirements list is recorded both as total_units and as the block's stated total.",
+   "Careers 'infant and toddler teacher', 'teacher of infants and toddlers' and 'associate teacher of infants and toddlers' come from the program description; 'infant specialists' comes from the Career Information heading.",
+   "The following sections (Master Teacher, Assistant Teacher and Associate Teacher Certificates) were ignored."
+  ]
+ },
+ "extracted_run": "39046850071"
+}

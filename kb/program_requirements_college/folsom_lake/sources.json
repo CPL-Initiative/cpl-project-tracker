@@ -1,0 +1,5194 @@
+[
+ {
+  "control_number": "15335",
+  "title": "Biological Sciences",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL323",
+   "BIOL350",
+   "BIOL380",
+   "BIOL382",
+   "BIOL386",
+   "BIOL388",
+   "BIOL389",
+   "BIOL400",
+   "BIOL410",
+   "BIOL411",
+   "BIOL420",
+   "CHEM400",
+   "CHEM401",
+   "CHEM420",
+   "CHEM421",
+   "MATH400",
+   "MATH401",
+   "PHYS350",
+   "PHYS360",
+   "PHYS411",
+   "PHYS421",
+   "PHYS431",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=165",
+   "title": "A.S. in Biological Sciences",
+   "h1": "A.S. in Biological Sciences",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    165,
+    166,
+    167,
+    168
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c086177b9efed3b9163f0a88e16893c4d892db586dee7159f3ce7127a1c46e76"
+   }
+  },
+  "listed": 23,
+  "text_chars": 15525
+ },
+ {
+  "control_number": "15338",
+  "title": "Business: General",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT301",
+   "BUS300",
+   "BUS310",
+   "BUS320",
+   "BUS330",
+   "BUS340",
+   "BUS345",
+   "BUSTEC360",
+   "BUSTEC362",
+   "BUSTEC367",
+   "CISC310",
+   "ECON320",
+   "ECONC2002",
+   "MGMT362",
+   "MKT300"
+  ],
+  "source": {
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=177",
+   "title": "A.A. in Business: General",
+   "h1": "A.A. in Business: General",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    177,
+    178,
+    179,
+    180
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c086177b9efed3b9163f0a88e16893c4d892db586dee7159f3ce7127a1c46e76"
+   }
+  },
+  "listed": 15,
+  "text_chars": 14523
+ },
+ {
+  "control_number": "15340",
+  "title": "Accounting",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT103",
+   "ACCT104",
+   "ACCT107",
+   "ACCT111",
+   "ACCT301",
+   "ACCT311",
+   "BUS340"
+  ],
+  "source": {
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=121",
+   "title": "Accounting Certificate",
+   "h1": "Accounting Certificate",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    121,
+    122,
+    123,
+    124
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c086177b9efed3b9163f0a88e16893c4d892db586dee7159f3ce7127a1c46e76"
+   }
+  },
+  "listed": 7,
+  "text_chars": 14479
+ },
+ {
+  "control_number": "15341",
+  "title": "Accounting",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.769,
+  "codes_found": [
+   "ACCT103",
+   "ACCT104",
+   "ACCT107",
+   "ACCT111",
+   "ACCT301",
+   "ACCT311",
+   "ACCT341",
+   "ACCT342",
+   "BUS340",
+   "ECONC2002"
+  ],
+  "source": {
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=121",
+   "title": "A.A. in Accounting",
+   "h1": "A.A. in Accounting",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    121,
+    122,
+    123,
+    124
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c086177b9efed3b9163f0a88e16893c4d892db586dee7159f3ce7127a1c46e76"
+   }
+  },
+  "listed": 13,
+  "text_chars": 14499
+ },
+ {
+  "control_number": "15343",
+  "title": "Accounting Computer Applications",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT301",
+   "ACCT311",
+   "ACCT341",
+   "ACCT342",
+   "BUSTEC362",
+   "BUSTEC367",
+   "CISC310"
+  ],
+  "source": {
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=122",
+   "title": "Accounting Computer Applications Certificate",
+   "h1": "Accounting Computer Applications Certificate",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    122,
+    123,
+    124
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c086177b9efed3b9163f0a88e16893c4d892db586dee7159f3ce7127a1c46e76"
+   }
+  },
+  "listed": 7,
+  "text_chars": 8731
+ },
+ {
+  "control_number": "15345",
+  "title": "Small Business Management: Entrepreneurship",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.933,
+  "codes_found": [
+   "ACCT301",
+   "ACCT311",
+   "BUS300",
+   "BUS330",
+   "BUS340",
+   "BUS345",
+   "BUS350",
+   "BUSTEC360",
+   "CISC310",
+   "ECONC2001",
+   "ECONC2002",
+   "MATH343",
+   "MKT300",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=180",
+   "title": "• develop an understanding of the role of the public manager as it",
+   "h1": "• develop an understanding of the role of the public manager as it",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    180,
+    181,
+    182,
+    183
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c086177b9efed3b9163f0a88e16893c4d892db586dee7159f3ce7127a1c46e76"
+   }
+  },
+  "listed": 15,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "15360",
+  "title": "Computer Science",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEM400",
+   "CISN304",
+   "CISP360",
+   "CISP370",
+   "CISP400",
+   "CISP407",
+   "CISP430",
+   "CISP440",
+   "CISS310",
+   "ENGR303",
+   "ENGR400",
+   "MATH400",
+   "PHYS411"
+  ],
+  "source": {
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=208",
+   "title": "A.S. in Computer Science",
+   "h1": "A.S. in Computer Science",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    208,
+    209,
+    210
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c086177b9efed3b9163f0a88e16893c4d892db586dee7159f3ce7127a1c46e76"
+   }
+  },
+  "listed": 13,
+  "text_chars": 9512
+ },
+ {
+  "control_number": "15361",
+  "title": "Computer Programming",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CISC310",
+   "CISP360",
+   "CISP370",
+   "CISP430"
+  ],
+  "source": {
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=208",
+   "title": "Computer Programming Certificate",
+   "h1": "Computer Programming Certificate",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    208,
+    209,
+    210,
+    211
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c086177b9efed3b9163f0a88e16893c4d892db586dee7159f3ce7127a1c46e76"
+   }
+  },
+  "listed": 4,
+  "text_chars": 12483
+ },
+ {
+  "control_number": "15366",
+  "title": "Art History",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART300",
+   "ART320",
+   "ART323",
+   "ART361",
+   "ART364",
+   "ART370",
+   "ART372",
+   "ART382",
+   "ART383",
+   "ART390",
+   "ART402",
+   "ARTH304",
+   "ARTH306",
+   "ARTH307",
+   "ARTH309",
+   "ARTH311",
+   "ARTH312",
+   "ARTH318",
+   "ARTH324",
+   "ARTH325",
+   "ARTH328",
+   "ARTH330",
+   "ARTH332",
+   "ARTH333"
+  ],
+  "source": {
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=152",
+   "title": "courses required for the major or area of emphasis. A \"P\" (Pass) grade",
+   "h1": "courses required for the major or area of emphasis. A \"P\" (Pass) grade",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    152,
+    153,
+    154,
+    155
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c086177b9efed3b9163f0a88e16893c4d892db586dee7159f3ce7127a1c46e76"
+   }
+  },
+  "listed": 24,
+  "text_chars": 13150
+ },
+ {
+  "control_number": "15368",
+  "title": "Studio Art",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.875,
+  "codes_found": [
+   "ART300",
+   "ART302",
+   "ART304",
+   "ART305",
+   "ART308",
+   "ART310",
+   "ART312",
+   "ART320",
+   "ART323",
+   "ART327",
+   "ART328",
+   "ART332",
+   "ART334",
+   "ART336",
+   "ART337",
+   "ART361",
+   "ART364",
+   "ART370",
+   "ART372",
+   "ART373",
+   "ART382",
+   "ART383",
+   "ART386",
+   "ART387",
+   "ART390",
+   "ART391",
+   "ART402",
+   "ART404"
+  ],
+  "source": {
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=143",
+   "title": "Drawing",
+   "h1": "Drawing",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    143,
+    144,
+    145,
+    146
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c086177b9efed3b9163f0a88e16893c4d892db586dee7159f3ce7127a1c46e76"
+   }
+  },
+  "listed": 32,
+  "text_chars": 13728
+ },
+ {
+  "control_number": "15370",
+  "title": "Early Childhood Education",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ECE300",
+   "ECE312",
+   "ECE314",
+   "ECE320",
+   "ECE321",
+   "ECE326",
+   "ECE330",
+   "ECE342",
+   "ECE343",
+   "ECE361",
+   "ECE363",
+   "ECE415",
+   "ECE430"
+  ],
+  "source": {
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=233",
+   "title": "A.A. in Early Childhood Education",
+   "h1": "A.A. in Early Childhood Education",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    233,
+    234,
+    235,
+    236
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c086177b9efed3b9163f0a88e16893c4d892db586dee7159f3ce7127a1c46e76"
+   }
+  },
+  "listed": 13,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "15373",
+  "title": "ECE Infant Specialist",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ECE300",
+   "ECE312",
+   "ECE314",
+   "ECE320",
+   "ECE330",
+   "ECE331",
+   "ECE415"
+  ],
+  "source": {
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=237",
+   "title": "ECE-Infant Specialist Certificate",
+   "h1": "ECE-Infant Specialist Certificate",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    237,
+    238,
+    239,
+    240
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c086177b9efed3b9163f0a88e16893c4d892db586dee7159f3ce7127a1c46e76"
+   }
+  },
+  "listed": 7,
+  "text_chars": 13783
+ },
+ {
+  "control_number": "15374",
+  "title": "ECE-Master Teacher",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTH310",
+   "ART320",
+   "ART430",
+   "ARTH300",
+   "BUS330",
+   "COMM325",
+   "ECE300",
+   "ECE312",
+   "ECE314",
+   "ECE320",
+   "ECE326",
+   "ECE330",
+   "ECE331",
+   "ECE342",
+   "ECE361",
+   "ECE363",
+   "ECE404",
+   "ECE424",
+   "ECE430",
+   "MUFHL330",
+   "MUIVI370",
+   "MUSM370",
+   "NUTRI310",
+   "SILA305",
+   "SILA306",
+   "SOC321"
+  ],
+  "source": {
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=238",
+   "title": "ECE-Master Teacher Certificate",
+   "h1": "ECE-Master Teacher Certificate",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    238,
+    239,
+    240,
+    241
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c086177b9efed3b9163f0a88e16893c4d892db586dee7159f3ce7127a1c46e76"
+   }
+  },
+  "listed": 26,
+  "text_chars": 13768
+ },
+ {
+  "control_number": "15376",
+  "title": "ECE Site Supervisor",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ECE300",
+   "ECE312",
+   "ECE314",
+   "ECE320",
+   "ECE321",
+   "ECE326",
+   "ECE330",
+   "ECE342",
+   "ECE343",
+   "ECE361",
+   "ECE363",
+   "ECE415",
+   "ECE420",
+   "ECE422",
+   "ECE424",
+   "ECE430"
+  ],
+  "source": {
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=234",
+   "title": "A.A. in ECE-Site Supervisor",
+   "h1": "A.A. in ECE-Site Supervisor",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    234,
+    235,
+    236,
+    237
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c086177b9efed3b9163f0a88e16893c4d892db586dee7159f3ce7127a1c46e76"
+   }
+  },
+  "listed": 16,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "15377",
+  "title": "Early Childhood Education Teacher",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ECE300",
+   "ECE312",
+   "ECE314",
+   "ECE320",
+   "ECE321",
+   "ECE326",
+   "ECE330",
+   "ECE415",
+   "ECE430"
+  ],
+  "source": {
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=236",
+   "title": "Early Childhood Education Teacher Certificate",
+   "h1": "Early Childhood Education Teacher Certificate",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    236,
+    237,
+    238,
+    239
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c086177b9efed3b9163f0a88e16893c4d892db586dee7159f3ce7127a1c46e76"
+   }
+  },
+  "listed": 9,
+  "text_chars": 13822
+ },
+ {
+  "control_number": "15382",
+  "title": "English",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.923,
+  "codes_found": [
+   "ENGCW400",
+   "ENGCW410",
+   "ENGCW420",
+   "ENGCW430",
+   "ENGCW452",
+   "ENGED305",
+   "ENGED320",
+   "ENGLC1000",
+   "ENGLC1000H",
+   "ENGLC1001",
+   "ENGLC1001H",
+   "ENGLT303",
+   "ENGLT310",
+   "ENGLT311",
+   "ENGLT320",
+   "ENGLT321",
+   "ENGLT339",
+   "ENGLT340",
+   "ENGLT341",
+   "ENGLT345",
+   "ENGLT360",
+   "ENGLT370",
+   "ENGLT402",
+   "ESLW340"
+  ],
+  "source": {
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=262",
+   "title": "The Associate in Arts in English for Transfer (AA-T) degree may be",
+   "h1": "The Associate in Arts in English for Transfer (AA-T) degree may be",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    262
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c086177b9efed3b9163f0a88e16893c4d892db586dee7159f3ce7127a1c46e76"
+   }
+  },
+  "listed": 26,
+  "text_chars": 2978
+ },
+ {
+  "control_number": "15385",
+  "title": "Mathematics",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CISP360",
+   "CISP370",
+   "MATH400",
+   "MATH401",
+   "MATH402",
+   "MATH410",
+   "MATH420",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=368",
+   "title": "A.S. in Mathematics",
+   "h1": "A.S. in Mathematics",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    368,
+    369,
+    370,
+    371
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c086177b9efed3b9163f0a88e16893c4d892db586dee7159f3ce7127a1c46e76"
+   }
+  },
+  "listed": 8,
+  "text_chars": 15230
+ },
+ {
+  "control_number": "15388",
+  "title": "Social Work/Human Services, General",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.964,
+  "codes_found": [
+   "ADMJ300",
+   "ANTH310",
+   "ECE312",
+   "ECE314",
+   "ENGLC1001",
+   "HIST331",
+   "PHIL310",
+   "PSYC312",
+   "PSYC320",
+   "PSYC340",
+   "PSYC356",
+   "PSYC368",
+   "PSYC370",
+   "PSYCC1000",
+   "SJS300",
+   "SOC301",
+   "SOC321",
+   "SOC341",
+   "SOC379",
+   "SWHS300",
+   "SWHS302",
+   "SWHS340",
+   "SWHS350",
+   "SWHS360",
+   "SWHS365",
+   "SWHS366",
+   "SWHS367"
+  ],
+  "source": {
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=455",
+   "title": "Course Code Course Code Course Title Course Title Units Units",
+   "h1": "Course Code Course Code Course Title Course Title Units Units",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    455,
+    456,
+    457,
+    458
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c086177b9efed3b9163f0a88e16893c4d892db586dee7159f3ce7127a1c46e76"
+   }
+  },
+  "listed": 28,
+  "text_chars": 15202
+ },
+ {
+  "control_number": "15395",
+  "title": "Liberal Studies for Elementary Education",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.952,
+  "codes_found": [
+   "ADMJ302",
+   "ART430",
+   "BIOLC1000",
+   "COMM325",
+   "COMM361",
+   "ECE312",
+   "ECONC2002",
+   "ENGED305",
+   "ENGED320",
+   "ENGLC1000",
+   "ENGLC1001",
+   "GEOL305",
+   "GEOL306",
+   "HIST307",
+   "HIST308",
+   "HISTC1001",
+   "MATH310",
+   "POLSC1000",
+   "PSYC368",
+   "SOC321"
+  ],
+  "source": {
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=250",
+   "title": "A.A. in Liberal Studies for Elementary Education",
+   "h1": "A.A. in Liberal Studies for Elementary Education",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    250
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c086177b9efed3b9163f0a88e16893c4d892db586dee7159f3ce7127a1c46e76"
+   }
+  },
+  "listed": 21,
+  "text_chars": 2806
+ },
+ {
+  "control_number": "16186",
+  "title": "Psychology",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ECE312",
+   "PSYC312",
+   "PSYC320",
+   "PSYC330",
+   "PSYC335",
+   "PSYC356",
+   "PSYC368",
+   "PSYC370",
+   "PSYC495",
+   "PSYC499",
+   "PSYCC1000"
+  ],
+  "source": {
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=436",
+   "title": "A.A.-T. in Psychology",
+   "h1": "A.A.-T. in Psychology",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    436,
+    437,
+    438,
+    439
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c086177b9efed3b9163f0a88e16893c4d892db586dee7159f3ce7127a1c46e76"
+   }
+  },
+  "listed": 11,
+  "text_chars": 15165
+ },
+ {
+  "control_number": "18836",
+  "title": "Project Management",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "PRJMGT300",
+   "PRJMGT310",
+   "PRJMGT320",
+   "PRJMGT330",
+   "PRJMGT340",
+   "PRJMGT350"
+  ],
+  "source": {
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=433",
+   "title": "Project Management Certificate",
+   "h1": "Project Management Certificate",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    433,
+    434,
+    435
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c086177b9efed3b9163f0a88e16893c4d892db586dee7159f3ce7127a1c46e76"
+   }
+  },
+  "listed": 6,
+  "text_chars": 10581
+ },
+ {
+  "control_number": "18841",
+  "title": "Public Management/Civil Service",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT301",
+   "ACCT311",
+   "BUS300",
+   "MGMT362",
+   "MGMT372",
+   "MGMT498",
+   "POLSC1000",
+   "PRJMGT300"
+  ],
+  "source": {
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=183",
+   "title": "Public Management/Civil Service Certificate",
+   "h1": "Public Management/Civil Service Certificate",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    183,
+    184
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c086177b9efed3b9163f0a88e16893c4d892db586dee7159f3ce7127a1c46e76"
+   }
+  },
+  "listed": 8,
+  "text_chars": 5568
+ },
+ {
+  "control_number": "18934",
+  "title": "Interdisciplinary Studies: Arts and Humanities",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.741,
+  "codes_found": [
+   "ARTH328",
+   "ARTH330",
+   "ARTH332",
+   "ARTH333",
+   "ARTHC1100",
+   "COMM305",
+   "DANCE380",
+   "ECE361",
+   "ECE363",
+   "ENGCW400",
+   "ENGCW410",
+   "ENGCW420",
+   "ENGCW430",
+   "ENGLT303",
+   "ENGLT305",
+   "ENGLT310",
+   "ENGLT311",
+   "ENGLT319",
+   "ENGLT320",
+   "ENGLT321",
+   "ENGLT330",
+   "ENGLT339",
+   "ENGLT340",
+   "ENGLT341",
+   "ENGLT345",
+   "ENGLT359",
+   "ENGLT360",
+   "ENGLT370",
+   "ENGLT402",
+   "FREN401",
+   "FREN402",
+   "FREN411",
+   "FREN412",
+   "HIST301",
+   "HIST302",
+   "HIST307",
+   "HIST308",
+   "HIST331",
+   "HIST344",
+   "HIST368",
+   "HISTC1001",
+   "HISTC1002",
+   "HUM300",
+   "HUM301",
+   "HUM310",
+   "HUM320",
+   "HUM325",
+   "HUM332",
+   "HUM370",
+   "KINES309",
+   "MUFHL300",
+   "MUFHL308",
+   "MUFHL310",
+   "MUFHL311",
+   "MUFHL315",
+   "MUFHL321",
+   "MUFHL330",
+   "MUFHL400",
+   "MUFHL401",
+   "MUFHL410",
+   "MUFHL411",
+   "MUIVI310",
+   "MUIVI345",
+   "MUIVI370",
+   "MUP350",
+   "MUP357",
+   "PHIL300",
+   "PHIL310",
+   "PHIL330",
+   "PHIL331",
+   "PHIL350",
+   "PHIL352",
+   "PHOTO302",
+   "PHOTO420",
+   "SILA305",
+   "SILA306",
+   "SILA315",
+   "SILA316",
+   "SPAN401",
+   "SPAN402",
+   "SPAN411",
+   "SPAN412",
+   "TA300",
+   "TA302",
+   "TA303",
+   "TA304",
+   "TA308",
+   "TA340",
+   "TA350",
+   "TA351",
+   "TA422",
+   "TAFILM300",
+   "TAFILM303",
+   "TAFILM304",
+   "TAFILM307",
+   "TAFILM320",
+   "TAFILM330",
+   "TAFILM360",
+   "TAFILM480",
+   "TAP300",
+   "TAP310",
+   "TAP320",
+   "TAP330",
+   "TAP340",
+   "TAP350",
+   "TAP360",
+   "TAP370",
+   "TAP380",
+   "TAP390"
+  ],
+  "source": {
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=325",
+   "title": "Course Course",
+   "h1": "Course Course",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    325,
+    326,
+    327
+   ],
+   "extractor": "pypdf",
+   "heading_named": false,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c086177b9efed3b9163f0a88e16893c4d892db586dee7159f3ce7127a1c46e76"
+   }
+  },
+  "listed": 147,
+  "text_chars": 11351
+ },
+ {
+  "control_number": "18935",
+  "title": "Interdisciplinary Studies: Communication and English",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.917,
+  "codes_found": [
+   "COMM311",
+   "COMM315",
+   "COMM331",
+   "COMM361",
+   "COMMC1000",
+   "ENGLC1000",
+   "ENGLC1001",
+   "ENGRD310",
+   "PHIL300",
+   "PHIL320",
+   "PHIL325"
+  ],
+  "source": {
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=203",
+   "title": "It is highly recommended that students consult a counselor to",
+   "h1": "It is highly recommended that students consult a counselor to",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    203,
+    204,
+    205,
+    206
+   ],
+   "extractor": "pypdf",
+   "heading_named": false,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c086177b9efed3b9163f0a88e16893c4d892db586dee7159f3ce7127a1c46e76"
+   }
+  },
+  "listed": 12,
+  "text_chars": 15481
+ },
+ {
+  "control_number": "18936",
+  "title": "Interdisciplinary Studies: Social and Behavioral Sciences",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.944,
+  "codes_found": [
+   "ADMJ320",
+   "ANTH310",
+   "ANTH319",
+   "ANTH323",
+   "ANTH330",
+   "ANTH341",
+   "BUS300",
+   "BUS320",
+   "BUS330",
+   "BUS345",
+   "COMM325",
+   "COMM341",
+   "COMM351",
+   "ECE312",
+   "ECE314",
+   "ECE330",
+   "ECE430",
+   "ECON307",
+   "ECON320",
+   "ECONC2001",
+   "ECONC2002",
+   "ETHNS300",
+   "ETHNS320",
+   "ETHNS321",
+   "ETHNS330",
+   "ETHNS331",
+   "ETHNS350",
+   "ETHNS351",
+   "ETHNS360",
+   "ETHNS361",
+   "GEOG310",
+   "GEOG322",
+   "HIST301",
+   "HIST302",
+   "HIST307",
+   "HIST308",
+   "HIST314",
+   "HIST319",
+   "HIST331",
+   "HIST344",
+   "HIST368",
+   "HISTC1001",
+   "HISTC1002",
+   "JOUR310",
+   "KINES308",
+   "KINES416",
+   "NUTRI310",
+   "POLS302",
+   "POLS310",
+   "POLS320",
+   "POLSC1000",
+   "PSYC320",
+   "PSYC335",
+   "PSYC340",
+   "PSYC356",
+   "PSYC368",
+   "PSYC370",
+   "PSYC390",
+   "PSYCC1000",
+   "SJS300",
+   "SOC301",
+   "SOC310",
+   "SOC321",
+   "SOC341",
+   "SOC379",
+   "SWHS300",
+   "SWHS302"
+  ],
+  "source": {
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=294",
+   "title": "Course Code Course Code Course Title Course Title Units Units",
+   "h1": "Course Code Course Code Course Title Course Title Units Units",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    294
+   ],
+   "extractor": "pypdf",
+   "heading_named": false,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c086177b9efed3b9163f0a88e16893c4d892db586dee7159f3ce7127a1c46e76"
+   }
+  },
+  "listed": 71,
+  "text_chars": 3751
+ },
+ {
+  "control_number": "18937",
+  "title": "Interdisciplinary Studies: Math and Science",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.798,
+  "codes_found": [
+   "BIOL430",
+   "BIOL431",
+   "BIOL440",
+   "BIOL442",
+   "CHEM300",
+   "CHEM305",
+   "CHEM337",
+   "CHEM339",
+   "CHEM400",
+   "CHEM401",
+   "CHEM410",
+   "CHEM420",
+   "CHEM421",
+   "CISC311",
+   "CISD351",
+   "CISP300",
+   "CISP360",
+   "CISP400",
+   "CISP401",
+   "CISP408",
+   "CISP440",
+   "ECON310",
+   "ENGR420",
+   "FT304",
+   "GEOG300",
+   "GEOG301",
+   "GEOG306",
+   "GEOG331",
+   "GEOL300",
+   "GEOL301",
+   "GEOL302",
+   "GEOL305",
+   "GEOL306",
+   "GEOL310",
+   "GEOL311",
+   "GEOL330",
+   "GEOL345",
+   "MATH300",
+   "MATH310",
+   "MATH333",
+   "MATH341",
+   "MATH343",
+   "MATH355",
+   "MATH356",
+   "MATH372",
+   "MATH373",
+   "MATH375",
+   "MATH385",
+   "MATH400",
+   "MATH401",
+   "MATH402",
+   "MATH410",
+   "MATH420",
+   "NUTRI300",
+   "NUTRI302",
+   "NUTRI340",
+   "PHYS310",
+   "PHYS311",
+   "PHYS350",
+   "PHYS360",
+   "PHYS411",
+   "PHYS421",
+   "PHYS431",
+   "PS302",
+   "PSYC312",
+   "PSYC330",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=197",
+   "title": "Course Course",
+   "h1": "Course Course",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    197,
+    198,
+    199,
+    200
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c086177b9efed3b9163f0a88e16893c4d892db586dee7159f3ce7127a1c46e76"
+   }
+  },
+  "listed": 84,
+  "text_chars": 15853
+ },
+ {
+  "control_number": "19184",
+  "title": "Water/Wastewater Management",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ENVT351",
+   "ENVT353",
+   "ENVT354",
+   "ENVT380",
+   "ENVT381",
+   "ENVT382",
+   "ENVT383"
+  ],
+  "source": {
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=284",
+   "title": "Water/Wastewater Management Certificate",
+   "h1": "Water/Wastewater Management Certificate",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    284,
+    285,
+    286
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c086177b9efed3b9163f0a88e16893c4d892db586dee7159f3ce7127a1c46e76"
+   }
+  },
+  "listed": 7,
+  "text_chars": 11062
+ },
+ {
+  "control_number": "21193",
+  "title": "Small Business Management/Entrepreneurship",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 0.857,
+  "codes_found": [
+   "ACCT301",
+   "BUS300",
+   "BUS302",
+   "BUS330",
+   "ECONC2001",
+   "MGMT362"
+  ],
+  "source": {
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=175",
+   "title": "Small Business Management/Entrepreneurship Certificate",
+   "h1": "Small Business Management/Entrepreneurship Certificate",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    175,
+    176,
+    177,
+    178
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c086177b9efed3b9163f0a88e16893c4d892db586dee7159f3ce7127a1c46e76"
+   }
+  },
+  "listed": 7,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "21196",
+  "title": "Human Services Specialist",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 0.967,
+  "codes_found": [
+   "ADMJ300",
+   "ANTH310",
+   "ECE312",
+   "ECE314",
+   "ENGLC1001",
+   "HIST331",
+   "PHIL310",
+   "PSYC312",
+   "PSYC320",
+   "PSYC340",
+   "PSYC356",
+   "PSYC368",
+   "PSYC370",
+   "PSYCC1000",
+   "SJS300",
+   "SOC301",
+   "SOC321",
+   "SOC341",
+   "SOC379",
+   "SWHS300",
+   "SWHS302",
+   "SWHS340",
+   "SWHS350",
+   "SWHS360",
+   "SWHS365",
+   "SWHS366",
+   "SWHS367",
+   "SWHS494",
+   "SWHS498"
+  ],
+  "source": {
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=456",
+   "title": "Human Services Specialist Certificate",
+   "h1": "Human Services Specialist Certificate",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    456,
+    457,
+    458,
+    459
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c086177b9efed3b9163f0a88e16893c4d892db586dee7159f3ce7127a1c46e76"
+   }
+  },
+  "listed": 30,
+  "text_chars": 13927
+ },
+ {
+  "control_number": "30792",
+  "title": "Mathematics",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "MATH400",
+   "MATH401",
+   "MATH402",
+   "MATH410",
+   "MATH420"
+  ],
+  "source": {
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=366",
+   "title": "requirements may vary for each CSU and the degree may only transfer",
+   "h1": "requirements may vary for each CSU and the degree may only transfer",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    366,
+    367,
+    368,
+    369
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c086177b9efed3b9163f0a88e16893c4d892db586dee7159f3ce7127a1c46e76"
+   }
+  },
+  "listed": 5,
+  "text_chars": 14737
+ },
+ {
+  "control_number": "30801",
+  "title": "Psychology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ECE312",
+   "PSYC312",
+   "PSYC320",
+   "PSYC330",
+   "PSYC335",
+   "PSYC340",
+   "PSYC356",
+   "PSYC368",
+   "PSYC370",
+   "PSYC390",
+   "PSYCC1000"
+  ],
+  "source": {
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=436",
+   "title": "A.A.-T. in Psychology",
+   "h1": "A.A.-T. in Psychology",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    436,
+    437,
+    438,
+    439
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c086177b9efed3b9163f0a88e16893c4d892db586dee7159f3ce7127a1c46e76"
+   }
+  },
+  "listed": 11,
+  "text_chars": 15165
+ },
+ {
+  "control_number": "31174",
+  "title": "Kinesiology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 0.951,
+  "codes_found": [
+   "BIOL430",
+   "BIOL431",
+   "CHEM305",
+   "CHEM400",
+   "DANCE310",
+   "DANCE312",
+   "DANCE320",
+   "DANCE321",
+   "DANCE330",
+   "DANCE332",
+   "DANCE351",
+   "DANCE352",
+   "ECON310",
+   "FITNS304",
+   "FITNS306",
+   "FITNS324",
+   "FITNS326",
+   "FITNS380",
+   "FITNS387",
+   "FITNS388",
+   "FITNS390",
+   "FITNS392",
+   "FITNS395",
+   "FITNS400",
+   "FITNS414",
+   "PACT300",
+   "PACT310",
+   "PACT311",
+   "PACT390",
+   "PACT391",
+   "PHYS350",
+   "PHYS411",
+   "PSYC330",
+   "PSYCC1000",
+   "STATC1000",
+   "TMACT305",
+   "TMACT306",
+   "TMACT320",
+   "TMACT321"
+  ],
+  "source": {
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=335",
+   "title": "Course Code Course Code Course Title Course Title Units Units",
+   "h1": "Course Code Course Code Course Title Course Title Units Units",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    335,
+    336,
+    337,
+    338
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c086177b9efed3b9163f0a88e16893c4d892db586dee7159f3ce7127a1c46e76"
+   }
+  },
+  "listed": 41,
+  "text_chars": 15292
+ },
+ {
+  "control_number": "31623",
+  "title": "Dance Studies",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.96,
+  "codes_found": [
+   "DANCE309",
+   "DANCE310",
+   "DANCE320",
+   "DANCE330",
+   "DANCE351",
+   "DANCE360",
+   "DANCE377",
+   "DANCE380",
+   "DANCE381",
+   "DANCE382",
+   "DANCE383",
+   "DANCE410",
+   "DANCE440",
+   "DANCE495",
+   "FITNS324",
+   "FITNS392",
+   "FITNS395",
+   "FITNS414",
+   "INDIS313",
+   "KINES300",
+   "MUFHL300",
+   "MUFHL330",
+   "TA350",
+   "TAP340"
+  ],
+  "source": {
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=217",
+   "title": "A.A. in Dance Studies",
+   "h1": "A.A. in Dance Studies",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    217,
+    218,
+    219,
+    220
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c086177b9efed3b9163f0a88e16893c4d892db586dee7159f3ce7127a1c46e76"
+   }
+  },
+  "listed": 25,
+  "text_chars": 14272
+ },
+ {
+  "control_number": "31783",
+  "title": "Medical Laboratory Technician",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "MEDTEC310",
+   "MEDTEC311",
+   "MEDTEC312",
+   "MEDTEC324",
+   "MEDTEC325"
+  ],
+  "source": {
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=380",
+   "title": "A.S. in Medical Laboratory Technician",
+   "h1": "A.S. in Medical Laboratory Technician",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    380,
+    381,
+    382,
+    383
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c086177b9efed3b9163f0a88e16893c4d892db586dee7159f3ce7127a1c46e76"
+   }
+  },
+  "listed": 5,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "32032",
+  "title": "Administration of Justice",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 0.929,
+  "codes_found": [
+   "ADMJ300",
+   "ADMJ301",
+   "ADMJ302",
+   "ADMJ320",
+   "ADMJ322",
+   "ADMJ323",
+   "ADMJ330",
+   "ADMJ333",
+   "ECON310",
+   "PSYC330",
+   "PSYCC1000",
+   "SOC301",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=126",
+   "title": "their Folsom Lake College counselor to ensure that they are taking the",
+   "h1": "their Folsom Lake College counselor to ensure that they are taking the",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    126,
+    127,
+    128,
+    129
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c086177b9efed3b9163f0a88e16893c4d892db586dee7159f3ce7127a1c46e76"
+   }
+  },
+  "listed": 14,
+  "text_chars": 15604
+ },
+ {
+  "control_number": "32254",
+  "title": "Early Childhood Education",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ECE300",
+   "ECE312",
+   "ECE314",
+   "ECE320",
+   "ECE321",
+   "ECE326",
+   "ECE415",
+   "ECE430"
+  ],
+  "source": {
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=232",
+   "title": "A.S.-T. in Early Childhood Education for",
+   "h1": "A.S.-T. in Early Childhood Education for",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    232,
+    233,
+    234,
+    235
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c086177b9efed3b9163f0a88e16893c4d892db586dee7159f3ce7127a1c46e76"
+   }
+  },
+  "listed": 8,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "32447",
+  "title": "Business Administration",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT301",
+   "ACCT311",
+   "BUS300",
+   "BUS340",
+   "BUS345",
+   "ECONC2001",
+   "ECONC2002",
+   "MATH341",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=175",
+   "title": "A.S.-T. in Business Administration 2.0",
+   "h1": "A.S.-T. in Business Administration 2.0",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    175,
+    176,
+    177,
+    178
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c086177b9efed3b9163f0a88e16893c4d892db586dee7159f3ce7127a1c46e76"
+   }
+  },
+  "listed": 9,
+  "text_chars": 15732
+ },
+ {
+  "control_number": "32474",
+  "title": "Physics",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "MATH400",
+   "MATH401",
+   "MATH402",
+   "PHYS411",
+   "PHYS421",
+   "PHYS431"
+  ],
+  "source": {
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=424",
+   "title": "A.S.-T. in Physics",
+   "h1": "A.S.-T. in Physics",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    424
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c086177b9efed3b9163f0a88e16893c4d892db586dee7159f3ce7127a1c46e76"
+   }
+  },
+  "listed": 6,
+  "text_chars": 2340
+ },
+ {
+  "control_number": "32546",
+  "title": "English",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 0.933,
+  "codes_found": [
+   "ANTH341",
+   "BUS310",
+   "COMM305",
+   "ENGCW400",
+   "ENGCW410",
+   "ENGCW420",
+   "ENGCW430",
+   "ENGLC1001",
+   "ENGLC1001H",
+   "ENGLT303",
+   "ENGLT310",
+   "ENGLT311",
+   "ENGLT319",
+   "ENGLT320",
+   "ENGLT321",
+   "ENGLT330",
+   "ENGLT339",
+   "ENGLT340",
+   "ENGLT341",
+   "ENGLT345",
+   "ENGLT360",
+   "ENGLT370",
+   "ENGLT402",
+   "FREN411",
+   "FREN412",
+   "SPAN411",
+   "SPAN412",
+   "TA300"
+  ],
+  "source": {
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=262",
+   "title": "Course Code Course Code Course Title Course Title Units Units",
+   "h1": "Course Code Course Code Course Title Course Title Units Units",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    262,
+    263,
+    264,
+    265
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c086177b9efed3b9163f0a88e16893c4d892db586dee7159f3ce7127a1c46e76"
+   }
+  },
+  "listed": 30,
+  "text_chars": 15279
+ },
+ {
+  "control_number": "32547",
+  "title": "Art History",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART300",
+   "ART304",
+   "ART320",
+   "ART327",
+   "ART361",
+   "ART370",
+   "ART372",
+   "ART383",
+   "ART390",
+   "ART402",
+   "ARTH304",
+   "ARTH306",
+   "ARTH307",
+   "ARTH309",
+   "ARTH311",
+   "ARTH312",
+   "ARTH318",
+   "ARTH324",
+   "ARTH325",
+   "ARTH328",
+   "ARTH330",
+   "ARTH332",
+   "ARTH333",
+   "ARTHC1100"
+  ],
+  "source": {
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=152",
+   "title": "courses required for the major or area of emphasis. A \"P\" (Pass) grade",
+   "h1": "courses required for the major or area of emphasis. A \"P\" (Pass) grade",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    152,
+    153,
+    154,
+    155
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c086177b9efed3b9163f0a88e16893c4d892db586dee7159f3ce7127a1c46e76"
+   }
+  },
+  "listed": 24,
+  "text_chars": 13150
+ },
+ {
+  "control_number": "33146",
+  "title": "Theatre Arts",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "TA300",
+   "TA302",
+   "TA340",
+   "TA350",
+   "TA351",
+   "TA420",
+   "TA422",
+   "TA423",
+   "TA424",
+   "TAP300",
+   "TAP301",
+   "TAP302",
+   "TAP303",
+   "TAP310",
+   "TAP311",
+   "TAP312",
+   "TAP313",
+   "TAP320",
+   "TAP321",
+   "TAP322",
+   "TAP323",
+   "TAP330",
+   "TAP331",
+   "TAP332",
+   "TAP333",
+   "TAP340",
+   "TAP341",
+   "TAP342",
+   "TAP343",
+   "TAP350",
+   "TAP351",
+   "TAP352",
+   "TAP353",
+   "TAP360",
+   "TAP361",
+   "TAP362",
+   "TAP363",
+   "TAP370",
+   "TAP371",
+   "TAP372",
+   "TAP373",
+   "TAP380",
+   "TAP381",
+   "TAP382",
+   "TAP383",
+   "TAP390",
+   "TAP391",
+   "TAP392",
+   "TAP393"
+  ],
+  "source": {
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=469",
+   "title": "requirements may vary for each CSU and the degree may only transfer",
+   "h1": "requirements may vary for each CSU and the degree may only transfer",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    469,
+    470,
+    471,
+    472
+   ],
+   "extractor": "pypdf",
+   "heading_named": false,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c086177b9efed3b9163f0a88e16893c4d892db586dee7159f3ce7127a1c46e76"
+   }
+  },
+  "listed": 49,
+  "text_chars": 14865
+ },
+ {
+  "control_number": "33210",
+  "title": "Geology",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEM400",
+   "CHEM401",
+   "GEOL300",
+   "GEOL301",
+   "GEOL302",
+   "GEOL310",
+   "GEOL311",
+   "MATH400",
+   "MATH401"
+  ],
+  "source": {
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=298",
+   "title": "A.S.-T. in Geology",
+   "h1": "A.S.-T. in Geology",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    298,
+    299,
+    300,
+    301
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c086177b9efed3b9163f0a88e16893c4d892db586dee7159f3ce7127a1c46e76"
+   }
+  },
+  "listed": 9,
+  "text_chars": 14069
+ },
+ {
+  "control_number": "33235",
+  "title": "Sociology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 0.929,
+  "codes_found": [
+   "ANTH310",
+   "ECON310",
+   "GEOG310",
+   "PSYC320",
+   "PSYC330",
+   "PSYC335",
+   "PSYCC1000",
+   "SOC301",
+   "SOC310",
+   "SOC321",
+   "SOC341",
+   "SOC379",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=461",
+   "title": "A.A.-T. in Sociology",
+   "h1": "A.A.-T. in Sociology",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    461,
+    462,
+    463,
+    464
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c086177b9efed3b9163f0a88e16893c4d892db586dee7159f3ce7127a1c46e76"
+   }
+  },
+  "listed": 14,
+  "text_chars": 14923
+ },
+ {
+  "control_number": "33236",
+  "title": "Geography",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTH310",
+   "BIOL310",
+   "BIOLC1000",
+   "GEOG300",
+   "GEOG301",
+   "GEOG306",
+   "GEOG310",
+   "GEOG322",
+   "GEOG331",
+   "GEOG334",
+   "GEOG390",
+   "GEOL300",
+   "PHIL320",
+   "POLS310",
+   "PSYC330",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=293",
+   "title": "ADTs require that students must earn a “C” or better in all courses",
+   "h1": "ADTs require that students must earn a “C” or better in all courses",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    293,
+    294,
+    295,
+    296
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c086177b9efed3b9163f0a88e16893c4d892db586dee7159f3ce7127a1c46e76"
+   }
+  },
+  "listed": 16,
+  "text_chars": 15349
+ },
+ {
+  "control_number": "33791",
+  "title": "Theatre Arts: Technical",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "TA420",
+   "TA422",
+   "TA424",
+   "TA426",
+   "TAP310",
+   "TAP311",
+   "TAP312",
+   "TAP313",
+   "TAP330",
+   "TAP331",
+   "TAP332",
+   "TAP333",
+   "TAP350",
+   "TAP351",
+   "TAP352",
+   "TAP353",
+   "TAP370",
+   "TAP371",
+   "TAP372",
+   "TAP373",
+   "TAP390",
+   "TAP391",
+   "TAP392",
+   "TAP393"
+  ],
+  "source": {
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=470",
+   "title": "Theatre Arts: Technical Certificate",
+   "h1": "Theatre Arts: Technical Certificate",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    470
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c086177b9efed3b9163f0a88e16893c4d892db586dee7159f3ce7127a1c46e76"
+   }
+  },
+  "listed": 24,
+  "text_chars": 2713
+ },
+ {
+  "control_number": "33883",
+  "title": "Nutrition and Dietetics",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 0.958,
+  "codes_found": [
+   "ACCT301",
+   "ANTH310",
+   "BIOL430",
+   "BIOL431",
+   "BIOL440",
+   "BIOL442",
+   "BUS340",
+   "CHEM400",
+   "CHEM401",
+   "CHEM420",
+   "COMM311",
+   "ECE312",
+   "ECE314",
+   "ECON310",
+   "ECONC2001",
+   "ECONC2002",
+   "HEED300",
+   "NUTRI300",
+   "NUTRI310",
+   "NUTRI330",
+   "PSYC330",
+   "PSYCC1000",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=409",
+   "title": "A.S.-T. in Nutrition and Dietetics",
+   "h1": "A.S.-T. in Nutrition and Dietetics",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    409,
+    410,
+    411,
+    412
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c086177b9efed3b9163f0a88e16893c4d892db586dee7159f3ce7127a1c46e76"
+   }
+  },
+  "listed": 24,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "35014",
+  "title": "Heritage Interpretation",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTH300",
+   "ANTH310",
+   "ANTH323",
+   "ANTH392",
+   "ANTH498",
+   "BIOL323",
+   "BIOL350",
+   "BIOL380",
+   "BIOL382",
+   "BIOL386",
+   "BIOL388",
+   "BIOL389",
+   "BIOLC1000",
+   "HIST319",
+   "HIST344",
+   "HIST498",
+   "WEXP498"
+  ],
+  "source": {
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=135",
+   "title": "Heritage Interpretation Certificate",
+   "h1": "Heritage Interpretation Certificate",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    135,
+    136,
+    137,
+    138
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c086177b9efed3b9163f0a88e16893c4d892db586dee7159f3ce7127a1c46e76"
+   }
+  },
+  "listed": 17,
+  "text_chars": 13286
+ },
+ {
+  "control_number": "35015",
+  "title": "Interdisciplinary Studies: Pre-Law",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.947,
+  "codes_found": [
+   "ANTH310",
+   "BUS345",
+   "ECONC2001",
+   "ECONC2002",
+   "HIST308",
+   "HISTC1001",
+   "HISTC1002",
+   "PHIL300",
+   "PHIL310",
+   "PHIL320",
+   "PHIL325",
+   "POLS302",
+   "POLS310",
+   "POLS320",
+   "POLSC1000",
+   "SOC301",
+   "SOC321",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=330",
+   "title": "A.A. in Interdisciplinary Studies: Pre-Law",
+   "h1": "A.A. in Interdisciplinary Studies: Pre-Law",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    330,
+    331,
+    332
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c086177b9efed3b9163f0a88e16893c4d892db586dee7159f3ce7127a1c46e76"
+   }
+  },
+  "listed": 19,
+  "text_chars": 10213
+ },
+ {
+  "control_number": "35158",
+  "title": "Biology",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL400",
+   "BIOL411",
+   "BIOL420",
+   "CHEM400",
+   "CHEM401",
+   "MATH355",
+   "PHYS350",
+   "PHYS360",
+   "PHYS411",
+   "PHYS421"
+  ],
+  "source": {
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=161",
+   "title": "A.S.-T. in Biology",
+   "h1": "A.S.-T. in Biology",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    161,
+    162,
+    163,
+    164
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c086177b9efed3b9163f0a88e16893c4d892db586dee7159f3ce7127a1c46e76"
+   }
+  },
+  "listed": 10,
+  "text_chars": 14109
+ },
+ {
+  "control_number": "35171",
+  "title": "Clay Arts",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART370",
+   "ART372",
+   "ART390",
+   "ART391",
+   "ART402",
+   "ART404"
+  ],
+  "source": {
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=144",
+   "title": "Clay Arts Certificate",
+   "h1": "Clay Arts Certificate",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    144
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c086177b9efed3b9163f0a88e16893c4d892db586dee7159f3ce7127a1c46e76"
+   }
+  },
+  "listed": 6,
+  "text_chars": 2175
+ },
+ {
+  "control_number": "35268",
+  "title": "Computed Tomagraphy",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "IMAGE320",
+   "IMAGE321",
+   "IMAGE331"
+  ],
+  "source": {
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=319",
+   "title": "HUM 495 Independent Studies in Humanities",
+   "h1": "HUM 495 Independent Studies in Humanities",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    319,
+    320,
+    321
+   ],
+   "extractor": "pypdf",
+   "heading_named": false,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c086177b9efed3b9163f0a88e16893c4d892db586dee7159f3ce7127a1c46e76"
+   }
+  },
+  "listed": 3,
+  "text_chars": 10151
+ },
+ {
+  "control_number": "35523",
+  "title": "Economics",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT301",
+   "ACCT311",
+   "BUS300",
+   "BUS310",
+   "BUS320",
+   "CISC310",
+   "CISP360",
+   "ECON310",
+   "ECON320",
+   "ECONC2001",
+   "ECONC2002",
+   "MATH341",
+   "MATH400",
+   "MATH401",
+   "MATH402",
+   "MATH410",
+   "PSYC330",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=246",
+   "title": "A.A.-T. in Economics",
+   "h1": "A.A.-T. in Economics",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    246,
+    247,
+    248,
+    249
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c086177b9efed3b9163f0a88e16893c4d892db586dee7159f3ce7127a1c46e76"
+   }
+  },
+  "listed": 18,
+  "text_chars": 15848
+ },
+ {
+  "control_number": "35575",
+  "title": "Philosophy",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ARTH325",
+   "ARTH333",
+   "ENGLT303",
+   "ENGLT305",
+   "ENGLT310",
+   "ENGLT311",
+   "ENGLT319",
+   "ENGLT320",
+   "ENGLT321",
+   "ENGLT330",
+   "ENGLT339",
+   "ENGLT340",
+   "ENGLT341",
+   "ENGLT345",
+   "ENGLT359",
+   "ENGLT360",
+   "ENGLT402",
+   "FREN411",
+   "FREN412",
+   "HIST301",
+   "HIST302",
+   "HIST307",
+   "HIST308",
+   "HIST344",
+   "HIST368",
+   "HUM300",
+   "HUM301",
+   "HUM310",
+   "HUM320",
+   "HUM325",
+   "HUM332",
+   "HUM370",
+   "PHIL300",
+   "PHIL310",
+   "PHIL320",
+   "PHIL325",
+   "PHIL330",
+   "PHIL331",
+   "PHIL350",
+   "PHIL352",
+   "SILA316",
+   "SPAN411",
+   "SPAN412"
+  ],
+  "source": {
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=416",
+   "title": "Course Code Course Code Course Title Course Title Units Units",
+   "h1": "Course Code Course Code Course Title Course Title Units Units",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    416,
+    417,
+    418,
+    419
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c086177b9efed3b9163f0a88e16893c4d892db586dee7159f3ce7127a1c46e76"
+   }
+  },
+  "listed": 43,
+  "text_chars": 15435
+ },
+ {
+  "control_number": "35577",
+  "title": "Public Health Science",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 0.667,
+  "codes_found": [
+   "BIOL310",
+   "BIOL400",
+   "BIOL430",
+   "CHEM400",
+   "HEED300",
+   "HEED302",
+   "NUTRI300",
+   "PSYC356",
+   "PSYCC1000",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=304",
+   "title": "Degree Requirements",
+   "h1": "Degree Requirements",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    304
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c086177b9efed3b9163f0a88e16893c4d892db586dee7159f3ce7127a1c46e76"
+   }
+  },
+  "listed": 15,
+  "text_chars": 3758
+ },
+ {
+  "control_number": "35681",
+  "title": "Magnetic Resonance Imaging",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "IMAGE340",
+   "IMAGE341",
+   "IMAGE351"
+  ],
+  "source": {
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=320",
+   "title": "Magnetic Resonance Imaging Certificate",
+   "h1": "Magnetic Resonance Imaging Certificate",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    320,
+    321,
+    322
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c086177b9efed3b9163f0a88e16893c4d892db586dee7159f3ce7127a1c46e76"
+   }
+  },
+  "listed": 3,
+  "text_chars": 10269
+ },
+ {
+  "control_number": "36508",
+  "title": "Pre-Health Occupations",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.727,
+  "codes_found": [
+   "AH311",
+   "ANTH310",
+   "BIOL442",
+   "CHEM305",
+   "CHEM400",
+   "CHEM401",
+   "COMM311",
+   "COMM331",
+   "COMM361",
+   "COMMC1000",
+   "NUTRI300",
+   "PSYC330",
+   "PSYC370",
+   "PSYCC1000",
+   "SOC321",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=131",
+   "title": "Course Code Course Code Course Title Course Title Units Units",
+   "h1": "Course Code Course Code Course Title Course Title Units Units",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    131,
+    132,
+    133,
+    134
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c086177b9efed3b9163f0a88e16893c4d892db586dee7159f3ce7127a1c46e76"
+   }
+  },
+  "listed": 22,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "36574",
+  "title": "Vascular-Interventional Radiography",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 1,
+  "text_chars": 0
+ },
+ {
+  "control_number": "37124",
+  "title": "Viticulture and Enology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL310",
+   "BIOL400",
+   "BUS300",
+   "BUS350",
+   "CHEM305",
+   "CHEM339",
+   "CHEM400",
+   "SPAN401",
+   "VITI300",
+   "VITI301",
+   "VITI304",
+   "VITI305",
+   "VITI306",
+   "VITI307",
+   "VITI308"
+  ],
+  "source": {
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=485",
+   "title": "A.S. in Viticulture and Enology",
+   "h1": "A.S. in Viticulture and Enology",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    485,
+    486,
+    487,
+    488
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c086177b9efed3b9163f0a88e16893c4d892db586dee7159f3ce7127a1c46e76"
+   }
+  },
+  "listed": 15,
+  "text_chars": 12843
+ },
+ {
+  "control_number": "37165",
+  "title": "Information Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS300",
+   "BUS310",
+   "CISC310",
+   "CISN304",
+   "CISP360",
+   "CISP407",
+   "CISS310",
+   "COMMC1000",
+   "MATH341",
+   "MATH400",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=209",
+   "title": "A.S. in Information Technology",
+   "h1": "A.S. in Information Technology",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    209,
+    210,
+    211
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c086177b9efed3b9163f0a88e16893c4d892db586dee7159f3ce7127a1c46e76"
+   }
+  },
+  "listed": 11,
+  "text_chars": 9407
+ },
+ {
+  "control_number": "37166",
+  "title": "Nutrition Science",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.941,
+  "codes_found": [
+   "ANTH310",
+   "BIOL400",
+   "BIOL410",
+   "BIOL411",
+   "BIOL420",
+   "CHEM400",
+   "CHEM401",
+   "CHEM420",
+   "CHEM421",
+   "ECONC2001",
+   "ECONC2002",
+   "NUTRI300",
+   "NUTRI340",
+   "PSYC335",
+   "PSYCC1000",
+   "SOC301"
+  ],
+  "source": {
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=412",
+   "title": "science or any science related academic area. After transfer to and",
+   "h1": "science or any science related academic area. After transfer to and",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    412,
+    413,
+    414
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c086177b9efed3b9163f0a88e16893c4d892db586dee7159f3ce7127a1c46e76"
+   }
+  },
+  "listed": 17,
+  "text_chars": 11618
+ },
+ {
+  "control_number": "37340",
+  "title": "Law, Public Policy, and Society",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ADMJ300",
+   "ADMJ302",
+   "ADMJ320",
+   "ADMJ322",
+   "ADMJ323",
+   "ADMJ498",
+   "ANTH310",
+   "ANTH498",
+   "BIOL498",
+   "BUS330",
+   "BUS340",
+   "BUS345",
+   "BUS498",
+   "BUSTEC498",
+   "CHEM498",
+   "CISC498",
+   "COMM311",
+   "COMM315",
+   "COMM325",
+   "COMM331",
+   "COMM498",
+   "COMMC1000",
+   "DANCE498",
+   "ECE498",
+   "ECONC2001",
+   "ECONC2002",
+   "ENGLC1000",
+   "ENGLC1001",
+   "ENVT498",
+   "GEOG310",
+   "HCD310",
+   "HIST331",
+   "HIST344",
+   "HISTC1001",
+   "HISTC1002",
+   "KINES498",
+   "MGMT310",
+   "MGMT315",
+   "MGMT498",
+   "MKT498",
+   "MUSM498",
+   "PHIL310",
+   "PHIL320",
+   "PHOTO498",
+   "POLS302",
+   "POLS310",
+   "POLS320",
+   "POLSC1000",
+   "PSYC330",
+   "PSYC368",
+   "SOC301",
+   "SOC321",
+   "SOC341",
+   "SOC498",
+   "STATC1000",
+   "SWHS498",
+   "TA498",
+   "WEXP498"
+  ],
+  "source": {
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=322",
+   "title": "A.A.-T. in Law, Public Policy, and Society",
+   "h1": "A.A.-T. in Law, Public Policy, and Society",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    322,
+    323
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c086177b9efed3b9163f0a88e16893c4d892db586dee7159f3ce7127a1c46e76"
+   }
+  },
+  "listed": 58,
+  "text_chars": 6333
+ },
+ {
+  "control_number": "37417",
+  "title": "Public Management/Civil Service",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT301",
+   "ACCT311",
+   "BUS340",
+   "COMMC1000",
+   "ECONC2002",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=179",
+   "title": "A.A. in Public Management/Civil Service",
+   "h1": "A.A. in Public Management/Civil Service",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    179,
+    180,
+    181,
+    182
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c086177b9efed3b9163f0a88e16893c4d892db586dee7159f3ce7127a1c46e76"
+   }
+  },
+  "listed": 6,
+  "text_chars": 13923
+ },
+ {
+  "control_number": "37420",
+  "title": "Interdisciplinary Studies: STEM for Trans.",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL350",
+   "BIOL400",
+   "BIOL410",
+   "BIOL420",
+   "CHEM400",
+   "CHEM401",
+   "CHEM420",
+   "CHEM421",
+   "CISP310",
+   "CISP360",
+   "CISP400",
+   "CISP430",
+   "CISP440",
+   "ENGR312",
+   "ENGR400",
+   "ENGR420",
+   "MATH400",
+   "MATH401",
+   "MATH402",
+   "MATH410",
+   "MATH420",
+   "PHYS350",
+   "PHYS360",
+   "PHYS411",
+   "PHYS421",
+   "PHYS431",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=331",
+   "title": "Student Learning Outcomes",
+   "h1": "Student Learning Outcomes",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    331,
+    332
+   ],
+   "extractor": "pypdf",
+   "heading_named": false,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c086177b9efed3b9163f0a88e16893c4d892db586dee7159f3ce7127a1c46e76"
+   }
+  },
+  "listed": 27,
+  "text_chars": 7509
+ },
+ {
+  "control_number": "37917",
+  "title": "Nutrition Education",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL310",
+   "BIOL400",
+   "BIOL430",
+   "BIOL431",
+   "CHEM400",
+   "NUTRI300",
+   "NUTRI302",
+   "NUTRI310",
+   "NUTRI322",
+   "NUTRI330",
+   "NUTRI340",
+   "PSYCC1000"
+  ],
+  "source": {
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=412",
+   "title": "science or any science related academic area. After transfer to and",
+   "h1": "science or any science related academic area. After transfer to and",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    412,
+    413,
+    414
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c086177b9efed3b9163f0a88e16893c4d892db586dee7159f3ce7127a1c46e76"
+   }
+  },
+  "listed": 12,
+  "text_chars": 11618
+ },
+ {
+  "control_number": "38631",
+  "title": "History",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 0.986,
+  "codes_found": [
+   "ADMJ300",
+   "ADMJ302",
+   "ANTH310",
+   "ANTH323",
+   "ANTH341",
+   "ARTH325",
+   "ARTH333",
+   "COMM325",
+   "ECON307",
+   "ECONC2001",
+   "ECONC2002",
+   "ENGLT303",
+   "ENGLT305",
+   "ENGLT310",
+   "ENGLT311",
+   "ENGLT319",
+   "ENGLT321",
+   "ENGLT330",
+   "ENGLT339",
+   "ENGLT340",
+   "ENGLT341",
+   "ENGLT345",
+   "ENGLT359",
+   "ENGLT360",
+   "ENGLT402",
+   "ETHNS300",
+   "ETHNS320",
+   "ETHNS330",
+   "ETHNS350",
+   "ETHNS360",
+   "FREN411",
+   "FREN412",
+   "GEOG310",
+   "GEOG322",
+   "HIST301",
+   "HIST302",
+   "HIST307",
+   "HIST308",
+   "HIST331",
+   "HIST344",
+   "HIST368",
+   "HISTC1001",
+   "HISTC1002",
+   "HUM300",
+   "HUM301",
+   "HUM310",
+   "HUM320",
+   "HUM325",
+   "HUM332",
+   "HUM370",
+   "NUTRI310",
+   "PHIL300",
+   "PHIL310",
+   "PHIL330",
+   "PHIL331",
+   "PHIL350",
+   "PHIL352",
+   "POLS302",
+   "POLS310",
+   "POLS320",
+   "POLSC1000",
+   "PSYC368",
+   "PSYCC1000",
+   "SJS300",
+   "SOC301",
+   "SOC321",
+   "SPAN411",
+   "SPAN412"
+  ],
+  "source": {
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=306",
+   "title": "(2) Obtainment of a minimum grade point average of 2.0.",
+   "h1": "(2) Obtainment of a minimum grade point average of 2.0.",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    306,
+    307,
+    308,
+    309
+   ],
+   "extractor": "pypdf",
+   "heading_named": false,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c086177b9efed3b9163f0a88e16893c4d892db586dee7159f3ce7127a1c46e76"
+   }
+  },
+  "listed": 69,
+  "text_chars": 15888
+ },
+ {
+  "control_number": "38702",
+  "title": "Engineering",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEM400",
+   "CISP360",
+   "ENGR303",
+   "ENGR312",
+   "ENGR400",
+   "ENGR420",
+   "MATH400",
+   "MATH401",
+   "MATH402",
+   "MATH420",
+   "PHYS411",
+   "PHYS421",
+   "PHYS431"
+  ],
+  "source": {
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=259",
+   "title": "A.S. in Engineering",
+   "h1": "A.S. in Engineering",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    259,
+    260
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c086177b9efed3b9163f0a88e16893c4d892db586dee7159f3ce7127a1c46e76"
+   }
+  },
+  "listed": 13,
+  "text_chars": 7064
+ },
+ {
+  "control_number": "38736",
+  "title": "Business Analyst/Data Analytics",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.944,
+  "codes_found": [
+   "ACCT301",
+   "ACCT311",
+   "ACCT342",
+   "BUS300",
+   "BUS302",
+   "BUS303",
+   "BUS304",
+   "BUS310",
+   "BUS340",
+   "CISC310",
+   "COMMC1000",
+   "ECONC2001",
+   "ECONC2002",
+   "MAKR101",
+   "MGMT362",
+   "PRJMGT300",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=177",
+   "title": "Course Code Course Code Course Title Course Title Units Units",
+   "h1": "Course Code Course Code Course Title Course Title Units Units",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    177,
+    178,
+    179,
+    180
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c086177b9efed3b9163f0a88e16893c4d892db586dee7159f3ce7127a1c46e76"
+   }
+  },
+  "listed": 18,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "38741",
+  "title": "New World of Work",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT301",
+   "BUS300",
+   "BUS302",
+   "BUS310",
+   "BUS340",
+   "BUS498",
+   "CISC310",
+   "COMM341",
+   "ECONC2002",
+   "HCD330",
+   "HCD345",
+   "MGMT310",
+   "MGMT498",
+   "PRJMGT300"
+  ],
+  "source": {
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=183",
+   "title": "New World of Work Certificate",
+   "h1": "New World of Work Certificate",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    183,
+    184
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c086177b9efed3b9163f0a88e16893c4d892db586dee7159f3ce7127a1c46e76"
+   }
+  },
+  "listed": 14,
+  "text_chars": 7567
+ },
+ {
+  "control_number": "38744",
+  "title": "Modern Making",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS357",
+   "MAKR100",
+   "MAKR101",
+   "MAKR110",
+   "MAKR111",
+   "MAKR290",
+   "SOC379",
+   "TA420",
+   "TA423"
+  ],
+  "source": {
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=387",
+   "title": "educators developing STEM activities for use in the classroom,",
+   "h1": "educators developing STEM activities for use in the classroom,",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    387,
+    388,
+    389
+   ],
+   "extractor": "pypdf",
+   "heading_named": false,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c086177b9efed3b9163f0a88e16893c4d892db586dee7159f3ce7127a1c46e76"
+   }
+  },
+  "listed": 9,
+  "text_chars": 12441
+ },
+ {
+  "control_number": "38897",
+  "title": "STEM Math",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "MATH300",
+   "MATH333",
+   "MATH341",
+   "MATH355",
+   "MATH356",
+   "MATH372",
+   "MATH373",
+   "MATH375",
+   "MATH400",
+   "MATH401",
+   "MATH402",
+   "MATH410",
+   "MATH420",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=368",
+   "title": "Course Course",
+   "h1": "Course Course",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    368,
+    369,
+    370,
+    371
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c086177b9efed3b9163f0a88e16893c4d892db586dee7159f3ce7127a1c46e76"
+   }
+  },
+  "listed": 14,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "38898",
+  "title": "Pre-Clinical Laboratory Scientist Trainee",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "MEDTEC310",
+   "MEDTEC324",
+   "MEDTEC325"
+  ],
+  "source": {
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=380",
+   "title": "Pre-Clinical Laboratory Scientist Trainee Certificate",
+   "h1": "Pre-Clinical Laboratory Scientist Trainee Certificate",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    380
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c086177b9efed3b9163f0a88e16893c4d892db586dee7159f3ce7127a1c46e76"
+   }
+  },
+  "listed": 3,
+  "text_chars": 3491
+ },
+ {
+  "control_number": "39117",
+  "title": "Social Justice Studies",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ARTH312",
+   "ARTH328",
+   "ARTH330",
+   "COMM325",
+   "ENGLT330",
+   "ENGLT360",
+   "HIST331",
+   "HIST344",
+   "HUM320",
+   "HUM325",
+   "HUM370",
+   "MUFHL330",
+   "PSYC330",
+   "PSYC356",
+   "PSYC368",
+   "SJS300",
+   "SOC321",
+   "SOC341",
+   "SOC379",
+   "STATC1000",
+   "TA304"
+  ],
+  "source": {
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=460",
+   "title": "A.A.-T. in Social Justice Studies",
+   "h1": "A.A.-T. in Social Justice Studies",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    460,
+    461,
+    462,
+    463
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c086177b9efed3b9163f0a88e16893c4d892db586dee7159f3ce7127a1c46e76"
+   }
+  },
+  "listed": 21,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "39137",
+  "title": "Social Work & Human Services",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 0.962,
+  "codes_found": [
+   "ADMJ300",
+   "ADMJ320",
+   "ANTH300",
+   "ANTH310",
+   "BIOL300",
+   "BIOL310",
+   "BIOLC1000",
+   "COMM325",
+   "ECE312",
+   "ECE314",
+   "ECONC2001",
+   "ECONC2002",
+   "ENGLC1001",
+   "ENGLC1001H",
+   "HISTC1001",
+   "HISTC1002",
+   "PSYC330",
+   "PSYC340",
+   "PSYC370",
+   "PSYCC1000",
+   "SOC301",
+   "SOC321",
+   "STATC1000",
+   "SWHS300",
+   "SWHS366"
+  ],
+  "source": {
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=453",
+   "title": "A.A.-T. in Social Work & Human Services",
+   "h1": "A.A.-T. in Social Work & Human Services",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    453,
+    454,
+    455,
+    456
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c086177b9efed3b9163f0a88e16893c4d892db586dee7159f3ce7127a1c46e76"
+   }
+  },
+  "listed": 26,
+  "text_chars": 14800
+ },
+ {
+  "control_number": "39574",
+  "title": "Environmental Science",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL350",
+   "BIOL400",
+   "BIOL410",
+   "BIOL411",
+   "BIOL420",
+   "CHEM400",
+   "CHEM401",
+   "CHEM420",
+   "CHEM421",
+   "ECONC2001",
+   "ECONC2002",
+   "GEOG300",
+   "GEOG301",
+   "GEOL300",
+   "GEOL301",
+   "MATH355",
+   "MATH356",
+   "MATH400",
+   "MATH401",
+   "MATH402",
+   "PHYS350",
+   "PHYS360",
+   "PHYS411",
+   "PHYS421",
+   "PHYS431",
+   "PSYC330",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=166",
+   "title": "Course Course",
+   "h1": "Course Course",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    166,
+    167,
+    168
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c086177b9efed3b9163f0a88e16893c4d892db586dee7159f3ce7127a1c46e76"
+   }
+  },
+  "listed": 27,
+  "text_chars": 11579
+ },
+ {
+  "control_number": "39579",
+  "title": "Biology UC Preparation",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL400",
+   "BIOL410",
+   "BIOL411",
+   "BIOL420",
+   "CHEM400",
+   "CHEM401",
+   "CHEM420",
+   "CHEM421",
+   "MATH355",
+   "MATH356",
+   "MATH400",
+   "MATH401"
+  ],
+  "source": {
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=166",
+   "title": "Course Course",
+   "h1": "Course Course",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    166,
+    167
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c086177b9efed3b9163f0a88e16893c4d892db586dee7159f3ce7127a1c46e76"
+   }
+  },
+  "listed": 12,
+  "text_chars": 7493
+ },
+ {
+  "control_number": "39580",
+  "title": "Environmental Science",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL350",
+   "BIOL400",
+   "BIOL410",
+   "BIOL411",
+   "BIOL420",
+   "CHEM400",
+   "CHEM401",
+   "CHEM420",
+   "CHEM421",
+   "ECONC2001",
+   "ECONC2002",
+   "GEOG300",
+   "GEOG301",
+   "GEOL300",
+   "GEOL301",
+   "MATH355",
+   "MATH356",
+   "MATH400",
+   "MATH401",
+   "MATH402",
+   "PHYS350",
+   "PHYS360",
+   "PHYS411",
+   "PHYS421",
+   "PHYS431",
+   "PSYC330",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=167",
+   "title": "Environmental Science Certificate",
+   "h1": "Environmental Science Certificate",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    167,
+    168
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c086177b9efed3b9163f0a88e16893c4d892db586dee7159f3ce7127a1c46e76"
+   }
+  },
+  "listed": 27,
+  "text_chars": 6007
+ },
+ {
+  "control_number": "39664",
+  "title": "Commercial Music: Multimedia Music Composition",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "MUFHL400",
+   "MUFHL401",
+   "MUFHL410",
+   "MUFHL411",
+   "MUP320",
+   "MUP350",
+   "MUP357",
+   "MUP360",
+   "MUP400",
+   "MUP424",
+   "MUP426",
+   "MUSM320",
+   "MUSM334",
+   "MUSM356"
+  ],
+  "source": {
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=395",
+   "title": "• evaluate and interpret the ways in which people throughout the ages",
+   "h1": "• evaluate and interpret the ways in which people throughout the ages",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    395,
+    396,
+    397,
+    398
+   ],
+   "extractor": "pypdf",
+   "heading_named": false,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c086177b9efed3b9163f0a88e16893c4d892db586dee7159f3ce7127a1c46e76"
+   }
+  },
+  "listed": 14,
+  "text_chars": 13887
+ },
+ {
+  "control_number": "40325",
+  "title": "Environmental Science",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL350",
+   "BIOL400",
+   "CHEM400",
+   "CHEM401",
+   "ECONC2001",
+   "GEOG300",
+   "GEOG301",
+   "GEOL300",
+   "GEOL301",
+   "MATH341",
+   "MATH400",
+   "PHYS350",
+   "PHYS360",
+   "PHYS411",
+   "PHYS421",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=162",
+   "title": "A.S.-T. in Environmental Science",
+   "h1": "A.S.-T. in Environmental Science",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    162,
+    163,
+    164,
+    165
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c086177b9efed3b9163f0a88e16893c4d892db586dee7159f3ce7127a1c46e76"
+   }
+  },
+  "listed": 16,
+  "text_chars": 14139
+ },
+ {
+  "control_number": "40763",
+  "title": "Business Analyst",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT301",
+   "BUS300",
+   "BUS302",
+   "BUS310",
+   "MGMT362",
+   "PRJMGT300"
+  ],
+  "source": {
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=182",
+   "title": "Business Analyst Certificate",
+   "h1": "Business Analyst Certificate",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    182,
+    183,
+    184
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c086177b9efed3b9163f0a88e16893c4d892db586dee7159f3ce7127a1c46e76"
+   }
+  },
+  "listed": 6,
+  "text_chars": 11413
+ },
+ {
+  "control_number": "40859",
+  "title": "Commercial Music: Performance",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "MUFHL400",
+   "MUFHL401",
+   "MUIVI380",
+   "MUP310",
+   "MUP320",
+   "MUP350",
+   "MUP357",
+   "MUP360",
+   "MUP400",
+   "MUP422",
+   "MUP424",
+   "MUP426",
+   "MUSM110",
+   "MUSM334",
+   "MUSM498"
+  ],
+  "source": {
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=396",
+   "title": "Commercial Music: Music Entrepreneurship",
+   "h1": "Commercial Music: Music Entrepreneurship",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    396,
+    397,
+    398,
+    399
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c086177b9efed3b9163f0a88e16893c4d892db586dee7159f3ce7127a1c46e76"
+   }
+  },
+  "listed": 15,
+  "text_chars": 14216
+ },
+ {
+  "control_number": "42293",
+  "title": "Food Science",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEM337",
+   "CHEM339",
+   "CHEM400",
+   "CHEM401",
+   "MATH400",
+   "MATH401",
+   "NUTRI300",
+   "PHYS350",
+   "PHYS360",
+   "PSYC330",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=411",
+   "title": "A.S. in Food Science",
+   "h1": "A.S. in Food Science",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    411,
+    412,
+    413,
+    414
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c086177b9efed3b9163f0a88e16893c4d892db586dee7159f3ce7127a1c46e76"
+   }
+  },
+  "listed": 11,
+  "text_chars": 13898
+ },
+ {
+  "control_number": "42502",
+  "title": "Quality Technician",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ENGR312",
+   "MITECH300",
+   "MITECH303",
+   "MITECH310",
+   "MITECH311",
+   "MITECH312",
+   "MITECH313"
+  ],
+  "source": {
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=361",
+   "title": "Quality Technician Certificate",
+   "h1": "Quality Technician Certificate",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    361,
+    362,
+    363
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c086177b9efed3b9163f0a88e16893c4d892db586dee7159f3ce7127a1c46e76"
+   }
+  },
+  "listed": 7,
+  "text_chars": 12437
+ },
+ {
+  "control_number": "42554",
+  "title": "Human Services Paraprofessional",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 0.962,
+  "codes_found": [
+   "ADMJ300",
+   "ANTH310",
+   "ECE312",
+   "ECE314",
+   "ENGLC1001",
+   "HIST331",
+   "PHIL310",
+   "PSYC312",
+   "PSYC320",
+   "PSYC340",
+   "PSYC356",
+   "PSYC368",
+   "PSYC370",
+   "PSYCC1000",
+   "SJS300",
+   "SOC301",
+   "SOC321",
+   "SOC341",
+   "SOC379",
+   "SWHS300",
+   "SWHS302",
+   "SWHS340",
+   "SWHS350",
+   "SWHS360",
+   "SWHS365"
+  ],
+  "source": {
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=455",
+   "title": "Course Code Course Code Course Title Course Title Units Units",
+   "h1": "Course Code Course Code Course Title Course Title Units Units",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    455,
+    456,
+    457,
+    458
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c086177b9efed3b9163f0a88e16893c4d892db586dee7159f3ce7127a1c46e76"
+   }
+  },
+  "listed": 26,
+  "text_chars": 15202
+ },
+ {
+  "control_number": "42566",
+  "title": "Manufacturing and Industrial Technology",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ENGR312",
+   "MAKR110",
+   "MITECH300",
+   "MITECH301",
+   "MITECH302",
+   "MITECH310"
+  ],
+  "source": {
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=358",
+   "title": "Manufacturing and Industrial Technology Certificate",
+   "h1": "Manufacturing and Industrial Technology Certificate",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    358,
+    359,
+    360,
+    361
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c086177b9efed3b9163f0a88e16893c4d892db586dee7159f3ce7127a1c46e76"
+   }
+  },
+  "listed": 6,
+  "text_chars": 12947
+ },
+ {
+  "control_number": "42567",
+  "title": "Production Planning",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 0.875,
+  "codes_found": [
+   "BUS310",
+   "BUS330",
+   "ENGR312",
+   "MGMT372",
+   "MITECH300",
+   "MITECH302",
+   "MITECH310"
+  ],
+  "source": {
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=360",
+   "title": "Production Planning Certificate",
+   "h1": "Production Planning Certificate",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    360,
+    361,
+    362
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c086177b9efed3b9163f0a88e16893c4d892db586dee7159f3ce7127a1c46e76"
+   }
+  },
+  "listed": 8,
+  "text_chars": 9497
+ },
+ {
+  "control_number": "42602",
+  "title": "CAD/CAM Programming",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ENGR312",
+   "MAKR110",
+   "MITECH300",
+   "MITECH303",
+   "MITECH313",
+   "MITECH320",
+   "MITECH321",
+   "MITECH322"
+  ],
+  "source": {
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=359",
+   "title": "CAD/CAM Programming Certificate",
+   "h1": "CAD/CAM Programming Certificate",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    359,
+    360,
+    361,
+    362
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c086177b9efed3b9163f0a88e16893c4d892db586dee7159f3ce7127a1c46e76"
+   }
+  },
+  "listed": 8,
+  "text_chars": 13328
+ },
+ {
+  "control_number": "42612",
+  "title": "Manufacturing and Industrial Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.913,
+  "codes_found": [
+   "BUS310",
+   "ENGR312",
+   "MAKR110",
+   "MGMT372",
+   "MITECH300",
+   "MITECH301",
+   "MITECH302",
+   "MITECH303",
+   "MITECH310",
+   "MITECH311",
+   "MITECH312",
+   "MITECH313",
+   "MITECH320",
+   "MITECH321",
+   "MITECH322",
+   "PHYS350",
+   "PHYS360",
+   "PHYS411",
+   "PHYS421",
+   "PHYS431",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=359",
+   "title": "Course Code Course Code Course Title Course Title Units Units",
+   "h1": "Course Code Course Code Course Title Course Title Units Units",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    359,
+    360,
+    361,
+    362
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c086177b9efed3b9163f0a88e16893c4d892db586dee7159f3ce7127a1c46e76"
+   }
+  },
+  "listed": 23,
+  "text_chars": 15529
+ },
+ {
+  "control_number": "42655",
+  "title": "Business Administration 2.0",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT301",
+   "ACCT311",
+   "BUS300",
+   "BUS340",
+   "BUS345",
+   "ECON310",
+   "ECONC2001",
+   "ECONC2002",
+   "MATH341",
+   "MATH343",
+   "MATH400",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=175",
+   "title": "A.S.-T. in Business Administration 2.0",
+   "h1": "A.S.-T. in Business Administration 2.0",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    175,
+    176,
+    177,
+    178
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c086177b9efed3b9163f0a88e16893c4d892db586dee7159f3ce7127a1c46e76"
+   }
+  },
+  "listed": 12,
+  "text_chars": 15732
+ },
+ {
+  "control_number": "42911",
+  "title": "Business Information Professional I",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS100",
+   "BUSTEC126",
+   "BUSTEC307",
+   "BUSTEC309",
+   "BUSTEC360",
+   "BUSTEC362",
+   "BUSTEC366",
+   "BUSTEC498",
+   "ENGLC1000",
+   "MATH300"
+  ],
+  "source": {
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=184",
+   "title": "Business Information Professional I Certificate",
+   "h1": "Business Information Professional I Certificate",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    184,
+    185
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c086177b9efed3b9163f0a88e16893c4d892db586dee7159f3ce7127a1c46e76"
+   }
+  },
+  "listed": 10,
+  "text_chars": 5374
+ },
+ {
+  "control_number": "43272",
+  "title": "Art Education for Children",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART300",
+   "ART302",
+   "ART320",
+   "ART323",
+   "ART370",
+   "ART372",
+   "ART390",
+   "ART402",
+   "ART430",
+   "ARTH300"
+  ],
+  "source": {
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=143",
+   "title": "Art Education for Children Certificate",
+   "h1": "Art Education for Children Certificate",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    143,
+    144,
+    145,
+    146
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c086177b9efed3b9163f0a88e16893c4d892db586dee7159f3ce7127a1c46e76"
+   }
+  },
+  "listed": 10,
+  "text_chars": 11569
+ },
+ {
+  "control_number": "43728",
+  "title": "Communication Studies 2.0",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 0.722,
+  "codes_found": [
+   "ANTH310",
+   "COMM305",
+   "COMM311",
+   "COMM315",
+   "COMM325",
+   "COMM331",
+   "COMM341",
+   "COMM351",
+   "COMM361",
+   "COMMC1000",
+   "ENGLC1001",
+   "JOUR310",
+   "PSYCC1000"
+  ],
+  "source": {
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=202",
+   "title": "(2) Obtainment of a minimum grade point average of 2.0.",
+   "h1": "(2) Obtainment of a minimum grade point average of 2.0.",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    202,
+    203,
+    204,
+    205
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c086177b9efed3b9163f0a88e16893c4d892db586dee7159f3ce7127a1c46e76"
+   }
+  },
+  "listed": 18,
+  "text_chars": 15940
+ },
+ {
+  "control_number": "43872",
+  "title": "Spanish",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 0.938,
+  "codes_found": [
+   "ANTH310",
+   "ENGLT340",
+   "ENGLT341",
+   "ETHNS320",
+   "ETHNS360",
+   "FREN401",
+   "FREN402",
+   "GEOG310",
+   "HISTC1001",
+   "HISTC1002",
+   "POLSC1000",
+   "SPAN401",
+   "SPAN402",
+   "SPAN411",
+   "SPAN412"
+  ],
+  "source": {
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=466",
+   "title": "GETC) Requirement.",
+   "h1": "GETC) Requirement.",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    466,
+    467
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c086177b9efed3b9163f0a88e16893c4d892db586dee7159f3ce7127a1c46e76"
+   }
+  },
+  "listed": 16,
+  "text_chars": 7996
+ },
+ {
+  "control_number": "43878",
+  "title": "Certified Nurse Assistant",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "AH311",
+   "NURSE100"
+  ],
+  "source": {
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=407",
+   "title": "Certified Nurse Assistant Certificate",
+   "h1": "Certified Nurse Assistant Certificate",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    407,
+    408
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c086177b9efed3b9163f0a88e16893c4d892db586dee7159f3ce7127a1c46e76"
+   }
+  },
+  "listed": 2,
+  "text_chars": 6382
+ },
+ {
+  "control_number": "43881",
+  "title": "Algorithmic and Logical Thinking",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CISC310",
+   "CISP360",
+   "COMM311",
+   "COMM315",
+   "PHIL300",
+   "PHIL320",
+   "PHIL325",
+   "PSYC330",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=209",
+   "title": "• design, write, test and debug computer programs, using a low-level",
+   "h1": "• design, write, test and debug computer programs, using a low-level",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    209,
+    210,
+    211
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c086177b9efed3b9163f0a88e16893c4d892db586dee7159f3ce7127a1c46e76"
+   }
+  },
+  "listed": 9,
+  "text_chars": 10296
+ },
+ {
+  "control_number": "43900",
+  "title": "Artificial Intelligence and Machine Learning",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "AI300",
+   "AI305",
+   "AI310",
+   "AI311",
+   "AI312",
+   "AI314",
+   "CISP407"
+  ],
+  "source": {
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=157",
+   "title": "Certificate Requirements",
+   "h1": "Certificate Requirements",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    157,
+    158,
+    159
+   ],
+   "extractor": "pypdf",
+   "heading_named": false,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c086177b9efed3b9163f0a88e16893c4d892db586dee7159f3ce7127a1c46e76"
+   }
+  },
+  "listed": 7,
+  "text_chars": 10148
+ },
+ {
+  "control_number": "44580",
+  "title": "Business Information Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT301",
+   "ACCT341",
+   "BUS300",
+   "BUS310",
+   "BUS320",
+   "BUS330",
+   "BUS340",
+   "BUS350",
+   "BUSTEC126",
+   "BUSTEC307",
+   "BUSTEC309",
+   "BUSTEC332",
+   "BUSTEC360",
+   "BUSTEC362",
+   "BUSTEC366",
+   "BUSTEC498",
+   "COMM325",
+   "ECON320",
+   "ECONC2002",
+   "MKT300",
+   "PRJMGT300"
+  ],
+  "source": {
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=181",
+   "title": "degree. Students who complete this degree program will have met the",
+   "h1": "degree. Students who complete this degree program will have met the",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    181,
+    182,
+    183,
+    184
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c086177b9efed3b9163f0a88e16893c4d892db586dee7159f3ce7127a1c46e76"
+   }
+  },
+  "listed": 21,
+  "text_chars": 15906
+ },
+ {
+  "control_number": "44855",
+  "title": "Public Health",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 0.95,
+  "codes_found": [
+   "ANTH310",
+   "BIOL310",
+   "BIOL400",
+   "BIOL430",
+   "BIOL440",
+   "BIOL442",
+   "CHEM305",
+   "CHEM400",
+   "ECE314",
+   "ECON310",
+   "HEED300",
+   "HEED302",
+   "NUTRI300",
+   "PSYC320",
+   "PSYC330",
+   "PSYC356",
+   "PSYC370",
+   "PSYCC1000",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=304",
+   "title": "Degree Requirements",
+   "h1": "Degree Requirements",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    304
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c086177b9efed3b9163f0a88e16893c4d892db586dee7159f3ce7127a1c46e76"
+   }
+  },
+  "listed": 20,
+  "text_chars": 3758
+ },
+ {
+  "control_number": "44970",
+  "title": "Business Information Professional II",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT301",
+   "ACCT341",
+   "BUS300",
+   "BUS310",
+   "BUS330",
+   "BUSTEC332",
+   "BUSTEC498",
+   "COMM325"
+  ],
+  "source": {
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=181",
+   "title": "and Business Information Professional II certificate.",
+   "h1": "and Business Information Professional II certificate.",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    181,
+    182,
+    183,
+    184
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c086177b9efed3b9163f0a88e16893c4d892db586dee7159f3ce7127a1c46e76"
+   }
+  },
+  "listed": 8,
+  "text_chars": 15763
+ },
+ {
+  "control_number": "45247",
+  "title": "Honors",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 0.75,
+  "codes_found": [
+   "ENGLC1000H",
+   "ENGLC1001H",
+   "TAFILM480"
+  ],
+  "source": {
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=312",
+   "title": "Honors Certificate",
+   "h1": "Honors Certificate",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    312
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c086177b9efed3b9163f0a88e16893c4d892db586dee7159f3ce7127a1c46e76"
+   }
+  },
+  "listed": 4,
+  "text_chars": 1873
+ },
+ {
+  "control_number": "45305",
+  "title": "Commercial Music, Entrepreneurship",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "MUFHL308",
+   "MUFHL315",
+   "MUFHL330",
+   "MUFHL400",
+   "MUFHL401",
+   "MUIVI420",
+   "MUP310",
+   "MUP311",
+   "MUP320",
+   "MUP350",
+   "MUP357",
+   "MUP360",
+   "MUP424",
+   "MUP426",
+   "MUSM110",
+   "MUSM111",
+   "MUSM306",
+   "MUSM334",
+   "MUSM356"
+  ],
+  "source": {
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=391",
+   "title": "A.A. in Commercial Music, Entrepreneurship",
+   "h1": "A.A. in Commercial Music, Entrepreneurship",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    391,
+    392
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c086177b9efed3b9163f0a88e16893c4d892db586dee7159f3ce7127a1c46e76"
+   }
+  },
+  "listed": 19,
+  "text_chars": 5631
+ },
+ {
+  "control_number": "45328",
+  "title": "California General Education  Curriculum (Cal-GETC)",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ADMJ300",
+   "ARTH300",
+   "ARTH325",
+   "BIOL370",
+   "BIOL410",
+   "COMMC1000",
+   "ECON310",
+   "ENGLC1000",
+   "ENGLC1001",
+   "ETHNS360",
+   "PHYS311"
+  ],
+  "source": {
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=97",
+   "title": "California General Education Transfer Curriculum Requirements",
+   "h1": "California General Education Transfer Curriculum Requirements",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    97,
+    98
+   ],
+   "extractor": "pypdf",
+   "heading_named": false,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c086177b9efed3b9163f0a88e16893c4d892db586dee7159f3ce7127a1c46e76"
+   }
+  },
+  "listed": 11,
+  "text_chars": 6538
+ },
+ {
+  "control_number": "45555",
+  "title": "Commercial Music: World Music",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "MUFHL330",
+   "MUFHL400",
+   "MUP426",
+   "MUSM334",
+   "MUSM356"
+  ],
+  "source": {
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=397",
+   "title": "Commercial Music: World Music Certificate",
+   "h1": "Commercial Music: World Music Certificate",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    397,
+    398,
+    399
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c086177b9efed3b9163f0a88e16893c4d892db586dee7159f3ce7127a1c46e76"
+   }
+  },
+  "listed": 5,
+  "text_chars": 9615
+ },
+ {
+  "control_number": "45556",
+  "title": "Commercial Music: Music Entrepreneurship",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "MUFHL400",
+   "MUFHL401",
+   "MUIVI380",
+   "MUP311",
+   "MUP320",
+   "MUP350",
+   "MUP357",
+   "MUP360",
+   "MUP400",
+   "MUP424",
+   "MUP426",
+   "MUSM110",
+   "MUSM111",
+   "MUSM320",
+   "MUSM334",
+   "MUSM356",
+   "MUSM498"
+  ],
+  "source": {
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=396",
+   "title": "Commercial Music: Music Entrepreneurship",
+   "h1": "Commercial Music: Music Entrepreneurship",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    396,
+    397,
+    398,
+    399
+   ],
+   "extractor": "pypdf",
+   "heading_named": false,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c086177b9efed3b9163f0a88e16893c4d892db586dee7159f3ce7127a1c46e76"
+   }
+  },
+  "listed": 17,
+  "text_chars": 14216
+ },
+ {
+  "control_number": "45568",
+  "title": "Commercial Music: Live Sound Technician",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 0.667,
+  "codes_found": [
+   "MUFHL400",
+   "MUSM306",
+   "MUSM334",
+   "MUSM356"
+  ],
+  "source": {
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=390",
+   "title": "Commercial Music: Live Sound Technician Certificate",
+   "h1": "Commercial Music: Live Sound Technician Certificate",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    390,
+    391,
+    392
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c086177b9efed3b9163f0a88e16893c4d892db586dee7159f3ce7127a1c46e76"
+   }
+  },
+  "listed": 6,
+  "text_chars": 10299
+ },
+ {
+  "control_number": "45569",
+  "title": "Information Technology",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CISC310",
+   "CISN304",
+   "CISP360",
+   "CISS310"
+  ],
+  "source": {
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=208",
+   "title": "Information Technology Certificate",
+   "h1": "Information Technology Certificate",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    208,
+    209,
+    210,
+    211
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c086177b9efed3b9163f0a88e16893c4d892db586dee7159f3ce7127a1c46e76"
+   }
+  },
+  "listed": 4,
+  "text_chars": 12449
+ },
+ {
+  "control_number": "45570",
+  "title": "Fire Technology",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "FT300",
+   "FT301",
+   "FT302",
+   "FT303",
+   "FT304",
+   "FT305"
+  ],
+  "source": {
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=251",
+   "title": "Fire Technology Certificate",
+   "h1": "Fire Technology Certificate",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    251,
+    252
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c086177b9efed3b9163f0a88e16893c4d892db586dee7159f3ce7127a1c46e76"
+   }
+  },
+  "listed": 6,
+  "text_chars": 5995
+ },
+ {
+  "control_number": "45612",
+  "title": "Fire Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "EMT101",
+   "EMT300",
+   "FT110",
+   "FT130",
+   "FT141",
+   "FT170",
+   "FT180",
+   "FT190",
+   "FT217",
+   "FT218",
+   "FT219",
+   "FT300",
+   "FT301",
+   "FT302",
+   "FT303",
+   "FT304",
+   "FT305"
+  ],
+  "source": {
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=251",
+   "title": "A.S. in Fire Technology",
+   "h1": "A.S. in Fire Technology",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    251,
+    252,
+    253,
+    254
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c086177b9efed3b9163f0a88e16893c4d892db586dee7159f3ce7127a1c46e76"
+   }
+  },
+  "listed": 17,
+  "text_chars": 14447
+ },
+ {
+  "control_number": "46145",
+  "title": "Radiologic Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "RADTEC300",
+   "RADTEC301",
+   "RADTEC321",
+   "RADTEC322",
+   "RADTEC326",
+   "RADTEC327",
+   "RADTEC335",
+   "RADTEC339",
+   "RADTEC340",
+   "RADTEC341",
+   "RADTEC342",
+   "RADTEC345",
+   "RADTEC346",
+   "RADTEC347",
+   "RADTEC350",
+   "RADTEC351",
+   "RADTEC352",
+   "RADTEC358",
+   "RADTEC361",
+   "RADTEC362",
+   "RADTEC363",
+   "RADTEC364",
+   "RADTEC365"
+  ],
+  "source": {
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=442",
+   "title": "A.S. in Radiologic Technology",
+   "h1": "A.S. in Radiologic Technology",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    442,
+    443,
+    444,
+    445
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "c086177b9efed3b9163f0a88e16893c4d892db586dee7159f3ce7127a1c46e76"
+   }
+  },
+  "listed": 23,
+  "text_chars": 15096
+ }
+]

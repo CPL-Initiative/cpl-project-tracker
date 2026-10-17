@@ -1,0 +1,229 @@
+{
+ "college": "Folsom Lake College",
+ "control_number": "15377",
+ "shape": "certificate",
+ "title": "Early Childhood Education Teacher",
+ "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+ "source_url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=236",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 10823,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 10823,
+    "output_tokens": 1935,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1935,
+  "output_tokens_details": {
+   "thinking_tokens": 654
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.08199,
+ "ms": 15782,
+ "seconds": 16.3,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 9,
+   "listed": 9,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    29.0,
+    29.0
+   ],
+   "stated": [
+    45.0,
+    45.0
+   ],
+   "against": "program",
+   "why": [
+    "the blocks sum to 29.0-29.0; the catalog states 45.0-45.0"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 10,
+   "courses": 0,
+   "count": 10,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Early Childhood Education Teacher Certificate",
+   "measure": "units",
+   "total_units": {
+    "min": 45,
+    "max": 45
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": 16,
+    "max": 16
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "design early childhood classroom communities that build healthy, respectful, and reciprocal relationships that support and empower families, with the intention to involve all families in their children’s development and learning.",
+    "analyze, synthesize, and evaluate systematic observations, documentation, and other effective assessment strategies in a responsible way in order to guide decisions about curriculum and teaching strategies as well as to support children’s development and learning.",
+    "observe and evaluate positive relationships and supportive interactions as the foundation for work with young children.",
+    "analyze, synthesize, and evaluate a wide array of effective approaches, strategies, and tools to support young children’s development and learning.",
+    "analyze, synthesize and evaluate young children's learning in content areas and access resources to deepen children's understanding.",
+    "design, implement and evaluate meaningful, challenging curriculum that promotes comprehensive developmental and learning outcomes for all young children.",
+    "analyze, synthesize, and evaluate ethical guidelines and other professional standards related of early childhood practice.",
+    "develop continuing professional growth plan and advocate for public policy that supports children, families and the profession of early childhood education.",
+    "apply acquired knowledge, skills, and abilities of certificate coursework toward successful completion of an Early Childhood Education Master Teacher Certificate.",
+    "seek employment as a teacher in a private or public early childhood educational setting."
+   ],
+   "careers": [
+    "teachers"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Certificate Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 29,
+     "max": 29
+    },
+    "courses": [
+     {
+      "code": "ECE 300",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECE 312",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECE 314",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECE 320",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECE 321",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECE 326",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECE 330",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECE 415",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECE 430",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The certificate's printed Total Units: 45 = 29 units of required ECE courses plus 'A minimum of 16 units from the following: 16', which the text describes as 16 units in general education categories (at least one course each in English, Humanities, Social Science, Math/Science) for Child Development Permit (Teacher) eligibility. No courses are listed for this requirement; the 16 units are recorded in ge_units and not as a block. ge_pattern left null because no named GE pattern is given.",
+   "The career entry is taken from the Career Information section ('There is a need for competent teachers in private and public Early Childhood programs').",
+   "Outcome 7 is copied as printed, including 'related of early childhood practice'.",
+   "Infant Specialist and Master Teacher certificate sections on the following pages were not read into this record."
+  ]
+ },
+ "extracted_run": "39046850071"
+}

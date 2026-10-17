@@ -1,0 +1,261 @@
+{
+ "college": "Folsom Lake College",
+ "control_number": "33210",
+ "shape": "adt",
+ "title": "Geology",
+ "award": "A.S. T Degree",
+ "source_url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=298",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 11672,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 11672,
+    "output_tokens": 2205,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2205,
+  "output_tokens_details": {
+   "thinking_tokens": 939
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.09079,
+ "ms": 18529,
+ "seconds": 19.1,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 9,
+   "listed": 9,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    28.0,
+    28.0
+   ],
+   "stated": [
+    28.0,
+    28.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 6,
+   "courses": 0,
+   "count": 6,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 9,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "A.S.-T. in Geology",
+   "measure": "units",
+   "total_units": {
+    "min": 28,
+    "max": 28
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "evaluate new and accepted ideas about the natural universe using testable methodology.",
+    "articulate orally and/or in writing the importance of continuous examination and modification of accepted ideas as a fundamental element in the progress of science.",
+    "sort, arrange, and quantify objects using the international system of measurement (metric) as the standard.",
+    "analyze a wide variety of natural phenomena geological using basic definitions and fundamental theories of natural science.",
+    "compare the scales at which geologic processes work.",
+    "apply knowledge of current geologic processes to the understanding of Earth's past geologic history."
+   ],
+   "careers": [
+    "environmental monitoring",
+    "protection and remediation",
+    "energy and mineral exploration",
+    "paleontology",
+    "vulcanology",
+    "seismology",
+    "climatology",
+    "teaching",
+    "research"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Degree Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "GEOL 310",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOL 311",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 400",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 401",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 400",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 401",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "GEOL 300 and GEOL 301",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Physical Geology",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "GEOL 300",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOL 301",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "or GEOL 302",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Physical Geology",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "GEOL 302",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The catalog prints '[ GEOL 300 (3) and GEOL 301 ] (1) or GEOL 302 (4)' as one row worth 4 units; recorded as two option blocks in option_group 'Physical Geology'.",
+   "Total Units: 28 matches the sum of the required courses plus 4 units for the Physical Geology choice.",
+   "The 60-unit figure appears in the generic ADT completion requirements and in the sentence 'may be obtained by completion of 60 transferable, semester units'; read as the standard ADT requirement rather than a printed award total, so degree_total is null. Reviewer may wish to check.",
+   "Cal-GETC is named as the GE pattern; no GE units are printed.",
+   "Physics coursework is recommended but not required; no specific physics courses are named, so no recommended block was created.",
+   "Career fields 'environmental monitoring, protection and remediation' split into two entries as printed; may be read as a single field.",
+   "Pages 299-301 belong to the A.A. in Interdisciplinary Studies: Math and Science and GEOL course descriptions; not used for this award."
+  ]
+ },
+ "extracted_run": "39046850071"
+}
