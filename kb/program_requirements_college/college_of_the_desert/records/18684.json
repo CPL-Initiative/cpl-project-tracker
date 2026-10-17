@@ -1,0 +1,404 @@
+{
+ "college": "College of the Desert",
+ "control_number": "18684",
+ "shape": "degree",
+ "title": "Automotive Technology",
+ "award": "A.S. Degree",
+ "source_url": "https://collegeofthedesert.edu/_web-items/documents/pdf-files/catalogs/2026-2027-catalog.pdf#page=128",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 12497,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 12497,
+    "output_tokens": 3844,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 3844,
+  "output_tokens_details": {
+   "thinking_tokens": 1441
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.12687,
+ "ms": 29969,
+ "seconds": 30.5,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 31,
+   "listed": 31,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    64.0,
+    64.0
+   ],
+   "stated": [
+    64.0,
+    65.0
+   ],
+   "against": "degree",
+   "ge": [
+    23.0,
+    23.0
+   ],
+   "why": [
+    "the blocks and general education sum to 64.0-64.0; the catalog prints 64.0-65.0 for the degree"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Automotive Technology AS Degree",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "COD General Education Pattern",
+   "degree_total": {
+    "min": 64,
+    "max": 65
+   },
+   "ge_units": {
+    "min": 23,
+    "max": 23
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Fulﬁll the requirements for an entry-level position in their ﬁeld.",
+    "Providing the knowledge and skills for advancement at their current automotive/ advanced transportation job.",
+    "Apply critical thinking skills to research, evaluate, analyze and synthesize information.",
+    "Demonstrate the skills and aptitude necessary to pass certiﬁcation exams in their ﬁeld."
+   ],
+   "careers": [
+    "entry-level technicians"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 38,
+     "max": 38
+    },
+    "courses": [
+     {
+      "code": "AUTO 010",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUTO 011B",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUTO 011C",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUTO 012A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUTO 013A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUTO 014A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUTO 015",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUTO 020A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUTO 042B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUTO 043A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUTO 095A",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Electives",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "AUTO 014B",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUTO 016",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUTO 017",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUTO 018",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUTO 021A",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUTO 043B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUTO 044B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUTO 044C",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUTO 045A",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUTO 046B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUTO 054D",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUTO 054E",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUTO 093A",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUTO 093B",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUTO 095A",
+      "units": 1,
+      "units_max": 2,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGR 009",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUMA 010",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACR 060",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACR 064",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WELD 011A",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WELD 012A",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The course list at the top of page 128 ending 'CERTIFICATE TOTAL 17' belongs to a preceding certificate (the 'Automotive Technology AS Degree' line above it is a running page header); it was not read for this award.",
+   "The degree's elective list continues across the page break onto page 129 (BUMA 010, ACR 060, ACR 064, WELD 011A, WELD 012A) under the running header 'Automotive Terminology Certificate of Completion'; these were read as part of the degree's elective list, followed by 'Required Subtotal 38', 'Elective Subtotal 3', 'COD General Education Pattern (p. 74) 23', 'DEGREE TOTAL 64-65'.",
+   "The page prints Required Subtotal 38 and Elective Subtotal 3 but no single major total, so total_units is left null; the block stated values hold the subtotals.",
+   "The 'Required Courses' and 'Electives' headings are printed with no units beside 'Required Courses'; stated 38 for that block comes from 'Required Subtotal 38' printed after the list.",
+   "Footnote 1: for extenuating circumstances, as deemed by the automotive advisor, work experience (AUTO 095A) may be fulfilled through a special shop project or an appropriate elective.",
+   "AUTO 095A appears both as a required course (2 units) and in the elective list (1-2 units, 'in addition to required').",
+   "Catalog codes use zero-padded numbers (AUTO 010, AUTO 015, ENGR 009, BUMA 010, ACR 060, ACR 064) and spaced codes (AUTO 014A, AUTO 017, AUTO 020A) where the closed list prints AUTO 10, AUTO 15, ENGR 9, BUMA 10, ACR 60, ACR 64, AUTO014A, AUTO017, AUTO020A; treated as the same courses, not catalog additions.",
+   "Outcomes are copied with the PDF's 'ﬁ' ligature characters as printed."
+  ]
+ },
+ "extracted_run": "39056007346"
+}

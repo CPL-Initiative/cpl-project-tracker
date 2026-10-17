@@ -1,0 +1,257 @@
+{
+ "college": "College of the Desert",
+ "control_number": "04370",
+ "shape": "degree",
+ "title": "Chemistry",
+ "award": "A.S. Degree",
+ "source_url": "https://collegeofthedesert.edu/_web-items/documents/pdf-files/catalogs/2026-2027-catalog.pdf#page=234",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 11264,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 11264,
+    "output_tokens": 2049,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2049,
+  "output_tokens_details": {
+   "thinking_tokens": 769
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.08604,
+ "ms": 16386,
+ "seconds": 16.9,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 7,
+   "listed": 10,
+   "share": 0.7,
+   "missing": [
+    "BI5",
+    "BI6",
+    "MATH1B"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "MATHC2220"
+   ],
+   "flagged": [
+    "MATHC2220"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    36.0,
+    36.0
+   ],
+   "stated": [
+    36.0,
+    36.0
+   ],
+   "against": "program",
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     70.0,
+     70.0
+    ],
+    "stated": [
+     63.0,
+     63.0
+    ],
+    "against": "degree",
+    "ge": [
+     34.0,
+     34.0
+    ],
+    "why": [],
+    "overlap": true
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 8,
+   "courses": 0,
+   "count": 8,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Chemistry AS-T Degree",
+   "measure": "units",
+   "total_units": {
+    "min": 36,
+    "max": 36
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": 63,
+    "max": 63
+   },
+   "ge_units": {
+    "min": 34,
+    "max": 34
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Demonstrate an understanding of general, inorganic and introductory organic chemistry, including nomenclature and writing formulas and chemical equations.",
+    "Use appropriate scientiﬁc terminology and evaluate the merit of scientiﬁc data using critical thought.",
+    "Demonstrate an understanding of general, inorganic and introductory organic chemistry, including nomenclature and writing formulas and chemical equations.",
+    "Describe basic atomic theory and apply its principles to chemical reactions.",
+    "Describe reactions of acids/bases, oxidation-reduction reactions, as well as reactions of gases, liquids, and solids.",
+    "Explain functional group categories that differentiate the various organic chemicals and the physical, chemical and physiological properties of each.",
+    "Describe and demonstrate correct use of laboratory equipment.",
+    "Prepared for transfer to 4-year university chemistry programs and upper-division chemistry courses."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required Core Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 36,
+     "max": 36
+    },
+    "courses": [
+     {
+      "code": "CH 001A",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CH 001B",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CH 010A",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CH 010B",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH C2210",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH C2220",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PH 003A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PH 003B",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "BI 5",
+    "why": "named only in the Biology AS-T section, not in the Chemistry section"
+   },
+   {
+    "code": "BI006",
+    "why": "named only in the Biology AS-T section, not in the Chemistry section"
+   },
+   {
+    "code": "MATH 001B",
+    "why": "named only in the Physics AS-T section, not in the Chemistry section"
+   }
+  ],
+  "notes": [
+   "The requested award is a Chemistry A.S. Degree, but the text contains only a 'Chemistry AS-T Degree' section; this record reads that section. A reviewer should confirm whether a separate Chemistry A.S. section exists elsewhere in the catalog (the closed list's BI 5, BI006 and MATH 001B suggest a different requirement set).",
+   "Total 36 is from 'Required Subtotal 36' and the text's '36 units in the major'; degree total 63 from 'DEGREE TOTAL 63' and '63 CSU transferable units'.",
+   "The generic sentence 'Completion of 60 semester units' conflicts with the printed DEGREE TOTAL 63; 63 recorded as printed for this award.",
+   "Learning outcomes 1 and 3 are printed identically in the catalog; both copied as printed. Outcome 8 continues on the next page after a running header.",
+   "Footnote: units for the major may be double counted for Cal-GETC."
+  ]
+ },
+ "extracted_run": "39056007346"
+}

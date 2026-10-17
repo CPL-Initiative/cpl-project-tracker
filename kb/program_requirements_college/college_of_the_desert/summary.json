@@ -1,0 +1,75 @@
+{
+ "college": "College of the Desert",
+ "programs": 374,
+ "with_closed_list": 365,
+ "found": 358,
+ "extracted": 358,
+ "errors": 0,
+ "passed_machine_checks": 221,
+ "failed": {
+  "coverage": 41,
+  "invented": 4,
+  "arithmetic": 124,
+  "repeated": 0,
+  "outcomes": 2
+ },
+ "cost_usd": 28.43,
+ "cost_per_program": 0.0794,
+ "not_found": [
+  {
+   "control_number": "35856",
+   "title": "Language and Thought",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "35857",
+   "title": "Sentence",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "35908",
+   "title": "Research & Argument",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "36159",
+   "title": "Elementary Teacher Assistant Special Education, Bilingual",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "url": "https://collegeofthedesert.edu/_web-items/documents/pdf-files/catalogs/2026-2027-catalog.pdf#page=82",
+    "coverage": 0.333
+   }
+  },
+  {
+   "control_number": "36161",
+   "title": "Elementary Teacher Assistant Special Education",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "url": "https://collegeofthedesert.edu/_web-items/documents/pdf-files/catalogs/2026-2027-catalog.pdf#page=82",
+    "coverage": 0.333
+   }
+  },
+  {
+   "control_number": "38978",
+   "title": "Basic Correctional Officer",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://collegeofthedesert.edu/_web-items/documents/pdf-files/catalogs/2026-2027-catalog.pdf#page=165",
+    "coverage": 0.333
+   }
+  },
+  {
+   "control_number": "41805",
+   "title": "Health and Wellness Coach",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "url": "https://collegeofthedesert.edu/_web-items/documents/pdf-files/catalogs/2026-2027-catalog.pdf#page=394",
+    "coverage": 0.429
+   }
+  }
+ ],
+ "run": "39056007346"
+}

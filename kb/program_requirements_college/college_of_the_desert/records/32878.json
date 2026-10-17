@@ -1,0 +1,262 @@
+{
+ "college": "College of the Desert",
+ "control_number": "32878",
+ "shape": "certificate",
+ "title": "Emergency Medical Services",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://collegeofthedesert.edu/_web-items/documents/pdf-files/catalogs/2026-2027-catalog.pdf#page=184",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 11714,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 11714,
+    "output_tokens": 2401,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2401,
+  "output_tokens_details": {
+   "thinking_tokens": 1085
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.09488,
+ "ms": 20192,
+ "seconds": 20.7,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 13,
+   "listed": 13,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    17.5,
+    22.0
+   ],
+   "stated": [
+    19.0,
+    22.0
+   ],
+   "against": "program",
+   "why": [
+    "the blocks sum to 17.5-22.0; the catalog states 19.0-22.0"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Emergency Medical Services (EMS) Certiﬁcate of Achievement",
+   "measure": "units",
+   "total_units": {
+    "min": 19,
+    "max": 22
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Identify the situational safety and nature of a patient's condition.",
+    "Analyze and communicate a patient's condition and initiate interventions as the team leader and as a team member. Demonstrate fundamental knowledge and understanding of emergency medical technology and systems.",
+    "Meet or exceed the requirements necessary to successfully complete the National Registry of Emergency Medical Technicians (NREMT) EMT-Basic written examination.",
+    "Demonstrate knowledge of techniques for operating an ambulance vehicle prior to the run, during the run, while at the emergency scene, to the hospital and when returning to quarters."
+   ],
+   "careers": [
+    "emergency medical care ﬁeld"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 16,
+     "max": 16
+    },
+    "courses": [
+     {
+      "code": "EMR 080",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "EMR 080A",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "EMR 080B",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "EMR 081",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HS 061",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "EMT 084",
+      "units": 9,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Electives",
+    "rule": "choose_courses",
+    "minimum": 2,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "HS 013",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HS 062",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KINE 010",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KINE 041",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KINE 046",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHIL 013",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The alternative to EMR 080 is the pair 'EMR 080A & EMR 080B' taken together (3 units printed for the pair, no individual units printed in this section); both are recorded as alternatives of EMR 080 but must be completed together.",
+   "EMT 084 is printed with 9 units in this section, while the description calls it an '8-unit EMT course' and the EMT Basic certificate section prints it at 8 units. Required Subtotal 16 matches 9.",
+   "HS 062 is printed as 'Your Living Body 2 3'; the '2' read as a footnote marker and 3 as units (no footnote 2 text appears).",
+   "KINE 046 is printed without a title; units 2.",
+   "Catalog codes use leading zeros (EMR 080, EMR 081, EMT 084, HS 061, KINE 010, etc.) matched to closed-list codes EMR 80, EMR 81, EMT 84, HS061, KINE 10, etc.",
+   "Footnote: EMR 080 is a prerequisite for EMT 084."
+  ]
+ },
+ "extracted_run": "39056007346"
+}

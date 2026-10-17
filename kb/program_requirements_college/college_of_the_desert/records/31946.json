@@ -1,0 +1,412 @@
+{
+ "college": "College of the Desert",
+ "control_number": "31946",
+ "shape": "degree",
+ "title": "Police Science",
+ "award": "A.S. Degree",
+ "source_url": "https://collegeofthedesert.edu/_web-items/documents/pdf-files/catalogs/2026-2027-catalog.pdf#page=164",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 11473,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 11473,
+    "output_tokens": 3192,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 3192,
+  "output_tokens_details": {
+   "thinking_tokens": 1678
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.10973,
+ "ms": 25713,
+ "seconds": 26.3,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 14,
+   "listed": 32,
+   "share": 0.438,
+   "missing": [
+    "ASL1",
+    "BPOT1",
+    "BPOT2",
+    "COMM13",
+    "COMM17",
+    "COMM25",
+    "COMM9",
+    "KINE37",
+    "KINE38",
+    "PSY29",
+    "PSY3",
+    "PSYCC1000",
+    "SOC14",
+    "SOC2",
+    "SOC3",
+    "SOCIC1000",
+    "SPAN1",
+    "SPAN21"
+   ],
+   "unexplained": [
+    "BPOT1",
+    "BPOT2"
+   ],
+   "none_placed": false,
+   "pass": false
+  },
+  "invented": {
+   "count": 7,
+   "codes": [
+    "BCOT20",
+    "BPOT1&BPOT2",
+    "CJ16",
+    "CJ17",
+    "CJ21",
+    "CJ8",
+    "CJ9"
+   ],
+   "flagged": [
+    "BCOT20",
+    "CJ16",
+    "CJ17",
+    "CJ21",
+    "CJ8",
+    "CJ9"
+   ],
+   "pass": false
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    60.0,
+    60.0
+   ],
+   "stated": [
+    60.0,
+    60.0
+   ],
+   "against": "degree",
+   "ge": [
+    23.0,
+    23.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 1,
+   "courses": 0,
+   "count": 1,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 3,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Criminal Justice AS Degree",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "COD General Education Pattern",
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": 23,
+    "max": 23
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Fulﬁll the requirements for an entry- level position in one of the three components of the criminal justice system: law enforcement, courts, corrections."
+   ],
+   "careers": [
+    "law enforcement",
+    "courts",
+    "corrections"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 15,
+     "max": 15
+    },
+    "courses": [
+     {
+      "code": "CJ 001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CJ 002",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CJ 004",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CJ 006",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CJ 024",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Electives",
+    "rule": "choose_units",
+    "minimum": 22,
+    "option_group": null,
+    "stated": {
+     "min": 22,
+     "max": 22
+    },
+    "courses": [
+     {
+      "code": "CJ 003",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CJ 005",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CJ 008",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CJ 009",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CJ 010",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CJ 016",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CJ 017",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CJ 021",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CJ 025",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CJ 026",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CJ 030",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CJ 095A",
+      "units": 1,
+      "units_max": 3,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BPOT 001 & BPOT 002",
+      "units": 19,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BPOT 003",
+        "units": 19,
+        "catalog_addition": false
+       },
+       {
+        "code": "BCOT 010",
+        "units": 16,
+        "catalog_addition": false
+       },
+       {
+        "code": "BCOT 020",
+        "units": 10,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ASL 1",
+    "why": "not in the text"
+   },
+   {
+    "code": "COMM 13",
+    "why": "not in the text"
+   },
+   {
+    "code": "COMM 9",
+    "why": "not in the text"
+   },
+   {
+    "code": "COMM017",
+    "why": "not in the text"
+   },
+   {
+    "code": "COMM025",
+    "why": "not in the text"
+   },
+   {
+    "code": "KINE 37",
+    "why": "not in the text"
+   },
+   {
+    "code": "KINE 38",
+    "why": "not in the text"
+   },
+   {
+    "code": "PSY 3",
+    "why": "not in the text"
+   },
+   {
+    "code": "PSY029",
+    "why": "not in the text"
+   },
+   {
+    "code": "PSYC C1000",
+    "why": "named only in the Administration of Justice AS-T section"
+   },
+   {
+    "code": "SOC 14",
+    "why": "not in the text"
+   },
+   {
+    "code": "SOC 2",
+    "why": "not in the text"
+   },
+   {
+    "code": "SOC 3",
+    "why": "named only in the Administration of Justice AS-T section"
+   },
+   {
+    "code": "SOCIC1000",
+    "why": "named only in the Administration of Justice AS-T section (as SOCI C1000)"
+   },
+   {
+    "code": "SPAN 1",
+    "why": "not in the text"
+   },
+   {
+    "code": "SPAN 21",
+    "why": "not in the text"
+   }
+  ],
+  "notes": []
+ },
+ "extracted_run": "39056007346"
+}
