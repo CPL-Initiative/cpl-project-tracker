@@ -1767,6 +1767,11 @@ check(C.pdf_program_pages(PL, pl, PL_COURSES)[0] == 0,
 check(C.pdf_program_pages(EL, {"title": "Accounting", "award": "Certificate of Achievement",
                                "control_number": "13343"}, AC_COURSES)[0] == 1,
       "a printed control number stays in the preferred class beside a clean heading (East LA)")
+step = {"start": "https://x.edu/catalog", "follow": "2026-2027 Catalog.pdf", "format": "pdf"}
+check(P.procedure_catalog({"catalog": dict(step, catalog_year="2026-2027")}).get("catalog_year") == "2026-2027"
+      and "catalog_year" not in P.procedure_catalog({"catalog": dict(step, catalog_year="2026-2028")})
+      and "catalog_year" not in P.procedure_catalog({"catalog": step}),
+      "a catalog step carries its file's year (S407), and only a year that follows its first")
 check(C.reads_as_pdf({"procedure": {"catalog": {"start": "https://x.edu/catalog", "follow": "2026", "format": "pdf"}}})
       and not C.reads_as_pdf({"catalog_format": "single_pdf", "catalog_url": "https://www.ccsf.edu/catalog"}),
       "a procedure record whose catalog step is a PDF reads as one")
