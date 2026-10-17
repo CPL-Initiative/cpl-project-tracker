@@ -1,0 +1,109 @@
+{
+ "college": "Skyline College",
+ "load_run": "39038232214",
+ "function": "program_requirement_records_college_load",
+ "at": "2026-10-17T13:51:16Z",
+ "records": 53,
+ "posted": 42,
+ "batches": 2,
+ "inserted": 42,
+ "kept": 0,
+ "skipped": [
+  {
+   "control_number": "30882",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "31587",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "32479",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "32964",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "39658",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "45267",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "45600",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "45668",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "45698",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "45699",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "46296",
+   "why": "places none of its listed courses (another program's page)"
+  }
+ ],
+ "error": null,
+ "extracted_runs": [
+  "39032119511",
+  "39035209486"
+ ],
+ "machine_pass": 37,
+ "inserted_keys": [
+  "31013",
+  "31978",
+  "32293",
+  "32337",
+  "32746",
+  "33399",
+  "35353",
+  "35773",
+  "36256",
+  "36303",
+  "36344",
+  "37135",
+  "37144",
+  "37236",
+  "37237",
+  "38299",
+  "39380",
+  "39394",
+  "39660",
+  "41387",
+  "41692",
+  "41889",
+  "42252",
+  "42371",
+  "42823",
+  "44453",
+  "44546",
+  "44778",
+  "44779",
+  "44780",
+  "44783",
+  "44784",
+  "44785",
+  "44866",
+  "44934",
+  "44935",
+  "45183",
+  "45384",
+  "45573",
+  "45696",
+  "45697",
+  "45804"
+ ],
+ "kept_keys": [],
+ "rollback": "delete from public.program_requirement_records where college = 'Skyline College' and checked = false and control_number in ('31013', '31978', '32293', '32337', '32746', '33399', '35353', '35773', '36256', '36303', '36344', '37135', '37144', '37236', '37237', '38299', '39380', '39394', '39660', '41387', '41692', '41889', '42252', '42371', '42823', '44453', '44546', '44778', '44779', '44780', '44783', '44784', '44785', '44866', '44934', '44935', '45183', '45384', '45573', '45696', '45697', '45804');"
+}

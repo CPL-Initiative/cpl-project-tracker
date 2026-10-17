@@ -6,15 +6,260 @@
  "award": "A.S. Degree",
  "source_url": "https://catalog.skylinecollege.edu/current/programs/barbering-as.php",
  "record_shape": 6,
- "model": null,
- "stop_reason": null,
- "usage": null,
- "cost_usd": null,
- "ms": null,
- "seconds": 2.2,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7401,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7401,
+    "output_tokens": 1624,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1624,
+  "output_tokens_details": {
+   "thinking_tokens": 462
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.06208,
+ "ms": 14659,
+ "seconds": 15.1,
  "parts": null,
- "error": "HTTP 401: {\"error\":\"unauthorized\"}",
- "score": null,
- "record": null,
- "extracted_run": "39032119511"
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 2,
+   "listed": 2,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 8,
+   "codes": [
+    "BARB701",
+    "BARB703",
+    "BARB704",
+    "BARB725",
+    "BARB750",
+    "COSM747",
+    "COSM767",
+    "COSM799"
+   ],
+   "flagged": [
+    "BARB701",
+    "BARB703",
+    "BARB704",
+    "BARB725",
+    "BARB750",
+    "COSM747",
+    "COSM767",
+    "COSM799"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    31.0,
+    31.0
+   ],
+   "stated": [
+    31.0,
+    31.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 6,
+   "courses": 0,
+   "count": 6,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Program Requirements",
+   "measure": "units",
+   "total_units": {
+    "min": 31,
+    "max": 31
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": true,
+   "outcomes": [
+    "Complete 1000 hours in the Barbering Program.",
+    "Successfully pass the California State Board Barbering written exam.",
+    "Identify career and continuing educational options in the Barbering industry and plan actions towards achieving those goals and objectives.",
+    "Critically consider, analyze and research special issues in Barbering and their effects on society.",
+    "Recognize the importance of and practice ethical behavior in a professional work setting, both within the workforce and within the community.",
+    "Demonstrate Barbering applied efforts."
+   ],
+   "careers": [
+    "Barber"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "BARB 701",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BARB 702",
+      "units": 6,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BARB 703",
+      "units": 6,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BARB 704",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BARB 705",
+      "units": 9,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BARB 725",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Students can earn hours by taking any of the following",
+    "rule": "recommended",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "COSM 747",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BARB 750",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "COSM 767",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "COSM 799",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The optional list ('Students can earn hours by taking any of the following') offers extra units/hours beyond the core and is not required; recorded as 'recommended'. Required courses sum to the printed 31 major units.",
+   "The sentence before the optional list names COSM 799, COSM 670 or BUS. 150, but COSM 670 and BUS. 150 do not appear in the printed list; not placed in any block.",
+   "Degree text says General Education and electives as needed to meet the minimum 60 units for the Associate degree; this is a general degree rule, so degree_total is null and electives_fill_degree is true. No GE pattern is named (refers to AA/AS Degree Requirements).",
+   "Program learning outcomes come from the page's outcomes tab (one list for the program); the text also begins with a truncated copy of the same list.",
+   "The catalog title for BARB 702 ('Barbering: Shaving & Hair Design') differs from the state file title ('Barbering Techniques and Hair Design Concepts').",
+   "The program overview states the program requires 1000 hours of training, but the award is counted in units (31 major units)."
+  ]
+ },
+ "extracted_run": "39035209486"
 }

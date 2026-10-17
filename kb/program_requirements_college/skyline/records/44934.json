@@ -6,15 +6,543 @@
  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
  "source_url": "https://catalog.skylinecollege.edu/current/programs/integrative-health-and-wellness-ca.php",
  "record_shape": 6,
- "model": null,
- "stop_reason": null,
- "usage": null,
- "cost_usd": null,
- "ms": null,
- "seconds": 2.2,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8940,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8940,
+    "output_tokens": 3761,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 3761,
+  "output_tokens_details": {
+   "thinking_tokens": 768
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.11098,
+ "ms": 27034,
+ "seconds": 27.6,
  "parts": null,
- "error": "HTTP 401: {\"error\":\"unauthorized\"}",
- "score": null,
- "record": null,
- "extracted_run": "39032119511"
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 33,
+   "listed": 33,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "WELL724"
+   ],
+   "flagged": [
+    "WELL724"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    20.0,
+    24.0
+   ],
+   "stated": [
+    20.0,
+    24.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 16,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Program Requirements",
+   "measure": "units",
+   "total_units": {
+    "min": 20,
+    "max": 24
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Differentiate traditional healing practices compared to the West and address base philosophies, challenges, current events culturally, environmentally, sustainability, and socioeconomically.",
+    "Analyze and create an individualized lifelong learning strategy through self-discovery for maintaining and promoting optimal health and wellness using a combination of integrative health practices.",
+    "Demonstrate interdisciplinary knowledge and understanding of the interconnectedness between mind, body and spirit associated with the foundational principles of integrative health and healing."
+   ],
+   "careers": [
+    "personal training",
+    "massage therapists",
+    "sports therapist",
+    "yoga and Pilates instructors",
+    "athletic trainers",
+    "kinesiologists",
+    "exercise physiologists",
+    "integrative health practitioners",
+    "allied health disciplines",
+    "manual therapists",
+    "wellness professions",
+    "acupuncturists",
+    "Ayurveda practitioners",
+    "mental health care",
+    "community health workers",
+    "occupational health workers"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Core Course - Human Complexity Science & Wellness",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "BIOL 130",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL 250",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL 310",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KINE 305",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WELL 703",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WELL 716",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Core Course - Mind Body Medicine",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "WELL 720",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WELL 725",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Core Course - Whole Foods",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 2,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "WELL 728",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WELL 740",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WELL 743",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Elective - Medicinal Plants/Ethnobotany",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "WELL 707",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WELL 709",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WELL 723",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WELL 726",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WELL 740",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WELL 743",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WELL 765",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Electives - Integrative Therapies",
+    "rule": "choose_units",
+    "minimum": 9,
+    "option_group": null,
+    "stated": {
+     "min": 9,
+     "max": 10
+    },
+    "courses": [
+     {
+      "code": "FITN 334.1",
+      "units": 0.5,
+      "units_max": 1,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FITN 334.2",
+      "units": 0.5,
+      "units_max": 1,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FITN 334.3",
+      "units": 0.5,
+      "units_max": 1,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FITN 334.4",
+      "units": 0.5,
+      "units_max": 1,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC 310",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WELL 706",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WELL 707",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WELL 709",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WELL 711",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WELL 713",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WELL 718",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WELL 720",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WELL 721",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WELL 722",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WELL 723",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WELL 724",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "WELL 725",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WELL 726",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WELL 728",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WELL 730",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WELL 731",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WELL 732",
+      "units": 0.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WELL 733",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WELL 740",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WELL 742",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WELL 743",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WELL 760",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WELL 765",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The catalog text begins mid-sentence; the program's own heading/title is cut off, so section_heading uses 'Program Requirements'. The careers list comes from the truncated opening paragraph.",
+   "The three 'Core Course' blocks are read as choose one course (singular 'Core Course' with printed unit ranges matching single courses); the two elective blocks are read as choose units at the low end of the printed range. Reviewer should confirm.",
+   "Several courses appear in more than one block (WELL 720, 725, 728, 740, 743, 707, 709, 723, 726, 765); the catalog does not say whether one course may satisfy two blocks.",
+   "Catalog titles differ from the state file for WELL 711 ('Sports Medicine Injuries and Prevention'), WELL 730 ('Meditation Techniques - Multicultural Practices') and WELL 760 ('Introduction to Holistic, Complementary and Integrative Health/Medicine').",
+   "FITN 334.1-334.4 are printed as .5 - 1 units; the state file stores 0.5.",
+   "WELL 724 is in the catalog's Integrative Therapies list but not in the closed list."
+  ]
+ },
+ "extracted_run": "39035209486"
 }
