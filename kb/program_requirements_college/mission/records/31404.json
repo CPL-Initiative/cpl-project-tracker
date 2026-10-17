@@ -1,0 +1,773 @@
+{
+ "college": "Mission College",
+ "control_number": "31404",
+ "shape": "adt",
+ "title": "Political Science",
+ "award": "A.A- T Degree",
+ "source_url": "https://mission.elumenapp.com/catalog/24-25/program/political-science-aa-t-2026fa",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8384,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8384,
+    "output_tokens": 4567,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 4567,
+  "output_tokens_details": {
+   "thinking_tokens": 1158
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.12488,
+ "ms": 34154,
+ "seconds": 34.6,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 12,
+   "listed": 12,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 55,
+   "codes": [
+    "ANT2",
+    "ANT55",
+    "CHD1",
+    "COM14",
+    "ECONC2002",
+    "ETH1A",
+    "ETH44",
+    "ETH44H",
+    "HIS15",
+    "HIS15H",
+    "HIS16",
+    "HIS16H",
+    "HIS20",
+    "HIS31",
+    "HIS33",
+    "HIS33H",
+    "HIS44",
+    "HIS44H",
+    "HIS4A",
+    "HIS4AH",
+    "HIS4B",
+    "HIS4BH",
+    "HISTC1001",
+    "HISTC1001H",
+    "HISTC1002",
+    "HISTC1002H",
+    "HUM16",
+    "HUM18",
+    "HUM18H",
+    "HUM24",
+    "KIN81",
+    "PHI5",
+    "PSY10",
+    "PSY12",
+    "PSY15",
+    "PSY15H",
+    "PSY45",
+    "PSY7",
+    "PSYCC1000",
+    "PSYCC1000H",
+    "SJS1",
+    "SJS2",
+    "SJS3",
+    "SOC1",
+    "SOC1H",
+    "SOC2",
+    "SOC21",
+    "SOC2H",
+    "SOC40",
+    "SOC45",
+    "SOC47",
+    "SOC50",
+    "SOC54",
+    "SOC60",
+    "STATC1000E"
+   ],
+   "flagged": [
+    "ANT2",
+    "ANT55",
+    "CHD1",
+    "COM14",
+    "ECONC2002",
+    "ETH1A",
+    "ETH44",
+    "ETH44H",
+    "HIS15",
+    "HIS15H",
+    "HIS16",
+    "HIS16H",
+    "HIS20",
+    "HIS31",
+    "HIS33",
+    "HIS33H",
+    "HIS44",
+    "HIS44H",
+    "HIS4A",
+    "HIS4AH",
+    "HIS4B",
+    "HIS4BH",
+    "HISTC1001",
+    "HISTC1001H",
+    "HISTC1002",
+    "HISTC1002H",
+    "HUM16",
+    "HUM18",
+    "HUM18H",
+    "HUM24",
+    "KIN81",
+    "PHI5",
+    "PSY10",
+    "PSY12",
+    "PSY15",
+    "PSY15H",
+    "PSY45",
+    "PSY7",
+    "PSYCC1000",
+    "PSYCC1000H",
+    "SJS1",
+    "SJS2",
+    "SJS3",
+    "SOC1",
+    "SOC1H",
+    "SOC2",
+    "SOC21",
+    "SOC2H",
+    "SOC40",
+    "SOC45",
+    "SOC47",
+    "SOC50",
+    "SOC54",
+    "SOC60",
+    "STATC1000E"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    18.0,
+    22.0
+   ],
+   "stated": [
+    18.0,
+    22.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 10,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Political Science AA-T",
+   "measure": "units",
+   "total_units": {
+    "min": 18,
+    "max": 22
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Students will be able to identify and describe major political institutions.",
+    "Students will be able to analyze the exercise of power.",
+    "Students will be able to apply theories and concepts of Political Science to real world events and situations."
+   ],
+   "careers": [
+    "attorney",
+    "city planner",
+    "lobbyist",
+    "civics teacher",
+    "journalist",
+    "researcher",
+    "social worker",
+    "public administrator",
+    "political analyst",
+    "media specialists"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Core",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 9,
+     "max": 9
+    },
+    "courses": [
+     {
+      "code": "POL002",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "POL004",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "POLSC1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "POLSC1000H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List A",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 9
+    },
+    "courses": [
+     {
+      "code": "POL007",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "STATC1000",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "STATC1000E",
+        "units": 6,
+        "catalog_addition": true
+       },
+       {
+        "code": "STATC1000H",
+        "units": 4,
+        "catalog_addition": false
+       },
+       {
+        "code": "SOC016",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List B",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "ANT002",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ANT003",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANT055",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BUS028A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHD001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "COM014",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ECONC2001",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECONC2002",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ECN006",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ETH001A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ETH044",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ETH044H",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "HIS004A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HIS004AH",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "HIS004B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HIS004BH",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "HIS015",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HIS015H",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "HIS016",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HIS016H",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "HIS020",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HIS031",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HIS033",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HIS033H",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "HIS044",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HIS044H",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "HISTC1001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HISTC1001H",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "HISTC1002",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HISTC1002H",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "HUM016",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HUM018",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HUM018H",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "HUM024",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "KIN081",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PHI005",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "POL002",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "POL004",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYCC1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PSYCC1000H",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "PSY007",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PSY010",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PSY012",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PSY015",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PSY015H",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "PSY045",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "SJS001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "SJS002",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "SJS003",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "SOC001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "SOC001H",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "SOC002",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "SOC002H",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "SOC021",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "SOC040",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "SOC045",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "SOC047",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "SOC050",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "SOC054",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "SOC060",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The page's 60 semester / 90 quarter CSU-transferable units line is the standard ADT requirements boilerplate, not printed as this award's own total; degree_total left null. The '18 semester units in the major' minimum is likewise not used as the major total; total_units 18-22 comes from the Program Requirements table.",
+   "List A is recorded as 'all': POL007 plus one statistics course (STATC1000, STATC1000E, STATC1000H or SOC016), consistent with the printed 6-9 total.",
+   "List B: 'Choose one (1) course from the following or any course not selected from List A.' The alternative of using an unselected List A course is not represented as separate entries.",
+   "POL002 and POL004 appear both in the Required Core and in List B as printed.",
+   "ETH044 and HIS044 (and their honors versions) share the title African American History; each recorded as printed. PSYCC1000H is printed with the same title as PSYCC1000 (no 'Honors'); treated as the honors twin.",
+   "The program description says the degree leads to a CSU baccalaureate 'in Spanish', apparently a catalog error.",
+   "Source URL path refers to catalog 24-25 while the program code says 2026fa and the requested year is 2026-2027; reviewer should confirm the catalog year.",
+   "A descriptive paragraph ('Students completing this program successfully will be able to identify and explain...') was not recorded as outcomes; only the three bulleted items under 'Program Outcomes' were recorded.",
+   "Program Curriculum Changes section lists course block additions/deletions (e.g., HIS 017A deleted); deleted courses were not recorded."
+  ]
+ },
+ "extracted_run": "39000023893"
+}

@@ -1,0 +1,197 @@
+{
+ "college": "Mission College",
+ "control_number": "45884",
+ "shape": "noncredit",
+ "title": "Graphic Design Foundations",
+ "award": "Noncredit program",
+ "source_url": "https://mission.elumenapp.com/catalog/24-25/program/graphic-design-foundations-cc-2026fa",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6221,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6221,
+    "output_tokens": 1013,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1013,
+  "output_tokens_details": {
+   "thinking_tokens": 311
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.04514,
+ "ms": 9800,
+ "seconds": 10.5,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 4,
+   "listed": 4,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    270.0,
+    270.0
+   ],
+   "stated": [
+    270.0,
+    270.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 2,
+   "courses": 0,
+   "count": 2,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Graphic Design Foundations CC",
+   "measure": "hours",
+   "total_units": {
+    "min": 270,
+    "max": 270
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Create graphic design deliverables at a fundamental level.",
+    "Produce communication materials for clients that are appropriate and effective at a fundamental level."
+   ],
+   "careers": [
+    "design"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Program Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "GDS835",
+      "units": 90,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GDS865",
+      "units": 90,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Choose One",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 90,
+     "max": 90
+    },
+    "courses": [
+     {
+      "code": "GDS856",
+      "units": 90,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GDS861",
+      "units": 90,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Noncredit Certificate of Completion counted in hours; all units fields hold hours.",
+   "The catalog prints codes without a space (e.g., GDS835); these match closed-list codes GDS 835, GDS 856, GDS 861 and GDS 865, so none are catalog additions.",
+   "'Program Requirements (Total 270)' / 'Complete the following number of hours: 270' is read as the program total (90 + 90 required plus 90 from Choose One); the required block's own stated total is left null.",
+   "Career entry 'design' comes from 'explore potential career pathways in design'; reviewer may judge whether this is specific enough to count as a career field.",
+   "Source URL references catalog 24-25 while the program code suggests 2026 fall; verify catalog year."
+  ]
+ },
+ "extracted_run": "39000023893"
+}

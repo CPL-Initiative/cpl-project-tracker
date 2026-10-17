@@ -1,0 +1,4067 @@
+[
+ {
+  "control_number": "06286",
+  "title": "Biological Sciences",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANT1",
+   "BIO10",
+   "BIO10L",
+   "BIO11",
+   "BIO12",
+   "BIO12H",
+   "BIO14",
+   "BIO14H",
+   "BIO16",
+   "BIO17",
+   "BIO17H",
+   "BIO18",
+   "BIO18H",
+   "BIO19",
+   "BIO1A",
+   "BIO1AH",
+   "BIO1B",
+   "BIO25",
+   "BIO25H",
+   "BIO30",
+   "BIO30L",
+   "BIO4",
+   "BIO47",
+   "BIO48",
+   "BIO48H",
+   "NTR15",
+   "NTR15H",
+   "NTR40",
+   "NTR40H"
+  ],
+  "source": {
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/biological-sciences-as-2023sp",
+   "title": "Biological Sciences AS",
+   "h1": "Biological Sciences AS",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 29,
+  "text_chars": 3106
+ },
+ {
+  "control_number": "06287",
+  "title": "Business",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACC61",
+   "BUS10",
+   "BUS102",
+   "BUS115",
+   "BUS118",
+   "BUS21",
+   "BUS21L",
+   "BUS22",
+   "BUS23",
+   "BUS28A",
+   "BUS37",
+   "BUS51",
+   "BUS52",
+   "BUS54",
+   "BUS56A",
+   "BUS61",
+   "BUS64B",
+   "BUS78B",
+   "COMMC1000",
+   "COMMC1000H"
+  ],
+  "source": {
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/business-as-2025fa",
+   "title": "Business AS",
+   "h1": "Business AS",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 20,
+  "text_chars": 3149
+ },
+ {
+  "control_number": "06288",
+  "title": "Accounting",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.962,
+  "codes_found": [
+   "ACC1A",
+   "ACC1B",
+   "ACC23",
+   "ACC33",
+   "ACC34",
+   "ACC46",
+   "ACC51A",
+   "ACC51B",
+   "ACC52",
+   "ACC57A",
+   "ACC58A",
+   "ACC58B",
+   "ACC59A",
+   "ACC66",
+   "ACC67",
+   "ACC70",
+   "ACC73",
+   "ACC75",
+   "BUS21",
+   "BUS21L",
+   "BUS28A",
+   "BUS51",
+   "BUS56A",
+   "BUS64B",
+   "BUS78B"
+  ],
+  "source": {
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/accounting-as-2023fa",
+   "title": "Accounting AS",
+   "h1": "Accounting AS",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 26,
+  "text_chars": 3827
+ },
+ {
+  "control_number": "06296",
+  "title": "Computer Information Systems",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CIS33",
+   "CIS37A",
+   "CIS39",
+   "CIS40",
+   "CIS43",
+   "CIS44",
+   "CIS45",
+   "CIS51",
+   "CIS55",
+   "CIS7",
+   "CIS8",
+   "WRK300GW"
+  ],
+  "source": {
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/computer-information-systems-as-2021fa",
+   "title": "Computer Information Systems AS",
+   "h1": "Computer Information Systems AS",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 2077
+ },
+ {
+  "control_number": "06298",
+  "title": "Engineering",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHM1A",
+   "CHM1AH",
+   "CIS44",
+   "EGR10H",
+   "EGR23",
+   "EGR24",
+   "EGR24L",
+   "EGR25",
+   "EGR30",
+   "MAT20",
+   "MAT3A",
+   "MAT3B",
+   "MAT4B",
+   "MAT5",
+   "PHY4A",
+   "PHY4B",
+   "PHY4C"
+  ],
+  "source": {
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/engineering-as-2026fa",
+   "title": "Engineering AS",
+   "h1": "Engineering AS",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 17,
+  "text_chars": 3645
+ },
+ {
+  "control_number": "06304",
+  "title": "Art",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART1D",
+   "ART31A",
+   "ART31B",
+   "ART33A",
+   "ART33B",
+   "ART33C",
+   "ART34A",
+   "ART35A",
+   "ART35B",
+   "ART39A",
+   "ART47A",
+   "ART47B",
+   "ART48A",
+   "ART48B",
+   "ART49A",
+   "ART49B",
+   "ART65A",
+   "ART65B",
+   "ART67A",
+   "ART67B",
+   "ART75A",
+   "ART75B",
+   "ART85A",
+   "ART85B",
+   "ART88A",
+   "ART88B",
+   "ARTHC1100",
+   "ARTHC1200"
+  ],
+  "source": {
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/art-aa-2026fa",
+   "title": "Art AA",
+   "h1": "Art AA",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 28,
+  "text_chars": 3719
+ },
+ {
+  "control_number": "06305",
+  "title": "Graphic Design",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART31A",
+   "ART31B",
+   "ART33A",
+   "ART33B",
+   "ART34A",
+   "GDS10",
+   "GDS12",
+   "GDS15",
+   "GDS16",
+   "GDS35",
+   "GDS39A",
+   "GDS45",
+   "GDS46",
+   "GDS55A",
+   "GDS56",
+   "GDS61",
+   "GDS62",
+   "GDS64",
+   "GDS65",
+   "GDS67",
+   "GDS70",
+   "GDS72",
+   "GDS75",
+   "GDS76",
+   "GDS77",
+   "GDS80",
+   "GDS81",
+   "GDS85"
+  ],
+  "source": {
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/graphic-design-ca-2026fa",
+   "title": "Graphic Design CA",
+   "h1": "Graphic Design CA",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 28,
+  "text_chars": 3698
+ },
+ {
+  "control_number": "06308",
+  "title": "Vocational Nursing",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.857,
+  "codes_found": [
+   "HOC25A",
+   "HOC26A",
+   "HOC28",
+   "HOC32",
+   "HOC33B",
+   "HOC34",
+   "HOC35A",
+   "HOC36A",
+   "HOC42",
+   "HOC43B",
+   "HOC46A",
+   "PSY12"
+  ],
+  "source": {
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/vocational-nursing-as-2021fa",
+   "title": "Vocational Nursing AS",
+   "h1": "Vocational Nursing AS",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 14,
+  "text_chars": 4183
+ },
+ {
+  "control_number": "06314",
+  "title": "Mathematics",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AST1",
+   "AST3",
+   "BIO10",
+   "CHM2",
+   "CIS37A",
+   "CIS40",
+   "CIS43",
+   "CIS51",
+   "CIS7",
+   "EGR30",
+   "MAT15",
+   "MAT20",
+   "MAT3A",
+   "MAT3AH",
+   "MAT3B",
+   "MAT4A",
+   "MAT4B",
+   "MAT4C",
+   "PHY2A",
+   "STATC1000",
+   "STATC1000E",
+   "STATC1000H"
+  ],
+  "source": {
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/mathematics-as-2025fa",
+   "title": "Mathematics AS",
+   "h1": "Mathematics AS",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 22,
+  "text_chars": 2769
+ },
+ {
+  "control_number": "06320",
+  "title": "Fire Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "FPT180",
+   "FPT201",
+   "FPT51",
+   "FPT52",
+   "FPT53",
+   "FPT54",
+   "FPT55",
+   "FPT56",
+   "FPT57",
+   "FPT60",
+   "FPT65C",
+   "FPT65L"
+  ],
+  "source": {
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/fire-technology-as-2025fa",
+   "title": "Fire Technology AS",
+   "h1": "Fire Technology AS",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 5580
+ },
+ {
+  "control_number": "06325",
+  "title": "Food Service and Restaurant Management",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 26,
+  "text_chars": 0
+ },
+ {
+  "control_number": "09807",
+  "title": "Web Design",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART31A",
+   "ART33A",
+   "GDS10",
+   "GDS12",
+   "GDS22",
+   "GDS32",
+   "GDS35",
+   "GDS45",
+   "GDS46",
+   "GDS49",
+   "GDS55A",
+   "GDS62",
+   "GDS64",
+   "GDS69",
+   "GDS70",
+   "GDS72",
+   "GDS76",
+   "GDS77",
+   "GDS85",
+   "GDS89",
+   "GDS89B"
+  ],
+  "source": {
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/web-design-ca-2026fa",
+   "title": "Web Design CA",
+   "h1": "Web Design CA",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 21,
+  "text_chars": 4070
+ },
+ {
+  "control_number": "12248",
+  "title": "Creative Arts",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 9,
+  "text_chars": 0
+ },
+ {
+  "control_number": "12605",
+  "title": "Fundamental Food Service Skills",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "FDR50",
+   "FDR51A",
+   "FDR51B",
+   "FDR56",
+   "FDR58"
+  ],
+  "source": {
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/fundamental-food-service-skills-ca-2024fa",
+   "title": "Fundamental Food Service Skills CA",
+   "h1": "Fundamental Food Service Skills CA",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 1886
+ },
+ {
+  "control_number": "12606",
+  "title": "Digital Illustration",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.875,
+  "codes_found": [
+   "ART31A",
+   "ART33A",
+   "GDS32",
+   "GDS62",
+   "GDS64",
+   "GDS69",
+   "GDS85"
+  ],
+  "source": {
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/digital-illustration-ca-2023fa",
+   "title": "Digital Illustration CA",
+   "h1": "Digital Illustration CA",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 2813
+ },
+ {
+  "control_number": "13575",
+  "title": "Early Childhood Education",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHD1",
+   "CHD10",
+   "CHD13",
+   "CHD14",
+   "CHD16",
+   "CHD17",
+   "CHD18",
+   "CHD2",
+   "CHD20",
+   "CHD21",
+   "CHD22",
+   "CHD24",
+   "CHD25",
+   "CHD26",
+   "CHD3",
+   "CHD4",
+   "CHD5",
+   "CHD6",
+   "CHD7",
+   "CHD8A"
+  ],
+  "source": {
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/early-childhood-education-as-2024fa",
+   "title": "Early Childhood Education AS",
+   "h1": "Early Childhood Education AS",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 20,
+  "text_chars": 3904
+ },
+ {
+  "control_number": "13576",
+  "title": "Associate Teacher",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHD1",
+   "CHD10",
+   "CHD17",
+   "CHD2",
+   "CHD26",
+   "CHD8A"
+  ],
+  "source": {
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/associate-teacher-ca-2024fa",
+   "title": "Associate Teacher CA",
+   "h1": "Associate Teacher CA",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 2636
+ },
+ {
+  "control_number": "13586",
+  "title": "Early Intervention Assistant",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHD1",
+   "CHD10",
+   "CHD15",
+   "CHD16",
+   "CHD17",
+   "CHD18",
+   "CHD2",
+   "CHD21",
+   "CHD24",
+   "CHD25",
+   "CHD3",
+   "CHD4",
+   "WRK300CD"
+  ],
+  "source": {
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/early-intervention-assistant-ca-2021fa",
+   "title": "Early Intervention Assistant CA",
+   "h1": "Early Intervention Assistant CA",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 2782
+ },
+ {
+  "control_number": "14591",
+  "title": "Cisco CCNA Cybersecurity and Cloud Computing",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CIT13",
+   "CIT17",
+   "CIT21",
+   "CIT22",
+   "CIT23"
+  ],
+  "source": {
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/cisco-ccna-cybersecurity-and-cloud-computing-ca-2024fa",
+   "title": "Cisco CCNA Cybersecurity and Cloud Computing CA",
+   "h1": "Cisco CCNA Cybersecurity and Cloud Computing CA",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 3009
+ },
+ {
+  "control_number": "15510",
+  "title": "Web Development",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CIS1",
+   "CIS37A",
+   "CIS40",
+   "CIS43",
+   "CIS44",
+   "CIS45",
+   "CIS55",
+   "CIS7",
+   "CIS8",
+   "GDS10",
+   "GDS45",
+   "GDS46",
+   "GDS49",
+   "GDS89",
+   "GDS89B"
+  ],
+  "source": {
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/web-development-ca-2026fa",
+   "title": "Web Development CA",
+   "h1": "Web Development CA",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 2950
+ },
+ {
+  "control_number": "16355",
+  "title": "Child Development Master Teacher",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHD1",
+   "CHD10",
+   "CHD13",
+   "CHD14",
+   "CHD16",
+   "CHD17",
+   "CHD2",
+   "CHD20",
+   "CHD21",
+   "CHD22",
+   "CHD24",
+   "CHD25",
+   "CHD26",
+   "CHD3",
+   "CHD4",
+   "CHD5",
+   "CHD6",
+   "CHD7",
+   "CHD8A"
+  ],
+  "source": {
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/master-teacher-ca-2024fa",
+   "title": "Master Teacher CA",
+   "h1": "Master Teacher CA",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 0.5
+   }
+  },
+  "listed": 19,
+  "text_chars": 3414
+ },
+ {
+  "control_number": "16375",
+  "title": "Hospitality Management",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.5,
+  "codes_found": [
+   "CAP62B",
+   "FDR50",
+   "FDR51A",
+   "FDR51B",
+   "FDR54",
+   "FDR55",
+   "FDR56",
+   "FDR58",
+   "FDR59",
+   "FDR60",
+   "FDR75",
+   "FDR76",
+   "NTR15"
+  ],
+  "source": {
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/hospitality-management-as-2026fa",
+   "title": "Hospitality Management AS",
+   "h1": "Hospitality Management AS",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 26,
+  "text_chars": 3391
+ },
+ {
+  "control_number": "16724",
+  "title": "Computer Network Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.909,
+  "codes_found": [
+   "CIT11",
+   "CIT12",
+   "CIT13",
+   "CIT14",
+   "CIT17",
+   "CIT18",
+   "CIT21",
+   "CIT22",
+   "CIT23",
+   "CIT24"
+  ],
+  "source": {
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/computer-network-technology-as-2026fa",
+   "title": "Computer Network Technology AS",
+   "h1": "Computer Network Technology AS",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 2916
+ },
+ {
+  "control_number": "18067",
+  "title": "Liberal Arts: Arts & Humanities",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 1,
+  "text_chars": 0
+ },
+ {
+  "control_number": "18068",
+  "title": "Liberal Arts: English Communication",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "18069",
+  "title": "Liberal Arts: Social and Behavioral Sciences",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "18070",
+  "title": "Liberal Arts: Science, Mathematics and Quantitative Reasoning",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "18139",
+  "title": "Nursing (LVN to RN)",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "RNB20",
+   "RNB23",
+   "RNB25",
+   "RNB27",
+   "RNB33",
+   "RNB34",
+   "RNB35",
+   "RNB37",
+   "RNB42",
+   "RNB43",
+   "RNB44",
+   "RNB45",
+   "RNB47",
+   "RNB49"
+  ],
+  "source": {
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/nursing-lvn-to-rn-as-2025fa",
+   "title": "Nursing (LVN to RN) AS",
+   "h1": "Nursing (LVN to RN) AS",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 14,
+  "text_chars": 4306
+ },
+ {
+  "control_number": "18140",
+  "title": "Vocational Nursing",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.857,
+  "codes_found": [
+   "HOC25A",
+   "HOC26A",
+   "HOC28",
+   "HOC32",
+   "HOC33B",
+   "HOC34",
+   "HOC35A",
+   "HOC36A",
+   "HOC42",
+   "HOC43B",
+   "HOC46A",
+   "PSY12"
+  ],
+  "source": {
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/vocational-nursing-ca-2021fa",
+   "title": "Vocational Nursing CA",
+   "h1": "Vocational Nursing CA",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 14,
+  "text_chars": 4178
+ },
+ {
+  "control_number": "22032",
+  "title": "Accounting",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.826,
+  "codes_found": [
+   "ACC1A",
+   "ACC1B",
+   "ACC23",
+   "ACC33",
+   "ACC34",
+   "ACC46",
+   "ACC51A",
+   "ACC51B",
+   "ACC52",
+   "ACC57A",
+   "ACC58A",
+   "ACC58B",
+   "ACC59A",
+   "ACC61",
+   "ACC66",
+   "ACC67",
+   "ACC70",
+   "ACC73",
+   "ACC75"
+  ],
+  "source": {
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/accounting-ca-2023fa",
+   "title": "Accounting CA",
+   "h1": "Accounting CA",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 23,
+  "text_chars": 2622
+ },
+ {
+  "control_number": "22036",
+  "title": "Computer Information Systems",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CIS33",
+   "CIS37A",
+   "CIS39",
+   "CIS40",
+   "CIS43",
+   "CIS44",
+   "CIS51",
+   "CIS55",
+   "CIS7",
+   "CIS8",
+   "WRK300GW"
+  ],
+  "source": {
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/computer-information-systems-ca-2021fa",
+   "title": "Computer Information Systems CA",
+   "h1": "Computer Information Systems CA",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 2639
+ },
+ {
+  "control_number": "22045",
+  "title": "Graphic Design",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART31A",
+   "ART31B",
+   "ART33A",
+   "ART33B",
+   "ART34A",
+   "GDS10",
+   "GDS12",
+   "GDS15",
+   "GDS16",
+   "GDS22",
+   "GDS32",
+   "GDS35",
+   "GDS39A",
+   "GDS45",
+   "GDS46",
+   "GDS55A",
+   "GDS56",
+   "GDS61",
+   "GDS62",
+   "GDS64",
+   "GDS65",
+   "GDS67",
+   "GDS69",
+   "GDS70",
+   "GDS72",
+   "GDS75",
+   "GDS76",
+   "GDS77",
+   "GDS80",
+   "GDS81",
+   "GDS85"
+  ],
+  "source": {
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/graphic-design-as-2026fa",
+   "title": "Graphic Design AS",
+   "h1": "Graphic Design AS",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 31,
+  "text_chars": 3626
+ },
+ {
+  "control_number": "22966",
+  "title": "Project Management",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS102",
+   "BUS108",
+   "BUS115",
+   "BUS118",
+   "BUS37",
+   "BUS41",
+   "CAP63B",
+   "CIS51",
+   "COM15",
+   "WRK300GW"
+  ],
+  "source": {
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/project-management-ca-2024fa",
+   "title": "Project Management CA",
+   "h1": "Project Management CA",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 2599
+ },
+ {
+  "control_number": "22968",
+  "title": "Business Computing",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS21",
+   "BUS21L",
+   "BUS51",
+   "CAP46D",
+   "CAP62B",
+   "CAP63B",
+   "CIS1",
+   "CIS51",
+   "CIS55",
+   "CIS7",
+   "CIT11",
+   "CIT12"
+  ],
+  "source": {
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/business-computing-ca-2023fa",
+   "title": "Business Computing CA",
+   "h1": "Business Computing CA",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 2177
+ },
+ {
+  "control_number": "22977",
+  "title": "Entrepreneurship and Small Business",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACC23",
+   "ACC61",
+   "BUS111",
+   "BUS114",
+   "BUS22",
+   "BUS23",
+   "BUS54",
+   "BUS56A",
+   "WRK300GW"
+  ],
+  "source": {
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/entrepreneurship-and-small-business-ca-2024fa",
+   "title": "Entrepreneurship and Small Business CA",
+   "h1": "Entrepreneurship and Small Business CA",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 2112
+ },
+ {
+  "control_number": "22984",
+  "title": "Three-Dimensional Arts",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART33B",
+   "ART65A",
+   "ART65B",
+   "ART67A",
+   "ART67B",
+   "ART75A",
+   "ART75B",
+   "ART85A",
+   "ART85B",
+   "ART88A",
+   "ART88B"
+  ],
+  "source": {
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/three-dimensional-arts-ca-2024fa",
+   "title": "Three-Dimensional Arts CA",
+   "h1": "Three-Dimensional Arts CA",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 3751
+ },
+ {
+  "control_number": "30271",
+  "title": "Transfer Studies - CSU GE-B",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "30272",
+  "title": "Transfer Studies IGETC for UC",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "30680",
+  "title": "Communication Studies",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.929,
+  "codes_found": [
+   "ANT3",
+   "COM12",
+   "COM14",
+   "COM20",
+   "COM20H",
+   "COMMC1000",
+   "COMMC1000H",
+   "ENG1B",
+   "ENGLC1001",
+   "PSYCC1000",
+   "PSYCC1000H",
+   "SOC1",
+   "SOC1H"
+  ],
+  "source": {
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/communication-studies-2-0-aa-t-2026fa",
+   "title": "Communication Studies 2.0 AA-T",
+   "h1": "Communication Studies 2.0 AA-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 14,
+  "text_chars": 4044
+ },
+ {
+  "control_number": "30681",
+  "title": "Sociology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANT3",
+   "POLSC1000",
+   "POLSC1000H",
+   "PSY10",
+   "PSYCC1000",
+   "PSYCC1000H",
+   "SOC1",
+   "SOC16",
+   "SOC1H",
+   "SOC2",
+   "SOC21",
+   "SOC2H",
+   "SOC40",
+   "SOC45",
+   "SOC47",
+   "STATC1000",
+   "STATC1000H"
+  ],
+  "source": {
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/sociology-aa-t-2026fa",
+   "title": "Sociology AA-T",
+   "h1": "Sociology AA-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 17,
+  "text_chars": 6035
+ },
+ {
+  "control_number": "30683",
+  "title": "Psychology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIO10",
+   "BIO11",
+   "PSY10",
+   "PSY12",
+   "PSY15",
+   "PSY15H",
+   "PSY25",
+   "PSY30",
+   "PSY45",
+   "PSY7",
+   "PSYCC1000",
+   "PSYCC1000H",
+   "SOC16",
+   "SOC45",
+   "STATC1000",
+   "STATC1000H"
+  ],
+  "source": {
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/psychology-aa-t-2025fa",
+   "title": "Psychology AA-T",
+   "h1": "Psychology AA-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 16,
+  "text_chars": 4441
+ },
+ {
+  "control_number": "31032",
+  "title": "Mathematics",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.714,
+  "codes_found": [
+   "CIS37A",
+   "CIS43",
+   "EGR30",
+   "MAT3A",
+   "MAT3AH",
+   "MAT3B",
+   "MAT4A",
+   "MAT4B",
+   "MAT4C",
+   "PHY4A"
+  ],
+  "source": {
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/mathematics-2-0-as-t-2026fa",
+   "title": "Mathematics 2.0 AS-T",
+   "h1": "Mathematics 2.0 AS-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 14,
+  "text_chars": 2394
+ },
+ {
+  "control_number": "31253",
+  "title": "Studio Arts",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.917,
+  "codes_found": [
+   "ART1D",
+   "ART31A",
+   "ART31B",
+   "ART33A",
+   "ART33B",
+   "ART33C",
+   "ART34A",
+   "ART35A",
+   "ART35B",
+   "ART39A",
+   "ART49A",
+   "ART49B",
+   "ART65A",
+   "ART65B",
+   "ART67A",
+   "ART67B",
+   "ART7",
+   "ART75A",
+   "ART85A",
+   "ART85B",
+   "ARTHC1100",
+   "ARTHC1200"
+  ],
+  "source": {
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/studio-arts-aa-t-2026fa",
+   "title": "Studio Arts AA-T",
+   "h1": "Studio Arts AA-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 24,
+  "text_chars": 3567
+ },
+ {
+  "control_number": "31397",
+  "title": "Kinesiology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.967,
+  "codes_found": [
+   "BIO47",
+   "BIO48",
+   "BIO48H",
+   "CHM1A",
+   "CHM1AH",
+   "CHM30A",
+   "CHM60",
+   "KIN14A",
+   "KIN14B",
+   "KIN14C",
+   "KIN15A",
+   "KIN15B",
+   "KIN15C",
+   "KIN15D",
+   "KIN19A",
+   "KIN19B",
+   "KIN20A",
+   "KIN20B",
+   "KIN20C",
+   "KIN20D",
+   "KIN21A",
+   "KIN21B",
+   "KIN21C",
+   "KIN21D",
+   "KIN23A",
+   "KIN23B",
+   "KIN23C",
+   "KIN30A",
+   "KIN30B",
+   "KIN30C",
+   "KIN32A",
+   "KIN32B",
+   "KIN32C",
+   "KIN33A",
+   "KIN33B",
+   "KIN33C",
+   "KIN35A",
+   "KIN35B",
+   "KIN35C",
+   "KIN37A",
+   "KIN37B",
+   "KIN37C",
+   "KIN39A",
+   "KIN39B",
+   "KIN39C",
+   "KIN40A",
+   "KIN40B",
+   "KIN40C",
+   "KIN41A",
+   "KIN41B",
+   "KIN41C",
+   "KIN42A",
+   "KIN42B",
+   "KIN42C",
+   "KIN46A",
+   "KIN46B",
+   "KIN46C",
+   "KIN47A",
+   "KIN47B",
+   "KIN47C",
+   "KIN48A",
+   "KIN48B",
+   "KIN50A",
+   "KIN50B",
+   "KIN50C",
+   "KIN51A",
+   "KIN51B",
+   "KIN51C",
+   "KIN53A",
+   "KIN53B",
+   "KIN53C",
+   "KIN55B",
+   "KIN61A",
+   "KIN61B",
+   "KIN61C",
+   "KIN63A",
+   "KIN63B",
+   "KIN78",
+   "NTR6",
+   "PHY2A",
+   "PSYCC1000",
+   "PSYCC1000H",
+   "SOC1",
+   "SOC16",
+   "SOC1H",
+   "STATC1000",
+   "STATC1000E",
+   "STATC1000H"
+  ],
+  "source": {
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/kinesiology-aa-t-2025fa",
+   "title": "Kinesiology AA-T",
+   "h1": "Kinesiology AA-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 91,
+  "text_chars": 7167
+ },
+ {
+  "control_number": "31404",
+  "title": "Political Science",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANT3",
+   "BUS28A",
+   "ECN6",
+   "ECONC2001",
+   "POL2",
+   "POL4",
+   "POL7",
+   "POLSC1000",
+   "POLSC1000H",
+   "SOC16",
+   "STATC1000",
+   "STATC1000H"
+  ],
+  "source": {
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/political-science-aa-t-2026fa",
+   "title": "Political Science AA-T",
+   "h1": "Political Science AA-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 6345
+ },
+ {
+  "control_number": "31419",
+  "title": "English",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.864,
+  "codes_found": [
+   "BUS78B",
+   "ENG13",
+   "ENG15",
+   "ENG1B",
+   "ENG43",
+   "ENG48",
+   "ENG5A",
+   "ENG5B",
+   "ENG6",
+   "ENG70",
+   "ENG7A",
+   "ENG7B",
+   "ENGLC1001",
+   "HUM1A",
+   "HUM1B",
+   "JPN2",
+   "SPA2",
+   "SPA3",
+   "SPA4"
+  ],
+  "source": {
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/english-aa-t-2026fa",
+   "title": "English AA-T",
+   "h1": "English AA-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 22,
+  "text_chars": 4248
+ },
+ {
+  "control_number": "31423",
+  "title": "Early Childhood Education",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHD1",
+   "CHD10",
+   "CHD13",
+   "CHD15",
+   "CHD17",
+   "CHD2",
+   "CHD26",
+   "CHD8A"
+  ],
+  "source": {
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/early-childhood-education-as-t-2025fa",
+   "title": "Early Childhood Education AS-T",
+   "h1": "Early Childhood Education AS-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 2461
+ },
+ {
+  "control_number": "31473",
+  "title": "History",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.857,
+  "codes_found": [
+   "ANT3",
+   "COM12",
+   "HIS15",
+   "HIS15H",
+   "HIS16",
+   "HIS16H",
+   "HIS31",
+   "HIS33",
+   "HIS33H",
+   "HIS4A",
+   "HIS4AH",
+   "HIS4B",
+   "HIS4BH",
+   "HISTC1001",
+   "HISTC1001H",
+   "HISTC1002",
+   "HISTC1002H",
+   "HUM16",
+   "HUM18",
+   "HUM18H",
+   "HUM1A",
+   "HUM1B",
+   "HUM22",
+   "HUM7",
+   "JPN2",
+   "POL4",
+   "POL7",
+   "POLSC1000",
+   "POLSC1000H",
+   "PSYCC1000",
+   "PSYCC1000H",
+   "SOC1",
+   "SOC1H",
+   "SPA2",
+   "SPA3",
+   "SPA4"
+  ],
+  "source": {
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/history-aa-t-2026fa",
+   "title": "History AA-T",
+   "h1": "History AA-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 42,
+  "text_chars": 5703
+ },
+ {
+  "control_number": "32206",
+  "title": "Administration of Justice",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "PSYCC1000",
+   "PSYCC1000H",
+   "SOC1",
+   "SOC16",
+   "SOC1H",
+   "SOC47",
+   "STATC1000",
+   "STATC1000H"
+  ],
+  "source": {
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/administration-of-justice-as-t-2025fa",
+   "title": "Administration of Justice AS-T",
+   "h1": "Administration of Justice AS-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 3791
+ },
+ {
+  "control_number": "32262",
+  "title": "Physics",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "32335",
+  "title": "Art History",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.943,
+  "codes_found": [
+   "ANT3",
+   "ANT55",
+   "ART11",
+   "ART1D",
+   "ART31A",
+   "ART33A",
+   "ART33B",
+   "ART34A",
+   "ART35A",
+   "ART65A",
+   "ART7",
+   "ART85A",
+   "ARTHC1100",
+   "ARTHC1200",
+   "HIS20",
+   "HIS31",
+   "HIS4A",
+   "HIS4AH",
+   "HIS4B",
+   "HIS4BH",
+   "HISTC1001",
+   "HISTC1001H",
+   "HISTC1002",
+   "HISTC1002H",
+   "HUM15",
+   "HUM16",
+   "HUM18",
+   "HUM18H",
+   "HUM1A",
+   "HUM1B",
+   "HUM7",
+   "PHI1",
+   "PHI3"
+  ],
+  "source": {
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/art-history-aa-t-2026fa",
+   "title": "Art History AA-T",
+   "h1": "Art History AA-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 35,
+  "text_chars": 4945
+ },
+ {
+  "control_number": "32419",
+  "title": "Spanish",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.778,
+  "codes_found": [
+   "ANT3",
+   "ENG13",
+   "HUM16",
+   "SPA1",
+   "SPA2",
+   "SPA3",
+   "SPA4"
+  ],
+  "source": {
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/spanish-aa-t-2025fa",
+   "title": "Spanish AA-T",
+   "h1": "Spanish AA-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 4651
+ },
+ {
+  "control_number": "32426",
+  "title": "Business Administration",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.8,
+  "codes_found": [
+   "ACC1A",
+   "ACC1B",
+   "BUS28A",
+   "BUS51",
+   "BUS78B",
+   "ECONC2001",
+   "MAT12",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/business-administration-2-0-as-t-2026fa",
+   "title": "Business Administration 2.0 AS-T",
+   "h1": "Business Administration 2.0 AS-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 2848
+ },
+ {
+  "control_number": "35604",
+  "title": "Biology",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIO1A",
+   "BIO1AH",
+   "BIO1B",
+   "CHM1A",
+   "CHM1AH",
+   "CHM1B",
+   "CHM1BH",
+   "MAT3A",
+   "MAT3AH",
+   "PHY2A",
+   "PHY2B",
+   "PHY4A",
+   "PHY4B"
+  ],
+  "source": {
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/biology-as-t-2025fa",
+   "title": "Biology AS-T",
+   "h1": "Biology AS-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 3720
+ },
+ {
+  "control_number": "35848",
+  "title": "Economics",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACC1A",
+   "ACC1B",
+   "BUS21",
+   "BUS78B",
+   "ECN6",
+   "ECONC2001",
+   "MAT12",
+   "MAT3A",
+   "MAT3B",
+   "MAT4A",
+   "MAT4C",
+   "STATC1000",
+   "STATC1000H"
+  ],
+  "source": {
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/economics-aa-t-2026fa",
+   "title": "Economics AA-T",
+   "h1": "Economics AA-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 5528
+ },
+ {
+  "control_number": "36280",
+  "title": "Beginning ESL",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "NCE920A",
+   "NCE920B",
+   "NCE920GW",
+   "NCE920PL",
+   "NCE924"
+  ],
+  "source": {
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/beginning-esl-noncredit-2022fa",
+   "title": "Beginning ESL CC",
+   "h1": "Beginning ESL CC",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 1752
+ },
+ {
+  "control_number": "36336",
+  "title": "Human Biology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANT1",
+   "BIO10",
+   "BIO10L",
+   "BIO11",
+   "BIO12",
+   "BIO12H",
+   "BIO14",
+   "BIO14H",
+   "BIO17",
+   "BIO17H",
+   "BIO18",
+   "BIO18H",
+   "BIO22",
+   "BIO4",
+   "BIO47",
+   "BIO48",
+   "BIO48H",
+   "CHM1A",
+   "CHM1AH",
+   "CHM30A",
+   "CHM60",
+   "HOC1",
+   "NTR15",
+   "NTR15H",
+   "NTR40",
+   "NTR40H"
+  ],
+  "source": {
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/human-biology-as-2023sp",
+   "title": "Human Biology AS",
+   "h1": "Human Biology AS",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 26,
+  "text_chars": 3123
+ },
+ {
+  "control_number": "36620",
+  "title": "Track Worker Apprenticeship",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "WRK300TN"
+  ],
+  "source": {
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/public-transit-track-worker-apprenticeship-ca-2023fa",
+   "title": "Public Transit - Track Worker Apprenticeship CA",
+   "h1": "Public Transit - Track Worker Apprenticeship CA",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 1,
+  "text_chars": 2374
+ },
+ {
+  "control_number": "36621",
+  "title": "Service Mechanic Apprenticeship",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "WRK300TN"
+  ],
+  "source": {
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/public-transit-service-mechanic-apprenticeship-ca-2023fa",
+   "title": "Public Transit - Service Mechanic Apprenticeship CA",
+   "h1": "Public Transit - Service Mechanic Apprenticeship CA",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 1,
+  "text_chars": 2698
+ },
+ {
+  "control_number": "36622",
+  "title": "Public Transit - Leadership",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "TRN101C",
+   "WRK300TN"
+  ],
+  "source": {
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/public-transit-leadership-ca-2026fa",
+   "title": "Public Transit - Leadership CA",
+   "h1": "Public Transit - Leadership CA",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 2673
+ },
+ {
+  "control_number": "36623",
+  "title": "Overhead Line Worker",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "WRK300TN"
+  ],
+  "source": {
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/public-transit-overhead-line-worker-ca-2023fa",
+   "title": "Public Transit - Overhead Line Worker CA",
+   "h1": "Public Transit - Overhead Line Worker CA",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 1,
+  "text_chars": 2442
+ },
+ {
+  "control_number": "36624",
+  "title": "Public Transit - Coach Operator",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "TRN101A",
+   "WRK300TN"
+  ],
+  "source": {
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/public-transit-coach-operator-ca-2026fa",
+   "title": "Public Transit - Coach Operator CA",
+   "h1": "Public Transit - Coach Operator CA",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 2618
+ },
+ {
+  "control_number": "38614",
+  "title": "English for Child Care",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "38615",
+  "title": "High Beginning ESL",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "NCE931",
+   "NCE932",
+   "NCE933"
+  ],
+  "source": {
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/high-beginning-esl-cc-2023sp",
+   "title": "High Beginning ESL CC",
+   "h1": "High Beginning ESL CC",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 684
+ },
+ {
+  "control_number": "38616",
+  "title": "Low Beginning ESL",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "NCE910A",
+   "NCE910B"
+  ],
+  "source": {
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/low-beginning-esl-cc-2026fa",
+   "title": "Low Beginning ESL CC",
+   "h1": "Low Beginning ESL CC",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 1259
+ },
+ {
+  "control_number": "38630",
+  "title": "Social Justice Studies",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.962,
+  "codes_found": [
+   "HIS33",
+   "HIS33H",
+   "HUM16",
+   "HUM18",
+   "HUM18H",
+   "HUM20",
+   "HUM22",
+   "HUM24",
+   "POLSC1000",
+   "POLSC1000H",
+   "PSY15",
+   "PSY15H",
+   "PSY45",
+   "PSYCC1000",
+   "PSYCC1000H",
+   "SJS1",
+   "SJS2",
+   "SJS3",
+   "SOC1",
+   "SOC16",
+   "SOC1H",
+   "SOC21",
+   "SOC45",
+   "STATC1000",
+   "STATC1000H"
+  ],
+  "source": {
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/social-justice-studies-aa-t-2025fa",
+   "title": "Social Justice Studies AA-T",
+   "h1": "Social Justice Studies AA-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 26,
+  "text_chars": 4933
+ },
+ {
+  "control_number": "39676",
+  "title": "Community Health Worker",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "NCH1CW",
+   "NCH2CW",
+   "NCH3CW"
+  ],
+  "source": {
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/community-health-worker-cc-2020fa",
+   "title": "Community Health Worker CC",
+   "h1": "Community Health Worker CC",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 1619
+ },
+ {
+  "control_number": "39835",
+  "title": "Nutrition and Dietetics",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIO11",
+   "BIO4",
+   "BIO47",
+   "BIO48",
+   "BIO48H",
+   "CHM12A",
+   "CHM12AH",
+   "CHM1A",
+   "CHM1AH",
+   "CHM1B",
+   "CHM1BH",
+   "CHM2",
+   "CHM2L",
+   "CHM30A",
+   "PSYCC1000",
+   "PSYCC1000H",
+   "SOC16",
+   "STATC1000",
+   "STATC1000H"
+  ],
+  "source": {
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/nutrition-and-dietetics-as-t-2026fa",
+   "title": "Nutrition and Dietetics AS-T",
+   "h1": "Nutrition and Dietetics AS-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 19,
+  "text_chars": 3175
+ },
+ {
+  "control_number": "39846",
+  "title": "Engineering",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHM1A",
+   "CHM1AH",
+   "CIS44",
+   "EGR10H",
+   "EGR23",
+   "EGR24",
+   "EGR24L",
+   "EGR25",
+   "EGR30",
+   "MAT20",
+   "MAT3A",
+   "MAT3B",
+   "MAT4B",
+   "PHY4A",
+   "PHY4B",
+   "PHY4C"
+  ],
+  "source": {
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/engineering-ca-2026fa",
+   "title": "Engineering CA",
+   "h1": "Engineering CA",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 16,
+  "text_chars": 4064
+ },
+ {
+  "control_number": "39950",
+  "title": "English for Careers in Food Service",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "NCE930FD",
+   "NCE940FD"
+  ],
+  "source": {
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/english-for-careers-in-food-service-cc-2027fa",
+   "title": "English for Careers in Food Service CC",
+   "h1": "English for Careers in Food Service CC",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 1527
+ },
+ {
+  "control_number": "40350",
+  "title": "IT Helpdesk Technician",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.889,
+  "codes_found": [
+   "BUS21L",
+   "BUS78B",
+   "CIS45",
+   "CIT11",
+   "CIT12",
+   "CIT17",
+   "CIT21",
+   "WRK300GW"
+  ],
+  "source": {
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/it-helpdesk-technician-ca-2021sp",
+   "title": "IT Helpdesk Technician CA",
+   "h1": "IT Helpdesk Technician CA",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 1421
+ },
+ {
+  "control_number": "40351",
+  "title": "Data Analyst Associate",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 9,
+  "text_chars": 0
+ },
+ {
+  "control_number": "40746",
+  "title": "Mechatronic Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "EGR25",
+   "MAT1",
+   "MAT11",
+   "MAT2",
+   "MTT10",
+   "MTT12",
+   "MTT20",
+   "MTT22",
+   "MTT30",
+   "MTT32",
+   "MTT34",
+   "MTT40",
+   "MTT42",
+   "MTT50",
+   "WRK300MT"
+  ],
+  "source": {
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/mechatronic-technology-as-2026fa",
+   "title": "Mechatronic Technology AS",
+   "h1": "Mechatronic Technology AS",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 2829
+ },
+ {
+  "control_number": "40796",
+  "title": "Mechatronic Technology",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "EGR25",
+   "MTT10",
+   "MTT12",
+   "MTT20",
+   "MTT22",
+   "MTT30",
+   "MTT32",
+   "MTT34",
+   "MTT40",
+   "MTT42",
+   "MTT50",
+   "WRK300MT"
+  ],
+  "source": {
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/mechatronic-technology-ca-2026fa",
+   "title": "Mechatronic Technology CA",
+   "h1": "Mechatronic Technology CA",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 2125
+ },
+ {
+  "control_number": "40926",
+  "title": "Fire Fighter/EMT Academy",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "FPT200",
+   "FPT65",
+   "FPT65C",
+   "FPT65L"
+  ],
+  "source": {
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/fire-fighter-emt-academy-ca-2021fa",
+   "title": "Fire Fighter/EMT Academy CA",
+   "h1": "Fire Fighter/EMT Academy CA",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 3648
+ },
+ {
+  "control_number": "40961",
+  "title": "English for Child Development",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "41092",
+  "title": "Baking and Pastry",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CAP62B",
+   "FDR105",
+   "FDR106A",
+   "FDR106B",
+   "FDR50",
+   "FDR51A",
+   "FDR51B",
+   "FDR55",
+   "FDR56",
+   "FDR58",
+   "FDR59",
+   "FDR72",
+   "FDR73",
+   "FDR74",
+   "FDR75",
+   "FDR76",
+   "FDR78",
+   "FDR79",
+   "FDR81",
+   "FDR82",
+   "FDR85",
+   "FDR86",
+   "NTR15"
+  ],
+  "source": {
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/baking-and-pastry-as-2026fa",
+   "title": "Baking and Pastry AS",
+   "h1": "Baking and Pastry AS",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 23,
+  "text_chars": 3430
+ },
+ {
+  "control_number": "41093",
+  "title": "Baking and Pastry",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CAP62B",
+   "FDR105",
+   "FDR106A",
+   "FDR106B",
+   "FDR50",
+   "FDR51A",
+   "FDR51B",
+   "FDR55",
+   "FDR56",
+   "FDR58",
+   "FDR59",
+   "FDR72",
+   "FDR73",
+   "FDR74",
+   "FDR75",
+   "FDR76",
+   "FDR78",
+   "FDR79",
+   "FDR81",
+   "FDR82",
+   "FDR85",
+   "FDR86",
+   "NTR15"
+  ],
+  "source": {
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/baking-and-pastry-ca-2026fa",
+   "title": "Baking and Pastry CA",
+   "h1": "Baking and Pastry CA",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 23,
+  "text_chars": 3175
+ },
+ {
+  "control_number": "41321",
+  "title": "User Experience and Interface Design",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART31A",
+   "ART33A",
+   "GDS10",
+   "GDS35",
+   "GDS49",
+   "GDS55A",
+   "GDS61",
+   "GDS62",
+   "GDS65",
+   "GDS70",
+   "GDS72",
+   "GDS76",
+   "GDS77",
+   "GDS81",
+   "GDS85"
+  ],
+  "source": {
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/user-experience-and-interface-design-ca-2026fa",
+   "title": "User Experience and Interface Design CA",
+   "h1": "User Experience and Interface Design CA",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 3922
+ },
+ {
+  "control_number": "41323",
+  "title": "Fire Prevention Internship Certification",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "FPT300A",
+   "FPT300B",
+   "FPT300C",
+   "FPT300D",
+   "FPT301",
+   "FPT302",
+   "FPT303",
+   "FPT304"
+  ],
+  "source": {
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/fire-prevention-internship-certification-ca-2022wi",
+   "title": "Fire Prevention Internship Certification CA",
+   "h1": "Fire Prevention Internship Certification CA",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 4746
+ },
+ {
+  "control_number": "41324",
+  "title": "Culinary Arts",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "FDR105",
+   "FDR106A",
+   "FDR106B",
+   "FDR50",
+   "FDR51A",
+   "FDR51B",
+   "FDR54",
+   "FDR55",
+   "FDR56",
+   "FDR58",
+   "FDR59",
+   "FDR60",
+   "FDR72",
+   "FDR73",
+   "FDR74",
+   "FDR75",
+   "FDR76",
+   "FDR78",
+   "FDR79",
+   "FDR81",
+   "FDR82",
+   "FDR85",
+   "FDR86"
+  ],
+  "source": {
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/culinary-arts-as-2026fa",
+   "title": "Culinary Arts AS",
+   "h1": "Culinary Arts AS",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 23,
+  "text_chars": 3657
+ },
+ {
+  "control_number": "41325",
+  "title": "Culinary Arts",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "FDR105",
+   "FDR106A",
+   "FDR106B",
+   "FDR50",
+   "FDR51A",
+   "FDR51B",
+   "FDR54",
+   "FDR55",
+   "FDR56",
+   "FDR58",
+   "FDR59",
+   "FDR60",
+   "FDR72",
+   "FDR73",
+   "FDR74",
+   "FDR75",
+   "FDR76",
+   "FDR78",
+   "FDR79",
+   "FDR81",
+   "FDR82",
+   "FDR85",
+   "FDR86"
+  ],
+  "source": {
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/culinary-arts-ca-2026fa",
+   "title": "Culinary Arts CA",
+   "h1": "Culinary Arts CA",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 23,
+  "text_chars": 3301
+ },
+ {
+  "control_number": "41332",
+  "title": "Fitness and Health",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.906,
+  "codes_found": [
+   "BUS23",
+   "BUS51",
+   "HOC4",
+   "KIN14A",
+   "KIN14B",
+   "KIN14C",
+   "KIN14D",
+   "KIN15A",
+   "KIN15B",
+   "KIN15C",
+   "KIN15D",
+   "KIN19A",
+   "KIN19B",
+   "KIN20A",
+   "KIN20B",
+   "KIN20C",
+   "KIN20D",
+   "KIN21A",
+   "KIN21B",
+   "KIN21C",
+   "KIN21D",
+   "KIN23A",
+   "KIN23B",
+   "KIN23C",
+   "KIN23D",
+   "KIN30A",
+   "KIN30B",
+   "KIN30C",
+   "KIN30D",
+   "KIN32A",
+   "KIN32B",
+   "KIN32C",
+   "KIN32D",
+   "KIN33A",
+   "KIN33B",
+   "KIN33C",
+   "KIN35A",
+   "KIN35B",
+   "KIN35C",
+   "KIN37A",
+   "KIN37B",
+   "KIN37C",
+   "KIN37D",
+   "KIN40A",
+   "KIN40B",
+   "KIN40C",
+   "KIN40D",
+   "KIN41A",
+   "KIN41B",
+   "KIN41C",
+   "KIN41D",
+   "KIN42A",
+   "KIN42B",
+   "KIN42C",
+   "KIN46A",
+   "KIN46B",
+   "KIN46C",
+   "KIN46D",
+   "KIN47A",
+   "KIN47B",
+   "KIN47C",
+   "KIN47D",
+   "KIN48A",
+   "KIN48B",
+   "KIN50A",
+   "KIN50B",
+   "KIN50C",
+   "KIN51A",
+   "KIN51B",
+   "KIN51C",
+   "KIN53A",
+   "KIN53B",
+   "KIN53C",
+   "KIN55A",
+   "KIN55B",
+   "KIN61A",
+   "KIN61B",
+   "KIN61C",
+   "KIN61D",
+   "KIN63A",
+   "KIN63B",
+   "KIN66",
+   "KIN67",
+   "KIN68",
+   "KIN69",
+   "KIN81",
+   "NTR15"
+  ],
+  "source": {
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/fitness-and-health-ca-2023sp",
+   "title": "Fitness and Health CA",
+   "h1": "Fitness and Health CA",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 96,
+  "text_chars": 5671
+ },
+ {
+  "control_number": "41339",
+  "title": "Management and Leadership",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS10",
+   "BUS102",
+   "BUS115",
+   "BUS118",
+   "BUS22",
+   "BUS37",
+   "BUS54",
+   "BUS78B",
+   "COM15",
+   "WRK300GW"
+  ],
+  "source": {
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/management-and-leadership-ca-2024fa",
+   "title": "Management and Leadership CA",
+   "h1": "Management and Leadership CA",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 2737
+ },
+ {
+  "control_number": "41391",
+  "title": "Business Administration 2.0",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACC1A",
+   "ACC1B",
+   "BUS28A",
+   "BUS51",
+   "BUS78B",
+   "ECONC2001",
+   "MAT12",
+   "MAT3A",
+   "MAT3AH",
+   "STATC1000",
+   "STATC1000H"
+  ],
+  "source": {
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/business-administration-2-0-as-t-2026fa",
+   "title": "Business Administration 2.0 AS-T",
+   "h1": "Business Administration 2.0 AS-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 2848
+ },
+ {
+  "control_number": "41494",
+  "title": "Anthropology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.868,
+  "codes_found": [
+   "ANT1",
+   "ANT2",
+   "ANT3",
+   "BIO47",
+   "COM12",
+   "ENG13",
+   "ETH13",
+   "ETH44",
+   "ETH44H",
+   "HIS31",
+   "HIS44",
+   "HIS44H",
+   "HISTC1001",
+   "HISTC1001H",
+   "HISTC1002",
+   "HISTC1002H",
+   "HUM16",
+   "HUM18",
+   "HUM18H",
+   "HUM20",
+   "HUM22",
+   "HUM24",
+   "LIN1",
+   "MUS17",
+   "PSY15",
+   "PSY15H",
+   "SJS1",
+   "SJS2",
+   "SOC16",
+   "SOC21",
+   "STATC1000",
+   "STATC1000E",
+   "STATC1000H"
+  ],
+  "source": {
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/anthropology-aa-t-2026fa",
+   "title": "Anthropology AA-T",
+   "h1": "Anthropology AA-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 38,
+  "text_chars": 6340
+ },
+ {
+  "control_number": "42188",
+  "title": "Preparation for Academic Success in ESL",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "NCE924",
+   "NCE934"
+  ],
+  "source": {
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/preparation-for-academic-success-in-esl-cc-2022fa",
+   "title": "Preparation for Academic Success in ESL CC",
+   "h1": "Preparation for Academic Success in ESL CC",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 957
+ },
+ {
+  "control_number": "42313",
+  "title": "Low Intermediate ESL",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "NCE940LS",
+   "NCE940RW"
+  ],
+  "source": {
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/low-intermediate-esl-cc-2024fa",
+   "title": "Low Intermediate ESL CC",
+   "h1": "Low Intermediate ESL CC",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 1596
+ },
+ {
+  "control_number": "42645",
+  "title": "Transfer Studies IGETC for CSU",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "43110",
+  "title": "Public Health Science",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 23,
+  "text_chars": 0
+ },
+ {
+  "control_number": "43142",
+  "title": "Communication Studies CA",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "COM12",
+   "COM14",
+   "COM15",
+   "COM20",
+   "COM20H",
+   "COM8",
+   "COM80",
+   "COM90A",
+   "COMMC1000",
+   "COMMC1000H"
+  ],
+  "source": {
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/communication-studies-ca-2025fa",
+   "title": "Communication Studies CA",
+   "h1": "Communication Studies CA",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 3411
+ },
+ {
+  "control_number": "43228",
+  "title": "Digital Media Marketing",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS22",
+   "BUS23",
+   "BUS56A",
+   "GDS10",
+   "GDS16",
+   "GDS22",
+   "GDS35",
+   "GDS55A",
+   "GDS56",
+   "GDS61",
+   "GDS62",
+   "GDS64",
+   "GDS67",
+   "GDS70",
+   "GDS72",
+   "GDS74",
+   "GDS75"
+  ],
+  "source": {
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/digital-media-marketing-ca-2026fa",
+   "title": "Digital Media Marketing CA",
+   "h1": "Digital Media Marketing CA",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 17,
+  "text_chars": 2482
+ },
+ {
+  "control_number": "43230",
+  "title": "Virtual Production Fundamentals",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "GDS39A",
+   "GDS40",
+   "GDS64",
+   "GDS69",
+   "GDS74",
+   "GDS81",
+   "GDS86",
+   "GDS87",
+   "WRK300GW"
+  ],
+  "source": {
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/virtual-production-fundamentals-ca-2023fa",
+   "title": "Virtual Production Fundamentals CA",
+   "h1": "Virtual Production Fundamentals CA",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 1617
+ },
+ {
+  "control_number": "43240",
+  "title": "Public Transit - Light Rail Operator",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "TRN101B",
+   "TRN501",
+   "TRN502",
+   "TRN503A",
+   "TRN503B",
+   "TRN503C",
+   "TRN503D",
+   "TRN504",
+   "WRK300TN"
+  ],
+  "source": {
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/public-transit-light-rail-operator-ca-2026fa",
+   "title": "Public Transit - Light Rail Operator CA",
+   "h1": "Public Transit - Light Rail Operator CA",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 2510
+ },
+ {
+  "control_number": "43293",
+  "title": "Computer Graphics",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "GDS862",
+   "GDS864",
+   "GDS884"
+  ],
+  "source": {
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/computer-graphics-cc-2026fa",
+   "title": "Computer Graphics CC",
+   "h1": "Computer Graphics CC",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 2012
+ },
+ {
+  "control_number": "43503",
+  "title": "Video and Motion Graphics",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 0.75,
+  "codes_found": [
+   "GDS873",
+   "GDS874",
+   "GDS881"
+  ],
+  "source": {
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/video-and-motion-graphics-cc-2023fa",
+   "title": "Video and Motion Graphics CC",
+   "h1": "Video and Motion Graphics CC",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 1100
+ },
+ {
+  "control_number": "43504",
+  "title": "Advanced ESL",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "NCE970LS",
+   "NCE970RW",
+   "NCE980"
+  ],
+  "source": {
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/advanced-esl-cc-2024fa",
+   "title": "Advanced ESL CC",
+   "h1": "Advanced ESL CC",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 1068
+ },
+ {
+  "control_number": "43505",
+  "title": "Intermediate ESL",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "NCE950LS",
+   "NCE950RW"
+  ],
+  "source": {
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/intermediate-esl-cc-2023fa",
+   "title": "Intermediate ESL CC",
+   "h1": "Intermediate ESL CC",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 900
+ },
+ {
+  "control_number": "43506",
+  "title": "High Intermediate ESL",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "NCE960LS",
+   "NCE960RW"
+  ],
+  "source": {
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/high-intermediate-esl-cc-2023fa",
+   "title": "High Intermediate ESL CC",
+   "h1": "High Intermediate ESL CC",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 907
+ },
+ {
+  "control_number": "43509",
+  "title": "ESL Grammar and Editing",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "NCE945GE",
+   "NCE965GE"
+  ],
+  "source": {
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/esl-grammar-and-editing-cc-2023fa",
+   "title": "ESL Grammar and Editing CC",
+   "h1": "ESL Grammar and Editing CC",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 927
+ },
+ {
+  "control_number": "43822",
+  "title": "Behavioral Health Worker",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "PSY10",
+   "PSY12",
+   "PSY21",
+   "PSY22",
+   "PSY25",
+   "PSY30",
+   "PSYCC1000",
+   "SOC47",
+   "SOC50",
+   "SOC60",
+   "WRK300GW"
+  ],
+  "source": {
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/behavioral-health-worker-ca-2025fa",
+   "title": "Behavioral Health Worker CA",
+   "h1": "Behavioral Health Worker CA",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 2116
+ },
+ {
+  "control_number": "43968",
+  "title": "Spanish",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "44040",
+  "title": "Tutoring Skills",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "INS810",
+   "INS815"
+  ],
+  "source": {
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/tutoring-skills-cc-2024fa",
+   "title": "Tutoring Skills CC",
+   "h1": "Tutoring Skills CC",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 1091
+ },
+ {
+  "control_number": "44048",
+  "title": "Pharmacy Technician",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "PHT801",
+   "PHT802",
+   "PHT803",
+   "PHT804",
+   "PHT805",
+   "PHT806",
+   "PHT807",
+   "PHT808",
+   "PHT809",
+   "PHT810",
+   "PHT811",
+   "PHT812"
+  ],
+  "source": {
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/pharmacy-technician-cc-2024fa",
+   "title": "Pharmacy Technician CC",
+   "h1": "Pharmacy Technician CC",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 3266
+ },
+ {
+  "control_number": "44059",
+  "title": "Foundations of Behavioral Health Work",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "PSY821",
+   "PSY822"
+  ],
+  "source": {
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/foundations-of-behavioral-health-work-cc-2024fa",
+   "title": "Foundations of Behavioral Health Work CC",
+   "h1": "Foundations of Behavioral Health Work CC",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 1004
+ },
+ {
+  "control_number": "44321",
+  "title": "Social Justice African American Studies",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.857,
+  "codes_found": [
+   "ETH44",
+   "ETH44H",
+   "HIS33",
+   "HIS33H",
+   "HIS44",
+   "HIS44H",
+   "HUM18",
+   "HUM18H",
+   "PSY15",
+   "PSY15H",
+   "PSY45",
+   "SJS1",
+   "SJS2",
+   "SOC16",
+   "SOC2",
+   "SOC21",
+   "STATC1000",
+   "STATC1000H"
+  ],
+  "source": {
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/social-justice-african-american-studies-aa-t-2025fa",
+   "title": "Social Justice African American Studies AA-T",
+   "h1": "Social Justice African American Studies AA-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 21,
+  "text_chars": 5487
+ },
+ {
+  "control_number": "44366",
+  "title": "Artificial Intelligence",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CIS50",
+   "CIS51",
+   "CIS53",
+   "CIS54",
+   "CIS57",
+   "CIS7"
+  ],
+  "source": {
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/artificial-intelligence-ca-2026fa",
+   "title": "Artificial Intelligence CA",
+   "h1": "Artificial Intelligence CA",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 1503
+ },
+ {
+  "control_number": "44371",
+  "title": "Advanced Virtual Production",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.75,
+  "codes_found": [
+   "CIS7",
+   "GDS39A",
+   "GDS81"
+  ],
+  "source": {
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/advanced-virtual-production-ca-2024fa",
+   "title": "Advanced Virtual Production CA",
+   "h1": "Advanced Virtual Production CA",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 4419
+ },
+ {
+  "control_number": "44504",
+  "title": "Communication Studies 2.0",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.938,
+  "codes_found": [
+   "ANT3",
+   "COM12",
+   "COM14",
+   "COM15",
+   "COM20",
+   "COM20H",
+   "COMMC1000",
+   "COMMC1000H",
+   "ENG1B",
+   "ENGLC1001",
+   "POLSC1000",
+   "PSYCC1000",
+   "PSYCC1000H",
+   "SOC1",
+   "SOC1H"
+  ],
+  "source": {
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/communication-studies-2-0-aa-t-2026fa",
+   "title": "Communication Studies 2.0 AA-T",
+   "h1": "Communication Studies 2.0 AA-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 16,
+  "text_chars": 4044
+ },
+ {
+  "control_number": "44817",
+  "title": "Public Transit: Coach Bus Operator Pre-Apprenticeship",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "WRK801",
+   "WRK802",
+   "WRK803",
+   "WRK804TN"
+  ],
+  "source": {
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/public-transit-coach-bus-operator-pre-apprenticeship-cc-2025fa",
+   "title": "Public Transit: Coach Bus Operator Pre-Apprenticeship CC",
+   "h1": "Public Transit: Coach Bus Operator Pre-Apprenticeship CC",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 2219
+ },
+ {
+  "control_number": "44969",
+  "title": "Data Science",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CIS51",
+   "CIS52",
+   "CIS53",
+   "CIS7",
+   "MAT15"
+  ],
+  "source": {
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/data-science-ca-2025fa",
+   "title": "Data Science CA",
+   "h1": "Data Science CA",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 1451
+ },
+ {
+  "control_number": "45229",
+  "title": "Computer Science",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIO1A",
+   "BIO1AH",
+   "CHM1A",
+   "CHM1AH",
+   "CIS39",
+   "CIS43",
+   "CIS44",
+   "MAT20",
+   "MAT3A",
+   "MAT3AH",
+   "MAT3B",
+   "PHY4A",
+   "PHY4B"
+  ],
+  "source": {
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/computer-science-as-t-2025fa",
+   "title": "Computer Science AS-T",
+   "h1": "Computer Science AS-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 3252
+ },
+ {
+  "control_number": "45329",
+  "title": "Hospitality Management",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACC1A",
+   "BUS28A",
+   "ECONC2001",
+   "FDR50",
+   "FDR51A",
+   "FDR51B",
+   "FDR55",
+   "FDR56",
+   "FDR58",
+   "FDR75",
+   "HMT76",
+   "STATC1000",
+   "STATC1000E",
+   "STATC1000H"
+  ],
+  "source": {
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/hospitality-management-as-t-2026fa",
+   "title": "Hospitality Management AS-T",
+   "h1": "Hospitality Management AS-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 14,
+  "text_chars": 3430
+ },
+ {
+  "control_number": "45478",
+  "title": "Public Health",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANT1",
+   "ANT3",
+   "BIO10",
+   "BIO10L",
+   "BIO11",
+   "BIO17",
+   "BIO17H",
+   "BIO4",
+   "BIO47",
+   "BIO48",
+   "BIO48H",
+   "CHM1A",
+   "CHM1AH",
+   "CHM2",
+   "CHM2L",
+   "CHM30A",
+   "CHM60",
+   "ECONC2001",
+   "ECONC2002",
+   "KIN79",
+   "NTR1",
+   "NTR15",
+   "NTR15H",
+   "NTR6",
+   "POL2",
+   "POLSC1000",
+   "POLSC1000H",
+   "PSY10",
+   "PSY12",
+   "PSY15",
+   "PSY15H",
+   "PSY45",
+   "PSY7",
+   "PSYCC1000",
+   "PSYCC1000H",
+   "SOC1",
+   "SOC16",
+   "SOC1H",
+   "SOC2",
+   "SOC2H",
+   "SOC45",
+   "STATC1000",
+   "STATC1000E",
+   "STATC1000H"
+  ],
+  "source": {
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/public-health-as-t-2026fa",
+   "title": "Public Health AS-T",
+   "h1": "Public Health AS-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 44,
+  "text_chars": 3997
+ },
+ {
+  "control_number": "45507",
+  "title": "Child and Adolescent Development",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANT3",
+   "BIO10",
+   "BIO11",
+   "BIO12",
+   "BIO12H",
+   "BIO14",
+   "BIO14H",
+   "BIO16",
+   "BIO17",
+   "BIO17H",
+   "BIO18",
+   "BIO18H",
+   "BIO19",
+   "BIO25",
+   "BIO25H",
+   "BIO30",
+   "CHD1",
+   "CHD10",
+   "CHD13",
+   "CHD15",
+   "CHD17",
+   "CHD2",
+   "CHD26",
+   "CHD8A",
+   "NTR15",
+   "NTR15H",
+   "PSY12",
+   "PSYCC1000",
+   "PSYCC1000H",
+   "SOC1",
+   "SOC16",
+   "SOC1H",
+   "SOC21",
+   "SOC40",
+   "STATC1000",
+   "STATC1000E",
+   "STATC1000H"
+  ],
+  "source": {
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/child-and-adolescent-development-aa-t-2025fa",
+   "title": "Child and Adolescent Development AA-T",
+   "h1": "Child and Adolescent Development AA-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 37,
+  "text_chars": 3689
+ },
+ {
+  "control_number": "45538",
+  "title": "Cal-GETC",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "45884",
+  "title": "Graphic Design Foundations",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "GDS835",
+   "GDS856",
+   "GDS861",
+   "GDS865"
+  ],
+  "source": {
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/graphic-design-foundations-cc-2026fa",
+   "title": "Graphic Design Foundations CC",
+   "h1": "Graphic Design Foundations CC",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 1293
+ },
+ {
+  "control_number": "46008",
+  "title": "Music Production",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MUS10",
+   "MUS16",
+   "MUS17",
+   "MUS5",
+   "MUS80",
+   "MUS82"
+  ],
+  "source": {
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/music-production-ca-2026fa",
+   "title": "Music Production CA",
+   "h1": "Music Production CA",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 2225
+ },
+ {
+  "control_number": "46350",
+  "title": "Mathematics 2.0",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.933,
+  "codes_found": [
+   "CIS37A",
+   "CIS40",
+   "CIS43",
+   "CIS7",
+   "CIS8",
+   "EGR30",
+   "MAT3A",
+   "MAT3AH",
+   "MAT3B",
+   "MAT4A",
+   "MAT4B",
+   "MAT4C",
+   "MAT5",
+   "PHY4A"
+  ],
+  "source": {
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/mathematics-2-0-as-t-2026fa",
+   "title": "Mathematics 2.0 AS-T",
+   "h1": "Mathematics 2.0 AS-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 2394
+ },
+ {
+  "control_number": "46351",
+  "title": "Emergency Services Administration",
+  "award": "Baccalaureate of Science (B.S.) Degree.",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.947,
+  "codes_found": [
+   "COMM3401",
+   "EMSA4401",
+   "EMSA4402",
+   "EMSA4403",
+   "EMSA4404",
+   "EMSA4405",
+   "EMSA4406",
+   "EMSA4407",
+   "EMSA4408",
+   "EMSA4409",
+   "EMSA4411",
+   "EMSA4412",
+   "EMSA4413",
+   "EMSA4416",
+   "EMSA4417",
+   "EMSA4418",
+   "PSYC3401",
+   "SOCI3402"
+  ],
+  "source": {
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/emergency-services-administration-bs-2026fa",
+   "title": "Emergency Services Administration BS",
+   "h1": "Emergency Services Administration BS",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 19,
+  "text_chars": 4547
+ },
+ {
+  "control_number": "46362",
+  "title": "Photography Foundations",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "GDS873",
+   "GDS875"
+  ],
+  "source": {
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/photography-foundations-cc-2026fa",
+   "title": "Photography Foundations CC",
+   "h1": "Photography Foundations CC",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 1162
+ },
+ {
+  "control_number": "46365",
+  "title": "Web Design Foundations",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "GDS845",
+   "GDS870",
+   "GDS872"
+  ],
+  "source": {
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/web-design-foundations-cc-2026fa",
+   "title": "Web Design Foundations CC",
+   "h1": "Web Design Foundations CC",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 1648
+ },
+ {
+  "control_number": "46416",
+  "title": "Emergency Medical Technician",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "FPT865",
+   "FPT865C",
+   "FPT865L"
+  ],
+  "source": {
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/emergency-medical-technician-cc-2026fa",
+   "title": "Emergency Medical Technician CC",
+   "h1": "Emergency Medical Technician CC",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 1637
+ },
+ {
+  "control_number": "46439",
+  "title": "Web Development Foundations",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "GDS845",
+   "GDS889",
+   "GDS889B"
+  ],
+  "source": {
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/web-development-foundations-cc-2026fa",
+   "title": "Web Development Foundations CC",
+   "h1": "Web Development Foundations CC",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 1521
+ }
+]

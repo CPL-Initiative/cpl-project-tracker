@@ -1,0 +1,189 @@
+{
+ "college": "Mission College",
+ "control_number": "40926",
+ "shape": "certificate",
+ "title": "Fire Fighter/EMT Academy",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://mission.elumenapp.com/catalog/24-25/program/fire-fighter-emt-academy-ca-2021fa",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7085,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7085,
+    "output_tokens": 1471,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1471,
+  "output_tokens_details": {
+   "thinking_tokens": 572
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.05776,
+ "ms": 11780,
+ "seconds": 12.3,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 4,
+   "listed": 4,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    22.5,
+    22.5
+   ],
+   "stated": [
+    22.5,
+    22.5
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 3,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Fire Fighter/EMT Academy CA",
+   "measure": "units",
+   "total_units": {
+    "min": 22.5,
+    "max": 22.5
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Analyze the causes of fire, determine extinguishing agents and methods of extinguishment, differentiate the stages of fire, and compare methods of heat transfer.",
+    "Students will be prepared for entry-level employment as a professional and competent Emergency Medical Technologist and meet the needs of the local health care community.",
+    "Students will be prepared for entry-level employment as a professional and competent Fire Fighter and meet the requirements for Firefighter 1 Certification from California State Fire Training",
+    "Students will be prepared for entry-level employment as a professional and competent Emergency Medical Technician and meet the needs of the local health care community."
+   ],
+   "careers": [
+    "Firefighter/EMT",
+    "emergency medical field",
+    "Professional or Volunteer Fire Fighter"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Core Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 22.5,
+     "max": 22.5
+    },
+    "courses": [
+     {
+      "code": "FPT065",
+      "units": 6,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FPT065C",
+      "units": 0.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FPT065L",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FPT200",
+      "units": 14.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Catalog codes are printed without spaces (FPT065, FPT065C, FPT200); they were matched to closed-list entries FPT 65, FPT 065C and FPT 200 as the same courses, so catalog_addition is false.",
+   "The source URL points to the 24-25 catalog while the requested catalog year is 2026-2027; verify the section is current.",
+   "The program outcomes list includes two near-duplicate EMT outcomes ('Emergency Medical Technologist' and 'Emergency Medical Technician'); both are recorded as printed.",
+   "The 22.5 total is printed for the certificate as 'Complete the following number of credits: 22.5'; recorded as total_units, not a degree total.",
+   "Career/Transfer Opportunities also states eligibility for 'entry-level positions in fire protection and emergency response agencies'; not recorded as a separate career entry."
+  ]
+ },
+ "extracted_run": "39000023893"
+}

@@ -1,0 +1,226 @@
+{
+ "college": "Mission College",
+ "control_number": "36624",
+ "shape": "certificate",
+ "title": "Public Transit - Coach Operator",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://mission.elumenapp.com/catalog/24-25/program/public-transit-coach-operator-ca-2026fa",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6721,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6721,
+    "output_tokens": 1383,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1383,
+  "output_tokens_details": {
+   "thinking_tokens": 509
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.05454,
+ "ms": 11980,
+ "seconds": 12.5,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 2,
+   "listed": 2,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 5,
+   "codes": [
+    "TRN401",
+    "TRN402",
+    "TRN403",
+    "TRN404",
+    "TRN405"
+   ],
+   "flagged": [
+    "TRN401",
+    "TRN402",
+    "TRN403",
+    "TRN404",
+    "TRN405"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    18.0,
+    18.0
+   ],
+   "stated": [
+    18.0,
+    18.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 7,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Public Transit - Coach Operator CA",
+   "measure": "units",
+   "total_units": {
+    "min": 18,
+    "max": 18
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Students will demonstrate the skills needed to immediately contribute to quality, on-time service delivery to the riding public in a dynamic public transit environment.",
+    "Students will display a sound command of both technical (driving) and interpersonal skills in coach operation and passenger relations.",
+    "Students will interact effectively with a diverse community of coworkers and transit customers in order to meet and exceed service delivery objectives."
+   ],
+   "careers": [
+    "Coach Operators",
+    "light rail operators",
+    "dispatchers",
+    "supervisors",
+    "maintenance",
+    "scheduling",
+    "information technology (IT)"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Core Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 18,
+     "max": 18
+    },
+    "courses": [
+     {
+      "code": "TRN101A",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "TRN401",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "TRN402",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "TRN403",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "TRN404",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "TRN405",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "WRK300TN",
+      "units": 6,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The catalog prints WRK300TN at 6 units; the state closed list stores 1 unit for WRK 300TN.",
+   "TRN401-TRN405 are not in the closed list and are recorded as catalog additions.",
+   "The page's curriculum-change section notes that TRN101A replaces TRN101, which was deleted from the course block.",
+   "The description also mentions 2000 hours of related work experience for an apprenticeship certificate of completion; this is not counted in the 18-unit total.",
+   "The source URL path says catalog 24-25 while the program code suggests 2026 fall; verify the catalog year.",
+   "The Program Outcomes list is printed for the program as a whole; this certificate shares it."
+  ]
+ },
+ "extracted_run": "39000023893"
+}
