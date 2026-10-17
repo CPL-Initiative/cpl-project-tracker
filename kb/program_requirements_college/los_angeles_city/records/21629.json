@@ -85,14 +85,10 @@
    "courses": 0,
    "count": 3,
    "not_verbatim": [
-    "Demonstrate effective communication skills such as active listening, reflection, and asking Socratic open-ended questions.",
-    "Summarize knowledge in drug prevention and education, counseling techniques for the chemically addicted and biological psychology of chemical dependency.",
-    "Demonstrate competency in the 12 core functions including screening intake, assessment, treatment planning, counseling, case management, crisis management, client education, referral, report and record keeping, and consultation with other professionals in the field of Addiction Studies."
+    "Summarize knowledge in drug prevention and education, counseling techniques for the chemically addicted and biological psychology of chemical dependency."
    ],
    "why": [
-    "not in the catalog text as printed: Demonstrate effective communication skills such as active listening, reflection,",
-    "not in the catalog text as printed: Summarize knowledge in drug prevention and education, counseling techniques for ",
-    "not in the catalog text as printed: Demonstrate competency in the 12 core functions including screening intake, asse"
+    "not in the catalog text as printed: Summarize knowledge in drug prevention and education, counseling techniques for "
    ],
    "heading_printed": true,
    "heading_without_outcomes": false,
@@ -263,5 +259,6 @@
    "Careers: 'Addiction Studies counseling' taken from 'the student's area of interest in an Addiction Studies counseling career'; reviewer may check whether to include it."
   ]
  },
- "extracted_run": "39006380342"
+ "extracted_run": 39018419466,
+ "read_run": "39006380342"
 }

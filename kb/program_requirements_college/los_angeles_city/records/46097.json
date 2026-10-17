@@ -101,25 +101,25 @@
    "program": 5,
    "courses": 0,
    "count": 5,
-   "not_verbatim": [
-    "Solve problems using a systematic approach, test the correctness of solutions, and interpret results in terms of the physical reality they represent."
-   ],
-   "why": [
-    "not in the catalog text as printed: Solve problems using a systematic approach, test the correctness of solutions, a"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 4,
-   "not_verbatim": [],
-   "pass": true
+   "not_verbatim": [
+    "engineering",
+    "medical",
+    "technical fields"
+   ],
+   "pass": false
   },
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -277,5 +277,6 @@
    "MATH 261 note: MATH 260 or MATH 260S is a prerequisite (not part of the major)."
   ]
  },
- "extracted_run": "39006380342"
+ "extracted_run": 39018419466,
+ "read_run": "39006380342"
 }

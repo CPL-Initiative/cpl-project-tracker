@@ -90,31 +90,21 @@
    "program": 4,
    "courses": 0,
    "count": 4,
-   "not_verbatim": [
-    "Combine both narrative and documentary knowledge of the historical, cultural, and economic influences on the motion picture.",
-    "Formulate knowledge of the processes of writing, directing, production, post-production, and distribution of motion pictures.",
-    "Perform the duties of various technical crew positions in a single- or multiple-camera production environment."
-   ],
-   "why": [
-    "not in the catalog text as printed: Combine both narrative and documentary knowledge of the historical, cultural, an",
-    "not in the catalog text as printed: Formulate knowledge of the processes of writing, directing, production, post-pro",
-    "not in the catalog text as printed: Perform the duties of various technical crew positions in a single- or multiple-"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 11,
-   "not_verbatim": [
-    "colorists"
-   ],
-   "pass": false
+   "not_verbatim": [],
+   "pass": true
   },
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -334,5 +324,6 @@
    "Career entry 'grips and electricians' kept as printed as one grouping; a reviewer may split it."
   ]
  },
- "extracted_run": "39006380342"
+ "extracted_run": 39018419466,
+ "read_run": "39006380342"
 }

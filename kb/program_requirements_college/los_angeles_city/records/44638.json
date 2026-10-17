@@ -81,17 +81,11 @@
    "program": 6,
    "courses": 0,
    "count": 6,
-   "not_verbatim": [
-    "Understand core public health concepts, including disease prevention, health promotion, and epidemiology.",
-    "Develop effective communication skills for public health advocacy and conduct community health assessments to identify key issues."
-   ],
-   "why": [
-    "not in the catalog text as printed: Understand core public health concepts, including disease prevention, health pro",
-    "not in the catalog text as printed: Develop effective communication skills for public health advocacy and conduct co"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 0,
@@ -359,5 +353,6 @@
    "The following sections (Human Movement and Applied Fitness A.S., Athletic Coaching Certificate) belong to other programs and were ignored."
   ]
  },
- "extracted_run": "39006380342"
+ "extracted_run": 39018419466,
+ "read_run": "39006380342"
 }

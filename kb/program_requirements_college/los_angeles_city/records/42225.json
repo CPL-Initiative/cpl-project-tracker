@@ -87,14 +87,10 @@
    "courses": 0,
    "count": 5,
    "not_verbatim": [
-    "Use various Python libraries such as numpy, scipy, pandas, matplotlib, seaborn, statsmodels, scikit-learn, keras, and TensorFlow to analyze, visualize, and forecast data for various applications.",
-    "Apply data cleaning, preparation, wrangling, and ETL (Extract-Transform-Load) techniques to analyze structured, unstructured, and steaming data.",
-    "Apply mathematical concepts related to probability and statistics in a modern, hands-on approach that uses software tools such as Python and R to gather, summarize, visualize data and to make predictions and with regression analysis."
+    "Apply data cleaning, preparation, wrangling, and ETL (Extract-Transform-Load) techniques to analyze structured, unstructured, and steaming data."
    ],
    "why": [
-    "not in the catalog text as printed: Use various Python libraries such as numpy, scipy, pandas, matplotlib, seaborn, ",
-    "not in the catalog text as printed: Apply data cleaning, preparation, wrangling, and ETL (Extract-Transform-Load) te",
-    "not in the catalog text as printed: Apply mathematical concepts related to probability and statistics in a modern, h"
+    "not in the catalog text as printed: Apply data cleaning, preparation, wrangling, and ETL (Extract-Transform-Load) te"
    ],
    "heading_printed": true,
    "heading_without_outcomes": false,
@@ -227,5 +223,6 @@
    "Careers include 'Data Science' and 'Data Analytics' from the description ('entry-level careers in Data Science or Data Analytics') plus the Possible Jobs list."
   ]
  },
- "extracted_run": "39006380342"
+ "extracted_run": 39018419466,
+ "read_run": "39006380342"
 }

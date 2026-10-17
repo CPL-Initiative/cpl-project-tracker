@@ -88,27 +88,21 @@
    "program": 3,
    "courses": 0,
    "count": 3,
-   "not_verbatim": [
-    "Utilize scientific periodization to deliver safe and effective training to individuals or groups."
-   ],
-   "why": [
-    "not in the catalog text as printed: Utilize scientific periodization to deliver safe and effective training to indiv"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 3,
-   "not_verbatim": [
-    "specialized personal trainers"
-   ],
-   "pass": false
+   "not_verbatim": [],
+   "pass": true
   },
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -379,5 +373,6 @@
    "Career 'fitness industry' taken from 'advanced careers in the fitness industry' in the program description."
   ]
  },
- "extracted_run": "39006380342"
+ "extracted_run": 39018419466,
+ "read_run": "39006380342"
 }

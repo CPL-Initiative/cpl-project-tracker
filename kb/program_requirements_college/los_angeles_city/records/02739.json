@@ -115,22 +115,16 @@
    "program": 5,
    "courses": 0,
    "count": 5,
-   "not_verbatim": [
-    "Demonstrating, in portfolio-level projects, the skills and knowledge necessary for entrance into a graphic design program at a four-year college/university or for entrance into the workforce as an entry-level designer."
-   ],
-   "why": [
-    "not in the catalog text as printed: Demonstrating, in portfolio-level projects, the skills and knowledge necessary f"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 4,
-   "not_verbatim": [
-    "commercial illustration"
-   ],
-   "pass": false
+   "not_verbatim": [],
+   "pass": true
   },
   "degree": {
    "status": "read"
@@ -357,5 +351,6 @@
    "Text at the top of page 208 (specializations, ART 932, art history list) belongs to the preceding program and was not used."
   ]
  },
- "extracted_run": "39006380342"
+ "extracted_run": 39018419466,
+ "read_run": "39006380342"
 }

@@ -99,17 +99,11 @@
    "program": 5,
    "courses": 0,
    "count": 5,
-   "not_verbatim": [
-    "Create and format a presentation with transitions, custom animations, graphics, video, and audio, using Microsoft PowerPoint.",
-    "Produce a business style report using a computer and Microsoft Word."
-   ],
-   "why": [
-    "not in the catalog text as printed: Create and format a presentation with transitions, custom animations, graphics, ",
-    "not in the catalog text as printed: Produce a business style report using a computer and Microsoft Word."
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 1,
@@ -247,5 +241,6 @@
    "Career entry taken from 'qualify for intermediate office positions'; description also mentions employment in business, government, and educational offices."
   ]
  },
- "extracted_run": "39006380342"
+ "extracted_run": 39018419466,
+ "read_run": "39006380342"
 }

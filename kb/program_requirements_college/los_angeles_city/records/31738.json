@@ -89,14 +89,10 @@
    "courses": 0,
    "count": 5,
    "not_verbatim": [
-    "Demonstrate advanced proficiency in skills such as hand sewing, basic pattern drafting, machine sewing, and rendering.",
-    "Serve as technical crew, designer’s assistant, designers and/or crew heads in the realization of costumes for a fully produced theater event.",
-    "Identify theater literature and visual styles, practices, systems, and historical context used within the realization of theater events."
+    "Serve as technical crew, designer’s assistant, designers and/or crew heads in the realization of costumes for a fully produced theater event."
    ],
    "why": [
-    "not in the catalog text as printed: Demonstrate advanced proficiency in skills such as hand sewing, basic pattern dr",
-    "not in the catalog text as printed: Serve as technical crew, designer's assistant, designers and/or crew heads in th",
-    "not in the catalog text as printed: Identify theater literature and visual styles, practices, systems, and historica"
+    "not in the catalog text as printed: Serve as technical crew, designer's assistant, designers and/or crew heads in th"
    ],
    "heading_printed": true,
    "heading_without_outcomes": false,
@@ -104,10 +100,8 @@
   },
   "careers": {
    "count": 2,
-   "not_verbatim": [
-    "costumers"
-   ],
-   "pass": false
+   "not_verbatim": [],
+   "pass": true
   },
   "degree": {
    "status": "n/a"
@@ -275,5 +269,6 @@
    "Careers 'costumers' and 'designers' are taken from the Level 2 description ('trains costumers and designers'); the overview's 'costume professionals' and Level 1's 'careers in costuming, costume design' were not recorded."
   ]
  },
- "extracted_run": "39006380342"
+ "extracted_run": 39018419466,
+ "read_run": "39006380342"
 }

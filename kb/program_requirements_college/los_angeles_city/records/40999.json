@@ -86,21 +86,11 @@
    "program": 4,
    "courses": 0,
    "count": 4,
-   "not_verbatim": [
-    "Create a fully documented modular design with correct mathematical and logical operations suitable for implementation from a given program specification.",
-    "Create, deploy, and test a basic program with valid syntax and proper logical and mathematical functions using the C++ programming language.",
-    "Design and implement solutions to a general-purpose problem using advanced programming techniques in the C++ programming language.",
-    "Employ complex data structures and algorithms, including sorting, searching, and recursion, to design and implement solutions to advanced computer science problems."
-   ],
-   "why": [
-    "not in the catalog text as printed: Create a fully documented modular design with correct mathematical and logical o",
-    "not in the catalog text as printed: Create, deploy, and test a basic program with valid syntax and proper logical an",
-    "not in the catalog text as printed: Design and implement solutions to a general-purpose problem using advanced progr",
-    "not in the catalog text as printed: Employ complex data structures and algorithms, including sorting, searching, and"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 5,
@@ -110,7 +100,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -214,5 +204,6 @@
    "Careers taken from the 'Possible Jobs' line and the description's 'career in software analysis, design, and development'; the latter recorded as one career field entry. The description also mentions Visual Basic, though no Visual Basic course is listed in the requirements."
   ]
  },
- "extracted_run": "39006380342"
+ "extracted_run": 39018419466,
+ "read_run": "39006380342"
 }

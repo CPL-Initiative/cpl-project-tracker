@@ -99,21 +99,11 @@
    "program": 8,
    "courses": 0,
    "count": 8,
-   "not_verbatim": [
-    "Gain appropriate skills in computer literacy, computer applications, and programming to enable efficient use of computers and their applications.",
-    "Create a fully documented modular design with correct mathematical and logical operations suitable for implementation from a given program specification.",
-    "Employ complex data structures and algorithms, including sorting, searching, and recursion, to design and implement solutions to advanced computer science problems.",
-    "Gain an understanding of computer architecture and organization and apply this understanding to develop low-level code in assembly-language to solve a given problem."
-   ],
-   "why": [
-    "not in the catalog text as printed: Gain appropriate skills in computer literacy, computer applications, and program",
-    "not in the catalog text as printed: Create a fully documented modular design with correct mathematical and logical o",
-    "not in the catalog text as printed: Employ complex data structures and algorithms, including sorting, searching, and",
-    "not in the catalog text as printed: Gain an understanding of computer architecture and organization and apply this u"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 2,
@@ -269,5 +259,6 @@
    "Careers taken from 'begin an entry-level job related to programming and software development'."
   ]
  },
- "extracted_run": "39006380342"
+ "extracted_run": 39018419466,
+ "read_run": "39006380342"
 }

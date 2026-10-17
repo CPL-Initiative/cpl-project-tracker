@@ -105,25 +105,24 @@
    "program": 4,
    "courses": 0,
    "count": 4,
-   "not_verbatim": [
-    "Demonstrate the ability to apply philosophical methods to historical and contemporary philosophical problems."
-   ],
-   "why": [
-    "not in the catalog text as printed: Demonstrate the ability to apply philosophical methods to historical and contemp"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 2,
-   "not_verbatim": [],
-   "pass": true
+   "not_verbatim": [
+    "managers",
+    "lawyers"
+   ],
+   "pass": false
   },
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -295,5 +294,6 @@
    "Careers 'managers' and 'lawyers' taken from the overview ('future managers', 'aspiring lawyers'); these are mentioned as beneficiaries of the skills rather than as a formal careers list."
   ]
  },
- "extracted_run": "39006380342"
+ "extracted_run": 39018419466,
+ "read_run": "39006380342"
 }

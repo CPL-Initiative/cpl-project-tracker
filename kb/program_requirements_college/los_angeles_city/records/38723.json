@@ -82,15 +82,11 @@
    "program": 2,
    "courses": 0,
    "count": 2,
-   "not_verbatim": [
-    "Demonstrate basic literacy skills, including reading, writing, listening, speaking, and conversational skills."
-   ],
-   "why": [
-    "not in the catalog text as printed: Demonstrate basic literacy skills, including reading, writing, listening, speaki"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 0,
@@ -100,7 +96,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -174,5 +170,6 @@
    "The section names no specific careers; 'enhanced job opportunities' was not recorded as a career."
   ]
  },
- "extracted_run": "39006380342"
+ "extracted_run": 39018419466,
+ "read_run": "39006380342"
 }

@@ -105,26 +105,16 @@
    "program": 3,
    "courses": 0,
    "count": 3,
-   "not_verbatim": [
-    "Integrate understanding of the needs, characteristics, and multiple influences on all areas of development of children birth to age eight that support optimal development.",
-    "Promote partnerships between programs, teachers, families, and communities, applying ethical standards and culturally sensitive professional behavior.",
-    "Design, implement, and evaluate developmentally appropriate environments, curriculum, and teacher/child interactions, applying the skills of observation and assessment."
-   ],
-   "why": [
-    "not in the catalog text as printed: Integrate understanding of the needs, characteristics, and multiple influences o",
-    "not in the catalog text as printed: Promote partnerships between programs, teachers, families, and communities, appl",
-    "not in the catalog text as printed: Design, implement, and evaluate developmentally appropriate environments, curric"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 2,
-   "not_verbatim": [
-    "administrators of early childhood education programs"
-   ],
-   "pass": false
+   "not_verbatim": [],
+   "pass": true
   },
   "degree": {
    "status": "read"
@@ -362,5 +352,6 @@
    "Required block sums to the printed 27 units; major total 36 = 27 + 9 electives."
   ]
  },
- "extracted_run": "39006380342"
+ "extracted_run": 39018419466,
+ "read_run": "39006380342"
 }

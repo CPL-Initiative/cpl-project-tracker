@@ -82,15 +82,11 @@
    "program": 3,
    "courses": 0,
    "count": 3,
-   "not_verbatim": [
-    "Produce word-processing documents for academic, professional, or personal use."
-   ],
-   "why": [
-    "not in the catalog text as printed: Produce word-processing documents for academic, professional, or personal use."
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 0,
@@ -100,7 +96,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -175,5 +171,6 @@
    "The description mentions 'educational and career advancement' but names no specific career, so careers is empty."
   ]
  },
- "extracted_run": "39006380342"
+ "extracted_run": 39018419466,
+ "read_run": "39006380342"
 }

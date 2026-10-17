@@ -82,15 +82,11 @@
    "program": 3,
    "courses": 0,
    "count": 3,
-   "not_verbatim": [
-    "Utilize consecutive, simultaneous, and sight translation in interpreting situations."
-   ],
-   "why": [
-    "not in the catalog text as printed: Utilize consecutive, simultaneous, and sight translation in interpreting situati"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 1,
@@ -100,7 +96,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -177,5 +173,6 @@
    "Only the Medical Interpretation section was read; the adjacent Medical Terminology for Career Readiness, Optician Technician and Phlebotomy Technician certificates were ignored."
   ]
  },
- "extracted_run": "39006380342"
+ "extracted_run": 39018419466,
+ "read_run": "39006380342"
 }

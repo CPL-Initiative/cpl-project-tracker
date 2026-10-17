@@ -89,11 +89,9 @@
    "courses": 0,
    "count": 2,
    "not_verbatim": [
-    "Demonstrate competency in foundational courses, including Introduction to Psychology, Human Services, and Clinical Counseling Law and Ethics",
     "Demonstrate competencies in the 12 core functions including, screening intake, assessment, treatment planning, counseling, case management, crisis management, client education, referral, report and record keeping, and consultation with other professionals in the field of Human Services."
    ],
    "why": [
-    "not in the catalog text as printed: Demonstrate competency in foundational courses, including Introduction to Psycho",
     "not in the catalog text as printed: Demonstrate competencies in the 12 core functions including, screening intake, a"
    ],
    "heading_printed": true,
@@ -102,10 +100,8 @@
   },
   "careers": {
    "count": 6,
-   "not_verbatim": [
-    "social and human services assistants"
-   ],
-   "pass": false
+   "not_verbatim": [],
+   "pass": true
   },
   "degree": {
    "status": "n/a"
@@ -254,5 +250,6 @@
    "The second outcome is printed with a space before its final period ('Human Services  .'); recorded with the period attached."
   ]
  },
- "extracted_run": "39006380342"
+ "extracted_run": 39018419466,
+ "read_run": "39006380342"
 }

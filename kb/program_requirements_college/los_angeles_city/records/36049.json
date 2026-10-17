@@ -110,6 +110,13 @@
   "careers": {
    "count": 8,
    "not_verbatim": [
+    "teaching",
+    "nursing",
+    "medicine",
+    "dentistry",
+    "veterinary medicine",
+    "pharmacy",
+    "physical therapy",
     "physician assistant"
    ],
    "pass": false
@@ -282,5 +289,6 @@
    "Outcome 2 is copied with the double period as printed."
   ]
  },
- "extracted_run": "39006380342"
+ "extracted_run": 39018419466,
+ "read_run": "39006380342"
 }

@@ -82,17 +82,11 @@
    "program": 4,
    "courses": 0,
    "count": 4,
-   "not_verbatim": [
-    "Make use of foundational level English necessary to pass the high school equivalency exam, prepare for college English readiness, and to perform general workplace tasks.",
-    "Use a computer to complete college-level coursework and workplace tasks."
-   ],
-   "why": [
-    "not in the catalog text as printed: Make use of foundational level English necessary to pass the high school equival",
-    "not in the catalog text as printed: Use a computer to complete college-level coursework and workplace tasks."
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 0,
@@ -102,7 +96,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -204,5 +198,6 @@
    "Only the Academic Preparation section was read; Adult Basic Education and College Readiness Math Fundamentals I sections on the same page were ignored."
   ]
  },
- "extracted_run": "39006380342"
+ "extracted_run": 39018419466,
+ "read_run": "39006380342"
 }

@@ -82,15 +82,11 @@
    "program": 2,
    "courses": 0,
    "count": 2,
-   "not_verbatim": [
-    "Use vocabulary, medical terminology, pronunciation, and grammar and comprehension skills necessary for successful transition to health career classes."
-   ],
-   "why": [
-    "not in the catalog text as printed: Use vocabulary, medical terminology, pronunciation, and grammar and comprehensio"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 1,
@@ -100,7 +96,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -169,5 +165,6 @@
    "The career field was taken from 'a general introduction to careers in the healthcare field' in the program description."
   ]
  },
- "extracted_run": "39006380342"
+ "extracted_run": 39018419466,
+ "read_run": "39006380342"
 }

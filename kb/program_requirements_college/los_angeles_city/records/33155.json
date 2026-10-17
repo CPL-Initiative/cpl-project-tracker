@@ -113,17 +113,11 @@
    "program": 4,
    "courses": 0,
    "count": 4,
-   "not_verbatim": [
-    "Demonstrate knowledge of converged media techniques including online and broadcast news writing.",
-    "Assemble a print portfolio of published news articles and/or photographs. Student may also collect digital samples of converged media work product such as online or Internet broadcast samples of work."
-   ],
-   "why": [
-    "not in the catalog text as printed: Demonstrate knowledge of converged media techniques including online and broadca",
-    "not in the catalog text as printed: Assemble a print portfolio of published news articles and/or photographs. Studen"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 0,
@@ -133,7 +127,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -290,5 +284,6 @@
    "The page prints separate outcome lists for the AA-T and AA; the AA-T list was recorded."
   ]
  },
- "extracted_run": "39006380342"
+ "extracted_run": 39018419466,
+ "read_run": "39006380342"
 }

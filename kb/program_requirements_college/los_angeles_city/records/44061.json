@@ -90,10 +90,8 @@
   },
   "careers": {
    "count": 14,
-   "not_verbatim": [
-    "computer network support specialist"
-   ],
-   "pass": false
+   "not_verbatim": [],
+   "pass": true
   },
   "degree": {
    "status": "n/a"
@@ -200,5 +198,6 @@
    "Total taken from 'Major Units: 19' and 'REQUIRED COURSES (19 UNITS)'; listed course units sum to 19."
   ]
  },
- "extracted_run": "39006380342"
+ "extracted_run": 39018419466,
+ "read_run": "39006380342"
 }

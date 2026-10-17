@@ -101,19 +101,11 @@
    "program": 4,
    "courses": 0,
    "count": 4,
-   "not_verbatim": [
-    "Demonstrate clinical judgment and apply evidence-based practice to deliver safe, patient-centered care across the lifespan.",
-    "Communicate effectively and collaborate within interprofessional teams using informatics and healthcare technology to optimize patient care.",
-    "Exemplify professionalism, ethical practice, and cultural humility in managing transitions of care and advancing the nursing role."
-   ],
-   "why": [
-    "not in the catalog text as printed: Demonstrate clinical judgment and apply evidence-based practice to deliver safe,",
-    "not in the catalog text as printed: Communicate effectively and collaborate within interprofessional teams using inf",
-    "not in the catalog text as printed: Exemplify professionalism, ethical practice, and cultural humility in managing t"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 1,
@@ -334,5 +326,6 @@
    "Line-end hyphenation in outcomes (e.g. 'health-care' split across lines) read as soft hyphens and joined ('healthcare')."
   ]
  },
- "extracted_run": "39006380342"
+ "extracted_run": 39018419466,
+ "read_run": "39006380342"
 }

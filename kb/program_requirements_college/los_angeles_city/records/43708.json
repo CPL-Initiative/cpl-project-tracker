@@ -82,17 +82,11 @@
    "program": 5,
    "courses": 0,
    "count": 5,
-   "not_verbatim": [
-    "Explain factors that influence the receiving, picking, and shipping processes.",
-    "Describe common metrics and systems used to evaluate warehouse and personal performance."
-   ],
-   "why": [
-    "not in the catalog text as printed: Explain factors that influence the receiving, picking, and shipping processes.",
-    "not in the catalog text as printed: Describe common metrics and systems used to evaluate warehouse and personal perf"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 1,
@@ -102,7 +96,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -196,5 +190,6 @@
    "Page also prints Roadmap to People Management and Warehouse & Distribution: Worker certificates; those were not read."
   ]
  },
- "extracted_run": "39006380342"
+ "extracted_run": 39018419466,
+ "read_run": "39006380342"
 }

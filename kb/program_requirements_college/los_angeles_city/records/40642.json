@@ -92,19 +92,11 @@
    "program": 3,
    "courses": 0,
    "count": 3,
-   "not_verbatim": [
-    "Students will survey business practices including development, financing, production, and distribution of motion pictures and media content.",
-    "Students will explain feature production from development through distribution on projects that have attained commercial distribution, and construct elements for their own projects.",
-    "Students will demonstrate an understanding of major concepts of Business Organization including: Management, Marketing, Finance, Human Resources, Economics, Legal Forms of Business Ownership, and Entertainment Law."
-   ],
-   "why": [
-    "not in the catalog text as printed: Students will survey business practices including development, financing, produc",
-    "not in the catalog text as printed: Students will explain feature production from development through distribution o",
-    "not in the catalog text as printed: Students will demonstrate an understanding of major concepts of Business Organiz"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 0,
@@ -114,7 +106,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -250,5 +242,6 @@
    "Required block of nine 3-unit rows (three with 'OR' alternatives) sums to the stated 27 units."
   ]
  },
- "extracted_run": "39006380342"
+ "extracted_run": 39018419466,
+ "read_run": "39006380342"
 }

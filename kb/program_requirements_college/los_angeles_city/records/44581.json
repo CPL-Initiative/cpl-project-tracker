@@ -99,26 +99,16 @@
    "program": 4,
    "courses": 0,
    "count": 4,
-   "not_verbatim": [
-    "Demonstrate comprehensive knowledge and clinically appropriate application of exercise in apparently healthy populations in a variety of settings including: preparticipation screening/health risk appraisal, fitness assessment and evaluations, and designing individually tailored exercise prescription and appropriate exercise techniques.",
-    "Apply evidence-based practice to deduce appropriate strategies that enhance human movement capabilities in exercise and performance.",
-    "Recognize the importance of interprofessional collaboration in the delivery of safe, high quality care within the health care system and exercise science field."
-   ],
-   "why": [
-    "not in the catalog text as printed: Demonstrate comprehensive knowledge and clinically appropriate application of ex",
-    "not in the catalog text as printed: Apply evidence-based practice to deduce appropriate strategies that enhance huma",
-    "not in the catalog text as printed: Recognize the importance of interprofessional collaboration in the delivery of s"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 7,
-   "not_verbatim": [
-    "tactical strength and conditioning specialist"
-   ],
-   "pass": false
+   "not_verbatim": [],
+   "pass": true
   },
   "degree": {
    "status": "read"
@@ -436,5 +426,6 @@
    "The page text preceding this section (public health outcomes and requirements with BIOLOGY 003, STAT C1000, etc.) belongs to a different program and was ignored, as were the Athletic Coaching, Applied Movement and Personal Training Specialist, and Health & Fitness Center Management certificates that follow."
   ]
  },
- "extracted_run": "39006380342"
+ "extracted_run": 39018419466,
+ "read_run": "39006380342"
 }

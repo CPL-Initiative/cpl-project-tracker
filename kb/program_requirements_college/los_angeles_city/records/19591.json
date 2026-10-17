@@ -82,25 +82,33 @@
    "program": 3,
    "courses": 0,
    "count": 3,
-   "not_verbatim": [
-    "Recognize the responsibilities and requirements of law enforcement careers."
-   ],
-   "why": [
-    "not in the catalog text as printed: Recognize the responsibilities and requirements of law enforcement careers."
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 12,
-   "not_verbatim": [],
-   "pass": true
+   "not_verbatim": [
+    "police officers",
+    "custodial officers",
+    "deputy sheriffs",
+    "probation/parole officers",
+    "highway patrol officers",
+    "private investigators",
+    "forensic specialists",
+    "insurance investigators",
+    "police assistants",
+    "financial investigators",
+    "fingerprint experts"
+   ],
+   "pass": false
   },
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -210,5 +218,6 @@
    "Total units taken from 'Major Units: 18' and 'REQUIRED COURSES (18 UNITS)'; the programs table also lists 18 units for the certificate (C)."
   ]
  },
- "extracted_run": "39006380342"
+ "extracted_run": 39018419466,
+ "read_run": "39006380342"
 }

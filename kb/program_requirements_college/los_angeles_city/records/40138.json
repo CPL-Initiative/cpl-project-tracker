@@ -83,8 +83,8 @@
    "count": 0,
    "not_verbatim": [],
    "why": [],
-   "heading_printed": true,
-   "heading_without_outcomes": true,
+   "heading_printed": false,
+   "heading_without_outcomes": false,
    "pass": true
   },
   "careers": {
@@ -160,5 +160,6 @@
    "The other sections on this page belong to other programs and were ignored: Professionalism & Success in Healthcare Occupations (VOC ED 404CE, 405CE) and E-Commerce (VOC ED 446CE, 447CE)."
   ]
  },
- "extracted_run": "39006380342"
+ "extracted_run": 39018419466,
+ "read_run": "39006380342"
 }

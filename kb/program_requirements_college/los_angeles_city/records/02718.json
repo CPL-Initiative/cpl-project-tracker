@@ -99,24 +99,16 @@
    "program": 7,
    "courses": 0,
    "count": 7,
-   "not_verbatim": [
-    "Identify how business operates in an international/global environment including legal, social, cultural, and interdependence and integrated financial markets.",
-    "Demonstrate an awareness of the appropriate language in written and oral communications."
-   ],
-   "why": [
-    "not in the catalog text as printed: Identify how business operates in an international/global environment including ",
-    "not in the catalog text as printed: Demonstrate an awareness of the appropriate language in written and oral communi"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 5,
-   "not_verbatim": [
-    "production managers"
-   ],
-   "pass": false
+   "not_verbatim": [],
+   "pass": true
   },
   "degree": {
    "status": "read"
@@ -426,5 +418,6 @@
    "Outcomes rejoined across hyphenated line breaks (e.g. 'envi -ronment' read as 'environment')."
   ]
  },
- "extracted_run": "39006380342"
+ "extracted_run": 39018419466,
+ "read_run": "39006380342"
 }

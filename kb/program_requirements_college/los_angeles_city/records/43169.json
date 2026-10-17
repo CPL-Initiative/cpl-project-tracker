@@ -121,8 +121,15 @@
   },
   "careers": {
    "count": 11,
-   "not_verbatim": [],
-   "pass": true
+   "not_verbatim": [
+    "health",
+    "marketing",
+    "performance",
+    "politics",
+    "public relations",
+    "social work"
+   ],
+   "pass": false
   },
   "degree": {
    "status": "read"
@@ -368,5 +375,6 @@
    "Careers taken from the Communication Studies department overview ('support success in many careers including but not limited to ...')."
   ]
  },
- "extracted_run": "39006380342"
+ "extracted_run": 39018419466,
+ "read_run": "39006380342"
 }

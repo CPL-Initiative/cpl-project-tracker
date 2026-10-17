@@ -90,10 +90,8 @@
   },
   "careers": {
    "count": 8,
-   "not_verbatim": [
-    "radiologic technologies"
-   ],
-   "pass": false
+   "not_verbatim": [],
+   "pass": true
   },
   "degree": {
    "status": "n/a"
@@ -293,5 +291,6 @@
    "Careers are the allied health programs the description names that students prepare to enter."
   ]
  },
- "extracted_run": "39006380342"
+ "extracted_run": 39018419466,
+ "read_run": "39006380342"
 }

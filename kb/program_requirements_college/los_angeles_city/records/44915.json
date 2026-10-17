@@ -82,17 +82,11 @@
    "program": 6,
    "courses": 0,
    "count": 6,
-   "not_verbatim": [
-    "Create a play-based curriculum that supports children’s cognitive, language, creative, physical, and social/emotional development.",
-    "Assess and document the active implementation of planned activities to demonstrate an understanding of the ongoing process of curriculum development."
-   ],
-   "why": [
-    "not in the catalog text as printed: Create a play-based curriculum that supports children's cognitive, language, cre",
-    "not in the catalog text as printed: Assess and document the active implementation of planned activities to demonstra"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 4,
@@ -102,7 +96,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -229,5 +223,6 @@
    "Catalog section text calls the award 'Early Childhood Curriculum of Achievement Certificate' in its description (apparent typo)."
   ]
  },
- "extracted_run": "39006380342"
+ "extracted_run": 39018419466,
+ "read_run": "39006380342"
 }

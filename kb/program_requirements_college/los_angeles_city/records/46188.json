@@ -82,21 +82,11 @@
    "program": 7,
    "courses": 0,
    "count": 7,
-   "not_verbatim": [
-    "Gain specialized knowledge in food chemistry with an understanding of the chemical makeup of foods, including proteins, carbohydrates, lipids, vitamins, and minerals. Students will gain skills in analyzing food constituents to ensure safety, quality, and compliance with regulations.",
-    "Gain preparedness for entry level jobs in the food and beverage industry, research, product development, and regulatory agencies.",
-    "Obtain analytical and critical thinking skills to address challenges in food composition, processing, and preservation.",
-    "Gain practical skills in methods such as spectroscopy, chromatography, and titration for analyzing food substances."
-   ],
-   "why": [
-    "not in the catalog text as printed: Gain specialized knowledge in food chemistry with an understanding of the chemic",
-    "not in the catalog text as printed: Gain preparedness for entry level jobs in the food and beverage industry, resear",
-    "not in the catalog text as printed: Obtain analytical and critical thinking skills to address challenges in food com",
-    "not in the catalog text as printed: Gain practical skills in methods such as spectroscopy, chromatography, and titra"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 3,
@@ -106,7 +96,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -198,5 +188,6 @@
    "Careers taken from the certificate description: 'careers in food science, quality control, nutrition, and related fields'."
   ]
  },
- "extracted_run": "39006380342"
+ "extracted_run": 39018419466,
+ "read_run": "39006380342"
 }

@@ -86,17 +86,11 @@
    "program": 5,
    "courses": 0,
    "count": 5,
-   "not_verbatim": [
-    "Apply methods and principles of effective supervision and mentoring in early childhood programs to develop positive staff relationships and support professional growth.",
-    "Apply ethical standards and professional behaviors that demonstrate understanding and knowledge, deepening the commitment to the Early Care and Education profession."
-   ],
-   "why": [
-    "not in the catalog text as printed: Apply methods and principles of effective supervision and mentoring in early chi",
-    "not in the catalog text as printed: Apply ethical standards and professional behaviors that demonstrate understandin"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 1,
@@ -106,7 +100,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -251,5 +245,6 @@
    "Hyphenated line-break words in outcomes (e.g., 'men -toring') were joined."
   ]
  },
- "extracted_run": "39006380342"
+ "extracted_run": 39018419466,
+ "read_run": "39006380342"
 }

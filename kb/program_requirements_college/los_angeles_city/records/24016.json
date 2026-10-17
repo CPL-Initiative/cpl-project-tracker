@@ -68,13 +68,13 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": true,
+   "pass": false,
    "status": "unstated",
    "computed": null,
    "stated": null,
    "against": null,
    "why": [
-    "the catalog prints no total, no hours and no units"
+    "the record states no figure, but the catalog text names 81 HRS, 16 HRS, 126 HRS"
    ]
   },
   "repeated": {
@@ -161,5 +161,6 @@
    "Measure set to hours because this is a noncredit program and the neighboring noncredit certificates count in hours."
   ]
  },
- "extracted_run": "39006380342"
+ "extracted_run": 39018419466,
+ "read_run": "39006380342"
 }

@@ -86,15 +86,11 @@
    "program": 4,
    "courses": 0,
    "count": 4,
-   "not_verbatim": [
-    "Demonstrate appropriate response to customer needs in a dining setting."
-   ],
-   "why": [
-    "not in the catalog text as printed: Demonstrate appropriate response to customer needs in a dining setting."
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 1,
@@ -104,7 +100,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -224,5 +220,6 @@
    "Outcome 1 had a hyphenated line break ('din -ing'), rejoined as 'dining'."
   ]
  },
- "extracted_run": "39006380342"
+ "extracted_run": 39018419466,
+ "read_run": "39006380342"
 }

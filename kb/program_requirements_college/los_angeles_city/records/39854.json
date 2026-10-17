@@ -88,31 +88,21 @@
    "program": 3,
    "courses": 0,
    "count": 3,
-   "not_verbatim": [
-    "Design Infrastructure as a Service (IaaS) solutions by provisioning computing instances, establishing virtual private networks, managing databases and storage within a secure online environment.",
-    "Analyze performance metrics of a cloud architecture to respond dynamically to information and computing technology workloads and optimize service costs.",
-    "Collaborate in a team designing business solutions in an industry aligned project."
-   ],
-   "why": [
-    "not in the catalog text as printed: Design Infrastructure as a Service (IaaS) solutions by provisioning computing in",
-    "not in the catalog text as printed: Analyze performance metrics of a cloud architecture to respond dynamically to in",
-    "not in the catalog text as printed: Collaborate in a team designing business solutions in an industry aligned projec"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 4,
-   "not_verbatim": [
-    "cloud technicians"
-   ],
-   "pass": false
+   "not_verbatim": [],
+   "pass": true
   },
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -240,5 +230,6 @@
    "Hyphenated line breaks in outcomes (e.g., 'provi -sioning', 'net -works') were rejoined as single words."
   ]
  },
- "extracted_run": "39006380342"
+ "extracted_run": 39018419466,
+ "read_run": "39006380342"
 }

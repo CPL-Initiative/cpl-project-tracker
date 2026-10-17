@@ -88,17 +88,11 @@
    "program": 6,
    "courses": 0,
    "count": 6,
-   "not_verbatim": [
-    "Employ patient care practices based on acceptable ethical behavior and established standards within their scope of practice.",
-    "Pass the American Registry of Radiologic Technology examination in radiography."
-   ],
-   "why": [
-    "not in the catalog text as printed: Employ patient care practices based on acceptable ethical behavior and establish",
-    "not in the catalog text as printed: Pass the American Registry of Radiologic Technology examination in radiography."
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 0,
@@ -111,7 +105,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -326,5 +320,6 @@
    "The Mammography Certificate, Clinical Education Skills Certificate and Fluoroscopy Skills Certificate sections that follow were not used."
   ]
  },
- "extracted_run": "39006380342"
+ "extracted_run": 39018419466,
+ "read_run": "39006380342"
 }

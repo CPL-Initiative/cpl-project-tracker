@@ -90,12 +90,8 @@
   },
   "careers": {
    "count": 11,
-   "not_verbatim": [
-    "journalism",
-    "venture capital",
-    "operations with business firms and organizations"
-   ],
-   "pass": false
+   "not_verbatim": [],
+   "pass": true
   },
   "degree": {
    "status": "n/a"
@@ -301,5 +297,6 @@
    "Careers taken from the program description ('general economic related fields in government, teaching, ... and operations with business firms and organizations in both the public and private sector')."
   ]
  },
- "extracted_run": "39006380342"
+ "extracted_run": 39018419466,
+ "read_run": "39006380342"
 }

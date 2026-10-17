@@ -88,15 +88,11 @@
    "program": 3,
    "courses": 0,
    "count": 3,
-   "not_verbatim": [
-    "Promote partnerships between programs, teachers, families, and communities, applying ethical standards and culturally sensitive professional behavior."
-   ],
-   "why": [
-    "not in the catalog text as printed: Promote partnerships between programs, teachers, families, and communities, appl"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 0,
@@ -106,7 +102,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -243,5 +239,6 @@
    "Outcomes are printed for this certificate's own section; hyphenated line breaks were joined."
   ]
  },
- "extracted_run": "39006380342"
+ "extracted_run": 39018419466,
+ "read_run": "39006380342"
 }

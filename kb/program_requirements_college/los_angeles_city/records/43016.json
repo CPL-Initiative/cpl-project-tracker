@@ -82,15 +82,11 @@
    "program": 4,
    "courses": 0,
    "count": 4,
-   "not_verbatim": [
-    "Identify the key role of the physical therapy aide in a variety of settings including hospitals, rehabilitation centers, nursing homes, home care agencies, outpatient clinics, community health centers, and sports medicine clinics."
-   ],
-   "why": [
-    "not in the catalog text as printed: Identify the key role of the physical therapy aide in a variety of settings incl"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 0,
@@ -100,7 +96,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -219,5 +215,6 @@
    "No careers or job titles are named for this program beyond its description of working with a Physical Therapist; careers left empty."
   ]
  },
- "extracted_run": "39006380342"
+ "extracted_run": 39018419466,
+ "read_run": "39006380342"
 }

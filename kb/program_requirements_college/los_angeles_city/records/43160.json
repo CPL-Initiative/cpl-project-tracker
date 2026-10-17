@@ -82,30 +82,21 @@
    "program": 4,
    "courses": 0,
    "count": 4,
-   "not_verbatim": [
-    "Distinguish key elements of the four genres (fiction, drama, creative non-fiction and poetry) and incorporate key elements of each genre in their own work.",
-    "Participate actively in class by supporting the workshop environment through reading, class discussion, and peer feedback."
-   ],
-   "why": [
-    "not in the catalog text as printed: Distinguish key elements of the four genres (fiction, drama, creative non-fictio",
-    "not in the catalog text as printed: Participate actively in class by supporting the workshop environment through rea"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 11,
-   "not_verbatim": [
-    "continuity writer",
-    "teacher/professor"
-   ],
-   "pass": false
+   "not_verbatim": [],
+   "pass": true
   },
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -275,5 +266,6 @@
    "ENGL C1000 is printed as 'ENGL C1000 (FORMERLY ENGLISH 101)'."
   ]
  },
- "extracted_run": "39006380342"
+ "extracted_run": 39018419466,
+ "read_run": "39006380342"
 }

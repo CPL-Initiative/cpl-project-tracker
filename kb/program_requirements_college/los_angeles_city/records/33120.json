@@ -122,8 +122,8 @@
    "count": 0,
    "not_verbatim": [],
    "why": [],
-   "heading_printed": true,
-   "heading_without_outcomes": true,
+   "heading_printed": false,
+   "heading_without_outcomes": false,
    "pass": true
   },
   "careers": {
@@ -327,5 +327,6 @@
    "A reviewer should fetch the preceding catalog page(s) to locate the Studio Arts A.A.-T section, its outcomes, careers and totals."
   ]
  },
- "extracted_run": "39006380342"
+ "extracted_run": 39018419466,
+ "read_run": "39006380342"
 }
