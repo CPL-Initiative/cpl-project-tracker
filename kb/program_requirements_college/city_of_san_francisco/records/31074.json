@@ -1,0 +1,140 @@
+{
+ "college": "City College of San Francisco",
+ "control_number": "31074",
+ "shape": "noncredit",
+ "title": "Digital Literacy and Core Skills",
+ "award": "Noncredit program",
+ "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=565",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6874,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6874,
+    "output_tokens": 586,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 586,
+  "output_tokens_details": {
+   "thinking_tokens": 204
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.03922,
+ "ms": 6416,
+ "seconds": 6.7,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 0,
+   "listed": 1,
+   "share": 0.0,
+   "missing": [
+    "COMP9921"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "unstated",
+   "computed": null,
+   "stated": null,
+   "against": null,
+   "why": [
+    "the catalog prints no total, no hours and no units"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "COMP 9921 - Introduction to Internet and Email for Business (0.0)",
+   "measure": "hours",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "COMP 9921",
+    "why": "Appears only as a course description (Hours: 45); the text prints no program requirements for Digital Literacy and Core Skills."
+   }
+  ],
+  "notes": [
+   "The supplied text (catalog page 565) is part of the course descriptions section, not the program section for Digital Literacy and Core Skills, so no requirement blocks, total hours, outcomes or careers could be recorded.",
+   "COMP 9921 is listed there as a noncredit course of 45 hours. A reviewer should locate the program's own page in the 2026-27 catalog to confirm its requirements and total hours.",
+   "The measure is set to hours because the award is a noncredit program and the catalog states its courses in hours."
+  ]
+ },
+ "extracted_run": "39047128472"
+}

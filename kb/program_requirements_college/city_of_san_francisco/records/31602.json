@@ -1,0 +1,171 @@
+{
+ "college": "City College of San Francisco",
+ "control_number": "31602",
+ "shape": "noncredit",
+ "title": "CCSF High School Diploma",
+ "award": "Noncredit program",
+ "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=824",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 9637,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 9637,
+    "output_tokens": 670,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 670,
+  "output_tokens_details": {
+   "thinking_tokens": 234
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.05195,
+ "ms": 6873,
+ "seconds": 7.4,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 0,
+   "listed": 8,
+   "share": 0.0,
+   "missing": [
+    "TRST1322",
+    "TRST2322",
+    "TRST2323",
+    "TRST2422",
+    "TRST2731",
+    "TRST3347",
+    "TRST3531",
+    "TRST3537"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "unstated",
+   "computed": null,
+   "stated": null,
+   "against": null,
+   "why": [
+    "the catalog prints no total, no hours and no units"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "CCSF Catalog - 2026/27",
+   "measure": "hours",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "TRST 1322",
+    "why": "Named only as recommended prep in other course descriptions; the text prints no program requirements."
+   },
+   {
+    "code": "TRST 2322",
+    "why": "Only a course description; the text prints no program requirements."
+   },
+   {
+    "code": "TRST 2323",
+    "why": "Only a course description; the text prints no program requirements."
+   },
+   {
+    "code": "TRST 2422",
+    "why": "Only a course description; the text prints no program requirements."
+   },
+   {
+    "code": "TRST 2731",
+    "why": "Only a course description; the text prints no program requirements."
+   },
+   {
+    "code": "TRST 3347",
+    "why": "Only a course description (printed as 'Contemporary U.S. Writers'); the text prints no program requirements."
+   },
+   {
+    "code": "TRST 3531",
+    "why": "Only a course description; the text prints no program requirements."
+   },
+   {
+    "code": "TRST 3537",
+    "why": "Only a course description; the text prints no program requirements."
+   }
+  ],
+  "notes": []
+ },
+ "extracted_run": "39047128472"
+}

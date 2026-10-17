@@ -1,0 +1,188 @@
+{
+ "college": "City College of San Francisco",
+ "control_number": "09179",
+ "shape": "certificate",
+ "title": "Editorial Management and Design",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=104",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7982,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7982,
+    "output_tokens": 1107,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1107,
+  "output_tokens_details": {
+   "thinking_tokens": 251
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.05407,
+ "ms": 9780,
+ "seconds": 10.3,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 10,
+   "share": 0.0,
+   "missing": [
+    "JOUR19",
+    "JOUR21",
+    "JOUR22",
+    "JOUR23",
+    "JOUR24A",
+    "JOUR24B",
+    "JOUR26",
+    "JOUR29A",
+    "JOUR37",
+    "VMD105"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": true,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Not found in the provided text (text covers Journalism – AA Degree and Journalism – AA-T Degree)",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "JOUR 19",
+    "why": "Editorial Management and Design section not in the text; named only in Journalism AA/AA-T sections"
+   },
+   {
+    "code": "JOUR 21",
+    "why": "Editorial Management and Design section not in the text; named only in Journalism AA/AA-T sections"
+   },
+   {
+    "code": "JOUR 22",
+    "why": "Editorial Management and Design section not in the text; named only in Journalism AA/AA-T sections"
+   },
+   {
+    "code": "JOUR 23",
+    "why": "Editorial Management and Design section not in the text; named only in Journalism AA section"
+   },
+   {
+    "code": "JOUR 24A",
+    "why": "Editorial Management and Design section not in the text; named only in Journalism AA/AA-T sections"
+   },
+   {
+    "code": "JOUR 24B",
+    "why": "Editorial Management and Design section not in the text; named only in Journalism AA/AA-T sections"
+   },
+   {
+    "code": "JOUR 26",
+    "why": "Editorial Management and Design section not in the text; named only in Journalism AA section"
+   },
+   {
+    "code": "JOUR 29A",
+    "why": "Editorial Management and Design section not in the text; named only in Journalism AA/AA-T sections"
+   },
+   {
+    "code": "JOUR 37",
+    "why": "Editorial Management and Design section not in the text; named only in Journalism AA/AA-T sections"
+   },
+   {
+    "code": "VMD 105",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "The provided text (catalog pages 104-105) does not contain the Editorial Management and Design Certificate of Achievement section; it contains the Journalism AA Degree and Journalism AA-T Degree sections, which are different awards and were not recorded.",
+   "Page 104 opens with the tail of a preceding program's table ('VMD 153 Adobe InDesign: Publication Design 2.0', 'Total: 42.0') whose heading is not in the text; a 42-unit total is inconsistent with a certificate of 16 to fewer than 30 units, so it was not attributed to this award.",
+   "Reviewer should check an earlier page (likely page 103) of the 2026-27 CCSF catalog for the Editorial Management and Design certificate requirements."
+  ]
+ },
+ "extracted_run": "39047128472"
+}

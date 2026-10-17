@@ -1,0 +1,186 @@
+{
+ "college": "City College of San Francisco",
+ "control_number": "41249",
+ "shape": "certificate",
+ "title": "ECG Technician",
+ "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+ "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=247",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6904,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6904,
+    "output_tokens": 1513,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1513,
+  "output_tokens_details": {
+   "thinking_tokens": 640
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.05788,
+ "ms": 14609,
+ "seconds": 15.1,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 1,
+   "listed": 1,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 2,
+   "codes": [
+    "ECGT101",
+    "ECGT102"
+   ],
+   "flagged": [
+    "ECGT101",
+    "ECGT102"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    4.5,
+    8.5
+   ],
+   "stated": [
+    4.5,
+    8.5
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Program Requirements and Completion Time",
+   "measure": "units",
+   "total_units": {
+    "min": 4.5,
+    "max": 8.5
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Evaluate and apply information relative to the role of an ECG Technician.",
+    "Apply clinical knowledge necessary to fulfill the role of an entry-level ECG Technician.",
+    "Perform clinical tasks on ECG machines, Holter monitor systems, exercise stress test equipment and perform CPR as needed.",
+    "Interact with and orient a diverse patient population and members of the healthcare team according to employer expectations and standards of the healthcare profession.",
+    "Prepare for the various national registry examinations for Electrocardiography Technician certification."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 4.5,
+     "max": 8.5
+    },
+    "courses": [
+     {
+      "code": "ECGT 101",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ECGT 102",
+      "units": 0,
+      "units_max": 4,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "EMT 12",
+      "units": 0.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The certificate's own heading and program description fall on the previous page and are not in this text. The section is identified by its position: the outcomes list and the requirements before the 'Electrocardiography Technician – AS Degree' heading. section_heading uses the subheading printed here.",
+   "The outcomes at the top of the page are taken to belong to this certificate. Their lead-in sentence is not in the text.",
+   "The block total and program total are printed as '8.5-4.5' (reversed). They are recorded as min 4.5 and max 8.5. The listed courses sum to 8.5 units, which fits the award's 8 to <16 unit range.",
+   "ECGT 102 is printed with units '4.0-0.0'. It is recorded as a range from 0 to 4, but it is likely a 4-unit course. A reviewer should check this.",
+   "The AS degree heading 'Electrocardiography Technician – AS Degree' is interleaved into the EMT 12 row by the PDF extraction.",
+   "Careers and outcomes printed in the following AS degree section (ECG and Phlebotomy Technician roles) belong to the AS degree and were not recorded."
+  ]
+ },
+ "extracted_run": "39047128472"
+}

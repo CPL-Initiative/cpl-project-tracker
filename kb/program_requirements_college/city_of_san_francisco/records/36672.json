@@ -1,0 +1,150 @@
+{
+ "college": "City College of San Francisco",
+ "control_number": "36672",
+ "shape": "noncredit",
+ "title": "QuickBooks & Spreadsheets for Accounting",
+ "award": "Noncredit program",
+ "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=564",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6966,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6966,
+    "output_tokens": 690,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 690,
+  "output_tokens_details": {
+   "thinking_tokens": 239
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.04166,
+ "ms": 6366,
+ "seconds": 6.7,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 0,
+   "listed": 3,
+   "share": 0.0,
+   "missing": [
+    "COMP9900",
+    "COMP9904",
+    "COMP9941"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "unstated",
+   "computed": null,
+   "stated": null,
+   "against": null,
+   "why": [
+    "the catalog prints no total, no hours and no units"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "No program section in the text (page 564 prints only COMP course descriptions)",
+   "measure": "hours",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "COMP 9900",
+    "why": "only a course description in the text; no program requirements printed"
+   },
+   {
+    "code": "COMP 9904",
+    "why": "only a course description in the text; no program requirements printed"
+   },
+   {
+    "code": "COMP 9941",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "The supplied text (catalog page 564) is part of the course description listings, not the requirements section for the QuickBooks & Spreadsheets for Accounting noncredit program. No program heading, requirements, total hours, outcomes or careers appear, so no blocks were recorded. A reviewer should locate the program's own page in the 2026-27 CCSF catalog.",
+   "Course descriptions printed on the page list hours (COMP 9900: 45 hours, COMP 9904: 45 hours), but these hours are not presented as program requirements and were not placed in blocks.",
+   "Measure set to hours because this is a noncredit program and the course listings count hours."
+  ]
+ },
+ "extracted_run": "39047128472"
+}

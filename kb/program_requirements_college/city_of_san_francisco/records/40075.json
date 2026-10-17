@@ -1,0 +1,458 @@
+{
+ "college": "City College of San Francisco",
+ "control_number": "40075",
+ "shape": "adt",
+ "title": "Social Work and Human Services",
+ "award": "A.A- T Degree",
+ "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=394",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 10440,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 10440,
+    "output_tokens": 3889,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 3889,
+  "output_tokens_details": {
+   "thinking_tokens": 1491
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.11954,
+ "ms": 29640,
+ "seconds": 30.2,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 22,
+   "listed": 28,
+   "share": 0.786,
+   "missing": [
+    "CMST5",
+    "ECON1",
+    "ECON3",
+    "HIST17A",
+    "HIST17B",
+    "STAT1000E"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 7,
+   "codes": [
+    "CDEV67",
+    "COMM5",
+    "ECONC2001",
+    "ECONC2002",
+    "HISTC1001",
+    "HISTC1002",
+    "STATC1000E"
+   ],
+   "flagged": [
+    "CDEV67",
+    "COMM5",
+    "ECONC2001",
+    "ECONC2002",
+    "HISTC1001",
+    "HISTC1002",
+    "STATC1000E"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    30.0,
+    32.0
+   ],
+   "stated": [
+    30.0,
+    32.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Social Work and Human Services – AA-T Degree",
+   "measure": "units",
+   "total_units": {
+    "min": 30,
+    "max": 32
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Critique major theories related to the understanding of social problems and social welfare policy.",
+    "Apply various methods of inquiry including statistical analysis to examine social welfare issues.",
+    "Apply the biopsychosocial model to understand real life experiences of persons from diverse backgrounds."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required Units",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 24,
+     "max": 25
+    },
+    "courses": [
+     {
+      "code": "SOC 11",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC 120A",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC 120B",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC 1",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "A statistics course",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 5,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "PSYC 5",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "LALS 5",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECON 5",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "STAT C1000",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "STAT C1000E",
+      "units": 6,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "An economics course",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "ECON C2001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ECON C2002",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "A biology course",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 4,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "BIO 9",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIO 11",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Choose two courses from the following",
+    "rule": "choose_courses",
+    "minimum": 2,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 7
+    },
+    "courses": [
+     {
+      "code": "ADMJ 57",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANTH 3",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDEV 53",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDEV 67",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "COMM 5",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ENGL C1001",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST C1001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HIST C1002",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PSYC 10",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC 21",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HLTH 30",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC 2",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC 3",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC 7",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC 35",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "CMST 5",
+    "why": "catalog prints COMM 5 Intercultural Communication instead"
+   },
+   {
+    "code": "ECON 1",
+    "why": "catalog prints ECON C2002 Principles of Macroeconomics instead"
+   },
+   {
+    "code": "ECON 3",
+    "why": "catalog prints ECON C2001 Principles of Microeconomics instead"
+   },
+   {
+    "code": "HIST 17A",
+    "why": "catalog prints HIST C1001 United States History to 1877 instead"
+   },
+   {
+    "code": "HIST 17B",
+    "why": "catalog prints HIST C1002 United States History since 1865 instead"
+   },
+   {
+    "code": "STAT 1000E",
+    "why": "catalog prints STAT C1000E Introduction to Statistics instead"
+   }
+  ],
+  "notes": [
+   "The section heading is not in the extracted text (page 394 begins mid-section with the outcomes list); the heading was inferred from the program and award names and the pattern of following headings.",
+   "The required-courses table appears scrambled by PDF extraction: SOC 1 is printed followed by 'OR LALS 5 OR ECON 5 OR STAT C1000 OR STAT C1000E', while PSYC C1000, 'A statistics course: 5.0-6.0' and PSYC 5 are printed under 'Choose two courses from the following'. Reconstructed so that SOC 1 and PSYC C1000 are required and the statistics course is PSYC 5, LALS 5, ECON 5, STAT C1000 or STAT C1000E; this matches the printed totals (3+1+2+3+3+5/6+3+4 = 24-25 required; 24-25 + 6-7 = 30-32 total). Reviewer should verify against the PDF layout.",
+   "The page states that AA-T students must complete 60 CSU transferable units including Cal-GETC; this generic sentence was not recorded as a degree total.",
+   "Statement 'Students must complete a minimum of 4 of 8 required courses at City College of San Francisco' is a residency rule, not a block.",
+   "The certificate section that follows prints a slightly different wording of the same outcomes; only the AA-T outcomes were recorded."
+  ]
+ },
+ "extracted_run": "39047128472"
+}

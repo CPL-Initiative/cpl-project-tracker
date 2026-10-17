@@ -1,0 +1,155 @@
+{
+ "college": "City College of San Francisco",
+ "control_number": "31413",
+ "shape": "other",
+ "title": "PowerPoint Specialist",
+ "award": null,
+ "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=564",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8110,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8110,
+    "output_tokens": 683,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 683,
+  "output_tokens_details": {
+   "thinking_tokens": 226
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.0461,
+ "ms": 6382,
+ "seconds": 6.8,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 0,
+   "listed": 4,
+   "share": 0.0,
+   "missing": [
+    "COMP9900",
+    "COMP9904",
+    "COMP9922",
+    "COMP9928"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "unstated",
+   "computed": null,
+   "stated": null,
+   "against": null,
+   "why": [
+    "the catalog prints no total, no hours and no units"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "CCSF Catalog - 2026/27",
+   "measure": "hours",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "COMP 9900",
+    "why": "appears only as a course description (45 hours); no program requirements section in the text"
+   },
+   {
+    "code": "COMP 9904",
+    "why": "appears only as a course description (45 hours); no program requirements section in the text"
+   },
+   {
+    "code": "COMP 9922",
+    "why": "not in the text"
+   },
+   {
+    "code": "COMP 9928",
+    "why": "appears only as a course description (45 hours); no program requirements section in the text"
+   }
+  ],
+  "notes": [
+   "The supplied text (catalog pages 564-565) contains only noncredit COMP course descriptions, not the PowerPoint Specialist certificate's requirements section. No blocks, total hours, outcomes or careers could be recorded; the program section should be located elsewhere in the catalog.",
+   "The section_heading is the page header, because the text prints no heading for this program.",
+   "Measure set to hours because the program and its courses are noncredit and the course descriptions list hours (COMP 9900, 9904 and 9928 each 45 hours)."
+  ]
+ },
+ "extracted_run": "39047128472"
+}

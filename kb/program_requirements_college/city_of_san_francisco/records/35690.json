@@ -1,0 +1,508 @@
+{
+ "college": "City College of San Francisco",
+ "control_number": "35690",
+ "shape": "adt",
+ "title": "Social Justice Studies: Ethnic Studies",
+ "award": "A.A- T Degree",
+ "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=389",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 12038,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 12038,
+    "output_tokens": 4446,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 4446,
+  "output_tokens_details": {
+   "thinking_tokens": 1629
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.13707,
+ "ms": 34333,
+ "seconds": 35.1,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 22,
+   "listed": 54,
+   "share": 0.407,
+   "missing": [
+    "AFAM30",
+    "AFAM40",
+    "AFAM60",
+    "ASAM10",
+    "ASAM6",
+    "ETHN37",
+    "HIST12B",
+    "HIST18A",
+    "HIST18B",
+    "HIST20",
+    "HIST21",
+    "HIST41A",
+    "HIST41B",
+    "HIST9",
+    "IDST14",
+    "IDST27B",
+    "IDST30",
+    "IDST31",
+    "IDST36",
+    "IDST37",
+    "IDST46",
+    "LALS/LGBT9",
+    "LALS11",
+    "LALS13",
+    "LALS14",
+    "LBCS70A",
+    "LBCS70B",
+    "LGBT11",
+    "LGBT20",
+    "LGBT55",
+    "POLS45",
+    "SOC7"
+   ],
+   "unexplained": [
+    "IDST46",
+    "LALS/LGBT9"
+   ],
+   "none_placed": false,
+   "pass": false
+  },
+  "invented": {
+   "count": 3,
+   "codes": [
+    "ASAM8",
+    "LALS9",
+    "LGBT9"
+   ],
+   "flagged": [
+    "ASAM8"
+   ],
+   "pass": false
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": [
+    18.0,
+    20.0
+   ],
+   "against": "program",
+   "why": [
+    "'Area list continued from previous page (area heading cut off before page 389)' chooses courses but names no minimum",
+    "'Area 4: Quantitative Reasoning & Research Methods' chooses courses but names no minimum"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": true,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Social Justice Studies: Ethnic Studies – AA-T Degree (heading not in the supplied text; only the tail of the section on page 389 is present)",
+   "measure": "units",
+   "total_units": {
+    "min": 18,
+    "max": 20
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Area list continued from previous page (area heading cut off before page 389)",
+    "rule": "choose_courses",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "AFAM 42",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANTH 3C",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANTH 12",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ASAM 8",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ASAM 20",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ASAM 22",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ASAM 27",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ASAM 30",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ASAM 35",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ASAM 40",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ASAM 42",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDEV 53",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDEV 67",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECON 30",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "IDST 45",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "LALS 1",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "LALS 9",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "LGBT 9",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "LALS 10",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "LGBT 5",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "LGBT 50",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "POLS 12",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC 23",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WGST 25",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Area 4: Quantitative Reasoning & Research Methods",
+    "rule": "choose_courses",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "LALS 5",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "AFAM 30",
+    "why": "not in the text; Ethnic Studies section begins before page 389"
+   },
+   {
+    "code": "AFAM 40",
+    "why": "not in the text; Ethnic Studies section begins before page 389"
+   },
+   {
+    "code": "AFAM 60",
+    "why": "named only in the Gender Studies and Labor Studies sections"
+   },
+   {
+    "code": "ASAM 6",
+    "why": "not in the text; Ethnic Studies section begins before page 389"
+   },
+   {
+    "code": "ASAM 10",
+    "why": "not in the text; Ethnic Studies section begins before page 389"
+   },
+   {
+    "code": "ETHN 37",
+    "why": "named only in the Labor and Community Studies section"
+   },
+   {
+    "code": "HIST 9",
+    "why": "not in the text; Ethnic Studies section begins before page 389"
+   },
+   {
+    "code": "HIST 12B",
+    "why": "named only in the Gender Studies section"
+   },
+   {
+    "code": "HIST 18A",
+    "why": "not in the text; Ethnic Studies section begins before page 389"
+   },
+   {
+    "code": "HIST 18B",
+    "why": "not in the text; Ethnic Studies section begins before page 389"
+   },
+   {
+    "code": "HIST 20",
+    "why": "not in the text; Ethnic Studies section begins before page 389"
+   },
+   {
+    "code": "HIST 21",
+    "why": "not in the text; Ethnic Studies section begins before page 389"
+   },
+   {
+    "code": "HIST 41A",
+    "why": "not in the text; Ethnic Studies section begins before page 389"
+   },
+   {
+    "code": "HIST 41B",
+    "why": "not in the text; Ethnic Studies section begins before page 389"
+   },
+   {
+    "code": "IDST 14",
+    "why": "not in the text; Ethnic Studies section begins before page 389"
+   },
+   {
+    "code": "IDST 30",
+    "why": "not in the text; Ethnic Studies section begins before page 389"
+   },
+   {
+    "code": "IDST 31",
+    "why": "named only in the Gender Studies section"
+   },
+   {
+    "code": "IDST 36",
+    "why": "not in the text; Ethnic Studies section begins before page 389"
+   },
+   {
+    "code": "IDST 37",
+    "why": "named only in the Gender Studies and Labor Studies sections"
+   },
+   {
+    "code": "IDST27B",
+    "why": "not in the text; Ethnic Studies section begins before page 389"
+   },
+   {
+    "code": "LALS 11",
+    "why": "not in the text; Ethnic Studies section begins before page 389"
+   },
+   {
+    "code": "LALS 13",
+    "why": "not in the text; Ethnic Studies section begins before page 389"
+   },
+   {
+    "code": "LALS 14",
+    "why": "not in the text; Ethnic Studies section begins before page 389"
+   },
+   {
+    "code": "LBCS 70A",
+    "why": "named only in the Gender Studies and Labor Studies sections"
+   },
+   {
+    "code": "LBCS 70B",
+    "why": "named only in the Labor and Community Studies section"
+   },
+   {
+    "code": "LGBT 11",
+    "why": "not in the text; Ethnic Studies section begins before page 389"
+   },
+   {
+    "code": "LGBT 55",
+    "why": "not in the text; Ethnic Studies section begins before page 389"
+   },
+   {
+    "code": "LGBT20",
+    "why": "not in the text; Ethnic Studies section begins before page 389"
+   },
+   {
+    "code": "POLS 45",
+    "why": "not in the text; Ethnic Studies section begins before page 389"
+   },
+   {
+    "code": "SOC 7",
+    "why": "named only in the Labor and Community Studies section"
+   }
+  ],
+  "notes": [
+   "The supplied text starts mid-section: only the end of the Ethnic Studies AA-T course list (page 389) is present. The section heading, program summary, learning outcomes, completion requirements, required core courses, the earlier area headings, and the selection rule (likely 'choose N courses from at least N areas', as in the sibling Gender Studies AA-T) are on earlier pages and not included; reviewer should check page 388.",
+   "The first block's area name is cut off; by analogy with sibling programs it is likely 'Area 3: Social Science'. Rule and minimum for both area blocks are unknown, so minimum is null.",
+   "Total: 18.0-20.0 printed just before the Gender Studies heading is read as this award's major total.",
+   "LALS 9 and LGBT 9 are printed as separate rows with the same title (The Latinx LGBTQ+ Experience); recorded as one cross-listed entry matching closed-list 'LALS/LGBT 9'.",
+   "Units for PSYC 23 (3.0), WGST 25 (3.0) and LALS 5 (5.0) read from a units column printed after the Area 4 row.",
+   "No outcomes, careers, GE pattern or degree total for this award appear in the supplied text; the Gender Studies, Labor and Community Studies and LGBTQ Studies sections that follow were not read for this record."
+  ]
+ },
+ "extracted_run": "39047128472"
+}

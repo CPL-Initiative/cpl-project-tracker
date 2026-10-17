@@ -1,0 +1,172 @@
+{
+ "college": "City College of San Francisco",
+ "control_number": "38447",
+ "shape": "certificate",
+ "title": "Basic Police Officer",
+ "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+ "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=234",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6373,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6373,
+    "output_tokens": 568,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 568,
+  "output_tokens_details": {
+   "thinking_tokens": 0
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.03685,
+ "ms": 5229,
+ "seconds": 5.6,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 2,
+   "listed": 2,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    49.5,
+    49.5
+   ],
+   "stated": [
+    49.5,
+    49.5
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Basic Police Officer – Certificate of Achievement",
+   "measure": "units",
+   "total_units": {
+    "min": 49.5,
+    "max": 49.5
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Apply the legal and ethical principles and procedures associated with the duties of a police officer",
+    "Interpret and apply criminal law to hypothetical and actual police cases",
+    "Implement appropriate patrol and investigation procedures",
+    "Manage and write accurate law enforcement reports",
+    "Employ legally approved defensive policing tactics and appropriate levels of use of force"
+   ],
+   "careers": [
+    "peace officer"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 49.5,
+     "max": 49.5
+    },
+    "courses": [
+     {
+      "code": "ADMJ 101",
+      "units": 41.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADMJ 72",
+      "units": 8,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Closed list stores ADMJ 101 as 'ADMJ101' without a space; treated as the same course as catalog's 'ADMJ 101'.",
+   "Career 'peace officer' is taken from the program summary phrase 'minimum standards for employment as a peace officer in California'; a reviewer may wish to confirm this counts as a named career.",
+   "Text after the total ('Community and Public Health – AS Degree') begins a different program and was not read."
+  ]
+ },
+ "extracted_run": "39047128472"
+}

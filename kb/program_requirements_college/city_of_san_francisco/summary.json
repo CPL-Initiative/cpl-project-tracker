@@ -1,0 +1,177 @@
+{
+ "college": "City College of San Francisco",
+ "programs": 417,
+ "with_closed_list": 371,
+ "found": 349,
+ "extracted": 349,
+ "errors": 0,
+ "passed_machine_checks": 233,
+ "failed": {
+  "coverage": 65,
+  "invented": 9,
+  "arithmetic": 89,
+  "repeated": 1,
+  "outcomes": 1
+ },
+ "cost_usd": 23.6,
+ "cost_per_program": 0.0676,
+ "not_found": [
+  {
+   "control_number": "05440",
+   "title": "Finance",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=132",
+    "coverage": 0.2
+   }
+  },
+  {
+   "control_number": "05447",
+   "title": "Administrative Support",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=149",
+    "coverage": 0.462
+   }
+  },
+  {
+   "control_number": "05467",
+   "title": "Avionics-Maintenance Technology",
+   "award": "A.S. Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "05468",
+   "title": "Airframe Maintenance Technology",
+   "award": "A.S. Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "05469",
+   "title": "Aircraft Powerplant Maintenance Technology",
+   "award": "A.S. Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "17954",
+   "title": "Liberal Arts and Sciences Emphasis in Science and Mathematics",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=208",
+    "coverage": 0.219
+   }
+  },
+  {
+   "control_number": "22721",
+   "title": "Finance",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=132",
+    "coverage": 0.143
+   }
+  },
+  {
+   "control_number": "22725",
+   "title": "Airframe-Maintenance Technology",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "22726",
+   "title": "Aircraft Powerplant Maintenance Technology",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "24012",
+   "title": "Intermediate VESL for Printing  Workers",
+   "award": null,
+   "near_miss": null
+  },
+  {
+   "control_number": "24252",
+   "title": "Beginning VESL for the Hospitality Industry",
+   "award": null,
+   "near_miss": null
+  },
+  {
+   "control_number": "24276",
+   "title": "ESL/ABE for Automotive Technology",
+   "award": null,
+   "near_miss": null
+  },
+  {
+   "control_number": "24338",
+   "title": "Beginning VESL Communication",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "24424",
+   "title": "Intermediate VESL for Transit Operators",
+   "award": null,
+   "near_miss": null
+  },
+  {
+   "control_number": "24456",
+   "title": "Textile and Fabric Design",
+   "award": null,
+   "near_miss": null
+  },
+  {
+   "control_number": "30907",
+   "title": "High Intermediate ESL for Health Professionals",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "32868",
+   "title": "Business Administration",
+   "award": "A.S. T Degree",
+   "near_miss": {
+    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=143",
+    "coverage": 0.455
+   }
+  },
+  {
+   "control_number": "36821",
+   "title": "Website Development for E-Business",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "37776",
+   "title": "Maker Studies",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=215",
+    "coverage": 0.048
+   }
+  },
+  {
+   "control_number": "38563",
+   "title": "Cloud-Based Accounting Systems",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "41638",
+   "title": "Business Administration 2.0",
+   "award": "A.S. T Degree",
+   "near_miss": {
+    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=143",
+    "coverage": 0.4
+   }
+  },
+  {
+   "control_number": "45768",
+   "title": "Cal-GETC",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=390",
+    "coverage": 0.129
+   }
+  }
+ ],
+ "run": "39047128472"
+}

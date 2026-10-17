@@ -1,0 +1,216 @@
+{
+ "college": "City College of San Francisco",
+ "control_number": "43116",
+ "shape": "adt",
+ "title": "Communication Studies 2.0",
+ "award": "A.A- T Degree",
+ "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=545",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8252,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8252,
+    "output_tokens": 1097,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1097,
+  "output_tokens_details": {
+   "thinking_tokens": 248
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.05495,
+ "ms": 9489,
+ "seconds": 10.0,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 15,
+   "share": 0.0,
+   "missing": [
+    "CMST12",
+    "CMST2",
+    "CMST20",
+    "CMST3",
+    "CMST4",
+    "CMST5",
+    "CMST7",
+    "CMST8",
+    "COMM38",
+    "COMMC1000",
+    "ENGL1B",
+    "ENGLC1001",
+    "JOUR21",
+    "PSYCC1000",
+    "SOC1"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "No program section in the text (pages 545-546 print COMM course descriptions only)",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "CMST 12",
+    "why": "Only a course description (as COMM 12) appears; no program requirements in the text"
+   },
+   {
+    "code": "CMST 2",
+    "why": "Only a course description (as COMM 2) appears; no program requirements in the text"
+   },
+   {
+    "code": "CMST 20",
+    "why": "Only a course description (as COMM 20) appears; no program requirements in the text"
+   },
+   {
+    "code": "CMST 3",
+    "why": "Only a course description (as COMM 3) appears; no program requirements in the text"
+   },
+   {
+    "code": "CMST 4",
+    "why": "Only a course description (as COMM 4) appears; no program requirements in the text"
+   },
+   {
+    "code": "CMST 5",
+    "why": "Only a course description (as COMM 5) appears; no program requirements in the text"
+   },
+   {
+    "code": "CMST 7",
+    "why": "Only a course description (as COMM 7) appears; no program requirements in the text"
+   },
+   {
+    "code": "CMST 8",
+    "why": "Only a course description (as COMM 8) appears; no program requirements in the text"
+   },
+   {
+    "code": "COMM 38",
+    "why": "Only a course description appears; no program requirements in the text"
+   },
+   {
+    "code": "COMM C1000",
+    "why": "Not in the text"
+   },
+   {
+    "code": "ENGL 1B",
+    "why": "Not in the text"
+   },
+   {
+    "code": "ENGL C1001",
+    "why": "Not in the text"
+   },
+   {
+    "code": "JOUR 21",
+    "why": "Not in the text"
+   },
+   {
+    "code": "PSYC C1000",
+    "why": "Not in the text"
+   },
+   {
+    "code": "SOC 1",
+    "why": "Not in the text"
+   }
+  ],
+  "notes": [
+   "The supplied text (catalog pages 545-546) contains only course descriptions for COMM courses and the start of HLTH courses; it does not include the Communication Studies 2.0 A.A-T requirements section, so no blocks, totals, outcomes or careers could be recorded. The program page should be located elsewhere in the catalog.",
+   "The catalog now prints these courses as COMM (e.g., COMM 2, 'Formerly SPCH/CMST 2'), while the closed list uses CMST codes; a reviewer should map CMST n to COMM n when the requirements section is found.",
+   "No course-level outcomes are printed in the text."
+  ]
+ },
+ "extracted_run": "39047128472"
+}

@@ -1,0 +1,223 @@
+{
+ "college": "City College of San Francisco",
+ "control_number": "36409",
+ "shape": "noncredit",
+ "title": "ESL Beginning High",
+ "award": "Noncredit program",
+ "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=161",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6483,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6483,
+    "output_tokens": 1300,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1300,
+  "output_tokens_details": {
+   "thinking_tokens": 328
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.05193,
+ "ms": 10492,
+ "seconds": 10.8,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 5,
+   "listed": 5,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 2,
+   "codes": [
+    "ESLN5220",
+    "ESLN5375"
+   ],
+   "flagged": [
+    "ESLN5220",
+    "ESLN5375"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    175.0,
+    262.5
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "ESL Beginning High Focus Skills – Certificate of Competency",
+   "measure": "hours",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Interpret general meaning and essential information in high-beginning English conversations in familiar contexts.",
+    "Use high-beginning English structures and vocabulary to engage in conversations on familiar topics.",
+    "Construct meaning from high-beginning written English texts on familiar topics.",
+    "Use high-beginning English structures and vocabulary to write short, loosely organized paragraphs on familiar topics."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Choose one course from the following",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 87.5,
+     "max": 175
+    },
+    "courses": [
+     {
+      "code": "ESLN 3300",
+      "units": 175,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ESLN 3305",
+      "units": 87.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ESLN 3340",
+      "units": 175,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ESLN 3400",
+      "units": 175,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ESLN 3405",
+      "units": 87.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Choose one course from the following",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 44,
+     "max": 87.5
+    },
+    "courses": [
+     {
+      "code": "ESLN 5220",
+      "units": 87.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ESLN 5375",
+      "units": 87.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The only section in the text is 'ESL Beginning High Focus Skills – Certificate of Competency'; the program title is 'ESL Beginning High'. The catalog may have a separate 'ESL Beginning High' certificate whose section is not in this text. A reviewer should confirm this is the right section.",
+   "The text prints no total hours for the certificate, so total_units is null.",
+   "The second block prints a range of 44.0-87.5 hours, but both listed courses show 87.5 hours. The list may be cut off at the page break (the text ends at page 161), and a 44-hour course may be missing.",
+   "ESLN 5220 and ESLN 5375 are not in the closed list and are recorded as catalog additions.",
+   "The program summary mentions preparing students for 'entry-level work'. This was not recorded as a career because no specific occupation is named."
+  ]
+ },
+ "extracted_run": "39047128472"
+}

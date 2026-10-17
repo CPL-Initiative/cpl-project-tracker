@@ -1,0 +1,219 @@
+{
+ "college": "City College of San Francisco",
+ "control_number": "40170",
+ "shape": "certificate",
+ "title": "Entrepreneurship and Innovation in Fashion Design and Merchandising",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=91",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6917,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6917,
+    "output_tokens": 1839,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1839,
+  "output_tokens_details": {
+   "thinking_tokens": 719
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.06445,
+ "ms": 14718,
+ "seconds": 15.2,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 6,
+   "listed": 6,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "ENTR102"
+   ],
+   "flagged": [
+    "ENTR102"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    17.0,
+    18.5
+   ],
+   "stated": [
+    17.0,
+    18.5
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 6,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Entrepreneurship and Innovation in Fashion Design and Merchandising – Certificate of Achievement",
+   "measure": "units",
+   "total_units": {
+    "min": 17,
+    "max": 18.5
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Apply an entrepreneurial mindset that breeds creativity and innovation in the field of fashion merchandising.",
+    "Use terms and concepts related to functional areas of entrepreneurship necessary for startups.",
+    "Analyze the marketing environment to identify entrepreneurial opportunities and areas for growth and development.",
+    "Develop an agile and lean business plan for a startup project/enterprise that is ready for pitching.",
+    "Compare different entrepreneurship pathways in relation to a project or business idea related to fashion merchandising."
+   ],
+   "careers": [
+    "fashion illustrators",
+    "designers",
+    "technical designers",
+    "patternmakers",
+    "product developers",
+    "entrepreneurs"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 17,
+     "max": 18.5
+    },
+    "courses": [
+     {
+      "code": "FASH 45A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FASH 54A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FASH 61",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENTR 101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENTR 102",
+      "units": 1.5,
+      "units_max": 3,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MRKT 140",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VMD 102",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The catalog prints the total as 'Required Units 18.5-17.0' and 'Total: 18.5-17.0' (high end first); recorded as min 17, max 18.5.",
+   "ENTR 102 is printed with units '3.0-1.5'; recorded as a 1.5-3 unit range. Summing all seven courses with ENTR 102 at 1.5-3 units gives 17-18.5, matching the printed total, so all courses were read as required.",
+   "ENTR 102 (Applied Design Thinking for Entrepreneurship) is not in the closed list; recorded as a catalog addition.",
+   "Careers taken from 'careers as full-time or freelance fashion illustrators, designers, technical designers, patternmakers, product developers and entrepreneurs'. Entrepreneurship pathways named in the summary (full-time business ownership, sub-contracting (freelancing), consulting, corporate intrapreneurship, mission-driven social entrepreneurship) were not recorded as careers; reviewer may wish to check.",
+   "Typo 'merhandising' appears in the program summary as printed.",
+   "The text at the top of the page (JOUR courses, Total 18.0) belongs to a preceding program and was ignored."
+  ]
+ },
+ "extracted_run": "39047128472"
+}
