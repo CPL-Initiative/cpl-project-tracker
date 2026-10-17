@@ -1,0 +1,21 @@
+{
+ "_readme": "S408 SkyAgave, 2026-10-17. Glendale's capture-only read (run 39057600516, 2025-2026 PDF, pypdf) found 190 of 267 programs, but 117 of the 190 picks name only 50-80% of the program's listed codes, and 77 programs found no page. The sample shows spaced capitals ('A VIATION') and split ligatures. Biological Sciences 02548 (BIOL 101-102, CHEM 101-106, MATH 103E-104E) scored 0.5 on page 116, Marketing 02553 0.5 on page 67, Welding 02569 0.5 on page 267. This read prints the pages naming those codes, spaced or joined, to tell a reader fault (codes the text breaks) from a catalog a year behind the state's file (codes the 2025-2026 programs do not list). Pages only, no model call, no table write.",
+ "college": "Glendale Community College",
+ "questions": {
+  "code_shape": "How the program pages print their course codes (joined, spaced, split across lines or columns), and whether the listed codes the reader missed are printed in another shape or not printed at all."
+ },
+ "keywords": [
+  "B\\s?U\\s?S\\s?A\\s?D\\s{0,3}16[2359]",
+  "W\\s?E\\s?L\\s?D\\s{0,3}12[1-6]",
+  "M\\s?T\\s?L\\s?G\\s?Y\\s{0,3}150",
+  "C\\s?H\\s?E\\s?M\\s{0,3}10[56]"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "code_shape"
+   ],
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf"
+  }
+ ]
+}
