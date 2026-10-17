@@ -88,11 +88,21 @@
    "program": 8,
    "courses": 0,
    "count": 8,
-   "not_verbatim": [],
-   "why": [],
+   "not_verbatim": [
+    "Develop self-awareness and conﬁdence through creative expression;",
+    "Identify, summarize, compare and contrast the principal movements in World theatre history and literature;",
+    "Serve in a production position to gain understanding of the collaborative and complex nature of a live performance;",
+    "Demonstrate an understanding of and empathy for the racial, ethnic, and cultural diversity of U.S. and World theatre; and"
+   ],
+   "why": [
+    "not in the catalog text as printed: Develop self-awareness and conﬁdence through creative expression;",
+    "not in the catalog text as printed: Identify, summarize, compare and contrast the principal movements in World theat",
+    "not in the catalog text as printed: Serve in a production position to gain understanding of the collaborative and co",
+    "not in the catalog text as printed: Demonstrate an understanding of and empathy for the racial, ethnic, and cultural"
+   ],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": true
+   "pass": false
   },
   "careers": {
    "count": 0,
@@ -105,7 +115,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": true
+  "pass": false
  },
  "record": {
   "program": {
@@ -233,5 +243,6 @@
    "The description mentions 'related disciplines, such as television, ﬁlm, and other media' as an area of interest. These were read as academic disciplines, not named careers, so careers is left empty."
   ]
  },
- "extracted_run": "39006464249"
+ "extracted_run": 39019559014,
+ "read_run": "39006464249"
 }

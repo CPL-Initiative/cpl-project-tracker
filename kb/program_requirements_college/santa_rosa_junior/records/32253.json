@@ -110,8 +110,8 @@
    "count": 0,
    "not_verbatim": [],
    "why": [],
-   "heading_printed": false,
-   "heading_without_outcomes": false,
+   "heading_printed": true,
+   "heading_without_outcomes": true,
    "pass": true
   },
   "careers": {
@@ -267,5 +267,6 @@
    "The section_heading records the heading of the page actually supplied, not the award's own section."
   ]
  },
- "extracted_run": "39006464249"
+ "extracted_run": 39019559014,
+ "read_run": "39006464249"
 }

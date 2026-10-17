@@ -139,8 +139,11 @@
   },
   "careers": {
    "count": 2,
-   "not_verbatim": [],
-   "pass": true
+   "not_verbatim": [
+    "Child Care",
+    "Preschool Education"
+   ],
+   "pass": false
   },
   "degree": {
    "status": "major only",
@@ -435,5 +438,6 @@
    "No units are printed beside the individual elective courses; that block requires at least 3.00 units."
   ]
  },
- "extracted_run": "39006464249"
+ "extracted_run": 39019559014,
+ "read_run": "39006464249"
 }

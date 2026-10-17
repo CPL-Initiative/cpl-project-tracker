@@ -82,11 +82,19 @@
    "program": 5,
    "courses": 0,
    "count": 5,
-   "not_verbatim": [],
-   "why": [],
+   "not_verbatim": [
+    "Write cogent essays or term papers in grammatically correct Spanish formulating and developing ideas on a full range of topics, including but not limited to, history, culture, literary analysis and current events;",
+    "Demonstrate cultural awareness and appreciation of the Spanish Spanish American experience by examining, identifying and analyzing the values, attitudes and traditions that characterize such experience; and",
+    "Succeed in upper division Spanish coursework at a four-year university and/or function in a professional setting where the use of Spanish is an asset."
+   ],
+   "why": [
+    "not in the catalog text as printed: Write cogent essays or term papers in grammatically correct Spanish formulating ",
+    "not in the catalog text as printed: Demonstrate cultural awareness and appreciation of the Spanish Spanish American ",
+    "not in the catalog text as printed: Succeed in upper division Spanish coursework at a four-year university and/or fu"
+   ],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": true
+   "pass": false
   },
   "careers": {
    "count": 0,
@@ -99,7 +107,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": true
+  "pass": false
  },
  "record": {
   "program": {
@@ -306,5 +314,6 @@
    "The Sociology outcomes at the top of page 205 belong to the preceding program and were not recorded."
   ]
  },
- "extracted_run": "39006464249"
+ "extracted_run": 39019559014,
+ "read_run": "39006464249"
 }

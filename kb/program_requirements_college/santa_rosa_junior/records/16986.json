@@ -90,11 +90,25 @@
    "program": 6,
    "courses": 0,
    "count": 6,
-   "not_verbatim": [],
-   "why": [],
-   "heading_printed": true,
+   "not_verbatim": [
+    "Identify the major theoretical approaches, theorists, and historical trends in psychology;",
+    "Understand and use basic research methods in psychology, including design, data analysis and interpretation;",
+    "Apply psychological knowledge to personal, social, and cultural issues;",
+    "Develop interpersonal skills to foster an understanding of self and others in a diverse cultural context;",
+    "Apply critical thinking to psychological theories, research, and personal assumptions; and",
+    "Articulate thoughts effectively in written and oral communication."
+   ],
+   "why": [
+    "not in the catalog text as printed: Identify the major theoretical approaches, theorists, and historical trends in p",
+    "not in the catalog text as printed: Understand and use basic research methods in psychology, including design, data ",
+    "not in the catalog text as printed: Apply psychological knowledge to personal, social, and cultural issues;",
+    "not in the catalog text as printed: Develop interpersonal skills to foster an understanding of self and others in a ",
+    "not in the catalog text as printed: Apply critical thinking to psychological theories, research, and personal assump",
+    "not in the catalog text as printed: Articulate thoughts effectively in written and oral communication."
+   ],
+   "heading_printed": false,
    "heading_without_outcomes": false,
-   "pass": true
+   "pass": false
   },
   "careers": {
    "count": 0,
@@ -107,7 +121,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": true
+  "pass": false
  },
  "record": {
   "program": {
@@ -395,5 +409,6 @@
    "Outcome 1 continues across the page break from page 195 to 196; the outcomes at the top of page 195 belong to a preceding veterinary program and were not recorded."
   ]
  },
- "extracted_run": "39006464249"
+ "extracted_run": 39019559014,
+ "read_run": "39006464249"
 }
