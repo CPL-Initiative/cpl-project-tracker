@@ -1,0 +1,407 @@
+{
+ "college": "Cuesta College",
+ "control_number": "32271",
+ "shape": "adt",
+ "title": "English",
+ "award": "A.A- T Degree",
+ "source_url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30138",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7707,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7707,
+    "output_tokens": 2630,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2630,
+  "output_tokens_details": {
+   "thinking_tokens": 602
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.08343,
+ "ms": 19923,
+ "seconds": 20.5,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 18,
+   "listed": 28,
+   "share": 0.643,
+   "missing": [
+    "ASL201",
+    "ASL202",
+    "FR201",
+    "FR202",
+    "GER201",
+    "GER202",
+    "SPAN201",
+    "SPAN202",
+    "SPAN203",
+    "SPAN204"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 4,
+   "codes": [
+    "ANYTRANSFERABLELANGUAGECOURSE",
+    "BUS227",
+    "ENGL216",
+    "ENGL217"
+   ],
+   "flagged": [
+    "ANYTRANSFERABLELANGUAGECOURSE",
+    "BUS227",
+    "ENGL216",
+    "ENGL217"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    19.0,
+    21.0
+   ],
+   "stated": [
+    19.0,
+    21.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "ENGLISH - Associate in Arts for Transfer",
+   "measure": "units",
+   "total_units": {
+    "min": 19,
+    "max": 21
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required Core (4 credits)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 4,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "ENGL C1003",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List A: Select Two Courses (6 credits)",
+    "rule": "choose_courses",
+    "minimum": 2,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "ENGL 212A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL 212B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL 245A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL 245B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL 246A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL 246B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List B: Select two courses or any course(s) from List A not already used (6 credits).",
+    "rule": "choose_courses",
+    "minimum": 2,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "ENGL 205",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL 206",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL 213",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL 215",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL 216",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ENGL 217",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ENGL 231",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List C: One course from List C or any course from List A or B, not used above (minimum of 3 credits)",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 5
+    },
+    "courses": [
+     {
+      "code": "ENGL C1001",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL 237",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL 242",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "JOUR 200",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "JOUR 201",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 227",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "DRA 207",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "Any transferable language course.",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ASL 201",
+    "why": "not named in the text; likely covered by 'Any transferable language course' in List C"
+   },
+   {
+    "code": "ASL 202",
+    "why": "not named in the text; likely covered by 'Any transferable language course' in List C"
+   },
+   {
+    "code": "FR 201",
+    "why": "not named in the text; likely covered by 'Any transferable language course' in List C"
+   },
+   {
+    "code": "FR 202",
+    "why": "not named in the text; likely covered by 'Any transferable language course' in List C"
+   },
+   {
+    "code": "GER 201",
+    "why": "not named in the text; likely covered by 'Any transferable language course' in List C"
+   },
+   {
+    "code": "GER 202",
+    "why": "not named in the text; likely covered by 'Any transferable language course' in List C"
+   },
+   {
+    "code": "SPAN 201",
+    "why": "not named in the text; likely covered by 'Any transferable language course' in List C"
+   },
+   {
+    "code": "SPAN 202",
+    "why": "not named in the text; likely covered by 'Any transferable language course' in List C"
+   },
+   {
+    "code": "SPAN 203",
+    "why": "not named in the text; likely covered by 'Any transferable language course' in List C"
+   },
+   {
+    "code": "SPAN 204",
+    "why": "not named in the text; likely covered by 'Any transferable language course' in List C"
+   }
+  ],
+  "notes": [
+   "Closed-list codes ENGLC1003, ENGL206, ENGL215, ENGL231 are written without a space; matched to catalog codes ENGL C1003, ENGL 206, ENGL 215, ENGL 231.",
+   "List C includes a generic entry 'Any transferable language course.' (5.0 units), recorded as a placeholder entry with catalog_addition true; the closed list's ASL, FR, GER and SPAN courses probably satisfy it but are not named.",
+   "List B may also be satisfied with unused List A courses; List C may be satisfied with any unused List A or List B course.",
+   "Catalog text is cut off at the end ('The Associate in Arts for Transfer degree'); any GE pattern, degree total, outcomes or careers that follow are not visible.",
+   "No program learning outcomes or careers are printed in the visible text."
+  ]
+ },
+ "extracted_run": "39063368678"
+}

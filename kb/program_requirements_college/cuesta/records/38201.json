@@ -1,0 +1,190 @@
+{
+ "college": "Cuesta College",
+ "control_number": "38201",
+ "shape": "noncredit",
+ "title": "NONCREDIT BASIC OFFICE SOFTWARE SKILLS",
+ "award": "Noncredit program",
+ "source_url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30199",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6247,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6247,
+    "output_tokens": 663,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 663,
+  "output_tokens_details": {
+   "thinking_tokens": 0
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.03825,
+ "ms": 5596,
+ "seconds": 6.0,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 5,
+   "listed": 5,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    63.0,
+    63.0
+   ],
+   "stated": [
+    63.0,
+    63.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "NONCREDIT BASIC OFFICE SOFTWARE SKILLS - Certificate of Completion",
+   "measure": "hours",
+   "total_units": {
+    "min": 63,
+    "max": 63
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Demonstrate a basic understanding of the most common uses for Outlook",
+    "Demonstrate a basic understanding of the most common uses for Powerpoint",
+    "Demonstrate a basic understanding of the most common uses for MS Word",
+    "Demonstrate a basic understanding of the most common uses for MS Excel"
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 63,
+     "max": 63
+    },
+    "courses": [
+     {
+      "code": "VOCE 609",
+      "units": 9,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VOCE 610",
+      "units": 18,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VOCE 611",
+      "units": 9,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VOCE 612",
+      "units": 9,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VOCE 608",
+      "units": 18,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Award is printed as a Certificate of Completion (noncredit); measured in hours. Block printed as 'Required Courses (0.0 credits)' with 'Hours: 63.0' and 'Total : 63.0'.",
+   "Course hours as printed sum to 63 (9+18+9+9+18).",
+   "Outcomes mention Powerpoint, though no listed course title names PowerPoint."
+  ]
+ },
+ "extracted_run": "39063368678"
+}

@@ -1,0 +1,280 @@
+{
+ "college": "Cuesta College",
+ "control_number": "43707",
+ "shape": "certificate",
+ "title": "ETHNIC STUDIES FOR EDUCATORS",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30143",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7393,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7393,
+    "output_tokens": 1818,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1818,
+  "output_tokens_details": {
+   "thinking_tokens": 491
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.06593,
+ "ms": 15005,
+ "seconds": 15.4,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 14,
+   "listed": 14,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    16.0,
+    19.0
+   ],
+   "stated": [
+    16.0,
+    19.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 3,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "ETHNIC STUDIES FOR EDUCATORS - Certificate of Achievement",
+   "measure": "units",
+   "total_units": {
+    "min": 16,
+    "max": 19
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Analyze the core principles of Ethnic Studies pedagogies demonstrated in diverse historical and contemporary contexts.",
+    "Apply culturally responsive teaching strategies and practices within diverse educational settings, showcasing an ability to create inclusive learning environments for all students.",
+    "Evaluate the impact of Ethnic Studies principles on educational equity and social justice by conducting research and presenting findings relevant to educational praxis."
+   ],
+   "careers": [
+    "paraprofessionals",
+    "school staff",
+    "counselors"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Core Courses (Required)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 12,
+     "max": 12
+    },
+    "courses": [
+     {
+      "code": "ETHN 230",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ETHN 231",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ETHN 210",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "EDUC 210",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "EDUC 200",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Electives (Choose one)",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "ETHN 211",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ETHN 234",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ETHN 240",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ETHN 250",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ETHN 260",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ETHN 262",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ETHN 270",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Work Experience (Minimum one unit)",
+    "rule": "choose_units",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 1,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "ETHN 252",
+      "units": 1,
+      "units_max": 4,
+      "alternatives": [
+       {
+        "code": "EDUC 252",
+        "units": 1,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The fourth learning outcome is cut off in the text ('Demonstrate an understanding of the historical and contemporary issues surrounding historically defined racialized g'); it was not recorded because it is incomplete. Reviewer should check the full page for it and any further outcomes.",
+   "EDUC 252 is printed with 1.0-4.0 units; the alternative field holds only the low end (1).",
+   "ETHN 210 and EDUC 210 are printed as a cross-listed pair ('210 (Cross-Listed)'), recorded as one entry with an alternative.",
+   "ETHN 262, ETHN 252 and EDUC 252 are marked '( Historical )' in the catalog but still listed in the requirements.",
+   "Careers are taken from 'a range of educational and professional settings, such as paraprofessionals, school staff, counselors, and more.'"
+  ]
+ },
+ "extracted_run": "39063368678"
+}

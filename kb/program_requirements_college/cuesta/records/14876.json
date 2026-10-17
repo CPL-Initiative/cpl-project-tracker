@@ -1,0 +1,302 @@
+{
+ "college": "Cuesta College",
+ "control_number": "14876",
+ "shape": "degree",
+ "title": "MUSIC PERFORMANCE",
+ "award": "A.A. Degree",
+ "source_url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30194",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7113,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7113,
+    "output_tokens": 1851,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1851,
+  "output_tokens_details": {
+   "thinking_tokens": 526
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.06547,
+ "ms": 14744,
+ "seconds": 15.3,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 19,
+   "listed": 19,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    31.0,
+    32.0
+   ],
+   "stated": [
+    31.0,
+    32.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "MUSIC PERFORMANCE - Associate in Arts",
+   "measure": "units",
+   "total_units": {
+    "min": 31,
+    "max": 32
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Perform music using an aesthetically pleasing artistic voice",
+    "Utilize the historical and theoretical elements of music in performance",
+    "Employ skills and ethics to lead and interact with ensembles for effective musical performance"
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required Courses (23-24 credits)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 23,
+     "max": 24
+    },
+    "courses": [
+     {
+      "code": "MUS 204A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS 205A",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS 204B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS 205B",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS 204C",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS 205C",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS 234",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS 212",
+      "units": 8,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS 220",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MUS 257",
+        "units": 1,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Plus 8 credits from the following:",
+    "rule": "choose_units",
+    "minimum": 8,
+    "option_group": null,
+    "stated": {
+     "min": 8,
+     "max": 8
+    },
+    "courses": [
+     {
+      "code": "MUS 223",
+      "units": 2,
+      "units_max": 3,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS 225",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS 227",
+      "units": 1,
+      "units_max": 3,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS 228",
+      "units": 1,
+      "units_max": 3,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS 229",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS 231",
+      "units": 1.5,
+      "units_max": 3,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS 232A",
+      "units": 1.5,
+      "units_max": 3,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS 240",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS 245",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "MUS 212 is printed with 8.0 units and the note that it is a 2-unit course repeated for a total of 8 units. A '1.0- 2.0' line follows the note; it appears to be the units range for the MUS 220 OR MUS 257 choice (2 or 1 units). That reading makes the required block sum to 23-24, matching the stated block total.",
+   "The catalog prints MUS 257; the closed list stores it as 'MUS257' with no units. It is treated as the same course, not a catalog addition.",
+   "The program prints one Learning Outcome(s) list, recorded here for the A.A. degree.",
+   "The page prints no degree total and no general education pattern."
+  ]
+ },
+ "extracted_run": "39063368678"
+}

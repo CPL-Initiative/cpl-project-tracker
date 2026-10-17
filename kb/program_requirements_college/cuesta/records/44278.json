@@ -1,0 +1,427 @@
+{
+ "college": "Cuesta College",
+ "control_number": "44278",
+ "shape": "adt",
+ "title": "SOCIAL JUSTICE: ETHNIC STUDIES",
+ "award": "A.A- T Degree",
+ "source_url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/32561",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8875,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8875,
+    "output_tokens": 3185,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 3185,
+  "output_tokens_details": {
+   "thinking_tokens": 896
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.0992,
+ "ms": 25947,
+ "seconds": 26.3,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 33,
+   "listed": 33,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    18.0,
+    19.0
+   ],
+   "stated": [
+    18.0,
+    19.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 11,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "SOCIAL JUSTICE: ETHNIC STUDIES - Associate in Arts for Transfer",
+   "measure": "units",
+   "total_units": {
+    "min": 18,
+    "max": 19
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": [
+    "public administration and law",
+    "human services",
+    "social work",
+    "counseling",
+    "entrepreneurship",
+    "marketing",
+    "communications",
+    "education",
+    "politics",
+    "fine and performing arts",
+    "multicultural leadership"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Core (3 courses, 9 credits)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 9,
+     "max": 9
+    },
+    "courses": [
+     {
+      "code": "ETHN 230",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ETHN 219",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "SOC 208",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 233",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "COMM 212",
+        "units": 3,
+        "catalog_addition": false
+       },
+       {
+        "code": "HSCI 208",
+        "units": 3,
+        "catalog_addition": false
+       },
+       {
+        "code": "HIST 203B",
+        "units": 3,
+        "catalog_addition": false
+       },
+       {
+        "code": "MUS 238",
+        "units": 3,
+        "catalog_addition": false
+       },
+       {
+        "code": "POLS 204",
+        "units": 3,
+        "catalog_addition": false
+       },
+       {
+        "code": "SOC 206",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List A: Select three courses from at least two of the following Areas",
+    "rule": "choose_courses",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 9,
+     "max": 10
+    },
+    "courses": [
+     {
+      "code": "HIST 203B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 212",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 233",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "POLS 204",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARTH 207",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARTH 208",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 209",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARTH 210",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARTH 211",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL 213",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ETHN 213",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS 236",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS 238",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANTH 220",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANTH 221",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "EDUC 210",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ETHN 210",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ETHN 211",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ETHN 231",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ETHN 234",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ETHN 235",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ETHN 240",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ETHN 250",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ETHN 260",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ETHN 270",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "STAT C1000",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC 200",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "List A is recorded as one choose-3 block (stated 9-10) holding all four Areas' courses in catalog order. Constraints: courses must come from at least two Areas; Area 1 History or Government (HIST 203B, HIST 212, HIST 233, POLS 204, printed Units 12.0); Area 2 Arts and Humanities (ARTH 207 through MUS 238, printed Units 27.0); Area 3 Social Science (ANTH 220 through ETHN 270, printed Units 36.0); Area 4 Quantitative Reasoning and Research Methods, choose one only (STAT C1000, PSYC 200, printed Units 7.0). Area unit figures are list sums, not requirements.",
+   "List A courses must not already be completed as part of the Required Core (HIST 203B, HIST 233, POLS 204, MUS 238 appear in both).",
+   "Catalog prints 'ARTH 207/208/210/211' with a space; the closed list stores 'ARTH207' etc. without a space. Treated as the same courses (catalog_addition false).",
+   "Program total printed as 'Total : 18.0- 19.0'. No GE pattern or degree total appears in the text; the text is cut off mid-sentence in the transfer description.",
+   "No program learning outcomes are printed in the text.",
+   "Several courses are marked Draft or Historical in the catalog (e.g., ETHN 230 Draft, SOC 208 Historical, SOC 206 Historical, ENGL 213/ETHN 213 Historical, PSYC 200 Historical); reviewer may verify currency for 2026-2027."
+  ]
+ },
+ "extracted_run": "39063368678"
+}

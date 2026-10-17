@@ -1,0 +1,168 @@
+{
+ "college": "Cuesta College",
+ "control_number": "42891",
+ "shape": "noncredit",
+ "title": "ACADEMIC SKILLS BRIDGE TO COLLEGE CREDIT",
+ "award": "Noncredit program",
+ "source_url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30069",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6124,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6124,
+    "output_tokens": 511,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 511,
+  "output_tokens_details": {
+   "thinking_tokens": 0
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.03472,
+ "ms": 4802,
+ "seconds": 5.2,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 2,
+   "listed": 2,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    162.0,
+    162.0
+   ],
+   "stated": [
+    162.0,
+    162.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "ACADEMIC SKILLS BRIDGE TO COLLEGE CREDIT - Certificate of Completion",
+   "measure": "hours",
+   "total_units": {
+    "min": 162,
+    "max": 162
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Identify campus resources and use critical thinking strategies to integrate these services into plans for personal success.",
+    "Employ learning strategies for focusing attention when reading, taking notes, and taking tests.",
+    "Utilize career resources for major and career exploration.",
+    "Create a student education plan based on individual values, major and career goals."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 162,
+     "max": 162
+    },
+    "courses": [
+     {
+      "code": "CSS 725",
+      "units": 108,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CSS 754",
+      "units": 54,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Noncredit certificate counted in hours; the block shows '0.0 credits' and 'Hours: 162.0', recorded as 162 hours.",
+   "Both courses are marked '( Historical )' in the catalog, which may mean they are inactive; a reviewer should check the program's status for 2026-2027."
+  ]
+ },
+ "extracted_run": "39063368678"
+}

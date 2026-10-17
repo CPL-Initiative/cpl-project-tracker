@@ -1,8 +1,8 @@
 {
- "_what": "MAP's credit recommendations per course at the harvest's hundred and eight colleges (the pilot's five, Santa Monica, Irvine Valley, Moreno Valley, Norco, Long Beach City, Chaffey, San Diego City, San Diego Mesa, Bakersfield, Coastline, Cabrillo, Modesto Junior, Palo Verde, Southwestern, Fresno City, El Camino, San Joaquin Delta, Santa Barbara City, Orange Coast, Foothill, Sierra, Fullerton, Citrus, Victor Valley, Monterey Peninsula, Golden West, Cuyamaca, Mt. San Jacinto, MiraCosta, College of the Sequoias, Napa Valley, San Bernardino Valley, Moorpark, Cypress, Evergreen Valley, Ventura, Oxnard, Santa Ana, Rio Hondo, Palomar, Saddleback, Allan Hancock, Reedley, Chabot, College of Alameda, Feather River, Imperial Valley, Laney, Las Positas, Madera, Merritt, Berkeley City, Gavilan, Antelope Valley, Columbia, Contra Costa, Lemoore, Redwoods, Siskiyous, Lake Tahoe, Marin, Butte, Los Medanos, Mission, Clovis, Barstow, Calbright, Compton, Lassen, Mendocino, Woodland, Canyons, Los Angeles City, Los Angeles Harbor, Pierce, Shasta, Los Angeles Valley, Santa Rosa, Yuba, East Los Angeles, College of San Mateo, Skyline, Coalinga, Copper Mountain, San Diego Continuing Education, Solano, West Valley, Cerro Coso, Porterville, Folsom Lake, De Anza, Cosumnes River, Sacramento City, City College of San Francisco, American River, Los Angeles Trade Technical, Los Angeles Mission, College of the Desert, Grossmont, Los Angeles Southwest, Ohlone, Pasadena City and Glendale): how many credit recommendations and exhibits MAP holds against each course code, and the exhibit titles behind them. Counts and credential titles only; no student column is read or carried. The ROEP display builder (kb/_build_roep_display.py) reads it as the 'articulated here' kind beside the CER's industry-credential lines.",
+ "_what": "MAP's credit recommendations per course at the harvest's hundred and nine colleges (the pilot's five, Santa Monica, Irvine Valley, Moreno Valley, Norco, Long Beach City, Chaffey, San Diego City, San Diego Mesa, Bakersfield, Coastline, Cabrillo, Modesto Junior, Palo Verde, Southwestern, Fresno City, El Camino, San Joaquin Delta, Santa Barbara City, Orange Coast, Foothill, Sierra, Fullerton, Citrus, Victor Valley, Monterey Peninsula, Golden West, Cuyamaca, Mt. San Jacinto, MiraCosta, College of the Sequoias, Napa Valley, San Bernardino Valley, Moorpark, Cypress, Evergreen Valley, Ventura, Oxnard, Santa Ana, Rio Hondo, Palomar, Saddleback, Allan Hancock, Reedley, Chabot, College of Alameda, Feather River, Imperial Valley, Laney, Las Positas, Madera, Merritt, Berkeley City, Gavilan, Antelope Valley, Columbia, Contra Costa, Lemoore, Redwoods, Siskiyous, Lake Tahoe, Marin, Butte, Los Medanos, Mission, Clovis, Barstow, Calbright, Compton, Lassen, Mendocino, Woodland, Canyons, Los Angeles City, Los Angeles Harbor, Pierce, Shasta, Los Angeles Valley, Santa Rosa, Yuba, East Los Angeles, College of San Mateo, Skyline, Coalinga, Copper Mountain, San Diego Continuing Education, Solano, West Valley, Cerro Coso, Porterville, Folsom Lake, De Anza, Cosumnes River, Sacramento City, City College of San Francisco, American River, Los Angeles Trade Technical, Los Angeles Mission, College of the Desert, Grossmont, Los Angeles Southwest, Ohlone, Pasadena City, Glendale and Cuesta): how many credit recommendations and exhibits MAP holds against each course code, and the exhibit titles behind them. Counts and credential titles only; no student column is read or carried. The ROEP display builder (kb/_build_roep_display.py) reads it as the 'articulated here' kind beside the CER's industry-credential lines.",
  "_source": "public.map_college_cr_unit (reviewer-gated) joined to map_colleges by college_id; exhibit titles from map_ace_exhibit_titles, else chatbox_exhibits. A college_course string naming several courses ('ADJ-13 ...(3.0), ADJ-19 ...(3.0)') counts toward each course it names. Course code = the SUBJ-NUM token with the hyphen read as a space.",
  "_read_at": "2026-10-17",
- "_read_by": "SkyAgave (S408) through the Supabase MCP: Grossmont, Los Angeles Southwest, Ohlone, Pasadena City and Glendale added, the counts matched in SQL (code|recs|exhibits|untitled in C order) and the titles (code#title#source#recs, C order then recs then title): Pasadena City (5 course codes; eafa0f27 counts, 31b1c22a titles), Glendale (35 course codes; f4e5bcca counts, 80d44280 titles); Grossmont, Los Angeles Southwest, Ohlone hold no MAP credit recommendation on a course (no rows). SkyMesquite (S407) through the Supabase MCP: Los Angeles Trade Technical, Los Angeles Mission and College of the Desert added, the counts matched in SQL (code|recs|exhibits|untitled in C order) and the titles (code#title#source#recs, C order then recs then title): Los Angeles Trade Technical (4 course codes; e2a5444d counts, 1185b49b titles), Los Angeles Mission (5; c9eacd5d, 3505999c), College of the Desert (28; 6dceba25, 7e37b7f5). SkyIronwood (S406) through the Supabase MCP: the eight hand-filed catalogs' colleges added, the counts matched in SQL (code|recs|exhibits|untitled in C order) and the rows filed from the query's own result: Cerro Coso (11 course codes; 6a0f9266 counts, 5de5d6b9 titles), Porterville (1 course code, on an untitled exhibit; d416ec73 counts, no titles), De Anza (11 course codes; 07a9a80f counts, 1836d2ce titles), City College of San Francisco (48 course codes; 659888af counts, 0497b2c0 titles). American River (1 row with a college_course naming no SUBJ-NUM code), Sacramento City, Cosumnes River and Folsom Lake name no course. SkyCholla (S405) through the Supabase MCP: College of San Mateo, Skyline, Coalinga, Copper Mountain, San Diego Continuing Education, Solano and West Valley added, matched by md5 (counts code|recs|exhibits|untitled in C order; titles code#title#source#recs): Coalinga 12 codes 6989c551/a0a26d33, Copper Mountain 7 012c7dee/0da00edb, Solano 11 2da11341/e7907b5a, West Valley 1 146a366e; San Mateo, Skyline and San Diego Continuing Education name none. SkyYarrow (S403) through the Supabase MCP, the PDF wave: Clovis (4 course codes; e53da6e3 counts, c1b5af06 titles), Barstow (17 course codes; f73f6fe1 counts, 451abb2f titles), Compton (15 course codes; 0372785a counts, 41de27b9 titles), Mendocino (2 course codes; 4bf17982 counts, ab2b512c titles), Woodland (3 course codes; c3e9f7ab counts, cf6856c7 titles), College of the Canyons (5 course codes; 4a961d0d counts, cac75a9e titles), Los Angeles City (1 course codes; 29ced49c counts, ae657c1d titles), Los Angeles Harbor (7 course codes; 163aa2f5 counts, 8a73d807 titles), Los Angeles Pierce (23 course codes; 6e747337 counts, 3cf5f81e titles), Shasta (2 course codes; f5b2e58b counts, e06203a4 titles), Santa Rosa (1 course codes; 69c2ee9c counts, d8318abc titles) added, each matched in SQL (two CTEs, counts and titles) and over the filed rows. Lassen, Los Angeles Valley and Yuba name no course (Lassen holds 1 row with a college_course that names no SUBJ-NUM token, Valley 6, Yuba none); Calbright College Credit has no map_colleges id. SkyYarrow (S403, the East LA session) through the Supabase MCP added East Los Angeles (3 codes, 4 credit recommendations, 5 exhibits); folded in at the merge of the two S403 branches. SkyToyon (S402) through the Supabase MCP, the S402 second wave: Los Medanos (7 course codes; md5 0e75e79e counts, e88bf855 titles) and Mission (3, each on one untitled exhibit; 74922763, no titles) added, each matched in SQL (two CTEs, counts and titles) and over the filed rows. SkyToyon (S402) through the Supabase MCP, the S402 wave: Lake Tahoe, Marin and Butte added, none naming a course (no map_college_cr_unit row at any of the three names a college_course; Butte holds 1,170 rows, Marin 13); Las Positas re-read, its three course codes (AUTO A9, CNT 52, CNT 69) unchanged, matched over the filed rows. SkyManzanita (S401) through the Supabase MCP, the eLumen wave: Antelope Valley (4 course codes; md5 2a10a9b9 counts, c39cfb0b titles), Columbia (4; e5456494, 0d495ac7), Contra Costa (1; 0330a719, 47f6d052), Lemoore (13; 2041ff49, c1e38b8b), Siskiyous (2; 813036cf, 81489319) and Redwoods (none: no map_college_cr_unit row names a college_course) added, each matched in SQL (two CTEs, counts and titles) and over the filed rows. SkyBirch (S400) through the Supabase MCP, wave 5's second half: Merritt (25 course codes; md5 ff9ac653 counts, 61638b16 titles), Berkeley City (3; c31979ed, 6a4bcd9a), Gavilan (3; 7766ec6e, 75d342d1) added, each matched in SQL (two CTEs, counts and titles) and over the filed rows after its load; Butte (none: its map_college_cr_unit rows name no college_course) held until its records load. SkyRowan (S399) through the Supabase MCP, wave 5: Laney (7 course codes; md5 2b0dacf8 counts, 70f4d0f9 titles), Madera (4; 6ae2737b, cb29a40d), Las Positas (3; 43b0da84, bb8ede61); College of Alameda, Feather River and Imperial Valley (none: their few college_course strings name no SUBJ-NUM code) added, each matched in SQL after its load. SkyJacaranda (S396) through the Supabase MCP, wave 4: Santa Ana (83 course codes; md5 8cc90680 counts, 51ec66e8 titles, 05f6a23e exhibits by source), Reedley (24; 10515015, ed3bf609, d817484a), Ventura (4; 959aa3a8, b7841475, 74b4ac39), Allan Hancock (3; f784b555, 456ddf45, f07e8cd7), Oxnard (2; e3758fea, e3fdf5c4, 685d8c10); Rio Hondo, Palomar, Saddleback and Chabot (none: their few college_course strings name no SUBJ-NUM code) added, each matched in SQL ahead of its load. SkyHawthorn (S395) through the Supabase MCP, wave 3: Cypress (41 course codes; md5 f23dc34b counts, 09bded16 titles), Napa Valley (25; 46024a39, 1cb28039), San Bernardino Valley (83; f18f1313, 4e38c8e4), Moorpark (4; 61571f0e, 0064e895), College of the Sequoias (3; 80563542, 0bba198e), Evergreen Valley (2; d32576cf, 0540a44c); Golden West, Cuyamaca, Mt. San Jacinto and MiraCosta (none) added. SkyMadrone (S394) through the Supabase MCP, second batch: Fullerton (6 course codes; md5 057fed7f counts, 11d31a76 titles), Monterey Peninsula (3; eb85fce8, 1794bde6), Citrus and Victor Valley (none) added. SkyMadrone (S394) through the Supabase MCP: Santa Barbara City, Orange Coast, Foothill and Sierra added; MAP names no course code at any of the four (map_college_cr_unit rows carry no SUBJ-NUM college_course there). Fullerton (6 course codes; md5 057fed7f counts, 11d31a76 titles) and Diablo Valley (2; 0daebf68, f20f5e51) were read the same day, matched in SQL, and are held until their records load. Earlier: SkyTamarack (S392) through the Supabase MCP: El Camino (no course code: its one college_course reads \"-\") and San Joaquin Delta (1 course code; md5 c814004d counts, d7d7ab68 titles; its \"CSU GE E\" line names no course) added. Earlier: SkyPersimmon (S389) through the Supabase MCP: Southwestern (3 course codes; md5 220de7f7 counts, b4f52863 titles) and Fresno City (2; afd80e74, 6b4b8433) added. Earlier: SkyHazel (S385) through the Supabase MCP: Modesto Junior (162 course codes) and Palo Verde (58) added; the per-college md5 over code|recs|exhibits|untitled (codes in C order, newline-joined) reads 44f69ec1a24823e14935781dbd760bd8 and 4acabc5730dedeb1e0f28194796eb23c, and the md5 over each code's titles (code#title#source#recs, in the read's order) 30765bf9ceef64b44a2e862b58111469 and 83bbe816ab4eb109b72be382c170d47a, in SQL and over the filed rows. Earlier: SkySpruce (S383) through the Supabase MCP: Cabrillo added (112 course codes); the per-college md5 over code|recs|exhibits|untitled (codes in C order, newline-joined) reads 51b488541fdab60ea9e4d093eb052c0a and the md5 over each code's titles (code#title#source#recs, in the read's order) d71fa73bd6952487451eaeafb878f3eb, in SQL and over the filed rows. Earlier: SkyRowan (S381) through the Supabase MCP: Bakersfield (100 course codes) and Coastline (26) added; per-college md5 over code|recs|exhibits|untitled (codes in C order, newline-joined) reads c58de704f09a7b58007336979431dace and 8bccde4ad1bae0d610b6de34413e24e9 in SQL and over the filed rows. Earlier: SkyCypress (S373) through the Supabase MCP: San Diego Mesa added (44 course codes); the per-college md5 over code|recs|exhibits|untitled reads 9ad02bf038663b2c19ac0c6b8aed2574 and the md5 over each code's titles (title#source#recs, in the read's order) 38e86115426ffd0ca2856d3ad6713150, in SQL and over the filed rows. Earlier: SkyLaurel (S369) through the Supabase MCP: Chaffey (94 course codes) and San Diego City (33) added; per-college md5 over code|recs|exhibits|untitled reads 115340c8a405300f47c2bd0223964f68 and 249410c6592148fbf3beb7b68b7f1cd0 in SQL and over the filed rows. Earlier: SkyCedar (S363) through the Supabase MCP: Long Beach City added (33 course codes; the per-course fingerprint over code, recs, exhibits, untitled exhibits and titles reads 5c7d3a90393e710daa4f686a2f56c917 in SQL and over the filed rows). Earlier: SkyFern (S358) through the Supabase MCP: Moreno Valley (106 course codes) and Norco (82) added; Riverside City re-read in full and equal to the 2026-10-06 read on all 34 codes (md5 feff937a5b5c8320029a06ab06a97243). Earlier: SkyLedger (S340) through the Supabase MCP. Santa Monica and Irvine Valley were read in full. The pilot's five were proved against the 2026-10-04 read by a fingerprint per course; the four courses that differed (Riverside MAG 51; West LA AVIATEK 002, 005 and 017: one exhibit title each, and one credit recommendation fewer on AVIATEK 002) were re-read. Every college's fingerprint matches the live read.",
+ "_read_by": "SkyOcotillo (S409) through the Supabase MCP: Cuesta added, the counts matched in SQL (code|recs|exhibits|untitled in C order) and the titles (code#title#source#recs, C order then recs then title): Cuesta (17 course codes; 8dd02db8 counts, 7185f52a titles), each fingerprint recomputed over the filed rows. SkyAgave (S408) through the Supabase MCP: Grossmont, Los Angeles Southwest, Ohlone, Pasadena City and Glendale added, the counts matched in SQL (code|recs|exhibits|untitled in C order) and the titles (code#title#source#recs, C order then recs then title): Pasadena City (5 course codes; eafa0f27 counts, 31b1c22a titles), Glendale (35 course codes; f4e5bcca counts, 80d44280 titles); Grossmont, Los Angeles Southwest, Ohlone hold no MAP credit recommendation on a course (no rows). SkyMesquite (S407) through the Supabase MCP: Los Angeles Trade Technical, Los Angeles Mission and College of the Desert added, the counts matched in SQL (code|recs|exhibits|untitled in C order) and the titles (code#title#source#recs, C order then recs then title): Los Angeles Trade Technical (4 course codes; e2a5444d counts, 1185b49b titles), Los Angeles Mission (5; c9eacd5d, 3505999c), College of the Desert (28; 6dceba25, 7e37b7f5). SkyIronwood (S406) through the Supabase MCP: the eight hand-filed catalogs' colleges added, the counts matched in SQL (code|recs|exhibits|untitled in C order) and the rows filed from the query's own result: Cerro Coso (11 course codes; 6a0f9266 counts, 5de5d6b9 titles), Porterville (1 course code, on an untitled exhibit; d416ec73 counts, no titles), De Anza (11 course codes; 07a9a80f counts, 1836d2ce titles), City College of San Francisco (48 course codes; 659888af counts, 0497b2c0 titles). American River (1 row with a college_course naming no SUBJ-NUM code), Sacramento City, Cosumnes River and Folsom Lake name no course. SkyCholla (S405) through the Supabase MCP: College of San Mateo, Skyline, Coalinga, Copper Mountain, San Diego Continuing Education, Solano and West Valley added, matched by md5 (counts code|recs|exhibits|untitled in C order; titles code#title#source#recs): Coalinga 12 codes 6989c551/a0a26d33, Copper Mountain 7 012c7dee/0da00edb, Solano 11 2da11341/e7907b5a, West Valley 1 146a366e; San Mateo, Skyline and San Diego Continuing Education name none. SkyYarrow (S403) through the Supabase MCP, the PDF wave: Clovis (4 course codes; e53da6e3 counts, c1b5af06 titles), Barstow (17 course codes; f73f6fe1 counts, 451abb2f titles), Compton (15 course codes; 0372785a counts, 41de27b9 titles), Mendocino (2 course codes; 4bf17982 counts, ab2b512c titles), Woodland (3 course codes; c3e9f7ab counts, cf6856c7 titles), College of the Canyons (5 course codes; 4a961d0d counts, cac75a9e titles), Los Angeles City (1 course codes; 29ced49c counts, ae657c1d titles), Los Angeles Harbor (7 course codes; 163aa2f5 counts, 8a73d807 titles), Los Angeles Pierce (23 course codes; 6e747337 counts, 3cf5f81e titles), Shasta (2 course codes; f5b2e58b counts, e06203a4 titles), Santa Rosa (1 course codes; 69c2ee9c counts, d8318abc titles) added, each matched in SQL (two CTEs, counts and titles) and over the filed rows. Lassen, Los Angeles Valley and Yuba name no course (Lassen holds 1 row with a college_course that names no SUBJ-NUM token, Valley 6, Yuba none); Calbright College Credit has no map_colleges id. SkyYarrow (S403, the East LA session) through the Supabase MCP added East Los Angeles (3 codes, 4 credit recommendations, 5 exhibits); folded in at the merge of the two S403 branches. SkyToyon (S402) through the Supabase MCP, the S402 second wave: Los Medanos (7 course codes; md5 0e75e79e counts, e88bf855 titles) and Mission (3, each on one untitled exhibit; 74922763, no titles) added, each matched in SQL (two CTEs, counts and titles) and over the filed rows. SkyToyon (S402) through the Supabase MCP, the S402 wave: Lake Tahoe, Marin and Butte added, none naming a course (no map_college_cr_unit row at any of the three names a college_course; Butte holds 1,170 rows, Marin 13); Las Positas re-read, its three course codes (AUTO A9, CNT 52, CNT 69) unchanged, matched over the filed rows. SkyManzanita (S401) through the Supabase MCP, the eLumen wave: Antelope Valley (4 course codes; md5 2a10a9b9 counts, c39cfb0b titles), Columbia (4; e5456494, 0d495ac7), Contra Costa (1; 0330a719, 47f6d052), Lemoore (13; 2041ff49, c1e38b8b), Siskiyous (2; 813036cf, 81489319) and Redwoods (none: no map_college_cr_unit row names a college_course) added, each matched in SQL (two CTEs, counts and titles) and over the filed rows. SkyBirch (S400) through the Supabase MCP, wave 5's second half: Merritt (25 course codes; md5 ff9ac653 counts, 61638b16 titles), Berkeley City (3; c31979ed, 6a4bcd9a), Gavilan (3; 7766ec6e, 75d342d1) added, each matched in SQL (two CTEs, counts and titles) and over the filed rows after its load; Butte (none: its map_college_cr_unit rows name no college_course) held until its records load. SkyRowan (S399) through the Supabase MCP, wave 5: Laney (7 course codes; md5 2b0dacf8 counts, 70f4d0f9 titles), Madera (4; 6ae2737b, cb29a40d), Las Positas (3; 43b0da84, bb8ede61); College of Alameda, Feather River and Imperial Valley (none: their few college_course strings name no SUBJ-NUM code) added, each matched in SQL after its load. SkyJacaranda (S396) through the Supabase MCP, wave 4: Santa Ana (83 course codes; md5 8cc90680 counts, 51ec66e8 titles, 05f6a23e exhibits by source), Reedley (24; 10515015, ed3bf609, d817484a), Ventura (4; 959aa3a8, b7841475, 74b4ac39), Allan Hancock (3; f784b555, 456ddf45, f07e8cd7), Oxnard (2; e3758fea, e3fdf5c4, 685d8c10); Rio Hondo, Palomar, Saddleback and Chabot (none: their few college_course strings name no SUBJ-NUM code) added, each matched in SQL ahead of its load. SkyHawthorn (S395) through the Supabase MCP, wave 3: Cypress (41 course codes; md5 f23dc34b counts, 09bded16 titles), Napa Valley (25; 46024a39, 1cb28039), San Bernardino Valley (83; f18f1313, 4e38c8e4), Moorpark (4; 61571f0e, 0064e895), College of the Sequoias (3; 80563542, 0bba198e), Evergreen Valley (2; d32576cf, 0540a44c); Golden West, Cuyamaca, Mt. San Jacinto and MiraCosta (none) added. SkyMadrone (S394) through the Supabase MCP, second batch: Fullerton (6 course codes; md5 057fed7f counts, 11d31a76 titles), Monterey Peninsula (3; eb85fce8, 1794bde6), Citrus and Victor Valley (none) added. SkyMadrone (S394) through the Supabase MCP: Santa Barbara City, Orange Coast, Foothill and Sierra added; MAP names no course code at any of the four (map_college_cr_unit rows carry no SUBJ-NUM college_course there). Fullerton (6 course codes; md5 057fed7f counts, 11d31a76 titles) and Diablo Valley (2; 0daebf68, f20f5e51) were read the same day, matched in SQL, and are held until their records load. Earlier: SkyTamarack (S392) through the Supabase MCP: El Camino (no course code: its one college_course reads \"-\") and San Joaquin Delta (1 course code; md5 c814004d counts, d7d7ab68 titles; its \"CSU GE E\" line names no course) added. Earlier: SkyPersimmon (S389) through the Supabase MCP: Southwestern (3 course codes; md5 220de7f7 counts, b4f52863 titles) and Fresno City (2; afd80e74, 6b4b8433) added. Earlier: SkyHazel (S385) through the Supabase MCP: Modesto Junior (162 course codes) and Palo Verde (58) added; the per-college md5 over code|recs|exhibits|untitled (codes in C order, newline-joined) reads 44f69ec1a24823e14935781dbd760bd8 and 4acabc5730dedeb1e0f28194796eb23c, and the md5 over each code's titles (code#title#source#recs, in the read's order) 30765bf9ceef64b44a2e862b58111469 and 83bbe816ab4eb109b72be382c170d47a, in SQL and over the filed rows. Earlier: SkySpruce (S383) through the Supabase MCP: Cabrillo added (112 course codes); the per-college md5 over code|recs|exhibits|untitled (codes in C order, newline-joined) reads 51b488541fdab60ea9e4d093eb052c0a and the md5 over each code's titles (code#title#source#recs, in the read's order) d71fa73bd6952487451eaeafb878f3eb, in SQL and over the filed rows. Earlier: SkyRowan (S381) through the Supabase MCP: Bakersfield (100 course codes) and Coastline (26) added; per-college md5 over code|recs|exhibits|untitled (codes in C order, newline-joined) reads c58de704f09a7b58007336979431dace and 8bccde4ad1bae0d610b6de34413e24e9 in SQL and over the filed rows. Earlier: SkyCypress (S373) through the Supabase MCP: San Diego Mesa added (44 course codes); the per-college md5 over code|recs|exhibits|untitled reads 9ad02bf038663b2c19ac0c6b8aed2574 and the md5 over each code's titles (title#source#recs, in the read's order) 38e86115426ffd0ca2856d3ad6713150, in SQL and over the filed rows. Earlier: SkyLaurel (S369) through the Supabase MCP: Chaffey (94 course codes) and San Diego City (33) added; per-college md5 over code|recs|exhibits|untitled reads 115340c8a405300f47c2bd0223964f68 and 249410c6592148fbf3beb7b68b7f1cd0 in SQL and over the filed rows. Earlier: SkyCedar (S363) through the Supabase MCP: Long Beach City added (33 course codes; the per-course fingerprint over code, recs, exhibits, untitled exhibits and titles reads 5c7d3a90393e710daa4f686a2f56c917 in SQL and over the filed rows). Earlier: SkyFern (S358) through the Supabase MCP: Moreno Valley (106 course codes) and Norco (82) added; Riverside City re-read in full and equal to the 2026-10-06 read on all 34 codes (md5 feff937a5b5c8320029a06ab06a97243). Earlier: SkyLedger (S340) through the Supabase MCP. Santa Monica and Irvine Valley were read in full. The pilot's five were proved against the 2026-10-04 read by a fingerprint per course; the four courses that differed (Riverside MAG 51; West LA AVIATEK 002, 005 and 017: one exhibit title each, and one credit recommendation fewer on AVIATEK 002) were re-read. Every college's fingerprint matches the live read.",
  "_refresh": "By hand, the way kb/ccr_cpl_funnel.json is refreshed: run kb/program_requirements_pilot/map_cr_by_course.sql through the Supabase MCP when the funnel reloads (map-custom-report-load.yml) or the harvest adds a college, and file the rows here.",
  "colleges": {
   "Bakersfield College": {
@@ -42548,6 +42548,290 @@
       "recs": 1,
       "title": "Recruit Training Master FY11",
       "source": "ACE"
+     }
+    ],
+    "untitled_exhibits": 0
+   }
+  },
+  "Cuesta College": {
+   "BIO 212": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "San Marcos CEU",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "CJ 226": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Basic Correctional Officer Academy - CDCR",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "CJ 228": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Basic Correctional Officer Academy - CDCR",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "CNET 260": {
+    "recs": 1,
+    "exhibits": 3,
+    "exhibits_by_source": {
+     "ACE": 3
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Automated Logistical Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Information Systems Operator-Analyst",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Unit Supply Specialist",
+      "source": "ACE"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "EMS 210": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Paramedic License",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "EMS 211": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Paramedic License",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "EMS 211L": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Paramedic License",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "EMS 212": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Paramedic License",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "EMS 213": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Paramedic License",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "ENGL C1000": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "International Master's Thesis - English",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "KINA 201": {
+    "recs": 2,
+    "exhibits": 2,
+    "exhibits_by_source": {
+     "ACE": 1,
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Recruit Training",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Recruit Training",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "KINA 231": {
+    "recs": 2,
+    "exhibits": 2,
+    "exhibits_by_source": {
+     "ACE": 1,
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Recruit Training",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Recruit Training",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "WELD 270A": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Welding Certificates",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "WELD 270B": {
+    "recs": 1,
+    "exhibits": 2,
+    "exhibits_by_source": {
+     "MAP": 2
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "WELD 770B (Non-Credit) Advanced Welding",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "Welding Certificates",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "WELD 275": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Welding Certificates",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "WELD 277": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Welding Certificates",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "WELD 280A": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Welding Certificates",
+      "source": "MAP"
      }
     ],
     "untitled_exhibits": 0

@@ -1,0 +1,205 @@
+{
+ "college": "Cuesta College",
+ "programs": 206,
+ "with_closed_list": 198,
+ "found": 183,
+ "extracted": 183,
+ "errors": 0,
+ "passed_machine_checks": 161,
+ "failed": {
+  "coverage": 2,
+  "invented": 0,
+  "arithmetic": 22,
+  "repeated": 0,
+  "outcomes": 0
+ },
+ "cost_usd": 10.93,
+ "cost_per_program": 0.0597,
+ "not_found": [
+  {
+   "control_number": "37255",
+   "title": "NONCREDIT ENGLISH AS A SECOND LANGUAGE GRAMMAR",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30202",
+    "label": {
+     "award": 1,
+     "title": 0.833
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 2,
+    "why": "coarse net: the page's code tokens name 0 of 2 listed courses",
+    "error": null,
+    "chars": {
+     "body": 881,
+     "content": 881,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "37543",
+   "title": "NONCREDIT READING, WRITING, AND GRAMMAR",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30208",
+    "label": {
+     "award": 1,
+     "title": 0.5
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 2,
+    "why": "coarse net: the page's code tokens name 0 of 2 listed courses",
+    "error": null,
+    "chars": {
+     "body": 795,
+     "content": 795,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "38249",
+   "title": "NONCREDIT WORKPLACE ESSENTIALS",
+   "award": "Noncredit program",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "38261",
+   "title": "NONCREDIT CUSTOMER RELATIONS",
+   "award": "Noncredit program",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "38273",
+   "title": "NONCREDIT EMERGING LEADERS",
+   "award": "Noncredit program",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "38274",
+   "title": "NONCREDIT ENTERPRISE COMMUNICATION",
+   "award": "Noncredit program",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "38275",
+   "title": "NONCREDIT ENTERPRISE COMMUNICATION 2",
+   "award": "Noncredit program",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "38276",
+   "title": "NONCREDIT THRIVE AND SURVIVE IN THE WORKPLACE",
+   "award": "Noncredit program",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "38303",
+   "title": "NONCREDIT MANAGING TO MAXIMIZE PERFORMANCE",
+   "award": "Noncredit program",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "38304",
+   "title": "NONCREDIT MANAGEMENT TOOL BOX",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30160",
+    "label": {
+     "award": 1,
+     "title": 0.5
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 2,
+    "why": "coarse net: the page's code tokens name 0 of 2 listed courses",
+    "error": null,
+    "chars": {
+     "body": 994,
+     "content": 994,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "38305",
+   "title": "NONCREDIT HIGH PERFORMANCE TEAMS",
+   "award": "Noncredit program",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "38409",
+   "title": "NONCREDIT COMPUTER TECHNICIAN INTERNSHIP PREPARATION",
+   "award": "Noncredit program",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "38410",
+   "title": "NONCREDIT COMPUTER AND DEVICE FUNDAMENTALS",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30200",
+    "label": {
+     "award": 1,
+     "title": 0.5
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 1,
+    "why": "coarse net: the page's code tokens name 0 of 1 listed courses",
+    "error": null,
+    "chars": {
+     "body": 800,
+     "content": 800,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "38689",
+   "title": "NONCREDIT FOSTER YOUTH CHILD ADVOCATE",
+   "award": "Noncredit program",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  }
+ ],
+ "run": "39063368678"
+}

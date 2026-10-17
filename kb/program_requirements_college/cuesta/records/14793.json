@@ -1,0 +1,217 @@
+{
+ "college": "Cuesta College",
+ "control_number": "14793",
+ "shape": "degree",
+ "title": "ADVANCED ENGINE PERFORMANCE TECHNICIAN",
+ "award": "A.S. Degree",
+ "source_url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30076",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6801,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6801,
+    "output_tokens": 1263,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1263,
+  "output_tokens_details": {
+   "thinking_tokens": 328
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.05246,
+ "ms": 10286,
+ "seconds": 10.8,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 8,
+   "listed": 8,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    29.5,
+    29.5
+   ],
+   "stated": [
+    29.5,
+    29.5
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "ADVANCED ENGINE PERFORMANCE  TECHNICIAN - Associate in Science",
+   "measure": "units",
+   "total_units": {
+    "min": 29.5,
+    "max": 29.5
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Demonstrate the necessary skill proficiency and the technical knowledge for success in the Automotive industry as evidenced by the continuation of NATEF Certification and completion of appropriate NATEF tasks for courses finished.",
+    "Students will maintain persistence in the program as evidence by 30% of students who have completed 3 or more ATCH Courses earning and acquiring a Program Certificate or better.",
+    "Students who complete the ATCH program (completers) will demonstrate academic proficiency by passing a minimum of 2 National ASE examinations (65% of program"
+   ],
+   "careers": [
+    "automotive technicians"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses (29.5 units)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 29.5,
+     "max": 29.5
+    },
+    "courses": [
+     {
+      "code": "ATCH 109",
+      "units": 2.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ATCH 125",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ATCH 152",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ATCH 158",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ATCH 160",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ATCH 264",
+      "units": 6,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ATCH 168",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ATCH 188",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The program also requires passing a minimum of two ASE certification tests; this is a non-course requirement and is not recorded as a block.",
+   "The third learning outcome is cut off in the source text ('(65% of program'). It is copied as printed and not completed.",
+   "The second outcome reads 'as evidence by' as printed.",
+   "The page names no general education pattern and prints no degree total. 29.5 is the major total.",
+   "'Master Automobile Technician' and 'Advanced Level Specialist' are named as certifications, not careers, so they are not listed in careers."
+  ]
+ },
+ "extracted_run": "39063368678"
+}
