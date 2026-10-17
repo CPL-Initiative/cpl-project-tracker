@@ -1,0 +1,247 @@
+{
+ "college": "Los Angeles Pierce College",
+ "control_number": "02837",
+ "shape": "degree",
+ "title": "Theater: Technical",
+ "award": "A.A. Degree",
+ "source_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=149",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8185,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8185,
+    "output_tokens": 1673,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1673,
+  "output_tokens_details": {
+   "thinking_tokens": 537
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.0662,
+ "ms": 14303,
+ "seconds": 14.7,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 8,
+   "listed": 8,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "THEATER310"
+   ],
+   "flagged": [
+    "THEATER310"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    20.0,
+    20.0
+   ],
+   "stated": [
+    20.0,
+    20.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [
+    "Identify the specific functions and contributions of every artist involved in the creative process of theatre including actors, writers, directors, producers, designers and stage technicians.",
+    "Develop and demonstrate a basic level of competency in stagecraft, scenic design, stage production, makeup, stage lighting and/or costuming for the theatre.",
+    "Identify and safely operate the most commonly used tools, materials and equipment, both hand and power, utilized in all areas of stage production."
+   ],
+   "why": [
+    "not in the catalog text as printed: Identify the specific functions and contributions of every artist involved in th",
+    "not in the catalog text as printed: Develop and demonstrate a basic level of competency in stagecraft, scenic design",
+    "not in the catalog text as printed: Identify and safely operate the most commonly used tools, materials and equipmen"
+   ],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": false
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Theater: Technical",
+   "measure": "units",
+   "total_units": {
+    "min": 20,
+    "max": 20
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Cal-GETC (34 units) or LACCD GE (21 units)",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Read, analyze and interpret a dramatic text for production values, requirements and design challenges.",
+    "Identify the specific functions and contributions of every artist involved in the creative process of theatre including actors, writers, directors, producers, designers and stage technicians.",
+    "Develop and demonstrate a basic level of competency in stagecraft, scenic design, stage production, makeup, stage lighting and/or costuming for the theatre.",
+    "Identify and safely operate the most commonly used tools, materials and equipment, both hand and power, utilized in all areas of stage production."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "MAJOR - REQUIRED COURSES",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "THEATER 100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THEATER 270",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THEATER 300",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THEATER 315",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THEATER 342",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THEATER 450",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select one course from the following:",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "COMM C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THEATER 310",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "THEATER 411",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The excerpt begins mid-section on page 149; the program heading, description and outcomes lead-in are on the preceding page and not in the text. Section heading taken from the award table row 'Theater: Technical AA P002837C'. Additional outcomes may appear on page 148; only the four printed here are recorded.",
+   "Course codes printed as 'THEA TER' (PDF spacing artifact) recorded as 'THEATER'. Hyphenation breaks in outcomes ('writ - ers', 'stage - craft', 'mate - rials') joined.",
+   "GE: award table lists two patterns, Cal-GETC (34 units) and LACCD GE (21 units); ge_units left null because two alternative figures are printed. No degree total printed.",
+   "THEATER 310 Introduction to Theatrical Lighting is not in the closed list; recorded as catalog addition.",
+   "The Engineering A.S. section that follows belongs to a different program and was not read."
+  ]
+ },
+ "extracted_run": "39006383070"
+}

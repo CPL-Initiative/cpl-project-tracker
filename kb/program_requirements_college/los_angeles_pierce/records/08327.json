@@ -1,0 +1,215 @@
+{
+ "college": "Los Angeles Pierce College",
+ "control_number": "08327",
+ "shape": "degree",
+ "title": "Theater: Costume",
+ "award": "A.A. Degree",
+ "source_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=147",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 11528,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 11528,
+    "output_tokens": 1466,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1466,
+  "output_tokens_details": {
+   "thinking_tokens": 422
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.07543,
+ "ms": 13221,
+ "seconds": 13.5,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 6,
+   "listed": 6,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    18.0,
+    18.0
+   ],
+   "stated": [
+    18.0,
+    18.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 6,
+   "courses": 0,
+   "count": 6,
+   "not_verbatim": [
+    "Develop a broad base knowledge of major historical periods, literary styles, significant plays and authors, cultural influences, and social customs inherent in the development of world theatre.",
+    "Recognize the roles, responsibilities, and collaborative contributions of each member of a professional theatrical production team.",
+    "Recognize, categorize, and safely work with the basic tools, equipment, and materials used in costume and scenic construction, and makeup application."
+   ],
+   "why": [
+    "not in the catalog text as printed: Develop a broad base knowledge of major historical periods, literary styles, sig",
+    "not in the catalog text as printed: Recognize the roles, responsibilities, and collaborative contributions of each m",
+    "not in the catalog text as printed: Recognize, categorize, and safely work with the basic tools, equipment, and mate"
+   ],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": false
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "THEATER: COSTUME Associate of Arts Degree (STATE CODE 08327)",
+   "measure": "units",
+   "total_units": {
+    "min": 18,
+    "max": 18
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Cal-GETC (34 units) or LACCD GE (21 units)",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Develop a broad base knowledge of major historical periods, literary styles, significant plays and authors, cultural influences, and social customs inherent in the development of world theatre.",
+    "Recognize the roles, responsibilities, and collaborative contributions of each member of a professional theatrical production team.",
+    "Creatively analyze, research and interpret a dramatic text to be produced and staged before a live audience.",
+    "Explore, coordinate, and partner with related disciples such as acting, directing, lighting and scenic design to achieve a unified artistic vision for the play.",
+    "Demonstrate a sound level of technical expertise, organizational proficiency, time management, and creative problem solving skills throughout each phase of the costuming process.",
+    "Recognize, categorize, and safely work with the basic tools, equipment, and materials used in costume and scenic construction, and makeup application."
+   ],
+   "careers": [
+    "theater artists"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "MAJOR - REQUIRED COURSES",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 18,
+     "max": 18
+    },
+    "courses": [
+     {
+      "code": "THEATER 100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THEATER 270",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THEATER 300",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THEATER 315",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THEATER 411",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THEATER 450",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Section read is THEATER: COSTUME A.A. on page 147; the preceding Theater A.A. section (19 units) and the following Dance and Technical sections were ignored.",
+   "The award table lists two GE options, Cal-GETC (34 units) and LACCD GE (21 units); ge_units left null because the page prints two alternative figures rather than one GE total.",
+   "No degree total is printed; MAJOR - TOTAL UNITS 18 recorded as total_units and as the block's stated total.",
+   "Codes printed as 'THEA TER' (PDF spacing) recorded as THEATER.",
+   "Career entry 'theater artists' is taken from the program description ('transferable education plan for theater artists'); reviewer may check whether it should count as a career.",
+   "Program information says 'six Major required classes', matching the six courses listed."
+  ]
+ },
+ "extracted_run": "39006383070"
+}

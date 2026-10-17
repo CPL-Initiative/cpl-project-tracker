@@ -1,0 +1,308 @@
+{
+ "college": "Los Angeles Pierce College",
+ "control_number": "08325",
+ "shape": "degree",
+ "title": "American Sign Language/Interpreting",
+ "award": "A.A. Degree",
+ "source_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=136",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 9850,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 9850,
+    "output_tokens": 2064,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2064,
+  "output_tokens_details": {
+   "thinking_tokens": 719
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.08068,
+ "ms": 16756,
+ "seconds": 17.0,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 9,
+   "listed": 9,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 7,
+   "codes": [
+    "ANTHRO161",
+    "ASL22",
+    "ASL55",
+    "ASL6",
+    "ASL65",
+    "COMM121",
+    "COMMC1000"
+   ],
+   "flagged": [
+    "ANTHRO161",
+    "ASL22",
+    "ASL55",
+    "ASL6",
+    "ASL65",
+    "COMM121",
+    "COMMC1000"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    35.0,
+    35.0
+   ],
+   "stated": [
+    35.0,
+    35.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [
+    "Develop receptive and expressive skills in American Sign Language and Fingerspelling.",
+    "Develop knowledge and awareness of the similarities and differences between the Deaf Culture/Deaf community and the hearing community."
+   ],
+   "why": [
+    "not in the catalog text as printed: Develop receptive and expressive skills in American Sign Language and Fingerspel",
+    "not in the catalog text as printed: Develop knowledge and awareness of the similarities and differences between the "
+   ],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": false
+  },
+  "careers": {
+   "count": 2,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "AMERICAN SIGN LANGUAGE/INTERPRETING Associate of Arts Degree (STATE CODE 08325)",
+   "measure": "units",
+   "total_units": {
+    "min": 35,
+    "max": 35
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Cal-GETC or LACCD GE",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Develop receptive and expressive skills in American Sign Language and Fingerspelling.",
+    "Develop knowledge and awareness of the similarities and differences between the Deaf Culture/Deaf community and the hearing community.",
+    "Accurately interpret and transliterate between ASL and English in educational settings and community settings.",
+    "Apply professional standards, practices, and ethics, not limited to the tenets of the Code of Professional Conduct, to interpreting."
+   ],
+   "careers": [
+    "interpreting for deaf and hearing people",
+    "interpreter"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "MAJOR - REQUIRED COURSES",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "A S L 004",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "A S L 005",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "A S L 006",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "A S L 010",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "A S L 016",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "A S L 025",
+        "units": 2,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "A S L 022",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "A S L 023",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "A S L 030",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "A S L 031",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "A S L 040",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "A S L 055",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "A S L 065",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "MAJOR - ELECTIVE COURSES",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "ANTHRO 161",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "COMM 121",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "COMM C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Catalog prints codes with leading zeros (A S L 004, 010, 016, etc.); matched to closed-list A S L 4, 10, 16, etc.",
+   "GE column lists two patterns: 'Cal-GETC (34 units)' and 'LACCD GE (21 units)'; ge_units left null because two alternative figures are printed. No degree total is printed.",
+   "Major total 35 = required courses 32 + one 3-unit elective.",
+   "Hyphenated line breaks in outcomes (e.g. 'Lan -guage', 'dif -ferences') were joined as single words.",
+   "The Certificate of Achievement section that follows prints the same outcomes and required courses (32 units) but was not used for this record."
+  ]
+ },
+ "extracted_run": "39006383070"
+}

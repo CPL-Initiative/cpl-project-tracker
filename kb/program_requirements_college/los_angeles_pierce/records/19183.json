@@ -1,0 +1,893 @@
+{
+ "college": "Los Angeles Pierce College",
+ "control_number": "19183",
+ "shape": "degree",
+ "title": "General Studies: Social and Behavioral Sciences",
+ "award": "A.A. Degree",
+ "source_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=31",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 17213,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 17213,
+    "output_tokens": 6573,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 6573,
+  "output_tokens_details": {
+   "thinking_tokens": 1545
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.20031,
+ "ms": 46526,
+ "seconds": 46.8,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 150,
+   "share": 0.0,
+   "missing": [
+    "ADDICST10",
+    "ADDICST14",
+    "ADDICST15",
+    "ADMJUS1",
+    "ADMJUS174",
+    "ADMJUS2",
+    "ADMJUS305",
+    "ADMJUS4",
+    "ADMJUS67",
+    "AFROAM19",
+    "AFROAM4",
+    "AFROAM5",
+    "ANTHRO101",
+    "ANTHRO102",
+    "ANTHRO103",
+    "ANTHRO105",
+    "ANTHRO106",
+    "ANTHRO109",
+    "ANTHRO111",
+    "ANTHRO121",
+    "ANTHRO132",
+    "ANTHRO141",
+    "ANTHRO161",
+    "ART101",
+    "ART102",
+    "ART103",
+    "ART105",
+    "ART109",
+    "ART111",
+    "BUS5",
+    "CAOT32",
+    "CAOT82",
+    "CHDEV1",
+    "CHDEV11",
+    "CHICANO2",
+    "CHICANO20",
+    "CHICANO47",
+    "CHICANO7",
+    "CHICANO8",
+    "CHICANO80",
+    "COMM100",
+    "COMM104",
+    "COMM121",
+    "COMM122",
+    "COMM151",
+    "COMM189",
+    "COMMC1000",
+    "COUNSEL20",
+    "COUNSEL40",
+    "ECON1",
+    "ECON10",
+    "ECON2",
+    "EDUC203",
+    "ENGLC1000",
+    "ENGLC1001",
+    "ENGLISH102",
+    "ENVSCI1",
+    "FINANCE1",
+    "FINANCE8",
+    "GEOG1",
+    "GEOG14",
+    "GEOG15",
+    "GEOG2",
+    "GEOG25",
+    "GEOG3",
+    "GEOG33",
+    "GEOG38",
+    "GEOG7",
+    "GIS25",
+    "GIS33",
+    "GIS38",
+    "HISTORY1",
+    "HISTORY11",
+    "HISTORY12",
+    "HISTORY13",
+    "HISTORY19",
+    "HISTORY2",
+    "HISTORY29",
+    "HISTORY41",
+    "HISTORY42",
+    "HISTORY44",
+    "HISTORY5",
+    "HISTORY52",
+    "HISTORY56",
+    "HISTORY6",
+    "HISTORY81",
+    "HISTORY82",
+    "HISTORY86",
+    "HISTORY87",
+    "JAPAN9",
+    "JOURNAL100",
+    "JOURNAL109",
+    "JOURNAL251",
+    "MATH215",
+    "MATH228B",
+    "MATH238",
+    "MATH240",
+    "MATH260",
+    "MATH261",
+    "MATH262",
+    "MATH263",
+    "MEDIART117",
+    "NATIVAM170",
+    "NATIVAM171",
+    "NATIVAM173",
+    "PHILOS5",
+    "PHILOS6",
+    "PHILOS9",
+    "POLSC1000",
+    "POLSCI19",
+    "POLSCI2",
+    "POLSCI22",
+    "POLSCI30",
+    "POLSCI5",
+    "POLSCI50",
+    "POLSCI7",
+    "PSYCC1000",
+    "PSYCH13",
+    "PSYCH14",
+    "PSYCH16",
+    "PSYCH2",
+    "PSYCH32",
+    "PSYCH41",
+    "PSYCH52",
+    "PSYCH60",
+    "PSYCH66",
+    "PSYCH69",
+    "PSYCH73",
+    "PSYCH74",
+    "SOC1",
+    "SOC11",
+    "SOC125",
+    "SOC13",
+    "SOC15",
+    "SOC2",
+    "SOC21",
+    "SOC28",
+    "SOC29",
+    "SOC3",
+    "SOC31",
+    "SOC35",
+    "SOC37",
+    "SOC4",
+    "SOC86",
+    "SOC87",
+    "SPANISH10",
+    "SPANISH16",
+    "SPANISH9",
+    "STAT101",
+    "STATC1000"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "LACCD General Education Pattern 2026-2027",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ADDICST 10",
+    "why": "program section not in text; named only in GE lists"
+   },
+   {
+    "code": "ADDICST 14",
+    "why": "program section not in text; named only in GE lists"
+   },
+   {
+    "code": "ADDICST 15",
+    "why": "program section not in text; named only in GE lists"
+   },
+   {
+    "code": "ADM JUS 1",
+    "why": "program section not in text; named only in GE lists"
+   },
+   {
+    "code": "ADM JUS 174",
+    "why": "not in the text"
+   },
+   {
+    "code": "ADM JUS 2",
+    "why": "program section not in text; named only in GE lists"
+   },
+   {
+    "code": "ADM JUS 305",
+    "why": "not in the text"
+   },
+   {
+    "code": "ADM JUS 4",
+    "why": "program section not in text; named only in GE lists"
+   },
+   {
+    "code": "ADM JUS 67",
+    "why": "program section not in text; named only in GE lists"
+   },
+   {
+    "code": "AFRO AM 19",
+    "why": "program section not in text; named only in GE lists"
+   },
+   {
+    "code": "AFRO AM 4",
+    "why": "program section not in text; named only in GE lists"
+   },
+   {
+    "code": "AFRO AM 5",
+    "why": "program section not in text; named only in GE lists"
+   },
+   {
+    "code": "ANTHRO 101",
+    "why": "program section not in text; named only in GE lists"
+   },
+   {
+    "code": "ANTHRO 102",
+    "why": "program section not in text; named only in GE lists"
+   },
+   {
+    "code": "ANTHRO 103",
+    "why": "program section not in text; named only in GE lists"
+   },
+   {
+    "code": "ANTHRO 105",
+    "why": "program section not in text; named only in GE lists"
+   },
+   {
+    "code": "ANTHRO 106",
+    "why": "program section not in text; named only in GE lists"
+   },
+   {
+    "code": "ANTHRO 109",
+    "why": "program section not in text; named only in GE lists"
+   },
+   {
+    "code": "ANTHRO 111",
+    "why": "program section not in text; named only in GE lists"
+   },
+   {
+    "code": "ANTHRO 121",
+    "why": "program section not in text; named only in GE lists"
+   },
+   {
+    "code": "ANTHRO 132",
+    "why": "program section not in text; named only in GE lists"
+   },
+   {
+    "code": "ANTHRO 141",
+    "why": "program section not in text; named only in GE lists"
+   },
+   {
+    "code": "ANTHRO 161",
+    "why": "program section not in text; named only in GE lists"
+   },
+   {
+    "code": "ART 101",
+    "why": "program section not in text; named only in GE lists"
+   },
+   {
+    "code": "ART 102",
+    "why": "program section not in text; named only in GE lists"
+   },
+   {
+    "code": "ART 103",
+    "why": "program section not in text; named only in GE lists"
+   },
+   {
+    "code": "ART 105",
+    "why": "program section not in text; named only in GE lists"
+   },
+   {
+    "code": "ART 109",
+    "why": "program section not in text; named only in GE lists"
+   },
+   {
+    "code": "ART 111",
+    "why": "program section not in text; named only in GE lists"
+   },
+   {
+    "code": "BUS 5",
+    "why": "program section not in text; named only in GE lists"
+   },
+   {
+    "code": "CAOT 32",
+    "why": "not in the text"
+   },
+   {
+    "code": "CAOT 82",
+    "why": "not in the text"
+   },
+   {
+    "code": "CH DEV 1",
+    "why": "program section not in text; named only in GE lists"
+   },
+   {
+    "code": "CH DEV 11",
+    "why": "program section not in text; named only in GE lists"
+   },
+   {
+    "code": "CHICANO 2",
+    "why": "program section not in text; named only in GE lists"
+   },
+   {
+    "code": "CHICANO 20",
+    "why": "program section not in text; named only in GE lists"
+   },
+   {
+    "code": "CHICANO 47",
+    "why": "program section not in text; named only in GE lists"
+   },
+   {
+    "code": "CHICANO 7",
+    "why": "program section not in text; named only in GE lists"
+   },
+   {
+    "code": "CHICANO 8",
+    "why": "program section not in text; named only in GE lists"
+   },
+   {
+    "code": "CHICANO 80",
+    "why": "program section not in text; named only in GE lists"
+   },
+   {
+    "code": "COMM 100",
+    "why": "program section not in text; named only in GE lists"
+   },
+   {
+    "code": "COMM 104",
+    "why": "program section not in text; named only in GE lists"
+   },
+   {
+    "code": "COMM 121",
+    "why": "program section not in text; named only in GE lists"
+   },
+   {
+    "code": "COMM 122",
+    "why": "program section not in text; named only in GE lists"
+   },
+   {
+    "code": "COMM 151",
+    "why": "program section not in text; named only in GE lists"
+   },
+   {
+    "code": "COMM 189",
+    "why": "program section not in text; named only in GE lists"
+   },
+   {
+    "code": "COMM C1000",
+    "why": "program section not in text; named only in GE lists"
+   },
+   {
+    "code": "COUNSEL 20",
+    "why": "program section not in text; named only in GE lists"
+   },
+   {
+    "code": "COUNSEL 40",
+    "why": "program section not in text; named only in GE lists"
+   },
+   {
+    "code": "ECON 1",
+    "why": "program section not in text; named only as former number of ECON C2001 in GE list"
+   },
+   {
+    "code": "ECON 10",
+    "why": "program section not in text; named only in GE lists"
+   },
+   {
+    "code": "ECON 2",
+    "why": "program section not in text; named only as former number of ECON C2002 in GE list"
+   },
+   {
+    "code": "EDUC 203",
+    "why": "program section not in text; named only in GE lists"
+   },
+   {
+    "code": "ENGL C1000",
+    "why": "program section not in text; named only in GE lists"
+   },
+   {
+    "code": "ENGL C1001",
+    "why": "program section not in text; named only in GE lists"
+   },
+   {
+    "code": "ENGLISH 102",
+    "why": "program section not in text; named only in GE lists"
+   },
+   {
+    "code": "ENV SCI 1",
+    "why": "program section not in text; named only in GE lists"
+   },
+   {
+    "code": "FINANCE 1",
+    "why": "not in the text"
+   },
+   {
+    "code": "FINANCE 8",
+    "why": "program section not in text; named only in GE lists"
+   },
+   {
+    "code": "GEOG 1",
+    "why": "program section not in text; named only in GE lists"
+   },
+   {
+    "code": "GEOG 14",
+    "why": "program section not in text; named only in GE lists"
+   },
+   {
+    "code": "GEOG 15",
+    "why": "program section not in text; named only in GE lists"
+   },
+   {
+    "code": "GEOG 2",
+    "why": "program section not in text; named only in GE lists"
+   },
+   {
+    "code": "GEOG 25",
+    "why": "program section not in text; named only in GE lists"
+   },
+   {
+    "code": "GEOG 3",
+    "why": "program section not in text; named only in GE lists"
+   },
+   {
+    "code": "GEOG 33",
+    "why": "not in the text"
+   },
+   {
+    "code": "GEOG 38",
+    "why": "not in the text"
+   },
+   {
+    "code": "GEOG 7",
+    "why": "program section not in text; named only in GE lists"
+   },
+   {
+    "code": "GIS 25",
+    "why": "program section not in text; named only in GE lists"
+   },
+   {
+    "code": "GIS 33",
+    "why": "not in the text"
+   },
+   {
+    "code": "GIS 38",
+    "why": "not in the text"
+   },
+   {
+    "code": "HISTORY 1",
+    "why": "program section not in text; named only in GE lists"
+   },
+   {
+    "code": "HISTORY 11",
+    "why": "program section not in text; named only in GE lists"
+   },
+   {
+    "code": "HISTORY 12",
+    "why": "program section not in text; named only in GE lists"
+   },
+   {
+    "code": "HISTORY 13",
+    "why": "program section not in text; named only in GE lists"
+   },
+   {
+    "code": "HISTORY 19",
+    "why": "program section not in text; named only in GE lists"
+   },
+   {
+    "code": "HISTORY 2",
+    "why": "program section not in text; named only in GE lists"
+   },
+   {
+    "code": "HISTORY 29",
+    "why": "program section not in text; named only in GE lists"
+   },
+   {
+    "code": "HISTORY 41",
+    "why": "program section not in text; named only in GE lists"
+   },
+   {
+    "code": "HISTORY 42",
+    "why": "program section not in text; named only in GE lists"
+   },
+   {
+    "code": "HISTORY 44",
+    "why": "program section not in text; named only in GE lists"
+   },
+   {
+    "code": "HISTORY 5",
+    "why": "program section not in text; named only in GE lists"
+   },
+   {
+    "code": "HISTORY 52",
+    "why": "program section not in text; named only in GE lists"
+   },
+   {
+    "code": "HISTORY 56",
+    "why": "program section not in text; named only in GE lists"
+   },
+   {
+    "code": "HISTORY 6",
+    "why": "program section not in text; named only in GE lists"
+   },
+   {
+    "code": "HISTORY 81",
+    "why": "program section not in text; named only in GE lists"
+   },
+   {
+    "code": "HISTORY 82",
+    "why": "program section not in text; named only in GE lists"
+   },
+   {
+    "code": "HISTORY 86",
+    "why": "program section not in text; named only in GE lists"
+   },
+   {
+    "code": "HISTORY 87",
+    "why": "program section not in text; named only in GE lists"
+   },
+   {
+    "code": "JAPAN 9",
+    "why": "program section not in text; named only in GE lists"
+   },
+   {
+    "code": "JOURNAL 100",
+    "why": "program section not in text; named only in GE lists"
+   },
+   {
+    "code": "JOURNAL 109",
+    "why": "program section not in text; named only in GE lists"
+   },
+   {
+    "code": "JOURNAL 251",
+    "why": "program section not in text; named only in GE lists"
+   },
+   {
+    "code": "MATH 215",
+    "why": "program section not in text; named only in GE lists"
+   },
+   {
+    "code": "MATH 228B",
+    "why": "program section not in text; named only in GE lists"
+   },
+   {
+    "code": "MATH 238",
+    "why": "program section not in text; named only in GE lists"
+   },
+   {
+    "code": "MATH 240",
+    "why": "program section not in text; named only in GE lists"
+   },
+   {
+    "code": "MATH 260",
+    "why": "program section not in text; named only in GE lists"
+   },
+   {
+    "code": "MATH 261",
+    "why": "program section not in text; named only in GE lists"
+   },
+   {
+    "code": "MATH 262",
+    "why": "program section not in text; named only in GE lists"
+   },
+   {
+    "code": "MATH 263",
+    "why": "program section not in text; named only in GE lists"
+   },
+   {
+    "code": "MEDIART 117",
+    "why": "program section not in text; named only in GE lists"
+   },
+   {
+    "code": "NATIVAM 170",
+    "why": "program section not in text; named only in GE lists"
+   },
+   {
+    "code": "NATIVAM 171",
+    "why": "program section not in text; named only in GE lists"
+   },
+   {
+    "code": "NATIVAM 173",
+    "why": "program section not in text; named only in GE lists"
+   },
+   {
+    "code": "PHILOS 5",
+    "why": "program section not in text; named only in GE lists"
+   },
+   {
+    "code": "PHILOS 6",
+    "why": "program section not in text; named only in GE lists"
+   },
+   {
+    "code": "PHILOS 9",
+    "why": "program section not in text; named only in GE lists"
+   },
+   {
+    "code": "POL SCI 19",
+    "why": "program section not in text; named only in GE lists"
+   },
+   {
+    "code": "POL SCI 2",
+    "why": "program section not in text; named only in GE lists"
+   },
+   {
+    "code": "POL SCI 22",
+    "why": "program section not in text; named only in GE lists"
+   },
+   {
+    "code": "POL SCI 30",
+    "why": "program section not in text; named only in GE lists"
+   },
+   {
+    "code": "POL SCI 5",
+    "why": "program section not in text; named only in GE lists"
+   },
+   {
+    "code": "POL SCI 50",
+    "why": "program section not in text; named only in GE lists"
+   },
+   {
+    "code": "POL SCI 7",
+    "why": "program section not in text; named only in GE lists"
+   },
+   {
+    "code": "POLS C1000",
+    "why": "program section not in text; named only in GE lists"
+   },
+   {
+    "code": "PSYC C1000",
+    "why": "program section not in text; named only in GE lists"
+   },
+   {
+    "code": "PSYCH 13",
+    "why": "program section not in text; named only in GE lists"
+   },
+   {
+    "code": "PSYCH 14",
+    "why": "program section not in text; named only in GE lists"
+   },
+   {
+    "code": "PSYCH 16",
+    "why": "program section not in text; named only in GE lists"
+   },
+   {
+    "code": "PSYCH 2",
+    "why": "program section not in text; named only in GE lists"
+   },
+   {
+    "code": "PSYCH 32",
+    "why": "program section not in text; named only in GE lists"
+   },
+   {
+    "code": "PSYCH 41",
+    "why": "program section not in text; named only in GE lists"
+   },
+   {
+    "code": "PSYCH 52",
+    "why": "program section not in text; named only in GE lists"
+   },
+   {
+    "code": "PSYCH 60",
+    "why": "program section not in text; named only in GE lists"
+   },
+   {
+    "code": "PSYCH 66",
+    "why": "program section not in text; named only in GE lists"
+   },
+   {
+    "code": "PSYCH 69",
+    "why": "program section not in text; named only in GE lists"
+   },
+   {
+    "code": "PSYCH 73",
+    "why": "program section not in text; named only in GE lists"
+   },
+   {
+    "code": "PSYCH 74",
+    "why": "program section not in text; named only in GE lists"
+   },
+   {
+    "code": "SOC 1",
+    "why": "program section not in text; named only in GE lists"
+   },
+   {
+    "code": "SOC 11",
+    "why": "program section not in text; named only in GE lists"
+   },
+   {
+    "code": "SOC 125",
+    "why": "program section not in text; named only in GE lists"
+   },
+   {
+    "code": "SOC 13",
+    "why": "program section not in text; named only in GE lists"
+   },
+   {
+    "code": "SOC 15",
+    "why": "program section not in text; named only in GE lists"
+   },
+   {
+    "code": "SOC 2",
+    "why": "program section not in text; named only in GE lists"
+   },
+   {
+    "code": "SOC 21",
+    "why": "program section not in text; named only in GE lists"
+   },
+   {
+    "code": "SOC 28",
+    "why": "program section not in text; named only in GE lists"
+   },
+   {
+    "code": "SOC 29",
+    "why": "program section not in text; named only in GE lists"
+   },
+   {
+    "code": "SOC 3",
+    "why": "program section not in text; named only in GE lists"
+   },
+   {
+    "code": "SOC 31",
+    "why": "program section not in text; named only in GE lists"
+   },
+   {
+    "code": "SOC 35",
+    "why": "program section not in text; named only in GE lists"
+   },
+   {
+    "code": "SOC 37",
+    "why": "program section not in text; named only in GE lists"
+   },
+   {
+    "code": "SOC 4",
+    "why": "program section not in text; named only in GE lists"
+   },
+   {
+    "code": "SOC 86",
+    "why": "program section not in text; named only in GE lists"
+   },
+   {
+    "code": "SOC 87",
+    "why": "program section not in text; named only in GE lists"
+   },
+   {
+    "code": "SPANISH 10",
+    "why": "program section not in text; named only in GE lists"
+   },
+   {
+    "code": "SPANISH 16",
+    "why": "program section not in text; named only in GE lists"
+   },
+   {
+    "code": "SPANISH 9",
+    "why": "program section not in text; named only in GE lists"
+   },
+   {
+    "code": "STAT 101",
+    "why": "program section not in text; named only in GE lists"
+   },
+   {
+    "code": "STAT C1000",
+    "why": "program section not in text; named only in GE lists"
+   }
+  ],
+  "notes": [
+   "The supplied text (catalog pages 31-33) does not contain the General Studies: Social and Behavioral Sciences A.A. program section. It holds only the LACCD General Education Pattern, the LAPC Cal-GETC certification pattern, and the start of the C-ID table. section_heading names the nearest relevant heading, not the program's own section.",
+   "No blocks were recorded: GE pattern courses never go in a block, and no major requirements for this award are printed in the text.",
+   "The LACCD GE page states general rules ('General Education Requirements: Minimum of 27 semester units'; 'Major Requirements: Minimum of 18 units in a single or related field'). These are generic minimums, not this award's totals, so total_units, degree_total and ge_units stay null.",
+   "General Studies degrees at LACCD likely use the LACCD GE pattern and draw the area of emphasis from Area 4B, but the text does not state this for the award, so ge_pattern is null.",
+   "A reviewer should fetch the actual program page (likely elsewhere in the catalog PDF) to record the area-of-emphasis requirements, outcomes and careers."
+  ]
+ },
+ "extracted_run": "39006383070"
+}

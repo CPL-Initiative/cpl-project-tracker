@@ -1,0 +1,198 @@
+{
+ "college": "Los Angeles Pierce College",
+ "control_number": "39969",
+ "shape": "certificate",
+ "title": "Cloud Computing Fundamentals for Amazon Web Services",
+ "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+ "source_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=110",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 11839,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 11839,
+    "output_tokens": 1280,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1280,
+  "output_tokens_details": {
+   "thinking_tokens": 443
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.07296,
+ "ms": 10761,
+ "seconds": 10.9,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 5,
+   "listed": 5,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    12.0,
+    12.0
+   ],
+   "stated": [
+    12.0,
+    12.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [
+    "Design Infrastructure as a Service (IaaS) solutions by provisioning computing instances, establishing virtual private networks, managing databases and storage within a secure online environment."
+   ],
+   "why": [
+    "not in the catalog text as printed: Design Infrastructure as a Service (IaaS) solutions by provisioning computing in"
+   ],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": false
+  },
+  "careers": {
+   "count": 4,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "CLOUD COMPUTING FUNDAMENTALS FOR AMAZON WEB SERVICES Certificate of Achievement (STATE CODE 39969)",
+   "measure": "units",
+   "total_units": {
+    "min": 12,
+    "max": 12
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Design Infrastructure as a Service (IaaS) solutions by provisioning computing instances, establishing virtual private networks, managing databases and storage within a secure online environment.",
+    "Analyze performance metrics of a cloud architecture to respond dynamically to information and computing technology workloads and optimize service costs.",
+    "Collaborate in a team designing business solutions in an industry aligned project."
+   ],
+   "careers": [
+    "Cloud Architect",
+    "Cloud Support Associate",
+    "Cloud Engineer",
+    "Cloud Technicians"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "CERTIFICATE - REQUIRED COURSES",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 12,
+     "max": 12
+    },
+    "courses": [
+     {
+      "code": "CIS 120",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CIS 193",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS 192",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS 194",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS 195",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The text opens with the tail of a different program (Cloud Computing and Networking for Amazon Web Services Certificate, P038606D, 18 units, with a 'Select two courses' list including CIS 113, CIS 173, CIS 210, CIS 227, CS 112); that section was not used.",
+   "Asterisks after CIS 193, CIS 194 and CIS 195 are footnote markers for prerequisites/corequisites and were dropped from the codes.",
+   "Block 'stated' taken from 'CERTIFICATE - TOTAL UNITS ... 12', which is the only total printed for this certificate.",
+   "Hyphenated line breaks in the outcomes ('man -aging') were read as single words."
+  ]
+ },
+ "extracted_run": "39006383070"
+}

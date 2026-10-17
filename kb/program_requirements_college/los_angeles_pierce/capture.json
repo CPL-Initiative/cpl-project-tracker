@@ -5,7 +5,7 @@
  "catalog_year": "2026-2027",
  "programs": 208,
  "with_closed_list": 196,
- "started": "2026-10-17T05:26:24Z",
+ "started": "2026-10-17T05:29:35Z",
  "pdf": {
   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf",
   "access": "ok",
@@ -22,7 +22,7 @@
   "extractor": "pypdf"
  },
  "loads": 1,
- "seconds": 101.9,
+ "seconds": 97.6,
  "found": 194,
  "by_method": {
   "no_closed_list": 12,
@@ -2260,5 +2260,5 @@
    }
   ]
  },
- "run": "39006198620"
+ "run": "39006383070"
 }

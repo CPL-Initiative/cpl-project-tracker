@@ -1,0 +1,39 @@
+{
+ "college": "Los Angeles Pierce College",
+ "programs": 208,
+ "with_closed_list": 196,
+ "found": 194,
+ "extracted": 194,
+ "errors": 1,
+ "passed_machine_checks": 76,
+ "failed": {
+  "coverage": 20,
+  "invented": 0,
+  "arithmetic": 37,
+  "repeated": 0,
+  "outcomes": 85
+ },
+ "cost_usd": 15.01,
+ "cost_per_program": 0.0774,
+ "not_found": [
+  {
+   "control_number": "19181",
+   "title": "General Studies: Arts and Humanities",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=31",
+    "coverage": 0.348
+   }
+  },
+  {
+   "control_number": "19182",
+   "title": "General Studies: Science, Technology, Engineering & Mathematics",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=119",
+    "coverage": 0.264
+   }
+  }
+ ],
+ "run": "39006383070"
+}
