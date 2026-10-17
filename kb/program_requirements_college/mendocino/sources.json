@@ -1,0 +1,4228 @@
+[
+ {
+  "control_number": "03424",
+  "title": "Agriculture - Horticulture",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "AGR100",
+   "AGR102",
+   "AGR140",
+   "AGR142",
+   "AGR144",
+   "AGR147",
+   "AGR151",
+   "AGR154",
+   "AGR208",
+   "AGR240",
+   "AGR241",
+   "WEE196"
+  ],
+  "source": {
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=93",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    93,
+    94,
+    95,
+    96
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 12,
+  "text_chars": 8764
+ },
+ {
+  "control_number": "03425",
+  "title": "Natural Resources",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "AGR208",
+   "BIO255",
+   "CHM200",
+   "CHM250",
+   "EAS211",
+   "GEL201",
+   "GEL201L",
+   "GEO206",
+   "NRS200",
+   "PHY210",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=192",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    192
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 11,
+  "text_chars": 3080
+ },
+ {
+  "control_number": "03426",
+  "title": "Biological Science",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIO250",
+   "BIO255",
+   "BIO257",
+   "CHM250",
+   "CHM251",
+   "MTH200",
+   "MTH210",
+   "MTH211",
+   "PHY210",
+   "PHY211",
+   "PHY220",
+   "PHY221",
+   "PHY222",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=113",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    113,
+    114
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 14,
+  "text_chars": 5762
+ },
+ {
+  "control_number": "03428",
+  "title": "Accounting",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS111",
+   "BUS200",
+   "BUS201",
+   "BUS230",
+   "BUS50",
+   "CSC104"
+  ],
+  "source": {
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=116",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    116,
+    117,
+    118,
+    119
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 6,
+  "text_chars": 7671
+ },
+ {
+  "control_number": "03429",
+  "title": "Business - Management",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS107",
+   "BUS132",
+   "BUS134",
+   "BUS135",
+   "BUS136",
+   "BUS150",
+   "BUS151",
+   "BUS170",
+   "BUS200",
+   "BUS201",
+   "BUS212",
+   "BUS230",
+   "BUS50",
+   "CSC104",
+   "WEE196"
+  ],
+  "source": {
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=117",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    117,
+    118,
+    119,
+    120
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 15,
+  "text_chars": 8055
+ },
+ {
+  "control_number": "03433",
+  "title": "Information Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.958,
+  "codes_found": [
+   "BUS134",
+   "CSC102",
+   "CSC105",
+   "CSC106",
+   "CSC109A",
+   "CSC109B",
+   "CSC116",
+   "CSC117",
+   "CSC118",
+   "CSC130",
+   "CSC166",
+   "CSC210",
+   "CSC210L",
+   "CSC220",
+   "CSC222",
+   "CSC240",
+   "DAM110",
+   "DAM125",
+   "DAM205",
+   "DAM250",
+   "DAM281",
+   "MTH210",
+   "PHY220"
+  ],
+  "source": {
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=132",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    132,
+    133,
+    134,
+    135
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 24,
+  "text_chars": 9756
+ },
+ {
+  "control_number": "03438",
+  "title": "Automotive Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "03440",
+  "title": "Art - Textiles",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 7,
+  "text_chars": 0
+ },
+ {
+  "control_number": "03441",
+  "title": "Music - Vocal",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "03442",
+  "title": "Theatre Arts",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.923,
+  "codes_found": [
+   "THE105A",
+   "THE105B",
+   "THE105C",
+   "THE105D",
+   "THE160",
+   "THE200",
+   "THE202",
+   "THE208A",
+   "THE208B",
+   "THE210A",
+   "THE210B",
+   "THE210C",
+   "THE210D",
+   "THE212A",
+   "THE212B",
+   "THE212C",
+   "THE216A",
+   "THE216B",
+   "THE217A",
+   "THE217B",
+   "THE217C",
+   "THE217D",
+   "THE220A",
+   "THE220C",
+   "THE220D",
+   "THE225A",
+   "THE225B",
+   "THE225C",
+   "THE230A",
+   "THE230B",
+   "THE230C",
+   "THE230D",
+   "THE260",
+   "THE262",
+   "THE265A",
+   "THE265B"
+  ],
+  "source": {
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=333",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    333,
+    334,
+    335,
+    336
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 39,
+  "text_chars": 15682
+ },
+ {
+  "control_number": "03444",
+  "title": "Spanish For Non-Native Speakers",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.75,
+  "codes_found": [
+   "SPN100",
+   "SPN101",
+   "SPN102",
+   "SPN200",
+   "SPN201",
+   "SPN202"
+  ],
+  "source": {
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=327",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    327,
+    328,
+    329
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 8,
+  "text_chars": 12971
+ },
+ {
+  "control_number": "03447",
+  "title": "Textiles/Clothing Construction",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 0.778,
+  "codes_found": [
+   "ART210A",
+   "CLO80",
+   "CLO81",
+   "CLO82",
+   "CLO83",
+   "THE217A",
+   "THE217B"
+  ],
+  "source": {
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=103",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    103,
+    104
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 9,
+  "text_chars": 4949
+ },
+ {
+  "control_number": "03454",
+  "title": "Administration of Justice",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ADJ104",
+   "ADJ106",
+   "ADJ108",
+   "ADJ109",
+   "ADJ150",
+   "ADJ200",
+   "ADJ202",
+   "ADJ204",
+   "ADJ206",
+   "ADJ207"
+  ],
+  "source": {
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=89",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    89
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 10,
+  "text_chars": 2678
+ },
+ {
+  "control_number": "03455",
+  "title": "Child Development/Family Relations",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CDV100",
+   "CDV101",
+   "CDV106",
+   "CDV107",
+   "CDV108",
+   "CDV109",
+   "CDV120",
+   "CDV121",
+   "CDV125",
+   "CDV130",
+   "CDV134",
+   "CDV135",
+   "CDV140",
+   "CDV202",
+   "CDV280"
+  ],
+  "source": {
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=125",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    125
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 15,
+  "text_chars": 3376
+ },
+ {
+  "control_number": "03457",
+  "title": "Fire Science",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ADJ150",
+   "COMM211",
+   "EMS135",
+   "EMS202",
+   "FSC111",
+   "FSC112",
+   "FSC113",
+   "FSC114",
+   "FSC115",
+   "FSC90",
+   "PSYC208",
+   "WEE196"
+  ],
+  "source": {
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=157",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    157
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 12,
+  "text_chars": 2314
+ },
+ {
+  "control_number": "03458",
+  "title": "Ethnic Studies",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.6,
+  "codes_found": [
+   "ANT200",
+   "ANT201",
+   "ETH202",
+   "ETH235",
+   "ETH241",
+   "SOC200"
+  ],
+  "source": {
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=79",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    79
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 10,
+  "text_chars": 5930
+ },
+ {
+  "control_number": "03461",
+  "title": "Psychology",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "PSYC206",
+   "PSYC208",
+   "PSYC210",
+   "PSYC212",
+   "PSYC216",
+   "PSYC218",
+   "PSYC220",
+   "PSYC225",
+   "PSYC250",
+   "PSYC255",
+   "PSYC290",
+   "PSYCC1000"
+  ],
+  "source": {
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=79",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    79
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 12,
+  "text_chars": 5930
+ },
+ {
+  "control_number": "03462",
+  "title": "Addiction and Recovery Counseling",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ARC151",
+   "ARC153",
+   "ARC158",
+   "ARC164",
+   "ARC165",
+   "ARC197A",
+   "HUS152",
+   "HUS154",
+   "HUS155",
+   "HUS156",
+   "HUS157",
+   "HUS159",
+   "HUS160",
+   "HUS161",
+   "HUS162",
+   "HUS163"
+  ],
+  "source": {
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=87",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    87,
+    88
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 16,
+  "text_chars": 6085
+ },
+ {
+  "control_number": "07775",
+  "title": "Agriculture - Nursery Production",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "AGR100",
+   "AGR102",
+   "AGR140",
+   "AGR144",
+   "AGR147",
+   "AGR208",
+   "AGR240",
+   "AGR241",
+   "AGR53",
+   "BUS132",
+   "WEE196"
+  ],
+  "source": {
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=95",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    95,
+    96,
+    97
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 11,
+  "text_chars": 5498
+ },
+ {
+  "control_number": "07776",
+  "title": "Agriculture: Landscape Practices",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "AGR100",
+   "AGR140",
+   "AGR142",
+   "AGR147",
+   "AGR151",
+   "AGR154",
+   "AGR208",
+   "AGR240",
+   "AGR241",
+   "AGR53",
+   "AGR75",
+   "BUS132",
+   "WEE196"
+  ],
+  "source": {
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=94",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    94,
+    95,
+    96,
+    97
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 13,
+  "text_chars": 7586
+ },
+ {
+  "control_number": "07780",
+  "title": "Computer Applications and Office Administration",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS107",
+   "BUS108",
+   "BUS134",
+   "BUS170",
+   "CSC104",
+   "CSC105",
+   "CSC116",
+   "CSC130",
+   "CSC166",
+   "CSC220"
+  ],
+  "source": {
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=130",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    130,
+    131,
+    132,
+    133
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 10,
+  "text_chars": 12225
+ },
+ {
+  "control_number": "07782",
+  "title": "Ceramics - Master Technician",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 22,
+  "text_chars": 0
+ },
+ {
+  "control_number": "07783",
+  "title": "Theatre Arts: Dance",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.975,
+  "codes_found": [
+   "THE105B",
+   "THE105C",
+   "THE200",
+   "THE204",
+   "THE206",
+   "THE208A",
+   "THE210B",
+   "THE216A",
+   "THE217A",
+   "THE220A",
+   "THE223",
+   "THE225A",
+   "THE225B",
+   "THE225C",
+   "THE227A",
+   "THE227B",
+   "THE228A",
+   "THE228B",
+   "THE230A",
+   "THE230B",
+   "THE230C",
+   "THE230D",
+   "THE238E",
+   "THE238F",
+   "THE238G",
+   "THE238H",
+   "THE242A",
+   "THE242B",
+   "THE242C",
+   "THE242D",
+   "THE244A",
+   "THE244B",
+   "THE247A",
+   "THE250A",
+   "THE260",
+   "THE262",
+   "THE265A",
+   "THE265B",
+   "THE268"
+  ],
+  "source": {
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=333",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    333,
+    334,
+    335,
+    336
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 40,
+  "text_chars": 15682
+ },
+ {
+  "control_number": "10578",
+  "title": "Computer Applications & Office Administration",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS107",
+   "BUS108",
+   "BUS134",
+   "BUS170",
+   "CSC104",
+   "CSC105",
+   "CSC116",
+   "CSC130",
+   "CSC166",
+   "CSC220"
+  ],
+  "source": {
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=130",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    130,
+    131,
+    132,
+    133
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 10,
+  "text_chars": 12225
+ },
+ {
+  "control_number": "10587",
+  "title": "Textiles/Weaving",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 0.5,
+  "codes_found": [
+   "ART213",
+   "ART214"
+  ],
+  "source": {
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=78",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    78
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 4,
+  "text_chars": 8050
+ },
+ {
+  "control_number": "10588",
+  "title": "Automotive Technician",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "AUT140",
+   "AUT142",
+   "AUT162",
+   "AUT166",
+   "BUS132",
+   "BUS150",
+   "BUS50"
+  ],
+  "source": {
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=106",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    106,
+    107,
+    108
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 7,
+  "text_chars": 8713
+ },
+ {
+  "control_number": "10589",
+  "title": "Automotive Chassis Specialist",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "AUT142",
+   "AUT144",
+   "AUT145",
+   "AUT162",
+   "BUS132",
+   "BUS150",
+   "BUS50"
+  ],
+  "source": {
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=106",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    106,
+    107,
+    108
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 7,
+  "text_chars": 8713
+ },
+ {
+  "control_number": "10590",
+  "title": "Automotive Tune-Up and Electronics Specialist",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "AUT140",
+   "AUT162",
+   "AUT166",
+   "AUT170",
+   "BUS132",
+   "BUS150",
+   "BUS50"
+  ],
+  "source": {
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=107",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    107,
+    108
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 7,
+  "text_chars": 5904
+ },
+ {
+  "control_number": "10591",
+  "title": "Art - Painting",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.8,
+  "codes_found": [
+   "ART210A",
+   "ART213",
+   "ART214",
+   "ART228A",
+   "ART228B",
+   "ART228C",
+   "ART228D",
+   "ART229"
+  ],
+  "source": {
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=102",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    102,
+    103,
+    104
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 10,
+  "text_chars": 7313
+ },
+ {
+  "control_number": "10592",
+  "title": "Art - Ceramics",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 18,
+  "text_chars": 0
+ },
+ {
+  "control_number": "10593",
+  "title": "Music - Instrumental",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "MUS200",
+   "MUS201A",
+   "MUS201B",
+   "MUS202A",
+   "MUS202B",
+   "MUS203",
+   "MUS204",
+   "MUS207",
+   "MUS208",
+   "MUS209",
+   "MUS210A",
+   "MUS250",
+   "MUS256",
+   "MUS272",
+   "MUS276",
+   "MUS278"
+  ],
+  "source": {
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=187",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    187
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 16,
+  "text_chars": 2210
+ },
+ {
+  "control_number": "12278",
+  "title": "Culinary Arts Management",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "AGR180",
+   "AGR181",
+   "BUS132",
+   "BUS150",
+   "CAM101",
+   "CAM102",
+   "CAM120",
+   "CAM121A",
+   "CAM121B",
+   "CAM121C",
+   "CAM130A",
+   "CAM130B",
+   "CAM130C",
+   "CAM140",
+   "CAM152",
+   "CAM154",
+   "CAM161",
+   "CAM197A",
+   "CAM260",
+   "CAM58",
+   "CAM68",
+   "CAM70A",
+   "CAM70B",
+   "CAM70C",
+   "CAM70D",
+   "CAM71",
+   "WEE196"
+  ],
+  "source": {
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=141",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    141
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 27,
+  "text_chars": 2186
+ },
+ {
+  "control_number": "12660",
+  "title": "IT Specialist",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CSC102",
+   "CSC105",
+   "CSC106",
+   "CSC109A",
+   "CSC116",
+   "CSC117",
+   "CSC118",
+   "CSC220"
+  ],
+  "source": {
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=135",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    135,
+    136,
+    137,
+    138
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 8,
+  "text_chars": 8711
+ },
+ {
+  "control_number": "12876",
+  "title": "Web Development",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 0.812,
+  "codes_found": [
+   "ART282",
+   "CSC102",
+   "CSC104",
+   "CSC130",
+   "CSC220",
+   "DAM110",
+   "DAM125",
+   "DAM205",
+   "DAM250",
+   "DAM281",
+   "MUS110",
+   "MUS115A",
+   "WEE196"
+  ],
+  "source": {
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=138",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    138
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 16,
+  "text_chars": 2063
+ },
+ {
+  "control_number": "15174",
+  "title": "Health Sciences",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIO202",
+   "BIO230",
+   "BIO231",
+   "BIO259",
+   "CHM200",
+   "COMM211",
+   "CSC104",
+   "HLH214",
+   "HLH215",
+   "PSYC210",
+   "PSYC216",
+   "PSYCC1000"
+  ],
+  "source": {
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=161",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    161,
+    162
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 12,
+  "text_chars": 6133
+ },
+ {
+  "control_number": "15513",
+  "title": "Human Service Worker",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ADJ200",
+   "ADJ204",
+   "ARC151",
+   "ARC164",
+   "ARC197A",
+   "CDV140",
+   "CDV202",
+   "COMM211",
+   "ETH202",
+   "ETH235",
+   "ETH241",
+   "HUS101",
+   "HUS103",
+   "HUS152",
+   "HUS154",
+   "HUS155",
+   "HUS156",
+   "HUS157",
+   "HUS161",
+   "HUS163",
+   "HUS170",
+   "HUS171",
+   "HUS172",
+   "HUS173",
+   "HUS197A",
+   "PSYC208",
+   "PSYC218",
+   "SOC210",
+   "WEE196"
+  ],
+  "source": {
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=170",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    170
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 29,
+  "text_chars": 3095
+ },
+ {
+  "control_number": "16539",
+  "title": "Registered Nurse",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANT201",
+   "BIO230",
+   "BIO231",
+   "BIO259",
+   "CDV200",
+   "COMM210",
+   "COMMC1000",
+   "ENGLC1000",
+   "ETH202",
+   "HLH214",
+   "HLH215",
+   "NUR102",
+   "NUR105",
+   "NUR112",
+   "NUR115",
+   "NUR116",
+   "NUR121",
+   "NUR122",
+   "NUR125",
+   "NUR126",
+   "NUR131",
+   "NUR132",
+   "NUR135",
+   "NUR136",
+   "NUR52A",
+   "NUR52B",
+   "NUR52C",
+   "NUR52D",
+   "PSYC210",
+   "PSYCC1000",
+   "SOC200",
+   "SOC201"
+  ],
+  "source": {
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=194",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    194,
+    195
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 32,
+  "text_chars": 5478
+ },
+ {
+  "control_number": "16540",
+  "title": "Earth Science",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "AGR208",
+   "CHM200",
+   "CHM250",
+   "CHM251",
+   "EAS210",
+   "EAS211",
+   "GEL201",
+   "GEL201L",
+   "GEL203",
+   "GEL203L",
+   "GEO201",
+   "GEO206",
+   "MTH210",
+   "MTH211",
+   "MTH230",
+   "NRS200",
+   "NRS200L",
+   "PHY210",
+   "PHY211",
+   "PHY220",
+   "PHY221",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=147",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    147
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 22,
+  "text_chars": 2650
+ },
+ {
+  "control_number": "18732",
+  "title": "Real Estate",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS111",
+   "BUS136",
+   "BUS151",
+   "BUS212",
+   "BUS230",
+   "BUS50",
+   "RLS160",
+   "RLS161",
+   "RLS162",
+   "RLS163",
+   "RLS164",
+   "RLS167",
+   "RLS170",
+   "RLS172",
+   "RLS65",
+   "RLS73",
+   "RLS74"
+  ],
+  "source": {
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=206",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    206
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 17,
+  "text_chars": 1917
+ },
+ {
+  "control_number": "18733",
+  "title": "Real Estate",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS111",
+   "BUS136",
+   "BUS151",
+   "BUS212",
+   "BUS230",
+   "BUS50",
+   "RLS160",
+   "RLS161",
+   "RLS162",
+   "RLS163",
+   "RLS164",
+   "RLS167",
+   "RLS170",
+   "RLS172",
+   "RLS65",
+   "RLS73",
+   "RLS74"
+  ],
+  "source": {
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=206",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    206
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 17,
+  "text_chars": 1917
+ },
+ {
+  "control_number": "21968",
+  "title": "Accounting",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS110",
+   "BUS111",
+   "BUS134",
+   "BUS170",
+   "BUS200",
+   "BUS201",
+   "BUS230",
+   "BUS50",
+   "COMM210",
+   "CSC104"
+  ],
+  "source": {
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=118",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    118,
+    119,
+    120,
+    121
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 10,
+  "text_chars": 7732
+ },
+ {
+  "control_number": "21969",
+  "title": "Business-Management",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS107",
+   "BUS132",
+   "BUS134",
+   "BUS136",
+   "BUS150",
+   "BUS151",
+   "BUS170",
+   "BUS200",
+   "BUS201",
+   "BUS212",
+   "BUS230",
+   "BUS50",
+   "CSC104",
+   "WEE196"
+  ],
+  "source": {
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=117",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    117,
+    118,
+    119,
+    120
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 14,
+  "text_chars": 8055
+ },
+ {
+  "control_number": "21971",
+  "title": "Child Development",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CDV100",
+   "CDV101",
+   "CDV106",
+   "CDV107",
+   "CDV108",
+   "CDV109",
+   "CDV120",
+   "CDV121",
+   "CDV125",
+   "CDV130",
+   "CDV134",
+   "CDV135",
+   "CDV140",
+   "CDV161",
+   "CDV200",
+   "CDV202",
+   "CDV280"
+  ],
+  "source": {
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=127",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    127
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 17,
+  "text_chars": 3044
+ },
+ {
+  "control_number": "21972",
+  "title": "Addiction and Recovery Counseling",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ARC151",
+   "ARC153",
+   "ARC158",
+   "ARC164",
+   "ARC165",
+   "ARC197A",
+   "HUS152",
+   "HUS154",
+   "HUS155",
+   "HUS156",
+   "HUS157",
+   "HUS159",
+   "HUS160",
+   "HUS161",
+   "HUS162",
+   "HUS163"
+  ],
+  "source": {
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=87",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    87,
+    88
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 16,
+  "text_chars": 6085
+ },
+ {
+  "control_number": "21973",
+  "title": "Administration of Justice",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ADJ104",
+   "ADJ106",
+   "ADJ108",
+   "ADJ109",
+   "ADJ150",
+   "ADJ200",
+   "ADJ202",
+   "ADJ204",
+   "ADJ206",
+   "ADJ207"
+  ],
+  "source": {
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=89",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    89
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 10,
+  "text_chars": 2678
+ },
+ {
+  "control_number": "30501",
+  "title": "Advanced ESL Preparation",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESL511A",
+   "ESL511B",
+   "ESL513"
+  ],
+  "source": {
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=155",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    155
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 3,
+  "text_chars": 1726
+ },
+ {
+  "control_number": "30601",
+  "title": "Sociology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ADJ200",
+   "ANT201",
+   "ETH202",
+   "ETH235",
+   "ETH241",
+   "PSYC250",
+   "SOC200",
+   "SOC201",
+   "SOC203",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=81",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    81,
+    82
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 10,
+  "text_chars": 10879
+ },
+ {
+  "control_number": "30672",
+  "title": "Communication Studies",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 0.889,
+  "codes_found": [
+   "ANT201",
+   "COMM200",
+   "COMM202",
+   "COMM210",
+   "COMM211",
+   "COMMC1000",
+   "PSYCC1000",
+   "SOC200"
+  ],
+  "source": {
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=128",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    128
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 9,
+  "text_chars": 2650
+ },
+ {
+  "control_number": "30677",
+  "title": "Mathematics",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "MTH210",
+   "MTH211",
+   "MTH212",
+   "MTH214",
+   "MTH215",
+   "PHY220",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=78",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    78,
+    79
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 7,
+  "text_chars": 13982
+ },
+ {
+  "control_number": "30693",
+  "title": "Human Services Paraprofessional",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 0.889,
+  "codes_found": [
+   "ADJ200",
+   "ADJ204",
+   "ARC151",
+   "ARC164",
+   "ARC197A",
+   "CDV202",
+   "CDV280",
+   "COMM211",
+   "ETH202",
+   "ETH235",
+   "ETH241",
+   "HUS101",
+   "HUS103",
+   "HUS152",
+   "HUS154",
+   "HUS155",
+   "HUS156",
+   "HUS157",
+   "HUS159",
+   "HUS160",
+   "HUS161",
+   "HUS162",
+   "HUS163",
+   "HUS170",
+   "HUS171",
+   "HUS172",
+   "HUS173",
+   "HUS197A",
+   "PSYC208",
+   "PSYC216",
+   "SOC210",
+   "WEE196"
+  ],
+  "source": {
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=168",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    168,
+    169,
+    170
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 36,
+  "text_chars": 8035
+ },
+ {
+  "control_number": "30857",
+  "title": "Sustainable Construction and Energy Technology - Building Efficiency and Performance",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "SCT162",
+   "SCT164",
+   "SCT180A",
+   "SCT193",
+   "SCT194",
+   "SCT200",
+   "WEE196"
+  ],
+  "source": {
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=216",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    216,
+    217,
+    218
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 7,
+  "text_chars": 5631
+ },
+ {
+  "control_number": "30858",
+  "title": "Sustainable Construction and Energy Technology - Construction",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "SCT162",
+   "SCT164",
+   "SCT180A",
+   "SCT180B",
+   "SCT200",
+   "WEE196"
+  ],
+  "source": {
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=217",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    217,
+    218
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 6,
+  "text_chars": 3596
+ },
+ {
+  "control_number": "30859",
+  "title": "Sustainable Construction and Energy Technology - Renewable Energy",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 0.857,
+  "codes_found": [
+   "SCT162",
+   "SCT164",
+   "SCT180A",
+   "SCT186",
+   "SCT200",
+   "WEE196"
+  ],
+  "source": {
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=218",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    218
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 7,
+  "text_chars": 1797
+ },
+ {
+  "control_number": "31067",
+  "title": "Human Services Paraprofessional",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ARC164",
+   "ARC197A",
+   "HUS101",
+   "HUS103",
+   "HUS152",
+   "HUS154",
+   "HUS156",
+   "HUS170",
+   "HUS197A",
+   "PSYCC1000",
+   "SOC200"
+  ],
+  "source": {
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=167",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    167,
+    168
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 11,
+  "text_chars": 6536
+ },
+ {
+  "control_number": "31424",
+  "title": "Business Administration",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 0.75,
+  "codes_found": [
+   "BUS200",
+   "BUS201",
+   "BUS212",
+   "BUS230",
+   "ECONC2001",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=114",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    114
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 8,
+  "text_chars": 2873
+ },
+ {
+  "control_number": "31425",
+  "title": "Political Science",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 0.625,
+  "codes_found": [
+   "POLS197",
+   "POLS201",
+   "POLS202",
+   "POLS203",
+   "POLS205",
+   "POLS206",
+   "POLSC1000",
+   "PSYC250",
+   "SOC201",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=201",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    201
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 16,
+  "text_chars": 2602
+ },
+ {
+  "control_number": "31446",
+  "title": "Geology",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHM250",
+   "CHM251",
+   "GEL201",
+   "GEL201L",
+   "GEL203",
+   "GEL203L",
+   "MTH210",
+   "MTH211"
+  ],
+  "source": {
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=147",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    147
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 8,
+  "text_chars": 2650
+ },
+ {
+  "control_number": "31447",
+  "title": "Administration of Justice",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ADJ104",
+   "ADJ106",
+   "ADJ108",
+   "ADJ109",
+   "ADJ150",
+   "ADJ200",
+   "ADJ202",
+   "ADJ204",
+   "ADJ206",
+   "ADJ207"
+  ],
+  "source": {
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=89",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    89
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 10,
+  "text_chars": 2678
+ },
+ {
+  "control_number": "31465",
+  "title": "English",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 0.909,
+  "codes_found": [
+   "ENGL210",
+   "ENGL212",
+   "ENGL225",
+   "ENGL245",
+   "ENGL246",
+   "ENGL250",
+   "ENGL265",
+   "ENGL270",
+   "ENGLC1001",
+   "THE200"
+  ],
+  "source": {
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=151",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    151
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 11,
+  "text_chars": 2539
+ },
+ {
+  "control_number": "31957",
+  "title": "Liberal Arts and Sciences Native American Studies",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.75,
+  "codes_found": [
+   "ANT201",
+   "ETH202",
+   "ETH241",
+   "HUS172",
+   "MTH170",
+   "POLS205"
+  ],
+  "source": {
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=179",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    179,
+    180
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 8,
+  "text_chars": 5443
+ },
+ {
+  "control_number": "31958",
+  "title": "Liberal Arts and Sciences in Kinesiology & Health",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.96,
+  "codes_found": [
+   "BIO202",
+   "BIO202L",
+   "BIO230",
+   "BIO231",
+   "BIO250",
+   "BIO259",
+   "CDV200",
+   "CHM200",
+   "CHM250",
+   "COMM210",
+   "COMMC1000",
+   "EMS202",
+   "HLH200",
+   "HLH214",
+   "HLH215",
+   "KIN109",
+   "KIN200",
+   "KIN214",
+   "PHY210",
+   "PHY211",
+   "PSYC210",
+   "PSYC220",
+   "PSYCC1000",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=178",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    178
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 25,
+  "text_chars": 3107
+ },
+ {
+  "control_number": "31959",
+  "title": "Liberal Arts and Sciences in Social Science",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.667,
+  "codes_found": [
+   "ANT201",
+   "CDV200",
+   "ECONC2001",
+   "ETH202",
+   "POLS202",
+   "POLS203",
+   "POLSC1000",
+   "PSYC210",
+   "PSYC216",
+   "PSYC220",
+   "PSYC250",
+   "PSYCC1000",
+   "SOC200",
+   "SOC201"
+  ],
+  "source": {
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=180",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    180
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 21,
+  "text_chars": 2490
+ },
+ {
+  "control_number": "31960",
+  "title": "Liberal Arts and Sciences in Education",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.9,
+  "codes_found": [
+   "BIO200",
+   "BIO202",
+   "BIO250",
+   "CDV200",
+   "CHM200",
+   "COMM210",
+   "COMMC1000",
+   "EDU103",
+   "EDU130",
+   "ENGL270",
+   "ETH202",
+   "ETH235",
+   "ETH241",
+   "GEL201",
+   "PHY202",
+   "PSYC210",
+   "STATC1000",
+   "THE200"
+  ],
+  "source": {
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=176",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    176
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 20,
+  "text_chars": 2860
+ },
+ {
+  "control_number": "31969",
+  "title": "LVN to RN Career Ladder",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANT201",
+   "BIO230",
+   "BIO231",
+   "BIO259",
+   "CDV200",
+   "COMM210",
+   "COMMC1000",
+   "ENGLC1000",
+   "ETH202",
+   "HLH214",
+   "HLH215",
+   "NUR121",
+   "NUR122",
+   "NUR125",
+   "NUR126",
+   "NUR131",
+   "NUR132",
+   "NUR135",
+   "NUR136",
+   "NUR50",
+   "NUR52C",
+   "NUR52D",
+   "NUR52T",
+   "PSYC210",
+   "PSYCC1000",
+   "SOC200",
+   "SOC201"
+  ],
+  "source": {
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=195",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    195
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 27,
+  "text_chars": 2397
+ },
+ {
+  "control_number": "32049",
+  "title": "History",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 22,
+  "text_chars": 0
+ },
+ {
+  "control_number": "32077",
+  "title": "Spanish For Native Speakers",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.8,
+  "codes_found": [
+   "ETH235",
+   "SPN202",
+   "SPN210",
+   "SPN211"
+  ],
+  "source": {
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=79",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    79
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 5,
+  "text_chars": 5930
+ },
+ {
+  "control_number": "32084",
+  "title": "Music",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "MUS201A",
+   "MUS201B",
+   "MUS202A",
+   "MUS202B",
+   "MUS250",
+   "MUS256",
+   "MUS272",
+   "MUS276",
+   "MUS278",
+   "MUS280",
+   "MUS281",
+   "MUS285"
+  ],
+  "source": {
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=185",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    185
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 12,
+  "text_chars": 2209
+ },
+ {
+  "control_number": "32085",
+  "title": "Theatre Arts",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "THE200",
+   "THE202",
+   "THE208A",
+   "THE210B",
+   "THE210C",
+   "THE210D",
+   "THE216A",
+   "THE217A",
+   "THE220A",
+   "THE225A",
+   "THE225B",
+   "THE225C"
+  ],
+  "source": {
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=220",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    220
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 12,
+  "text_chars": 2318
+ },
+ {
+  "control_number": "32089",
+  "title": "Psychology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIO200",
+   "PSYC206",
+   "PSYC208",
+   "PSYC210",
+   "PSYC212",
+   "PSYC216",
+   "PSYC218",
+   "PSYC220",
+   "PSYC225",
+   "PSYC250",
+   "PSYC255",
+   "PSYC290",
+   "PSYCC1000",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=203",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    203
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 14,
+  "text_chars": 2011
+ },
+ {
+  "control_number": "32095",
+  "title": "Kinesiology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIO230",
+   "BIO231",
+   "CHM250",
+   "EMS202",
+   "KIN200",
+   "PEF202",
+   "PEF216",
+   "PEF280",
+   "PES204",
+   "PES208",
+   "PES224",
+   "PES264A",
+   "PES264B",
+   "PES273A",
+   "PES273B",
+   "PES274A",
+   "PHY210",
+   "PHY220",
+   "PSYCC1000",
+   "SOC200",
+   "STATC1000",
+   "THE227A",
+   "THE228A",
+   "THE230A",
+   "THE238E",
+   "THE242A"
+  ],
+  "source": {
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=172",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    172,
+    173
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 26,
+  "text_chars": 3791
+ },
+ {
+  "control_number": "32678",
+  "title": "Business Retail Management",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS106",
+   "BUS134",
+   "BUS135",
+   "BUS136",
+   "BUS151",
+   "BUS170",
+   "BUS200",
+   "CSC104"
+  ],
+  "source": {
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=122",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    122
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 8,
+  "text_chars": 1720
+ },
+ {
+  "control_number": "32680",
+  "title": "Business Entrepreneurship",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS106",
+   "BUS132",
+   "BUS135",
+   "BUS150",
+   "BUS200",
+   "BUS230",
+   "BUS50"
+  ],
+  "source": {
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=119",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    119
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 7,
+  "text_chars": 2651
+ },
+ {
+  "control_number": "32708",
+  "title": "Recording Arts and Technology",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "MUS110",
+   "MUS111",
+   "MUS112",
+   "MUS113",
+   "MUS115A",
+   "MUS115B",
+   "MUS115C",
+   "MUS115D",
+   "MUS201A",
+   "MUS201B",
+   "MUS202A",
+   "MUS202B",
+   "MUS203",
+   "MUS204",
+   "MUS208",
+   "MUS209",
+   "MUS210A",
+   "MUS210B",
+   "MUS210C",
+   "MUS210D"
+  ],
+  "source": {
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=189",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    189
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 20,
+  "text_chars": 2500
+ },
+ {
+  "control_number": "32788",
+  "title": "Viticulture Skills",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "AGR100",
+   "AGR112",
+   "AGR197",
+   "AGR208",
+   "AGR211",
+   "AGR216",
+   "AGR56",
+   "BUS132",
+   "WEE196"
+  ],
+  "source": {
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=97",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    97
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 9,
+  "text_chars": 1220
+ },
+ {
+  "control_number": "32803",
+  "title": "Sustainable Small Farms Management",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "AGR100",
+   "AGR140",
+   "AGR180",
+   "AGR181",
+   "AGR197",
+   "AGR208",
+   "AGR216",
+   "AGR56",
+   "AGR57",
+   "AGR61",
+   "AGR62",
+   "AGR75",
+   "BUS132",
+   "BUS150",
+   "SPN100",
+   "SPN101",
+   "SPN102",
+   "WEE196"
+  ],
+  "source": {
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=96",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    96,
+    97
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 18,
+  "text_chars": 3487
+ },
+ {
+  "control_number": "32985",
+  "title": "Economics",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 0.8,
+  "codes_found": [
+   "BUS200",
+   "BUS201",
+   "MTH210",
+   "MTH211",
+   "MTH212",
+   "MTH214",
+   "MTH230",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=149",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    149
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 10,
+  "text_chars": 2682
+ },
+ {
+  "control_number": "32986",
+  "title": "Early Childhood Education",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CDV100",
+   "CDV101",
+   "CDV107",
+   "CDV108",
+   "CDV109",
+   "CDV200",
+   "CDV202",
+   "CDV280"
+  ],
+  "source": {
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=124",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    124,
+    125
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 8,
+  "text_chars": 6492
+ },
+ {
+  "control_number": "32988",
+  "title": "Studio Arts",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 0.714,
+  "codes_found": [
+   "ART210A",
+   "ART210B",
+   "ART213",
+   "ART214",
+   "ART220A",
+   "ART228A",
+   "ART231A",
+   "ART232",
+   "ART282",
+   "DAM205"
+  ],
+  "source": {
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=100",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    100
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 14,
+  "text_chars": 1911
+ },
+ {
+  "control_number": "33016",
+  "title": "Art History",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 0.556,
+  "codes_found": [
+   "ART210A",
+   "ART213",
+   "ART214",
+   "ART220A",
+   "ART228A"
+  ],
+  "source": {
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=98",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    98
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 9,
+  "text_chars": 2486
+ },
+ {
+  "control_number": "33096",
+  "title": "Elementary Teacher Education",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 13,
+  "text_chars": 0
+ },
+ {
+  "control_number": "33148",
+  "title": "Recording Arts and Technology",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "MUS110",
+   "MUS111",
+   "MUS112",
+   "MUS113",
+   "MUS115A",
+   "MUS115B",
+   "MUS115C",
+   "MUS115D",
+   "MUS201A",
+   "MUS201B",
+   "MUS202A",
+   "MUS202B",
+   "MUS203",
+   "MUS204",
+   "MUS208",
+   "MUS209",
+   "MUS210A",
+   "MUS210B",
+   "MUS210C",
+   "MUS210D"
+  ],
+  "source": {
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=189",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    189
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 20,
+  "text_chars": 2500
+ },
+ {
+  "control_number": "33595",
+  "title": "Computer Science",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 0.875,
+  "codes_found": [
+   "CSC210",
+   "CSC222",
+   "CSC240",
+   "MTH210",
+   "MTH211",
+   "PHY220",
+   "PHY221"
+  ],
+  "source": {
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=129",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    129
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 8,
+  "text_chars": 3070
+ },
+ {
+  "control_number": "33597",
+  "title": "Spanish",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 0.895,
+  "codes_found": [
+   "ANT201",
+   "ASL200",
+   "ASL201",
+   "COMM211",
+   "ETH202",
+   "ETH235",
+   "GEO201",
+   "ITA200",
+   "ITA201",
+   "SOC200",
+   "SPN200",
+   "SPN201",
+   "SPN202",
+   "SPN203",
+   "SPN210",
+   "SPN211",
+   "SPN212"
+  ],
+  "source": {
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=213",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    213
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 19,
+  "text_chars": 2380
+ },
+ {
+  "control_number": "33796",
+  "title": "Allied Health",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIO202",
+   "BIO230",
+   "BIO231",
+   "BIO259",
+   "CHM200",
+   "COMM211",
+   "CSC104",
+   "HLH214",
+   "HLH215",
+   "PSYC210",
+   "PSYC216",
+   "PSYCC1000",
+   "WEE196"
+  ],
+  "source": {
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=161",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    161,
+    162
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 13,
+  "text_chars": 6133
+ },
+ {
+  "control_number": "33812",
+  "title": "Geography",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANT201",
+   "EAS211",
+   "GEL201",
+   "GEO201",
+   "GEO206"
+  ],
+  "source": {
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=78",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    78,
+    79
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 5,
+  "text_chars": 13982
+ },
+ {
+  "control_number": "33886",
+  "title": "Biology",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIO250",
+   "BIO255",
+   "BIO257",
+   "CHM250",
+   "CHM251",
+   "MTH210",
+   "MTH230",
+   "PHY210",
+   "PHY211",
+   "PHY220",
+   "PHY221"
+  ],
+  "source": {
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=111",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    111
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 11,
+  "text_chars": 2369
+ },
+ {
+  "control_number": "35137",
+  "title": "Fine Woodworking I",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "WOD80A",
+   "WOD80B"
+  ],
+  "source": {
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=226",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    226,
+    227
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 2,
+  "text_chars": 3556
+ },
+ {
+  "control_number": "35138",
+  "title": "Fine Woodworking II",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "WOD81A",
+   "WOD81B"
+  ],
+  "source": {
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=227",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    227
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 2,
+  "text_chars": 1672
+ },
+ {
+  "control_number": "35168",
+  "title": "LVN to RN",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIO231",
+   "BIO259",
+   "NUR121",
+   "NUR122",
+   "NUR125",
+   "NUR126",
+   "NUR131",
+   "NUR132",
+   "NUR135",
+   "NUR136",
+   "NUR50",
+   "NUR52C",
+   "NUR52D",
+   "NUR52T"
+  ],
+  "source": {
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=195",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    195
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 14,
+  "text_chars": 2397
+ },
+ {
+  "control_number": "35224",
+  "title": "Art - Printmaking",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.818,
+  "codes_found": [
+   "ART210A",
+   "ART210B",
+   "ART213",
+   "ART214",
+   "ART232",
+   "ART234A",
+   "ART234B",
+   "ART236A",
+   "ART236B"
+  ],
+  "source": {
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=238",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    238,
+    239
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 11,
+  "text_chars": 8018
+ },
+ {
+  "control_number": "35331",
+  "title": "Digital Arts and Media",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 0.938,
+  "codes_found": [
+   "ART210A",
+   "ART282",
+   "CSC104",
+   "CSC130",
+   "DAM110",
+   "DAM125",
+   "DAM205",
+   "DAM250",
+   "DAM281",
+   "MUS110",
+   "MUS115A",
+   "THE201",
+   "THE216A",
+   "THE219",
+   "WEE196"
+  ],
+  "source": {
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=146",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    146
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 16,
+  "text_chars": 2091
+ },
+ {
+  "control_number": "36053",
+  "title": "Physical Therapist Assistant",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIO230",
+   "BIO231",
+   "ENGLC1000",
+   "KIN200",
+   "PTA100",
+   "PTA101",
+   "PTA102",
+   "PTA103",
+   "PTA103L",
+   "PTA104",
+   "PTA104L",
+   "PTA105",
+   "PTA105L",
+   "PTA106",
+   "PTA106L",
+   "PTA107",
+   "PTA107L",
+   "PTA108",
+   "PTA108L",
+   "PTA109",
+   "PTA109L",
+   "PTA110",
+   "PTA110L",
+   "PTA111",
+   "PTA118",
+   "PTA121",
+   "PTA122"
+  ],
+  "source": {
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=199",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    199,
+    200
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 27,
+  "text_chars": 4974
+ },
+ {
+  "control_number": "36246",
+  "title": "Business Information Worker I",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS107",
+   "BUS134",
+   "BUS170",
+   "CSC104",
+   "CSC116",
+   "CSC220"
+  ],
+  "source": {
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=119",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    119,
+    120,
+    121,
+    122
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 6,
+  "text_chars": 8184
+ },
+ {
+  "control_number": "36290",
+  "title": "Basic Academic Skills",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BSK501",
+   "BSK502"
+  ],
+  "source": {
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=110",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    110
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 2,
+  "text_chars": 2668
+ },
+ {
+  "control_number": "36589",
+  "title": "Employment Work Skills",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "LRS531",
+   "LRS532",
+   "LRS533",
+   "LRS534",
+   "LRS535",
+   "LRS536"
+  ],
+  "source": {
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=174",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    174
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 6,
+  "text_chars": 1897
+ },
+ {
+  "control_number": "36788",
+  "title": "CSU GE Breadth",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 0.818,
+  "codes_found": [
+   "ANT201",
+   "BIO202",
+   "CHM200",
+   "COMMC1000",
+   "ENGLC1001",
+   "MTH121",
+   "MUS207",
+   "POLSC1000",
+   "SOC200"
+  ],
+  "source": {
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=78",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    78,
+    79
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 11,
+  "text_chars": 13982
+ },
+ {
+  "control_number": "36789",
+  "title": "California General Education Transfer Curriculum",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 0.692,
+  "codes_found": [
+   "ANT201",
+   "BIO202",
+   "CHM200",
+   "ENGLC1000",
+   "ENGLC1001",
+   "MTH200",
+   "MUS207",
+   "POLS203",
+   "SOC200"
+  ],
+  "source": {
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=81",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    81,
+    82
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 13,
+  "text_chars": 10879
+ },
+ {
+  "control_number": "37283",
+  "title": "Basic Computer Skills",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CSC520",
+   "CSC526"
+  ],
+  "source": {
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=110",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    110
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 2,
+  "text_chars": 2668
+ },
+ {
+  "control_number": "38656",
+  "title": "Social Justice: General Studies",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 0.667,
+  "codes_found": [
+   "COMM211",
+   "ETH202",
+   "SOC200",
+   "SOC201",
+   "SOC203",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=81",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    81,
+    82
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 9,
+  "text_chars": 10879
+ },
+ {
+  "control_number": "38659",
+  "title": "Social Justice: Ethnic Studies",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 0.692,
+  "codes_found": [
+   "ETH202",
+   "ETH235",
+   "ETH241",
+   "MUS208",
+   "POLS205",
+   "SOC200",
+   "SOC201",
+   "SOC203",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=81",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    81,
+    82
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 13,
+  "text_chars": 10879
+ },
+ {
+  "control_number": "39213",
+  "title": "Culinary Arts Management",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "AGR180",
+   "AGR181",
+   "BUS132",
+   "BUS150",
+   "CAM101",
+   "CAM102",
+   "CAM120",
+   "CAM121A",
+   "CAM121B",
+   "CAM121C",
+   "CAM130A",
+   "CAM130B",
+   "CAM130C",
+   "CAM140",
+   "CAM152",
+   "CAM154",
+   "CAM161",
+   "CAM197A",
+   "CAM260",
+   "CAM58",
+   "CAM68",
+   "CAM70A",
+   "CAM70B",
+   "CAM70C",
+   "CAM70D",
+   "CAM71",
+   "WEE196"
+  ],
+  "source": {
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=141",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    141
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 27,
+  "text_chars": 2186
+ },
+ {
+  "control_number": "40466",
+  "title": "Introduction to the Construction Trades",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "EMS550",
+   "SCT500",
+   "SCT505",
+   "SCT515",
+   "SCT540",
+   "SCT541",
+   "SCT562"
+  ],
+  "source": {
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=219",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    219
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 7,
+  "text_chars": 2222
+ },
+ {
+  "control_number": "40730",
+  "title": "Technical Theatre",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "MUS110",
+   "MUS115A",
+   "THE200",
+   "THE208A",
+   "THE216A",
+   "THE217A",
+   "THE225A",
+   "THE225B"
+  ],
+  "source": {
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=225",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    225
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 8,
+  "text_chars": 2112
+ },
+ {
+  "control_number": "41091",
+  "title": "Chemistry UCTP",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHM250",
+   "CHM251",
+   "CHM255",
+   "CHM256",
+   "MTH210",
+   "MTH211",
+   "MTH212",
+   "MTH215",
+   "PHY220",
+   "PHY221",
+   "PHY222"
+  ],
+  "source": {
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=123",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    123
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 11,
+  "text_chars": 3252
+ },
+ {
+  "control_number": "41511",
+  "title": "Business Administration 2.0",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 0.889,
+  "codes_found": [
+   "BUS200",
+   "BUS201",
+   "BUS212",
+   "BUS230",
+   "ECONC2001",
+   "MTH210",
+   "MTH230",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=114",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    114
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 9,
+  "text_chars": 2873
+ },
+ {
+  "control_number": "42202",
+  "title": "Word Processing",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CSC531",
+   "CSC532"
+  ],
+  "source": {
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=140",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    140
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 2,
+  "text_chars": 1225
+ },
+ {
+  "control_number": "42219",
+  "title": "Presentations",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CSC551",
+   "CSC552"
+  ],
+  "source": {
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=139",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    139
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 2,
+  "text_chars": 2367
+ },
+ {
+  "control_number": "42220",
+  "title": "Spreadsheets",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CSC541",
+   "CSC542"
+  ],
+  "source": {
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=139",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    139
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 2,
+  "text_chars": 2367
+ },
+ {
+  "control_number": "42496",
+  "title": "Business Information Worker II",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS107",
+   "BUS108",
+   "BUS134",
+   "BUS170",
+   "CSC104",
+   "CSC116",
+   "CSC164",
+   "CSC166",
+   "CSC220",
+   "WEE196"
+  ],
+  "source": {
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=120",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    120,
+    121,
+    122
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 10,
+  "text_chars": 5531
+ },
+ {
+  "control_number": "42666",
+  "title": "Advanced Automotive Hybrid and Electric Vehicles",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "AUT162",
+   "AUT166",
+   "AUT180",
+   "AUT181"
+  ],
+  "source": {
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=108",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    108
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 4,
+  "text_chars": 3390
+ },
+ {
+  "control_number": "42667",
+  "title": "Automotive Chassis Specialist",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "AUT542",
+   "AUT562"
+  ],
+  "source": {
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=108",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    108
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 2,
+  "text_chars": 3390
+ },
+ {
+  "control_number": "42668",
+  "title": "Advanced Automotive Chassis Specialist",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "AUT544",
+   "AUT545"
+  ],
+  "source": {
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=109",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    109
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 2,
+  "text_chars": 1595
+ },
+ {
+  "control_number": "42863",
+  "title": "Communication Studies 2.0",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANT201",
+   "COMM200",
+   "COMM202",
+   "COMM210",
+   "COMM211",
+   "COMMC1000",
+   "PSYCC1000",
+   "SOC200"
+  ],
+  "source": {
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=128",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    128
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 8,
+  "text_chars": 2650
+ },
+ {
+  "control_number": "43158",
+  "title": "Intermediate ESL Preparation",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESL500A",
+   "ESL500B",
+   "ESL507A",
+   "ESL507B",
+   "ESL509A",
+   "ESL509B"
+  ],
+  "source": {
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=154",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    154
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 6,
+  "text_chars": 1897
+ },
+ {
+  "control_number": "43277",
+  "title": "Company Officer",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ADJ150"
+  ],
+  "source": {
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=157",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    157
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 1,
+  "text_chars": 2314
+ },
+ {
+  "control_number": "43366",
+  "title": "Fire Science",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ADJ150",
+   "COMM211",
+   "EMS135",
+   "EMS202",
+   "FSC111",
+   "FSC112",
+   "FSC113",
+   "FSC114",
+   "FSC115",
+   "FSC90",
+   "PSYC208",
+   "WEE196"
+  ],
+  "source": {
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=157",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    157
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 12,
+  "text_chars": 2314
+ },
+ {
+  "control_number": "43562",
+  "title": "Cybersecurity",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS107",
+   "BUS134",
+   "BUS170",
+   "CSC116",
+   "CSC117",
+   "CSC118",
+   "CSC150",
+   "CSC152",
+   "CSC154",
+   "CSC156",
+   "CSC158",
+   "CSC159",
+   "CSC161"
+  ],
+  "source": {
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=131",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    131,
+    132,
+    133,
+    134
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 13,
+  "text_chars": 11571
+ },
+ {
+  "control_number": "43563",
+  "title": "Network Defense",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS107",
+   "BUS134",
+   "BUS170",
+   "CSC116",
+   "CSC117",
+   "CSC118",
+   "CSC152",
+   "CSC154",
+   "CSC161",
+   "CSC221"
+  ],
+  "source": {
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=131",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    131,
+    132,
+    133,
+    134
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 10,
+  "text_chars": 11571
+ },
+ {
+  "control_number": "43564",
+  "title": "Penetration Test Professional",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS107",
+   "BUS134",
+   "BUS170",
+   "CSC116",
+   "CSC117",
+   "CSC118",
+   "CSC152",
+   "CSC158",
+   "CSC159",
+   "CSC161",
+   "CSC221"
+  ],
+  "source": {
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=137",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    137,
+    138
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 11,
+  "text_chars": 4262
+ },
+ {
+  "control_number": "43565",
+  "title": "Digital Forensics",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS107",
+   "BUS134",
+   "BUS170",
+   "CSC116",
+   "CSC117",
+   "CSC118",
+   "CSC152",
+   "CSC156",
+   "CSC161"
+  ],
+  "source": {
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=131",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    131,
+    132,
+    133,
+    134
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 9,
+  "text_chars": 11571
+ },
+ {
+  "control_number": "43585",
+  "title": "Communication Skills ESL Preparation",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESL503A",
+   "ESL503B",
+   "ESL503C"
+  ],
+  "source": {
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=153",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    153
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 3,
+  "text_chars": 1606
+ },
+ {
+  "control_number": "45263",
+  "title": "STEM Preparation",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIO200",
+   "CHM200",
+   "CSC220",
+   "MTH121",
+   "MTH200",
+   "PHY202",
+   "SCI200"
+  ],
+  "source": {
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=215",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    215
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 7,
+  "text_chars": 2235
+ },
+ {
+  "control_number": "45314",
+  "title": "Vocational Nursing",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "LVN101",
+   "LVN102",
+   "LVN103"
+  ],
+  "source": {
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=182",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    182
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 3,
+  "text_chars": 3001
+ },
+ {
+  "control_number": "46062",
+  "title": "Hospitality Management",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS170",
+   "BUS212",
+   "CAM101",
+   "CAM152",
+   "CAM154",
+   "CAM161",
+   "ECONC2001",
+   "HSP101",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=166",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    166
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 9,
+  "text_chars": 1966
+ },
+ {
+  "control_number": "46569",
+  "title": "Business Foundations",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS107",
+   "BUS132",
+   "BUS134",
+   "BUS136",
+   "BUS150",
+   "BUS151",
+   "BUS230",
+   "BUS50",
+   "WEE196"
+  ],
+  "source": {
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=117",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    117,
+    118,
+    119,
+    120
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 9,
+  "text_chars": 8055
+ }
+]
