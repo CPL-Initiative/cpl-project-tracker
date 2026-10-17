@@ -1,0 +1,285 @@
+{
+ "college": "Antelope Valley College",
+ "control_number": "38016",
+ "shape": "noncredit",
+ "title": "Nursing Skills Lab",
+ "award": "Noncredit program",
+ "source_url": "https://avc.elumenapp.com/catalog/2026-27/program/nursing-skills-lab-certificate-noncredit-fall-2026",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8246,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8246,
+    "output_tokens": 3201,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 3201,
+  "output_tokens_details": {
+   "thinking_tokens": 1315
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.097,
+ "ms": 37808,
+ "seconds": 38.2,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 8,
+   "listed": 8,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    35.0,
+    35.0
+   ],
+   "stated": [
+    35.0,
+    95.0
+   ],
+   "against": "program",
+   "why": [
+    "the blocks sum to 35.0-35.0; the catalog states 35.0-95.0"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 1,
+   "courses": 7,
+   "count": 22,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Nursing Skills Lab Certificate (Noncredit)",
+   "measure": "hours",
+   "total_units": {
+    "min": 35,
+    "max": 95
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Students will successfully perform nursing skills necessary to practice as a competent registered nurse."
+   ],
+   "careers": [
+    "registered nurse"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "NS 911L",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NS 912L",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NS 913L",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NS 921L",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NS 922L",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NS 923L",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NS 924L",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Optional",
+    "rule": "choose_courses",
+    "minimum": 0,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "NS 950L",
+      "units": 60,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [
+   {
+    "code": "NS911L",
+    "outcomes": [
+     "Practice nursing within the legal, ethical and regulatory framework of nursing and standards of professional nursing practices.",
+     "Uses the nursing process to safely care for patients; reports and documents appropriate patient information in a timely manner.",
+     "Uses critical thinking to provide the foundation for appropriate decision-making."
+    ]
+   },
+   {
+    "code": "NS912L",
+    "outcomes": [
+     "Practice nursing within the legal, ethical and regulatory framework of nursing and standards of professional nursing practices.",
+     "Uses the nursing process to safely care for patients; reports and documents appropriate patient information in a timely manner.",
+     "Uses critical thinking to provide the foundation for appropriate decision-making."
+    ]
+   },
+   {
+    "code": "NS913L",
+    "outcomes": [
+     "Practice nursing within the legal, ethical and regulatory framework of nursing and standards of professional nursing practices.",
+     "Uses the nursing process to safely care for patients; reports and documents appropriate patient information in a timely manner.",
+     "Uses critical thinking to provide the foundation for appropriate decision-making."
+    ]
+   },
+   {
+    "code": "NS921L",
+    "outcomes": [
+     "Practice nursing within the legal, ethical and regulatory framework of nursing and standards of professional nursing practices.",
+     "Uses the nursing process to safely care for patients; reports and documents appropriate patient information in a timely manner.",
+     "Uses critical thinking to provide the foundation for appropriate decision-making."
+    ]
+   },
+   {
+    "code": "NS922L",
+    "outcomes": [
+     "Practice nursing within the legal, ethical and regulatory framework of nursing and standards of professional nursing practices.",
+     "Uses the nursing process to safely care for patients; reports and documents appropriate patient information in a timely manner.",
+     "Uses critical thinking to provide the foundation for appropriate decision-making."
+    ]
+   },
+   {
+    "code": "NS923L",
+    "outcomes": [
+     "Practice nursing within the legal, ethical and regulatory framework of nursing and standards of professional nursing practices.",
+     "Uses the nursing process to safely care for patients; reports and documents appropriate patient information in a timely manner.",
+     "Uses critical thinking to provide the foundation for appropriate decision-making."
+    ]
+   },
+   {
+    "code": "NS924L",
+    "outcomes": [
+     "Practice nursing within the legal, ethical and regulatory framework of nursing and standards of professional nursing practices.",
+     "Uses the nursing process to safely care for patients; reports and documents appropriate patient information in a timely manner.",
+     "Uses critical thinking to provide the foundation for appropriate decision-making."
+    ]
+   }
+  ],
+  "missing_explained": [],
+  "notes": [
+   "Program is counted in hours: 'Complete the following number of hours: 35-95' and 'Required Major Total 35-95 hours'; course figures are hours.",
+   "The first requirements list prints all eight courses under one 'Complete the following number of hours: 35-95' heading; the detailed requirements table splits them into seven required courses (35 hours) and NS 950L (60 hours) marked 'Optional'. Recorded as an 'all' block plus an 'Optional' block with minimum 0, so the 35-95 range reflects taking or skipping NS 950L. Reviewer should confirm.",
+   "The table heading 'Required Courses (35 - 95 hours)' covers both the required and optional courses, so it was not recorded as the stated total of the seven-course block alone (which sums to 35).",
+   "The single program outcome was taken from the 'Program Goals and Objectives' section; the 'Program Outcomes' section prints outcomes only under individual courses (recorded in course_outcomes) and under 'Registered Nursing AS', a different program, which were not recorded as this award's outcomes.",
+   "No outcomes are printed for NS950L.",
+   "Course codes are written with a space as in the requirements table ('NS 911L'); the first list prints them without a space ('NS911L'). Course outcomes keep the no-space form as printed there.",
+   "Page includes internal eLumen workflow/checklist text unrelated to requirements; ignored."
+  ]
+ },
+ "extracted_run": "38979725726"
+}

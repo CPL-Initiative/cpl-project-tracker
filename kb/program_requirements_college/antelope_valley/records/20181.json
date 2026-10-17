@@ -1,0 +1,218 @@
+{
+ "college": "Antelope Valley College",
+ "control_number": "20181",
+ "shape": "certificate",
+ "title": "Aircraft Fabrication and Assembly Technician",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://avc.elumenapp.com/catalog/2026-27/program/aircraft-fabrication-and-assembly-technician-as-fall-2026",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8169,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8169,
+    "output_tokens": 2119,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2119,
+  "output_tokens_details": {
+   "thinking_tokens": 1122
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.07506,
+ "ms": 19341,
+ "seconds": 19.7,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 5,
+   "listed": 5,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    26.0,
+    26.0
+   ],
+   "stated": [
+    26.0,
+    26.0
+   ],
+   "against": "program",
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     47.0,
+     47.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     21.0,
+     21.0
+    ],
+    "why": [],
+    "fill": [
+     13.0,
+     13.0
+    ]
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 2,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Aircraft Fabrication and Assembly Technician AS",
+   "measure": "units",
+   "total_units": {
+    "min": 26,
+    "max": 26
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "AVC GE (local general education)",
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": 21,
+    "max": 21
+   },
+   "electives_fill_degree": true,
+   "outcomes": [
+    "Plan, design, and construct aircraft structures to industry standards using sheet metal and composites materials.",
+    "Analyze and evaluate critical aspects of the aerospace industry related to safe work practices, standards and tolerances, standard shop practices, proper use of tools, power equipment, and personal protective equipment.",
+    "Use, read, and interpret industry standard blueprints to construct aircraft components."
+   ],
+   "careers": [
+    "structural and/or composite technician",
+    "aerospace technology"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Complete all of the following",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 26,
+     "max": 26
+    },
+    "courses": [
+     {
+      "code": "AFAB 110",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AFAB 115",
+      "units": 8,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AFAB 120",
+      "units": 7,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AFAB 130",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AFAB 210",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The requested award is a Certificate of Achievement, but the catalog text (and source URL) contains only the Aircraft Fabrication and Assembly Technician AS section; no certificate section is printed. The AS major requirements (26 units, which fits the 16 to fewer than 30 unit range) were recorded; a reviewer should confirm whether the certificate shares these requirements.",
+   "Degree total of 60 units and 21 units of general education are taken from the AS description; the requirements table prints 34 units for 'General Education requirements, plus electives (as needed to reach 60 units)', a combined figure not recorded as ge_units.",
+   "Catalog prints codes both as 'AFAB110' and 'AFAB 110'; recorded with a space.",
+   "The fourth program outcome is cut off in the text ('...directly related to profic') and was not recorded.",
+   "The 'Program Goals and Objectives' section's three 'Objective(s)' statements were not recorded as outcomes; the separate 'Program Outcomes' list was used.",
+   "The page also mentions 'supervisory and/or management positions' as promotional opportunities; not recorded as careers.",
+   "The page recommends that elective units go toward prerequisite courses for the AFMT bachelor program, but names no specific courses."
+  ]
+ },
+ "extracted_run": "38979725726"
+}

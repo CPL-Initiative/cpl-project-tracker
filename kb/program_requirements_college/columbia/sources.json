@@ -1,0 +1,3127 @@
+[
+ {
+  "control_number": "06815",
+  "title": "Child Development",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHILD1",
+   "CHILD16",
+   "CHILD17",
+   "CHILD19",
+   "CHILD22",
+   "CHILD23",
+   "CHILD26",
+   "CHILD3",
+   "CHILD30",
+   "CHILD31",
+   "CHILD35",
+   "CHILD36",
+   "CHILD4",
+   "CHILD42",
+   "CHILD43",
+   "CHILD44",
+   "CHILD45",
+   "EDUC11"
+  ],
+  "source": {
+   "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/program/child-development-as-cc-fall-2026",
+   "title": "Child Development AS",
+   "h1": "Child Development AS",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 18,
+  "text_chars": 4713
+ },
+ {
+  "control_number": "06817",
+  "title": "Natural Resources",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "FNR1",
+   "FNR10",
+   "FNR11",
+   "FNR114",
+   "FNR12",
+   "FNR130",
+   "FNR150",
+   "FNR159",
+   "FNR160",
+   "FNR173",
+   "FNR174",
+   "FNR179",
+   "FNR182",
+   "FNR184",
+   "FNR187",
+   "FNR190",
+   "FNR2",
+   "FNR22",
+   "FNR24",
+   "FNR3",
+   "FNR30",
+   "FNR35",
+   "FNR50",
+   "FNR53",
+   "FNR6",
+   "FNR60",
+   "FNR61",
+   "FNR62",
+   "FNR64",
+   "FNR71",
+   "FNR81",
+   "FNR83",
+   "FNR86",
+   "GEOGR59"
+  ],
+  "source": {
+   "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/program/natural-resources-as-cc-fall-2026",
+   "title": "Natural Resources AS",
+   "h1": "Natural Resources AS",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 34,
+  "text_chars": 4149
+ },
+ {
+  "control_number": "06819",
+  "title": "Business Management",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUSAD158",
+   "BUSAD163",
+   "BUSAD18",
+   "BUSAD24",
+   "BUSAD2A",
+   "BUSAD2B",
+   "BUSAD30",
+   "BUSAD40",
+   "COMP29"
+  ],
+  "source": {
+   "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/program/business-management-as-cc-fall-2025",
+   "title": "Business Management AS",
+   "h1": "Business Management AS",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 1725
+ },
+ {
+  "control_number": "06823",
+  "title": "Computer Programming",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "COMP1",
+   "COMP10",
+   "COMP11J",
+   "COMP11P",
+   "COMP12J",
+   "COMP12P",
+   "COMP40",
+   "COMP41",
+   "COMP42",
+   "COMP50",
+   "MATH16",
+   "MATH18C",
+   "MATHC2210",
+   "MATHC2220",
+   "PHYCS5A",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/program/computer-programming-as-cc-fall-2026",
+   "title": "Computer Programming AS",
+   "h1": "Computer Programming AS",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 16,
+  "text_chars": 2965
+ },
+ {
+  "control_number": "06828",
+  "title": "Fine Arts: Emphasis in Art",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART1",
+   "ART13",
+   "ART14",
+   "ART15",
+   "ART2",
+   "ART21A",
+   "ART23A",
+   "ART25",
+   "ART3",
+   "ART40",
+   "ART43",
+   "ART51",
+   "ART53",
+   "ART9A",
+   "ARTHC1100",
+   "ARTHC1200",
+   "ENGL10",
+   "ENGL11",
+   "MEDIA10",
+   "MEDIA14",
+   "MUSIC10",
+   "MUSIC2",
+   "MUSIC20A",
+   "MUSIC31A",
+   "MUSIC31B",
+   "MUSIC36",
+   "MUSIC37",
+   "MUSIC38",
+   "MUSIC39",
+   "MUSIC41A",
+   "MUSIC41B",
+   "MUSIC49",
+   "MUSIC50",
+   "MUSIC51",
+   "MUSIC52",
+   "MUSIC53",
+   "MUSIC54",
+   "MUSIC55",
+   "MUSIC56",
+   "MUSIC60",
+   "MUSIC64",
+   "MUSIC66",
+   "MUSIC72",
+   "MUSIC75",
+   "MUSIC76",
+   "MUSIC78"
+  ],
+  "source": {
+   "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/program/fine-arts-emphasis-in-art-aa-cc-fall-2026",
+   "title": "Fine Arts: Emphasis in Art AA",
+   "h1": "Fine Arts: Emphasis in Art AA",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 46,
+  "text_chars": 3935
+ },
+ {
+  "control_number": "06829",
+  "title": "Music",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MUSIC12",
+   "MUSIC2",
+   "MUSIC20A",
+   "MUSIC20B",
+   "MUSIC31A",
+   "MUSIC4A",
+   "MUSIC4B",
+   "MUSIC50",
+   "MUSIC51",
+   "MUSIC52",
+   "MUSIC53",
+   "MUSIC54",
+   "MUSIC55",
+   "MUSIC56",
+   "MUSIC60",
+   "MUSIC64",
+   "MUSIC66",
+   "MUSIC72",
+   "MUSIC75",
+   "MUSIC76",
+   "MUSIC78",
+   "MUSIC90A",
+   "MUSIC90B"
+  ],
+  "source": {
+   "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/program/music-aa-cc-fall-2025",
+   "title": "Music AA",
+   "h1": "Music AA",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 23,
+  "text_chars": 2807
+ },
+ {
+  "control_number": "06831",
+  "title": "Allied Health",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL10",
+   "BIOL50",
+   "BIOL60",
+   "BIOL65",
+   "CHEM14",
+   "CHEM14L",
+   "CHEM2A",
+   "CHEM2AL",
+   "EMS4",
+   "HHP60",
+   "HHP62"
+  ],
+  "source": {
+   "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/program/allied-health-as-cc-fall-2025",
+   "title": "Allied Health AS",
+   "h1": "Allied Health AS",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 2156
+ },
+ {
+  "control_number": "06832",
+  "title": "Emergency Medical Services",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL10",
+   "BIOL60",
+   "EMS20",
+   "EMS4",
+   "EMS97",
+   "HLTH50",
+   "SPAN1",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/program/emergency-medical-services-as-cc-fall-2025",
+   "title": "Emergency Medical Services AS",
+   "h1": "Emergency Medical Services AS",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 2688
+ },
+ {
+  "control_number": "06833",
+  "title": "Foodservice Management",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUSAD161",
+   "COMP1",
+   "HPMGT1",
+   "HPMGT122",
+   "HPMGT2",
+   "HPMGT21",
+   "HPMGT28",
+   "HPMGT32",
+   "HPMGT36",
+   "HPMGT46",
+   "HPMGT47",
+   "HPMGT48",
+   "HPMGT55",
+   "HPMGT56",
+   "HPMGT57",
+   "HPMGT90",
+   "HPMGT97"
+  ],
+  "source": {
+   "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/program/foodservice-management-as-cc-fall-2025",
+   "title": "Foodservice Management AS",
+   "h1": "Foodservice Management AS",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 17,
+  "text_chars": 2448
+ },
+ {
+  "control_number": "06839",
+  "title": "Fire Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "EMS158",
+   "EMS4",
+   "EMS57",
+   "FIRE101A",
+   "FIRE101B",
+   "FIRE101C",
+   "FIRE101D",
+   "FIRE101E",
+   "FIRE29A",
+   "FIRE29B",
+   "HHP55"
+  ],
+  "source": {
+   "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/program/fire-technology-as-cc-fall-2026",
+   "title": "Fire Technology AS",
+   "h1": "Fire Technology AS",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 2455
+ },
+ {
+  "control_number": "07552",
+  "title": "Watershed Management",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL24",
+   "BIOL65",
+   "ESC35TR",
+   "ESC5",
+   "ESC62",
+   "FNR1",
+   "FNR11",
+   "FNR130",
+   "FNR131",
+   "FNR132",
+   "FNR133",
+   "FNR179",
+   "FNR3",
+   "FNR30",
+   "FNR35",
+   "FNR6",
+   "FNR60",
+   "FNR61",
+   "FNR64",
+   "FNR71",
+   "FNR83",
+   "GEOGR59"
+  ],
+  "source": {
+   "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/program/watershed-management-as-cc-fall-2026",
+   "title": "Watershed Management AS",
+   "h1": "Watershed Management AS",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 22,
+  "text_chars": 3109
+ },
+ {
+  "control_number": "07553",
+  "title": "Accounting",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUSAD155",
+   "BUSAD158",
+   "BUSAD163",
+   "BUSAD164",
+   "BUSAD18",
+   "BUSAD24",
+   "BUSAD2A",
+   "BUSAD2B",
+   "COMP29",
+   "COMP3",
+   "COMP5"
+  ],
+  "source": {
+   "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/program/accounting-as-cc-fall-2025",
+   "title": "Accounting AS",
+   "h1": "Accounting AS",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 2353
+ },
+ {
+  "control_number": "07577",
+  "title": "Automotive Service Technician",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AT100",
+   "AT102",
+   "AT103",
+   "AT105",
+   "AT106",
+   "AT112",
+   "AT113",
+   "AT120",
+   "AT122",
+   "AT132",
+   "AT141",
+   "AT97"
+  ],
+  "source": {
+   "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/program/automotive-service-technician-as-cc-fall-2025",
+   "title": "Automotive Service Technician AS",
+   "h1": "Automotive Service Technician AS",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 2115
+ },
+ {
+  "control_number": "07578",
+  "title": "Fine Arts: Emphasis in Photography",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART1",
+   "ART13",
+   "ART14",
+   "ART15",
+   "ART2",
+   "ART40",
+   "ART43",
+   "ART49",
+   "ART51",
+   "ART53",
+   "ARTHC1100",
+   "ARTHC1200",
+   "MEDIA10",
+   "MEDIA12",
+   "MEDIA14"
+  ],
+  "source": {
+   "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/program/fine-arts-emphasis-in-photography-aa-cc-fall-2026",
+   "title": "Fine Arts: Emphasis in Photography AA",
+   "h1": "Fine Arts: Emphasis in Photography AA",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 3208
+ },
+ {
+  "control_number": "07580",
+  "title": "Culinary Arts",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ENTRE101",
+   "ENTRE104",
+   "HPMGT1",
+   "HPMGT122",
+   "HPMGT126",
+   "HPMGT2",
+   "HPMGT21",
+   "HPMGT22",
+   "HPMGT28",
+   "HPMGT32",
+   "HPMGT36",
+   "HPMGT46",
+   "HPMGT47",
+   "HPMGT48",
+   "HPMGT55",
+   "HPMGT56",
+   "HPMGT57",
+   "HPMGT90",
+   "HPMGT97"
+  ],
+  "source": {
+   "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/program/culinary-arts-as-cc-fall-2025",
+   "title": "Culinary Arts AS",
+   "h1": "Culinary Arts AS",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 19,
+  "text_chars": 2379
+ },
+ {
+  "control_number": "07583",
+  "title": "Baking and Pastry Arts",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "HPMGT1",
+   "HPMGT122",
+   "HPMGT126",
+   "HPMGT137",
+   "HPMGT138",
+   "HPMGT2",
+   "HPMGT21",
+   "HPMGT22",
+   "HPMGT28",
+   "HPMGT32",
+   "HPMGT36",
+   "HPMGT46",
+   "HPMGT47",
+   "HPMGT48",
+   "HPMGT90",
+   "HPMGT97"
+  ],
+  "source": {
+   "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/program/baking-and-pastry-arts-as-cc-fall-2025",
+   "title": "Baking and Pastry Arts AS",
+   "h1": "Baking and Pastry Arts AS",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 16,
+  "text_chars": 2673
+ },
+ {
+  "control_number": "08637",
+  "title": "Geographic Information Systems",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "COMP1",
+   "ESC10",
+   "ESC23",
+   "ESC33",
+   "ESC42",
+   "ESC5",
+   "FNR1",
+   "FNR53",
+   "FNR60",
+   "GEOGR15",
+   "GEOGR60",
+   "GEOGR61",
+   "GEOGR63",
+   "GEOGR66",
+   "GEOGR68",
+   "GEOGR70",
+   "GEOGR75"
+  ],
+  "source": {
+   "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/program/geographic-information-systems-as-cc-fall-2026",
+   "title": "Geographic Information Systems AS",
+   "h1": "Geographic Information Systems AS",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 17,
+  "text_chars": 3072
+ },
+ {
+  "control_number": "12023",
+  "title": "Associate Child Development Teacher/Future Educators",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHILD1",
+   "CHILD16",
+   "CHILD19",
+   "CHILD22",
+   "CHILD23",
+   "CHILD3",
+   "CHILD36",
+   "CHILD44",
+   "EDUC11"
+  ],
+  "source": {
+   "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/program/associate-child-development-teacher-future-educators-coa-cc-fall-2026",
+   "title": "Associate Child Development Teacher/Future Educators COA",
+   "h1": "Associate Child Development Teacher/Future Educators COA",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 4105
+ },
+ {
+  "control_number": "12031",
+  "title": "Ecological Forestry",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "FNR1",
+   "FNR10",
+   "FNR11",
+   "FNR114",
+   "FNR12",
+   "FNR130",
+   "FNR150",
+   "FNR152",
+   "FNR159",
+   "FNR160",
+   "FNR173",
+   "FNR174",
+   "FNR179",
+   "FNR182",
+   "FNR184",
+   "FNR187",
+   "FNR190",
+   "FNR2",
+   "FNR22",
+   "FNR24",
+   "FNR3",
+   "FNR30",
+   "FNR35",
+   "FNR50",
+   "FNR53",
+   "FNR6",
+   "FNR60",
+   "FNR62",
+   "FNR81",
+   "FNR83",
+   "GEOGR59"
+  ],
+  "source": {
+   "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/program/ecological-forestry-as-cc-fall-2026",
+   "title": "Ecological Forestry AS",
+   "h1": "Ecological Forestry AS",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 31,
+  "text_chars": 3911
+ },
+ {
+  "control_number": "17213",
+  "title": "Engine Performance",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AT106",
+   "AT112",
+   "AT97"
+  ],
+  "source": {
+   "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/program/engine-performance-coa-cc-summer-2021",
+   "title": "Engine Performance COA",
+   "h1": "Engine Performance COA",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 1277
+ },
+ {
+  "control_number": "17215",
+  "title": "Under Vehicle Service",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AT105",
+   "AT120",
+   "AT122",
+   "AT97"
+  ],
+  "source": {
+   "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/program/under-vehicle-service-coa-cc-summer-2021",
+   "title": "Under Vehicle Service COA",
+   "h1": "Under Vehicle Service COA",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 1420
+ },
+ {
+  "control_number": "17217",
+  "title": "Organizational Behavior",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUSAD20",
+   "BUSAD24",
+   "BUSAD40",
+   "COMP1",
+   "COMP29",
+   "MGMT110",
+   "MGMT111",
+   "MGMT112",
+   "MGMT113",
+   "MGMT114",
+   "MGMT115",
+   "MGMT116",
+   "MGMT117",
+   "MGMT118",
+   "MGMT119",
+   "MGMT120"
+  ],
+  "source": {
+   "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/program/organizational-behavior-coa-cc-fall-2024",
+   "title": "Organizational Behavior COA",
+   "h1": "Organizational Behavior COA",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 16,
+  "text_chars": 2023
+ },
+ {
+  "control_number": "18784",
+  "title": "Arts and Humanities",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART1",
+   "ART13",
+   "ART14",
+   "ART15",
+   "ART2",
+   "ART21A",
+   "ART23A",
+   "ART25",
+   "ART3",
+   "ART40",
+   "ART43",
+   "ART53",
+   "ART9A",
+   "ARTHC1100",
+   "ARTHC1200",
+   "COMM2",
+   "COMM3",
+   "COMM4",
+   "COMM5",
+   "COMM9",
+   "COMMC1000",
+   "DRAMA10",
+   "DRAMA20",
+   "ENGL10",
+   "ENGL11",
+   "ENGL17",
+   "ENGL18",
+   "ENGL46",
+   "ENGL47",
+   "ENGL49",
+   "ENGLC1000",
+   "ENGLC1000E",
+   "ENGLC1001",
+   "ENGLC1002",
+   "HIST5",
+   "HUMAN1",
+   "HUMAN2",
+   "HUMAN3",
+   "HUMAN4",
+   "MEDIA1",
+   "MEDIA10",
+   "MEDIA12",
+   "MUSIC10",
+   "MUSIC11",
+   "MUSIC12",
+   "MUSIC2",
+   "MUSIC31A",
+   "MUSIC36",
+   "MUSIC49",
+   "MUSIC60",
+   "MUSIC76",
+   "PHILO1",
+   "SIGN40A",
+   "SIGN40B",
+   "SIGN40C",
+   "SPAN1",
+   "SPAN2"
+  ],
+  "source": {
+   "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/program/arts-and-humanities-aa-cc-fall-2026",
+   "title": "Arts and Humanities AA",
+   "h1": "Arts and Humanities AA",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 57,
+  "text_chars": 4834
+ },
+ {
+  "control_number": "18785",
+  "title": "Social and Behavioral Sciences",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTHR1",
+   "ANTHR10",
+   "ANTHR2",
+   "CHILD1",
+   "CHILD22",
+   "COMM2",
+   "COMM3",
+   "COMM4",
+   "COMM5",
+   "COMM9",
+   "COMMC1000",
+   "COMP1",
+   "ECONC2001",
+   "ECONC2002",
+   "EDUC11",
+   "ETHS15",
+   "ETHS5",
+   "GEOGR12",
+   "GEOGR20",
+   "HHP2",
+   "HHP3",
+   "HHP60",
+   "HHP63",
+   "HIST11",
+   "HIST13",
+   "HIST14",
+   "HISTC1001",
+   "HISTC1002",
+   "POLSC1000",
+   "POLSC12",
+   "POLSC14",
+   "POLSC16",
+   "PSYCC1000",
+   "PSYCH10",
+   "PSYCH20",
+   "PSYCH35",
+   "PSYCH40",
+   "PSYCH5",
+   "SOCIO1",
+   "SOCIO12",
+   "SOCIO2",
+   "SOCIO28",
+   "SOCIO7",
+   "SWHS1"
+  ],
+  "source": {
+   "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/program/social-and-behavioral-sciences-aa-cc-fall-2026",
+   "title": "Social and Behavioral Sciences AA",
+   "h1": "Social and Behavioral Sciences AA",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 44,
+  "text_chars": 3959
+ },
+ {
+  "control_number": "20769",
+  "title": "Ecological Forestry",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "FNR1",
+   "FNR10",
+   "FNR11",
+   "FNR114",
+   "FNR12",
+   "FNR130",
+   "FNR150",
+   "FNR152",
+   "FNR159",
+   "FNR160",
+   "FNR173",
+   "FNR174",
+   "FNR179",
+   "FNR182",
+   "FNR184",
+   "FNR187",
+   "FNR190",
+   "FNR2",
+   "FNR22",
+   "FNR24",
+   "FNR3",
+   "FNR30",
+   "FNR35",
+   "FNR50",
+   "FNR53",
+   "FNR6",
+   "FNR60",
+   "FNR62",
+   "FNR81",
+   "FNR83",
+   "GEOGR59"
+  ],
+  "source": {
+   "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/program/ecological-forestry-coa-cc-fall-2026",
+   "title": "Ecological Forestry COA",
+   "h1": "Ecological Forestry COA",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 31,
+  "text_chars": 3699
+ },
+ {
+  "control_number": "20770",
+  "title": "Natural Resources",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "FNR1",
+   "FNR10",
+   "FNR11",
+   "FNR114",
+   "FNR12",
+   "FNR130",
+   "FNR150",
+   "FNR159",
+   "FNR160",
+   "FNR173",
+   "FNR174",
+   "FNR179",
+   "FNR182",
+   "FNR184",
+   "FNR187",
+   "FNR190",
+   "FNR2",
+   "FNR22",
+   "FNR24",
+   "FNR3",
+   "FNR30",
+   "FNR35",
+   "FNR50",
+   "FNR53",
+   "FNR6",
+   "FNR60",
+   "FNR61",
+   "FNR62",
+   "FNR64",
+   "FNR71",
+   "FNR81",
+   "FNR83",
+   "FNR86",
+   "GEOGR59"
+  ],
+  "source": {
+   "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/program/natural-resources-coa-cc-fall-2026",
+   "title": "Natural Resources COA",
+   "h1": "Natural Resources COA",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 34,
+  "text_chars": 3932
+ },
+ {
+  "control_number": "20771",
+  "title": "Watershed Management",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL24",
+   "BIOL65",
+   "ESC35TR",
+   "ESC5",
+   "ESC62",
+   "FNR1",
+   "FNR11",
+   "FNR130",
+   "FNR131",
+   "FNR132",
+   "FNR133",
+   "FNR179",
+   "FNR3",
+   "FNR30",
+   "FNR35",
+   "FNR6",
+   "FNR60",
+   "FNR61",
+   "FNR64",
+   "FNR71",
+   "FNR83",
+   "GEOGR59"
+  ],
+  "source": {
+   "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/program/watershed-management-coa-cc-fall-2026",
+   "title": "Watershed Management COA",
+   "h1": "Watershed Management COA",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 22,
+  "text_chars": 2953
+ },
+ {
+  "control_number": "20772",
+  "title": "Accounting",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUSAD135",
+   "BUSAD158",
+   "BUSAD161",
+   "BUSAD163",
+   "BUSAD164",
+   "BUSAD18",
+   "BUSAD24",
+   "COMP29",
+   "COMP3",
+   "COMP5"
+  ],
+  "source": {
+   "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/program/accounting-coa-cc-summer-2022",
+   "title": "Accounting COA",
+   "h1": "Accounting COA",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 1570
+ },
+ {
+  "control_number": "20773",
+  "title": "Management",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUSAD161",
+   "BUSAD24",
+   "BUSAD30",
+   "BUSAD40",
+   "BUSAD41",
+   "COMP1",
+   "COMP29",
+   "COMP3",
+   "COMP5",
+   "MGMT110",
+   "MGMT111",
+   "MGMT112",
+   "MGMT113",
+   "MGMT114",
+   "MGMT115",
+   "MGMT116",
+   "MGMT117",
+   "MGMT118",
+   "MGMT119",
+   "MGMT120"
+  ],
+  "source": {
+   "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/program/management-coa-cc-fall-2024",
+   "title": "Management COA",
+   "h1": "Management COA",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 20,
+  "text_chars": 2600
+ },
+ {
+  "control_number": "20781",
+  "title": "Automotive Service Technician",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AT100",
+   "AT102",
+   "AT103",
+   "AT105",
+   "AT106",
+   "AT112",
+   "AT113",
+   "AT120",
+   "AT122",
+   "AT132",
+   "AT141",
+   "AT97"
+  ],
+  "source": {
+   "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/program/automotive-service-technician-coa-cc-summer-2021",
+   "title": "Automotive Service Technician COA",
+   "h1": "Automotive Service Technician COA",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 1887
+ },
+ {
+  "control_number": "20782",
+  "title": "Emergency Medical Services",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL10",
+   "BIOL60",
+   "EMS12",
+   "EMS158",
+   "EMS175",
+   "EMS20",
+   "EMS4",
+   "EMS57",
+   "EMS97"
+  ],
+  "source": {
+   "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/program/emergency-medical-services-coa-cc-fall-2026",
+   "title": "Emergency Medical Services COA",
+   "h1": "Emergency Medical Services COA",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 1798
+ },
+ {
+  "control_number": "20784",
+  "title": "Culinary Arts",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ENTRE101",
+   "ENTRE104",
+   "HPMGT1",
+   "HPMGT122",
+   "HPMGT126",
+   "HPMGT2",
+   "HPMGT21",
+   "HPMGT22",
+   "HPMGT28",
+   "HPMGT32",
+   "HPMGT36",
+   "HPMGT46",
+   "HPMGT47",
+   "HPMGT48",
+   "HPMGT55",
+   "HPMGT56",
+   "HPMGT57",
+   "HPMGT90",
+   "HPMGT97"
+  ],
+  "source": {
+   "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/program/culinary-arts-coa-cc-fall-2025",
+   "title": "Culinary Arts COA",
+   "h1": "Culinary Arts COA",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 19,
+  "text_chars": 2199
+ },
+ {
+  "control_number": "20786",
+  "title": "Baking and Pastry Arts",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "HPMGT1",
+   "HPMGT122",
+   "HPMGT126",
+   "HPMGT137",
+   "HPMGT138",
+   "HPMGT2",
+   "HPMGT21",
+   "HPMGT28",
+   "HPMGT32",
+   "HPMGT36",
+   "HPMGT46",
+   "HPMGT47",
+   "HPMGT48",
+   "HPMGT90",
+   "HPMGT97"
+  ],
+  "source": {
+   "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/program/baking-and-pastry-arts-coa-cc-fall-2025",
+   "title": "Baking and Pastry Arts COA",
+   "h1": "Baking and Pastry Arts COA",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 2256
+ },
+ {
+  "control_number": "20787",
+  "title": "Foodservice Management",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUSAD161",
+   "COMP1",
+   "HPMGT1",
+   "HPMGT122",
+   "HPMGT2",
+   "HPMGT21",
+   "HPMGT28",
+   "HPMGT32",
+   "HPMGT36",
+   "HPMGT46",
+   "HPMGT47",
+   "HPMGT48",
+   "HPMGT55",
+   "HPMGT56",
+   "HPMGT57",
+   "HPMGT90",
+   "HPMGT97"
+  ],
+  "source": {
+   "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/program/foodservice-management-coa-cc-fall-2025",
+   "title": "Foodservice Management COA",
+   "h1": "Foodservice Management COA",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 17,
+  "text_chars": 2470
+ },
+ {
+  "control_number": "20790",
+  "title": "Fire Technology",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "EMS158",
+   "EMS57",
+   "FIRE101A",
+   "FIRE101B",
+   "FIRE101C",
+   "FIRE101D",
+   "FIRE101E",
+   "HHP55"
+  ],
+  "source": {
+   "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/program/fire-technology-coa-cc-fall-2026",
+   "title": "Fire Technology COA",
+   "h1": "Fire Technology COA",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 2199
+ },
+ {
+  "control_number": "20791",
+  "title": "Geographic Information Systems",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "COMP1",
+   "ENGLC1000",
+   "ESC23",
+   "ESC33",
+   "ESC42",
+   "ESC5",
+   "FNR1",
+   "FNR53",
+   "FNR60",
+   "GEOGR15",
+   "GEOGR60",
+   "GEOGR63",
+   "GEOGR66",
+   "GEOGR70",
+   "GEOGR75"
+  ],
+  "source": {
+   "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/program/geographic-information-systems-coa-cc-fall-2026",
+   "title": "Geographic Information Systems COA",
+   "h1": "Geographic Information Systems COA",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 2872
+ },
+ {
+  "control_number": "30798",
+  "title": "Sociology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTHR2",
+   "ETHS5",
+   "GEOGR12",
+   "POLSC1000",
+   "PSYCC1000",
+   "PSYCH15",
+   "SOCIO1",
+   "SOCIO12",
+   "SOCIO2",
+   "SOCIO7",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/program/sociology-aa-t-cc-fall-2026",
+   "title": "Sociology AA-T",
+   "h1": "Sociology AA-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 3431
+ },
+ {
+  "control_number": "31184",
+  "title": "Entrepreneurship",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUSAD135",
+   "BUSAD158",
+   "BUSAD161",
+   "BUSAD24",
+   "COMP29",
+   "COMP3",
+   "COMP5",
+   "ENTRE101",
+   "ENTRE102",
+   "ENTRE103",
+   "ENTRE104",
+   "ENTRE105",
+   "ENTRE106",
+   "ENTRE107",
+   "ENTRE108",
+   "MGMT110",
+   "MGMT111",
+   "MGMT112",
+   "MGMT113",
+   "MGMT114",
+   "MGMT115",
+   "MGMT116",
+   "MGMT117",
+   "MGMT118",
+   "MGMT119",
+   "MGMT120"
+  ],
+  "source": {
+   "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/program/entrepreneurship-coa-cc-fall-2024",
+   "title": "Entrepreneurship COA",
+   "h1": "Entrepreneurship COA",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 26,
+  "text_chars": 3052
+ },
+ {
+  "control_number": "31203",
+  "title": "Welding Technology",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "WT124"
+  ],
+  "source": {
+   "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/program/welding-technology-coa-cc-summer-2022",
+   "title": "Welding Technology COA",
+   "h1": "Welding Technology COA",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 1,
+  "text_chars": 1323
+ },
+ {
+  "control_number": "31206",
+  "title": "Entrepreneurship",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUSAD161",
+   "BUSAD41",
+   "COMP3",
+   "COMP5",
+   "ENTRE101",
+   "ENTRE102",
+   "ENTRE103",
+   "ENTRE104",
+   "ENTRE105",
+   "ENTRE106",
+   "ENTRE107",
+   "ENTRE108"
+  ],
+  "source": {
+   "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/program/entrepreneurship-as-cc-fall-2025",
+   "title": "Entrepreneurship AS",
+   "h1": "Entrepreneurship AS",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 2216
+ },
+ {
+  "control_number": "31244",
+  "title": "Sport Science",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL10",
+   "BIOL60",
+   "HHP2",
+   "HHP3",
+   "HHP60",
+   "HHP62",
+   "HHP63",
+   "PSYCH20"
+  ],
+  "source": {
+   "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/program/sport-science-aa-cc-fall-2025",
+   "title": "Sport Science AA",
+   "h1": "Sport Science AA",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 2172
+ },
+ {
+  "control_number": "31806",
+  "title": "Media and Design",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART15",
+   "ART17",
+   "ART51",
+   "ART53",
+   "ART56",
+   "COMP29",
+   "ENTRE105",
+   "ENTRE107",
+   "MEDIA1",
+   "MEDIA10",
+   "MEDIA12",
+   "MEDIA14",
+   "MEDIA16",
+   "MEDIA24",
+   "MEDIA26",
+   "MEDIA3"
+  ],
+  "source": {
+   "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/program/media-and-design-as-cc-fall-2025",
+   "title": "Media and Design AS",
+   "h1": "Media and Design AS",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 16,
+  "text_chars": 2237
+ },
+ {
+  "control_number": "31824",
+  "title": "Early Childhood Education",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHILD1",
+   "CHILD16",
+   "CHILD22",
+   "CHILD26",
+   "CHILD3",
+   "CHILD35",
+   "CHILD36",
+   "CHILD4",
+   "CHILD44"
+  ],
+  "source": {
+   "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/program/early-childhood-education-as-t-cc-fall-2025",
+   "title": "Early Childhood Education AS-T",
+   "h1": "Early Childhood Education AS-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 3786
+ },
+ {
+  "control_number": "31825",
+  "title": "Psychology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTHR2",
+   "BIOL17",
+   "BIOL2",
+   "COMM4",
+   "PSYCC1000",
+   "PSYCH10",
+   "PSYCH15",
+   "PSYCH24",
+   "PSYCH40",
+   "PSYCH5",
+   "SOCIO1",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/program/psychology-aa-t-cc-fall-2025",
+   "title": "Psychology AA-T",
+   "h1": "Psychology AA-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 3470
+ },
+ {
+  "control_number": "31839",
+  "title": "English",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ENGL10",
+   "ENGL11",
+   "ENGL12",
+   "ENGL17",
+   "ENGL18",
+   "ENGL46",
+   "ENGL47",
+   "ENGL49",
+   "ENGLC1001",
+   "ENGLC1002",
+   "ETHS20"
+  ],
+  "source": {
+   "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/program/english-aa-t-cc-fall-2026",
+   "title": "English AA-T",
+   "h1": "English AA-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 3390
+ },
+ {
+  "control_number": "32348",
+  "title": "Anthropology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTHR1",
+   "ANTHR10",
+   "ANTHR12",
+   "ANTHR2",
+   "BIOL10",
+   "ESC5",
+   "ETHS15",
+   "ETHS5",
+   "HIST11",
+   "HIST13",
+   "HIST14",
+   "HIST5",
+   "HISTC1001",
+   "HISTC1002",
+   "HUMAN4",
+   "POLSC1000",
+   "POLSC12",
+   "POLSC14",
+   "POLSC16",
+   "SOCIO1",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/program/anthropology-aa-t-cc-fall-2026",
+   "title": "Anthropology AA-T",
+   "h1": "Anthropology AA-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 21,
+  "text_chars": 3864
+ },
+ {
+  "control_number": "32444",
+  "title": "Kinesiology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL10",
+   "BIOL60",
+   "CHEM2A",
+   "CHEM2AL",
+   "HHP16A",
+   "HHP16B",
+   "HHP18A",
+   "HHP18B",
+   "HHP3",
+   "HHP32A",
+   "HHP32B",
+   "HHP47A",
+   "HHP47B",
+   "HHP50A",
+   "HHP50B",
+   "HHP53A",
+   "HHP53B",
+   "HHP53C",
+   "HHP56A",
+   "HHP56B",
+   "HHP59A",
+   "HHP62",
+   "HHP8A",
+   "HHP8B",
+   "HHP9",
+   "PHYCS4A",
+   "PHYCS5A",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/program/kinesiology-aa-t-cc-fall-2025",
+   "title": "Kinesiology AA-T",
+   "h1": "Kinesiology AA-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 28,
+  "text_chars": 4139
+ },
+ {
+  "control_number": "32470",
+  "title": "Political Science",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTHR2",
+   "GEOGR12",
+   "POLSC1000",
+   "POLSC12",
+   "POLSC14",
+   "POLSC16",
+   "SOCIO1",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/program/political-science-aa-t-cc-fall-2025",
+   "title": "Political Science AA-T",
+   "h1": "Political Science AA-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 3382
+ },
+ {
+  "control_number": "32641",
+  "title": "History",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ETHS15",
+   "ETHS20",
+   "ETHS5",
+   "HIST11",
+   "HIST13",
+   "HIST14",
+   "HIST5",
+   "HISTC1001",
+   "HISTC1002",
+   "POLSC1000",
+   "SOCIO1"
+  ],
+  "source": {
+   "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/program/history-aa-t-cc-fall-2026",
+   "title": "History AA-T",
+   "h1": "History AA-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 3682
+ },
+ {
+  "control_number": "33376",
+  "title": "Studio Arts",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART1",
+   "ART13",
+   "ART17",
+   "ART2",
+   "ART21A",
+   "ART21B",
+   "ART23A",
+   "ART23B",
+   "ART25",
+   "ART3",
+   "ART40",
+   "ART53",
+   "ART9A",
+   "ART9B",
+   "ARTHC1100",
+   "ARTHC1200",
+   "MEDIA10"
+  ],
+  "source": {
+   "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/program/studio-arts-aa-t-cc-fall-2026",
+   "title": "Studio Arts AA-T",
+   "h1": "Studio Arts AA-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 17,
+  "text_chars": 3449
+ },
+ {
+  "control_number": "33535",
+  "title": "Geology",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEM2A",
+   "CHEM2AL",
+   "CHEM2B",
+   "CHEM2BL",
+   "ESC23",
+   "ESC5",
+   "MATHC2210",
+   "MATHC2220"
+  ],
+  "source": {
+   "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/program/geology-as-t-cc-fall-2026",
+   "title": "Geology AS-T",
+   "h1": "Geology AS-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 2663
+ },
+ {
+  "control_number": "33543",
+  "title": "Music",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MUSIC1",
+   "MUSIC20A",
+   "MUSIC20B",
+   "MUSIC21A",
+   "MUSIC21B",
+   "MUSIC4A",
+   "MUSIC4B",
+   "MUSIC50",
+   "MUSIC51",
+   "MUSIC52",
+   "MUSIC53",
+   "MUSIC54",
+   "MUSIC55",
+   "MUSIC56",
+   "MUSIC5A",
+   "MUSIC5B",
+   "MUSIC60",
+   "MUSIC64",
+   "MUSIC66",
+   "MUSIC72",
+   "MUSIC75",
+   "MUSIC76",
+   "MUSIC78"
+  ],
+  "source": {
+   "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/program/music-aa-t-cc-fall-2026",
+   "title": "Music AA-T",
+   "h1": "Music AA-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 23,
+  "text_chars": 3603
+ },
+ {
+  "control_number": "33959",
+  "title": "Associate Infant/Toddler Teacher",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHILD1",
+   "CHILD22",
+   "CHILD26",
+   "CHILD3",
+   "CHILD42",
+   "CHILD43",
+   "CHILD44"
+  ],
+  "source": {
+   "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/program/associate-infant-toddler-teacher-coa-cc-fall-2026",
+   "title": "Associate Infant/Toddler Teacher COA",
+   "h1": "Associate Infant/Toddler Teacher COA",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 2848
+ },
+ {
+  "control_number": "35150",
+  "title": "Biology",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL2",
+   "BIOL4",
+   "BIOL6",
+   "CHEM2A",
+   "CHEM2AL",
+   "CHEM2B",
+   "CHEM2BL",
+   "MATHC2210",
+   "PHYCS4A",
+   "PHYCS4B",
+   "PHYCS5A",
+   "PHYCS5B"
+  ],
+  "source": {
+   "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/program/biology-as-t-cc-fall-2026",
+   "title": "Biology AS-T",
+   "h1": "Biology AS-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 3274
+ },
+ {
+  "control_number": "35870",
+  "title": "Fire Science",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "EMS158",
+   "EMS4",
+   "EMS57",
+   "EMS97",
+   "FIRE1",
+   "FIRE149",
+   "FIRE2",
+   "FIRE29A",
+   "FIRE29B",
+   "FIRE3",
+   "FIRE4",
+   "FIRE5",
+   "FIRE7",
+   "FIRE97"
+  ],
+  "source": {
+   "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/program/fire-science-as-cc-fall-2026",
+   "title": "Fire Science AS",
+   "h1": "Fire Science AS",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 14,
+  "text_chars": 2685
+ },
+ {
+  "control_number": "36046",
+  "title": "Media and Design",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART15",
+   "ART17",
+   "ART51",
+   "ART53",
+   "ART56",
+   "COMP29",
+   "ENTRE105",
+   "ENTRE107",
+   "MEDIA1",
+   "MEDIA10",
+   "MEDIA12",
+   "MEDIA14",
+   "MEDIA16",
+   "MEDIA24",
+   "MEDIA26",
+   "MEDIA3"
+  ],
+  "source": {
+   "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/program/media-and-design-coa-cc-fall-2024",
+   "title": "Media and Design COA",
+   "h1": "Media and Design COA",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 16,
+  "text_chars": 1988
+ },
+ {
+  "control_number": "36236",
+  "title": "Payroll Clerk",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUSAD158",
+   "BUSAD161",
+   "BUSAD163",
+   "BUSAD24",
+   "COMP3",
+   "COMP5"
+  ],
+  "source": {
+   "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/program/payroll-clerk-coa-cc-fall-2024",
+   "title": "Payroll Clerk COA",
+   "h1": "Payroll Clerk COA",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 1224
+ },
+ {
+  "control_number": "36637",
+  "title": "Economics",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUSAD2A",
+   "BUSAD2B",
+   "ECONC2001",
+   "ECONC2002",
+   "MATH12",
+   "MATH18C",
+   "MATH26",
+   "MATHC2210",
+   "MATHC2220",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/program/economics-aa-t-cc-fall-2026",
+   "title": "Economics AA-T",
+   "h1": "Economics AA-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 2976
+ },
+ {
+  "control_number": "36997",
+  "title": "Drive Train Technician",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AT105",
+   "AT113",
+   "AT120",
+   "AT122",
+   "AT132",
+   "AT97"
+  ],
+  "source": {
+   "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/program/drive-train-technician-as-cc-fall-2025",
+   "title": "Drive Train Technician AS",
+   "h1": "Drive Train Technician AS",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 1433
+ },
+ {
+  "control_number": "37233",
+  "title": "Engineering Fundamentals",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEM2A",
+   "CHEM2AL",
+   "MATH18C",
+   "MATH28",
+   "MATHC2210",
+   "MATHC2220",
+   "PHYCS5A",
+   "PHYCS5B"
+  ],
+  "source": {
+   "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/program/engineering-fundamentals-as-cc-fall-2026",
+   "title": "Engineering Fundamentals AS",
+   "h1": "Engineering Fundamentals AS",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 2140
+ },
+ {
+  "control_number": "38328",
+  "title": "Hospitality Supervision",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "HPMGT1",
+   "HPMGT122",
+   "HPMGT137",
+   "HPMGT138",
+   "HPMGT2",
+   "HPMGT21",
+   "HPMGT28",
+   "HPMGT32",
+   "HPMGT36",
+   "HPMGT46"
+  ],
+  "source": {
+   "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/program/hospitality-supervision-coa-cc-fall-2025",
+   "title": "Hospitality Supervision COA",
+   "h1": "Hospitality Supervision COA",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 2478
+ },
+ {
+  "control_number": "38870",
+  "title": "Management & Restoration of Fire-Adapted Ecosystems",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "FIRE7",
+   "FNR150",
+   "FNR22",
+   "FNR24",
+   "FNR62",
+   "FNR83"
+  ],
+  "source": {
+   "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/program/management-restoration-of-fire-adapted-ecosystems-coa-cc-fall-2023",
+   "title": "Management & Restoration of Fire-Adapted Ecosystems COA",
+   "h1": "Management & Restoration of Fire-Adapted Ecosystems COA",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 2221
+ },
+ {
+  "control_number": "38891",
+  "title": "General Science",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTHR1",
+   "ASTRO40",
+   "BIOL10",
+   "BIOL17",
+   "BIOL2",
+   "BIOL24",
+   "BIOL39",
+   "BIOL4",
+   "BIOL40",
+   "BIOL6",
+   "BIOL60",
+   "BIOL65",
+   "CHEM14",
+   "CHEM14L",
+   "CHEM2A",
+   "CHEM2AL",
+   "CHEM2B",
+   "CHEM2BL",
+   "CHEM5",
+   "CHEM5L",
+   "COMP1",
+   "COMP10",
+   "COMP11J",
+   "COMP11P",
+   "COMP12J",
+   "COMP12P",
+   "ESC10",
+   "ESC23",
+   "ESC33",
+   "ESC35DV",
+   "ESC35LS",
+   "ESC35LT",
+   "ESC35LV",
+   "ESC35ML",
+   "ESC35SA",
+   "ESC35SN",
+   "ESC35SP",
+   "ESC35TR",
+   "ESC42",
+   "ESC5",
+   "ESC62",
+   "FNR1",
+   "FNR10",
+   "FNR2",
+   "FNR3",
+   "FNR30",
+   "FNR50",
+   "GEOGR15",
+   "GEOGR59",
+   "GEOGR60",
+   "MATH16",
+   "MATH8",
+   "MATHC2210",
+   "MATHC2220",
+   "PHSCI30",
+   "PHYCS1",
+   "PHYCS4A",
+   "PHYCS4B",
+   "PHYCS5A",
+   "PHYCS5B",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/program/general-science-as-cc-fall-2026",
+   "title": "General Science AS",
+   "h1": "General Science AS",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 61,
+  "text_chars": 4849
+ },
+ {
+  "control_number": "38901",
+  "title": "Nutrition and Dietetics",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL10",
+   "BIOL50",
+   "BIOL60",
+   "BIOL65",
+   "CHEM2A",
+   "CHEM2AL",
+   "CHEM2B",
+   "CHEM2BL",
+   "CHEM4A",
+   "CHEM4AL",
+   "PSYCC1000",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/program/nutrition-and-dietetics-as-t-cc-fall-2025",
+   "title": "Nutrition and Dietetics AS-T",
+   "h1": "Nutrition and Dietetics AS-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 3554
+ },
+ {
+  "control_number": "38954",
+  "title": "Media for Entrepreneurs",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART56",
+   "COMP29",
+   "ENTRE101",
+   "ENTRE102",
+   "ENTRE104",
+   "ENTRE105",
+   "ENTRE106",
+   "ENTRE107",
+   "MEDIA12",
+   "MEDIA16",
+   "MEDIA26"
+  ],
+  "source": {
+   "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/program/media-for-entrepreneurs-coa-cc-fall-2024",
+   "title": "Media for Entrepreneurs COA",
+   "h1": "Media for Entrepreneurs COA",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 1658
+ },
+ {
+  "control_number": "40892",
+  "title": "Social Work and Human Services",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTHR2",
+   "BIOL10",
+   "BIOL17",
+   "BIOL2",
+   "BIOL60",
+   "CHILD1",
+   "CHILD22",
+   "COMM5",
+   "ECONC2001",
+   "ECONC2002",
+   "ENGLC1001",
+   "ETHS5",
+   "HISTC1002",
+   "HLTH14",
+   "PSYCC1000",
+   "PSYCH10",
+   "PSYCH24",
+   "PSYCH35",
+   "SOCIO1",
+   "SOCIO2",
+   "STATC1000",
+   "SWHS1",
+   "SWHS47A",
+   "SWHS47B"
+  ],
+  "source": {
+   "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/program/social-work-and-human-services-aa-t-cc-fall-2026",
+   "title": "Social Work and Human Services AA-T",
+   "h1": "Social Work and Human Services AA-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 24,
+  "text_chars": 3883
+ },
+ {
+  "control_number": "41581",
+  "title": "Business Administration 2.0",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUSAD18",
+   "BUSAD20",
+   "BUSAD2A",
+   "BUSAD2B",
+   "MATH12",
+   "MATHC2210",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/program/business-administration-2-0-as-t-cc-fall-2026",
+   "title": "Business Administration 2.0 AS-T",
+   "h1": "Business Administration 2.0 AS-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 3153
+ },
+ {
+  "control_number": "41640",
+  "title": "Hospitality Management",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUSAD18",
+   "BUSAD2A",
+   "BUSAD2B",
+   "ECONC2001",
+   "HPMGT1",
+   "HPMGT2",
+   "HPMGT21",
+   "HPMGT32",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/program/hospitality-management-as-t-cc-fall-2026",
+   "title": "Hospitality Management AS-T",
+   "h1": "Hospitality Management AS-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 3448
+ },
+ {
+  "control_number": "41963",
+  "title": "Social Work and Human Services",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ECONC2001",
+   "ECONC2002",
+   "PSYCC1000",
+   "PSYCH35",
+   "SOCIO1",
+   "SOCIO2",
+   "SWHS1"
+  ],
+  "source": {
+   "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/program/social-work-and-human-services-coa-cc-fall-2026",
+   "title": "Social Work and Human Services COA",
+   "h1": "Social Work and Human Services COA",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 2293
+ },
+ {
+  "control_number": "42743",
+  "title": "Archaeological Technician",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTHR10",
+   "ANTHR11",
+   "ANTHR12",
+   "ANTHR2",
+   "ETHS15"
+  ],
+  "source": {
+   "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/program/archaeological-technician-coa-cc-fall-2023",
+   "title": "Archaeological Technician COA",
+   "h1": "Archaeological Technician COA",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 1537
+ },
+ {
+  "control_number": "42905",
+  "title": "River Ecology and Management",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "EMS153",
+   "FNR114",
+   "FNR130",
+   "FNR131",
+   "FNR132",
+   "FNR133",
+   "FNR30",
+   "FNR35",
+   "FNR50",
+   "FNR60",
+   "FNR61",
+   "FNR64",
+   "FNR83",
+   "FNR86",
+   "GEOGR59"
+  ],
+  "source": {
+   "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/program/river-ecology-and-management-coa-cc-fall-2026",
+   "title": "River Ecology and Management COA",
+   "h1": "River Ecology and Management COA",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 2850
+ },
+ {
+  "control_number": "43629",
+  "title": "English Language Proficiency",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL50",
+   "CHILD22",
+   "CHILD42",
+   "ELL10",
+   "ELL20",
+   "GUIDE1",
+   "GUIDE18",
+   "HHP2",
+   "HHP60",
+   "PSYCH10",
+   "PSYCH20",
+   "PSYCH35",
+   "PSYCH40",
+   "PSYCH5",
+   "SOCIO28"
+  ],
+  "source": {
+   "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/program/english-language-proficiency-coa-cc-fall-2026",
+   "title": "English Language Proficiency COA",
+   "h1": "English Language Proficiency COA",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 2776
+ },
+ {
+  "control_number": "43773",
+  "title": "Communication Studies 2.0",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTHR2",
+   "COMM2",
+   "COMM3",
+   "COMM4",
+   "COMM5",
+   "COMM9",
+   "COMMC1000",
+   "ENGLC1001",
+   "ENGLC1002",
+   "PSYCC1000",
+   "SOCIO1"
+  ],
+  "source": {
+   "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/program/communication-studies-2-0-aa-t-cc-fall-2026",
+   "title": "Communication Studies 2.0 AA-T",
+   "h1": "Communication Studies 2.0 AA-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 3220
+ },
+ {
+  "control_number": "44622",
+  "title": "Google IT Support Professional",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "COMP40",
+   "COMP41",
+   "COMP42",
+   "COMP50"
+  ],
+  "source": {
+   "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/program/google-it-support-professional-coa-cc-fall-2025",
+   "title": "Google IT Support Professional COA",
+   "h1": "Google IT Support Professional COA",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 1887
+ },
+ {
+  "control_number": "44767",
+  "title": "Wildland Fire",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "EMS153",
+   "FIRE111",
+   "FIRE112",
+   "FIRE190",
+   "FIRE7",
+   "FIRE97",
+   "FNR22",
+   "FNR24",
+   "FNR97",
+   "HHP55"
+  ],
+  "source": {
+   "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/program/wildland-fire-coa-cc-fall-2025",
+   "title": "Wildland Fire COA",
+   "h1": "Wildland Fire COA",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 2047
+ },
+ {
+  "control_number": "45074",
+  "title": "Education Foundations",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL17",
+   "CHILD1",
+   "CHILD16",
+   "CHILD19",
+   "CHILD22",
+   "CHILD23",
+   "CHILD3",
+   "CHILD36",
+   "COMMC1000",
+   "COMP1",
+   "EDUC11",
+   "ENGLC1000",
+   "ENGLC1000E",
+   "ENGLC1001",
+   "ENGLC1002",
+   "ESC33",
+   "ETHS15",
+   "ETHS5",
+   "GEOGR20",
+   "HISTC1001",
+   "MATH4",
+   "MATH6",
+   "POLSC1000",
+   "SIGN40A",
+   "SIGN40B",
+   "SPAN1",
+   "SPAN2"
+  ],
+  "source": {
+   "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/program/education-foundations-coa-cc-fall-2026",
+   "title": "Education Foundations COA",
+   "h1": "Education Foundations COA",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 27,
+  "text_chars": 3237
+ },
+ {
+  "control_number": "45075",
+  "title": "Paraprofessional Educator",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART14",
+   "BIOL17",
+   "CHILD1",
+   "CHILD16",
+   "CHILD19",
+   "CHILD22",
+   "CHILD23",
+   "CHILD26",
+   "CHILD3",
+   "CHILD35",
+   "CHILD36",
+   "CHILD4",
+   "COMMC1000",
+   "COMP1",
+   "DRAMA10",
+   "EDUC11",
+   "EDUC12",
+   "ENGLC1000",
+   "ENGLC1000E",
+   "ENGLC1001",
+   "ENGLC1002",
+   "ESC33",
+   "ETHS15",
+   "ETHS5",
+   "GEOGR20",
+   "GUIDE1",
+   "GUIDE18",
+   "HIST13",
+   "HISTC1001",
+   "MATH4",
+   "MATH6",
+   "MUSIC2",
+   "PHSCI30",
+   "POLSC1000",
+   "PSYCH10",
+   "SIGN40A",
+   "SIGN40B",
+   "SIGN40C",
+   "SPAN1",
+   "SPAN2"
+  ],
+  "source": {
+   "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/program/paraprofessional-educator-coa-cc-fall-2026",
+   "title": "Paraprofessional Educator COA",
+   "h1": "Paraprofessional Educator COA",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 40,
+  "text_chars": 5382
+ },
+ {
+  "control_number": "45076",
+  "title": "Public Health",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL10",
+   "BIOL17",
+   "BIOL60",
+   "BIOL65",
+   "CHEM14",
+   "CHEM14L",
+   "CHEM2A",
+   "CHEM2AL",
+   "HHP60",
+   "HLTH1",
+   "HLTH14",
+   "HLTH5",
+   "PSYCH10",
+   "SOCIO1",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/program/public-health-as-t-cc-fall-2026",
+   "title": "Public Health AS-T",
+   "h1": "Public Health AS-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 3373
+ },
+ {
+  "control_number": "45118",
+  "title": "Google IT Support Professional",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "COMP340",
+   "COMP341",
+   "COMP342",
+   "COMP350",
+   "COMP361"
+  ],
+  "source": {
+   "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/program/google-it-support-professional-con-cc-fall-2025",
+   "title": "Google IT Support Professional CON",
+   "h1": "Google IT Support Professional CON",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 1914
+ },
+ {
+  "control_number": "45599",
+  "title": "Elementary Teacher Education: Integrated Programs",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART14",
+   "BIOL17",
+   "CHILD1",
+   "COMMC1000",
+   "DRAMA10",
+   "EDUC11",
+   "ENGL12",
+   "ENGLC1000",
+   "ENGLC1002",
+   "ESC33",
+   "HIST13",
+   "HISTC1001",
+   "MUSIC2",
+   "PHSCI30",
+   "POLSC1000"
+  ],
+  "source": {
+   "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/program/elementary-teacher-education-integrated-programs-aa-t-cc-fall-2026",
+   "title": "Elementary Teacher Education: Integrated Programs AA-T",
+   "h1": "Elementary Teacher Education: Integrated Programs AA-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 3973
+ },
+ {
+  "control_number": "45944",
+  "title": "Cal-GETC Pattern",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "46240",
+  "title": "Mathematics 2.0",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "COMP11J",
+   "COMP11P",
+   "MATH18C",
+   "MATH26",
+   "MATH28",
+   "MATHC2210",
+   "MATHC2220",
+   "PHYCS5A"
+  ],
+  "source": {
+   "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/program/mathematics-2-0-as-t-cc-fall-2026",
+   "title": "Mathematics 2.0 AS-T",
+   "h1": "Mathematics 2.0 AS-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 3177
+ },
+ {
+  "control_number": "46241",
+  "title": "Physics 2.0",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "COMP11J",
+   "COMP11P",
+   "MATH18C",
+   "MATH26",
+   "MATH28",
+   "MATHC2210",
+   "MATHC2220",
+   "PHYCS5A",
+   "PHYCS5B",
+   "PHYCS5C"
+  ],
+  "source": {
+   "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/program/physics-2-0-as-t-cc-fall-2026",
+   "title": "Physics 2.0 AS-T",
+   "h1": "Physics 2.0 AS-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 3244
+ }
+]

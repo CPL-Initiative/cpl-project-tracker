@@ -1,0 +1,232 @@
+{
+ "college": "College of the Redwoods",
+ "control_number": "22657",
+ "shape": "certificate",
+ "title": "Forestry and Natural Resources",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/forestry-and-natural-resources-ca-fall-2024",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7415,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7415,
+    "output_tokens": 1544,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1544,
+  "output_tokens_details": {
+   "thinking_tokens": 503
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.06054,
+ "ms": 12770,
+ "seconds": 13.1,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 8,
+   "listed": 9,
+   "share": 0.889,
+   "missing": [
+    "FNR5L"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    24.0,
+    24.0
+   ],
+   "stated": [
+    24.0,
+    24.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 13,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Forestry and Natural Resources, CA",
+   "measure": "units",
+   "total_units": {
+    "min": 24,
+    "max": 24
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Demonstrate skills needed to detect and analyze differences between the various organisms and ecosystems encountered in forest management activities and recognize how these differences affect social, economic, and ecological values.",
+    "Apply safety protocols for common field techniques and use appropriate field methodologies to accomplish common technician-level tasks.",
+    "Demonstrate common FNR field skills such as land navigation, establishing and measuring field plots, using basic field tools like clinometers, laser hypsometers, and Relaskops."
+   ],
+   "careers": [
+    "entry level technician",
+    "forestry",
+    "natural resources",
+    "wildlife",
+    "parks and outdoor recreation",
+    "fisheries",
+    "rangeland",
+    "watershed technician positions",
+    "Conservation Scientists",
+    "Fallers",
+    "First-Line Supervisors of Farming, Fishing, and Forestry Workers",
+    "Forest and Conservation Technicians",
+    "Forest and Conservation Workers"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Program Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 24,
+     "max": 24
+    },
+    "courses": [
+     {
+      "code": "FNR1",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FNR5",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FNR51",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FNR54",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FNR60",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FNR77",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FNR31",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FNR10",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "FNR5L",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "Catalog prints FNR77 at 2 units (in requirements and recommended sequence); the state file stores 3 units. Printed courses sum to 24, matching the stated total.",
+   "Catalog writes codes without a space (FNR1, FNR5, etc.); these match closed-list codes FNR 1, FNR 5, etc.",
+   "Careers include occupations listed under the 'Career Information' heading (labor-market data) as well as the description's career opportunities; the description's list was split into separate fields ('rangeland', 'watershed technician positions') — reviewer may prefer reading each as '... technician positions'.",
+   "Source URL slug says fall-2024 though catalog year is 2026-2027."
+  ]
+ },
+ "extracted_run": "38979396148"
+}

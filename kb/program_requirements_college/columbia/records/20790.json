@@ -1,0 +1,225 @@
+{
+ "college": "Columbia College",
+ "control_number": "20790",
+ "shape": "certificate",
+ "title": "Fire Technology",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/program/fire-technology-coa-cc-fall-2026",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6955,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6955,
+    "output_tokens": 1436,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1436,
+  "output_tokens_details": {
+   "thinking_tokens": 424
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.05654,
+ "ms": 12088,
+ "seconds": 12.6,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 8,
+   "listed": 8,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    23.5,
+    23.5
+   ],
+   "stated": [
+    23.5,
+    23.5
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Fire Technology COA",
+   "measure": "units",
+   "total_units": {
+    "min": 23.5,
+    "max": 23.5
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Demonstrate knowledge and skills in compliance with state fire training requirements for Firefighter I and applicable certifications.",
+    "Demonstrate the necessary knowledge and skills as an Emergency Medical Responder (EMR) according to industry standards.",
+    "Utilize knowledge and skills to maintain health and fitness levels necessary for industry standards and/or job-specific duties."
+   ],
+   "careers": [
+    "firefighting field"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 23.5,
+     "max": 23.5
+    },
+    "courses": [
+     {
+      "code": "FIRE101A",
+      "units": 10,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FIRE101B",
+      "units": 2.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FIRE101C",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FIRE101D",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FIRE101E",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HHP55",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Required Courses: Choose One",
+    "rule": "choose_units",
+    "minimum": 3.5,
+    "option_group": null,
+    "stated": {
+     "min": 3.5,
+     "max": 3.5
+    },
+    "courses": [
+     {
+      "code": "EMS57",
+      "units": 3.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "EMS158",
+      "units": 3.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The catalog prints codes without a space (e.g., FIRE101A, HHP55, EMS57); these match closed-list codes FIRE 101A, HHP 55, EMS 57, etc., so none are catalog additions.",
+   "The 'Required Courses' heading prints '(Total 23.5 units)', but its listed courses sum to 20 units; the 23.5 appears to cover both this list and the 3.5-unit 'Choose One' block. Recorded as printed in stated.",
+   "The description section prints the outcomes lead-in ('Upon satisfactory completion of this award, the student should be prepared to:') with no outcomes beneath it; the outcomes were taken from the Program Learning Outcomes section.",
+   "Description notes students must also complete field experience with Fire Department verification before applying for State Firefighter 1 certification; this is not a course requirement."
+  ]
+ },
+ "extracted_run": "38979390136"
+}

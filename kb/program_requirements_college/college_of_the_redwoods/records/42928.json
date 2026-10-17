@@ -1,0 +1,242 @@
+{
+ "college": "College of the Redwoods",
+ "control_number": "42928",
+ "shape": "degree",
+ "title": "Aquaculture Technology",
+ "award": "A.S. Degree",
+ "source_url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/aquaculture-technology-ca-fall-2023",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8438,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8438,
+    "output_tokens": 2005,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2005,
+  "output_tokens_details": {
+   "thinking_tokens": 552
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.07385,
+ "ms": 16729,
+ "seconds": 17.1,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 20,
+   "share": 0.0,
+   "missing": [
+    "AG32",
+    "AQUA1",
+    "AQUA2",
+    "AQUA3",
+    "AQUA4",
+    "BIOL3",
+    "BIOL4",
+    "BUS10",
+    "CE41",
+    "CHEM2",
+    "CHEM3",
+    "GEOL1",
+    "MATH25",
+    "MATH30",
+    "MATHC2210",
+    "OCEAN10",
+    "OCEAN10L",
+    "PHYS2A",
+    "STATC1000",
+    "STATC1000E"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": true,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Aquaculture Technology, CA",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "AG 32",
+    "why": "A.S. section not in text; listed only in the Certificate of Achievement"
+   },
+   {
+    "code": "AQUA 1",
+    "why": "A.S. section not in text; listed only in the Certificate of Achievement"
+   },
+   {
+    "code": "AQUA 2",
+    "why": "A.S. section not in text; listed only in the Certificate of Achievement"
+   },
+   {
+    "code": "AQUA 3",
+    "why": "A.S. section not in text; listed only in the Certificate of Achievement"
+   },
+   {
+    "code": "AQUA 4",
+    "why": "A.S. section not in text; listed only in the Certificate of Achievement"
+   },
+   {
+    "code": "BIOL 3",
+    "why": "A.S. section not in text; listed only in the Certificate of Achievement"
+   },
+   {
+    "code": "BIOL 4",
+    "why": "A.S. section not in text; listed only in the Certificate of Achievement"
+   },
+   {
+    "code": "BUS 10",
+    "why": "A.S. section not in text; listed only in the Certificate of Achievement"
+   },
+   {
+    "code": "CE41",
+    "why": "A.S. section not in text; listed only in the Certificate of Achievement"
+   },
+   {
+    "code": "CHEM 2",
+    "why": "A.S. section not in text; listed only in the Certificate of Achievement"
+   },
+   {
+    "code": "CHEM 3",
+    "why": "A.S. section not in text; listed only in the Certificate of Achievement"
+   },
+   {
+    "code": "GEOL 1",
+    "why": "A.S. section not in text; listed only in the Certificate of Achievement"
+   },
+   {
+    "code": "MATH 25",
+    "why": "A.S. section not in text; listed only in the Certificate of Achievement"
+   },
+   {
+    "code": "MATH 30",
+    "why": "A.S. section not in text; listed only in the Certificate of Achievement"
+   },
+   {
+    "code": "MATH C2210",
+    "why": "not in the text"
+   },
+   {
+    "code": "OCEAN 10",
+    "why": "A.S. section not in text; listed only in the Certificate of Achievement"
+   },
+   {
+    "code": "OCEAN 10L",
+    "why": "A.S. section not in text; listed only in the Certificate of Achievement"
+   },
+   {
+    "code": "PHYS 2A",
+    "why": "A.S. section not in text; listed only in the Certificate of Achievement"
+   },
+   {
+    "code": "STAT C1000",
+    "why": "not in the text (certificate lists MATH15 - Introduction to Statistics instead)"
+   },
+   {
+    "code": "STAT C1000E",
+    "why": "not in the text (certificate lists MATH16 - Introduction to Statistics with Support instead)"
+   }
+  ],
+  "notes": [
+   "The catalog text is the page for the Aquaculture Technology Certificate of Achievement (19.0 - 23.0 Credits), not the A.S. Degree; no A.S. section, degree total, GE pattern or major total appears in the text, so no blocks are recorded for the A.S.",
+   "The certificate prints Core (Total 13): AQUA1 3, AQUA2 4, AQUA3 3, BUS10 3; Restricted Electives (Total 6 - 10) from AG32, AQUA4, BIOL3, BIOL4, CE41 (0.5 - 3), CHEM2, CHEM3, PHYS2A, GEOL1, with alternative groups of MATH15, MATH16, MATH25, MATH30 (0-5) and OCEAN10, OCEAN10L (0-4) 'instead of 3-4 credits from above'. A reviewer should locate the separate A.S. Degree page.",
+   "The page prints four Program Learning Outcomes and career text (careers in aquaculture and management of aquatic ecosystems; employment in private aquaculture facilities, government hatcheries, entrepreneurial ventures; Career Information: Environmental Science and Protection Technicians, Including Health; Life, Physical, and Social Science Technicians, All Other) for the certificate; they are not recorded because the text does not show they belong to the A.S. Degree.",
+   "Closed list includes MATH C2210, STAT C1000 and STAT C1000E, which do not appear in the certificate text, suggesting the A.S. requirements differ from the certificate."
+  ]
+ },
+ "extracted_run": "38979396148"
+}

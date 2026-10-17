@@ -1,0 +1,301 @@
+{
+ "college": "College of the Redwoods",
+ "control_number": "46245",
+ "shape": "adt",
+ "title": "Mathematics 2.0",
+ "award": "A.S. T Degree",
+ "source_url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/mathematics-2-0-for-transfer-fall-2026",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8434,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8434,
+    "output_tokens": 2175,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2175,
+  "output_tokens_details": {
+   "thinking_tokens": 851
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.07724,
+ "ms": 17872,
+ "seconds": 18.0,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 7,
+   "listed": 7,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 4,
+   "codes": [
+    "MATH25",
+    "MATH30",
+    "MATH31",
+    "MATH32"
+   ],
+   "flagged": [
+    "MATH25",
+    "MATH30",
+    "MATH31",
+    "MATH32"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    24.0,
+    24.0
+   ],
+   "stated": [
+    60.0,
+    60.0
+   ],
+   "against": "degree",
+   "ge": null,
+   "why": [
+    "the record names the degree total and the CalGETC pattern, but no units for it"
+   ],
+   "major": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     24.0,
+     24.0
+    ],
+    "stated": [
+     24.0,
+     24.0
+    ],
+    "against": "program",
+    "why": []
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 5,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Mathematics 2.0 for Transfer",
+   "measure": "units",
+   "total_units": {
+    "min": 24,
+    "max": 24
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "CalGETC",
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Communicate accurately (orally and/or written) about mathematical ideas using numerical, graphical, and symbolic representations.",
+    "Demonstrate competence in calculus, linear algebra and/or differential equations.",
+    "Analyze and investigate real-world applications using technology as appropriate."
+   ],
+   "careers": [
+    "Actuaries",
+    "Cost Estimators",
+    "Data Scientists",
+    "Financial and Investment Analysts",
+    "Financial Risk Specialists"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "MATH 30 and MATH 25 Sequence",
+    "rule": "recommended",
+    "minimum": null,
+    "option_group": "MATH C2210 Calculus I Prerequisite",
+    "stated": {
+     "min": 0,
+     "max": 0
+    },
+    "courses": [
+     {
+      "code": "MATH30",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MATH31",
+        "units": 5,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "MATH25",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "MATH 32 Sequence",
+    "rule": "recommended",
+    "minimum": null,
+    "option_group": "MATH C2210 Calculus I Prerequisite",
+    "stated": {
+     "min": 0,
+     "max": 0
+    },
+    "courses": [
+     {
+      "code": "MATH32",
+      "units": 6,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Required Core",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 20,
+     "max": 20
+    },
+    "courses": [
+     {
+      "code": "MATHC2210",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATHC2220",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH50C",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH45",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH55",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Electives",
+    "rule": "choose_units",
+    "minimum": 4,
+    "option_group": null,
+    "stated": {
+     "min": 4,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "PHYS4A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS18",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The 'MATH C2210 Calculus I Prerequisite' rule (Total 0, 'Complete the following number of rules: 0') lists MATH 30/MATH 31 + MATH 25 or MATH 32 as Calculus prerequisite sequences that count 0 units toward the major; recorded as non-counting ('recommended') blocks in one option_group. Reviewer should confirm treatment.",
+   "MATH31 (College Algebra with Support, 5) recorded as an alternative to MATH30 within the MATH 30 and MATH 25 Sequence; the catalog lists them without an explicit 'or'.",
+   "Degree total of 60 taken from the header 'A.S. Degree for Transfer (60.0 Credits)'; major total 24 from 'Mathematices for Transfer 2.0 (Total 24)'. No CalGETC unit figure printed.",
+   "Codes recorded as printed in the requirement lists (e.g., 'MATHC2210' without space).",
+   "Careers taken from the Career Information heading."
+  ]
+ },
+ "extracted_run": "38979396148"
+}

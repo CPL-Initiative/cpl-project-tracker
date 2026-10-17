@@ -1,0 +1,296 @@
+{
+ "college": "Contra Costa College",
+ "control_number": "11702",
+ "shape": "degree",
+ "title": "Business Administration",
+ "award": "A.S. Degree",
+ "source_url": "https://ccc.elumenapp.com/catalog/ccc-2026-27/program/business-administration-fall-2026",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6790,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6790,
+    "output_tokens": 1931,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1931,
+  "output_tokens_details": {
+   "thinking_tokens": 642
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.06578,
+ "ms": 16006,
+ "seconds": 16.5,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 8,
+   "listed": 10,
+   "share": 0.8,
+   "missing": [
+    "ECON220",
+    "ECON221"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 2,
+   "codes": [
+    "ECONC2001",
+    "ECONC2002"
+   ],
+   "flagged": [
+    "ECONC2001",
+    "ECONC2002"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    29.0,
+    30.0
+   ],
+   "stated": [
+    60.0,
+    60.0
+   ],
+   "against": "degree",
+   "ge": null,
+   "why": [
+    "the blocks and general education sum to 29.0-30.0; the catalog prints 60.0-60.0 for the degree"
+   ],
+   "major": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     29.0,
+     30.0
+    ],
+    "stated": [
+     29.0,
+     30.0
+    ],
+    "against": "program",
+    "why": []
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": true,
+   "pass": true
+  },
+  "careers": {
+   "count": 14,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Business Administration - A.S. Degree",
+   "measure": "units",
+   "total_units": {
+    "min": 29,
+    "max": 30
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": [
+    "Accountant",
+    "auditor",
+    "cost estimator",
+    "financial manager",
+    "marketing",
+    "retail sales",
+    "purchasing agent",
+    "underwriter",
+    "wholesale/retail buyer",
+    "bookkeeper",
+    "payroll clerk",
+    "employment interviewer",
+    "management consultant",
+    "personnel trainer"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Fall semester (15 units)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 15,
+     "max": 15
+    },
+    "courses": [
+     {
+      "code": "BUS186",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "STATC1000",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECONC2002",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CIS135",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Spring semester (10 units)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 10,
+     "max": 10
+    },
+    "courses": [
+     {
+      "code": "BUS187",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS294",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECONC2001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "And one of the following:",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "MATH171",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH180",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATHC2210",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ECON 220",
+    "why": "not in the text; catalog lists ECONC2002 Principles of Macroeconomics instead (likely renumbered)"
+   },
+   {
+    "code": "ECON 221",
+    "why": "not in the text; catalog lists ECONC2001 Principles of Microeconomics instead (likely renumbered)"
+   }
+  ],
+  "notes": [
+   "Catalog prints codes without spaces (e.g., BUS186); recorded as printed. They match closed-list codes BUS 186, STAT C1000, CIS 135, BUS 187, BUS 294, MATH 171, MATH 180, MATH C2210.",
+   "ECONC2002 and ECONC2001 are not in the closed list and are marked as catalog additions; they appear to replace ECON 220 and ECON 221.",
+   "Degree total 60-60 taken from the Unit Summary 'Total Overall Units (min/max)'. General Education Units and Elective Units to reach 60 are printed as 'None', so ge_units is null and electives_fill_degree is false; the description mentions 'breadth requirements' without naming a GE pattern.",
+   "Program Outcomes section is cut off mid-outcome ('Demonstrate an understanding of business-related terms/issues so that they can communicate effectively in an organiz'); the truncated outcome was not recorded. A reviewer should check the full page for the complete outcomes list.",
+   "Semester block totals (15 + 10) plus the math choice (4-5) sum to the stated 29-30 major units."
+  ]
+ },
+ "extracted_run": "38979730323"
+}

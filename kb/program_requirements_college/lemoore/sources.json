@@ -1,0 +1,2566 @@
+[
+ {
+  "control_number": "10944",
+  "title": "Administration of Justice: Correctional Science",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "10945",
+  "title": "Administration of Justice: Law Enforcement",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AOJ10",
+   "AOJ12",
+   "AOJ15X",
+   "AOJ16",
+   "AOJ20",
+   "AOJ22",
+   "AOJ24",
+   "AOJ29",
+   "AOJ32",
+   "AOJ5"
+  ],
+  "source": {
+   "url": "https://westhillslemoore.elumenapp.com/catalog/26-27/program/administration-of-justice-law-enforcement-aa-fall-2025",
+   "title": "Administration of Justice: Law Enforcement (AA)",
+   "h1": "Administration of Justice: Law Enforcement (AA)",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 8495
+ },
+ {
+  "control_number": "10954",
+  "title": "Computer Information Systems",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.857,
+  "codes_found": [
+   "BUS13A",
+   "BUS13B",
+   "BUS20",
+   "BUS24",
+   "CIS34",
+   "CIS7"
+  ],
+  "source": {
+   "url": "https://westhillslemoore.elumenapp.com/catalog/26-27/program/business-bookkeeping-coa-spring-2021",
+   "title": "Business Bookkeeping (COA)",
+   "h1": "Business Bookkeeping (COA)",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 0.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 2046
+ },
+ {
+  "control_number": "10963",
+  "title": "Child Development",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CD10",
+   "CD11",
+   "CD12A",
+   "CD15",
+   "CD16",
+   "CD17A",
+   "CD17B",
+   "CD18",
+   "CD2",
+   "CD20",
+   "CD21",
+   "CD22",
+   "CD23",
+   "CD3",
+   "CD4",
+   "CD5",
+   "CD7"
+  ],
+  "source": {
+   "url": "https://westhillslemoore.elumenapp.com/catalog/26-27/program/child-development-aa-fall-2025",
+   "title": "Child Development (AA)",
+   "h1": "Child Development (AA)",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 17,
+  "text_chars": 13517
+ },
+ {
+  "control_number": "10967",
+  "title": "Geology",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.778,
+  "codes_found": [
+   "CHEM2A",
+   "GEOL1",
+   "GEOL3",
+   "PHYSICS2A",
+   "PHYSICS4A",
+   "PHYSICS4B",
+   "PHYSICS4C"
+  ],
+  "source": {
+   "url": "https://westhillslemoore.elumenapp.com/catalog/26-27/program/mathematics-2-0-as-t-fall-2026",
+   "title": "Mathematics 2.0 (AS-T)",
+   "h1": "Mathematics 2.0 (AS-T)",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 0.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 6558
+ },
+ {
+  "control_number": "15266",
+  "title": "Biology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 10,
+  "text_chars": 0
+ },
+ {
+  "control_number": "15268",
+  "title": "Business Administration",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.875,
+  "codes_found": [
+   "BUS18",
+   "BUS1A",
+   "BUS1B",
+   "BUS39",
+   "CIS7",
+   "ECON1B",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://westhillslemoore.elumenapp.com/catalog/26-27/program/business-administration-as-fall-2025",
+   "title": "Business Administration (AS)",
+   "h1": "Business Administration (AS)",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 9743
+ },
+ {
+  "control_number": "15270",
+  "title": "Business: Business Management",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS13A",
+   "BUS18",
+   "BUS1A",
+   "BUS1B",
+   "BUS20",
+   "BUS24",
+   "BUS28",
+   "BUS32",
+   "BUS35",
+   "CIS34",
+   "CIS7"
+  ],
+  "source": {
+   "url": "https://westhillslemoore.elumenapp.com/catalog/26-27/program/business-management-as-fall-2025",
+   "title": "Business Management (AS)",
+   "h1": "Business Management (AS)",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 4717
+ },
+ {
+  "control_number": "15274",
+  "title": "Computer Information Systems",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 7,
+  "text_chars": 0
+ },
+ {
+  "control_number": "15276",
+  "title": "Kinesiology",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 8,
+  "text_chars": 0
+ },
+ {
+  "control_number": "15277",
+  "title": "Engineering",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEM1A",
+   "COMP3A",
+   "ENGR10",
+   "ENGR15",
+   "ENGR20",
+   "ENGR25",
+   "ENGR31",
+   "ENGR35",
+   "MATH1A",
+   "MATH1B",
+   "MATH2A",
+   "MATH2B",
+   "PHYSICS4A",
+   "PHYSICS4B",
+   "PHYSICS4C"
+  ],
+  "source": {
+   "url": "https://westhillslemoore.elumenapp.com/catalog/26-27/program/engineering-as-fall-2025",
+   "title": "Engineering (AS)",
+   "h1": "Engineering (AS)",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 7949
+ },
+ {
+  "control_number": "15280",
+  "title": "Health Science, General",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIO32",
+   "BIO35",
+   "BIO38",
+   "CHEM2A",
+   "NUT1"
+  ],
+  "source": {
+   "url": "https://westhillslemoore.elumenapp.com/catalog/26-27/program/health-science-as-fall-2025",
+   "title": "Health Science (AS)",
+   "h1": "Health Science (AS)",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 0.667
+   }
+  },
+  "listed": 5,
+  "text_chars": 8321
+ },
+ {
+  "control_number": "15284",
+  "title": "Hotel, Restaurant,  and Casino Management",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS1A",
+   "CIS7",
+   "CUL3",
+   "CUL4",
+   "CUL58",
+   "HRCM1",
+   "HRCM12",
+   "HRCM15X",
+   "HRCM3",
+   "HRCM4",
+   "HRCM60",
+   "HRCM8",
+   "HRCM9"
+  ],
+  "source": {
+   "url": "https://westhillslemoore.elumenapp.com/catalog/26-27/program/hotel-restaurant-and-casino-management-aa-fall-2025",
+   "title": "Hotel, Restaurant, and Casino Management (AA)",
+   "h1": "Hotel, Restaurant, and Casino Management (AA)",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 8519
+ },
+ {
+  "control_number": "15285",
+  "title": "Introduction to Hotel Operations",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CIS7",
+   "HRCM1",
+   "HRCM10",
+   "HRCM13",
+   "HRCM15X",
+   "HRCM51"
+  ],
+  "source": {
+   "url": "https://westhillslemoore.elumenapp.com/catalog/26-27/program/introduction-to-hotel-operations-coa-fall-2025",
+   "title": "Introduction to Hotel Operations (COA)",
+   "h1": "Introduction to Hotel Operations (COA)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 2858
+ },
+ {
+  "control_number": "15290",
+  "title": "Geology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.778,
+  "codes_found": [
+   "CHEM2A",
+   "GEOL1",
+   "GEOL3",
+   "PHYSICS2A",
+   "PHYSICS4A",
+   "PHYSICS4B",
+   "PHYSICS4C"
+  ],
+  "source": {
+   "url": "https://westhillslemoore.elumenapp.com/catalog/26-27/program/mathematics-2-0-as-t-fall-2026",
+   "title": "Mathematics 2.0 (AS-T)",
+   "h1": "Mathematics 2.0 (AS-T)",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 0.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 6558
+ },
+ {
+  "control_number": "15291",
+  "title": "Psychology",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "17832",
+  "title": "LVN to ADN",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "NURS12",
+   "NURS30",
+   "NURS30L",
+   "NURS31",
+   "NURS31L",
+   "NURS40",
+   "NURS40L",
+   "NURS41",
+   "NURS41L"
+  ],
+  "source": {
+   "url": "https://westhillslemoore.elumenapp.com/catalog/26-27/program/lvn-to-adn-as-fall-2025",
+   "title": "LVN to ADN (AS)",
+   "h1": "LVN to ADN (AS)",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 5261
+ },
+ {
+  "control_number": "17833",
+  "title": "30-unit LVN to RN",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIO35",
+   "BIO38",
+   "NURS30",
+   "NURS30L",
+   "NURS31",
+   "NURS31L",
+   "NURS40",
+   "NURS40L",
+   "NURS41",
+   "NURS41L"
+  ],
+  "source": {
+   "url": "https://westhillslemoore.elumenapp.com/catalog/26-27/program/30-unit-lvn-to-rn-coa-summer-2021",
+   "title": "30-Unit LVN to RN (COA)",
+   "h1": "30-Unit LVN to RN (COA)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 3620
+ },
+ {
+  "control_number": "19303",
+  "title": "Liberal Arts: Arts & Humanities",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.962,
+  "codes_found": [
+   "ART16A",
+   "ART42",
+   "ART5A",
+   "ASL1",
+   "ASL2",
+   "ENG2",
+   "ENG4",
+   "ENG5",
+   "GEOG3",
+   "HIST20",
+   "HIST4A",
+   "HIST4B",
+   "HUM1",
+   "HUM22",
+   "LING11",
+   "MUS42",
+   "PA1",
+   "PA3",
+   "PHIL1",
+   "PHIL2",
+   "PHIL3",
+   "SPAN1",
+   "SPAN2",
+   "SPAN3",
+   "SPAN4"
+  ],
+  "source": {
+   "url": "https://westhillslemoore.elumenapp.com/catalog/26-27/program/liberal-arts-arts-and-humanities-aa-fall-2025",
+   "title": "Liberal Arts: Arts and Humanities (AA)",
+   "h1": "Liberal Arts: Arts and Humanities (AA)",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 26,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "19305",
+  "title": "Liberal Arts: Elementary Teacher Preparation",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.733,
+  "codes_found": [
+   "ART16A",
+   "ART42",
+   "BIO10",
+   "COMMC1000",
+   "ENGLC1001",
+   "GEOG1",
+   "HIST17A",
+   "HUM1",
+   "MUS42",
+   "POLSC1000",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://westhillslemoore.elumenapp.com/catalog/26-27/program/studio-arts-aat-fall-2025",
+   "title": "Studio Arts (AAT)",
+   "h1": "Studio Arts (AAT)",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 0.2
+   }
+  },
+  "listed": 15,
+  "text_chars": 6686
+ },
+ {
+  "control_number": "19306",
+  "title": "Liberal Arts: Math & Science",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIO10",
+   "BIO1A",
+   "BIO1B",
+   "BIO32",
+   "BIO35",
+   "BIO38",
+   "BUS39",
+   "CHEM1A",
+   "CHEM1B",
+   "CHEM2A",
+   "GEOG1",
+   "GEOL1",
+   "GEOL3",
+   "MATH16",
+   "MATH1A",
+   "MATH1B",
+   "MATH2A",
+   "MATH2B",
+   "MATH3A",
+   "MATH45",
+   "PHYSICS2A",
+   "PHYSICS2B",
+   "PHYSICS4A",
+   "PHYSICS4B",
+   "PHYSICS4C",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://westhillslemoore.elumenapp.com/catalog/26-27/program/liberal-arts-math-and-science-aa-spring-2026",
+   "title": "Liberal Arts: Math and Science (AA)",
+   "h1": "Liberal Arts: Math and Science (AA)",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 26,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "19307",
+  "title": "Liberal Arts: Social Science",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.929,
+  "codes_found": [
+   "AOJ29",
+   "CD5",
+   "ECON1B",
+   "ES1",
+   "GEOG1",
+   "GEOG18",
+   "GEOG2",
+   "GEOG3",
+   "HIST17A",
+   "HIST20",
+   "HIST32",
+   "HIST34",
+   "HIST44",
+   "HIST4A",
+   "HIST4B",
+   "POLSC1000",
+   "POLSCI2",
+   "PSYCC1000",
+   "PSYCH2",
+   "PSYCH3",
+   "PSYCH4",
+   "PSYCH5",
+   "SOC1",
+   "SOC2",
+   "SOC3",
+   "SOC5"
+  ],
+  "source": {
+   "url": "https://westhillslemoore.elumenapp.com/catalog/26-27/program/liberal-arts-social-science-aa-fall-2025",
+   "title": "Liberal Arts: Social Science (AA)",
+   "h1": "Liberal Arts: Social Science (AA)",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 28,
+  "text_chars": 15043
+ },
+ {
+  "control_number": "20341",
+  "title": "Business: Bookkeeping",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "20342",
+  "title": "Business: Business Management",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "20343",
+  "title": "Business: Retail Business Management",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.929,
+  "codes_found": [
+   "BUS13A",
+   "BUS13B",
+   "BUS18",
+   "BUS1A",
+   "BUS20",
+   "BUS28",
+   "BUS32",
+   "BUS55",
+   "CIS42",
+   "CIS7",
+   "CIS8",
+   "ECON1B",
+   "PHIL3"
+  ],
+  "source": {
+   "url": "https://westhillslemoore.elumenapp.com/catalog/26-27/program/retail-business-management-coa-fall-2021",
+   "title": "Retail Business Management (COA)",
+   "h1": "Retail Business Management (COA)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 14,
+  "text_chars": 2242
+ },
+ {
+  "control_number": "20349",
+  "title": "Child Development Teacher Level",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CD10",
+   "CD11",
+   "CD12A",
+   "CD15",
+   "CD16",
+   "CD17A",
+   "CD17B",
+   "CD18",
+   "CD2",
+   "CD20",
+   "CD21",
+   "CD22",
+   "CD23",
+   "CD3",
+   "CD4",
+   "CD5",
+   "CD7"
+  ],
+  "source": {
+   "url": "https://westhillslemoore.elumenapp.com/catalog/26-27/program/child-development-teacher-level-certificate-fall-2025",
+   "title": "Child Development Teacher Level Certificate",
+   "h1": "Child Development Teacher Level Certificate",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 17,
+  "text_chars": 5303
+ },
+ {
+  "control_number": "30832",
+  "title": "Mathematics",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MATH1A",
+   "MATH1B",
+   "MATH2A",
+   "MATH2B",
+   "MATH3A",
+   "PHYSICS4A",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://westhillslemoore.elumenapp.com/catalog/26-27/program/mathematics-ast-fall-2025",
+   "title": "Mathematics (AST)",
+   "h1": "Mathematics (AST)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 7712
+ },
+ {
+  "control_number": "30833",
+  "title": "Administration of Justice",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AOJ10",
+   "AOJ12",
+   "AOJ16",
+   "AOJ20",
+   "AOJ22",
+   "AOJ24",
+   "AOJ3",
+   "AOJ32",
+   "PSYCC1000",
+   "SOC1",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://westhillslemoore.elumenapp.com/catalog/26-27/program/administration-of-justice-ast-fall-2025",
+   "title": "Administration of Justice (AST)",
+   "h1": "Administration of Justice (AST)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 7238
+ },
+ {
+  "control_number": "31225",
+  "title": "Physics",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MATH1A",
+   "MATH1B",
+   "MATH2A",
+   "PHYSICS4A",
+   "PHYSICS4B",
+   "PHYSICS4C"
+  ],
+  "source": {
+   "url": "https://westhillslemoore.elumenapp.com/catalog/26-27/program/physics-ast-fall-2025",
+   "title": "Physics (AST)",
+   "h1": "Physics (AST)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 5947
+ },
+ {
+  "control_number": "31235",
+  "title": "Chef Apprentice",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CUL1",
+   "CUL4",
+   "CUL52",
+   "CUL56",
+   "CUL7",
+   "HRCM12",
+   "HRCM6",
+   "HRCM7"
+  ],
+  "source": {
+   "url": "https://westhillslemoore.elumenapp.com/catalog/26-27/program/chef-apprentice-coa-fall-2021",
+   "title": "Chef Apprentice (COA)",
+   "h1": "Chef Apprentice (COA)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 2842
+ },
+ {
+  "control_number": "31883",
+  "title": "Paramedic",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "EMT10",
+   "EMT11",
+   "EMT12",
+   "EMT13",
+   "EMT14",
+   "EMT15"
+  ],
+  "source": {
+   "url": "https://westhillslemoore.elumenapp.com/catalog/26-27/program/paramedic-as-fall-2025",
+   "title": "Paramedic (AS)",
+   "h1": "Paramedic (AS)",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 3648
+ },
+ {
+  "control_number": "32842",
+  "title": "Business Administration",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.75,
+  "codes_found": [
+   "BUS18",
+   "BUS1A",
+   "BUS1B",
+   "BUS39",
+   "ECONC2002",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://westhillslemoore.elumenapp.com/catalog/26-27/program/business-administration-ast-2-0-fall-2026",
+   "title": "Business Administration (AST) 2.0",
+   "h1": "Business Administration (AST) 2.0",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 6312
+ },
+ {
+  "control_number": "32899",
+  "title": "Communication Studies",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.75,
+  "codes_found": [
+   "COM2",
+   "COM3",
+   "COM4",
+   "COMMC1000",
+   "PSYCC1000",
+   "SOC1"
+  ],
+  "source": {
+   "url": "https://westhillslemoore.elumenapp.com/catalog/26-27/program/communication-studies-2-0-aat-fall-2026",
+   "title": "Communication Studies 2.0 (AAT)",
+   "h1": "Communication Studies 2.0 (AAT)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 6620
+ },
+ {
+  "control_number": "32900",
+  "title": "Geology",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEM1A",
+   "CHEM1B",
+   "GEOL1",
+   "GEOL3",
+   "MATH1A",
+   "MATH1B"
+  ],
+  "source": {
+   "url": "https://westhillslemoore.elumenapp.com/catalog/26-27/program/geology-ast-fall-2025",
+   "title": "Geology (AST)",
+   "h1": "Geology (AST)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 5510
+ },
+ {
+  "control_number": "32908",
+  "title": "Early Childhood Education",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CD10",
+   "CD12A",
+   "CD16",
+   "CD18",
+   "CD2",
+   "CD3",
+   "CD5"
+  ],
+  "source": {
+   "url": "https://westhillslemoore.elumenapp.com/catalog/26-27/program/early-childhood-education-ast-fall-2025",
+   "title": "Early Childhood Education (AST)",
+   "h1": "Early Childhood Education (AST)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 6233
+ },
+ {
+  "control_number": "32909",
+  "title": "Sociology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "SOC1",
+   "SOC10",
+   "SOC2",
+   "SOC3",
+   "SOC5",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://westhillslemoore.elumenapp.com/catalog/26-27/program/sociology-aat-fall-2025",
+   "title": "Sociology (AAT)",
+   "h1": "Sociology (AAT)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 6179
+ },
+ {
+  "control_number": "32911",
+  "title": "Geography",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CIS7",
+   "GEOG1",
+   "GEOG18",
+   "GEOG2",
+   "GEOG3",
+   "GEOG4",
+   "GEOL1"
+  ],
+  "source": {
+   "url": "https://westhillslemoore.elumenapp.com/catalog/26-27/program/geography-aat-fall-2025",
+   "title": "Geography (AAT)",
+   "h1": "Geography (AAT)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 6097
+ },
+ {
+  "control_number": "32926",
+  "title": "Political Science",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.875,
+  "codes_found": [
+   "HIST4B",
+   "HISTC1002",
+   "POLSC1000",
+   "POLSCI2",
+   "POLSCI4",
+   "POLSCI5",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://westhillslemoore.elumenapp.com/catalog/26-27/program/political-science-aat-fall-2026",
+   "title": "Political Science (AAT)",
+   "h1": "Political Science (AAT)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 6450
+ },
+ {
+  "control_number": "32933",
+  "title": "Elementary Teacher Education",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.737,
+  "codes_found": [
+   "ART42",
+   "COMMC1000",
+   "EDUC1",
+   "ENGLC1000",
+   "ESCI2",
+   "GEOG2",
+   "HIST20",
+   "LING11",
+   "MATH10A",
+   "MATH10B",
+   "MUS42",
+   "PA1",
+   "PHYSCI2",
+   "POLSC1000"
+  ],
+  "source": {
+   "url": "https://westhillslemoore.elumenapp.com/catalog/26-27/program/elementary-teacher-education-integrated-programs-aat-fall-2026",
+   "title": "Elementary Teacher Education: Integrated Programs (AAT)",
+   "h1": "Elementary Teacher Education: Integrated Programs (AAT)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 19,
+  "text_chars": 6165
+ },
+ {
+  "control_number": "33017",
+  "title": "Studio Arts",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "33656",
+  "title": "Psychology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "PSYCC1000",
+   "PSYCH2",
+   "PSYCH3",
+   "PSYCH4",
+   "PSYCH5",
+   "PSYCH6",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://westhillslemoore.elumenapp.com/catalog/26-27/program/psychology-aat-fall-2025",
+   "title": "Psychology (AAT)",
+   "h1": "Psychology (AAT)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 5871
+ },
+ {
+  "control_number": "35112",
+  "title": "Networking Fundamentals",
+  "award": "Certificate of Achievement: 12 to fewer than 18 semester(or 18 to fewer than 27 ",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "35663",
+  "title": "Introduction to Programming",
+  "award": "Certificate of Achievement: 12 to fewer than 18 semester(or 18 to fewer than 27 ",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "35960",
+  "title": "History",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.933,
+  "codes_found": [
+   "ES1",
+   "GEOG3",
+   "HIST20",
+   "HIST21",
+   "HIST32",
+   "HIST34",
+   "HIST44",
+   "HIST4A",
+   "HIST4B",
+   "HISTC1002",
+   "HUM1",
+   "HUM22",
+   "POLSCI2",
+   "POLSCI4"
+  ],
+  "source": {
+   "url": "https://westhillslemoore.elumenapp.com/catalog/26-27/program/history-aat-fall-2026",
+   "title": "History (AAT)",
+   "h1": "History (AAT)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 7190
+ },
+ {
+  "control_number": "35963",
+  "title": "Business Information Worker",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS13A",
+   "BUS13B",
+   "BUS2",
+   "BUS28",
+   "BUS35",
+   "BUS67",
+   "CIS34",
+   "CIS7",
+   "CIS8"
+  ],
+  "source": {
+   "url": "https://westhillslemoore.elumenapp.com/catalog/26-27/program/business-information-worker-coa-spring-2021",
+   "title": "Business Information Worker (COA)",
+   "h1": "Business Information Worker (COA)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 3572
+ },
+ {
+  "control_number": "36295",
+  "title": "Correctional Rehabilitation",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AOJ12",
+   "AOJ20",
+   "AOJ3",
+   "AOJ4",
+   "AOJ6",
+   "AOJ7",
+   "COMMC1000",
+   "ENGLC1000"
+  ],
+  "source": {
+   "url": "https://westhillslemoore.elumenapp.com/catalog/26-27/program/correctional-rehabilitation-coa-spring-2026",
+   "title": "Correctional Rehabilitation (COA)",
+   "h1": "Correctional Rehabilitation (COA)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 3089
+ },
+ {
+  "control_number": "37123",
+  "title": "Introduction to Cybersecurity",
+  "award": "Certificate of Achievement: 12 to fewer than 18 semester(or 18 to fewer than 27 ",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CIS42",
+   "CIS5F",
+   "CIS5H"
+  ],
+  "source": {
+   "url": "https://westhillslemoore.elumenapp.com/catalog/26-27/program/introduction-to-cybersecurity-coa-spring-2021",
+   "title": "Introduction to Cybersecurity (COA)",
+   "h1": "Introduction to Cybersecurity (COA)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 3012
+ },
+ {
+  "control_number": "37129",
+  "title": "Introduction to Industrial Automation",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ELET1",
+   "ELET3",
+   "ELET6",
+   "ELET7",
+   "ITEC8"
+  ],
+  "source": {
+   "url": "https://westhillslemoore.elumenapp.com/catalog/26-27/program/introduction-to-industrial-automation-coa-spring-2022",
+   "title": "Introduction to Industrial Automation (COA)",
+   "h1": "Introduction to Industrial Automation (COA)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 2836
+ },
+ {
+  "control_number": "37134",
+  "title": "English",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.909,
+  "codes_found": [
+   "COM2",
+   "ENG25",
+   "ENG4",
+   "ENG5",
+   "ENGLC1001",
+   "HUM1",
+   "JOURN1",
+   "JOURN2A",
+   "LING11",
+   "PA1"
+  ],
+  "source": {
+   "url": "https://westhillslemoore.elumenapp.com/catalog/26-27/program/english-aat-fall-2026",
+   "title": "English (AAT)",
+   "h1": "English (AAT)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 6534
+ },
+ {
+  "control_number": "37153",
+  "title": "Project Management",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 1,
+  "text_chars": 0
+ },
+ {
+  "control_number": "37155",
+  "title": "Agriculture Sales and Marketing",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AG11",
+   "AGBUS15",
+   "CIS2G",
+   "CIS34"
+  ],
+  "source": {
+   "url": "https://westhillslemoore.elumenapp.com/catalog/26-27/program/agriculture-sales-and-marketing-coa-fall-2021",
+   "title": "Agriculture Sales and Marketing (COA)",
+   "h1": "Agriculture Sales and Marketing (COA)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 2419
+ },
+ {
+  "control_number": "37364",
+  "title": "Kinesiology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIO32",
+   "BIO35",
+   "CHEM1A",
+   "HE35",
+   "KINES1",
+   "KINES48",
+   "PE11",
+   "PE16",
+   "PE18",
+   "PE2",
+   "PE21",
+   "PE23",
+   "PE25A",
+   "PE3",
+   "PE32",
+   "PE6",
+   "PE7",
+   "PE8",
+   "PSYCC1000",
+   "SOC1",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://westhillslemoore.elumenapp.com/catalog/26-27/program/kinesiology-aat-fall-2026",
+   "title": "Kinesiology (AAT)",
+   "h1": "Kinesiology (AAT)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 21,
+  "text_chars": 6201
+ },
+ {
+  "control_number": "38655",
+  "title": "Academic Readiness",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 3,
+  "text_chars": 0
+ },
+ {
+  "control_number": "38698",
+  "title": "ESL",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "NC120",
+   "NC125",
+   "NC130",
+   "NC135"
+  ],
+  "source": {
+   "url": "https://westhillslemoore.elumenapp.com/catalog/26-27/program/esl-coc-summer-2021",
+   "title": "ESL (COC)",
+   "h1": "ESL (COC)",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 1135
+ },
+ {
+  "control_number": "38740",
+  "title": "Industrial Mechanic I",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MM51A",
+   "MM51B",
+   "MM51C",
+   "MM51D",
+   "MM51E",
+   "MM51F",
+   "MM54"
+  ],
+  "source": {
+   "url": "https://westhillslemoore.elumenapp.com/catalog/26-27/program/industrial-mechanic-i-coa-spring-2021",
+   "title": "Industrial Mechanic I (COA)",
+   "h1": "Industrial Mechanic I (COA)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 2891
+ },
+ {
+  "control_number": "38786",
+  "title": "CSU GE Breadth",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 93,
+  "text_chars": 0
+ },
+ {
+  "control_number": "38968",
+  "title": "Transfer Studies- Full IGETC Certification: UC",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.5,
+  "codes_found": [
+   "ART16A",
+   "ART42",
+   "ASL1",
+   "ASL2",
+   "BIO10",
+   "CHEM2A",
+   "ENG4",
+   "ENGLC1001",
+   "GEOG1",
+   "GEOG3",
+   "GEOL1",
+   "GEOL3",
+   "HIST17A",
+   "HIST20",
+   "HIST4A",
+   "HIST4B",
+   "HUM1",
+   "HUM22",
+   "MUS42",
+   "PA1",
+   "PHIL1",
+   "PHIL3",
+   "PHYSICS4A",
+   "PHYSICS4B",
+   "PHYSICS4C",
+   "POLSC1000",
+   "SOC5",
+   "SPAN2",
+   "SPAN3",
+   "SPAN4",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://westhillslemoore.elumenapp.com/catalog/26-27/program/liberal-arts-arts-and-humanities-aa-fall-2025",
+   "title": "Liberal Arts: Arts and Humanities (AA)",
+   "h1": "Liberal Arts: Arts and Humanities (AA)",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 0.0
+   }
+  },
+  "listed": 62,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "39698",
+  "title": "Manufacturing Automation",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ELET1",
+   "ELET2",
+   "ELET3",
+   "ELET4",
+   "ELET5",
+   "ELET6",
+   "ELET7",
+   "ITEC2",
+   "ITEC8",
+   "NC15"
+  ],
+  "source": {
+   "url": "https://westhillslemoore.elumenapp.com/catalog/26-27/program/manufacturing-automation-as-fall-2025",
+   "title": "Manufacturing Automation (AS)",
+   "h1": "Manufacturing Automation (AS)",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 7909
+ },
+ {
+  "control_number": "39699",
+  "title": "Nursing",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIO32",
+   "BIO35",
+   "BIO38",
+   "ENGLC1000",
+   "NURS16",
+   "NURS17",
+   "NURS17L",
+   "NURS18",
+   "NURS20",
+   "NURS20L",
+   "NURS21",
+   "NURS21L",
+   "NURS30",
+   "NURS30L",
+   "NURS31",
+   "NURS31L",
+   "NURS40",
+   "NURS40L",
+   "NURS41",
+   "NURS41L"
+  ],
+  "source": {
+   "url": "https://westhillslemoore.elumenapp.com/catalog/26-27/program/nursing-as-fall-2025",
+   "title": "Nursing (AS)",
+   "h1": "Nursing (AS)",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 20,
+  "text_chars": 8417
+ },
+ {
+  "control_number": "40164",
+  "title": "LVN to Nursing Program",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 9,
+  "text_chars": 0
+ },
+ {
+  "control_number": "40166",
+  "title": "Biology",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIO1A",
+   "BIO1B",
+   "CHEM1A",
+   "CHEM1B",
+   "MATH1A"
+  ],
+  "source": {
+   "url": "https://westhillslemoore.elumenapp.com/catalog/26-27/program/biology-ast-fall-2025",
+   "title": "Biology (AST)",
+   "h1": "Biology (AST)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 5964
+ },
+ {
+  "control_number": "40265",
+  "title": "Introduction to Culinary Arts",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CUL1",
+   "CUL3",
+   "CUL52",
+   "CUL7",
+   "HRCM1",
+   "HRCM12"
+  ],
+  "source": {
+   "url": "https://westhillslemoore.elumenapp.com/catalog/26-27/program/introduction-to-culinary-arts-coa-fall-2020",
+   "title": "Introduction to Culinary Arts (COA)",
+   "h1": "Introduction to Culinary Arts (COA)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 2301
+ },
+ {
+  "control_number": "40269",
+  "title": "Introduction to Hospitality Management",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CUL3",
+   "CUL58",
+   "HRCM1",
+   "HRCM12",
+   "HRCM4",
+   "HRCM8"
+  ],
+  "source": {
+   "url": "https://westhillslemoore.elumenapp.com/catalog/26-27/program/introduction-to-hospitality-management-coa-fall-2020",
+   "title": "Introduction to Hospitality Management (COA)",
+   "h1": "Introduction to Hospitality Management (COA)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 2387
+ },
+ {
+  "control_number": "40321",
+  "title": "Hospitality Management",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS1A",
+   "CUL1",
+   "CUL3",
+   "CUL7",
+   "HRCM1",
+   "HRCM12",
+   "HRCM7",
+   "HRCM9"
+  ],
+  "source": {
+   "url": "https://westhillslemoore.elumenapp.com/catalog/26-27/program/hospitality-management-ast-fall-2025",
+   "title": "Hospitality Management (AST)",
+   "h1": "Hospitality Management (AST)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 6940
+ },
+ {
+  "control_number": "40340",
+  "title": "Advanced Culinary Arts",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CUL56",
+   "CUL57",
+   "CUL58",
+   "CUL64",
+   "HRCM6",
+   "HRCM7",
+   "HRCM8"
+  ],
+  "source": {
+   "url": "https://westhillslemoore.elumenapp.com/catalog/26-27/program/advanced-culinary-arts-coa-spring-2022",
+   "title": "Advanced Culinary Arts (COA)",
+   "h1": "Advanced Culinary Arts (COA)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 2533
+ },
+ {
+  "control_number": "40379",
+  "title": "Beverage Management",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CUL2",
+   "CUL3",
+   "CUL57",
+   "HRCM1",
+   "HRCM12"
+  ],
+  "source": {
+   "url": "https://westhillslemoore.elumenapp.com/catalog/26-27/program/beverage-management-coa-fall-2020",
+   "title": "Beverage Management (COA)",
+   "h1": "Beverage Management (COA)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 2107
+ },
+ {
+  "control_number": "40429",
+  "title": "Advanced Hospitality Management",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS1A",
+   "CIS7",
+   "CUL4",
+   "HRCM3",
+   "HRCM9"
+  ],
+  "source": {
+   "url": "https://westhillslemoore.elumenapp.com/catalog/26-27/program/advanced-hospitality-management-coa-fall-2020",
+   "title": "Advanced Hospitality Management (COA)",
+   "h1": "Advanced Hospitality Management (COA)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 2598
+ },
+ {
+  "control_number": "40430",
+  "title": "Pastry and Baking Arts",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CUL1",
+   "CUL3",
+   "CUL52",
+   "CUL64",
+   "HRCM1",
+   "HRCM12"
+  ],
+  "source": {
+   "url": "https://westhillslemoore.elumenapp.com/catalog/26-27/program/pastry-and-baking-arts-coa-spring-2023",
+   "title": "Pastry and Baking Arts (COA)",
+   "h1": "Pastry and Baking Arts (COA)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 2384
+ },
+ {
+  "control_number": "42096",
+  "title": "Full-Stack Web Development",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "COMP1A",
+   "COMP1B",
+   "COMP2",
+   "COMP3A",
+   "COMP3B",
+   "COMP4"
+  ],
+  "source": {
+   "url": "https://westhillslemoore.elumenapp.com/catalog/26-27/program/full-stack-web-development-coa-spring-2022",
+   "title": "Full-Stack Web Development (COA)",
+   "h1": "Full-Stack Web Development (COA)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 3457
+ },
+ {
+  "control_number": "42551",
+  "title": "Human Resources (COA)",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.857,
+  "codes_found": [
+   "BUS15X",
+   "BUS18",
+   "BUS20",
+   "BUS28",
+   "BUS35",
+   "SOC2"
+  ],
+  "source": {
+   "url": "https://westhillslemoore.elumenapp.com/catalog/26-27/program/human-resources-coa-fall-2022",
+   "title": "Human Resources (COA)",
+   "h1": "Human Resources (COA)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 2212
+ },
+ {
+  "control_number": "42563",
+  "title": "Economics",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.75,
+  "codes_found": [
+   "BUS1A",
+   "BUS1B",
+   "BUS39",
+   "CIS7",
+   "ECONC2002",
+   "MATH2A",
+   "MATH3A",
+   "SOC1",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://westhillslemoore.elumenapp.com/catalog/26-27/program/economics-aat-fall-2026",
+   "title": "Economics (AAT)",
+   "h1": "Economics (AAT)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 6692
+ },
+ {
+  "control_number": "42593",
+  "title": "Information Technology",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART20A",
+   "BUS19A",
+   "BUS38",
+   "CIS42",
+   "CIS5A",
+   "CIS5B",
+   "CIS5C",
+   "CIS5D",
+   "CIS5E",
+   "CIS5F",
+   "CIS5H",
+   "CIS7",
+   "COMP1A",
+   "COMP1B",
+   "COMP2",
+   "COMP3A",
+   "COMP3B",
+   "COMP4",
+   "DIME1",
+   "DIME2"
+  ],
+  "source": {
+   "url": "https://westhillslemoore.elumenapp.com/catalog/26-27/program/information-technology-aa-fall-2025",
+   "title": "Information Technology (AA)",
+   "h1": "Information Technology (AA)",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 20,
+  "text_chars": 11776
+ },
+ {
+  "control_number": "42893",
+  "title": "User Experience (UX) Design (COA)",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART20A",
+   "BUS38",
+   "COMP1A",
+   "COMP1B",
+   "DIME1",
+   "DIME2"
+  ],
+  "source": {
+   "url": "https://westhillslemoore.elumenapp.com/catalog/26-27/program/user-experience-ux-design-coa-fall-2022",
+   "title": "User Experience (UX) Design (COA)",
+   "h1": "User Experience (UX) Design (COA)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 2339
+ },
+ {
+  "control_number": "43051",
+  "title": "Agriculture",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AG15X",
+   "AGBUS10",
+   "AGBUS15",
+   "AGBUS24",
+   "AGBUS40",
+   "ASCI12",
+   "CRPSCI1",
+   "EDUC1",
+   "ITEC8",
+   "SLSCI21"
+  ],
+  "source": {
+   "url": "https://westhillslemoore.elumenapp.com/catalog/26-27/program/agriculture-as-fall-2025",
+   "title": "Agriculture (AS)",
+   "h1": "Agriculture (AS)",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 11400
+ },
+ {
+  "control_number": "43103",
+  "title": "Business Administration 2.0",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.875,
+  "codes_found": [
+   "BUS18",
+   "BUS1A",
+   "BUS1B",
+   "BUS20",
+   "BUS39",
+   "ECONC2002",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://westhillslemoore.elumenapp.com/catalog/26-27/program/business-administration-ast-2-0-fall-2026",
+   "title": "Business Administration (AST) 2.0",
+   "h1": "Business Administration (AST) 2.0",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 6312
+ },
+ {
+  "control_number": "43429",
+  "title": "Business Information Systems",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS13A",
+   "BUS13B",
+   "BUS15X",
+   "BUS2",
+   "BUS28",
+   "BUS3",
+   "BUS35",
+   "BUS67",
+   "CIS34",
+   "CIS5E",
+   "CIS7",
+   "CIS8"
+  ],
+  "source": {
+   "url": "https://westhillslemoore.elumenapp.com/catalog/26-27/program/business-information-systems-aa-fall-2025",
+   "title": "Business Information Systems (AA)",
+   "h1": "Business Information Systems (AA)",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 8050
+ },
+ {
+  "control_number": "43533",
+  "title": "Information Technology Specialist",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.667,
+  "codes_found": [
+   "CIS15X",
+   "CIS42",
+   "CIS5A",
+   "CIS5B"
+  ],
+  "source": {
+   "url": "https://westhillslemoore.elumenapp.com/catalog/26-27/program/networking-fundamentals-coa-spring-2021",
+   "title": "Networking Fundamentals (COA)",
+   "h1": "Networking Fundamentals (COA)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 0.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 2558
+ },
+ {
+  "control_number": "44247",
+  "title": "Communication Studies 2.0",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.75,
+  "codes_found": [
+   "COM2",
+   "COM3",
+   "COM4",
+   "COMMC1000",
+   "PSYCC1000",
+   "SOC1"
+  ],
+  "source": {
+   "url": "https://westhillslemoore.elumenapp.com/catalog/26-27/program/communication-studies-2-0-aat-fall-2026",
+   "title": "Communication Studies 2.0 (AAT)",
+   "h1": "Communication Studies 2.0 (AAT)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 6620
+ },
+ {
+  "control_number": "44549",
+  "title": "Public Health",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIO10",
+   "CHEM2A",
+   "HE35",
+   "HS30",
+   "HS40",
+   "HS45",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://westhillslemoore.elumenapp.com/catalog/26-27/program/public-health-fall-2025",
+   "title": "Public Health",
+   "h1": "Public Health",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 5893
+ },
+ {
+  "control_number": "45494",
+  "title": "Transfer studies - Cal GETC",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.962,
+  "codes_found": [
+   "AGBUS40",
+   "ART16A",
+   "ART42",
+   "BIO10",
+   "BIO1A",
+   "BIO1B",
+   "BIO32",
+   "BIO35",
+   "BIO38",
+   "BUS39",
+   "CD5",
+   "CHEM1A",
+   "CHEM1B",
+   "CHEM2A",
+   "COMMC1000",
+   "ECON1B",
+   "ENG2",
+   "ENG4",
+   "ENG5",
+   "ENGLC1000",
+   "ENGLC1001",
+   "ES1",
+   "ES5",
+   "ESCI2",
+   "GEOG1",
+   "GEOG18",
+   "GEOG2",
+   "GEOG3",
+   "GEOL1",
+   "GEOL3",
+   "HIST17A",
+   "HIST20",
+   "HIST21",
+   "HIST32",
+   "HIST34",
+   "HIST44",
+   "HIST4A",
+   "HIST4B",
+   "HUM1",
+   "HUM11",
+   "HUM22",
+   "LING11",
+   "MATH16",
+   "MATH1A",
+   "MATH1B",
+   "MATH2A",
+   "MATH2B",
+   "MATH3A",
+   "MATH41",
+   "MUS42",
+   "PA1",
+   "PHIL1",
+   "PHYSICS2A",
+   "PHYSICS2B",
+   "PHYSICS4A",
+   "PHYSICS4B",
+   "PHYSICS4C",
+   "POLSC1000",
+   "POLSCI10",
+   "POLSCI2",
+   "POLSCI4",
+   "POLSCI5",
+   "PSYCC1000",
+   "PSYCH2",
+   "PSYCH3",
+   "PSYCH4",
+   "PSYCH5",
+   "PSYCH6",
+   "SOC1",
+   "SOC2",
+   "SOC3",
+   "SOC5",
+   "SPAN3",
+   "SPAN4",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://westhillslemoore.elumenapp.com/catalog/26-27/program/transfer-studies-cal-getc-coa-fall-2025",
+   "title": "Transfer Studies – Cal GETC (COA)",
+   "h1": "Transfer Studies – Cal GETC (COA)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 78,
+  "text_chars": 13087
+ },
+ {
+  "control_number": "45614",
+  "title": "Agriculture Systems Basics",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 5,
+  "text_chars": 0
+ },
+ {
+  "control_number": "45632",
+  "title": "Maintenance Electrical Systems Technician 1",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "NC170",
+   "NC172"
+  ],
+  "source": {
+   "url": "https://westhillslemoore.elumenapp.com/catalog/26-27/program/maintenance-electrical-systems-technician-1-coc-spring-2026",
+   "title": "Maintenance Electrical Systems Technician 1 (COC)",
+   "h1": "Maintenance Electrical Systems Technician 1 (COC)",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 2322
+ },
+ {
+  "control_number": "45651",
+  "title": "Agriculture Systems Fundamentals",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "45802",
+  "title": "Agriculture Business",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AG11",
+   "AGBUS10",
+   "AGBUS15",
+   "AGBUS24",
+   "AGBUS40",
+   "ASCI12",
+   "BUS18",
+   "CRPSCI1",
+   "ECONC2002",
+   "SLSCI21",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://westhillslemoore.elumenapp.com/catalog/26-27/program/agriculture-business-ast-fall-2026",
+   "title": "Agriculture Business (AST)",
+   "h1": "Agriculture Business (AST)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 6929
+ },
+ {
+  "control_number": "45975",
+  "title": "Elementary Teacher Education: Integrated Programs",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.824,
+  "codes_found": [
+   "ART42",
+   "BIO10",
+   "COMMC1000",
+   "EDUC1",
+   "ENGLC1000",
+   "GEOG2",
+   "HIST20",
+   "LING11",
+   "MATH10A",
+   "MATH10B",
+   "MUS42",
+   "PA1",
+   "PHYSCI2",
+   "POLSC1000"
+  ],
+  "source": {
+   "url": "https://westhillslemoore.elumenapp.com/catalog/26-27/program/elementary-teacher-education-integrated-programs-aat-fall-2026",
+   "title": "Elementary Teacher Education: Integrated Programs (AAT)",
+   "h1": "Elementary Teacher Education: Integrated Programs (AAT)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 17,
+  "text_chars": 6165
+ },
+ {
+  "control_number": "46268",
+  "title": "Mechanical Systems 1",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "NC175",
+   "NC176"
+  ],
+  "source": {
+   "url": "https://westhillslemoore.elumenapp.com/catalog/26-27/program/mechanical-systems-1-coc-spring-2026",
+   "title": "Mechanical Systems 1 (COC)",
+   "h1": "Mechanical Systems 1 (COC)",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 2329
+ },
+ {
+  "control_number": "46271",
+  "title": "Hydraulic and Pneumatic Systems Technician 1",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 2,
+  "text_chars": 0
+ },
+ {
+  "control_number": "46390",
+  "title": "Community Health Worker",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "COMMC1000",
+   "HE35",
+   "HS15X",
+   "HS30",
+   "HS40",
+   "HS45",
+   "HS5",
+   "STATC1000",
+   "SW20"
+  ],
+  "source": {
+   "url": "https://westhillslemoore.elumenapp.com/catalog/26-27/program/community-health-worker-coa-spring-2026",
+   "title": "Community Health Worker (COA)",
+   "h1": "Community Health Worker (COA)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 2538
+ },
+ {
+  "control_number": "46558",
+  "title": "Process Control Systems Technician Level 1",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "NC177",
+   "NC179"
+  ],
+  "source": {
+   "url": "https://westhillslemoore.elumenapp.com/catalog/26-27/program/process-control-systems-technician-level-1-coc-fall-2026",
+   "title": "Process Control Systems Technician Level 1 (COC)",
+   "h1": "Process Control Systems Technician Level 1 (COC)",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 2478
+ },
+ {
+  "control_number": "46578",
+  "title": "Mathematics 2.0",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "COMP3A",
+   "MATH2A",
+   "MATH2B",
+   "MATH3A",
+   "MATHC2210",
+   "MATHC2220",
+   "PHYSICS4A"
+  ],
+  "source": {
+   "url": "https://westhillslemoore.elumenapp.com/catalog/26-27/program/mathematics-2-0-as-t-fall-2026",
+   "title": "Mathematics 2.0 (AS-T)",
+   "h1": "Mathematics 2.0 (AS-T)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 6630
+ }
+]

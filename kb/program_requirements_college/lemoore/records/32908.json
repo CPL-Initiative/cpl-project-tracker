@@ -1,0 +1,228 @@
+{
+ "college": "Lemoore College",
+ "control_number": "32908",
+ "shape": "adt",
+ "title": "Early Childhood Education",
+ "award": "A.S. T Degree",
+ "source_url": "https://westhillslemoore.elumenapp.com/catalog/26-27/program/early-childhood-education-ast-fall-2025",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8322,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8322,
+    "output_tokens": 1889,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1889,
+  "output_tokens_details": {
+   "thinking_tokens": 787
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.07107,
+ "ms": 16225,
+ "seconds": 17.0,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 7,
+   "listed": 7,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "CD12B"
+   ],
+   "flagged": [
+    "CD12B"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    60.0,
+    60.0
+   ],
+   "stated": [
+    60.0,
+    60.0
+   ],
+   "against": "degree",
+   "ge": [
+    31.0,
+    31.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 5,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Early Childhood Education (AST)",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": 5,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": 31,
+    "max": 31
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Students will have the comprehensive knowledge and identify, analyze and/or evaluate typical and atypical growth and development of young children.",
+    "Students will be able to have the comprehensive knowledge of nutrition, health and safety issues and prevention strategies pertaining to young children.",
+    "Students will be able to plan, create, implement and/or evaluate age-appropriate curriculum, while developing the ability to produce written observations and/or assessments."
+   ],
+   "careers": [
+    "teaching",
+    "pre-school/childcare operations",
+    "community service",
+    "social services",
+    "government"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Core Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 24,
+     "max": 24
+    },
+    "courses": [
+     {
+      "code": "CD002",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CD003",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CD005",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CD010",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CD012A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CD012B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CD016",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CD018",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The page prints '(Total 60)' for the whole program, including Cal-GETC (31) and transferable electives (5); recorded as degree_total. The core block's 'Total 24' is recorded as the block's stated total; no separate major total is printed, so total_units is null (the core block is effectively the whole major).",
+   "Cal-GETC is printed as 31 units in the requirements, while the description says Cal-GETC requires 34 semester units (double counting with the major is permitted); ge_units records the printed 31.",
+   "Transferable elective units (5) are printed outside every block and recorded in open_elective_units against the 60-unit degree total.",
+   "Catalog prints codes without spaces and with leading zeros (CD002 = closed-list CD 2, etc.). CD012B (Field Work) is not on the closed list and is marked as a catalog addition.",
+   "The Program Outcomes list is cut off: PSLO 4 ends mid-word ('...recognize soci') and is omitted rather than completed; further outcomes may follow in the full page.",
+   "The Recommended Sequence lists GE courses by Cal-GETC area; these are not recorded as blocks.",
+   "Source URL references 'fall-2025' while the requested catalog year is 2026-2027; reviewer may want to confirm the year."
+  ]
+ },
+ "extracted_run": "38979392604"
+}

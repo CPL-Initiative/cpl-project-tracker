@@ -809,16 +809,27 @@ CQ_AWARD_LEAD = re.compile(
     r"^((?:[A-Z]{2}(?:-T)?|A\.[AS]\.(?:-T)?|associate(?: of \w+)?|noncredit)?\s*"
     r"(?:degree|certificate)(?: of \w+)?(?: for transfer)?)\s+in\s+(\S.*)$", re.I)
 CQ_AWARD_PAREN = re.compile(r"^(\S.*?)\s*\(([^()]*\b(?:degree|certificate)\b[^()]*)\)\s*$", re.I)
+# Las Positas (S401, page read 38982439886) puts the award after the name's last
+# comma: "Liberal Arts & Sciences: Mathematics and Science, Associate of Arts (AA)".
+# Only the 20 whose names also carry a colon were taken (20 of 201 found, run
+# 38979338956). A name holds commas too ("Film, Television & Electronic Media"),
+# so the words after the last comma must open with an award.
+CQ_AWARD_COMMA = re.compile(
+    r"^(\S.*),\s+((?:associate|certificate|noncredit|bachelor)\b.*|(?-i:(?:A\.[AS]\.|A[AS])(?:-T)?)(?:\s.*)?)$", re.I)
 
 
 def cq_name_award(text: str) -> tuple[str, str | None]:
     """(the program's name, its award) from a title that leads with its award
-    before " in " or closes with it in parentheses; else (the title, None)."""
+    before " in ", closes with it in parentheses, or names it after its last
+    comma; else (the title, None)."""
     text = (text or "").strip()
     m = CQ_AWARD_LEAD.match(text)
     if m:
         return m.group(2).strip(), m.group(1).strip()
     m = CQ_AWARD_PAREN.match(text)
+    if m:
+        return m.group(1).strip(), m.group(2).strip()
+    m = CQ_AWARD_COMMA.match(text)
     if m:
         return m.group(1).strip(), m.group(2).strip()
     return text, None

@@ -1,0 +1,255 @@
+{
+ "college": "Lemoore College",
+ "control_number": "10945",
+ "shape": "degree",
+ "title": "Administration of Justice: Law Enforcement",
+ "award": "A.A. Degree",
+ "source_url": "https://westhillslemoore.elumenapp.com/catalog/26-27/program/administration-of-justice-law-enforcement-aa-fall-2025",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 9640,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 9640,
+    "output_tokens": 1874,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1874,
+  "output_tokens_details": {
+   "thinking_tokens": 584
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.07604,
+ "ms": 15545,
+ "seconds": 16.8,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 10,
+   "listed": 10,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "AOJ1"
+   ],
+   "flagged": [
+    "AOJ1"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    60.0,
+    60.0
+   ],
+   "stated": [
+    60.0,
+    60.0
+   ],
+   "against": "degree",
+   "ge": [
+    21.0,
+    21.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Administration of Justice: Law Enforcement (AA)",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": 18,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Local General Education",
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": 21,
+    "max": 21
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Students will be able to identify the components of the criminal justice system to include law enforcement, corrections, courts and the three levels of state and federal courts.",
+    "Students will be able to identify the protections afforded all persons as delineated in the first, fourth, fifth, six, eighth, and 14th Amendments; Students will identify that the Miranda decision came from the courts and is not a right enumerated in the Bill of Rights.",
+    "Students will be able to identify the role of the Exclusionary Rule in the admissibility of evidence, the four exceptions to that rule and be able to identify the general rules of admissibility for all evidence.",
+    "Students will be able to identify the various roles individuals play in a criminal event, such as principals, accessories, accomplices, and feigned accomplices and the four types of intent required that must be proven to establish an act as a crime."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required Core Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 18,
+     "max": 18
+    },
+    "courses": [
+     {
+      "code": "AOJ001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "AOJ010",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AOJ012",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AOJ016",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AOJ020",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AOJ022",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Program Electives",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "AOJ015X",
+      "units": 1,
+      "units_max": 8,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AOJ005",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AOJ024",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AOJ029",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AOJ032",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The page prints '(Total 60)' / 'Complete the following number of credits: 60' over the program requirements, which include Local General Education (21) and electives (18); recorded as degree_total. No separate major total is printed (core 18 + program electives 3), so total_units is null.",
+   "'Elective units for total of 60 degree applicable semester units 18' is printed outside every block and recorded as open_elective_units.",
+   "Degree may also be completed with Cal-GETC instead of Local General Education per the degree requirements text; the program requirements list Local General Education 21.",
+   "Outcome labels 'PSLO 1:' through 'PSLO 4:' were omitted as list numbers.",
+   "The description mentions emphasizing Law Enforcement or Correctional Science and 'several career options in the Administration of Justice' but names no specific careers; careers left empty.",
+   "Recommended Sequence section lists GE courses and generic electives; not recorded as blocks."
+  ]
+ },
+ "extracted_run": "38979392604"
+}

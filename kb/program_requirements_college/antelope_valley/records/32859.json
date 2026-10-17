@@ -1,0 +1,367 @@
+{
+ "college": "Antelope Valley College",
+ "control_number": "32859",
+ "shape": "adt",
+ "title": "Anthropology",
+ "award": "A.A- T Degree",
+ "source_url": "https://avc.elumenapp.com/catalog/2026-27/program/anthropology-aa-t-fall-2026",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 9855,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 9855,
+    "output_tokens": 2797,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2797,
+  "output_tokens_details": {
+   "thinking_tokens": 985
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.09536,
+ "ms": 22127,
+ "seconds": 22.4,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 19,
+   "listed": 19,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    22.0,
+    30.0
+   ],
+   "stated": [
+    24.0,
+    30.0
+   ],
+   "against": "program",
+   "why": [
+    "the blocks sum to 22.0-30.0; the catalog states 24.0-30.0"
+   ],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     62.0,
+     82.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     34.0,
+     34.0
+    ],
+    "why": [],
+    "overlap": true
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 2,
+   "courses": 0,
+   "count": 2,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Anthropology AA-T",
+   "measure": "units",
+   "total_units": {
+    "min": 24,
+    "max": 30
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": 6,
+    "max": 18
+   },
+   "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": 34,
+    "max": 34
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Demonstrate an appreciation of a holistic approach to understanding human biological, linguistic, and cultural diversity, especially those features that separates humans from other species.",
+    "Clearly express self when writing or speaking about anthropology demonstrating knowledge of anthropological terminology, major anthropological concepts, and the main theories that offer various explanations and understandings of diverse cultural, archaeological, and biological processes that impact societies."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Core Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 8,
+     "max": 8
+    },
+    "courses": [
+     {
+      "code": "ANTH 102",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANTH 140",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANTH 101L",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Core Course - Choose one",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "ANTH 101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ANTH 101H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Required Electives List A",
+    "rule": "choose_units",
+    "minimum": 4,
+    "option_group": null,
+    "stated": {
+     "min": 4,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "STAT C1000",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "STAT C1000H",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 116",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Required Electives List B, Choose two courses",
+    "rule": "choose_courses",
+    "minimum": 2,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 11
+    },
+    "courses": [
+     {
+      "code": "ANTH 103",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANTH 110",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANTH 112",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ANTH 112H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANTH 199",
+      "units": 1,
+      "units_max": 8,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Either choose 1 of these courses",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": "List C",
+    "stated": {
+     "min": 3,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "BIOL 201",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOG 205",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ERSC 101",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "if none of the above courses are selected, GEOL 101L must be taken with GEOL 101 or GEOL 101H",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "List C",
+    "stated": {
+     "min": 4,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "GEOL 101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "GEOL 101H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOL 101L",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "List C ('Required Electives List C or any course from list B not already used', Total 3-4) is recorded as two option blocks in option_group 'List C'; the student may instead satisfy List C with any List B course not already used.",
+   "Core Course - Choose one (ANTH 101 or ANTH 101H) recorded as one required entry with the honors twin as alternative.",
+   "Codes printed without spaces in the first listing (e.g., STATC1000, ANTH102) are written with spaces as in the Requirements table.",
+   "Program Outcomes list is cut off: outcome 3 is truncated after 'De' and is not recorded; further outcomes may be missing.",
+   "Requirements table also prints 'Units that may be double-counted 10-16 units' and 'Elective (CSU Transferable) 6-18 units'; the latter recorded as degree_elective_units.",
+   "Recommended Pathway lists GE courses (ENGL C1000, POLS C1000, Cal-GETC areas) which are not recorded in blocks.",
+   "The 'Required Electives List B' block prints 'Choose two courses' but 'Complete the following number of credits: 6-11'; recorded as choose 2 courses with stated 6-11."
+  ]
+ },
+ "extracted_run": "38979725726"
+}

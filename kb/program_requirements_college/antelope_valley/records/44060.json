@@ -1,0 +1,507 @@
+{
+ "college": "Antelope Valley College",
+ "control_number": "44060",
+ "shape": "degree",
+ "title": "Respiratory Care",
+ "award": "Baccalaureate of Science (B.S.) Degree.",
+ "source_url": "https://avc.elumenapp.com/catalog/2026-27/program/bachelor-of-science-degree-respiratory-care-fall-2026",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 10997,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 10997,
+    "output_tokens": 4107,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 4107,
+  "output_tokens_details": {
+   "thinking_tokens": 1531
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.12613,
+ "ms": 32293,
+ "seconds": 32.8,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 13,
+   "listed": 13,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 20,
+   "codes": [
+    "BIOL201",
+    "BIOL202",
+    "BIOL203A",
+    "BIOL203B",
+    "CHEM101",
+    "COMMC1000",
+    "COMMC1000H",
+    "ENGL115",
+    "ENGLC1000",
+    "ENGLC1000H",
+    "PSYCC1000",
+    "PSYCC1000H",
+    "RCP101",
+    "RCP103",
+    "RCP104",
+    "RCP105",
+    "RCP201",
+    "RCP202",
+    "RCP203",
+    "RCP204"
+   ],
+   "flagged": [
+    "BIOL201",
+    "BIOL202",
+    "BIOL203A",
+    "BIOL203B",
+    "CHEM101",
+    "COMMC1000",
+    "COMMC1000H",
+    "ENGL115",
+    "ENGLC1000",
+    "ENGLC1000H",
+    "PSYCC1000",
+    "PSYCC1000H",
+    "RCP101",
+    "RCP103",
+    "RCP104",
+    "RCP105",
+    "RCP201",
+    "RCP202",
+    "RCP203",
+    "RCP204"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    109.0,
+    109.0
+   ],
+   "stated": [
+    121.0,
+    121.0
+   ],
+   "against": "degree",
+   "ge": null,
+   "why": [
+    "the record names the degree total and the AVC GE pattern, but no units for it"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 2,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Bachelor of Science in Respiratory Care",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "AVC GE",
+   "degree_total": {
+    "min": 121,
+    "max": 121
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Apply knowledge of advanced Respiratory Care concepts and functions in Neonatal, pediatric, adult critical care, and leadership.",
+    "Draw on multiple sources of analysis, research, and critical thinking to address a problem and construct an applicable project focused on Respiratory Care.",
+    "Participate as a multidisciplinary team member in patient education and disease management of acute and chronic illnesses.",
+    "Integrate professional and ethical behavior with enhanced communication skills required for practice within the diverse field of respiratory care."
+   ],
+   "careers": [
+    "Respiratory Care Practitioners",
+    "advanced degree respiratory therapists"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Program Prerequisites",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 70,
+     "max": 70
+    },
+    "courses": [
+     {
+      "code": "CHEM 101",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ENGL 115",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "RCP 101",
+      "units": 6,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "RCP 103",
+      "units": 6,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "RCP 104",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "RCP 105",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "RCP 201",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "RCP 202",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "RCP 203",
+      "units": 6,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "RCP 204",
+      "units": 9,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "BIOL Option 1",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "BIOL Option",
+    "stated": {
+     "min": 8,
+     "max": 8
+    },
+    "courses": [
+     {
+      "code": "BIOL 201",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BIOL 202",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "BIOL Option 2",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "BIOL Option",
+    "stated": {
+     "min": 8,
+     "max": 8
+    },
+    "courses": [
+     {
+      "code": "BIOL 203A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BIOL 203B",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Program Prerequisites - COMM Honors Option",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "COMM C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "COMM C1000H",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Program Prerequisites - ENGL Honors Option",
+    "rule": "choose_units",
+    "minimum": 4,
+    "option_group": null,
+    "stated": {
+     "min": 4,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "ENGL C1000",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ENGL C1000H",
+        "units": 4,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Program Prerequisites-PSYC Honors Option",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "PSYC C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PSYC C1000H",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 41,
+     "max": 41
+    },
+    "courses": [
+     {
+      "code": "BIOL 304",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL 315",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHIL 300",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSY 301",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "RCP 301",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "RCP 302",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "RCP 303",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "RCP 304",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "RCP 305",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "RCP 306",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "RCP 401",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "RCP 402",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "RCP 403",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Degree total 121 printed ('Bachelor of Science in Respiratory Care (Total 121)' and 'Total Degree Units 121'); no single major total printed. The page prints Lower Division Major Units 49 and Upper Division Major Units 32, Lower Division GE Units 31 and Upper Division GE Units 9; no single GE total, so total_units and ge_units left null.",
+   "Program Prerequisites block printed with Total 70, while the requirements table says 'Preprogram (80 Units)' and the pathway totals 80.0. The 70 appears to include the BIOL option (8) but not the COMM/ENGL/PSYC honors-option sub-blocks (10); reviewer should check.",
+   "The prerequisites list includes 'Any AVC GE Area 2', 'Any AVC GE Area 3', 'Any AVC GE Area 4', 'Any AVC GE Area 6' (3 units each); these are general education placeholders and were not recorded as courses in a block.",
+   "Course codes printed both without space (e.g. 'RCP301') and with space ('RCP 301'); recorded with a space.",
+   "PSY 301 printed as 'Organizational Behavioral Psychology' in one table and 'Organizational Behavior Psychology' in another.",
+   "Outcomes taken from the 'Program Learning Outcomes' list; a second 'Program Outcomes' list at the end repeats them but is cut off.",
+   "Upper division courses must be completed with a minimum grade of C (or P)."
+  ]
+ },
+ "extracted_run": "38979725726"
+}

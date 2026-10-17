@@ -1,0 +1,867 @@
+{
+ "college": "Columbia College",
+ "catalog_url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/admissions/getting-started",
+ "platform": "elumen",
+ "catalog_year": "2026-2027",
+ "programs": 83,
+ "with_closed_list": 82,
+ "started": "2026-10-16T23:05:08Z",
+ "elumen": {
+  "catalog": "2026-2027-Catalog",
+  "read": "publish/content",
+  "menu_programs": 0,
+  "errors": [],
+  "menu_departments": 0,
+  "department_programs": 0,
+  "menu_hubs": [
+   "degrees-certificates"
+  ],
+  "hub_programs": 101,
+  "program_pages": 101
+ },
+ "pages_read": 101,
+ "banner_h1": null,
+ "loads": 103,
+ "seconds": 426.0,
+ "found": 82,
+ "by_method": {
+  "no_closed_list": 1,
+  "sitemap_page": 82
+ },
+ "shared_pages": {},
+ "not_found": [],
+ "page_claimed": [],
+ "coverage_bands": {
+  "0.5-0.8": 0,
+  "0.8-1.0": 0,
+  "1.0": 82
+ },
+ "would_extract": {
+  "against": null,
+  "kept": 0,
+  "programs": 82,
+  "list": [
+   {
+    "control_number": "06815",
+    "title": "Child Development",
+    "award": "A.S. Degree",
+    "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/program/child-development-as-cc-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "06817",
+    "title": "Natural Resources",
+    "award": "A.S. Degree",
+    "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/program/natural-resources-as-cc-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "06819",
+    "title": "Business Management",
+    "award": "A.S. Degree",
+    "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/program/business-management-as-cc-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "06823",
+    "title": "Computer Programming",
+    "award": "A.S. Degree",
+    "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/program/computer-programming-as-cc-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "06828",
+    "title": "Fine Arts: Emphasis in Art",
+    "award": "A.A. Degree",
+    "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/program/fine-arts-emphasis-in-art-aa-cc-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "06829",
+    "title": "Music",
+    "award": "A.A. Degree",
+    "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/program/music-aa-cc-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "06831",
+    "title": "Allied Health",
+    "award": "A.S. Degree",
+    "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/program/allied-health-as-cc-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "06832",
+    "title": "Emergency Medical Services",
+    "award": "A.S. Degree",
+    "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/program/emergency-medical-services-as-cc-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "06833",
+    "title": "Foodservice Management",
+    "award": "A.S. Degree",
+    "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/program/foodservice-management-as-cc-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "06839",
+    "title": "Fire Technology",
+    "award": "A.S. Degree",
+    "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/program/fire-technology-as-cc-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "07552",
+    "title": "Watershed Management",
+    "award": "A.S. Degree",
+    "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/program/watershed-management-as-cc-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "07553",
+    "title": "Accounting",
+    "award": "A.S. Degree",
+    "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/program/accounting-as-cc-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "07577",
+    "title": "Automotive Service Technician",
+    "award": "A.S. Degree",
+    "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/program/automotive-service-technician-as-cc-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "07578",
+    "title": "Fine Arts: Emphasis in Photography",
+    "award": "A.A. Degree",
+    "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/program/fine-arts-emphasis-in-photography-aa-cc-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "07580",
+    "title": "Culinary Arts",
+    "award": "A.S. Degree",
+    "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/program/culinary-arts-as-cc-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "07583",
+    "title": "Baking and Pastry Arts",
+    "award": "A.S. Degree",
+    "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/program/baking-and-pastry-arts-as-cc-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "08637",
+    "title": "Geographic Information Systems",
+    "award": "A.S. Degree",
+    "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/program/geographic-information-systems-as-cc-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "12023",
+    "title": "Associate Child Development Teacher/Future Educators",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/program/associate-child-development-teacher-future-educators-coa-cc-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "12031",
+    "title": "Ecological Forestry",
+    "award": "A.S. Degree",
+    "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/program/ecological-forestry-as-cc-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "17213",
+    "title": "Engine Performance",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/program/engine-performance-coa-cc-summer-2021",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "17215",
+    "title": "Under Vehicle Service",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/program/under-vehicle-service-coa-cc-summer-2021",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "17217",
+    "title": "Organizational Behavior",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/program/organizational-behavior-coa-cc-fall-2024",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "18784",
+    "title": "Arts and Humanities",
+    "award": "A.A. Degree",
+    "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/program/arts-and-humanities-aa-cc-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "18785",
+    "title": "Social and Behavioral Sciences",
+    "award": "A.A. Degree",
+    "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/program/social-and-behavioral-sciences-aa-cc-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20769",
+    "title": "Ecological Forestry",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/program/ecological-forestry-coa-cc-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20770",
+    "title": "Natural Resources",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/program/natural-resources-coa-cc-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20771",
+    "title": "Watershed Management",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/program/watershed-management-coa-cc-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20772",
+    "title": "Accounting",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/program/accounting-coa-cc-summer-2022",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20773",
+    "title": "Management",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/program/management-coa-cc-fall-2024",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20781",
+    "title": "Automotive Service Technician",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/program/automotive-service-technician-coa-cc-summer-2021",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20782",
+    "title": "Emergency Medical Services",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/program/emergency-medical-services-coa-cc-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20784",
+    "title": "Culinary Arts",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/program/culinary-arts-coa-cc-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20786",
+    "title": "Baking and Pastry Arts",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/program/baking-and-pastry-arts-coa-cc-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20787",
+    "title": "Foodservice Management",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/program/foodservice-management-coa-cc-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20790",
+    "title": "Fire Technology",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/program/fire-technology-coa-cc-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20791",
+    "title": "Geographic Information Systems",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/program/geographic-information-systems-coa-cc-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "30798",
+    "title": "Sociology",
+    "award": "A.A- T Degree",
+    "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/program/sociology-aa-t-cc-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31184",
+    "title": "Entrepreneurship",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/program/entrepreneurship-coa-cc-fall-2024",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31203",
+    "title": "Welding Technology",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/program/welding-technology-coa-cc-summer-2022",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31206",
+    "title": "Entrepreneurship",
+    "award": "A.S. Degree",
+    "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/program/entrepreneurship-as-cc-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31244",
+    "title": "Sport Science",
+    "award": "A.A. Degree",
+    "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/program/sport-science-aa-cc-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31806",
+    "title": "Media and Design",
+    "award": "A.S. Degree",
+    "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/program/media-and-design-as-cc-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31824",
+    "title": "Early Childhood Education",
+    "award": "A.S. T Degree",
+    "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/program/early-childhood-education-as-t-cc-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31825",
+    "title": "Psychology",
+    "award": "A.A- T Degree",
+    "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/program/psychology-aa-t-cc-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31839",
+    "title": "English",
+    "award": "A.A- T Degree",
+    "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/program/english-aa-t-cc-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32348",
+    "title": "Anthropology",
+    "award": "A.A- T Degree",
+    "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/program/anthropology-aa-t-cc-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32444",
+    "title": "Kinesiology",
+    "award": "A.A- T Degree",
+    "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/program/kinesiology-aa-t-cc-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32470",
+    "title": "Political Science",
+    "award": "A.A- T Degree",
+    "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/program/political-science-aa-t-cc-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32641",
+    "title": "History",
+    "award": "A.A- T Degree",
+    "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/program/history-aa-t-cc-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33376",
+    "title": "Studio Arts",
+    "award": "A.A- T Degree",
+    "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/program/studio-arts-aa-t-cc-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33535",
+    "title": "Geology",
+    "award": "A.S. T Degree",
+    "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/program/geology-as-t-cc-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33543",
+    "title": "Music",
+    "award": "A.A- T Degree",
+    "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/program/music-aa-t-cc-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33959",
+    "title": "Associate Infant/Toddler Teacher",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/program/associate-infant-toddler-teacher-coa-cc-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35150",
+    "title": "Biology",
+    "award": "A.S. T Degree",
+    "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/program/biology-as-t-cc-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35870",
+    "title": "Fire Science",
+    "award": "A.S. Degree",
+    "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/program/fire-science-as-cc-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36046",
+    "title": "Media and Design",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/program/media-and-design-coa-cc-fall-2024",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36236",
+    "title": "Payroll Clerk",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/program/payroll-clerk-coa-cc-fall-2024",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36637",
+    "title": "Economics",
+    "award": "A.A- T Degree",
+    "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/program/economics-aa-t-cc-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36997",
+    "title": "Drive Train Technician",
+    "award": "A.S. Degree",
+    "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/program/drive-train-technician-as-cc-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37233",
+    "title": "Engineering Fundamentals",
+    "award": "A.S. Degree",
+    "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/program/engineering-fundamentals-as-cc-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38328",
+    "title": "Hospitality Supervision",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/program/hospitality-supervision-coa-cc-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38870",
+    "title": "Management & Restoration of Fire-Adapted Ecosystems",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/program/management-restoration-of-fire-adapted-ecosystems-coa-cc-fall-2023",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38891",
+    "title": "General Science",
+    "award": "A.S. Degree",
+    "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/program/general-science-as-cc-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38901",
+    "title": "Nutrition and Dietetics",
+    "award": "A.S. T Degree",
+    "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/program/nutrition-and-dietetics-as-t-cc-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38954",
+    "title": "Media for Entrepreneurs",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/program/media-for-entrepreneurs-coa-cc-fall-2024",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40892",
+    "title": "Social Work and Human Services",
+    "award": "A.A- T Degree",
+    "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/program/social-work-and-human-services-aa-t-cc-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41581",
+    "title": "Business Administration 2.0",
+    "award": "A.S. T Degree",
+    "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/program/business-administration-2-0-as-t-cc-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41640",
+    "title": "Hospitality Management",
+    "award": "A.S. T Degree",
+    "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/program/hospitality-management-as-t-cc-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41963",
+    "title": "Social Work and Human Services",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/program/social-work-and-human-services-coa-cc-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42743",
+    "title": "Archaeological Technician",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/program/archaeological-technician-coa-cc-fall-2023",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42905",
+    "title": "River Ecology and Management",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/program/river-ecology-and-management-coa-cc-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43629",
+    "title": "English Language Proficiency",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/program/english-language-proficiency-coa-cc-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43773",
+    "title": "Communication Studies 2.0",
+    "award": "A.A- T Degree",
+    "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/program/communication-studies-2-0-aa-t-cc-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44622",
+    "title": "Google IT Support Professional",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/program/google-it-support-professional-coa-cc-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44767",
+    "title": "Wildland Fire",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/program/wildland-fire-coa-cc-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45074",
+    "title": "Education Foundations",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/program/education-foundations-coa-cc-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45075",
+    "title": "Paraprofessional Educator",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/program/paraprofessional-educator-coa-cc-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45076",
+    "title": "Public Health",
+    "award": "A.S. T Degree",
+    "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/program/public-health-as-t-cc-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45118",
+    "title": "Google IT Support Professional",
+    "award": "Noncredit program",
+    "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/program/google-it-support-professional-con-cc-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45599",
+    "title": "Elementary Teacher Education: Integrated Programs",
+    "award": "A.A- T Degree",
+    "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/program/elementary-teacher-education-integrated-programs-aa-t-cc-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46240",
+    "title": "Mathematics 2.0",
+    "award": "A.S. T Degree",
+    "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/program/mathematics-2-0-as-t-cc-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46241",
+    "title": "Physics 2.0",
+    "award": "A.S. T Degree",
+    "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/program/physics-2-0-as-t-cc-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   }
+  ]
+ },
+ "run": "38979390136"
+}
