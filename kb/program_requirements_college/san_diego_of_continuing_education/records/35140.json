@@ -1,0 +1,145 @@
+{
+ "college": "San Diego College of Continuing Education",
+ "control_number": "35140",
+ "shape": "noncredit",
+ "title": "Windows System Administration",
+ "award": "Noncredit program",
+ "source_url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=76",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7109,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7109,
+    "output_tokens": 625,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 625,
+  "output_tokens_details": {
+   "thinking_tokens": 245
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.04094,
+ "ms": 7405,
+ "seconds": 7.7,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 0,
+   "listed": 2,
+   "share": 0.0,
+   "missing": [
+    "COMP640",
+    "COMP642"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "unstated",
+   "computed": null,
+   "stated": null,
+   "against": null,
+   "why": [
+    "the catalog prints no total, no hours and no units"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "",
+   "measure": "hours",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "COMP 640",
+    "why": "named only in the Desktop Technician section; no Windows System Administration section in the text"
+   },
+   {
+    "code": "COMP 642",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "The supplied text (page 76) prints only the Certificate of Completion sections for Desktop Technician, Linux Server Administration and Network Technician. No Windows System Administration section appears, so section_heading is empty and no blocks are recorded. The program likely continues on another page; a reviewer should check the adjacent catalog pages.",
+   "Measure set to hours because this is a noncredit program; the text prints no hours for any course or total.",
+   "No outcomes or careers are recorded because the text prints none for Windows System Administration. Careers named in the other certificates' descriptions were not used."
+  ]
+ },
+ "extracted_run": "39035224783"
+}

@@ -1,0 +1,145 @@
+{
+ "college": "San Diego College of Continuing Education",
+ "control_number": "38411",
+ "shape": "noncredit",
+ "title": "Visual and Vector Design",
+ "award": "Noncredit program",
+ "source_url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=27",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6586,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6586,
+    "output_tokens": 757,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 757,
+  "output_tokens_details": {
+   "thinking_tokens": 213
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.04148,
+ "ms": 7865,
+ "seconds": 8.2,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 0,
+   "listed": 2,
+   "share": 0.0,
+   "missing": [
+    "COMM660",
+    "COMM661"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "unstated",
+   "computed": null,
+   "stated": null,
+   "against": null,
+   "why": [
+    "the catalog prints no total, no hours and no units"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Credit by Exam Active Agreements",
+   "measure": "hours",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "COMM 660",
+    "why": "Named only in a credit-by-exam articulation table (SDCCE to City/Mesa college courses), not as a requirement of the Visual and Vector Design program; the program's own section is not in the text."
+   },
+   {
+    "code": "COMM 661",
+    "why": "Named only in a credit-by-exam articulation table (SDCCE to City/Mesa college courses), not as a requirement of the Visual and Vector Design program; the program's own section is not in the text."
+   }
+  ],
+  "notes": [
+   "The supplied page (catalog p. 27) is the 'Credit by Exam Active Agreements' articulation table, not the section for the Visual and Vector Design noncredit program. No program requirements, hours, outcomes or careers for this award appear in the text.",
+   "COMM 660 Visual Design and COMM 661 Vector Design appear together with COMM 662 (and COMM 663) as bundles earning credit for DSGN 102 (City) and MULT 100 (Mesa); these are articulation agreements, not award requirements, so no blocks were recorded.",
+   "Measure set to 'hours' because this is a noncredit program; the text prints no hours for the courses or the program. A reviewer should locate the program's own catalog section to record its requirements."
+  ]
+ },
+ "extracted_run": "39035224783"
+}

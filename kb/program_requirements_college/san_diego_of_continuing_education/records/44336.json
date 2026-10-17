@@ -1,0 +1,145 @@
+{
+ "college": "San Diego College of Continuing Education",
+ "control_number": "44336",
+ "shape": "noncredit",
+ "title": "Sewn Product Construction Essentials",
+ "award": "Noncredit program",
+ "source_url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=29",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6722,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6722,
+    "output_tokens": 686,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 686,
+  "output_tokens_details": {
+   "thinking_tokens": 219
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.04061,
+ "ms": 6294,
+ "seconds": 6.5,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 0,
+   "listed": 2,
+   "share": 0.0,
+   "missing": [
+    "CLTX511",
+    "CLTX512"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "unstated",
+   "computed": null,
+   "stated": null,
+   "against": null,
+   "why": [
+    "the catalog prints no total, no hours and no units"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Credit by Exam Active Agreements",
+   "measure": "hours",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "CLTX 511",
+    "why": "named only in the credit-by-exam articulation table (to Mesa FASH 130/130L), not in a program requirements list"
+   },
+   {
+    "code": "CLTX 512",
+    "why": "named only in the credit-by-exam articulation table (to Mesa FASH 130/130L), not in a program requirements list"
+   }
+  ],
+  "notes": [
+   "The supplied page is the SDCCE-to-college Credit by Exam agreements table, not the Sewn Product Construction Essentials program section; no requirements, hours, outcomes or careers for the award are printed here.",
+   "The table pairs 'CLTX 620 and CLTX 625' or 'CLTX 511 and CLTX 512' with Mesa FASH 130 and FASH 130L (total of 4 units), active through Summer 2027. Its 4 units are college credit units, not the program's hours.",
+   "Measure is set to hours because this is a noncredit program, but the text prints no hours. A reviewer should locate the program's own catalog page."
+  ]
+ },
+ "extracted_run": "39035224783"
+}
