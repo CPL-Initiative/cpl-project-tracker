@@ -1611,32 +1611,45 @@ def _titled(text: str, pats: list) -> bool:
     return all(pt.search(low) for pt in pats)
 
 
-def _pdf_pick(pages: list[str], program: dict, courses: list[dict]) -> tuple[list[int], int, tuple]:
+def _pdf_pick(pages: list[str], program: dict, courses: list[dict]) -> tuple[list[int], int, tuple, bool]:
     """(run of page indexes, where the first prints the control number, its
-    heading) for the program, or an empty run."""
+    heading, whether it passed the title gate) for the program, or an empty
+    run. The highest-scoring page whose run covers the list wins; a page that
+    scores high on a printed control number but names too few listed codes
+    gives way. Pierce prints numbers away from the program's page, and the
+    bonus alone took 80 of its 194 picks to pages that fail the share (S403)."""
     tokens = P.title_tokens(program.get("title") or "")
     pats = [re.compile(r"\b" + re.escape(w) + r"\b") for w in tokens]
     cn = program.get("control_number")
-    best, best_score, best_cn, best_head = None, 0, -1, (0.0, False, -1)
+    cands = []
     for i, txt in enumerate(pages):
         at = pdf_control_number(txt, cn)
-        if at < 0 and not (pats and _titled(txt, pats)):
+        titled = bool(pats) and _titled(txt, pats)
+        if at < 0 and not titled:
             continue
         n = len(P.find_codes(txt, courses))
         if not n:
             continue
         head = pdf_heading(txt, program)
         s = n + (PDF_HEADING_BONUS if head[0] == 1.0 and head[1] else 0) + (PDF_CN_BONUS if at >= 0 else 0)
-        if s > best_score:
-            best, best_score, best_cn, best_head = i, s, at, head
-    if best is None:
-        return list(P.pick_pdf_pages(pages, program, courses) or []), -1, (0.0, False, -1)
-    run = [best]
-    for j in range(best + 1, min(best + 1 + PDF_RUN_PAGES, len(pages))):
-        if not P.find_codes(pages[j], courses):
-            break
-        run.append(j)
-    return run, best_cn, best_head
+        cands.append((s, -i, i, at, head, titled))
+    if not cands:
+        return list(P.pick_pdf_pages(pages, program, courses) or []), -1, (0.0, False, -1), False
+    cands.sort(reverse=True)
+
+    def run_from(best: int) -> list[int]:
+        run = [best]
+        for j in range(best + 1, min(best + 1 + PDF_RUN_PAGES, len(pages))):
+            if not P.find_codes(pages[j], courses):
+                break
+            run.append(j)
+        return run
+    for _, _, i, at, head, titled in cands:
+        run = run_from(i)
+        if P.coverage(P.find_codes("\n".join(pages[k] for k in run), courses), courses) >= P.ACCEPT_SHARE:
+            return run, at, head, titled
+    _, _, i, at, head, titled = cands[0]
+    return run_from(i), at, head, titled
 
 
 def pdf_program_pages(pages: list[str], program: dict, courses: list[dict]) -> list[int]:
@@ -1653,7 +1666,7 @@ def pdf_best(url: str, pages: list[str], program: dict, courses: list[dict], ext
     source_record() takes: None when no page names a listed course. The text
     opens on the program's heading, so an A.S. and the certificate printed
     after it each open on their own name."""
-    run, cn_at, head = _pdf_pick(pages, program, courses)
+    run, cn_at, head, titled = _pdf_pick(pages, program, courses)
     if not run:
         return None
     parts = []
@@ -1671,7 +1684,7 @@ def pdf_best(url: str, pages: list[str], program: dict, courses: list[dict], ext
     return {"url": "%s#page=%d" % (url, run[0] + 1), "field": "pdf_pages", "found": found,
             "coverage": P.coverage(found, courses), "text": text,
             "pages": [i + 1 for i in run], "extractor": extractor,
-            "named": bool(head[0] == 1.0 and head[1]), "control_number_printed": cn_at >= 0,
+            "named": bool(head[0] == 1.0 and head[1]), "control_number_printed": cn_at >= 0, "titled": titled,
             "got": {"title": first[:PDF_HEADING_CHARS], "h1": first[:PDF_HEADING_CHARS]}}
 
 
@@ -1682,11 +1695,15 @@ def pdf_unproven(picks: list[dict]) -> set[str]:
     """The picks a catalog that prints control numbers does not vouch for. East LA
     prints the number in 116 of its 141 headings (run 39010864052); of the 25
     others, six went to its online-course, C-ID and admissions pages up front.
-    Where the numbers are the catalog's habit, a page naming neither the number
-    nor the program's title and award is no proof, and the program stays out."""
+    Where the numbers are the catalog's habit, a page that prints neither the
+    number nor all the title words (the pilot's picker chose it on codes alone)
+    is no proof, and the program stays out. A title-gated page stays: at Los
+    Angeles City the stricter test, title and award on one heading line, dropped
+    28 of its 245 picks (run 39017360234)."""
     if not picks or sum(1 for p in picks if p["cn_printed"]) < PDF_CN_SHARE * len(picks):
         return set()
-    return {p["control_number"] for p in picks if not p["cn_printed"] and not p["named"]}
+    return {p["control_number"] for p in picks
+            if not p["cn_printed"] and not p.get("titled") and not p["named"]}
 
 
 def pdf_start(reader, reg: dict, cache: dict, report: dict) -> tuple[str | None, int]:
@@ -1763,7 +1780,7 @@ def capture_pdf(college: str, out_dir: str, programs: list[dict], reg: dict, rep
                 # A capture-only read files the preview alone: each pick's opening shows whether it is the program's page.
                 report["pdf"].setdefault("picks", []).append(
                     {"control_number": prog["control_number"], "pages": best["pages"], "named": best["named"],
-                     "cn_printed": best["control_number_printed"],
+                     "cn_printed": best["control_number_printed"], "titled": best["titled"],
                      "coverage": round(best["coverage"], 3), "opens": re.sub(r"\s+", " ", best["text"][:220])})
             else:
                 rec = source_record(college, prog, reg, None, "not_found")

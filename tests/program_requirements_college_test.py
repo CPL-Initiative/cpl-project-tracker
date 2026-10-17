@@ -1634,6 +1634,15 @@ picks = [{"control_number": "1", "cn_printed": True, "named": False},
 check(C.pdf_unproven(picks) == {"4"}, "where the catalog prints control numbers, an unnamed page is no proof")
 check(C.pdf_unproven([dict(p, cn_printed=False) for p in picks]) == set(),
       "a catalog that prints no control numbers keeps its coverage picks")
+check(C.pdf_unproven([dict(p, titled=True) for p in picks]) == set(),
+      "a title-gated page is proof enough, named or not (Los Angeles City lost 28 picks to the heading test)")
+# Pierce prints control numbers in a list away from the programs: a page with the number and one listed
+# code gives way to the titled page whose run covers the list.
+PI = ["Program list\nAccounting (Academic Plan E013343D) ACCT 101", "General education",
+      "Accounting\nACCT 101 4\nACCT 102 4\nACCT 210 3\nBUS 120 3"]
+check(C.pdf_program_pages(PI, {"title": "Accounting", "award": "Certificate of Achievement",
+                               "control_number": "13343"}, AC_COURSES) == [2],
+      "a control number on a page naming too few listed codes gives way to the page that covers the list")
 check(C.reads_as_pdf({"procedure": {"catalog": {"start": "https://x.edu/catalog", "follow": "2026", "format": "pdf"}}})
       and not C.reads_as_pdf({"catalog_format": "single_pdf", "catalog_url": "https://www.ccsf.edu/catalog"}),
       "a procedure record whose catalog step is a PDF reads as one")
