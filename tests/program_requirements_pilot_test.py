@@ -909,6 +909,14 @@ spaced = {**plo, "program": {**plo["program"], "outcomes": [
     "Interact with doctors, nurses and technicians in a professional manner."]}}
 check(S.outcomes_check(spaced, "Outcomes\nInteract with doctors, nurses and tech - nicians in a profes - sional manner.")["pass"],
       "an outcome broken by East LA's spaced hyphen ('tech - nicians') is verbatim (S403)")
+lig = {**plo, "program": {**plo["program"], "outcomes": ["Design and draft landscape plan.",
+                                                         "Estimate the cost of a landscape construction project."]}}
+LIG_TEXT = "Program Outcomes\n1. Design and draŌ  landscape plan.\n3. EsƟ mate the cost of a landscape construcƟ on project."
+check(S.outcomes_check(lig, LIG_TEXT)["pass"],
+      "an outcome printed with Solano's stand-in ligature glyphs ('draŌ ', 'EsƟ mate') is verbatim (S405)")
+check(not S.outcomes_check({**lig, "program": {**lig["program"], "outcomes": ["Design and draft a landscape plan."]}},
+                           LIG_TEXT)["pass"],
+      "the ligature reading still refuses a word the text does not print")
 reworded = {**plo, "program": {**plo["program"], "outcomes": [
     "Meet the education requirements for the DRE Real Estate Broker license exam."]}}
 check(not S.outcomes_check(reworded, PLO_TEXT)["pass"],
