@@ -1,0 +1,1209 @@
+{
+ "college": "Mission College",
+ "catalog_url": "https://mission.elumenapp.com/catalog/24-25/cataloghome",
+ "platform": "elumen",
+ "catalog_year": "2026-2027",
+ "programs": 124,
+ "with_closed_list": 113,
+ "started": "2026-10-17T03:32:03Z",
+ "elumen": {
+  "catalog": "24-25",
+  "read": "publish/content",
+  "menu_programs": 0,
+  "errors": [],
+  "menu_departments": 0,
+  "department_programs": 0,
+  "menu_hubs": [],
+  "hub_programs": 0,
+  "walk_pages": 71,
+  "walk_menus": 5,
+  "walk_programs": 120,
+  "walk_stopped_at_cap": false,
+  "program_pages": 120
+ },
+ "pages_read": 120,
+ "banner_h1": null,
+ "loads": 192,
+ "seconds": 797.8,
+ "found": 108,
+ "by_method": {
+  "no_closed_list": 11,
+  "not_found": 1,
+  "page_claimed": 4,
+  "sitemap_page": 108
+ },
+ "shared_pages": {
+  "https://mission.elumenapp.com/catalog/24-25/program/communication-studies-2-0-aa-t-2026fa": [
+   "30680",
+   "44504"
+  ],
+  "https://mission.elumenapp.com/catalog/24-25/program/mathematics-2-0-as-t-2026fa": [
+   "31032",
+   "46350"
+  ],
+  "https://mission.elumenapp.com/catalog/24-25/program/business-administration-2-0-as-t-2026fa": [
+   "32426",
+   "41391"
+  ]
+ },
+ "not_found": [
+  {
+   "control_number": "18067",
+   "title": "Liberal Arts: Arts & Humanities",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "url": "https://mission.elumenapp.com/catalog/24-25/program/liberal-arts-arts-and-humanities-aa-2025fa",
+    "label": {
+     "award": 0,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 1,
+    "why": "coarse net: the page's code tokens name 0 of 1 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2064,
+     "content": 2064,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  }
+ ],
+ "page_claimed": [
+  {
+   "control_number": "06325",
+   "title": "Food Service and Restaurant Management",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "pages": [
+    "https://mission.elumenapp.com/catalog/24-25/program/culinary-arts-as-2026fa",
+    "https://mission.elumenapp.com/catalog/24-25/program/culinary-arts-ca-2026fa",
+    "https://mission.elumenapp.com/catalog/24-25/program/baking-and-pastry-as-2026fa",
+    "https://mission.elumenapp.com/catalog/24-25/program/baking-and-pastry-ca-2026fa"
+   ]
+  },
+  {
+   "control_number": "12248",
+   "title": "Creative Arts",
+   "award": "A.A. Degree",
+   "pages": [
+    "https://mission.elumenapp.com/catalog/24-25/program/art-history-aa-t-2026fa"
+   ]
+  },
+  {
+   "control_number": "40351",
+   "title": "Data Analyst Associate",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://mission.elumenapp.com/catalog/24-25/program/business-computing-ca-2023fa"
+   ]
+  },
+  {
+   "control_number": "43110",
+   "title": "Public Health Science",
+   "award": "A.S. T Degree",
+   "pages": [
+    "https://mission.elumenapp.com/catalog/24-25/program/public-health-as-t-2026fa",
+    "https://mission.elumenapp.com/catalog/24-25/program/nutrition-and-dietetics-as-t-2026fa",
+    "https://mission.elumenapp.com/catalog/24-25/program/kinesiology-aa-t-2025fa"
+   ]
+  }
+ ],
+ "coverage_bands": {
+  "0.5-0.8": 5,
+  "0.8-1.0": 21,
+  "1.0": 82
+ },
+ "would_extract": {
+  "against": null,
+  "kept": 0,
+  "programs": 108,
+  "list": [
+   {
+    "control_number": "06286",
+    "title": "Biological Sciences",
+    "award": "A.S. Degree",
+    "url": "https://mission.elumenapp.com/catalog/24-25/program/biological-sciences-as-2023sp",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "06287",
+    "title": "Business",
+    "award": "A.S. Degree",
+    "url": "https://mission.elumenapp.com/catalog/24-25/program/business-as-2025fa",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "06288",
+    "title": "Accounting",
+    "award": "A.S. Degree",
+    "url": "https://mission.elumenapp.com/catalog/24-25/program/accounting-as-2023fa",
+    "coverage": 0.962,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "06296",
+    "title": "Computer Information Systems",
+    "award": "A.S. Degree",
+    "url": "https://mission.elumenapp.com/catalog/24-25/program/computer-information-systems-as-2021fa",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "06298",
+    "title": "Engineering",
+    "award": "A.S. Degree",
+    "url": "https://mission.elumenapp.com/catalog/24-25/program/engineering-as-2026fa",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "06304",
+    "title": "Art",
+    "award": "A.A. Degree",
+    "url": "https://mission.elumenapp.com/catalog/24-25/program/art-aa-2026fa",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "06305",
+    "title": "Graphic Design",
+    "award": "A.S. Degree",
+    "url": "https://mission.elumenapp.com/catalog/24-25/program/graphic-design-ca-2026fa",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "06308",
+    "title": "Vocational Nursing",
+    "award": "A.S. Degree",
+    "url": "https://mission.elumenapp.com/catalog/24-25/program/vocational-nursing-as-2021fa",
+    "coverage": 0.857,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "06314",
+    "title": "Mathematics",
+    "award": "A.S. Degree",
+    "url": "https://mission.elumenapp.com/catalog/24-25/program/mathematics-as-2025fa",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "06320",
+    "title": "Fire Technology",
+    "award": "A.S. Degree",
+    "url": "https://mission.elumenapp.com/catalog/24-25/program/fire-technology-as-2025fa",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "09807",
+    "title": "Web Design",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://mission.elumenapp.com/catalog/24-25/program/web-design-ca-2026fa",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "12605",
+    "title": "Fundamental Food Service Skills",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://mission.elumenapp.com/catalog/24-25/program/fundamental-food-service-skills-ca-2024fa",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "12606",
+    "title": "Digital Illustration",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://mission.elumenapp.com/catalog/24-25/program/digital-illustration-ca-2023fa",
+    "coverage": 0.875,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "13575",
+    "title": "Early Childhood Education",
+    "award": "A.S. Degree",
+    "url": "https://mission.elumenapp.com/catalog/24-25/program/early-childhood-education-as-2024fa",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "13576",
+    "title": "Associate Teacher",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://mission.elumenapp.com/catalog/24-25/program/associate-teacher-ca-2024fa",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "13586",
+    "title": "Early Intervention Assistant",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://mission.elumenapp.com/catalog/24-25/program/early-intervention-assistant-ca-2021fa",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "14591",
+    "title": "Cisco CCNA Cybersecurity and Cloud Computing",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://mission.elumenapp.com/catalog/24-25/program/cisco-ccna-cybersecurity-and-cloud-computing-ca-2024fa",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "15510",
+    "title": "Web Development",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://mission.elumenapp.com/catalog/24-25/program/web-development-ca-2026fa",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "16355",
+    "title": "Child Development Master Teacher",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://mission.elumenapp.com/catalog/24-25/program/master-teacher-ca-2024fa",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "16375",
+    "title": "Hospitality Management",
+    "award": "A.S. Degree",
+    "url": "https://mission.elumenapp.com/catalog/24-25/program/hospitality-management-as-2026fa",
+    "coverage": 0.5,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "16724",
+    "title": "Computer Network Technology",
+    "award": "A.S. Degree",
+    "url": "https://mission.elumenapp.com/catalog/24-25/program/computer-network-technology-as-2026fa",
+    "coverage": 0.909,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "18139",
+    "title": "Nursing (LVN to RN)",
+    "award": "A.S. Degree",
+    "url": "https://mission.elumenapp.com/catalog/24-25/program/nursing-lvn-to-rn-as-2025fa",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "18140",
+    "title": "Vocational Nursing",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://mission.elumenapp.com/catalog/24-25/program/vocational-nursing-ca-2021fa",
+    "coverage": 0.857,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22032",
+    "title": "Accounting",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://mission.elumenapp.com/catalog/24-25/program/accounting-ca-2023fa",
+    "coverage": 0.826,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22036",
+    "title": "Computer Information Systems",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://mission.elumenapp.com/catalog/24-25/program/computer-information-systems-ca-2021fa",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22045",
+    "title": "Graphic Design",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://mission.elumenapp.com/catalog/24-25/program/graphic-design-as-2026fa",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22966",
+    "title": "Project Management",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://mission.elumenapp.com/catalog/24-25/program/project-management-ca-2024fa",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22968",
+    "title": "Business Computing",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://mission.elumenapp.com/catalog/24-25/program/business-computing-ca-2023fa",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22977",
+    "title": "Entrepreneurship and Small Business",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://mission.elumenapp.com/catalog/24-25/program/entrepreneurship-and-small-business-ca-2024fa",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22984",
+    "title": "Three-Dimensional Arts",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://mission.elumenapp.com/catalog/24-25/program/three-dimensional-arts-ca-2024fa",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "30680",
+    "title": "Communication Studies",
+    "award": "A.A- T Degree",
+    "url": "https://mission.elumenapp.com/catalog/24-25/program/communication-studies-2-0-aa-t-2026fa",
+    "coverage": 0.929,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "30681",
+    "title": "Sociology",
+    "award": "A.A- T Degree",
+    "url": "https://mission.elumenapp.com/catalog/24-25/program/sociology-aa-t-2026fa",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "30683",
+    "title": "Psychology",
+    "award": "A.A- T Degree",
+    "url": "https://mission.elumenapp.com/catalog/24-25/program/psychology-aa-t-2025fa",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31032",
+    "title": "Mathematics",
+    "award": "A.S. T Degree",
+    "url": "https://mission.elumenapp.com/catalog/24-25/program/mathematics-2-0-as-t-2026fa",
+    "coverage": 0.714,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31253",
+    "title": "Studio Arts",
+    "award": "A.A- T Degree",
+    "url": "https://mission.elumenapp.com/catalog/24-25/program/studio-arts-aa-t-2026fa",
+    "coverage": 0.917,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31397",
+    "title": "Kinesiology",
+    "award": "A.A- T Degree",
+    "url": "https://mission.elumenapp.com/catalog/24-25/program/kinesiology-aa-t-2025fa",
+    "coverage": 0.967,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31404",
+    "title": "Political Science",
+    "award": "A.A- T Degree",
+    "url": "https://mission.elumenapp.com/catalog/24-25/program/political-science-aa-t-2026fa",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31419",
+    "title": "English",
+    "award": "A.A- T Degree",
+    "url": "https://mission.elumenapp.com/catalog/24-25/program/english-aa-t-2026fa",
+    "coverage": 0.864,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31423",
+    "title": "Early Childhood Education",
+    "award": "A.S. T Degree",
+    "url": "https://mission.elumenapp.com/catalog/24-25/program/early-childhood-education-as-t-2025fa",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31473",
+    "title": "History",
+    "award": "A.A- T Degree",
+    "url": "https://mission.elumenapp.com/catalog/24-25/program/history-aa-t-2026fa",
+    "coverage": 0.857,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32206",
+    "title": "Administration of Justice",
+    "award": "A.S. T Degree",
+    "url": "https://mission.elumenapp.com/catalog/24-25/program/administration-of-justice-as-t-2025fa",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32335",
+    "title": "Art History",
+    "award": "A.A- T Degree",
+    "url": "https://mission.elumenapp.com/catalog/24-25/program/art-history-aa-t-2026fa",
+    "coverage": 0.943,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32419",
+    "title": "Spanish",
+    "award": "A.A- T Degree",
+    "url": "https://mission.elumenapp.com/catalog/24-25/program/spanish-aa-t-2025fa",
+    "coverage": 0.778,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32426",
+    "title": "Business Administration",
+    "award": "A.S. T Degree",
+    "url": "https://mission.elumenapp.com/catalog/24-25/program/business-administration-2-0-as-t-2026fa",
+    "coverage": 0.8,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35604",
+    "title": "Biology",
+    "award": "A.S. T Degree",
+    "url": "https://mission.elumenapp.com/catalog/24-25/program/biology-as-t-2025fa",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35848",
+    "title": "Economics",
+    "award": "A.A- T Degree",
+    "url": "https://mission.elumenapp.com/catalog/24-25/program/economics-aa-t-2026fa",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36280",
+    "title": "Beginning ESL",
+    "award": "Noncredit program",
+    "url": "https://mission.elumenapp.com/catalog/24-25/program/beginning-esl-noncredit-2022fa",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36336",
+    "title": "Human Biology",
+    "award": "A.S. Degree",
+    "url": "https://mission.elumenapp.com/catalog/24-25/program/human-biology-as-2023sp",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36620",
+    "title": "Track Worker Apprenticeship",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://mission.elumenapp.com/catalog/24-25/program/public-transit-track-worker-apprenticeship-ca-2023fa",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36621",
+    "title": "Service Mechanic Apprenticeship",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://mission.elumenapp.com/catalog/24-25/program/public-transit-service-mechanic-apprenticeship-ca-2023fa",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36622",
+    "title": "Public Transit - Leadership",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://mission.elumenapp.com/catalog/24-25/program/public-transit-leadership-ca-2026fa",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36623",
+    "title": "Overhead Line Worker",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://mission.elumenapp.com/catalog/24-25/program/public-transit-overhead-line-worker-ca-2023fa",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36624",
+    "title": "Public Transit - Coach Operator",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://mission.elumenapp.com/catalog/24-25/program/public-transit-coach-operator-ca-2026fa",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38615",
+    "title": "High Beginning ESL",
+    "award": "Noncredit program",
+    "url": "https://mission.elumenapp.com/catalog/24-25/program/high-beginning-esl-cc-2023sp",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38616",
+    "title": "Low Beginning ESL",
+    "award": "Noncredit program",
+    "url": "https://mission.elumenapp.com/catalog/24-25/program/low-beginning-esl-cc-2026fa",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38630",
+    "title": "Social Justice Studies",
+    "award": "A.A- T Degree",
+    "url": "https://mission.elumenapp.com/catalog/24-25/program/social-justice-studies-aa-t-2025fa",
+    "coverage": 0.962,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39676",
+    "title": "Community Health Worker",
+    "award": "Noncredit program",
+    "url": "https://mission.elumenapp.com/catalog/24-25/program/community-health-worker-cc-2020fa",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39835",
+    "title": "Nutrition and Dietetics",
+    "award": "A.S. T Degree",
+    "url": "https://mission.elumenapp.com/catalog/24-25/program/nutrition-and-dietetics-as-t-2026fa",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39846",
+    "title": "Engineering",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://mission.elumenapp.com/catalog/24-25/program/engineering-ca-2026fa",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39950",
+    "title": "English for Careers in Food Service",
+    "award": "Noncredit program",
+    "url": "https://mission.elumenapp.com/catalog/24-25/program/english-for-careers-in-food-service-cc-2027fa",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40350",
+    "title": "IT Helpdesk Technician",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://mission.elumenapp.com/catalog/24-25/program/it-helpdesk-technician-ca-2021sp",
+    "coverage": 0.889,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40746",
+    "title": "Mechatronic Technology",
+    "award": "A.S. Degree",
+    "url": "https://mission.elumenapp.com/catalog/24-25/program/mechatronic-technology-as-2026fa",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40796",
+    "title": "Mechatronic Technology",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://mission.elumenapp.com/catalog/24-25/program/mechatronic-technology-ca-2026fa",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40926",
+    "title": "Fire Fighter/EMT Academy",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://mission.elumenapp.com/catalog/24-25/program/fire-fighter-emt-academy-ca-2021fa",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41092",
+    "title": "Baking and Pastry",
+    "award": "A.S. Degree",
+    "url": "https://mission.elumenapp.com/catalog/24-25/program/baking-and-pastry-as-2026fa",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41093",
+    "title": "Baking and Pastry",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://mission.elumenapp.com/catalog/24-25/program/baking-and-pastry-ca-2026fa",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41321",
+    "title": "User Experience and Interface Design",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://mission.elumenapp.com/catalog/24-25/program/user-experience-and-interface-design-ca-2026fa",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41323",
+    "title": "Fire Prevention Internship Certification",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://mission.elumenapp.com/catalog/24-25/program/fire-prevention-internship-certification-ca-2022wi",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41324",
+    "title": "Culinary Arts",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://mission.elumenapp.com/catalog/24-25/program/culinary-arts-as-2026fa",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41325",
+    "title": "Culinary Arts",
+    "award": "A.S. Degree",
+    "url": "https://mission.elumenapp.com/catalog/24-25/program/culinary-arts-ca-2026fa",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41332",
+    "title": "Fitness and Health",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://mission.elumenapp.com/catalog/24-25/program/fitness-and-health-ca-2023sp",
+    "coverage": 0.906,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41339",
+    "title": "Management and Leadership",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://mission.elumenapp.com/catalog/24-25/program/management-and-leadership-ca-2024fa",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41391",
+    "title": "Business Administration 2.0",
+    "award": "A.S. T Degree",
+    "url": "https://mission.elumenapp.com/catalog/24-25/program/business-administration-2-0-as-t-2026fa",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41494",
+    "title": "Anthropology",
+    "award": "A.A- T Degree",
+    "url": "https://mission.elumenapp.com/catalog/24-25/program/anthropology-aa-t-2026fa",
+    "coverage": 0.868,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42188",
+    "title": "Preparation for Academic Success in ESL",
+    "award": "Noncredit program",
+    "url": "https://mission.elumenapp.com/catalog/24-25/program/preparation-for-academic-success-in-esl-cc-2022fa",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42313",
+    "title": "Low Intermediate ESL",
+    "award": "Noncredit program",
+    "url": "https://mission.elumenapp.com/catalog/24-25/program/low-intermediate-esl-cc-2024fa",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43142",
+    "title": "Communication Studies CA",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://mission.elumenapp.com/catalog/24-25/program/communication-studies-ca-2025fa",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43228",
+    "title": "Digital Media Marketing",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://mission.elumenapp.com/catalog/24-25/program/digital-media-marketing-ca-2026fa",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43230",
+    "title": "Virtual Production Fundamentals",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://mission.elumenapp.com/catalog/24-25/program/virtual-production-fundamentals-ca-2023fa",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43240",
+    "title": "Public Transit - Light Rail Operator",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://mission.elumenapp.com/catalog/24-25/program/public-transit-light-rail-operator-ca-2026fa",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43293",
+    "title": "Computer Graphics",
+    "award": "Noncredit program",
+    "url": "https://mission.elumenapp.com/catalog/24-25/program/computer-graphics-cc-2026fa",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43503",
+    "title": "Video and Motion Graphics",
+    "award": "Noncredit program",
+    "url": "https://mission.elumenapp.com/catalog/24-25/program/video-and-motion-graphics-cc-2023fa",
+    "coverage": 0.75,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43504",
+    "title": "Advanced ESL",
+    "award": "Noncredit program",
+    "url": "https://mission.elumenapp.com/catalog/24-25/program/advanced-esl-cc-2024fa",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43505",
+    "title": "Intermediate ESL",
+    "award": "Noncredit program",
+    "url": "https://mission.elumenapp.com/catalog/24-25/program/intermediate-esl-cc-2023fa",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43506",
+    "title": "High Intermediate ESL",
+    "award": "Noncredit program",
+    "url": "https://mission.elumenapp.com/catalog/24-25/program/high-intermediate-esl-cc-2023fa",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43509",
+    "title": "ESL Grammar and Editing",
+    "award": "Noncredit program",
+    "url": "https://mission.elumenapp.com/catalog/24-25/program/esl-grammar-and-editing-cc-2023fa",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43822",
+    "title": "Behavioral Health Worker",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://mission.elumenapp.com/catalog/24-25/program/behavioral-health-worker-ca-2025fa",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44040",
+    "title": "Tutoring Skills",
+    "award": "Noncredit program",
+    "url": "https://mission.elumenapp.com/catalog/24-25/program/tutoring-skills-cc-2024fa",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44048",
+    "title": "Pharmacy Technician",
+    "award": "Noncredit program",
+    "url": "https://mission.elumenapp.com/catalog/24-25/program/pharmacy-technician-cc-2024fa",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44059",
+    "title": "Foundations of Behavioral Health Work",
+    "award": "Noncredit program",
+    "url": "https://mission.elumenapp.com/catalog/24-25/program/foundations-of-behavioral-health-work-cc-2024fa",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44321",
+    "title": "Social Justice African American Studies",
+    "award": "A.A- T Degree",
+    "url": "https://mission.elumenapp.com/catalog/24-25/program/social-justice-african-american-studies-aa-t-2025fa",
+    "coverage": 0.857,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44366",
+    "title": "Artificial Intelligence",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://mission.elumenapp.com/catalog/24-25/program/artificial-intelligence-ca-2026fa",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44371",
+    "title": "Advanced Virtual Production",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://mission.elumenapp.com/catalog/24-25/program/advanced-virtual-production-ca-2024fa",
+    "coverage": 0.75,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44504",
+    "title": "Communication Studies 2.0",
+    "award": "A.A- T Degree",
+    "url": "https://mission.elumenapp.com/catalog/24-25/program/communication-studies-2-0-aa-t-2026fa",
+    "coverage": 0.938,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44817",
+    "title": "Public Transit: Coach Bus Operator Pre-Apprenticeship",
+    "award": "Noncredit program",
+    "url": "https://mission.elumenapp.com/catalog/24-25/program/public-transit-coach-bus-operator-pre-apprenticeship-cc-2025fa",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44969",
+    "title": "Data Science",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://mission.elumenapp.com/catalog/24-25/program/data-science-ca-2025fa",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45229",
+    "title": "Computer Science",
+    "award": "A.S. T Degree",
+    "url": "https://mission.elumenapp.com/catalog/24-25/program/computer-science-as-t-2025fa",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45329",
+    "title": "Hospitality Management",
+    "award": "A.S. T Degree",
+    "url": "https://mission.elumenapp.com/catalog/24-25/program/hospitality-management-as-t-2026fa",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45478",
+    "title": "Public Health",
+    "award": "A.S. T Degree",
+    "url": "https://mission.elumenapp.com/catalog/24-25/program/public-health-as-t-2026fa",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45507",
+    "title": "Child and Adolescent Development",
+    "award": "A.A- T Degree",
+    "url": "https://mission.elumenapp.com/catalog/24-25/program/child-and-adolescent-development-aa-t-2025fa",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45884",
+    "title": "Graphic Design Foundations",
+    "award": "Noncredit program",
+    "url": "https://mission.elumenapp.com/catalog/24-25/program/graphic-design-foundations-cc-2026fa",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46008",
+    "title": "Music Production",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://mission.elumenapp.com/catalog/24-25/program/music-production-ca-2026fa",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46350",
+    "title": "Mathematics 2.0",
+    "award": "A.S. T Degree",
+    "url": "https://mission.elumenapp.com/catalog/24-25/program/mathematics-2-0-as-t-2026fa",
+    "coverage": 0.933,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46351",
+    "title": "Emergency Services Administration",
+    "award": "Baccalaureate of Science (B.S.) Degree.",
+    "url": "https://mission.elumenapp.com/catalog/24-25/program/emergency-services-administration-bs-2026fa",
+    "coverage": 0.947,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46362",
+    "title": "Photography Foundations",
+    "award": "Noncredit program",
+    "url": "https://mission.elumenapp.com/catalog/24-25/program/photography-foundations-cc-2026fa",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46365",
+    "title": "Web Design Foundations",
+    "award": "Noncredit program",
+    "url": "https://mission.elumenapp.com/catalog/24-25/program/web-design-foundations-cc-2026fa",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46416",
+    "title": "Emergency Medical Technician",
+    "award": "Noncredit program",
+    "url": "https://mission.elumenapp.com/catalog/24-25/program/emergency-medical-technician-cc-2026fa",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46439",
+    "title": "Web Development Foundations",
+    "award": "Noncredit program",
+    "url": "https://mission.elumenapp.com/catalog/24-25/program/web-development-foundations-cc-2026fa",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   }
+  ]
+ },
+ "run": "38999070639"
+}
