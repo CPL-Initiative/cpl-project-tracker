@@ -1,11 +1,11 @@
 {
   "schema": 1,
-  "written_at": "2026-10-17T09:13:07Z",
-  "session": 403,
-  "moniker": "SkyYarrow",
+  "written_at": "2026-10-17T11:30:07Z",
+  "session": 404,
+  "moniker": "SkyBuckeye",
   "run": "the CPL Queue routine",
   "decider": "Sam",
-  "handoff": "docs/session_404_handoff.md",
+  "handoff": "docs/session_405_handoff.md",
   "unchecked": [
     {
       "college": "Cerritos College",
@@ -82816,11 +82816,396 @@
       "award": "A.S. Degree",
       "control_number": "46461",
       "loaded": "2026-10-17"
+    },
+    {
+      "college": "College of San Mateo",
+      "program": "Architecture",
+      "award": "A.S. Degree",
+      "control_number": "05744",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "College of San Mateo",
+      "program": "Biology",
+      "award": "A.S. Degree",
+      "control_number": "05745",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "College of San Mateo",
+      "program": "CIS: Applications and Development AS",
+      "award": "A.S. Degree",
+      "control_number": "05756",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "College of San Mateo",
+      "program": "Computer Aided Drafting",
+      "award": "A.S. Degree",
+      "control_number": "05766",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "College of San Mateo",
+      "program": "Art: Photography",
+      "award": "A.A. Degree",
+      "control_number": "05773",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "College of San Mateo",
+      "program": "Nursing",
+      "award": "A.S. Degree",
+      "control_number": "05779",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "College of San Mateo",
+      "program": "Communication Studies",
+      "award": "A.A. Degree",
+      "control_number": "05785",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "College of San Mateo",
+      "program": "Cosmetology",
+      "award": "A.A. Degree",
+      "control_number": "05805",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "College of San Mateo",
+      "program": "Biology:Pre-Nursing",
+      "award": "A.S. Degree",
+      "control_number": "09079",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "College of San Mateo",
+      "program": "Business Administration",
+      "award": "A.S. Degree",
+      "control_number": "10927",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "College of San Mateo",
+      "program": "Cosmetology",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "19394",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "College of San Mateo",
+      "program": "Art: Art History",
+      "award": "A.A. Degree",
+      "control_number": "30446",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "College of San Mateo",
+      "program": "Art History",
+      "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+      "control_number": "30460",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "College of San Mateo",
+      "program": "Sociology",
+      "award": "A.A- T Degree",
+      "control_number": "30817",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "College of San Mateo",
+      "program": "Geology",
+      "award": "A.S. T Degree",
+      "control_number": "31254",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "College of San Mateo",
+      "program": "Psychology",
+      "award": "A.A- T Degree",
+      "control_number": "31269",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "College of San Mateo",
+      "program": "Studio Arts",
+      "award": "A.A- T Degree",
+      "control_number": "31360",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "College of San Mateo",
+      "program": "Digital Media: Broadcast and Electronic Media",
+      "award": "A.A. Degree",
+      "control_number": "31554",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "College of San Mateo",
+      "program": "Digital Media: Web Design/Multimedia",
+      "award": "A.A. Degree",
+      "control_number": "31558",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "College of San Mateo",
+      "program": "Digital Media: Mobile App and Web Design",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "31564",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "College of San Mateo",
+      "program": "Digital Media: Graphic Design",
+      "award": "A.A. Degree",
+      "control_number": "31576",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "College of San Mateo",
+      "program": "Digital Media: Graphic Production",
+      "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+      "control_number": "31577",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "College of San Mateo",
+      "program": "Web and Mobile Application Development",
+      "award": "A.S. Degree",
+      "control_number": "33042",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "College of San Mateo",
+      "program": "Art History",
+      "award": "A.A- T Degree",
+      "control_number": "33267",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "College of San Mateo",
+      "program": "Web and Mobile Application Development",
+      "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+      "control_number": "33348",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "College of San Mateo",
+      "program": "Music",
+      "award": "A.A- T Degree",
+      "control_number": "33393",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "College of San Mateo",
+      "program": "Dance",
+      "award": "A.A. Degree",
+      "control_number": "33860",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "College of San Mateo",
+      "program": "Anthropology",
+      "award": "A.A- T Degree",
+      "control_number": "33879",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "College of San Mateo",
+      "program": "Biology",
+      "award": "A.S. T Degree",
+      "control_number": "33912",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "College of San Mateo",
+      "program": "Nutrition and Dietetics",
+      "award": "A.S. T Degree",
+      "control_number": "35024",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "College of San Mateo",
+      "program": "Political Science",
+      "award": "A.A- T Degree",
+      "control_number": "35574",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "College of San Mateo",
+      "program": "Philosophy",
+      "award": "A.A- T Degree",
+      "control_number": "35666",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "College of San Mateo",
+      "program": "Critical Pacific Islands & Oceania Studies",
+      "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+      "control_number": "35881",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "College of San Mateo",
+      "program": "Kinesiology",
+      "award": "A.A. Degree",
+      "control_number": "37013",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "College of San Mateo",
+      "program": "Law, Public Policy, and Society",
+      "award": "A.A- T Degree",
+      "control_number": "38487",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "College of San Mateo",
+      "program": "Astronomy",
+      "award": "A.S. Degree",
+      "control_number": "39408",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "College of San Mateo",
+      "program": "Business Administration 2.0",
+      "award": "A.S. T Degree",
+      "control_number": "41976",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "College of San Mateo",
+      "program": "Entrepreneurship and Small Business Management",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "42094",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "College of San Mateo",
+      "program": "Business Analytics",
+      "award": "A.S. Degree",
+      "control_number": "42139",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "College of San Mateo",
+      "program": "Leadership",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "42996",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "College of San Mateo",
+      "program": "Creative Writing",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "43063",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "College of San Mateo",
+      "program": "Public and Non-Profit Administration",
+      "award": "A.S. Degree",
+      "control_number": "43071",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "College of San Mateo",
+      "program": "Public and Non-Profit Administration",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "43072",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "College of San Mateo",
+      "program": "Communication Studies 2.0",
+      "award": "A.A- T Degree",
+      "control_number": "43193",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "College of San Mateo",
+      "program": "Music and Technology",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "43844",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "College of San Mateo",
+      "program": "Music and Technology",
+      "award": "A.A. Degree",
+      "control_number": "44067",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "College of San Mateo",
+      "program": "Esthetics",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "44288",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "College of San Mateo",
+      "program": "Interdisciplinary Studies: Business and Public Service",
+      "award": "A.A. Degree",
+      "control_number": "45220",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "College of San Mateo",
+      "program": "Interdisciplinary Studies: STEM",
+      "award": "A.A. Degree",
+      "control_number": "45244",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "College of San Mateo",
+      "program": "Interdisciplinary Studies: Arts and Media",
+      "award": "A.A. Degree",
+      "control_number": "45245",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "College of San Mateo",
+      "program": "Interdisciplinary Studies: Language Arts and Social Science",
+      "award": "A.A. Degree",
+      "control_number": "45246",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "College of San Mateo",
+      "program": "Interdisciplinary Studies: Health and Wellness",
+      "award": "A.A. Degree",
+      "control_number": "45291",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "College of San Mateo",
+      "program": "Modern Policing",
+      "award": "A.S. Degree",
+      "control_number": "45506",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "College of San Mateo",
+      "program": "Mental Imagery",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "45547",
+      "loaded": "2026-10-17"
+    },
+    {
+      "college": "College of San Mateo",
+      "program": "Proficiency in English for Academic and Career Success (PEACS)",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "45948",
+      "loaded": "2026-10-17"
     }
   ],
   "next_step": {
-    "title": "Merge the one PDF reader and apply its display build, then read the own-HTML catalogs",
-    "text": "Merge the PR that joins the two PDF readers, apply display build 726bde512dfa from main, then build a reader for the 20 colleges that print their own catalog pages."
+    "title": "Apply San Mateo's display build, then read Skyline and the other own-HTML catalogs",
+    "text": "Merge the PR that loads College of San Mateo, apply display build 928577b30f0f from main, then extract and load Skyline and run capture-only reads of the other colleges that print their own catalog pages."
   },
   "calls": [
     {
@@ -82847,6 +83232,18 @@
   },
   "changes": [
     {
+      "at": "2026-10-17T10:20:00Z",
+      "text": "The display build from the PDF wave reached every program record."
+    },
+    {
+      "at": "2026-10-17T11:00:00Z",
+      "text": "The MAP Data Quality tab now uses the shared colors in light and dark, and its controls are underlined words."
+    },
+    {
+      "at": "2026-10-17T11:11:00Z",
+      "text": "The harvest reads a college's own catalog pages; College of San Mateo's 55 program records loaded unchecked."
+    },
+    {
       "at": "2026-10-17T05:20:00Z",
       "text": "The harvest reads a catalog published as one PDF: each program gets the pages that carry its title and name its courses."
     },
@@ -82865,18 +83262,6 @@
     {
       "at": "2026-10-17T07:40:00Z",
       "text": "Fifteen colleges gained a procedure record naming their catalog and each read."
-    },
-    {
-      "at": "2026-10-17T07:13:00Z",
-      "text": "East Los Angeles joined the harvest from its PDF catalog: 120 records, unchecked."
-    },
-    {
-      "at": "2026-10-17T08:25:00Z",
-      "text": "The two PDF readers written the same morning became one, and display build 726bde512dfa covers 11,862 programs once applied."
-    },
-    {
-      "at": "2026-10-17T08:47:00Z",
-      "text": "Los Angeles City and Pierce were scored again with no model call: outcome check failures fell from 145 to 12 and from 85 to 15."
     }
   ],
   "headline": [
@@ -82944,11 +83329,11 @@
   "next_run": {
     "name": "CPL Queue",
     "every_hours": 24,
-    "at": "2026-10-17T10:12:00Z"
+    "at": "2026-10-17T12:12:00Z"
   },
   "harvest": {
     "day": "2026-10-17",
-    "gaps": 2930,
+    "gaps": 2968,
     "parts": {
       "links": {
         "catalog": [
@@ -82965,11 +83350,11 @@
         ]
       },
       "roep": [
-        13726,
+        13881,
         20282
       ],
       "coci": [
-        10913,
+        10968,
         20282
       ],
       "outcomes": {
@@ -82978,12 +83363,12 @@
           89192
         ],
         "plo": [
-          10913,
+          10968,
           20282
         ]
       },
       "careers": [
-        9863,
+        9918,
         20282
       ]
     }

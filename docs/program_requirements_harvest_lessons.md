@@ -574,3 +574,37 @@ Verbatim from `docs/reference/lanes/program-requirements-harvest.md`, Phase 2, w
 - **A rescore must carry the run, or the reread keeps the old checks.** The first rereads (39018310349, 39018312320) replaced 0 rows: the rescore left `extracted_run` as it was, and `program_requirement_records_college_reread()` keeps an equal run. A rescored record now carries the reconcile run, as a reconciled one does. Rereads 39018615618 and 39018617236 replaced 156 rows at LA City and 94 at Pierce, each with a rollback receipt.
 - **The other thirteen #2189 colleges have not been rescored.** The same reconcile then reread, one college per branch, is free. Clovis, Canyons, Santa Rosa and Valley are the largest.
 
+
+## S404 SkyBuckeye (2026-10-17, the 10:12Z session): own-HTML catalogs through the sitemap road, College of San Mateo
+
+- **The handoff pointed at Los Rios; the record pointed away.** Handoff 404 named American River, Folsom Lake and
+  Sacramento City as the first own-HTML shape. All four Los Rios hosts have answered the reader 404 since 2026-10-08
+  (census again on 10-11), and each procedure says the reader never works around it. The San Mateo district's catalogs
+  (`catalog.collegeofsanmateo.edu/current/`, `catalog.skylinecollege.edu/current/`) answer and file 2026-2027, so the
+  session started there. Read the registry row's `access_status` before taking a handoff's pick.
+- **The reader already existed; the gate refused it (#2194).** `capture()` sent only CourseLeaf, curriQunet, eLumen and
+  Acalog onward. The CourseLeaf branch is no CourseLeaf code at all: the sitemap, program-looking paths
+  (`PROGRAM_PATH`), each page's children and the link search. Letting `custom_html` through it was one line. Try a
+  free capture-only run on the generic path before writing a host reader.
+- **College of San Mateo, end to end on the generic path.** Capture 39024297472: a 1,165-page sitemap, 195 program
+  paths, 238 pages read in 23 minutes, 60 of the 64 programs that list courses (55 sitemap, 5 link search). Extraction
+  39025870196: $4.98 ($0.083 a program), 51 of 60 passing; 5 fail coverage, 8 arithmetic. Load 39027691727: 55
+  inserted unchecked, 5 skipped. Display build `928577b30f0f`. Not found: Addiction Studies A.A. (its page names 2 of
+  14 listed codes) and International Business A.S. and certificate (5 of 13, 0 of 10): the pages print the courses in a
+  form the net does not read, a page read's question for the next pass. Three pages each serve two or three programs
+  (Biology, Business Administration 2.0, the Cal-GETC option); check those records' awards before a person confirms.
+- **Skyline's capture ran past an hour** (run 39024299478, same commit). The same reader on a sister host took three
+  times San Mateo's time: read its capture report (sitemap size, child pages) before extracting.
+- **The MAP Data Quality UI pass (#2193)** is in `ui_pass_lessons.md`'s ledger line: a tab's private light and dark
+  palettes shadow the global tokens and drift; the fix is role names over First Light's tokens, never new hex.
+
+**Patterns that worked.** A capture-only run on two sister hosts in parallel, one branch each, while a UI pass ran in
+the session. Proving a seeded a11y target by running it on the old file (it must fail) before trusting a clean report.
+
+## Moved from the lane (S404 compaction)
+
+- The other thirteen PDF-wave colleges were reconciled on the merged reader and not reread: their pages had no hyphen
+  fault, and the moved picks only lowered their checks (S403).
+- Loaded unchecked in the PDF wave: Clovis 100, Barstow 56, Calbright College Credit 11, Compton 73, Lassen 59,
+  Mendocino 93, Woodland 64, Canyons 148, Los Angeles City 223, Harbor 107, Pierce 173, Valley 204, Santa Rosa 222,
+  Shasta 103, Yuba 89; East Los Angeles 120 (run 39012416324).
