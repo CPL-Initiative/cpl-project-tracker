@@ -1,0 +1,253 @@
+{
+ "college": "Solano Community College",
+ "control_number": "16541",
+ "shape": "degree",
+ "title": "Web Design and Development",
+ "award": "A.S. Degree",
+ "source_url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=210",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 12303,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 12303,
+    "output_tokens": 1794,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1794,
+  "output_tokens_details": {
+   "thinking_tokens": 611
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.08509,
+ "ms": 14645,
+ "seconds": 15.0,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 8,
+   "listed": 13,
+   "share": 0.615,
+   "missing": [
+    "CIS15",
+    "CIS22",
+    "CIS23",
+    "CIS35",
+    "CIS78"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    22.5,
+    22.5
+   ],
+   "stated": [
+    22.5,
+    22.5
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 5,
+   "not_verbatim": [
+    "Motion Graphic/Animation Video Editor"
+   ],
+   "pass": false
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Web Design and Development Certificate of Achievement and Associate in Science",
+   "measure": "units",
+   "total_units": {
+    "min": 22.5,
+    "max": 22.5
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": true,
+   "outcomes": [
+    "Produce functional web pages replete with responsive web elements.",
+    "Properly use design elements and an HTML editor in creating web pages.",
+    "Develop a project incorporating CSS, search forms, tables, photo galleries, shared borders, themes, interactive components, dynamic web pages and publish to a server.",
+    "Create web elements for print design and production.",
+    "Create and edit production quality animation and video"
+   ],
+   "careers": [
+    "website designer",
+    "Web Designer",
+    "Web Development",
+    "Motion Graphic/Animation Video Editor",
+    "Print Designer"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 22.5,
+     "max": 22.5
+    },
+    "courses": [
+     {
+      "code": "CIS 001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS 061",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS 062",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS 069",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS 070",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS 085",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS 087",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 097",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "CIS 15",
+    "why": "named only in the Microcomputer Applications section and course descriptions"
+   },
+   {
+    "code": "CIS 22",
+    "why": "appears only in course descriptions, not in this program's requirements"
+   },
+   {
+    "code": "CIS 23",
+    "why": "appears only in course descriptions, not in this program's requirements"
+   },
+   {
+    "code": "CIS 35",
+    "why": "appears only in course descriptions, not in this program's requirements"
+   },
+   {
+    "code": "CIS 78",
+    "why": "named only in the Microcomputer Applications section and course descriptions"
+   }
+  ],
+  "notes": [
+   "The section covers both the Certificate of Achievement and the A.S.; the A.S. is the 22.5-unit major plus General Education and electives as needed to reach a minimum of 60 units. The 60-unit minimum was not recorded as degree_total; electives_fill_degree set true.",
+   "The program outcomes list is shared by the Certificate of Achievement and the A.S. degree.",
+   "Catalog prints codes with leading zeros (CIS 001, BUS 097); these match closed-list CIS 1, BUS 97, etc. Catalog titles differ slightly (CIS 062 'Creating Web Interactivity with Flash', BUS 097 'Work Readiness' vs closed list 'Skills for Workplace Success').",
+   "No general education pattern is named; text says only 'General Education'.",
+   "PDF text had ligature artifacts (e.g., 'Ɵ'), normalized to 'ti' in outcomes and careers."
+  ]
+ },
+ "extracted_run": 39037377728,
+ "read_run": "39035226783"
+}

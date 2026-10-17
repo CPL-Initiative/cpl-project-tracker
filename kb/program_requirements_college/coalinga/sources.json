@@ -1,0 +1,1895 @@
+[
+ {
+  "control_number": "01628",
+  "title": "Biology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "01629",
+  "title": "Business: Business Management",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS13A",
+   "BUS13B",
+   "BUS18",
+   "BUS1A",
+   "BUS20",
+   "BUS24",
+   "BUS28",
+   "BUS32",
+   "BUS35",
+   "BUS55",
+   "BUS74",
+   "CIS34",
+   "CIS7"
+  ],
+  "source": {
+   "url": "https://coalingacollege.edu/catalog/2026-2027/programs-of-study/business-management-cert.php",
+   "title": "Business - Management",
+   "h1": "Business - Management",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 4011
+ },
+ {
+  "control_number": "01635",
+  "title": "Kinesiology",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "07610",
+  "title": "Business: Bookkeeping",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS13A",
+   "BUS13B",
+   "BUS20",
+   "BUS24",
+   "BUS28",
+   "BUS55",
+   "BUS74",
+   "CIS34",
+   "CIS7"
+  ],
+  "source": {
+   "url": "https://coalingacollege.edu/catalog/2026-2027/programs-of-study/business-bookkeeping-cert.php",
+   "title": "Business - Bookkeeping",
+   "h1": "Business - Bookkeeping",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 3578
+ },
+ {
+  "control_number": "07611",
+  "title": "Business: Retail Business Management",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS18",
+   "BUS1A",
+   "BUS20",
+   "BUS28",
+   "BUS32",
+   "BUS35",
+   "BUS55",
+   "CIS7"
+  ],
+  "source": {
+   "url": "https://coalingacollege.edu/catalog/2026-2027/programs-of-study/business-retail-business-management-cert.php",
+   "title": "Business - Retail Business Management",
+   "h1": "Business - Retail Business Management",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 3557
+ },
+ {
+  "control_number": "07957",
+  "title": "Health Science: General",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "07958",
+  "title": "Administration of Justice: Correctional Science",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 10,
+  "text_chars": 0
+ },
+ {
+  "control_number": "10910",
+  "title": "Business: Business Management",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS13A",
+   "BUS13B",
+   "BUS18",
+   "BUS1A",
+   "BUS20",
+   "BUS24",
+   "BUS28",
+   "BUS32",
+   "BUS35",
+   "BUS55",
+   "BUS74",
+   "CIS34",
+   "CIS7"
+  ],
+  "source": {
+   "url": "https://coalingacollege.edu/catalog/2026-2027/programs-of-study/business-management.php",
+   "title": "Business - Management",
+   "h1": "Business - Management",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 4175
+ },
+ {
+  "control_number": "12332",
+  "title": "Psychiatric Technician Training Program",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "PT51",
+   "PT51L",
+   "PT52L",
+   "PT61",
+   "PT61L",
+   "PT62L",
+   "PT71",
+   "PT71L",
+   "PT72L"
+  ],
+  "source": {
+   "url": "https://coalingacollege.edu/catalog/2026-2027/programs-of-study/psychiatric-technician-cert.php",
+   "title": "Psychiatric Technician",
+   "h1": "Psychiatric Technician",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 0.667
+   }
+  },
+  "listed": 9,
+  "text_chars": 3801
+ },
+ {
+  "control_number": "15643",
+  "title": "Computer Information Systems (CIS): Microcomputer Applications Specialist",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS13A",
+   "BUS13B",
+   "BUS20",
+   "BUS24",
+   "CIS34",
+   "CIS7"
+  ],
+  "source": {
+   "url": "https://coalingacollege.edu/catalog/2026-2027/programs-of-study/computer-information-systems-cis-microcomputer-application-specialist-cert.php",
+   "title": "Computer Information Systems (CIS) - Microcomputer Applications Specialist",
+   "h1": "Computer Information Systems (CIS) - Microcomputer Applications Specialist",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 3531
+ },
+ {
+  "control_number": "17056",
+  "title": "Agriculture Science Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AET15",
+   "AET21",
+   "AG14",
+   "AGBUS15",
+   "CRPSCI1",
+   "CRPSCI17",
+   "CRPSCI18",
+   "CRPSCI19",
+   "CRPSCI2",
+   "CRPSCI21",
+   "CRPSCI23",
+   "CRPSCI32",
+   "CRPSCI36",
+   "CRPSCI44",
+   "CRPSCI45",
+   "CRPSCI46",
+   "CRPSCI6",
+   "CRPSCI8",
+   "IMT60",
+   "SLSCI21"
+  ],
+  "source": {
+   "url": "https://coalingacollege.edu/catalog/2026-2027/programs-of-study/agriculture-science-technology.php",
+   "title": "Agriculture Science Technology",
+   "h1": "Agriculture Science Technology",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 20,
+  "text_chars": 4345
+ },
+ {
+  "control_number": "19009",
+  "title": "CSU General Education-Breadth",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 111,
+  "text_chars": 0
+ },
+ {
+  "control_number": "19019",
+  "title": "Liberal Arts: Math & Science",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ASCI12",
+   "BIO10",
+   "BIO15",
+   "BIO32",
+   "BIO35",
+   "BIO38",
+   "CHEM2A",
+   "CRPSCI1",
+   "CRPSCI2",
+   "CRPSCI6",
+   "CRPSCI7",
+   "GEOG1",
+   "GEOL1",
+   "GEOL3",
+   "MATH10A",
+   "MATH10B",
+   "MATH1A",
+   "MATH1B",
+   "MATH2A",
+   "MATH2B",
+   "MATH45",
+   "MATH63",
+   "PSYCH6",
+   "SLSCI21",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://coalingacollege.edu/catalog/2026-2027/programs-of-study/liberal-arts-area-of-emphasis-for-math-and-science.php",
+   "title": "Liberal Arts - Area of Emphasis for Math and Science",
+   "h1": "Liberal Arts - Area of Emphasis for Math and Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 25,
+  "text_chars": 4392
+ },
+ {
+  "control_number": "19021",
+  "title": "Liberal Arts: Arts & Humanities",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "19023",
+  "title": "Liberal Arts: Social & Behavioral Science",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.909,
+  "codes_found": [
+   "AGBUS40",
+   "AOJ29",
+   "BUS20",
+   "CD10",
+   "CD2",
+   "CD21",
+   "CD24",
+   "CD5",
+   "CD6",
+   "COM5",
+   "COM6",
+   "CRPSCI19",
+   "GEOG18",
+   "GEOG2",
+   "GEOG3",
+   "HIST20",
+   "HIST21",
+   "HIST32",
+   "HIST44",
+   "HIST4A",
+   "HIST4B",
+   "KINES2",
+   "LING11",
+   "POLSC1000",
+   "POLSCI10",
+   "POLSCI2",
+   "POLSCI20",
+   "POLSCI4",
+   "POLSCI5",
+   "PSYCC1000",
+   "PSYCH2",
+   "PSYCH3",
+   "PSYCH4",
+   "PSYCH5",
+   "PSYCH6",
+   "SOC1",
+   "SOC2",
+   "SOC3",
+   "SOC5",
+   "SW20"
+  ],
+  "source": {
+   "url": "https://coalingacollege.edu/catalog/2026-2027/programs-of-study/liberal-arts-for-social-and-behavioral-science.php",
+   "title": "Liberal Arts - Area of Emphasis for Social and Behavioral Science",
+   "h1": "Liberal Arts - Area of Emphasis for Social and Behavioral Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 44,
+  "text_chars": 5251
+ },
+ {
+  "control_number": "20331",
+  "title": "Precision Agriculture",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AET15",
+   "AET21",
+   "AG11",
+   "AG14",
+   "AG15X",
+   "AGBUS15",
+   "AGBUS40",
+   "CRPSCI1",
+   "CRPSCI17",
+   "CRPSCI18",
+   "CRPSCI19",
+   "CRPSCI2",
+   "CRPSCI21",
+   "CRPSCI23",
+   "CRPSCI32",
+   "CRPSCI36",
+   "CRPSCI44",
+   "CRPSCI45",
+   "CRPSCI6",
+   "CRPSCI8",
+   "IMT60",
+   "IMT61",
+   "IMT62",
+   "SLSCI21",
+   "WT70"
+  ],
+  "source": {
+   "url": "https://coalingacollege.edu/catalog/2026-2027/programs-of-study/precision-agriculture.php",
+   "title": "Precision Agriculture",
+   "h1": "Precision Agriculture",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 25,
+  "text_chars": 4385
+ },
+ {
+  "control_number": "20332",
+  "title": "Business: Bookkeeping",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 9,
+  "text_chars": 0
+ },
+ {
+  "control_number": "20333",
+  "title": "Business: Business Management",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 13,
+  "text_chars": 0
+ },
+ {
+  "control_number": "20334",
+  "title": "Business: Retail Business Management",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 8,
+  "text_chars": 0
+ },
+ {
+  "control_number": "20338",
+  "title": "Computer Information Systems (CIS): Microcomputer Applications Specialist",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS13A",
+   "BUS13B",
+   "BUS20",
+   "BUS24",
+   "CIS34",
+   "CIS7"
+  ],
+  "source": {
+   "url": "https://coalingacollege.edu/catalog/2026-2027/programs-of-study/computer-information-systems-cis-microcomputer-application-specialist.php",
+   "title": "Computer Information Systems (CIS) - Microcomputer Applications Specialist",
+   "h1": "Computer Information Systems (CIS) - Microcomputer Applications Specialist",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 3715
+ },
+ {
+  "control_number": "20339",
+  "title": "Psychiatric Technician Training Program",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "PT51",
+   "PT51L",
+   "PT52L",
+   "PT61",
+   "PT61L",
+   "PT62L",
+   "PT71",
+   "PT71L",
+   "PT72L"
+  ],
+  "source": {
+   "url": "https://coalingacollege.edu/catalog/2026-2027/programs-of-study/psychiatric-technician.php",
+   "title": "Psychiatric Technician",
+   "h1": "Psychiatric Technician",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 0.667
+   }
+  },
+  "listed": 9,
+  "text_chars": 4424
+ },
+ {
+  "control_number": "20340",
+  "title": "Child Development Teacher",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CD10",
+   "CD12A",
+   "CD12B",
+   "CD14A",
+   "CD14B",
+   "CD16",
+   "CD17A",
+   "CD17B",
+   "CD17C",
+   "CD18",
+   "CD2",
+   "CD22",
+   "CD3",
+   "CD4",
+   "CD5"
+  ],
+  "source": {
+   "url": "https://coalingacollege.edu/catalog/2026-2027/programs-of-study/child-development-teacher.php",
+   "title": "Child Development - Teacher",
+   "h1": "Child Development - Teacher",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 4020
+ },
+ {
+  "control_number": "30887",
+  "title": "Administration of Justice",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 9,
+  "text_chars": 0
+ },
+ {
+  "control_number": "30939",
+  "title": "Mathematics",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MATH1A",
+   "MATH1B",
+   "MATH2A",
+   "MATH2B"
+  ],
+  "source": {
+   "url": "https://coalingacollege.edu/catalog/2026-2027/programs-of-study/mathematics.php",
+   "title": "Mathematics",
+   "h1": "Mathematics",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 3615
+ },
+ {
+  "control_number": "31398",
+  "title": "Heavy Equipment Operation",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "HVYEQUI60A",
+   "HVYEQUI60B",
+   "HVYEQUI60C",
+   "IMT60"
+  ],
+  "source": {
+   "url": "https://coalingacollege.edu/catalog/2026-2027/programs-of-study/heavy-equipment-operation.php",
+   "title": "Heavy Equipment Operation",
+   "h1": "Heavy Equipment Operation",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 3469
+ },
+ {
+  "control_number": "32771",
+  "title": "Early Childhood Education",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CD10",
+   "CD12A",
+   "CD12B",
+   "CD16",
+   "CD18",
+   "CD2",
+   "CD3",
+   "CD5"
+  ],
+  "source": {
+   "url": "https://coalingacollege.edu/catalog/2026-2027/programs-of-study/early-childhood-education.php",
+   "title": "Early Childhood Education",
+   "h1": "Early Childhood Education",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 3774
+ },
+ {
+  "control_number": "32862",
+  "title": "Studio Arts",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.778,
+  "codes_found": [
+   "ART13A",
+   "ART15A",
+   "ART2",
+   "ART3",
+   "ART5A",
+   "ART5B",
+   "ART8"
+  ],
+  "source": {
+   "url": "https://coalingacollege.edu/catalog/2026-2027/programs-of-study/studio-arts.php",
+   "title": "Art",
+   "h1": "Art",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 3818
+ },
+ {
+  "control_number": "32889",
+  "title": "Geology",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEM1A",
+   "CHEM1B",
+   "GEOL1",
+   "GEOL3",
+   "MATH1A",
+   "MATH1B"
+  ],
+  "source": {
+   "url": "https://coalingacollege.edu/catalog/2026-2027/programs-of-study/geology.php",
+   "title": "Geology",
+   "h1": "Geology",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 3625
+ },
+ {
+  "control_number": "32929",
+  "title": "Psychology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIO10",
+   "PSYCC1000",
+   "PSYCH2",
+   "PSYCH29",
+   "PSYCH3",
+   "PSYCH4",
+   "PSYCH5",
+   "PSYCH6",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://coalingacollege.edu/catalog/2026-2027/programs-of-study/psychology.php",
+   "title": "Psychology",
+   "h1": "Psychology",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 3982
+ },
+ {
+  "control_number": "32931",
+  "title": "Political Science",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.826,
+  "codes_found": [
+   "CD5",
+   "GEOG18",
+   "GEOG3",
+   "HIST4A",
+   "HIST4B",
+   "POLSC1000",
+   "POLSCI10",
+   "POLSCI20",
+   "POLSCI4",
+   "POLSCI5",
+   "PSYCC1000",
+   "PSYCH2",
+   "PSYCH3",
+   "PSYCH5",
+   "SOC1",
+   "SOC2",
+   "SOC3",
+   "STATC1000",
+   "SW20"
+  ],
+  "source": {
+   "url": "https://coalingacollege.edu/catalog/2026-2027/programs-of-study/political-science.php",
+   "title": "Political Science",
+   "h1": "Political Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 23,
+  "text_chars": 4625
+ },
+ {
+  "control_number": "32945",
+  "title": "Communication Studies",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "COM2",
+   "COM3",
+   "COM4",
+   "COM5",
+   "COMMC1000",
+   "PSYCC1000",
+   "SOC1"
+  ],
+  "source": {
+   "url": "https://coalingacollege.edu/catalog/2026-2027/programs-of-study/communication-studies2.0.php",
+   "title": "Communication Studies 2.0",
+   "h1": "Communication Studies 2.0",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 3968
+ },
+ {
+  "control_number": "33877",
+  "title": "Geography",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "GEOG1",
+   "GEOG16",
+   "GEOG18",
+   "GEOG2",
+   "GEOG3",
+   "GEOG5",
+   "GEOL1"
+  ],
+  "source": {
+   "url": "https://coalingacollege.edu/catalog/2026-2027/programs-of-study/geography.php",
+   "title": "Geography",
+   "h1": "Geography",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 3720
+ },
+ {
+  "control_number": "35492",
+  "title": "Integrated Pest Management",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AET21",
+   "AGBUS15",
+   "CRPSCI1",
+   "CRPSCI19",
+   "CRPSCI2",
+   "CRPSCI32",
+   "CRPSCI36",
+   "CRPSCI44",
+   "CRPSCI45",
+   "CRPSCI46",
+   "CRPSCI6",
+   "SLSCI21"
+  ],
+  "source": {
+   "url": "https://coalingacollege.edu/catalog/2026-2027/programs-of-study/integrated-pest-management.php",
+   "title": "Integrated Pest Management",
+   "h1": "Integrated Pest Management",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 3881
+ },
+ {
+  "control_number": "35876",
+  "title": "Welding Technology",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "WT70",
+   "WT71",
+   "WT72",
+   "WT73",
+   "WT74",
+   "WT75",
+   "WT76"
+  ],
+  "source": {
+   "url": "https://coalingacollege.edu/catalog/2026-2027/programs-of-study/welding-technology.php",
+   "title": "Welding Technology",
+   "h1": "Welding Technology",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 3554
+ },
+ {
+  "control_number": "36749",
+  "title": "Agriculture Plant Science",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.929,
+  "codes_found": [
+   "AET21",
+   "AG14",
+   "AGBUS24",
+   "AGBUS40",
+   "CHEM12A",
+   "CHEM12AL",
+   "CHEM1A",
+   "CHEM2A",
+   "CHEM2B",
+   "CRPSCI1",
+   "CRPSCI2",
+   "SLSCI21",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://coalingacollege.edu/catalog/2026-2027/programs-of-study/agriculture-plant-science.php",
+   "title": "Agriculture Plant Science",
+   "h1": "Agriculture Plant Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 14,
+  "text_chars": 4116
+ },
+ {
+  "control_number": "36894",
+  "title": "English As A Second Language",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "NC120",
+   "NC125",
+   "NC130",
+   "NC135"
+  ],
+  "source": {
+   "url": "https://coalingacollege.edu/catalog/2026-2027/programs-of-study/english-as-a-second-language.php",
+   "title": "English as a Second Language - Non Credit",
+   "h1": "English as a Second Language - Non Credit",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 3516
+ },
+ {
+  "control_number": "37024",
+  "title": "Transfer Studies – Full IGETC Certification: CSU",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "37025",
+  "title": "Transfer Studies – Full IGETC Certification: UC",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "38326",
+  "title": "Heating, Ventilation, and Air Conditioning",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "HVAC60",
+   "HVAC61",
+   "HVAC62",
+   "HVAC63",
+   "IMT60"
+  ],
+  "source": {
+   "url": "https://coalingacollege.edu/catalog/2026-2027/programs-of-study/heating-ventilation-and-air-conditioning.php",
+   "title": "Heating Ventilation and Air Conditioning Program",
+   "h1": "Heating Ventilation and Air Conditioning",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 3491
+ },
+ {
+  "control_number": "38327",
+  "title": "Professional Driving",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "DT50",
+   "DT52",
+   "DT53",
+   "DT58",
+   "DT59",
+   "DT74",
+   "DT79",
+   "DT94",
+   "DT97",
+   "IMT60"
+  ],
+  "source": {
+   "url": "https://coalingacollege.edu/catalog/2026-2027/programs-of-study/professional-driving.php",
+   "title": "Professional Driving",
+   "h1": "Professional Driving",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 3729
+ },
+ {
+  "control_number": "38525",
+  "title": "Life Skills",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "GS102",
+   "GS103",
+   "GS61"
+  ],
+  "source": {
+   "url": "https://coalingacollege.edu/catalog/2026-2027/programs-of-study/life-skills.php",
+   "title": "Life Skills",
+   "h1": "Life Skills",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 3507
+ },
+ {
+  "control_number": "38748",
+  "title": "Child and Adolescent Development",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIO10",
+   "BIO15",
+   "CD10",
+   "CD12A",
+   "CD2",
+   "CD5",
+   "PSYCC1000",
+   "PSYCH3",
+   "SOC1",
+   "SOC3",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://coalingacollege.edu/catalog/2026-2027/programs-of-study/child-and-adolescent-development.php",
+   "title": "Child and Adolescent Development",
+   "h1": "Child and Adolescent Development",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 3904
+ },
+ {
+  "control_number": "39230",
+  "title": "Food Science and Safety",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "FSS10",
+   "FSS15",
+   "FSS20",
+   "FSS25",
+   "FSS30",
+   "FSS35",
+   "FSS40",
+   "FSS5"
+  ],
+  "source": {
+   "url": "https://coalingacollege.edu/catalog/2026-2027/programs-of-study/food-science-safety.php",
+   "title": "Food Science and Safety",
+   "h1": "Food Science and Safety",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 3700
+ },
+ {
+  "control_number": "41198",
+  "title": "History",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.875,
+  "codes_found": [
+   "GEOG2",
+   "GEOG3",
+   "HIST20",
+   "HIST21",
+   "HIST32",
+   "HIST44",
+   "HIST4A",
+   "HIST4B",
+   "HUM1",
+   "HUM22",
+   "POLSC1000",
+   "PSYCC1000",
+   "SOC1",
+   "SW20"
+  ],
+  "source": {
+   "url": "https://coalingacollege.edu/catalog/2026-2027/programs-of-study/history.php",
+   "title": "History",
+   "h1": "History",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 16,
+  "text_chars": 4202
+ },
+ {
+  "control_number": "41239",
+  "title": "Business Administration 2.0",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.75,
+  "codes_found": [
+   "BUS18",
+   "BUS1A",
+   "BUS1B",
+   "BUS20",
+   "MATH39",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://coalingacollege.edu/catalog/2026-2027/programs-of-study/business-administration2.0.php",
+   "title": "Business - Administration 2.0",
+   "h1": "Business - Administration 2.0",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 3721
+ },
+ {
+  "control_number": "41240",
+  "title": "English",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.909,
+  "codes_found": [
+   "CD15",
+   "COM2",
+   "ENG25",
+   "ENG6",
+   "ENG7",
+   "ENG8",
+   "ENGLC1000",
+   "ENGLC1001",
+   "HUM1",
+   "LING11"
+  ],
+  "source": {
+   "url": "https://coalingacollege.edu/catalog/2026-2027/programs-of-study/english.php",
+   "title": "English",
+   "h1": "English",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 4060
+ },
+ {
+  "control_number": "42824",
+  "title": "Elementary Teacher Education",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.909,
+  "codes_found": [
+   "ART42",
+   "BIO10",
+   "BIO15",
+   "CD5",
+   "COMMC1000",
+   "EDUC1",
+   "EDUC5",
+   "ENGLC1000",
+   "ENGLC1001",
+   "ESCI2",
+   "ESL1",
+   "GEOG2",
+   "HIST20",
+   "LING11",
+   "MATH10A",
+   "MATH10B",
+   "MUS42",
+   "PHIL2",
+   "PHYSCI2",
+   "POLSC1000"
+  ],
+  "source": {
+   "url": "https://coalingacollege.edu/catalog/2026-2027/programs-of-study/elementary-teacher-education.php",
+   "title": "Elementary Teacher Education",
+   "h1": "Elementary Teacher Education",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 22,
+  "text_chars": 4405
+ },
+ {
+  "control_number": "43109",
+  "title": "Sociology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AOJ29",
+   "ES1",
+   "PSYCC1000",
+   "SOC1",
+   "SOC2",
+   "SOC3",
+   "SOC5",
+   "STATC1000",
+   "SW20"
+  ],
+  "source": {
+   "url": "https://coalingacollege.edu/catalog/2026-2027/programs-of-study/sociology.php",
+   "title": "Sociology",
+   "h1": "Sociology",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 3922
+ },
+ {
+  "control_number": "43126",
+  "title": "Biology",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIO1A",
+   "BIO1B",
+   "CHEM1A",
+   "CHEM1B",
+   "MATH1A",
+   "PHYSICS2A",
+   "PHYSICS2B",
+   "PHYSICS4A",
+   "PHYSICS4B"
+  ],
+  "source": {
+   "url": "https://coalingacollege.edu/catalog/2026-2027/programs-of-study/biology-ast.php",
+   "title": "Biology",
+   "h1": "Biology",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 3849
+ },
+ {
+  "control_number": "43397",
+  "title": "Physics",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MATH1A",
+   "MATH1B",
+   "MATH2A",
+   "PHYSICS4A",
+   "PHYSICS4B",
+   "PHYSICS4C"
+  ],
+  "source": {
+   "url": "https://coalingacollege.edu/catalog/2026-2027/programs-of-study/physics.php",
+   "title": "Physics",
+   "h1": "Physics",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 3665
+ },
+ {
+  "control_number": "43455",
+  "title": "Kinesiology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIO32",
+   "BIO35",
+   "CHEM1A",
+   "HE35",
+   "KINES1",
+   "KINES48",
+   "PE11",
+   "PE16",
+   "PE20",
+   "PE21A",
+   "PE21B",
+   "PE21C",
+   "PE22A",
+   "PE22B",
+   "PE23",
+   "PE24",
+   "PE25A",
+   "PE3",
+   "PE32A",
+   "PE6",
+   "PHYSICS2A",
+   "PHYSICS4A",
+   "PSYCC1000",
+   "SOC1",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://coalingacollege.edu/catalog/2026-2027/programs-of-study/kinesiology-aat.php",
+   "title": "Kinesiology",
+   "h1": "Kinesiology",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 25,
+  "text_chars": 4426
+ },
+ {
+  "control_number": "43642",
+  "title": "Communication Studies 2.0",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 10,
+  "text_chars": 0
+ },
+ {
+  "control_number": "43680",
+  "title": "Equipment Technician",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AG14",
+   "DT94",
+   "DT95",
+   "DT96",
+   "DT97",
+   "IMT60"
+  ],
+  "source": {
+   "url": "https://coalingacollege.edu/catalog/2026-2027/programs-of-study/equipment-technician.php",
+   "title": "Equipment Technician",
+   "h1": "Equipment Technician",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 3477
+ },
+ {
+  "control_number": "43681",
+  "title": "Entry Level Truck Driving",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "DT50",
+   "DT52",
+   "DT58",
+   "DT79"
+  ],
+  "source": {
+   "url": "https://coalingacollege.edu/catalog/2026-2027/programs-of-study/entry-level-truck-driving.php",
+   "title": "Entry Level Truck Driving",
+   "h1": "Entry Level Truck Driving",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 3455
+ },
+ {
+  "control_number": "43683",
+  "title": "Entry Level Diesel Mechanic",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "DT94",
+   "DT96",
+   "IMT60"
+  ],
+  "source": {
+   "url": "https://coalingacollege.edu/catalog/2026-2027/programs-of-study/entry-level-diesel-mechanic.php",
+   "title": "Entry Level Diesel Mechanic",
+   "h1": "Entry Level Diesel Mechanic",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 3382
+ },
+ {
+  "control_number": "43763",
+  "title": "UCTP Chemistry",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEM12A",
+   "CHEM12AL",
+   "CHEM12B",
+   "CHEM12BL",
+   "CHEM1A",
+   "CHEM1B",
+   "MATH1A",
+   "MATH1B",
+   "MATH2A",
+   "MATH2B",
+   "PHYSICS4A",
+   "PHYSICS4B",
+   "PHYSICS4C"
+  ],
+  "source": {
+   "url": "https://coalingacollege.edu/catalog/2026-2027/programs-of-study/uctp-chemistry.php",
+   "title": "Chemistry",
+   "h1": "Chemistry",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 3951
+ },
+ {
+  "control_number": "44511",
+  "title": "Unmanned Aerial System Remote Pilot",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "NC180",
+   "NC181",
+   "NC188"
+  ],
+  "source": {
+   "url": "https://coalingacollege.edu/catalog/2026-2027/programs-of-study/unmanned-aerial-system-remote-pilot.php",
+   "title": "Unmanned Aerial System Remote Pilot – Non-Credit",
+   "h1": "Unmanned Aerial System Remote Pilot – Non-Credit",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 3394
+ },
+ {
+  "control_number": "44545",
+  "title": "Law, Public Policy, and Society",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.857,
+  "codes_found": [
+   "AOJ1",
+   "AOJ20",
+   "BUS18",
+   "COM3",
+   "COMMC1000",
+   "ENGLC1000",
+   "ENGLC1001",
+   "ESL1",
+   "PHIL2",
+   "PHIL3",
+   "POLSC1000",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://coalingacollege.edu/catalog/2026-2027/programs-of-study/law-public-policy-and-society.php",
+   "title": "Law, Public Policy, and Society",
+   "h1": "Law, Public Policy, and Society",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 14,
+  "text_chars": 4112
+ },
+ {
+  "control_number": "44548",
+  "title": "Public Health",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIO10",
+   "BIO15",
+   "BIO32",
+   "BIO35",
+   "BIO38",
+   "CHEM1A",
+   "CHEM2A",
+   "HE35",
+   "HS40",
+   "HS45",
+   "HS48",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://coalingacollege.edu/catalog/2026-2027/programs-of-study/public-health.php",
+   "title": "Public Health",
+   "h1": "Public Health",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 3972
+ },
+ {
+  "control_number": "44555",
+  "title": "Irrigation Systems Management",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "NC182",
+   "NC183",
+   "NC184",
+   "NC185A",
+   "NC185B",
+   "NC185C",
+   "NC186",
+   "NC187"
+  ],
+  "source": {
+   "url": "https://coalingacollege.edu/catalog/2026-2027/programs-of-study/irrigation-systems-management.php",
+   "title": "Irrigation Systems Management - Non Credit",
+   "h1": "Irrigation Systems Management - Non Credit",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 3770
+ },
+ {
+  "control_number": "44762",
+  "title": "Smart Agriculture",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AET21",
+   "AGBUS15",
+   "CRPSCI1",
+   "CRPSCI6",
+   "CRPSCI8"
+  ],
+  "source": {
+   "url": "https://coalingacollege.edu/catalog/2026-2027/programs-of-study/smart-agriculture.php",
+   "title": "Smart Agriculture",
+   "h1": "Smart Agriculture",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 3519
+ },
+ {
+  "control_number": "45088",
+  "title": "Agriculture Systems Fundamentals",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "NC191",
+   "NC192",
+   "NC193",
+   "NC194",
+   "NC195"
+  ],
+  "source": {
+   "url": "https://coalingacollege.edu/catalog/2026-2027/programs-of-study/agriculture-systems-fundamentals.php",
+   "title": "Agriculture Systems Fundamentals - Non Credit",
+   "h1": "Agriculture Systems Fundamentals - Non Credit",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 3504
+ },
+ {
+  "control_number": "45288",
+  "title": "Transfer Studies: Cal-GETC",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 90,
+  "text_chars": 0
+ },
+ {
+  "control_number": "46451",
+  "title": "Child Development School-Age Child",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CD18",
+   "CD24",
+   "CD25",
+   "CD26A",
+   "CD26B",
+   "CD26C"
+  ],
+  "source": {
+   "url": "https://coalingacollege.edu/catalog/2026-2027/programs-of-study/child-development-school-age.php",
+   "title": "Child Development - School-Age",
+   "h1": "Child Development - School-Age",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 3515
+ },
+ {
+  "control_number": "46452",
+  "title": "Agriculture Science Technology",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AGBUS15",
+   "CRPSCI1",
+   "CRPSCI19",
+   "CRPSCI6",
+   "CRPSCI7"
+  ],
+  "source": {
+   "url": "https://coalingacollege.edu/catalog/2026-2027/programs-of-study/agriculture-science-technology-local.php",
+   "title": "Agriculture Science Technology Local Certificate",
+   "h1": "Agriculture Science Technology",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 3510
+ },
+ {
+  "control_number": "46453",
+  "title": "Child Development Associate Teacher",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CD10",
+   "CD12A",
+   "CD12B",
+   "CD15",
+   "CD16",
+   "CD17A",
+   "CD17B",
+   "CD17C",
+   "CD18",
+   "CD2",
+   "CD21",
+   "CD23",
+   "CD3",
+   "CD4",
+   "CD5"
+  ],
+  "source": {
+   "url": "https://coalingacollege.edu/catalog/2026-2027/programs-of-study/child-development-associate-teacher.php",
+   "title": "Child Development - Associate Teacher",
+   "h1": "Child Development - Associate Teacher",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 4134
+ },
+ {
+  "control_number": "46456",
+  "title": "Child Development Administrative",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS20",
+   "BUS32",
+   "BUS55",
+   "CD14A",
+   "CD14B",
+   "CD22",
+   "CIS2",
+   "CIS34",
+   "CIS7"
+  ],
+  "source": {
+   "url": "https://coalingacollege.edu/catalog/2026-2027/programs-of-study/child-development-administrative.php",
+   "title": "Child Development - Administrative",
+   "h1": "Child Development - Administrative",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 4377
+ },
+ {
+  "control_number": "46574",
+  "title": "Medical Assisting",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 3,
+  "text_chars": 0
+ }
+]

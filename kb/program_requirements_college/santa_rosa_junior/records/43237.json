@@ -82,15 +82,11 @@
    "program": 4,
    "courses": 0,
    "count": 4,
-   "not_verbatim": [
-    "Gain a basic proficiency in photogrammetric and remote sensing data processing and preparation."
-   ],
-   "why": [
-    "not in the catalog text as printed: Gain a basic proficiency in photogrammetric and remote sensing data processing a"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 0,
@@ -103,7 +99,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -233,5 +229,6 @@
    "Word 'proficiency' in outcome 4 printed with an 'fi' ligature; transcribed as plain letters."
   ]
  },
- "extracted_run": "39006464249"
+ "extracted_run": 39037637820,
+ "read_run": "39006464249"
 }

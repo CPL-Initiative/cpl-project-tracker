@@ -1,0 +1,146 @@
+{
+ "college": "San Diego College of Continuing Education",
+ "control_number": "42361",
+ "shape": "noncredit",
+ "title": "Instructional Aide",
+ "award": "Noncredit program",
+ "source_url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=120",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7214,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7214,
+    "output_tokens": 752,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 752,
+  "output_tokens_details": {
+   "thinking_tokens": 271
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.0439,
+ "ms": 8268,
+ "seconds": 8.4,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 0,
+   "listed": 2,
+   "share": 0.0,
+   "missing": [
+    "HMDV571A",
+    "HMDV571B"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "unstated",
+   "computed": null,
+   "stated": null,
+   "against": null,
+   "why": [
+    "the catalog prints no total, no hours and no units"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Instruction Aide I HMDV 571A / Instruction Aide II HMDV 571B (course descriptions only; no program section in text)",
+   "measure": "hours",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "HMDV 571A",
+    "why": "appears only as a course description; the text prints no program requirements placing it"
+   },
+   {
+    "code": "HMDV 571B",
+    "why": "appears only as a course description; the text prints no program requirements placing it"
+   }
+  ],
+  "notes": [
+   "The supplied catalog text (page 120) is part of the course description listings, not the Instructional Aide program section. It prints no program requirements, required-course list, total hours, outcomes or careers for the Instructional Aide program.",
+   "HMDV 571A (Instruction Aide I) and HMDV 571B (Instruction Aide II) are described on this page, with no hours printed. They are likely the program's two required courses, but the text does not state this, so no block was recorded.",
+   "A reviewer should locate the Instructional Aide program page elsewhere in the 2026-2027 CE catalog to confirm the requirements and total hours.",
+   "The measure is set to hours because this is a noncredit program; the text prints no hours."
+  ]
+ },
+ "extracted_run": "39035224783"
+}

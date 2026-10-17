@@ -1,0 +1,276 @@
+{
+ "college": "Solano Community College",
+ "control_number": "06542",
+ "shape": "degree",
+ "title": "Nursing, Registered",
+ "award": "A.S. Degree",
+ "source_url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=373",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7486,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7486,
+    "output_tokens": 2374,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2374,
+  "output_tokens_details": {
+   "thinking_tokens": 827
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.07742,
+ "ms": 18678,
+ "seconds": 19.2,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 11,
+   "listed": 11,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    51.0,
+    51.0
+   ],
+   "stated": [
+    51.0,
+    51.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 6,
+   "courses": 0,
+   "count": 6,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "REQUIRED COURSES",
+   "measure": "units",
+   "total_units": {
+    "min": 51,
+    "max": 51
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Educate patients, families, and communities in health promotion behaviors that increase wellness and decrease disease and illness across populations and communities.",
+    "Synthesize principles of the nursing process and critical thinking—utilizing memory, recall, and clinical reasoning—to assist individuals, families, and communities in achieving positive adaptation to changes in health or in supporting a peaceful death.",
+    "Integrate technology and evidence-based concepts of nursing practice across the healthcare continuum to ensure safe, quality, and patient-centered care.",
+    "Communicate effectively using verbal, written, and electronic modalities with patients, families, peers, faculty, and members of the interdisciplinary healthcare team.",
+    "Demonstrate accountability, integrity, and ethical behavior consistent with nursing standards, legal requirements, and the values of the profession.",
+    "Collaborate with interdisciplinary healthcare teams and demonstrate beginning leadership skills to promote optimal patient outcomes and quality improvement initiatives."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "First Semester Courses (First Year)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "NURS 071A",
+      "units": 11,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NURS 071S",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NURS 071D",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Second Semester Courses (First Year)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "NURS 072P",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NURS 072B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NURS 072S",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NURS 073B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Third Semester Courses (Second Year)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "NURS 073A",
+      "units": 12.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NURS 073S",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Fourth Semester Courses (Second Year)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "NURS 074A",
+      "units": 12.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NURS 074S",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The page excerpt begins at 'REQUIRED COURSES'; the program's own heading (e.g., Registered Nursing A.S.) is not in the extracted text, so the section heading is recorded as 'REQUIRED COURSES'.",
+   "Catalog titles and units differ from the state file for NURS 073A ('Medical/Surgical and Geriatric Nursing I', 12.5 units vs. 5) and NURS 074A ('Medical/Surgical and Geriatric Nursing II', 12.5 units vs. 6); catalog units recorded. Course units sum to the printed 'Required Major Total Units 51'.",
+   "Closed-list code 'NURS073B' (no space) matched to the catalog's 'NURS 073B'.",
+   "Outcomes text contained PDF ligature extraction artifacts (e.g., 'paƟ ents', 'e ﬀ ecƟ vely', 'wriƩ en', 'Co llaborate'); these were read as the printed words 'patients', 'effectively', 'written', 'Collaborate'. Reviewer may verify against the PDF.",
+   "No general education pattern, degree total, or careers are printed in this excerpt; prerequisites/GE may appear on the preceding catalog page."
+  ]
+ },
+ "extracted_run": 39037377728,
+ "read_run": "39035226783"
+}

@@ -21,8 +21,8 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=105",
-   "title": null,
-   "h1": null,
+   "title": "SRJC 2026-2027 Catalog 105",
+   "h1": "SRJC 2026-2027 Catalog 105",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -31,7 +31,8 @@
     107,
     108
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 13,
   "text_chars": 16000
@@ -65,14 +66,15 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=345",
-   "title": null,
-   "h1": null,
+   "title": "SRJC 2026-2027 Catalog 345",
+   "h1": "SRJC 2026-2027 Catalog 345",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     345
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 26,
   "text_chars": 4704
@@ -98,8 +100,8 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=260",
-   "title": null,
-   "h1": null,
+   "title": "260  Business: Accountant Assistant (Certiﬁcate of Achievement)",
+   "h1": "260  Business: Accountant Assistant (Certiﬁcate of Achievement)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -107,7 +109,8 @@
     261,
     262
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 10,
   "text_chars": 15482
@@ -136,14 +139,15 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=267",
-   "title": null,
-   "h1": null,
+   "title": "SRJC 2026-2027 Catalog 267",
+   "h1": "SRJC 2026-2027 Catalog 267",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     267
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 13,
   "text_chars": 4978
@@ -171,14 +175,15 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=124",
-   "title": null,
-   "h1": null,
+   "title": "124  Business: Real Estate (AA)",
+   "h1": "124  Business: Real Estate (AA)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     124
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 12,
   "text_chars": 5114
@@ -208,14 +213,15 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=220",
-   "title": null,
-   "h1": null,
+   "title": "220  Administrative Assistant (Certiﬁcate of Achievement)",
+   "h1": "220  Administrative Assistant (Certiﬁcate of Achievement)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     220
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 14,
   "text_chars": 4992
@@ -255,14 +261,15 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=307",
-   "title": null,
-   "h1": null,
+   "title": "SRJC 2026-2027 Catalog 307",
+   "h1": "SRJC 2026-2027 Catalog 307",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     307
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 12,
   "text_chars": 5235
@@ -288,14 +295,15 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=354",
-   "title": null,
-   "h1": null,
+   "title": "354  Public Safety Dispatcher (Skills Certiﬁcate)",
+   "h1": "354  Public Safety Dispatcher (Skills Certiﬁcate)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     354
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 10,
   "text_chars": 4885
@@ -325,8 +333,8 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=135",
-   "title": null,
-   "h1": null,
+   "title": "SRJC 2026-2027 Catalog 135",
+   "h1": "SRJC 2026-2027 Catalog 135",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -334,7 +342,8 @@
     136,
     137
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 14,
   "text_chars": 14998
@@ -360,8 +369,8 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=104",
-   "title": null,
-   "h1": null,
+   "title": "104  Advanced Manufacturing Tech (AS)",
+   "h1": "104  Advanced Manufacturing Tech (AS)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -369,7 +378,8 @@
     105,
     106
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 10,
   "text_chars": 14710
@@ -393,14 +403,15 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=215",
-   "title": null,
-   "h1": null,
+   "title": "SRJC 2026-2027 Catalog 215",
+   "h1": "SRJC 2026-2027 Catalog 215",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     215
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 8,
   "text_chars": 2377
@@ -425,8 +436,8 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=129",
-   "title": null,
-   "h1": null,
+   "title": "SRJC 2026-2027 Catalog 129",
+   "h1": "SRJC 2026-2027 Catalog 129",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -434,7 +445,8 @@
     130,
     131
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 9,
   "text_chars": 14173
@@ -478,15 +490,16 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=369",
-   "title": null,
-   "h1": null,
+   "title": "SRJC 2026-2027 Catalog 369",
+   "h1": "SRJC 2026-2027 Catalog 369",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     369,
     370
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 29,
   "text_chars": 10767
@@ -528,8 +541,8 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=183",
-   "title": null,
-   "h1": null,
+   "title": "SRJC 2026-2027 Catalog 183",
+   "h1": "SRJC 2026-2027 Catalog 183",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -537,7 +550,8 @@
     184,
     185
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 30,
   "text_chars": 15155
@@ -561,14 +575,15 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=303",
-   "title": null,
-   "h1": null,
+   "title": "SRJC 2026-2027 Catalog 303",
+   "h1": "SRJC 2026-2027 Catalog 303",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     303
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 9,
   "text_chars": 5103
@@ -614,15 +629,16 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=356",
-   "title": null,
-   "h1": null,
+   "title": "356  Radiologic Technology (Certiﬁcate of Achievement)",
+   "h1": "356  Radiologic Technology (Certiﬁcate of Achievement)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     356,
     357
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 33,
   "text_chars": 9914
@@ -647,14 +663,15 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=304",
-   "title": null,
-   "h1": null,
+   "title": "304  DM: 3D Modeling & Animation (Certiﬁcate of Achievement)",
+   "h1": "304  DM: 3D Modeling & Animation (Certiﬁcate of Achievement)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     304
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 9,
   "text_chars": 5033
@@ -678,14 +695,15 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=103",
-   "title": null,
-   "h1": null,
+   "title": "SRJC 2026-2027 Catalog 103",
+   "h1": "SRJC 2026-2027 Catalog 103",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     103
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 11,
   "text_chars": 5086
@@ -729,8 +747,8 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=321",
-   "title": null,
-   "h1": null,
+   "title": "SRJC 2026-2027 Catalog 321",
+   "h1": "SRJC 2026-2027 Catalog 321",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -738,7 +756,8 @@
     322,
     323
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 30,
   "text_chars": 15485
@@ -833,8 +852,8 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=124",
-   "title": null,
-   "h1": null,
+   "title": "124  Business: Real Estate (AA)",
+   "h1": "124  Business: Real Estate (AA)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -843,7 +862,8 @@
     126,
     127
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 79,
   "text_chars": 16000
@@ -881,8 +901,8 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=109",
-   "title": null,
-   "h1": null,
+   "title": "SRJC 2026-2027 Catalog 109",
+   "h1": "SRJC 2026-2027 Catalog 109",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -890,7 +910,8 @@
     110,
     111
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 22,
   "text_chars": 14366
@@ -914,8 +935,8 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=264",
-   "title": null,
-   "h1": null,
+   "title": "264  Business: Entrepreneurship (Certiﬁcate of Achievement)",
+   "h1": "264  Business: Entrepreneurship (Certiﬁcate of Achievement)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -924,7 +945,8 @@
     266,
     267
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 8,
   "text_chars": 16000
@@ -957,8 +979,8 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=259",
-   "title": null,
-   "h1": null,
+   "title": "SRJC 2026-2027 Catalog 259",
+   "h1": "SRJC 2026-2027 Catalog 259",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -967,7 +989,8 @@
     261,
     262
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 17,
   "text_chars": 16000
@@ -985,15 +1008,16 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=174",
-   "title": null,
-   "h1": null,
+   "title": "174  Medium Heavy Truck Technology (AS)",
+   "h1": "174  Medium Heavy Truck Technology (AS)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     174,
     175
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 4,
   "text_chars": 10196
@@ -1020,15 +1044,16 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=154",
-   "title": null,
-   "h1": null,
+   "title": "154  French (AA)",
+   "h1": "154  French (AA)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     154,
     155
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 11,
   "text_chars": 9772
@@ -1062,14 +1087,15 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=370",
-   "title": null,
-   "h1": null,
+   "title": "370  Theatre Arts: Costuming (Certiﬁcate of Achievement)",
+   "h1": "370  Theatre Arts: Costuming (Certiﬁcate of Achievement)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     370
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 19,
   "text_chars": 5325
@@ -1105,15 +1131,16 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=372",
-   "title": null,
-   "h1": null,
+   "title": "372  Theatre Arts: Stagecraft (Certiﬁcate of Achievement)",
+   "h1": "372  Theatre Arts: Stagecraft (Certiﬁcate of Achievement)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     372,
     373
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 20,
   "text_chars": 10827
@@ -1148,14 +1175,15 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=373",
-   "title": null,
-   "h1": null,
+   "title": "SRJC 2026-2027 Catalog 373",
+   "h1": "SRJC 2026-2027 Catalog 373",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     373
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 19,
   "text_chars": 5160
@@ -1191,8 +1219,8 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=366",
-   "title": null,
-   "h1": null,
+   "title": "366  THAR: Theatre Mgmt (Certiﬁcate of Achievement)",
+   "h1": "366  THAR: Theatre Mgmt (Certiﬁcate of Achievement)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -1201,7 +1229,8 @@
     368,
     369
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 21,
   "text_chars": 16000
@@ -1226,14 +1255,15 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=187",
-   "title": null,
-   "h1": null,
+   "title": "SRJC 2026-2027 Catalog 187",
+   "h1": "SRJC 2026-2027 Catalog 187",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     187
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 9,
   "text_chars": 5405
@@ -1273,14 +1303,15 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=127",
-   "title": null,
-   "h1": null,
+   "title": "SRJC 2026-2027 Catalog 127",
+   "h1": "SRJC 2026-2027 Catalog 127",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     127
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 26,
   "text_chars": 4651
@@ -1315,15 +1346,16 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=155",
-   "title": null,
-   "h1": null,
+   "title": "SRJC 2026-2027 Catalog 155",
+   "h1": "SRJC 2026-2027 Catalog 155",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     155,
     156
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 19,
   "text_chars": 9954
@@ -1383,15 +1415,16 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=364",
-   "title": null,
-   "h1": null,
+   "title": "364  SWHS: Recovery & Acad Success (Skills Certiﬁcate)",
+   "h1": "364  SWHS: Recovery & Acad Success (Skills Certiﬁcate)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     364,
     365
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 35,
   "text_chars": 9933
@@ -1420,8 +1453,8 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=210",
-   "title": null,
-   "h1": null,
+   "title": "210  SWHS: Addiction Studies (AA)",
+   "h1": "210  SWHS: Addiction Studies (AA)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -1429,7 +1462,8 @@
     211,
     212
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 13,
   "text_chars": 14895
@@ -1440,9 +1474,8 @@
   "award": "A.A. Degree",
   "shape": "degree",
   "method": "pdf_pages",
-  "coverage": 1.0,
+  "coverage": 0.833,
   "codes_found": [
-   "ANTH30",
    "ANTH31",
    "ENGL25",
    "ENGL33",
@@ -1452,29 +1485,27 @@
    "HIST81",
    "HIST82",
    "HUM23",
-   "LIR10",
    "SPAN1",
    "SPAN2",
    "SPAN3",
    "SPAN4",
    "SPAN40",
-   "SPAN41",
-   "SPAN50A"
+   "SPAN41"
   ],
   "source": {
-   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=205",
-   "title": null,
-   "h1": null,
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=206",
+   "title": "A student completing the Associate in Arts for Transfer in Spanish will",
+   "h1": "A student completing the Associate in Arts for Transfer in Spanish will",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    205,
     206
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 18,
-  "text_chars": 10223
+  "text_chars": 4975
  },
  {
   "control_number": "13898",
@@ -1491,14 +1522,15 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=435",
-   "title": null,
-   "h1": null,
+   "title": "SRJC 2026-2027 Catalog 435",
+   "h1": "SRJC 2026-2027 Catalog 435",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     435
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 8,
   "text_chars": 6611
@@ -1526,15 +1558,16 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=112",
-   "title": null,
-   "h1": null,
+   "title": "112  Anthropology (AA-T)",
+   "h1": "112  Anthropology (AA-T)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     112,
     113
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 14,
   "text_chars": 9465
@@ -1570,15 +1603,16 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=115",
-   "title": null,
-   "h1": null,
+   "title": "SRJC 2026-2027 Catalog 115",
+   "h1": "SRJC 2026-2027 Catalog 115",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     115,
     116
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 21,
   "text_chars": 8985
@@ -1604,14 +1638,15 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=188",
-   "title": null,
-   "h1": null,
+   "title": "188  Philosophy (AA)",
+   "h1": "188  Philosophy (AA)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     188
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 10,
   "text_chars": 5265
@@ -1640,8 +1675,8 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=106",
-   "title": null,
-   "h1": null,
+   "title": "106  AGEH: Landscape Design (AS)",
+   "h1": "106  AGEH: Landscape Design (AS)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -1650,7 +1685,8 @@
     108,
     109
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 15,
   "text_chars": 16000
@@ -1684,15 +1720,16 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=189",
-   "title": null,
-   "h1": null,
+   "title": "SRJC 2026-2027 Catalog 189",
+   "h1": "SRJC 2026-2027 Catalog 189",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     189,
     190
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 18,
   "text_chars": 9172
@@ -1703,29 +1740,29 @@
   "award": "A.S. Degree",
   "shape": "degree",
   "method": "pdf_pages",
-  "coverage": 1.0,
+  "coverage": 0.714,
   "codes_found": [
    "MATH1C",
    "MATH2",
    "MATH4",
    "MATH5",
-   "MATH6",
-   "MATHC2210",
-   "MATHC2220"
+   "MATH6"
   ],
   "source": {
-   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=516",
-   "title": null,
-   "h1": null,
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=171",
+   "title": "SRJC 2026-2027 Catalog 171",
+   "h1": "SRJC 2026-2027 Catalog 171",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    516
+    171,
+    172
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 7,
-  "text_chars": 6230
+  "text_chars": 9502
  },
  {
   "control_number": "14998",
@@ -1745,14 +1782,15 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=194",
-   "title": null,
-   "h1": null,
+   "title": "194  Pre-Veterinary Studies (AS)",
+   "h1": "194  Pre-Veterinary Studies (AS)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     194
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 7,
   "text_chars": 4890
@@ -1781,15 +1819,16 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=184",
-   "title": null,
-   "h1": null,
+   "title": "184  Nutrition and Dietetics (AS-T)",
+   "h1": "184  Nutrition and Dietetics (AS-T)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     184,
     185
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 13,
   "text_chars": 9906
@@ -1823,14 +1862,15 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=170",
-   "title": null,
-   "h1": null,
+   "title": "170  Latin American Studies (AA)",
+   "h1": "170  Latin American Studies (AA)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     170
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 19,
   "text_chars": 4708
@@ -1855,15 +1895,16 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=333",
-   "title": null,
-   "h1": null,
+   "title": "SRJC 2026-2027 Catalog 333",
+   "h1": "SRJC 2026-2027 Catalog 333",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     333,
     334
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 10,
   "text_chars": 10086
@@ -1948,8 +1989,8 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=89",
-   "title": null,
-   "h1": null,
+   "title": "SRJC 2026-2027 Catalog 89",
+   "h1": "SRJC 2026-2027 Catalog 89",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -1958,7 +1999,8 @@
     91,
     92
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 82,
   "text_chars": 16000
@@ -2037,8 +2079,8 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=181",
-   "title": null,
-   "h1": null,
+   "title": "SRJC 2026-2027 Catalog 181",
+   "h1": "SRJC 2026-2027 Catalog 181",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -2047,7 +2089,8 @@
     183,
     184
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 71,
   "text_chars": 16000
@@ -2178,15 +2221,16 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=159",
-   "title": null,
-   "h1": null,
+   "title": "SRJC 2026-2027 Catalog 159",
+   "h1": "SRJC 2026-2027 Catalog 159",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     159,
     160
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 120,
   "text_chars": 8627
@@ -2246,14 +2290,15 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=140",
-   "title": null,
-   "h1": null,
+   "title": "140  DM: 3D Modeling & Animation (AS)",
+   "h1": "140  DM: 3D Modeling & Animation (AS)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     140
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 56,
   "text_chars": 4452
@@ -2274,14 +2319,15 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=114",
-   "title": null,
-   "h1": null,
+   "title": "114  ArlRmotSnsng&Photogrammtry (AS)",
+   "h1": "114  ArlRmotSnsng&Photogrammtry (AS)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     114
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 6,
   "text_chars": 4794
@@ -2311,8 +2357,8 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=120",
-   "title": null,
-   "h1": null,
+   "title": "120  Biology (AS)",
+   "h1": "120  Biology (AS)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -2321,7 +2367,8 @@
     122,
     123
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 15,
   "text_chars": 16000
@@ -2369,14 +2416,15 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=162",
-   "title": null,
-   "h1": null,
+   "title": "162  Interior Design (AA)",
+   "h1": "162  Interior Design (AA)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     162
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 32,
   "text_chars": 4483
@@ -2426,18 +2474,19 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=138",
-   "title": null,
-   "h1": null,
+   "title": "The Dance major leads to an Associate in Arts in Dance and provides the",
+   "h1": "The Dance major leads to an Associate in Arts in Dance and provides the",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     138,
     139
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 34,
-  "text_chars": 9484
+  "text_chars": 8749
  },
  {
   "control_number": "16562",
@@ -2473,8 +2522,8 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=109",
-   "title": null,
-   "h1": null,
+   "title": "SRJC 2026-2027 Catalog 109",
+   "h1": "SRJC 2026-2027 Catalog 109",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -2482,7 +2531,8 @@
     110,
     111
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 23,
   "text_chars": 14366
@@ -2517,15 +2567,16 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=209",
-   "title": null,
-   "h1": null,
+   "title": "SRJC 2026-2027 Catalog 209",
+   "h1": "SRJC 2026-2027 Catalog 209",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     209,
     210
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 19,
   "text_chars": 9825
@@ -2555,14 +2606,15 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=111",
-   "title": null,
-   "h1": null,
+   "title": "SRJC 2026-2027 Catalog 111",
+   "h1": "SRJC 2026-2027 Catalog 111",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     111
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 25,
   "text_chars": 4896
@@ -2594,14 +2646,15 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=111",
-   "title": null,
-   "h1": null,
+   "title": "SRJC 2026-2027 Catalog 111",
+   "h1": "SRJC 2026-2027 Catalog 111",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     111
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 16,
   "text_chars": 4896
@@ -2632,15 +2685,16 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=110",
-   "title": null,
-   "h1": null,
+   "title": "110  AGWS: Enology (AS)",
+   "h1": "110  AGWS: Enology (AS)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     110,
     111
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 15,
   "text_chars": 9758
@@ -2675,8 +2729,8 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=192",
-   "title": null,
-   "h1": null,
+   "title": "192  Political Science (AA-T)",
+   "h1": "192  Political Science (AA-T)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -2685,7 +2739,8 @@
     194,
     195
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 20,
   "text_chars": 16000
@@ -2712,14 +2767,15 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=124",
-   "title": null,
-   "h1": null,
+   "title": "124  Business: Real Estate (AA)",
+   "h1": "124  Business: Real Estate (AA)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     124
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 11,
   "text_chars": 5114
@@ -2748,14 +2804,15 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=148",
-   "title": null,
-   "h1": null,
+   "title": "148  Fashion Design (AA)",
+   "h1": "148  Fashion Design (AA)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     148
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 13,
   "text_chars": 5176
@@ -2776,14 +2833,15 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=104",
-   "title": null,
-   "h1": null,
+   "title": "104  Advanced Manufacturing Tech (AS)",
+   "h1": "104  Advanced Manufacturing Tech (AS)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     104
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 5,
   "text_chars": 5013
@@ -2814,14 +2872,15 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=174",
-   "title": null,
-   "h1": null,
+   "title": "174  Medium Heavy Truck Technology (AS)",
+   "h1": "174  Medium Heavy Truck Technology (AS)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     174
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 16,
   "text_chars": 5200
@@ -2832,10 +2891,9 @@
   "award": "A.A. Degree",
   "shape": "degree",
   "method": "pdf_pages",
-  "coverage": 0.947,
+  "coverage": 0.895,
   "codes_found": [
    "PSYC10",
-   "PSYC10L",
    "PSYC11",
    "PSYC15",
    "PSYC1B",
@@ -2854,19 +2912,19 @@
    "STATC1000"
   ],
   "source": {
-   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=195",
-   "title": null,
-   "h1": null,
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=196",
+   "title": "Students completing the Associate in Arts for Transfer in Psychology at",
+   "h1": "Students completing the Associate in Arts for Transfer in Psychology at",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    195,
     196
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 19,
-  "text_chars": 9609
+  "text_chars": 4157
  },
  {
   "control_number": "17620",
@@ -2887,14 +2945,15 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=137",
-   "title": null,
-   "h1": null,
+   "title": "SRJC 2026-2027 Catalog 137",
+   "h1": "SRJC 2026-2027 Catalog 137",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     137
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 8,
   "text_chars": 4571
@@ -2935,15 +2994,16 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=374",
-   "title": null,
-   "h1": null,
+   "title": "374  Veterinary Technician (Certiﬁcate of Achievement)",
+   "h1": "374  Veterinary Technician (Certiﬁcate of Achievement)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     374,
     375
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 25,
   "text_chars": 9718
@@ -2972,15 +3032,16 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=271",
-   "title": null,
-   "h1": null,
+   "title": "SRJC 2026-2027 Catalog 271",
+   "h1": "SRJC 2026-2027 Catalog 271",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     271,
     272
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 15,
   "text_chars": 9694
@@ -3008,17 +3069,18 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=199",
-   "title": null,
-   "h1": null,
+   "title": "The Religious Studies Associate of Arts Degree Program prepares",
+   "h1": "The Religious Studies Associate of Arts Degree Program prepares",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     199
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 12,
-  "text_chars": 4947
+  "text_chars": 4841
  },
  {
   "control_number": "17968",
@@ -3064,15 +3126,16 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=364",
-   "title": null,
-   "h1": null,
+   "title": "364  SWHS: Recovery & Acad Success (Skills Certiﬁcate)",
+   "h1": "364  SWHS: Recovery & Acad Success (Skills Certiﬁcate)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     364,
     365
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 35,
   "text_chars": 9933
@@ -3102,8 +3165,8 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=210",
-   "title": null,
-   "h1": null,
+   "title": "210  SWHS: Addiction Studies (AA)",
+   "h1": "210  SWHS: Addiction Studies (AA)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -3111,7 +3174,8 @@
     211,
     212
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 14,
   "text_chars": 14895
@@ -3133,14 +3197,15 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=378",
-   "title": null,
-   "h1": null,
+   "title": "378  Water Utility Operations (Certiﬁcate of Achievement)",
+   "h1": "378  Water Utility Operations (Certiﬁcate of Achievement)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     378
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 6,
   "text_chars": 4902
@@ -3191,8 +3256,8 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=147",
-   "title": null,
-   "h1": null,
+   "title": "SRJC 2026-2027 Catalog 147",
+   "h1": "SRJC 2026-2027 Catalog 147",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -3200,7 +3265,8 @@
     148,
     149
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 38,
   "text_chars": 14495
@@ -3224,15 +3290,16 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=126",
-   "title": null,
-   "h1": null,
+   "title": "126  Chemistry (AS)",
+   "h1": "126  Chemistry (AS)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     126,
     127
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 10,
   "text_chars": 9332
@@ -3279,15 +3346,16 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=236",
-   "title": null,
-   "h1": null,
+   "title": "236  AGEH: Landscape Constr & Maint (Certiﬁcate of Achievement)",
+   "h1": "236  AGEH: Landscape Constr & Maint (Certiﬁcate of Achievement)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     236,
     237
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 32,
   "text_chars": 9992
@@ -3343,15 +3411,16 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=356",
-   "title": null,
-   "h1": null,
+   "title": "356  Radiologic Technology (Certiﬁcate of Achievement)",
+   "h1": "356  Radiologic Technology (Certiﬁcate of Achievement)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     356,
     357
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 42,
   "text_chars": 9914
@@ -3378,14 +3447,15 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=461",
-   "title": null,
-   "h1": null,
+   "title": "SRJC 2026-2027 Catalog 461",
+   "h1": "SRJC 2026-2027 Catalog 461",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     461
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 17,
   "text_chars": 6488
@@ -3396,10 +3466,8 @@
   "award": "A.S. Degree",
   "shape": "degree",
   "method": "pdf_pages",
-  "coverage": 0.818,
+  "coverage": 0.636,
   "codes_found": [
-   "CHEM3A",
-   "CHEM3AL",
    "LIR10",
    "MATH1C",
    "MATH2",
@@ -3409,20 +3477,20 @@
    "PHYS43"
   ],
   "source": {
-   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=190",
-   "title": null,
-   "h1": null,
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=191",
+   "title": "The Associate in Science for Transfer in Physics degree is designed",
+   "h1": "The Associate in Science for Transfer in Physics degree is designed",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    190,
     191,
     192
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 11,
-  "text_chars": 14490
+  "text_chars": 9148
  },
  {
   "control_number": "19289",
@@ -3450,14 +3518,15 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=145",
-   "title": null,
-   "h1": null,
+   "title": "SRJC 2026-2027 Catalog 145",
+   "h1": "SRJC 2026-2027 Catalog 145",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     145
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 17,
   "text_chars": 4911
@@ -3477,15 +3546,16 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=208",
-   "title": null,
-   "h1": null,
+   "title": "208  Surveying Technology (AS)",
+   "h1": "208  Surveying Technology (AS)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     208,
     209
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 6,
   "text_chars": 10297
@@ -3506,8 +3576,8 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=208",
-   "title": null,
-   "h1": null,
+   "title": "208  Surveying Technology (AS)",
+   "h1": "208  Surveying Technology (AS)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -3515,7 +3585,8 @@
     209,
     210
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 7,
   "text_chars": 15249
@@ -3542,14 +3613,15 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=187",
-   "title": null,
-   "h1": null,
+   "title": "SRJC 2026-2027 Catalog 187",
+   "h1": "SRJC 2026-2027 Catalog 187",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     187
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 11,
   "text_chars": 5405
@@ -3586,14 +3658,15 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=123",
-   "title": null,
-   "h1": null,
+   "title": "SRJC 2026-2027 Catalog 123",
+   "h1": "SRJC 2026-2027 Catalog 123",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     123
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 21,
   "text_chars": 4829
@@ -3631,8 +3704,8 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=123",
-   "title": null,
-   "h1": null,
+   "title": "SRJC 2026-2027 Catalog 123",
+   "h1": "SRJC 2026-2027 Catalog 123",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -3641,7 +3714,8 @@
     125,
     126
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 22,
   "text_chars": 16000
@@ -3805,8 +3879,8 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=166",
-   "title": null,
-   "h1": null,
+   "title": "166  Kinesiology (AA)",
+   "h1": "166  Kinesiology (AA)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -3815,7 +3889,8 @@
     168,
     169
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 157,
   "text_chars": 14413
@@ -3852,8 +3927,8 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=176",
-   "title": null,
-   "h1": null,
+   "title": "176  Music (AA)",
+   "h1": "176  Music (AA)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -3861,7 +3936,8 @@
     177,
     178
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 22,
   "text_chars": 13066
@@ -3895,8 +3971,8 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=176",
-   "title": null,
-   "h1": null,
+   "title": "176  Music (AA)",
+   "h1": "176  Music (AA)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -3904,7 +3980,8 @@
     177,
     178
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 19,
   "text_chars": 13066
@@ -3934,15 +4011,16 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=130",
-   "title": null,
-   "h1": null,
+   "title": "130  Communication Studies 2.0 (AA-T)",
+   "h1": "130  Communication Studies 2.0 (AA-T)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     130,
     131
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 14,
   "text_chars": 9064
@@ -3968,14 +4046,15 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=130",
-   "title": null,
-   "h1": null,
+   "title": "130  Communication Studies 2.0 (AA-T)",
+   "h1": "130  Communication Studies 2.0 (AA-T)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     130
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 10,
   "text_chars": 4432
@@ -4006,15 +4085,16 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=110",
-   "title": null,
-   "h1": null,
+   "title": "110  AGWS: Enology (AS)",
+   "h1": "110  AGWS: Enology (AS)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     110,
     111
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 15,
   "text_chars": 9758
@@ -4046,14 +4126,15 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=111",
-   "title": null,
-   "h1": null,
+   "title": "SRJC 2026-2027 Catalog 111",
+   "h1": "SRJC 2026-2027 Catalog 111",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     111
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 16,
   "text_chars": 4896
@@ -4081,15 +4162,16 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=560",
-   "title": null,
-   "h1": null,
+   "title": "560  Wine Studies (WINE)",
+   "h1": "560  Wine Studies (WINE)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     560,
     561
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 20,
   "text_chars": 12923
@@ -4118,8 +4200,8 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=106",
-   "title": null,
-   "h1": null,
+   "title": "106  AGEH: Landscape Design (AS)",
+   "h1": "106  AGEH: Landscape Design (AS)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -4127,7 +4209,8 @@
     107,
     108
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 15,
   "text_chars": 14354
@@ -4153,8 +4236,8 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=105",
-   "title": null,
-   "h1": null,
+   "title": "SRJC 2026-2027 Catalog 105",
+   "h1": "SRJC 2026-2027 Catalog 105",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -4163,7 +4246,8 @@
     107,
     108
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 12,
   "text_chars": 16000
@@ -4189,14 +4273,15 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=154",
-   "title": null,
-   "h1": null,
+   "title": "154  French (AA)",
+   "h1": "154  French (AA)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     154
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 10,
   "text_chars": 4359
@@ -4227,15 +4312,16 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=155",
-   "title": null,
-   "h1": null,
+   "title": "SRJC 2026-2027 Catalog 155",
+   "h1": "SRJC 2026-2027 Catalog 155",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     155,
     156
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 15,
   "text_chars": 9954
@@ -4269,14 +4355,15 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=345",
-   "title": null,
-   "h1": null,
+   "title": "SRJC 2026-2027 Catalog 345",
+   "h1": "SRJC 2026-2027 Catalog 345",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     345
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 18,
   "text_chars": 4704
@@ -4309,15 +4396,16 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=209",
-   "title": null,
-   "h1": null,
+   "title": "SRJC 2026-2027 Catalog 209",
+   "h1": "SRJC 2026-2027 Catalog 209",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     209,
     210
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 17,
   "text_chars": 9825
@@ -4340,14 +4428,15 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=137",
-   "title": null,
-   "h1": null,
+   "title": "SRJC 2026-2027 Catalog 137",
+   "h1": "SRJC 2026-2027 Catalog 137",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     137
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 7,
   "text_chars": 4571
@@ -4364,14 +4453,15 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=97",
-   "title": null,
-   "h1": null,
+   "title": "SRJC 2026-2027 Catalog 97",
+   "h1": "SRJC 2026-2027 Catalog 97",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     97
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 1,
   "text_chars": 4124
@@ -4407,15 +4497,16 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=104",
-   "title": null,
-   "h1": null,
+   "title": "104  Advanced Manufacturing Tech (AS)",
+   "h1": "104  Advanced Manufacturing Tech (AS)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     104,
     105
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 8,
   "text_chars": 9972
@@ -4436,14 +4527,15 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=129",
-   "title": null,
-   "h1": null,
+   "title": "SRJC 2026-2027 Catalog 129",
+   "h1": "SRJC 2026-2027 Catalog 129",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     129
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 5,
   "text_chars": 5107
@@ -4464,14 +4556,15 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=360",
-   "title": null,
-   "h1": null,
+   "title": "360  Surveying Technology (Certiﬁcate of Achievement)",
+   "h1": "360  Surveying Technology (Certiﬁcate of Achievement)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     360
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 5,
   "text_chars": 5064
@@ -4501,8 +4594,8 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=135",
-   "title": null,
-   "h1": null,
+   "title": "SRJC 2026-2027 Catalog 135",
+   "h1": "SRJC 2026-2027 Catalog 135",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -4510,7 +4603,8 @@
     136,
     137
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 14,
   "text_chars": 14998
@@ -4540,14 +4634,15 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=174",
-   "title": null,
-   "h1": null,
+   "title": "174  Medium Heavy Truck Technology (AS)",
+   "h1": "174  Medium Heavy Truck Technology (AS)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     174
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 15,
   "text_chars": 5200
@@ -4573,14 +4668,15 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=188",
-   "title": null,
-   "h1": null,
+   "title": "188  Philosophy (AA)",
+   "h1": "188  Philosophy (AA)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     188
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 10,
   "text_chars": 5265
@@ -4629,14 +4725,15 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=162",
-   "title": null,
-   "h1": null,
+   "title": "162  Interior Design (AA)",
+   "h1": "162  Interior Design (AA)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     162
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 33,
   "text_chars": 4483
@@ -4659,14 +4756,15 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=331",
-   "title": null,
-   "h1": null,
+   "title": "SRJC 2026-2027 Catalog 331",
+   "h1": "SRJC 2026-2027 Catalog 331",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     331
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 7,
   "text_chars": 4497
@@ -4694,14 +4792,15 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=148",
-   "title": null,
-   "h1": null,
+   "title": "148  Fashion Design (AA)",
+   "h1": "148  Fashion Design (AA)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     148
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 12,
   "text_chars": 5176
@@ -4725,15 +4824,16 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=318",
-   "title": null,
-   "h1": null,
+   "title": "318  Fashion Fundamentals (Certiﬁcate of Achievement)",
+   "h1": "318  Fashion Fundamentals (Certiﬁcate of Achievement)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     318,
     319
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 8,
   "text_chars": 9259
@@ -4773,14 +4873,15 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=127",
-   "title": null,
-   "h1": null,
+   "title": "SRJC 2026-2027 Catalog 127",
+   "h1": "SRJC 2026-2027 Catalog 127",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     127
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 29,
   "text_chars": 4651
@@ -4803,15 +4904,16 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=271",
-   "title": null,
-   "h1": null,
+   "title": "SRJC 2026-2027 Catalog 271",
+   "h1": "SRJC 2026-2027 Catalog 271",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     271,
     272
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 7,
   "text_chars": 9694
@@ -4839,15 +4941,16 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=271",
-   "title": null,
-   "h1": null,
+   "title": "SRJC 2026-2027 Catalog 271",
+   "h1": "SRJC 2026-2027 Catalog 271",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     271,
     272
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 12,
   "text_chars": 9694
@@ -4872,14 +4975,15 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=334",
-   "title": null,
-   "h1": null,
+   "title": "334  Law Enforcement (Certiﬁcate of Achievement)",
+   "h1": "334  Law Enforcement (Certiﬁcate of Achievement)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     334
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 10,
   "text_chars": 5125
@@ -4924,8 +5028,8 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=321",
-   "title": null,
-   "h1": null,
+   "title": "SRJC 2026-2027 Catalog 321",
+   "h1": "SRJC 2026-2027 Catalog 321",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -4933,7 +5037,8 @@
     322,
     323
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 29,
   "text_chars": 15485
@@ -4953,17 +5058,18 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=257",
-   "title": null,
-   "h1": null,
+   "title": "Non-Credit Basic Academic Skills",
+   "h1": "Non-Credit Basic Academic Skills",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     257
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 5,
-  "text_chars": 4942
+  "text_chars": 3838
  },
  {
   "control_number": "30346",
@@ -4997,14 +5103,15 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=186",
-   "title": null,
-   "h1": null,
+   "title": "186  Paramedic (AS)",
+   "h1": "186  Paramedic (AS)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     186
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 21,
   "text_chars": 4938
@@ -5022,14 +5129,15 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=258",
-   "title": null,
-   "h1": null,
+   "title": "258  Basic Police Ofﬁcer Academy (Certiﬁcate of Achievement)",
+   "h1": "258  Basic Police Ofﬁcer Academy (Certiﬁcate of Achievement)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     258
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 2,
   "text_chars": 4618
@@ -5063,14 +5171,15 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=141",
-   "title": null,
-   "h1": null,
+   "title": "SRJC 2026-2027 Catalog 141",
+   "h1": "SRJC 2026-2027 Catalog 141",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     141
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 19,
   "text_chars": 5242
@@ -5081,30 +5190,29 @@
   "award": "A.A. Degree",
   "shape": "degree",
   "method": "pdf_pages",
-  "coverage": 1.0,
+  "coverage": 0.833,
   "codes_found": [
    "LIR10",
    "THAR1",
    "THAR20",
    "THAR251",
-   "THAR252",
-   "THAR6"
+   "THAR252"
   ],
   "source": {
-   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=212",
-   "title": null,
-   "h1": null,
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=213",
+   "title": "The Associate in Arts for Transfer in Theatre Arts is designed for students",
+   "h1": "The Associate in Arts for Transfer in Theatre Arts is designed for students",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    212,
     213,
     214
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 6,
-  "text_chars": 14565
+  "text_chars": 8861
  },
  {
   "control_number": "30732",
@@ -5124,14 +5232,15 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=482",
-   "title": null,
-   "h1": null,
+   "title": "482  Film and Media Arts (FMA)",
+   "h1": "482  Film and Media Arts (FMA)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     482
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 8,
   "text_chars": 6388
@@ -5160,8 +5269,8 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=134",
-   "title": null,
-   "h1": null,
+   "title": "134  CS Graphic Design (AA)",
+   "h1": "134  CS Graphic Design (AA)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -5170,7 +5279,8 @@
     136,
     137
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 15,
   "text_chars": 16000
@@ -5197,8 +5307,8 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=312",
-   "title": null,
-   "h1": null,
+   "title": "312  EMLS NC: College & Career Prep (Certiﬁcate of Completion)",
+   "h1": "312  EMLS NC: College & Career Prep (Certiﬁcate of Completion)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -5206,7 +5316,8 @@
     313,
     314
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 11,
   "text_chars": 14378
@@ -5228,15 +5339,16 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=312",
-   "title": null,
-   "h1": null,
+   "title": "312  EMLS NC: College & Career Prep (Certiﬁcate of Completion)",
+   "h1": "312  EMLS NC: College & Career Prep (Certiﬁcate of Completion)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     312,
     313
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 6,
   "text_chars": 9426
@@ -5257,14 +5369,15 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=315",
-   "title": null,
-   "h1": null,
+   "title": "SRJC 2026-2027 Catalog 315",
+   "h1": "SRJC 2026-2027 Catalog 315",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     315
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 5,
   "text_chars": 4839
@@ -5292,14 +5405,15 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=131",
-   "title": null,
-   "h1": null,
+   "title": "SRJC 2026-2027 Catalog 131",
+   "h1": "SRJC 2026-2027 Catalog 131",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     131
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 14,
   "text_chars": 4630
@@ -5330,8 +5444,8 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=204",
-   "title": null,
-   "h1": null,
+   "title": "204  Sociology (AA-T)",
+   "h1": "204  Sociology (AA-T)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -5339,7 +5453,8 @@
     205,
     206
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 16,
   "text_chars": 14802
@@ -5373,14 +5488,15 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=141",
-   "title": null,
-   "h1": null,
+   "title": "SRJC 2026-2027 Catalog 141",
+   "h1": "SRJC 2026-2027 Catalog 141",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     141
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 18,
   "text_chars": 5242
@@ -5402,14 +5518,15 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=214",
-   "title": null,
-   "h1": null,
+   "title": "214  Wastewater Treatment Operatns (AS)",
+   "h1": "214  Wastewater Treatment Operatns (AS)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     214
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 6,
   "text_chars": 4855
@@ -5420,11 +5537,10 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "pdf_pages",
-  "coverage": 0.913,
+  "coverage": 0.87,
   "codes_found": [
    "BIO10",
    "PSYC10",
-   "PSYC10L",
    "PSYC11",
    "PSYC14",
    "PSYC15",
@@ -5445,19 +5561,19 @@
    "STATC1000"
   ],
   "source": {
-   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=195",
-   "title": null,
-   "h1": null,
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=196",
+   "title": "196  Psychology (AA-T)",
+   "h1": "196  Psychology (AA-T)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    195,
     196
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 23,
-  "text_chars": 9609
+  "text_chars": 4866
  },
  {
   "control_number": "31080",
@@ -5480,8 +5596,8 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=154",
-   "title": null,
-   "h1": null,
+   "title": "154  French (AA)",
+   "h1": "154  French (AA)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -5490,7 +5606,8 @@
     156,
     157
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 10,
   "text_chars": 16000
@@ -5516,14 +5633,15 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=153",
-   "title": null,
-   "h1": null,
+   "title": "SRJC 2026-2027 Catalog 153",
+   "h1": "SRJC 2026-2027 Catalog 153",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     153
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 10,
   "text_chars": 5275
@@ -5550,8 +5668,8 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=153",
-   "title": null,
-   "h1": null,
+   "title": "SRJC 2026-2027 Catalog 153",
+   "h1": "SRJC 2026-2027 Catalog 153",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -5559,7 +5677,8 @@
     154,
     155
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 11,
   "text_chars": 15049
@@ -5593,14 +5712,15 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=214",
-   "title": null,
-   "h1": null,
+   "title": "214  Wastewater Treatment Operatns (AS)",
+   "h1": "214  Wastewater Treatment Operatns (AS)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     214
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 18,
   "text_chars": 4855
@@ -5626,15 +5746,16 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=423",
-   "title": null,
-   "h1": null,
+   "title": "SRJC 2026-2027 Catalog 423",
+   "h1": "SRJC 2026-2027 Catalog 423",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     423,
     424
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 14,
   "text_chars": 12373
@@ -5656,14 +5777,15 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=543",
-   "title": null,
-   "h1": null,
+   "title": "SRJC 2026-2027 Catalog 543",
+   "h1": "SRJC 2026-2027 Catalog 543",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     543
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 8,
   "text_chars": 6215
@@ -5684,18 +5806,19 @@
    "CHLD904"
   ],
   "source": {
-   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=127",
-   "title": null,
-   "h1": null,
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=142",
+   "title": "Early Childhood Education for Transfer Requirements",
+   "h1": "Early Childhood Education for Transfer Requirements",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    127
+    142
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 8,
-  "text_chars": 4651
+  "text_chars": 3956
  },
  {
   "control_number": "31462",
@@ -5723,14 +5846,15 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=103",
-   "title": null,
-   "h1": null,
+   "title": "SRJC 2026-2027 Catalog 103",
+   "h1": "SRJC 2026-2027 Catalog 103",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     103
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 18,
   "text_chars": 5086
@@ -5768,8 +5892,8 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=193",
-   "title": null,
-   "h1": null,
+   "title": "SRJC 2026-2027 Catalog 193",
+   "h1": "SRJC 2026-2027 Catalog 193",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -5778,7 +5902,8 @@
     195,
     196
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 23,
   "text_chars": 16000
@@ -5791,7 +5916,6 @@
   "method": "pdf_pages",
   "coverage": 0.846,
   "codes_found": [
-   "COMM2",
    "ENGL10",
    "ENGL11",
    "ENGL12",
@@ -5809,24 +5933,28 @@
    "ENGL36",
    "ENGL461",
    "ENGL462",
+   "ENGL4A",
    "ENGL7",
    "ENGL9",
-   "ENGLC1002",
-   "THAR2"
+   "ENGLC1001",
+   "ENGLC1002"
   ],
   "source": {
-   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=88",
-   "title": null,
-   "h1": null,
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=146",
+   "title": "English for Transfer Core Requirements",
+   "h1": "English for Transfer Core Requirements",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    88
+    146,
+    147,
+    148
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 26,
-  "text_chars": 3970
+  "text_chars": 12716
  },
  {
   "control_number": "32268",
@@ -5866,17 +5994,18 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=207",
-   "title": null,
-   "h1": null,
+   "title": "Studio Arts (AA-T)",
+   "h1": "Studio Arts (AA-T)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     207
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 28,
-  "text_chars": 4454
+  "text_chars": 3846
  },
  {
   "control_number": "32298",
@@ -5909,14 +6038,15 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=144",
-   "title": null,
-   "h1": null,
+   "title": "144  Elementary Teacher Education: Integrated Programs (AA-T)",
+   "h1": "144  Elementary Teacher Education: Integrated Programs (AA-T)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     144
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 27,
   "text_chars": 4832
@@ -5950,18 +6080,19 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=163",
-   "title": null,
-   "h1": null,
+   "title": "The Associate in Arts for Transfer in Journalism degree is designed",
+   "h1": "The Associate in Arts for Transfer in Journalism degree is designed",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     163,
     164
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 18,
-  "text_chars": 9852
+  "text_chars": 9805
  },
  {
   "control_number": "32300",
@@ -6049,8 +6180,8 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=157",
-   "title": null,
-   "h1": null,
+   "title": "SRJC 2026-2027 Catalog 157",
+   "h1": "SRJC 2026-2027 Catalog 157",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -6059,7 +6190,8 @@
     159,
     160
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 90,
   "text_chars": 16000
@@ -6153,15 +6285,16 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=88",
-   "title": null,
-   "h1": null,
+   "title": "88  General Education- 2026-27 Cal-GETC GE",
+   "h1": "88  General Education- 2026-27 Cal-GETC GE",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     88,
     89
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 106,
   "text_chars": 7970
@@ -6172,28 +6305,29 @@
   "award": "A.S. T Degree",
   "shape": "adt",
   "method": "pdf_pages",
-  "coverage": 0.857,
+  "coverage": 0.714,
   "codes_found": [
    "MATH1C",
-   "MATHC2220",
    "PHYS40",
    "PHYS41",
    "PHYS42",
    "PHYS43"
   ],
   "source": {
-   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=536",
-   "title": null,
-   "h1": null,
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=190",
+   "title": "The Physics Degree Program is designed to prepare students for transfer",
+   "h1": "The Physics Degree Program is designed to prepare students for transfer",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    536
+    190,
+    191
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 7,
-  "text_chars": 6062
+  "text_chars": 7691
  },
  {
   "control_number": "32330",
@@ -6201,31 +6335,30 @@
   "award": "A.S. T Degree",
   "shape": "adt",
   "method": "pdf_pages",
-  "coverage": 0.9,
+  "coverage": 0.7,
   "codes_found": [
    "CS10A",
-   "MATH1C",
    "MATH2",
    "MATH4",
    "MATH5",
    "MATH6",
-   "MATHC2210",
-   "MATHC2220",
+   "PHYS40",
    "STATC1000"
   ],
   "source": {
-   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=516",
-   "title": null,
-   "h1": null,
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=172",
+   "title": "172  Mchtroncs:IndustrlMntnncTchncn (AS)",
+   "h1": "172  Mchtroncs:IndustrlMntnncTchncn (AS)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    516
+    172
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 10,
-  "text_chars": 6230
+  "text_chars": 4630
  },
  {
   "control_number": "32357",
@@ -6310,14 +6443,15 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=169",
-   "title": null,
-   "h1": null,
+   "title": "SRJC 2026-2027 Catalog 169",
+   "h1": "SRJC 2026-2027 Catalog 169",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     169
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 136,
   "text_chars": 3614
@@ -6361,14 +6495,15 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=206",
-   "title": null,
-   "h1": null,
+   "title": "206  Spanish (AA-T)",
+   "h1": "206  Spanish (AA-T)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     206
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 29,
   "text_chars": 5218
@@ -6400,17 +6535,18 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=213",
-   "title": null,
-   "h1": null,
+   "title": "Theatre Arts (AA-T)",
+   "h1": "Theatre Arts (AA-T)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     213
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 16,
-  "text_chars": 4727
+  "text_chars": 4232
  },
  {
   "control_number": "32758",
@@ -6435,17 +6571,18 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=143",
-   "title": null,
-   "h1": null,
+   "title": "Economics for Transfer List B Requirements",
+   "h1": "Economics for Transfer List B Requirements",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     143
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 19,
-  "text_chars": 4733
+  "text_chars": 4343
  },
  {
   "control_number": "32770",
@@ -6476,15 +6613,16 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=189",
-   "title": null,
-   "h1": null,
+   "title": "SRJC 2026-2027 Catalog 189",
+   "h1": "SRJC 2026-2027 Catalog 189",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     189,
     190
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 18,
   "text_chars": 9172
@@ -6494,12 +6632,34 @@
   "title": "Hospitality, Event and Tourism Management",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "pdf_pages",
+  "coverage": 0.667,
+  "codes_found": [
+   "BMG52",
+   "HOSP50",
+   "HOSP53",
+   "HOSP54",
+   "HOSP63",
+   "HOSP68",
+   "HOSP80",
+   "WEE99I"
+  ],
+  "source": {
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=326",
+   "title": "326  Hospitality Management (Certiﬁcate of Achievement)",
+   "h1": "326  Hospitality Management (Certiﬁcate of Achievement)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    326,
+    327,
+    328
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
   "listed": 12,
-  "text_chars": 0
+  "text_chars": 13881
  },
  {
   "control_number": "33166",
@@ -6526,17 +6686,18 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=113",
-   "title": null,
-   "h1": null,
+   "title": "Anthropology for Transfer List C Requirements",
+   "h1": "Anthropology for Transfer List C Requirements",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     113
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 21,
-  "text_chars": 4633
+  "text_chars": 4291
  },
  {
   "control_number": "33316",
@@ -6567,14 +6728,15 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=164",
-   "title": null,
-   "h1": null,
+   "title": "164  Kines: Sports Medicine Prep (AA)",
+   "h1": "164  Kines: Sports Medicine Prep (AA)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     164
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 18,
   "text_chars": 4717
@@ -6609,14 +6771,15 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=164",
-   "title": null,
-   "h1": null,
+   "title": "164  Kines: Sports Medicine Prep (AA)",
+   "h1": "164  Kines: Sports Medicine Prep (AA)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     164
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 19,
   "text_chars": 4717
@@ -6635,8 +6798,8 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=270",
-   "title": null,
-   "h1": null,
+   "title": "270  CA: Culinary Arts (Certiﬁcate of Achievement)",
+   "h1": "270  CA: Culinary Arts (Certiﬁcate of Achievement)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -6644,7 +6807,8 @@
     271,
     272
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 3,
   "text_chars": 14641
@@ -6667,15 +6831,16 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=310",
-   "title": null,
-   "h1": null,
+   "title": "310  EMLS Credit: Advanced (Certiﬁcate of Achievement)",
+   "h1": "310  EMLS Credit: Advanced (Certiﬁcate of Achievement)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     310,
     311
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 7,
   "text_chars": 9138
@@ -6710,14 +6875,15 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=475",
-   "title": null,
-   "h1": null,
+   "title": "SRJC 2026-2027 Catalog 475",
+   "h1": "SRJC 2026-2027 Catalog 475",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     475
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 10,
   "text_chars": 6373
@@ -6744,8 +6910,8 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=108",
-   "title": null,
-   "h1": null,
+   "title": "108  Agriculture Plant Science (AS-T)",
+   "h1": "108  Agriculture Plant Science (AS-T)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -6753,7 +6919,8 @@
     109,
     110
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 11,
   "text_chars": 14072
@@ -6782,8 +6949,8 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=108",
-   "title": null,
-   "h1": null,
+   "title": "108  Agriculture Plant Science (AS-T)",
+   "h1": "108  Agriculture Plant Science (AS-T)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -6791,7 +6958,8 @@
     109,
     110
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 13,
   "text_chars": 14072
@@ -6820,18 +6988,19 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=107",
-   "title": null,
-   "h1": null,
+   "title": "Agriculture Animal Science for Transfer Required Core",
+   "h1": "Agriculture Animal Science for Transfer Required Core",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     107,
     108
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 13,
-  "text_chars": 9616
+  "text_chars": 8552
  },
  {
   "control_number": "35738",
@@ -6867,8 +7036,8 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=176",
-   "title": null,
-   "h1": null,
+   "title": "176  Music (AA)",
+   "h1": "176  Music (AA)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -6876,7 +7045,8 @@
     177,
     178
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 26,
   "text_chars": 13066
@@ -6928,8 +7098,8 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=202",
-   "title": null,
-   "h1": null,
+   "title": "202  Social Justice Studies (AA-T)",
+   "h1": "202  Social Justice Studies (AA-T)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -6938,7 +7108,8 @@
     204,
     205
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 37,
   "text_chars": 16000
@@ -6964,14 +7135,15 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=353",
-   "title": null,
-   "h1": null,
+   "title": "SRJC 2026-2027 Catalog 353",
+   "h1": "SRJC 2026-2027 Catalog 353",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     353
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 10,
   "text_chars": 4637
@@ -7009,15 +7181,16 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=247",
-   "title": null,
-   "h1": null,
+   "title": "SRJC 2026-2027 Catalog 247",
+   "h1": "SRJC 2026-2027 Catalog 247",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     247,
     248
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 10,
   "text_chars": 9533
@@ -7039,15 +7212,16 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=228",
-   "title": null,
-   "h1": null,
+   "title": "228  AE: Intro to Landscaping II (Certiﬁcate of Completion)",
+   "h1": "228  AE: Intro to Landscaping II (Certiﬁcate of Completion)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     228,
     229
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 6,
   "text_chars": 9622
@@ -7067,14 +7241,15 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=263",
-   "title": null,
-   "h1": null,
+   "title": "SRJC 2026-2027 Catalog 263",
+   "h1": "SRJC 2026-2027 Catalog 263",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     263
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 4,
   "text_chars": 4827
@@ -7094,14 +7269,15 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=223",
-   "title": null,
-   "h1": null,
+   "title": "SRJC 2026-2027 Catalog 223",
+   "h1": "SRJC 2026-2027 Catalog 223",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     223
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 4,
   "text_chars": 4612
@@ -7127,15 +7303,16 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=149",
-   "title": null,
-   "h1": null,
+   "title": "SRJC 2026-2027 Catalog 149",
+   "h1": "SRJC 2026-2027 Catalog 149",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     149,
     150
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 10,
   "text_chars": 10030
@@ -7171,14 +7348,15 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=179",
-   "title": null,
-   "h1": null,
+   "title": "SRJC 2026-2027 Catalog 179",
+   "h1": "SRJC 2026-2027 Catalog 179",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     179
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 8,
   "text_chars": 5024
@@ -7196,14 +7374,15 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=225",
-   "title": null,
-   "h1": null,
+   "title": "SRJC 2026-2027 Catalog 225",
+   "h1": "SRJC 2026-2027 Catalog 225",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     225
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 2,
   "text_chars": 4898
@@ -7222,15 +7401,16 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=230",
-   "title": null,
-   "h1": null,
+   "title": "230  AE: Social Media for Business (Certiﬁcate of Completion)",
+   "h1": "230  AE: Social Media for Business (Certiﬁcate of Completion)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     230,
     231
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 3,
   "text_chars": 9438
@@ -7250,8 +7430,8 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=226",
-   "title": null,
-   "h1": null,
+   "title": "226  AE: Intro to Bldg & Constr (Certiﬁcate of Completion)",
+   "h1": "226  AE: Intro to Bldg & Constr (Certiﬁcate of Completion)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -7260,7 +7440,8 @@
     228,
     229
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 4,
   "text_chars": 16000
@@ -7291,8 +7472,8 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=261",
-   "title": null,
-   "h1": null,
+   "title": "SRJC 2026-2027 Catalog 261",
+   "h1": "SRJC 2026-2027 Catalog 261",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -7301,7 +7482,8 @@
     263,
     264
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 15,
   "text_chars": 16000
@@ -7327,14 +7509,15 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=158",
-   "title": null,
-   "h1": null,
+   "title": "158  Humanities (AA)",
+   "h1": "158  Humanities (AA)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     158
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 10,
   "text_chars": 5181
@@ -7357,14 +7540,15 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=224",
-   "title": null,
-   "h1": null,
+   "title": "224  AE: Family Child Care Provider (Certiﬁcate of Completion)",
+   "h1": "224  AE: Family Child Care Provider (Certiﬁcate of Completion)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     224
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 7,
   "text_chars": 4403
@@ -7374,12 +7558,34 @@
   "title": "Public Health Science",
   "award": "A.S. T Degree",
   "shape": "adt",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "pdf_pages",
+  "coverage": 0.538,
+  "codes_found": [
+   "ANAT1",
+   "BIO10",
+   "FDNT10",
+   "PHYZ1",
+   "PSYC8",
+   "PSYCC1000",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=182",
+   "title": "182  Nursing ADN (AS)",
+   "h1": "182  Nursing ADN (AS)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    182,
+    183,
+    184,
+    185
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
   "listed": 13,
-  "text_chars": 0
+  "text_chars": 16000
  },
  {
   "control_number": "36810",
@@ -7409,14 +7615,15 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=234",
-   "title": null,
-   "h1": null,
+   "title": "234  AE: Workplace Computer Ops (Certiﬁcate of Completion)",
+   "h1": "234  AE: Workplace Computer Ops (Certiﬁcate of Completion)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     234
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 5,
   "text_chars": 4769
@@ -7426,12 +7633,152 @@
   "title": "Cal-GETC GE Pattern",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "pdf_pages",
+  "coverage": 0.532,
+  "codes_found": [
+   "ANTH2",
+   "ANTH21",
+   "ANTH3",
+   "ANTH30",
+   "ANTH31",
+   "ANTH32",
+   "ANTH34",
+   "ANTH43",
+   "ARCH21",
+   "ARCH22",
+   "ART23",
+   "ART3",
+   "ART4",
+   "ARTH11",
+   "ARTH12",
+   "ARTH13",
+   "ARTH14",
+   "ARTH25",
+   "ARTHC1200",
+   "ASL2",
+   "COUN7",
+   "DANC2",
+   "ECON12",
+   "ECONC2001",
+   "ECONC2002",
+   "ENGL10",
+   "ENGL11",
+   "ENGL12",
+   "ENGL14",
+   "ENGL2",
+   "ENGL22",
+   "ENGL25",
+   "ENGL27",
+   "ENGL3",
+   "ENGL301",
+   "ENGL302",
+   "ENGL31",
+   "ENGL32",
+   "ENGL33",
+   "ENGL36",
+   "ENGL461",
+   "ENGL462",
+   "ENGL7",
+   "ENGL9",
+   "ENGLC1002",
+   "FMA10",
+   "FMA14",
+   "FMA15",
+   "FMA17",
+   "FMA4",
+   "FMA44",
+   "FMA6",
+   "FREN2",
+   "FREN3",
+   "FREN4",
+   "GD15",
+   "GEOG3",
+   "GEOG7",
+   "GERM2",
+   "GERM3",
+   "GERM4",
+   "HIST11",
+   "HIST12",
+   "HIST181",
+   "HIST182",
+   "HIST20",
+   "HIST21",
+   "HIST22",
+   "HIST26",
+   "HIST30",
+   "HIST33",
+   "HIST41",
+   "HIST42",
+   "HIST5",
+   "HIST6",
+   "HIST81",
+   "HIST82",
+   "HISTC1001",
+   "HISTC1002",
+   "HUM14",
+   "HUM23",
+   "HUM24",
+   "HUM25",
+   "HUM26",
+   "HUM41",
+   "HUM5",
+   "HUM6",
+   "HUM7",
+   "HUM8",
+   "ITAL2",
+   "ITAL3",
+   "ITAL4",
+   "MUSC61",
+   "MUSC62",
+   "MUSC7",
+   "MUSC8",
+   "MUSC9",
+   "PHIL10",
+   "PHIL11",
+   "PHIL12",
+   "PHIL20",
+   "PHIL21",
+   "PHIL6",
+   "PHIL7",
+   "PHIL9",
+   "POLS12",
+   "POLS18",
+   "POLS2",
+   "POLS25",
+   "POLSC1000",
+   "RELS1",
+   "RELS15",
+   "RELS2",
+   "RELS21",
+   "RELS22",
+   "RELS3",
+   "RELS32",
+   "RELS666",
+   "SOC2",
+   "SOC30",
+   "SPAN2",
+   "SPAN3",
+   "SPAN4",
+   "STATC1000",
+   "THAR6"
+  ],
+  "source": {
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=156",
+   "title": "156  History (AA-T)",
+   "h1": "156  History (AA-T)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    156,
+    157,
+    158,
+    159
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
   "listed": 235,
-  "text_chars": 0
+  "text_chars": 16000
  },
  {
   "control_number": "37015",
@@ -7712,8 +8059,8 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=94",
-   "title": null,
-   "h1": null,
+   "title": "94  General Education- 2026-27 SRJC Associate Degree Graduation Requirements (Local GE)",
+   "h1": "94  General Education- 2026-27 SRJC Associate Degree Graduation Requirements (Local GE)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -7722,7 +8069,8 @@
     96,
     97
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 442,
   "text_chars": 16000
@@ -7743,14 +8091,15 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=323",
-   "title": null,
-   "h1": null,
+   "title": "SRJC 2026-2027 Catalog 323",
+   "h1": "SRJC 2026-2027 Catalog 323",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     323
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 5,
   "text_chars": 4972
@@ -7780,14 +8129,15 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=223",
-   "title": null,
-   "h1": null,
+   "title": "SRJC 2026-2027 Catalog 223",
+   "h1": "SRJC 2026-2027 Catalog 223",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     223
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 2,
   "text_chars": 4612
@@ -7808,15 +8158,16 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=234",
-   "title": null,
-   "h1": null,
+   "title": "234  AE: Workplace Computer Ops (Certiﬁcate of Completion)",
+   "h1": "234  AE: Workplace Computer Ops (Certiﬁcate of Completion)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     234,
     235
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 5,
   "text_chars": 10880
@@ -7836,14 +8187,15 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=229",
-   "title": null,
-   "h1": null,
+   "title": "SRJC 2026-2027 Catalog 229",
+   "h1": "SRJC 2026-2027 Catalog 229",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     229
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 4,
   "text_chars": 4576
@@ -7872,8 +8224,8 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=259",
-   "title": null,
-   "h1": null,
+   "title": "SRJC 2026-2027 Catalog 259",
+   "h1": "SRJC 2026-2027 Catalog 259",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -7882,7 +8234,8 @@
     261,
     262
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 13,
   "text_chars": 16000
@@ -7907,8 +8260,8 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=289",
-   "title": null,
-   "h1": null,
+   "title": "SRJC 2026-2027 Catalog 289",
+   "h1": "SRJC 2026-2027 Catalog 289",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -7916,7 +8269,8 @@
     290,
     291
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 9,
   "text_chars": 15072
@@ -7938,8 +8292,8 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=227",
-   "title": null,
-   "h1": null,
+   "title": "SRJC 2026-2027 Catalog 227",
+   "h1": "SRJC 2026-2027 Catalog 227",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -7947,7 +8301,8 @@
     228,
     229
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 6,
   "text_chars": 14404
@@ -7970,8 +8325,8 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=291",
-   "title": null,
-   "h1": null,
+   "title": "SRJC 2026-2027 Catalog 291",
+   "h1": "SRJC 2026-2027 Catalog 291",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -7979,7 +8334,8 @@
     292,
     293
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 8,
   "text_chars": 14734
@@ -8001,8 +8357,8 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=281",
-   "title": null,
-   "h1": null,
+   "title": "SRJC 2026-2027 Catalog 281",
+   "h1": "SRJC 2026-2027 Catalog 281",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -8011,7 +8367,8 @@
     283,
     284
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 6,
   "text_chars": 16000
@@ -8032,14 +8389,15 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=233",
-   "title": null,
-   "h1": null,
+   "title": "SRJC 2026-2027 Catalog 233",
+   "h1": "SRJC 2026-2027 Catalog 233",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     233
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 5,
   "text_chars": 4841
@@ -8065,18 +8423,20 @@
    "PHYS42"
   ],
   "source": {
-   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=121",
-   "title": null,
-   "h1": null,
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=120",
+   "title": "The Biology major is designed for students who are pursuing transfer to",
+   "h1": "The Biology major is designed for students who are pursuing transfer to",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    120,
     121
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 12,
-  "text_chars": 4808
+  "text_chars": 9529
  },
  {
   "control_number": "38721",
@@ -8091,8 +8451,8 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=226",
-   "title": null,
-   "h1": null,
+   "title": "226  AE: Intro to Bldg & Constr (Certiﬁcate of Completion)",
+   "h1": "226  AE: Intro to Bldg & Constr (Certiﬁcate of Completion)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -8101,7 +8461,8 @@
     228,
     229
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 2,
   "text_chars": 16000
@@ -8122,15 +8483,16 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=228",
-   "title": null,
-   "h1": null,
+   "title": "228  AE: Intro to Landscaping II (Certiﬁcate of Completion)",
+   "h1": "228  AE: Intro to Landscaping II (Certiﬁcate of Completion)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     228,
     229
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 7,
   "text_chars": 9622
@@ -8155,15 +8517,16 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=151",
-   "title": null,
-   "h1": null,
+   "title": "SRJC 2026-2027 Catalog 151",
+   "h1": "SRJC 2026-2027 Catalog 151",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     151,
     152
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 9,
   "text_chars": 10257
@@ -8187,15 +8550,16 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=151",
-   "title": null,
-   "h1": null,
+   "title": "SRJC 2026-2027 Catalog 151",
+   "h1": "SRJC 2026-2027 Catalog 151",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     151,
     152
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 8,
   "text_chars": 10257
@@ -8220,14 +8584,15 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=137",
-   "title": null,
-   "h1": null,
+   "title": "SRJC 2026-2027 Catalog 137",
+   "h1": "SRJC 2026-2027 Catalog 137",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     137
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 9,
   "text_chars": 4571
@@ -8252,14 +8617,15 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=137",
-   "title": null,
-   "h1": null,
+   "title": "SRJC 2026-2027 Catalog 137",
+   "h1": "SRJC 2026-2027 Catalog 137",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     137
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 9,
   "text_chars": 4571
@@ -8285,14 +8651,15 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=215",
-   "title": null,
-   "h1": null,
+   "title": "SRJC 2026-2027 Catalog 215",
+   "h1": "SRJC 2026-2027 Catalog 215",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     215
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 10,
   "text_chars": 2377
@@ -8312,14 +8679,15 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=215",
-   "title": null,
-   "h1": null,
+   "title": "SRJC 2026-2027 Catalog 215",
+   "h1": "SRJC 2026-2027 Catalog 215",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     215
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 4,
   "text_chars": 2377
@@ -8339,14 +8707,15 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=215",
-   "title": null,
-   "h1": null,
+   "title": "SRJC 2026-2027 Catalog 215",
+   "h1": "SRJC 2026-2027 Catalog 215",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     215
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 4,
   "text_chars": 2377
@@ -8366,14 +8735,15 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=215",
-   "title": null,
-   "h1": null,
+   "title": "SRJC 2026-2027 Catalog 215",
+   "h1": "SRJC 2026-2027 Catalog 215",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     215
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 4,
   "text_chars": 2377
@@ -8393,14 +8763,15 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=215",
-   "title": null,
-   "h1": null,
+   "title": "SRJC 2026-2027 Catalog 215",
+   "h1": "SRJC 2026-2027 Catalog 215",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     215
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 4,
   "text_chars": 2377
@@ -8425,15 +8796,16 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=241",
-   "title": null,
-   "h1": null,
+   "title": "SRJC 2026-2027 Catalog 241",
+   "h1": "SRJC 2026-2027 Catalog 241",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     241,
     242
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 11,
   "text_chars": 9850
@@ -8458,15 +8830,16 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=241",
-   "title": null,
-   "h1": null,
+   "title": "SRJC 2026-2027 Catalog 241",
+   "h1": "SRJC 2026-2027 Catalog 241",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     241,
     242
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 11,
   "text_chars": 9850
@@ -8487,14 +8860,15 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=543",
-   "title": null,
-   "h1": null,
+   "title": "SRJC 2026-2027 Catalog 543",
+   "h1": "SRJC 2026-2027 Catalog 543",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     543
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 5,
   "text_chars": 6215
@@ -8515,14 +8889,15 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=543",
-   "title": null,
-   "h1": null,
+   "title": "SRJC 2026-2027 Catalog 543",
+   "h1": "SRJC 2026-2027 Catalog 543",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     543
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 5,
   "text_chars": 6215
@@ -8545,14 +8920,15 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=200",
-   "title": null,
-   "h1": null,
+   "title": "200  Social and Behavioral Sciences (AA)",
+   "h1": "200  Social and Behavioral Sciences (AA)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     200
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 7,
   "text_chars": 4599
@@ -8575,14 +8951,15 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=200",
-   "title": null,
-   "h1": null,
+   "title": "200  Social and Behavioral Sciences (AA)",
+   "h1": "200  Social and Behavioral Sciences (AA)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     200
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 7,
   "text_chars": 4599
@@ -8611,8 +8988,8 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=194",
-   "title": null,
-   "h1": null,
+   "title": "194  Pre-Veterinary Studies (AS)",
+   "h1": "194  Pre-Veterinary Studies (AS)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -8620,7 +8997,8 @@
     195,
     196
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 13,
   "text_chars": 14501
@@ -8645,14 +9023,15 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=173",
-   "title": null,
-   "h1": null,
+   "title": "SRJC 2026-2027 Catalog 173",
+   "h1": "SRJC 2026-2027 Catalog 173",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     173
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 9,
   "text_chars": 5550
@@ -8676,15 +9055,16 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=172",
-   "title": null,
-   "h1": null,
+   "title": "172  Mchtroncs:IndustrlMntnncTchncn (AS)",
+   "h1": "172  Mchtroncs:IndustrlMntnncTchncn (AS)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     172,
     173
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 9,
   "text_chars": 10182
@@ -8708,15 +9088,16 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=172",
-   "title": null,
-   "h1": null,
+   "title": "172  Mchtroncs:IndustrlMntnncTchncn (AS)",
+   "h1": "172  Mchtroncs:IndustrlMntnncTchncn (AS)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     172,
     173
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 9,
   "text_chars": 10182
@@ -8741,14 +9122,15 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=173",
-   "title": null,
-   "h1": null,
+   "title": "SRJC 2026-2027 Catalog 173",
+   "h1": "SRJC 2026-2027 Catalog 173",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     173
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 9,
   "text_chars": 5550
@@ -8776,17 +9158,18 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=150",
-   "title": null,
-   "h1": null,
+   "title": "The AS-T in Film, Television, and Electronic Media is designed to give",
+   "h1": "The AS-T in Film, Television, and Electronic Media is designed to give",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     150
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 14,
-  "text_chars": 5139
+  "text_chars": 5099
  },
  {
   "control_number": "41906",
@@ -8821,18 +9204,19 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=122",
-   "title": null,
-   "h1": null,
+   "title": "Business Administration for Transfer Core Requirements",
+   "h1": "Business Administration for Transfer Core Requirements",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     122,
     123
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 10,
-  "text_chars": 9467
+  "text_chars": 9393
  },
  {
   "control_number": "42268",
@@ -8862,15 +9246,16 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=133",
-   "title": null,
-   "h1": null,
+   "title": "SRJC 2026-2027 Catalog 133",
+   "h1": "SRJC 2026-2027 Catalog 133",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     133,
     134
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 17,
   "text_chars": 10589
@@ -8903,15 +9288,16 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=133",
-   "title": null,
-   "h1": null,
+   "title": "SRJC 2026-2027 Catalog 133",
+   "h1": "SRJC 2026-2027 Catalog 133",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     133,
     134
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 17,
   "text_chars": 10589
@@ -8930,14 +9316,15 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=358",
-   "title": null,
-   "h1": null,
+   "title": "358  Signal Technician (Certiﬁcate of Achievement)",
+   "h1": "358  Signal Technician (Certiﬁcate of Achievement)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     358
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 5,
   "text_chars": 4203
@@ -8964,14 +9351,15 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=307",
-   "title": null,
-   "h1": null,
+   "title": "SRJC 2026-2027 Catalog 307",
+   "h1": "SRJC 2026-2027 Catalog 307",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     307
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 11,
   "text_chars": 5235
@@ -8990,14 +9378,15 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=231",
-   "title": null,
-   "h1": null,
+   "title": "SRJC 2026-2027 Catalog 231",
+   "h1": "SRJC 2026-2027 Catalog 231",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     231
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 3,
   "text_chars": 4563
@@ -9015,14 +9404,15 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=232",
-   "title": null,
-   "h1": null,
+   "title": "232  AE: Tax Preparation (Certiﬁcate of Completion)",
+   "h1": "232  AE: Tax Preparation (Certiﬁcate of Completion)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     232
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 2,
   "text_chars": 4750
@@ -9044,14 +9434,15 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=131",
-   "title": null,
-   "h1": null,
+   "title": "SRJC 2026-2027 Catalog 131",
+   "h1": "SRJC 2026-2027 Catalog 131",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     131
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 6,
   "text_chars": 4630
@@ -9072,14 +9463,15 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=131",
-   "title": null,
-   "h1": null,
+   "title": "SRJC 2026-2027 Catalog 131",
+   "h1": "SRJC 2026-2027 Catalog 131",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     131
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 5,
   "text_chars": 4630
@@ -9099,15 +9491,16 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=330",
-   "title": null,
-   "h1": null,
+   "title": "330  Interior Design: Fundamentals (Certiﬁcate of Achievement)",
+   "h1": "330  Interior Design: Fundamentals (Certiﬁcate of Achievement)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     330,
     331
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 4,
   "text_chars": 9101
@@ -9117,12 +9510,32 @@
   "title": "Hospitality Management",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "pdf_pages",
+  "coverage": 0.778,
+  "codes_found": [
+   "HOSP50",
+   "HOSP53",
+   "HOSP54",
+   "HOSP58",
+   "HOSP63",
+   "HOSP68",
+   "HOSP80"
+  ],
+  "source": {
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=497",
+   "title": "SRJC 2026-2027 Catalog 497",
+   "h1": "SRJC 2026-2027 Catalog 497",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    497,
+    498
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
   "listed": 9,
-  "text_chars": 0
+  "text_chars": 12389
  },
  {
   "control_number": "42873",
@@ -9154,15 +9567,16 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=285",
-   "title": null,
-   "h1": null,
+   "title": "SRJC 2026-2027 Catalog 285",
+   "h1": "SRJC 2026-2027 Catalog 285",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     285,
     286
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 19,
   "text_chars": 9708
@@ -9186,14 +9600,15 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=114",
-   "title": null,
-   "h1": null,
+   "title": "114  ArlRmotSnsng&Photogrammtry (AS)",
+   "h1": "114  ArlRmotSnsng&Photogrammtry (AS)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     114
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 8,
   "text_chars": 4794
@@ -9218,14 +9633,15 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=114",
-   "title": null,
-   "h1": null,
+   "title": "114  ArlRmotSnsng&Photogrammtry (AS)",
+   "h1": "114  ArlRmotSnsng&Photogrammtry (AS)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     114
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 9,
   "text_chars": 4794
@@ -9250,15 +9666,16 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=351",
-   "title": null,
-   "h1": null,
+   "title": "SRJC 2026-2027 Catalog 351",
+   "h1": "SRJC 2026-2027 Catalog 351",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     351,
     352
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 9,
   "text_chars": 9809
@@ -9288,14 +9705,15 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=266",
-   "title": null,
-   "h1": null,
+   "title": "266  Business: Marketing (Certiﬁcate of Achievement)",
+   "h1": "266  Business: Marketing (Certiﬁcate of Achievement)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     266
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 14,
   "text_chars": 4750
@@ -9323,14 +9741,15 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=296",
-   "title": null,
-   "h1": null,
+   "title": "296  CS Virtual Prod Fundamental (Certiﬁcate of Achievement)",
+   "h1": "296  CS Virtual Prod Fundamental (Certiﬁcate of Achievement)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     296
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 12,
   "text_chars": 4748
@@ -9351,8 +9770,8 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=350",
-   "title": null,
-   "h1": null,
+   "title": "350  Pilates Comprehensive Instruct (Certiﬁcate of Achievement)",
+   "h1": "350  Pilates Comprehensive Instruct (Certiﬁcate of Achievement)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -9360,7 +9779,8 @@
     351,
     352
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 5,
   "text_chars": 15064
@@ -9381,15 +9801,16 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=351",
-   "title": null,
-   "h1": null,
+   "title": "SRJC 2026-2027 Catalog 351",
+   "h1": "SRJC 2026-2027 Catalog 351",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     351,
     352
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 5,
   "text_chars": 9809
@@ -9410,15 +9831,16 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=351",
-   "title": null,
-   "h1": null,
+   "title": "SRJC 2026-2027 Catalog 351",
+   "h1": "SRJC 2026-2027 Catalog 351",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     351,
     352
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 5,
   "text_chars": 9809
@@ -9436,14 +9858,15 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=219",
-   "title": null,
-   "h1": null,
+   "title": "SRJC 2026-2027 Catalog 219",
+   "h1": "SRJC 2026-2027 Catalog 219",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     219
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 2,
   "text_chars": 5027
@@ -9462,14 +9885,15 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=218",
-   "title": null,
-   "h1": null,
+   "title": "218  Academic Prep: Math (Certiﬁcate of Competency)",
+   "h1": "218  Academic Prep: Math (Certiﬁcate of Competency)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     218
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 3,
   "text_chars": 4649
@@ -9492,14 +9916,15 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=314",
-   "title": null,
-   "h1": null,
+   "title": "314  EMLS NC: Literacy Foundations (Certiﬁcate of Completion)",
+   "h1": "314  EMLS NC: Literacy Foundations (Certiﬁcate of Completion)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     314
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 8,
   "text_chars": 4950
@@ -9520,14 +9945,15 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=306",
-   "title": null,
-   "h1": null,
+   "title": "306  Electrical Union Apprentice (Certiﬁcate of Achievement)",
+   "h1": "306  Electrical Union Apprentice (Certiﬁcate of Achievement)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     306
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 5,
   "text_chars": 4864
@@ -9547,15 +9973,16 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=223",
-   "title": null,
-   "h1": null,
+   "title": "SRJC 2026-2027 Catalog 223",
+   "h1": "SRJC 2026-2027 Catalog 223",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     223,
     224
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 4,
   "text_chars": 9017
@@ -9593,14 +10020,15 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=186",
-   "title": null,
-   "h1": null,
+   "title": "186  Paramedic (AS)",
+   "h1": "186  Paramedic (AS)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     186
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 22,
   "text_chars": 4938
@@ -9627,8 +10055,8 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=252",
-   "title": null,
-   "h1": null,
+   "title": "252  Automotive MLR Tech (Certiﬁcate of Achievement)",
+   "h1": "252  Automotive MLR Tech (Certiﬁcate of Achievement)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -9637,7 +10065,8 @@
     254,
     255
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 11,
   "text_chars": 16000
@@ -9666,14 +10095,15 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=175",
-   "title": null,
-   "h1": null,
+   "title": "SRJC 2026-2027 Catalog 175",
+   "h1": "SRJC 2026-2027 Catalog 175",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     175
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 13,
   "text_chars": 4994
@@ -9706,15 +10136,16 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=284",
-   "title": null,
-   "h1": null,
+   "title": "284  CS Adv Virtual Production RVPA (Certiﬁcate of Achievement)",
+   "h1": "284  CS Adv Virtual Production RVPA (Certiﬁcate of Achievement)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     284,
     285
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 18,
   "text_chars": 9655
@@ -9752,15 +10183,16 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=136",
-   "title": null,
-   "h1": null,
+   "title": "136  CS Web and Multimedia (AA)",
+   "h1": "136  CS Web and Multimedia (AA)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     136,
     137
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 23,
   "text_chars": 9696
@@ -9794,15 +10226,16 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=161",
-   "title": null,
-   "h1": null,
+   "title": "SRJC 2026-2027 Catalog 161",
+   "h1": "SRJC 2026-2027 Catalog 161",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     161,
     162
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 18,
   "text_chars": 9053
@@ -9824,15 +10257,16 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=249",
-   "title": null,
-   "h1": null,
+   "title": "SRJC 2026-2027 Catalog 249",
+   "h1": "SRJC 2026-2027 Catalog 249",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     249,
     250
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 6,
   "text_chars": 9687
@@ -9866,15 +10300,16 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=161",
-   "title": null,
-   "h1": null,
+   "title": "SRJC 2026-2027 Catalog 161",
+   "h1": "SRJC 2026-2027 Catalog 161",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     161,
     162
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 18,
   "text_chars": 9053
@@ -9902,14 +10337,15 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=175",
-   "title": null,
-   "h1": null,
+   "title": "SRJC 2026-2027 Catalog 175",
+   "h1": "SRJC 2026-2027 Catalog 175",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     175
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 12,
   "text_chars": 4994
@@ -9934,15 +10370,16 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=342",
-   "title": null,
-   "h1": null,
+   "title": "342  MHT Diagnostic Tech (Certiﬁcate of Achievement)",
+   "h1": "342  MHT Diagnostic Tech (Certiﬁcate of Achievement)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     342,
     343
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 10,
   "text_chars": 9911
@@ -9969,14 +10406,15 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=119",
-   "title": null,
-   "h1": null,
+   "title": "SRJC 2026-2027 Catalog 119",
+   "h1": "SRJC 2026-2027 Catalog 119",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     119
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 11,
   "text_chars": 5417
@@ -10005,15 +10443,16 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=118",
-   "title": null,
-   "h1": null,
+   "title": "118  Automotive Technology (AS)",
+   "h1": "118  Automotive Technology (AS)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     118,
     119
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 14,
   "text_chars": 10956
@@ -10035,15 +10474,16 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=118",
-   "title": null,
-   "h1": null,
+   "title": "118  Automotive Technology (AS)",
+   "h1": "118  Automotive Technology (AS)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     118,
     119
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 6,
   "text_chars": 10956
@@ -10065,14 +10505,15 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=119",
-   "title": null,
-   "h1": null,
+   "title": "SRJC 2026-2027 Catalog 119",
+   "h1": "SRJC 2026-2027 Catalog 119",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     119
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 6,
   "text_chars": 5417
@@ -10097,14 +10538,15 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=250",
-   "title": null,
-   "h1": null,
+   "title": "250  Automotive Diagnostic Tech (Certiﬁcate of Achievement)",
+   "h1": "250  Automotive Diagnostic Tech (Certiﬁcate of Achievement)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     250
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 9,
   "text_chars": 5085
@@ -10127,14 +10569,15 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=316",
-   "title": null,
-   "h1": null,
+   "title": "316  Engine Machining (Certiﬁcate of Achievement)",
+   "h1": "316  Engine Machining (Certiﬁcate of Achievement)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     316
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 7,
   "text_chars": 4549
@@ -10161,14 +10604,15 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=255",
-   "title": null,
-   "h1": null,
+   "title": "SRJC 2026-2027 Catalog 255",
+   "h1": "SRJC 2026-2027 Catalog 255",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     255
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 12,
   "text_chars": 5161
@@ -10193,8 +10637,8 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=341",
-   "title": null,
-   "h1": null,
+   "title": "SRJC 2026-2027 Catalog 341",
+   "h1": "SRJC 2026-2027 Catalog 341",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -10202,7 +10646,8 @@
     342,
     343
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 9,
   "text_chars": 14815
@@ -10229,14 +10674,15 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=343",
-   "title": null,
-   "h1": null,
+   "title": "SRJC 2026-2027 Catalog 343",
+   "h1": "SRJC 2026-2027 Catalog 343",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     343
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 11,
   "text_chars": 4845
@@ -10311,8 +10757,8 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=176",
-   "title": null,
-   "h1": null,
+   "title": "176  Music (AA)",
+   "h1": "176  Music (AA)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -10320,7 +10766,8 @@
     177,
     178
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 66,
   "text_chars": 13066
@@ -10353,14 +10800,15 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=248",
-   "title": null,
-   "h1": null,
+   "title": "248  Automation Fundamentals (Skills Certiﬁcate)",
+   "h1": "248  Automation Fundamentals (Skills Certiﬁcate)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     248
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 18,
   "text_chars": 4676
@@ -10370,12 +10818,33 @@
   "title": "Hospitality: Event Management",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "pdf_pages",
+  "coverage": 0.875,
+  "codes_found": [
+   "HOSP50",
+   "HOSP53",
+   "HOSP54",
+   "HOSP58",
+   "HOSP68",
+   "HOSP80",
+   "WEE99I"
+  ],
+  "source": {
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=326",
+   "title": "326  Hospitality Management (Certiﬁcate of Achievement)",
+   "h1": "326  Hospitality Management (Certiﬁcate of Achievement)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    326,
+    327,
+    328
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
   "listed": 8,
-  "text_chars": 0
+  "text_chars": 13881
  },
  {
   "control_number": "45234",
@@ -10391,14 +10860,15 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=298",
-   "title": null,
-   "h1": null,
+   "title": "298  CS Web and Mobile Full-Stack (Certiﬁcate of Achievement)",
+   "h1": "298  CS Web and Mobile Full-Stack (Certiﬁcate of Achievement)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     298
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 3,
   "text_chars": 5378
@@ -10415,14 +10885,15 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=160",
-   "title": null,
-   "h1": null,
+   "title": "160  HVAC Refrigeration Apprentice (AS)",
+   "h1": "160  HVAC Refrigeration Apprentice (AS)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     160
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 1,
   "text_chars": 4651
@@ -10465,17 +10936,18 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=185",
-   "title": null,
-   "h1": null,
+   "title": "NUTRITION AND DIETETICS (AS-T) - 26",
+   "h1": "NUTRITION AND DIETETICS (AS-T) - 26",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     185
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 32,
-  "text_chars": 4829
+  "text_chars": 4673
  },
  {
   "control_number": "45522",
@@ -10500,15 +10972,16 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=366",
-   "title": null,
-   "h1": null,
+   "title": "366  THAR: Theatre Mgmt (Certiﬁcate of Achievement)",
+   "h1": "366  THAR: Theatre Mgmt (Certiﬁcate of Achievement)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     366,
     367
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 12,
   "text_chars": 11077
@@ -10540,15 +11013,16 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=122",
-   "title": null,
-   "h1": null,
+   "title": "122  Business: Accounting (AS)",
+   "h1": "122  Business: Accounting (AS)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     122,
     123
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 16,
   "text_chars": 9467
@@ -10601,14 +11075,15 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=178",
-   "title": null,
-   "h1": null,
+   "title": "178  Native American Studies (AA)",
+   "h1": "178  Native American Studies (AA)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     178
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 45,
   "text_chars": 4508
@@ -10655,18 +11130,19 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=203",
-   "title": null,
-   "h1": null,
+   "title": "The Associate in Arts in Social Work and Human Services for Transfer",
+   "h1": "The Associate in Arts in Social Work and Human Services for Transfer",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     203,
     204
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 34,
-  "text_chars": 9446
+  "text_chars": 8297
  },
  {
   "control_number": "45601",
@@ -10698,14 +11174,15 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=131",
-   "title": null,
-   "h1": null,
+   "title": "SRJC 2026-2027 Catalog 131",
+   "h1": "SRJC 2026-2027 Catalog 131",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     131
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 21,
   "text_chars": 4630
@@ -10732,15 +11209,16 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=113",
-   "title": null,
-   "h1": null,
+   "title": "SRJC 2026-2027 Catalog 113",
+   "h1": "SRJC 2026-2027 Catalog 113",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     113,
     114
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 12,
   "text_chars": 9429
@@ -10767,14 +11245,15 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=295",
-   "title": null,
-   "h1": null,
+   "title": "SRJC 2026-2027 Catalog 295",
+   "h1": "SRJC 2026-2027 Catalog 295",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     295
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 12,
   "text_chars": 4633
@@ -10815,8 +11294,8 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=144",
-   "title": null,
-   "h1": null,
+   "title": "144  Elementary Teacher Education: Integrated Programs (AA-T)",
+   "h1": "144  Elementary Teacher Education: Integrated Programs (AA-T)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -10825,7 +11304,8 @@
     146,
     147
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 28,
   "text_chars": 16000

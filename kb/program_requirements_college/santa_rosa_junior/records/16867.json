@@ -88,15 +88,11 @@
    "program": 5,
    "courses": 0,
    "count": 5,
-   "not_verbatim": [
-    "Satisfy Department of Real Estate and Office of Real Estate Appraisers educational requirements for state licensing;"
-   ],
-   "why": [
-    "not in the catalog text as printed: Satisfy Department of Real Estate and Office of Real Estate Appraisers education"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 1,
@@ -109,7 +105,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -272,5 +268,6 @@
    "Outcome text 'Office' was printed with a typographic ligature (Ofﬁce) in the PDF extraction."
   ]
  },
- "extracted_run": "39006464249"
+ "extracted_run": 39037637820,
+ "read_run": "39006464249"
 }

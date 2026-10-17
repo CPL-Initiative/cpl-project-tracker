@@ -1,0 +1,306 @@
+{
+ "college": "Solano Community College",
+ "control_number": "39445",
+ "shape": "certificate",
+ "title": "Photo Illustration",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=391",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 12192,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 12192,
+    "output_tokens": 2366,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2366,
+  "output_tokens_details": {
+   "thinking_tokens": 685
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.09609,
+ "ms": 20490,
+ "seconds": 21.0,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 16,
+   "listed": 16,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    24.0,
+    24.0
+   ],
+   "stated": [
+    24.0,
+    24.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [
+    "Complete a professional portfolio and accompanying promotional materials appropriate for use in seeking employment in areas of design and media, such as advertising, editorial and fashion production, fine art and social media."
+   ],
+   "why": [
+    "not in the catalog text as printed: Complete a professional portfolio and accompanying promotional materials appropr"
+   ],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": false
+  },
+  "careers": {
+   "count": 5,
+   "not_verbatim": [
+    "advertising and promotional designer"
+   ],
+   "pass": false
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Photo Illustration Certificate of Achievement",
+   "measure": "units",
+   "total_units": {
+    "min": 24,
+    "max": 24
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Professional level proficiency in utilizing photography and graphic design to create expressive original works, appropriate for use in various applications including fashion and editorial, advertising and fine art.",
+    "Working knowledge of current graphic design and photographic software programs, including specific understanding of the strengths and appropriate applications of each program and an ability to work between the programs for strong outcomes.",
+    "Complete a professional portfolio and accompanying promotional materials appropriate for use in seeking employment in areas of design and media, such as advertising, editorial and fashion production, fine art and social media."
+   ],
+   "careers": [
+    "Social media content manager",
+    "web development and management",
+    "retouching",
+    "photo editor",
+    "advertising and promotional designer"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "DMA 010",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DMA 020",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHOT 029",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHOT 032",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHOT 158",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHOT 159",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Photo Electives",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "PHOT 031",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHOT 033",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHOT 040",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHOT 045",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Digital Media and Art Electives",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "DMA 011",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DMA 015",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DMA 021",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DMA 031",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DMA 062",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 015C",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Catalog prints codes with leading zeros (DMA 010, PHOT 029, etc.); treated as the closed-list codes DMA 10, PHOT 29, etc.",
+   "Several catalog titles differ from the closed list: DMA 010 'Graphic Design - Beginning' (list: Graphic Design I), DMA 011 'Graphic Design - Intermediate', DMA 062 'UI/UX Design - Beginning', PHOT 032 'Digital Media for Photographers - Beginning', PHOT 045 'DSLR Videography' (list and course description: Introduction to Filmmaking for Photographers). Codes match, so not marked as additions.",
+   "PHOT 040 is printed in the Photo Electives list without units; units left null (course description shows 3.0 units).",
+   "The electives counts under Required Courses ('One course from Photo Electives 3', 'One course from Digital Media and Art Electives 3') recorded as stated 3 on each elective block.",
+   "The Program Outcomes lead-in refers to 'the Photography, Professional Certificate of Achievement/Associate Degree', but the outcomes are printed within the Photo Illustration section and recorded for this award. Text extraction ligature artifacts (e.g., 'proﬁ ciency', 'por ƞ olio') were rendered as normal words.",
+   "Page footer text 'Consult with your counselor for guidance on custom course pathwayr' noted; the Certificate of Completion (noncredit, hours) section on the next page belongs to a different award and was not read."
+  ]
+ },
+ "extracted_run": 39037377728,
+ "read_run": "39035226783"
+}

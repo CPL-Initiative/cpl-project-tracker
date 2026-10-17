@@ -1,0 +1,359 @@
+{
+ "college": "Solano Community College",
+ "control_number": "43134",
+ "shape": "degree",
+ "title": "World Languages",
+ "award": "A.A. Degree",
+ "source_url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=341",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 11232,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 11232,
+    "output_tokens": 3078,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 3078,
+  "output_tokens_details": {
+   "thinking_tokens": 1237
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.10649,
+ "ms": 26156,
+ "seconds": 26.5,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 22,
+   "listed": 22,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 2,
+   "codes": [
+    "SPAN31",
+    "SPAN32"
+   ],
+   "flagged": [
+    "SPAN31",
+    "SPAN32"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": [
+    22.0,
+    27.0
+   ],
+   "against": "program",
+   "why": [
+    "'American Sign Language' chooses units but names no minimum",
+    "'French' chooses units but names no minimum",
+    "'Spanish' chooses units but names no minimum"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "World Languages Associate in Arts",
+   "measure": "units",
+   "total_units": {
+    "min": 22,
+    "max": 27
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": true,
+   "outcomes": [
+    "Converse in an intermediate level in two or more languages: American Sign Language (ASL), French, or Spanish",
+    "Demonstrate grammatical and semantic proficiency in paragraph or narrative mode (for ASL) at the intermediate-low level.",
+    "Understanding of cultural and community differences"
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "American Sign Language",
+    "rule": "choose_units",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ASL 001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ASL 002",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ASL 003",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ASL 004",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ASL 005",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ASL 006",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ASL 052",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ASL 053",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ASL 054",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ASL 057",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "French",
+    "rule": "choose_units",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "FREN 001",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "FREN 031",
+        "units": 3,
+        "catalog_addition": false
+       },
+       {
+        "code": "FREN 032",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "FREN 002",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FREN 003",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FREN 011",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FREN101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Spanish",
+    "rule": "choose_units",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "SPAN 001",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "SPAN 031",
+        "units": 3,
+        "catalog_addition": true
+       },
+       {
+        "code": "SPAN 032",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPAN 002",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPAN 003",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPAN 011",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPAN 101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Rule reads: select 2-3 different languages, with minimum successful completion of ASL 002, FREN 002, and/or SPAN 002 in each language chosen; minimum 22 units of coursework. No per-language unit minimum is printed, so each language block is choose_units with minimum null. The student completes 2 or 3 of the three language blocks (not a single-option choice, so option_group left null).",
+   "FREN 001 (5) or FREN 031 and FREN 032 (3+3) together; likewise SPAN 001 or SPAN 031 and SPAN 032 together. The 031/032 pair is recorded as alternatives but both are needed to substitute.",
+   "SPAN 031 and SPAN 032 are not in the closed list (catalog_addition true).",
+   "FREN 101 is printed without a space as 'FREN101'; it matches closed-list FREN 101.",
+   "Each language list ends with a line 'Complete ... through Credit for Prior Learning 0-15' (ASL 001-004, 052; FREN 001-003; SPAN 001-003); not recorded as a course or block total.",
+   "Degree says general education requirements and electives as needed to complete a minimum of 60 units; no GE pattern named and no degree total printed as a figure, so degree_total null and electives_fill_degree true.",
+   "Outcomes lead-in names 'Foreign Languages, General Associate in Arts', apparently an older name for this World Languages A.A.; outcomes text normalized from PDF ligature artifacts (e.g., 'grammaƟ cal' -> 'grammatical').",
+   "Pages 342-343 hold separate ASL A.A. and ASL/English Interpreter Training programs; not read for this record."
+  ]
+ },
+ "extracted_run": 39037377728,
+ "read_run": "39035226783"
+}

@@ -1,0 +1,155 @@
+{
+ "college": "San Diego College of Continuing Education",
+ "control_number": "38412",
+ "shape": "noncredit",
+ "title": "Digital Design",
+ "award": "Noncredit program",
+ "source_url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=27",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6619,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6619,
+    "output_tokens": 818,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 818,
+  "output_tokens_details": {
+   "thinking_tokens": 199
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.04284,
+ "ms": 7606,
+ "seconds": 7.8,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 0,
+   "listed": 4,
+   "share": 0.0,
+   "missing": [
+    "COMM660",
+    "COMM661",
+    "COMM662",
+    "COMM663"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "unstated",
+   "computed": null,
+   "stated": null,
+   "against": null,
+   "why": [
+    "the catalog prints no total, no hours and no units"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "San Diego College of Continuing Education (SDCCE) to College CTE (Career Technical Education) Transitions Credit by Exam Active Agreements",
+   "measure": "hours",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "COMM 660",
+    "why": "named only in credit-by-exam articulation table, not as a Digital Design program requirement"
+   },
+   {
+    "code": "COMM 661",
+    "why": "named only in credit-by-exam articulation table, not as a Digital Design program requirement"
+   },
+   {
+    "code": "COMM 662",
+    "why": "named only in credit-by-exam articulation table, not as a Digital Design program requirement"
+   },
+   {
+    "code": "COMM 663",
+    "why": "named only in credit-by-exam articulation table, not as a Digital Design program requirement"
+   }
+  ],
+  "notes": [
+   "The supplied page is the Credit by Exam Active Agreements table, not the Digital Design noncredit program section. No program requirements, hours, outcomes or careers are printed, so no blocks were recorded.",
+   "The table shows that COMM 660, COMM 661, COMM 662 and COMM 663 (Portfolio Design) together articulate to DSGN 102 Digital Media I (3 units) at City College Art – Graphic Design, active through Summer 2027. COMM 660, COMM 661 and COMM 662 together articulate to MULT 100 at Mesa Multimedia, active through Summer 2028.",
+   "Measure is set to hours because this is a noncredit program, but the text prints no hours. A reviewer should locate the actual Digital Design program page in the 2026-2027 CE catalog."
+  ]
+ },
+ "extracted_run": "39035224783"
+}

@@ -1,0 +1,652 @@
+{
+ "college": "Cañada College",
+ "catalog_url": "https://canadacollege.edu/catalogschedule/",
+ "platform": "custom_html",
+ "catalog_year": null,
+ "programs": 127,
+ "with_closed_list": 75,
+ "started": "2026-10-17T12:25:07Z",
+ "scope": null,
+ "sitemap": {
+  "url": "https://canadacollege.edu/sitemap.xml",
+  "status": 200,
+  "listed": 25550,
+  "nested": 0,
+  "program_pages": 0,
+  "refused": null,
+  "errors": null
+ },
+ "index_fallback": 1,
+ "pages_read": 1,
+ "child_pages": 0,
+ "banner_h1": null,
+ "loads": 7,
+ "seconds": 46.3,
+ "found": 1,
+ "by_method": {
+  "no_closed_list": 52,
+  "not_found": 73,
+  "page_claimed": 1,
+  "sitemap_page": 1
+ },
+ "shared_pages": {},
+ "not_found": [
+  {
+   "control_number": "05700",
+   "title": "Business Administration",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "05711",
+   "title": "Theater Arts",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "05717",
+   "title": "Custom Dressmaking/Small Business Oriented",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "05722",
+   "title": "Philosophy",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "05735",
+   "title": "Geography",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "10247",
+   "title": "Business Management",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "14443",
+   "title": "Digital Art and Animation",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "15052",
+   "title": "Technical (Apparel Industry Oriented)",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "15654",
+   "title": "Graphic Design",
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "16816",
+   "title": "3D Animation and Videogame Art",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "20425",
+   "title": "Business Administration",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "20426",
+   "title": "Entrepreneurship and Small Business Management",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "20427",
+   "title": "Business Management",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "20430",
+   "title": "3D Animation and Videogame Art",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "20432",
+   "title": "Digital Art and Animation",
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "20438",
+   "title": "Custom Dressmaking/Small Business Oriented",
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "20440",
+   "title": "Technical (Apparel Industry Oriented)",
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "30385",
+   "title": "Art History",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "30427",
+   "title": "Earth Science",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "30741",
+   "title": "Mathematics",
+   "award": "A.S. T Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "30825",
+   "title": "Sociology",
+   "award": "A.A- T Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "30834",
+   "title": "Psychology",
+   "award": "A.A- T Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "30853",
+   "title": "Home Staging",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "30881",
+   "title": "Physics",
+   "award": "A.S. T Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "30910",
+   "title": "Kinesiology",
+   "award": "A.A- T Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "31069",
+   "title": "Early Childhood Education",
+   "award": "A.S. T Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "31401",
+   "title": "Math for Surveying and Computer-aided Design",
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "31755",
+   "title": "Bilingualism and Biliteracy in English/Spanish",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "31856",
+   "title": "DANCE",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "31911",
+   "title": "Pathways to Student Success",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "32197",
+   "title": "Computer Science",
+   "award": "A.S. T Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "32295",
+   "title": "Geography",
+   "award": "A.A- T Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "32400",
+   "title": "Anthropology",
+   "award": "A.A- T Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "32452",
+   "title": "Studio Arts",
+   "award": "A.A- T Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "32514",
+   "title": "Art History",
+   "award": "A.A- T Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "32525",
+   "title": "Computer Science - Java",
+   "award": "Certificate of Achievement: 12 to fewer than 18 semester(or 18 to fewer than 27 ",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "32526",
+   "title": "Computer Science - Swift",
+   "award": "Certificate of Achievement: 12 to fewer than 18 semester(or 18 to fewer than 27 ",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "32527",
+   "title": "Computer Science - C++",
+   "award": "Certificate of Achievement: 12 to fewer than 18 semester(or 18 to fewer than 27 ",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "32576",
+   "title": "History",
+   "award": "A.A- T Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "32716",
+   "title": "Economics",
+   "award": "A.A- T Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "32730",
+   "title": "English",
+   "award": "A.A- T Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "32731",
+   "title": "Philosophy",
+   "award": "A.A- T Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "32795",
+   "title": "Theatre Arts",
+   "award": "A.A- T Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "32833",
+   "title": "Political Science",
+   "award": "A.A- T Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "33317",
+   "title": "Payroll Specialist",
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "33608",
+   "title": "Biology",
+   "award": "A.S. T Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "33610",
+   "title": "Nutrition and Dietetics",
+   "award": "A.S. T Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "33828",
+   "title": "Spanish",
+   "award": "A.A- T Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "35834",
+   "title": "Child and Adolescent Development",
+   "award": "A.A- T Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "35971",
+   "title": "Environmental Science",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "35986",
+   "title": "Engineering",
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "36025",
+   "title": "Law, Public Policy, and Society",
+   "award": "A.A- T Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "36056",
+   "title": "Environmental Science",
+   "award": "A.S. T Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "36721",
+   "title": "Business Information Worker",
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "36942",
+   "title": "Marketing",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "37122",
+   "title": "Social Work and Human Services",
+   "award": "A.A- T Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "37156",
+   "title": "Business Assistant",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "37973",
+   "title": "Youth and School-Age",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "37974",
+   "title": "Human Relations in the Workplace",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "38442",
+   "title": "Cloud Computing",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "38514",
+   "title": "Video Game Design",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "38824",
+   "title": "Litigation",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "40391",
+   "title": "Inclusion Support",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "40834",
+   "title": "Ethnic Studies",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "41287",
+   "title": "Business Administration 2.0",
+   "award": "A.S. T Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "41512",
+   "title": "Advanced Optics and Photonics Technology",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "41513",
+   "title": "Photonics and Laser Technology",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "43514",
+   "title": "Business Administration",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "43537",
+   "title": "Marketing",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "43660",
+   "title": "Entrepreneurship and Small Business Management",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "43790",
+   "title": "Multilingual Learner Teaching",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "43965",
+   "title": "Business Assistant",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "45177",
+   "title": "Digital Marketing",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  }
+ ],
+ "page_claimed": [
+  {
+   "control_number": "43478",
+   "title": "Communication Studies 2.0",
+   "award": "A.A- T Degree",
+   "pages": [
+    "https://canadacollege.edu/transfercenter/generaleducation/ccn.php"
+   ]
+  }
+ ],
+ "coverage_bands": {
+  "0.5-0.8": 1,
+  "0.8-1.0": 0,
+  "1.0": 0
+ },
+ "would_extract": {
+  "against": null,
+  "kept": 0,
+  "programs": 1,
+  "list": [
+   {
+    "control_number": "32861",
+    "title": "Elementary Teacher Education",
+    "award": "A.A- T Degree",
+    "url": "https://canadacollege.edu/transfercenter/generaleducation/ccn.php",
+    "coverage": 0.5,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   }
+  ]
+ },
+ "run": "39032360834"
+}

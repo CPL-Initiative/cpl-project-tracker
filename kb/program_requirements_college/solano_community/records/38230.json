@@ -1,0 +1,289 @@
+{
+ "college": "Solano Community College",
+ "control_number": "38230",
+ "shape": "certificate",
+ "title": "Cell and Gene Therapies",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=165",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 12242,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 12242,
+    "output_tokens": 2288,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2288,
+  "output_tokens_details": {
+   "thinking_tokens": 844
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.09473,
+ "ms": 19098,
+ "seconds": 19.5,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 11,
+   "listed": 11,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "CHEM10"
+   ],
+   "flagged": [
+    "CHEM10"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    24.0,
+    29.0
+   ],
+   "stated": [
+    24.0,
+    29.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [
+    "Follow the appropriate procedures to maintain controlled documents: In a research setting, students will keep a research laboratory notebook using a standard legal format. In a manufacturing setting, students will keep the appropriate controlled documents"
+   ],
+   "why": [
+    "not in the catalog text as printed: Follow the appropriate procedures to maintain controlled documents: In a researc"
+   ],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": false
+  },
+  "careers": {
+   "count": 2,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Cell and Gene Therapies Certificate of Achievement",
+   "measure": "units",
+   "total_units": {
+    "min": 24,
+    "max": 29
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Apply knowledge of the regulation of the Food and Drug Administration and other international regulatory agencies of cell-based therapeutic agents.",
+    "Apply knowledge of cell biology concepts to prepare and maintain cells in culture while maintaining sterility stem cells must be able to be cultured in an undifferentiated state or induced to differentiate into different cell types.",
+    "Follow the appropriate procedures to maintain controlled documents: In a research setting, students will keep a research laboratory notebook using a standard legal format. In a manufacturing setting, students will keep the appropriate controlled documents"
+   ],
+   "careers": [
+    "gene therapy",
+    "cell therapy"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "BIOT 001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOT 052",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOT 057",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOT 060",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOT 061",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Biomanufacturing",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 1,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "BIOT 062",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOT 065",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Biology",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 4,
+     "max": 5
+    },
+    "courses": [
+     {
+      "code": "BIOL 002",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL 014",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Chemistry",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 4,
+     "max": 5
+    },
+    "courses": [
+     {
+      "code": "CHEM 001",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 010",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CHEM 012",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Catalog text contains PDF ligature artifacts (e.g., 'regulaƟ on', 'seƫ n g', 'diﬀ erenƟ ate'); outcomes were transcribed with these rendered as normal letters (ti, fi, ff, tt). Reviewer may verify against the PDF.",
+   "The Program Outcomes lead-in names the 'Stem Cells and Cell-Based Technologies Certificate of Achievement', apparently a former program name; outcomes printed in this Cell and Gene Therapies section were recorded.",
+   "Outcome 3 is printed without a final period; copied as printed.",
+   "Requirement list prints older titles for BIOT 052 ('Business and Regulatory Practices in Biotechnology') and BIOT 061 ('Stem Cells and Cell-Based Technologies'); course codes match the closed list (BIOT 52, BIOT 61).",
+   "CHEM 010 Intermediate Chemistry is in the Chemistry list but not in the closed list; recorded as catalog addition.",
+   "Careers recorded from the description: 'emerging fields of gene therapy ... and cell therapy'."
+  ]
+ },
+ "extracted_run": 39037377728,
+ "read_run": "39035226783"
+}

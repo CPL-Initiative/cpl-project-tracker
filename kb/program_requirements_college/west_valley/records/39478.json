@@ -1,0 +1,217 @@
+{
+ "college": "West Valley College",
+ "control_number": "39478",
+ "shape": "noncredit",
+ "title": "Court Reporting",
+ "award": "Noncredit program",
+ "source_url": "https://www.westvalley.edu/catalog/programs/court-reporting-certificate-of-completion.html",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7005,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7005,
+    "output_tokens": 1474,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1474,
+  "output_tokens_details": {
+   "thinking_tokens": 549
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.0575,
+ "ms": 13188,
+ "seconds": 13.6,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 6,
+   "listed": 6,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    290.0,
+    400.0
+   ],
+   "stated": [
+    290.0,
+    400.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 7,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Court Reporting Certificate of Completion",
+   "measure": "hours",
+   "total_units": {
+    "min": 290,
+    "max": 400
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Produce accurate, properly formatted transcripts of actual court and deposition proceedings.",
+    "Use standard English punctuation and grammar, medical and legal terminology, and apply technology as required to pass the written and skills examinations for licensing.",
+    "Write stenographically, for ten minutes, four-voice testimony at 200 words per minute with 97.5% accuracy as required to pass the skills examination for licensing."
+   ],
+   "careers": [
+    "court reporting",
+    "Official Court Reporter",
+    "Deposition Court Reporter",
+    "Hearing Reporter",
+    "Freelance Reporter",
+    "Reporter for the Department of Veterans Affairs",
+    "Convention Reporter"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Select one:",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "NCCC020",
+      "units": 190,
+      "units_max": 200,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NCCC020M",
+      "units": 112,
+      "units_max": 126,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Program Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "NCCC038",
+      "units": 48,
+      "units_max": 54,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NCCC039",
+      "units": 48,
+      "units_max": 54,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NCCC042",
+      "units": 32,
+      "units_max": 36,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NCCC044",
+      "units": 50,
+      "units_max": 56,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The catalog prints codes without a space and with leading zeros (NCCC020, NCCC038, etc.); these were matched to closed-list codes NCCC 20, NCCC 38, NCCC 39, NCCC 42, NCCC 44 and NCCC 020M, so none is marked a catalog addition.",
+   "Award is a noncredit Certificate of Completion counted in hours; all units fields hold hours as printed.",
+   "The hours for the 'Select one' row are printed in order: 190 - 200 hours for NCCC020 and 112 - 126 hours for NCCC020M (alignment inferred from table layout).",
+   "Program Learning Outcomes were taken from the page's outcomes tab, which appears to apply to this program."
+  ]
+ },
+ "extracted_run": "39035604333"
+}

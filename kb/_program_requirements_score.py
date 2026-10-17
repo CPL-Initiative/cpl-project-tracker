@@ -324,6 +324,11 @@ _FOLD = str.maketrans({"‘": "'", "’": "'", "“": '"', "”": '"',
                        "–": "-", "—": "-", " ": " ", "­": None})
 
 
+_LIGATURES = {"Ɵ": "ti", "Ʃ": "tt", "Ō": "ft", "ﬁ": "fi", "ﬂ": "fl", "ﬀ": "ff", "ﬃ": "ffi", "ﬄ": "ffl"}
+_LIGATURE = re.compile("[%s]" % "".join(_LIGATURES))
+_UNSPACED = "\x00"   # marks the reading with no spaces
+
+
 def _flat(s: str) -> str:
     return re.sub(r"\s+", " ", (s or "").translate(_FOLD)).strip()
 
@@ -335,8 +340,16 @@ def _readings(text: str) -> list[str]:
     flat = _flat(text)
     # East LA's PDF breaks a word with a hyphen spaced on both sides ("tech - nicians",
     # "profe - sional"); 82 of its 120 records failed the outcomes check on that (run 39011319511).
-    return [flat, re.sub(r"(\w)- (\w)", r"\1-\2", flat), re.sub(r"(\w)- (\w)", r"\1\2", flat),
-            re.sub(r"(\w) - (\w)", r"\1\2", flat)]
+    readings = [flat, re.sub(r"(\w)- (\w)", r"\1-\2", flat), re.sub(r"(\w)- (\w)", r"\1\2", flat),
+                re.sub(r"(\w) - (\w)", r"\1\2", flat)]
+    # Solano's PDF prints its ligatures as stand-in glyphs with a space beside them ("IntroducƟ on",
+    # "draŌ  landscape plan", "Iden Ɵ ﬁ caƟ on"); 135 of its 162 records failed the outcomes check on that
+    # (run 39035226783; page read 39036135577). Which space is the word's own cannot be told ("draŌ  landscape",
+    # "aŌ er"), so such text gets one more reading: the ligatures spelled out and every space dropped, which
+    # outcomes_check compares with the outcome's own letters, spaces dropped too.
+    if _LIGATURE.search(flat):
+        readings.append(_UNSPACED + re.sub(r"\s", "", _LIGATURE.sub(lambda m: _LIGATURES[m.group(0)], flat)))
+    return readings
 
 
 def outcome_entries(record: dict) -> list[tuple[str | None, str]]:
@@ -362,7 +375,7 @@ def outcomes_check(record: dict, text: str | None) -> dict:
             if not f:
                 bad.append(o)
                 why.append("an empty outcome%s" % (" under %s" % code if code else ""))
-            elif not any(f in r for r in readings):
+            elif not any((re.sub(r"\s", "", f) if r.startswith(_UNSPACED) else f) in r for r in readings):
                 bad.append(o)
                 why.append("not in the catalog text as printed%s: %s"
                            % (" (%s)" % code if code else "", f[:80]))

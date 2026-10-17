@@ -88,17 +88,11 @@
    "program": 6,
    "courses": 0,
    "count": 6,
-   "not_verbatim": [
-    "Demonstrate ability to greet patients, answer telephones, schedule appointments, maintain and filing client medical records, complete insurance forms, arrange hospital admissions and laboratory services, handle billing, bookkeeping, and physician correspondence;",
-    "Demonstrate ability to perform other clinical tasks such as preparing and administering medications as directed by a physician, authorizing drug refills as directed, telephoning prescriptions to a pharmacy, preparing clients for x-rays, taking EKG's, removing sutures and changing dressings; and"
-   ],
-   "why": [
-    "not in the catalog text as printed: Demonstrate ability to greet patients, answer telephones, schedule appointments,",
-    "not in the catalog text as printed: Demonstrate ability to perform other clinical tasks such as preparing and admini"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 0,
@@ -294,5 +288,6 @@
    "Outcomes copied with the PDF ligature 'ﬁ' rendered as 'fi'."
   ]
  },
- "extracted_run": "39006464249"
+ "extracted_run": 39037637820,
+ "read_run": "39006464249"
 }

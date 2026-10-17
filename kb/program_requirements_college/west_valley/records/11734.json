@@ -1,0 +1,257 @@
+{
+ "college": "West Valley College",
+ "control_number": "11734",
+ "shape": "degree",
+ "title": "Communication Design",
+ "award": "A.A. Degree",
+ "source_url": "https://www.westvalley.edu/catalog/programs/communication-design-associate-in-arts-degree.html",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7280,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7280,
+    "output_tokens": 1576,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1576,
+  "output_tokens_details": {
+   "thinking_tokens": 409
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.06064,
+ "ms": 12409,
+ "seconds": 12.9,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 9,
+   "listed": 9,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 2,
+   "codes": [
+    "GDES8",
+    "GDES9"
+   ],
+   "flagged": [
+    "GDES8",
+    "GDES9"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    38.0,
+    38.0
+   ],
+   "stated": [
+    38.0,
+    38.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 7,
+   "courses": 0,
+   "count": 7,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 9,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Communication Design Associate in Arts Degree",
+   "measure": "units",
+   "total_units": {
+    "min": 38,
+    "max": 38
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "WVC or Cal-GETC General Education patterns",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": true,
+   "outcomes": [
+    "Plan, develop, test and market digital products and printed material",
+    "Follow standard user interface guidelines for accessible interfaces",
+    "Sketch wireframe drawings for interface elements and layout",
+    "Apply UX and UI standards to digital products",
+    "Apply programming languages to layout and user interactions for digital products",
+    "Create portfolios in alignment with professional and educational goals and identity.",
+    "Create digital product prototypes that can be tested by users."
+   ],
+   "careers": [
+    "app design and development",
+    "Front-end Web Developer or Designer",
+    "Multimedia Artist",
+    "App Developer",
+    "UX/UI Designer",
+    "Graphic Designer",
+    "Interactive Media Designer",
+    "Digital and Social Marketer",
+    "Visual Designer"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Major Core Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 38,
+     "max": 38
+    },
+    "courses": [
+     {
+      "code": "GDES001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GDES003",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GDES004",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GDES008",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "GDES009",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "GDES020A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GDES020B",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARTS031A",
+      "units": 3.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARTS033A",
+      "units": 3.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARTS062D",
+      "units": 3.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARTS081",
+      "units": 3.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Catalog prints codes zero-padded (GDES001, GDES003, GDES004); matched to closed-list GDES 1, GDES 3, GDES 4.",
+   "GDES008 Photoshop for Designers and GDES009 Introduction to Typography are not in the closed list; recorded as catalog additions.",
+   "The 60-unit figure is the general Associate Degree minimum, not printed as this award's total, so degree_total is null; additional degree-applicable units fill the rest (electives_fill_degree true).",
+   "GE pattern: student completes either WVC GE or Cal-GETC; Cal-GETC recommended for transfer. No GE units printed.",
+   "Outcomes taken from the page's Program Learning Outcomes tab; line breaks inside outcomes read as spaces.",
+   "'Front-end Web Developer or Designer' kept as one career entry as printed."
+  ]
+ },
+ "extracted_run": "39035604333"
+}

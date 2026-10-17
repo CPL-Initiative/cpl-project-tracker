@@ -1,0 +1,28 @@
+{
+ "_readme": "S405 SkyCholla, 2026-10-17. Cañada's registry row names its catalog-and-schedule landing page; the capture (run 39032360834) found no program page in the main site's 25,550-page sitemap. Its sister colleges serve catalog.<college>.edu/current/. This read lists the landing page's catalog links and tries the sister form, so a correction card can name the address the college's own page names. Two loads, no model call.",
+ "college": "Cañada College",
+ "questions": {
+  "catalog_address": "The address of the 2026-2027 online catalog the college's own page links, and whether catalog.canadacollege.edu/current/ serves it."
+ },
+ "keywords": [
+  "2026",
+  "catalog",
+  "current"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "catalog_address"
+   ],
+   "url": "https://canadacollege.edu/catalogschedule/",
+   "links": "catalog"
+  },
+  {
+   "answers": [
+    "catalog_address"
+   ],
+   "url": "https://catalog.canadacollege.edu/current/",
+   "links": "program|degree|certificate"
+  }
+ ]
+}

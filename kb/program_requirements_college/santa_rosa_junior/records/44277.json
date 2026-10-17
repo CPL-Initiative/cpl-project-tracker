@@ -88,25 +88,11 @@
    "program": 30,
    "courses": 0,
    "count": 30,
-   "not_verbatim": [
-    "Prepare initial, revised, and final repair orders in compliance with California law (BAR).",
-    "Identify engine block assembly components and configurations.",
-    "Demonstrate the proper steps to remove a cylinder head; inspect gasket condition; install cylinder head and gasket; tighten according to manufacturer's specification and procedure.",
-    "Define the basic troubleshooting of diesel electronic fuel control systems.",
-    "Perform arc weld from the flat, fillet weld position per American Welding Society (AWS) standards.",
-    "Perform oxy-acetylene weld on a butt joint, lap joint, fillet joint, and brazing fillet joint per AWS standards."
-   ],
-   "why": [
-    "not in the catalog text as printed: Prepare initial, revised, and final repair orders in compliance with California ",
-    "not in the catalog text as printed: Identify engine block assembly components and configurations.",
-    "not in the catalog text as printed: Demonstrate the proper steps to remove a cylinder head; inspect gasket condition",
-    "not in the catalog text as printed: Define the basic troubleshooting of diesel electronic fuel control systems.",
-    "not in the catalog text as printed: Perform arc weld from the flat, fillet weld position per American Welding Societ",
-    "not in the catalog text as printed: Perform oxy-acetylene weld on a butt joint, lap joint, fillet joint, and brazing"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 0,
@@ -119,7 +105,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -313,5 +299,6 @@
    "No careers are named in this section."
   ]
  },
- "extracted_run": "39006464249"
+ "extracted_run": 39037637820,
+ "read_run": "39006464249"
 }

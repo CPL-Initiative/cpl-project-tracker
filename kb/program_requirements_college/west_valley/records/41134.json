@@ -1,0 +1,276 @@
+{
+ "college": "West Valley College",
+ "control_number": "41134",
+ "shape": "adt",
+ "title": "UCTP Chemistry",
+ "award": "A.S. T Degree",
+ "source_url": "https://www.westvalley.edu/catalog/programs/chemistry-associate-in-science-degree-for-uc-transfer.html",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7559,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7559,
+    "output_tokens": 1779,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1779,
+  "output_tokens_details": {
+   "thinking_tokens": 403
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.06582,
+ "ms": 14291,
+ "seconds": 15.1,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 15,
+   "listed": 15,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    52.0,
+    52.0
+   ],
+   "stated": [
+    52.0,
+    52.0
+   ],
+   "against": "program",
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     68.0,
+     72.0
+    ],
+    "stated": [
+     68.0,
+     72.0
+    ],
+    "against": "degree",
+    "ge": [
+     16.0,
+     20.0
+    ],
+    "why": []
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Chemistry Associate in Science Degree for UC Transfer",
+   "measure": "units",
+   "total_units": {
+    "min": 52,
+    "max": 52
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": 68,
+    "max": 72
+   },
+   "ge_units": {
+    "min": 16,
+    "max": 20
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Use physical and chemical concepts as well as mathematical skills to solve chemistry problems that demonstrate critical thinking and scientific inquiry.",
+    "Perform hypothesis driven laboratory experiments using appropriate instruments and basic software, such as spreadsheets and graphing programs, as well as analyze and interpret data and identify sources of error to form appropriate conclusions.",
+    "Provide technical information in a clear and concise manner to demonstrate effective written and oral communication skills for chemical and physical concepts, results of laboratory experiments, and articles in the scientific literature."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Major Core Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 52,
+     "max": 52
+    },
+    "courses": [
+     {
+      "code": "CHEM001A",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CHEM001AH",
+        "units": 5,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM001B",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CHEM001BH",
+        "units": 5,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM012A",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM012B",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH003A",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MATH003AH",
+        "units": 5,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH003B",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MATH003BH",
+        "units": 5,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH004A",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH004B",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS004A",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS004B",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS004C",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Each 'Select one:' pair is a regular course with its honors twin, recorded as one entry with the honors course as an alternative inside the required core block.",
+   "The page prints 'Total degree units: 68-72' and 16-20 units of required Cal-GETC courses, but a later correction says the Cal-GETC units required are 19-23 and Total Degree Units are 71-75. degree_total and ge_units record the figures printed in the requirements list (68-72 and 16-20). A reviewer should check which figures to use.",
+   "Catalog codes print without a space (e.g., CHEM001A); the closed list uses 'CHEM 001A'. These are treated as the same courses, so none is a catalog addition.",
+   "The intro states a minimum of 52 semester units in the major, and the core block prints 52 units. total_units is taken from the block's printed total of 52 units.",
+   "The program learning outcomes come from the page's outcomes tab, under the lead-in 'Upon successful completion of this program a student will be able to:'. They are recorded for this award, which is the only program on the page.",
+   "The page also requires a minimum 3.5 GPA in UC-transferable coursework for guaranteed admission, and a grade of C or better in major requirements."
+  ]
+ },
+ "extracted_run": "39035604333"
+}

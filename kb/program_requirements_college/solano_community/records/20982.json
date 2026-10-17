@@ -1,0 +1,391 @@
+{
+ "college": "Solano Community College",
+ "control_number": "20982",
+ "shape": "certificate",
+ "title": "Photography, Professional",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=390",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 12064,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 12064,
+    "output_tokens": 3197,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 3197,
+  "output_tokens_details": {
+   "thinking_tokens": 1121
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.1122,
+ "ms": 25144,
+ "seconds": 25.7,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 19,
+   "listed": 19,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 5,
+   "codes": [
+    "PHOT164",
+    "PHOT30",
+    "PHOT30B",
+    "PHOT33",
+    "PHOT46"
+   ],
+   "flagged": [
+    "PHOT164",
+    "PHOT30",
+    "PHOT30B",
+    "PHOT33",
+    "PHOT46"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    27.0,
+    27.0
+   ],
+   "stated": [
+    27.0,
+    27.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [
+    "Conceive and produce a coherent portfolio of original work that meets department and professional industry standards."
+   ],
+   "why": [
+    "not in the catalog text as printed: Conceive and produce a coherent portfolio of original work that meets department"
+   ],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": false
+  },
+  "careers": {
+   "count": 17,
+   "not_verbatim": [
+    "fine art",
+    "video production"
+   ],
+   "pass": false
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Photography, Professional Certificate of Achievement and Associate in Arts",
+   "measure": "units",
+   "total_units": {
+    "min": 27,
+    "max": 27
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Integrate conceptual elements with aesthetic and technical skills to create cohesive and memorable photographs.",
+    "Demonstrate full knowledge of the technical aspects of photography, including camera operations, exposure, lighting, and post-production, including software applications and printing.",
+    "Demonstrate an understanding of industry trends and professional practices related to a career in photography.",
+    "Conceive and produce a coherent portfolio of original work that meets department and professional industry standards.",
+    "Demonstrate an understanding of, and sensitivity towards, historical and contemporary issues of equity, race and representation in the photo industry."
+   ],
+   "careers": [
+    "advertising",
+    "illustration",
+    "industrial",
+    "portraiture",
+    "fine art",
+    "commercial",
+    "photojournalism",
+    "landscape",
+    "self-employment",
+    "assisting",
+    "retail",
+    "post-production",
+    "marketing",
+    "video production",
+    "graphic design",
+    "journalism",
+    "social media management"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "PHOT 029",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHOT 031",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHOT 032",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHOT 151",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHOT 156",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List A: (select two courses)",
+    "rule": "choose_courses",
+    "minimum": 2,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "PHOT 152",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHOT 153",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHOT 154",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List B (select 6 units)",
+    "rule": "choose_units",
+    "minimum": 6,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "PHOT 030",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PHOT 030A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHOT 030B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PHOT 033",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PHOT 035",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHOT 040",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHOT 045",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHOT 046",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PHOT 056",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHOT 158",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHOT 161",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHOT 162",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHOT 163",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHOT 164",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PHOT 165",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 015C",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The section prints the Certificate of Achievement and the Associate in Arts together; the 27-unit major is the certificate's requirements. The A.A. adds general education and electives with no printed units, which are not recorded for this certificate.",
+   "The Program Outcomes list is printed once for the 'Certificate of Achievement/Associate Degree' and is shared by this award.",
+   "Catalog prints codes with leading zeros (PHOT 029, PHOT 031, PHOT 032, PHOT 035, PHOT 040, PHOT 045, PHOT 056); these were matched to closed-list PHOT 29, 31, 32, 35, 40, 45, 56.",
+   "List B is printed as 'PHOT158' without a space; recorded as PHOT 158.",
+   "List B's first line, 'Any course not used for List A 3', means unused List A courses (PHOT 152/153/154) may also count toward List B; not recorded as separate entries to avoid double listing.",
+   "PHOT 161 is printed with 3 units in List B, while the state file stores 1 unit; PHOT 162 is printed as 'Workshop: Portraiture Intensive' vs. state title 'Workshop: Portraiture and Studio Lighting'. Reviewer should check.",
+   "PHOT 030 'Beginning Film Photography', PHOT 030B, PHOT 033, PHOT 046 and PHOT 164 are not in the closed list and are marked catalog additions.",
+   "Careers are taken from the program description's named photographic fields, entry-level job areas and related fields."
+  ]
+ },
+ "extracted_run": 39037377728,
+ "read_run": "39035226783"
+}

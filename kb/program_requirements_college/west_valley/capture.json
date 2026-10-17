@@ -1,0 +1,1481 @@
+{
+ "college": "West Valley College",
+ "catalog_url": "https://www.westvalley.edu/catalog/",
+ "platform": "custom_html",
+ "catalog_year": "2026-2027",
+ "programs": 145,
+ "with_closed_list": 142,
+ "started": "2026-10-17T13:13:32Z",
+ "scope": null,
+ "sitemap": {
+  "url": "https://www.westvalley.edu/sitemap.xml",
+  "status": 200,
+  "listed": 0,
+  "nested": 0,
+  "program_pages": 0,
+  "refused": null,
+  "errors": null
+ },
+ "index_fallback": 145,
+ "pages_read": 145,
+ "child_pages": 0,
+ "banner_h1": "Catalog 2026-2027",
+ "loads": 151,
+ "seconds": 787.6,
+ "found": 134,
+ "by_method": {
+  "no_closed_list": 3,
+  "not_found": 4,
+  "page_claimed": 4,
+  "sitemap_page": 134
+ },
+ "shared_pages": {
+  "https://www.westvalley.edu/catalog/programs/psychology-associate-in-arts-degree-for-transfer.html": [
+   "06274",
+   "31033"
+  ],
+  "https://www.westvalley.edu/catalog/programs/communication-studies-2-0-associate-in-arts-degree-for-transfer.html": [
+   "30976",
+   "43024"
+  ],
+  "https://www.westvalley.edu/catalog/programs/public-health-associate-in-science-degree-for-transfer.html": [
+   "37882",
+   "45153"
+  ]
+ },
+ "not_found": [
+  {
+   "control_number": "06276",
+   "title": "Administration of Justice: Law Enforcement",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "40773",
+   "title": "Communication, Digital Skills and Leadership for the Workplace",
+   "award": "Noncredit program",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "44070",
+   "title": "iOS App Development with Swift",
+   "award": "Noncredit program",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "44126",
+   "title": "Web Programming",
+   "award": "Noncredit program",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  }
+ ],
+ "page_claimed": [
+  {
+   "control_number": "32021",
+   "title": "Administration of Justice",
+   "award": "A.S. T Degree",
+   "pages": [
+    "https://www.westvalley.edu/catalog/programs/liberal-arts-associate-in-arts-degree.html"
+   ]
+  },
+  {
+   "control_number": "40699",
+   "title": "Theater Arts: Stage Technology",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://www.westvalley.edu/catalog/programs/theater-arts-associate-in-arts-degree.html",
+    "https://www.westvalley.edu/catalog/programs/theater-arts-associate-in-arts-degree-for-transfer.html"
+   ]
+  },
+  {
+   "control_number": "41133",
+   "title": "UCTP Physics",
+   "award": "A.S. T Degree",
+   "pages": [
+    "https://www.westvalley.edu/catalog/programs/physics-2-0-associate-in-science-degree-for-transfer.html",
+    "https://www.westvalley.edu/catalog/programs/chemistry-associate-in-science-degree-for-uc-transfer.html",
+    "https://www.westvalley.edu/catalog/programs/mathematics-2-0-associate-in-science-degree-for-transfer.html",
+    "https://www.westvalley.edu/catalog/programs/economics-associate-in-arts-degree-for-transfer.html",
+    "https://www.westvalley.edu/catalog/programs/biology-associate-in-science-degree-for-transfer.html",
+    "https://www.westvalley.edu/catalog/programs/geology-associate-in-science-degree-for-transfer.html",
+    "https://www.westvalley.edu/catalog/programs/applied-physics-associate-in-science-degree.html",
+    "https://www.westvalley.edu/catalog/programs/liberal-arts-associate-in-arts-degree.html",
+    "https://www.westvalley.edu/catalog/programs/mathematics-associate-in-science-degree.html",
+    "https://www.westvalley.edu/catalog/programs/engineering-associate-in-science-degree.html",
+    "https://www.westvalley.edu/catalog/programs/ecology-biodiversity-and-conservation-associate-in-science-degree.html",
+    "https://www.westvalley.edu/catalog/programs/data-science-associate-in-science-degree.html"
+   ]
+  },
+  {
+   "control_number": "42951",
+   "title": "Stylist",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "pages": [
+    "https://www.westvalley.edu/catalog/programs/apparel-design-level-2-certificate-of-achievement.html",
+    "https://www.westvalley.edu/catalog/programs/apparel-design-associate-in-science-degree.html",
+    "https://www.westvalley.edu/catalog/programs/liberal-arts-associate-in-arts-degree.html"
+   ]
+  }
+ ],
+ "coverage_bands": {
+  "0.5-0.8": 1,
+  "0.8-1.0": 9,
+  "1.0": 124
+ },
+ "would_extract": {
+  "against": null,
+  "kept": 0,
+  "programs": 134,
+  "list": [
+   {
+    "control_number": "06241",
+    "title": "Architecture",
+    "award": "A.S. Degree",
+    "url": "https://www.westvalley.edu/catalog/programs/architecture-associate-in-science-degree.html",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "06242",
+    "title": "Interior Design Fundamentals",
+    "award": "A.S. Degree",
+    "url": "https://www.westvalley.edu/catalog/programs/interior-design-fundamentals-associate-in-science-degree.html",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "06243",
+    "title": "Biological Sciences",
+    "award": "A.S. Degree",
+    "url": "https://www.westvalley.edu/catalog/programs/biological-sciences-associate-in-science-degree.html",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "06252",
+    "title": "Kinesiology",
+    "award": "A.A. Degree",
+    "url": "https://www.westvalley.edu/catalog/programs/kinesiology-associate-in-arts-degree.html",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "06257",
+    "title": "Theater Arts",
+    "award": "A.A. Degree",
+    "url": "https://www.westvalley.edu/catalog/programs/theater-arts-associate-in-arts-degree.html",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "06258",
+    "title": "French",
+    "award": "A.A. Degree",
+    "url": "https://www.westvalley.edu/catalog/programs/french-associate-in-arts-degree.html",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "06261",
+    "title": "Spanish",
+    "award": "A.A. Degree",
+    "url": "https://www.westvalley.edu/catalog/programs/spanish-associate-in-arts-degree.html",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "06263",
+    "title": "Medical Assistant",
+    "award": "A.S. Degree",
+    "url": "https://www.westvalley.edu/catalog/programs/medical-assistant-associate-in-science-degree.html",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "06264",
+    "title": "Apparel Design Level 1",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.westvalley.edu/catalog/programs/apparel-design-level-1-certificate-of-achievement.html",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "06266",
+    "title": "English",
+    "award": "A.A. Degree",
+    "url": "https://www.westvalley.edu/catalog/programs/english-associate-in-arts-degree.html",
+    "coverage": 0.971,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "06267",
+    "title": "Communication Studies",
+    "award": "A.A. Degree",
+    "url": "https://www.westvalley.edu/catalog/programs/communication-studies-associate-in-arts-degree.html",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "06269",
+    "title": "Mathematics",
+    "award": "A.S. Degree",
+    "url": "https://www.westvalley.edu/catalog/programs/mathematics-associate-in-science-degree.html",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "06271",
+    "title": "Applied Physics",
+    "award": "A.S. Degree",
+    "url": "https://www.westvalley.edu/catalog/programs/applied-physics-associate-in-science-degree.html",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "06274",
+    "title": "Psychology",
+    "award": "A.A. Degree",
+    "url": "https://www.westvalley.edu/catalog/programs/psychology-associate-in-arts-degree-for-transfer.html",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "06275",
+    "title": "Park Management",
+    "award": "A.S. Degree",
+    "url": "https://www.westvalley.edu/catalog/programs/park-management-associate-in-science-degree.html",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "06277",
+    "title": "Early Childhood Education",
+    "award": "A.S. Degree",
+    "url": "https://www.westvalley.edu/catalog/programs/early-childhood-education-associate-in-science-degree.html",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "06279",
+    "title": "Women, Gender and Queer Studies",
+    "award": "A.A. Degree",
+    "url": "https://www.westvalley.edu/catalog/programs/women-gender-and-queer-studies-associate-in-arts-degree.html",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "06280",
+    "title": "History",
+    "award": "A.A. Degree",
+    "url": "https://www.westvalley.edu/catalog/programs/history-associate-in-arts-degree.html",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "06281",
+    "title": "Political Science",
+    "award": "A.A. Degree",
+    "url": "https://www.westvalley.edu/catalog/programs/political-science-associate-in-arts-degree.html",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "06282",
+    "title": "Sociology",
+    "award": "A.A. Degree",
+    "url": "https://www.westvalley.edu/catalog/programs/sociology-associate-in-arts-degree.html",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "07457",
+    "title": "Business Administration",
+    "award": "A.S. Degree",
+    "url": "https://www.westvalley.edu/catalog/programs/business-administration-associate-in-science-degree.html",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "07478",
+    "title": "Insurance Billing Specialist",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.westvalley.edu/catalog/programs/insurance-billing-specialist-certificate-of-achievement.html",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "07479",
+    "title": "Clinical Assistant",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://www.westvalley.edu/catalog/programs/clinical-assistant-certificate-of-achievement.html",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "07484",
+    "title": "Paralegal",
+    "award": "A.S. Degree",
+    "url": "https://www.westvalley.edu/catalog/programs/paralegal-associate-in-science-degree.html",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "07487",
+    "title": "Anthropology",
+    "award": "A.A. Degree",
+    "url": "https://www.westvalley.edu/catalog/programs/anthropology-associate-in-arts-degree.html",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "07618",
+    "title": "Economics",
+    "award": "A.A. Degree",
+    "url": "https://www.westvalley.edu/catalog/programs/economics-associate-in-arts-degree.html",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "07619",
+    "title": "Geography",
+    "award": "A.A. Degree",
+    "url": "https://www.westvalley.edu/catalog/programs/geography-associate-in-arts-degree.html",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "10325",
+    "title": "Film Studies",
+    "award": "A.A. Degree",
+    "url": "https://www.westvalley.edu/catalog/programs/film-studies-associate-in-arts-degree.html",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "11734",
+    "title": "Communication Design",
+    "award": "A.A. Degree",
+    "url": "https://www.westvalley.edu/catalog/programs/communication-design-associate-in-arts-degree.html",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "12290",
+    "title": "Apparel Design",
+    "award": "A.S. Degree",
+    "url": "https://www.westvalley.edu/catalog/programs/apparel-design-associate-in-science-degree.html",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "13523",
+    "title": "Computer Aided Drafting & Design",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://www.westvalley.edu/catalog/programs/computer-aided-drafting-and-design-certificate-of-achievement.html",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "14231",
+    "title": "Medical Administrative Assistant",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.westvalley.edu/catalog/programs/medical-administrative-assistant-certificate-of-achievement.html",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "15303",
+    "title": "Geospatial Technology",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.westvalley.edu/catalog/programs/geospatial-technology-certificate-of-achievement.html",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "16443",
+    "title": "Graphic Design",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.westvalley.edu/catalog/programs/graphic-design-certificate-of-achievement.html",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "17305",
+    "title": "Orthopedic Technician",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.westvalley.edu/catalog/programs/orthopedic-technician-certificate-of-achievement.html",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20271",
+    "title": "Park Management",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://www.westvalley.edu/catalog/programs/park-management-certificate-of-achievement.html",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20272",
+    "title": "Architecture",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://www.westvalley.edu/catalog/programs/architecture-certificate-of-achievement.html",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20278",
+    "title": "UX  Design",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.westvalley.edu/catalog/programs/ux-design-certificate-of-achievement.html",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20284",
+    "title": "Computer Science",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.westvalley.edu/catalog/programs/computer-science-certificate-of-achievement.html",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20307",
+    "title": "Medical Assistant",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://www.westvalley.edu/catalog/programs/medical-assistant-certificate-of-achievement.html",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20309",
+    "title": "Interior Design Fundamentals",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://www.westvalley.edu/catalog/programs/interior-design-fundamentals-certificate-of-achievement.html",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20314",
+    "title": "Apparel Design Level 2",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://www.westvalley.edu/catalog/programs/apparel-design-level-2-certificate-of-achievement.html",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20322",
+    "title": "Paralegal",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://www.westvalley.edu/catalog/programs/paralegal-certificate-of-achievement.html",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "30066",
+    "title": "Early Childhood Program Director",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://www.westvalley.edu/catalog/programs/early-childhood-program-director-certificate-of-achievement.html",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "30972",
+    "title": "Sociology",
+    "award": "A.A- T Degree",
+    "url": "https://www.westvalley.edu/catalog/programs/sociology-associate-in-arts-degree-for-transfer.html",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "30976",
+    "title": "Communication Studies",
+    "award": "A.A- T Degree",
+    "url": "https://www.westvalley.edu/catalog/programs/communication-studies-2-0-associate-in-arts-degree-for-transfer.html",
+    "coverage": 0.929,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31033",
+    "title": "Psychology",
+    "award": "A.A- T Degree",
+    "url": "https://www.westvalley.edu/catalog/programs/psychology-associate-in-arts-degree-for-transfer.html",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31991",
+    "title": "Mathematics",
+    "award": "A.S. T Degree",
+    "url": "https://www.westvalley.edu/catalog/programs/mathematics-2-0-associate-in-science-degree-for-transfer.html",
+    "coverage": 0.769,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31992",
+    "title": "Early Childhood Education",
+    "award": "A.S. T Degree",
+    "url": "https://www.westvalley.edu/catalog/programs/early-childhood-education-associate-in-science-degree-for-transfer.html",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32022",
+    "title": "Political Science",
+    "award": "A.A- T Degree",
+    "url": "https://www.westvalley.edu/catalog/programs/political-science-associate-in-arts-degree-for-transfer.html",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32023",
+    "title": "Art History",
+    "award": "A.A- T Degree",
+    "url": "https://www.westvalley.edu/catalog/programs/art-history-associate-in-arts-degree-for-transfer.html",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32024",
+    "title": "Studio Arts",
+    "award": "A.A- T Degree",
+    "url": "https://www.westvalley.edu/catalog/programs/studio-arts-associate-in-arts-degree-for-transfer.html",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32025",
+    "title": "English",
+    "award": "A.A- T Degree",
+    "url": "https://www.westvalley.edu/catalog/programs/english-associate-in-arts-degree-for-transfer.html",
+    "coverage": 0.983,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32026",
+    "title": "Theater Arts",
+    "award": "A.A- T Degree",
+    "url": "https://www.westvalley.edu/catalog/programs/theater-arts-associate-in-arts-degree-for-transfer.html",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32090",
+    "title": "Anthropology",
+    "award": "A.A- T Degree",
+    "url": "https://www.westvalley.edu/catalog/programs/anthropology-associate-in-arts-degree-for-transfer.html",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32091",
+    "title": "History",
+    "award": "A.A- T Degree",
+    "url": "https://www.westvalley.edu/catalog/programs/history-associate-in-arts-degree-for-transfer.html",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32169",
+    "title": "Music",
+    "award": "A.A- T Degree",
+    "url": "https://www.westvalley.edu/catalog/programs/music-associate-in-arts-degree-for-transfer.html",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32435",
+    "title": "Physics",
+    "award": "A.S. T Degree",
+    "url": "https://www.westvalley.edu/catalog/programs/physics-2-0-associate-in-science-degree-for-transfer.html",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32442",
+    "title": "Geology",
+    "award": "A.S. T Degree",
+    "url": "https://www.westvalley.edu/catalog/programs/geology-associate-in-science-degree-for-transfer.html",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32509",
+    "title": "Geography",
+    "award": "A.A- T Degree",
+    "url": "https://www.westvalley.edu/catalog/programs/geography-associate-in-arts-degree-for-transfer.html",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32623",
+    "title": "Philosophy",
+    "award": "A.A- T Degree",
+    "url": "https://www.westvalley.edu/catalog/programs/philosophy-associate-in-arts-degree-for-transfer.html",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32652",
+    "title": "Spanish",
+    "award": "A.A- T Degree",
+    "url": "https://www.westvalley.edu/catalog/programs/spanish-associate-in-arts-degree-for-transfer.html",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32802",
+    "title": "Kinesiology",
+    "award": "A.A- T Degree",
+    "url": "https://www.westvalley.edu/catalog/programs/kinesiology-associate-in-arts-degree-for-transfer.html",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33023",
+    "title": "Economics",
+    "award": "A.A- T Degree",
+    "url": "https://www.westvalley.edu/catalog/programs/economics-associate-in-arts-degree-for-transfer.html",
+    "coverage": 0.974,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33351",
+    "title": "Commercial Music",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.westvalley.edu/catalog/programs/commercial-music-certificate-of-achievement.html",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35310",
+    "title": "Pilates Instructor",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://www.westvalley.edu/catalog/programs/pilates-instructor-certificate-of-achievement.html",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35402",
+    "title": "Music, Professional",
+    "award": "A.A. Degree",
+    "url": "https://www.westvalley.edu/catalog/programs/music-professional-associate-in-arts-degree.html",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35490",
+    "title": "Drone Technology",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.westvalley.edu/catalog/programs/drone-technology-certificate-of-achievement.html",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35557",
+    "title": "Nutrition and Dietetics",
+    "award": "A.S. T Degree",
+    "url": "https://www.westvalley.edu/catalog/programs/nutrition-and-dietetics-associate-in-science-degree-for-transfer.html",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35588",
+    "title": "Liberal Arts",
+    "award": "A.A. Degree",
+    "url": "https://www.westvalley.edu/catalog/programs/liberal-arts-associate-in-arts-degree.html",
+    "coverage": 0.987,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35615",
+    "title": "Social Justice Studies: General Studies",
+    "award": "A.A- T Degree",
+    "url": "https://www.westvalley.edu/catalog/programs/social-justice-studies-general-studies-associate-in-arts-degree-for-transfer.html",
+    "coverage": 0.974,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35662",
+    "title": "Ecology, Biodiversity and Conservation",
+    "award": "A.S. Degree",
+    "url": "https://www.westvalley.edu/catalog/programs/ecology-biodiversity-and-conservation-associate-in-science-degree.html",
+    "coverage": 0.981,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36700",
+    "title": "Biology",
+    "award": "A.S. T Degree",
+    "url": "https://www.westvalley.edu/catalog/programs/biology-associate-in-science-degree-for-transfer.html",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36707",
+    "title": "Accounting Assistant",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://www.westvalley.edu/catalog/programs/accounting-assistant-certificate-of-achievement.html",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37882",
+    "title": "Public Health Science",
+    "award": "A.S. T Degree",
+    "url": "https://www.westvalley.edu/catalog/programs/public-health-associate-in-science-degree-for-transfer.html",
+    "coverage": 0.917,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38027",
+    "title": "Early Childhood Teacher Level 2",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.westvalley.edu/catalog/programs/early-childhood-teacher-level-2-certificate-of-achievement.html",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38029",
+    "title": "Early Childhood Teacher Level 1",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.westvalley.edu/catalog/programs/early-childhood-teacher-level-1-certificate-of-achievement.html",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38033",
+    "title": "Bookkeeping Certification",
+    "award": "Noncredit program",
+    "url": "https://www.westvalley.edu/catalog/programs/bookkeeping-certification-certificate-of-completion.html",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38034",
+    "title": "Small Business Essentials",
+    "award": "Noncredit program",
+    "url": "https://www.westvalley.edu/catalog/programs/small-business-essentials-certificate-of-completion.html",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39462",
+    "title": "Proofreading",
+    "award": "Noncredit program",
+    "url": "https://www.westvalley.edu/catalog/programs/proofreading-certificate-of-completion.html",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39478",
+    "title": "Court Reporting",
+    "award": "Noncredit program",
+    "url": "https://www.westvalley.edu/catalog/programs/court-reporting-certificate-of-completion.html",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39479",
+    "title": "Educational Captioning",
+    "award": "Noncredit program",
+    "url": "https://www.westvalley.edu/catalog/programs/educational-captioning-certificate-of-completion.html",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39480",
+    "title": "Transcription and Office Support: Machine Writing",
+    "award": "Noncredit program",
+    "url": "https://www.westvalley.edu/catalog/programs/transcription-and-office-support-machine-writing-certificate-of-completion.html",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39481",
+    "title": "Transcription and Office Support: Voice Writing",
+    "award": "Noncredit program",
+    "url": "https://www.westvalley.edu/catalog/programs/transcription-and-office-support-voice-writing-certificate-of-completion.html",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39548",
+    "title": "Law, Public Policy and Society",
+    "award": "A.A- T Degree",
+    "url": "https://www.westvalley.edu/catalog/programs/law-public-policy-and-society-associate-in-arts-degree-for-transfer.html",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39638",
+    "title": "Scoping",
+    "award": "Noncredit program",
+    "url": "https://www.westvalley.edu/catalog/programs/scoping-certificate-of-completion.html",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39654",
+    "title": "Professional and Workplace Communication",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://www.westvalley.edu/catalog/programs/professional-and-workplace-communication-certificate-of-achievement.html",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39673",
+    "title": "Film, Television, and Electronic Media",
+    "award": "A.S. T Degree",
+    "url": "https://www.westvalley.edu/catalog/programs/film-television-and-electronic-media-associate-in-science-degree-for-transfer.html",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39674",
+    "title": "Child and Adolescent Development",
+    "award": "A.A- T Degree",
+    "url": "https://www.westvalley.edu/catalog/programs/child-and-adolescent-development-associate-in-arts-degree-for-transfer.html",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39849",
+    "title": "Musical Theater",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://www.westvalley.edu/catalog/programs/musical-theater-certificate-of-achievement.html",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40757",
+    "title": "Portfolio Development in Studio Arts",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.westvalley.edu/catalog/programs/portfolio-development-in-studio-arts-certificate-of-achievement.html",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40771",
+    "title": "ESL: Careers in Early Childhood Education",
+    "award": "Noncredit program",
+    "url": "https://www.westvalley.edu/catalog/programs/esl-careers-in-early-childhood-education-certificate-of-competency.html",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40772",
+    "title": "ESL: Careers in Healthcare",
+    "award": "Noncredit program",
+    "url": "https://www.westvalley.edu/catalog/programs/esl-careers-in-healthcare-certificate-of-competency.html",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40857",
+    "title": "Italian",
+    "award": "A.A. Degree",
+    "url": "https://www.westvalley.edu/catalog/programs/italian-associate-in-arts-degree.html",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41134",
+    "title": "UCTP Chemistry",
+    "award": "A.S. T Degree",
+    "url": "https://www.westvalley.edu/catalog/programs/chemistry-associate-in-science-degree-for-uc-transfer.html",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41144",
+    "title": "Business Administration 2.0",
+    "award": "A.S. T Degree",
+    "url": "https://www.westvalley.edu/catalog/programs/business-administration-2-0-associate-in-science-degree-for-transfer.html",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41316",
+    "title": "Interior Design Professional",
+    "award": "Certificate of Achievement requiring 60+S/90+Q units",
+    "url": "https://www.westvalley.edu/catalog/programs/interior-design-professional-certificate-of-achievement.html",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41317",
+    "title": "Regenerative Agriculture",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.westvalley.edu/catalog/programs/regenerative-agriculture-certificate-of-achievement.html",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41318",
+    "title": "Drone Technology",
+    "award": "A.S. Degree",
+    "url": "https://www.westvalley.edu/catalog/programs/drone-technology-associate-in-science-degree.html",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41802",
+    "title": "Microsoft Office Basics",
+    "award": "Noncredit program",
+    "url": "https://www.westvalley.edu/catalog/programs/microsoft-office-basics-certificate-of-completion.html",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42066",
+    "title": "Spanish for Medical Professionals",
+    "award": "Noncredit program",
+    "url": "https://www.westvalley.edu/catalog/programs/spanish-for-medical-professionals-certificate-of-completion.html",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42121",
+    "title": "Inclusion Teacher Assistant",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.westvalley.edu/catalog/programs/inclusion-teacher-assistant-certificate-of-achievement.html",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43024",
+    "title": "Communication Studies 2.0",
+    "award": "A.A- T Degree",
+    "url": "https://www.westvalley.edu/catalog/programs/communication-studies-2-0-associate-in-arts-degree-for-transfer.html",
+    "coverage": 0.933,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43026",
+    "title": "Data Science",
+    "award": "A.S. Degree",
+    "url": "https://www.westvalley.edu/catalog/programs/data-science-associate-in-science-degree.html",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43034",
+    "title": "Real Estate Broker License",
+    "award": "Noncredit program",
+    "url": "https://www.westvalley.edu/catalog/programs/real-estate-broker-license-certificate-of-completion.html",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43035",
+    "title": "Real Estate Salesperson License",
+    "award": "Noncredit program",
+    "url": "https://www.westvalley.edu/catalog/programs/real-estate-salesperson-license-certificate-of-completion.html",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43092",
+    "title": "Google Data Analytics",
+    "award": "Noncredit program",
+    "url": "https://www.westvalley.edu/catalog/programs/google-data-analytics-certificate-of-completion.html",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43093",
+    "title": "Google IT Automation with Python",
+    "award": "Noncredit program",
+    "url": "https://www.westvalley.edu/catalog/programs/google-it-automation-with-python-certificate-of-completion.html",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43094",
+    "title": "Google IT Support",
+    "award": "Noncredit program",
+    "url": "https://www.westvalley.edu/catalog/programs/google-it-support-certificate-of-completion.html",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43212",
+    "title": "Real Estate Salesperson License",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://www.westvalley.edu/catalog/programs/real-estate-salesperson-license-certificate-of-achievement.html",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43213",
+    "title": "Real Estate Broker License",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.westvalley.edu/catalog/programs/real-estate-broker-license-certificate-of-achievement.html",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43766",
+    "title": "Mathematics",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.westvalley.edu/catalog/programs/mathematics-certificate-of-achievement.html",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44049",
+    "title": "Small Business Fundamentals and Growth",
+    "award": "Noncredit program",
+    "url": "https://www.westvalley.edu/catalog/programs/small-business-fundamentals-and-growth-certificate-of-completion.html",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44050",
+    "title": "Academic ESL: High-Beginning Level",
+    "award": "Noncredit program",
+    "url": "https://www.westvalley.edu/catalog/programs/academic-esl-high-beginning-level-certificate-of-competency.html",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44051",
+    "title": "Academic ESL: Advanced Level",
+    "award": "Noncredit program",
+    "url": "https://www.westvalley.edu/catalog/programs/academic-esl-advanced-level-certificate-of-competency.html",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44052",
+    "title": "Integrated ESL: Low-Intermediate Level",
+    "award": "Noncredit program",
+    "url": "https://www.westvalley.edu/catalog/programs/integrated-esl-low-intermediate-level-certificate-of-competency.html",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44053",
+    "title": "American Culture and Civics",
+    "award": "Noncredit program",
+    "url": "https://www.westvalley.edu/catalog/programs/american-culture-and-civics-certificate-of-competency.html",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44054",
+    "title": "Integrated ESL: Low-Beginning Level",
+    "award": "Noncredit program",
+    "url": "https://www.westvalley.edu/catalog/programs/integrated-esl-low-beginning-level-certificate-of-competency.html",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44071",
+    "title": "Google Digital Marketing and E-commerce",
+    "award": "Noncredit program",
+    "url": "https://www.westvalley.edu/catalog/programs/google-digital-marketing-and-e-commerce-certificate-of-completion.html",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44072",
+    "title": "Academic ESL: Intermediate Level",
+    "award": "Noncredit program",
+    "url": "https://www.westvalley.edu/catalog/programs/academic-esl-intermediate-level-certificate-of-competency.html",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44125",
+    "title": "Enrolled Agent Exam Preparation",
+    "award": "Noncredit program",
+    "url": "https://www.westvalley.edu/catalog/programs/enrolled-agent-exam-preparation-certificate-of-completion.html",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44903",
+    "title": "Engineering",
+    "award": "A.S. Degree",
+    "url": "https://www.westvalley.edu/catalog/programs/engineering-associate-in-science-degree.html",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44928",
+    "title": "Cisco Certified Network Associate",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://www.westvalley.edu/catalog/programs/cisco-certified-network-associate-certificate-of-achievement.html",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44930",
+    "title": "Child Development Permit Preparation",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://www.westvalley.edu/catalog/programs/child-development-permit-preparation-certificate-of-achievement.html",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45050",
+    "title": "Computer Science",
+    "award": "A.S. T Degree",
+    "url": "https://www.westvalley.edu/catalog/programs/computer-science-associate-in-science-degree-for-transfer.html",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45153",
+    "title": "Public Health",
+    "award": "A.S. T Degree",
+    "url": "https://www.westvalley.edu/catalog/programs/public-health-associate-in-science-degree-for-transfer.html",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45221",
+    "title": "Google Cybersecurity",
+    "award": "Noncredit program",
+    "url": "https://www.westvalley.edu/catalog/programs/google-cybersecurity-certificate-of-completion.html",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45222",
+    "title": "Affordable Housing Management",
+    "award": "Noncredit program",
+    "url": "https://www.westvalley.edu/catalog/programs/affordable-housing-management-certificate-of-completion.html",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46357",
+    "title": "Google Advanced Data Analytics",
+    "award": "Noncredit program",
+    "url": "https://www.westvalley.edu/catalog/programs/google-advanced-data-analytics-certificate-of-completion.html",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46358",
+    "title": "Community Caregiver",
+    "award": "Noncredit program",
+    "url": "https://www.westvalley.edu/catalog/programs/community-caregiver-certificate-of-completion.html",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46359",
+    "title": "Google UX Design",
+    "award": "Noncredit program",
+    "url": "https://www.westvalley.edu/catalog/programs/google-ux-design-certificate-of-completion.html",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46466",
+    "title": "Industrial Design",
+    "award": "A.S. Degree",
+    "url": "https://www.westvalley.edu/catalog/programs/industrial-design-associate-in-science-degree.html",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46475",
+    "title": "Land Steward",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.westvalley.edu/catalog/programs/land-steward-certificate-of-achievement.html",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46476",
+    "title": "Industrial Design",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.westvalley.edu/catalog/programs/industrial-design-certificate-of-achievement.html",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   }
+  ]
+ },
+ "run": "39035604333"
+}

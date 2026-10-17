@@ -82,19 +82,11 @@
    "program": 3,
    "courses": 0,
    "count": 3,
-   "not_verbatim": [
-    "Describe and demonstrate plumbing principles and regulations related to the plumbing and pipefitting trade.",
-    "Demonstrate knowledge of theory and regulations of plumbers and pipefitters' trade.",
-    "Apply best practices in practical environment related to the plumbing and pipefitting trade."
-   ],
-   "why": [
-    "not in the catalog text as printed: Describe and demonstrate plumbing principles and regulations related to the plum",
-    "not in the catalog text as printed: Demonstrate knowledge of theory and regulations of plumbers and pipefitters' tra",
-    "not in the catalog text as printed: Apply best practices in practical environment related to the plumbing and pipefi"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 3,
@@ -106,7 +98,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -235,5 +227,6 @@
    "Careers taken from the program description sentence: 'the very best plumbers, steam fitters, refrigeration and air conditioning mechanics in the world.'"
   ]
  },
- "extracted_run": "39006464249"
+ "extracted_run": 39037637820,
+ "read_run": "39006464249"
 }

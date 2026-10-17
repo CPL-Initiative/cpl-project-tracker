@@ -1,0 +1,319 @@
+{
+ "college": "West Valley College",
+ "control_number": "06275",
+ "shape": "degree",
+ "title": "Park Management",
+ "award": "A.S. Degree",
+ "source_url": "https://www.westvalley.edu/catalog/programs/park-management-associate-in-science-degree.html",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7551,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7551,
+    "output_tokens": 2369,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2369,
+  "output_tokens_details": {
+   "thinking_tokens": 601
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.07758,
+ "ms": 19309,
+ "seconds": 19.8,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 17,
+   "listed": 17,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    38.0,
+    38.0
+   ],
+   "stated": [
+    38.0,
+    38.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 7,
+   "courses": 0,
+   "count": 7,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 11,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Park Management Associate in Science Degree",
+   "measure": "units",
+   "total_units": {
+    "min": 38,
+    "max": 38
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "WVC or Cal-GETC General Education patterns",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": true,
+   "outcomes": [
+    "Demonstrate practical skills in park operations, maintenance, and visitor services for employment in parks and public lands.",
+    "Apply ecological principles and land management practices to support habitat restoration, resource protection, and sustainable land stewardship.",
+    "Interpret and communicate natural and cultural resource information to the public through education and outreach techniques used in parks and open space settings.",
+    "Identify and comply with safety, risk management, and environmental regulations relevant to park and open space operations.",
+    "Exhibit professional work habits and effective communication skills while collaborating with diverse teams and community partners to fulfill stewardship goals.",
+    "Analyze and utilize maps, geographic data, and inventory tools to support resource monitoring and planning decisions.",
+    "Integrate Indigenous perspectives and ecological knowledge in understanding land stewardship practices and the historical context of public lands."
+   ],
+   "careers": [
+    "Open Space Technicians",
+    "Park Rangers",
+    "Park Interpreters",
+    "Park Maintenance",
+    "Game Officers",
+    "Park Managers",
+    "Park Planners",
+    "Natural Resource Managers",
+    "Cultural Resource Managers",
+    "Wildland Firefighters",
+    "Search and Rescue Technicians"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Major Core Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "PMGT010",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PMGT011",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PMGT013",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PMGT014",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PMGT015A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PMGT015B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PMGT015C",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PMGT017",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PMGT018",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PMGT019A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PMGT020A",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PMGT020B",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PMGT021",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select one (Basic Outdoor Skills / Backcountry Technical Rescue)",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "PMGT012A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PMGT012B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select one (Geospatial Technology / Remote Sensing)",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "GIST016A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GIST016G",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Catalog codes are printed without spaces (e.g., PMGT010, GIST016A) and matched to closed-list entries PMGT 10, GIST 016A, etc.; none treated as catalog additions.",
+   "The 'Major Core Requirements (38 units)' heading total includes the two nested 'Select one' choices, so it is recorded as total_units (38, matching 'Total Major Units: 38 units') rather than as the stated total of the core block alone.",
+   "Both 'Select one' lists are nested inside the core list; recorded as separate choose_courses blocks. The first appears between PMGT011 and PMGT013 in the catalog order.",
+   "The 60-unit figure is the generic minimum for an Associate Degree, not a printed total for this award, so degree_total is null; electives_fill_degree set true because the page says to complete additional degree-applicable units to reach 60.",
+   "GE pattern: student may complete WVC or Cal-GETC General Education; no GE units printed.",
+   "Program learning outcomes come from the page's outcomes tab, which appears to apply to the program as a whole; recorded for this A.S. award."
+  ]
+ },
+ "extracted_run": "39035604333"
+}

@@ -1,0 +1,172 @@
+{
+ "college": "West Valley College",
+ "control_number": "44071",
+ "shape": "noncredit",
+ "title": "Google Digital Marketing and E-commerce",
+ "award": "Noncredit program",
+ "source_url": "https://www.westvalley.edu/catalog/programs/google-digital-marketing-and-e-commerce-certificate-of-completion.html",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6814,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6814,
+    "output_tokens": 1103,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1103,
+  "output_tokens_details": {
+   "thinking_tokens": 393
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.04932,
+ "ms": 9271,
+ "seconds": 9.6,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 2,
+   "listed": 2,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    44.0,
+    49.5
+   ],
+   "stated": [
+    44.0,
+    49.5
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 2,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Google Digital Marketing and E-commerce Certificate of Completion",
+   "measure": "hours",
+   "total_units": {
+    "min": 44,
+    "max": 49.5
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Demonstrate proficiency in using various digital marketing tools and platforms, such as Google Ads, Google Analytics, social media advertising interfaces, and e-commerce platforms, to execute effective marketing strategies.",
+    "Demonstrate an understanding of e-commerce principles, including online store setup, product listing optimization, customer journey mapping, conversion rate optimization, and strategies for driving sales in the e-commerce environment.",
+    "Demonstrate knowledge on current industry trends, emerging technologies, and best practices in digital marketing and e-commerce to adapt strategies accordingly and remain competitive in the field."
+   ],
+   "careers": [
+    "entry-level digital marketing coordinator",
+    "e-commerce analyst"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Program Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 44,
+     "max": 49.5
+    },
+    "courses": [
+     {
+      "code": "NCGO001",
+      "units": 4,
+      "units_max": 4.5,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NCGO006",
+      "units": 40,
+      "units_max": 45,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The catalog prints codes as NCGO001 and NCGO006; these were matched to closed-list NCGO 1 and NCGO 6 (same titles), so catalog_addition is false.",
+   "The award is counted in hours: 'Total Certificate Hours: 44-49.5 hours'. Course hours are ranges printed beside each course.",
+   "Program learning outcomes were taken from the page's outcomes tab.",
+   "Careers were read from the description's mention of the job responsibilities of an entry-level digital marketing coordinator and an e-commerce analyst."
+  ]
+ },
+ "extracted_run": "39035604333"
+}

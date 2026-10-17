@@ -1,0 +1,273 @@
+{
+ "college": "Coalinga College",
+ "control_number": "32862",
+ "shape": "adt",
+ "title": "Studio Arts",
+ "award": "A.A- T Degree",
+ "source_url": "https://coalingacollege.edu/catalog/2026-2027/programs-of-study/studio-arts.php",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7277,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7277,
+    "output_tokens": 1741,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1741,
+  "output_tokens_details": {
+   "thinking_tokens": 438
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.06393,
+ "ms": 14338,
+ "seconds": 14.7,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 7,
+   "listed": 9,
+   "share": 0.778,
+   "missing": [
+    "ART16A",
+    "ART16B"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 2,
+   "codes": [
+    "ARTHC1100",
+    "ARTHC1200"
+   ],
+   "flagged": [
+    "ARTHC1100",
+    "ARTHC1200"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    24.0,
+    24.0
+   ],
+   "stated": [
+    24.0,
+    24.0
+   ],
+   "against": "program",
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     63.0,
+     63.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     34.0,
+     34.0
+    ],
+    "why": [],
+    "overlap": true
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 6,
+   "courses": 0,
+   "count": 6,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Studio Arts AA-T Degree",
+   "measure": "units",
+   "total_units": {
+    "min": 24,
+    "max": 24
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": 5,
+    "max": 5
+   },
+   "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": 34,
+    "max": 34
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Students will create a visually balanced artwork using the art elements and design principles.",
+    "Students will produce sustained and developed artworks for inclusion in an artistic portfolio.",
+    "Students will create artworks demonstrating proficiency with basic color theory and color mixing.",
+    "Students will write a personal and individual critique and artist statement describing her/his series of artworks.",
+    "Students will describe visual art concepts and terminology relating to art history and art disciplines, media, materials, and techniques.",
+    "Students will analyze, critique, and respond orally and in writing to a variety of artistic movements throughout European and non-European history."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required Core Courses (15 Units)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 15,
+     "max": 15
+    },
+    "courses": [
+     {
+      "code": "ART 002",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 003",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 005A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARTH C1100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ARTH C1200",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Plus 9 units from the courses listed below",
+    "rule": "choose_units",
+    "minimum": 9,
+    "option_group": null,
+    "stated": {
+     "min": 9,
+     "max": 9
+    },
+    "courses": [
+     {
+      "code": "ART 005B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 013A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 015A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 008",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ART 016A",
+    "why": "not in the text; catalog lists ARTH C1100 (Survey of Art From Prehistory to the Medieval Era) instead"
+   },
+   {
+    "code": "ART 016B",
+    "why": "not in the text; catalog lists ARTH C1200 (Survey of Art From the Renaissance to Contemporary) instead"
+   }
+  ],
+  "notes": [
+   "Catalog prints ART 002, ART 003 and ART 008; matched to closed-list ART 2, ART 3 and ART 8 (same titles), so not marked as catalog additions. Reviewer should confirm.",
+   "ARTH C1100 and ARTH C1200 (common course numbering) are not in the closed list and appear to replace ART 016A/016B.",
+   "Page prints 'Units that may be double-counted as GE 3'; Total Major Units 24 + Cal-GETC 34 + Elective Units 5 - 3 double-counted = 60 Total Degree Units.",
+   "Elective Units 5 recorded in degree_elective_units since the page prints a major total.",
+   "The 'minimum of 18 semester units in a major' sentence is a general ADT rule, not this award's total.",
+   "The 9-unit block's stated value is taken from its heading 'Plus 9 units from the courses listed below'.",
+   "The program student learning outcomes are printed for the Art program section, which here presents only this AA-T degree."
+  ]
+ },
+ "extracted_run": "39032865307"
+}

@@ -1,0 +1,6210 @@
+[
+ {
+  "control_number": "06506",
+  "title": "Horticulture and Plant Science",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "HORT30",
+   "HORT55",
+   "HORT56",
+   "HORT6",
+   "HORT70",
+   "HORT71"
+  ],
+  "source": {
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=297",
+   "title": "296",
+   "h1": "296",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    297,
+    298,
+    299
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 6,
+  "text_chars": 11527
+ },
+ {
+  "control_number": "06509",
+  "title": "Business, General",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT1",
+   "ACCT2",
+   "BUS18",
+   "BUS5",
+   "BUS92",
+   "CIS1",
+   "CIS20",
+   "CIS22",
+   "CIS23",
+   "CIS50",
+   "ECONC2001",
+   "ECONC2002",
+   "MATH30",
+   "MATH31",
+   "MATHC2210",
+   "MATHC2220",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=172",
+   "title": "Students who complete the Business, General CerƟ ﬁ cate of Achievement/Associate in Science will be able to:",
+   "h1": "Students who complete the Business, General CerƟ ﬁ cate of Achievement/Associate in Science will be able to:",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    172,
+    173,
+    174
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 17,
+  "text_chars": 11181
+ },
+ {
+  "control_number": "06510",
+  "title": "Accounting",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT1",
+   "ACCT176",
+   "ACCT177",
+   "ACCT183",
+   "ACCT2",
+   "ACCT50",
+   "CIS1",
+   "CIS50",
+   "CIS66",
+   "CIS73"
+  ],
+  "source": {
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=107",
+   "title": "106",
+   "h1": "106",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    107,
+    108
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 10,
+  "text_chars": 6361
+ },
+ {
+  "control_number": "06512",
+  "title": "Management",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "06514",
+  "title": "Marketing",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "06515",
+  "title": "Real Estate",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT1",
+   "BUS18",
+   "ECONC2001",
+   "ECONC2002",
+   "RE164",
+   "RE171",
+   "RE172",
+   "RE173",
+   "RE174",
+   "RE175",
+   "RE176",
+   "RE177"
+  ],
+  "source": {
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=418",
+   "title": "Students who complete the Real Estate CerƟ ﬁ cate of Achievement/Associate in Science will be able to:",
+   "h1": "Students who complete the Real Estate CerƟ ﬁ cate of Achievement/Associate in Science will be able to:",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    418,
+    419
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 12,
+  "text_chars": 6396
+ },
+ {
+  "control_number": "06516",
+  "title": "Administrative Assistant",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.812,
+  "codes_found": [
+   "BUS92",
+   "BUS97",
+   "CIS1",
+   "CIS50",
+   "CIS66",
+   "CIS73",
+   "CIS91",
+   "OT162",
+   "OT54A",
+   "OT54B",
+   "OT55A",
+   "OT55B",
+   "OT56"
+  ],
+  "source": {
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=183",
+   "title": "182",
+   "h1": "182",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    183,
+    184,
+    185,
+    186
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 16,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "06517",
+  "title": "Journalism",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ENGL58",
+   "JOUR61"
+  ],
+  "source": {
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=309",
+   "title": "Students who complete the Associate in Arts in Journalism for Transfer will be able to:",
+   "h1": "Students who complete the Associate in Arts in Journalism for Transfer will be able to:",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    309,
+    310
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 2,
+  "text_chars": 7822
+ },
+ {
+  "control_number": "06518",
+  "title": "Film & Television",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "FTV10",
+   "FTV11",
+   "FTV12",
+   "FTV13",
+   "FTV14",
+   "FTV15",
+   "FTV16",
+   "FTV55",
+   "FTV56"
+  ],
+  "source": {
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=280",
+   "title": "Students who complete the Film and Television Associate in Arts will be able to:",
+   "h1": "Students who complete the Film and Television Associate in Arts will be able to:",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    280,
+    281
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 9,
+  "text_chars": 8607
+ },
+ {
+  "control_number": "06519",
+  "title": "Computer Programming",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT1",
+   "ACCT2",
+   "BUS5",
+   "BUS92",
+   "CIS1",
+   "CIS15",
+   "CIS20",
+   "CIS22",
+   "CIS23",
+   "CIS35",
+   "CIS52",
+   "CIS55",
+   "CIS60",
+   "CIS61",
+   "CIS66",
+   "CIS73",
+   "CIS78",
+   "CIS80",
+   "CIS89",
+   "OCED90",
+   "OCED91"
+  ],
+  "source": {
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=209",
+   "title": "Students who complete the Computer Programming CerƟ ﬁ cate of Achievement/Associate in Science will be able to:",
+   "h1": "Students who complete the Computer Programming CerƟ ﬁ cate of Achievement/Associate in Science will be able to:",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    209,
+    210,
+    211,
+    212
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 21,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "06522",
+  "title": "Automotive Technician",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ATEC130",
+   "ATEC131",
+   "ATEC132",
+   "ATEC133",
+   "ATEC134",
+   "ATEC135",
+   "ATEC136",
+   "ATEC137",
+   "ATEC138",
+   "ATEC139",
+   "ATEC140",
+   "ATEC70"
+  ],
+  "source": {
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=148",
+   "title": "147",
+   "h1": "147",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    148,
+    149,
+    150,
+    151
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 12,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "06524",
+  "title": "Airframe and Powerplant Maintenance Technician",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "AERO102",
+   "AERO103",
+   "AERO105",
+   "AERO106",
+   "AERO107",
+   "AERO118",
+   "AERO119",
+   "AERO55"
+  ],
+  "source": {
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=123",
+   "title": "122",
+   "h1": "122",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    123,
+    124,
+    125
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 8,
+  "text_chars": 10299
+ },
+ {
+  "control_number": "06525",
+  "title": "Airframe Maintenance Technician",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "AERO102",
+   "AERO103",
+   "AERO105",
+   "AERO118",
+   "AERO55"
+  ],
+  "source": {
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=123",
+   "title": "122",
+   "h1": "122",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    123,
+    124
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 5,
+  "text_chars": 9205
+ },
+ {
+  "control_number": "06526",
+  "title": "Powerplant Maintenance Technician",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "AERO103",
+   "AERO106",
+   "AERO107",
+   "AERO119",
+   "AERO55"
+  ],
+  "source": {
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=123",
+   "title": "Powerplant Maintenance Technician CerƟ ﬁ cate of Achievement or Associate in Science will be able to:",
+   "h1": "Powerplant Maintenance Technician CerƟ ﬁ cate of Achievement or Associate in Science will be able to:",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    123,
+    124,
+    125
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 5,
+  "text_chars": 8577
+ },
+ {
+  "control_number": "06529",
+  "title": "Welding Technician",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ADVM101",
+   "ADVM51",
+   "DRFT79",
+   "WELD130",
+   "WELD131",
+   "WELD132",
+   "WELD136",
+   "WELD145"
+  ],
+  "source": {
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=447",
+   "title": "Students who complete the Welding Technician CerƟ ﬁ cate of Achievement/Associate in Science will be able to:",
+   "h1": "Students who complete the Welding Technician CerƟ ﬁ cate of Achievement/Associate in Science will be able to:",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    447,
+    448
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 8,
+  "text_chars": 7211
+ },
+ {
+  "control_number": "06530",
+  "title": "Water & Wastewater Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "06534",
+  "title": "Music: Vocal",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.792,
+  "codes_found": [
+   "MUSC1",
+   "MUSC13",
+   "MUSC17",
+   "MUSC2",
+   "MUSC20",
+   "MUSC21",
+   "MUSC25",
+   "MUSC29",
+   "MUSC3",
+   "MUSC30",
+   "MUSC35A",
+   "MUSC36A",
+   "MUSC36B",
+   "MUSC41A",
+   "MUSC45",
+   "MUSC5",
+   "MUSC51",
+   "MUSC7",
+   "MUSC8"
+  ],
+  "source": {
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=359",
+   "title": "Students who complete the Music-Vocal Associate in Arts will be able to:",
+   "h1": "Students who complete the Music-Vocal Associate in Arts will be able to:",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    359
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 24,
+  "text_chars": 3222
+ },
+ {
+  "control_number": "06535",
+  "title": "Theatre Arts",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.966,
+  "codes_found": [
+   "THEA1",
+   "THEA10",
+   "THEA13",
+   "THEA148A",
+   "THEA148B",
+   "THEA148C",
+   "THEA148D",
+   "THEA15",
+   "THEA2",
+   "THEA21",
+   "THEA24",
+   "THEA24A",
+   "THEA24B",
+   "THEA24C",
+   "THEA24D",
+   "THEA27",
+   "THEA3",
+   "THEA32A",
+   "THEA32B",
+   "THEA35",
+   "THEA36",
+   "THEA40",
+   "THEA47",
+   "THEA5",
+   "THEA55",
+   "THEA6",
+   "THEA8",
+   "THEA9"
+  ],
+  "source": {
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=434",
+   "title": "433",
+   "h1": "433",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    434,
+    435,
+    436,
+    437
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 29,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "06536",
+  "title": "Graphic Design & Illustration",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.5,
+  "codes_found": [
+   "ART14",
+   "ART15",
+   "ART4",
+   "ART6",
+   "ART7"
+  ],
+  "source": {
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=76",
+   "title": "75",
+   "h1": "75",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    76
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 10,
+  "text_chars": 4655
+ },
+ {
+  "control_number": "06538",
+  "title": "World Languages",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.87,
+  "codes_found": [
+   "ASL1",
+   "ASL2",
+   "ASL3",
+   "ASL4",
+   "ASL5",
+   "ASL52",
+   "ASL53",
+   "ASL54",
+   "ASL6",
+   "FREN1",
+   "FREN11",
+   "FREN2",
+   "FREN3",
+   "FREN31",
+   "FREN32",
+   "SPAN1",
+   "SPAN101",
+   "SPAN11",
+   "SPAN2",
+   "SPAN3"
+  ],
+  "source": {
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=341",
+   "title": "340",
+   "h1": "340",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    341,
+    342,
+    343,
+    344
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 23,
+  "text_chars": 13542
+ },
+ {
+  "control_number": "06539",
+  "title": "French",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "FREN1",
+   "FREN101",
+   "FREN11",
+   "FREN2",
+   "FREN3",
+   "FREN31",
+   "FREN32",
+   "FREN4"
+  ],
+  "source": {
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=347",
+   "title": "The French Associate in Arts can be obtained by compleƟ ng the 23-24-unit major, general educaƟ on requirements, and",
+   "h1": "The French Associate in Arts can be obtained by compleƟ ng the 23-24-unit major, general educaƟ on requirements, and",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    347,
+    348,
+    349
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 8,
+  "text_chars": 10686
+ },
+ {
+  "control_number": "06541",
+  "title": "Spanish",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.833,
+  "codes_found": [
+   "SPAN1",
+   "SPAN11",
+   "SPAN2",
+   "SPAN3",
+   "SPAN4"
+  ],
+  "source": {
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=350",
+   "title": "Associate in Arts in Spanish for Transfer (ADT: A.A.-T)",
+   "h1": "Associate in Arts in Spanish for Transfer (ADT: A.A.-T)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    350,
+    351,
+    352,
+    353
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 6,
+  "text_chars": 13246
+ },
+ {
+  "control_number": "06542",
+  "title": "Nursing, Registered",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "NURS71A",
+   "NURS71D",
+   "NURS71S",
+   "NURS72B",
+   "NURS72P",
+   "NURS72S",
+   "NURS73A",
+   "NURS73B",
+   "NURS73S",
+   "NURS74A",
+   "NURS74S"
+  ],
+  "source": {
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=373",
+   "title": "372",
+   "h1": "372",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    373
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 11,
+  "text_chars": 4086
+ },
+ {
+  "control_number": "06545",
+  "title": "English",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ENGL10",
+   "ENGL18",
+   "ENGL21",
+   "ENGL23",
+   "ENGL24",
+   "ENGL30",
+   "ENGL31",
+   "ENGL33",
+   "ENGL36",
+   "ENGL40",
+   "ENGL41",
+   "ENGL44",
+   "ENGL49",
+   "ENGL58",
+   "ENGL59",
+   "ENGL6",
+   "ENGL7",
+   "ENGLC1003",
+   "HUMN1"
+  ],
+  "source": {
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=267",
+   "title": "The Associate in Arts in English provides the academic and pracƟ cal experience for further educaƟ on in English at a fo",
+   "h1": "The Associate in Arts in English provides the academic and pracƟ cal experience for further educaƟ on in English at a fo",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    267,
+    268,
+    269,
+    270
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 19,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "06547",
+  "title": "Physics",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ASTR30",
+   "ASTR40",
+   "ASTRC1001L",
+   "BIOL16",
+   "BIOL18",
+   "BIOL2",
+   "BIOL3",
+   "BIOL5",
+   "BIOLC1000",
+   "CHEM11",
+   "CHEM2",
+   "CHEM3",
+   "CHEM4",
+   "GEOG1L",
+   "GEOL1",
+   "GEOL2",
+   "GEOL5",
+   "MATH23",
+   "PHSC12",
+   "PHYS6",
+   "PHYS7",
+   "PHYS8"
+  ],
+  "source": {
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=404",
+   "title": "Students who complete the Physics Associate in Science will be able to:",
+   "h1": "Students who complete the Physics Associate in Science will be able to:",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    404,
+    405
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 22,
+  "text_chars": 8431
+ },
+ {
+  "control_number": "06548",
+  "title": "Chemistry",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEM3",
+   "CHEM4"
+  ],
+  "source": {
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=189",
+   "title": "An Associate in Science in Chemistry for UC Transfer is designed for students who plan to complete a bachelor’s degree",
+   "h1": "An Associate in Science in Chemistry for UC Transfer is designed for students who plan to complete a bachelor’s degree",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    189,
+    190,
+    191
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 2,
+  "text_chars": 9756
+ },
+ {
+  "control_number": "06549",
+  "title": "Psychology",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.933,
+  "codes_found": [
+   "PSYC12",
+   "PSYC18",
+   "PSYC2",
+   "PSYC20",
+   "PSYC3",
+   "PSYC30",
+   "PSYC34",
+   "PSYC4",
+   "PSYC40",
+   "PSYC5",
+   "PSYC6",
+   "PSYC7",
+   "PSYCC1000",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=413",
+   "title": "Associate in Arts in Psychology for Transfer (ADT: A.A.-T)",
+   "h1": "Associate in Arts in Psychology for Transfer (ADT: A.A.-T)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    413,
+    414,
+    415,
+    416
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 15,
+  "text_chars": 15041
+ },
+ {
+  "control_number": "06550",
+  "title": "Criminal Justice: Law Enforcement",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CJ1",
+   "CJ11",
+   "CJ2",
+   "CJ51",
+   "CJ52",
+   "CJ53",
+   "CJ56",
+   "CJ57",
+   "CJ58",
+   "CJ59",
+   "CJ64"
+  ],
+  "source": {
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=111",
+   "title": "110",
+   "h1": "110",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    111,
+    112,
+    113,
+    114
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 11,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "06551",
+  "title": "Criminal Justice: Corrections",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CJ1",
+   "CJ11",
+   "CJ2",
+   "CJ51",
+   "CJ52",
+   "CJ53",
+   "CJ57",
+   "CJ58",
+   "CJ59",
+   "CJ60",
+   "CJ62"
+  ],
+  "source": {
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=111",
+   "title": "110",
+   "h1": "110",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    111,
+    112,
+    113,
+    114
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 11,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "06552",
+  "title": "Early Childhood Education",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.727,
+  "codes_found": [
+   "CDEVC1000",
+   "CDFS50",
+   "CDFS53",
+   "CDFS54",
+   "CDFS62",
+   "CDFS63",
+   "CDFS64",
+   "CDFS65"
+  ],
+  "source": {
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=77",
+   "title": "76",
+   "h1": "76",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    77
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 11,
+  "text_chars": 4849
+ },
+ {
+  "control_number": "06553",
+  "title": "Fire Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "EMS110",
+   "EMS112",
+   "FIRE101",
+   "FIRE140",
+   "FIRE50",
+   "FIRE51",
+   "FIRE53",
+   "FIRE54",
+   "FIRE56"
+  ],
+  "source": {
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=283",
+   "title": "Students who complete the Fire Technology CerƟ ﬁ cate of Achievement/Associate in Science will be able to:",
+   "h1": "Students who complete the Fire Technology CerƟ ﬁ cate of Achievement/Associate in Science will be able to:",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    283,
+    284,
+    285
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 9,
+  "text_chars": 8655
+ },
+ {
+  "control_number": "06555",
+  "title": "Ethnic Studies",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.704,
+  "codes_found": [
+   "ANTH2",
+   "ANTH24",
+   "ARTH35",
+   "CDFS53",
+   "COUN15",
+   "ENGL33",
+   "ENGL36",
+   "ETHN1",
+   "ETHN3",
+   "FTV11",
+   "HIST28",
+   "HIST37",
+   "HSW82",
+   "HUMN3",
+   "MUSC13",
+   "PSYC7",
+   "SJS1",
+   "SJS2",
+   "THEA13"
+  ],
+  "source": {
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=85",
+   "title": "84",
+   "h1": "84",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    85
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 27,
+  "text_chars": 4212
+ },
+ {
+  "control_number": "06559",
+  "title": "Science, General",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEM3",
+   "CHEM4"
+  ],
+  "source": {
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=422",
+   "title": "Students who complete the Science, General Associate in Arts will be able to:",
+   "h1": "Students who complete the Science, General Associate in Arts will be able to:",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    422
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 2,
+  "text_chars": 3706
+ },
+ {
+  "control_number": "07790",
+  "title": "Small Business Management",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT1",
+   "ACCT2",
+   "ACCT50",
+   "BUS18",
+   "BUS181",
+   "BUS182",
+   "BUS5",
+   "BUS60",
+   "BUS92",
+   "ECONC2001",
+   "ECONC2002",
+   "MGMT191",
+   "MGMT55",
+   "MKT173",
+   "MKT174",
+   "OT54A",
+   "OT54B",
+   "OT55A",
+   "OT55B"
+  ],
+  "source": {
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=178",
+   "title": "Students who complete the Small Business Management CerƟ ﬁ cate of Achievement/Associate in Science will be able to:",
+   "h1": "Students who complete the Small Business Management CerƟ ﬁ cate of Achievement/Associate in Science will be able to:",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    178,
+    179
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 19,
+  "text_chars": 7141
+ },
+ {
+  "control_number": "07793",
+  "title": "Computer & Info Science: Microcomputer Applications",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CIS1",
+   "CIS15",
+   "CIS55",
+   "CIS61",
+   "CIS66",
+   "CIS73",
+   "CIS78",
+   "CIS89",
+   "CIS90",
+   "CIS91"
+  ],
+  "source": {
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=210",
+   "title": "209",
+   "h1": "209",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    210,
+    211,
+    212,
+    213
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 10,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "07795",
+  "title": "Sports Medicine-Athletic Training",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL4",
+   "CHEM10",
+   "KINE40A",
+   "KINE45C",
+   "SPMD54",
+   "SPMD55A",
+   "SPMD55B",
+   "SPMD71"
+  ],
+  "source": {
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=331",
+   "title": "330",
+   "h1": "330",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    331,
+    332
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 8,
+  "text_chars": 7206
+ },
+ {
+  "control_number": "07800",
+  "title": "Photography, Professional",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART15C",
+   "PHOT151",
+   "PHOT152",
+   "PHOT153",
+   "PHOT154",
+   "PHOT156",
+   "PHOT158",
+   "PHOT162",
+   "PHOT163",
+   "PHOT164",
+   "PHOT165",
+   "PHOT29",
+   "PHOT30A",
+   "PHOT30B",
+   "PHOT31",
+   "PHOT32",
+   "PHOT33",
+   "PHOT35",
+   "PHOT40",
+   "PHOT45",
+   "PHOT46",
+   "PHOT56"
+  ],
+  "source": {
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=390",
+   "title": "389",
+   "h1": "389",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    390,
+    391,
+    392,
+    393
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 22,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "07808",
+  "title": "Industrial Biotechnology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL14",
+   "BIOL2",
+   "BIOT1",
+   "BIOT52",
+   "BIOT62",
+   "BIOT63",
+   "CHEM1"
+  ],
+  "source": {
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=162",
+   "title": "Students who complete the Industrial Biotechnology Associate in Science will be able to:",
+   "h1": "Students who complete the Industrial Biotechnology Associate in Science will be able to:",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    162,
+    163
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 7,
+  "text_chars": 5562
+ },
+ {
+  "control_number": "08337",
+  "title": "Human Services and Social Work",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.938,
+  "codes_found": [
+   "CJ1",
+   "COUN64",
+   "COUN64P",
+   "HSW1",
+   "HSW82",
+   "HSW83",
+   "HSW85",
+   "PSYC12",
+   "PSYC20",
+   "PSYC40",
+   "PSYC5",
+   "PSYC6",
+   "PSYCC1000",
+   "SJS1",
+   "SOCIC1000"
+  ],
+  "source": {
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=303",
+   "title": "Associate in Arts in Social Work and Human Services for Transfer (ADT: A.A.-T)",
+   "h1": "Associate in Arts in Social Work and Human Services for Transfer (ADT: A.A.-T)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    303,
+    304,
+    305
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 16,
+  "text_chars": 10789
+ },
+ {
+  "control_number": "10463",
+  "title": "Music: Instrumental",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.783,
+  "codes_found": [
+   "MUSC1",
+   "MUSC10",
+   "MUSC13",
+   "MUSC16",
+   "MUSC17",
+   "MUSC2",
+   "MUSC20",
+   "MUSC21",
+   "MUSC29",
+   "MUSC3",
+   "MUSC30",
+   "MUSC38",
+   "MUSC39",
+   "MUSC41A",
+   "MUSC45",
+   "MUSC5",
+   "MUSC7",
+   "MUSC8"
+  ],
+  "source": {
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=358",
+   "title": "Students who complete the Music-Instrumental Associate in Arts will be able to:",
+   "h1": "Students who complete the Music-Instrumental Associate in Arts will be able to:",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    358,
+    359
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 23,
+  "text_chars": 7506
+ },
+ {
+  "control_number": "12273",
+  "title": "Retail Management",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "16541",
+  "title": "Web Design and Development",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS97",
+   "CIS1",
+   "CIS15",
+   "CIS22",
+   "CIS23",
+   "CIS35",
+   "CIS61",
+   "CIS62",
+   "CIS69",
+   "CIS70",
+   "CIS78",
+   "CIS85",
+   "CIS87"
+  ],
+  "source": {
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=210",
+   "title": "209",
+   "h1": "209",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    210,
+    211,
+    212,
+    213
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 13,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "16819",
+  "title": "Business Insurance: Property & Casualty",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT1",
+   "BUS18",
+   "BUS5",
+   "BUS70",
+   "BUS71",
+   "BUS72",
+   "BUS73",
+   "BUS74",
+   "BUS92",
+   "CIS50",
+   "CIS73"
+  ],
+  "source": {
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=173",
+   "title": "Students who complete the Business-Insurance: Property & Casualty CerƟ ﬁ cate of Achievement/Associate in Science will b",
+   "h1": "Students who complete the Business-Insurance: Property & Casualty CerƟ ﬁ cate of Achievement/Associate in Science will b",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    173,
+    174
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 11,
+  "text_chars": 8305
+ },
+ {
+  "control_number": "18535",
+  "title": "Interdisciplinary Studies: Science & Quantitative Reasoning",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEM3",
+   "CHEM4"
+  ],
+  "source": {
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=155",
+   "title": "154",
+   "h1": "154",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    155
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 2,
+  "text_chars": 4413
+ },
+ {
+  "control_number": "18616",
+  "title": "Interdisciplinary Studies: Wellness & Self Development",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 83,
+  "text_chars": 0
+ },
+ {
+  "control_number": "19450",
+  "title": "Sociology",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTH2",
+   "POLS19",
+   "PSYC30",
+   "PSYC4",
+   "SJS2",
+   "SOC2",
+   "SOC23",
+   "SOC40",
+   "SOC45",
+   "SOC75",
+   "SOCIC1000",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=429",
+   "title": "Students who complete the Sociology Associate in Arts will be able to:",
+   "h1": "Students who complete the Sociology Associate in Arts will be able to:",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    429,
+    430,
+    431
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 12,
+  "text_chars": 5332
+ },
+ {
+  "control_number": "19633",
+  "title": "Industrial Biotechnology",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL14",
+   "BIOL2",
+   "BIOT1",
+   "BIOT10",
+   "BIOT160",
+   "BIOT52",
+   "BIOT62",
+   "BIOT63",
+   "CHEM1",
+   "CHEM12"
+  ],
+  "source": {
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=163",
+   "title": "162",
+   "h1": "162",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    163,
+    164,
+    165,
+    166
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 10,
+  "text_chars": 13126
+ },
+ {
+  "control_number": "20947",
+  "title": "Horticulture and Plant Science",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "HORT30",
+   "HORT55",
+   "HORT56",
+   "HORT6",
+   "HORT70",
+   "HORT71"
+  ],
+  "source": {
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=297",
+   "title": "296",
+   "h1": "296",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    297,
+    298,
+    299
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 6,
+  "text_chars": 11527
+ },
+ {
+  "control_number": "20953",
+  "title": "Accounting",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT1",
+   "ACCT176",
+   "ACCT177",
+   "ACCT183",
+   "ACCT2",
+   "ACCT50",
+   "CIS1",
+   "CIS50",
+   "CIS66",
+   "CIS73"
+  ],
+  "source": {
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=107",
+   "title": "106",
+   "h1": "106",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    107,
+    108
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 10,
+  "text_chars": 6361
+ },
+ {
+  "control_number": "20955",
+  "title": "Business, General",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT1",
+   "ACCT2",
+   "BUS18",
+   "BUS5",
+   "BUS92",
+   "CIS1",
+   "CIS20",
+   "CIS22",
+   "CIS23",
+   "CIS50",
+   "ECONC2001",
+   "ECONC2002",
+   "MATH30",
+   "MATH31",
+   "MATHC2210",
+   "MATHC2220",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=172",
+   "title": "171",
+   "h1": "171",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    172,
+    173,
+    174
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 17,
+  "text_chars": 11820
+ },
+ {
+  "control_number": "20956",
+  "title": "Management",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS181",
+   "BUS5",
+   "BUS92",
+   "CIS50",
+   "MGMT191",
+   "MGMT193",
+   "MGMT50",
+   "MGMT55"
+  ],
+  "source": {
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=176",
+   "title": "175",
+   "h1": "175",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    176,
+    177,
+    178,
+    179
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 8,
+  "text_chars": 13810
+ },
+ {
+  "control_number": "20957",
+  "title": "Small Business Management",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT1",
+   "ACCT2",
+   "BUS60",
+   "ECONC2001",
+   "ECONC2002",
+   "MGMT191",
+   "MGMT55",
+   "MKT173",
+   "MKT174",
+   "OT54A",
+   "OT54B",
+   "OT55A",
+   "OT55B"
+  ],
+  "source": {
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=178",
+   "title": "177",
+   "h1": "177",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    178,
+    179
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 13,
+  "text_chars": 8102
+ },
+ {
+  "control_number": "20958",
+  "title": "Retail Management",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS92",
+   "CIS50",
+   "MGMT191",
+   "MGMT193",
+   "MGMT50",
+   "MGMT55",
+   "MKT171",
+   "MKT174"
+  ],
+  "source": {
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=177",
+   "title": "176",
+   "h1": "176",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    177,
+    178,
+    179,
+    180
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 8,
+  "text_chars": 12332
+ },
+ {
+  "control_number": "20959",
+  "title": "Marketing",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS18",
+   "BUS181",
+   "BUS5",
+   "CIS1",
+   "CIS50",
+   "ECONC2001",
+   "MGMT191",
+   "MGMT50",
+   "MKT171",
+   "MKT172",
+   "MKT173",
+   "MKT174"
+  ],
+  "source": {
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=181",
+   "title": "180",
+   "h1": "180",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    181,
+    182,
+    183,
+    184
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 12,
+  "text_chars": 14108
+ },
+ {
+  "control_number": "20960",
+  "title": "Real Estate",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT1",
+   "BUS18",
+   "ECONC2001",
+   "ECONC2002",
+   "RE164",
+   "RE171",
+   "RE172",
+   "RE173",
+   "RE174",
+   "RE175",
+   "RE176",
+   "RE177"
+  ],
+  "source": {
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=418",
+   "title": "417",
+   "h1": "417",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    418,
+    419
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 12,
+  "text_chars": 7253
+ },
+ {
+  "control_number": "20961",
+  "title": "Business Insurance: Property & Casualty",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT1",
+   "BUS18",
+   "BUS5",
+   "BUS70",
+   "BUS71",
+   "BUS72",
+   "BUS73",
+   "BUS74",
+   "BUS92",
+   "CIS50",
+   "CIS73"
+  ],
+  "source": {
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=173",
+   "title": "172",
+   "h1": "172",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    173,
+    174
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 11,
+  "text_chars": 9056
+ },
+ {
+  "control_number": "20962",
+  "title": "Administrative Assistant",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 0.545,
+  "codes_found": [
+   "BUS97",
+   "CIS91",
+   "OT162",
+   "OT54A",
+   "OT54B",
+   "OT56"
+  ],
+  "source": {
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=183",
+   "title": "182",
+   "h1": "182",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    183
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 11,
+  "text_chars": 4400
+ },
+ {
+  "control_number": "20966",
+  "title": "Microcomputer Applications",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CIS1",
+   "CIS15",
+   "CIS55",
+   "CIS61",
+   "CIS66",
+   "CIS73",
+   "CIS78",
+   "CIS89",
+   "CIS90",
+   "CIS91"
+  ],
+  "source": {
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=210",
+   "title": "209",
+   "h1": "209",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    210,
+    211,
+    212,
+    213
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 10,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "20967",
+  "title": "Computer Programming",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT1",
+   "ACCT2",
+   "BUS5",
+   "BUS92",
+   "CIS1",
+   "CIS15",
+   "CIS20",
+   "CIS22",
+   "CIS23",
+   "CIS35",
+   "CIS52",
+   "CIS55",
+   "CIS60",
+   "CIS61",
+   "CIS66",
+   "CIS73",
+   "CIS78",
+   "CIS80",
+   "CIS89"
+  ],
+  "source": {
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=209",
+   "title": "208",
+   "h1": "208",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    209,
+    210,
+    211,
+    212
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 19,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "20968",
+  "title": "Web Design and Development",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS97",
+   "CIS1",
+   "CIS61",
+   "CIS62",
+   "CIS69",
+   "CIS70",
+   "CIS85",
+   "CIS87"
+  ],
+  "source": {
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=210",
+   "title": "209",
+   "h1": "209",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    210,
+    211,
+    212,
+    213
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 8,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "20971",
+  "title": "Automotive Maintenance and Light Repair Technician",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ATEC130",
+   "ATEC131",
+   "ATEC132",
+   "ATEC140",
+   "ATEC70"
+  ],
+  "source": {
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=149",
+   "title": "148",
+   "h1": "148",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    149,
+    150,
+    151,
+    152
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 5,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "20973",
+  "title": "Airframe and Powerplant Maintenance Technician",
+  "award": "Certificate of Achievement requiring 60+S/90+Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "AERO102",
+   "AERO103",
+   "AERO105",
+   "AERO106",
+   "AERO107",
+   "AERO118",
+   "AERO119",
+   "AERO55"
+  ],
+  "source": {
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=123",
+   "title": "122",
+   "h1": "122",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    123,
+    124,
+    125
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 8,
+  "text_chars": 10299
+ },
+ {
+  "control_number": "20974",
+  "title": "Airframe Maintenance Technician",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "AERO102",
+   "AERO103",
+   "AERO105",
+   "AERO118",
+   "AERO55"
+  ],
+  "source": {
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=123",
+   "title": "122",
+   "h1": "122",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    123,
+    124
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 5,
+  "text_chars": 9205
+ },
+ {
+  "control_number": "20975",
+  "title": "Powerplant Maintenance Technician",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "AERO103",
+   "AERO106",
+   "AERO107",
+   "AERO119",
+   "AERO55"
+  ],
+  "source": {
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=123",
+   "title": "122",
+   "h1": "122",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    123,
+    124,
+    125
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 5,
+  "text_chars": 10299
+ },
+ {
+  "control_number": "20977",
+  "title": "Drafting and Design Technician",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ADVM110",
+   "ADVM171",
+   "ADVM172",
+   "ADVM51",
+   "DRFT161",
+   "DRFT45",
+   "DRFT55",
+   "DRFT58",
+   "DRFT60",
+   "DRFT75",
+   "DRFT80",
+   "OCED70"
+  ],
+  "source": {
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=249",
+   "title": "248",
+   "h1": "248",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    249,
+    250,
+    251,
+    252
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 12,
+  "text_chars": 14937
+ },
+ {
+  "control_number": "20978",
+  "title": "Welding Technician",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ADVM51",
+   "DRFT79",
+   "WELD130",
+   "WELD131",
+   "WELD132"
+  ],
+  "source": {
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=447",
+   "title": "446",
+   "h1": "446",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    447,
+    448
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 5,
+  "text_chars": 8120
+ },
+ {
+  "control_number": "20981",
+  "title": "Water & Wastewater Technology",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 0.929,
+  "codes_found": [
+   "BIOL14",
+   "BIOT160",
+   "CHEM1",
+   "WATR100",
+   "WATR101",
+   "WATR103",
+   "WATR104",
+   "WATR105",
+   "WATR106",
+   "WATR107",
+   "WATR108",
+   "WATR120",
+   "WATR121"
+  ],
+  "source": {
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=443",
+   "title": "442",
+   "h1": "442",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    443,
+    444,
+    445
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 14,
+  "text_chars": 9164
+ },
+ {
+  "control_number": "20982",
+  "title": "Photography, Professional",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART15C",
+   "PHOT151",
+   "PHOT152",
+   "PHOT153",
+   "PHOT154",
+   "PHOT156",
+   "PHOT158",
+   "PHOT161",
+   "PHOT162",
+   "PHOT163",
+   "PHOT165",
+   "PHOT29",
+   "PHOT30A",
+   "PHOT31",
+   "PHOT32",
+   "PHOT35",
+   "PHOT40",
+   "PHOT45",
+   "PHOT56"
+  ],
+  "source": {
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=390",
+   "title": "389",
+   "h1": "389",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    390,
+    391,
+    392,
+    393
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 19,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "20988",
+  "title": "Early Childhood Education",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 0.667,
+  "codes_found": [
+   "CDEVC1000",
+   "CDFS50",
+   "CDFS53",
+   "CDFS54",
+   "CDFS62",
+   "CDFS63",
+   "CDFS64",
+   "CDFS65"
+  ],
+  "source": {
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=77",
+   "title": "76",
+   "h1": "76",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    77
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 12,
+  "text_chars": 4849
+ },
+ {
+  "control_number": "20989",
+  "title": "Human Services and Social Work",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "COUN64",
+   "COUN64P",
+   "HSW1",
+   "HSW82",
+   "HSW83",
+   "HSW85",
+   "PSYCC1000"
+  ],
+  "source": {
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=304",
+   "title": "303",
+   "h1": "303",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    304,
+    305
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 7,
+  "text_chars": 6875
+ },
+ {
+  "control_number": "20990",
+  "title": "Criminal Justice: Law Enforcement",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CJ1",
+   "CJ11",
+   "CJ2",
+   "CJ51",
+   "CJ52",
+   "CJ53",
+   "CJ56",
+   "CJ57",
+   "CJ58",
+   "CJ59",
+   "CJ64"
+  ],
+  "source": {
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=111",
+   "title": "110",
+   "h1": "110",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    111,
+    112,
+    113,
+    114
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 11,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "20991",
+  "title": "Criminal Justice: Corrections",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CJ1",
+   "CJ11",
+   "CJ2",
+   "CJ51",
+   "CJ52",
+   "CJ53",
+   "CJ57",
+   "CJ58",
+   "CJ59",
+   "CJ60",
+   "CJ62"
+  ],
+  "source": {
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=111",
+   "title": "110",
+   "h1": "110",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    111,
+    112,
+    113,
+    114
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 11,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "20992",
+  "title": "Fire Technology",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 0.778,
+  "codes_found": [
+   "EMS110",
+   "FIRE101",
+   "FIRE50",
+   "FIRE51",
+   "FIRE53",
+   "FIRE54",
+   "FIRE56"
+  ],
+  "source": {
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=285",
+   "title": "284",
+   "h1": "284",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    285
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 9,
+  "text_chars": 4136
+ },
+ {
+  "control_number": "30034",
+  "title": "Survey and Civil Drafting Technician",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ADVM51",
+   "DRFT140",
+   "DRFT161",
+   "DRFT45",
+   "DRFT60",
+   "DRFT80",
+   "GEOG10",
+   "GEOL1",
+   "GEOL5",
+   "OCED70"
+  ],
+  "source": {
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=250",
+   "title": "249",
+   "h1": "249",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    250,
+    251,
+    252
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 10,
+  "text_chars": 12003
+ },
+ {
+  "control_number": "30184",
+  "title": "Mechatronics",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ADVM101",
+   "ADVM110",
+   "ADVM121",
+   "ADVM130",
+   "ADVM132",
+   "ADVM140",
+   "ADVM142",
+   "ADVM162",
+   "ADVM163",
+   "ADVM164",
+   "ADVM165",
+   "ADVM166",
+   "ADVM174",
+   "ADVM51",
+   "CIS1",
+   "DRFT151",
+   "DRFT79",
+   "OCED70",
+   "OCED90"
+  ],
+  "source": {
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=118",
+   "title": "Students who complete the Mechatronics CerƟ ﬁ cate of Achievement/Associate in Science will be able to:",
+   "h1": "Students who complete the Mechatronics CerƟ ﬁ cate of Achievement/Associate in Science will be able to:",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    118,
+    119,
+    120,
+    121
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 19,
+  "text_chars": 14471
+ },
+ {
+  "control_number": "30185",
+  "title": "Mechatronics",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ADVM101",
+   "ADVM110",
+   "ADVM121",
+   "ADVM130",
+   "ADVM132",
+   "ADVM140",
+   "ADVM142",
+   "ADVM162",
+   "ADVM163",
+   "ADVM164",
+   "ADVM165",
+   "ADVM166",
+   "ADVM174",
+   "ADVM51",
+   "CIS1",
+   "DRFT151",
+   "DRFT79",
+   "OCED70",
+   "OCED90"
+  ],
+  "source": {
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=118",
+   "title": "117",
+   "h1": "117",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    118,
+    119,
+    120,
+    121
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 19,
+  "text_chars": 15522
+ },
+ {
+  "control_number": "30417",
+  "title": "Medical Administrative Assistant",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS97",
+   "CIS66",
+   "CIS91",
+   "NURS111",
+   "OT54A",
+   "OT54B",
+   "OT56",
+   "OT60",
+   "OT61"
+  ],
+  "source": {
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=183",
+   "title": "182",
+   "h1": "182",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    183
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 9,
+  "text_chars": 4400
+ },
+ {
+  "control_number": "30671",
+  "title": "Mathematics",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "MATH22",
+   "MATH23",
+   "MATH40",
+   "MATHC2210",
+   "MATHC2220",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=78",
+   "title": "77",
+   "h1": "77",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    78
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 6,
+  "text_chars": 4188
+ },
+ {
+  "control_number": "30678",
+  "title": "Sociology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "PSYC4",
+   "SJS2",
+   "SJS30",
+   "SOC2",
+   "SOC40",
+   "SOC45",
+   "SOC75",
+   "SOCIC1000",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=428",
+   "title": "Associate in Arts in Sociology for Transfer (ADT: A.A.-T)",
+   "h1": "Associate in Arts in Sociology for Transfer (ADT: A.A.-T)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    428,
+    429,
+    430,
+    431
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 9,
+  "text_chars": 9242
+ },
+ {
+  "control_number": "31659",
+  "title": "Communication Studies",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTH2",
+   "COMM15",
+   "COMM2",
+   "COMM50",
+   "COMM6",
+   "COMM75A",
+   "COMMC1004",
+   "SOCIC1000"
+  ],
+  "source": {
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=203",
+   "title": "202",
+   "h1": "202",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    203,
+    204,
+    205,
+    206
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 8,
+  "text_chars": 15172
+ },
+ {
+  "control_number": "31761",
+  "title": "Early Childhood Education",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CDEVC1000",
+   "CDFS50",
+   "CDFS53",
+   "CDFS54",
+   "CDFS62",
+   "CDFS63",
+   "CDFS64",
+   "CDFS65"
+  ],
+  "source": {
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=77",
+   "title": "76",
+   "h1": "76",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    77
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 8,
+  "text_chars": 4849
+ },
+ {
+  "control_number": "32121",
+  "title": "Studio Arts",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 0.938,
+  "codes_found": [
+   "ART14",
+   "ART15",
+   "ART16",
+   "ART17",
+   "ART19",
+   "ART21",
+   "ART23",
+   "ART24",
+   "ART26",
+   "ART31",
+   "ART32",
+   "ART33",
+   "ART34",
+   "ART38",
+   "ART39",
+   "ART4",
+   "ART40",
+   "ART41",
+   "ART42",
+   "ART43",
+   "ART5",
+   "ART6",
+   "ART7",
+   "ART8",
+   "ARTH21",
+   "ARTH25",
+   "ARTH31",
+   "ARTHC1100",
+   "ARTHC1200",
+   "PHOT30A"
+  ],
+  "source": {
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=131",
+   "title": "Associate in Arts in Studio Arts for Transfer (ADT: A.A.-T)",
+   "h1": "Associate in Arts in Studio Arts for Transfer (ADT: A.A.-T)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    131,
+    132,
+    133,
+    134
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 32,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "32126",
+  "title": "Art History",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 0.952,
+  "codes_found": [
+   "ART14",
+   "ART16",
+   "ART17",
+   "ART19",
+   "ART21",
+   "ART23",
+   "ART26",
+   "ART31",
+   "ART4",
+   "ART6",
+   "ART7",
+   "ART8",
+   "ARTH21",
+   "ARTH25",
+   "ARTH31",
+   "ARTH35",
+   "ARTHC1100",
+   "ARTHC1200",
+   "DMA9",
+   "PHOT29"
+  ],
+  "source": {
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=142",
+   "title": "Associate in Arts in Art History for Transfer (ADT: A.A.-T)",
+   "h1": "Associate in Arts in Art History for Transfer (ADT: A.A.-T)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    142,
+    143
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 21,
+  "text_chars": 9285
+ },
+ {
+  "control_number": "32475",
+  "title": "Physics",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "MATH22",
+   "MATHC2210",
+   "MATHC2220",
+   "PHYS6",
+   "PHYS7",
+   "PHYS8"
+  ],
+  "source": {
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=145",
+   "title": "major in astronomy/astrophysics or double major in astronomy and physics to the university. Transfer level astronomy",
+   "h1": "major in astronomy/astrophysics or double major in astronomy and physics to the university. Transfer level astronomy",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    145
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 6,
+  "text_chars": 3493
+ },
+ {
+  "control_number": "32495",
+  "title": "Journalism",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CIS85",
+   "COMM6",
+   "ECONC2001",
+   "ECONC2002",
+   "JOUR1",
+   "JOUR11",
+   "JOUR60",
+   "JOUR61",
+   "PHOT56",
+   "POLS2",
+   "POLSC1000",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=307",
+   "title": "Associate in Arts in Journalism for Transfer (ADT: A.A.-T)",
+   "h1": "Associate in Arts in Journalism for Transfer (ADT: A.A.-T)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    307,
+    308,
+    309,
+    310
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 12,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "32903",
+  "title": "Administration of Justice",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CJ1",
+   "CJ11",
+   "CJ2",
+   "CJ51",
+   "CJ53",
+   "CJ56",
+   "CJ64",
+   "PSYCC1000",
+   "SOCIC1000"
+  ],
+  "source": {
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=110",
+   "title": "109",
+   "h1": "109",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    110,
+    111,
+    112,
+    113
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 9,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "32917",
+  "title": "Psychology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL16",
+   "BIOLC1000",
+   "PSYC12",
+   "PSYC18",
+   "PSYC2",
+   "PSYC20",
+   "PSYC3",
+   "PSYC30",
+   "PSYC34",
+   "PSYC4",
+   "PSYC40",
+   "PSYC5",
+   "PSYC6",
+   "PSYC7",
+   "PSYCC1000",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=413",
+   "title": "Associate in Arts in Psychology for Transfer (ADT: A.A.-T)",
+   "h1": "Associate in Arts in Psychology for Transfer (ADT: A.A.-T)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    413,
+    414,
+    415,
+    416
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 16,
+  "text_chars": 15041
+ },
+ {
+  "control_number": "32918",
+  "title": "Kinesiology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 0.808,
+  "codes_found": [
+   "DANC10A",
+   "DANC10B",
+   "DANC11A",
+   "DANC12A",
+   "DANC12B",
+   "DANC13A",
+   "DANC13B",
+   "DANC14A",
+   "DANC14B",
+   "DANC15A",
+   "KINE11A",
+   "KINE11B",
+   "KINE11X",
+   "KINE12A",
+   "KINE12B",
+   "KINE12X",
+   "KINE13X",
+   "KINE18A",
+   "KINE19A",
+   "KINE21A",
+   "KINE23A",
+   "KINE23B",
+   "KINE23X",
+   "KINE23Y",
+   "KINE2A",
+   "KINE2B",
+   "KINE2D",
+   "KINE30A",
+   "KINE30B",
+   "KINE32A",
+   "KINE32X",
+   "KINE36A",
+   "KINE36B",
+   "KINE37A",
+   "KINE37B",
+   "KINE3A",
+   "KINE3D",
+   "KINE3E",
+   "KINE3X",
+   "KINE6E",
+   "KINE6F",
+   "KINE6X"
+  ],
+  "source": {
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=324",
+   "title": "323",
+   "h1": "323",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    324,
+    325,
+    326,
+    327
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 52,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "32919",
+  "title": "English",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ENGL10",
+   "ENGL18",
+   "ENGL21",
+   "ENGL23",
+   "ENGL24",
+   "ENGL30",
+   "ENGL31",
+   "ENGL36",
+   "ENGL40",
+   "ENGL41",
+   "ENGL44",
+   "ENGL58",
+   "ENGL59",
+   "ENGL6",
+   "ENGL7",
+   "ENGLC1003",
+   "HUMN1"
+  ],
+  "source": {
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=266",
+   "title": "Associate in Arts in English for Transfer (ADT: A.A.-T)",
+   "h1": "Associate in Arts in English for Transfer (ADT: A.A.-T)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    266,
+    267,
+    268,
+    269
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 17,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "32927",
+  "title": "Geography",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTH2",
+   "GEOG1",
+   "GEOG10",
+   "GEOG1L",
+   "GEOG2",
+   "GEOG4",
+   "GEOL1"
+  ],
+  "source": {
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=287",
+   "title": "Associate in Arts in Geography for Transfer (ADT: A.A.-T)",
+   "h1": "Associate in Arts in Geography for Transfer (ADT: A.A.-T)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    287,
+    288
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 7,
+  "text_chars": 8333
+ },
+ {
+  "control_number": "32937",
+  "title": "History",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "HIST10",
+   "HIST2",
+   "HIST28",
+   "HIST29",
+   "HIST3",
+   "HIST31",
+   "HIST37",
+   "HIST4",
+   "HIST5",
+   "HISTC1001",
+   "HISTC1002"
+  ],
+  "source": {
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=292",
+   "title": "Associate in Arts in History for Transfer (ADT: A.A.-T)",
+   "h1": "Associate in Arts in History for Transfer (ADT: A.A.-T)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    292,
+    293,
+    294
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 11,
+  "text_chars": 12148
+ },
+ {
+  "control_number": "32992",
+  "title": "Theatre Arts",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "THEA1",
+   "THEA2",
+   "THEA20",
+   "THEA21",
+   "THEA24A",
+   "THEA24B",
+   "THEA24C",
+   "THEA24D",
+   "THEA27",
+   "THEA3",
+   "THEA32A",
+   "THEA47",
+   "THEA6",
+   "THEA8",
+   "THEA9"
+  ],
+  "source": {
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=433",
+   "title": "Associate in Arts in Theatre Arts for Transfer (ADT: A.A.-T)",
+   "h1": "Associate in Arts in Theatre Arts for Transfer (ADT: A.A.-T)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    433,
+    434,
+    435,
+    436
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 15,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "33291",
+  "title": "Spanish",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "HIST31",
+   "SJS2",
+   "SPAN1",
+   "SPAN11",
+   "SPAN2",
+   "SPAN3",
+   "SPAN4"
+  ],
+  "source": {
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=350",
+   "title": "Associate in Arts in Spanish for Transfer (ADT: A.A.-T)",
+   "h1": "Associate in Arts in Spanish for Transfer (ADT: A.A.-T)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    350,
+    351,
+    352,
+    353
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 7,
+  "text_chars": 13246
+ },
+ {
+  "control_number": "33305",
+  "title": "Business Administration",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 0.778,
+  "codes_found": [
+   "ACCT1",
+   "ACCT2",
+   "BUS18",
+   "BUS5",
+   "ECONC2001",
+   "ECONC2002",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=76",
+   "title": "75",
+   "h1": "75",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    76,
+    77,
+    78
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 9,
+  "text_chars": 13696
+ },
+ {
+  "control_number": "33373",
+  "title": "Anthropology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTH2",
+   "ANTH24",
+   "ANTH6",
+   "ANTH7",
+   "ANTHC1001",
+   "ANTHC1001L",
+   "BIOL4",
+   "COMM12",
+   "GEOG2",
+   "GEOL1",
+   "GEOL2",
+   "PSYC4",
+   "PSYC7",
+   "SOCIC1000",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=127",
+   "title": "Associate in Arts in Anthropology for Transfer (ADT: AA-T)",
+   "h1": "Associate in Arts in Anthropology for Transfer (ADT: AA-T)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    127,
+    128,
+    129
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 15,
+  "text_chars": 11158
+ },
+ {
+  "control_number": "33378",
+  "title": "Political Science",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "POLS16",
+   "POLS19",
+   "POLS2",
+   "POLS3",
+   "POLS4",
+   "POLS5",
+   "POLS6",
+   "POLS7",
+   "POLSC1000",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=409",
+   "title": "408",
+   "h1": "408",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    409,
+    410,
+    411
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 10,
+  "text_chars": 10395
+ },
+ {
+  "control_number": "35213",
+  "title": "Liberal Studies",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.903,
+  "codes_found": [
+   "ANTH2",
+   "ARTH1",
+   "ARTH35",
+   "ARTHC1100",
+   "ARTHC1200",
+   "ASTRC1001",
+   "BIOL16",
+   "BIOLC1000",
+   "ENGLC1000",
+   "ENGLC1001",
+   "ENGLC1003",
+   "GEOG2",
+   "GEOL1",
+   "GEOL5",
+   "HIST28",
+   "HIST29",
+   "HISTC1001",
+   "HISTC1002",
+   "KINE40A",
+   "MUSC13",
+   "MUSC8",
+   "PHIL3",
+   "PHIL4",
+   "POLSC1000",
+   "PSYC12",
+   "PSYCC1000",
+   "SOCIC1000",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=231",
+   "title": "preparaƟ on and general educaƟ on for transfer while simultaneously compleƟ ng the Liberal Studies Associate in Arts.",
+   "h1": "preparaƟ on and general educaƟ on for transfer while simultaneously compleƟ ng the Liberal Studies Associate in Arts.",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    231
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 31,
+  "text_chars": 4332
+ },
+ {
+  "control_number": "35259",
+  "title": "Sports Broadcasting",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "COMM75A",
+   "COMM75B",
+   "COMM80A",
+   "COMM80B"
+  ],
+  "source": {
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=204",
+   "title": "203",
+   "h1": "203",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    204
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 4,
+  "text_chars": 2950
+ },
+ {
+  "control_number": "35517",
+  "title": "Associate Teacher",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CDEVC1000",
+   "CDFS50",
+   "CDFS62",
+   "CDFS63"
+  ],
+  "source": {
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=195",
+   "title": "194",
+   "h1": "194",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    195,
+    196,
+    197,
+    198
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 4,
+  "text_chars": 14021
+ },
+ {
+  "control_number": "35683",
+  "title": "Engineering",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEM1",
+   "CIS22",
+   "DRFT45",
+   "DRFT58",
+   "ENGR17",
+   "ENGR26",
+   "ENGR30",
+   "ENGR45",
+   "MATH22",
+   "MATH23",
+   "MATH26",
+   "MATHC2210",
+   "MATHC2220",
+   "PHYS6",
+   "PHYS7"
+  ],
+  "source": {
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=262",
+   "title": "universiƟ es throughout California. As part of our Engineering Program, an Associate in Science in Engineering is availa",
+   "h1": "universiƟ es throughout California. As part of our Engineering Program, an Associate in Science in Engineering is availa",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    262,
+    263,
+    264
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 15,
+  "text_chars": 11265
+ },
+ {
+  "control_number": "35707",
+  "title": "Biotechnology Laboratory Assistant",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOT10",
+   "BIOT160",
+   "ENGL1E",
+   "ENGLC1000",
+   "LR10",
+   "MATH12",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=164",
+   "title": "163",
+   "h1": "163",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    164
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 7,
+  "text_chars": 2595
+ },
+ {
+  "control_number": "35747",
+  "title": "Automotive Electrical and Body Systems",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ATEC131",
+   "ATEC137",
+   "ATEC138",
+   "ATEC140",
+   "ATEC70"
+  ],
+  "source": {
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=149",
+   "title": "148",
+   "h1": "148",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    149,
+    150,
+    151,
+    152
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 5,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "35748",
+  "title": "Automotive Automatic Transmissions and Transaxles",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ATEC131",
+   "ATEC134",
+   "ATEC138",
+   "ATEC140",
+   "ATEC70"
+  ],
+  "source": {
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=148",
+   "title": "147",
+   "h1": "147",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    148,
+    149,
+    150,
+    151
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 5,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "35808",
+  "title": "Music",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 0.762,
+  "codes_found": [
+   "MUSC1",
+   "MUSC10",
+   "MUSC11",
+   "MUSC16",
+   "MUSC17",
+   "MUSC2",
+   "MUSC20",
+   "MUSC25",
+   "MUSC27",
+   "MUSC3",
+   "MUSC40A",
+   "MUSC40B",
+   "MUSC40C",
+   "MUSC40D",
+   "MUSC5",
+   "MUSC8"
+  ],
+  "source": {
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=357",
+   "title": "Associate in Arts in Music for Transfer (ADT: A.A.-T)",
+   "h1": "Associate in Arts in Music for Transfer (ADT: A.A.-T)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    357,
+    358,
+    359
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 21,
+  "text_chars": 12177
+ },
+ {
+  "control_number": "35982",
+  "title": "Nutrition",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTH2",
+   "BIOL4",
+   "BIOL5",
+   "CHEM2",
+   "CHEM3",
+   "NUTR10",
+   "PSYC2",
+   "SOCIC1000",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=382",
+   "title": "381",
+   "h1": "381",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    382,
+    383
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 9,
+  "text_chars": 6216
+ },
+ {
+  "control_number": "36034",
+  "title": "Astronomy",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ASTR30",
+   "ASTR40",
+   "ASTR45",
+   "ASTR50",
+   "ASTRC1001",
+   "ASTRC1001L",
+   "CHEM1",
+   "CIS22",
+   "MATH22",
+   "MATHC2210",
+   "MATHC2220",
+   "PHYS6",
+   "PHYS7",
+   "PHYS8"
+  ],
+  "source": {
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=145",
+   "title": "The Associate in Science in Astronomy can be obtained by compleƟ ng the 39-unit major, General EducaƟ on, and",
+   "h1": "The Associate in Science in Astronomy can be obtained by compleƟ ng the 39-unit major, General EducaƟ on, and",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    145,
+    146
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 14,
+  "text_chars": 7186
+ },
+ {
+  "control_number": "36249",
+  "title": "Theatre Arts Technical",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART6",
+   "DRFT45",
+   "THEA1",
+   "THEA148B",
+   "THEA148C",
+   "THEA148D",
+   "THEA20",
+   "THEA21",
+   "THEA27",
+   "THEA3",
+   "THEA32A",
+   "THEA32B",
+   "THEA47",
+   "THEA6",
+   "THEA8",
+   "THEA9",
+   "WELD130"
+  ],
+  "source": {
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=435",
+   "title": "434",
+   "h1": "434",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    435,
+    436,
+    437,
+    438
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 17,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "36302",
+  "title": "Biology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL2",
+   "BIOL3",
+   "CHEM1",
+   "CHEM2",
+   "CHEM3",
+   "CHEM4",
+   "MATHC2210",
+   "MATHC2220"
+  ],
+  "source": {
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=155",
+   "title": "154",
+   "h1": "154",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    155,
+    156,
+    157,
+    158
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 8,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "36420",
+  "title": "Cosmetology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.667,
+  "codes_found": [
+   "COSM100",
+   "COSM101"
+  ],
+  "source": {
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=221",
+   "title": "Students who complete the Cosmetology CerƟ ﬁ cate of Achievement/Associate in Science will be able to:",
+   "h1": "Students who complete the Cosmetology CerƟ ﬁ cate of Achievement/Associate in Science will be able to:",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    221
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 3,
+  "text_chars": 985
+ },
+ {
+  "control_number": "36421",
+  "title": "Drafting and Design Technician",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ADVM110",
+   "ADVM171",
+   "ADVM172",
+   "ADVM51",
+   "DRFT161",
+   "DRFT45",
+   "DRFT55",
+   "DRFT58",
+   "DRFT60",
+   "DRFT75",
+   "DRFT80",
+   "OCED70"
+  ],
+  "source": {
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=249",
+   "title": "248",
+   "h1": "248",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    249,
+    250,
+    251,
+    252
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 12,
+  "text_chars": 14937
+ },
+ {
+  "control_number": "36428",
+  "title": "Survey and Civil Drafting Technician",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ADVM51",
+   "DRFT140",
+   "DRFT161",
+   "DRFT45",
+   "DRFT60",
+   "DRFT80",
+   "GEOG10",
+   "GEOL1",
+   "GEOL5",
+   "OCED70"
+  ],
+  "source": {
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=250",
+   "title": "249",
+   "h1": "249",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    250,
+    251,
+    252
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 10,
+  "text_chars": 12003
+ },
+ {
+  "control_number": "36455",
+  "title": "ASL/English Interpreter Training",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ASL1",
+   "ASL2",
+   "ASL3",
+   "ASL4",
+   "ASL5",
+   "ASL52",
+   "ASL53",
+   "ASL54",
+   "ASL57",
+   "ASL6"
+  ],
+  "source": {
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=343",
+   "title": "Students who complete the ASL/English Interpreter Training CerƟ ﬁ cate of Achievement/Associate in Arts will be able to:",
+   "h1": "Students who complete the ASL/English Interpreter Training CerƟ ﬁ cate of Achievement/Associate in Arts will be able to:",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    343,
+    344,
+    345,
+    346
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 10,
+  "text_chars": 12820
+ },
+ {
+  "control_number": "36457",
+  "title": "ASL/English Interpreter Training",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ASL1",
+   "ASL2",
+   "ASL3",
+   "ASL4",
+   "ASL5",
+   "ASL52",
+   "ASL53",
+   "ASL54",
+   "ASL57",
+   "ASL6"
+  ],
+  "source": {
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=343",
+   "title": "342",
+   "h1": "342",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    343,
+    344,
+    345,
+    346
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 10,
+  "text_chars": 13664
+ },
+ {
+  "control_number": "36511",
+  "title": "Biology",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL2",
+   "BIOL3",
+   "CHEM1",
+   "CHEM2",
+   "MATHC2210",
+   "PHYS2",
+   "PHYS4",
+   "PHYS6",
+   "PHYS7"
+  ],
+  "source": {
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=154",
+   "title": "Associate in Science in Biology for Transfer (ADT: A.S.-T.)",
+   "h1": "Associate in Science in Biology for Transfer (ADT: A.S.-T.)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    154,
+    155,
+    156,
+    157
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 9,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "37103",
+  "title": "Economics",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT1",
+   "ACCT2",
+   "BUS18",
+   "CIS15",
+   "ECONC2001",
+   "ECONC2002",
+   "MATH22",
+   "MATH23",
+   "MATH30",
+   "MATH40",
+   "MATHC2210",
+   "MATHC2220",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=254",
+   "title": "Associate in Arts in Economics for Transfer (ADT: A.A.-T)",
+   "h1": "Associate in Arts in Economics for Transfer (ADT: A.A.-T)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    254,
+    255
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 13,
+  "text_chars": 5577
+ },
+ {
+  "control_number": "37158",
+  "title": "Social Justice: General",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 0.696,
+  "codes_found": [
+   "ANTH2",
+   "CDFS53",
+   "COMM12",
+   "ENGL36",
+   "HIST28",
+   "HIST29",
+   "HIST31",
+   "HIST37",
+   "MUSC13",
+   "POLS5",
+   "PSYC12",
+   "PSYC34",
+   "PSYC7",
+   "SJS1",
+   "SJS2",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=424",
+   "title": "423",
+   "h1": "423",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    424,
+    425
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 23,
+  "text_chars": 6779
+ },
+ {
+  "control_number": "37187",
+  "title": "Studio Arts with Emphasis",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART14",
+   "ART15",
+   "ART15B",
+   "ART16",
+   "ART17",
+   "ART18",
+   "ART19",
+   "ART20",
+   "ART21",
+   "ART23",
+   "ART24",
+   "ART25",
+   "ART26",
+   "ART27",
+   "ART28",
+   "ART29",
+   "ART30C",
+   "ART31",
+   "ART32",
+   "ART33",
+   "ART34",
+   "ART35A",
+   "ART37",
+   "ART38",
+   "ART39",
+   "ART4",
+   "ART40",
+   "ART41",
+   "ART42",
+   "ART43",
+   "ART5",
+   "ART6",
+   "ART7",
+   "ART8",
+   "ARTH31",
+   "ARTHC1100",
+   "ARTHC1200"
+  ],
+  "source": {
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=132",
+   "title": "Students who complete the Studio Arts with Emphasis Associate in Arts will be able to:",
+   "h1": "Students who complete the Studio Arts with Emphasis Associate in Arts will be able to:",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    132,
+    133,
+    134,
+    135
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 37,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "37212",
+  "title": "Maker Space Technology",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ADVM101",
+   "ADVM171",
+   "ADVM172",
+   "ADVM173",
+   "ADVM174",
+   "ADVM175",
+   "ADVM176",
+   "ADVM179",
+   "DRFT145",
+   "DRFT151",
+   "DRFT45",
+   "DRFT58",
+   "DRFT79"
+  ],
+  "source": {
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=251",
+   "title": "250",
+   "h1": "250",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    251,
+    252
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 13,
+  "text_chars": 9160
+ },
+ {
+  "control_number": "37608",
+  "title": "Trsfr Studies: CSU GE",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "37609",
+  "title": "Trsfr Studies: IGETC",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "37919",
+  "title": "Dance",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "DANC10A",
+   "DANC10B",
+   "DANC11A",
+   "DANC11B",
+   "DANC12A",
+   "DANC12B",
+   "DANC13A",
+   "DANC13B",
+   "DANC14A",
+   "DANC14B",
+   "DANC15A",
+   "DANC20A",
+   "DANC25A",
+   "DANC25B",
+   "DANC4",
+   "KINE6E",
+   "KINE6F",
+   "MUSC8"
+  ],
+  "source": {
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=236",
+   "title": "Students who complete the Dance Associate in Arts will be able to:",
+   "h1": "Students who complete the Dance Associate in Arts will be able to:",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    236,
+    237,
+    238,
+    239
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 18,
+  "text_chars": 13727
+ },
+ {
+  "control_number": "38141",
+  "title": "Biomedical Sciences",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL14",
+   "BIOL4",
+   "BIOL5",
+   "CHEM1",
+   "CHEM12"
+  ],
+  "source": {
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=155",
+   "title": "154",
+   "h1": "154",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    155,
+    156,
+    157,
+    158
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 5,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "38142",
+  "title": "Biomedical Sciences",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL14",
+   "BIOL4",
+   "BIOL5",
+   "CHEM1",
+   "CHEM12"
+  ],
+  "source": {
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=155",
+   "title": "Students who complete the Biomedical Sciences CerƟ ﬁ cate of Achievement/Associate in Science will be able to:",
+   "h1": "Students who complete the Biomedical Sciences CerƟ ﬁ cate of Achievement/Associate in Science will be able to:",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    155,
+    156,
+    157,
+    158
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 5,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "38146",
+  "title": "Physical Science",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ASTR40",
+   "ASTR45",
+   "ASTR50",
+   "ASTRC1001",
+   "ASTRC1001L",
+   "CHEM1",
+   "CHEM2",
+   "CIS1",
+   "GEOL1",
+   "GEOL2",
+   "GEOL6",
+   "GEOL6L",
+   "PHSC12",
+   "PHSC13",
+   "PHSC14",
+   "PHSC15",
+   "PHSC16",
+   "PHYS2",
+   "PHYS4",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=400",
+   "title": "399",
+   "h1": "399",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    400,
+    401
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 20,
+  "text_chars": 8256
+ },
+ {
+  "control_number": "38221",
+  "title": "Automation",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ADVM101",
+   "ADVM121",
+   "ADVM132",
+   "ADVM142",
+   "ADVM162",
+   "ADVM163",
+   "ADVM164",
+   "ADVM165",
+   "ADVM166",
+   "ADVM167",
+   "ADVM174",
+   "ADVM51",
+   "CIS1",
+   "DRFT151",
+   "OCED70",
+   "OCED90"
+  ],
+  "source": {
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=116",
+   "title": "115",
+   "h1": "115",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    116,
+    117,
+    118,
+    119
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 16,
+  "text_chars": 14271
+ },
+ {
+  "control_number": "38229",
+  "title": "Automation",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ADVM101",
+   "ADVM121",
+   "ADVM132",
+   "ADVM142",
+   "ADVM162",
+   "ADVM163",
+   "ADVM164",
+   "ADVM165",
+   "ADVM166",
+   "ADVM167",
+   "ADVM174",
+   "ADVM51",
+   "CIS1",
+   "DRFT151",
+   "OCED70",
+   "OCED90"
+  ],
+  "source": {
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=116",
+   "title": "115",
+   "h1": "115",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    116,
+    117,
+    118,
+    119
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 16,
+  "text_chars": 14271
+ },
+ {
+  "control_number": "38230",
+  "title": "Cell and Gene Therapies",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL14",
+   "BIOL2",
+   "BIOT1",
+   "BIOT52",
+   "BIOT57",
+   "BIOT60",
+   "BIOT61",
+   "BIOT62",
+   "BIOT65",
+   "CHEM1",
+   "CHEM12"
+  ],
+  "source": {
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=165",
+   "title": "164",
+   "h1": "164",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    165,
+    166,
+    167,
+    168
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 11,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "38231",
+  "title": "Maintenance Technician",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ADVM101",
+   "ADVM51",
+   "MT130",
+   "MT132",
+   "MT140",
+   "MT142"
+  ],
+  "source": {
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=116",
+   "title": "115",
+   "h1": "115",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    116,
+    117,
+    118,
+    119
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 6,
+  "text_chars": 14271
+ },
+ {
+  "control_number": "38404",
+  "title": "Computer Science",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEM1",
+   "CIS20",
+   "CIS21",
+   "CIS22",
+   "CIS23",
+   "MATHC2210",
+   "MATHC2220",
+   "PHYS6",
+   "PHYS7"
+  ],
+  "source": {
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=217",
+   "title": "Associate in Science in Computer Science for Transfer (ADT: A.S.-T)",
+   "h1": "Associate in Science in Computer Science for Transfer (ADT: A.S.-T)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    217
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 9,
+  "text_chars": 2852
+ },
+ {
+  "control_number": "38591",
+  "title": "American Sign Language",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ASL1",
+   "ASL2",
+   "ASL3",
+   "ASL4",
+   "ASL5",
+   "ASL52",
+   "ASL53",
+   "ASL54",
+   "ASL57",
+   "ASL6"
+  ],
+  "source": {
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=342",
+   "title": "The American Sign Language Associate in Arts can be obtained by compleƟ ng the 27-unit major, general educaƟ on",
+   "h1": "The American Sign Language Associate in Arts can be obtained by compleƟ ng the 27-unit major, general educaƟ on",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    342,
+    343,
+    344,
+    345
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 10,
+  "text_chars": 13402
+ },
+ {
+  "control_number": "38652",
+  "title": "Elementary Teacher Education",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 0.895,
+  "codes_found": [
+   "ARTH1",
+   "BIOLC1000",
+   "CDEVC1000",
+   "CDFS53",
+   "CDFS62",
+   "CDFS64",
+   "DANC4",
+   "ENGLC1000",
+   "ENGLC1003",
+   "GEOL6",
+   "GEOL6L",
+   "HIST2",
+   "HISTC1001",
+   "MATH55",
+   "MUSC8",
+   "POLSC1000",
+   "THEA6"
+  ],
+  "source": {
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=257",
+   "title": "256",
+   "h1": "256",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    257,
+    258
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 19,
+  "text_chars": 6516
+ },
+ {
+  "control_number": "39445",
+  "title": "Photo Illustration",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART15C",
+   "DMA10",
+   "DMA11",
+   "DMA15",
+   "DMA20",
+   "DMA21",
+   "DMA31",
+   "DMA62",
+   "PHOT158",
+   "PHOT159",
+   "PHOT29",
+   "PHOT31",
+   "PHOT32",
+   "PHOT33",
+   "PHOT40",
+   "PHOT45"
+  ],
+  "source": {
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=391",
+   "title": "390",
+   "h1": "390",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    391,
+    392,
+    393,
+    394
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 16,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "40392",
+  "title": "Infant/Toddler Teacher",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CDEVC1000",
+   "CDFS50",
+   "CDFS62",
+   "CDFS63",
+   "CDFS75",
+   "CDFS76"
+  ],
+  "source": {
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=198",
+   "title": "197",
+   "h1": "197",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    198,
+    199,
+    200,
+    201
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 6,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "41377",
+  "title": "Business Administration 2.0",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT1",
+   "ACCT2",
+   "BUS18",
+   "BUS5",
+   "ECONC2001",
+   "ECONC2002",
+   "MATH30",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=76",
+   "title": "75",
+   "h1": "75",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    76,
+    77,
+    78
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 8,
+  "text_chars": 13696
+ },
+ {
+  "control_number": "41524",
+  "title": "Firefighter 1 & 2",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "EMS110",
+   "EMS112",
+   "FIRE101",
+   "FIRE140",
+   "FIRE50"
+  ],
+  "source": {
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=284",
+   "title": "283",
+   "h1": "283",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    284,
+    285
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 5,
+  "text_chars": 6806
+ },
+ {
+  "control_number": "42041",
+  "title": "Social Work and Human Services",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 0.96,
+  "codes_found": [
+   "ANTH2",
+   "BIOL16",
+   "BIOL4",
+   "BIOL5",
+   "CDEVC1000",
+   "CDFS50",
+   "CJ1",
+   "COMM12",
+   "COUN64",
+   "COUN64P",
+   "ECONC2001",
+   "ECONC2002",
+   "ENGLC1001",
+   "HISTC1001",
+   "HISTC1002",
+   "HSW1",
+   "PSYC40",
+   "PSYC5",
+   "PSYC6",
+   "PSYCC1000",
+   "SJS1",
+   "SJS2",
+   "SOCIC1000",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=303",
+   "title": "Associate in Arts in Social Work and Human Services for Transfer (ADT: A.A.-T)",
+   "h1": "Associate in Arts in Social Work and Human Services for Transfer (ADT: A.A.-T)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    303,
+    304,
+    305
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 25,
+  "text_chars": 10789
+ },
+ {
+  "control_number": "42203",
+  "title": "Spanish/English Healthcare Interpreter Training",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "COMM12",
+   "NURS111",
+   "OCED90",
+   "OT101",
+   "SPAN1",
+   "SPAN181",
+   "SPAN182",
+   "SPAN185",
+   "SPAN2",
+   "SPAN3",
+   "SPAN4"
+  ],
+  "source": {
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=352",
+   "title": "351",
+   "h1": "351",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    352,
+    353,
+    354,
+    355
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 11,
+  "text_chars": 14037
+ },
+ {
+  "control_number": "42204",
+  "title": "Spanish/English Communication Specialist",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS92",
+   "COMM12",
+   "OCED91",
+   "SPAN1",
+   "SPAN175",
+   "SPAN2",
+   "SPAN3",
+   "SPAN4",
+   "SPAN70",
+   "SPAN71"
+  ],
+  "source": {
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=351",
+   "title": "350",
+   "h1": "350",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    351,
+    352,
+    353,
+    354
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 10,
+  "text_chars": 14430
+ },
+ {
+  "control_number": "42205",
+  "title": "Cosmetology",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "COSM100",
+   "COSM101"
+  ],
+  "source": {
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=221",
+   "title": "220",
+   "h1": "220",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    221
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 2,
+  "text_chars": 1765
+ },
+ {
+  "control_number": "42206",
+  "title": "Nail Technology",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "COSM131",
+   "OCED70",
+   "OCED71"
+  ],
+  "source": {
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=223",
+   "title": "222",
+   "h1": "222",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    223
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 3,
+  "text_chars": 2795
+ },
+ {
+  "control_number": "42207",
+  "title": "Esthetics",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "COSM121",
+   "COSM122"
+  ],
+  "source": {
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=222",
+   "title": "221",
+   "h1": "221",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    222
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 2,
+  "text_chars": 2383
+ },
+ {
+  "control_number": "42912",
+  "title": "Data Science",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ENGR10",
+   "ENGR11",
+   "ENGR12",
+   "ENGR14",
+   "ENGR7",
+   "ENGR8",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=241",
+   "title": "240",
+   "h1": "240",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    241,
+    242
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 7,
+  "text_chars": 4936
+ },
+ {
+  "control_number": "42914",
+  "title": "Data Science",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ENGR10",
+   "ENGR11",
+   "ENGR12",
+   "ENGR14",
+   "ENGR7",
+   "ENGR8",
+   "MATH22",
+   "MATH40",
+   "MATHC2210",
+   "MATHC2220",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=241",
+   "title": "The Associate in Science in Data Science can be obtained by compleƟ ng the 35-unit major and general educaƟ on. All",
+   "h1": "The Associate in Science in Data Science can be obtained by compleƟ ng the 35-unit major and general educaƟ on. All",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    241,
+    242
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 11,
+  "text_chars": 4563
+ },
+ {
+  "control_number": "42947",
+  "title": "Physics",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.967,
+  "codes_found": [
+   "ASTR30",
+   "ASTR40",
+   "ASTRC1001",
+   "ASTRC1001L",
+   "BIOL12",
+   "BIOL14",
+   "BIOL16",
+   "BIOL18",
+   "BIOL2",
+   "BIOL3",
+   "BIOL5",
+   "BIOLC1000",
+   "CHEM1",
+   "CHEM10",
+   "CHEM11",
+   "CHEM2",
+   "CHEM3",
+   "CHEM4",
+   "GEOG1",
+   "GEOG1L",
+   "GEOL1",
+   "GEOL2",
+   "GEOL5",
+   "MATH23",
+   "MATHC2220",
+   "PHSC12",
+   "PHYS6",
+   "PHYS7",
+   "PHYS8"
+  ],
+  "source": {
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=404",
+   "title": "Students who complete the Physics Associate in Science will be able to:",
+   "h1": "Students who complete the Physics Associate in Science will be able to:",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    404,
+    405
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 30,
+  "text_chars": 8431
+ },
+ {
+  "control_number": "43134",
+  "title": "World Languages",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ASL1",
+   "ASL2",
+   "ASL3",
+   "ASL4",
+   "ASL5",
+   "ASL52",
+   "ASL53",
+   "ASL54",
+   "ASL57",
+   "ASL6",
+   "FREN1",
+   "FREN101",
+   "FREN11",
+   "FREN2",
+   "FREN3",
+   "FREN31",
+   "FREN32",
+   "SPAN1",
+   "SPAN101",
+   "SPAN11",
+   "SPAN2",
+   "SPAN3"
+  ],
+  "source": {
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=341",
+   "title": "340",
+   "h1": "340",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    341,
+    342,
+    343,
+    344
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 22,
+  "text_chars": 13542
+ },
+ {
+  "control_number": "43144",
+  "title": "Public Health",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 0.933,
+  "codes_found": [
+   "BIOL4",
+   "BIOL5",
+   "BIOLC1000",
+   "CDEVC1000",
+   "CHEM1",
+   "CHEM10",
+   "HED1",
+   "HED2",
+   "HED3",
+   "HED5",
+   "NUTR10",
+   "PSYC30",
+   "SOCIC1000",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=321",
+   "title": "Associate in Science in Public Health for Transfer (ADT: A.S.-T)",
+   "h1": "Associate in Science in Public Health for Transfer (ADT: A.S.-T)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    321,
+    322,
+    323
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 15,
+  "text_chars": 11252
+ },
+ {
+  "control_number": "43145",
+  "title": "Communication Studies 2.0",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTH2",
+   "COMM12",
+   "COMM15",
+   "COMM2",
+   "COMM50",
+   "COMM6",
+   "COMM8",
+   "COMMC1000",
+   "COMMC1004",
+   "ENGLC1001",
+   "ENGLC1003",
+   "JOUR1",
+   "JOUR11",
+   "PSYCC1000",
+   "SOCIC1000"
+  ],
+  "source": {
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=203",
+   "title": "202",
+   "h1": "202",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    203,
+    204,
+    205,
+    206
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 15,
+  "text_chars": 15172
+ },
+ {
+  "control_number": "43166",
+  "title": "UCTP Physics",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 0.9,
+  "codes_found": [
+   "CHEM1",
+   "CHEM2",
+   "MATH22",
+   "MATH23",
+   "MATHC2210",
+   "MATHC2220",
+   "PHYS6",
+   "PHYS7",
+   "PHYS8"
+  ],
+  "source": {
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=189",
+   "title": "188",
+   "h1": "188",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    189,
+    190,
+    191,
+    192
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 10,
+  "text_chars": 13884
+ },
+ {
+  "control_number": "43948",
+  "title": "Fire Technology",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "FIRE101",
+   "FIRE50",
+   "FIRE51",
+   "FIRE53",
+   "FIRE54",
+   "FIRE56"
+  ],
+  "source": {
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=283",
+   "title": "282",
+   "h1": "282",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    283,
+    284,
+    285
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 6,
+  "text_chars": 9970
+ },
+ {
+  "control_number": "43949",
+  "title": "Fire Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "FIRE101",
+   "FIRE50",
+   "FIRE51",
+   "FIRE53",
+   "FIRE54",
+   "FIRE56"
+  ],
+  "source": {
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=283",
+   "title": "Students who complete the Fire Technology CerƟ ﬁ cate of Achievement/Associate in Science will be able to:",
+   "h1": "Students who complete the Fire Technology CerƟ ﬁ cate of Achievement/Associate in Science will be able to:",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    283,
+    284,
+    285
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 6,
+  "text_chars": 8655
+ },
+ {
+  "control_number": "44069",
+  "title": "Agriculture Plant Science",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEM1",
+   "CHEM10",
+   "ECONC2001",
+   "HORT101",
+   "HORT50",
+   "HORT55",
+   "HORT6",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=296",
+   "title": "Associate in Science in Agriculture Plant Science for Transfer (ADT: A.S.-T)",
+   "h1": "Associate in Science in Agriculture Plant Science for Transfer (ADT: A.S.-T)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    296,
+    297,
+    298,
+    299
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 8,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "44185",
+  "title": "Sound Production",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "MUSC52",
+   "MUSC53",
+   "MUSC60",
+   "MUSC67A",
+   "MUSC67B"
+  ],
+  "source": {
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=360",
+   "title": "359",
+   "h1": "359",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    360,
+    361
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 5,
+  "text_chars": 4587
+ },
+ {
+  "control_number": "44365",
+  "title": "Sound Production Specialist",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "MUSC52",
+   "MUSC53",
+   "MUSC60",
+   "MUSC61",
+   "MUSC66A",
+   "MUSC66C",
+   "MUSC66E",
+   "MUSC66F",
+   "MUSC66G",
+   "MUSC67A",
+   "MUSC67B"
+  ],
+  "source": {
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=360",
+   "title": "359",
+   "h1": "359",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    360,
+    361
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 11,
+  "text_chars": 4587
+ },
+ {
+  "control_number": "44532",
+  "title": "Administrative Assistant",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS92",
+   "BUS97",
+   "CIS50",
+   "CIS66",
+   "CIS73",
+   "CIS91",
+   "OT162",
+   "OT54A",
+   "OT54B"
+  ],
+  "source": {
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=183",
+   "title": "182",
+   "h1": "182",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    183,
+    184,
+    185,
+    186
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 9,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "44533",
+  "title": "Administrative Assistant",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS92",
+   "BUS97",
+   "CIS50",
+   "CIS66",
+   "CIS73",
+   "CIS91",
+   "OT162",
+   "OT54A",
+   "OT54B"
+  ],
+  "source": {
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=183",
+   "title": "182",
+   "h1": "182",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    183,
+    184,
+    185,
+    186
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 9,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "44578",
+  "title": "Graphic and Interactive Design",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART14",
+   "ART6",
+   "ART7",
+   "DMA10",
+   "DMA100",
+   "DMA101",
+   "DMA102",
+   "DMA103",
+   "DMA11",
+   "DMA110",
+   "DMA120",
+   "DMA130",
+   "DMA15",
+   "DMA20",
+   "DMA21",
+   "DMA31",
+   "DMA32",
+   "DMA33",
+   "DMA40",
+   "DMA62",
+   "DMA63",
+   "DMA9",
+   "PHOT29"
+  ],
+  "source": {
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=244",
+   "title": "243",
+   "h1": "243",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    244,
+    245,
+    246,
+    247
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 23,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "44579",
+  "title": "Graphic and Interactive Design",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART14",
+   "ART6",
+   "ART7",
+   "DMA10",
+   "DMA100",
+   "DMA101",
+   "DMA102",
+   "DMA103",
+   "DMA11",
+   "DMA110",
+   "DMA120",
+   "DMA130",
+   "DMA15",
+   "DMA20",
+   "DMA21",
+   "DMA31",
+   "DMA32",
+   "DMA33",
+   "DMA40",
+   "DMA62",
+   "DMA63",
+   "DMA9",
+   "PHOT29"
+  ],
+  "source": {
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=244",
+   "title": "243",
+   "h1": "243",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    244,
+    245,
+    246,
+    247
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 23,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "44820",
+  "title": "Law, Public Policy, and Society",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTH2",
+   "BUS18",
+   "CJ1",
+   "CJ11",
+   "CJ2",
+   "CJ53",
+   "CJ56",
+   "COMM12",
+   "COMM2",
+   "COMM6",
+   "COMM8",
+   "COMMC1000",
+   "COUN5",
+   "COUN7",
+   "ECONC2001",
+   "ECONC2002",
+   "ENGL1E",
+   "ENGLC1000",
+   "ENGLC1001",
+   "ETHN1",
+   "HISTC1001",
+   "HISTC1002",
+   "PHIL4",
+   "POLS2",
+   "POLS4",
+   "POLS7",
+   "POLSC1000",
+   "PSYC12",
+   "PSYC40",
+   "SJS1",
+   "SJS2",
+   "SOC2",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=407",
+   "title": "Associate in Arts in Law, Public Policy, and Society for Transfer (ADT: A.A.-T)",
+   "h1": "Associate in Arts in Law, Public Policy, and Society for Transfer (ADT: A.A.-T)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    407,
+    408,
+    409,
+    410
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 33,
+  "text_chars": 15454
+ },
+ {
+  "control_number": "44832",
+  "title": "Multimedia Journalism",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CIS61",
+   "CIS70",
+   "CIS85",
+   "COMM75A",
+   "COMM75B",
+   "COMM80A",
+   "COMM80B",
+   "DMA10",
+   "DMA100",
+   "DMA101",
+   "DMA102",
+   "DMA9",
+   "ENGL58",
+   "ENGL59",
+   "ENGL6",
+   "FTV55",
+   "FTV56",
+   "JOUR1",
+   "JOUR11",
+   "JOUR60",
+   "JOUR61",
+   "LR11",
+   "PHOT163",
+   "PHOT165",
+   "PHOT29",
+   "PHOT56"
+  ],
+  "source": {
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=309",
+   "title": "308",
+   "h1": "308",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    309,
+    310
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 26,
+  "text_chars": 8701
+ },
+ {
+  "control_number": "44833",
+  "title": "Journalism",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "JOUR1",
+   "JOUR11",
+   "JOUR60",
+   "JOUR61"
+  ],
+  "source": {
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=78",
+   "title": "77",
+   "h1": "77",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    78
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 4,
+  "text_chars": 4188
+ },
+ {
+  "control_number": "44989",
+  "title": "Trsfr Studies: Cal-GETC",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "45560",
+  "title": "Photography",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "45686",
+  "title": "Modern Policing",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ARTH25",
+   "CDFS50",
+   "CJ1",
+   "CJ11",
+   "CJ2",
+   "CJ51",
+   "CJ53",
+   "CJ56",
+   "COMM12",
+   "COMMC1000",
+   "ENGL1E",
+   "ENGLC1000",
+   "ENGLC1001",
+   "PHIL4",
+   "PSYC3",
+   "PSYC30",
+   "SJS1",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=112",
+   "title": "The Associate of Science in Modern Policing is designed to meet the State of California and California Commission on Pea",
+   "h1": "The Associate of Science in Modern Policing is designed to meet the State of California and California Commission on Pea",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    112,
+    113,
+    114
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 18,
+  "text_chars": 13268
+ },
+ {
+  "control_number": "45915",
+  "title": "Pre-Nursing",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTH2",
+   "ARTH1",
+   "BIOL14",
+   "BIOL4",
+   "BIOL5",
+   "CDFS70",
+   "CHEM10",
+   "CHEM12",
+   "COMMC1000",
+   "DANC4",
+   "ENGL1E",
+   "ENGLC1000",
+   "ENGLC1001",
+   "ENGLC1003",
+   "ETHN1",
+   "ETHN28",
+   "ETHN29",
+   "ETHN35",
+   "FTV10",
+   "HIST37",
+   "HISTC1001",
+   "HISTC1002",
+   "MUSC13",
+   "MUSC45",
+   "NUTR10",
+   "PHIL4",
+   "PSYCC1000",
+   "SOCIC1000",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=374",
+   "title": "The Pre-Nursing Associate in Science Degree gives students the necessary background needed to enter the ﬁ eld of",
+   "h1": "The Pre-Nursing Associate in Science Degree gives students the necessary background needed to enter the ﬁ eld of",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    374
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 29,
+  "text_chars": 4119
+ },
+ {
+  "control_number": "45917",
+  "title": "Music (Non-Performance)",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ENGLC1000",
+   "MUSC1",
+   "MUSC13",
+   "MUSC46",
+   "MUSC49",
+   "MUSC5",
+   "MUSC7",
+   "MUSC8"
+  ],
+  "source": {
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=362",
+   "title": "361",
+   "h1": "361",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    362,
+    363,
+    364
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 8,
+  "text_chars": 12127
+ },
+ {
+  "control_number": "46127",
+  "title": "Mathematics 2.0",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 0.857,
+  "codes_found": [
+   "MATH22",
+   "MATH23",
+   "MATH40",
+   "MATHC2210",
+   "MATHC2220",
+   "PHYS6"
+  ],
+  "source": {
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=78",
+   "title": "77",
+   "h1": "77",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    78
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 7,
+  "text_chars": 4188
+ },
+ {
+  "control_number": "46128",
+  "title": "UCTP Chemistry",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEM1",
+   "CHEM2",
+   "CHEM3",
+   "CHEM4",
+   "MATH22",
+   "MATH23",
+   "MATHC2210",
+   "MATHC2220",
+   "PHYS6",
+   "PHYS7",
+   "PHYS8"
+  ],
+  "source": {
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=189",
+   "title": "Chemistry (AS-T-UCTP)",
+   "h1": "Chemistry (AS-T-UCTP)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    189,
+    190,
+    191,
+    192
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 11,
+  "text_chars": 13870
+ },
+ {
+  "control_number": "46201",
+  "title": "Elementary Teacher Education: Integrated Programs",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ARTH1",
+   "BIOLC1000",
+   "CDEVC1000",
+   "CDFS53",
+   "CDFS62",
+   "CDFS64",
+   "COMMC1000",
+   "DANC4",
+   "EDUC1",
+   "ENGL1E",
+   "ENGLC1000",
+   "ENGLC1003",
+   "GEOL6",
+   "GEOL6L",
+   "HIST2",
+   "HISTC1001",
+   "MATH55",
+   "MUSC8",
+   "PHSC12",
+   "POLSC1000",
+   "THEA6"
+  ],
+  "source": {
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=257",
+   "title": "256",
+   "h1": "256",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    257,
+    258
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 21,
+  "text_chars": 6516
+ },
+ {
+  "control_number": "46370",
+  "title": "Certified Nursing Assistant",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "NURS103",
+   "NURS111"
+  ],
+  "source": {
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=380",
+   "title": "379",
+   "h1": "379",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    380
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 2,
+  "text_chars": 3964
+ },
+ {
+  "control_number": "46517",
+  "title": "Home Health Aide",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "NURS103",
+   "NURS104",
+   "NURS111"
+  ],
+  "source": {
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=380",
+   "title": "379",
+   "h1": "379",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    380
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 3,
+  "text_chars": 3964
+ },
+ {
+  "control_number": "46518",
+  "title": "Home Health Aide",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "NURS503",
+   "NURS504",
+   "NURS511"
+  ],
+  "source": {
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=380",
+   "title": "379",
+   "h1": "379",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    380
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 3,
+  "text_chars": 3964
+ }
+]

@@ -1,0 +1,235 @@
+{
+ "college": "Solano Community College",
+ "control_number": "46128",
+ "shape": "adt",
+ "title": "UCTP Chemistry",
+ "award": "A.S. T Degree",
+ "source_url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=189",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 11450,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 11450,
+    "output_tokens": 1794,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1794,
+  "output_tokens_details": {
+   "thinking_tokens": 597
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.08168,
+ "ms": 14757,
+ "seconds": 15.2,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 11,
+   "listed": 11,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    51.0,
+    51.0
+   ],
+   "stated": [
+    51.0,
+    51.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Chemistry (AS-T-UCTP) — Associate in Science for Tranfer - UC Transfer Pathway",
+   "measure": "units",
+   "total_units": {
+    "min": 51,
+    "max": 51
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "CalGETC",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": 16,
+    "max": 27
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Use qualitative and quantitative analysis techniques to solve chemistry problems through integration of multiple ideas that demonstrates reasoning completely and clearly.",
+    "Use chemistry principles to evaluate and solve conceptual challenges.",
+    "Perform hypothesis driven laboratory experiments using the appropriate instruments as well as analyze and interpret data to form appropriate conclusions."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "REQUIRED COURSES",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 51,
+     "max": 51
+    },
+    "courses": [
+     {
+      "code": "CHEM 001",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 002",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 003",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 004",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS 006",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS 007",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS 008",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH C2210",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH C2220",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 022",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 023",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Catalog codes use zero-padded numbers (CHEM 001, PHYS 006, MATH 022); matched to closed-list CHEM 1, PHYS 6, MATH 22 etc. and CHEM004 to CHEM 004.",
+   "Outcomes text had PDF ligature artifacts ('qualita Ɵ ve', 'quanƟ taƟ ve', 'integraƟ on', 'mulƟ ple', 'c hemistry'); recorded with 'ti' restored and stray spaces removed. Reviewer should verify.",
+   "The outcomes lead-in reads 'Students who complete the Chemistry Associate in Science' although printed under the AS-T UCTP section; recorded as this award's outcomes.",
+   "GE heading reads 'CalGETC General Education (select 16-27 units)', recorded as ge_units 16-27; description elsewhere refers to IGETC. No degree total is printed.",
+   "Description mentions only 'a wide range of rewarding careers'; no specific careers named.",
+   "Page 190 contains the separate Chemistry A.S. (26-30 units) section, not used for this record."
+  ]
+ },
+ "extracted_run": 39037377728,
+ "read_run": "39035226783"
+}

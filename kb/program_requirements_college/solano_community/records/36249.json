@@ -1,0 +1,319 @@
+{
+ "college": "Solano Community College",
+ "control_number": "36249",
+ "shape": "certificate",
+ "title": "Theatre Arts Technical",
+ "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+ "source_url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=435",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 12521,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 12521,
+    "output_tokens": 2504,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2504,
+  "output_tokens_details": {
+   "thinking_tokens": 904
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.10016,
+ "ms": 19967,
+ "seconds": 20.3,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 17,
+   "listed": 17,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    24.0,
+    24.0
+   ],
+   "stated": [
+    30.0,
+    31.5
+   ],
+   "against": "program",
+   "why": [
+    "'Technical Emphasis' chooses 3 courses but 2 carry units"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 10,
+   "not_verbatim": [
+    "Property Artisan",
+    "Scenic Artist"
+   ],
+   "pass": false
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Theatre Arts Technical Certificate of Achievement",
+   "measure": "units",
+   "total_units": {
+    "min": 30,
+    "max": 31.5
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Work effectively with lighting and scenery design plans.",
+    "Work competently with common materials and techniques when constructing theatrical elements.",
+    "Apply fundamental techniques while participating as a member of a backstage production crew.",
+    "Demonstrate basic skills in one or more of the following areas of specialization. lighting hangs and focus, scenic carpentry, scenic painting, audio set up and signal routing.",
+    "Integrate knowledge of theatre history and literature when constructing theatrical elements."
+   ],
+   "careers": [
+    "Community and Professional Theatre",
+    "Scene Shop Technician",
+    "Stage Electrician",
+    "Property Artisan",
+    "Costume Technician",
+    "Make-Up Technician",
+    "Scenic Artist",
+    "Audio Technician",
+    "Stage Manager",
+    "Event Tech"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Core",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "THEA 001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THEA 003",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THEA 006",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THEA 020",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Technical Emphasis",
+    "rule": "choose_courses",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 7.5
+    },
+    "courses": [
+     {
+      "code": "THEA 027",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THEA 047",
+      "units": 2.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List A",
+    "rule": "choose_units",
+    "minimum": 12,
+    "option_group": null,
+    "stated": {
+     "min": 12,
+     "max": 12
+    },
+    "courses": [
+     {
+      "code": "ART 006",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DRFT 045",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THEA 008",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THEA 009",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THEA 021",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THEA 032A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THEA 032B",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THEA 148B",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THEA 148C",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THEA 148D",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WELD 130",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Catalog codes use zero-padded numbers (THEA 001, ART 006, DRFT 045) matched to closed-list codes THEA 1, ART 6, DRFT 45, THEA003 etc.; treated as the same courses, not catalog additions.",
+   "Technical Emphasis requires 3 semesters of THEA 047 and/or THEA 027 (courses may be repeated across semesters); recorded as choose_courses minimum 3 with the printed 6-7.5 units as stated.",
+   "Catalog prints THEA 148B as 'Costuming' and THEA 148C as 'Technical Theatre', the reverse of the titles in the state file; reviewer may verify.",
+   "ART 006 title misspelled 'Degign' in catalog; WELD 130 carries an unexplained asterisk.",
+   "Course descriptions following the program section (THEA 002, 005, 010, 013, 015, 024 series, etc.) were not read as requirements.",
+   "Outcome and career text normalized from PDF ligature artifacts (e.g., 'eﬀ ecƟ vely' read as 'effectively')."
+  ]
+ },
+ "extracted_run": 39037377728,
+ "read_run": "39035226783"
+}

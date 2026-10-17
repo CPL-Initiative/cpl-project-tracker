@@ -1,0 +1,20 @@
+{
+ "_readme": "S405 SkyCholla, 2026-10-17. Grossmont's registry row names the catalog's cover image. This read lists the catalog page's links so a correction card can name the 2026-2027 catalog's own address. One load, no model call.",
+ "college": "Grossmont College",
+ "questions": {
+  "catalog_address": "The address of the 2026-2027 catalog (HTML or PDF) the college's catalog page links."
+ },
+ "keywords": [
+  "2026",
+  "catalog"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "catalog_address"
+   ],
+   "url": "https://www.grossmont.edu/academics/catalog/",
+   "links": "catalog|\\.pdf"
+  }
+ ]
+}

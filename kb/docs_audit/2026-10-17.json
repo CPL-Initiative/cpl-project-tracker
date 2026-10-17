@@ -10,18 +10,18 @@
     "other": 150000
   },
   "summary": {
-    "files": 1172,
-    "bytes": 12066219,
+    "files": 1173,
+    "bytes": 12078728,
     "over_budget": 7,
-    "handoff_max": 405,
+    "handoff_max": 406,
     "always_loaded_files": 1,
-    "always_loaded_bytes": 59992,
+    "always_loaded_bytes": 59991,
     "superseded_files": 0,
     "superseded_bytes": 0,
     "lanes": {
       "always_loaded": {
         "files": 1,
-        "bytes": 59992,
+        "bytes": 59991,
         "over": 0
       },
       "other": {
@@ -36,7 +36,7 @@
       },
       "lessons": {
         "files": 82,
-        "bytes": 2306025,
+        "bytes": 2312295,
         "over": 2
       },
       "kb_note": {
@@ -46,12 +46,12 @@
       },
       "roadmap_lane": {
         "files": 37,
-        "bytes": 353149,
+        "bytes": 353208,
         "over": 2
       },
       "handoff": {
-        "files": 376,
-        "bytes": 2916830,
+        "files": 377,
+        "bytes": 2923011,
         "over": 0
       }
     },
@@ -62,10 +62,10 @@
       "vault_heavy_path": 63
     },
     "vault": {
-      "files": 18019,
-      "bytes": 2887415578,
-      "heavy_bytes": 1823059036,
-      "heavy_share": 0.631,
+      "files": 18614,
+      "bytes": 2905910132,
+      "heavy_bytes": 1841525033,
+      "heavy_share": 0.634,
       "ignore_filters": [
         "cpl-project-tracker/kb/receipts",
         "cpl-project-tracker/kb/program_requirements_college",
@@ -517,20 +517,20 @@
       "fixable": false,
       "path": "kb/receipts",
       "detail": {
-        "bytes": 889647314,
+        "bytes": 903672168,
         "kind": "dir"
       },
-      "message": "directory totals 889,647,314 B inside the vault"
+      "message": "directory totals 903,672,168 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
       "fixable": false,
       "path": "kb/program_requirements_college",
       "detail": {
-        "bytes": 99237912,
+        "bytes": 103679036,
         "kind": "dir"
       },
-      "message": "directory totals 99,237,912 B inside the vault"
+      "message": "directory totals 103,679,036 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -1017,10 +1017,10 @@
       "fixable": false,
       "path": "credential_reference_data.js",
       "detail": {
-        "bytes": 3007626,
+        "bytes": 3007645,
         "kind": "file"
       },
-      "message": "3,007,626 B single file inside the vault"
+      "message": "3,007,645 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",

@@ -1,0 +1,475 @@
+{
+ "college": "Solano Community College",
+ "control_number": "06517",
+ "shape": "degree",
+ "title": "Journalism",
+ "award": "A.A. Degree",
+ "source_url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=309",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 9033,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 9033,
+    "output_tokens": 4049,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 4049,
+  "output_tokens_details": {
+   "thinking_tokens": 1552
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.11711,
+ "ms": 31336,
+ "seconds": 31.9,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 2,
+   "listed": 2,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 25,
+   "codes": [
+    "CIS61",
+    "CIS70",
+    "CIS85",
+    "COMM75A",
+    "COMM75B",
+    "COMM80A",
+    "COMM80B",
+    "DMA10",
+    "DMA100",
+    "DMA101",
+    "DMA102",
+    "DMA11",
+    "DMA9",
+    "ENGL59",
+    "ENGL6",
+    "FTV55",
+    "FTV56",
+    "JOUR1",
+    "JOUR11",
+    "JOUR60",
+    "LR11",
+    "PHOT163",
+    "PHOT165",
+    "PHOT29",
+    "PHOT56"
+   ],
+   "flagged": [
+    "CIS61",
+    "CIS70",
+    "CIS85",
+    "COMM75A",
+    "COMM75B",
+    "COMM80A",
+    "COMM80B",
+    "DMA10",
+    "DMA100",
+    "DMA101",
+    "DMA102",
+    "DMA11",
+    "DMA9",
+    "ENGL59",
+    "ENGL6",
+    "FTV55",
+    "FTV56",
+    "JOUR1",
+    "JOUR11",
+    "JOUR60",
+    "LR11",
+    "PHOT163",
+    "PHOT165",
+    "PHOT29",
+    "PHOT56"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    21.0,
+    21.5
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "'ElecƟves (Complete 3 units)' chooses 1 courses but 0 carry units",
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [
+    "Demonstrate an understanding of the importance of diversity and inclusion in journalism, reflecting it in coverage and story selection to represent a broad range of perspectives, while working collaboratively in a newsroom setting and demonstrating effective communication and teamwork skills essential for the dynamic and fast-paced nature of journalism.",
+    "Compile a comprehensive and professional portfolio showcasing a range of journalistic work across different media formats and disciplines, including written copy, digital media, and photography, demonstrating growth and proficiency over the course of the program."
+   ],
+   "why": [
+    "not in the catalog text as printed: Demonstrate an understanding of the importance of diversity and inclusion in jou",
+    "not in the catalog text as printed: Compile a comprehensive and professional portfolio showcasing a range of journal"
+   ],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": false
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "REQUIRED COURSES",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Understand and apply ethical principles and legal considerations specific to journalism to produce well-researched, compelling multimedia stories using a combination of text, images, audio, and video to effectively communicate information to diverse audiences, with an emphasis on clarity, accuracy, and journalistic style.",
+    "Demonstrate an understanding of the importance of diversity and inclusion in journalism, reflecting it in coverage and story selection to represent a broad range of perspectives, while working collaboratively in a newsroom setting and demonstrating effective communication and teamwork skills essential for the dynamic and fast-paced nature of journalism.",
+    "Compile a comprehensive and professional portfolio showcasing a range of journalistic work across different media formats and disciplines, including written copy, digital media, and photography, demonstrating growth and proficiency over the course of the program."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Journalism Coursres (Complete 9 units)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 9,
+     "max": 9
+    },
+    "courses": [
+     {
+      "code": "JOUR 001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "JOUR 011",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "JOUR 060",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Photography Courses (Complete 3 units)",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "PHOT 056",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PHOT 029",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Digital Media Courses (Complete 3 units)",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "DMA 009",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "DMA 010",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Skills and Strategies Courses (Complete 3-3.5 units)",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3.5
+    },
+    "courses": [
+     {
+      "code": "CIS 070",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CIS 085",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CIS 061",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ENGL 006",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "DMA 010",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "DMA011",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "DMA 102",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "DMA 101",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "DMA 100",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PHOT 163",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PHOT 165",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "LR 011",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "ProducƟon Courses (Complete 3 units)",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "ENGL 058",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL 059",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "JOUR 061",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FTV 055",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "FTV056",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "COMM 075A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "COMM 075B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "COMM 080A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "COMM 080B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "ElecƟves (Complete 3 units)",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": []
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The excerpt begins mid-section; no program heading is printed. The only identifying text is the outcomes lead-in 'Students who complete the Associate in Arts in Journalism for Transfer will be able to:', which names the transfer degree (AA-T), not the local A.A. Reviewer should confirm whether this section is the A.A. Degree requested or the AA-T. The closed-list courses (ENGL 58, JOUR 61) both appear in its Production Courses list.",
+   "Outcomes are recorded from the outcomes list printed under the 'Associate in Arts in Journalism for Transfer' lead-in. The PDF extraction broke ligatures (e.g., 'consideraƟ ons', 'seƫ  n g', 'por ƞ olio', 'wriƩ en'); these were read as the intended words (considerations, setting, portfolio, written).",
+   "No total for the major and no degree total or GE pattern are printed in the excerpt; total_units left null.",
+   "The Skills and Strategies list is interrupted by a page footer (counselor/prerequisite/Class Finder notes); DMA 100, PHOT 163, PHOT 165 and LR 011 after the footer were read as continuing that list, before 'Production Courses'.",
+   "DMA 010 appears in both the Digital Media and Skills and Strategies lists; recorded in each block.",
+   "Electives block: 'Select 1 additional course not used above' (3 units) names no codes; recorded as a choose-1-course block drawn from the lists above, not as open electives.",
+   "Journalism Courses block says 'Complete 9 units' and lists exactly three 3-unit courses; recorded as 'all'."
+  ]
+ },
+ "extracted_run": 39037377728,
+ "read_run": "39035226783"
+}

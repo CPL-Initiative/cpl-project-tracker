@@ -1,0 +1,385 @@
+{
+ "college": "West Valley College",
+ "control_number": "06241",
+ "shape": "degree",
+ "title": "Architecture",
+ "award": "A.S. Degree",
+ "source_url": "https://www.westvalley.edu/catalog/programs/architecture-associate-in-science-degree.html",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8108,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8108,
+    "output_tokens": 2682,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2682,
+  "output_tokens_details": {
+   "thinking_tokens": 643
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.08607,
+ "ms": 21202,
+ "seconds": 22.0,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 23,
+   "listed": 23,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    38.0,
+    40.0
+   ],
+   "stated": [
+    60.0,
+    65.0
+   ],
+   "against": "degree",
+   "ge": null,
+   "why": [
+    "the record names the degree total and the WVC or Cal-GETC General Education patterns pattern, but no units for it"
+   ],
+   "major": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     38.0,
+     40.0
+    ],
+    "stated": [
+     38.0,
+     40.0
+    ],
+    "against": "program",
+    "why": []
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 12,
+   "courses": 0,
+   "count": 12,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 9,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Architecture Associate in Science Degree",
+   "measure": "units",
+   "total_units": {
+    "min": 38,
+    "max": 40
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "WVC or Cal-GETC General Education patterns",
+   "degree_total": {
+    "min": 60,
+    "max": 65
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Select construction materials based upon their properties and methods of installation.",
+    "Demonstrate creativity and problem-solving abilities in designing residential and commercial buildings.",
+    "Apply principles of structural design.",
+    "Apply mathematical skills to solve technical problems associated with architectural drawings.",
+    "Use standard dimensions for space planning and human occupancy using Architectural Graphic Standards.",
+    "Communicate effectively and professionally in the architectural environment through proper use of verbal, written and graphic techniques.",
+    "Develop architectural drawings including construction drawings and presentation drawings.",
+    "Use computer graphics applications associated with architectural projects.",
+    "Apply building codes, zoning codes, and ADA (Americans with Disabilities Act) regulations.",
+    "Identify professional, ethical and societal responsibilities including respect for diversity.",
+    "Identify different types of landscape plants during the four seasons. (Landscape Architecture)",
+    "Demonstrate creative abilities in landscape plant composition. (Landscape Architecture)"
+   ],
+   "careers": [
+    "Architecture",
+    "Landscape Architecture",
+    "Historic Preservation Architecture",
+    "Interior Design",
+    "Construction Management",
+    "Facilities Management",
+    "Specification Writing",
+    "Structural Engineering",
+    "Architectural Graphics"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Major Core Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 31,
+     "max": 31
+    },
+    "courses": [
+     {
+      "code": "ARCH043",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARCH045",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARCH048",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARCH050",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARCH051",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARCH052",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARCH053",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARCH056",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARCH061",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARCH062",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARCH063",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "General Architecture",
+    "rule": "choose_units",
+    "minimum": 7,
+    "option_group": "emphasis",
+    "stated": {
+     "min": 7,
+     "max": 9
+    },
+    "courses": [
+     {
+      "code": "ARCH046",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARCH047",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARCH049",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARCH057",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARCH058",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARCH060",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARCH066",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Landscape Architecture",
+    "rule": "choose_units",
+    "minimum": 7,
+    "option_group": "emphasis",
+    "stated": {
+     "min": 7,
+     "max": 9
+    },
+    "courses": [
+     {
+      "code": "ARCH057",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARCH072",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARCH076",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARCH081",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARCH082",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARCH083",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Emphasis heading reads 'Select an emphasis: General Architecture or Landscape Architecture (7-9 units)' with no stated selection rule inside each emphasis; recorded each emphasis as a choose_units option with minimum 7 and the heading's 7-9 range as stated. The General Architecture list totals 19 units and Landscape 15 units, so students choose among them — reviewer should verify.",
+   "ARCH057 (Architectural Model Making) appears in both emphasis lists.",
+   "Catalog prints codes without a space and with leading zeros (e.g., ARCH043), matching closed-list ARCH 43 etc.",
+   "Outcomes taken from the page's outcomes tab, which prints one list for the program; the A.S. degree shares it. Two outcomes are marked '(Landscape Architecture)'.",
+   "Careers listed are career options 'after completion of a baccalaureate degree'.",
+   "GE pattern: WVC or Cal-GETC; no GE units printed. Total degree units printed as 60-65."
+  ]
+ },
+ "extracted_run": "39035604333"
+}

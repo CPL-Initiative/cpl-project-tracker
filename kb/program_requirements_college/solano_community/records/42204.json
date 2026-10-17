@@ -1,0 +1,248 @@
+{
+ "college": "Solano Community College",
+ "control_number": "42204",
+ "shape": "certificate",
+ "title": "Spanish/English Communication Specialist",
+ "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+ "source_url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=351",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 11854,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 11854,
+    "output_tokens": 1888,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1888,
+  "output_tokens_details": {
+   "thinking_tokens": 671
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.08518,
+ "ms": 16645,
+ "seconds": 17.0,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 10,
+   "listed": 10,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    38.0,
+    38.0
+   ],
+   "stated": [
+    38.0,
+    38.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [
+    "Apply cultural responsiveness and linguistic skills to successfully identify and solve potential communication pitfalls in the workforce."
+   ],
+   "why": [
+    "not in the catalog text as printed: Apply cultural responsiveness and linguistic skills to successfully identify and"
+   ],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": false
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [
+    "bilingual communication specialists"
+   ],
+   "pass": false
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Spanish/English Communication Specialist",
+   "measure": "units",
+   "total_units": {
+    "min": 38,
+    "max": 38
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Demonstrate a high intermediate/advanced linguistic proficiency (reading, writing, speaking, listening) in the use of specialized vocabulary and grammatical structures applied to various community work environments.",
+    "Apply cultural responsiveness and linguistic skills to successfully identify and solve potential communication pitfalls in the workforce.",
+    "Identify, define, and analyze the important differences between interpretation and translation, and articulate the specialized skill-set required of each area."
+   ],
+   "careers": [
+    "bilingual communication specialists"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "SPAN 070",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPAN 071",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPAN 175",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 092",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COMM 012",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "OCED 091",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Spanish Language Requirement",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 20,
+     "max": 20
+    },
+    "courses": [
+     {
+      "code": "SPAN 001",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPAN 002",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPAN 003",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPAN 004",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The PDF text has broken ligatures (e.g. 'CommunicaƟ on', 'piƞ alls'); the section heading, outcomes and career were transcribed with these restored to normal spelling ('Communication', 'pitfalls'). Reviewer should confirm.",
+   "The Spanish Language Requirement (20 units, listed as a line in Required Courses) may also be satisfied in part or whole through Credit for Prior Learning: 'SPAN 001-004 through Credit For Prior Learning 0-20'. Recorded as an all-required block of SPAN 001-004 with stated 20.",
+   "Catalog codes use leading zeros (SPAN 070, BUS 092, COMM 012, OCED 091, SPAN 001-004); matched to closed-list codes SPAN 70, BUS 92, COMM 12, OCED 91, SPAN 1-4.",
+   "Program description states the certificate is obtained by completing the 38-unit major; 'Required Major Total Units 38' recorded as total_units.",
+   "The outcomes list is printed for the Certificate of Achievement itself.",
+   "The following page section (Spanish/English Healthcare Interpreter Training) belongs to a different program and was not read."
+  ]
+ },
+ "extracted_run": 39037377728,
+ "read_run": "39035226783"
+}

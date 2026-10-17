@@ -54,6 +54,9 @@ from __future__ import annotations
 
 import argparse
 import glob
+import gzip
+import hashlib
+import io
 import json
 import os
 import re
@@ -72,6 +75,8 @@ FALLBACK_LOADS = 4        # the pilot's link search, per program no page accepte
 MAX_FALLBACKS = 40        # programs given that search in one run (160 loads at most)
 SMALL_LIST = 3            # below this many listed courses, coverage alone cannot pick a page
 COLLEGE_DIR = os.path.join(HERE, "program_requirements_college")
+HAND_FILED_DIR = os.path.join(HERE, "hand_filed_catalogs")
+HAND_FILED_KEYS = ("college", "url", "fetched_by", "fetched_at", "sha256", "file")
 
 # A sitemap address names the program pages by their path. These words mark a
 # catalog's program sections; these mark everything else it lists.
@@ -177,6 +182,25 @@ def district_scope(start: str, registry_urls: list[str]) -> str | None:
               if u and urllib.parse.urlparse(u).netloc.lower() == host and u.rstrip("/") != start.rstrip("/")]
     seg = [x for x in (urllib.parse.urlparse(start).path or "/").split("/") if x]
     return "/%s/" % seg[0] if others and seg else None
+
+
+YEAR_SEGMENT = re.compile(r"^(current|\d{4}|(19|20)\d{2}-(19|20)?\d{2})$", re.I)
+
+
+def year_scope(start: str, platform: str | None) -> str | None:
+    """An own-HTML catalog's own path (/current/), so its sitemap's past years
+    stay out. Skyline's sitemap lists 48,034 pages across every catalog year
+    since 2017-18; the read stopped at MAX_PAGES and took 40 of its 62 picks
+    from /1718/, /1819/ and /1920/ (run 39024299478, S404). The scope runs
+    through the address's year segment (Coalinga: /catalog/2026-2027/); an
+    address that names no year (a landing page) keeps the whole host."""
+    if platform != "custom_html" or not start:
+        return None
+    seg = [x for x in (urllib.parse.urlparse(start).path or "/").split("/") if x]
+    for i, x in enumerate(seg):
+        if YEAR_SEGMENT.match(x):
+            return "/%s/" % "/".join(seg[:i + 1])
+    return None
 
 
 def in_scope(url: str, scope: str | None) -> bool:
@@ -1737,19 +1761,66 @@ def reads_as_pdf(reg: dict) -> bool:
     return is_pdf_catalog(reg) or (P.procedure_catalog(reg.get("procedure")) or {}).get("format") == "pdf"
 
 
-def capture_pdf(college: str, out_dir: str, programs: list[dict], reg: dict, report: dict) -> list[dict]:
+def hand_filed(college: str) -> dict | None:
+    """A catalog a person fetched by hand for the pipeline, where the college's host
+    refuses the reader (Sam, 2026-10-17, ruling 2 on the blocked colleges: automated
+    reads still name the CPL Initiative and respect blocks and robots.txt; a person
+    may fetch a public file by hand). kb/hand_filed_catalogs/<slug>.json records who
+    fetched it, when and from what address, and the file's sha256; the file sits
+    beside it (.pdf, or .pdf.gz under GitHub's size limits). None when no record."""
+    meta_path = os.path.join(HAND_FILED_DIR, slug_of(college) + ".json")
+    if not os.path.isfile(meta_path):
+        return None
+    meta = json.load(open(meta_path))
+    missing = [k for k in HAND_FILED_KEYS if not meta.get(k)]
+    if missing:
+        return {"meta": meta, "error": "the provenance record lacks " + ", ".join(missing)}
+    path = os.path.join(HAND_FILED_DIR, os.path.basename(meta["file"]))
+    if not os.path.isfile(path):
+        return {"meta": meta, "error": "no file at " + os.path.relpath(path, HERE)}
+    data = open(path, "rb").read()
+    if path.endswith(".gz"):
+        data = gzip.decompress(data)
+    if hashlib.sha256(data).hexdigest() != meta["sha256"].lower():
+        return {"meta": meta, "error": "the file's sha256 differs from its provenance record"}
+    return {"meta": meta, "data": data}
+
+
+def read_hand_filed(hf: dict) -> dict:
+    """read_pdf's shape for a hand-filed file: no load, no robots, the same pypdf text."""
+    out = {"url": hf["meta"]["url"], "status": None}
+    if hf.get("error"):
+        out.update(access="hand_filed_refused", error=hf["error"], pages=[])
+        return out
+    try:
+        from pypdf import PdfReader
+        pdf = PdfReader(io.BytesIO(hf["data"]))
+        out.update(access="hand_filed", bytes=len(hf["data"]), data=hf["data"], extractor="pypdf",
+                   pages=[(pg.extract_text() or "") for pg in pdf.pages])
+    except Exception as exc:
+        out.update(access="hand_filed_unreadable", error=str(exc).splitlines()[0][:200], pages=[])
+    return out
+
+
+def capture_pdf(college: str, out_dir: str, programs: list[dict], reg: dict, report: dict,
+                hf: dict | None = None) -> list[dict]:
     """Every program at a college whose catalog is one PDF: the file read once
     (pypdf, then pdfminer when pypdf's text names few listed codes), each
-    program given its run of pages."""
-    delay = int(os.environ.get("CENSUS_DELAY_MS", "4000"))
-    pw, browser, reader = P.open_reader(delay)
-    try:
-        start, wait = pdf_start(reader, reg, {}, report)
-        pdf = (P.read_pdf(reader, start, {}, timeout_ms=wait) if start
-               else {"access": "no_address", "pages": []})
-    finally:
-        browser.close()
-        pw.stop()
+    program given its run of pages. A hand-filed file (hf) is read in place of
+    the download, and its provenance rides on the report and each record."""
+    if hf:
+        start, pdf = hf["meta"]["url"], read_hand_filed(hf)
+        reader = type("NoReader", (), {"loads": 0})()
+    else:
+        delay = int(os.environ.get("CENSUS_DELAY_MS", "4000"))
+        pw, browser, reader = P.open_reader(delay)
+        try:
+            start, wait = pdf_start(reader, reg, {}, report)
+            pdf = (P.read_pdf(reader, start, {}, timeout_ms=wait) if start
+                   else {"access": "no_address", "pages": []})
+        finally:
+            browser.close()
+            pw.stop()
     pages, extractor = pdf.get("pages") or [], pdf.get("extractor")
     listed = [p for p in programs if p["closed_list"]]
 
@@ -1768,6 +1839,8 @@ def capture_pdf(college: str, out_dir: str, programs: list[dict], reg: dict, rep
         if m > n:
             pages, extractor = alt["pages"], alt["extractor"]
     report["pdf"]["extractor"] = extractor
+    if hf:
+        report["pdf"]["hand_filed"] = {k: hf["meta"].get(k) for k in HAND_FILED_KEYS + ("note",)}
     report["loads"] = reader.loads
     print("%s: %d programs (%d with a course list), PDF %s pages by %s, %s"
           % (college, len(programs), len(listed), len(pages), extractor, pdf.get("access")), flush=True)
@@ -1780,6 +1853,8 @@ def capture_pdf(college: str, out_dir: str, programs: list[dict], reg: dict, rep
             if best and best["coverage"] >= P.ACCEPT_SHARE:
                 rec = source_record(college, prog, reg, best, "pdf_pages")
                 rec["source"].update(pages=best["pages"], extractor=extractor, heading_named=best["named"])
+                if hf:
+                    rec["source"]["hand_filed"] = {k: hf["meta"][k] for k in ("fetched_by", "fetched_at", "sha256")}
                 # The pages are the program's own: keep their text whole, not a window around the codes.
                 rec["text"] = best["text"][:P.TEXT_CAP]
                 # A capture-only read files the preview alone: each pick's opening shows whether it is the program's page.
@@ -1821,6 +1896,14 @@ def capture(college: str, out_dir: str, limit: int = 0) -> int:
               "started": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())}
     os.makedirs(os.path.join(out_dir, "sources"), exist_ok=True)
     platform = reg.get("catalog_platform")
+    hf = hand_filed(college)
+    if hf:
+        if hf["meta"].get("catalog_year"):
+            # A refused host's row often names no year; the person who fetched the file names it.
+            reg = dict(reg, catalog_year=hf["meta"]["catalog_year"])
+            report["catalog_year"] = reg["catalog_year"]
+        recs = capture_pdf(college, out_dir, programs, reg, report, hf)
+        return finish_capture(college, out_dir, recs, report, t0)
     if reads_as_pdf(reg) and (start or reg.get("procedure")):
         recs = capture_pdf(college, out_dir, programs, reg, report)
         return finish_capture(college, out_dir, recs, report, t0)
@@ -1864,7 +1947,7 @@ def capture(college: str, out_dir: str, limit: int = 0) -> int:
                   % (college, len(programs), report["with_closed_list"], len(urls),
                      report["acalog"].get("catoid"), delay / 1000), flush=True)
         else:
-            scope = district_scope(start, host_registry_urls(start))
+            scope = district_scope(start, host_registry_urls(start)) or year_scope(start, platform)
             report["scope"] = scope
             sm = read_sitemap(reader, start)
             urls = program_candidates(sm["pages"], start, scope)

@@ -1,0 +1,22 @@
+{
+ "_readme": "S405 SkyCholla, 2026-10-17. Ohlone's registry names www.ohlone.edu/catalog; the generic capture (run on claude/s405-ohlone) found 1 of 179 programs: its program pages (ohlone.edu/program/<slug>) name none of their listed course codes. This read lists the catalog page's links and one program page's links, so a session can tell where the catalog prints each program's requirements (a catalog host, a PDF, or a requirements tab). Two loads, no model call. Second read: the catalog page names its 2026-2027 catalog at /catalog/current; this lists that page's links.",
+ "college": "Ohlone College",
+ "questions": {
+  "catalog_address": "Where the 2026-2027 catalog prints each program's courses and units: its host, PDF or page form."
+ },
+ "keywords": [
+  "2026",
+  "catalog",
+  "requirements",
+  "units"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "catalog_address"
+   ],
+   "url": "https://www.ohlone.edu/catalog/current",
+   "links": "degree|certificate|program|requirement|\\.pdf|current/"
+  }
+ ]
+}

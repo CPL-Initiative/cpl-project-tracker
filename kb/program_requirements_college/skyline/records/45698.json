@@ -1,0 +1,252 @@
+{
+ "college": "Skyline College",
+ "control_number": "45698",
+ "shape": "degree",
+ "title": "Engineering",
+ "award": "A.S. Degree",
+ "source_url": "https://catalog.skylinecollege.edu/current/programs/index.xml",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 12899,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 12899,
+    "output_tokens": 877,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 877,
+  "output_tokens_details": {
+   "thinking_tokens": 240
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.06914,
+ "ms": 7582,
+ "seconds": 8.1,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 23,
+   "share": 0.0,
+   "missing": [
+    "CHEM210",
+    "CHEM220",
+    "CIS122",
+    "CIS242",
+    "CIS250",
+    "CIS257",
+    "CIS274",
+    "ENGR210",
+    "ENGR215",
+    "ENGR230",
+    "ENGR240",
+    "ENGR260",
+    "ENGR261",
+    "ENGR270",
+    "ENGR291",
+    "MATH253",
+    "MATH270",
+    "MATH275",
+    "MATHC2210",
+    "MATHC2220",
+    "PHYS250",
+    "PHYS260",
+    "PHYS270"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "(Engineering A.S. Degree section not present in the supplied text)",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "CHEM 210",
+    "why": "Engineering section not in text; appears only in another program's list"
+   },
+   {
+    "code": "CHEM 220",
+    "why": "Engineering section not in text; appears only in another program's list"
+   },
+   {
+    "code": "CIS 122",
+    "why": "not in text"
+   },
+   {
+    "code": "CIS 242",
+    "why": "not in text"
+   },
+   {
+    "code": "CIS 250",
+    "why": "not in text"
+   },
+   {
+    "code": "CIS 257",
+    "why": "not in text"
+   },
+   {
+    "code": "CIS 274",
+    "why": "not in text"
+   },
+   {
+    "code": "ENGR 210",
+    "why": "not in text"
+   },
+   {
+    "code": "ENGR 215",
+    "why": "not in text"
+   },
+   {
+    "code": "ENGR 230",
+    "why": "not in text"
+   },
+   {
+    "code": "ENGR 240",
+    "why": "not in text"
+   },
+   {
+    "code": "ENGR 260",
+    "why": "not in text"
+   },
+   {
+    "code": "ENGR 261",
+    "why": "not in text"
+   },
+   {
+    "code": "ENGR 270",
+    "why": "not in text"
+   },
+   {
+    "code": "ENGR 291",
+    "why": "not in text"
+   },
+   {
+    "code": "MATH 253",
+    "why": "not in text"
+   },
+   {
+    "code": "MATH 270",
+    "why": "not in text"
+   },
+   {
+    "code": "MATH 275",
+    "why": "not in text"
+   },
+   {
+    "code": "MATH C2210",
+    "why": "not in text"
+   },
+   {
+    "code": "MATH C2220",
+    "why": "not in text"
+   },
+   {
+    "code": "PHYS 250",
+    "why": "not in text"
+   },
+   {
+    "code": "PHYS 260",
+    "why": "not in text"
+   },
+   {
+    "code": "PHYS 270",
+    "why": "not in text"
+   }
+  ],
+  "notes": []
+ },
+ "extracted_run": "39035209486"
+}

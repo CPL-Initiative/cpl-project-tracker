@@ -82,19 +82,11 @@
    "program": 4,
    "courses": 0,
    "count": 4,
-   "not_verbatim": [
-    "Design and develop a strategic marketing plan that can be used to launch a new business, enter new markets, or grow an existing business or nonprofit;",
-    "Understand how to use a broad range of marketing tactics to build and promote a successful business or nonprofit;",
-    "Demonstrate specific marketable skills such as advertising campaign development, basic graphic design competency, or spreadsheet usage that will enhance business success and employment opportunities."
-   ],
-   "why": [
-    "not in the catalog text as printed: Design and develop a strategic marketing plan that can be used to launch a new b",
-    "not in the catalog text as printed: Understand how to use a broad range of marketing tactics to build and promote a ",
-    "not in the catalog text as printed: Demonstrate specific marketable skills such as advertising campaign development,"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 0,
@@ -104,7 +96,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -263,5 +255,6 @@
    "The catalog encourages internships through Work Experience after completion; no specific course is named, so no recommended block was created."
   ]
  },
- "extracted_run": "39006464249"
+ "extracted_run": 39037637820,
+ "read_run": "39006464249"
 }

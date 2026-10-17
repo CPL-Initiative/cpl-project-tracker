@@ -1,0 +1,242 @@
+{
+ "college": "West Valley College",
+ "control_number": "39480",
+ "shape": "noncredit",
+ "title": "Transcription and Office Support: Machine Writing",
+ "award": "Noncredit program",
+ "source_url": "https://www.westvalley.edu/catalog/programs/transcription-and-office-support-machine-writing-certificate-of-completion.html",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7060,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7060,
+    "output_tokens": 1570,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1570,
+  "output_tokens_details": {
+   "thinking_tokens": 554
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.05964,
+ "ms": 13025,
+ "seconds": 13.5,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 6,
+   "listed": 6,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    304.0,
+    490.0
+   ],
+   "stated": [
+    304.0,
+    490.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 6,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Transcription and Office Support: Machine Writing Certificate of Completion",
+   "measure": "hours",
+   "total_units": {
+    "min": 304,
+    "max": 490
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Demonstrate recognition and correct spelling of legal and medical terminology and English vocabulary.",
+    "Write legal, medical, and general subject matter, stenographically, at a minimum of 120 words per minute on a machine writer.",
+    "Demonstrate proficiency in Microsoft Word to provide entry-level office support.",
+    "Demonstrate proficiency in industry-standard computer-aided software to produce accurate transcripts of legal, medical, and general audio-recorded material."
+   ],
+   "careers": [
+    "Legal Transcriptionist",
+    "Web Content Transcriptionist",
+    "Video Transcriptionist",
+    "General Transcriptionist",
+    "Medical Transcriptionist",
+    "Office Support Assistant"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Program Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "NCCC007",
+      "units": 48,
+      "units_max": 54,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select one",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "NCCC008",
+      "units": 190,
+      "units_max": 200,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NCCC008M",
+      "units": 112,
+      "units_max": 126,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select one",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "NCCC012",
+      "units": 190,
+      "units_max": 200,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NCCC012M",
+      "units": 112,
+      "units_max": 126,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Program Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "NCCC028",
+      "units": 32,
+      "units_max": 36,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Award is counted in hours; all units fields hold hours as printed.",
+   "Catalog prints codes without spaces/leading zeros differently from the closed list (NCCC007 = NCCC 7, NCCC008 = NCCC 8, NCCC012 = NCCC 12, NCCC028 = NCCC 28); treated as the same courses.",
+   "NCCC028 follows the two 'Select one' choices in the required list; recorded as a separate 'all' block to keep catalog order.",
+   "Printed total 304-490 hours matches the sum of the minimum and maximum hours of the chosen paths.",
+   "Program learning outcomes taken from the page's outcomes tab."
+  ]
+ },
+ "extracted_run": "39035604333"
+}

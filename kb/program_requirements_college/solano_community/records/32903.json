@@ -1,0 +1,250 @@
+{
+ "college": "Solano Community College",
+ "control_number": "32903",
+ "shape": "adt",
+ "title": "Administration of Justice",
+ "award": "A.S. T Degree",
+ "source_url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=110",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 12075,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 12075,
+    "output_tokens": 2105,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2105,
+  "output_tokens_details": {
+   "thinking_tokens": 724
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.0904,
+ "ms": 17595,
+ "seconds": 18.1,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 9,
+   "listed": 9,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    18.0,
+    18.0
+   ],
+   "stated": [
+    18.0,
+    18.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 7,
+   "courses": 0,
+   "count": 7,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Associate in Science in Administration of Justice for Transfer (ADT: A.S.-T)",
+   "measure": "units",
+   "total_units": {
+    "min": 18,
+    "max": 18
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Demonstrate an understanding of the American Criminal Justice system and the scope of responsibilities of the various local, state, and federal law enforcement agencies beginning with arrest through parole.",
+    "Articulate the system’s objectives, the crime problem, and role expectations of criminal justice personnel, and describe the various agencies and each subsystem within the system.",
+    "Describe the system’s responsibilities to the community, factors in crime causation, the social implications of crime and communication barriers between the system and the community.",
+    "Articulate the differences between the major criminological theories of the causes of crime and how those theories relate to policies toward crime and criminal behavior .",
+    "Analyze legal concepts and make rational decisions about case processing.",
+    "Demonstrate knowledge of the rules of evidence, legal definitions, and concepts of evidentiary law. Apply basic investigative proficiencies.",
+    "Demonstrate critical thinking and analytical skills acquired in the social sciences in preparation for continuance of college-level education at a four-year college."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CJ 001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CJ 002",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List A (select two courses)",
+    "rule": "choose_courses",
+    "minimum": 2,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "CJ 011",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CJ 051",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CJ 053",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CJ 056",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List B (select two courses)",
+    "rule": "choose_courses",
+    "minimum": 2,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "CJ 064",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOCI C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Catalog codes use zero-padded numbers (CJ 001, CJ 011, etc.), matched to closed-list CJ 1, CJ 11, etc.; SOCI C1000 matched to closed-list SOCIC1000.",
+   "PDF text extraction rendered the 'ti' and 'ff'/'fi' ligatures as 'Ɵ'/'ﬀ'/'ﬁ' with stray spaces; heading and outcomes were transcribed with these ligatures restored to normal letters. Outcome 7's line break after 'college-' was read as the hyphenated 'college-level'.",
+   "The 60 semester units stated in the ADT boilerplate ('Complete 60 semester units that are eligible for transfer to the CSU') is the generic transfer-degree requirement and was not recorded as degree_total; ge_units is null because no unit figure is printed for Cal-GETC.",
+   "Total 18 is from 'Required Major Total Units ... 18'. Other sections on the page (Corrections, Law Enforcement, Modern Policing) were not read for this award."
+  ]
+ },
+ "extracted_run": 39037377728,
+ "read_run": "39035226783"
+}

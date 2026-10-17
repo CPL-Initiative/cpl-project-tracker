@@ -1,0 +1,188 @@
+{
+ "college": "San Diego College of Continuing Education",
+ "load_run": "39035578661",
+ "function": "program_requirement_records_college_load",
+ "at": "2026-10-17T13:12:41Z",
+ "records": 109,
+ "posted": 90,
+ "batches": 4,
+ "inserted": 90,
+ "kept": 0,
+ "skipped": [
+  {
+   "control_number": "24101",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "24236",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "24238",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "24306",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "24313",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "31482",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "33750",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "35140",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "35838",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "38411",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "38412",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "39774",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "39927",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "40118",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "40119",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "40516",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "40532",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "42361",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "44336",
+   "why": "places none of its listed courses (another program's page)"
+  }
+ ],
+ "error": null,
+ "extracted_runs": [
+  "39035224783"
+ ],
+ "machine_pass": 90,
+ "inserted_keys": [
+  "24081",
+  "24143",
+  "24148",
+  "24237",
+  "24241",
+  "24279",
+  "24332",
+  "24333",
+  "24419",
+  "30772",
+  "30773",
+  "30789",
+  "30790",
+  "31483",
+  "31484",
+  "31486",
+  "31487",
+  "32671",
+  "33135",
+  "33136",
+  "33403",
+  "33783",
+  "33867",
+  "33869",
+  "35139",
+  "35841",
+  "35966",
+  "35967",
+  "35968",
+  "36588",
+  "36887",
+  "36895",
+  "36896",
+  "37546",
+  "37828",
+  "38005",
+  "38693",
+  "38694",
+  "38695",
+  "38720",
+  "39186",
+  "39187",
+  "39640",
+  "39700",
+  "39924",
+  "39925",
+  "39926",
+  "39928",
+  "39929",
+  "39930",
+  "39936",
+  "40120",
+  "40123",
+  "40469",
+  "40470",
+  "40471",
+  "40472",
+  "40474",
+  "40475",
+  "40517",
+  "41451",
+  "41468",
+  "41595",
+  "41623",
+  "41626",
+  "42016",
+  "42155",
+  "42360",
+  "42646",
+  "44332",
+  "44333",
+  "44334",
+  "44335",
+  "44337",
+  "44338",
+  "44339",
+  "44340",
+  "45374",
+  "45439",
+  "45440",
+  "45441",
+  "45442",
+  "45443",
+  "45444",
+  "46209",
+  "46210",
+  "46211",
+  "46212",
+  "46213",
+  "46214"
+ ],
+ "kept_keys": [],
+ "rollback": "delete from public.program_requirement_records where college = 'San Diego College of Continuing Education' and checked = false and control_number in ('24081', '24143', '24148', '24237', '24241', '24279', '24332', '24333', '24419', '30772', '30773', '30789', '30790', '31483', '31484', '31486', '31487', '32671', '33135', '33136', '33403', '33783', '33867', '33869', '35139', '35841', '35966', '35967', '35968', '36588', '36887', '36895', '36896', '37546', '37828', '38005', '38693', '38694', '38695', '38720', '39186', '39187', '39640', '39700', '39924', '39925', '39926', '39928', '39929', '39930', '39936', '40120', '40123', '40469', '40470', '40471', '40472', '40474', '40475', '40517', '41451', '41468', '41595', '41623', '41626', '42016', '42155', '42360', '42646', '44332', '44333', '44334', '44335', '44337', '44338', '44339', '44340', '45374', '45439', '45440', '45441', '45442', '45443', '45444', '46209', '46210', '46211', '46212', '46213', '46214');"
+}

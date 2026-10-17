@@ -96,6 +96,47 @@ check(C.district_scope(start, REG) is None and C.program_candidates(pages, start
       "a host no other college shares keeps the whole host, as Cerritos read")
 check(C.district_scope("https://catalog.nocccd.edu/", REG) is None,
       "an address at a shared host's root names no scope rather than guessing one")
+# A hand-filed catalog (Sam, 2026-10-17): read only with its provenance, and only when the bytes match it.
+import gzip, hashlib  # noqa: E401,E402
+_hf = tempfile.mkdtemp()
+_was = C.HAND_FILED_DIR
+C.HAND_FILED_DIR = _hf
+try:
+    check(C.hand_filed("De Anza College") is None, "no provenance record, no hand-filed read")
+    body = b"%PDF-1.4 a catalog"
+    with open(os.path.join(_hf, "de_anza.pdf.gz"), "wb") as fh:
+        fh.write(gzip.compress(body))
+    meta = {"college": "De Anza College", "url": "https://www.deanza.edu/catalog/x.pdf",
+            "fetched_by": "Sam Lee", "fetched_at": "2026-10-17", "file": "de_anza.pdf.gz",
+            "sha256": hashlib.sha256(body).hexdigest()}
+    json.dump(meta, open(os.path.join(_hf, "de_anza.json"), "w"))
+    got = C.hand_filed("De Anza College")
+    check(got and got.get("data") == body and not got.get("error"), "a matching .pdf.gz reads, unzipped")
+    json.dump(dict(meta, sha256="0" * 64), open(os.path.join(_hf, "de_anza.json"), "w"))
+    got = C.hand_filed("De Anza College")
+    check("sha256" in (got or {}).get("error", "") and "data" not in got, "a file that differs from its record is refused")
+    check(C.read_hand_filed(got)["access"] == "hand_filed_refused" and C.read_hand_filed(got)["pages"] == [],
+          "a refused hand-filed file reads as no pages")
+    json.dump({k: v for k, v in meta.items() if k != "fetched_by"}, open(os.path.join(_hf, "de_anza.json"), "w"))
+    check("fetched_by" in C.hand_filed("De Anza College").get("error", ""), "a record must say who fetched the file")
+finally:
+    C.HAND_FILED_DIR = _was
+    shutil.rmtree(_hf)
+check("hf = hand_filed(college)" in open(os.path.join(ROOT, "kb", "_program_requirements_college.py")).read(),
+      "the capture asks for a hand-filed catalog before any read")
+
+# An own-HTML catalog keeps to its own year's path (Skyline, run 39024299478, S404).
+sky = "https://catalog.skylinecollege.edu/current/"
+SKY = [sky + "programs/biology-as/", "https://catalog.skylinecollege.edu/1718/programs/biology-as/"]
+check(C.year_scope(sky, "custom_html") == "/current/"
+      and C.program_candidates(SKY, sky, C.year_scope(sky, "custom_html")) == SKY[:1],
+      "an own-HTML catalog's sitemap keeps to its own path")
+check(C.year_scope(sky, "courseleaf") is None and C.year_scope("https://catalog.x.edu/", "custom_html") is None
+      and C.year_scope("https://canadacollege.edu/catalogschedule/", "custom_html") is None,
+      "the year scope is own-HTML only, and none where the address names no year")
+check(C.year_scope("https://coalingacollege.edu/catalog/2026-2027/", "custom_html") == "/catalog/2026-2027/"
+      and C.year_scope("https://catalog.skylinecollege.edu/1718/", "custom_html") == "/1718/",
+      "the year scope runs through the year segment")
 check(C.in_scope("https://catalog.nocccd.edu/fullerton-college/x/", "/fullerton-college/")
       and not C.in_scope("https://catalog.nocccd.edu/cypress-college/x/", "/fullerton-college/")
       and C.in_scope("https://anything/", None),

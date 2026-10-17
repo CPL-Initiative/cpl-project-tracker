@@ -1,0 +1,241 @@
+{
+ "college": "Solano Community College",
+ "control_number": "30417",
+ "shape": "certificate",
+ "title": "Medical Administrative Assistant",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=183",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7571,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7571,
+    "output_tokens": 1462,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1462,
+  "output_tokens_details": {
+   "thinking_tokens": 368
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.05952,
+ "ms": 11941,
+ "seconds": 12.5,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 9,
+   "listed": 9,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    20.0,
+    20.0
+   ],
+   "stated": [
+    20.0,
+    20.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 6,
+   "courses": 0,
+   "count": 6,
+   "not_verbatim": [
+    "Demonstrate computer literacy and word processing skills related to formatting business documents."
+   ],
+   "why": [
+    "not in the catalog text as printed: Demonstrate computer literacy and word processing skills related to formatting b"
+   ],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": false
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Medical Administrative Assistant Certificate of Achievement",
+   "measure": "units",
+   "total_units": {
+    "min": 20,
+    "max": 20
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Demonstrate alpha and numeric keyboarding skills at 40 wpm with established accuracy.",
+    "Demonstrate computer literacy and word processing skills related to formatting business documents.",
+    "Use medical terminology for human diseases.",
+    "Demonstrate the differences in medical insurance and explain the duties of a medical office assistant, HIPPA.",
+    "Demonstrate ability to type medical documents and facility at using medical software such as Medisoft.",
+    "Employ the necessary soft skills to apply and find employment and keep it."
+   ],
+   "careers": [
+    "health care industry"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Semester 1",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "NURS 111",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "OT 060",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS 066",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "OT 054A",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "OT 054B",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS 091",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Semester 2",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "BUS 097",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "OT 056",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "OT 061",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The page also prints the Administrative Assistant Certificate/A.S. section above; it was ignored.",
+   "Catalog codes are printed with leading zeros (OT 060, CIS 091, BUS 097, etc.) and match closed-list codes OT 60, CIS 91, BUS 97, CIS 66, OT 56, OT 61.",
+   "BUS 097 is titled 'Work Readiness' in the catalog vs 'Skills for Workplace Success' in the state file.",
+   "PDF extraction garbled ligatures (e.g., 'formaƫ n g', 'soŌ ware', 'diﬀ erences'); outcomes were transcribed with these restored to 'formatting', 'software', 'Medisoft', 'soft', 'differences', 'office', 'duties'. 'HIPPA' is kept as printed.",
+   "Required Major Total Units printed as 20, matching the sum of listed courses (13.5 + 6.5)."
+  ]
+ },
+ "extracted_run": 39037377728,
+ "read_run": "39035226783"
+}

@@ -1,0 +1,243 @@
+{
+ "college": "Skyline College",
+ "control_number": "31978",
+ "shape": "certificate",
+ "title": "Entrepreneurship and Small Businesss Management",
+ "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+ "source_url": "https://catalog.skylinecollege.edu/current/programs/entrepreneurship-and-small-business-management-ca.php",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7174,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7174,
+    "output_tokens": 1153,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1153,
+  "output_tokens_details": {
+   "thinking_tokens": 239
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.05176,
+ "ms": 9797,
+ "seconds": 10.9,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 3,
+   "listed": 4,
+   "share": 0.75,
+   "missing": [
+    "BUS150"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 6,
+   "codes": [
+    "ACTG100",
+    "BUS161",
+    "BUS166",
+    "BUS180",
+    "BUS193",
+    "BUS401"
+   ],
+   "flagged": [
+    "ACTG100",
+    "BUS161",
+    "BUS166",
+    "BUS180",
+    "BUS193",
+    "BUS401"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    24.0,
+    24.0
+   ],
+   "stated": [
+    24.0,
+    24.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 6,
+   "courses": 0,
+   "count": 6,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Entrepreneurship and Small Business Management Certificate of Achievement",
+   "measure": "units",
+   "total_units": {
+    "min": 24,
+    "max": 24
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Critical Thinking: Develop critical thinking and analytical skills for decision making and problem solving.",
+    "Accounting/Financial Accounting: Apply accounting principles in business decision making.",
+    "Business Law: Assess how the law and the legal environment relate to business operations, including ethical implications.",
+    "Introduction to Business Information Systems: Utilize multimedia and software applications to enhance business decision-making process.",
+    "Business Communications: Create effective oral and written business communications utilizing modern communication technologies.",
+    "Economics/Macroeconomics: Analyze how external forces affect business practices."
+   ],
+   "careers": [
+    "Small Business Owner"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 24,
+     "max": 24
+    },
+    "courses": [
+     {
+      "code": "ACTG 100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BUS. 100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS. 161",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BUS. 166",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BUS. 180",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BUS. 193",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "BUS. 201",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS. 401",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MGMT 100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "BUS. 150",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "BUS. 201 (Business Law) matched to closed-list entry 'BUS201' (Business Law); treated as the same course.",
+   "'Total Required Units: 24' recorded as total_units and as the block's stated total.",
+   "Program title in the request is spelled 'Businesss'; catalog prints 'Business'.",
+   "Award descriptor in request says 18+ semester units; catalog total is 24."
+  ]
+ },
+ "extracted_run": "39032119511"
+}

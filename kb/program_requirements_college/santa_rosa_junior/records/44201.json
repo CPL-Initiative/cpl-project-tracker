@@ -82,27 +82,11 @@
    "program": 21,
    "courses": 0,
    "count": 21,
-   "not_verbatim": [
-    "Prepare initial, revised, and final repair orders in compliance with California law (BAR).",
-    "Identify engine block assembly components and configurations.",
-    "Demonstrate the proper steps to remove a cylinder head; inspect gasket condition; install cylinder head and gasket; tighten according to manufacturer's specification and procedure.",
-    "Research and identify correct procedures and specifications for maintenance and repair of automatic transmissions and transaxle systems.",
-    "Research and identify correct procedures and specifications for maintenance and repair of manual transmission and drive train systems.",
-    "Research and identify correct procedures and specifications for maintenance and repair of suspension and steering systems.",
-    "Research and identify correct procedures and specifications for maintenance and repair of braking systems."
-   ],
-   "why": [
-    "not in the catalog text as printed: Prepare initial, revised, and final repair orders in compliance with California ",
-    "not in the catalog text as printed: Identify engine block assembly components and configurations.",
-    "not in the catalog text as printed: Demonstrate the proper steps to remove a cylinder head; inspect gasket condition",
-    "not in the catalog text as printed: Research and identify correct procedures and specifications for maintenance and ",
-    "not in the catalog text as printed: Research and identify correct procedures and specifications for maintenance and ",
-    "not in the catalog text as printed: Research and identify correct procedures and specifications for maintenance and ",
-    "not in the catalog text as printed: Research and identify correct procedures and specifications for maintenance and "
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 1,
@@ -112,7 +96,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -263,5 +247,6 @@
    "The 'fi' ligatures in the PDF text were written as plain 'fi' in the outcomes."
   ]
  },
- "extracted_run": "39006464249"
+ "extracted_run": 39037637820,
+ "read_run": "39006464249"
 }
