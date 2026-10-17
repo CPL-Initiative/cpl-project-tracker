@@ -82,15 +82,11 @@
    "program": 4,
    "courses": 0,
    "count": 4,
-   "not_verbatim": [
-    "Apply the mathematical skills required in performing operations and/or problem-solving related to pre-algebra."
-   ],
-   "why": [
-    "not in the catalog text as printed: Apply the mathematical skills required in performing operations and/or problem-s"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 0,
@@ -100,7 +96,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -189,5 +185,6 @@
    "The outcomes list ends at item 4 at the end of the extracted text; it may continue on the next page (e.g., further beginning-algebra outcomes). Reviewer should check."
   ]
  },
- "extracted_run": "39006464249"
+ "extracted_run": 39037637820,
+ "read_run": "39006464249"
 }

@@ -88,15 +88,11 @@
    "program": 5,
    "courses": 0,
    "count": 5,
-   "not_verbatim": [
-    "Apply basic skills in one or more of the following areas of specialization: stage management, assistant stage management, house management, production management, box office management, theatre management;"
-   ],
-   "why": [
-    "not in the catalog text as printed: Apply basic skills in one or more of the following areas of specialization: stag"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 8,
@@ -109,7 +105,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -386,5 +382,6 @@
    "PDF ligatures ('ﬁ') were normalized to 'fi' in outcomes and careers (e.g., 'box office')."
   ]
  },
- "extracted_run": "39006464249"
+ "extracted_run": 39037637820,
+ "read_run": "39006464249"
 }

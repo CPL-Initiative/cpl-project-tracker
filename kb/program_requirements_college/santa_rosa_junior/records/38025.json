@@ -82,19 +82,11 @@
    "program": 4,
    "courses": 0,
    "count": 4,
-   "not_verbatim": [
-    "Demonstrate proficiency in image editing skills using Photoshop;",
-    "Demonstrate proficiency in vector skills using Illustrator;",
-    "Demonstrate proficiency in desktop publishing skills using InDesign; and"
-   ],
-   "why": [
-    "not in the catalog text as printed: Demonstrate proficiency in image editing skills using Photoshop;",
-    "not in the catalog text as printed: Demonstrate proficiency in vector skills using Illustrator;",
-    "not in the catalog text as printed: Demonstrate proficiency in desktop publishing skills using InDesign; and"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 0,
@@ -104,7 +96,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -214,5 +206,6 @@
    "Total 15 units printed as 'Requirements - Complete 15.00 Units' and 'Total Hours/Units 15'."
   ]
  },
- "extracted_run": "39006464249"
+ "extracted_run": 39037637820,
+ "read_run": "39006464249"
 }

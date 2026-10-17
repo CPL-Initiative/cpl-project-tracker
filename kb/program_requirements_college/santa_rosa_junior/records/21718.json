@@ -88,17 +88,11 @@
    "program": 5,
    "courses": 0,
    "count": 5,
-   "not_verbatim": [
-    "Discuss economic benefits to protecting healthy watershed characteristics including: recreation opportunities, biological diversity, species richness and clean water;",
-    "Critically analyze and apply research and extension work in the field of watershed, park management, and forestry; and"
-   ],
-   "why": [
-    "not in the catalog text as printed: Discuss economic benefits to protecting healthy watershed characteristics includ",
-    "not in the catalog text as printed: Critically analyze and apply research and extension work in the field of watersh"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 0,
@@ -108,7 +102,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -306,5 +300,6 @@
    "The text following the outcomes belongs to the Paralegal Studies certificate and was not used."
   ]
  },
- "extracted_run": "39006464249"
+ "extracted_run": 39037637820,
+ "read_run": "39006464249"
 }

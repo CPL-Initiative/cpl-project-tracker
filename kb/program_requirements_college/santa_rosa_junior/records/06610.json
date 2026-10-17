@@ -92,15 +92,11 @@
    "program": 4,
    "courses": 0,
    "count": 4,
-   "not_verbatim": [
-    "Use leadership skills to motivate foodservice employees to work as a team in an efficient and effective manner that meets or exceeds client expectations."
-   ],
-   "why": [
-    "not in the catalog text as printed: Use leadership skills to motivate foodservice employees to work as a team in an "
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 0,
@@ -110,7 +106,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -282,5 +278,6 @@
    "Program Student Learning Outcomes recorded as printed, including trailing punctuation."
   ]
  },
- "extracted_run": "39006464249"
+ "extracted_run": 39037637820,
+ "read_run": "39006464249"
 }

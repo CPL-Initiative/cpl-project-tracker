@@ -86,27 +86,11 @@
    "program": 7,
    "courses": 0,
    "count": 7,
-   "not_verbatim": [
-    "Describe all elements of the fire service including: fire service history, culture and diversity; minimum qualifications and entry level skills; and all elements of the application, hiring and probationary process.",
-    "Analyze, appraise and evaluate fire and emergency incidents and identify components of emergency management and firefighter safety.",
-    "Identify and comprehend laws, regulations, codes and standards that influence fire department operations and identify regulatory and advisory organizations that create and mandate them, especially in the areas of fire prevention, building codes and ordinances and firefighter health and safety;",
-    "Analyze the causes of fire, determine extinguishing agents and methods; differentiate the stages of the fire and fire development, and compare methods of heat transfer;",
-    "Identify and describe the equipment and apparatus used in the fire service and the maintenance of said equipment and apparatus;",
-    "Identify and describe common types of building construction and conditions associated with structural collapse and firefighter safety; and",
-    "Differentiate between fire detection and alarm systems and identify common health and safety concerns of firefighters and first responders."
-   ],
-   "why": [
-    "not in the catalog text as printed: Describe all elements of the fire service including: fire service history, cultu",
-    "not in the catalog text as printed: Analyze, appraise and evaluate fire and emergency incidents and identify compone",
-    "not in the catalog text as printed: Identify and comprehend laws, regulations, codes and standards that influence fi",
-    "not in the catalog text as printed: Analyze the causes of fire, determine extinguishing agents and methods; differen",
-    "not in the catalog text as printed: Identify and describe the equipment and apparatus used in the fire service and t",
-    "not in the catalog text as printed: Identify and describe common types of building construction and conditions assoc",
-    "not in the catalog text as printed: Differentiate between fire detection and alarm systems and identify common healt"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 1,
@@ -116,7 +100,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -401,5 +385,6 @@
    "The Firefighter Academy Certificate of Achievement section that follows was not used."
   ]
  },
- "extracted_run": "39006464249"
+ "extracted_run": 39037637820,
+ "read_run": "39006464249"
 }

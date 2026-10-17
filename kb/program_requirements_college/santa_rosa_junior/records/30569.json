@@ -84,21 +84,11 @@
    "program": 4,
    "courses": 0,
    "count": 4,
-   "not_verbatim": [
-    "Identify, define and demonstrate basic tasks of peace officers;",
-    "Identify, classify, and apply appropriate provisions of federal and state law related to peace officers;",
-    "Perform and document complete preliminary investigations assigned to peace officers; and",
-    "Demonstrate the physical skills needed to perform the tasks of a peace officer in the areas of driving, shooting, defensive tactics, and first aid."
-   ],
-   "why": [
-    "not in the catalog text as printed: Identify, define and demonstrate basic tasks of peace officers;",
-    "not in the catalog text as printed: Identify, classify, and apply appropriate provisions of federal and state law re",
-    "not in the catalog text as printed: Perform and document complete preliminary investigations assigned to peace offic",
-    "not in the catalog text as printed: Demonstrate the physical skills needed to perform the tasks of a peace officer i"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 1,
@@ -185,5 +175,6 @@
    "'peace officer' is taken from the program description ('anyone serving as a peace officer in the state of California')."
   ]
  },
- "extracted_run": "39006464249"
+ "extracted_run": 39037637820,
+ "read_run": "39006464249"
 }

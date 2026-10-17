@@ -82,17 +82,11 @@
    "program": 6,
    "courses": 0,
    "count": 6,
-   "not_verbatim": [
-    "Describe a workable set of financial goals;",
-    "Create a long-term financial plan leading to retirement."
-   ],
-   "why": [
-    "not in the catalog text as printed: Describe a workable set of financial goals;",
-    "not in the catalog text as printed: Create a long-term financial plan leading to retirement."
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 0,
@@ -102,7 +96,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -175,5 +169,6 @@
    "Ligature characters in the outcomes (e.g., 'ﬁnancial') were transcribed as plain letters."
   ]
  },
- "extracted_run": "39006464249"
+ "extracted_run": 39037637820,
+ "read_run": "39006464249"
 }

@@ -82,17 +82,11 @@
    "program": 3,
    "courses": 0,
    "count": 3,
-   "not_verbatim": [
-    "Develop competency in specific web development skills in the area of coding, validation and user interface;",
-    "Evaluate the numerous tools available to create a website and select the appropriate tools for the specific situation"
-   ],
-   "why": [
-    "not in the catalog text as printed: Develop competency in specific web development skills in the area of coding, val",
-    "not in the catalog text as printed: Evaluate the numerous tools available to create a website and select the appropr"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 9,
@@ -102,7 +96,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -188,5 +182,6 @@
    "The 'All of the following requirements' language applies to all three courses; the block is recorded as 'all'."
   ]
  },
- "extracted_run": "39006464249"
+ "extracted_run": 39037637820,
+ "read_run": "39006464249"
 }
