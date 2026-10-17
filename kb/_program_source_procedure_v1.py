@@ -37,7 +37,7 @@ ROOT = Path(__file__).resolve().parent.parent
 PLAN_READ = ("program-requirements-college.yml, read with extraction (the catalog sweep; "
              "Sam's standing go of 2026-10-14, up to $40 a college)")
 PLATFORM_NAME = {"courseleaf": "CourseLeaf", "curriqunet": "curriQunet", "elumen": "eLumen",
-                 "acalog": "Acalog"}
+                 "acalog": "Acalog", "pdf": "single-PDF"}
 
 
 def slug_of(college: str) -> str:
@@ -83,9 +83,15 @@ def found_text(cap: dict, s: dict) -> str:
         ways.append("%d %s" % (bm["sitemap_page"], {
             "curriqunet": "from the catalog's own index",
             "elumen": "from the catalog's own menu"}.get(cap.get("platform"), "by sitemap page")))
-    return ("%d pages in %d loads (%d min). %d of %d programs with a course list found a page (%s); "
+    if bm.get("pdf_pages"):
+        # A whole-catalog PDF is one load; each program reads its own run of pages (S403).
+        ways.append("%d by their run of PDF pages" % bm["pdf_pages"])
+    pdf = cap.get("pdf") or {}
+    read = ("the PDF's %d pages in 1 load, by %s" % (pdf.get("pages_total") or 0, pdf.get("extractor"))
+            if pdf else "%d pages in %d loads" % (cap["pages_read"], cap["loads"]))
+    return ("%s (%d min). %d of %d programs with a course list found a page (%s); "
             "%d extracted with function v10 for $%.2f; %d pass the machine checks."
-            % (cap["pages_read"], cap["loads"], round(cap["seconds"] / 60), s["found"],
+            % (read, round(cap["seconds"] / 60), s["found"],
                s["with_closed_list"], ", ".join(ways) or "none", s["extracted"], s["cost_usd"],
                s["passed_machine_checks"]))
 
