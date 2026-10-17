@@ -270,8 +270,8 @@
    "name": "MAP Data Quality",
    "page": "index.html#map-data-quality",
    "audience": "staff",
-   "last": null,
-   "outcome": null
+   "last": "2026-10-17",
+   "outcome": "S404: the register's private palette (38 raw hex in a light and a dark block that had drifted from index.html) gave way to First Light's tokens under nine role names, so dark follows cpl_theme; nine labels moved off decoration-only --text-faint (3.24:1 light, 3.62-4.01:1 dark); controls are underlined words at 24px (filled primary retired), the status filters mark the selected one by weight and aria-pressed; six status glyphs and four emoji out; the page's Loading box no longer frames the mounted register. Seeded targets mdq-list and mdq-form (light and dark) fail on the old file and pass at 390 and 1440. Wiring: map_data_quality, map_cleanup_worklist and map_cx_exhibit_guidance have no other view. Deferred: map_cleanup_views.js, painted above the register, keeps its own palette and is not seeded."
   },
   {
    "id": "cobi:credential-reference",
