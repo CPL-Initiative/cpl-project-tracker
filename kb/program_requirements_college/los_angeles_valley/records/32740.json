@@ -87,8 +87,8 @@
    "count": 0,
    "not_verbatim": [],
    "why": [],
-   "heading_printed": false,
-   "heading_without_outcomes": false,
+   "heading_printed": true,
+   "heading_without_outcomes": true,
    "pass": true
   },
   "careers": {
@@ -153,5 +153,6 @@
    "No program learning outcomes or careers appear in the text for this award."
   ]
  },
- "extracted_run": "39006418426"
+ "extracted_run": 39019557206,
+ "read_run": "39006418426"
 }

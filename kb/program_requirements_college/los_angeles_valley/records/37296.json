@@ -105,11 +105,19 @@
    "program": 3,
    "courses": 0,
    "count": 3,
-   "not_verbatim": [],
-   "why": [],
-   "heading_printed": true,
+   "not_verbatim": [
+    "To give students a thorough background in the aesthetics of film and media.",
+    "To give students experience in creating visual effects for various types of projects.",
+    "To give students experience in digital color grading, color correction, and the theories of color science."
+   ],
+   "why": [
+    "not in the catalog text as printed: To give students a thorough background in the aesthetics of film and media.",
+    "not in the catalog text as printed: To give students experience in creating visual effects for various types of proj",
+    "not in the catalog text as printed: To give students experience in digital color grading, color correction, and the "
+   ],
+   "heading_printed": false,
    "heading_without_outcomes": false,
-   "pass": true
+   "pass": false
   },
   "careers": {
    "count": 0,
@@ -243,5 +251,6 @@
    "Units for the choose-one courses are printed in parentheses (3) in the catalog."
   ]
  },
- "extracted_run": "39006418426"
+ "extracted_run": 39019557206,
+ "read_run": "39006418426"
 }

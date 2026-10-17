@@ -99,11 +99,21 @@
    "program": 4,
    "courses": 0,
    "count": 4,
-   "not_verbatim": [],
-   "why": [],
-   "heading_printed": true,
+   "not_verbatim": [
+    "Students will learn about the aesthetics of film and media and be able to apply that knowledge to productions.",
+    "Students will be able to gain experience using various editorial and color techniques and styles to effectively tell a story.",
+    "Students will be able to successfully accomplish the tasks of all positions on the editing and color grading team",
+    "Students will be able to have the ability to build a reel (digital resume) with their own footage in order to better position themselves for transfer and/or gainful employment in the entertainment industry."
+   ],
+   "why": [
+    "not in the catalog text as printed: Students will learn about the aesthetics of film and media and be able to apply ",
+    "not in the catalog text as printed: Students will be able to gain experience using various editorial and color techn",
+    "not in the catalog text as printed: Students will be able to successfully accomplish the tasks of all positions on t",
+    "not in the catalog text as printed: Students will be able to have the ability to build a reel (digital resume) with "
+   ],
+   "heading_printed": false,
    "heading_without_outcomes": false,
-   "pass": true
+   "pass": false
   },
   "careers": {
    "count": 0,
@@ -263,5 +273,6 @@
    "Outcome 4 mentions 'gainful employment in the entertainment industry', but no careers are named in the program description, so careers were left empty."
   ]
  },
- "extracted_run": "39006418426"
+ "extracted_run": 39019557206,
+ "read_run": "39006418426"
 }

@@ -82,21 +82,27 @@
    "program": 4,
    "courses": 0,
    "count": 4,
-   "not_verbatim": [],
-   "why": [],
+   "not_verbatim": [
+    "Students will via a problem-solving process, utilize the tenets of 2-D design to construct and present digital solutions to assigned problems."
+   ],
+   "why": [
+    "not in the catalog text as printed: Students will via a problem-solving process, utilize the tenets of 2-D design to"
+   ],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": true
+   "pass": false
   },
   "careers": {
    "count": 3,
-   "not_verbatim": [],
-   "pass": true
+   "not_verbatim": [
+    "Production Artist"
+   ],
+   "pass": false
   },
   "degree": {
    "status": "n/a"
   },
-  "pass": true
+  "pass": false
  },
  "record": {
   "program": {
@@ -218,5 +224,6 @@
    "Total: 29 matches the sum of the nine required courses."
   ]
  },
- "extracted_run": "39006418426"
+ "extracted_run": 39019557206,
+ "read_run": "39006418426"
 }

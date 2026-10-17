@@ -99,8 +99,12 @@
   },
   "careers": {
    "count": 4,
-   "not_verbatim": [],
-   "pass": true
+   "not_verbatim": [
+    "Drafter Tracer",
+    "Detailer Engineering Aid",
+    "Computer-Aided Drafting"
+   ],
+   "pass": false
   },
   "degree": {
    "status": "n/a"
@@ -209,5 +213,6 @@
    "Printed total 18 matches the sum of the six required courses (3+3+3+2+3+4)."
   ]
  },
- "extracted_run": "39006418426"
+ "extracted_run": 39019557206,
+ "read_run": "39006418426"
 }

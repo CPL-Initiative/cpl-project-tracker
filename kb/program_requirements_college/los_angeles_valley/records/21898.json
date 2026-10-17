@@ -99,8 +99,11 @@
   },
   "careers": {
    "count": 3,
-   "not_verbatim": [],
-   "pass": true
+   "not_verbatim": [
+    "Numerical Control Programmer",
+    "Numerical Control Machine Operator"
+   ],
+   "pass": false
   },
   "degree": {
    "status": "n/a"
@@ -228,5 +231,6 @@
    "The four outcomes printed in the certificate section are identical to those printed for the A.S. degree and the Metal Machining programs."
   ]
  },
- "extracted_run": "39006418426"
+ "extracted_run": 39019557206,
+ "read_run": "39006418426"
 }

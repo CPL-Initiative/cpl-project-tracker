@@ -88,21 +88,31 @@
    "program": 3,
    "courses": 0,
    "count": 3,
-   "not_verbatim": [],
-   "why": [],
-   "heading_printed": true,
+   "not_verbatim": [
+    "After successful completion of this program, students will be able to use their thorough background in the aesthetics of film and media to apply to productions.",
+    "After successful completion of this program, students will be able to experience directing actors from casting through the rehearsing process to better prepare them to work with actors on a set.",
+    "After successful completion of this program, students will be able to develop a visual plan including a lined script, shot list, floor plan, and storyboards in order to successfully communicate their vision to fellow crew members."
+   ],
+   "why": [
+    "not in the catalog text as printed: After successful completion of this program, students will be able to use their ",
+    "not in the catalog text as printed: After successful completion of this program, students will be able to experience",
+    "not in the catalog text as printed: After successful completion of this program, students will be able to develop a "
+   ],
+   "heading_printed": false,
    "heading_without_outcomes": false,
-   "pass": true
+   "pass": false
   },
   "careers": {
    "count": 1,
-   "not_verbatim": [],
-   "pass": true
+   "not_verbatim": [
+    "director"
+   ],
+   "pass": false
   },
   "degree": {
    "status": "n/a"
   },
-  "pass": true
+  "pass": false
  },
  "record": {
   "program": {
@@ -252,5 +262,6 @@
    "Program Student Learning Outcomes are printed for the AA degree; recorded here as the program's outcomes on the assumption the certificate shares them."
   ]
  },
- "extracted_run": "39006418426"
+ "extracted_run": 39019557206,
+ "read_run": "39006418426"
 }

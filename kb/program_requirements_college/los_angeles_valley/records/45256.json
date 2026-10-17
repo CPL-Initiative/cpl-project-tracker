@@ -99,16 +99,28 @@
    "program": 4,
    "courses": 0,
    "count": 4,
-   "not_verbatim": [],
-   "why": [],
-   "heading_printed": true,
+   "not_verbatim": [
+    "Students will be able to use their thorough knowledge of the aesthetics of film and media in order to apply them to productions.",
+    "Students will be able to apply their experience in cinematography to narrative and documentary settings.",
+    "Students will be able to execute all positions on the camera team and learning the roles of each position.",
+    "Students will be able to use camera, lighting, and grip equipment to gain practical experience in creating the visual look of scenes or interview setups."
+   ],
+   "why": [
+    "not in the catalog text as printed: Students will be able to use their thorough knowledge of the aesthetics of film ",
+    "not in the catalog text as printed: Students will be able to apply their experience in cinematography to narrative a",
+    "not in the catalog text as printed: Students will be able to execute all positions on the camera team and learning t",
+    "not in the catalog text as printed: Students will be able to use camera, lighting, and grip equipment to gain practi"
+   ],
+   "heading_printed": false,
    "heading_without_outcomes": false,
-   "pass": true
+   "pass": false
   },
   "careers": {
    "count": 1,
-   "not_verbatim": [],
-   "pass": true
+   "not_verbatim": [
+    "camera department"
+   ],
+   "pass": false
   },
   "degree": {
    "status": "read"
@@ -257,5 +269,6 @@
    "Career entry 'camera department' taken from the description 'preparing students to work in the camera department on productions'; reviewer may check whether this counts as a career field."
   ]
  },
- "extracted_run": "39006418426"
+ "extracted_run": 39019557206,
+ "read_run": "39006418426"
 }

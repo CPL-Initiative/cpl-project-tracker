@@ -86,11 +86,19 @@
    "program": 3,
    "courses": 0,
    "count": 3,
-   "not_verbatim": [],
-   "why": [],
-   "heading_printed": true,
+   "not_verbatim": [
+    "To give students a basic understanding of the aesthetics of film and media.",
+    "To give students some experience in directing a cast and crew.",
+    "To give students the ability to build a reel (digital resume) with their own footage in order to better position themselves for transfer and/ or gainful employment in the entertainment industry."
+   ],
+   "why": [
+    "not in the catalog text as printed: To give students a basic understanding of the aesthetics of film and media.",
+    "not in the catalog text as printed: To give students some experience in directing a cast and crew.",
+    "not in the catalog text as printed: To give students the ability to build a reel (digital resume) with their own foo"
+   ],
+   "heading_printed": false,
    "heading_without_outcomes": false,
-   "pass": true
+   "pass": false
   },
   "careers": {
    "count": 0,
@@ -100,7 +108,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": true
+  "pass": false
  },
  "record": {
   "program": {
@@ -209,5 +217,6 @@
    "No careers are named in the section; 'entertainment industry' appears only inside an outcome."
   ]
  },
- "extracted_run": "39006418426"
+ "extracted_run": 39019557206,
+ "read_run": "39006418426"
 }

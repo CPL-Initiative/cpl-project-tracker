@@ -90,8 +90,8 @@
    "count": 0,
    "not_verbatim": [],
    "why": [],
-   "heading_printed": true,
-   "heading_without_outcomes": true,
+   "heading_printed": false,
+   "heading_without_outcomes": false,
    "pass": true
   },
   "careers": {
@@ -164,5 +164,6 @@
    "The certificate sections run alphabetically (Cinematography, Core Studies, Directing, Editing and Color Grading, Producing, Screenwriting, Sound Design). The text is cut off mid-way through Sound Design, so the Visual Effects certificate probably follows on page 68 or later and was not captured. A reviewer should check the next page of the PDF."
   ]
  },
- "extracted_run": "39006418426"
+ "extracted_run": 39019557206,
+ "read_run": "39006418426"
 }

@@ -82,21 +82,28 @@
    "program": 1,
    "courses": 0,
    "count": 1,
-   "not_verbatim": [],
-   "why": [],
+   "not_verbatim": [
+    "Students will be able to prepare a standard residential lease document."
+   ],
+   "why": [
+    "not in the catalog text as printed: Students will be able to prepare a standard residential lease document."
+   ],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": true
+   "pass": false
   },
   "careers": {
    "count": 2,
-   "not_verbatim": [],
-   "pass": true
+   "not_verbatim": [
+    "manager of investment property",
+    "entry-level positions in property management"
+   ],
+   "pass": false
   },
   "degree": {
    "status": "n/a"
   },
-  "pass": true
+  "pass": false
  },
  "record": {
   "program": {
@@ -219,5 +226,6 @@
    "Elective-block units were printed in parentheses, e.g. '(5)', '(3)'."
   ]
  },
- "extracted_run": "39006418426"
+ "extracted_run": 39019557206,
+ "read_run": "39006418426"
 }

@@ -105,11 +105,23 @@
    "program": 5,
    "courses": 0,
    "count": 5,
-   "not_verbatim": [],
-   "why": [],
-   "heading_printed": true,
+   "not_verbatim": [
+    "Understanding of the aesthetics of film and media.",
+    "Experience in creating advanced visual effects for various types of projects.",
+    "Experience in motion capture production and post production.",
+    "Experience in virtual production and 3D modeling to be used for gaming and on a virtual production set.",
+    "Ability to build a reel (digital resume) with their own footage in order to better position themselves for transfer and/or gainful employment in the entertainment industry."
+   ],
+   "why": [
+    "not in the catalog text as printed: Understanding of the aesthetics of film and media.",
+    "not in the catalog text as printed: Experience in creating advanced visual effects for various types of projects.",
+    "not in the catalog text as printed: Experience in motion capture production and post production.",
+    "not in the catalog text as printed: Experience in virtual production and 3D modeling to be used for gaming and on a ",
+    "not in the catalog text as printed: Ability to build a reel (digital resume) with their own footage in order to bett"
+   ],
+   "heading_printed": false,
    "heading_without_outcomes": false,
-   "pass": true
+   "pass": false
   },
   "careers": {
    "count": 0,
@@ -258,5 +270,6 @@
    "Choice-list units are printed in parentheses (3)."
   ]
  },
- "extracted_run": "39006418426"
+ "extracted_run": 39019557206,
+ "read_run": "39006418426"
 }

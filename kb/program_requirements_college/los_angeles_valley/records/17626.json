@@ -103,11 +103,19 @@
    "program": 3,
    "courses": 0,
    "count": 3,
-   "not_verbatim": [],
-   "why": [],
-   "heading_printed": true,
+   "not_verbatim": [
+    "To give students experience in putting together a feature, short, and/or episodic production.",
+    "To give students experience solving logistical challenges of production by balancing financial, legal, and creative interests.",
+    "To give students the ability to build a reel (digital resume) with their own footage in order to better position themselves for transfer and/ or gainful employment in the entertainment industry."
+   ],
+   "why": [
+    "not in the catalog text as printed: To give students experience in putting together a feature, short, and/or episodi",
+    "not in the catalog text as printed: To give students experience solving logistical challenges of production by balan",
+    "not in the catalog text as printed: To give students the ability to build a reel (digital resume) with their own foo"
+   ],
+   "heading_printed": false,
    "heading_without_outcomes": false,
-   "pass": true
+   "pass": false
   },
   "careers": {
    "count": 0,
@@ -241,5 +249,6 @@
    "Asterisks on CINEMA 101 and MEDIART 101 denote prerequisites/corequisites, not part of the code."
   ]
  },
- "extracted_run": "39006418426"
+ "extracted_run": 39019557206,
+ "read_run": "39006418426"
 }
