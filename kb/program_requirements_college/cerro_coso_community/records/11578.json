@@ -1,0 +1,229 @@
+{
+ "college": "Cerro Coso Community College",
+ "control_number": "11578",
+ "shape": "certificate",
+ "title": "Child Development Teacher",
+ "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+ "source_url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=82",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 11316,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 11316,
+    "output_tokens": 1730,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1730,
+  "output_tokens_details": {
+   "thinking_tokens": 615
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.07986,
+ "ms": 14819,
+ "seconds": 15.2,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 6,
+   "listed": 6,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 2,
+   "codes": [
+    "CHDVC100",
+    "CHDVC102"
+   ],
+   "flagged": [
+    "CHDVC100",
+    "CHDVC102"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    24.0,
+    24.0
+   ],
+   "stated": [
+    24.0,
+    24.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [
+    "Integrate understandings of children’s development and needs to maintain healthy, safe, supportive, and challenging learning environments that demonstrate culturally relevant, inclusive, age-appropriate, and anti-bias approaches respectful of children, families, and early learning professionals."
+   ],
+   "why": [
+    "not in the catalog text as printed: Integrate understandings of children's development and needs to maintain healthy"
+   ],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": false
+  },
+  "careers": {
+   "count": 5,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Child Development Teacher Certificate of Achievement",
+   "measure": "units",
+   "total_units": {
+    "min": 24,
+    "max": 24
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Examine teaching and care practices that provide a developmentally appropriate program to support children’s growth, development, and learning.",
+    "Identify one’s own values, experiences, and philosophies and how they guide and inform practice.",
+    "Integrate understandings of children’s development and needs to maintain healthy, safe, supportive, and challenging learning environments that demonstrate culturally relevant, inclusive, age-appropriate, and anti-bias approaches respectful of children, families, and early learning professionals."
+   ],
+   "careers": [
+    "child development",
+    "child development assistant",
+    "associate teacher",
+    "teacher",
+    "educational paraprofessional"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Complete all of the following courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CHDV C100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CHDV C102",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CHDV C104",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHDV C106",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHDV C121",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHDV C125",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHDV C200",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHDV C203",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Read only the Child Development Teacher Certificate of Achievement section (pages 75-76 of the catalog, PDF pages 83-84); the total of 24 units comes from the description '(24 units)'.",
+   "The course list spans a page break; course codes and titles are misaligned in the extracted text on PDF page 84, but all eight courses at 3 units each are clear and sum to 24.",
+   "Outcome text was extracted with PDF ligature artifacts (e.g. 'pracƟces', 'supporƟve', 'anƟ-bias', 'respecƞul'); these were rendered as 'practices', 'supportive', 'anti-bias', 'respectful'. Reviewer may wish to verify against the source.",
+   "'Careers in child development' recorded as the career field 'child development'; 'other educational paraprofessional working in infant, toddler, preschool or school-age care' recorded as 'educational paraprofessional'.",
+   "CHDV C100 and CHDV C102 are required by the catalog but absent from the closed list; recorded as catalog additions.",
+   "Permit information (Teacher Permit requirements: experience plus 16 general education units) is a state permit requirement, not a certificate requirement, and is not recorded as a block."
+  ]
+ },
+ "extracted_run": "39046789844"
+}

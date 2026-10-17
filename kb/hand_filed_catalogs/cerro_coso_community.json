@@ -5,6 +5,8 @@
  "fetched_at": "2026-10-17",
  "catalog_year": "2026-2027",
  "copy_url": "https://github.com/user-attachments/files/33599445/2026-2027-catalog.pdf",
- "sha256": "",
- "note": "Sam downloaded it in a browser and posted it to the catalog-files release (2026-10-17); its robots.txt disallows the catalog PDF to readers. cpl_memory sam-hand-filed-catalog-pdf-links-2026-10-17."
+ "sha256": "a01a1321caee137b86ef6769db86daf52af475ba64ed6e33b6c817c3547a3214",
+ "note": "Sam downloaded it in a browser and posted it to the catalog-files release (2026-10-17); its robots.txt disallows the catalog PDF to readers. cpl_memory sam-hand-filed-catalog-pdf-links-2026-10-17.",
+ "bytes": 8604112,
+ "pinned_run": "39046621621"
 }

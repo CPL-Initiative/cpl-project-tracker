@@ -1,0 +1,292 @@
+{
+ "college": "Cerro Coso Community College",
+ "control_number": "15576",
+ "shape": "degree",
+ "title": "Paralegal Studies",
+ "award": "A.S. Degree",
+ "source_url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=112",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 9510,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 9510,
+    "output_tokens": 2568,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2568,
+  "output_tokens_details": {
+   "thinking_tokens": 1190
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.0894,
+ "ms": 21215,
+ "seconds": 21.5,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 3,
+   "listed": 5,
+   "share": 0.6,
+   "missing": [
+    "PARAC230",
+    "PARAC280"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 9,
+   "codes": [
+    "PARAC101",
+    "PARAC112",
+    "PARAC122",
+    "PARAC130",
+    "PARAC150",
+    "PARAC215X",
+    "PARAC220",
+    "PARAC250",
+    "PARAC260"
+   ],
+   "flagged": [
+    "PARAC101",
+    "PARAC112",
+    "PARAC122",
+    "PARAC130",
+    "PARAC150",
+    "PARAC215X",
+    "PARAC220",
+    "PARAC250",
+    "PARAC260"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    27.0,
+    27.0
+   ],
+   "stated": [
+    60.0,
+    60.0
+   ],
+   "against": "degree",
+   "ge": null,
+   "why": [
+    "the record names the degree total and the OPTION A Cerro Coso Local General Education Pattern or OPTION B Cal-GETC – California General Education Transfer Curriculum pattern, but no units for it"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 2,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Paralegal Studies Associate in Science Degree (heading not in the excerpt; section begins mid-text on page 112)",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "OPTION A Cerro Coso Local General Education Pattern or OPTION B Cal-GETC – California General Education Transfer Curriculum",
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Understand and apply the fundamentals of the legal process to assist the attorney in representation of the client.",
+    "Conduct ethical legal research and use other investigative functions to gather relevant information.",
+    "Process and draft legal documents, written correspondence, records, and court forms including tracking and maintaining case and court deadlines.",
+    "Apply ethical principles and rules when performing duties within the legal field."
+   ],
+   "careers": [
+    "contract paralegal",
+    "California Legal Document Assistant (LDA)"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Complete all of the following courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "PARA C101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PARA C112",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PARA C122",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PARA C130",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PARA C190",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PARA C210",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select a minimum of 9 units from the following courses",
+    "rule": "choose_units",
+    "minimum": 9,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "PARA C150",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PARA C215X",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PARA C220",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PARA C240",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PARA C250",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PARA C260",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "PARAC 230",
+    "why": "not in the text"
+   },
+   {
+    "code": "PARAC 280",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "The A.S. section begins before page 112; its heading and opening description are not in the excerpt, so the major's own unit total (if printed) could not be read. total_units left null.",
+   "degree_total 60 taken from 'You must complete a minimum of 60 units, including the courses listed in the major and general education requirements' printed in this program's section; this may be college-wide boilerplate — reviewer should check.",
+   "PARA C210 in the catalog is matched to closed-list 'PARAC 210'; PARA C190 and PARA C240 matched to closed-list codes.",
+   "Outcomes copied with PDF ligature extraction artifacts repaired (e.g., 'aƩ orney' -> 'attorney', 'draŌ' -> 'draft', 'duƟes' -> 'duties').",
+   "The Paralegal Studies Certificate of Achievement (27 units) that follows prints the same outcomes and course lists; it was not used for this record.",
+   "Careers taken from 'self-employment as a contract paralegal or California Legal Document Assistant (LDA)'; the other listed items (law firms, court jurisdictions, government offices, etc.) are employment settings rather than job titles."
+  ]
+ },
+ "extracted_run": "39046789844"
+}

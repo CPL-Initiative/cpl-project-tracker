@@ -1,0 +1,197 @@
+{
+ "college": "Cerro Coso Community College",
+ "control_number": "44885",
+ "shape": "certificate",
+ "title": "Reserve Officer",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=115",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6932,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6932,
+    "output_tokens": 1455,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1455,
+  "output_tokens_details": {
+   "thinking_tokens": 525
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.05683,
+ "ms": 12526,
+ "seconds": 12.8,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 5,
+   "listed": 5,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    16.0,
+    16.5
+   ],
+   "stated": [
+    16.0,
+    16.0
+   ],
+   "against": "program",
+   "why": [
+    "the blocks sum to 16.0-16.5; the catalog states 16.0-16.0"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 3,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Reserve Officer Certificate of Achievement",
+   "measure": "units",
+   "total_units": {
+    "min": 16,
+    "max": 16
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Articulate the broad requirements of balancing law enforcement with individual liberties.",
+    "Employ proper techniques and requirements for arrest, firearms safety, and high-speed driving as set forth by the Peace Officer Standards and Training requirements.",
+    "Adopt proper procedures related to due process and ethics, including routine patrol response, vehicle pullovers, crime scene forensics, officer safety, and preservation of evidence."
+   ],
+   "careers": [
+    "statewide limited peace officer",
+    "reserve police officer",
+    "reserve deputy sheriff"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Core",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ADMJ C140",
+      "units": 0.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADMJ C142",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADMJ C143",
+      "units": 10,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADMJ C062",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ADMJ C063",
+        "units": 0.5,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The extracted PDF text contains ligature artifacts (e.g., 'ArƟculate', 'liberƟes', 'Oﬃ cer'); outcomes were recorded with these restored to their ordinary letters ('Articulate', 'liberties', 'Officer'). A reviewer should confirm this against the printed page.",
+   "The stated certificate total is 16 units. Summing the core gives 16 units if ADMJ C063 (0.5) is chosen, and 16.5 units if ADMJ C062 (1) is chosen. The stated figure was recorded as printed.",
+   "The catalog prints the ADMJ C143 title as 'Basic Peace Officer Academy Modular Format Level II'; the state file title reads 'Basic Police Officer Academy Modular Format Level II'.",
+   "The career entry 'reserve deputy sheriff' was printed as 'reserve deputy sheriff positions'; the word 'positions' was omitted as a generic qualifier.",
+   "The text following the course list belongs to the Social Work and Human Services AA-T and was ignored.",
+   "Each course must be completed with a grade of C or better."
+  ]
+ },
+ "extracted_run": "39046789844"
+}
