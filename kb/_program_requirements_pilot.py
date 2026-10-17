@@ -81,10 +81,18 @@ def norm_code(code: str | None) -> str:
     return s
 
 
-CODE_PARTS = re.compile(r"^([A-Z&][A-Z&\s]*?)[\s\-]*(C?\d[0-9A-Z.\-]*)$")
+CODE_PARTS = re.compile(r"^([A-Z&][A-Z&/\s]*?)[\s\-]*(C?\d[0-9A-Z.\-]*)$")
 NUM_PARTS = re.compile(r"^(C?)(\d+)(?:([.\-])(\d+))?([A-Z]*)$")
 SPACED_CAMPUS = re.compile(r"^(.*\d[0-9A-Z.\-]*) ([A-Z])$")
 CODE_END = r"(?![0-9A-Za-z]|[.\-]\d)"
+# Between a subject's letters: a space, a hyphen, or the slash Glendale's CS/IS carries (S408).
+SUBJ_JOIN = r"[\s\-/]?"
+# A number in a run that lists one subject's courses after it ("ACCTG 101, 102; BUSAD 101, 106,
+# 120; CS/IS 100 or 101", Glendale's 2025-2026 PDF), and what may stand between two of them.
+RUN_TOKEN = r"C?\d(?: ?\d){0,3}(?:\.\d{1,2})?[A-Z]{0,2}"
+RUN_SEP = r"\s*(?:,|\bor\b|\band\b|&)\s*"
+# A number a run's words make a figure, not a course ("CHEM 101 and 3 units", "MATH 100 or 3 years").
+RUN_FIGURE = re.compile(r"\s*(?:units?|hours?|hrs?|credits?|courses?|classes|semesters?|years?|weeks?|of|from)\b", re.I)
 
 
 def code_pattern(code: str) -> re.Pattern | None:
@@ -102,39 +110,87 @@ def code_pattern(code: str) -> re.Pattern | None:
         if base is None:
             return None
         return re.compile(base.pattern[:-len(CODE_END)] + r"[\s\-]?" + campus.group(2) + CODE_END, re.I)
-    m = CODE_PARTS.match(raw)
-    if not m:
+    parts = code_parts(raw)
+    if parts is None:
         letters = re.sub(r"[^A-Z&]", "", raw)
         if not letters:
             return None
         body = r"[\s\-]?".join(re.escape(ch) for ch in letters)
     else:
-        subj = re.sub(r"[^A-Z&]", "", m.group(1))
-        n = NUM_PARTS.match(m.group(2))
-        if not n:
-            num_re = re.escape(m.group(2))
-        else:
-            c, whole, sep, frac, suffix = n.groups()
-            num_re = re.escape(c) + r"0*" + (whole.lstrip("0") or "0")
-            if sep == "." and frac.rstrip("0"):
-                num_re += r"\." + frac.rstrip("0") + r"0*"
-            elif sep == ".":
-                num_re += r"(?:\.0*)?"
-            elif sep == "-":
-                num_re += r"[\s\-]?" + frac
-            num_re += suffix
-        body = r"[\s\-]?".join(re.escape(ch) for ch in subj) + r"[\s\-]{0,2}" + num_re
+        body = parts[0] + r"[\s\-]{0,2}" + parts[1]
     return re.compile(r"(?<![A-Za-z0-9&])" + body + CODE_END, re.I)
+
+
+def _digits(whole: str) -> str:
+    """A course number's digits as a pattern. A PDF's kerning can space the digits of a
+    three-digit number ("B IOL 1 42, 50; CHEM 1 1 0; ENGL 1 01", Glendale, S408), so
+    those may carry one space between digits; a shorter number may not, since "ART 1 3"
+    is ART 1 and its 3 units."""
+    return (" ?" if len(whole) >= 3 else "").join(re.escape(ch) for ch in whole)
+
+
+def code_parts(code: str) -> tuple[str, str] | None:
+    """(subject pattern, number pattern) for a code that has both, or None (a
+    campus-lettered code, a code of letters only)."""
+    raw = re.sub(r"\s+", " ", (code or "").upper().strip())
+    if SPACED_CAMPUS.match(raw):
+        return None
+    m = CODE_PARTS.match(raw)
+    if not m:
+        return None
+    subj = re.sub(r"[^A-Z&]", "", m.group(1))
+    n = NUM_PARTS.match(m.group(2))
+    if not n:
+        num_re = re.escape(m.group(2))
+    else:
+        c, whole, sep, frac, suffix = n.groups()
+        num_re = re.escape(c) + r"0*" + _digits(whole.lstrip("0") or "0")
+        if sep == "." and frac.rstrip("0"):
+            num_re += r"\." + frac.rstrip("0") + r"0*"
+        elif sep == ".":
+            num_re += r"(?:\.0*)?"
+        elif sep == "-":
+            num_re += r"[\s\-]?" + frac
+        num_re += suffix
+    return SUBJ_JOIN.join(re.escape(ch) for ch in subj), num_re
+
+
+def run_numbers(text: str, subj: str) -> list[tuple[str, int]]:
+    """(number, position) for each number a run lists after the first one named
+    with this subject: "BUSAD 101, 106, 120" names BUSAD 106 and 120 too, and
+    "WELD 121 or WELD 117 and 118" names WELD 118. A number the run's words make a
+    figure ("and 3 units") ends the run."""
+    out = []
+    run = re.compile(r"(?<![A-Za-z0-9&])" + subj + r"[\s\-]{0,2}" + RUN_TOKEN
+                     + r"(?:" + RUN_SEP + RUN_TOKEN + r"(?![0-9A-Za-z]))+", re.I)
+    step = re.compile(RUN_SEP + r"(" + RUN_TOKEN + r")(?![0-9A-Za-z])", re.I)
+    for m in run.finditer(text or ""):
+        first = re.match(r"(?<![A-Za-z0-9&])" + subj + r"[\s\-]{0,2}" + RUN_TOKEN, m.group(0), re.I)
+        at = m.start() + first.end()
+        while True:
+            s = step.match(text, at, m.end())
+            if not s or RUN_FIGURE.match(text, s.end()):
+                break
+            out.append((s.group(1), s.start(1)))
+            at = s.end()
+    return out
 
 
 def find_codes(text: str, courses: list[dict]) -> dict[str, list[int]]:
     """{normalized code: [positions]} for each listed course the text names."""
     out: dict[str, list[int]] = {}
+    runs: dict[str, list[tuple[str, int]]] = {}
     for c in courses:
         pat = code_pattern(c.get("code") or "")
         if pat is None:
             continue
         pos = [m.start() for m in pat.finditer(text or "")]
+        parts = code_parts(c.get("code") or "")
+        if parts and text:
+            if parts[0] not in runs:
+                runs[parts[0]] = run_numbers(text, parts[0])
+            num = re.compile(parts[1], re.I)
+            pos = sorted(set(pos) | {at for tok, at in runs[parts[0]] if num.fullmatch(tok)})
         if pos:
             out[norm_code(c["code"])] = pos
     return out
