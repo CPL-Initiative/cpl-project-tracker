@@ -1,0 +1,367 @@
+{
+ "college": "Ohlone College",
+ "control_number": "11810",
+ "shape": "degree",
+ "title": "UNIX/Linux Systems Administrator Network Technology and Systems Administration",
+ "award": "A.S. Degree",
+ "source_url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=75",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8436,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8436,
+    "output_tokens": 2267,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2267,
+  "output_tokens_details": {
+   "thinking_tokens": 702
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.07908,
+ "ms": 17647,
+ "seconds": 18.0,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 4,
+   "listed": 8,
+   "share": 0.5,
+   "missing": [
+    "COMM125",
+    "CS102",
+    "CS170",
+    "ENGL156"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 13,
+   "codes": [
+    "CNET105",
+    "CNET120",
+    "CNET125",
+    "CNET135",
+    "CNET137",
+    "CNET142",
+    "CNET155B",
+    "CNET156C",
+    "CNET162",
+    "CNET170",
+    "CNET173",
+    "CNET174",
+    "CNET175"
+   ],
+   "flagged": [
+    "CNET105",
+    "CNET120",
+    "CNET125",
+    "CNET135",
+    "CNET137",
+    "CNET142",
+    "CNET155B",
+    "CNET156C",
+    "CNET162",
+    "CNET170",
+    "CNET173",
+    "CNET174",
+    "CNET175"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    28.0,
+    34.0
+   ],
+   "stated": [
+    28.0,
+    34.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [
+    "Setup, configure, maintain, and troubleshoot computer systems, stand-alone application, and/or various computer operating systems (client, server, and network).",
+    "Demonstrate appreciation of the ICT career field and the need to be lifelong learners."
+   ],
+   "why": [
+    "not in the catalog text as printed: Setup, configure, maintain, and troubleshoot computer systems, stand-alone appli",
+    "not in the catalog text as printed: Demonstrate appreciation of the ICT career field and the need to be lifelong lea"
+   ],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": false
+  },
+  "careers": {
+   "count": 9,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "SYSTEM ADMINISTRATION — Associate in Science in System Administration",
+   "measure": "units",
+   "total_units": {
+    "min": 28,
+    "max": 34
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Ohlone College or Cal-GETC General Education",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Setup, configure, maintain, and troubleshoot computer systems, stand-alone application, and/or various computer operating systems (client, server, and network).",
+    "Demonstrate appreciation of the ICT career field and the need to be lifelong learners.",
+    "Demonstrate the basic knowledge and skills of programming languages."
+   ],
+   "careers": [
+    "entry-level information and communication technologies (ICT) professional",
+    "system administrator",
+    "sysadmin",
+    "Storage (SAN) Administrator",
+    "database administrator",
+    "network administrator",
+    "Cybersecurity administrator",
+    "web administrator",
+    "network and computer systems administrators"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "MAJOR FIELD",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 16,
+     "max": 16
+    },
+    "courses": [
+     {
+      "code": "CNET-142",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CNET-146",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CNET-155A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CNET-162",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CNET-170",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "SYSTEM ADMINISTRATOR FOCUS",
+    "rule": "choose_units",
+    "minimum": 8,
+    "option_group": null,
+    "stated": {
+     "min": 8,
+     "max": 11
+    },
+    "courses": [
+     {
+      "code": "CNET-120",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CNET-125",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CNET-135",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CNET-137",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CNET-156C",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CNET-173",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CNET-174",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CNET-175",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "SUPPORTING COURSES",
+    "rule": "choose_units",
+    "minimum": 4,
+    "option_group": null,
+    "stated": {
+     "min": 4,
+     "max": 7
+    },
+    "courses": [
+     {
+      "code": "CNET-105",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CNET-108",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CNET-147",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CNET-155B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "COMM 125",
+    "why": "not in the text"
+   },
+   {
+    "code": "CS 102",
+    "why": "not in the text"
+   },
+   {
+    "code": "CS 170",
+    "why": "not in the text"
+   },
+   {
+    "code": "ENGL 156",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "The requested program is titled 'UNIX/Linux Systems Administrator Network Technology and Systems Administration' A.S., but the catalog page prints 'Associate in Science in System Administration'; this appears to be the renamed/restructured program and its course list differs substantially from the closed list (many CNET courses added; COMM 125, CS 102, CS 170, ENGL 156 absent). Reviewer should confirm this is the correct section.",
+   "The requirement 'Complete at least 60 degree-applicable units' is a general degree requirement, not recorded as degree_total.",
+   "Outcome 1 was hyphenated across a line break ('stand-/alone'); recorded as 'stand-alone'.",
+   "Theatre Arts for Transfer section following on the page was ignored."
+  ]
+ },
+ "extracted_run": "39061732843"
+}

@@ -1,0 +1,250 @@
+{
+ "college": "Ohlone College",
+ "control_number": "36096",
+ "shape": "degree",
+ "title": "American Sign Language and Deaf Studies",
+ "award": "A.A. Degree",
+ "source_url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=8",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7658,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7658,
+    "output_tokens": 1707,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1707,
+  "output_tokens_details": {
+   "thinking_tokens": 680
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.06477,
+ "ms": 13860,
+ "seconds": 14.2,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 12,
+   "listed": 12,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    31.0,
+    31.0
+   ],
+   "stated": [
+    31.0,
+    31.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [
+    "Demonstrate the ability to communicate effectively in ASL with multiculturally diverse members of the Deaf Community in all types of settings.",
+    "Apply knowledge and skills in ASL and Deaf culture to demonstrate critical thinking through understanding, advocacy, and advancement of issues that impact the lives of Deaf children and adults.",
+    "Utilize knowledge from Deaf Studies and the ability to communicate in ASL with multiculturally diverse members of the Deaf community at the level that will support employment in various professional and paraprofessional occupations in which ASL and knowledge in Deaf Studies is essential."
+   ],
+   "why": [
+    "not in the catalog text as printed: Demonstrate the ability to communicate effectively in ASL with multiculturally d",
+    "not in the catalog text as printed: Apply knowledge and skills in ASL and Deaf culture to demonstrate critical think",
+    "not in the catalog text as printed: Utilize knowledge from Deaf Studies and the ability to communicate in ASL with m"
+   ],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": false
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Associate in Arts in American Sign Language and Deaf Studies",
+   "measure": "units",
+   "total_units": {
+    "min": 31,
+    "max": 31
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Ohlone College or Cal-GETC General Education",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Demonstrate the ability to communicate effectively in ASL with multiculturally diverse members of the Deaf Community in all types of settings.",
+    "Apply knowledge and skills in ASL and Deaf culture to demonstrate critical thinking through understanding, advocacy, and advancement of issues that impact the lives of Deaf children and adults.",
+    "Utilize knowledge from Deaf Studies and the ability to communicate in ASL with multiculturally diverse members of the Deaf community at the level that will support employment in various professional and paraprofessional occupations in which ASL and knowledge in Deaf Studies is essential."
+   ],
+   "careers": [
+    "paraprofessional positions"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Major Field",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ASL-101",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ASL-102",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ASL-103",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ASL-104",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ASL-140",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ASL-142",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "DEAF-311",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ASL-145",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ASL-150",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "DEAF-312",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ASL-158",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ASL-160",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Catalog prints codes with a hyphen (ASL-101); matched to closed-list codes written with a space (ASL 101) and ASL145 (no space).",
+   "'Complete at least 60 degree-applicable units' is a general AA degree requirement, not recorded as a degree total.",
+   "Total Required Units: 31.0 is the Major Field total, recorded in total_units.",
+   "The following Animation and 3D Modeling certificate section was ignored."
+  ]
+ },
+ "extracted_run": "39061732843"
+}

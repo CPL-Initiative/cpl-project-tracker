@@ -1,0 +1,214 @@
+{
+ "college": "Ohlone College",
+ "control_number": "43042",
+ "shape": "certificate",
+ "title": "Deaf Education",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=24",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 9077,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 9077,
+    "output_tokens": 1207,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1207,
+  "output_tokens_details": {
+   "thinking_tokens": 353
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.06045,
+ "ms": 11455,
+ "seconds": 11.7,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 7,
+   "listed": 7,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    18.0,
+    18.0
+   ],
+   "stated": [
+    18.0,
+    18.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [
+    "List strengths and weaknesses of various communication methods currently used with deaf and hard-of-hearing children.",
+    "Compare and contrast differing philosophies regarding language options for use with deaf and hard-of-hearing children.",
+    "Identify educational placements for deaf and hard-of-hearing children and discuss advantages and disadvantages of each."
+   ],
+   "why": [
+    "not in the catalog text as printed: List strengths and weaknesses of various communication methods currently used wi",
+    "not in the catalog text as printed: Compare and contrast differing philosophies regarding language options for use w",
+    "not in the catalog text as printed: Identify educational placements for deaf and hard-of-hearing children and discus"
+   ],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": false
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Certificate of Achievement in Deaf Education",
+   "measure": "units",
+   "total_units": {
+    "min": 18,
+    "max": 18
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "List strengths and weaknesses of various communication methods currently used with deaf and hard-of-hearing children.",
+    "Compare and contrast differing philosophies regarding language options for use with deaf and hard-of-hearing children.",
+    "Identify educational placements for deaf and hard-of-hearing children and discuss advantages and disadvantages of each."
+   ],
+   "careers": [
+    "cottage counselor"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "MAJOR FIELD",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 18,
+     "max": 18
+    },
+    "courses": [
+     {
+      "code": "ASL-140",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "DEAF-330",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ASL-145",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DEAF-311",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DEAF-312",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DEAF-331",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DEAF-332",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Catalog prints codes with hyphens (ASL-140, ASL-145); the closed list stores 'ASL 140' and 'ASL145'. These were treated as the same courses, not catalog additions.",
+   "DEAF-330 is printed as an OR option to ASL-140, with its units in parentheses (3.0); recorded as an alternative.",
+   "The description says the certificate is awarded for completing 'all six courses', consistent with five required courses plus the ASL-140/DEAF-330 choice totaling 18.0 units.",
+   "The career 'cottage counselor' is named in the description as 'employment as a cottage counselor at a school for the deaf'.",
+   "The neighboring Deaf Education – Early Intervention Studies and Deaf-Centered Interpreting sections were not read for this record."
+  ]
+ },
+ "extracted_run": "39061732843"
+}

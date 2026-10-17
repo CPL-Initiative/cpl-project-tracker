@@ -1,0 +1,217 @@
+{
+ "college": "Ohlone College",
+ "control_number": "22207",
+ "shape": "certificate",
+ "title": "Entertainment Design & Technology: Audio",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=33",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 10106,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 10106,
+    "output_tokens": 1067,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1067,
+  "output_tokens_details": {
+   "thinking_tokens": 285
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.06176,
+ "ms": 9208,
+ "seconds": 9.5,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 6,
+   "listed": 6,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "MUS112A"
+   ],
+   "flagged": [
+    "MUS112A"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    17.0,
+    17.0
+   ],
+   "stated": [
+    17.0,
+    17.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [
+    "Demonstrate a basic knowledge of how sound systems work in a theatrical, live event, and television environment.",
+    "Demonstrate the basic knowledge of computerized audio software as it relates to recording, editing, and playback of audio tracks.",
+    "Demonstrate the basic knowledge of how sound is used in both live and pre-recorded productions."
+   ],
+   "why": [
+    "not in the catalog text as printed: Demonstrate a basic knowledge of how sound systems work in a theatrical, live ev",
+    "not in the catalog text as printed: Demonstrate the basic knowledge of computerized audio software as it relates to ",
+    "not in the catalog text as printed: Demonstrate the basic knowledge of how sound is used in both live and pre-record"
+   ],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": false
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Certificate of Achievement in Entertainment Design and Technology: Audio",
+   "measure": "units",
+   "total_units": {
+    "min": 17,
+    "max": 17
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Demonstrate a basic knowledge of how sound systems work in a theatrical, live event, and television environment.",
+    "Demonstrate the basic knowledge of computerized audio software as it relates to recording, editing, and playback of audio tracks.",
+    "Demonstrate the basic knowledge of how sound is used in both live and pre-recorded productions."
+   ],
+   "careers": [
+    "skilled audio technicians"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "MAJOR FIELD",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 17,
+     "max": 17
+    },
+    "courses": [
+     {
+      "code": "MUS-112A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MUS-112B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MUS-113",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "TD-152",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "TD-162",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "TD-170",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "TD-175",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The Audio section's heading is not printed in the excerpt (text starts mid-section on page 33 with the description); section_heading taken from the certificate name in the description.",
+   "Block stated total taken from 'Total Required Units: 17.0' for the Major Field list.",
+   "MUS-112A is printed in the Major Field but is not in the closed list; recorded as catalog addition.",
+   "Career entry 'skilled audio technicians' is from the description; industries listed (theme parks, motion pictures, concerts, etc.) were treated as employers' industries, not careers."
+  ]
+ },
+ "extracted_run": "39061732843"
+}

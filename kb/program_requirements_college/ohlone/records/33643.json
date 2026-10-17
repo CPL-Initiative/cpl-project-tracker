@@ -1,0 +1,342 @@
+{
+ "college": "Ohlone College",
+ "control_number": "33643",
+ "shape": "degree",
+ "title": "Information Technology",
+ "award": "A.S. Degree",
+ "source_url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=47",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 10966,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 10966,
+    "output_tokens": 1929,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1929,
+  "output_tokens_details": {
+   "thinking_tokens": 385
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.08244,
+ "ms": 14821,
+ "seconds": 15.1,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 17,
+   "listed": 17,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    35.0,
+    40.0
+   ],
+   "stated": [
+    35.0,
+    40.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 6,
+   "courses": 0,
+   "count": 6,
+   "not_verbatim": [
+    "Apply fundamental knowledge of computing and the current use of technology techniques, skills, and tools necessary for the computing practice.",
+    "Demonstrate the ability to locate, critically evaluate, and solve business problems with technology solutions using qualitative and quantitative information.",
+    "Demonstrate a fundamental ability to identify and analyze user needs in the selection, creation, evaluation, and administration of computer-based systems.",
+    "Provide information technology technical assistance to computer and network users.",
+    "Demonstrate a basic knowledge and skills of computer programming language.",
+    "Demonstrate broad understanding of Information Technology related knowledge in the area of Networking, Operating Systems, Cybersecurity, and Programming Languages."
+   ],
+   "why": [
+    "not in the catalog text as printed: Apply fundamental knowledge of computing and the current use of technology techn",
+    "not in the catalog text as printed: Demonstrate the ability to locate, critically evaluate, and solve business probl",
+    "not in the catalog text as printed: Demonstrate a fundamental ability to identify and analyze user needs in the sele",
+    "not in the catalog text as printed: Provide information technology technical assistance to computer and network user",
+    "not in the catalog text as printed: Demonstrate a basic knowledge and skills of computer programming language.",
+    "not in the catalog text as printed: Demonstrate broad understanding of Information Technology related knowledge in t"
+   ],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": false
+  },
+  "careers": {
+   "count": 3,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Associate in Science in Information Technology",
+   "measure": "units",
+   "total_units": {
+    "min": 35,
+    "max": 40
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Ohlone College or Cal-GETC General Education",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Apply fundamental knowledge of computing and the current use of technology techniques, skills, and tools necessary for the computing practice.",
+    "Demonstrate the ability to locate, critically evaluate, and solve business problems with technology solutions using qualitative and quantitative information.",
+    "Demonstrate a fundamental ability to identify and analyze user needs in the selection, creation, evaluation, and administration of computer-based systems.",
+    "Provide information technology technical assistance to computer and network users.",
+    "Demonstrate a basic knowledge and skills of computer programming language.",
+    "Demonstrate broad understanding of Information Technology related knowledge in the area of Networking, Operating Systems, Cybersecurity, and Programming Languages."
+   ],
+   "careers": [
+    "IT support technician",
+    "IT system administrator",
+    "Computer network technicians"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "MAJOR FIELD",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 20,
+     "max": 20
+    },
+    "courses": [
+     {
+      "code": "CNET-137",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CNET-142",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CNET-146",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CNET-155A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CNET-162",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CNET-170",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "ELECTIVE COURSES",
+    "rule": "choose_units",
+    "minimum": 6,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 9
+    },
+    "courses": [
+     {
+      "code": "CNET-105",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CNET-108",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CNET-135",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CNET-155B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CNET-173",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CNET-174",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CNET-175",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "SUPPORTING COURSES",
+    "rule": "choose_units",
+    "minimum": 9,
+    "option_group": null,
+    "stated": {
+     "min": 9,
+     "max": 11
+    },
+    "courses": [
+     {
+      "code": "CNET-103",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CNET-105",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CNET-108",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CNET-120",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CNET-132",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CNET-135",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CNET-156C",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "CNET-105, CNET-108 and CNET-135 appear in both Elective Courses and Supporting Courses; the catalog says a course cannot count toward both blocks.",
+   "The requirement 'Complete at least 60 degree-applicable units' is a general degree rule, not recorded as a printed degree total.",
+   "Careers taken from the program description: 'IT support technician or IT system administrator' and the description of 'Computer network technicians'."
+  ]
+ },
+ "extracted_run": "39061732843"
+}

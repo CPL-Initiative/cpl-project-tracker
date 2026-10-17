@@ -1,0 +1,304 @@
+{
+ "college": "Ohlone College",
+ "control_number": "18802",
+ "shape": "degree",
+ "title": "Biotechnology",
+ "award": "A.S. Degree",
+ "source_url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=13",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 11619,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 11619,
+    "output_tokens": 2074,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2074,
+  "output_tokens_details": {
+   "thinking_tokens": 620
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.08796,
+ "ms": 16169,
+ "seconds": 16.5,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 19,
+   "listed": 19,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    33.5,
+    33.5
+   ],
+   "stated": [
+    33.5,
+    33.5
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [
+    "Apply industrial standards in recording laboratory procedures and results in a laboratory notebook.",
+    "Demonstrate the use of common laboratory equipment such as micropipettes, spectrophotometers, electrophoresis equipment, pH meters, thermocyclers, bioreactors, etc.",
+    "Employ the correct mathematical rules of operation, and be able to apply these to the preparation of reagents, buffers, pH adjustments, etc.",
+    "Demonstrate an understanding of key concepts in molecular biology and biotechnology as they relate to the biotechnology industry."
+   ],
+   "why": [
+    "not in the catalog text as printed: Apply industrial standards in recording laboratory procedures and results in a l",
+    "not in the catalog text as printed: Demonstrate the use of common laboratory equipment such as micropipettes, spectr",
+    "not in the catalog text as printed: Employ the correct mathematical rules of operation, and be able to apply these t",
+    "not in the catalog text as printed: Demonstrate an understanding of key concepts in molecular biology and biotechnol"
+   ],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": false
+  },
+  "careers": {
+   "count": 3,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Associate in Science in Biotechnology",
+   "measure": "units",
+   "total_units": {
+    "min": 33.5,
+    "max": 33.5
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Ohlone College or Cal-GETC General Education",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Apply industrial standards in recording laboratory procedures and results in a laboratory notebook.",
+    "Demonstrate the use of common laboratory equipment such as micropipettes, spectrophotometers, electrophoresis equipment, pH meters, thermocyclers, bioreactors, etc.",
+    "Employ the correct mathematical rules of operation, and be able to apply these to the preparation of reagents, buffers, pH adjustments, etc.",
+    "Practice proper laboratory safety.",
+    "Demonstrate an understanding of key concepts in molecular biology and biotechnology as they relate to the biotechnology industry."
+   ],
+   "careers": [
+    "laboratory assistants",
+    "biological technicians",
+    "biomanufacturing technicians"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Major Field",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 33.5,
+     "max": 33.5
+    },
+    "courses": [
+     {
+      "code": "BIOT-101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BIOT-114",
+        "units": 3,
+        "catalog_addition": false
+       },
+       {
+        "code": "BIOT-118",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOT-104A",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOT-105",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOT-110A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOT-111A",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOT-111B",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOT-112",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOT-113",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOT-115A",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOT-115B",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOT-117",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOT-119",
+      "units": 0.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOT-121",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CAOT-148",
+      "units": 0.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM-109",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL-156",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "STAT-C1000",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "BIOT-101, BIOT-114 and BIOT-118 are printed as 'OR' rows (3.0, (3.0), (3.0)); recorded as one required choice with BIOT-114 and BIOT-118 as alternatives. Course units sum to the printed 33.5 total with one of the three counted.",
+   "'Complete at least 60 degree-applicable units' is the generic associate degree requirement, not printed as this award's total; degree_total left null.",
+   "GE pattern stated as 'Ohlone College or Cal-GETC General Education requirements'; no GE units printed.",
+   "The certificates of achievement (Bio-Manufacturing, Biostatistics, Research Associate, Operations) on the following pages were not read for this record."
+  ]
+ },
+ "extracted_run": "39061732843"
+}

@@ -1,0 +1,226 @@
+{
+ "college": "Ohlone College",
+ "control_number": "22213",
+ "shape": "certificate",
+ "title": "Graphic Design",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=43",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6611,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6611,
+    "output_tokens": 1205,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1205,
+  "output_tokens_details": {
+   "thinking_tokens": 369
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.05054,
+ "ms": 10247,
+ "seconds": 10.6,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 8,
+   "listed": 8,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    21.0,
+    21.0
+   ],
+   "stated": [
+    21.0,
+    21.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [
+    "Employ skills and processes required for working in print and interactive design.",
+    "Demonstrate skill with a variety of graphic design techniques, both analog and digital.",
+    "Utilize problem solving techniques in developing creative graphic designs solutions that include design thinking, prototyping, and research.",
+    "Demonstrate effective development, interpretation, and expression of ideas through written, oral, and/or visual communication.",
+    "Understand and consider diverse artistic expressions and communicate effectively in a team environment."
+   ],
+   "why": [
+    "not in the catalog text as printed: Employ skills and processes required for working in print and interactive design",
+    "not in the catalog text as printed: Demonstrate skill with a variety of graphic design techniques, both analog and d",
+    "not in the catalog text as printed: Utilize problem solving techniques in developing creative graphic designs soluti",
+    "not in the catalog text as printed: Demonstrate effective development, interpretation, and expression of ideas throu",
+    "not in the catalog text as printed: Understand and consider diverse artistic expressions and communicate effectively"
+   ],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": false
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Certificate of Achievement in Graphic Design",
+   "measure": "units",
+   "total_units": {
+    "min": 21,
+    "max": 21
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Employ skills and processes required for working in print and interactive design.",
+    "Demonstrate skill with a variety of graphic design techniques, both analog and digital.",
+    "Utilize problem solving techniques in developing creative graphic designs solutions that include design thinking, prototyping, and research.",
+    "Demonstrate effective development, interpretation, and expression of ideas through written, oral, and/or visual communication.",
+    "Understand and consider diverse artistic expressions and communicate effectively in a team environment."
+   ],
+   "careers": [
+    "graphic design field"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "MAJOR FIELD",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ART-106A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DAID-104B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DAID-105A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DAID-130A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "DAID-130B",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "DAID-132A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DAID-133A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DAID-139A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Catalog prints codes with a hyphen (e.g., ART-106A); these match closed-list codes written with a space.",
+   "DAID-130A and DAID-130B are printed as an OR choice; DAID-130B's units are printed in parentheses (3.0) as the alternative.",
+   "Total Required Units: 21.0 is printed under the Major Field table and recorded as total_units.",
+   "Certificate also requires at least six units at Ohlone College and a 2.0 GPA in Major Field courses."
+  ]
+ },
+ "extracted_run": "39061732843"
+}

@@ -1,0 +1,6000 @@
+[
+ {
+  "control_number": "01244",
+  "title": "Accounting",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "01245",
+  "title": "Business Supervision/Management",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 10,
+  "text_chars": 0
+ },
+ {
+  "control_number": "01248",
+  "title": "Real Estate Sales Agent/Broker",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.9,
+  "codes_found": [
+   "BA101A",
+   "BA123",
+   "BA141A",
+   "RE121",
+   "RE122",
+   "RE124",
+   "RE126",
+   "RE128",
+   "RE149"
+  ],
+  "source": {
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=66",
+   "title": "Associate in Arts in Real Estate Sales Agent/Broker",
+   "h1": "Associate in Arts in Real Estate Sales Agent/Broker",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    66
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 10,
+  "text_chars": 6694
+ },
+ {
+  "control_number": "01249",
+  "title": "Administrative Assistant",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "01250",
+  "title": "Journalism",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.714,
+  "codes_found": [
+   "BA125",
+   "BRDC155",
+   "JOUR101A",
+   "JOUR155",
+   "JOUR172"
+  ],
+  "source": {
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=87",
+   "title": "148                                                                                                                     ",
+   "h1": "148                                                                                                                     ",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    87,
+    88,
+    89
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 7,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "01251",
+  "title": "Broadcasting",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "01254",
+  "title": "Computer Studies",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 8,
+  "text_chars": 0
+ },
+ {
+  "control_number": "01255",
+  "title": "Deaf-Centered Interpreting",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "INT106",
+   "INT107",
+   "INT112",
+   "INT115",
+   "INT116",
+   "INT127",
+   "INT145",
+   "INT190",
+   "INT191",
+   "INT193",
+   "INT197",
+   "INT198",
+   "INT227",
+   "INT245",
+   "INT253",
+   "INT263",
+   "INT295",
+   "INT299"
+  ],
+  "source": {
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=25",
+   "title": "86                                                                                                                      ",
+   "h1": "86                                                                                                                      ",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    25,
+    26
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 18,
+  "text_chars": 14882
+ },
+ {
+  "control_number": "01265",
+  "title": "Interior Design",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 11,
+  "text_chars": 0
+ },
+ {
+  "control_number": "01267",
+  "title": "Graphic and Interactive Design",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART104A",
+   "ART104C",
+   "ART133A",
+   "ART138A",
+   "ART139A",
+   "DAID100",
+   "DAID104A",
+   "DAID104B",
+   "DAID105A",
+   "DAID105B",
+   "DAID107",
+   "DAID112",
+   "DAID130A",
+   "DAID132A",
+   "DAID133A",
+   "DAID159"
+  ],
+  "source": {
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=43",
+   "title": "Associate in Arts in Graphic and Interactive Design",
+   "h1": "Associate in Arts in Graphic and Interactive Design",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    43
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 16,
+  "text_chars": 6123
+ },
+ {
+  "control_number": "01271",
+  "title": "Registered Nurse",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL103A",
+   "BIOL103B",
+   "BIOL106",
+   "COMM113",
+   "COMMC1000",
+   "ENGLC1000",
+   "HLTH109",
+   "NUR301A",
+   "NUR301B",
+   "NUR303",
+   "NUR304",
+   "NUR306",
+   "NUR307A",
+   "NUR307B",
+   "PSYC108",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=67",
+   "title": "128                                                                                                                     ",
+   "h1": "128                                                                                                                     ",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    67,
+    68,
+    69,
+    70
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 16,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "01273",
+  "title": "Respiratory Therapist",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL103A",
+   "BIOL103B",
+   "BIOL106",
+   "BIOL111",
+   "BIOL112",
+   "CHEM102",
+   "CHEM109",
+   "ENGLC1000",
+   "PSYC108",
+   "RT220",
+   "RT222",
+   "RT223",
+   "RT225",
+   "RT251",
+   "RT252",
+   "RT258",
+   "RT265",
+   "RT270",
+   "RT275",
+   "RT297",
+   "RT298",
+   "RT302",
+   "RT303",
+   "RT323",
+   "RT330",
+   "RT340",
+   "RT360",
+   "RT370",
+   "RT380",
+   "RT385",
+   "RT399",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=68",
+   "title": "Associate in Science in Respiratory Therapist",
+   "h1": "Associate in Science in Respiratory Therapist",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    68,
+    69,
+    70,
+    71
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 32,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "01285",
+  "title": "Administration of Justice",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.5,
+  "codes_found": [
+   "AJ101",
+   "AJ102",
+   "AJ104",
+   "AJ106",
+   "AJ107",
+   "AJ117",
+   "AJ118",
+   "AJ131",
+   "PSYCC1000",
+   "SOC101"
+  ],
+  "source": {
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=6",
+   "title": "2026-2027 OHLONE COLLEGE CATALOG                                                                                        ",
+   "h1": "2026-2027 OHLONE COLLEGE CATALOG                                                                                        ",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    6
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 20,
+  "text_chars": 5609
+ },
+ {
+  "control_number": "01286",
+  "title": "Early Childhood Studies",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ECS300",
+   "ECS301",
+   "ECS302",
+   "ECS303",
+   "ECS304",
+   "ECS305",
+   "ECS306",
+   "ECS307A4",
+   "ECS309"
+  ],
+  "source": {
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=29",
+   "title": "Associate in Arts in Early Childhood Studies",
+   "h1": "Associate in Arts in Early Childhood Studies",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    29
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 9,
+  "text_chars": 6676
+ },
+ {
+  "control_number": "08336",
+  "title": "Physical Therapist Assistant",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL103A",
+   "BIOL103B",
+   "BIOL104",
+   "BIOL111",
+   "BIOL112",
+   "PSYC108",
+   "PTA101",
+   "PTA102",
+   "PTA103",
+   "PTA104",
+   "PTA105A",
+   "PTA105B",
+   "PTA106",
+   "PTA108",
+   "PTA109",
+   "PTA110A",
+   "PTA110B",
+   "PTA140",
+   "PTA301",
+   "PTA302",
+   "PTA303"
+  ],
+  "source": {
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=61",
+   "title": "Associate in Science in Physical Therapist Assistant",
+   "h1": "Associate in Science in Physical Therapist Assistant",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    61
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 21,
+  "text_chars": 5748
+ },
+ {
+  "control_number": "08524",
+  "title": "Fine Arts",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 72,
+  "text_chars": 0
+ },
+ {
+  "control_number": "10401",
+  "title": "Digital Arts and Interactive Design",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART106A",
+   "ART139A",
+   "DAID103",
+   "DAID104A",
+   "DAID104B",
+   "DAID105A",
+   "DAID105B",
+   "DAID107",
+   "DAID111",
+   "DAID112",
+   "DAID113",
+   "DAID114",
+   "DAID115",
+   "DAID118",
+   "DAID119",
+   "DAID122",
+   "DAID123",
+   "DAID124",
+   "DAID125",
+   "DAID127",
+   "DAID130A",
+   "DAID132A",
+   "DAID133A",
+   "DAID159",
+   "DAID160"
+  ],
+  "source": {
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=26",
+   "title": "2026-2027 OHLONE COLLEGE CATALOG                                                                                        ",
+   "h1": "2026-2027 OHLONE COLLEGE CATALOG                                                                                        ",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    26,
+    27
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 25,
+  "text_chars": 15332
+ },
+ {
+  "control_number": "11810",
+  "title": "UNIX/Linux Systems Administrator Network Technology and Systems Administration",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.5,
+  "codes_found": [
+   "CNET108",
+   "CNET146",
+   "CNET147",
+   "CNET155A"
+  ],
+  "source": {
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=75",
+   "title": "136                                                                                                                     ",
+   "h1": "136                                                                                                                     ",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    75
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 8,
+  "text_chars": 8238
+ },
+ {
+  "control_number": "12148",
+  "title": "Network Administrator",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CNET105",
+   "CNET107",
+   "CNET108",
+   "CNET120",
+   "CNET135",
+   "CNET137",
+   "CNET142",
+   "CNET146",
+   "CNET155A",
+   "CNET155B",
+   "CNET156C",
+   "CNET162",
+   "CNET170",
+   "CNET173",
+   "CNET174",
+   "CNET175",
+   "WEX185A1",
+   "WEX185A2"
+  ],
+  "source": {
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=59",
+   "title": "Associate in Science in Network Administrator",
+   "h1": "Associate in Science in Network Administrator",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    59
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 18,
+  "text_chars": 7238
+ },
+ {
+  "control_number": "12149",
+  "title": "IT Service and Support",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CNET105",
+   "CNET107",
+   "CNET108",
+   "CNET120",
+   "CNET125",
+   "CNET142",
+   "CNET146",
+   "CNET155A",
+   "CNET155B",
+   "CNET162",
+   "CNET170"
+  ],
+  "source": {
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=48",
+   "title": "2026-2027 OHLONE COLLEGE CATALOG                                                                                        ",
+   "h1": "2026-2027 OHLONE COLLEGE CATALOG                                                                                        ",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    48,
+    49
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 11,
+  "text_chars": 13501
+ },
+ {
+  "control_number": "12549",
+  "title": "Entertainment Design & Technology",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "12550",
+  "title": "Entertainment Design & Technology: Stage Craft",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "12551",
+  "title": "Entertainment Design & Technology: Costuming",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "12552",
+  "title": "Entertainment Design & Technology: Theatrical & TV Lighting",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "12553",
+  "title": "Entertainment Design & Technology: Moving Light Technician",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "12554",
+  "title": "Entertainment Design & Technology: Audio Technician",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "12555",
+  "title": "Entertainment Design and Technology",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "TD102",
+   "TD109",
+   "TD150",
+   "TD152",
+   "TD155A",
+   "TD156",
+   "TD158",
+   "TD161",
+   "TD170",
+   "TD171",
+   "TD172",
+   "TD173",
+   "TD174",
+   "TD175",
+   "TD178",
+   "TD179"
+  ],
+  "source": {
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=32",
+   "title": "Associate in Arts in Entertainment Design and Technology",
+   "h1": "Associate in Arts in Entertainment Design and Technology",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    32,
+    33,
+    34
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 16,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "13256",
+  "title": "Biology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL101A",
+   "BIOL101B",
+   "CHEM101A",
+   "CHEM101B",
+   "CHEM112A",
+   "CHEM112B",
+   "MATH101A",
+   "PHYS120",
+   "PHYS121"
+  ],
+  "source": {
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=12",
+   "title": "Associate in Science in Biology",
+   "h1": "Associate in Science in Biology",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    12
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 9,
+  "text_chars": 3447
+ },
+ {
+  "control_number": "14968",
+  "title": "Communication Studies",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "COMM100",
+   "COMM112",
+   "COMM113",
+   "COMM114",
+   "COMM115",
+   "COMM116",
+   "COMM117",
+   "COMM118",
+   "COMM122",
+   "COMM125",
+   "COMM126",
+   "COMM127",
+   "COMM134",
+   "COMM190A",
+   "COMM190B",
+   "COMM190C",
+   "COMM191A1",
+   "COMM191A2",
+   "COMM191A3",
+   "COMM192A1",
+   "COMM192A2",
+   "COMM192A3",
+   "COMM193",
+   "COMMC1000"
+  ],
+  "source": {
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=20",
+   "title": "Associate in Arts in Communication Studies",
+   "h1": "Associate in Arts in Communication Studies",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    20
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 24,
+  "text_chars": 7146
+ },
+ {
+  "control_number": "15175",
+  "title": "Engineering",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "15176",
+  "title": "Physics",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "15177",
+  "title": "Chemistry",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "15178",
+  "title": "Mathematics",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "15179",
+  "title": "Geology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "15545",
+  "title": "Computer Science",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "15551",
+  "title": "Music",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.743,
+  "codes_found": [
+   "MUS102",
+   "MUS104",
+   "MUS110A",
+   "MUS110B",
+   "MUS110C",
+   "MUS110D",
+   "MUS111A",
+   "MUS111C",
+   "MUS112A",
+   "MUS112B",
+   "MUS113",
+   "MUS121",
+   "MUS125",
+   "MUS160A",
+   "MUS160C",
+   "MUS160D",
+   "MUS162A",
+   "MUS162B",
+   "MUS162C",
+   "MUS162D",
+   "MUS166A",
+   "MUS352",
+   "MUS355",
+   "MUS356",
+   "MUS380",
+   "MUS381"
+  ],
+  "source": {
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=55",
+   "title": "116                                                                                                                     ",
+   "h1": "116                                                                                                                     ",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    55,
+    56
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 37,
+  "text_chars": 15895
+ },
+ {
+  "control_number": "15887",
+  "title": "Art",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART104A",
+   "ART104B",
+   "ART104C",
+   "ART106A",
+   "ART106B",
+   "ART107A",
+   "ART108",
+   "ART111A",
+   "ART112",
+   "ART114",
+   "ART116A",
+   "ART117A",
+   "ART121A",
+   "ART127",
+   "ART133A",
+   "ART139A",
+   "ARTH103C",
+   "ARTH103D",
+   "ARTH103E",
+   "ARTHC1100",
+   "ARTHC1200"
+  ],
+  "source": {
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=10",
+   "title": "Associate in Arts in Art",
+   "h1": "Associate in Arts in Art",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    10,
+    11
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 21,
+  "text_chars": 15456
+ },
+ {
+  "control_number": "16631",
+  "title": "Kinesiology: Athletic Training",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 10,
+  "text_chars": 0
+ },
+ {
+  "control_number": "16655",
+  "title": "Business Administration",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "16663",
+  "title": "English",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.885,
+  "codes_found": [
+   "ENGL104",
+   "ENGL106",
+   "ENGL107",
+   "ENGL109",
+   "ENGL111A",
+   "ENGL111B",
+   "ENGL112",
+   "ENGL113",
+   "ENGL114",
+   "ENGL115",
+   "ENGL118",
+   "ENGL120A",
+   "ENGL120B",
+   "ENGL121",
+   "ENGL125A",
+   "ENGL125B",
+   "ENGL127",
+   "ENGL130",
+   "ENGL131",
+   "ENGL141",
+   "ENGLC1000",
+   "ENGLC1001",
+   "ENGLC1002"
+  ],
+  "source": {
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=31",
+   "title": "92                                                                                                                      ",
+   "h1": "92                                                                                                                      ",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    31,
+    32
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 26,
+  "text_chars": 14375
+ },
+ {
+  "control_number": "16763",
+  "title": "Administrative Assistant with Supervisory Focus",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 11,
+  "text_chars": 0
+ },
+ {
+  "control_number": "16823",
+  "title": "Computer Engineering",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "18032",
+  "title": "Business",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BA101A",
+   "BA101B",
+   "BA125",
+   "BA141A",
+   "CS101",
+   "ECONC2001",
+   "ECONC2002",
+   "MATH101A",
+   "MATH101B",
+   "MATH167",
+   "PHIL106",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=15",
+   "title": "Associate in Arts in Business",
+   "h1": "Associate in Arts in Business",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    15,
+    16
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 12,
+  "text_chars": 11891
+ },
+ {
+  "control_number": "18034",
+  "title": "Liberal Arts: Humanities Emphasis",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ARTH103C",
+   "ARTH103D",
+   "ARTH103E",
+   "ARTHC1100",
+   "ARTHC1200",
+   "CHS102A",
+   "CHS102B",
+   "ETHN114A",
+   "ETHN114B",
+   "ETHN115",
+   "ETHN116",
+   "ETHN117",
+   "HIST102A",
+   "HIST102B",
+   "HIST104A",
+   "HIST104B",
+   "HIST106A",
+   "HIST106B",
+   "HIST107",
+   "HIST114A",
+   "HIST114B",
+   "HIST115",
+   "HIST119A",
+   "HIST119B",
+   "HIST141",
+   "HIST142",
+   "HIST143",
+   "PHIL100",
+   "PHIL101",
+   "PHIL102",
+   "PHIL104",
+   "PHIL106",
+   "PHIL107",
+   "PHIL114"
+  ],
+  "source": {
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=52",
+   "title": "2026-2027 OHLONE COLLEGE CATALOG                                                                                        ",
+   "h1": "2026-2027 OHLONE COLLEGE CATALOG                                                                                        ",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    52
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 34,
+  "text_chars": 7141
+ },
+ {
+  "control_number": "18035",
+  "title": "Liberal Arts: Language Emphasis",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 38,
+  "text_chars": 0
+ },
+ {
+  "control_number": "18036",
+  "title": "Liberal Arts: Communication Emphasis",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "COMM100",
+   "COMM112",
+   "COMM113",
+   "COMM114",
+   "COMM115",
+   "COMM116",
+   "COMM117",
+   "COMM118",
+   "COMM122",
+   "COMM125",
+   "COMM126",
+   "COMM127",
+   "COMM134",
+   "COMM190A",
+   "COMM190B",
+   "COMM190C",
+   "COMM191A1",
+   "COMM191A2",
+   "COMM191A3",
+   "COMM192A1",
+   "COMM192A2",
+   "COMM192A3",
+   "COMM193",
+   "COMMC1000"
+  ],
+  "source": {
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=51",
+   "title": "Associate in Arts in Liberal Arts: Communication Emphasis",
+   "h1": "Associate in Arts in Liberal Arts: Communication Emphasis",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    51
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 24,
+  "text_chars": 8066
+ },
+ {
+  "control_number": "18037",
+  "title": "Natural Science: Biological Science",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTH101",
+   "BIOL101B",
+   "BIOL103A",
+   "BIOL103B",
+   "BIOL104",
+   "BIOL105",
+   "BIOL106",
+   "BIOL109",
+   "BIOL130",
+   "BIOL141",
+   "BIOT114",
+   "ENVS108",
+   "ENVS142"
+  ],
+  "source": {
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=56",
+   "title": "Associate in Arts in Natural Science: Biological Science Emphasis",
+   "h1": "Associate in Arts in Natural Science: Biological Science Emphasis",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    56
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 13,
+  "text_chars": 4963
+ },
+ {
+  "control_number": "18038",
+  "title": "Natural Science: Physical Science",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 23,
+  "text_chars": 0
+ },
+ {
+  "control_number": "18039",
+  "title": "Natural Science:  Mathematics and Technology",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CNET105",
+   "CNET155A",
+   "CNET155B",
+   "CNET170",
+   "CS101",
+   "CS102",
+   "DAID105A",
+   "ENGI111",
+   "ENGI114",
+   "ENGI135",
+   "MATH100",
+   "MATH101A",
+   "MATH101B",
+   "MATH101C",
+   "MATH103",
+   "MATH104",
+   "MATH167",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=57",
+   "title": "118                                                                                                                     ",
+   "h1": "118                                                                                                                     ",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    57,
+    58,
+    59,
+    60
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 18,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "18040",
+  "title": "Social Science",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "AJ101",
+   "AJ102",
+   "AJ104",
+   "AJ106",
+   "AJ107",
+   "AJ117",
+   "AJ118",
+   "AJ131",
+   "ANTH101",
+   "ANTH102",
+   "ANTH104",
+   "ANTH106",
+   "ANTH108",
+   "CHS101",
+   "CHS102A",
+   "CHS102B",
+   "CHS112",
+   "ECONC2001",
+   "ECONC2002",
+   "ENVS103",
+   "ENVS107",
+   "ENVS112",
+   "ENVS113",
+   "ETHN100",
+   "ETHN105",
+   "ETHN114A",
+   "ETHN114B",
+   "ETHN115",
+   "ETHN116",
+   "ETHN117",
+   "GEOG102",
+   "GEOG104",
+   "GEOG105",
+   "GEOG106",
+   "GEOG107",
+   "GEOG108",
+   "HIST102A",
+   "HIST102B",
+   "HIST104A",
+   "HIST104B",
+   "HIST105",
+   "HIST106A",
+   "HIST106B",
+   "HIST109",
+   "HIST110",
+   "HIST113",
+   "HIST114A",
+   "HIST114B",
+   "HIST115",
+   "HIST116",
+   "HIST118",
+   "HIST119A",
+   "HIST119B",
+   "HISTC1001",
+   "HISTC1002",
+   "POLS103",
+   "POLS104",
+   "POLS105",
+   "POLS106",
+   "POLS107",
+   "POLSC1000",
+   "PSYC102",
+   "PSYC105",
+   "PSYC106",
+   "PSYC108",
+   "PSYC112",
+   "PSYC115",
+   "PSYC120",
+   "PSYC139",
+   "PSYCC1000",
+   "SOC101",
+   "SOC102",
+   "SOC105",
+   "SOC106",
+   "SOC108",
+   "WS101",
+   "WS150"
+  ],
+  "source": {
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=71",
+   "title": "Associate in Arts in Social Science",
+   "h1": "Associate in Arts in Social Science",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    71,
+    72,
+    73
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 77,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "18760",
+  "title": "Environmental Studies",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ENVS103",
+   "ENVS105",
+   "ENVS107",
+   "ENVS108",
+   "ENVS109",
+   "ENVS110",
+   "ENVS112",
+   "ENVS113",
+   "ENVS142",
+   "GEOG101",
+   "GEOG106"
+  ],
+  "source": {
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=36",
+   "title": "Associate in Arts in Environmental Studies",
+   "h1": "Associate in Arts in Environmental Studies",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    36
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 11,
+  "text_chars": 5642
+ },
+ {
+  "control_number": "18761",
+  "title": "Environmental Science",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "18802",
+  "title": "Biotechnology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOT101",
+   "BIOT104A",
+   "BIOT105",
+   "BIOT110A",
+   "BIOT111A",
+   "BIOT111B",
+   "BIOT112",
+   "BIOT113",
+   "BIOT114",
+   "BIOT115A",
+   "BIOT115B",
+   "BIOT117",
+   "BIOT118",
+   "BIOT119",
+   "BIOT121",
+   "CAOT148",
+   "CHEM109",
+   "ENGL156",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=13",
+   "title": "Associate in Science in Biotechnology",
+   "h1": "Associate in Science in Biotechnology",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    13,
+    14,
+    15,
+    16
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 19,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "18803",
+  "title": "Biotechnology: Cell Production/Fermentation",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "18804",
+  "title": "Biotechnology: Biotechnology Research Associate",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOT101",
+   "BIOT105",
+   "BIOT110A",
+   "BIOT111A",
+   "BIOT111B",
+   "BIOT113",
+   "BIOT115A",
+   "BIOT117",
+   "BIOT121",
+   "CAOT148",
+   "CHEM109",
+   "ENGL156"
+  ],
+  "source": {
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=13",
+   "title": "74                                                                                                                      ",
+   "h1": "74                                                                                                                      ",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    13,
+    14,
+    15
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 12,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "18805",
+  "title": "Biotechnology: Biostatistics",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOT105",
+   "BIOT110A",
+   "BIOT112",
+   "BIOT113",
+   "BIOT115A",
+   "BIOT115B",
+   "BIOT119",
+   "BIOT121",
+   "CAOT148",
+   "CHEM109",
+   "ENGL156",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=14",
+   "title": "Certificate of Achievement in Biotechnology: Biostatistics",
+   "h1": "Certificate of Achievement in Biotechnology: Biostatistics",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    14,
+    15,
+    16
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 12,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "18806",
+  "title": "Biotechnology: Bio-manufacturing",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOT105",
+   "BIOT110A",
+   "BIOT113",
+   "BIOT115A",
+   "BIOT115B",
+   "BIOT119",
+   "BIOT121",
+   "CAOT148",
+   "CHEM109"
+  ],
+  "source": {
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=13",
+   "title": "Certificate of Achievement in Biotechnology: Bio-Manufacturing",
+   "h1": "Certificate of Achievement in Biotechnology: Bio-Manufacturing",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    13,
+    14,
+    15
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 9,
+  "text_chars": 15299
+ },
+ {
+  "control_number": "22192",
+  "title": "Administrative Assistant with Supervisory Focus",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 6,
+  "text_chars": 0
+ },
+ {
+  "control_number": "22193",
+  "title": "Business Supervision/Management",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 10,
+  "text_chars": 0
+ },
+ {
+  "control_number": "22194",
+  "title": "Real Estate Sales Agent/Broker Associate",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 0.8,
+  "codes_found": [
+   "BA101A",
+   "RE121",
+   "RE122",
+   "RE124"
+  ],
+  "source": {
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=66",
+   "title": "2026-2027 OHLONE COLLEGE CATALOG                                                                                        ",
+   "h1": "2026-2027 OHLONE COLLEGE CATALOG                                                                                        ",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    66
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 5,
+  "text_chars": 7197
+ },
+ {
+  "control_number": "22195",
+  "title": "Journalism",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 0.714,
+  "codes_found": [
+   "BA125",
+   "BRDC155",
+   "JOUR101A",
+   "JOUR155",
+   "JOUR172"
+  ],
+  "source": {
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=87",
+   "title": "Certificate of Accomplishment in Journalism",
+   "h1": "Certificate of Accomplishment in Journalism",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    87,
+    88,
+    89
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 7,
+  "text_chars": 13884
+ },
+ {
+  "control_number": "22196",
+  "title": "Broadcasting",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "22197",
+  "title": "Digital Arts and Interactive Design",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART106A",
+   "DAID103",
+   "DAID104B",
+   "DAID105A",
+   "DAID111",
+   "DAID112",
+   "DAID115",
+   "DAID160"
+  ],
+  "source": {
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=26",
+   "title": "Certificate of Achievement in Digital Arts and Interactive Design",
+   "h1": "Certificate of Achievement in Digital Arts and Interactive Design",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    26,
+    27
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 8,
+  "text_chars": 11573
+ },
+ {
+  "control_number": "22198",
+  "title": "Computer Studies",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 8,
+  "text_chars": 0
+ },
+ {
+  "control_number": "22199",
+  "title": "UNIX/Linux Systems Administrator",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 0.5,
+  "codes_found": [
+   "CNET108",
+   "CNET146",
+   "CNET147",
+   "CNET155A"
+  ],
+  "source": {
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=75",
+   "title": "136                                                                                                                     ",
+   "h1": "136                                                                                                                     ",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    75
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 8,
+  "text_chars": 8238
+ },
+ {
+  "control_number": "22202",
+  "title": "Network Administrator",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CNET142",
+   "CNET146",
+   "CNET155A",
+   "CNET155B",
+   "CNET156C",
+   "CNET162",
+   "CNET170"
+  ],
+  "source": {
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=58",
+   "title": "Certificate of Achievement in Network Administrator",
+   "h1": "Certificate of Achievement in Network Administrator",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    58,
+    59
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 7,
+  "text_chars": 10697
+ },
+ {
+  "control_number": "22203",
+  "title": "IT Service and Support",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CNET105",
+   "CNET108",
+   "CNET120",
+   "CNET142",
+   "CNET146",
+   "CNET147",
+   "CNET155A",
+   "CNET155B",
+   "CNET162",
+   "CNET170"
+  ],
+  "source": {
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=48",
+   "title": "Certificate of Achievement in IT Service and Support",
+   "h1": "Certificate of Achievement in IT Service and Support",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    48,
+    49
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 10,
+  "text_chars": 13006
+ },
+ {
+  "control_number": "22204",
+  "title": "Technical Support Specialist",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 6,
+  "text_chars": 0
+ },
+ {
+  "control_number": "22205",
+  "title": "American Sign Language & Deaf Studies",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ASL101",
+   "ASL102",
+   "ASL103",
+   "ASL104",
+   "ASL140",
+   "ASL142",
+   "ASL145",
+   "ASL150",
+   "ASL158",
+   "ASL160",
+   "DEAF311",
+   "DEAF312"
+  ],
+  "source": {
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=8",
+   "title": "2026-2027 OHLONE COLLEGE CATALOG                                                                                        ",
+   "h1": "2026-2027 OHLONE COLLEGE CATALOG                                                                                        ",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    8
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 12,
+  "text_chars": 7172
+ },
+ {
+  "control_number": "22206",
+  "title": "Deaf-Centered Interpreting",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "INT106",
+   "INT107",
+   "INT112",
+   "INT115",
+   "INT116",
+   "INT127",
+   "INT145",
+   "INT190",
+   "INT191",
+   "INT193",
+   "INT197",
+   "INT198",
+   "INT227",
+   "INT245",
+   "INT253",
+   "INT263",
+   "INT295",
+   "INT299"
+  ],
+  "source": {
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=25",
+   "title": "Certificate of Achievement in Deaf-Centered Interpreting",
+   "h1": "Certificate of Achievement in Deaf-Centered Interpreting",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    25,
+    26
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 18,
+  "text_chars": 11859
+ },
+ {
+  "control_number": "22207",
+  "title": "Entertainment Design & Technology: Audio",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "MUS112B",
+   "MUS113",
+   "TD152",
+   "TD162",
+   "TD170",
+   "TD175"
+  ],
+  "source": {
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=33",
+   "title": "The Certificate of Achievement in Entertainment Design and Technology: Audio",
+   "h1": "The Certificate of Achievement in Entertainment Design and Technology: Audio",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    33,
+    34
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 6,
+  "text_chars": 12859
+ },
+ {
+  "control_number": "22208",
+  "title": "Entertainment Design & Technology: Costume Design",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART106A",
+   "TD154",
+   "TD155A",
+   "TD155B",
+   "TD156",
+   "TD162"
+  ],
+  "source": {
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=33",
+   "title": "94                                                                                                                      ",
+   "h1": "94                                                                                                                      ",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    33,
+    34
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 6,
+  "text_chars": 13360
+ },
+ {
+  "control_number": "22209",
+  "title": "Entertainment Design and Technology: Live Event Management",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "TD150",
+   "TD152",
+   "TD158",
+   "TD162",
+   "TD170",
+   "TD179"
+  ],
+  "source": {
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=34",
+   "title": "2026-2027 OHLONE COLLEGE CATALOG                                                                                        ",
+   "h1": "2026-2027 OHLONE COLLEGE CATALOG                                                                                        ",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    34
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 6,
+  "text_chars": 6898
+ },
+ {
+  "control_number": "22210",
+  "title": "Entertainment Design & Technology: Moving Light Technician",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "22211",
+  "title": "Entertainment Design and Technology: Stagecraft",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "TD150",
+   "TD153",
+   "TD161",
+   "TD162",
+   "TD163",
+   "TD164",
+   "TD170",
+   "TD171",
+   "TD178"
+  ],
+  "source": {
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=34",
+   "title": "2026-2027 OHLONE COLLEGE CATALOG                                                                                        ",
+   "h1": "2026-2027 OHLONE COLLEGE CATALOG                                                                                        ",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    34
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 9,
+  "text_chars": 6898
+ },
+ {
+  "control_number": "22212",
+  "title": "Entertainment Design and Technology: Lighting Design",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "TD152",
+   "TD160A2",
+   "TD161",
+   "TD171",
+   "TD172",
+   "TD173",
+   "TD174",
+   "TD178"
+  ],
+  "source": {
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=34",
+   "title": "2026-2027 OHLONE COLLEGE CATALOG                                                                                        ",
+   "h1": "2026-2027 OHLONE COLLEGE CATALOG                                                                                        ",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    34
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 8,
+  "text_chars": 6898
+ },
+ {
+  "control_number": "22213",
+  "title": "Graphic Design",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART106A",
+   "DAID104B",
+   "DAID105A",
+   "DAID130A",
+   "DAID130B",
+   "DAID132A",
+   "DAID133A",
+   "DAID139A"
+  ],
+  "source": {
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=43",
+   "title": "Certificate of Achievement in Graphic Design",
+   "h1": "Certificate of Achievement in Graphic Design",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    43
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 8,
+  "text_chars": 2255
+ },
+ {
+  "control_number": "22214",
+  "title": "Interior Design",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 11,
+  "text_chars": 0
+ },
+ {
+  "control_number": "22215",
+  "title": "Early Childhood Studies",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ECS300",
+   "ECS301",
+   "ECS302",
+   "ECS303",
+   "ECS304",
+   "ECS305",
+   "ECS306",
+   "ECS307A4",
+   "ECS309"
+  ],
+  "source": {
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=28",
+   "title": "2026-2027 OHLONE COLLEGE CATALOG                                                                                        ",
+   "h1": "2026-2027 OHLONE COLLEGE CATALOG                                                                                        ",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    28,
+    29
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 9,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "22938",
+  "title": "Human Development Studies",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTH101",
+   "ANTH102",
+   "ANTH103",
+   "ANTH104",
+   "ANTH106",
+   "BIOL102",
+   "BIOL104",
+   "BIOL105",
+   "BIOL109",
+   "BIOL130",
+   "BIOL141",
+   "CHEM101A",
+   "CHEM102",
+   "CHEM108",
+   "CHEM109",
+   "CHS101",
+   "CHS102A",
+   "CHS102B",
+   "CHS106",
+   "CHS112",
+   "COMM100",
+   "COMM112",
+   "COMM113",
+   "COMM114",
+   "COMM115",
+   "COMM116",
+   "COMM118",
+   "COMM122",
+   "COMMC1000",
+   "COUN102",
+   "COUN103",
+   "COUN110",
+   "ECONC2001",
+   "ECONC2002",
+   "ECS301",
+   "ECS303",
+   "ECS305",
+   "ENGI114",
+   "ENVS103",
+   "ENVS105",
+   "ENVS108",
+   "ENVS110",
+   "ENVS142",
+   "ETHN100",
+   "ETHN105",
+   "ETHN114A",
+   "ETHN114B",
+   "ETHN115",
+   "ETHN116",
+   "ETHN117",
+   "GEOG101",
+   "GEOG102",
+   "GEOG104",
+   "GEOG105",
+   "GEOL101",
+   "GEOL102",
+   "GEOL103",
+   "HIST104A",
+   "HIST104B",
+   "HIST105",
+   "HIST106A",
+   "HIST106B",
+   "HIST110",
+   "HIST116",
+   "HIST119A",
+   "HIST119B",
+   "HISTC1001",
+   "HISTC1002",
+   "HLTH101",
+   "HLTH109",
+   "HLTH150",
+   "JOUR155",
+   "KIN240",
+   "KIN251",
+   "MATH100",
+   "MATH101A",
+   "MATH156",
+   "MATH166",
+   "MATH167",
+   "MUS104",
+   "PHYS108",
+   "PHYS140",
+   "POLSC1000",
+   "PSYC102",
+   "PSYC105",
+   "PSYC106",
+   "PSYC108",
+   "PSYC112",
+   "PSYC115",
+   "PSYC139",
+   "PSYCC1000",
+   "SOC101",
+   "SOC102",
+   "SOC105",
+   "STATC1000",
+   "TD102",
+   "TD114A",
+   "WS101"
+  ],
+  "source": {
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=45",
+   "title": "Associate in Arts in Human Development Studies",
+   "h1": "Associate in Arts in Human Development Studies",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    45,
+    46
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 98,
+  "text_chars": 15476
+ },
+ {
+  "control_number": "30592",
+  "title": "Psychology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL102",
+   "BIOL103A",
+   "BIOL104",
+   "BIOL111",
+   "BIOL130",
+   "PSYC102",
+   "PSYC105",
+   "PSYC108",
+   "PSYC112",
+   "PSYC115",
+   "PSYC120",
+   "PSYCC1000",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=64",
+   "title": "PSYCHOLOGY FOR TRANSFER",
+   "h1": "PSYCHOLOGY FOR TRANSFER",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    64,
+    65
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 13,
+  "text_chars": 15458
+ },
+ {
+  "control_number": "31779",
+  "title": "Kinesiology: Fitness Professional",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL102",
+   "HLTH101",
+   "HLTH109",
+   "HLTH150",
+   "KIN240",
+   "KIN250",
+   "KIN258",
+   "PE342A3",
+   "PE343A3",
+   "PE344A3",
+   "PE346A3",
+   "PE360A3",
+   "PE362A3",
+   "PE363A3",
+   "PE372A3",
+   "PE374A3",
+   "PE375A3",
+   "PE376A3",
+   "PE376B3",
+   "PE376C3",
+   "PE378A3",
+   "WEX185A1",
+   "WEX185A2"
+  ],
+  "source": {
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=50",
+   "title": "Certificate of Achievement in Kinesiology: Fitness Professional",
+   "h1": "Certificate of Achievement in Kinesiology: Fitness Professional",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    50
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 23,
+  "text_chars": 5567
+ },
+ {
+  "control_number": "32412",
+  "title": "Geography",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTH102",
+   "GEOG101",
+   "GEOG102",
+   "GEOG104",
+   "GEOG105",
+   "GEOG121",
+   "GEOL101"
+  ],
+  "source": {
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=40",
+   "title": "certificate is also aligned with the Associate in Arts in Geography for Transfer,",
+   "h1": "certificate is also aligned with the Associate in Arts in Geography for Transfer,",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    40,
+    41,
+    42
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 7,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "32414",
+  "title": "Spanish",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHS101",
+   "CHS106",
+   "SPAN101A",
+   "SPAN101B",
+   "SPAN102A",
+   "SPAN102B"
+  ],
+  "source": {
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=73",
+   "title": "SPANISH FOR TRANSFER",
+   "h1": "SPANISH FOR TRANSFER",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    73
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 6,
+  "text_chars": 7536
+ },
+ {
+  "control_number": "32423",
+  "title": "Geology",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "32440",
+  "title": "History",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHS102A",
+   "CHS102B",
+   "HIST104A",
+   "HIST104B",
+   "HIST105",
+   "HIST106A",
+   "HIST106B",
+   "HIST109",
+   "HIST110",
+   "HIST114A",
+   "HIST114B",
+   "HIST115",
+   "HIST116",
+   "HIST118",
+   "HIST119A",
+   "HIST119B",
+   "HIST141",
+   "HIST142",
+   "HISTC1001",
+   "HISTC1002",
+   "POLS103",
+   "POLS105",
+   "POLSC1000"
+  ],
+  "source": {
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=44",
+   "title": "HISTORY FOR TRANSFER",
+   "h1": "HISTORY FOR TRANSFER",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    44,
+    45,
+    46
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 23,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "32441",
+  "title": "Theatre Arts",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "TD102",
+   "TD110",
+   "TD110L",
+   "TD111",
+   "TD120A",
+   "TD120B",
+   "TD124",
+   "TD150",
+   "TD152",
+   "TD156",
+   "TD163",
+   "TD164",
+   "TD170"
+  ],
+  "source": {
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=76",
+   "title": "2026-2027 OHLONE COLLEGE CATALOG                                                                                        ",
+   "h1": "2026-2027 OHLONE COLLEGE CATALOG                                                                                        ",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    76
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 13,
+  "text_chars": 7482
+ },
+ {
+  "control_number": "32584",
+  "title": "Economics",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 0.75,
+  "codes_found": [
+   "BA101A",
+   "BA101B",
+   "MATH101A",
+   "MATH101B",
+   "MATH167",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=15",
+   "title": "76                                                                                                                      ",
+   "h1": "76                                                                                                                      ",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    15,
+    16
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 8,
+  "text_chars": 14919
+ },
+ {
+  "control_number": "32585",
+  "title": "Philosophy",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "PHIL100",
+   "PHIL101",
+   "PHIL102",
+   "PHIL104",
+   "PHIL106",
+   "PHIL107"
+  ],
+  "source": {
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=60",
+   "title": "PHILOSOPHY FOR TRANSFER",
+   "h1": "PHILOSOPHY FOR TRANSFER",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    60
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 6,
+  "text_chars": 6093
+ },
+ {
+  "control_number": "32697",
+  "title": "Music",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "MUS110A",
+   "MUS110B",
+   "MUS110C",
+   "MUS110D",
+   "MUS111A",
+   "MUS111B",
+   "MUS111C",
+   "MUS111D",
+   "MUS166A",
+   "MUS352",
+   "MUS355",
+   "MUS356"
+  ],
+  "source": {
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=55",
+   "title": "116                                                                                                                     ",
+   "h1": "116                                                                                                                     ",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    55,
+    56
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 12,
+  "text_chars": 15895
+ },
+ {
+  "control_number": "32706",
+  "title": "Art History",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART104A",
+   "ART104B",
+   "ART106A",
+   "ART107A",
+   "ART116A",
+   "ART121A",
+   "ART127",
+   "ART131",
+   "ART133A",
+   "ART139A",
+   "ARTH103C",
+   "ARTH103D",
+   "ARTH103E",
+   "ARTHC1100",
+   "ARTHC1200",
+   "DAID103"
+  ],
+  "source": {
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=10",
+   "title": "2026-2027 OHLONE COLLEGE CATALOG                                                                                        ",
+   "h1": "2026-2027 OHLONE COLLEGE CATALOG                                                                                        ",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    10,
+    11
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 16,
+  "text_chars": 15934
+ },
+ {
+  "control_number": "32761",
+  "title": "Early Childhood Education",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ECS300",
+   "ECS301",
+   "ECS302",
+   "ECS303",
+   "ECS304",
+   "ECS305",
+   "ECS307A4",
+   "ECS309"
+  ],
+  "source": {
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=28",
+   "title": "EARLY CHILDHOOD EDUCATION FOR TRANSFER",
+   "h1": "EARLY CHILDHOOD EDUCATION FOR TRANSFER",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    28,
+    29
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 8,
+  "text_chars": 15808
+ },
+ {
+  "control_number": "33318",
+  "title": "Database Administration",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CNET135",
+   "CNET137",
+   "CNET142",
+   "CNET146",
+   "CNET162",
+   "CNET170"
+  ],
+  "source": {
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=23",
+   "title": "Certificate of Achievement in Database Administration",
+   "h1": "Certificate of Achievement in Database Administration",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    23,
+    24
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 6,
+  "text_chars": 10048
+ },
+ {
+  "control_number": "33319",
+  "title": "Information Technology",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 0.5,
+  "codes_found": [
+   "CNET105",
+   "CNET108",
+   "CNET142",
+   "CNET146",
+   "CNET162",
+   "CNET170"
+  ],
+  "source": {
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=87",
+   "title": "Certificate of Accomplishment in Health Information Technology",
+   "h1": "Certificate of Accomplishment in Health Information Technology",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    87
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 12,
+  "text_chars": 5611
+ },
+ {
+  "control_number": "33320",
+  "title": "System Administration",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CNET120",
+   "CNET122A",
+   "CNET122B",
+   "CNET135",
+   "CNET137",
+   "CNET142",
+   "CNET146",
+   "CNET147",
+   "CNET155A",
+   "CNET162",
+   "CNET164",
+   "CNET170",
+   "CNET172",
+   "CNET173",
+   "CNET174",
+   "CNET175"
+  ],
+  "source": {
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=74",
+   "title": "Certificate of Achievement in System Administration",
+   "h1": "Certificate of Achievement in System Administration",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    74,
+    75
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 16,
+  "text_chars": 13076
+ },
+ {
+  "control_number": "33547",
+  "title": "Computer Science",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CS102",
+   "CS113",
+   "CS118",
+   "CS124",
+   "MATH101A",
+   "MATH101B",
+   "PHYS140",
+   "PHYS141"
+  ],
+  "source": {
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=21",
+   "title": "COMPUTER SCIENCE FOR TRANSFER",
+   "h1": "COMPUTER SCIENCE FOR TRANSFER",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    21,
+    22,
+    23
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 8,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "33549",
+  "title": "Administration of Justice",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "AJ101",
+   "AJ102",
+   "AJ104",
+   "AJ106",
+   "AJ107",
+   "AJ117",
+   "AJ118",
+   "AJ131",
+   "PSYCC1000",
+   "SOC101"
+  ],
+  "source": {
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=6",
+   "title": "2026-2027 OHLONE COLLEGE CATALOG                                                                                        ",
+   "h1": "2026-2027 OHLONE COLLEGE CATALOG                                                                                        ",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    6
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 10,
+  "text_chars": 5609
+ },
+ {
+  "control_number": "33643",
+  "title": "Information Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CNET103",
+   "CNET105",
+   "CNET108",
+   "CNET120",
+   "CNET132",
+   "CNET135",
+   "CNET137",
+   "CNET142",
+   "CNET146",
+   "CNET155A",
+   "CNET155B",
+   "CNET156C",
+   "CNET162",
+   "CNET170",
+   "CNET173",
+   "CNET174",
+   "CNET175"
+  ],
+  "source": {
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=47",
+   "title": "Associate in Science in Information Technology",
+   "h1": "Associate in Science in Information Technology",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    47,
+    48,
+    49
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 17,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "33644",
+  "title": "Database Administration",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CNET103",
+   "CNET105",
+   "CNET107",
+   "CNET108",
+   "CNET120",
+   "CNET135",
+   "CNET137",
+   "CNET142",
+   "CNET146",
+   "CNET147",
+   "CNET155A",
+   "CNET162",
+   "CNET170",
+   "CNET175",
+   "WEX185A1",
+   "WEX185A2"
+  ],
+  "source": {
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=24",
+   "title": "Associate in Science in Database Administration",
+   "h1": "Associate in Science in Database Administration",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    24
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 16,
+  "text_chars": 7024
+ },
+ {
+  "control_number": "33685",
+  "title": "System Administration",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CNET105",
+   "CNET108",
+   "CNET120",
+   "CNET125",
+   "CNET135",
+   "CNET137",
+   "CNET142",
+   "CNET146",
+   "CNET147",
+   "CNET155A",
+   "CNET155B",
+   "CNET156C",
+   "CNET162",
+   "CNET170",
+   "CNET173",
+   "CNET174",
+   "CNET175"
+  ],
+  "source": {
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=75",
+   "title": "Associate in Science in System Administration",
+   "h1": "Associate in Science in System Administration",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    75
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 17,
+  "text_chars": 7884
+ },
+ {
+  "control_number": "35532",
+  "title": "Biology",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL101B",
+   "BIOL106",
+   "CHEM101A",
+   "CHEM101B",
+   "MATH101A",
+   "PHYS120",
+   "PHYS121",
+   "PHYS140",
+   "PHYS141"
+  ],
+  "source": {
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=12",
+   "title": "2026-2027 OHLONE COLLEGE CATALOG                                                                                        ",
+   "h1": "2026-2027 OHLONE COLLEGE CATALOG                                                                                        ",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    12
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 9,
+  "text_chars": 6895
+ },
+ {
+  "control_number": "35542",
+  "title": "Personal Development Studies",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 10,
+  "text_chars": 0
+ },
+ {
+  "control_number": "35797",
+  "title": "Bioengineering",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.5,
+  "codes_found": [
+   "CHEM101A",
+   "CS102",
+   "ENGI101",
+   "ENGI111",
+   "ENGI115",
+   "MATH101A",
+   "PHYS140",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=30",
+   "title": "2026-2027 OHLONE COLLEGE CATALOG                                                                                        ",
+   "h1": "2026-2027 OHLONE COLLEGE CATALOG                                                                                        ",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    30,
+    31
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 16,
+  "text_chars": 12764
+ },
+ {
+  "control_number": "35933",
+  "title": "Biotechnology Operations",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOT105",
+   "BIOT110A",
+   "BIOT113",
+   "BIOT115A",
+   "BIOT115B",
+   "BIOT118",
+   "BIOT119",
+   "BIOT121",
+   "CAOT148",
+   "CHEM109",
+   "ENGL156"
+  ],
+  "source": {
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=15",
+   "title": "Certificate of Achievement in Biotechnology Operations",
+   "h1": "Certificate of Achievement in Biotechnology Operations",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    15
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 11,
+  "text_chars": 6396
+ },
+ {
+  "control_number": "36009",
+  "title": "Studio Arts",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 0.5,
+  "codes_found": [
+   "ART104B",
+   "ART116A",
+   "ART121A",
+   "ARTH103C",
+   "ARTH103D",
+   "ARTHC1100",
+   "ARTHC1200",
+   "DAID103"
+  ],
+  "source": {
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=76",
+   "title": "for completion of the Associate in Arts in Studio Arts for Transfer.",
+   "h1": "for completion of the Associate in Arts in Studio Arts for Transfer.",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    76,
+    77,
+    78
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 16,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "36016",
+  "title": "English",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.885,
+  "codes_found": [
+   "ENGL104",
+   "ENGL106",
+   "ENGL107",
+   "ENGL109",
+   "ENGL111A",
+   "ENGL111B",
+   "ENGL112",
+   "ENGL113",
+   "ENGL114",
+   "ENGL115",
+   "ENGL118",
+   "ENGL120A",
+   "ENGL120B",
+   "ENGL121",
+   "ENGL125A",
+   "ENGL125B",
+   "ENGL127",
+   "ENGL130",
+   "ENGL131",
+   "ENGL141",
+   "ENGLC1000",
+   "ENGLC1001",
+   "ENGLC1002"
+  ],
+  "source": {
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=31",
+   "title": "92                                                                                                                      ",
+   "h1": "92                                                                                                                      ",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    31,
+    32
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 26,
+  "text_chars": 14375
+ },
+ {
+  "control_number": "36031",
+  "title": "English",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ENGL104",
+   "ENGL106",
+   "ENGL107",
+   "ENGL109",
+   "ENGL111A",
+   "ENGL111B",
+   "ENGL112",
+   "ENGL113",
+   "ENGL114",
+   "ENGL115",
+   "ENGL118",
+   "ENGL120A",
+   "ENGL120B",
+   "ENGL121",
+   "ENGL125A",
+   "ENGL125B",
+   "ENGL127",
+   "ENGL130",
+   "ENGL131",
+   "ENGL141",
+   "ENGLC1001",
+   "ENGLC1002"
+  ],
+  "source": {
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=32",
+   "title": "2026-2027 OHLONE COLLEGE CATALOG                                                                                        ",
+   "h1": "2026-2027 OHLONE COLLEGE CATALOG                                                                                        ",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    32
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 22,
+  "text_chars": 8875
+ },
+ {
+  "control_number": "36062",
+  "title": "Sociology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "AJ118",
+   "ANTH102",
+   "CHS101",
+   "ETHN100",
+   "PSYC112",
+   "PSYCC1000",
+   "SOC101",
+   "SOC102",
+   "SOC105",
+   "SOC108",
+   "STATC1000",
+   "WS101"
+  ],
+  "source": {
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=72",
+   "title": "SOCIOLOGY FOR TRANSFER",
+   "h1": "SOCIOLOGY FOR TRANSFER",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    72,
+    73
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 12,
+  "text_chars": 13789
+ },
+ {
+  "control_number": "36096",
+  "title": "American Sign Language and Deaf Studies",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ASL101",
+   "ASL102",
+   "ASL103",
+   "ASL104",
+   "ASL140",
+   "ASL142",
+   "ASL145",
+   "ASL150",
+   "ASL158",
+   "ASL160",
+   "DEAF311",
+   "DEAF312"
+  ],
+  "source": {
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=8",
+   "title": "Associate in Arts in American Sign Language and Deaf Studies",
+   "h1": "Associate in Arts in American Sign Language and Deaf Studies",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    8
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 12,
+  "text_chars": 5355
+ },
+ {
+  "control_number": "36120",
+  "title": "Anthropology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTH101",
+   "ANTH102",
+   "ANTH103",
+   "ANTH104",
+   "ANTH106",
+   "ANTH107",
+   "ANTH108",
+   "GEOL101",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=9",
+   "title": "ANTHROPOLOGY FOR TRANSFER",
+   "h1": "ANTHROPOLOGY FOR TRANSFER",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    9
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 9,
+  "text_chars": 7569
+ },
+ {
+  "control_number": "36285",
+  "title": "English as a Second Language",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESL981RW",
+   "ESL982LS",
+   "ESL982RW",
+   "ESL983LS",
+   "ESL983RW",
+   "ESL984RW"
+  ],
+  "source": {
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=96",
+   "title": "Certificate of Competency in English as a Second Language",
+   "h1": "Certificate of Competency in English as a Second Language",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    96
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 6,
+  "text_chars": 3538
+ },
+ {
+  "control_number": "36299",
+  "title": "Global Studies",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTH102",
+   "ECONC2001",
+   "GEOG102",
+   "GEOG104",
+   "GEOG107",
+   "GEOG108",
+   "POLS103"
+  ],
+  "source": {
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=42",
+   "title": "2026-2027 OHLONE COLLEGE CATALOG                                                                                        ",
+   "h1": "2026-2027 OHLONE COLLEGE CATALOG                                                                                        ",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    42,
+    43,
+    44,
+    45
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 7,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "36521",
+  "title": "Accounting",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BA101A",
+   "BA101B",
+   "BA125",
+   "ECONC2001",
+   "ECONC2002"
+  ],
+  "source": {
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=5",
+   "title": "Certificate of Achievement in Accounting",
+   "h1": "Certificate of Achievement in Accounting",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    5
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 5,
+  "text_chars": 5573
+ },
+ {
+  "control_number": "36523",
+  "title": "Global Studies",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTH102",
+   "ECONC2001",
+   "GEOG102",
+   "GEOG104",
+   "GEOG107",
+   "GEOG108",
+   "POLS103"
+  ],
+  "source": {
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=42",
+   "title": "Certificate of Achievement in Global Studies",
+   "h1": "Certificate of Achievement in Global Studies",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    42,
+    43,
+    44,
+    45
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 7,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "36533",
+  "title": "Journalism",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 9,
+  "text_chars": 0
+ },
+ {
+  "control_number": "37259",
+  "title": "Customer Service Academy",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 3,
+  "text_chars": 0
+ },
+ {
+  "control_number": "37260",
+  "title": "Customer Service: Team Building",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 2,
+  "text_chars": 0
+ },
+ {
+  "control_number": "37261",
+  "title": "Customer Service: Communication and Writing",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 1,
+  "text_chars": 0
+ },
+ {
+  "control_number": "37262",
+  "title": "Customer Service: Problem Solving",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "37482",
+  "title": "Social Justice Studies",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTH104",
+   "CHS101",
+   "CHS102A",
+   "CHS102B",
+   "CHS106",
+   "CHS112",
+   "COMM115",
+   "COMM118",
+   "ENGL115",
+   "ENVS103",
+   "ENVS107",
+   "ETHN100",
+   "GEOG107",
+   "GEOG108",
+   "HIST114A",
+   "HIST114B",
+   "HIST115",
+   "HIST116",
+   "HIST119A",
+   "HIST119B",
+   "PHIL106",
+   "SOC101",
+   "SOC102",
+   "SOC108",
+   "STATC1000",
+   "WS101"
+  ],
+  "source": {
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=70",
+   "title": "SOCIAL JUSTICE STUDIES FOR TRANSFER",
+   "h1": "SOCIAL JUSTICE STUDIES FOR TRANSFER",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    70,
+    71,
+    72,
+    73
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 26,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "37490",
+  "title": "Computer Fundamentals",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 2,
+  "text_chars": 0
+ },
+ {
+  "control_number": "37491",
+  "title": "Beginning Technology Skills",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 2,
+  "text_chars": 0
+ },
+ {
+  "control_number": "37691",
+  "title": "Environmental Studies",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ENVS103",
+   "ENVS105",
+   "ENVS107",
+   "ENVS108",
+   "ENVS109",
+   "ENVS110",
+   "ENVS112",
+   "ENVS113",
+   "ENVS142",
+   "GEOG101",
+   "GEOG106"
+  ],
+  "source": {
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=35",
+   "title": "96                                                                                                                      ",
+   "h1": "96                                                                                                                      ",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    35,
+    36
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 11,
+  "text_chars": 15036
+ },
+ {
+  "control_number": "37692",
+  "title": "Geography",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTH102",
+   "GEOG101",
+   "GEOG102",
+   "GEOG104",
+   "GEOG105",
+   "GEOL101"
+  ],
+  "source": {
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=40",
+   "title": "Certificate of Achievement in Geography",
+   "h1": "Certificate of Achievement in Geography",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    40,
+    41,
+    42
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 6,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "37693",
+  "title": "Kinesiology: Sports Medicine",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 0.833,
+  "codes_found": [
+   "KIN250",
+   "KIN257",
+   "KIN258",
+   "KIN381",
+   "KIN382"
+  ],
+  "source": {
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=88",
+   "title": "Certificate of Accomplishment in Kinesiology: Sports Medicine",
+   "h1": "Certificate of Accomplishment in Kinesiology: Sports Medicine",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    88
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 6,
+  "text_chars": 5084
+ },
+ {
+  "control_number": "37694",
+  "title": "Pure Mathematics",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "MATH101B",
+   "MATH101C",
+   "MATH103",
+   "MATH104"
+  ],
+  "source": {
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=65",
+   "title": "Certificate of Achievement in Pure Mathematics",
+   "h1": "Certificate of Achievement in Pure Mathematics",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    65
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 4,
+  "text_chars": 1928
+ },
+ {
+  "control_number": "37898",
+  "title": "Applied Mathematics",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ENGI130",
+   "ENGI140",
+   "MATH101A",
+   "MATH101B",
+   "PHYS140",
+   "PHYS141",
+   "PHYS142"
+  ],
+  "source": {
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=9",
+   "title": "Certificate of Achievement in Applied Mathematics",
+   "h1": "Certificate of Achievement in Applied Mathematics",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    9
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 7,
+  "text_chars": 2228
+ },
+ {
+  "control_number": "37931",
+  "title": "Game Design and Animation",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART104A",
+   "ART104C",
+   "DAID103",
+   "DAID111",
+   "DAID112",
+   "DAID114",
+   "DAID115",
+   "DAID118",
+   "DAID119",
+   "DAID122",
+   "DAID123",
+   "DAID124",
+   "DAID125",
+   "DAID126",
+   "DAID127",
+   "DAID160"
+  ],
+  "source": {
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=39",
+   "title": "100                                                                                                                     ",
+   "h1": "100                                                                                                                     ",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    39,
+    40
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 16,
+  "text_chars": 13838
+ },
+ {
+  "control_number": "37937",
+  "title": "Political Science",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "GEOG108",
+   "POLS103",
+   "POLS104",
+   "POLS105",
+   "POLS106",
+   "POLS107",
+   "POLSC1000",
+   "SOC102",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=63",
+   "title": "POLITICAL SCIENCE FOR TRANSFER",
+   "h1": "POLITICAL SCIENCE FOR TRANSFER",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    63,
+    64,
+    65
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 9,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "38226",
+  "title": "Entrepreneurial Business Basics",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 2,
+  "text_chars": 0
+ },
+ {
+  "control_number": "38441",
+  "title": "Math Applications",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 0.5,
+  "codes_found": [
+   "MATH900A"
+  ],
+  "source": {
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=99",
+   "title": "160                                                                                                                     ",
+   "h1": "160                                                                                                                     ",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    99
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 2,
+  "text_chars": 5801
+ },
+ {
+  "control_number": "38496",
+  "title": "Business Support Specialist I",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 4,
+  "text_chars": 0
+ },
+ {
+  "control_number": "38497",
+  "title": "Math Foundations",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 3,
+  "text_chars": 0
+ },
+ {
+  "control_number": "38660",
+  "title": "Effective Job Search Skills",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 2,
+  "text_chars": 0
+ },
+ {
+  "control_number": "38755",
+  "title": "Three-Dimensional Foundations in Art",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART104B",
+   "ART105A",
+   "ART116A",
+   "ART121A",
+   "ART127",
+   "ARTH103C",
+   "ARTH103D",
+   "ARTH103E",
+   "ARTHC1100",
+   "ARTHC1200"
+  ],
+  "source": {
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=76",
+   "title": "Certificate of Achievement in Three-Dimensional Foundations in Art",
+   "h1": "Certificate of Achievement in Three-Dimensional Foundations in Art",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    76
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 10,
+  "text_chars": 2741
+ },
+ {
+  "control_number": "38834",
+  "title": "Business Support Specialist II",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 3,
+  "text_chars": 0
+ },
+ {
+  "control_number": "38974",
+  "title": "Front End Development/User Experience Design",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "DAID103",
+   "DAID104A",
+   "DAID104B",
+   "DAID105A",
+   "DAID105B",
+   "DAID107",
+   "DAID113",
+   "DAID159"
+  ],
+  "source": {
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=39",
+   "title": "100                                                                                                                     ",
+   "h1": "100                                                                                                                     ",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    39,
+    40
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 8,
+  "text_chars": 13838
+ },
+ {
+  "control_number": "38975",
+  "title": "Computer Aided Design Skills: AutoCAD and SolidWorks",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 2,
+  "text_chars": 0
+ },
+ {
+  "control_number": "38976",
+  "title": "Digital Media Essential Skills",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "DAID900A",
+   "DAID900B",
+   "DAID900C",
+   "DAID900D",
+   "DAID900E"
+  ],
+  "source": {
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=96",
+   "title": "The Digital Media Essential Skills Certificate of Completion is designed to",
+   "h1": "The Digital Media Essential Skills Certificate of Completion is designed to",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    96
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 5,
+  "text_chars": 5145
+ },
+ {
+  "control_number": "39343",
+  "title": "Kinesiology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 0.708,
+  "codes_found": [
+   "CHEM101A",
+   "HLTH101",
+   "KIN240",
+   "KIN250",
+   "PE342A3",
+   "PE343A3",
+   "PE344A3",
+   "PE360A3",
+   "PE362A3",
+   "PE372A3",
+   "PE374A3",
+   "PE375A3",
+   "PE376A3",
+   "PE376B3",
+   "PHYS120",
+   "PSYCC1000",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=50",
+   "title": "2026-2027 OHLONE COLLEGE CATALOG                                                                                        ",
+   "h1": "2026-2027 OHLONE COLLEGE CATALOG                                                                                        ",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    50
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 24,
+  "text_chars": 8059
+ },
+ {
+  "control_number": "39369",
+  "title": "English as a Second Language",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESL981LS",
+   "ESL981RW",
+   "ESL982LS",
+   "ESL982RW",
+   "ESL983LS",
+   "ESL983RW",
+   "ESL984LS",
+   "ESL984RW"
+  ],
+  "source": {
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=96",
+   "title": "Certificate of Competency in English as a Second Language",
+   "h1": "Certificate of Competency in English as a Second Language",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    96
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 8,
+  "text_chars": 3538
+ },
+ {
+  "control_number": "39758",
+  "title": "College Success Skills",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "COUN900",
+   "ENGL901",
+   "MATH901"
+  ],
+  "source": {
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=95",
+   "title": "Certificate of Competency in College Success Skills",
+   "h1": "Certificate of Competency in College Success Skills",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    95
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 3,
+  "text_chars": 5594
+ },
+ {
+  "control_number": "39792",
+  "title": "Animation and 3D Modeling",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "DAID103",
+   "DAID114",
+   "DAID115",
+   "DAID122",
+   "DAID123",
+   "DAID124",
+   "DAID125",
+   "DAID126",
+   "DAID127"
+  ],
+  "source": {
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=8",
+   "title": "Certificate of Achievement in Animation and 3D Modeling",
+   "h1": "Certificate of Achievement in Animation and 3D Modeling",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    8
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 9,
+  "text_chars": 2287
+ },
+ {
+  "control_number": "39799",
+  "title": "Video, Animation, and Motion Graphics",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "DAID103",
+   "DAID111",
+   "DAID112",
+   "DAID114",
+   "DAID115",
+   "DAID130A",
+   "DAID132A"
+  ],
+  "source": {
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=77",
+   "title": "The Certificate of Achievement in Video, Animation, and Motion Graphics",
+   "h1": "The Certificate of Achievement in Video, Animation, and Motion Graphics",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    77,
+    78
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 7,
+  "text_chars": 13705
+ },
+ {
+  "control_number": "39827",
+  "title": "Digital Arts",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "DAID903",
+   "DAID914",
+   "DAID915",
+   "DAID918",
+   "DAID922",
+   "DAID925"
+  ],
+  "source": {
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=95",
+   "title": "Certificate of Completion in Digital Arts",
+   "h1": "Certificate of Completion in Digital Arts",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    95
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 6,
+  "text_chars": 2124
+ },
+ {
+  "control_number": "40030",
+  "title": "Engineering Technology Fundamentals",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CAOT150",
+   "CAOT151",
+   "COMM113",
+   "COMMC1000",
+   "ENGI101",
+   "ENGI111",
+   "ENGI115",
+   "ENGI130",
+   "ENGLC1000",
+   "ETEC106",
+   "ETEC113",
+   "ETEC121"
+  ],
+  "source": {
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=30",
+   "title": "2026-2027 OHLONE COLLEGE CATALOG                                                                                        ",
+   "h1": "2026-2027 OHLONE COLLEGE CATALOG                                                                                        ",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    30,
+    31
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 12,
+  "text_chars": 12764
+ },
+ {
+  "control_number": "40034",
+  "title": "Smart Manufacturing Technology",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CAOT150",
+   "COMM113",
+   "COMMC1000",
+   "ENGI101",
+   "ENGI130",
+   "ENGI140",
+   "ENGLC1000",
+   "ETEC106",
+   "ETEC107",
+   "ETEC113",
+   "ETEC124",
+   "ETEC126"
+  ],
+  "source": {
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=69",
+   "title": "Certificate of Achievement in Smart Manufacturing Technology",
+   "h1": "Certificate of Achievement in Smart Manufacturing Technology",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    69
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 12,
+  "text_chars": 7258
+ },
+ {
+  "control_number": "40035",
+  "title": "Smart Manufacturing Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CAOT150",
+   "CAOT151",
+   "CNET105",
+   "CNET170",
+   "CNET175",
+   "COMM113",
+   "COMMC1000",
+   "ENGI101",
+   "ENGI114",
+   "ENGI115",
+   "ENGI130",
+   "ENGI135",
+   "ENGI140",
+   "ENGL156",
+   "ETEC106",
+   "ETEC107",
+   "ETEC110",
+   "ETEC112",
+   "ETEC113",
+   "ETEC116",
+   "ETEC117",
+   "ETEC121",
+   "ETEC124",
+   "ETEC126",
+   "PHYS108"
+  ],
+  "source": {
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=69",
+   "title": "Associate in Science in Smart Manufacturing Technology.",
+   "h1": "Associate in Science in Smart Manufacturing Technology.",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    69
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 25,
+  "text_chars": 6656
+ },
+ {
+  "control_number": "40314",
+  "title": "Computer Science Foundations",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CS102",
+   "CS113",
+   "CS116",
+   "CS118",
+   "CS124"
+  ],
+  "source": {
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=22",
+   "title": "Certificate of Achievement in Computer Science Foundations",
+   "h1": "Certificate of Achievement in Computer Science Foundations",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    22,
+    23
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 5,
+  "text_chars": 10115
+ },
+ {
+  "control_number": "40371",
+  "title": "DRE Exam Preparation",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 2,
+  "text_chars": 0
+ },
+ {
+  "control_number": "40405",
+  "title": "Entrepreneurial Business Advanced Food Services (EBB)",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 3,
+  "text_chars": 0
+ },
+ {
+  "control_number": "40609",
+  "title": "Green Business Entrepreneurs",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 2,
+  "text_chars": 0
+ },
+ {
+  "control_number": "41054",
+  "title": "Foundations for Learning Computer Science",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CS900A",
+   "CS900B"
+  ],
+  "source": {
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=97",
+   "title": "158                                                                                                                     ",
+   "h1": "158                                                                                                                     ",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    97
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 2,
+  "text_chars": 6587
+ },
+ {
+  "control_number": "41055",
+  "title": "SLAM Concepts",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "MATH900A",
+   "MATH901",
+   "MATH956X",
+   "MATH959X"
+  ],
+  "source": {
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=99",
+   "title": "Certificate of Completion in SLAM Concepts",
+   "h1": "Certificate of Completion in SLAM Concepts",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    99,
+    100
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 4,
+  "text_chars": 10910
+ },
+ {
+  "control_number": "41056",
+  "title": "STEM Concepts",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "MATH901",
+   "MATH901AX",
+   "MATH966X",
+   "MATH986X",
+   "MATH987X"
+  ],
+  "source": {
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=99",
+   "title": "160                                                                                                                     ",
+   "h1": "160                                                                                                                     ",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    99,
+    100
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 5,
+  "text_chars": 12560
+ },
+ {
+  "control_number": "41057",
+  "title": "Development of Self-Concept for Success in the Workforce",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "COUN921",
+   "COUN930",
+   "COUN940"
+  ],
+  "source": {
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=95",
+   "title": "156                                                                                                                     ",
+   "h1": "156                                                                                                                     ",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    95
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 3,
+  "text_chars": 5949
+ },
+ {
+  "control_number": "41112",
+  "title": "Animation Essential Skills",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "DAID903",
+   "DAID912",
+   "DAID914",
+   "DAID915",
+   "DAID924"
+  ],
+  "source": {
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=93",
+   "title": "Certificate of Completion in Animation Essential Skills",
+   "h1": "Certificate of Completion in Animation Essential Skills",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    93
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 5,
+  "text_chars": 1799
+ },
+ {
+  "control_number": "41113",
+  "title": "User Experience (UX) and Interface Design",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "DAID904A",
+   "DAID904B",
+   "DAID905A",
+   "DAID905B",
+   "DAID907",
+   "DAID913"
+  ],
+  "source": {
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=100",
+   "title": "The noncredit User Experience (UX) and Interface Design Certificate of",
+   "h1": "The noncredit User Experience (UX) and Interface Design Certificate of",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    100
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 6,
+  "text_chars": 5366
+ },
+ {
+  "control_number": "41124",
+  "title": "Introduction to Permaculture, Design, and Entrepreneurship",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ENVS902",
+   "ENVS903"
+  ],
+  "source": {
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=98",
+   "title": "2026-2027 OHLONE COLLEGE CATALOG                                                                                        ",
+   "h1": "2026-2027 OHLONE COLLEGE CATALOG                                                                                        ",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    98
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 2,
+  "text_chars": 6061
+ },
+ {
+  "control_number": "41245",
+  "title": "Fire Fighter I",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "FT225A18",
+   "FT226A1"
+  ],
+  "source": {
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=39",
+   "title": "Certificate of Achievement in Fire Fighter I",
+   "h1": "Certificate of Achievement in Fire Fighter I",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    39
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 2,
+  "text_chars": 5324
+ },
+ {
+  "control_number": "41329",
+  "title": "Environmental Science and Technology",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEM101A",
+   "ECONC2001",
+   "ENVS103",
+   "ENVS108",
+   "ENVS113",
+   "GEOG101",
+   "GEOL101"
+  ],
+  "source": {
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=35",
+   "title": "The Certificate of Achievement in Environmental Science and Technology is",
+   "h1": "The Certificate of Achievement in Environmental Science and Technology is",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    35,
+    36
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 7,
+  "text_chars": 14560
+ },
+ {
+  "control_number": "41470",
+  "title": "Business Administration 2.0",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BA101A",
+   "BA101B",
+   "BA125",
+   "BA141A",
+   "ECONC2001",
+   "ECONC2002",
+   "MATH101A",
+   "MATH166",
+   "MATH167",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=16",
+   "title": "BUSINESS ADMINISTRATION 2.0 FOR TRANSFER",
+   "h1": "BUSINESS ADMINISTRATION 2.0 FOR TRANSFER",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    16
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 10,
+  "text_chars": 7688
+ },
+ {
+  "control_number": "41658",
+  "title": "Ceramics",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART121A",
+   "ART122A",
+   "ART122B",
+   "ART123",
+   "ART124"
+  ],
+  "source": {
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=17",
+   "title": "Certificate of Achievement in Ceramics",
+   "h1": "Certificate of Achievement in Ceramics",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    17
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 5,
+  "text_chars": 6199
+ },
+ {
+  "control_number": "41659",
+  "title": "Ceramics",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART121A",
+   "ART122A",
+   "ART122B",
+   "ART123",
+   "ART124",
+   "ARTH103C",
+   "ARTH103D",
+   "ARTH103E",
+   "ARTHC1100",
+   "ARTHC1200"
+  ],
+  "source": {
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=17",
+   "title": "Ceramics. Students are well on their way to achieving an Associate in Arts in",
+   "h1": "Ceramics. Students are well on their way to achieving an Associate in Arts in",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    17
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 10,
+  "text_chars": 5126
+ },
+ {
+  "control_number": "41833",
+  "title": "Environmental Science and Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEM101A",
+   "ECONC2001",
+   "ENVS103",
+   "ENVS108",
+   "ENVS113",
+   "GEOG101",
+   "GEOL101",
+   "MATH101A",
+   "PHYS120",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=35",
+   "title": "the Associate in Science in Environmental Science and Technology, allowing",
+   "h1": "the Associate in Science in Environmental Science and Technology, allowing",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    35,
+    36
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 10,
+  "text_chars": 14254
+ },
+ {
+  "control_number": "41888",
+  "title": "Video Game Development",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "DAID102",
+   "DAID104B",
+   "DAID118",
+   "DAID119",
+   "DAID122",
+   "DAID123",
+   "DAID124",
+   "DAID125"
+  ],
+  "source": {
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=77",
+   "title": "Certificate of Achievement in Video Game Development",
+   "h1": "Certificate of Achievement in Video Game Development",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    77,
+    78
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 8,
+  "text_chars": 11549
+ },
+ {
+  "control_number": "41938",
+  "title": "Marketing for Entrepreneurs",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 4,
+  "text_chars": 0
+ },
+ {
+  "control_number": "42090",
+  "title": "Entrepreneurship",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 8,
+  "text_chars": 0
+ },
+ {
+  "control_number": "42325",
+  "title": "Fundamentals of Entrepreneurial Financing",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 2,
+  "text_chars": 0
+ },
+ {
+  "control_number": "42775",
+  "title": "Smart Manufacturing Technology",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ETEC926",
+   "ETEC928"
+  ],
+  "source": {
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=99",
+   "title": "Certificate of Completion in Smart Manufacturing Technology",
+   "h1": "Certificate of Completion in Smart Manufacturing Technology",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    99
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 2,
+  "text_chars": 2843
+ },
+ {
+  "control_number": "42776",
+  "title": "Community Mental Health Preparation",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 2,
+  "text_chars": 0
+ },
+ {
+  "control_number": "42917",
+  "title": "Photography",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART131",
+   "ART133A",
+   "ART133B",
+   "ART135",
+   "ART139A",
+   "ART139B"
+  ],
+  "source": {
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=61",
+   "title": "Certificate of Achievement in Photography",
+   "h1": "Certificate of Achievement in Photography",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    61
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 6,
+  "text_chars": 7498
+ },
+ {
+  "control_number": "42924",
+  "title": "Cybersecurity",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CNET146",
+   "CNET170",
+   "CNET173",
+   "CNET174",
+   "CNET175"
+  ],
+  "source": {
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=47",
+   "title": "108                                                                                                                     ",
+   "h1": "108                                                                                                                     ",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    47,
+    48
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 5,
+  "text_chars": 15397
+ },
+ {
+  "control_number": "43042",
+  "title": "Deaf Education",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ASL140",
+   "ASL145",
+   "DEAF311",
+   "DEAF312",
+   "DEAF330",
+   "DEAF331",
+   "DEAF332"
+  ],
+  "source": {
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=24",
+   "title": "Certificate of Achievement in Deaf Education",
+   "h1": "Certificate of Achievement in Deaf Education",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    24,
+    25
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 7,
+  "text_chars": 10011
+ },
+ {
+  "control_number": "43090",
+  "title": "Virtual Production Fundamentals",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "DAID103",
+   "DAID111",
+   "DAID112",
+   "DAID115",
+   "DAID122",
+   "DAID123",
+   "DAID124",
+   "DAID125",
+   "DAID128",
+   "DAID129",
+   "WEX185A1",
+   "WEX185A2",
+   "WEX185A3"
+  ],
+  "source": {
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=77",
+   "title": "138                                                                                                                     ",
+   "h1": "138                                                                                                                     ",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    77,
+    78
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 13,
+  "text_chars": 14193
+ },
+ {
+  "control_number": "43403",
+  "title": "Communication Studies 2.0",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "COMM100",
+   "COMM112",
+   "COMM113",
+   "COMM114",
+   "COMM115",
+   "COMM116",
+   "COMM117",
+   "COMM118",
+   "COMM122",
+   "COMM125",
+   "COMM134",
+   "COMM190C",
+   "COMM191A3",
+   "COMM192A3",
+   "COMM193",
+   "COMMC1000"
+  ],
+  "source": {
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=19",
+   "title": "COMMUNICATION STUDIES 2.0 FOR TRANSFER",
+   "h1": "COMMUNICATION STUDIES 2.0 FOR TRANSFER",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    19,
+    20
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 16,
+  "text_chars": 15038
+ },
+ {
+  "control_number": "43778",
+  "title": "Registered Nurse - Pre",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTH102",
+   "BIOL103A",
+   "BIOL103B",
+   "BIOL106",
+   "BIOL111",
+   "BIOL112",
+   "COMM113",
+   "COMMC1000",
+   "ENGLC1000",
+   "HLTH109",
+   "PSYC108",
+   "PSYCC1000",
+   "SOC101",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=67",
+   "title": "128                                                                                                                     ",
+   "h1": "128                                                                                                                     ",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    67,
+    68,
+    69,
+    70
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 14,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "43833",
+  "title": "Basic Communicative Competence in ESL",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESL921",
+   "ESL922"
+  ],
+  "source": {
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=94",
+   "title": "Certificate of Competency in Basic Communicative Competence in ESL",
+   "h1": "Certificate of Competency in Basic Communicative Competence in ESL",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    94
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 2,
+  "text_chars": 5151
+ },
+ {
+  "control_number": "44099",
+  "title": "Virtual Production Fundamentals",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "DAID903",
+   "DAID911",
+   "DAID912",
+   "DAID915",
+   "DAID918",
+   "DAID922",
+   "DAID924",
+   "DAID925",
+   "DAID928",
+   "DAID929"
+  ],
+  "source": {
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=100",
+   "title": "Certificate of Completion in Virtual Production Fundamentals",
+   "h1": "Certificate of Completion in Virtual Production Fundamentals",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    100
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 10,
+  "text_chars": 2810
+ },
+ {
+  "control_number": "44254",
+  "title": "Virtual Production",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CNET142",
+   "DAID103",
+   "DAID111",
+   "DAID112",
+   "DAID115",
+   "DAID118",
+   "DAID122",
+   "DAID123",
+   "DAID124",
+   "DAID125",
+   "DAID126",
+   "DAID128",
+   "DAID129",
+   "DAID140",
+   "DAID141",
+   "DAID142",
+   "DAID143",
+   "DAID150",
+   "DAID160",
+   "TD172",
+   "WEX185A1",
+   "WEX185A2",
+   "WEX185A3"
+  ],
+  "source": {
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=78",
+   "title": "Associate in Arts in Virtual Production",
+   "h1": "Associate in Arts in Virtual Production",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    78
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 23,
+  "text_chars": 5121
+ },
+ {
+  "control_number": "44383",
+  "title": "Advanced Virtual Production",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CNET142",
+   "DAID112",
+   "DAID115",
+   "DAID122",
+   "DAID123",
+   "DAID124",
+   "DAID125",
+   "DAID126",
+   "DAID140",
+   "DAID141",
+   "DAID142",
+   "DAID143",
+   "DAID150",
+   "DAID160",
+   "TD172"
+  ],
+  "source": {
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=7",
+   "title": "Certificate of Achievement in Advanced Virtual Production",
+   "h1": "Certificate of Achievement in Advanced Virtual Production",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    7,
+    8
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 15,
+  "text_chars": 13545
+ },
+ {
+  "control_number": "44787",
+  "title": "Film, Television, and Electronic Media",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BRDC131",
+   "BRDC134",
+   "BRDC136",
+   "BRDC137",
+   "BRDC141",
+   "BRDC142",
+   "BRDC143",
+   "BRDC148",
+   "BRDC150",
+   "BRDC155",
+   "DAID112"
+  ],
+  "source": {
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=37",
+   "title": "98                                                                                                                      ",
+   "h1": "98                                                                                                                      ",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    37
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 11,
+  "text_chars": 8129
+ },
+ {
+  "control_number": "44852",
+  "title": "Academic English Reading and Writing",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ENGL902",
+   "ENGL903"
+  ],
+  "source": {
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=93",
+   "title": "Certificate of Competency in Academic English Reading and Writing",
+   "h1": "Certificate of Competency in Academic English Reading and Writing",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    93
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 2,
+  "text_chars": 5354
+ },
+ {
+  "control_number": "44853",
+  "title": "College and Career Advancement",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "COUN901",
+   "COUN902",
+   "COUN903",
+   "COUN910",
+   "COUN920"
+  ],
+  "source": {
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=94",
+   "title": "Certificate of Completion in College and Career Advancement",
+   "h1": "Certificate of Completion in College and Career Advancement",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    94
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 5,
+  "text_chars": 2160
+ },
+ {
+  "control_number": "44864",
+  "title": "Public Health",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL102",
+   "BIOL106",
+   "CHEM101A",
+   "CHEM102",
+   "HLTH101",
+   "HLTH102",
+   "HLTH103",
+   "HLTH150",
+   "HLTH160",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=65",
+   "title": "PUBLIC HEALTH FOR TRANSFER",
+   "h1": "PUBLIC HEALTH FOR TRANSFER",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    65
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 10,
+  "text_chars": 7868
+ },
+ {
+  "control_number": "45891",
+  "title": "Computer Science",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CS102",
+   "CS108",
+   "CS113",
+   "CS116",
+   "CS118",
+   "CS124",
+   "CS150",
+   "CS170",
+   "MATH101A",
+   "MATH101B"
+  ],
+  "source": {
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=22",
+   "title": "Associate in Science in Computer Science",
+   "h1": "Associate in Science in Computer Science",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    22,
+    23
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 10,
+  "text_chars": 13325
+ },
+ {
+  "control_number": "45892",
+  "title": "Data Science",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CNET142",
+   "CS102",
+   "CS108",
+   "CS113",
+   "CS116",
+   "CS118",
+   "CS124",
+   "CS142",
+   "CS150",
+   "MATH101A",
+   "MATH101B",
+   "MATH101C",
+   "MATH103",
+   "MATH104"
+  ],
+  "source": {
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=23",
+   "title": "Associate in Science in Data Science",
+   "h1": "Associate in Science in Data Science",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    23,
+    24
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 14,
+  "text_chars": 13302
+ },
+ {
+  "control_number": "45893",
+  "title": "Deaf Education - Early Intervention Studies",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ASL145",
+   "DEAF311",
+   "DEAF312",
+   "DEAF330",
+   "DEAF332",
+   "DEAF344",
+   "ECS305"
+  ],
+  "source": {
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=25",
+   "title": "The courses in the Deaf Education - Early Intervention Studies Certificate of",
+   "h1": "The courses in the Deaf Education - Early Intervention Studies Certificate of",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    25
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 7,
+  "text_chars": 7072
+ },
+ {
+  "control_number": "45894",
+  "title": "Civil Engineering",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEM101A",
+   "ENGI101",
+   "ENGI111",
+   "ENGI115",
+   "ENGI120",
+   "MATH101A",
+   "MATH101B",
+   "MATH101C",
+   "MATH104",
+   "PHYS140",
+   "PHYS141"
+  ],
+  "source": {
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=18",
+   "title": "Associate in Science in Civil Engineering",
+   "h1": "Associate in Science in Civil Engineering",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    18
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 11,
+  "text_chars": 3724
+ },
+ {
+  "control_number": "45895",
+  "title": "Computer and Software Engineering",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CS102",
+   "CS113",
+   "CS116",
+   "CS118",
+   "CS124",
+   "ENGI101",
+   "ENGI130",
+   "MATH101A",
+   "MATH101B",
+   "MATH101C",
+   "PHYS140",
+   "PHYS141"
+  ],
+  "source": {
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=21",
+   "title": "82                                                                                                                      ",
+   "h1": "82                                                                                                                      ",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    21,
+    22,
+    23
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 12,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "45896",
+  "title": "Electrical Engineering",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEM101A",
+   "CS102",
+   "CS116",
+   "ENGI101",
+   "ENGI130",
+   "MATH101A",
+   "MATH101B",
+   "MATH101C",
+   "MATH104",
+   "PHYS140",
+   "PHYS141"
+  ],
+  "source": {
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=30",
+   "title": "Associate in Science in Electrical Engineering",
+   "h1": "Associate in Science in Electrical Engineering",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    30,
+    31
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 11,
+  "text_chars": 9872
+ },
+ {
+  "control_number": "45898",
+  "title": "Mechanical, Aerospace, and Manufacturing Engineering",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEM101A",
+   "ENGI101",
+   "ENGI111",
+   "ENGI115",
+   "ENGI120",
+   "ENGI140",
+   "MATH101A",
+   "MATH101B",
+   "MATH101C",
+   "MATH104",
+   "PHYS140",
+   "PHYS141"
+  ],
+  "source": {
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=54",
+   "title": "2026-2027 OHLONE COLLEGE CATALOG                                                                                        ",
+   "h1": "2026-2027 OHLONE COLLEGE CATALOG                                                                                        ",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    54
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 12,
+  "text_chars": 7528
+ },
+ {
+  "control_number": "45900",
+  "title": "Cal-GETC Certification",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "45932",
+  "title": "Acting",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "TD110",
+   "TD110L",
+   "TD111",
+   "TD113",
+   "TD114A",
+   "TD114B",
+   "TD120A"
+  ],
+  "source": {
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=5",
+   "title": "Certificate of Achievement in Acting",
+   "h1": "Certificate of Achievement in Acting",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    5
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 7,
+  "text_chars": 3596
+ },
+ {
+  "control_number": "45933",
+  "title": "Directing",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "TD110",
+   "TD110L",
+   "TD111",
+   "TD119A",
+   "TD120B",
+   "TD124"
+  ],
+  "source": {
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=27",
+   "title": "Certificate of Achievement in Directing",
+   "h1": "Certificate of Achievement in Directing",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    27
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 6,
+  "text_chars": 3254
+ },
+ {
+  "control_number": "46032",
+  "title": "Advanced Virtual Production: Animation",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "DAID912",
+   "DAID915",
+   "DAID924",
+   "DAID941",
+   "DAID942",
+   "DAID943",
+   "DAID950"
+  ],
+  "source": {
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=93",
+   "title": "Certificate of Completion in Advanced Virtual Production: Animation",
+   "h1": "Certificate of Completion in Advanced Virtual Production: Animation",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    93
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 7,
+  "text_chars": 4258
+ },
+ {
+  "control_number": "46033",
+  "title": "Internship Preparation for Multilingual Learners",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CS945",
+   "ESL945"
+  ],
+  "source": {
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=98",
+   "title": "2026-2027 OHLONE COLLEGE CATALOG                                                                                        ",
+   "h1": "2026-2027 OHLONE COLLEGE CATALOG                                                                                        ",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    98
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 2,
+  "text_chars": 6061
+ },
+ {
+  "control_number": "46034",
+  "title": "Esports Management",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "46035",
+  "title": "Esports Entrepreneurship and Live Production - Game Design",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "DAID922",
+   "DAID925"
+  ],
+  "source": {
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=95",
+   "title": "156                                                                                                                     ",
+   "h1": "156                                                                                                                     ",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    95
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 2,
+  "text_chars": 5949
+ },
+ {
+  "control_number": "46103",
+  "title": "Beginning Conversational ASL",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ASL921",
+   "ASL922"
+  ],
+  "source": {
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=94",
+   "title": "Certificate of Completion in Beginning Conversational ASL",
+   "h1": "Certificate of Completion in Beginning Conversational ASL",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    94
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 2,
+  "text_chars": 3515
+ },
+ {
+  "control_number": "46107",
+  "title": "Graphic and Interactive Design",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "DAID905A"
+  ],
+  "source": {
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=98",
+   "title": "Certificate of Completion in Graphic and Interactive Design",
+   "h1": "Certificate of Completion in Graphic and Interactive Design",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    98
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 1,
+  "text_chars": 5558
+ },
+ {
+  "control_number": "46259",
+  "title": "Multilingual Learners in Smart Manufacturing Technology",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESL915",
+   "ESL983LS"
+  ],
+  "source": {
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=99",
+   "title": "160                                                                                                                     ",
+   "h1": "160                                                                                                                     ",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    99
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 2,
+  "text_chars": 5801
+ },
+ {
+  "control_number": "46265",
+  "title": "Physics 2.0",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CNET142",
+   "CS102",
+   "CS142",
+   "MATH101A",
+   "MATH101B",
+   "MATH101C",
+   "MATH103",
+   "MATH104",
+   "PHYS140",
+   "PHYS141",
+   "PHYS142"
+  ],
+  "source": {
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=62",
+   "title": "PHYSICS 2.0 FOR TRANSFER",
+   "h1": "PHYSICS 2.0 FOR TRANSFER",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    62,
+    63
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 11,
+  "text_chars": 15872
+ },
+ {
+  "control_number": "46267",
+  "title": "Mathematics 2.0",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CNET142",
+   "CS102",
+   "CS142",
+   "MATH101A",
+   "MATH101B",
+   "MATH101C",
+   "MATH103",
+   "MATH104",
+   "PHYS140"
+  ],
+  "source": {
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=53",
+   "title": "MATHEMATICS 2.0 FOR TRANSFER",
+   "h1": "MATHEMATICS 2.0 FOR TRANSFER",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    53,
+    54
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 9,
+  "text_chars": 12787
+ }
+]

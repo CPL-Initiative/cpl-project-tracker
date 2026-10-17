@@ -5,7 +5,7 @@
  "catalog_year": "2026-2027",
  "programs": 204,
  "with_closed_list": 179,
- "started": "2026-10-17T18:20:18Z",
+ "started": "2026-10-17T19:17:31Z",
  "pdf": {
   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf",
   "access": "ok",
@@ -1731,7 +1731,7 @@
   "unproven": []
  },
  "loads": 1,
- "seconds": 66.4,
+ "seconds": 63.8,
  "found": 146,
  "by_method": {
   "no_closed_list": 25,
@@ -3669,5 +3669,5 @@
    }
   ]
  },
- "run": "39057583370"
+ "run": "39061732843"
 }
