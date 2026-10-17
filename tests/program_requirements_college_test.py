@@ -102,8 +102,12 @@ SKY = [sky + "programs/biology-as/", "https://catalog.skylinecollege.edu/1718/pr
 check(C.year_scope(sky, "custom_html") == "/current/"
       and C.program_candidates(SKY, sky, C.year_scope(sky, "custom_html")) == SKY[:1],
       "an own-HTML catalog's sitemap keeps to its own path")
-check(C.year_scope(sky, "courseleaf") is None and C.year_scope("https://catalog.x.edu/", "custom_html") is None,
-      "the year scope is own-HTML only, and none at a host's root")
+check(C.year_scope(sky, "courseleaf") is None and C.year_scope("https://catalog.x.edu/", "custom_html") is None
+      and C.year_scope("https://canadacollege.edu/catalogschedule/", "custom_html") is None,
+      "the year scope is own-HTML only, and none where the address names no year")
+check(C.year_scope("https://coalingacollege.edu/catalog/2026-2027/", "custom_html") == "/catalog/2026-2027/"
+      and C.year_scope("https://catalog.skylinecollege.edu/1718/", "custom_html") == "/1718/",
+      "the year scope runs through the year segment")
 check(C.in_scope("https://catalog.nocccd.edu/fullerton-college/x/", "/fullerton-college/")
       and not C.in_scope("https://catalog.nocccd.edu/cypress-college/x/", "/fullerton-college/")
       and C.in_scope("https://anything/", None),

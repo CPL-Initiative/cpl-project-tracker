@@ -179,16 +179,23 @@ def district_scope(start: str, registry_urls: list[str]) -> str | None:
     return "/%s/" % seg[0] if others and seg else None
 
 
+YEAR_SEGMENT = re.compile(r"^(current|\d{4}|(19|20)\d{2}-(19|20)?\d{2})$", re.I)
+
+
 def year_scope(start: str, platform: str | None) -> str | None:
     """An own-HTML catalog's own path (/current/), so its sitemap's past years
     stay out. Skyline's sitemap lists 48,034 pages across every catalog year
     since 2017-18; the read stopped at MAX_PAGES and took 40 of its 62 picks
-    from /1718/, /1819/ and /1920/ (run 39024299478, S404). A catalog at the
-    host's root has none."""
+    from /1718/, /1819/ and /1920/ (run 39024299478, S404). The scope runs
+    through the address's year segment (Coalinga: /catalog/2026-2027/); an
+    address that names no year (a landing page) keeps the whole host."""
     if platform != "custom_html" or not start:
         return None
     seg = [x for x in (urllib.parse.urlparse(start).path or "/").split("/") if x]
-    return "/%s/" % seg[0] if seg else None
+    for i, x in enumerate(seg):
+        if YEAR_SEGMENT.match(x):
+            return "/%s/" % "/".join(seg[:i + 1])
+    return None
 
 
 def in_scope(url: str, scope: str | None) -> bool:
