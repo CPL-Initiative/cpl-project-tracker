@@ -1643,6 +1643,20 @@ def pdf_program_pages(pages: list[str], program: dict, courses: list[dict]) -> d
             "named": bool(best_head[0] == 1.0 and best_head[1]), "control_number_printed": best_cn >= 0}
 
 
+PDF_CN_SHARE = 0.5        # a catalog printing this share of its programs' control numbers prints them all
+
+
+def pdf_unproven(picks: list[dict]) -> set[str]:
+    """The picks a catalog that prints control numbers does not vouch for. East LA
+    prints the number in 116 of its 141 headings (run 39010864052); of the 25
+    others, six went to its online-course, C-ID and admissions pages up front.
+    Where the numbers are the catalog's habit, a page naming neither the number
+    nor the program's title and award is no proof, and the program stays out."""
+    if not picks or sum(1 for p in picks if p["cn_printed"]) < PDF_CN_SHARE * len(picks):
+        return set()
+    return {p["control_number"] for p in picks if not p["cn_printed"] and not p["named"]}
+
+
 def pdf_start(reader, reg: dict, cache: dict, report: dict) -> tuple[str | None, int]:
     """The catalog PDF's address and how long to wait for it: the registry's,
     or the link its procedure record says to follow."""
@@ -1705,8 +1719,18 @@ def pdf_records(reader, college: str, programs: list[dict], reg: dict, cache: di
                     rec["near_miss"] = {"pages": got["pages"], "coverage": round(got["coverage"], 3),
                                         "heading": got["heading"]}
         recs.append(rec)
-        _write(os.path.join(out_dir, "sources", prog["control_number"] + ".json"), rec)
-        print("%-6s %-12s cov %-5s %s" % (prog["control_number"], rec["method"][:12], rec["coverage"],
+    picks = {p["control_number"]: p for p in report["pdf"].get("picks") or []}
+    drop = pdf_unproven(list(picks.values()))
+    report["pdf"]["unproven"] = sorted(drop)
+    byc = {p["control_number"]: p for p in programs}
+    for i, rec in enumerate(recs):
+        cn = rec["control_number"]
+        if cn in drop:
+            recs[i] = rec = source_record(college, byc[cn], reg, None, "not_found")
+            rec["near_miss"] = {"pages": picks[cn]["pages"], "coverage": picks[cn]["coverage"],
+                                "why": "the page prints neither the control number nor the title and award"}
+        _write(os.path.join(out_dir, "sources", rec["control_number"] + ".json"), rec)
+        print("%-6s %-12s cov %-5s %s" % (rec["control_number"], rec["method"][:12], rec["coverage"],
                                           (rec.get("source") or {}).get("url") or ""), flush=True)
     return recs
 

@@ -1606,6 +1606,14 @@ long_head = ["Medical Assistant, Associate in Science Degree (Academic Plan X) A
 check(C.pdf_heading(long_head[0], {"title": "Medical Assistant", "award": "A.S. Degree"})[:2] == (1.0, True),
       "a heading run into its paragraph is read from the line's opening")
 
+picks = [{"control_number": "1", "cn_printed": True, "named": False},
+         {"control_number": "2", "cn_printed": True, "named": False},
+         {"control_number": "3", "cn_printed": False, "named": True},
+         {"control_number": "4", "cn_printed": False, "named": False}]
+check(C.pdf_unproven(picks) == {"4"}, "where the catalog prints control numbers, an unnamed page is no proof")
+check(C.pdf_unproven([dict(p, cn_printed=False) for p in picks]) == set(),
+      "a catalog that prints no control numbers keeps its coverage picks")
+
 
 class StepReader:
     pass
