@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "Radio-TV-Film: Video Production",
  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
- "source_url": "https://butte.curriqunet.com/catalog/iq/25399/28161/28045/27593",
+ "source_url": "https://butte.curriqunet.com/catalog/iq/25398/28170/28343",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 6476,
+  "input_tokens": 6546,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,7 +18,7 @@
   },
   "iterations": [
    {
-    "input_tokens": 6476,
+    "input_tokens": 6546,
     "output_tokens": 716,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
@@ -38,9 +38,9 @@
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.04022,
- "ms": 11476,
- "seconds": 12.5,
+ "cost_usd": 0.0405,
+ "ms": 8266,
+ "seconds": 8.7,
  "parts": null,
  "error": null,
  "score": {
@@ -100,7 +100,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "Radio-TV-Film: Video Production (Certificate of Achievement)",
+   "section_heading": "Certificate of Achievement in Radio-TV-Film: Video Production",
    "measure": "units",
    "total_units": {
     "min": 21,
@@ -195,9 +195,9 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The page includes a term-by-term Map (Term 1: 9 units, Term 2: 12 units) that repeats the same seven required courses; it was not recorded as separate blocks.",
-   "The page says 'See AS degree in Radio-TV-Film: Video Production.' The AS degree requirements are not in this text."
+   "The page also prints a two-term Map repeating the same seven courses (Term 1: 9 units; Term 2: 12 units; total 21). It is a suggested sequence and is not recorded as separate blocks.",
+   "The page refers to the AS degree in Radio-TV-Film: Video Production. That degree was not read."
   ]
  },
- "extracted_run": "38948140330"
+ "extracted_run": "38981247046"
 }

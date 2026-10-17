@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "Accelerated Track Registered Nursing: LVN to ADN",
  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
- "source_url": "https://butte.curriqunet.com/catalog/iq/25399/28163/28039/27613",
+ "source_url": "https://butte.curriqunet.com/catalog/iq/25398/28156/28382",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 8711,
+  "input_tokens": 8707,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 8711,
-    "output_tokens": 1529,
+    "input_tokens": 8707,
+    "output_tokens": 1425,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 1529,
+  "output_tokens": 1425,
   "output_tokens_details": {
-   "thinking_tokens": 297
+   "thinking_tokens": 228
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.06542,
- "ms": 12768,
- "seconds": 13.1,
+ "cost_usd": 0.06333,
+ "ms": 11884,
+ "seconds": 12.4,
  "parts": null,
  "error": null,
  "score": {
@@ -100,7 +100,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "Accelerated Track Registered Nursing: LVN to ADN (Certificate of Achievement)",
+   "section_heading": "Certificate of Achievement in Accelerated Track Registered Nursing: LVN to ADN",
    "measure": "units",
    "total_units": {
     "min": 29.5,
@@ -132,7 +132,7 @@
     "Demonstrate effective management through gathering information, planning, and directing in collaboration with the healthcare team to assist the client to move toward positive outcomes in an efficient and cost-effective manner."
    ],
    "careers": [
-    "Registered Nurse"
+    "registered nurse"
    ]
   },
   "blocks": [
@@ -229,12 +229,12 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The 'Map' section repeats the same 11 required courses by term (total 29.50); it was not recorded as separate blocks.",
+   "GE Pattern(s) printed as 'None'.",
+   "The Map section repeats the same 11 required courses by term (Total 29.50); not recorded as separate blocks.",
    "Courses named only as prerequisites in the Map (BIOL 20, CHEM 1, CHEM 51, BIOL 1, BIOL 2) are not program requirements and were not recorded.",
-   "The description mentions 'A 30-unit option is available'; that option is not detailed in this section.",
-   "Admission requires 16 units of prior vocational nursing credit, which counts toward some first/second semester courses; these are not listed as courses in the requirements.",
-   "'Registered Nurse' recorded as the career; the employment settings listed (hospitals, clinics, etc.) are workplaces, not careers."
+   "Admission requires 16 units of college-level nursing credit from a vocational/practical nursing program and an LVN license; these are admission requirements, not courses in the award.",
+   "Text mentions 'A 30-unit option is available' without detailing it; not recorded."
   ]
  },
- "extracted_run": "38948140330"
+ "extracted_run": "38981247046"
 }

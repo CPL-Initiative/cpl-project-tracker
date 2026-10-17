@@ -4,12 +4,12 @@
  "shape": "degree",
  "title": "Accelerated Track Registered Nursing: LVN to ADN",
  "award": "A.S. Degree",
- "source_url": "https://butte.curriqunet.com/catalog/iq/25399/28163/28039/27611",
+ "source_url": "https://butte.curriqunet.com/catalog/iq/25398/28156/28381",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 9152,
+  "input_tokens": 9150,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 9152,
-    "output_tokens": 2230,
+    "input_tokens": 9150,
+    "output_tokens": 2198,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 2230,
+  "output_tokens": 2198,
   "output_tokens_details": {
-   "thinking_tokens": 675
+   "thinking_tokens": 617
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.08121,
- "ms": 17972,
- "seconds": 18.3,
+ "cost_usd": 0.08056,
+ "ms": 25307,
+ "seconds": 25.8,
  "parts": null,
  "error": null,
  "score": {
@@ -117,7 +117,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "N to ADN (AS Degree)",
+   "section_heading": "Nursing: LVN to ADN",
    "measure": "units",
    "total_units": {
     "min": 29.5,
@@ -253,14 +253,14 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The section heading appears truncated in the extracted text ('N to ADN (AS Degree)'); likely 'Accelerated Track Registered Nursing: LVN to ADN (AS Degree)'.",
-   "Closed list stores 'NSG10' without a space; the catalog prints 'NSG 10'. Treated as the same course (not a catalog addition).",
-   "degree_total 60-63 is taken from the 'Map (Butte GE)' section ('Units: 60.00- 63.00', 'Total : 60.00- 63.00'), which includes GE area choices and an elective; reviewer should confirm it is the award's degree total rather than only a sample map.",
-   "degree_elective_units 21.5 is the map's 'Elective (any course numbered 1-199 or C1000-C2999)', which the page says is 'Only necessary if the 60 units needed to graduate have not been completed.'",
-   "No single GE units figure is printed; the map lists Area 2 (3-5), Area 3 (3-4) and Area 6 (3) choices, so ge_units is null.",
-   "Admission prerequisites (CMST 4 or COMM C1000, ENGL C1000 or ENGL C1000E, FN 2, PSYC C1000, BIOL 15, BIOL 20, BIOL 21) and 16 units of vocational nursing credit are entry requirements, not part of the 29.5-unit major, and are not placed in blocks.",
-   "NSG 51 and NSG 52 are described as additional prerequisites upon admittance but are listed within the required courses totaling 29.50."
+   "Closed list stores 'NSG10' without a space; the catalog prints 'NSG 10' (1.50 units). Treated as the same closed-list course, not a catalog addition.",
+   "Section heading as printed is 'Nursing: LVN to ADN'; the description names the award 'Associate Degree in Accelerated Track Registered Nursing: LVN to ADN'.",
+   "degree_total 60-63 is taken from the 'Map (Butte GE)' sequence ('Units: 60.00- 63.00', 'Total : 60.00- 63.00'), which includes GE area choices and an elective; reviewer should confirm a degree map total counts as the award's degree total.",
+   "degree_elective_units 21.5 is the map's 'Elective (any course numbered 1-199 or C1000-C2999)' line, which the page says is 'Only necessary if the 60 units needed to graduate have not been completed.'",
+   "The map prints individual GE area choices (Area 2 3-5, Area 3 3-4, Area 6 3) but no total for the GE pattern, so ge_units is null.",
+   "Admission prerequisites (CMST 4 or COMM C1000, ENGL C1000 or ENGL C1000E, FN 2, PSYC C1000, BIOL 15, BIOL 20, BIOL 21) are listed as application prerequisites, not major requirements, and were not placed in blocks. NSG 51 and NSG 52 are described as post-admission prerequisites but are also listed under Required courses, so they are placed there.",
+   "Program Learning Outcomes are printed for the program as a whole; the A.S. degree is the only award on the page."
   ]
  },
- "extracted_run": "38948140330"
+ "extracted_run": "38981247046"
 }

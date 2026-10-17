@@ -1,0 +1,290 @@
+{
+ "college": "Butte College",
+ "control_number": "38056",
+ "shape": "degree",
+ "title": "Advanced Manufacturing",
+ "award": "A.S. Degree",
+ "source_url": "https://butte.curriqunet.com/catalog/iq/25398/28144/28373",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8084,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8084,
+    "output_tokens": 1743,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1743,
+  "output_tokens_details": {
+   "thinking_tokens": 389
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.0672,
+ "ms": 14965,
+ "seconds": 15.5,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 16,
+   "listed": 16,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    62.0,
+    62.0
+   ],
+   "stated": [
+    83.0,
+    89.0
+   ],
+   "against": "degree",
+   "ge": null,
+   "why": [
+    "the record names the degree total and the Butte Local pattern, but no units for it"
+   ],
+   "major": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     62.0,
+     62.0
+    ],
+    "stated": [
+     62.0,
+     62.0
+    ],
+    "against": "program",
+    "why": []
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 7,
+   "courses": 0,
+   "count": 7,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "AS Degree in Advanced Manufacturing",
+   "measure": "units",
+   "total_units": {
+    "min": 62,
+    "max": 62
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Butte Local",
+   "degree_total": {
+    "min": 83,
+    "max": 89
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Practice safety skills required on job sites.",
+    "Use various software tools used in CNC manufacturing equipment and product design",
+    "Explain the basic principles of feed and speed settings on various manufacturing platforms.",
+    "Apply precision measurement strategies and unit conversion skills.",
+    "Interpret technical drawings and schematics for use in cost estimation, scheduling, and manufacturing applications.",
+    "Manage and maintain the mechanical and electrical systems used in manufacturing equipment.",
+    "Employ Enterprise Resource Planning (ERP) software that enables manufacturers to perform cost/benefit analysis of various manufacturing techniques."
+   ],
+   "careers": [
+    "Manufacturing industry"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 62,
+     "max": 62
+    },
+    "courses": [
+     {
+      "code": "MFG 10",
+      "units": 8,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MFG 12",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MFG 14",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MFG 16",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MFG 20",
+      "units": 8,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MFG 22",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MFG 24",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MFG 26",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MFG 30",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MFG 32",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MFG 34",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MFG 36",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MFG 40",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MFG 42",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MFG 44",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MFG 46",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "degree_total 83-89 taken from the 'Map (Butte GE)' section, which lists the 62-unit major plus Butte GE area choices across Terms 5 and 6 (Term 5: 15-21, Term 6: 6). The page prints no single GE total, so ge_units is left null (GE terms would sum to 21-27).",
+   "ITEC 55 is named as a program prerequisite ('Term 1 Prerequisite: ITEC 55 (Meets Graduation Requirement)'); it is not listed among the required courses and was not placed in a block.",
+   "The second program learning outcome is printed without a closing period; copied as printed.",
+   "Career entry 'Manufacturing industry' is drawn from 'prepare students for productive futures in the Manufacturing industry'; the description also mentions a managerial capacity in manufacturing but names no specific job titles."
+  ]
+ },
+ "extracted_run": "38981247046"
+}

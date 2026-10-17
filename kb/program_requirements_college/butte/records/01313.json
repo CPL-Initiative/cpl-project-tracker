@@ -1,0 +1,270 @@
+{
+ "college": "Butte College",
+ "control_number": "01313",
+ "shape": "degree",
+ "title": "Business Information Worker",
+ "award": "A.S. Degree",
+ "source_url": "https://butte.curriqunet.com/catalog/iq/25398/28092/28232",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7767,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7767,
+    "output_tokens": 1933,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1933,
+  "output_tokens_details": {
+   "thinking_tokens": 658
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.06973,
+ "ms": 16319,
+ "seconds": 16.9,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 12,
+   "listed": 12,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    29.5,
+    29.5
+   ],
+   "stated": [
+    60.0,
+    68.0
+   ],
+   "against": "degree",
+   "ge": null,
+   "why": [
+    "the record names the degree total and the Butte Local pattern, but no units for it"
+   ],
+   "major": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     29.5,
+     29.5
+    ],
+    "stated": [
+     29.5,
+     29.5
+    ],
+    "against": "program",
+    "why": []
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 7,
+   "courses": 0,
+   "count": 7,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 8,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "AS Degree in Business Information Worker",
+   "measure": "units",
+   "total_units": {
+    "min": 29.5,
+    "max": 29.5
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Butte Local",
+   "degree_total": {
+    "min": 60,
+    "max": 68
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Manage office information and records.",
+    "Communicate professionally and work effectively in a team",
+    "Produce accessible business documents with appropriate formatting using word processing software.",
+    "Create spreadsheets with financial functions and charting.",
+    "Plan and deliver individual or team oral presentations for business meetings.",
+    "Use email and calendaring software to communicate and manage time.",
+    "Apply the features and functions of web-based tools efficiently and effectively in order to meet the desired goals and outcomes of business."
+   ],
+   "careers": [
+    "office and administrative support",
+    "office and administrative support workers",
+    "administrative assistants",
+    "receptionists",
+    "office specialists",
+    "customer service representatives",
+    "general office and information clerks",
+    "file clerks"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 29.5,
+     "max": 29.5
+    },
+    "courses": [
+     {
+      "code": "BCIS 13",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BCIS 16",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BCIS 17",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BCIS 18",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BCIS 20",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BCIS 28",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BCIS 33",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BCIS 46",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BCIS 50",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BCIS 51",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BCIS 70",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BCIS 85",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "BCIS 46 is printed with a space in the catalog; the closed list stores it as 'BCIS46' with no units. Treated as the same course (catalog_addition false); the catalog prints 2.00 units.",
+   "degree_total 60-68 is taken from the 'Map (Butte GE)' sample term plan ('Units: 60.00- 68.00', 'Total : 60.00- 68.00'), which includes GE area choices; reviewer may confirm it should count as the award's degree total.",
+   "The map lists two electives (3.00 and 4.50 units, 'any course numbered 1-199 or C1000-C2999') marked 'Only necessary if the 60 units needed to graduate have not been completed'. Because they are conditional, they were not recorded in degree_elective_units or open_elective_units.",
+   "GE pattern stated as 'Butte Local'; the map refers to GE areas via 'See GE Guide' and prints no GE unit total, so ge_units is null.",
+   "The page states AS degree holders will also have completed the BIW Certificate and BIW Certificate of Achievement."
+  ]
+ },
+ "extracted_run": "38981247046"
+}

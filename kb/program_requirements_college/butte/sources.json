@@ -4,12 +4,41 @@
   "title": "Agriculture Science",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AB20",
+   "AB22",
+   "AB25",
+   "AET34",
+   "AGS10",
+   "AGS20",
+   "AGS30",
+   "AGS40",
+   "AGS45",
+   "AGS50",
+   "AGS51",
+   "AGS75",
+   "AGS99",
+   "COMMC1000",
+   "EH38",
+   "EH60",
+   "EH66",
+   "STATC1000",
+   "STATC1000E"
+  ],
+  "source": {
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28078/28202",
+   "title": "AS Degree in Agriculture Science",
+   "h1": "AS Degree in Agriculture Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 19,
-  "text_chars": 0
+  "text_chars": 4790
  },
  {
   "control_number": "01301",
@@ -28,132 +57,384 @@
   "title": "Landscape/Turfgrass Technician",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "EH20",
+   "EH22",
+   "EH23",
+   "EH24",
+   "EH26",
+   "EH28",
+   "EH30",
+   "EH72",
+   "EH74"
+  ],
+  "source": {
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28122/28286",
+   "title": "Certificate of Achievement in Landscape/Turfgrass Technician",
+   "h1": "Certificate of Achievement in Landscape/Turfgrass Technician",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 9,
-  "text_chars": 0
+  "text_chars": 2214
  },
  {
   "control_number": "01305",
   "title": "Mechanized Agriculture",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AB20",
+   "AB25",
+   "AB54",
+   "AET22",
+   "AET30",
+   "AET34",
+   "AET36",
+   "AET38",
+   "AET43",
+   "AGS20",
+   "AGS50",
+   "AGS99",
+   "EH22",
+   "WLD20"
+  ],
+  "source": {
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28074/28198",
+   "title": "AS Degree in Mechanized Agriculture",
+   "h1": "AS Degree in Mechanized Agriculture",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 14,
-  "text_chars": 0
+  "text_chars": 3727
  },
  {
   "control_number": "01306",
   "title": "Biological Science",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL41",
+   "BIOL42",
+   "BIOL43",
+   "CHEM1",
+   "CHEM2"
+  ],
+  "source": {
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28088/28240",
+   "title": "AS Degree in Biological Science",
+   "h1": "AS Degree in Biological Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 5,
-  "text_chars": 0
+  "text_chars": 2541
  },
  {
   "control_number": "01307",
   "title": "Business Administration",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT2",
+   "ACCT4",
+   "BUS20",
+   "ECONC2001",
+   "ECONC2002",
+   "MATH12",
+   "MATH12S",
+   "STATC1000",
+   "STATC1000E"
+  ],
+  "source": {
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28090/28242",
+   "title": "AS Degree in Business Administration",
+   "h1": "AS Degree in Business Administration",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 9,
-  "text_chars": 0
+  "text_chars": 4226
  },
  {
   "control_number": "01308",
   "title": "Accounting",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT100",
+   "ACCT110",
+   "ACCT2",
+   "ACCT20",
+   "ACCT30",
+   "ACCT4",
+   "BCIS13",
+   "BCIS33",
+   "BCIS46",
+   "BCIS81",
+   "BUS20",
+   "BUS35",
+   "BUS64",
+   "BUS8"
+  ],
+  "source": {
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28068/28192",
+   "title": "AS Degree in Accounting",
+   "h1": "AS Degree in Accounting",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 14,
-  "text_chars": 0
+  "text_chars": 3760
  },
  {
   "control_number": "01310",
   "title": "Business Management",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT100",
+   "ACCT20",
+   "ACCT4",
+   "BCIS13",
+   "BCIS18",
+   "BCIS33",
+   "BCIS81",
+   "BCIS85",
+   "BUS20",
+   "BUS25",
+   "BUS35",
+   "BUS40",
+   "BUS44",
+   "BUS50",
+   "BUS60",
+   "BUS64",
+   "BUS68",
+   "BUS8",
+   "COMMC1000",
+   "ECONC2001"
+  ],
+  "source": {
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28090/28244",
+   "title": "AS Degree in Business Management",
+   "h1": "AS Degree in Business Management",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 20,
-  "text_chars": 0
+  "text_chars": 4703
  },
  {
   "control_number": "01311",
   "title": "Marketing",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT20",
+   "ART31",
+   "BCIS13",
+   "BCIS17",
+   "BCIS18",
+   "BCIS33",
+   "BCIS81",
+   "BUS20",
+   "BUS25",
+   "BUS35",
+   "BUS50",
+   "BUS60",
+   "BUS64",
+   "BUS68",
+   "BUS8",
+   "COMMC1000",
+   "ECONC2001",
+   "MSP5",
+   "MSP74"
+  ],
+  "source": {
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28090/28247",
+   "title": "AS Degree in Marketing",
+   "h1": "AS Degree in Marketing",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 19,
-  "text_chars": 0
+  "text_chars": 4446
  },
  {
   "control_number": "01312",
   "title": "Real Estate",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT2",
+   "ACCT20",
+   "BCIS18",
+   "BUS25",
+   "BUS50",
+   "CSCI2",
+   "ECONC2002",
+   "RLS20",
+   "RLS25",
+   "RLS30",
+   "RLS35",
+   "RLS40",
+   "RLS45",
+   "RLS50",
+   "RLS55",
+   "RLS60"
+  ],
+  "source": {
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28172/28335",
+   "title": "AS Degree in Real Estate",
+   "h1": "AS Degree in Real Estate",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 16,
-  "text_chars": 0
+  "text_chars": 4789
  },
  {
   "control_number": "01313",
   "title": "Business Information Worker",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BCIS13",
+   "BCIS16",
+   "BCIS17",
+   "BCIS18",
+   "BCIS20",
+   "BCIS28",
+   "BCIS33",
+   "BCIS46",
+   "BCIS50",
+   "BCIS51",
+   "BCIS70",
+   "BCIS85"
+  ],
+  "source": {
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28092/28232",
+   "title": "AS Degree in Business Information Worker",
+   "h1": "AS Degree in Business Information Worker",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 12,
-  "text_chars": 0
+  "text_chars": 4741
  },
  {
   "control_number": "01314",
   "title": "Legal Office Administration",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AJ3",
+   "BCIS13",
+   "BCIS18",
+   "BCIS28",
+   "BCIS33",
+   "BCIS46",
+   "BCIS51",
+   "BCIS59",
+   "BCIS60",
+   "BCIS70",
+   "BUS8"
+  ],
+  "source": {
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28092/28235",
+   "title": "AS Degree in Legal Office Administration",
+   "h1": "AS Degree in Legal Office Administration",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 11,
-  "text_chars": 0
+  "text_chars": 4994
  },
  {
   "control_number": "01315",
   "title": "Medical Office Administration",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ALH104",
+   "BCIS13",
+   "BCIS18",
+   "BCIS33",
+   "BCIS99",
+   "BIOL10",
+   "BIOL2",
+   "BIOL20",
+   "HIM56",
+   "HIM58",
+   "HIM62",
+   "HIM63",
+   "HIM76"
+  ],
+  "source": {
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28092/28238",
+   "title": "AS Degree in Medical Office Administration",
+   "h1": "AS Degree in Medical Office Administration",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 13,
-  "text_chars": 0
+  "text_chars": 5165
  },
  {
   "control_number": "01320",
@@ -184,12 +465,32 @@
   "title": "Civil Engineering Technology",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "DFT12",
+   "DFT2",
+   "DFT24",
+   "DFT4",
+   "ENGLC1000",
+   "ENGLC1000E",
+   "ENGR1",
+   "ENGR3",
+   "ENGR4",
+   "MATH20"
+  ],
+  "source": {
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28116/28291",
+   "title": "AS Degree in Civil Engineering Technology",
+   "h1": "AS Degree in Civil Engineering Technology",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 10,
-  "text_chars": 0
+  "text_chars": 4143
  },
  {
   "control_number": "01323",
@@ -216,9 +517,9 @@
    "AUT9"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/catalog/iq/25398/28086/28227",
-   "title": "AS Degree in Automotive Technology - Honda, Professional Automotive Career Training (PACT)",
-   "h1": "AS Degree in Automotive Technology - Honda, Professional Automotive Career Training (PACT)",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28086/28225",
+   "title": "AS Degree in Automotive Technology",
+   "h1": "AS Degree in Automotive Technology",
    "text_from": "innerText",
    "label": {
     "award": 1,
@@ -226,7 +527,7 @@
    }
   },
   "listed": 15,
-  "text_chars": 5303
+  "text_chars": 4725
  },
  {
   "control_number": "01324",
@@ -245,24 +546,81 @@
   "title": "Welding Technology",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AB54",
+   "BCIS18",
+   "BUS25",
+   "CSCI2",
+   "WLD154",
+   "WLD156",
+   "WLD160",
+   "WLD22",
+   "WLD24",
+   "WLD25",
+   "WLD26",
+   "WLD28",
+   "WLD30",
+   "WLD32",
+   "WLD34",
+   "WLD36",
+   "WLD40",
+   "WLD42",
+   "WLD50",
+   "WLD56",
+   "WLD99"
+  ],
+  "source": {
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28182/28349",
+   "title": "AS Degree in Welding Technology",
+   "h1": "AS Degree in Welding Technology",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 21,
-  "text_chars": 0
+  "text_chars": 5463
  },
  {
   "control_number": "01329",
   "title": "Arts",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART1",
+   "ART14",
+   "ART17",
+   "ART23",
+   "ART3",
+   "ART50",
+   "ART6",
+   "ART60",
+   "ART7",
+   "ART8",
+   "ART9",
+   "ARTHC1100",
+   "ARTHC1200",
+   "MSP30",
+   "PHO2",
+   "PHO4"
+  ],
+  "source": {
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28084/28222",
+   "title": "AA Degree in Arts",
+   "h1": "AA Degree in Arts",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 16,
-  "text_chars": 0
+  "text_chars": 4690
  },
  {
   "control_number": "01334",
@@ -329,12 +687,35 @@
   "title": "Fashion Merchandising",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BCIS18",
+   "BUS20",
+   "BUS25",
+   "BUS35",
+   "BUS50",
+   "ECON25",
+   "FASH18",
+   "FASH6",
+   "FASH64",
+   "FASH74",
+   "FASH80",
+   "FASH90",
+   "FASH99"
+  ],
+  "source": {
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28124/28296",
+   "title": "AS Degree in Fashion Merchandising",
+   "h1": "AS Degree in Fashion Merchandising",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 13,
-  "text_chars": 0
+  "text_chars": 4418
  },
  {
   "control_number": "01349",
@@ -353,12 +734,28 @@
   "title": "Mathematics",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CSCI20",
+   "MATH32",
+   "MATH40",
+   "MATH42",
+   "MATHC2210",
+   "MATHC2220"
+  ],
+  "source": {
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28146/28308",
+   "title": "AS Degree in Mathematics",
+   "h1": "AS Degree in Mathematics",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 6,
-  "text_chars": 0
+  "text_chars": 3250
  },
  {
   "control_number": "01356",
@@ -389,24 +786,63 @@
   "title": "Chemistry",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEM1",
+   "CHEM2",
+   "CHEM21",
+   "MATH32",
+   "MATHC2210",
+   "MATHC2220",
+   "PHYS41",
+   "PHYS42",
+   "PHYS43"
+  ],
+  "source": {
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28094/28255",
+   "title": "AS Degree in Chemistry",
+   "h1": "AS Degree in Chemistry",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 9,
-  "text_chars": 0
+  "text_chars": 4253
  },
  {
   "control_number": "01362",
   "title": "Fire Technology",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "FSC10",
+   "FSC12",
+   "FSC14",
+   "FSC16",
+   "FSC18",
+   "FSC2",
+   "FSC4",
+   "FSC6",
+   "FSC8",
+   "POLSC1000"
+  ],
+  "source": {
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28126/28301",
+   "title": "AS Degree in Fire Technology",
+   "h1": "AS Degree in Fire Technology",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 10,
-  "text_chars": 0
+  "text_chars": 3456
  },
  {
   "control_number": "01363",
@@ -425,12 +861,29 @@
   "title": "Cosmetology",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "COS10",
+   "COS11",
+   "COS12",
+   "COS19",
+   "COS20",
+   "COS23",
+   "COS29"
+  ],
+  "source": {
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28104/28258",
+   "title": "AS Degree in Cosmetology",
+   "h1": "AS Degree in Cosmetology",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 7,
-  "text_chars": 0
+  "text_chars": 4085
  },
  {
   "control_number": "01372",
@@ -449,24 +902,73 @@
   "title": "Nursery Technician",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "EH20",
+   "EH23",
+   "EH24",
+   "EH26",
+   "EH30",
+   "EH38",
+   "EH60",
+   "EH61",
+   "EH62",
+   "EH70"
+  ],
+  "source": {
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28122/28287",
+   "title": "Certificate of Achievement in Nursery Technician",
+   "h1": "Certificate of Achievement in Nursery Technician",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 10,
-  "text_chars": 0
+  "text_chars": 2897
  },
  {
   "control_number": "07258",
   "title": "Environmental Horticulture",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AB20",
+   "AET30",
+   "AGS20",
+   "AGS30",
+   "AGS50",
+   "EH20",
+   "EH23",
+   "EH24",
+   "EH26",
+   "EH28",
+   "EH30",
+   "EH38",
+   "EH60",
+   "EH61",
+   "EH62",
+   "EH70",
+   "EH72",
+   "EH74",
+   "EH99"
+  ],
+  "source": {
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28122/28284",
+   "title": "AS Degree in Environmental Horticulture",
+   "h1": "AS Degree in Environmental Horticulture",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 19,
-  "text_chars": 0
+  "text_chars": 4155
  },
  {
   "control_number": "07259",
@@ -485,36 +987,105 @@
   "title": "Heavy Equipment Operator Technician",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AB20",
+   "AET26",
+   "AET30",
+   "AET34",
+   "AET35",
+   "AET36",
+   "AET38",
+   "AET43",
+   "AET44",
+   "WLD20"
+  ],
+  "source": {
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28074/28196",
+   "title": "Certificate of Achievement in Heavy Equipment Operator Technician",
+   "h1": "Certificate of Achievement in Heavy Equipment Operator Technician",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 10,
-  "text_chars": 0
+  "text_chars": 3018
  },
  {
   "control_number": "07264",
   "title": "Graphic Design for Print",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART1",
+   "ART31",
+   "ART32",
+   "ART34",
+   "ART35",
+   "ART36",
+   "ART7",
+   "ART70",
+   "ART8",
+   "ARTHC1100",
+   "ARTHC1200",
+   "BUS60",
+   "MSP1",
+   "MSP5",
+   "MSP96",
+   "PHO2",
+   "RTVF12"
+  ],
+  "source": {
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28150/28312",
+   "title": "AS Degree in Graphic Design for Print",
+   "h1": "AS Degree in Graphic Design for Print",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 17,
-  "text_chars": 0
+  "text_chars": 4492
  },
  {
   "control_number": "07269",
   "title": "Administration of Justice",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AJ1",
+   "AJ10",
+   "AJ11",
+   "AJ13",
+   "AJ14",
+   "AJ2",
+   "AJ3",
+   "AJ4",
+   "AJ6",
+   "AJ8",
+   "AJ99",
+   "COMMC1000"
+  ],
+  "source": {
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28070/28204",
+   "title": "AS Degree in Administration of Justice",
+   "h1": "AS Degree in Administration of Justice",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 12,
-  "text_chars": 0
+  "text_chars": 3956
  },
  {
   "control_number": "07474",
@@ -533,9 +1104,9 @@
    "RTVF55"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/catalog/iq/25399/28161/28045/27591",
-   "title": "Radio-TV-Film: Video Production (AS Degree)",
-   "h1": "Radio-TV-Film: Video Production (AS Degree)",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28170/28342",
+   "title": "AS Degree in Radio-TV-Film: Video Production",
+   "h1": "AS Degree in Radio-TV-Film: Video Production",
    "text_from": "innerText",
    "label": {
     "award": 1,
@@ -543,19 +1114,49 @@
    }
   },
   "listed": 7,
-  "text_chars": 3123
+  "text_chars": 3338
  },
  {
   "control_number": "09582",
   "title": "Multimedia Studies",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART14",
+   "ART31",
+   "ART32",
+   "ART35",
+   "ART7",
+   "ART8",
+   "ART9",
+   "MSP1",
+   "MSP10",
+   "MSP12",
+   "MSP30",
+   "MSP45",
+   "MSP5",
+   "MSP74",
+   "MSP75",
+   "MSP96",
+   "PHO2",
+   "PHO4",
+   "PHO8",
+   "RTVF40"
+  ],
+  "source": {
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28150/28313",
+   "title": "AS Degree in Multimedia Studies",
+   "h1": "AS Degree in Multimedia Studies",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 20,
-  "text_chars": 0
+  "text_chars": 5169
  },
  {
   "control_number": "11122",
@@ -586,24 +1187,88 @@
   "title": "Ceramics",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART50",
+   "ART52",
+   "ART54",
+   "ART56",
+   "ART60",
+   "ART7",
+   "ART70",
+   "ART8",
+   "ART9",
+   "ARTHC1100",
+   "ARTHC1200"
+  ],
+  "source": {
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28084/28223",
+   "title": "AA Degree in Ceramics",
+   "h1": "AA Degree in Ceramics",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 11,
-  "text_chars": 0
+  "text_chars": 4461
  },
  {
   "control_number": "11131",
   "title": "Language Arts",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ASL1",
+   "ASL2",
+   "CMST12",
+   "CMST14",
+   "CMST4",
+   "CMST6",
+   "CMST9",
+   "COMMC1000",
+   "ENGL10",
+   "ENGL14",
+   "ENGL15",
+   "ENGL16",
+   "ENGL20",
+   "ENGL25",
+   "ENGL31",
+   "ENGL35",
+   "ENGL47",
+   "ENGL8",
+   "ENGLC1000",
+   "ENGLC1000E",
+   "ENGLC1002",
+   "GERM1",
+   "GERM2",
+   "JPN1",
+   "JPN2",
+   "JPN3",
+   "JPN4",
+   "SPAN1",
+   "SPAN14",
+   "SPAN16",
+   "SPAN2",
+   "SPAN3",
+   "SPAN4"
+  ],
+  "source": {
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28118/28290",
+   "title": "AA Degree in Language Arts",
+   "h1": "AA Degree in Language Arts",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 33,
-  "text_chars": 0
+  "text_chars": 6837
  },
  {
   "control_number": "11133",
@@ -622,12 +1287,37 @@
   "title": "Court Personnel/Pre-law",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT20",
+   "AJ1",
+   "AJ11",
+   "AJ2",
+   "AJ3",
+   "AJ4",
+   "AJ6",
+   "AJ8",
+   "AJ99",
+   "BCIS59",
+   "BCIS60",
+   "BUS20",
+   "BUS8",
+   "ENGLC1000E",
+   "POS12"
+  ],
+  "source": {
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28070/28210",
+   "title": "AS Degree in Court Personnel/Pre-law",
+   "h1": "AS Degree in Court Personnel/Pre-law",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 15,
-  "text_chars": 0
+  "text_chars": 3792
  },
  {
   "control_number": "11137",
@@ -670,24 +1360,63 @@
   "title": "Graphic Design",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART31",
+   "ART7",
+   "ART8",
+   "ARTHC1100",
+   "ARTHC1200",
+   "PHO2",
+   "RTVF12"
+  ],
+  "source": {
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28150/28311",
+   "title": "AA Degree in Graphic Design",
+   "h1": "AA Degree in Graphic Design",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 7,
-  "text_chars": 0
+  "text_chars": 3044
  },
  {
   "control_number": "12221",
   "title": "Retail Management",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT20",
+   "BCIS13",
+   "BCIS18",
+   "BUS20",
+   "BUS35",
+   "BUS40",
+   "BUS44",
+   "BUS50",
+   "BUS60",
+   "BUS64",
+   "COMMC1000",
+   "ECONC2001"
+  ],
+  "source": {
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28090/28249",
+   "title": "Certificate of Achievement in Retail Management",
+   "h1": "Certificate of Achievement in Retail Management",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 12,
-  "text_chars": 0
+  "text_chars": 2795
  },
  {
   "control_number": "14583",
@@ -700,9 +1429,9 @@
    "FN2"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/catalog/iq/25399/28163/28039/27611",
-   "title": "Accelerated Track Registered Nursing: LVN to ADN (AS Degree)",
-   "h1": "Accelerated Track Registered Nursing: LVN to ADN (AS Degree)",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28156/28380",
+   "title": "AS Degree in Accelerated Track Registered Nursing",
+   "h1": "AS Degree in Accelerated Track Registered Nursing",
    "text_from": "innerText",
    "label": {
     "award": 1,
@@ -710,26 +1439,52 @@
    }
   },
   "listed": 1,
-  "text_chars": 3209
+  "text_chars": 2939
  },
  {
   "control_number": "15151",
   "title": "Environmental Science",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AGS50",
+   "BIOL43",
+   "CHEM1",
+   "CHEM2",
+   "GEOL32",
+   "MATHC2210E",
+   "MATHC2220",
+   "PHYS21",
+   "PHYS22",
+   "PHYS41",
+   "PHYS42",
+   "PSC10",
+   "PSC50",
+   "PSC51",
+   "STATC1000",
+   "STATC1000E"
+  ],
+  "source": {
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28162/28332",
+   "title": "AS Degree in Environmental Science",
+   "h1": "AS Degree in Environmental Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 16,
-  "text_chars": 0
+  "text_chars": 4902
  },
  {
   "control_number": "16226",
   "title": "Child Development",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "not_found",
+  "method": "page_claimed",
   "coverage": 0.0,
   "codes_found": [],
   "source": null,
@@ -741,12 +1496,28 @@
   "title": "Criminal Justice",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AJ10",
+   "AJ14",
+   "AJ2",
+   "AJ4",
+   "AJ6",
+   "AJ8"
+  ],
+  "source": {
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28070/28213",
+   "title": "AS Degree in Criminal Justice",
+   "h1": "AS Degree in Criminal Justice",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 6,
-  "text_chars": 0
+  "text_chars": 2820
  },
  {
   "control_number": "17935",
@@ -813,120 +1584,331 @@
   "title": "Environmental Horticulture",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AB20",
+   "AET30",
+   "AGS20",
+   "EH20",
+   "EH23",
+   "EH24",
+   "EH28",
+   "EH30",
+   "EH38",
+   "EH70",
+   "EH72",
+   "EH99"
+  ],
+  "source": {
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28122/28285",
+   "title": "Certificate of Achievement in Environmental Horticulture",
+   "h1": "Certificate of Achievement in Environmental Horticulture",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 12,
-  "text_chars": 0
+  "text_chars": 2072
  },
  {
   "control_number": "19981",
   "title": "Agriculture Business",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AB15",
+   "AB20",
+   "AB22",
+   "AB25",
+   "AB26",
+   "AB50",
+   "AB51",
+   "AB54",
+   "AGS20",
+   "AGS40"
+  ],
+  "source": {
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28076/28188",
+   "title": "Certificate of Achievement in Agriculture Business",
+   "h1": "Certificate of Achievement in Agriculture Business",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 10,
-  "text_chars": 0
+  "text_chars": 2561
  },
  {
   "control_number": "19984",
   "title": "Mechanized Agriculture",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AB20",
+   "AET22",
+   "AET30",
+   "AET34",
+   "AET36",
+   "AET38",
+   "AET43",
+   "EH22",
+   "WLD20"
+  ],
+  "source": {
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28074/28200",
+   "title": "Certificate of Achievement in Mechanized Agriculture",
+   "h1": "Certificate of Achievement in Mechanized Agriculture",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 9,
-  "text_chars": 0
+  "text_chars": 1930
  },
  {
   "control_number": "19985",
   "title": "Accounting",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT100",
+   "ACCT110",
+   "ACCT2",
+   "ACCT20",
+   "BCIS13",
+   "BCIS33",
+   "BCIS46",
+   "BCIS81",
+   "BUS20",
+   "BUS35",
+   "BUS64"
+  ],
+  "source": {
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28068/28406",
+   "title": "Certificate of Achievement in Accounting",
+   "h1": "Certificate of Achievement in Accounting",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 11,
-  "text_chars": 0
+  "text_chars": 1782
  },
  {
   "control_number": "19986",
   "title": "Business Management",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT20",
+   "BCIS13",
+   "BCIS18",
+   "BUS20",
+   "BUS25",
+   "BUS35",
+   "BUS40",
+   "BUS44",
+   "BUS64",
+   "COMMC1000",
+   "ECONC2001"
+  ],
+  "source": {
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28090/28245",
+   "title": "Certificate of Achievement in Business Management",
+   "h1": "Certificate of Achievement in Business Management",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 11,
-  "text_chars": 0
+  "text_chars": 2120
  },
  {
   "control_number": "19987",
   "title": "Marketing",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT20",
+   "BCIS13",
+   "BCIS33",
+   "BCIS81",
+   "BUS20",
+   "BUS35",
+   "BUS50",
+   "BUS60",
+   "BUS64",
+   "BUS68",
+   "COMMC1000",
+   "ECONC2001"
+  ],
+  "source": {
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28090/28248",
+   "title": "Certificate of Achievement in Marketing",
+   "h1": "Certificate of Achievement in Marketing",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 12,
-  "text_chars": 0
+  "text_chars": 2128
  },
  {
   "control_number": "19988",
   "title": "Real Estate",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.909,
+  "codes_found": [
+   "ACCT2",
+   "ACCT20",
+   "BCIS18",
+   "BUS35",
+   "BUS50",
+   "CSCI2",
+   "RLS20",
+   "RLS25",
+   "RLS30",
+   "RLS40"
+  ],
+  "source": {
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28172/28336",
+   "title": "Certificate of Achievement in Real Estate",
+   "h1": "Certificate of Achievement in Real Estate",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 11,
-  "text_chars": 0
+  "text_chars": 2096
  },
  {
   "control_number": "19989",
   "title": "Business Information Worker",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BCIS13",
+   "BCIS16",
+   "BCIS17",
+   "BCIS18",
+   "BCIS20",
+   "BCIS28",
+   "BCIS33",
+   "BCIS46",
+   "BCIS50",
+   "BCIS51",
+   "BCIS70",
+   "BCIS85"
+  ],
+  "source": {
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28092/28234",
+   "title": "Certificate of Achievement in Business Information Worker",
+   "h1": "Certificate of Achievement in Business Information Worker",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 12,
-  "text_chars": 0
+  "text_chars": 2988
  },
  {
   "control_number": "19990",
   "title": "Legal Office Administration",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AJ3",
+   "BCIS13",
+   "BCIS18",
+   "BCIS28",
+   "BCIS33",
+   "BCIS46",
+   "BCIS51",
+   "BCIS59",
+   "BCIS60",
+   "BCIS70",
+   "BUS8"
+  ],
+  "source": {
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28092/28237",
+   "title": "Certificate of Achievement in Legal Office Administration",
+   "h1": "Certificate of Achievement in Legal Office Administration",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 11,
-  "text_chars": 0
+  "text_chars": 2591
  },
  {
   "control_number": "19991",
   "title": "Medical Office Administration",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ALH104",
+   "BCIS13",
+   "BCIS18",
+   "BCIS20",
+   "BCIS33",
+   "BIOL10",
+   "BIOL2",
+   "BIOL20",
+   "HIM56",
+   "HIM58",
+   "HIM62",
+   "HIM63",
+   "HIM76"
+  ],
+  "source": {
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28092/28239",
+   "title": "Certificate of Achievement in Medical Office Administration",
+   "h1": "Certificate of Achievement in Medical Office Administration",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 13,
-  "text_chars": 0
+  "text_chars": 3120
  },
  {
   "control_number": "19995",
@@ -945,9 +1927,9 @@
    "RTVF55"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/catalog/iq/25399/28161/28045/27593",
-   "title": "Radio-TV-Film: Video Production (Certificate of Achievement)",
-   "h1": "Radio-TV-Film: Video Production (Certificate of Achievement)",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28170/28343",
+   "title": "Certificate of Achievement in Radio-TV-Film: Video Production",
+   "h1": "Certificate of Achievement in Radio-TV-Film: Video Production",
    "text_from": "innerText",
    "label": {
     "award": 1,
@@ -955,31 +1937,79 @@
    }
   },
   "listed": 7,
-  "text_chars": 1441
+  "text_chars": 1638
  },
  {
   "control_number": "19996",
   "title": "Multimedia Studies",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART14",
+   "ART31",
+   "ART32",
+   "ART35",
+   "ART7",
+   "ART8",
+   "ART9",
+   "MSP1",
+   "MSP10",
+   "MSP12",
+   "MSP30",
+   "MSP45",
+   "MSP5",
+   "MSP74",
+   "MSP75",
+   "MSP96",
+   "PHO2",
+   "PHO4",
+   "PHO8",
+   "RTVF40"
+  ],
+  "source": {
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28150/28314",
+   "title": "Certificate of Achievement in Multimedia Studies",
+   "h1": "Certificate of Achievement in Multimedia Studies",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 20,
-  "text_chars": 0
+  "text_chars": 3123
  },
  {
   "control_number": "19998",
   "title": "Civil Engineering Technology",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "DFT12",
+   "DFT2",
+   "ENGLC1000",
+   "ENGLC1000E",
+   "ENGR1",
+   "ENGR3",
+   "ENGR4",
+   "MATH20"
+  ],
+  "source": {
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28116/28292",
+   "title": "Certificate of Achievement in Civil Engineering Technology",
+   "h1": "Certificate of Achievement in Civil Engineering Technology",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 8,
-  "text_chars": 0
+  "text_chars": 1720
  },
  {
   "control_number": "19999",
@@ -1006,9 +2036,9 @@
    "AUT9"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/catalog/iq/25398/28086/28228",
-   "title": "Certificate of Achievement in Automotive Technology - Honda, Professional Automotive Career Training (PACT)",
-   "h1": "Certificate of Achievement in Automotive Technology - Honda, Professional Automotive Career Training (PACT)",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28086/28226",
+   "title": "Certificate of Achievement in Automotive Technology",
+   "h1": "Certificate of Achievement in Automotive Technology",
    "text_from": "innerText",
    "label": {
     "award": 1,
@@ -1016,43 +2046,103 @@
    }
   },
   "listed": 15,
-  "text_chars": 3868
+  "text_chars": 3158
  },
  {
   "control_number": "20000",
   "title": "Drafting and CAD Technology",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "DFT12",
+   "DFT2",
+   "DFT24",
+   "DFT4",
+   "DFT45",
+   "DFT46",
+   "MATH20"
+  ],
+  "source": {
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28106/28275",
+   "title": "Certificate of Achievement in Drafting and CAD Technology",
+   "h1": "Certificate of Achievement in Drafting and CAD Technology",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 7,
-  "text_chars": 0
+  "text_chars": 1997
  },
  {
   "control_number": "20001",
   "title": "Welding Technology",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "WLD154",
+   "WLD156",
+   "WLD160",
+   "WLD22",
+   "WLD24",
+   "WLD25",
+   "WLD26",
+   "WLD28",
+   "WLD30",
+   "WLD32",
+   "WLD34",
+   "WLD36",
+   "WLD40",
+   "WLD42",
+   "WLD50",
+   "WLD56"
+  ],
+  "source": {
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28182/28350",
+   "title": "Certificate of Achievement in Welding Technology",
+   "h1": "Certificate of Achievement in Welding Technology",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 16,
-  "text_chars": 0
+  "text_chars": 2743
  },
  {
   "control_number": "20003",
   "title": "Ceramics",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART50",
+   "ART52",
+   "ART54",
+   "ART56",
+   "ART70",
+   "ART8",
+   "ART99"
+  ],
+  "source": {
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28084/28224",
+   "title": "Certificate of Achievement in Ceramics",
+   "h1": "Certificate of Achievement in Ceramics",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 7,
-  "text_chars": 0
+  "text_chars": 1572
  },
  {
   "control_number": "20005",
@@ -1074,9 +2164,9 @@
    "NSG89"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/catalog/iq/25399/28163/28039/27619",
-   "title": "Registered Nursing: LVN to ADN (Certificate of Achievement)",
-   "h1": "Registered Nursing: LVN to ADN (Certificate of Achievement)",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28156/28326",
+   "title": "Certificate of Achievement in Registered Nursing: LVN to ADN",
+   "h1": "Certificate of Achievement in Registered Nursing: LVN to ADN",
    "text_from": "innerText",
    "label": {
     "award": 1,
@@ -1084,103 +2174,260 @@
    }
   },
   "listed": 11,
-  "text_chars": 4210
+  "text_chars": 4395
  },
  {
   "control_number": "20006",
   "title": "Licensed Vocational Nursing",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "NSG18",
+   "NSG21",
+   "NSG22",
+   "NSG24",
+   "NSG28",
+   "NSG31",
+   "NSG32",
+   "NSG35",
+   "NSG36",
+   "NSG37",
+   "NSG41",
+   "NSG42",
+   "NSG43",
+   "NSG44",
+   "NSG47",
+   "NSG49"
+  ],
+  "source": {
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28156/28323",
+   "title": "Certificate of Achievement in Licensed Vocational Nursing",
+   "h1": "Certificate of Achievement in Licensed Vocational Nursing",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 16,
-  "text_chars": 0
+  "text_chars": 4416
  },
  {
   "control_number": "20007",
   "title": "Paramedic",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "EMS170",
+   "EMS171"
+  ],
+  "source": {
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28114/28359",
+   "title": "Certificate of Achievement in Paramedic",
+   "h1": "Certificate of Achievement in Paramedic",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 2,
-  "text_chars": 0
+  "text_chars": 1194
  },
  {
   "control_number": "20010",
   "title": "Fashion Merchandising",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BCIS18",
+   "FASH18",
+   "FASH6",
+   "FASH64",
+   "FASH74",
+   "FASH80",
+   "FASH90",
+   "FASH99"
+  ],
+  "source": {
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28124/28297",
+   "title": "Certificate of Achievement in Fashion Merchandising",
+   "h1": "Certificate of Achievement in Fashion Merchandising",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 8,
-  "text_chars": 0
+  "text_chars": 1912
  },
  {
   "control_number": "20012",
   "title": "Early Childhood Education",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CDEVC1000",
+   "CDF12",
+   "CDF40",
+   "CDF48",
+   "CDF57",
+   "CDF63",
+   "CDF78",
+   "CDF80"
+  ],
+  "source": {
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28096/28254",
+   "title": "Certificate of Achievement in Early Childhood Education",
+   "h1": "Certificate of Achievement in Early Childhood Education",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 8,
-  "text_chars": 0
+  "text_chars": 2492
  },
  {
   "control_number": "20014",
   "title": "Administration of Justice",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AJ1",
+   "AJ10",
+   "AJ11",
+   "AJ13",
+   "AJ14",
+   "AJ2",
+   "AJ3",
+   "AJ4",
+   "AJ6",
+   "AJ8",
+   "AJ99"
+  ],
+  "source": {
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28070/28208",
+   "title": "Certificate of Achievement in Administration of Justice",
+   "h1": "Certificate of Achievement in Administration of Justice",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 11,
-  "text_chars": 0
+  "text_chars": 1931
  },
  {
   "control_number": "20015",
   "title": "Court Personnel/Pre-law",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AJ1",
+   "AJ11",
+   "AJ2",
+   "AJ3",
+   "AJ4",
+   "AJ6",
+   "AJ8",
+   "AJ99",
+   "BUS8",
+   "ENGLC1000",
+   "ENGLC1000E"
+  ],
+  "source": {
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28070/28212",
+   "title": "Certificate of Achievement in Court Personnel/Pre-law",
+   "h1": "Certificate of Achievement in Court Personnel/Pre-law",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 11,
-  "text_chars": 0
+  "text_chars": 2177
  },
  {
   "control_number": "20016",
   "title": "Fire Technology",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ENGLC1000",
+   "ENGLC1000E",
+   "FSC10",
+   "FSC12",
+   "FSC14",
+   "FSC2",
+   "FSC4",
+   "FSC8",
+   "KIN48",
+   "KIN49",
+   "KIN51",
+   "KIN52",
+   "POLSC1000"
+  ],
+  "source": {
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28126/28302",
+   "title": "Certificate of Achievement in Fire Technology",
+   "h1": "Certificate of Achievement in Fire Technology",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 13,
-  "text_chars": 0
+  "text_chars": 2684
  },
  {
   "control_number": "20017",
   "title": "Cosmetology",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "COS10",
+   "COS11",
+   "COS12",
+   "COS19",
+   "COS20",
+   "COS21",
+   "COS23",
+   "COS29"
+  ],
+  "source": {
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28104/28259",
+   "title": "Certificate of Achievement in Cosmetology",
+   "h1": "Certificate of Achievement in Cosmetology",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 8,
-  "text_chars": 0
+  "text_chars": 1773
  },
  {
   "control_number": "30774",
@@ -1199,324 +2446,923 @@
   "title": "History",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.917,
+  "codes_found": [
+   "ANTH33",
+   "ECONC2001",
+   "ECONC2002",
+   "HIST18",
+   "HIST21",
+   "HIST23",
+   "HIST3",
+   "HIST30",
+   "HIST5",
+   "HISTC1001",
+   "HISTC1002"
+  ],
+  "source": {
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28138/28306",
+   "title": "AA-T Degree in History",
+   "h1": "AA-T Degree in History",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 12,
-  "text_chars": 0
+  "text_chars": 4610
  },
  {
   "control_number": "31042",
   "title": "Administration of Justice",
   "award": "A.S. T Degree",
   "shape": "adt",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AJ10",
+   "AJ11",
+   "AJ14",
+   "AJ2",
+   "AJ4",
+   "AJ6",
+   "AJ8",
+   "PSYCC1000",
+   "SOCIC1000",
+   "STATC1000",
+   "STATC1000E"
+  ],
+  "source": {
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28070/28206",
+   "title": "AS-T Degree in Administration of Justice",
+   "h1": "AS-T Degree in Administration of Justice",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 11,
-  "text_chars": 0
+  "text_chars": 3462
  },
  {
   "control_number": "31133",
   "title": "English",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ENGL10",
+   "ENGL14",
+   "ENGL15",
+   "ENGL16",
+   "ENGL20",
+   "ENGL25",
+   "ENGL26",
+   "ENGL31",
+   "ENGL35",
+   "ENGL47",
+   "ENGL6",
+   "ENGL60",
+   "ENGL8",
+   "ENGLC1001",
+   "ENGLC1002"
+  ],
+  "source": {
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28118/28289",
+   "title": "AA-T Degree in English",
+   "h1": "AA-T Degree in English",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 15,
-  "text_chars": 0
+  "text_chars": 4499
  },
  {
   "control_number": "31236",
   "title": "Computer System Administration",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CSCI17",
+   "CSCI25",
+   "CSCI4",
+   "CSCI40",
+   "CSCI41",
+   "CSCI42",
+   "CSCI49",
+   "CSCI5",
+   "CSCI50",
+   "CSCI52",
+   "CSCI65",
+   "CSCI76"
+  ],
+  "source": {
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28100/28270",
+   "title": "Certificate of Achievement in Computer System Administration",
+   "h1": "Certificate of Achievement in Computer System Administration",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 12,
-  "text_chars": 0
+  "text_chars": 2916
  },
  {
   "control_number": "31246",
   "title": "Computer Programming",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CSCI20",
+   "CSCI21",
+   "CSCI25",
+   "CSCI31",
+   "CSCI32",
+   "CSCI36",
+   "CSCI4",
+   "CSCI65"
+  ],
+  "source": {
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28100/28265",
+   "title": "Certificate of Achievement in Computer Programming",
+   "h1": "Certificate of Achievement in Computer Programming",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 8,
-  "text_chars": 0
+  "text_chars": 2119
  },
  {
   "control_number": "31284",
   "title": "Computer Animation and Game Development",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART14",
+   "ART7",
+   "ART8",
+   "ARTHC1100",
+   "CSCI11",
+   "CSCI20",
+   "CSCI21",
+   "DRAM8",
+   "MSP5",
+   "MSP74",
+   "MSP96",
+   "RTVF30"
+  ],
+  "source": {
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28100/28262",
+   "title": "AS Degree in Computer Animation and Game Development",
+   "h1": "AS Degree in Computer Animation and Game Development",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 12,
-  "text_chars": 0
+  "text_chars": 4835
  },
  {
   "control_number": "31306",
   "title": "Computer System Administration",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CSCI17",
+   "CSCI25",
+   "CSCI4",
+   "CSCI40",
+   "CSCI41",
+   "CSCI42",
+   "CSCI49",
+   "CSCI5",
+   "CSCI50",
+   "CSCI52",
+   "CSCI65",
+   "CSCI76"
+  ],
+  "source": {
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28100/28269",
+   "title": "AS Degree in Computer System Administration",
+   "h1": "AS Degree in Computer System Administration",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 12,
-  "text_chars": 0
+  "text_chars": 3912
  },
  {
   "control_number": "31307",
   "title": "Computer Programming",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CSCI20",
+   "CSCI21",
+   "CSCI25",
+   "CSCI31",
+   "CSCI32",
+   "CSCI36",
+   "CSCI4",
+   "CSCI65"
+  ],
+  "source": {
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28100/28264",
+   "title": "AS Degree in Computer Programming",
+   "h1": "AS Degree in Computer Programming",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 8,
-  "text_chars": 0
+  "text_chars": 3509
  },
  {
   "control_number": "31422",
   "title": "Psychology",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.909,
+  "codes_found": [
+   "BIOL2",
+   "BIOLC1000",
+   "PSY10",
+   "PSY15",
+   "PSY3",
+   "PSY41",
+   "PSY6",
+   "PSY7",
+   "PSYCC1000",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28168/28334",
+   "title": "AA-T Degree in Psychology",
+   "h1": "AA-T Degree in Psychology",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 11,
-  "text_chars": 0
+  "text_chars": 4151
  },
  {
   "control_number": "31512",
   "title": "Plant Protection",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AGS20",
+   "AGS30",
+   "AGS40",
+   "AGS45",
+   "AGS50",
+   "AGS51",
+   "AGS99",
+   "BIOL15",
+   "BIOL41",
+   "BIOL5",
+   "BIOLC1000",
+   "CHEM51",
+   "CHEM52",
+   "EH20",
+   "EH23",
+   "EH24",
+   "EH30",
+   "EH38",
+   "EH60",
+   "EH61",
+   "EH62",
+   "EH66",
+   "EH70",
+   "EH74",
+   "NR20",
+   "NR55",
+   "PSC10"
+  ],
+  "source": {
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28122/28288",
+   "title": "Certificate of Achievement in Plant Protection",
+   "h1": "Certificate of Achievement in Plant Protection",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 27,
-  "text_chars": 0
+  "text_chars": 7110
  },
  {
   "control_number": "31850",
   "title": "Theatre Arts",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "DRAM10",
+   "DRAM12",
+   "DRAM14",
+   "DRAM15",
+   "DRAM16",
+   "DRAM2",
+   "DRAM20",
+   "DRAM21",
+   "DRAM22",
+   "DRAM23",
+   "DRAM3",
+   "DRAM8",
+   "DRAM9"
+  ],
+  "source": {
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28108/28276",
+   "title": "AA-T Degree in Theatre Arts",
+   "h1": "AA-T Degree in Theatre Arts",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 13,
-  "text_chars": 0
+  "text_chars": 5219
  },
  {
   "control_number": "31930",
   "title": "Computer Science",
   "award": "A.S. T Degree",
   "shape": "adt",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CSCI10",
+   "CSCI20",
+   "CSCI21",
+   "CSCI22",
+   "MATHC2210",
+   "MATHC2220",
+   "PHYS41",
+   "PHYS42"
+  ],
+  "source": {
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28100/28267",
+   "title": "AS-T Degree in Computer Science",
+   "h1": "AS-T Degree in Computer Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 8,
-  "text_chars": 0
+  "text_chars": 3473
  },
  {
   "control_number": "31939",
   "title": "Political Science",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AJ2",
+   "ECONC2002",
+   "POLSC1000",
+   "POS12",
+   "POS16",
+   "POS18",
+   "POS3",
+   "SOC20",
+   "STATC1000",
+   "STATC1000E"
+  ],
+  "source": {
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28166/28331",
+   "title": "AA-T Degree in Political Science",
+   "h1": "AA-T Degree in Political Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 10,
-  "text_chars": 0
+  "text_chars": 3860
  },
  {
   "control_number": "31941",
   "title": "Early Childhood Education",
   "award": "A.S. T Degree",
   "shape": "adt",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CDEVC1000",
+   "CDF12",
+   "CDF40",
+   "CDF48",
+   "CDF57",
+   "CDF63",
+   "CDF78",
+   "CDF80"
+  ],
+  "source": {
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28096/28252",
+   "title": "AS-T Degree in Early Childhood Education",
+   "h1": "AS-T Degree in Early Childhood Education",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 8,
-  "text_chars": 0
+  "text_chars": 4304
  },
  {
   "control_number": "31950",
   "title": "Physics",
   "award": "A.S. T Degree",
   "shape": "adt",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MATH32",
+   "MATHC2210",
+   "MATHC2210E",
+   "MATHC2220",
+   "PHYS41",
+   "PHYS42",
+   "PHYS43"
+  ],
+  "source": {
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28164/28538",
+   "title": "AS-T Degree in Physics 2.0",
+   "h1": "AS-T Degree in Physics 2.0",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 7,
-  "text_chars": 0
+  "text_chars": 2927
  },
  {
   "control_number": "31951",
   "title": "Art History",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART14",
+   "ART3",
+   "ART50",
+   "ART6",
+   "ART60",
+   "ART7",
+   "ART8",
+   "ART9",
+   "ARTHC1100",
+   "ARTHC1200",
+   "MSP30",
+   "PHO2"
+  ],
+  "source": {
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28084/28221",
+   "title": "AA-T Degree in Art History",
+   "h1": "AA-T Degree in Art History",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 12,
-  "text_chars": 0
+  "text_chars": 4777
  },
  {
   "control_number": "31952",
   "title": "Geography",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTH4",
+   "GEOG10",
+   "GEOG2",
+   "GEOG20",
+   "GEOG3",
+   "GEOG4",
+   "GEOG8",
+   "STATC1000",
+   "STATC1000E"
+  ],
+  "source": {
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28130/28304",
+   "title": "AA-T Degree in Geography",
+   "h1": "AA-T Degree in Geography",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 9,
-  "text_chars": 0
+  "text_chars": 3745
  },
  {
   "control_number": "31953",
   "title": "Mathematics",
   "award": "A.S. T Degree",
   "shape": "adt",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.8,
+  "codes_found": [
+   "CSCI20",
+   "MATH32",
+   "MATH40",
+   "MATH42",
+   "MATHC2210",
+   "MATHC2210E",
+   "MATHC2220",
+   "PHYS41"
+  ],
+  "source": {
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28146/28526",
+   "title": "AS-T Degree in Mathematics 2.0",
+   "h1": "AS-T Degree in Mathematics 2.0",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 10,
-  "text_chars": 0
+  "text_chars": 3357
  },
  {
   "control_number": "31954",
   "title": "Sociology",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "PSY7",
+   "SOC10",
+   "SOC14",
+   "SOC20",
+   "SOC30",
+   "SOC4",
+   "SOC5",
+   "SOC8",
+   "SOCIC1000",
+   "STATC1000",
+   "STATC1000E"
+  ],
+  "source": {
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28176/28345",
+   "title": "AA-T Degree in Sociology",
+   "h1": "AA-T Degree in Sociology",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 11,
-  "text_chars": 0
+  "text_chars": 3518
  },
  {
   "control_number": "32093",
   "title": "Studio Arts",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART14",
+   "ART17",
+   "ART3",
+   "ART50",
+   "ART6",
+   "ART60",
+   "ART7",
+   "ART8",
+   "ART81",
+   "ART9",
+   "ARTHC1100",
+   "ARTHC1200",
+   "MSP30",
+   "PHO2"
+  ],
+  "source": {
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28084/28398",
+   "title": "AA-T Degree in Studio Arts",
+   "h1": "AA-T Degree in Studio Arts",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 14,
-  "text_chars": 0
+  "text_chars": 4010
  },
  {
   "control_number": "32446",
   "title": "Kinesiology",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL20",
+   "BIOL21",
+   "CHEM1",
+   "CHEM51",
+   "HLTH2",
+   "KIN1",
+   "KIN11",
+   "KIN23",
+   "KIN24",
+   "KIN27",
+   "KIN38",
+   "KIN39",
+   "KIN40",
+   "KIN42",
+   "KIN43",
+   "KIN53",
+   "KIN57",
+   "KIN58",
+   "KIN59",
+   "KIN60",
+   "KIN61",
+   "KIN64",
+   "KIN65",
+   "KIN66",
+   "KIN67",
+   "KIN68",
+   "KIN69",
+   "KIN70",
+   "KIN71",
+   "KIN73",
+   "KIN74",
+   "KIN77",
+   "PHYS21",
+   "PSYCC1000",
+   "SOCIC1000",
+   "STATC1000",
+   "STATC1000E"
+  ],
+  "source": {
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28142/28361",
+   "title": "AA-T Degree in Kinesiology",
+   "h1": "AA-T Degree in Kinesiology",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 37,
-  "text_chars": 0
+  "text_chars": 6620
  },
  {
   "control_number": "32469",
   "title": "Music",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MUS1",
+   "MUS40",
+   "MUS41",
+   "MUS42",
+   "MUS60",
+   "MUS61",
+   "MUS63",
+   "MUS64",
+   "MUS65",
+   "MUS68",
+   "MUS69",
+   "MUS70",
+   "MUS80",
+   "MUS82",
+   "MUS84",
+   "MUS86",
+   "MUS88"
+  ],
+  "source": {
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28152/28315",
+   "title": "AA-T Degree in Music",
+   "h1": "AA-T Degree in Music",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 17,
-  "text_chars": 0
+  "text_chars": 5593
  },
  {
   "control_number": "32721",
   "title": "Geology",
   "award": "A.S. T Degree",
   "shape": "adt",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEM1",
+   "CHEM2",
+   "GEOL32",
+   "GEOL34",
+   "MATHC2210",
+   "MATHC2210E",
+   "MATHC2220"
+  ],
+  "source": {
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28132/28305",
+   "title": "AS-T Degree in Geology",
+   "h1": "AS-T Degree in Geology",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 7,
-  "text_chars": 0
+  "text_chars": 3245
  },
  {
   "control_number": "32841",
   "title": "Firefighter I and II Academy",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.75,
+  "codes_found": [
+   "EDUC10",
+   "FSC105",
+   "FSC107"
+  ],
+  "source": {
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28126/28303",
+   "title": "Certificate of Achievement in Firefighter I and II Academy",
+   "h1": "Certificate of Achievement in Firefighter I and II Academy",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 4,
-  "text_chars": 0
+  "text_chars": 3099
  },
  {
   "control_number": "33182",
   "title": "Recording Arts",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MUS3",
+   "MUS4",
+   "MUS40",
+   "MUS41",
+   "MUS51",
+   "MUS52",
+   "MUS53",
+   "MUS54",
+   "MUS55",
+   "MUS80",
+   "MUS82",
+   "MUS90",
+   "RTVF30"
+  ],
+  "source": {
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28152/28317",
+   "title": "Certificate of Achievement in Recording Arts",
+   "h1": "Certificate of Achievement in Recording Arts",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 13,
-  "text_chars": 0
+  "text_chars": 2301
  },
  {
   "control_number": "33199",
   "title": "Journalism",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CMST14",
+   "ECONC2001",
+   "ECONC2002",
+   "ENGLC1001",
+   "JOUR10",
+   "JOUR12",
+   "JOUR2",
+   "PHO2",
+   "POLSC1000",
+   "POS3",
+   "RTVF12",
+   "STATC1000",
+   "STATC1000E"
+  ],
+  "source": {
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28140/28307",
+   "title": "AA-T Degree in Journalism",
+   "h1": "AA-T Degree in Journalism",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 13,
-  "text_chars": 0
+  "text_chars": 3754
  },
  {
   "control_number": "33222",
   "title": "Recording Arts",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MUS3",
+   "MUS4",
+   "MUS40",
+   "MUS41",
+   "MUS51",
+   "MUS52",
+   "MUS53",
+   "MUS54",
+   "MUS55",
+   "MUS80",
+   "MUS82",
+   "MUS90",
+   "RTVF30"
+  ],
+  "source": {
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28152/28316",
+   "title": "AS Degree in Recording Arts",
+   "h1": "AS Degree in Recording Arts",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 13,
-  "text_chars": 0
+  "text_chars": 3683
  },
  {
   "control_number": "33254",
@@ -1547,72 +3393,202 @@
   "title": "Elementary Teacher Education",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.938,
+  "codes_found": [
+   "ART1",
+   "BIOLC1000",
+   "CDEVC1000",
+   "COMMC1000",
+   "DRAM2",
+   "EDUC2",
+   "ENGLC1000",
+   "ENGLC1000E",
+   "ENGLC1002",
+   "HIST3",
+   "HISTC1001",
+   "MUS1",
+   "POLSC1000",
+   "PSC11",
+   "PSC12"
+  ],
+  "source": {
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28112/28279",
+   "title": "AA-T Degree in Elementary Teacher Education",
+   "h1": "AA-T Degree in Elementary Teacher Education",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 16,
-  "text_chars": 0
+  "text_chars": 4504
  },
  {
   "control_number": "33579",
   "title": "Agriculture Business",
   "award": "A.S. T Degree",
   "shape": "adt",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AB15",
+   "AB25",
+   "AB26",
+   "AB50",
+   "AGS20",
+   "AGS40",
+   "AGS50",
+   "ECONC2002",
+   "STATC1000",
+   "STATC1000E"
+  ],
+  "source": {
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28076/28186",
+   "title": "AS-T Degree in Agriculture Business",
+   "h1": "AS-T Degree in Agriculture Business",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 10,
-  "text_chars": 0
+  "text_chars": 3581
  },
  {
   "control_number": "33847",
   "title": "Occupational and Life Skills",
   "award": null,
   "shape": "other",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "OLS324",
+   "OLS325",
+   "OLS326",
+   "OLS327",
+   "OLS328",
+   "OLS329"
+  ],
+  "source": {
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28158/28363",
+   "title": "Noncredit Certificate of Completion in Occupational and Life Skills",
+   "h1": "Noncredit Certificate of Completion in Occupational and Life Skills",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
   "listed": 6,
-  "text_chars": 0
+  "text_chars": 2213
  },
  {
   "control_number": "33927",
   "title": "Economics",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT2",
+   "ACCT4",
+   "ECON20",
+   "ECONC2001",
+   "ECONC2002",
+   "MATH12",
+   "MATH12S",
+   "MATH13",
+   "MATH13S",
+   "MATH32",
+   "MATH42",
+   "MATHC2210",
+   "MATHC2210E",
+   "MATHC2220",
+   "STATC1000",
+   "STATC1000E"
+  ],
+  "source": {
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28110/28278",
+   "title": "AA-T Degree in Economics",
+   "h1": "AA-T Degree in Economics",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 16,
-  "text_chars": 0
+  "text_chars": 4739
  },
  {
   "control_number": "35022",
   "title": "Biology",
   "award": "A.S. T Degree",
   "shape": "adt",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL41",
+   "BIOL42",
+   "BIOL43",
+   "CHEM1",
+   "CHEM2",
+   "MATHC2210",
+   "MATHC2210E",
+   "PHYS21",
+   "PHYS22",
+   "PHYS41",
+   "PHYS42"
+  ],
+  "source": {
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28088/28241",
+   "title": "AS-T Degree in Biology",
+   "h1": "AS-T Degree in Biology",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 11,
-  "text_chars": 0
+  "text_chars": 3140
  },
  {
   "control_number": "35061",
   "title": "Agriculture Plant Science",
   "award": "A.S. T Degree",
   "shape": "adt",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AET30",
+   "AGS20",
+   "AGS50",
+   "CHEM1",
+   "CHEM21",
+   "CHEM51",
+   "ECONC2001",
+   "EH23",
+   "EH24",
+   "EH70",
+   "STATC1000",
+   "STATC1000E"
+  ],
+  "source": {
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28122/28283",
+   "title": "AS-T Degree in Agriculture Plant Science",
+   "h1": "AS-T Degree in Agriculture Plant Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 12,
-  "text_chars": 0
+  "text_chars": 4410
  },
  {
   "control_number": "35132",
@@ -1620,64 +3596,130 @@
   "award": "A.S. T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.636,
+  "coverage": 1.0,
   "codes_found": [
    "BIOL20",
    "BIOL21",
    "CHEM1",
    "CHEM2",
+   "CHEM21",
+   "FN10",
+   "FN12",
+   "FN2",
    "PSYCC1000",
    "STATC1000",
    "STATC1000E"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/catalog/iq/25399/28163/28037/27693",
-   "title": "Physical Education: Exercise Physiology (AA Degree)",
-   "h1": "Physical Education: Exercise Physiology (AA Degree)",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28128/28298",
+   "title": "AS-T Degree in Nutrition and Dietetics",
+   "h1": "AS-T Degree in Nutrition and Dietetics",
    "text_from": "innerText",
    "label": {
-    "award": 0,
-    "title": 0.0
+    "award": 1,
+    "title": 1.0
    }
   },
   "listed": 11,
-  "text_chars": 3604
+  "text_chars": 4505
  },
  {
   "control_number": "35197",
   "title": "Child and Adolescent Development",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTH4",
+   "BIOLC1000",
+   "CDEVC1000",
+   "CDF12",
+   "CDF40",
+   "CDF63",
+   "PSY15",
+   "PSYCC1000",
+   "SOC20",
+   "SOC8",
+   "SOCIC1000",
+   "STATC1000",
+   "STATC1000E"
+  ],
+  "source": {
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28096/28251",
+   "title": "AA-T Degree in Child and Adolescent Development",
+   "h1": "AA-T Degree in Child and Adolescent Development",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 13,
-  "text_chars": 0
+  "text_chars": 4946
  },
  {
   "control_number": "35684",
   "title": "Film, Television, and Electronic Media",
   "award": "A.S. T Degree",
   "shape": "adt",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "JOUR2",
+   "PHO2",
+   "RTVF12",
+   "RTVF13",
+   "RTVF14",
+   "RTVF15",
+   "RTVF30",
+   "RTVF40",
+   "RTVF55"
+  ],
+  "source": {
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28170/28340",
+   "title": "AS-T Degree in Film, Television and Electronic Media",
+   "h1": "AS-T Degree in Film, Television and Electronic Media",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 9,
-  "text_chars": 0
+  "text_chars": 3727
  },
  {
   "control_number": "35746",
   "title": "Medical Coding",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ALH104",
+   "BCIS18",
+   "BCIS99",
+   "BIOL10",
+   "HIM56",
+   "HIM58",
+   "HIM62",
+   "HIM63",
+   "HIM64",
+   "HIM76"
+  ],
+  "source": {
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28134/28364",
+   "title": "Certificate of Achievement in Medical Coding",
+   "h1": "Certificate of Achievement in Medical Coding",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 10,
-  "text_chars": 0
+  "text_chars": 2723
  },
  {
   "control_number": "35887",
@@ -1685,25 +3727,28 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.571,
+  "coverage": 1.0,
   "codes_found": [
    "ETHS10",
+   "SPAN1",
+   "SPAN14",
+   "SPAN16",
    "SPAN2",
    "SPAN3",
    "SPAN4"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/catalog/iq/25399/28169/28007/27725",
-   "title": "Liberal Studies: Bilingual Pattern (AA Degree)",
-   "h1": "Liberal Studies: Bilingual Pattern (AA Degree)",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28178/28347",
+   "title": "AA-T Degree in Spanish",
+   "h1": "AA-T Degree in Spanish",
    "text_from": "innerText",
    "label": {
-    "award": 0,
-    "title": 0.0
+    "award": 1,
+    "title": 1.0
    }
   },
   "listed": 7,
-  "text_chars": 4611
+  "text_chars": 3336
  },
  {
   "control_number": "35937",
@@ -1757,72 +3802,211 @@
   "title": "Computer Information Systems",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT2",
+   "ACCT4",
+   "BUS8",
+   "CSCI20",
+   "CSCI21",
+   "CSCI22",
+   "CSCI49",
+   "CSCI50",
+   "ECONC2001",
+   "MATH13",
+   "MATH13S",
+   "MATHC2210",
+   "MATHC2210E",
+   "STATC1000",
+   "STATC1000E"
+  ],
+  "source": {
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28100/28263",
+   "title": "AS Degree in Computer Information Systems",
+   "h1": "AS Degree in Computer Information Systems",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 15,
-  "text_chars": 0
+  "text_chars": 4811
  },
  {
   "control_number": "36259",
   "title": "Multicultural and Gender Studies",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CMST13",
+   "CMST9",
+   "ENGL26",
+   "ETHS10",
+   "ETHS30",
+   "ETHS40",
+   "HIST18",
+   "HIST26",
+   "HIST30",
+   "MCGS10",
+   "MCGS8",
+   "SOC14",
+   "SOC20"
+  ],
+  "source": {
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28148/28365",
+   "title": "AA Degree in Multicultural and Gender Studies",
+   "h1": "AA Degree in Multicultural and Gender Studies",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 13,
-  "text_chars": 0
+  "text_chars": 4683
  },
  {
   "control_number": "37059",
   "title": "Public Health Science",
   "award": "A.S. T Degree",
   "shape": "adt",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ALH3",
+   "ANTH4",
+   "BIOL20",
+   "BIOL21",
+   "BIOLC1000",
+   "CHEM1",
+   "CHEM51",
+   "COMMC1004",
+   "ECONC2001",
+   "ECONC2002",
+   "FN2",
+   "FN50",
+   "HLTH2",
+   "PSYCC1000",
+   "SOCIC1000",
+   "STATC1000",
+   "STATC1000E"
+  ],
+  "source": {
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28080/28514",
+   "title": "AS-T Degree in Public Health",
+   "h1": "AS-T Degree in Public Health",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 0.667
+   }
+  },
   "listed": 17,
-  "text_chars": 0
+  "text_chars": 5096
  },
  {
   "control_number": "37852",
   "title": "HVACR",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.923,
+  "codes_found": [
+   "HVAC11",
+   "HVAC12",
+   "HVAC13",
+   "HVAC21",
+   "HVAC22",
+   "HVAC23",
+   "HVAC31",
+   "HVAC32",
+   "HVAC33",
+   "HVAC41",
+   "HVAC42",
+   "HVAC43"
+  ],
+  "source": {
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28136/28369",
+   "title": "Certificate of Achievement in HVACR",
+   "h1": "Certificate of Achievement in HVACR",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 13,
-  "text_chars": 0
+  "text_chars": 2508
  },
  {
   "control_number": "37939",
   "title": "Advanced Manufacturing",
   "award": "Certificate of Achievement requiring 60+S/90+Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MFG10",
+   "MFG12",
+   "MFG14",
+   "MFG16",
+   "MFG20",
+   "MFG22",
+   "MFG24",
+   "MFG26",
+   "MFG30",
+   "MFG32",
+   "MFG34",
+   "MFG36",
+   "MFG40",
+   "MFG42",
+   "MFG44",
+   "MFG46"
+  ],
+  "source": {
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28144/28374",
+   "title": "Certificate of Achievement in Advanced Manufacturing",
+   "h1": "Certificate of Achievement in Advanced Manufacturing",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 16,
-  "text_chars": 0
+  "text_chars": 3235
  },
  {
   "control_number": "37940",
   "title": "Commercial HVACR",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "HVAC31",
+   "HVAC32",
+   "HVAC33",
+   "HVAC41",
+   "HVAC42",
+   "HVAC43"
+  ],
+  "source": {
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28136/28367",
+   "title": "Certificate of Achievement in Commercial HVACR",
+   "h1": "Certificate of Achievement in Commercial HVACR",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 6,
-  "text_chars": 0
+  "text_chars": 3223
  },
  {
   "control_number": "37941",
@@ -1830,7 +4014,7 @@
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
   "method": "sitemap_page",
-  "coverage": 0.824,
+  "coverage": 1.0,
   "codes_found": [
    "AUT20",
    "AUT21",
@@ -1844,81 +4028,179 @@
    "AUT57",
    "AUT6",
    "AUT7",
+   "AUT73",
+   "AUT74",
    "AUT8",
-   "AUT9"
+   "AUT9",
+   "WLD18"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/catalog/iq/25399/28167/28019/27917",
-   "title": "Automotive Technology - Honda, Professional Automotive Career Training (PACT) (Certificate of Achievement)",
-   "h1": "Automotive Technology - Honda, Professional Automotive Career Training (PACT) (Certificate of Achievement)",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28086/28230",
+   "title": "Certificate of Achievement in Diesel Technology",
+   "h1": "Certificate of Achievement in Diesel Technology",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.5
+    "title": 1.0
    }
   },
   "listed": 17,
-  "text_chars": 3605
+  "text_chars": 3836
  },
  {
   "control_number": "37942",
   "title": "Production Management",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MFG30",
+   "MFG32",
+   "MFG34",
+   "MFG36",
+   "MFG40",
+   "MFG42",
+   "MFG44",
+   "MFG46"
+  ],
+  "source": {
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28144/28378",
+   "title": "Certificate of Achievement in Production Management",
+   "h1": "Certificate of Achievement in Production Management",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 8,
-  "text_chars": 0
+  "text_chars": 3226
  },
  {
   "control_number": "37943",
   "title": "Residential HVACR",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.857,
+  "codes_found": [
+   "HVAC11",
+   "HVAC12",
+   "HVAC13",
+   "HVAC21",
+   "HVAC22",
+   "HVAC23"
+  ],
+  "source": {
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28136/28372",
+   "title": "Certificate of Achievement in Residential HVACR",
+   "h1": "Certificate of Achievement in Residential HVACR",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 7,
-  "text_chars": 0
+  "text_chars": 3252
  },
  {
   "control_number": "37944",
   "title": "Construction Management",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT2",
+   "ACCT4",
+   "BUS8",
+   "CHEM1",
+   "CHEM51",
+   "CNST15",
+   "CNST21",
+   "CNST35",
+   "CNST45",
+   "CNST55",
+   "ECONC2001",
+   "MATHC2210",
+   "MATHC2210E",
+   "PHYS21",
+   "PHYS41"
+  ],
+  "source": {
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28102/28355",
+   "title": "Certificate of Achievement in Construction Management",
+   "h1": "Certificate of Achievement in Construction Management",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 15,
-  "text_chars": 0
+  "text_chars": 3201
  },
  {
   "control_number": "37945",
   "title": "Manufacturing Operations",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MFG10",
+   "MFG12",
+   "MFG14",
+   "MFG16",
+   "MFG20",
+   "MFG22",
+   "MFG24",
+   "MFG26"
+  ],
+  "source": {
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28144/28377",
+   "title": "Certificate of Achievement in Manufacturing Operations",
+   "h1": "Certificate of Achievement in Manufacturing Operations",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 8,
-  "text_chars": 0
+  "text_chars": 3039
  },
  {
   "control_number": "37967",
   "title": "Applied Construction",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.889,
+  "codes_found": [
+   "CNST10",
+   "CNST15",
+   "CNST20",
+   "CNST25",
+   "CNST30",
+   "CNST35",
+   "CNST40",
+   "CNST5"
+  ],
+  "source": {
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28102/28353",
+   "title": "Certificate of Achievement in Applied Construction",
+   "h1": "Certificate of Achievement in Applied Construction",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 9,
-  "text_chars": 0
+  "text_chars": 2463
  },
  {
   "control_number": "37972",
@@ -1965,36 +4247,109 @@
   "title": "Advanced Manufacturing",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MFG10",
+   "MFG12",
+   "MFG14",
+   "MFG16",
+   "MFG20",
+   "MFG22",
+   "MFG24",
+   "MFG26",
+   "MFG30",
+   "MFG32",
+   "MFG34",
+   "MFG36",
+   "MFG40",
+   "MFG42",
+   "MFG44",
+   "MFG46"
+  ],
+  "source": {
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28144/28373",
+   "title": "AS Degree in Advanced Manufacturing",
+   "h1": "AS Degree in Advanced Manufacturing",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 16,
-  "text_chars": 0
+  "text_chars": 4899
  },
  {
   "control_number": "38057",
   "title": "Construction Management",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT2",
+   "ACCT4",
+   "BUS8",
+   "CHEM1",
+   "CHEM51",
+   "CNST15",
+   "CNST21",
+   "CNST35",
+   "CNST45",
+   "CNST55",
+   "ECONC2001",
+   "MATHC2210",
+   "PHYS21",
+   "PHYS41"
+  ],
+  "source": {
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28102/28354",
+   "title": "AS Degree in Construction Management",
+   "h1": "AS Degree in Construction Management",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 14,
-  "text_chars": 0
+  "text_chars": 4546
  },
  {
   "control_number": "38058",
   "title": "HVACR",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "HVAC11",
+   "HVAC12",
+   "HVAC13",
+   "HVAC21",
+   "HVAC22",
+   "HVAC23",
+   "HVAC31",
+   "HVAC32",
+   "HVAC33",
+   "HVAC41",
+   "HVAC42",
+   "HVAC43",
+   "ITEC55"
+  ],
+  "source": {
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28136/28368",
+   "title": "AS Degree in HVACR",
+   "h1": "AS Degree in HVACR",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 13,
-  "text_chars": 0
+  "text_chars": 4230
  },
  {
   "control_number": "38059",
@@ -2002,7 +4357,7 @@
   "award": "A.S. Degree",
   "shape": "degree",
   "method": "sitemap_page",
-  "coverage": 0.824,
+  "coverage": 1.0,
   "codes_found": [
    "AUT20",
    "AUT21",
@@ -2016,21 +4371,24 @@
    "AUT57",
    "AUT6",
    "AUT7",
+   "AUT73",
+   "AUT74",
    "AUT8",
-   "AUT9"
+   "AUT9",
+   "WLD18"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/catalog/iq/25399/28167/28019/27915",
-   "title": "Automotive Technology - Honda, Professional Automotive Career Training (PACT) (AS Degree)",
-   "h1": "Automotive Technology - Honda, Professional Automotive Career Training (PACT) (AS Degree)",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28086/28229",
+   "title": "AS Degree in Diesel Technology",
+   "h1": "AS Degree in Diesel Technology",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.5
+    "title": 1.0
    }
   },
   "listed": 17,
-  "text_chars": 5163
+  "text_chars": 5095
  },
  {
   "control_number": "38066",
@@ -2077,120 +4435,292 @@
   "title": "Advanced Manufacturing Level I",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MFG10",
+   "MFG12",
+   "MFG14",
+   "MFG16"
+  ],
+  "source": {
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28144/28374",
+   "title": "Certificate of Achievement in Advanced Manufacturing",
+   "h1": "Certificate of Achievement in Advanced Manufacturing",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 4,
-  "text_chars": 0
+  "text_chars": 3235
  },
  {
   "control_number": "39883",
   "title": "HVACR Level III",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "HVAC31",
+   "HVAC32",
+   "HVAC33"
+  ],
+  "source": {
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28136/27560",
+   "title": "Certificate of Achievement in HVACR Level III",
+   "h1": "Certificate of Achievement in HVACR Level III",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 3,
-  "text_chars": 0
+  "text_chars": 2335
  },
  {
   "control_number": "39884",
   "title": "Advanced Manufacturing Level II",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MFG20",
+   "MFG22",
+   "MFG24",
+   "MFG26"
+  ],
+  "source": {
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28144/27576",
+   "title": "Certificate of Achievement in Advanced Manufacturing Level II",
+   "h1": "Certificate of Achievement in Advanced Manufacturing Level II",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 4,
-  "text_chars": 0
+  "text_chars": 2407
  },
  {
   "control_number": "39885",
   "title": "HVACR Level IV",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "HVAC41",
+   "HVAC42",
+   "HVAC43"
+  ],
+  "source": {
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28136/27552",
+   "title": "Certificate of Achievement in HVACR Level IV",
+   "h1": "Certificate of Achievement in HVACR Level IV",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 3,
-  "text_chars": 0
+  "text_chars": 3013
  },
  {
   "control_number": "40709",
   "title": "Cyber-Security Practitioner",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CSCI17",
+   "CSCI18",
+   "CSCI19",
+   "CSCI25",
+   "CSCI26",
+   "CSCI4",
+   "CSCI40",
+   "CSCI41",
+   "CSCI42",
+   "CSCI49",
+   "CSCI5",
+   "CSCI50",
+   "CSCI52",
+   "CSCI76"
+  ],
+  "source": {
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28100/27592",
+   "title": "Certificate of Achievement in Cyber-Security Practitioner",
+   "h1": "Certificate of Achievement in Cyber-Security Practitioner",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 14,
-  "text_chars": 0
+  "text_chars": 3767
  },
  {
   "control_number": "40710",
   "title": "Cyber-Security Practitioner",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CSCI17",
+   "CSCI18",
+   "CSCI19",
+   "CSCI25",
+   "CSCI26",
+   "CSCI4",
+   "CSCI40",
+   "CSCI41",
+   "CSCI42",
+   "CSCI49",
+   "CSCI5",
+   "CSCI50",
+   "CSCI52",
+   "CSCI76"
+  ],
+  "source": {
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28100/27600",
+   "title": "AS Degree in Cyber-Security Practitioner",
+   "h1": "AS Degree in Cyber-Security Practitioner",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 14,
-  "text_chars": 0
+  "text_chars": 5015
  },
  {
   "control_number": "40923",
   "title": "Philosophy",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "PHIL10",
+   "PHIL16",
+   "PHIL18",
+   "PHIL2",
+   "PHIL4",
+   "PHIL6",
+   "PHIL8"
+  ],
+  "source": {
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28402/27536",
+   "title": "AA-T Degree in Philosophy",
+   "h1": "AA-T Degree in Philosophy",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 7,
-  "text_chars": 0
+  "text_chars": 3628
  },
  {
   "control_number": "41755",
   "title": "Business Administration 2.0",
   "award": "A.S. T Degree",
   "shape": "adt",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT2",
+   "ACCT4",
+   "BUS20",
+   "BUS8",
+   "ECONC2001",
+   "ECONC2002",
+   "MATH12",
+   "MATH12S",
+   "MATH13",
+   "MATH13S",
+   "STATC1000",
+   "STATC1000E"
+  ],
+  "source": {
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28090/28243",
+   "title": "AS-T Degree in Business Administration 2.0",
+   "h1": "AS-T Degree in Business Administration 2.0",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 12,
-  "text_chars": 0
+  "text_chars": 4032
  },
  {
   "control_number": "41986",
   "title": "Professional Accountant",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT100",
+   "ACCT110",
+   "ACCT2",
+   "ACCT30",
+   "ACCT4"
+  ],
+  "source": {
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28068/28388",
+   "title": "Certificate of Achievement in Professional Accountant",
+   "h1": "Certificate of Achievement in Professional Accountant",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 5,
-  "text_chars": 0
+  "text_chars": 1810
  },
  {
   "control_number": "42240",
   "title": "Project Management",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT2",
+   "ACCT4",
+   "BCIS16",
+   "BUS20",
+   "BUS35",
+   "BUS46"
+  ],
+  "source": {
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28090/28397",
+   "title": "Certificate of Achievement in Project Management",
+   "h1": "Certificate of Achievement in Project Management",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 6,
-  "text_chars": 0
+  "text_chars": 2482
  },
  {
   "control_number": "43185",
@@ -2198,23 +4728,30 @@
   "award": "A.S. Degree",
   "shape": "degree",
   "method": "sitemap_page",
-  "coverage": 0.588,
+  "coverage": 1.0,
   "codes_found": [
+   "NSG1",
    "NSG10",
+   "NSG11",
    "NSG12",
    "NSG13",
    "NSG14",
    "NSG15",
    "NSG16",
    "NSG17",
+   "NSG2",
+   "NSG3",
    "NSG4",
+   "NSG5",
    "NSG6",
+   "NSG7",
+   "NSG8",
    "NSG9"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/catalog/iq/25399/28163/28039/27611",
-   "title": "Accelerated Track Registered Nursing: LVN to ADN (AS Degree)",
-   "h1": "Accelerated Track Registered Nursing: LVN to ADN (AS Degree)",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28156/28380",
+   "title": "AS Degree in Accelerated Track Registered Nursing",
+   "h1": "AS Degree in Accelerated Track Registered Nursing",
    "text_from": "innerText",
    "label": {
     "award": 1,
@@ -2222,7 +4759,7 @@
    }
   },
   "listed": 17,
-  "text_chars": 4618
+  "text_chars": 5447
  },
  {
   "control_number": "43186",
@@ -2246,9 +4783,9 @@
    "NSG9"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/catalog/iq/25399/28163/28039/27611",
-   "title": "Accelerated Track Registered Nursing: LVN to ADN (AS Degree)",
-   "h1": "Accelerated Track Registered Nursing: LVN to ADN (AS Degree)",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28156/28381",
+   "title": "AS Degree in Accelerated Track Registered Nursing: LVN to ADN",
+   "h1": "AS Degree in Accelerated Track Registered Nursing: LVN to ADN",
    "text_from": "innerText",
    "label": {
     "award": 1,
@@ -2279,9 +4816,9 @@
    "NSG9"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/catalog/iq/25399/28163/28039/27613",
-   "title": "Accelerated Track Registered Nursing: LVN to ADN (Certificate of Achievement)",
-   "h1": "Accelerated Track Registered Nursing: LVN to ADN (Certificate of Achievement)",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28156/28382",
+   "title": "Certificate of Achievement in Accelerated Track Registered Nursing: LVN to ADN",
+   "h1": "Certificate of Achievement in Accelerated Track Registered Nursing: LVN to ADN",
    "text_from": "innerText",
    "label": {
     "award": 1,
@@ -2289,247 +4826,785 @@
    }
   },
   "listed": 11,
-  "text_chars": 6817
+  "text_chars": 6818
  },
  {
   "control_number": "43333",
   "title": "Navigating Workplace Success",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "OLS325",
+   "OLS329",
+   "OLS340",
+   "OLS341"
+  ],
+  "source": {
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28158/27508",
+   "title": "Noncredit Certificate of Completion in Navigating Workplace Success",
+   "h1": "Noncredit Certificate of Completion in Navigating Workplace Success",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 4,
-  "text_chars": 0
+  "text_chars": 1716
  },
  {
   "control_number": "43453",
   "title": "Communication Studies 2.0",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CMST12",
+   "CMST13",
+   "CMST14",
+   "CMST4",
+   "CMST6",
+   "CMST9",
+   "COMMC1000",
+   "COMMC1004",
+   "JOUR2",
+   "RTVF12"
+  ],
+  "source": {
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28098/28257",
+   "title": "AA-T Degree in Communication Studies 2.0",
+   "h1": "AA-T Degree in Communication Studies 2.0",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 10,
-  "text_chars": 0
+  "text_chars": 4015
  },
  {
   "control_number": "44131",
   "title": "Health Occupations Preparation",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTH4",
+   "BIOL15",
+   "BIOL20",
+   "BIOL21",
+   "CHEM1",
+   "CHEM51",
+   "CMST4",
+   "COMMC1000",
+   "FN2",
+   "MATH26",
+   "MATH26S",
+   "MATH28",
+   "MATH28S",
+   "PSYCC1000",
+   "SOC4",
+   "SOCIC1000",
+   "STATC1000",
+   "STATC1000E"
+  ],
+  "source": {
+   "url": "https://butte.curriqunet.com/catalog/iq/25399/28165/28025/27891",
+   "title": "Health Occupations Preparation (AS Degree)",
+   "h1": "Health Occupations Preparation (AS Degree)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 18,
-  "text_chars": 0
+  "text_chars": 3961
  },
  {
   "control_number": "44132",
   "title": "Civil Engineering",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEM1",
+   "DFT12",
+   "ENGR1",
+   "ENGR2",
+   "ENGR3",
+   "ENGR4",
+   "ENGR45",
+   "ENGR8",
+   "GEOL32",
+   "MATH40",
+   "MATHC2210",
+   "MATHC2220",
+   "PHYS41",
+   "PHYS42"
+  ],
+  "source": {
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28116/27529",
+   "title": "AS Degree in Civil Engineering",
+   "h1": "AS Degree in Civil Engineering",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 14,
-  "text_chars": 0
+  "text_chars": 3786
  },
  {
   "control_number": "44133",
   "title": "Mechatronic Engineering",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEM1",
+   "CSCI20",
+   "DFT2",
+   "DFT8",
+   "ENGR1",
+   "ENGR10",
+   "ENGR11",
+   "ENGR17",
+   "ENGR45",
+   "ENGR8",
+   "MATH40",
+   "MATHC2210",
+   "MATHC2210E",
+   "MATHC2220",
+   "PHYS41",
+   "PHYS42",
+   "PHYS43"
+  ],
+  "source": {
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28116/27545",
+   "title": "AS Degree in Mechatronic Engineering",
+   "h1": "AS Degree in Mechatronic Engineering",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 17,
-  "text_chars": 0
+  "text_chars": 4213
  },
  {
   "control_number": "44134",
   "title": "Computer Engineering",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEM1",
+   "CSCI20",
+   "CSCI21",
+   "CSCI22",
+   "ENGR1",
+   "ENGR10",
+   "ENGR11",
+   "ENGR17",
+   "MATH40",
+   "MATHC2210",
+   "MATHC2210E",
+   "MATHC2220",
+   "PHYS41",
+   "PHYS42"
+  ],
+  "source": {
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28116/27533",
+   "title": "AS Degree in Computer Engineering",
+   "h1": "AS Degree in Computer Engineering",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 14,
-  "text_chars": 0
+  "text_chars": 3692
  },
  {
   "control_number": "44135",
   "title": "Electrical Engineering",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEM1",
+   "CSCI20",
+   "ENGR1",
+   "ENGR10",
+   "ENGR11",
+   "ENGR17",
+   "MATH32",
+   "MATH40",
+   "MATHC2210",
+   "MATHC2210E",
+   "MATHC2220",
+   "PHYS41",
+   "PHYS42"
+  ],
+  "source": {
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28116/27537",
+   "title": "AS Degree in Electrical Engineering",
+   "h1": "AS Degree in Electrical Engineering",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 13,
-  "text_chars": 0
+  "text_chars": 3676
  },
  {
   "control_number": "44136",
   "title": "Mechanical Engineering",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEM1",
+   "DFT2",
+   "DFT8",
+   "ENGR1",
+   "ENGR2",
+   "ENGR45",
+   "ENGR8",
+   "MATH32",
+   "MATHC2210",
+   "MATHC2220",
+   "PHYS41",
+   "PHYS42"
+  ],
+  "source": {
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28116/27541",
+   "title": "AS Degree in Mechanical Engineering",
+   "h1": "AS Degree in Mechanical Engineering",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 12,
-  "text_chars": 0
+  "text_chars": 3696
  },
  {
   "control_number": "44137",
   "title": "Civil Engineering",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "DFT12",
+   "ENGR2",
+   "ENGR3",
+   "ENGR4",
+   "ENGR45",
+   "ENGR8",
+   "GEOL32"
+  ],
+  "source": {
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28116/27531",
+   "title": "Certificate of Achievement in Civil Engineering",
+   "h1": "Certificate of Achievement in Civil Engineering",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 7,
-  "text_chars": 0
+  "text_chars": 2215
  },
  {
   "control_number": "44138",
   "title": "Computer Engineering",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CSCI20",
+   "CSCI21",
+   "CSCI22",
+   "ENGR10",
+   "ENGR11",
+   "ENGR17"
+  ],
+  "source": {
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28116/27535",
+   "title": "Certificate of Achievement in Computer Engineering",
+   "h1": "Certificate of Achievement in Computer Engineering",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 6,
-  "text_chars": 0
+  "text_chars": 2089
  },
  {
   "control_number": "44141",
   "title": "Mechatronic Engineering",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CSCI20",
+   "DFT2",
+   "DFT8",
+   "ENGR10",
+   "ENGR11",
+   "ENGR17",
+   "ENGR45",
+   "ENGR8",
+   "PHYS43"
+  ],
+  "source": {
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28116/27547",
+   "title": "Certificate of Achievement in Mechatronic Engineering",
+   "h1": "Certificate of Achievement in Mechatronic Engineering",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 9,
-  "text_chars": 0
+  "text_chars": 2559
  },
  {
   "control_number": "44142",
   "title": "Mechanical Engineering",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "DFT2",
+   "DFT8",
+   "ENGR2",
+   "ENGR45",
+   "ENGR8",
+   "MATH32"
+  ],
+  "source": {
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28116/27543",
+   "title": "Certificate of Achievement in Mechanical Engineering",
+   "h1": "Certificate of Achievement in Mechanical Engineering",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 6,
-  "text_chars": 0
+  "text_chars": 2164
  },
  {
   "control_number": "44143",
   "title": "Engineering Fundamentals",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEM1",
+   "CMST4",
+   "COMMC1000",
+   "ENGLC1000",
+   "ENGR1",
+   "MATH40",
+   "MATHC2210",
+   "MATHC2220",
+   "PHYS41",
+   "PHYS42"
+  ],
+  "source": {
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28116/27549",
+   "title": "Certificate of Achievement in Engineering Fundamentals",
+   "h1": "Certificate of Achievement in Engineering Fundamentals",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 10,
-  "text_chars": 0
+  "text_chars": 2690
  },
  {
   "control_number": "44298",
   "title": "Arts and Humanities",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART3",
+   "ART6",
+   "ART7",
+   "ART8",
+   "ARTHC1100",
+   "ARTHC1200",
+   "ASL1",
+   "ASL2",
+   "ASL3",
+   "ASL4",
+   "CMST6",
+   "DRAM2",
+   "DRAM8",
+   "ENGL10",
+   "ENGL14",
+   "ENGL15",
+   "ENGL16",
+   "ENGL20",
+   "ENGL25",
+   "ENGL26",
+   "ENGL35",
+   "ENGL47",
+   "ENGL6",
+   "ENGL60",
+   "ENGL8",
+   "ENGLC1002",
+   "GERM1",
+   "GERM2",
+   "HIST18",
+   "HIST21",
+   "HIST23",
+   "HIST3",
+   "HIST30",
+   "HIST5",
+   "HISTC1001",
+   "HISTC1002",
+   "JPN1",
+   "JPN2",
+   "JPN3",
+   "JPN4",
+   "MUS1",
+   "MUS3",
+   "MUS5",
+   "MUS6",
+   "MUS7",
+   "MUS9",
+   "PHIL10",
+   "PHIL16",
+   "PHIL18",
+   "PHIL2",
+   "PHIL4",
+   "PHIL6",
+   "RTVF12",
+   "RTVF13",
+   "RTVF15",
+   "SPAN1",
+   "SPAN2",
+   "SPAN3",
+   "SPAN4"
+  ],
+  "source": {
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/27607/27515",
+   "title": "AA Degree in Arts and Humanities",
+   "h1": "AA Degree in Arts and Humanities",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 59,
-  "text_chars": 0
+  "text_chars": 8991
  },
  {
   "control_number": "44301",
   "title": "Social Science",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AJ1",
+   "AJ10",
+   "AJ11",
+   "AJ14",
+   "AJ2",
+   "AJ4",
+   "ANTH13",
+   "ANTH14",
+   "ANTH16",
+   "ANTH32",
+   "ANTH4",
+   "CDEVC1000",
+   "CDF12",
+   "CDF57",
+   "CMST13",
+   "CMST9",
+   "COMMC1004",
+   "ECON20",
+   "ECONC2001",
+   "ECONC2002",
+   "ETHS10",
+   "ETHS30",
+   "ETHS40",
+   "GEOG10",
+   "GEOG4",
+   "GEOG8",
+   "HIST18",
+   "HIST3",
+   "HIST30",
+   "HIST5",
+   "HISTC1001",
+   "HISTC1002",
+   "MCGS10",
+   "POLSC1000",
+   "POS12",
+   "POS16",
+   "POS18",
+   "POS3",
+   "PSY15",
+   "PSY20",
+   "PSY41",
+   "PSY6",
+   "PSY7",
+   "PSYCC1000",
+   "SOC10",
+   "SOC14",
+   "SOC20",
+   "SOC30",
+   "SOC4",
+   "SOC5",
+   "SOC8",
+   "SOCIC1000"
+  ],
+  "source": {
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/27607/27519",
+   "title": "AA Degree in Social Science",
+   "h1": "AA Degree in Social Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 52,
-  "text_chars": 0
+  "text_chars": 8642
  },
  {
   "control_number": "44349",
   "title": "Mathematics and Science",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AGS20",
+   "AGS40",
+   "AGS50",
+   "ANTHC1001",
+   "ASTRC1000",
+   "BIOL41",
+   "BIOL42",
+   "BIOL43",
+   "BIOLC1000",
+   "CHEM1",
+   "CHEM11",
+   "CHEM21",
+   "CHEM51",
+   "CHEM52",
+   "GEOG2",
+   "GEOG3",
+   "GEOL32",
+   "GEOL34",
+   "MATH20",
+   "MATH26",
+   "MATH26S",
+   "MATH28",
+   "MATH28S",
+   "MATHC2210",
+   "MATHC2210E",
+   "MATHC2220",
+   "PHYS10",
+   "PHYS11",
+   "PHYS21",
+   "PHYS41",
+   "PSC10",
+   "PSC11",
+   "PSC12",
+   "PSC50",
+   "PSC51",
+   "PSY3",
+   "STATC1000",
+   "STATC1000E"
+  ],
+  "source": {
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/27607/27517",
+   "title": "AS Degree in Mathematics and Science",
+   "h1": "AS Degree in Mathematics and Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 38,
-  "text_chars": 0
+  "text_chars": 7349
  },
  {
   "control_number": "44575",
   "title": "Electrical Engineering",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CSCI20",
+   "ENGR10",
+   "ENGR11",
+   "ENGR17",
+   "MATH32"
+  ],
+  "source": {
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28116/27539",
+   "title": "Certificate of Achievement in Electrical Engineering",
+   "h1": "Certificate of Achievement in Electrical Engineering",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 5,
-  "text_chars": 0
+  "text_chars": 2110
  },
  {
   "control_number": "44716",
   "title": "Music",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MUS4",
+   "MUS40",
+   "MUS41",
+   "MUS42",
+   "MUS51",
+   "MUS60",
+   "MUS61",
+   "MUS63",
+   "MUS64",
+   "MUS65",
+   "MUS68",
+   "MUS69",
+   "MUS70",
+   "MUS80",
+   "MUS82",
+   "MUS84",
+   "MUS86",
+   "MUS87",
+   "MUS88",
+   "MUS89",
+   "MUS90",
+   "MUS92"
+  ],
+  "source": {
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28152/27601",
+   "title": "AA Degree in Music",
+   "h1": "AA Degree in Music",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 22,
-  "text_chars": 0
+  "text_chars": 5622
  },
  {
   "control_number": "44753",
   "title": "Music",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MUS1",
+   "MUS40",
+   "MUS41",
+   "MUS42",
+   "MUS60",
+   "MUS61",
+   "MUS63",
+   "MUS64",
+   "MUS65",
+   "MUS68",
+   "MUS69",
+   "MUS70",
+   "MUS80",
+   "MUS82",
+   "MUS84",
+   "MUS86",
+   "MUS88"
+  ],
+  "source": {
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28152/27603",
+   "title": "Certificate of Achievement in Music",
+   "h1": "Certificate of Achievement in Music",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 17,
-  "text_chars": 0
+  "text_chars": 4125
  },
  {
   "control_number": "44823",
   "title": "Music Theory and Composition",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MUS80",
+   "MUS82",
+   "MUS84",
+   "MUS87",
+   "MUS89"
+  ],
+  "source": {
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28152/27605",
+   "title": "Certificate of Achievement in Music Theory and Composition",
+   "h1": "Certificate of Achievement in Music Theory and Composition",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 5,
-  "text_chars": 0
+  "text_chars": 1902
  },
  {
   "control_number": "44891",
@@ -2548,119 +5623,329 @@
   "title": "Engineering Support Technician",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BCIS85",
+   "CSCI19",
+   "CSCI4",
+   "DFT16",
+   "ENGR99",
+   "ITEC65",
+   "MATH20",
+   "MATH28",
+   "MATH28S",
+   "MATHC2210",
+   "MATHC2210E",
+   "PHYS21",
+   "PHYS41"
+  ],
+  "source": {
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28116/27551",
+   "title": "Certificate of Achievement in Engineering Support Technician",
+   "h1": "Certificate of Achievement in Engineering Support Technician",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 13,
-  "text_chars": 0
+  "text_chars": 2977
  },
  {
   "control_number": "45454",
   "title": "Speech and Debate",
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CMST12",
+   "CMST14",
+   "CMST6",
+   "COMMC1000"
+  ],
+  "source": {
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28098/28435",
+   "title": "Certificate of Achievement in Speech and Debate",
+   "h1": "Certificate of Achievement in Speech and Debate",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 4,
-  "text_chars": 0
+  "text_chars": 1718
  },
  {
   "control_number": "45652",
   "title": "Social Work and Human Services",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTH4",
+   "BIOL2",
+   "BIOL20",
+   "BIOL21",
+   "CDEVC1000",
+   "CDF12",
+   "CMST9",
+   "ECONC2001",
+   "ECONC2002",
+   "ENGLC1001",
+   "HISTC1001",
+   "HISTC1002",
+   "PSY15",
+   "PSY6",
+   "PSYCC1000",
+   "SOC20",
+   "SOC30",
+   "SOC4",
+   "SOCIC1000",
+   "STATC1000",
+   "STATC1000E",
+   "SWHS1",
+   "SWHS2"
+  ],
+  "source": {
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28428/28534",
+   "title": "AA-T Degree in Social Work and Human Services",
+   "h1": "AA-T Degree in Social Work and Human Services",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 23,
-  "text_chars": 0
+  "text_chars": 5614
  },
  {
   "control_number": "45662",
   "title": "Commercial Music",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MUS4",
+   "MUS51",
+   "MUS52",
+   "MUS61",
+   "MUS80",
+   "MUS82",
+   "MUS88",
+   "MUS89",
+   "MUS90"
+  ],
+  "source": {
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28152/28460",
+   "title": "Certificate of Achievement in Commercial Music",
+   "h1": "Certificate of Achievement in Commercial Music",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 9,
-  "text_chars": 0
+  "text_chars": 2384
  },
  {
   "control_number": "45770",
   "title": "Concrete Industry Technician",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT2",
+   "ACCT4",
+   "BUS8",
+   "CNST1",
+   "CNST10",
+   "CNST20",
+   "CNST5"
+  ],
+  "source": {
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28102/28444",
+   "title": "Certificate of Achievement in Concrete Industry Technician",
+   "h1": "Certificate of Achievement in Concrete Industry Technician",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 7,
-  "text_chars": 0
+  "text_chars": 2159
  },
  {
   "control_number": "45799",
   "title": "Concrete Industry Technician",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT2",
+   "ACCT4",
+   "BUS8",
+   "CHEM51",
+   "CNST1",
+   "CNST20",
+   "CNST5",
+   "ECONC2001",
+   "GEOL32",
+   "MATH20",
+   "MATH26",
+   "MATH26S",
+   "MATH28",
+   "MATH28S",
+   "PHYS21",
+   "PHYS41",
+   "STATC1000",
+   "STATC1000E"
+  ],
+  "source": {
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28102/28443",
+   "title": "AS Degree in Concrete Industry Technician",
+   "h1": "AS Degree in Concrete Industry Technician",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 18,
-  "text_chars": 0
+  "text_chars": 4007
  },
  {
   "control_number": "46303",
   "title": "Theatre Arts",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "DRAM10",
+   "DRAM12",
+   "DRAM14",
+   "DRAM15",
+   "DRAM16",
+   "DRAM2",
+   "DRAM20",
+   "DRAM21",
+   "DRAM22",
+   "DRAM23",
+   "DRAM3",
+   "DRAM8",
+   "DRAM9"
+  ],
+  "source": {
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28108/28469",
+   "title": "Certificate of Achievement in Theatre Arts",
+   "h1": "Certificate of Achievement in Theatre Arts",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 13,
-  "text_chars": 0
+  "text_chars": 3184
  },
  {
   "control_number": "46540",
   "title": "Physics 2.0",
   "award": "A.S. T Degree",
   "shape": "adt",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CSCI20",
+   "MATH32",
+   "MATH40",
+   "MATH42",
+   "MATHC2210",
+   "MATHC2210E",
+   "MATHC2220",
+   "PHYS41",
+   "PHYS42",
+   "PHYS43"
+  ],
+  "source": {
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28164/28538",
+   "title": "AS-T Degree in Physics 2.0",
+   "h1": "AS-T Degree in Physics 2.0",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 10,
-  "text_chars": 0
+  "text_chars": 2927
  },
  {
   "control_number": "46541",
   "title": "Mathematics 2.0",
   "award": "A.S. T Degree",
   "shape": "adt",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CSCI20",
+   "CSCI4",
+   "MATH32",
+   "MATH40",
+   "MATH42",
+   "MATHC2210",
+   "MATHC2210E",
+   "MATHC2220",
+   "PHYS41"
+  ],
+  "source": {
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28146/28526",
+   "title": "AS-T Degree in Mathematics 2.0",
+   "h1": "AS-T Degree in Mathematics 2.0",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 9,
-  "text_chars": 0
+  "text_chars": 3357
  },
  {
   "control_number": "46584",
   "title": "Early Childhood Education",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CDF310",
+   "CDF315",
+   "CDF324",
+   "CDF325"
+  ],
+  "source": {
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28096/28548",
+   "title": "Noncredit Certificate of Completion in Early Childhood Education",
+   "h1": "Noncredit Certificate of Completion in Early Childhood Education",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 4,
-  "text_chars": 0
+  "text_chars": 1982
  }
 ]
