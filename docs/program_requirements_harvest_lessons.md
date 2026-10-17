@@ -636,6 +636,9 @@ the session. Proving a seeded a11y target by running it on the old file (it must
   (*"draŌ  landscape"* against *"aŌ er"*), so text carrying one gets a fifth reading in `_readings()`: ligatures spelled
   out and every space dropped, compared with the outcome's letters, spaces dropped too. A free reconcile took Solano's
   outcomes failures from 135 to 25 and its passes from 7 to 83.
+- **Santa Rosa had the same glyphs.** A free reconcile on the ligature reading took its outcomes failures from 38 to
+  1 and its passes from 147 to 180 (run 39037637820); the reread replaced 37 rows (39038350065) and Solano's 135
+  (39037608756). Skyline's rerun extracted all 53 ($3.83, 37 passing) and loaded 42.
 - **Three more registry rows name a page about the catalog** (page reads 39032643761, 39035702276): Grossmont (the
   cover image; `catalog.gcccd.edu/grossmont/`), Ohlone (the landing page; chapter 7 of a PDF catalog), Cañada (its
   schedule page; `catalog.canadacollege.edu/current/` refuses the reader in robots.txt). Open Asks Sheet 89 card 1.
@@ -650,3 +653,23 @@ the session. Proving a seeded a11y target by running it on the old file (it must
 
 **Patterns that worked.** Ten branches, one a college, captured in parallel while the session fixed what the first
 reports showed. A page read of the PDF around one failing outcome named the fault in one load.
+
+## Moved from the lane (S405 compaction)
+
+- Extraction spend by wave: waves 1-5 about $510; the eLumen wave $41.06; S402 $13.57; the PDF wave $149.41 for
+  fifteen; S405 $40.32 for six colleges plus Skyline's two runs ($1.29, $3.83).
+- The PDF reader (S403; #2189, merged with East LA's in #2192, build `726bde512dfa`, 11,862 programs): a page qualifies
+  for a program when it carries every title word outside its contents lines or prints the program's control number; the
+  highest-scoring page (listed codes, +5 for a heading naming title and award, +10 for the control number) whose run
+  covers the list wins, and the text opens at the heading while that keeps every listed code.
+- The spaced-hyphen reconciles took LA City's outcomes failures from 145 to 12 and Pierce's from 85 to 15; the rereads
+  replaced 156 and 94 rows (39018615618, 39018617236). 29 LA City and 20 Pierce rows had been rescored on a moved page
+  before the guard; Sam pasted the undo (Sheet 88 card 2), read back 2026-10-17: LA City 96 on run 39006380342 and 127
+  on 39018419466, Pierce 99 on 39006383070 and 74 on 39018421038.
+- Sheet 88 card 1 (Sam, 2026-10-17, applied by the hand-opened S405,
+  `kb/receipts/program_source_registry_sheet88_five_catalogs_2026-10-17_s405.sql`): Copper Mountain, San Diego Continuing
+  Education, Porterville and Solano to their 2026-2027 PDFs; West Valley to its own HTML catalog.
+- College of San Mateo loaded 55 unchecked (S404, 60 of 64 found, $4.98, build `928577b30f0f`, applied 12:24Z by run
+  39030423266).
+- Parked detail: Diablo Valley found 0 of 244 (its hubs grid departments by award, run 38999074345); Santiago
+  Canyon's eLumen host serves 2025-2026, and a narrower page read must show its Catalog Archives and printer PDF links.
