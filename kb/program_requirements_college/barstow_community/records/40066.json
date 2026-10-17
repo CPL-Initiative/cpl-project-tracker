@@ -87,8 +87,8 @@
    "count": 0,
    "not_verbatim": [],
    "why": [],
-   "heading_printed": false,
-   "heading_without_outcomes": false,
+   "heading_printed": true,
+   "heading_without_outcomes": true,
    "pass": true
   },
   "careers": {
@@ -151,5 +151,6 @@
    "A reviewer should check the neighboring catalog pages (likely page 72 or 74) for the Level I certificate section."
   ]
  },
- "extracted_run": "39006332820"
+ "extracted_run": 39019543777,
+ "read_run": "39006332820"
 }

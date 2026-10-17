@@ -84,7 +84,7 @@
    "count": 3,
    "not_verbatim": [],
    "why": [],
-   "heading_printed": true,
+   "heading_printed": false,
    "heading_without_outcomes": false,
    "pass": true
   },
@@ -177,5 +177,6 @@
    "Careers read from the program description: 'a career in customer service as representative, personal assistant, associate, bank teller, and cashier'."
   ]
  },
- "extracted_run": "39006332820"
+ "extracted_run": 39019543777,
+ "read_run": "39006332820"
 }

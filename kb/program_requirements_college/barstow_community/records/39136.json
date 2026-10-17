@@ -90,8 +90,8 @@
    "count": 0,
    "not_verbatim": [],
    "why": [],
-   "heading_printed": false,
-   "heading_without_outcomes": false,
+   "heading_printed": true,
+   "heading_without_outcomes": true,
    "pass": true
   },
   "careers": {
@@ -165,5 +165,6 @@
    "The Track 3 list prints ADJU 4 twice, which is a duplicate in the source."
   ]
  },
- "extracted_run": "39006332820"
+ "extracted_run": 39019543777,
+ "read_run": "39006332820"
 }

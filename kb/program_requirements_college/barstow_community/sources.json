@@ -15,15 +15,16 @@
   ],
   "source": {
    "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=89",
-   "title": null,
-   "h1": null,
+   "title": "Associate of Science Degree, Diesel Technology",
+   "h1": "Associate of Science Degree, Diesel Technology",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     89,
     90
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 5,
   "text_chars": 4882
@@ -57,8 +58,8 @@
   ],
   "source": {
    "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=133",
-   "title": null,
-   "h1": null,
+   "title": "BADM 2",
+   "h1": "BADM 2",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -67,7 +68,8 @@
     135,
     136
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 6,
   "text_chars": 16000
@@ -87,19 +89,19 @@
    "CBIS19"
   ],
   "source": {
-   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=76",
-   "title": null,
-   "h1": null,
+   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=77",
+   "title": "Certificate of Achievement, Management Information Systems",
+   "h1": "Certificate of Achievement, Management Information Systems",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    76,
     77
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 5,
-  "text_chars": 6010
+  "text_chars": 2316
  },
  {
   "control_number": "18206",
@@ -117,19 +119,19 @@
    "AUTO56"
   ],
   "source": {
-   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=88",
-   "title": null,
-   "h1": null,
+   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=89",
+   "title": "Certificate of Achievement, Automotive Technology",
+   "h1": "Certificate of Achievement, Automotive Technology",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    88,
     89
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 6,
-  "text_chars": 3365
+  "text_chars": 950
  },
  {
   "control_number": "18482",
@@ -151,8 +153,8 @@
   ],
   "source": {
    "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=71",
-   "title": null,
-   "h1": null,
+   "title": "Associate of Science Degree, Accounting",
+   "h1": "Associate of Science Degree, Accounting",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -161,10 +163,11 @@
     73,
     74
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 9,
-  "text_chars": 10392
+  "text_chars": 10188
  },
  {
   "control_number": "18483",
@@ -190,8 +193,8 @@
   ],
   "source": {
    "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=109",
-   "title": null,
-   "h1": null,
+   "title": "Associate of Science Degree for Transfer, Administration of Justice",
+   "h1": "Associate of Science Degree for Transfer, Administration of Justice",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -200,10 +203,11 @@
     111,
     112
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 13,
-  "text_chars": 9748
+  "text_chars": 9395
  },
  {
   "control_number": "18487",
@@ -224,18 +228,19 @@
   ],
   "source": {
    "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=88",
-   "title": null,
-   "h1": null,
+   "title": "Associate of Science Degree, Automotive Technology",
+   "h1": "Associate of Science Degree, Automotive Technology",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     88,
     89
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 8,
-  "text_chars": 3365
+  "text_chars": 3298
  },
  {
   "control_number": "18488",
@@ -266,8 +271,8 @@
   ],
   "source": {
    "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=72",
-   "title": null,
-   "h1": null,
+   "title": "",
+   "h1": "",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -275,7 +280,8 @@
     73,
     74
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 18,
   "text_chars": 7709
@@ -309,8 +315,8 @@
   ],
   "source": {
    "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=134",
-   "title": null,
-   "h1": null,
+   "title": "CDEV 14",
+   "h1": "CDEV 14",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -319,7 +325,8 @@
     136,
     137
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 21,
   "text_chars": 16000
@@ -341,19 +348,19 @@
    "COSM52"
   ],
   "source": {
-   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=90",
-   "title": null,
-   "h1": null,
+   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=91",
+   "title": "Certificate of Achievement, Cosmetology",
+   "h1": "Certificate of Achievement, Cosmetology",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    90,
     91
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 7,
-  "text_chars": 5598
+  "text_chars": 2700
  },
  {
   "control_number": "18491",
@@ -373,18 +380,19 @@
   ],
   "source": {
    "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=90",
-   "title": null,
-   "h1": null,
+   "title": "Associate of Science Degree, Cosmetology",
+   "h1": "Associate of Science Degree, Cosmetology",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     90,
     91
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 7,
-  "text_chars": 5598
+  "text_chars": 4570
  },
  {
   "control_number": "18494",
@@ -402,20 +410,19 @@
    "MGMT5"
   ],
   "source": {
-   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=72",
-   "title": null,
-   "h1": null,
+   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=74",
+   "title": "Certificate of Achievement, Management",
+   "h1": "Certificate of Achievement, Management",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    72,
-    73,
     74
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 6,
-  "text_chars": 7709
+  "text_chars": 1736
  },
  {
   "control_number": "18500",
@@ -438,8 +445,8 @@
   ],
   "source": {
    "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=96",
-   "title": null,
-   "h1": null,
+   "title": "Welding Cluster",
+   "h1": "Welding Cluster",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -448,7 +455,8 @@
     98,
     99
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 10,
   "text_chars": 10316
@@ -474,8 +482,8 @@
   ],
   "source": {
    "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=96",
-   "title": null,
-   "h1": null,
+   "title": "Associate of Science Degree, Welding Technology",
+   "h1": "Associate of Science Degree, Welding Technology",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -484,10 +492,11 @@
     98,
     99
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 10,
-  "text_chars": 10316
+  "text_chars": 10297
  },
  {
   "control_number": "18503",
@@ -583,8 +592,8 @@
   ],
   "source": {
    "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=65",
-   "title": null,
-   "h1": null,
+   "title": "ARTS 18A Beginning Ceramics 3.0",
+   "h1": "ARTS 18A Beginning Ceramics 3.0",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -593,7 +602,8 @@
     67,
     68
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 84,
   "text_chars": 10209
@@ -621,21 +631,21 @@
    "ADJU8"
   ],
   "source": {
-   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=109",
-   "title": null,
-   "h1": null,
+   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=111",
+   "title": "Certificate of Achievement, Administration of Justice",
+   "h1": "Certificate of Achievement, Administration of Justice",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    109,
-    110,
     111,
-    112
+    112,
+    113
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 13,
-  "text_chars": 9748
+  "text_chars": 7217
  },
  {
   "control_number": "18589",
@@ -654,18 +664,19 @@
   ],
   "source": {
    "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=73",
-   "title": null,
-   "h1": null,
+   "title": "Certificate of Achievement, Accounting",
+   "h1": "Certificate of Achievement, Accounting",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     73,
     74
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 6,
-  "text_chars": 5334
+  "text_chars": 4113
  },
  {
   "control_number": "19967",
@@ -682,19 +693,19 @@
    "DESL70"
   ],
   "source": {
-   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=89",
-   "title": null,
-   "h1": null,
+   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=90",
+   "title": "Certificate of Achievement, Diesel Technology",
+   "h1": "Certificate of Achievement, Diesel Technology",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    89,
     90
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 5,
-  "text_chars": 4882
+  "text_chars": 2825
  },
  {
   "control_number": "30562",
@@ -712,21 +723,21 @@
    "WARE59"
   ],
   "source": {
-   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=73",
-   "title": null,
-   "h1": null,
+   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=75",
+   "title": "Certificate of Achievement, Warehousing and Logistics, Level 2",
+   "h1": "Certificate of Achievement, Warehousing and Logistics, Level 2",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    73,
-    74,
     75,
-    76
+    76,
+    77
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 6,
-  "text_chars": 11620
+  "text_chars": 8208
  },
  {
   "control_number": "30733",
@@ -745,8 +756,8 @@
   ],
   "source": {
    "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=73",
-   "title": null,
-   "h1": null,
+   "title": "• Demonstrate critical thinking skills, making the intellectual connection between quantitative",
+   "h1": "• Demonstrate critical thinking skills, making the intellectual connection between quantitative",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -755,7 +766,8 @@
     75,
     76
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 6,
   "text_chars": 11620
@@ -783,8 +795,8 @@
   ],
   "source": {
    "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=107",
-   "title": null,
-   "h1": null,
+   "title": "Associate of Arts Degree for Transfer, Sociology",
+   "h1": "Associate of Arts Degree for Transfer, Sociology",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -793,10 +805,11 @@
     109,
     110
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 12,
-  "text_chars": 10311
+  "text_chars": 10160
  },
  {
   "control_number": "31051",
@@ -818,8 +831,8 @@
   ],
   "source": {
    "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=106",
-   "title": null,
-   "h1": null,
+   "title": "Associate of Arts Degree for Transfer, Psychology",
+   "h1": "Associate of Arts Degree for Transfer, Psychology",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -828,10 +841,11 @@
     108,
     109
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 9,
-  "text_chars": 11559
+  "text_chars": 11413
  },
  {
   "control_number": "33065",
@@ -848,15 +862,16 @@
   ],
   "source": {
    "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=136",
-   "title": null,
-   "h1": null,
+   "title": "CDEV 35A",
+   "h1": "CDEV 35A",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     136,
     137
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 8,
   "text_chars": 9270
@@ -880,8 +895,8 @@
   ],
   "source": {
    "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=105",
-   "title": null,
-   "h1": null,
+   "title": "Associate of Arts Degree for Transfer, Political Science",
+   "h1": "Associate of Arts Degree for Transfer, Political Science",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -890,7 +905,8 @@
     107,
     108
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 11,
   "text_chars": 12230
@@ -916,19 +932,22 @@
    "SOCIC1000"
   ],
   "source": {
-   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=83",
-   "title": null,
-   "h1": null,
+   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=103",
+   "title": "ETHN 1  Introduction to Ethnic Studies  3.0",
+   "h1": "ETHN 1  Introduction to Ethnic Studies  3.0",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    83,
-    84
+    103,
+    104,
+    105,
+    106
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 12,
-  "text_chars": 5124
+  "text_chars": 12046
  },
  {
   "control_number": "33070",
@@ -959,18 +978,19 @@
   ],
   "source": {
    "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=60",
-   "title": null,
-   "h1": null,
+   "title": "Associate of Arts Degree for Transfer, Art History",
+   "h1": "Associate of Arts Degree for Transfer, Art History",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     60,
     61
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 18,
-  "text_chars": 5387
+  "text_chars": 5314
  },
  {
   "control_number": "33071",
@@ -992,8 +1012,8 @@
   ],
   "source": {
    "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=70",
-   "title": null,
-   "h1": null,
+   "title": "Associate of Science Degree for Transfer, Business Administration",
+   "h1": "Associate of Science Degree for Transfer, Business Administration",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -1002,10 +1022,11 @@
     72,
     73
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 9,
-  "text_chars": 10881
+  "text_chars": 10807
  },
  {
   "control_number": "33076",
@@ -1035,8 +1056,8 @@
   ],
   "source": {
    "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=109",
-   "title": null,
-   "h1": null,
+   "title": "SOCI 10 Introduction to Criminology 3.0",
+   "h1": "SOCI 10 Introduction to Criminology 3.0",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -1045,7 +1066,8 @@
     111,
     112
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 17,
   "text_chars": 9748
@@ -1070,18 +1092,20 @@
    "ENGLC1002"
   ],
   "source": {
-   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=65",
-   "title": null,
-   "h1": null,
+   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=62",
+   "title": "Associate of Arts Degree for Transfer, English",
+   "h1": "Associate of Arts Degree for Transfer, English",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    65
+    62,
+    63
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 10,
-  "text_chars": 2426
+  "text_chars": 6284
  },
  {
   "control_number": "35100",
@@ -1106,18 +1130,19 @@
    "IMMT77"
   ],
   "source": {
-   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=92",
-   "title": null,
-   "h1": null,
+   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=95",
+   "title": "Certificate of Achievement, Industrial Maintenance Mechanic",
+   "h1": "Certificate of Achievement, Industrial Maintenance Mechanic",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    92
+    95
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 13,
-  "text_chars": 2005
+  "text_chars": 2237
  },
  {
   "control_number": "35346",
@@ -1142,15 +1167,16 @@
   ],
   "source": {
    "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=93",
-   "title": null,
-   "h1": null,
+   "title": "Certificate of Achievement, Industrial Maintenance Electrical and",
+   "h1": "Certificate of Achievement, Industrial Maintenance Electrical and",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     93,
     94
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 12,
   "text_chars": 5078
@@ -1194,15 +1220,16 @@
   ],
   "source": {
    "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=133",
-   "title": null,
-   "h1": null,
+   "title": "BADM 2",
+   "h1": "BADM 2",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     133,
     134
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 6,
   "text_chars": 9397
@@ -1223,18 +1250,21 @@
    "ADJU18"
   ],
   "source": {
-   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=102",
-   "title": null,
-   "h1": null,
+   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=111",
+   "title": "Certificate of Achievement, Administration of Justice",
+   "h1": "Certificate of Achievement, Administration of Justice",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    102
+    111,
+    112,
+    113
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 6,
-  "text_chars": 2852
+  "text_chars": 7217
  },
  {
   "control_number": "39150",
@@ -1252,15 +1282,16 @@
   ],
   "source": {
    "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=76",
-   "title": null,
-   "h1": null,
+   "title": "foundation for those students who plan to complete a four-year program in computer business",
+   "h1": "foundation for those students who plan to complete a four-year program in computer business",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     76,
     77
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 5,
   "text_chars": 6010
@@ -1279,15 +1310,16 @@
   ],
   "source": {
    "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=76",
-   "title": null,
-   "h1": null,
+   "title": "foundation for those students who plan to complete a four-year program in computer business",
+   "h1": "foundation for those students who plan to complete a four-year program in computer business",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     76,
     77
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 4,
   "text_chars": 6010
@@ -1311,15 +1343,16 @@
   ],
   "source": {
    "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=119",
-   "title": null,
-   "h1": null,
+   "title": "Required Core Courses",
+   "h1": "Required Core Courses",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     119,
     120
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 8,
   "text_chars": 5535
@@ -1355,8 +1388,8 @@
   ],
   "source": {
    "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=116",
-   "title": null,
-   "h1": null,
+   "title": "Associate of Arts Degree for Transfer, Kinesiology",
+   "h1": "Associate of Arts Degree for Transfer, Kinesiology",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -1365,7 +1398,8 @@
     118,
     119
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 20,
   "text_chars": 10445
@@ -1394,8 +1428,8 @@
   ],
   "source": {
    "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=78",
-   "title": null,
-   "h1": null,
+   "title": "meet the diverse needs of students and roles of the teacher, and to gain a broad foundation of",
+   "h1": "meet the diverse needs of students and roles of the teacher, and to gain a broad foundation of",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -1403,7 +1437,8 @@
     79,
     80
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 15,
   "text_chars": 8880
@@ -1435,14 +1470,15 @@
   ],
   "source": {
    "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=101",
-   "title": null,
-   "h1": null,
+   "title": "ENGL 12  Survey of American Literature to 1865  3.0",
+   "h1": "ENGL 12  Survey of American Literature to 1865  3.0",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     101
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 16,
   "text_chars": 2423
@@ -1466,15 +1502,16 @@
   ],
   "source": {
    "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=76",
-   "title": null,
-   "h1": null,
+   "title": "foundation for those students who plan to complete a four-year program in computer business",
+   "h1": "foundation for those students who plan to complete a four-year program in computer business",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     76,
     77
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 8,
   "text_chars": 6010
@@ -1501,14 +1538,15 @@
   ],
   "source": {
    "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=67",
-   "title": null,
-   "h1": null,
+   "title": "• Employ technical skills, creativity, critical thinking, and conceptual problem-solving in",
+   "h1": "• Employ technical skills, creativity, critical thinking, and conceptual problem-solving in",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     67
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 11,
   "text_chars": 3123
@@ -1536,15 +1574,16 @@
   ],
   "source": {
    "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=93",
-   "title": null,
-   "h1": null,
+   "title": "Certificate of Achievement, Industrial Maintenance Electrical and",
+   "h1": "Certificate of Achievement, Industrial Maintenance Electrical and",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     93,
     94
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 13,
   "text_chars": 5078
@@ -1575,8 +1614,8 @@
   ],
   "source": {
    "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=92",
-   "title": null,
-   "h1": null,
+   "title": "IMEI 80B Electrical and Instrumentation Test Equipment  1.0",
+   "h1": "IMEI 80B Electrical and Instrumentation Test Equipment  1.0",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -1585,7 +1624,8 @@
     94,
     95
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 15,
   "text_chars": 9324
@@ -1607,8 +1647,8 @@
   ],
   "source": {
    "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=73",
-   "title": null,
-   "h1": null,
+   "title": "• Demonstrate critical thinking skills, making the intellectual connection between quantitative",
+   "h1": "• Demonstrate critical thinking skills, making the intellectual connection between quantitative",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -1617,7 +1657,8 @@
     75,
     76
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 6,
   "text_chars": 11620
@@ -1640,18 +1681,19 @@
   ],
   "source": {
    "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=114",
-   "title": null,
-   "h1": null,
+   "title": "Associate of Science Degree for Transfer, Biology",
+   "h1": "Associate of Science Degree for Transfer, Biology",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     114,
     115
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 7,
-  "text_chars": 4989
+  "text_chars": 4964
  },
  {
   "control_number": "40024",
@@ -1659,8 +1701,10 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "pdf_pages",
-  "coverage": 0.846,
+  "coverage": 1.0,
   "codes_found": [
+   "ANTH1",
+   "ENGLC1002",
    "ETHN1",
    "HISTC1001",
    "PSYCC1000",
@@ -1674,21 +1718,21 @@
    "STATC1000"
   ],
   "source": {
-   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=103",
-   "title": null,
-   "h1": null,
+   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=108",
+   "title": "Associate of Arts Degree for Transfer, Social Justice",
+   "h1": "Associate of Arts Degree for Transfer, Social Justice",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    103,
-    104,
-    105,
-    106
+    108,
+    109,
+    110
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 13,
-  "text_chars": 12046
+  "text_chars": 7198
  },
  {
   "control_number": "40065",
@@ -1707,14 +1751,15 @@
   ],
   "source": {
    "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=93",
-   "title": null,
-   "h1": null,
+   "title": "Certificate of Achievement, Industrial Maintenance Electrical and",
+   "h1": "Certificate of Achievement, Industrial Maintenance Electrical and",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     93
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 6,
   "text_chars": 2592
@@ -1732,18 +1777,19 @@
    "WARE55"
   ],
   "source": {
-   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=73",
-   "title": null,
-   "h1": null,
+   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=75",
+   "title": "Certificate of Achievement, Warehousing and Logistics, Level 2",
+   "h1": "Certificate of Achievement, Warehousing and Logistics, Level 2",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    73
+    75
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 3,
-  "text_chars": 2798
+  "text_chars": 2196
  },
  {
   "control_number": "40067",
@@ -1762,18 +1808,19 @@
    "IMMT77"
   ],
   "source": {
-   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=92",
-   "title": null,
-   "h1": null,
+   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=95",
+   "title": "Certificate of Achievement, Industrial Maintenance Mechanic",
+   "h1": "Certificate of Achievement, Industrial Maintenance Mechanic",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    92
+    95
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 7,
-  "text_chars": 2005
+  "text_chars": 2237
  },
  {
   "control_number": "40088",
@@ -1790,8 +1837,8 @@
   ],
   "source": {
    "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=96",
-   "title": null,
-   "h1": null,
+   "title": "Welding Cluster",
+   "h1": "Welding Cluster",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -1800,7 +1847,8 @@
     98,
     99
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 4,
   "text_chars": 10316
@@ -1824,17 +1872,18 @@
   ],
   "source": {
    "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=120",
-   "title": null,
-   "h1": null,
+   "title": "Associate of Science Degree for Transfer, Chemistry",
+   "h1": "Associate of Science Degree for Transfer, Chemistry",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     120
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 8,
-  "text_chars": 2782
+  "text_chars": 2626
  },
  {
   "control_number": "40101",
@@ -1851,8 +1900,8 @@
   ],
   "source": {
    "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=96",
-   "title": null,
-   "h1": null,
+   "title": "Welding Cluster",
+   "h1": "Welding Cluster",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -1861,7 +1910,8 @@
     98,
     99
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 4,
   "text_chars": 10316
@@ -1881,8 +1931,8 @@
   ],
   "source": {
    "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=96",
-   "title": null,
-   "h1": null,
+   "title": "Welding Cluster",
+   "h1": "Welding Cluster",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -1891,7 +1941,8 @@
     98,
     99
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 4,
   "text_chars": 10316
@@ -1910,21 +1961,20 @@
    "WELD57B"
   ],
   "source": {
-   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=96",
-   "title": null,
-   "h1": null,
+   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=98",
+   "title": "• Demonstrate knowledge about the required materials of the trade and can operate equipment",
+   "h1": "• Demonstrate knowledge about the required materials of the trade and can operate equipment",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    96,
-    97,
     98,
     99
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 4,
-  "text_chars": 10316
+  "text_chars": 5374
  },
  {
   "control_number": "40633",
@@ -1943,18 +1993,19 @@
   ],
   "source": {
    "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=119",
-   "title": null,
-   "h1": null,
+   "title": "Associate of Science Degree for Transfer, Mathematics",
+   "h1": "Associate of Science Degree for Transfer, Mathematics",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     119,
     120
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 7,
-  "text_chars": 5535
+  "text_chars": 4959
  },
  {
   "control_number": "40827",
@@ -1970,18 +2021,19 @@
   ],
   "source": {
    "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=121",
-   "title": null,
-   "h1": null,
+   "title": "Certificate of Completion, Customer Service and Digital Literacy",
+   "h1": "Certificate of Completion, Customer Service and Digital Literacy",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     121,
     122
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 3,
-  "text_chars": 6053
+  "text_chars": 4735
  },
  {
   "control_number": "40830",
@@ -1997,17 +2049,18 @@
   ],
   "source": {
    "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=122",
-   "title": null,
-   "h1": null,
+   "title": "Certificate of Completion, Trades Technician",
+   "h1": "Certificate of Completion, Trades Technician",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     122
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 3,
-  "text_chars": 3052
+  "text_chars": 1983
  },
  {
   "control_number": "41033",
@@ -2042,15 +2095,16 @@
   ],
   "source": {
    "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=117",
-   "title": null,
-   "h1": null,
+   "title": "KINA 17A Beginning Basketball 0.5 - 1.0",
+   "h1": "KINA 17A Beginning Basketball 0.5 - 1.0",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     117,
     118
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 22,
   "text_chars": 4732
@@ -2078,17 +2132,18 @@
   ],
   "source": {
    "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=113",
-   "title": null,
-   "h1": null,
+   "title": "Certificate of Achievement, Emergency Medical Technician",
+   "h1": "Certificate of Achievement, Emergency Medical Technician",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     113
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 12,
-  "text_chars": 2038
+  "text_chars": 1977
  },
  {
   "control_number": "41081",
@@ -2104,15 +2159,16 @@
   ],
   "source": {
    "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=121",
-   "title": null,
-   "h1": null,
+   "title": "Non-Credit Certificates",
+   "h1": "Non-Credit Certificates",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     121,
     122
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 3,
   "text_chars": 6053
@@ -2284,8 +2340,8 @@
   ],
   "source": {
    "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=100",
-   "title": null,
-   "h1": null,
+   "title": "MATH C2220 Calculus II: Early Transcendentals  4.0",
+   "h1": "MATH C2220 Calculus II: Early Transcendentals  4.0",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -2294,7 +2350,8 @@
     102,
     103
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 182,
   "text_chars": 10625
@@ -2322,18 +2379,19 @@
   ],
   "source": {
    "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=112",
-   "title": null,
-   "h1": null,
+   "title": "Associate of Science Degree, Pre-Allied Health Sciences",
+   "h1": "Associate of Science Degree, Pre-Allied Health Sciences",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     112,
     113
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 12,
-  "text_chars": 4231
+  "text_chars": 3843
  },
  {
   "control_number": "41556",
@@ -2356,8 +2414,8 @@
   ],
   "source": {
    "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=70",
-   "title": null,
-   "h1": null,
+   "title": "Associate of Science Degree for Transfer, Business Administration",
+   "h1": "Associate of Science Degree for Transfer, Business Administration",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -2366,10 +2424,11 @@
     72,
     73
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 10,
-  "text_chars": 10881
+  "text_chars": 10807
  },
  {
   "control_number": "42255",
@@ -2384,29 +2443,58 @@
   ],
   "source": {
    "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=121",
-   "title": null,
-   "h1": null,
+   "title": "Certificate of Completion, Basic Skills Education Program",
+   "h1": "Certificate of Completion, Basic Skills Education Program",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     121
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 2,
-  "text_chars": 2999
+  "text_chars": 2972
  },
  {
   "control_number": "42759",
   "title": "Theatre Arts",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "pdf_pages",
+  "coverage": 0.765,
+  "codes_found": [
+   "TART1",
+   "TART10",
+   "TART12A",
+   "TART12B",
+   "TART13A",
+   "TART13B",
+   "TART14A",
+   "TART14B",
+   "TART15",
+   "TART16",
+   "TART17",
+   "TART18",
+   "TART19"
+  ],
+  "source": {
+   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=172",
+   "title": "PHIL 9 3 Unit",
+   "h1": "PHIL 9 3 Unit",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    172,
+    173,
+    174,
+    175
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
   "listed": 17,
-  "text_chars": 0
+  "text_chars": 16000
  },
  {
   "control_number": "43165",
@@ -2428,18 +2516,19 @@
   ],
   "source": {
    "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=61",
-   "title": null,
-   "h1": null,
+   "title": "Associate of Arts Degree for Transfer, Communication Studies 2.0",
+   "h1": "Associate of Arts Degree for Transfer, Communication Studies 2.0",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     61,
     62
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 9,
-  "text_chars": 5935
+  "text_chars": 5908
  },
  {
   "control_number": "43495",
@@ -2454,14 +2543,15 @@
   ],
   "source": {
    "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=123",
-   "title": null,
-   "h1": null,
+   "title": "Certificate of Competency, Beginning English as a Second Language",
+   "h1": "Certificate of Competency, Beginning English as a Second Language",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     123
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 2,
   "text_chars": 3055
@@ -2482,19 +2572,19 @@
    "TART19"
   ],
   "source": {
-   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=68",
-   "title": null,
-   "h1": null,
+   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=69",
+   "title": "Certificate of Achievement, Technical Theatre",
+   "h1": "Certificate of Achievement, Technical Theatre",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    68,
     69
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 6,
-  "text_chars": 3231
+  "text_chars": 1187
  },
  {
   "control_number": "43659",
@@ -2518,15 +2608,16 @@
   ],
   "source": {
    "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=112",
-   "title": null,
-   "h1": null,
+   "title": "Required Core Courses",
+   "h1": "Required Core Courses",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     112,
     113
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 14,
   "text_chars": 4231
@@ -2547,15 +2638,16 @@
   ],
   "source": {
    "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=123",
-   "title": null,
-   "h1": null,
+   "title": "Certificate of Competency, Beginning English as a Second Language",
+   "h1": "Certificate of Competency, Beginning English as a Second Language",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     123,
     124
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 5,
   "text_chars": 5394
@@ -2576,14 +2668,15 @@
   ],
   "source": {
    "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=124",
-   "title": null,
-   "h1": null,
+   "title": "",
+   "h1": "",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     124
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 5,
   "text_chars": 2337
@@ -2614,8 +2707,8 @@
   ],
   "source": {
    "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=78",
-   "title": null,
-   "h1": null,
+   "title": "meet the diverse needs of students and roles of the teacher, and to gain a broad foundation of",
+   "h1": "meet the diverse needs of students and roles of the teacher, and to gain a broad foundation of",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -2623,7 +2716,8 @@
     79,
     80
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 15,
   "text_chars": 8880

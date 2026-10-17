@@ -2,7 +2,7 @@
  "college": "Barstow Community College",
  "programs": 76,
  "with_closed_list": 76,
- "found": 71,
+ "found": 72,
  "extracted": 71,
  "errors": 0,
  "passed_machine_checks": 51,
@@ -21,7 +21,7 @@
    "title": "Child Development Level II",
    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
    "near_miss": {
-    "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=83",
+    "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=85",
     "coverage": 0.125
    }
   },
@@ -44,15 +44,6 @@
    }
   },
   {
-   "control_number": "42759",
-   "title": "Theatre Arts",
-   "award": "A.A- T Degree",
-   "near_miss": {
-    "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=66",
-    "coverage": 0.353
-   }
-  },
-  {
    "control_number": "46575",
    "title": "Cal-GETC",
    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
@@ -62,5 +53,5 @@
    }
   }
  ],
- "run": "39006332820"
+ "run": "39019543777"
 }
