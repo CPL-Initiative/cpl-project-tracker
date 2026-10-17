@@ -5,7 +5,7 @@
  "catalog_year": "2026-2027",
  "programs": 20,
  "with_closed_list": 19,
- "started": "2026-10-17T05:28:46Z",
+ "started": "2026-10-17T09:02:29Z",
  "pdf": {
   "url": "https://www.calbright.edu/wp-content/uploads/2026/09/Final-Calbright-College-Academic-Catalog-2026-2027-September-18-2026.docx.pdf",
   "access": "ok",
@@ -19,10 +19,145 @@
    "p31: ' \\n \\n \\nDefensive\\n \\nCybersecurity\\n \\nProgram\\n \\n \\n(320\\n \\nclock\\n \\nhours)\\n \\nThis\\n \\nskills-based,\\n \\nnoncredit\\n \\nprogram\\n \\nprepares\\n \\nadult\\n \\nstudents\\n \\nfor\\n \\nemployment\\n \\nin\\n \\nthe\\n \\nInformation\\n \\nSecurity\\n \\nﬁeld.\\n \\nStudents\\n \\nwill\\n \\nprogress\\n \\nthr'",
    "p62: ' \\n \\n●\\n \\nVPNs\\n \\nand\\n \\nad-blockers\\n \\nmay\\n \\ninterfere\\n \\nwith\\n \\nsome\\n \\nplatform\\n \\nfunctionalities\\n \\nand\\n \\nshould\\n \\nbe\\n \\npaused..\\n \\nIf\\n \\nyou\\n \\nexperience\\n \\nany\\n \\nissues\\n \\nor\\n \\nrequire\\n \\nfurther\\n \\nassistance,\\n \\nplease\\n \\ncontact\\n \\nour\\n \\nsupport\\n \\n'"
   ],
-  "extractor": "pypdf"
+  "extractor": "pypdf",
+  "picks": [
+   {
+    "control_number": "38571",
+    "pages": [
+     15
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 15] CALBRIGHT PROGRAM OPTIONS Programs Courses Community Health Worker (CHW) Program ● CHW501: Introduction to Community Health Worker ● CHW502: Community Health "
+   },
+   {
+    "control_number": "38572",
+    "pages": [
+     16
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 16] Information Technology Support ● IT501: Introduction to IT SUPPORT Core 1 (A+) *industry certiﬁcation exams are administered by third parties ● IT502: Introdu"
+   },
+   {
+    "control_number": "38573",
+    "pages": [
+     16
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.667,
+    "opens": "[page 16] Information Technology Support ● IT501: Introduction to IT SUPPORT Core 1 (A+) *industry certiﬁcation exams are administered by third parties ● IT502: Introdu"
+   },
+   {
+    "control_number": "41516",
+    "pages": [
+     16
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 16] Information Technology Support ● IT501: Introduction to IT SUPPORT Core 1 (A+) *industry certiﬁcation exams are administered by third parties ● IT502: Introdu"
+   },
+   {
+    "control_number": "43231",
+    "pages": [
+     17
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 17] Data Analysis ● BUS500: Introduction to Structured Data ● BUS501: Application of Structured Data Human Resources Learning and Development ● BUS515: Learning & "
+   },
+   {
+    "control_number": "43528",
+    "pages": [
+     17
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 17] Data Analysis ● BUS500: Introduction to Structured Data ● BUS501: Application of Structured Data Human Resources Learning and Development ● BUS515: Learning & "
+   },
+   {
+    "control_number": "43529",
+    "pages": [
+     17
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 17] Data Analysis ● BUS500: Introduction to Structured Data ● BUS501: Application of Structured Data Human Resources Learning and Development ● BUS515: Learning & "
+   },
+   {
+    "control_number": "44618",
+    "pages": [
+     15
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 15] CALBRIGHT PROGRAM OPTIONS Programs Courses Community Health Worker (CHW) Program ● CHW501: Introduction to Community Health Worker ● CHW502: Community Health "
+   },
+   {
+    "control_number": "44719",
+    "pages": [
+     15
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": false,
+    "coverage": 0.5,
+    "opens": "[page 15] CALBRIGHT PROGRAM OPTIONS Programs Courses Community Health Worker (CHW) Program ● CHW501: Introduction to Community Health Worker ● CHW502: Community Health "
+   },
+   {
+    "control_number": "44851",
+    "pages": [
+     16
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 16] Information Technology Support ● IT501: Introduction to IT SUPPORT Core 1 (A+) *industry certiﬁcation exams are administered by third parties ● IT502: Introdu"
+   },
+   {
+    "control_number": "46233",
+    "pages": [
+     16
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 16] Information Technology Support ● IT501: Introduction to IT SUPPORT Core 1 (A+) *industry certiﬁcation exams are administered by third parties ● IT502: Introdu"
+   },
+   {
+    "control_number": "46480",
+    "pages": [
+     16
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.667,
+    "opens": "[page 16] Information Technology Support ● IT501: Introduction to IT SUPPORT Core 1 (A+) *industry certiﬁcation exams are administered by third parties ● IT502: Introdu"
+   }
+  ],
+  "unproven": []
  },
  "loads": 1,
- "seconds": 13.2,
+ "seconds": 17.3,
  "found": 12,
  "by_method": {
   "no_closed_list": 1,
@@ -103,131 +238,10 @@
   "1.0": 9
  },
  "would_extract": {
-  "against": null,
-  "kept": 0,
-  "programs": 12,
-  "list": [
-   {
-    "control_number": "38571",
-    "title": "Medical Coding",
-    "award": "Noncredit program",
-    "url": "https://www.calbright.edu/wp-content/uploads/2026/09/Final-Calbright-College-Academic-Catalog-2026-2027-September-18-2026.docx.pdf#page=15",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "38572",
-    "title": "Defensive Cybersecurity",
-    "award": "Noncredit program",
-    "url": "https://www.calbright.edu/wp-content/uploads/2026/09/Final-Calbright-College-Academic-Catalog-2026-2027-September-18-2026.docx.pdf#page=16",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "38573",
-    "title": "Information Technology Support",
-    "award": "Noncredit program",
-    "url": "https://www.calbright.edu/wp-content/uploads/2026/09/Final-Calbright-College-Academic-Catalog-2026-2027-September-18-2026.docx.pdf#page=16",
-    "coverage": 0.667,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "41516",
-    "title": "Network Technology",
-    "award": "Noncredit program",
-    "url": "https://www.calbright.edu/wp-content/uploads/2026/09/Final-Calbright-College-Academic-Catalog-2026-2027-September-18-2026.docx.pdf#page=16",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "43231",
-    "title": "Project Management",
-    "award": "Noncredit program",
-    "url": "https://www.calbright.edu/wp-content/uploads/2026/09/Final-Calbright-College-Academic-Catalog-2026-2027-September-18-2026.docx.pdf#page=17",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "43528",
-    "title": "Human Resources: Talent Acquisition",
-    "award": "Noncredit program",
-    "url": "https://www.calbright.edu/wp-content/uploads/2026/09/Final-Calbright-College-Academic-Catalog-2026-2027-September-18-2026.docx.pdf#page=17",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "43529",
-    "title": "Human Resources: Learning and Development",
-    "award": "Noncredit program",
-    "url": "https://www.calbright.edu/wp-content/uploads/2026/09/Final-Calbright-College-Academic-Catalog-2026-2027-September-18-2026.docx.pdf#page=17",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "44618",
-    "title": "Community Health Worker",
-    "award": "Noncredit program",
-    "url": "https://www.calbright.edu/wp-content/uploads/2026/09/Final-Calbright-College-Academic-Catalog-2026-2027-September-18-2026.docx.pdf#page=15",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "44719",
-    "title": "Medical Billing",
-    "award": "Noncredit program",
-    "url": "https://www.calbright.edu/wp-content/uploads/2026/09/Final-Calbright-College-Academic-Catalog-2026-2027-September-18-2026.docx.pdf#page=15",
-    "coverage": 0.5,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "44851",
-    "title": "Offensive Cybersecurity",
-    "award": "Noncredit program",
-    "url": "https://www.calbright.edu/wp-content/uploads/2026/09/Final-Calbright-College-Academic-Catalog-2026-2027-September-18-2026.docx.pdf#page=16",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "46233",
-    "title": "CRM Platform Administration",
-    "award": "Noncredit program",
-    "url": "https://www.calbright.edu/wp-content/uploads/2026/09/Final-Calbright-College-Academic-Catalog-2026-2027-September-18-2026.docx.pdf#page=16",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "46480",
-    "title": "Information Technology Support Program",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://www.calbright.edu/wp-content/uploads/2026/09/Final-Calbright-College-Academic-Catalog-2026-2027-September-18-2026.docx.pdf#page=16",
-    "coverage": 0.667,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   }
-  ]
+  "against": "kb/program_requirements_college/calbright_credit",
+  "kept": 12,
+  "programs": 0,
+  "list": []
  },
- "run": "39006334571"
+ "run": "39019545248"
 }
