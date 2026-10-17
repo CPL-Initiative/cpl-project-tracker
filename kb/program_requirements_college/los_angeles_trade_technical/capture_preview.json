@@ -1,0 +1,4333 @@
+{
+ "college": "Los Angeles Trade Technical College",
+ "catalog_url": "https://www.lattc.edu/academic-resources/catalog",
+ "platform": "custom_html",
+ "catalog_year": null,
+ "programs": 211,
+ "with_closed_list": 188,
+ "started": "2026-10-17T17:26:03Z",
+ "procedure_step": {
+  "start": "https://www.lattc.edu/academic-resources/catalog",
+  "follow": "2026-2027 LATTC Catalog.pdf",
+  "href": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf",
+  "status": 200,
+  "access": "ok"
+ },
+ "pdf": {
+  "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf",
+  "access": "ok",
+  "status": 200,
+  "bytes": 11359170,
+  "pages_total": 376,
+  "error": null,
+  "chars_total": 1615901,
+  "pypdf_accepted": 179,
+  "sample": [
+   "p113: 'Los Angeles Trade-Technical College 2026 - 2027 GENERAL CATALOG\\nGRADUATION REQUIREMENTS, P ATHW AYS \\nAND PROGRAMS OF STUDY\\n113\\nBusiness & Civic Engagement Pathway (BCE)\\nCOMPUTER APPLICATIONS & OFFICE \\nTECHNOLOGIES\\nAward Title Academic Plan '",
+   "p226: 'Los Angeles Trade-Technical College 2026 - 2027 GENERAL CATALOG\\n226\\nNoncredit - Certificates\\nGRADUATION REQUIREMENTS, P ATHW AYS \\nAND PROGRAMS OF STUDY\\nCAREER FOUNDATIONS FOR ENGLISH \\nLANGUAGE LEARNERS I  \\n ▌ Certificate of Completion \\nAwar'"
+  ],
+  "extractor": "pypdf",
+  "picks": [
+   {
+    "control_number": "02891",
+    "pages": [
+     100,
+     101
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 100] Accounting T002891C A.A. 21* 47 - 47 Accounting Clerk T021826D C 30 - 30 At least 60 degree applicable units are required to earn an Associate degree. *GE Units requirements may be fulfilled by completing an"
+   },
+   {
+    "control_number": "02892",
+    "pages": [
+     121
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.75,
+    "opens": "[page 121] Requirements for the Associate in Arts degree in Management/Supervision may be met by completing 47 units of Required Courses with a “C” or better along with General Education units. Information on the Gener"
+   },
+   {
+    "control_number": "02894",
+    "pages": [
+     122
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 122] Relations T002894C A.A. 21* 44 - 44 Marketing and Public Relations T021831D C 33 - 33 At least 60 degree applicable units are required to earn an Associate degree. *GE Units requirements may be fulfilled by c"
+   },
+   {
+    "control_number": "02895",
+    "pages": [
+     126,
+     127,
+     128
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.955,
+    "opens": "[page 126] Retail Management T002895C A.A. 21* 41 6 47 Retail Management T035286D C 24 24 At least 60 degree applicable units are required to earn an Associate degree. *GE Units requirements may be fulfilled by completin"
+   },
+   {
+    "control_number": "02896",
+    "pages": [
+     125,
+     126,
+     127,
+     128
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 125] Real Estate T002896C A.A. 21* 45 - 45 Real Estate T021832D C 30 - 30 At least 60 degree applicable units are required to earn an Associate degree. *GE Units requirements may be fulfilled by completing any Gene"
+   },
+   {
+    "control_number": "02897",
+    "pages": [
+     113,
+     114,
+     115,
+     116
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": false,
+    "coverage": 0.737,
+    "opens": "[page 113] Administrative Assistant T002897C A.A. 21* 32 12 44 Computer App & Office Tech: Administrative Assistant T021835D C 22 9 32 Computer App & Office Tech: Information Processing SpecialistT008470C A.A. 21* 43"
+   },
+   {
+    "control_number": "02898",
+    "pages": [
+     119,
+     120
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 119] Labor Studies T002898C A.A. 21* 18 18 36 Labor Studies T021836D C 15 9 24 At least 60 degree applicable units are required to earn an Associate degree. *GE Units requirements may be fulfilled by completing any"
+   },
+   {
+    "control_number": "02900",
+    "pages": [
+     117
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 117] Requirements for the Associate in Science degree in Computer Information Systems may be met by completing 24 units of Required Courses and 21 units of Major Electives with a “C” or better along with General "
+   },
+   {
+    "control_number": "02905",
+    "pages": [
+     79,
+     80
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 79] T002905C A.S. 21* 48 - 48 Heavy Truck, Transit and Equipment Technology T021844D C 48 - 48 Truck and Transit Preventative Maintenance T008476D C 24 - 24 At least 60 degree applicable units are required to e"
+   },
+   {
+    "control_number": "02907",
+    "pages": [
+     246
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.545,
+    "opens": "[page 246] Los Angeles Trade-Technical College 2026 - 2027 GENERAL CATALOG 246 Course Descriptions - Credit Courses GRADUATION REQUIREMENTS, P ATHW AYS AND PROGRAMS OF STUDY AUTOCOR 285 DIRECTED STUDY - AUTOMOTIVE COLLI"
+   },
+   {
+    "control_number": "02908",
+    "pages": [
+     84
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.8,
+    "opens": "[page 84] Mechanics T002908D C 16 7 23 This program is Financial Aid Eligible. PROGRAM OVERVIEW The Certificate of Achievement in Motorcycle Repair is designed for both new students as well as industry professionals wh"
+   },
+   {
+    "control_number": "02909",
+    "pages": [
+     132,
+     133,
+     134,
+     135
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.812,
+    "opens": "[page 132] T002909C A.S. 21* 42 6 48 Carpentry —(day only) T021848D C 42 6 48 Carpentry Construction Technologies —(evening only) T008479C A.A. 21* 40 8 48 Carpentry Construction Technologies —(evening only) T021849D "
+   },
+   {
+    "control_number": "02910",
+    "pages": [
+     137,
+     138,
+     139,
+     140
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 137] Los Angeles Trade-Technical College 2026 - 2027 GENERAL CATALOG GRADUATION REQUIREMENTS, P ATHW AYS AND PROGRAMS OF STUDY 137 Construction Maintenance & Utilities Pathway (CMU) ELECTRICAL CONSTRUCTION & MAINT"
+   },
+   {
+    "control_number": "02911",
+    "pages": [
+     144,
+     145,
+     146,
+     147
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 144] Plumbing —(day only) T002911C A.S. 21* 45 3 48 Plumbing —(day only) T021855D C 45 3 48 Plumbing: Construction Technician —(evening only) T008484C A.A. 21* 37 8 45 Plumbing: Construction Technician —(evening"
+   },
+   {
+    "control_number": "02913",
+    "pages": [
+     88
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 88] Chemical Technology T002913C A.S. 21* 38 - 38 Chemical Technology T021859D C 38 - 38 At least 60 degree applicable units are required to earn an Associate degree. *GE Units requirements may be "
+   },
+   {
+    "control_number": "02914",
+    "pages": [
+     83
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.826,
+    "opens": "[page 83] Machine Shop CNC T002914C A.S. 21* 48 - 48 Machine Shop CNC T021860D C 48 - 48 At least 60 degree applicable units are required to earn an Associate degree. *GE Units requirements may be fulfilled by completi n"
+   },
+   {
+    "control_number": "02917",
+    "pages": [
+     154,
+     155
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 154] T002917C A.S. 21* 21 9 30 Supply Water Systems Technology T010754D C 21 9 30 At least 60 degree applicable units are required to earn an Associate degree. *GE Units requirements may be fulfilled by completin"
+   },
+   {
+    "control_number": "02921",
+    "pages": [
+     186,
+     187
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 186] Sign Graphics T002921C AA 21* 40 4 44 Sign Graphics T021862D C 40 4 44 At least 60 degree applicable units are required to earn an Associate degree. *GE Units requirements may be fulfilled by completing any Ge"
+   },
+   {
+    "control_number": "02922",
+    "pages": [
+     196,
+     197,
+     198,
+     199
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.842,
+    "opens": "[page 196] Nursing, Registered T002922C A.S. 21* 38 - 38 Nursing, Registered: LVN to RN Career Ladder T008498C A.S. 21 30 - 30 Nursing, Registered 25-Unit Option 30 - 30 At least 60 degree applicable units are require"
+   },
+   {
+    "control_number": "02925",
+    "pages": [
+     179,
+     180,
+     181,
+     182
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 179] Requirements for the Associate in Arts degree in Fashion Design may be met by completing 46 units of Required Courses and 2 units of Major Electives with a “C” or better along with General Education units. I"
+   },
+   {
+    "control_number": "02926",
+    "pages": [
+     339
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 339] Los Angeles Trade-Technical College 2026 - 2027 GENERAL CATALOG GRADUATION REQUIREMENTS, P ATHW AYS AND PROGRAMS OF STUDY 339 Course Descriptions - Credit Courses SUPERVISION SUPV 001 ELEMENTS OF SUPERVISION "
+   },
+   {
+    "control_number": "02927",
+    "pages": [
+     206
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.75,
+    "opens": "[page 206] The Associate in Arts Degree in English for Transfer (AA-T) is for students who intend to complete a bachelor’s degree in English at a California State University. Core course work explores primarily British"
+   },
+   {
+    "control_number": "02938",
+    "pages": [
+     168
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.833,
+    "opens": "[page 168] Culinary Arts* T002938C A.A. 21* 48 - 48 Culinary Arts T021869D C 48 - 48 At least 60 degree applicable units are required to earn an Associate degree. *GE Units requirements may be fulfilled by completing an"
+   },
+   {
+    "control_number": "02939",
+    "pages": [
+     171
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 171] ment* T002939C A.A. 21* 42 - 42 At least 60 degree applicable units are required to earn an Associate degree. *GE Units requirements may be fulfilled by completing any General Education Pattern; please consul"
+   },
+   {
+    "control_number": "02940",
+    "pages": [
+     164
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 164] Cosmetology T002940C A.A. 21* 30 6 36 Cosmetology T021873D C 30 6 36 At least 60 degree applicable units are required to earn an Associate degree. *GE Units requirements may be fulfilled by completing any Gen"
+   },
+   {
+    "control_number": "08467",
+    "pages": [
+     131
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.842,
+    "opens": "[page 131] and Environmental Design T008467C A.A. 21* 43 6 49 Architectural Technology and Environmental Design T021825D C 43 6 49 At least 60 degree applicable units are required to earn an Associate degree. *GE Units "
+   },
+   {
+    "control_number": "08469",
+    "pages": [
+     121,
+     122,
+     123,
+     124
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.611,
+    "opens": "[page 121] Los Angeles Trade-Technical College 2026 - 2027 GENERAL CATALOG GRADUATION REQUIREMENTS, P ATHW AYS AND PROGRAMS OF STUDY 121 Business & Civic Engagement Pathway (BCE) MANAGEMENT/SUPERVISION ▌ Associate in A"
+   },
+   {
+    "control_number": "08471",
+    "pages": [
+     113,
+     114,
+     115,
+     116
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": false,
+    "coverage": 1.0,
+    "opens": "[page 113] Office Assistant-Clerical T008471C A.A. 21* 32 7 39 Computer App & Office Tech: Office Assistant-Clerical T021834D C 35 35 At least 60 degree applicable units are required to earn an Associate degree. *GE Un"
+   },
+   {
+    "control_number": "08473",
+    "pages": [
+     82
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.846,
+    "opens": "[page 82] Technology T008473C A.S. 24* 35 - 35 Information Technology T021840D C 35 - 35 At least 60 degree applicable units are required to earn an Associate degree. *GE Units requirements may be fulfilled by completin"
+   },
+   {
+    "control_number": "08474",
+    "pages": [
+     142,
+     143,
+     144,
+     145
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.5,
+    "opens": "[page 142] Engineering: Steam Plant T008474D C 12 24 36 This program is Financial Aid Eligible. PROGRAM OVERVIEW Most craft workers specialize in one kind of work, such as plumbing or carpentry. General maintenance and "
+   },
+   {
+    "control_number": "08476",
+    "pages": [
+     79,
+     80
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": false,
+    "coverage": 1.0,
+    "opens": "[page 79] T008476D C 24 - 24 At least 60 degree applicable units are required to earn an Associate degree *GE Units requirements may be fulfilled by completing any General Education Pattern; please consult with a coun"
+   },
+   {
+    "control_number": "08478",
+    "pages": [
+     81
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 81] Vehicle Technology T008478D C 14 - 14 This program is not Financial Aid Eligible. PROGRAM OVERVIEW The courses listed in this certificate compile a comprehensive list of job related skills needed to acquire hy"
+   },
+   {
+    "control_number": "08479",
+    "pages": [
+     132,
+     133,
+     134,
+     135
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.967,
+    "opens": "[page 132] T008479C A.A. 21* 40 8 48 Carpentry Construction Technologies —(evening only) T021849D C 40 8 48 Residential/Commercial Framing Helper T042144D C 8-10 - 8-10 At least 60 degree applicable units are required"
+   },
+   {
+    "control_number": "08481",
+    "pages": [
+     137,
+     138,
+     139,
+     140
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 137] Los Angeles Trade-Technical College 2026 - 2027 GENERAL CATALOG GRADUATION REQUIREMENTS, P ATHW AYS AND PROGRAMS OF STUDY 137 Construction Maintenance & Utilities Pathway (CMU) ELECTRICAL CONSTRUCTION & MAINT"
+   },
+   {
+    "control_number": "08482",
+    "pages": [
+     159
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 159] Los Angeles Trade-Technical College 2026 - 2027 GENERAL CATALOG GRADUATION REQUIREMENTS, P ATHW AYS AND PROGRAMS OF STUDY 159 Apprenticeship Education Program ELECTRICAL LINEMAN APPRENTICESHIP ▌ Certificate"
+   },
+   {
+    "control_number": "08484",
+    "pages": [
+     144,
+     145,
+     146
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.941,
+    "opens": "[page 144] T008484C A.A. 21* 37 8 45 Plumbing: Construction Technician —(evening only) T021856D C 37 8 45 At least 60 degree applicable units are required to earn an Associate degree. *GE Units requirements may be fulf"
+   },
+   {
+    "control_number": "08488",
+    "pages": [
+     153
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 153] Technology T008488C AA 21* 30 6 36 Street Maintenance Technology T021870D C 30 6 36 At least 60 degree applicable units are required to earn an Associate degree. *GE Units requirements may be fulfilled by co"
+   },
+   {
+    "control_number": "08489",
+    "pages": [
+     152
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 152] ment Technology T008489D C 12 12 24 This program is Financial Aid Eligible. PROGRAM OVERVIEW The program is designed for any interested individuals seeking to learn the most updated information in recycling a"
+   },
+   {
+    "control_number": "08493",
+    "pages": [
+     342,
+     343
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.583,
+    "opens": "[page 342] Los Angeles Trade-Technical College 2026 - 2027 GENERAL CATALOG 342 Course Descriptions - Credit Courses GRADUATION REQUIREMENTS, P ATHW AYS AND PROGRAMS OF STUDY VISCOM 124 COMPUTER ILLUSTRATION I (3) UC/CSU"
+   },
+   {
+    "control_number": "08503",
+    "pages": [
+     167
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.833,
+    "opens": "[page 167] Baking Professional T008503C A.A. 21* 48 - 48 Baking Professional T021868D C 48 - 48 At least 60 degree applicable units are required to earn an Associate degree. *GE Units requirements may be fulfilled by co"
+   },
+   {
+    "control_number": "08653",
+    "pages": [
+     182,
+     183
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.87,
+    "opens": "[page 182] Fashion Merchandising T008653C A.S. 21* 33 5 38 Fashion Merchandising T021867D C - 33 5 38 Retail Merchandising T040330D C - 21 - 21 Wholesale Merchandising T040323D C - 19 - 19 At least 60 degr"
+   },
+   {
+    "control_number": "09266",
+    "pages": [
+     111,
+     112
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 111] T009266C AA 21* 9 27 36 Community Planning and Economic Development T021871D C 21 - 21 At least 60 degree applicable units are required to earn an Associate degree *GE Units requirements may be fulfilled b"
+   },
+   {
+    "control_number": "10403",
+    "pages": [
+     106,
+     107,
+     108,
+     109
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.957,
+    "opens": "[page 106] Child Development T010403C A.A. 21* 38 9 47 Early Childhood Education (Transfer) T031018H AS-T Cal-GETC 25 - 25 At least 60 degree applicable units are required to earn an Associate degree. "
+   },
+   {
+    "control_number": "10404",
+    "pages": [
+     108,
+     109,
+     110
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 108] Preschool Teaching T010404D C 39 39 Specializing in Program Administration T031063D C 43 43 Specializing in School Age Programs T031062D C 32 32 Specializing in Chil"
+   },
+   {
+    "control_number": "10405",
+    "pages": [
+     110
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 110] Los Angeles Trade-Technical College 2026 - 2027 GENERAL CATALOG 110 Business & Civic Engagement Pathway (BCE) GRADUATION REQUIREMENTS, P ATHW AYS AND PROGRAMS OF STUDY SPECIALIZING IN SCHOOL AGE PROGRAMS ▌ "
+   },
+   {
+    "control_number": "10750",
+    "pages": [
+     123,
+     124,
+     125,
+     126
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.889,
+    "opens": "[page 123] T010750D C 29 - 29 This program is Financial Aid Eligible. PROGRAM OVERVIEW The Medical Administrative Assistant Certificate of Achievement prepares students for entry-level employment in a medical/dental/hos"
+   },
+   {
+    "control_number": "10751",
+    "pages": [
+     75,
+     76
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 75] T010751D C 18 - 18 Auto & Related Technology: Tune-up T010752D C 18 - 18 At least 60 degree applicable units are required to earn an Associate degree. *GE Units requirements may be fulfilled by completing any"
+   },
+   {
+    "control_number": "10752",
+    "pages": [
+     75,
+     76
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 75] T010752D C 18 - 18 At least 60 degree applicable units are required to earn an Associate degree. *GE Units requirements may be fulfilled by completing any General Education Pattern; please consult with a coun"
+   },
+   {
+    "control_number": "10754",
+    "pages": [
+     154,
+     155
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 154] Technology T010754D C 21 9 30 At least 60 degree applicable units are required to earn an Associate degree. *GE Units requirements may be fulfilled by completing any General Education Pattern; please consult"
+   },
+   {
+    "control_number": "10755",
+    "pages": [
+     154,
+     155
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 154] T010755C A.S. 21* 21 9 30 Water Systems Technology-Supply Water Technology T002917C A.S. 21* 21 9 30 Supply Water Systems Technology T010754D C 21 9 30 At least 60 degree applicable units are required to e"
+   },
+   {
+    "control_number": "18856",
+    "pages": [
+     209,
+     210,
+     211,
+     212
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.994,
+    "opens": "[page 209] Los Angeles Trade-Technical College 2026 - 2027 GENERAL CATALOG GRADUATION REQUIREMENTS, P ATHW AYS AND PROGRAMS OF STUDY 209 Liberal Arts (LA) and Transfer Prep Pathway INTERDISCIPLINARY STUDIES: ARTS AND S"
+   },
+   {
+    "control_number": "18857",
+    "pages": [
+     95,
+     96,
+     97
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 95] T018857C A.A. 21* 18 - 18 At least 60 degree applicable units are required to earn an Associate degree. *GE Units requirements may be fulfilled by completing any General Education Pattern; ple"
+   },
+   {
+    "control_number": "19108",
+    "pages": [
+     97
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 97] Process Technology T019108D C 38 - 38 At least 60 degree applicable units are required to earn an Associate degree. *GE Units requirements may be fulfilled by completing any General Education P"
+   },
+   {
+    "control_number": "19109",
+    "pages": [
+     97
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 97] Process Technology T019109C A.S. 21* 38 - 38 Process Technology T019108D C 38 - 38 At least 60 degree applicable units are required to earn an Associate degree. *GE Units requirements may be fu"
+   },
+   {
+    "control_number": "21825",
+    "pages": [
+     131
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 131] and Environmental Design T021825D C 43 6 49 At least 60 degree applicable units are required to earn an Associate degree. *GE Units requirements may be fulfilled by completing any General Education Pattern; pl"
+   },
+   {
+    "control_number": "21834",
+    "pages": [
+     113,
+     114,
+     115,
+     116
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": false,
+    "coverage": 1.0,
+    "opens": "[page 113] Office Assistant-Clerical T021834D C 35 35 At least 60 degree applicable units are required to earn an Associate degree. *GE Units requirements may be fulfilled by completing any General Education Pattern; pl"
+   },
+   {
+    "control_number": "21836",
+    "pages": [
+     119,
+     120
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 119] Labor Studies T021836D C 15 9 24 At least 60 degree applicable units are required to earn an Associate degree. *GE Units requirements may be fulfilled by completing any General Education Pattern; please consu"
+   },
+   {
+    "control_number": "21839",
+    "pages": [
+     117
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 117] Los Angeles Trade-Technical College 2026 - 2027 GENERAL CATALOG GRADUATION REQUIREMENTS, P ATHW AYS AND PROGRAMS OF STUDY 117 Business & Civic Engagement Pathway (BCE) COMPUTER INFORMATION SYSTEMS ▌ Associat"
+   },
+   {
+    "control_number": "21840",
+    "pages": [
+     82
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.846,
+    "opens": "[page 82] Technology T021840D C 35 - 35 At least 60 degree applicable units are required to earn an Associate degree. *GE Units requirements may be fulfilled by completing any General Education Pat- tern; please consult "
+   },
+   {
+    "control_number": "21844",
+    "pages": [
+     79,
+     80
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 79] T021844D C 48 - 48 Truck and Transit Preventative Maintenance T008476D C 24 - 24 At least 60 degree applicable units are required to earn an Associate degree *GE Units requirements may be fulfilled by compl"
+   },
+   {
+    "control_number": "21845",
+    "pages": [
+     75,
+     76
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 75] T021845D C 36 - 36 Auto & Related Technology: Transmission Repair T010751D C 18 - 18 Auto & Related Technology: Tune-up T010752D C 18 - 18 At least 60 degree applicable units are required to earn an Associate"
+   },
+   {
+    "control_number": "21848",
+    "pages": [
+     132,
+     133,
+     134,
+     135
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.793,
+    "opens": "[page 132] T021848D C 42 6 48 Carpentry Construction Technologies —(evening only) T008479C A.A. 21* 40 8 48 Carpentry Construction Technologies —(evening only) T021849D C 40 8 48 Residential/Commercial Framing Helper"
+   },
+   {
+    "control_number": "21849",
+    "pages": [
+     132,
+     133,
+     134,
+     135
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.967,
+    "opens": "[page 132] T021849D C 40 8 48 Residential/Commercial Framing Helper T042144D C 8-10 - 8-10 At least 60 degree applicable units are required to earn an Associate degree. *GE Units requirements may be fulfilled by complet"
+   },
+   {
+    "control_number": "21852",
+    "pages": [
+     137,
+     138,
+     139,
+     140
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 137] Los Angeles Trade-Technical College 2026 - 2027 GENERAL CATALOG GRADUATION REQUIREMENTS, P ATHW AYS AND PROGRAMS OF STUDY 137 Construction Maintenance & Utilities Pathway (CMU) ELECTRICAL CONSTRUCTION & MAINT"
+   },
+   {
+    "control_number": "21853",
+    "pages": [
+     137,
+     138,
+     139,
+     140
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 137] Los Angeles Trade-Technical College 2026 - 2027 GENERAL CATALOG GRADUATION REQUIREMENTS, P ATHW AYS AND PROGRAMS OF STUDY 137 Construction Maintenance & Utilities Pathway (CMU) ELECTRICAL CONSTRUCTION & MAINT"
+   },
+   {
+    "control_number": "21855",
+    "pages": [
+     144,
+     145,
+     146,
+     147
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 144] Plumbing —(day only) T021855D C 45 3 48 Plumbing: Construction Technician —(evening only) T008484C A.A. 21* 37 8 45 Plumbing: Construction Technician —(evening only) T021856D C 37 8 45 At least 60 degree a"
+   },
+   {
+    "control_number": "21856",
+    "pages": [
+     145,
+     146
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.941,
+    "opens": "[page 145] Los Angeles Trade-Technical College 2026 - 2027 GENERAL CATALOG GRADUATION REQUIREMENTS, P ATHW AYS AND PROGRAMS OF STUDY 145 Construction Maintenance & Utilities Pathway (CMU) PLUMBING ▌ Certificate of Achi"
+   },
+   {
+    "control_number": "21859",
+    "pages": [
+     88
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 88] Chemical Technology T021859D C 38 - 38 At least 60 degree applicable units are required to earn an Associate degree. *GE Units requirements may be fulfilled by completing any General Education "
+   },
+   {
+    "control_number": "21862",
+    "pages": [
+     186,
+     187
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 186] Sign Graphics T021862D C 40 4 44 At least 60 degree applicable units are required to earn an Associate degree. *GE Units requirements may be fulfilled by completing any General Education Pattern; please consu"
+   },
+   {
+    "control_number": "21863",
+    "pages": [
+     183
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 183] Los Angeles Trade-Technical College 2026 - 2027 GENERAL CATALOG GRADUATION REQUIREMENTS, P ATHW AYS AND PROGRAMS OF STUDY 183 Design & Media Arts Pathway (DMA) SEMESTER III UNITS FASHMER 001 Entrepreneurial "
+   },
+   {
+    "control_number": "21865",
+    "pages": [
+     179,
+     180,
+     181,
+     182
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 179] Los Angeles Trade-Technical College 2026 - 2027 GENERAL CATALOG GRADUATION REQUIREMENTS, P ATHW AYS AND PROGRAMS OF STUDY 179 Design & Media Arts Pathway (DMA) FASHION DESIGN ▌ Associate in Arts Degree Major"
+   },
+   {
+    "control_number": "21867",
+    "pages": [
+     183
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.826,
+    "opens": "[page 183] Los Angeles Trade-Technical College 2026 - 2027 GENERAL CATALOG GRADUATION REQUIREMENTS, P ATHW AYS AND PROGRAMS OF STUDY 183 Design & Media Arts Pathway (DMA) SEMESTER III UNITS FASHMER 001 Entrepreneurial "
+   },
+   {
+    "control_number": "21870",
+    "pages": [
+     153
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 153] Technology T021870D C 30 6 36 At least 60 degree applicable units are required to earn an Associate degree. *GE Units requirements may be fulfilled by completing any General Education Pat- tern; please consul"
+   },
+   {
+    "control_number": "21873",
+    "pages": [
+     164
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 164] Cosmetology T021873D C 30 6 36 At least 60 degree applicable units are required to earn an Associate degree. *GE Units requirements may be fulfilled by completing any General Educa- tion Pattern; please consu"
+   },
+   {
+    "control_number": "24048",
+    "pages": [
+     233
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 233] Recreation and Community Services Assistant T024048E PROGRAM OVERVIEW This program is designed to train students to perform paraprofessional work assisting in organizing and conducting recreation, sports, cul"
+   },
+   {
+    "control_number": "24132",
+    "pages": [
+     235
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 235] Utilities and Construction Preparation T024132E PROGRAM OVERVIEW The program focuses on preparing students for entry into the construction trades and/or utilities sectors. REQUIRED COURSES UNITS BSICSKL 074"
+   },
+   {
+    "control_number": "24136",
+    "pages": [
+     352,
+     353
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 352] Los Angeles Trade-Technical College 2026 - 2027 GENERAL CATALOG 352 Course Descriptions - Non-Credit Courses GRADUATION REQUIREMENTS, P ATHW AYS AND PROGRAMS OF STUDY VOC ED 080CE BANK TELLER TRAINING (0) "
+   },
+   {
+    "control_number": "24169",
+    "pages": [
+     348,
+     349
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": false,
+    "coverage": 1.0,
+    "opens": "[page 348] Los Angeles Trade-Technical College 2026 - 2027 GENERAL CATALOG 348 Course Descriptions - Non-Credit Courses GRADUATION REQUIREMENTS, P ATHW AYS AND PROGRAMS OF STUDY Non Credit Courses ACADEMIC PREPARATION "
+   },
+   {
+    "control_number": "24459",
+    "pages": [
+     350
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 350] Los Angeles Trade-Technical College 2026 - 2027 GENERAL CATALOG 350 Course Descriptions - Non-Credit Courses GRADUATION REQUIREMENTS, P ATHW AYS AND PROGRAMS OF STUDY BSICSKL 078CE FUNDAMENTALS OF WORKPLA"
+   },
+   {
+    "control_number": "30002",
+    "pages": [
+     239
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": false,
+    "coverage": 0.875,
+    "opens": "[page 239] Los Angeles Trade-Technical College 2026 - 2027 GENERAL CATALOG GRADUATION REQUIREMENTS, P ATHW AYS AND PROGRAMS OF STUDY 239 Course Descriptions - Credit Courses ADM JUS 003 LEGAL ASPECTS OF EVIDENCE (3) UC/"
+   },
+   {
+    "control_number": "30210",
+    "pages": [
+     138,
+     139
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 138] Energy Auditor T030210D C 14 - 14 At least 60 degree applicable units are required to earn an Associate degree. *GE Units requirements may be fulfilled by completing any General Education Pattern; please cons"
+   },
+   {
+    "control_number": "30904",
+    "pages": [
+     146,
+     147,
+     148,
+     149
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 146] Fundamentals T030904D C 19-21 - 19-21 At least 60 degree applicable units are required to earn an Associate degree. *GE Units requirements may be fulfilled by completing any General Education Pat- tern; please"
+   },
+   {
+    "control_number": "30905",
+    "pages": [
+     146,
+     147,
+     148,
+     149
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 146] Pole Climbing T030905D C 18-20 - 18-20 Utility Industry Fundamentals T030904D C 19-21 - 19-21 At least 60 degree applicable units are required to earn an Associate degree. *GE Units requirements may be fulfil"
+   },
+   {
+    "control_number": "30906",
+    "pages": [
+     138,
+     139,
+     140,
+     141
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 138] Technology Fundamentals T030906D C 16 - 16 Weatherization and Energy Auditor T030210D C 14 - 14 At least 60 degree applicable units are required to earn an Associate degree. *GE Units requirements may be fulf"
+   },
+   {
+    "control_number": "30963",
+    "pages": [
+     146,
+     147,
+     148,
+     149
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.812,
+    "opens": "[page 146] Powerline Worker T030963C A.S. 21* 34-36 6-7 40-43 Powerline Worker: Pole Climbing T030905D C 18-20 - 18-20 Utility Industry Fundamentals T030904D C 19-21 - 19-21 At least 60 degree applicable units are requ"
+   },
+   {
+    "control_number": "31018",
+    "pages": [
+     106,
+     107,
+     108,
+     109
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 106] T031018H AS-T Cal-GETC 25 - 25 At least 60 degree applicable units are required to earn an Associate degree. *GE Units requirements may be fulfilled by completing any General Education Patter"
+   },
+   {
+    "control_number": "31059",
+    "pages": [
+     108,
+     109,
+     110
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 108] T031059D C 36 36 All programs are Financial Aid Eligible, except Associate Preschool Teaching. PROGRAM OVERVIEW The Child Development Program offers various educational options. Completion of each program lea"
+   },
+   {
+    "control_number": "31060",
+    "pages": [
+     108,
+     109,
+     110
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 108] T031060D C 15 15 Specializing in Infant and Toddler Teaching T031061D C 27 27 Specializing in Preschool Teaching T010404D C 39 39 Specializing in Program Administration "
+   },
+   {
+    "control_number": "31061",
+    "pages": [
+     108,
+     109,
+     110
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 108] and Toddler Teaching T031061D C 27 27 Specializing in Preschool Teaching T010404D C 39 39 Specializing in Program Administration T031063D C 43 43 Specializing in Scho"
+   },
+   {
+    "control_number": "31062",
+    "pages": [
+     110
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 110] A Certificate of Achievement in Specializing in School Age Programs may be earned by completing 32 units of Required Courses with “C” or better in each course. REQUIRED COURSES SEMESTER I UNITS CH DEV 001 "
+   },
+   {
+    "control_number": "31063",
+    "pages": [
+     109,
+     110
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 109] A Certificate of Achievement in Specializing in Program Administration may be earned by completing 43 units of Required Courses with “C” or better in each course. REQUIRED COURSES SEMESTER I UNITS CH DEV 0"
+   },
+   {
+    "control_number": "31081",
+    "pages": [
+     148,
+     149,
+     150,
+     151
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 148] T031081D C 26-28 - 26-28 At least 60 degree applicable units are required to earn an Associate degree. *GE Units requirements may be fulfilled by completing any General Education Pattern; please consult with "
+   },
+   {
+    "control_number": "31082",
+    "pages": [
+     150,
+     151
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.75,
+    "opens": "[page 150] and Maintenance T031082D C 30 - 30 At least 60 degree applicable units are required to earn an Associate degree. *GE Units requirements may be fulfilled by completing any General Education Pattern; please con"
+   },
+   {
+    "control_number": "31089",
+    "pages": [
+     150,
+     151
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.565,
+    "opens": "[page 150] and Maintenance T031089C A.S. 21* 38 4 42 Solar Thermal Installation and Maintenance T031082D C 30 - 30 At least 60 degree applicable units are required to earn an Associate degree. *GE Units requirements may"
+   },
+   {
+    "control_number": "31090",
+    "pages": [
+     138,
+     139,
+     140,
+     141
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.762,
+    "opens": "[page 138] Technician T031090C A.S. 21* 36-38 4 40-42 Energy Systems Technology Fundamentals T030906D C 16 - 16 Weatherization and Energy Auditor T030210D C 14 - 14 At least 60 degree applicable units are required to e"
+   },
+   {
+    "control_number": "31182",
+    "pages": [
+     124,
+     125,
+     126,
+     127
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.944,
+    "opens": "[page 124] Paralegal Studies T031182D C 40 3 43 At least 60 degree applicable units are required to earn an Associate degree. *GE Units requirements may be fulfilled by completing any General Education Pattern; please c"
+   },
+   {
+    "control_number": "31207",
+    "pages": [
+     89,
+     90,
+     91,
+     92
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 89] Chemistry T031207C A.S. 21* 40 - 40 UC Transfer Pathway in Chemistry AST 15-20* 53 - 53 At least 60 degree applicable units are required to earn an Associate degree. *GE Units requirements"
+   },
+   {
+    "control_number": "31262",
+    "pages": [
+     124,
+     125,
+     126,
+     127
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.933,
+    "opens": "[page 124] Paralegal Studies T031262C A.A. 21* 40 3 43 Paralegal Studies T031182D C 40 3 43 At least 60 degree applicable units are required to earn an Associate degree. *GE Units requirements may be fulfilled by complet"
+   },
+   {
+    "control_number": "31280",
+    "pages": [
+     148,
+     149,
+     150,
+     151
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.6,
+    "opens": "[page 148] T031280C A.S. 21* 36-38 4 40-42 Solar PV Installation and Maintenance Technician T031081D C 26-28 - 26-28 At least 60 degree applicable units are required to earn an Associate degree. *GE Units requirements "
+   },
+   {
+    "control_number": "31396",
+    "pages": [
+     165
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 165] Skin Therapy T031396D C 24 - 24 This program is Financial Aid Eligible. PROGRAM OVERVIEW The Trade Tech Skin Therapy Program offers training and technical instruction of; manual, electrical and chemical facia"
+   },
+   {
+    "control_number": "32703",
+    "pages": [
+     163,
+     164
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 163] Barbering T032703D C 30 6 36 This program is Financial Aid Eligible. PROGRAM OVERVIEW Barbering is the study and practice of professional care of the hair, skin and nails. The LATTC Barbering program offers "
+   },
+   {
+    "control_number": "32905",
+    "pages": [
+     206
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 206] English T032905G AA-T Cal-GETC 6 12 18 At least 60 degree applicable units are required to earn an Associate degree. This program is Financial Aid Eligible. PROGRAM OVERVIEW The Associate in Arts Degree in Eng"
+   },
+   {
+    "control_number": "32910",
+    "pages": [
+     102
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 102] T032910H AS-T Cal- GETC 18 - 18 This program is Financial Aid Eligible. PROGRAM OVERVIEW The Associate in Science in Administration of Justice for Transfer (AS-T) prepares students for entry-level positions"
+   },
+   {
+    "control_number": "32948",
+    "pages": [
+     62,
+     63,
+     64,
+     65
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 62] Los Angeles Trade-Technical College 2026 - 2027 GENERAL CATALOG 62 Graduation Requirements, Pathways and Programs of Study GRADUATION REQUIREMENTS, P ATHW AYS AND PROGRAMS OF STUDY ECON C2002 Principles of"
+   },
+   {
+    "control_number": "33225",
+    "pages": [
+     87,
+     88
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 87] Los Angeles Trade-Technical College 2026 - 2027 GENERAL CATALOG GRADUATION REQUIREMENTS, P ATHW AYS AND PROGRAMS OF STUDY 87 Applied Sciences Pathway (AS) BIOTECHNOLOGY ▌ Associate in Science Degree Major Uni"
+   },
+   {
+    "control_number": "33682",
+    "pages": [
+     87,
+     88
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 87] Los Angeles Trade-Technical College 2026 - 2027 GENERAL CATALOG GRADUATION REQUIREMENTS, P ATHW AYS AND PROGRAMS OF STUDY 87 Applied Sciences Pathway (AS) BIOTECHNOLOGY ▌ Associate in Science Degree Major Uni"
+   },
+   {
+    "control_number": "33802",
+    "pages": [
+     202,
+     203
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 202] Personal Care Aide T033802D C 16.5 - 16.5 This program is Financial Aid Eligible. PROGRAM OVERVIEW The Personal Care Aide certificate is intended to prepare students for a new role in agencies that provide c"
+   },
+   {
+    "control_number": "33813",
+    "pages": [
+     127,
+     128
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 127] Entrepreneurship T033813C A.A. 21* 41 - 41 Small Business Entrepreneurship T008469D C 32 - 32 At least 60 degree applicable units are required to earn an Associate degree. *GE Units requirements may be fulfi"
+   },
+   {
+    "control_number": "33815",
+    "pages": [
+     210,
+     211,
+     212,
+     213
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.984,
+    "opens": "[page 210] Los Angeles Trade-Technical College 2026 - 2027 GENERAL CATALOG 210 Liberal Arts (LA) and Transfer Prep Pathway GRADUATION REQUIREMENTS, P ATHW AYS AND PROGRAMS OF STUDY MUSIC 650 Beginning Guitar 3 PHILOS 00"
+   },
+   {
+    "control_number": "35202",
+    "pages": [
+     175,
+     176,
+     177
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 175] Digital Media T035202D C - 18 - 18 At least 60 degree applicable units are required to earn an Associate degree. *GE Units requirements may be fulfilled by completing any General Education Pattern; please co"
+   },
+   {
+    "control_number": "35215",
+    "pages": [
+     175,
+     176,
+     177
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 175] Digital Media T035215C A.S. 21* 18 10 28 Digital Media T035202D C - 18 - 18 At least 60 degree applicable units are required to earn an Associate degree. *GE Units requirements may be fulfilled by completing "
+   },
+   {
+    "control_number": "35275",
+    "pages": [
+     177
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 177] T035275C A.S. 21* 45 - 45 Digital Media Mobile Application and Web Design T035278D C - 45 - 45 At least 60 degree applicable units are required to earn an Associate degree. *GE Units requirements may be fulf"
+   },
+   {
+    "control_number": "35278",
+    "pages": [
+     177
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 177] T035278D C - 45 - 45 At least 60 degree applicable units are required to earn an Associate degree. *GE Units requirements may be fulfilled by completing any General Education Pattern; please consult with a co"
+   },
+   {
+    "control_number": "35286",
+    "pages": [
+     126,
+     127,
+     128
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 126] Retail Management T035286D C 24 24 At least 60 degree applicable units are required to earn an Associate degree. *GE Units requirements may be fulfilled by completing any General Education Pattern; please con"
+   },
+   {
+    "control_number": "35292",
+    "pages": [
+     176,
+     177
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 176] Video and Audio T035292D C 30 - 30 At least 60 degree applicable units are required to earn an Associate degree. *GE Units requirements may be fulfilled by completing any General Education Pattern; please co"
+   },
+   {
+    "control_number": "35296",
+    "pages": [
+     176,
+     177
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 176] Video and Audio T035296C A.S. 21* 30 - 30 Digital Media: Digital Video and Audio T035292D C 30 - 30 At least 60 degree applicable units are required to earn an Associate degree. *GE Units requirements may be"
+   },
+   {
+    "control_number": "35618",
+    "pages": [
+     85
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 85] Rail Vehicle Maintenance T035618D C 40 - 40 At least 60 degree applicable units are required to earn an Associate degree. *GE Units requirements may be fulfilled by completing any General Education Pattern; "
+   },
+   {
+    "control_number": "35649",
+    "pages": [
+     85
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 85] Rail Vehicle Maintenance T035649C AS 21* 40 - 40 Rail Vehicle Maintenance T035618D C 40 - 40 At least 60 degree applicable units are required to earn an Associate degree. *GE Units requirements may be fulfill"
+   },
+   {
+    "control_number": "36134",
+    "pages": [
+     209,
+     210,
+     211,
+     212
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": false,
+    "coverage": 0.812,
+    "opens": "[page 209] Los Angeles Trade-Technical College 2026 - 2027 GENERAL CATALOG GRADUATION REQUIREMENTS, P ATHW AYS AND PROGRAMS OF STUDY 209 Liberal Arts (LA) and Transfer Prep Pathway INTERDISCIPLINARY STUDIES: ARTS AND S"
+   },
+   {
+    "control_number": "36231",
+    "pages": [
+     212,
+     213,
+     214,
+     215
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.622,
+    "opens": "[page 212] Los Angeles Trade-Technical College 2026 - 2027 GENERAL CATALOG 212 Liberal Arts (LA) and Transfer Prep Pathway GRADUATION REQUIREMENTS, P ATHW AYS AND PROGRAMS OF STUDY ECONOMICS: ECON 001 Principles of Micr"
+   },
+   {
+    "control_number": "36614",
+    "pages": [
+     230
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 230] Entry Level Laborer for the Energy & Construction Sectors T036614E PROGRAM OVERVIEW This entry level program provides a generalized understanding of various energy and construction related career expectations"
+   },
+   {
+    "control_number": "36615",
+    "pages": [
+     234
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 234] Sewing Operator T036615E PROGRAM OVERVIEW This program will provide instruction on all basic industry machinery operation as well as apparel construction, special fabric handling. PROGRAM LEARNING OUTCOMES (P"
+   },
+   {
+    "control_number": "36617",
+    "pages": [
+     232,
+     233
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 232] Lifeguard Training T036617E PROGRAM OVERVIEW Successful completion of this certificate provides candidates with recognized vocational certification for employment at: swimming pools, splash parks, aquatic par"
+   },
+   {
+    "control_number": "36686",
+    "pages": [
+     235
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 235] Water Safety Instructor T036686E PROGRAM OVERVIEW Employment preparation as a certified American Red Cross Swimming and Water Safety Instructor with expertise in swimming and water safety instruction for all "
+   },
+   {
+    "control_number": "36814",
+    "pages": [
+     233
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 233] Lube Technician T036814E PROGRAM OVERVIEW This entry level program provides a generalized understanding of preventative automotive maintenance focusing on oil and fluid maintenance. This program is designed "
+   },
+   {
+    "control_number": "36965",
+    "pages": [
+     351
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.5,
+    "opens": "[page 351] Los Angeles Trade-Technical College 2026 - 2027 GENERAL CATALOG GRADUATION REQUIREMENTS, P ATHW AYS AND PROGRAMS OF STUDY 351 Course Descriptions - Non-Credit Courses ESL NC 051CE INTERMEDIATE CONVERSATIO"
+   },
+   {
+    "control_number": "37088",
+    "pages": [
+     234
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 234] Sustainable Small Business Development T037088E PROGRAM OVERVIEW This Sustainable businesses are enterprises that strive to meet the triple bottom line, which is a social, environmental and financial framewor"
+   },
+   {
+    "control_number": "37706",
+    "pages": [
+     200,
+     201
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 200] Professions II T037706D C 16-19 - 16-19 Public Health Science T039531H AST Cal-GETC 30 3 33 At least 60 degree applicable units are required to earn an Associate degree. GE Units requirements may be fulfilled"
+   },
+   {
+    "control_number": "38452",
+    "pages": [
+     200,
+     201,
+     202
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 200] Professions I* T038452D C 10 - 10 Pre-Health Professions II T037706D C 16-19 - 16-19 Public Health Science T039531H AST Cal-GETC 30 3 33 At least 60 degree applicable units are required to earn an Associate "
+   },
+   {
+    "control_number": "38461",
+    "pages": [
+     105,
+     106,
+     107,
+     108
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.941,
+    "opens": "[page 105] Development T038461G AA-T Cal-GETC 10 9-10 19-20 At least 60 degree applicable units are required to earn an Associate degree. *GE Units requirements may be fulfilled by completing any General"
+   },
+   {
+    "control_number": "38533",
+    "pages": [
+     203
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 203] T038533D C - 15.5 1 16.5 This program is Financial Aid Eligible. PROGRAM OVERVIEW The Senior Exercise Leader program is designed to prepare students for employment in the Senior Care, Fitness, and Recreation"
+   },
+   {
+    "control_number": "38588",
+    "pages": [
+     91,
+     92
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 91] Electrical Track T038588C A.S. 18 56 - 56 At least 60 degree applicable units are required to earn an Associate degree. *GE Units requirements may be fulfilled by completing any General Educati"
+   },
+   {
+    "control_number": "38589",
+    "pages": [
+     92
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 92] T038589C A.S. 18 62 - 62 At least 60 degree applicable units are required to earn an Associate degree. *GE Units requirements may be fulfilled by completing any General Education Pattern; plea"
+   },
+   {
+    "control_number": "38590",
+    "pages": [
+     90,
+     91,
+     92,
+     93
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 90] Engineering Track T038590C A.S. 18 66 - 66 At least 60 degree applicable units are required to earn an Associate degree. *GE Units requirements may be fulfilled by completing any General Educat"
+   },
+   {
+    "control_number": "38703",
+    "pages": [
+     93,
+     94,
+     95
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 93] T038703D C - 20 - 20 At least 60 degree applicable units are required to earn an Associate degree. *GE Units requirements may be fulfilled by completing any General Education Pattern; please c"
+   },
+   {
+    "control_number": "38737",
+    "pages": [
+     94
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 94] T038737D C - 11 - 11 At least 60 degree applicable units are required to earn an Associate degree. *GE Units requirements may be fulfilled by completing any General Education Pattern; please c"
+   },
+   {
+    "control_number": "38883",
+    "pages": [
+     217,
+     218,
+     219,
+     220
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 217] Psychology T038883G AST Cal-GETC 20 - 20 At least 60 degree applicable units are required to earn an Associate degree. This program is Financial Aid Eligible. PROGRAM OVERVIEW Psychology is a discipline that "
+   },
+   {
+    "control_number": "38910",
+    "pages": [
+     104,
+     105
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.667,
+    "opens": "[page 104] The Associate in Science in Business Administration 2.0 for Transfer degree provides an opportunity for students to earn an Associate in Science in Business Administration for Transfer while preparing to tra"
+   },
+   {
+    "control_number": "38947",
+    "pages": [
+     161
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 161] Los Angeles Trade-Technical College 2026 - 2027 GENERAL CATALOG GRADUATION REQUIREMENTS, P ATHW AYS AND PROGRAMS OF STUDY 161 Apprenticeship Education Program OPERATING ENGINEER-APPRENTICESHIP PROGRAM Assoc"
+   },
+   {
+    "control_number": "38966",
+    "pages": [
+     207
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.833,
+    "opens": "[page 207] History T038966G AA-T Cal-GETC 18 - 18 At least 60 degree applicable units are required to earn an Associate degree. This program is Financial Aid Eligible. PROGRAM OVERVIEW The Associate in Arts in History fo"
+   },
+   {
+    "control_number": "39133",
+    "pages": [
+     174
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.923,
+    "opens": "[page 174] T039133D C 20-21 12 32-33 At least 60 degree applicable units are required to earn an Associate degree. *GE Units requirements may be fulfilled by completing any General Education Pattern; please consult wit"
+   },
+   {
+    "control_number": "39216",
+    "pages": [
+     216,
+     217,
+     218,
+     219
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.818,
+    "opens": "[page 216] Political Science T039216G AST Cal-GETC 19 - 19 At least 60 degree applicable units are required to earn an Associate degree. This program is Financial Aid Eligible. PROGRAM OVERVIEW Political science, the sy"
+   },
+   {
+    "control_number": "39228",
+    "pages": [
+     161
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.889,
+    "opens": "[page 161] Los Angeles Trade-Technical College 2026 - 2027 GENERAL CATALOG GRADUATION REQUIREMENTS, P ATHW AYS AND PROGRAMS OF STUDY 161 Apprenticeship Education Program OPERATING ENGINEER-APPRENTICESHIP PROGRAM Assoc"
+   },
+   {
+    "control_number": "39531",
+    "pages": [
+     201,
+     202
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.867,
+    "opens": "[page 201] The Associate in Science in Public Health Science for Transfer Degree AS-T prepares students for transfer to California State Universities. Students who complete the degree will be ensured preferential trans"
+   },
+   {
+    "control_number": "39546",
+    "pages": [
+     218,
+     219,
+     220
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 218] T039546G AAT Cal-GETC 18-19 - 18-19 Social Justice Studies- General T039403G AAT Cal-GETC 18-19 - 18 At least 60 degree applicable units are required to earn an Associate degree. These programs are Financial"
+   },
+   {
+    "control_number": "40026",
+    "pages": [
+     199,
+     200,
+     201,
+     202
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 199] Dietetics T040026H AST Cal-GETC 15 11-13 26-28 At least 60 degree applicable units are required to earn an Associate degree. This program is Financial Aid Eligible. PROGRAM OVERVIEW The Associate in Science "
+   },
+   {
+    "control_number": "40283",
+    "pages": [
+     103
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 103] Amazon Web Services T040283D C - 12 - 12 This program is Financial Aid Eligible. PROGRAM OVERVIEW The Cloud Computing Certificate prepares students to design solutions for Infrastructure as a Service (IaaS) "
+   },
+   {
+    "control_number": "40323",
+    "pages": [
+     182,
+     183
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.8,
+    "opens": "[page 182] Merchandising T040323D C - 19 - 19 At least 60 degree applicable units are required to earn an Associate degree. *GE Units requirements may be fulfilled by completing any General Education Pattern; please con"
+   },
+   {
+    "control_number": "40330",
+    "pages": [
+     182,
+     183
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 182] Retail Merchandising T040330D C - 21 - 21 Wholesale Merchandising T040323D C - 19 - 19 At least 60 degree applicable units are required to earn an Associate degree. *GE Units requirements may be"
+   },
+   {
+    "control_number": "40965",
+    "pages": [
+     228
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 228] Test Prep) T040965E PROGRAM OVERVIEW This online certificate can improve career opportunities and advancement. Automotive Service Excellence (ASE) certification can give students and technicians the edge wh"
+   },
+   {
+    "control_number": "40966",
+    "pages": [
+     224,
+     225
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 224] AC Technician T040966E PROGRAM OVERVIEW This online certificate can improve career opportunities and advancement. Automotive Service Excellence (ASE) certification can give students, technicians, and others"
+   },
+   {
+    "control_number": "40967",
+    "pages": [
+     226
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 226] Basic Automotive Chassis Tech T040967E PROGRAM OVERVIEW This entry level program provides a generalized understanding of automotive chassis systems that is in compliance with the Automotive Education Found"
+   },
+   {
+    "control_number": "41010",
+    "pages": [
+     224,
+     225
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.667,
+    "opens": "[page 224] T041010E PROGRAM OVERVIEW This online certificate can improve career opportunities and advancement. Automotive Service Excellence (ASE) certification can give students and technicians others the edge when b"
+   },
+   {
+    "control_number": "41011",
+    "pages": [
+     225
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.7,
+    "opens": "[page 225] (ASE A1-8 & L1 Test Prep) T041011E PROGRAM OVERVIEW This online certificate can improve career opportunities and advancement. Automotive Service Excellence (ASE) certification can give students and technici"
+   },
+   {
+    "control_number": "41012",
+    "pages": [
+     225
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 225] Prep) T041012E PROGRAM OVERVIEW This online certificate can improve career opportunities and advancement. Automotive Service Excellence (ASE) certification can give students and technicians others the edge "
+   },
+   {
+    "control_number": "41014",
+    "pages": [
+     225
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.75,
+    "opens": "[page 225] Los Angeles Trade-Technical College 2026 - 2027 GENERAL CATALOG GRADUATION REQUIREMENTS, P ATHW AYS AND PROGRAMS OF STUDY 225 Noncredit - Certificates ADVANCED MASTER AUTO TECHNICIAN (ASE A1-8 & L1 TEST PREP"
+   },
+   {
+    "control_number": "41150",
+    "pages": [
+     182,
+     183
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.9,
+    "opens": "[page 182] Fashion Media T041150D C - 19 - 19 Fashion Merchandising T008653C A.S. 21* 33 5 38 Fashion Merchandising T021867D C - 33 5 38 Retail Merchandising T040330D C - 21 - 21 Wholesale Merchandising T0"
+   },
+   {
+    "control_number": "42144",
+    "pages": [
+     132,
+     133,
+     134
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 132] Framing Helper T042144D C 8-10 - 8-10 At least 60 degree applicable units are required to earn an Associate degree. *GE Units requirements may be fulfilled by completing any General Education Pattern; please "
+   },
+   {
+    "control_number": "42296",
+    "pages": [
+     192
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 192] T042296D C 8.5 - 8.5 PROGRAM OVERVIEW This Health Foundation Career Program is designed to prepare students for employment in supportive care in the healthcare industry. Career opportunities for students c"
+   },
+   {
+    "control_number": "42785",
+    "pages": [
+     104,
+     105
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.8,
+    "opens": "[page 104] Administration 2.0 T042785H AS-T Cal-GETC 31 - 31 At least 60 degree applicable units are required to earn an Associate degree. *GE Units requirements may be fulfilled by completing any Genera"
+   },
+   {
+    "control_number": "44055",
+    "pages": [
+     350,
+     351
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 350] Los Angeles Trade-Technical College 2026 - 2027 GENERAL CATALOG 350 Course Descriptions - Non-Credit Courses GRADUATION REQUIREMENTS, P ATHW AYS AND PROGRAMS OF STUDY BSICSKL 078CE FUNDAMENTALS OF WORKPLA"
+   },
+   {
+    "control_number": "44170",
+    "pages": [
+     231
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 231] Fashion Retail First Time Manager T044170E PROGRAM OVERVIEW The Fashion Retail First Time Manager certificate program equips students with essential skills and knowledge to excel in the dynamic role as a ret"
+   },
+   {
+    "control_number": "44291",
+    "pages": [
+     351
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": false,
+    "coverage": 1.0,
+    "opens": "[page 351] Los Angeles Trade-Technical College 2026 - 2027 GENERAL CATALOG GRADUATION REQUIREMENTS, P ATHW AYS AND PROGRAMS OF STUDY 351 Course Descriptions - Non-Credit Courses ESL NC 051CE INTERMEDIATE CONVERSATIO"
+   },
+   {
+    "control_number": "44344",
+    "pages": [
+     184,
+     185,
+     186
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 184] T044344C AS 21* 23 - 23 Game Art & Design Foundation T044345D C 23 - 23 At least 60 degree applicable units are required to earn an Associate degree. *GE Units requirements may be fulfilled by completing an"
+   },
+   {
+    "control_number": "44345",
+    "pages": [
+     184,
+     185,
+     186
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 184] T044345D C 23 - 23 At least 60 degree applicable units are required to earn an Associate degree. *GE Units requirements may be fulfilled by completing any General Education Pattern; please consult with a coun"
+   },
+   {
+    "control_number": "44561",
+    "pages": [
+     95,
+     96
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": false,
+    "coverage": 1.0,
+    "opens": "[page 95] Los Angeles Trade-Technical College 2026 - 2027 GENERAL CATALOG GRADUATION REQUIREMENTS, P ATHW AYS AND PROGRAMS OF STUDY 95 Applied Sciences Pathway (AS) LIBERAL ARTS AND SCIENCES: EMPHASIS IN MATHEMATICS, "
+   },
+   {
+    "control_number": "44562",
+    "pages": [
+     354
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": false,
+    "coverage": 0.5,
+    "opens": "[page 354] Los Angeles Trade-Technical College 2026 - 2027 GENERAL CATALOG 354 Course Descriptions - Non-Credit Courses GRADUATION REQUIREMENTS, P ATHW AYS AND PROGRAMS OF STUDY VOC ED 325CE INTRODUCTION TO AUTOMOTIVE "
+   },
+   {
+    "control_number": "45285",
+    "pages": [
+     65
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.535,
+    "opens": "[page 65] Los Angeles Trade-Technical College 2026 - 2027 GENERAL CATALOG GRADUATION REQUIREMENTS, P ATHW AYS AND PROGRAMS OF STUDY 65 Graduation Requirements, Pathways and Programs of Study ECON C2001 Principles o"
+   },
+   {
+    "control_number": "45321",
+    "pages": [
+     186,
+     187
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 186] T045321D C 6 6 12 Sign Graphics T002921C AA 21* 40 4 44 Sign Graphics T021862D C 40 4 44 At least 60 degree applicable units are required to earn an Associate degree. *GE Units requirements may be fulfilled "
+   },
+   {
+    "control_number": "45377",
+    "pages": [
+     169,
+     170,
+     171
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 169] & Nutrition* T045377D C 15 PROGRAM OVERVIEW This program is helpful for individuals wanting to pursue careers in plant- based nutrition education, green technology, community/urban farming, school nutrition/g"
+   },
+   {
+    "control_number": "45459",
+    "pages": [
+     357
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": false,
+    "coverage": 1.0,
+    "opens": "[page 357] Los Angeles Trade-Technical College 2026 - 2027 GENERAL CATALOG GRADUATION REQUIREMENTS, P ATHW AYS AND PROGRAMS OF STUDY 357 Course Descriptions - Non-Credit Courses VOC ED 601CE RAIL SAFETY (0) Lecture: 1 "
+   },
+   {
+    "control_number": "45629",
+    "pages": [
+     173
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 173] T045629C A.A. 33 - 33 Advanced Graphic Design T045630D C 33 - 33 At least 60 degree applicable units are required to earn an Associate degree. *GE Units requirements may be fulfilled by completing any Gener"
+   },
+   {
+    "control_number": "45630",
+    "pages": [
+     173
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 173] T045630D C 33 - 33 At least 60 degree applicable units are required to earn an Associate degree. *GE Units requirements may be fulfilled by completing any General Edu- cation Pattern; please consult with a c"
+   },
+   {
+    "control_number": "45670",
+    "pages": [
+     170,
+     171
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 170] Operations T045670D C 17 PROGRAM OVERVIEW Los Angeles Trade Technical College’s (LATTC) Certificate in Achievement in Mobile Food Operations is a comprehensive program designed to equip students with the ess"
+   },
+   {
+    "control_number": "45676",
+    "pages": [
+     139
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 139] T045676D C 19 19 PROGRAM OVERVIEW By fulfilling the program requirements, students will have the necessary knowledge and skills for a career in installation and repair of electric vehicle charging station"
+   },
+   {
+    "control_number": "46397",
+    "pages": [
+     226
+    ],
+    "named": false,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 226] Language Learners T046397E PROGRAM OVERVIEW This program is designed for intermediate-level English language learners who want to build the language skills needed to pursue education and training in"
+   },
+   {
+    "control_number": "46398",
+    "pages": [
+     231
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 231] Los Angeles Trade-Technical College 2026 - 2027 GENERAL CATALOG GRADUATION REQUIREMENTS, P ATHW AYS AND PROGRAMS OF STUDY 231 Noncredit - Certificates FASHION RETAIL FIRST TIME MANAGER ▌ Certificate of Compl"
+   },
+   {
+    "control_number": "46399",
+    "pages": [
+     232
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 232] Los Angeles Trade-Technical College 2026 - 2027 GENERAL CATALOG 232 Noncredit - Certificates GRADUATION REQUIREMENTS, P ATHW AYS AND PROGRAMS OF STUDY HIGH SCHOOL EQUIVALENCY BILINGUAL PREPARATION II ▌ Cer"
+   },
+   {
+    "control_number": "46498",
+    "pages": [
+     185,
+     186
+    ],
+    "named": true,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 185] T046498D C 18 - 18 PROGRAM OVERVIEW The Graphic Design Fundamentals program introduces students to the foundational principles of graphic design. It covers core design concepts such as composition, typo"
+   }
+  ],
+  "unproven": [
+   "24169",
+   "30002",
+   "36134",
+   "44291",
+   "44561",
+   "44562",
+   "45459"
+  ]
+ },
+ "loads": 2,
+ "seconds": 138.4,
+ "found": 172,
+ "by_method": {
+  "no_closed_list": 23,
+  "not_found": 16,
+  "pdf_pages": 172
+ },
+ "shared_pages": {
+  "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=121": [
+   "02892",
+   "08469"
+  ],
+  "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=126": [
+   "02895",
+   "35286"
+  ],
+  "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=113": [
+   "02897",
+   "08471",
+   "21834"
+  ],
+  "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=119": [
+   "02898",
+   "21836"
+  ],
+  "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=117": [
+   "02900",
+   "21839"
+  ],
+  "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=79": [
+   "02905",
+   "08476",
+   "21844"
+  ],
+  "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=132": [
+   "02909",
+   "08479",
+   "21848",
+   "21849",
+   "42144"
+  ],
+  "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=137": [
+   "02910",
+   "08481",
+   "21852",
+   "21853"
+  ],
+  "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=144": [
+   "02911",
+   "08484",
+   "21855"
+  ],
+  "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=88": [
+   "02913",
+   "21859"
+  ],
+  "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=154": [
+   "02917",
+   "10754",
+   "10755"
+  ],
+  "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=186": [
+   "02921",
+   "21862",
+   "45321"
+  ],
+  "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=179": [
+   "02925",
+   "21865"
+  ],
+  "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=206": [
+   "02927",
+   "32905"
+  ],
+  "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=164": [
+   "02940",
+   "21873"
+  ],
+  "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=131": [
+   "08467",
+   "21825"
+  ],
+  "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=82": [
+   "08473",
+   "21840"
+  ],
+  "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=153": [
+   "08488",
+   "21870"
+  ],
+  "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=182": [
+   "08653",
+   "40323",
+   "40330",
+   "41150"
+  ],
+  "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=106": [
+   "10403",
+   "31018"
+  ],
+  "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=108": [
+   "10404",
+   "31059",
+   "31060",
+   "31061"
+  ],
+  "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=110": [
+   "10405",
+   "31062"
+  ],
+  "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=75": [
+   "10751",
+   "10752",
+   "21845"
+  ],
+  "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=97": [
+   "19108",
+   "19109"
+  ],
+  "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=183": [
+   "21863",
+   "21867"
+  ],
+  "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=233": [
+   "24048",
+   "36814"
+  ],
+  "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=235": [
+   "24132",
+   "36686"
+  ],
+  "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=350": [
+   "24459",
+   "44055"
+  ],
+  "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=138": [
+   "30210",
+   "30906",
+   "31090"
+  ],
+  "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=146": [
+   "30904",
+   "30905",
+   "30963"
+  ],
+  "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=148": [
+   "31081",
+   "31280"
+  ],
+  "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=150": [
+   "31082",
+   "31089"
+  ],
+  "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=124": [
+   "31182",
+   "31262"
+  ],
+  "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=87": [
+   "33225",
+   "33682"
+  ],
+  "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=175": [
+   "35202",
+   "35215"
+  ],
+  "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=177": [
+   "35275",
+   "35278"
+  ],
+  "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=176": [
+   "35292",
+   "35296"
+  ],
+  "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=85": [
+   "35618",
+   "35649"
+  ],
+  "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=234": [
+   "36615",
+   "37088"
+  ],
+  "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=232": [
+   "36617",
+   "46399"
+  ],
+  "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=200": [
+   "37706",
+   "38452"
+  ],
+  "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=104": [
+   "38910",
+   "42785"
+  ],
+  "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=161": [
+   "38947",
+   "39228"
+  ],
+  "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=224": [
+   "40966",
+   "41010"
+  ],
+  "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=226": [
+   "40967",
+   "46397"
+  ],
+  "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=225": [
+   "41011",
+   "41012",
+   "41014"
+  ],
+  "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=231": [
+   "44170",
+   "46398"
+  ],
+  "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=184": [
+   "44344",
+   "44345"
+  ],
+  "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=173": [
+   "45629",
+   "45630"
+  ]
+ },
+ "not_found": [
+  {
+   "control_number": "02902",
+   "title": "Electronics Communications",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=78",
+    "coverage": 0.4
+   }
+  },
+  {
+   "control_number": "02904",
+   "title": "Heating, Ventilating, Air Conditioning (HVAC) & Refrigeration",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=140",
+    "coverage": 0.185
+   }
+  },
+  {
+   "control_number": "02916",
+   "title": "Welding, Gas and Electric",
+   "award": "A.S. Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "12068",
+   "title": "Electronics Engineering Technician",
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+   "near_miss": {
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=284",
+    "coverage": 0.353
+   }
+  },
+  {
+   "control_number": "21842",
+   "title": "Heating, Ventilating, Air Conditioning (HVAC) & Refrigeration",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=140",
+    "coverage": 0.185
+   }
+  },
+  {
+   "control_number": "21861",
+   "title": "Welding, Gas and Electric",
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+   "near_miss": null
+  },
+  {
+   "control_number": "24169",
+   "title": "Workplace Readiness Certificate of Completion",
+   "award": null,
+   "near_miss": {
+    "pages": [
+     348,
+     349
+    ],
+    "coverage": 1.0,
+    "why": "the page prints neither the control number nor the title and award"
+   }
+  },
+  {
+   "control_number": "30002",
+   "title": "Correctional Science",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "pages": [
+     239
+    ],
+    "coverage": 0.875,
+    "why": "the page prints neither the control number nor the title and award"
+   }
+  },
+  {
+   "control_number": "36134",
+   "title": "CSU General Education (CSU-GE-Breadth)",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "pages": [
+     209,
+     210,
+     211,
+     212
+    ],
+    "coverage": 0.812,
+    "why": "the page prints neither the control number nor the title and award"
+   }
+  },
+  {
+   "control_number": "41013",
+   "title": "Chassis Technician (ASE A4 & A5 Test Prep)",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "41754",
+   "title": "Gas Tungsten Arc Welding (GTAW) Ferrous and Non-Ferrous Metals",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "41759",
+   "title": "Shielded Metal Arc Welding (SMAW) Structural Steel",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "44291",
+   "title": "English as a Second Language (ESL): Advanced Grammar and Composition",
+   "award": "Noncredit program",
+   "near_miss": {
+    "pages": [
+     351
+    ],
+    "coverage": 1.0,
+    "why": "the page prints neither the control number nor the title and award"
+   }
+  },
+  {
+   "control_number": "44561",
+   "title": "UCTP Physics",
+   "award": "A.S. T Degree",
+   "near_miss": {
+    "pages": [
+     95,
+     96
+    ],
+    "coverage": 1.0,
+    "why": "the page prints neither the control number nor the title and award"
+   }
+  },
+  {
+   "control_number": "44562",
+   "title": "Peer Support Specialist Certification Training",
+   "award": "Noncredit program",
+   "near_miss": {
+    "pages": [
+     354
+    ],
+    "coverage": 0.5,
+    "why": "the page prints neither the control number nor the title and award"
+   }
+  },
+  {
+   "control_number": "45459",
+   "title": "Transportation Workforce Readiness",
+   "award": "Noncredit program",
+   "near_miss": {
+    "pages": [
+     357
+    ],
+    "coverage": 1.0,
+    "why": "the page prints neither the control number nor the title and award"
+   }
+  }
+ ],
+ "page_claimed": [],
+ "coverage_bands": {
+  "0.5-0.8": 19,
+  "0.8-1.0": 32,
+  "1.0": 121
+ },
+ "would_extract": {
+  "against": null,
+  "kept": 0,
+  "programs": 172,
+  "list": [
+   {
+    "control_number": "02891",
+    "title": "Accounting",
+    "award": "A.A. Degree",
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=100",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "02892",
+    "title": "Management/Supervision",
+    "award": "A.A. Degree",
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=121",
+    "coverage": 0.75,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "02894",
+    "title": "Marketing and Public Relations",
+    "award": "A.A. Degree",
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=122",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "02895",
+    "title": "Retail Management",
+    "award": "A.A. Degree",
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=126",
+    "coverage": 0.955,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "02896",
+    "title": "Real Estate",
+    "award": "A.A. Degree",
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=125",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "02897",
+    "title": "Computer App & Office Tech: Administrative Asst",
+    "award": "A.A. Degree",
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=113",
+    "coverage": 0.737,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "02898",
+    "title": "Labor Studies",
+    "award": "A.A. Degree",
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=119",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "02900",
+    "title": "Computer Information Systems",
+    "award": "A.S. Degree",
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=117",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "02905",
+    "title": "Heavy Truck, Transit, and Equipment Technology",
+    "award": "A.S. Degree",
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=79",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "02907",
+    "title": "Automotive Collision Repair",
+    "award": "A.S. Degree",
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=246",
+    "coverage": 0.545,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "02908",
+    "title": "Motorcycle Repair Mechanics",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=84",
+    "coverage": 0.8,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "02909",
+    "title": "Carpentry",
+    "award": "A.S. Degree",
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=132",
+    "coverage": 0.812,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "02910",
+    "title": "Electrical Construction and Maintenance:  Electrician",
+    "award": "A.S. Degree",
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=137",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "02911",
+    "title": "Plumbing",
+    "award": "A.S. Degree",
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=144",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "02913",
+    "title": "Chemical Technology",
+    "award": "A.S. Degree",
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=88",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "02914",
+    "title": "Machine Shop: CNC",
+    "award": "A.S. Degree",
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=83",
+    "coverage": 0.826,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "02917",
+    "title": "Water Systems Technology: Supply Water Technology",
+    "award": "A.S. Degree",
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=154",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "02921",
+    "title": "Sign Graphics",
+    "award": "A.A. Degree",
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=186",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "02922",
+    "title": "Nursing, Registered",
+    "award": "A.S. Degree",
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=196",
+    "coverage": 0.842,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "02925",
+    "title": "Fashion Design",
+    "award": "A.A. Degree",
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=179",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "02926",
+    "title": "Tailoring",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=339",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "02927",
+    "title": "English",
+    "award": "A.A. Degree",
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=206",
+    "coverage": 0.75,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "02938",
+    "title": "Culinary Arts",
+    "award": "A.A. Degree",
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=168",
+    "coverage": 0.833,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "02939",
+    "title": "Restaurant Management",
+    "award": "A.A. Degree",
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=171",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "02940",
+    "title": "Cosmetology",
+    "award": "A.A. Degree",
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=164",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "08467",
+    "title": "Architectural Technology and Environmental Design",
+    "award": "A.A. Degree",
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=131",
+    "coverage": 0.842,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "08469",
+    "title": "Small Business Entrepreneurship",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=121",
+    "coverage": 0.611,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "08471",
+    "title": "Comp App & Office Tech: Office Assistant-Clerical",
+    "award": "A.A. Degree",
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=113",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "08473",
+    "title": "Information Technology",
+    "award": "A.S. Degree",
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=82",
+    "coverage": 0.846,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "08474",
+    "title": "Operation & Maintenance Engineering: Steam Plant",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=142",
+    "coverage": 0.5,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "08476",
+    "title": "Truck and Transit Preventive Maintenance",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=79",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "08478",
+    "title": "Hybrid & Electric Vehicle Technology",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=81",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "08479",
+    "title": "Carpentry - Construction Technologies",
+    "award": "A.S. Degree",
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=132",
+    "coverage": 0.967,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "08481",
+    "title": "Electrical Construction & Maintenance: Construction Technician",
+    "award": "A.A. Degree",
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=137",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "08482",
+    "title": "Electrical Lineman Apprenticeship",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=159",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "08484",
+    "title": "Plumbing: Construction Technician",
+    "award": "A.S. Degree",
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=144",
+    "coverage": 0.941,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "08488",
+    "title": "Street Maintenance Technology",
+    "award": "A.A. Degree",
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=153",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "08489",
+    "title": "Solid Waste Management Technology",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=152",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "08493",
+    "title": "Visual Communications",
+    "award": "A.A. Degree",
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=342",
+    "coverage": 0.583,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "08503",
+    "title": "Baking Professional",
+    "award": "A.A. Degree",
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=167",
+    "coverage": 0.833,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "08653",
+    "title": "Fashion Merchandising",
+    "award": "A.S. Degree",
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=182",
+    "coverage": 0.87,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "09266",
+    "title": "Community Planning & Economic Development",
+    "award": "A.A. Degree",
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=111",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "10403",
+    "title": "Child Development",
+    "award": "A.A. Degree",
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=106",
+    "coverage": 0.957,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "10404",
+    "title": "Specializing in Preschool Teaching",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=108",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "10405",
+    "title": "Specializing in Children with Special Needs",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=110",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "10750",
+    "title": "Medical Administrative Assistant",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=123",
+    "coverage": 0.889,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "10751",
+    "title": "Auto & Related Technology: Transmission Repair",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=75",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "10752",
+    "title": "Auto & Related Technology: Tune-Up",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=75",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "10754",
+    "title": "Supply Water Systems Technology",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=154",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "10755",
+    "title": "Water Systems Technology--Wastewater Technology",
+    "award": "A.S. Degree",
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=154",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "18856",
+    "title": "Interdisciplinary Studies: Arts and Sciences",
+    "award": "A.A. Degree",
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=209",
+    "coverage": 0.994,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "18857",
+    "title": "Liberal Arts & Sciences:  Emphasis in Mathematics, Physical and Natural Sciences",
+    "award": "A.A. Degree",
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=95",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "19108",
+    "title": "Process Technology",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=97",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "19109",
+    "title": "Process Technology",
+    "award": "A.S. Degree",
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=97",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21825",
+    "title": "Architectural Technology and Environmental Design",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=131",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21834",
+    "title": "Comp App & Office Tech: Office Assistant-Clerical",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=113",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21836",
+    "title": "Labor Studies",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=119",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21839",
+    "title": "Computer Information Systems",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=117",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21840",
+    "title": "Information Technology",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=82",
+    "coverage": 0.846,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21844",
+    "title": "Heavy Truck, Transit, and Equipment Technology",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=79",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21845",
+    "title": "Automotive and Related Technology",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=75",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21848",
+    "title": "Carpentry",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=132",
+    "coverage": 0.793,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21849",
+    "title": "Carpentry - Construction Technologies",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=132",
+    "coverage": 0.967,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21852",
+    "title": "Electrical Construction & Maintenance: Construction Technician",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=137",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21853",
+    "title": "Electrical Construction and Maintenance:  Electrician",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=137",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21855",
+    "title": "Plumbing",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=144",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21856",
+    "title": "Plumbing: Construction Technician",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=145",
+    "coverage": 0.941,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21859",
+    "title": "Chemical Technology",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=88",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21862",
+    "title": "Sign Graphics",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=186",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21863",
+    "title": "Visual Communications",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=183",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21865",
+    "title": "Fashion Design",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=179",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21867",
+    "title": "Fashion Merchandising",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=183",
+    "coverage": 0.826,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21870",
+    "title": "Street Maintenance Technology",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=153",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21873",
+    "title": "Cosmetology",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=164",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "24048",
+    "title": "Recreation and Community Services Assistant",
+    "award": null,
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=233",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "24132",
+    "title": "Utilities and Construction Preparation",
+    "award": "Noncredit program",
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=235",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "24136",
+    "title": "Bank Teller",
+    "award": null,
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=352",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "24459",
+    "title": "English as a Second Language (ESL): Beginning",
+    "award": "Noncredit program",
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=350",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "30210",
+    "title": "Weatherization and Energy Auditor",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=138",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "30904",
+    "title": "Utility Industry Fundamentals",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=146",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "30905",
+    "title": "Powerline Worker: Pole Climbing",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=146",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "30906",
+    "title": "Energy Systems Technology Fundamentals",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=138",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "30963",
+    "title": "Powerline Mechanic",
+    "award": "A.S. Degree",
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=146",
+    "coverage": 0.812,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31018",
+    "title": "Early Childhood Education",
+    "award": "A.S. T Degree",
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=106",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31059",
+    "title": "Specializing in Children with Special Needs",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=108",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31060",
+    "title": "Specializing in Associate Preschool Teaching",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=108",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31061",
+    "title": "Specializing in Infant and Toddler Teaching",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=108",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31062",
+    "title": "Specializing in School Age Programs",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=110",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31063",
+    "title": "Specializing in Program Administration",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=109",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31081",
+    "title": "Solar PV Installation and Maintenance Technician",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=148",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31082",
+    "title": "Solar Thermal Installation and Maintenance",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=150",
+    "coverage": 0.75,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31089",
+    "title": "Solar Thermal Installation & Maintenance",
+    "award": "A.S. Degree",
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=150",
+    "coverage": 0.565,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31090",
+    "title": "Energy Efficiency Technician",
+    "award": "A.S. Degree",
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=138",
+    "coverage": 0.762,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31182",
+    "title": "Paralegal Studies",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=124",
+    "coverage": 0.944,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31207",
+    "title": "Chemistry",
+    "award": "A.S. Degree",
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=89",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31262",
+    "title": "Paralegal Studies",
+    "award": "A.A. Degree",
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=124",
+    "coverage": 0.933,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31280",
+    "title": "Photo Voltaic (PV) Solar Installation & Maintenance",
+    "award": "A.S. Degree",
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=148",
+    "coverage": 0.6,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31396",
+    "title": "Skin Therapy",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=165",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32703",
+    "title": "Barbering",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=163",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32905",
+    "title": "English",
+    "award": "A.A- T Degree",
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=206",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32910",
+    "title": "Administration of Justice",
+    "award": "A.S. T Degree",
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=102",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32948",
+    "title": "Kinesiology",
+    "award": "A.A- T Degree",
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=62",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33225",
+    "title": "Biotechnology",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=87",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33682",
+    "title": "Biotechnology",
+    "award": "A.S. Degree",
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=87",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33802",
+    "title": "Personal Care Aide",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=202",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33813",
+    "title": "Small Business Entrepreneurship",
+    "award": "A.A. Degree",
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=127",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33815",
+    "title": "Liberal Arts: Behavioral and Social Sciences",
+    "award": "A.A. Degree",
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=210",
+    "coverage": 0.984,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35202",
+    "title": "Digital Media",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=175",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35215",
+    "title": "Digital Media",
+    "award": "A.S. Degree",
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=175",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35275",
+    "title": "Digital Media Mobile Application and Web Design",
+    "award": "A.S. Degree",
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=177",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35278",
+    "title": "Digital Media Mobile Application and Web Design",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=177",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35286",
+    "title": "Retail Management",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=126",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35292",
+    "title": "Digital Media: Digital Video and Audio",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=176",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35296",
+    "title": "Digital Media: Digital Video and Audio",
+    "award": "A.S. Degree",
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=176",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35618",
+    "title": "Rail Vehicle Maintenance",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=85",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35649",
+    "title": "Rail Vehicle Maintenance",
+    "award": "A.S. Degree",
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=85",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36231",
+    "title": "IGETC",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=212",
+    "coverage": 0.622,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36614",
+    "title": "Entry Level Laborer for the Energy & Construction Sectors",
+    "award": "Noncredit program",
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=230",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36615",
+    "title": "Sewing Operator",
+    "award": "Noncredit program",
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=234",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36617",
+    "title": "Lifeguard Training",
+    "award": "Noncredit program",
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=232",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36686",
+    "title": "Water Safety Instructor",
+    "award": "Noncredit program",
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=235",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36814",
+    "title": "Lube Technician",
+    "award": "Noncredit program",
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=233",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36965",
+    "title": "Custodial Technician Training",
+    "award": "Noncredit program",
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=351",
+    "coverage": 0.5,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37088",
+    "title": "Sustainable Small Business Development",
+    "award": "Noncredit program",
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=234",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37706",
+    "title": "Pre-Health Professions II",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=200",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38452",
+    "title": "Pre-Health Professions I",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=200",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38461",
+    "title": "Child and Adolescent Development",
+    "award": "A.A- T Degree",
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=105",
+    "coverage": 0.941,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38533",
+    "title": "Senior Exercise Leader, Land & Aquatics Programming",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=203",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38588",
+    "title": "Engineering - Electrical Track",
+    "award": "A.S. Degree",
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=91",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38589",
+    "title": "Engineering - Mechanical, Aerospace, Manufacturing Track",
+    "award": "A.S. Degree",
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=92",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38590",
+    "title": "Engineering - Civil Engineering Track",
+    "award": "A.S. Degree",
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=90",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38703",
+    "title": "Industrial Applied Science - Core Competencies",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=93",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38737",
+    "title": "Industrial Safety, Regulatory and Biomanufacturing",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=94",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38883",
+    "title": "Psychology",
+    "award": "A.A- T Degree",
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=217",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38910",
+    "title": "Business Administration",
+    "award": "A.S. T Degree",
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=104",
+    "coverage": 0.667,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38947",
+    "title": "Operating Engineer",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=161",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38966",
+    "title": "History",
+    "award": "A.A- T Degree",
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=207",
+    "coverage": 0.833,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39133",
+    "title": "Costume Technology",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=174",
+    "coverage": 0.923,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39216",
+    "title": "Political Science",
+    "award": "A.A- T Degree",
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=216",
+    "coverage": 0.818,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39228",
+    "title": "Operating Engineer",
+    "award": "A.S. Degree",
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=161",
+    "coverage": 0.889,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39531",
+    "title": "Public Health Science",
+    "award": "A.S. T Degree",
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=201",
+    "coverage": 0.867,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39546",
+    "title": "Social Justice Studies - Gender Studies",
+    "award": "A.A- T Degree",
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=218",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40026",
+    "title": "Nutrition and Dietetics",
+    "award": "A.S. T Degree",
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=199",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40283",
+    "title": "Amazon Web Services",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=103",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40323",
+    "title": "Wholesale Merchandising",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=182",
+    "coverage": 0.8,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40330",
+    "title": "Retail Merchandising",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=182",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40965",
+    "title": "Drive Train Technician (ASE A2 & A3 Test Prep)",
+    "award": "Noncredit program",
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=228",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40966",
+    "title": "AC Technician (ASE A6 & A7 Test Prep)",
+    "award": "Noncredit program",
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=224",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40967",
+    "title": "Basic Automotive Chassis Tech",
+    "award": "Noncredit program",
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=226",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41010",
+    "title": "Advanced Engine Performance (ASE A6, A8 & L1 Test Prep)",
+    "award": "Noncredit program",
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=224",
+    "coverage": 0.667,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41011",
+    "title": "Advanced Master Auto Technician (ASE A1-8 & L1 Test Prep)",
+    "award": "Noncredit program",
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=225",
+    "coverage": 0.7,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41012",
+    "title": "Auto Technician (ASE A1 & A8 Test Prep)",
+    "award": "Noncredit program",
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=225",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41014",
+    "title": "Master Auto Technician (ASE 1-8 Test Prep)",
+    "award": "Noncredit program",
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=225",
+    "coverage": 0.75,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41150",
+    "title": "Fashion Media",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=182",
+    "coverage": 0.9,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42144",
+    "title": "Residential/Commercial Framing Helper",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=132",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42296",
+    "title": "Health Foundation Career Program",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=192",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42785",
+    "title": "Business Administration 2.0",
+    "award": "A.S. T Degree",
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=104",
+    "coverage": 0.8,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44055",
+    "title": "English as a Second Language (ESL): Intermediate",
+    "award": "Noncredit program",
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=350",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44170",
+    "title": "Fashion Retail First Time Manager",
+    "award": "Noncredit program",
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=231",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44344",
+    "title": "Game Art & Design Foundation",
+    "award": "A.S. Degree",
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=184",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44345",
+    "title": "Game Art & Design Foundation",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=184",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45285",
+    "title": "Cal-GETC",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=65",
+    "coverage": 0.535,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45321",
+    "title": "Screen Printing Fundamentals",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=186",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45377",
+    "title": "Plant-Based Culinary & Nutrition",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=169",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45629",
+    "title": "Advanced Graphic Design",
+    "award": "A.A. Degree",
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=173",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45630",
+    "title": "Advanced Graphic Design",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=173",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45670",
+    "title": "Mobile Food Truck Operations",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=170",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45676",
+    "title": "EV Charging Station Installation, Maintenance, and Repair",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=139",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46397",
+    "title": "Career Foundations for English Language Learners I",
+    "award": "Noncredit program",
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=226",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46398",
+    "title": "High School Equivalency Bilingual Preparation I",
+    "award": "Noncredit program",
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=231",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46399",
+    "title": "High School Equivalency Bilingual Preparation II",
+    "award": "Noncredit program",
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=232",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46498",
+    "title": "Graphic Design Fundamentals",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=185",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   }
+  ]
+ },
+ "run": "39053645881"
+}
