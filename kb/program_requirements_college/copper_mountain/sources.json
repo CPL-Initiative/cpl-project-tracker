@@ -1,0 +1,1691 @@
+[
+ {
+  "control_number": "14710",
+  "title": "General Business",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT1",
+   "ACCT2",
+   "ACCT3",
+   "ACCT4",
+   "BUAA1",
+   "BUAC10",
+   "BUAC66",
+   "BUMA1",
+   "BUMA10",
+   "BUMA27",
+   "BUWE80",
+   "BUWE81",
+   "BUWE82",
+   "BUWE83",
+   "BUWE84",
+   "CIS30",
+   "CIS70A",
+   "CIS73C",
+   "CIS82C",
+   "CULN1A",
+   "HOSP1",
+   "HOSP2",
+   "REAL81",
+   "REAL82",
+   "REAL83A",
+   "REAL84",
+   "REAL85",
+   "REAL86"
+  ],
+  "source": {
+   "url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=77",
+   "title": "2026-2027 Catalog",
+   "h1": "2026-2027 Catalog",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    77,
+    78
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 28,
+  "text_chars": 9508
+ },
+ {
+  "control_number": "14711",
+  "title": "Accounting",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT1",
+   "ACCT2",
+   "ACCT3",
+   "ACCT4",
+   "ACCT5",
+   "BUAA1",
+   "BUAC10",
+   "BUMA10",
+   "CIS70A",
+   "CIS74"
+  ],
+  "source": {
+   "url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=77",
+   "title": "The Accounting Certificate provides a solid foundation in the areas",
+   "h1": "The Accounting Certificate provides a solid foundation in the areas",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    77,
+    78
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 10,
+  "text_chars": 4988
+ },
+ {
+  "control_number": "14712",
+  "title": "Business Administration",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "14715",
+  "title": "Computer Information Systems",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.944,
+  "codes_found": [
+   "BUAA1",
+   "BUAC10",
+   "BUAC66",
+   "BUMA10",
+   "CIS30",
+   "CIS62",
+   "CIS63",
+   "CIS70A",
+   "CIS73C",
+   "CIS74",
+   "CIS78B",
+   "CIS82C",
+   "CIS82H",
+   "CIS86",
+   "CS3",
+   "CS4",
+   "CS5"
+  ],
+  "source": {
+   "url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=81",
+   "title": "2026-2027 Catalog",
+   "h1": "2026-2027 Catalog",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    81
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 18,
+  "text_chars": 5569
+ },
+ {
+  "control_number": "14716",
+  "title": "Computer Programming",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT1",
+   "ACCT2",
+   "ACCT4",
+   "BUAC10",
+   "BUAC66",
+   "BUMA1",
+   "BUMA10",
+   "BUMA27",
+   "CIS30",
+   "CIS62",
+   "CIS63",
+   "CIS70A",
+   "CIS72D",
+   "CIS73C",
+   "CIS74",
+   "CIS76B",
+   "CIS78B",
+   "CIS82H",
+   "CIS86",
+   "CS3",
+   "CS4",
+   "CS5",
+   "CS86A"
+  ],
+  "source": {
+   "url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=83",
+   "title": "2026-2027 Catalog",
+   "h1": "2026-2027 Catalog",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    83
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 23,
+  "text_chars": 5276
+ },
+ {
+  "control_number": "14719",
+  "title": "Automotive Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "AUTO20",
+   "AUTO21",
+   "AUTO27",
+   "AUTO29",
+   "AUTO4",
+   "BUMA10"
+  ],
+  "source": {
+   "url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=71",
+   "title": "Associate in Science in AUTOMOTIVE TECHNOLOGY",
+   "h1": "Associate in Science in AUTOMOTIVE TECHNOLOGY",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    71,
+    72,
+    73,
+    74
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 6,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "14737",
+  "title": "Vocational Nursing",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.667,
+  "codes_found": [
+   "VN10",
+   "VN20"
+  ],
+  "source": {
+   "url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=112",
+   "title": "Associate in Science in VOCATIONAL NURSING",
+   "h1": "Associate in Science in VOCATIONAL NURSING",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    112,
+    113
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 3,
+  "text_chars": 7403
+ },
+ {
+  "control_number": "14751",
+  "title": "Fire Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.824,
+  "codes_found": [
+   "CIS70A",
+   "FIRE1",
+   "FIRE10",
+   "FIRE2",
+   "FIRE3",
+   "FIRE4",
+   "FIRE5",
+   "FIRE58",
+   "FIRE6",
+   "FIRE61",
+   "FIRE7",
+   "FIRE8",
+   "FIWE80",
+   "PHIL13"
+  ],
+  "source": {
+   "url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=98",
+   "title": "2026-2027 Catalog",
+   "h1": "2026-2027 Catalog",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    98,
+    99
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 17,
+  "text_chars": 10749
+ },
+ {
+  "control_number": "14754",
+  "title": "Economics",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "16657",
+  "title": "Registered Nursing",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.8,
+  "codes_found": [
+   "ANTH2",
+   "N10",
+   "N15",
+   "N30",
+   "N35",
+   "N36",
+   "N40",
+   "PSYCC1000"
+  ],
+  "source": {
+   "url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=111",
+   "title": "2026-2027 Catalog",
+   "h1": "2026-2027 Catalog",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    111
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 10,
+  "text_chars": 7963
+ },
+ {
+  "control_number": "18517",
+  "title": "Political Science",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "18518",
+  "title": "Liberal Arts: Arts and Humanities",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.857,
+  "codes_found": [
+   "ART10",
+   "ART11B",
+   "ART1A",
+   "ART4",
+   "ART48A",
+   "ART52",
+   "ART53",
+   "ART5B",
+   "ART7B",
+   "ART9A",
+   "ART9B",
+   "ARTHC1100",
+   "ARTHC1200",
+   "ASL1",
+   "ASL2",
+   "ASL3",
+   "ASL4",
+   "ENGL12A",
+   "HIST48A",
+   "HISTC1001",
+   "HISTC1002",
+   "MUS10",
+   "MUS5",
+   "PHIL12",
+   "PHIL13",
+   "PHIL14",
+   "PHIL6",
+   "TA1",
+   "TA2",
+   "TA3"
+  ],
+  "source": {
+   "url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=108",
+   "title": "2026-2027 Catalog",
+   "h1": "2026-2027 Catalog",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    108,
+    109
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 35,
+  "text_chars": 10649
+ },
+ {
+  "control_number": "18519",
+  "title": "Liberal Arts Social and Behavioral Sciences",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.692,
+  "codes_found": [
+   "ANTH2",
+   "ANTH3",
+   "GEOG2",
+   "HIST19",
+   "HISTC1001",
+   "HISTC1002",
+   "POLSC1000",
+   "PSYCC1000",
+   "SOCIC1000"
+  ],
+  "source": {
+   "url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=109",
+   "title": "2026-2027 Catalog",
+   "h1": "2026-2027 Catalog",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    109
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 13,
+  "text_chars": 4375
+ },
+ {
+  "control_number": "18520",
+  "title": "Liberal Arts: Mathematics & Science",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.636,
+  "codes_found": [
+   "CH5",
+   "GEOG48A",
+   "MATH4",
+   "MATHC2220",
+   "PH4A",
+   "PH4B",
+   "PH4C"
+  ],
+  "source": {
+   "url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=109",
+   "title": "2026-2027 Catalog",
+   "h1": "2026-2027 Catalog",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    109,
+    110
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 11,
+  "text_chars": 7745
+ },
+ {
+  "control_number": "19100",
+  "title": "Criminal Justice",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "19325",
+  "title": "Sociology",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "19796",
+  "title": "Computer Information Systems",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUAA1",
+   "BUAC66",
+   "BUMA10",
+   "CIS30",
+   "CIS62",
+   "CIS63",
+   "CIS70A",
+   "CIS73C",
+   "CIS74",
+   "CIS78B",
+   "CIS82C",
+   "CIS82H",
+   "CIS86",
+   "CS3",
+   "CS4",
+   "CS5"
+  ],
+  "source": {
+   "url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=81",
+   "title": "2026-2027 Catalog",
+   "h1": "2026-2027 Catalog",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    81
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 16,
+  "text_chars": 5569
+ },
+ {
+  "control_number": "20093",
+  "title": "Computer Programming",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT1",
+   "ACCT2",
+   "ACCT4",
+   "BUMA1",
+   "BUMA10",
+   "BUMA27",
+   "CIS30",
+   "CS3",
+   "CS4",
+   "CS5",
+   "CS86A"
+  ],
+  "source": {
+   "url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=83",
+   "title": "2026-2027 Catalog",
+   "h1": "2026-2027 Catalog",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    83
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 11,
+  "text_chars": 5276
+ },
+ {
+  "control_number": "20094",
+  "title": "Vocational Nursing",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 0.667,
+  "codes_found": [
+   "VN10",
+   "VN20"
+  ],
+  "source": {
+   "url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=112",
+   "title": "of the program a certificate in vocational nursing is awarded and the graduate is eligible to write the National Council",
+   "h1": "of the program a certificate in vocational nursing is awarded and the graduate is eligible to write the National Council",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    112,
+    113
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 3,
+  "text_chars": 6756
+ },
+ {
+  "control_number": "24229",
+  "title": "GED Certificate of Completion",
+  "award": null,
+  "shape": "other",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "30387",
+  "title": "Qualified Early Childhood Educator: Teacher",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 0.917,
+  "codes_found": [
+   "ART10",
+   "CD12",
+   "CD14",
+   "CD15",
+   "CD19",
+   "CD30",
+   "CD75",
+   "MUS10",
+   "PHIL13",
+   "PSYCC1000",
+   "SPAN1"
+  ],
+  "source": {
+   "url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=90",
+   "title": "Students holding the Qualified Early Childhood Educator: Teacher certificate will be trained and eligible for employment",
+   "h1": "Students holding the Qualified Early Childhood Educator: Teacher certificate will be trained and eligible for employment",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    90
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 12,
+  "text_chars": 6140
+ },
+ {
+  "control_number": "30827",
+  "title": "Sociology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "31670",
+  "title": "Culinary Arts",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CUWE80",
+   "CUWE81",
+   "CUWE82",
+   "CUWE83"
+  ],
+  "source": {
+   "url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=88",
+   "title": "Certificate of Achievement in CULINARY ARTS",
+   "h1": "Certificate of Achievement in CULINARY ARTS",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    88
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 4,
+  "text_chars": 2216
+ },
+ {
+  "control_number": "32285",
+  "title": "Studio Arts",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART1A",
+   "ART4",
+   "ART52",
+   "ART53",
+   "ART9A",
+   "ARTHC1100"
+  ],
+  "source": {
+   "url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=70",
+   "title": "The Associate in Arts in Studio Arts for Transfer also includes the following completion requirements:",
+   "h1": "The Associate in Arts in Studio Arts for Transfer also includes the following completion requirements:",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    70
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 6,
+  "text_chars": 3277
+ },
+ {
+  "control_number": "32579",
+  "title": "Administration of Justice",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "PSYCC1000"
+  ],
+  "source": {
+   "url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=66",
+   "title": "2026-2027 Catalog",
+   "h1": "2026-2027 Catalog",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    66
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 1,
+  "text_chars": 4823
+ },
+ {
+  "control_number": "32617",
+  "title": "Art History",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART1A",
+   "ART4",
+   "ART52",
+   "ART53",
+   "ART9A",
+   "ARTHC1100",
+   "ARTHC1200"
+  ],
+  "source": {
+   "url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=69",
+   "title": "Copper Mountain College’s Associate in Arts in Art History for Transfer offers introductory and intermediate level cours",
+   "h1": "Copper Mountain College’s Associate in Arts in Art History for Transfer offers introductory and intermediate level cours",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    69,
+    70
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 7,
+  "text_chars": 9217
+ },
+ {
+  "control_number": "33162",
+  "title": "English",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "33381",
+  "title": "Economics",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT1",
+   "ACCT2",
+   "MATH2A",
+   "MATH2B",
+   "MATHC2220"
+  ],
+  "source": {
+   "url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=91",
+   "title": "The Associate Degree for Transfer in Economics is designed to provide students with a foundation in macroeconomic and mi",
+   "h1": "The Associate Degree for Transfer in Economics is designed to provide students with a foundation in macroeconomic and mi",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    91
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 5,
+  "text_chars": 4282
+ },
+ {
+  "control_number": "33793",
+  "title": "Fire Technology",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 0.824,
+  "codes_found": [
+   "CIS70A",
+   "FIRE1",
+   "FIRE10",
+   "FIRE2",
+   "FIRE3",
+   "FIRE4",
+   "FIRE5",
+   "FIRE58",
+   "FIRE6",
+   "FIRE61",
+   "FIRE7",
+   "FIRE8",
+   "FIWE80",
+   "PHIL13"
+  ],
+  "source": {
+   "url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=98",
+   "title": "Copper Mountain College offers courses in the Fire Technology field that will count toward a certificate or Associate in",
+   "h1": "Copper Mountain College offers courses in the Fire Technology field that will count toward a certificate or Associate in",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    98,
+    99
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 17,
+  "text_chars": 10704
+ },
+ {
+  "control_number": "33932",
+  "title": "Automotive Technology",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "AUTO20",
+   "AUTO21",
+   "AUTO27",
+   "AUTO4"
+  ],
+  "source": {
+   "url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=71",
+   "title": "2026-2027 Catalog",
+   "h1": "2026-2027 Catalog",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    71,
+    72,
+    73,
+    74
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 4,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "35004",
+  "title": "Transmission Service, Repair, and Overhaul",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "AUTO20",
+   "AUTO4"
+  ],
+  "source": {
+   "url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=74",
+   "title": "2026-2027 Catalog",
+   "h1": "2026-2027 Catalog",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    74
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 2,
+  "text_chars": 4944
+ },
+ {
+  "control_number": "35005",
+  "title": "Alternative Fuel Vehicles",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "AUTO20",
+   "AUTO4"
+  ],
+  "source": {
+   "url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=72",
+   "title": "2026-2027 Catalog",
+   "h1": "2026-2027 Catalog",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    72,
+    73,
+    74
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 2,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "35006",
+  "title": "Steering and Suspension Service",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "AUTO20",
+   "AUTO4"
+  ],
+  "source": {
+   "url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=74",
+   "title": "2026-2027 Catalog",
+   "h1": "2026-2027 Catalog",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    74
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 2,
+  "text_chars": 4944
+ },
+ {
+  "control_number": "35007",
+  "title": "Engine Performance and Driveability",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "AUTO20",
+   "AUTO29",
+   "AUTO4"
+  ],
+  "source": {
+   "url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=73",
+   "title": "2026-2027 Catalog",
+   "h1": "2026-2027 Catalog",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    73,
+    74
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 3,
+  "text_chars": 10102
+ },
+ {
+  "control_number": "35055",
+  "title": "Heating and Air Conditioning Service and Repair",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "AUTO20",
+   "AUTO4"
+  ],
+  "source": {
+   "url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=73",
+   "title": "2026-2027 Catalog",
+   "h1": "2026-2027 Catalog",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    73,
+    74
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 2,
+  "text_chars": 10102
+ },
+ {
+  "control_number": "36526",
+  "title": "Computer Network Supervisor",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CS3",
+   "CS4",
+   "CS5"
+  ],
+  "source": {
+   "url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=85",
+   "title": "2026-2027 Catalog",
+   "h1": "2026-2027 Catalog",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    85,
+    86
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 3,
+  "text_chars": 9450
+ },
+ {
+  "control_number": "36808",
+  "title": "Desert Studies",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTH2",
+   "ANTH3",
+   "ART48A",
+   "BIOLC1001L",
+   "CH1B",
+   "CS73",
+   "ENV1",
+   "G10",
+   "GEOG48A",
+   "HIST19",
+   "MATHC2220",
+   "PH4A",
+   "PH4B"
+  ],
+  "source": {
+   "url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=97",
+   "title": "The Desert Studies Certificate of Achievement emphasizes themes",
+   "h1": "The Desert Studies Certificate of Achievement emphasizes themes",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    97
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 13,
+  "text_chars": 3449
+ },
+ {
+  "control_number": "38512",
+  "title": "Computer-Aided Design and Drafting",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CADD1",
+   "CADD2",
+   "CADD3",
+   "CADD4"
+  ],
+  "source": {
+   "url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=82",
+   "title": "2026-2027 Catalog",
+   "h1": "2026-2027 Catalog",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    82
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 4,
+  "text_chars": 2999
+ },
+ {
+  "control_number": "41085",
+  "title": "Hospitality Management",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT1",
+   "ACCT2",
+   "CULN1A",
+   "HOSP1",
+   "HOSP2"
+  ],
+  "source": {
+   "url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=77",
+   "title": "2026-2027 Catalog",
+   "h1": "2026-2027 Catalog",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    77,
+    78
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 5,
+  "text_chars": 9508
+ },
+ {
+  "control_number": "41580",
+  "title": "Business Administration 2.0",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT1",
+   "ACCT2",
+   "BUMA10"
+  ],
+  "source": {
+   "url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=76",
+   "title": "2026-2027 Catalog",
+   "h1": "2026-2027 Catalog",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    76,
+    77,
+    78
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 3,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "41829",
+  "title": "Physics",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "42113",
+  "title": "Chemistry",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CH10B",
+   "CH1B",
+   "MATHC2220",
+   "PH4A",
+   "PH4B"
+  ],
+  "source": {
+   "url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=79",
+   "title": "The Associate in Science in Chemistry for Transfer, also called the Chemistry AS-T Degree, is designed to prepare studen",
+   "h1": "The Associate in Science in Chemistry for Transfer, also called the Chemistry AS-T Degree, is designed to prepare studen",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    79
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 5,
+  "text_chars": 3920
+ },
+ {
+  "control_number": "42177",
+  "title": "Spanish",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "SPAN1",
+   "SPAN3",
+   "SPAN4"
+  ],
+  "source": {
+   "url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=118",
+   "title": "The Associate in Arts in Spanish for Transfer degree will prepare students for upper division coursework in the study of",
+   "h1": "The Associate in Arts in Spanish for Transfer degree will prepare students for upper division coursework in the study of",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    118
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 3,
+  "text_chars": 3568
+ },
+ {
+  "control_number": "42178",
+  "title": "Biology",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "PH2A",
+   "PH2B"
+  ],
+  "source": {
+   "url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=75",
+   "title": "The Associate in Science in Biology for Transfer, also called the Biology AS-T Degree, is designed to prepare students f",
+   "h1": "The Associate in Science in Biology for Transfer, also called the Biology AS-T Degree, is designed to prepare students f",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    75
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 2,
+  "text_chars": 3705
+ },
+ {
+  "control_number": "42765",
+  "title": "Computer Science",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "42932",
+  "title": "Wildland Fire Technology (Noncredit)",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "FIRE100",
+   "FIRE110"
+  ],
+  "source": {
+   "url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=99",
+   "title": "The Certificate of Completion in Wildland Fire Technology Noncredit",
+   "h1": "The Certificate of Completion in Wildland Fire Technology Noncredit",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    99
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 2,
+  "text_chars": 3359
+ },
+ {
+  "control_number": "42946",
+  "title": "Computer Science",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CS87",
+   "CS89",
+   "CS89A",
+   "MATH4",
+   "MATHC2220",
+   "PH4A",
+   "PH4B"
+  ],
+  "source": {
+   "url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=84",
+   "title": "The Associate in Science degree for Transfer in Computer Science is designed for students pursuing degrees in Computer S",
+   "h1": "The Associate in Science degree for Transfer in Computer Science is designed for students pursuing degrees in Computer S",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    84,
+    85
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 7,
+  "text_chars": 8504
+ },
+ {
+  "control_number": "43132",
+  "title": "Kinesiology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 0.545,
+  "codes_found": [
+   "PE43",
+   "PE45",
+   "PE52",
+   "PE91",
+   "PE96",
+   "PE98"
+  ],
+  "source": {
+   "url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=158",
+   "title": "2026-2027 Catalog",
+   "h1": "2026-2027 Catalog",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    158,
+    159,
+    160
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 11,
+  "text_chars": 14980
+ },
+ {
+  "control_number": "43192",
+  "title": "Adult High School Diploma",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "43282",
+  "title": "Communication Studies 2.0",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 0.75,
+  "codes_found": [
+   "ANTH2",
+   "PSYCC1000",
+   "SOCIC1000"
+  ],
+  "source": {
+   "url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=80",
+   "title": "The Communications program includes an Associate in Arts Degree for Transfer in Communication Studies 2.0 consisting of",
+   "h1": "The Communications program includes an Associate in Arts Degree for Transfer in Communication Studies 2.0 consisting of",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    80
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 4,
+  "text_chars": 3132
+ },
+ {
+  "control_number": "43302",
+  "title": "Environmental Science",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CH1B",
+   "ENV1",
+   "G1",
+   "PH2A",
+   "PH2B",
+   "PH4A",
+   "PH4B"
+  ],
+  "source": {
+   "url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=96",
+   "title": "The Environmental Science Associate in Science for Transfer Degree is designed to prepare students for a seamless transf",
+   "h1": "The Environmental Science Associate in Science for Transfer Degree is designed to prepare students for a seamless transf",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    96,
+    97
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 7,
+  "text_chars": 7615
+ },
+ {
+  "control_number": "43422",
+  "title": "Residential Construction and Maintenance",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUMA1",
+   "CNST10",
+   "CNST20",
+   "CNST50",
+   "CNST60",
+   "CNST80"
+  ],
+  "source": {
+   "url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=87",
+   "title": "2026-2027 Catalog",
+   "h1": "2026-2027 Catalog",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    87
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 6,
+  "text_chars": 4988
+ },
+ {
+  "control_number": "43428",
+  "title": "Wildland Fire Technology",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "EMR1",
+   "FIRE6",
+   "FIREWFT101",
+   "FIREWFT102",
+   "FIREWFT103",
+   "FIREWFT104",
+   "FIREWFT105"
+  ],
+  "source": {
+   "url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=99",
+   "title": "The Certificate of Completion in Wildland Fire Technology Noncredit",
+   "h1": "The Certificate of Completion in Wildland Fire Technology Noncredit",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    99
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 7,
+  "text_chars": 3359
+ },
+ {
+  "control_number": "43430",
+  "title": "Residential Construction and Maintenance (Noncredit)",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CNST110",
+   "CNST120",
+   "CNST150",
+   "CNST160",
+   "CNST180"
+  ],
+  "source": {
+   "url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=87",
+   "title": "2026-2027 Catalog",
+   "h1": "2026-2027 Catalog",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    87
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 5,
+  "text_chars": 4988
+ },
+ {
+  "control_number": "43854",
+  "title": "History",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "EGSJ20",
+   "HISTC1001",
+   "HISTC1002",
+   "POLSC1000"
+  ],
+  "source": {
+   "url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=103",
+   "title": "Courses in the Associate in Arts in History for Transfer degree explore the past in a variety of ways. Through a critica",
+   "h1": "Courses in the Associate in Arts in History for Transfer degree explore the past in a variety of ways. Through a critica",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    103,
+    104
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 4,
+  "text_chars": 5447
+ },
+ {
+  "control_number": "44066",
+  "title": "History",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTH2",
+   "EGSJ20",
+   "GEOG2",
+   "HISTC1001",
+   "HISTC1002",
+   "POLSC1000",
+   "SPAN1"
+  ],
+  "source": {
+   "url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=103",
+   "title": "Courses in the Associate in Arts in History for Transfer degree explore the past in a variety of ways. Through a critica",
+   "h1": "Courses in the Associate in Arts in History for Transfer degree explore the past in a variety of ways. Through a critica",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    103,
+    104
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 7,
+  "text_chars": 5447
+ },
+ {
+  "control_number": "44517",
+  "title": "Early Childhood Education",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 0.857,
+  "codes_found": [
+   "CD12",
+   "CD14",
+   "CD15",
+   "CD30",
+   "CD74",
+   "CD75"
+  ],
+  "source": {
+   "url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=89",
+   "title": "CMC's Associate in Science in Early Childhood Education for Transfer program prepares students for careers in private or",
+   "h1": "CMC's Associate in Science in Early Childhood Education for Transfer program prepares students for careers in private or",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    89,
+    90
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 7,
+  "text_chars": 11048
+ },
+ {
+  "control_number": "45594",
+  "title": "Elementary Teacher Education: Integrated Programs",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 0.944,
+  "codes_found": [
+   "ART10",
+   "BIOLC1001",
+   "BIOLC1001L",
+   "CH3",
+   "COMMC1000",
+   "EDUC10",
+   "ENGLC1000",
+   "G10",
+   "HIST19",
+   "HIST3",
+   "HISTC1001",
+   "HISTC1002",
+   "HS1",
+   "MATH16",
+   "MUS10",
+   "POLSC1000",
+   "TA1"
+  ],
+  "source": {
+   "url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=92",
+   "title": "2026-2027 Catalog",
+   "h1": "2026-2027 Catalog",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    92
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 18,
+  "text_chars": 5019
+ },
+ {
+  "control_number": "46529",
+  "title": "English",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "COMM2",
+   "ENGL10A",
+   "ENGL10B",
+   "ENGL11A",
+   "ENGL11B",
+   "ENGL12A",
+   "ENGL12B",
+   "ENGL5A",
+   "ENGLC1000",
+   "ENGLC1001",
+   "ENGLC1002",
+   "SPAN3",
+   "SPAN4",
+   "TA1"
+  ],
+  "source": {
+   "url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=94",
+   "title": "The Associate in Arts degree in English for Transfer (AA-T) degree is for students who intend to complete a bachelor’s d",
+   "h1": "The Associate in Arts degree in English for Transfer (AA-T) degree is for students who intend to complete a bachelor’s d",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    94
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
+  "listed": 14,
+  "text_chars": 4471
+ }
+]

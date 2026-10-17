@@ -1,0 +1,285 @@
+{
+ "college": "Copper Mountain College",
+ "control_number": "43282",
+ "shape": "adt",
+ "title": "Communication Studies 2.0",
+ "award": "A.A- T Degree",
+ "source_url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=80",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6795,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6795,
+    "output_tokens": 2131,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2131,
+  "output_tokens_details": {
+   "thinking_tokens": 769
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.0698,
+ "ms": 18375,
+ "seconds": 18.9,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 3,
+   "listed": 4,
+   "share": 0.75,
+   "missing": [
+    "SP7"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 7,
+   "codes": [
+    "COMM15",
+    "COMM2",
+    "COMM7",
+    "COMMC1000",
+    "COMMC1004",
+    "ENGLC1001",
+    "ENGLC1002"
+   ],
+   "flagged": [
+    "COMM15",
+    "COMM2",
+    "COMM7",
+    "COMMC1000",
+    "COMMC1004",
+    "ENGLC1001",
+    "ENGLC1002"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    18.0,
+    18.0
+   ],
+   "stated": [
+    18.0,
+    18.0
+   ],
+   "against": "program",
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     52.0,
+     52.0
+    ],
+    "stated": [
+     60.0,
+     69.0
+    ],
+    "against": "degree",
+    "ge": [
+     34.0,
+     34.0
+    ],
+    "why": [],
+    "fill": [
+     8.0,
+     17.0
+    ]
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Associate in Arts in COMMUNICATION STUDIES 2.0 for transfer",
+   "measure": "units",
+   "total_units": {
+    "min": 18,
+    "max": 18
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": 60,
+    "max": 69
+   },
+   "ge_units": {
+    "min": 34,
+    "max": 34
+   },
+   "electives_fill_degree": true,
+   "outcomes": [
+    "Apply the vocabulary, key concepts, and foundational principles of Communication Studies. (Institutional SLOs: Communication, Critical Thinking, and Information Competency)",
+    "Demonstrate an awareness of diverse communication climates and utilize effective rhetorical strategies and ethical considerations when researching, composing, and presenting materials of scholarly, social, and artistic value. (Institutional SLOs: Communication, Critical Thinking, Personal Development, Ethics, and Information Competency)",
+    "Utilize critical thinking as a consumer of communication and as a self-reflective communicator. (Institutional SLOs: Communication, Critical Thinking, Personal Development, Ethics, and Information Competency)"
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "COMM C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "COMM C1004",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "COMM 002",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "COMM 007",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "COMM 015",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Select one (1) course from the following (3 units)",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "ANTH 002",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL C1001",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ENGL C1002",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PSYC C1000",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOCI C1000",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "SP 7",
+    "why": "not in the text under this code; the catalog prints COMM 007 Decision-Making and Advocacy, which appears to be the same course renumbered"
+   }
+  ],
+  "notes": [
+   "The section heading 'Associate in Arts in COMMUNICATION STUDIES 2.0 for transfer' is printed at the bottom of page 80 and may be a running header for this page.",
+   "Degree total recorded from 'MINIMUM TRANSFERABLE UNITS 60-69'; the requirement text also states 60 semester units.",
+   "COMM 007 (Decision-Making and Advocacy) matches the title of closed-list SP 7; recorded as printed with catalog_addition true. Reviewer should confirm the renumbering.",
+   "ANTH 002 treated as closed-list ANTH 2, and SOCI C1000 as closed-list SOCIC1000 (formatting differences only).",
+   "The choose-one list prints a single '3' for the whole line rather than units beside each course, so per-course units are left null and the 3 is recorded as the block's stated total.",
+   "The outcomes are printed for the program as a whole; this degree is the only award in the section and shares that list.",
+   "The catalog notes that students applying required major courses to GE must make up equivalent units in consultation with an advisor."
+  ]
+ },
+ "extracted_run": "39035222722"
+}

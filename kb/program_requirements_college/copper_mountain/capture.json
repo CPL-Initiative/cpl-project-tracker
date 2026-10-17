@@ -1,0 +1,1138 @@
+{
+ "college": "Copper Mountain College",
+ "catalog_url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf",
+ "platform": "pdf",
+ "catalog_year": "2026-2027",
+ "programs": 59,
+ "with_closed_list": 48,
+ "started": "2026-10-17T13:07:57Z",
+ "pdf": {
+  "url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf",
+  "access": "ok",
+  "status": 200,
+  "bytes": 10460233,
+  "pages_total": 183,
+  "error": null,
+  "chars_total": 880295,
+  "pypdf_accepted": 48,
+  "sample": [
+   "p55: '2026-2027 Catalog \\n48\\nCopper Mountain College\\nfirst CMC course, as long as they matriculate to CMC during the first \\n16-week semester after their high school graduation.\\nCollege authorities may authorize or require substitutions for \\ndiscon'",
+   "p110: '2026-2027 Catalog\\n103\\nCopper Mountain College\\nStudents must complete the required courses for their major. General education units, transferable electives, and total degree units will vary for each \\nstudent. Some considerations include the '"
+  ],
+  "extractor": "pypdf",
+  "picks": [
+   {
+    "control_number": "14710",
+    "pages": [
+     77,
+     78
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 77] 2026-2027 Catalog 70 Copper Mountain College Students must complete the required courses for their major. General education units, transferable electives, and total degree units will vary for each student. So"
+   },
+   {
+    "control_number": "14711",
+    "pages": [
+     77,
+     78
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 77] The Accounting Certificate provides a solid foundation in the areas of financial and managerial accounting, tax preparation, and computer software skills. These skills prepare you for a new career in accounti"
+   },
+   {
+    "control_number": "14715",
+    "pages": [
+     81
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.944,
+    "opens": "[page 81] 2026-2027 Catalog 74 Copper Mountain College COMPUTER COMPUTER INFORMATIONINFORMATION SYSTEMSSYSTEMS The Computer Information Systems program encompasses a broad area of study which includes basic computer con"
+   },
+   {
+    "control_number": "14716",
+    "pages": [
+     83
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 83] 2026-2027 Catalog 76 Copper Mountain College Students must complete the required courses for their major. General education units, transferable electives, and total degree units will vary for each student. So"
+   },
+   {
+    "control_number": "14719",
+    "pages": [
+     71,
+     72,
+     73,
+     74
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 71] Associate in Science in AUTOMOTIVE TECHNOLOGY with emphasis on employment preparation Program Learning Outcomes Upon successful completion of this program students will be able to: 1. Identify the components, "
+   },
+   {
+    "control_number": "14737",
+    "pages": [
+     112,
+     113
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.667,
+    "opens": "[page 112] Associate in Science in VOCATIONAL NURSING with emphasis on employment preparation The Vocational Nursing Program prepares men and women for entry level vocational nursing positions as contributing members of "
+   },
+   {
+    "control_number": "14751",
+    "pages": [
+     98,
+     99
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.824,
+    "opens": "[page 98] 2026-2027 Catalog 91 Copper Mountain College Copper Mountain College offers courses in the Fire Technology field that will count toward a certificate or Associate in Science Degree. These courses are designed "
+   },
+   {
+    "control_number": "16657",
+    "pages": [
+     111
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.8,
+    "opens": "[page 111] 2026-2027 Catalog 104 Copper Mountain College NURSING: REGISTEREDNURSING: REGISTERED The Associate Degree - Registered Nursing Program is comprised of 37 units of nursing theory and clinical experience plus "
+   },
+   {
+    "control_number": "18518",
+    "pages": [
+     108,
+     109
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.857,
+    "opens": "[page 108] 2026-2027 Catalog 101 Copper Mountain College Students must complete the required courses for their major. General education units, transferable electives, and total degree units will vary for each student. S"
+   },
+   {
+    "control_number": "18519",
+    "pages": [
+     109
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.692,
+    "opens": "[page 109] 2026-2027 Catalog 102 Copper Mountain College Associate in Arts in LIBERAL ARTS: Social & Behavioral Sciences These courses emphasize the perspective, concepts, theories, and methodologies of the disciplin"
+   },
+   {
+    "control_number": "18520",
+    "pages": [
+     109,
+     110
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.636,
+    "opens": "[page 109] 2026-2027 Catalog 102 Copper Mountain College Associate in Arts in LIBERAL ARTS: Social & Behavioral Sciences These courses emphasize the perspective, concepts, theories, and methodologies of the disciplin"
+   },
+   {
+    "control_number": "19796",
+    "pages": [
+     81
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 81] 2026-2027 Catalog 74 Copper Mountain College COMPUTER COMPUTER INFORMATIONINFORMATION SYSTEMSSYSTEMS The Computer Information Systems program encompasses a broad area of study which includes basic computer con"
+   },
+   {
+    "control_number": "20093",
+    "pages": [
+     83
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 83] 2026-2027 Catalog 76 Copper Mountain College Students must complete the required courses for their major. General education units, transferable electives, and total degree units will vary for each student. So"
+   },
+   {
+    "control_number": "20094",
+    "pages": [
+     112,
+     113
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.667,
+    "opens": "[page 112] of the program a certificate in vocational nursing is awarded and the graduate is eligible to write the National Council Licensure Examination (NCLEX-PN) for vocational nursing in the state of California. An "
+   },
+   {
+    "control_number": "30387",
+    "pages": [
+     90
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.917,
+    "opens": "[page 90] Students holding the Qualified Early Childhood Educator: Teacher certificate will be trained and eligible for employment as preschool lead teachers in privately-owned preschools, child care centers, or home ch"
+   },
+   {
+    "control_number": "31670",
+    "pages": [
+     88
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 88] Certificate of Achievement in CULINARY ARTS with emphasis on employment preparation The Culinary Arts Certificate of Achievement prepares men and women for entry level positions in the food service and hospita"
+   },
+   {
+    "control_number": "32285",
+    "pages": [
+     70
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 70] The Associate in Arts in Studio Arts for Transfer also includes the following completion requirements: (1) Completion of 60 semester units or 90 quarter units that are eligible for transfer to the California S"
+   },
+   {
+    "control_number": "32579",
+    "pages": [
+     66
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 66] 2026-2027 Catalog 59 Copper Mountain College DEGREE, CERTIFICATE AND PROGRAMS OF STUDY ADMINISTRATION OF JUSTICEADMINISTRATION OF JUSTICE Students intending to transfer to a four-year college should consult tha"
+   },
+   {
+    "control_number": "32617",
+    "pages": [
+     69,
+     70
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 69] Copper Mountain College’s Associate in Arts in Art History for Transfer offers introductory and intermediate level courses in drawing, painting, sculpture, ceramics, printmaking, graphic design, and computer a"
+   },
+   {
+    "control_number": "33381",
+    "pages": [
+     91
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 91] The Associate Degree for Transfer in Economics is designed to provide students with a foundation in macroeconomic and microeconomic theory, supported by relevant mathematics and exposure to the field’s connect"
+   },
+   {
+    "control_number": "33793",
+    "pages": [
+     98,
+     99
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.824,
+    "opens": "[page 98] Copper Mountain College offers courses in the Fire Technology field that will count toward a certificate or Associate in Science Degree. These courses are designed for students who plan to transfer to a four-y"
+   },
+   {
+    "control_number": "33932",
+    "pages": [
+     71,
+     72,
+     73,
+     74
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 71] 2026-2027 Catalog 64 Copper Mountain College Students must complete the required courses for their major. General education units, transferable electives, and total degree units will vary for each student. So"
+   },
+   {
+    "control_number": "35004",
+    "pages": [
+     74
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 74] 2026-2027 Catalog 67 Copper Mountain College Certificate of Achievement in TRANSMISSION SERVICE, REPAIR, AND OVERHAUL with emphasis on employment preparation Program Learning Outcomes Upon successful completio"
+   },
+   {
+    "control_number": "35005",
+    "pages": [
+     72,
+     73,
+     74
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 72] 2026-2027 Catalog 65 Copper Mountain College Certificate of Achievement in AUTOMOTIVE TECHNOLOGY with emphasis on employment preparation Program Learning Outcomes Upon successful completion of this program, s"
+   },
+   {
+    "control_number": "35006",
+    "pages": [
+     74
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 74] 2026-2027 Catalog 67 Copper Mountain College Certificate of Achievement in TRANSMISSION SERVICE, REPAIR, AND OVERHAUL with emphasis on employment preparation Program Learning Outcomes Upon successful completio"
+   },
+   {
+    "control_number": "35007",
+    "pages": [
+     73,
+     74
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 73] 2026-2027 Catalog 66 Copper Mountain College Certificate of Achievement in HEATING AND AIR CONDITIONING SERVICES AND REPAIR with emphasis on employment preparation Program Learning Outcomes Upon successful c"
+   },
+   {
+    "control_number": "35055",
+    "pages": [
+     73,
+     74
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 73] 2026-2027 Catalog 66 Copper Mountain College Certificate of Achievement in HEATING AND AIR CONDITIONING SERVICES AND REPAIR with emphasis on employment preparation Program Learning Outcomes Upon successful c"
+   },
+   {
+    "control_number": "36526",
+    "pages": [
+     85,
+     86
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 85] 2026-2027 Catalog 78 Copper Mountain College Certificate of Achievement in COMPUTER NETWORK SUPERVISOR with emphasis on employment preparation This certificate demonstrates a broad understanding and high ski"
+   },
+   {
+    "control_number": "36808",
+    "pages": [
+     97
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 97] The Desert Studies Certificate of Achievement emphasizes themes and activities unique to the North American desert. The certificate provides foundational knowledge of environmental science, biology, geology,"
+   },
+   {
+    "control_number": "38512",
+    "pages": [
+     82
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 82] 2026-2027 Catalog 75 Copper Mountain College Certificate of Achievement in COMPUTER -AIDED DESIGN AND DRAFTING (CADD) TECHNICIAN with emphasis on employment preparation Copper Mountain College offers courses "
+   },
+   {
+    "control_number": "41085",
+    "pages": [
+     77,
+     78
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 77] 2026-2027 Catalog 70 Copper Mountain College Students must complete the required courses for their major. General education units, transferable electives, and total degree units will vary for each student. So"
+   },
+   {
+    "control_number": "41580",
+    "pages": [
+     76,
+     77,
+     78
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 76] 2026-2027 Catalog 69 Copper Mountain College Students must complete the required courses for their major. General education units, transferable electives, and total degree units will vary for each student. Som"
+   },
+   {
+    "control_number": "42113",
+    "pages": [
+     79
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 79] The Associate in Science in Chemistry for Transfer, also called the Chemistry AS-T Degree, is designed to prepare students majoring in Chemistry for a seamless transfer with junior status to a CSU campus for c"
+   },
+   {
+    "control_number": "42177",
+    "pages": [
+     118
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 118] The Associate in Arts in Spanish for Transfer degree will prepare students for upper division coursework in the study of Spanish. The Spanish program offers students a strong foundation in communicative skill"
+   },
+   {
+    "control_number": "42178",
+    "pages": [
+     75
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 75] The Associate in Science in Biology for Transfer, also called the Biology AS-T Degree, is designed to prepare students for a seamless transfer with junior status to a CSU campus in a program or major in Biolog"
+   },
+   {
+    "control_number": "42932",
+    "pages": [
+     99
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 99] The Certificate of Completion in Wildland Fire Technology Noncredit offers the required courses and learning domains for students to apply for employment with wildland firefighting agencies such as the United"
+   },
+   {
+    "control_number": "42946",
+    "pages": [
+     84,
+     85
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 84] The Associate in Science degree for Transfer in Computer Science is designed for students pursuing degrees in Computer Science or Computer Engineering. Successful completion of the transfer degree in Computer "
+   },
+   {
+    "control_number": "43132",
+    "pages": [
+     158,
+     159,
+     160
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.545,
+    "opens": "[page 158] 2026-2027 Catalog 151 Copper Mountain College HOSP 002 HOSPITALITY COST CONTROL 3 Units Total Lecture Hours: 54 In this course, students analyze and manage food, beverage, labor, and other costs within a h"
+   },
+   {
+    "control_number": "43282",
+    "pages": [
+     80
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.75,
+    "opens": "[page 80] The Communications program includes an Associate in Arts Degree for Transfer in Communication Studies 2.0 consisting of courses from the Communication Studies (Speech) academic discipline and General Educatio"
+   },
+   {
+    "control_number": "43302",
+    "pages": [
+     96,
+     97
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 96] The Environmental Science Associate in Science for Transfer Degree is designed to prepare students for a seamless transfer with junior status to a California State University (CSU) campus for completion of a b"
+   },
+   {
+    "control_number": "43422",
+    "pages": [
+     87
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 87] 2026-2027 Catalog 80 Copper Mountain College Certificate of Achievement in Residential Construction and Maintenance with emphasis on employment preparation This certificate is intended to prepare students fo"
+   },
+   {
+    "control_number": "43428",
+    "pages": [
+     99
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 99] The Certificate of Completion in Wildland Fire Technology Noncredit offers the required courses and learning domains for students to apply for employment with wildland firefighting agencies such as the United"
+   },
+   {
+    "control_number": "43430",
+    "pages": [
+     87
+    ],
+    "named": false,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 87] 2026-2027 Catalog 80 Copper Mountain College Certificate of Achievement in Residential Construction and Maintenance with emphasis on employment preparation This certificate is intended to prepare students fo"
+   },
+   {
+    "control_number": "43854",
+    "pages": [
+     103,
+     104
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 103] Courses in the Associate in Arts in History for Transfer degree explore the past in a variety of ways. Through a critical evaluation of the causes and significance of events in the past, students of history l"
+   },
+   {
+    "control_number": "44066",
+    "pages": [
+     103,
+     104
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 103] Courses in the Associate in Arts in History for Transfer degree explore the past in a variety of ways. Through a critical evaluation of the causes and significance of events in the past, students of history l"
+   },
+   {
+    "control_number": "44517",
+    "pages": [
+     89,
+     90
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.857,
+    "opens": "[page 89] CMC's Associate in Science in Early Childhood Education for Transfer program prepares students for careers in private or public programs serving infants, toddlers, preschoolers, children with disabilities, and"
+   },
+   {
+    "control_number": "45594",
+    "pages": [
+     92
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.944,
+    "opens": "[page 92] 2026-2027 Catalog 85 Copper Mountain College Students must complete the required courses for their major. General education units, transferable electives, and total degree units will vary for each student. Som"
+   },
+   {
+    "control_number": "46529",
+    "pages": [
+     94
+    ],
+    "named": true,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 94] The Associate in Arts degree in English for Transfer (AA-T) degree is for students who intend to complete a bachelor’s degree in English at a California State University. Core course work explores primarily Wo"
+   }
+  ],
+  "unproven": []
+ },
+ "loads": 1,
+ "seconds": 28.8,
+ "found": 48,
+ "by_method": {
+  "no_closed_list": 11,
+  "pdf_pages": 48
+ },
+ "shared_pages": {
+  "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=77": [
+   "14710",
+   "14711",
+   "41085"
+  ],
+  "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=81": [
+   "14715",
+   "19796"
+  ],
+  "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=83": [
+   "14716",
+   "20093"
+  ],
+  "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=71": [
+   "14719",
+   "33932"
+  ],
+  "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=112": [
+   "14737",
+   "20094"
+  ],
+  "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=98": [
+   "14751",
+   "33793"
+  ],
+  "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=109": [
+   "18519",
+   "18520"
+  ],
+  "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=74": [
+   "35004",
+   "35006"
+  ],
+  "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=73": [
+   "35007",
+   "35055"
+  ],
+  "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=99": [
+   "42932",
+   "43428"
+  ],
+  "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=87": [
+   "43422",
+   "43430"
+  ],
+  "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=103": [
+   "43854",
+   "44066"
+  ]
+ },
+ "not_found": [],
+ "page_claimed": [],
+ "coverage_bands": {
+  "0.5-0.8": 6,
+  "0.8-1.0": 8,
+  "1.0": 34
+ },
+ "would_extract": {
+  "against": null,
+  "kept": 0,
+  "programs": 48,
+  "list": [
+   {
+    "control_number": "14710",
+    "title": "General Business",
+    "award": "A.S. Degree",
+    "url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=77",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "14711",
+    "title": "Accounting",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=77",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "14715",
+    "title": "Computer Information Systems",
+    "award": "A.A. Degree",
+    "url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=81",
+    "coverage": 0.944,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "14716",
+    "title": "Computer Programming",
+    "award": "A.S. Degree",
+    "url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=83",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "14719",
+    "title": "Automotive Technology",
+    "award": "A.S. Degree",
+    "url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=71",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "14737",
+    "title": "Vocational Nursing",
+    "award": "A.S. Degree",
+    "url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=112",
+    "coverage": 0.667,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "14751",
+    "title": "Fire Technology",
+    "award": "A.S. Degree",
+    "url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=98",
+    "coverage": 0.824,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "16657",
+    "title": "Registered Nursing",
+    "award": "A.S. Degree",
+    "url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=111",
+    "coverage": 0.8,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "18518",
+    "title": "Liberal Arts: Arts and Humanities",
+    "award": "A.A. Degree",
+    "url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=108",
+    "coverage": 0.857,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "18519",
+    "title": "Liberal Arts Social and Behavioral Sciences",
+    "award": "A.A. Degree",
+    "url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=109",
+    "coverage": 0.692,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "18520",
+    "title": "Liberal Arts: Mathematics & Science",
+    "award": "A.A. Degree",
+    "url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=109",
+    "coverage": 0.636,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "19796",
+    "title": "Computer Information Systems",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=81",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20093",
+    "title": "Computer Programming",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=83",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20094",
+    "title": "Vocational Nursing",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=112",
+    "coverage": 0.667,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "30387",
+    "title": "Qualified Early Childhood Educator: Teacher",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=90",
+    "coverage": 0.917,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31670",
+    "title": "Culinary Arts",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=88",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32285",
+    "title": "Studio Arts",
+    "award": "A.A- T Degree",
+    "url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=70",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32579",
+    "title": "Administration of Justice",
+    "award": "A.S. T Degree",
+    "url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=66",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32617",
+    "title": "Art History",
+    "award": "A.A- T Degree",
+    "url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=69",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33381",
+    "title": "Economics",
+    "award": "A.A- T Degree",
+    "url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=91",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33793",
+    "title": "Fire Technology",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=98",
+    "coverage": 0.824,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33932",
+    "title": "Automotive Technology",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=71",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35004",
+    "title": "Transmission Service, Repair, and Overhaul",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=74",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35005",
+    "title": "Alternative Fuel Vehicles",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=72",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35006",
+    "title": "Steering and Suspension Service",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=74",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35007",
+    "title": "Engine Performance and Driveability",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=73",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35055",
+    "title": "Heating and Air Conditioning Service and Repair",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=73",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36526",
+    "title": "Computer Network Supervisor",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=85",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36808",
+    "title": "Desert Studies",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=97",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38512",
+    "title": "Computer-Aided Design and Drafting",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=82",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41085",
+    "title": "Hospitality Management",
+    "award": "A.S. T Degree",
+    "url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=77",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41580",
+    "title": "Business Administration 2.0",
+    "award": "A.S. T Degree",
+    "url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=76",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42113",
+    "title": "Chemistry",
+    "award": "A.S. T Degree",
+    "url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=79",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42177",
+    "title": "Spanish",
+    "award": "A.A- T Degree",
+    "url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=118",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42178",
+    "title": "Biology",
+    "award": "A.S. T Degree",
+    "url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=75",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42932",
+    "title": "Wildland Fire Technology (Noncredit)",
+    "award": "Noncredit program",
+    "url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=99",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42946",
+    "title": "Computer Science",
+    "award": "A.S. T Degree",
+    "url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=84",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43132",
+    "title": "Kinesiology",
+    "award": "A.A- T Degree",
+    "url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=158",
+    "coverage": 0.545,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43282",
+    "title": "Communication Studies 2.0",
+    "award": "A.A- T Degree",
+    "url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=80",
+    "coverage": 0.75,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43302",
+    "title": "Environmental Science",
+    "award": "A.S. T Degree",
+    "url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=96",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43422",
+    "title": "Residential Construction and Maintenance",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=87",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43428",
+    "title": "Wildland Fire Technology",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=99",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43430",
+    "title": "Residential Construction and Maintenance (Noncredit)",
+    "award": "Noncredit program",
+    "url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=87",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43854",
+    "title": "History",
+    "award": "A.A. Degree",
+    "url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=103",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44066",
+    "title": "History",
+    "award": "A.A- T Degree",
+    "url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=103",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44517",
+    "title": "Early Childhood Education",
+    "award": "A.S. T Degree",
+    "url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=89",
+    "coverage": 0.857,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45594",
+    "title": "Elementary Teacher Education: Integrated Programs",
+    "award": "A.A- T Degree",
+    "url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=92",
+    "coverage": 0.944,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46529",
+    "title": "English",
+    "award": "A.A- T Degree",
+    "url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=94",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   }
+  ]
+ },
+ "run": "39035222722"
+}

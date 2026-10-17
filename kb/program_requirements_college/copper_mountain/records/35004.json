@@ -1,0 +1,202 @@
+{
+ "college": "Copper Mountain College",
+ "control_number": "35004",
+ "shape": "certificate",
+ "title": "Transmission Service, Repair, and Overhaul",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=74",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7494,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7494,
+    "output_tokens": 1376,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1376,
+  "output_tokens_details": {
+   "thinking_tokens": 244
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.0575,
+ "ms": 10289,
+ "seconds": 10.7,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 2,
+   "listed": 2,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 3,
+   "codes": [
+    "AUTO18",
+    "AUTO45",
+    "AUTO65"
+   ],
+   "flagged": [
+    "AUTO18",
+    "AUTO45",
+    "AUTO65"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    20.0,
+    20.0
+   ],
+   "stated": [
+    20.0,
+    20.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 6,
+   "courses": 0,
+   "count": 6,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Certificate of Achievement in TRANSMISSION SERVICE, REPAIR, AND OVERHAUL",
+   "measure": "units",
+   "total_units": {
+    "min": 20,
+    "max": 20
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Identify the components, perform service on, and describe the construction features, theory and/or operating principles related to manual and automatic transmissions in preparation for ASE A2 and A3 certification. (ILOs: Information Competency)",
+    "Use various automotive test equipment: to diagnose vehicle component failures, determine the logical cause of the failure through complete and accurate analysis (either mechanical or electrical), evaluate and discuss findings, prepare a written estimate of needed system repairs, estimate the related costs, and perform and verify correct repairs related to various manual and automatic transmissions issues. (ILOs: Communication, Critical Thinking, and Information Competency)",
+    "Utilize applicable vehicle service information to locate pertinent procedures and specifications related to the inspection, service, diagnosis, repair, adjustment of various automotive transmission systems, and document the services. (ILOs: Information Competency)",
+    "Demonstrate proper use and safety practices associated with common automotive technician hand tools, precision measuring tools, power equipment, standard automotive laboratory equipment, and repair and service associated with electrical, hydraulic and mechanical systems. (ILOs: Information Competency)",
+    "Work independently and in groups to diagnose, service, repair, and maintain vehicles. (ILOs: Personal Development)",
+    "Exhibit professionalism, sensitivity, tact, integrity, and appropriate communication skills when handling customer/co-worker needs, complaints, questions, and special challenges. (ILOs: Personal Development, Ethics, Communication)"
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "AUTO 004",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUTO 018",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "AUTO 020",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUTO 045",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "AUTO 065",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Catalog prints codes with leading zeros (AUTO 004, AUTO 020); these match closed-list AUTO 4 and AUTO 20.",
+   "AUTO 018, AUTO 045 and AUTO 065 are required in the catalog but absent from the closed list; recorded as catalog additions.",
+   "Total taken from 'MINIMUM CERTIFICATE UNITS ... 20'.",
+   "Outcomes copied including the printed '(ILOs: ...)' parentheticals, which the catalog prints as part of each outcome.",
+   "The following Steering and Suspension Service certificate section was not read."
+  ]
+ },
+ "extracted_run": "39035222722"
+}

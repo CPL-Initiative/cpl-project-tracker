@@ -1,0 +1,412 @@
+{
+ "college": "Copper Mountain College",
+ "control_number": "14751",
+ "shape": "degree",
+ "title": "Fire Technology",
+ "award": "A.S. Degree",
+ "source_url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=98",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 9709,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 9709,
+    "output_tokens": 3972,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 3972,
+  "output_tokens_details": {
+   "thinking_tokens": 1315
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.11828,
+ "ms": 29239,
+ "seconds": 29.9,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 17,
+   "listed": 17,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 9,
+   "codes": [
+    "BIOL22",
+    "BIOL23",
+    "CH3",
+    "CJ3",
+    "COMMC1000",
+    "EMR1",
+    "EMT84",
+    "FIRE81",
+    "FIRE84"
+   ],
+   "flagged": [
+    "BIOL22",
+    "BIOL23",
+    "CH3",
+    "CJ3",
+    "COMMC1000",
+    "EMR1",
+    "EMT84",
+    "FIRE81",
+    "FIRE84"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    42.0,
+    48.0
+   ],
+   "stated": [
+    42.0,
+    42.0
+   ],
+   "against": "program",
+   "why": [
+    "the blocks sum to 42.0-48.0; the catalog states 42.0-42.0"
+   ],
+   "degree": {
+    "pass": false,
+    "status": "unequal",
+    "computed": [
+     63.0,
+     69.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     21.0,
+     21.0
+    ],
+    "why": [
+     "the blocks and general education sum to 63.0-69.0; the catalog prints 60.0-60.0 for the degree"
+    ]
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 8,
+   "courses": 0,
+   "count": 8,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Associate in Science in FIRE TECHNOLOGY with emphasis on employment preparation",
+   "measure": "units",
+   "total_units": {
+    "min": 42,
+    "max": 42
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "CMC General Education",
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": 21,
+    "max": 21
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Upon completion of the Fire Technology Program, the student will identify minimum qualifications and entry-level skills for fire fighter hiring. The student will be able to describe the following elements: application process; written exam process; physical agility exam, oral interview, chief’s interview; background investigation; and fire fighter probationary process. Students will identify fire service history, culture and diversity. (ILOs: Personal Development)",
+    "Upon completion of the Fire Technology Program, the student will demonstrate the ability to analyze, appraise and evaluate fire and emergency incidents and identify components of emergency management and fire fighter safety including: Size-up, report on conditions, Incident Command System; RECEO; 10 Standard Firefighting Orders; 18 Situations that Shout “Watch Out”; and common factors associated with injuries and line of duty deaths. (ILOs: Communication, Critical Thinking, and Personal Development)",
+    "Upon completion of the Fire Technology Program, the student will be able to identify and comprehend laws, regulations, codes and standards that influence fire department operations, and identify regulatory and advisory organizations that create and mandate them, especially in the areas of fire prevention, building codes and ordinances, and firefighter health and safety. (ILOs: Information Competency)",
+    "Upon completion of the Fire Technology Program the student will be able to analyze the causes of fire, determine extinguishing agents and methods, differentiate the stages of the fire and fire development, and compare methods of heat transfer. (ILOs: Critical Thinking)",
+    "Upon completion of the Fire Technology Program, the student will be able to calculate flow requirements for fire apparatus, diagram a pump and plumbing schematic for fire apparatus, and apply mathematic formulae to hydraulics problems. (ILOs: Critical Thinking)",
+    "Upon completion of the Fire Technology Program, the student will identify and describe the apparatus used in the fire service, and the equipment and maintenance of fire apparatus and equipment. (ILOs: Personal Development)",
+    "Upon completion of the fire technology program, the student will identify and describe common types of building construction and conditions associated with structural collapse and firefighter safety. (ILOs: Critical Thinking)",
+    "Upon completion of the Fire Technology Program the student will differentiate between fire detection and fire suppression systems. Student will design and diagram a wet and dry fire protection system, and identify alarm system components and their operations. (ILOs: Critical Thinking)"
+   ],
+   "careers": [
+    "fire service"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "FIRE 001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FIRE 002",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FIRE 003",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FIRE 004",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FIRE 005",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FIRE 007",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "EMT 084",
+      "units": 3,
+      "units_max": 9,
+      "alternatives": [
+       {
+        "code": "EMR 001",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Select at least thirteen (13) units from the following",
+    "rule": "choose_units",
+    "minimum": 13,
+    "option_group": null,
+    "stated": {
+     "min": 13,
+     "max": 13
+    },
+    "courses": [
+     {
+      "code": "FIRE 006",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FIRE 008",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FIRE 010",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FIRE 058",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FIRE 061",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FIRE 081",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "FIRE 084",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "FIWE 080",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FIWE 081",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FIWE 082",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FIWE 083",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select at least eight (8) units from the following",
+    "rule": "choose_units",
+    "minimum": 8,
+    "option_group": null,
+    "stated": {
+     "min": 8,
+     "max": 8
+    },
+    "courses": [
+     {
+      "code": "BIOL 022",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BIOL 023",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CH 003",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CIS 070A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CJ 003",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PHIL 013",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COMM C1000",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The catalog prints codes zero-padded (FIRE 001, FIWE 080, PHIL 013); these were matched to closed-list FIRE 1, FIWE 80, PHIL 13 etc. and not flagged as additions.",
+   "'EMT 084 or EMR 001' has a single range '3-9' printed beside the pair; recorded on EMT 084 as 3-9 with EMR 001's own units left null. The Wildland certificate lists EMR 001 at 3 units, suggesting EMT 084 is the 9-unit option.",
+   "'FIWE 080 - 083' was expanded to FIWE 080, 081, 082, 083.",
+   "No units are printed beside individual courses in the two elective lists; units left null.",
+   "Program Learning Outcomes are printed once for the Fire Technology program as a whole (preceding both the A.S. and the Certificate of Achievement); the A.S. shares them and they are recorded here.",
+   "MINIMUM DEGREE UNITS 60 recorded as degree_total; Total Units for the Major 42 as total_units; CMC General Education Requirement 21 as ge_units. The page notes general education units, transferable electives and total degree units vary per student, but prints no elective units.",
+   "Career 'fire service' taken from the program description ('gain employment in the fire service')."
+  ]
+ },
+ "extracted_run": "39035222722"
+}

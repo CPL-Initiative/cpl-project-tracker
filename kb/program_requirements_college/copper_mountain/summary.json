@@ -1,0 +1,20 @@
+{
+ "college": "Copper Mountain College",
+ "programs": 59,
+ "with_closed_list": 48,
+ "found": 48,
+ "extracted": 48,
+ "errors": 0,
+ "passed_machine_checks": 32,
+ "failed": {
+  "coverage": 6,
+  "invented": 4,
+  "arithmetic": 15,
+  "repeated": 0,
+  "outcomes": 0
+ },
+ "cost_usd": 3.84,
+ "cost_per_program": 0.0801,
+ "not_found": [],
+ "run": "39035222722"
+}
