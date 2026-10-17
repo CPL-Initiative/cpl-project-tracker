@@ -1,0 +1,17 @@
+-- S407 SkyMesquite, 2026-10-17: American River College's procedure record v3. The record the row holds is kept whole;
+-- v3 adds the custom_html catalog host, the catalog sweep's read, load and display runs, and what
+-- the read left open. The merge runs in SQL on the row's own record, so nothing of it is retyped.
+-- Through program_source_procedure_set, expecting the row's md5 a8a7fba9e5f117c5e5b6ebaa454b994d; the history trigger files it.
+-- Rollback: program_source_registry_history holds the prior record.
+-- Additions written by kb/_program_source_procedure_v1.py --merge.
+
+select public.program_source_procedure_set('American River College',
+  p.procedure || jsonb_build_object('v', 3,
+    'hosts', (p.procedure->'hosts') || (x.a->'hosts'),
+    'steps', (p.procedure->'steps') || (x.a->'steps'),
+    'open',  (p.procedure->'open')  || (x.a->'open')),
+  'S407 SkyMesquite, 2026-10-17 (the catalog sweep: read 39047245752, 39049026449, load 39048942683, display 39052136437)',
+  'a8a7fba9e5f117c5e5b6ebaa454b994d')
+from public.program_source_registry p,
+  (select $add${"hosts": [{"host": "arc.losrios.edu", "access": "open", "platform": "pdf", "note": "American River College's 2026-2027 catalog, as one PDF. Read from the copy Sam filed on the catalog-files release (the hand-filed step, #2199), its sha256 pinned on the first fetch; the college's host refuses the reader. The Los Rios hosts answer the reader 404. Program 07230 took a Cloudflare 502 at extraction, was extracted again alone and loaded by run 39049683293 (receipt kb/receipts/program_requirement_records_college_american_river_39049683293.json)."}], "steps": [{"run": "39047245752", "date": "2026-10-17", "plan": "program-requirements-college.yml, read with extraction (the catalog sweep; Sam's standing go of 2026-10-14, up to $40 a college)", "found": "the PDF's 998 pages in 1 load, by pypdf (4 min). 368 of 368 programs with a course list found a page (368 by their run of PDF pages); 368 extracted with function v10 for $29.75; 279 pass the machine checks."}, {"run": "39049026449", "date": "2026-10-17", "plan": "program-requirements-college.yml, read with extraction (the catalog sweep; Sam's standing go of 2026-10-14, up to $40 a college)", "found": "the PDF's 998 pages in 1 load, by pypdf (7 min); program 07230 extracted again alone (force=07230) after a Cloudflare 502 from the extraction gateway, bringing the college's extraction to $29.85; 280 of 368 pass the machine checks."}, {"run": "39048942683", "date": "2026-10-17", "plan": "program-requirements-college.yml, load", "found": "326 records inserted unchecked (receipt kb/receipts/program_requirement_records_college_american_river_39048942683.json); 42 place none of their listed courses and stay out."}, {"run": "39052136437", "date": "2026-10-17", "plan": "program-requirements-college.yml, display", "found": "Display build fec9782a4dbc applied from main; the applied record beside the receipt is the rollback."}], "open": [{"question": "85 of 368 records fail the arithmetic check, 41 the coverage check, 0 the invented-course check and 5 the outcomes check.", "next": "Measure the Major only and degree-figure gaps per page layout, then write this catalog's reconcile steps (kb/program_requirements_reconcile.json) before any record is confirmed."}, {"question": "42 records place none of their listed courses and stay out of the load.", "next": "Read two of their pages for the codes they print before a re-read."}]}$add$::jsonb a) x
+where p.college = 'American River College';
