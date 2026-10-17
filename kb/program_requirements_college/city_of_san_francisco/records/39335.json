@@ -4,12 +4,12 @@
  "shape": "adt",
  "title": "Kinesiology",
  "award": "A.A- T Degree",
- "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=261",
+ "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=260",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 13004,
+  "input_tokens": 12687,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 13004,
-    "output_tokens": 7893,
+    "input_tokens": 12687,
+    "output_tokens": 8562,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,29 +30,26 @@
     "model": null
    }
   ],
-  "output_tokens": 7893,
+  "output_tokens": 8562,
   "output_tokens_details": {
-   "thinking_tokens": 1898
+   "thinking_tokens": 2629
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.20988,
- "ms": 56271,
- "seconds": 56.7,
+ "cost_usd": 0.22199,
+ "ms": 64195,
+ "seconds": 64.5,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 88,
+   "placed": 95,
    "listed": 126,
-   "share": 0.698,
+   "share": 0.754,
    "missing": [
-    "BIO108",
-    "BIO111",
-    "BIO112",
     "DANC119D",
     "DANC129D",
     "DANC141A",
@@ -65,8 +62,6 @@
     "DANC149B",
     "DANC160A",
     "DANC160B",
-    "EMT14",
-    "HLTH53",
     "PE212B",
     "PE215A",
     "PE230A",
@@ -75,7 +70,6 @@
     "PE232B",
     "PE239A",
     "PE239B",
-    "PE26",
     "PEA60",
     "PEA62",
     "PEA65",
@@ -86,7 +80,6 @@
     "PEA81",
     "PEA85",
     "PEA88",
-    "PSYCC1000",
     "STAT1000E"
    ],
    "unexplained": [],
@@ -123,8 +116,8 @@
    "pass": false,
    "status": "unequal",
    "computed": [
-    15.0,
-    21.0
+    18.0,
+    29.0
    ],
    "stated": [
     20.0,
@@ -132,7 +125,7 @@
    ],
    "against": "program",
    "why": [
-    "the blocks sum to 15.0-21.0; the catalog states 20.0-28.0"
+    "the blocks sum to 18.0-29.0; the catalog states 20.0-28.0"
    ]
   },
   "repeated": {
@@ -140,13 +133,13 @@
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 4,
    "courses": 0,
-   "count": 0,
+   "count": 4,
    "not_verbatim": [],
    "why": [],
    "heading_printed": true,
-   "heading_without_outcomes": true,
+   "heading_without_outcomes": false,
    "pass": true
   },
   "careers": {
@@ -164,7 +157,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "Kinesiology – AA-T Degree (heading not in the excerpt; text begins mid-section)",
+   "section_heading": "Kinesiology – AA-T Degree",
    "measure": "units",
    "total_units": {
     "min": 20,
@@ -175,7 +168,7 @@
     "min": null,
     "max": null
    },
-   "ge_pattern": null,
+   "ge_pattern": "Cal-GETC",
    "degree_total": {
     "min": null,
     "max": null
@@ -185,26 +178,84 @@
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [],
+   "outcomes": [
+    "Integrate and articulate appropriate scientific and quantitative conclusions in regards to human movement.",
+    "Evaluate the role of physical activity and its impact on leading a healthy, functional lifestyle.",
+    "Explain the range of occupational and educational pathways in Kinesiology.",
+    "Analyze the value of distinct physical activities."
+   ],
    "careers": []
   },
   "blocks": [
    {
-    "name": "One of the following",
-    "rule": "choose_courses",
-    "minimum": 1,
+    "name": "Required Units",
+    "rule": "all",
+    "minimum": null,
     "option_group": null,
     "stated": {
-     "min": 4,
-     "max": 6
+     "min": 11,
+     "max": 12
     },
     "courses": [
      {
-      "code": "CHEM 32",
+      "code": "PE 26",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIO 108",
       "units": 4,
       "units_max": null,
       "alternatives": [],
-      "catalog_addition": true
+      "catalog_addition": false
+     },
+     {
+      "code": "BIO 111",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BIO 112",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Choose two courses from the following",
+    "rule": "choose_courses",
+    "minimum": 2,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 12
+    },
+    "courses": [
+     {
+      "code": "EMT 14",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HLTH 53",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
      },
      {
       "code": "SOC 1",
@@ -214,24 +265,18 @@
       "catalog_addition": false
      },
      {
-      "code": "CHEM 101A",
-      "units": 6,
+      "code": "CHEM 32",
+      "units": 4,
       "units_max": null,
-      "alternatives": [],
+      "alternatives": [
+       {
+        "code": "CHEM 101A",
+        "units": 6,
+        "catalog_addition": true
+       }
+      ],
       "catalog_addition": true
-     }
-    ]
-   },
-   {
-    "name": "Both of the following",
-    "rule": "all",
-    "minimum": null,
-    "option_group": null,
-    "stated": {
-     "min": 4,
-     "max": 4
-    },
-    "courses": [
+     },
      {
       "code": "PHYC 2A",
       "units": 3,
@@ -245,53 +290,34 @@
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
-     }
-    ]
-   },
-   {
-    "name": "One of the following statistics courses",
-    "rule": "choose_courses",
-    "minimum": 1,
-    "option_group": null,
-    "stated": {
-     "min": 26,
-     "max": 26
-    },
-    "courses": [
+     },
      {
       "code": "ECON 5",
       "units": 5,
       "units_max": null,
-      "alternatives": [],
+      "alternatives": [
+       {
+        "code": "LALS 5",
+        "units": 5,
+        "catalog_addition": false
+       },
+       {
+        "code": "PSYC 5",
+        "units": 5,
+        "catalog_addition": false
+       },
+       {
+        "code": "STAT C1000",
+        "units": 5,
+        "catalog_addition": false
+       },
+       {
+        "code": "STAT C1000E",
+        "units": 6,
+        "catalog_addition": true
+       }
+      ],
       "catalog_addition": false
-     },
-     {
-      "code": "LALS 5",
-      "units": 5,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "PSYC 5",
-      "units": 5,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "STAT C1000",
-      "units": 5,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "STAT C1000E",
-      "units": 6,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
      }
     ]
    },
@@ -920,38 +946,6 @@
   "course_outcomes": [],
   "missing_explained": [
    {
-    "code": "BIO 108",
-    "why": "not in the Kinesiology excerpt (likely on preceding page 260); appears only in Medical Administrative Assisting section"
-   },
-   {
-    "code": "BIO 111",
-    "why": "not in the Kinesiology excerpt (likely on page 260); appears only in Medical Administrative Assisting section"
-   },
-   {
-    "code": "BIO 112",
-    "why": "not in the Kinesiology excerpt; appears only in Medical Administrative Assisting section"
-   },
-   {
-    "code": "PE 26",
-    "why": "not in the text (likely on preceding page 260)"
-   },
-   {
-    "code": "HLTH 53",
-    "why": "not in the text (likely on preceding page 260)"
-   },
-   {
-    "code": "EMT 14",
-    "why": "not in the text (likely on preceding page 260)"
-   },
-   {
-    "code": "PSYC C1000",
-    "why": "named only in the Medical Administrative Assisting AS section"
-   },
-   {
-    "code": "STAT 1000E",
-    "why": "catalog prints STAT C1000E instead; likely the same course, recorded as printed"
-   },
-   {
     "code": "DANC 119D",
     "why": "not in the text"
    },
@@ -1005,7 +999,7 @@
    },
    {
     "code": "PE 215A",
-    "why": "not in the text"
+    "why": "not in the text (catalog lists PE 215B)"
    },
    {
     "code": "PE 230A",
@@ -1033,55 +1027,59 @@
    },
    {
     "code": "PE A 60",
-    "why": "not listed; text only says to contact the department about using a PE A course"
+    "why": "PE A courses only mentioned generally in a note (contact department); not listed"
    },
    {
     "code": "PE A 62",
-    "why": "not listed; text only says to contact the department about using a PE A course"
+    "why": "PE A courses only mentioned generally in a note; not listed"
    },
    {
     "code": "PE A 65",
-    "why": "not listed; text only says to contact the department about using a PE A course"
+    "why": "PE A courses only mentioned generally in a note; not listed"
    },
    {
     "code": "PE A 66",
-    "why": "not listed; text only says to contact the department about using a PE A course"
+    "why": "PE A courses only mentioned generally in a note; not listed"
    },
    {
     "code": "PE A 67",
-    "why": "not listed; text only says to contact the department about using a PE A course"
+    "why": "PE A courses only mentioned generally in a note; not listed"
    },
    {
     "code": "PE A 68",
-    "why": "not listed; text only says to contact the department about using a PE A course"
+    "why": "PE A courses only mentioned generally in a note; not listed"
    },
    {
     "code": "PE A 69",
-    "why": "not listed; text only says to contact the department about using a PE A course"
+    "why": "PE A courses only mentioned generally in a note; not listed"
    },
    {
     "code": "PE A 81",
-    "why": "not listed; text only says to contact the department about using a PE A course"
+    "why": "PE A courses only mentioned generally in a note; not listed"
    },
    {
     "code": "PE A 85",
-    "why": "not listed; text only says to contact the department about using a PE A course"
+    "why": "PE A courses only mentioned generally in a note; not listed"
    },
    {
     "code": "PE A 88",
-    "why": "not listed; text only says to contact the department about using a PE A course"
+    "why": "PE A courses only mentioned generally in a note; not listed"
+   },
+   {
+    "code": "STAT 1000E",
+    "why": "catalog prints STAT C1000E (recorded as catalog addition); likely the same course"
    }
   ],
   "notes": [
-   "The excerpt begins on page 261 in the middle of the Kinesiology AA-T requirements; the section heading, program summary, outcomes, careers, and the first requirement blocks (likely PE 26, BIO 108, BIO 111, HLTH 53, EMT 14) are on a preceding page not provided. Section heading is inferred.",
-   "The blocks shown may belong to a larger 'choose N from List B' structure whose heading is on the missing page; reviewer should check whether 'One of the following', 'Both of the following' and the statistics block are alternatives within a larger choice.",
-   "In the 'One of the following: 4.0-6.0' block, SOC 1 is printed between CHEM 32 'OR' and CHEM 101A; this looks like a layout/extraction anomaly. Recorded as three options.",
-   "The statistics block's printed total '26.0' appears to be an extraction error (courses are 5.0-6.0 units); recorded as printed.",
-   "'Choose three courses from the following' requires each course from a different area (Aquatics, Combatives, Individual sports, Fitness, Team sports, Dance); recorded as one block. Contact the department about using a PE Athletics (PE A) course to fulfill part of this requirement.",
-   "Units for PE 254-PE 256C and for DANC 34A-DANC 173 / PE 233A-233B were printed in displaced columns; assigned 1.0 each by position.",
-   "Total: 20.0-28.0 is printed at the end of the section and recorded as total_units (major total). No GE pattern or degree total is printed in the excerpt.",
-   "No program learning outcomes or careers for Kinesiology appear in the excerpt; outcomes and careers printed belong to Law Enforcement Career Preparation and Medical Administrative Assisting sections and were not used."
+   "BIO 111 or BIO 112 ('One of the following: 4.0-5.0') recorded as one entry with an alternative inside the Required Units block, consistent with the block's printed 11.0-12.0.",
+   "In 'Choose two courses from the following' (6.0-12.0), nested choices count as one pick each: CHEM 32 or CHEM 101A ('One of the following: 4.0-6.0'); PHYC 2A AND PHYC 2AL together ('Both of the following: 4.0') count as a single choice; one statistics course (ECON 5, LALS 5, PSYC 5, STAT C1000, STAT C1000E).",
+   "SOC 1 is printed between 'CHEM 32 OR' and 'CHEM 101A', apparently a layout error; recorded as a standalone option in the choose-two list. Reviewer should verify.",
+   "The statistics sub-list prints '26.0' as its units, which appears garbled (likely 5.0-6.0).",
+   "PHYC 2A printed at 3.0 units; the state file stores 0.",
+   "Movement-based courses: choose three, each from a different area (Aquatics, Combatives, Individual sports, Fitness, Team sports, Dance); areas recorded in a single block in catalog order. Department may allow a PE Athletics (PE A) course for part of this requirement. Unit columns in this table are misaligned in the PDF text; all courses in it read as 1.0 except PE 200C and PE 202 (2.0).",
+   "The 60-unit statement is a general AA-T requirement, not recorded as degree_total; Cal-GETC units not printed.",
+   "The summary mentions 'coaching and professional careers in kinesiology' as course work topics; no careers recorded."
   ]
  },
- "extracted_run": "39047128472"
+ "extracted_run": "39056434592"
 }

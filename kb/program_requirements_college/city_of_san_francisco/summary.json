@@ -5,16 +5,16 @@
  "found": 349,
  "extracted": 349,
  "errors": 0,
- "passed_machine_checks": 233,
+ "passed_machine_checks": 248,
  "failed": {
-  "coverage": 65,
-  "invented": 9,
-  "arithmetic": 89,
+  "coverage": 62,
+  "invented": 8,
+  "arithmetic": 73,
   "repeated": 1,
   "outcomes": 1
  },
- "cost_usd": 23.6,
- "cost_per_program": 0.0676,
+ "cost_usd": 23.72,
+ "cost_per_program": 0.068,
  "not_found": [
   {
    "control_number": "05440",
@@ -173,5 +173,5 @@
    }
   }
  ],
- "run": "39047128472"
+ "run": "39056434592"
 }

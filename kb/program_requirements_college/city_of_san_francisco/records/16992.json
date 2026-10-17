@@ -4,12 +4,12 @@
  "shape": "degree",
  "title": "Japanese",
  "award": "A.A. Degree",
- "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=111",
+ "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=178",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 7731,
+  "input_tokens": 8833,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 7731,
-    "output_tokens": 1530,
+    "input_tokens": 8833,
+    "output_tokens": 1861,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,76 +30,65 @@
     "model": null
    }
   ],
-  "output_tokens": 1530,
+  "output_tokens": 1861,
   "output_tokens_details": {
-   "thinking_tokens": 404
+   "thinking_tokens": 628
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.06152,
- "ms": 12606,
- "seconds": 12.9,
+ "cost_usd": 0.07255,
+ "ms": 15553,
+ "seconds": 15.9,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 15,
    "listed": 15,
-   "share": 0.0,
-   "missing": [
-    "JAPA1",
-    "JAPA10B",
-    "JAPA10C",
-    "JAPA16",
-    "JAPA1A",
-    "JAPA1B",
-    "JAPA2",
-    "JAPA2A",
-    "JAPA2B",
-    "JAPA3",
-    "JAPA39",
-    "JAPA3A",
-    "JAPA4",
-    "JAPA4A",
-    "JAPA4B"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
-   "count": 0,
-   "codes": [],
-   "flagged": [],
+   "count": 1,
+   "codes": [
+    "JAPA3B"
+   ],
+   "flagged": [
+    "JAPA3B"
+   ],
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    0.0,
-    0.0
+    18.0,
+    18.0
    ],
-   "stated": null,
-   "against": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    18.0,
+    18.0
+   ],
+   "against": "program",
+   "why": []
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 3,
    "courses": 0,
-   "count": 0,
+   "count": 3,
    "not_verbatim": [],
    "why": [],
-   "heading_printed": false,
+   "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
   },
@@ -114,15 +103,15 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "Not in text",
+   "section_heading": "Japanese – AA Degree",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 18,
+    "max": 18
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -139,79 +128,148 @@
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [],
+   "outcomes": [
+    "Interpret oral and written Japanese texts by applying knowledge of intermediate vocabulary and structures.",
+    "Apply a range of intermediate Japanese vocabulary, grammar, and syntax to communicate in oral and written Japanese.",
+    "Analyze and synthesize aspects of Japanese culture and society."
+   ],
    "careers": []
   },
-  "blocks": [],
-  "course_outcomes": [],
-  "missing_explained": [
+  "blocks": [
    {
-    "code": "JAPA 1",
-    "why": "Japanese A.A. section not in the text; listed only in an untitled multi-subject course list"
+    "name": "Choose 15 units from the following",
+    "rule": "choose_units",
+    "minimum": 15,
+    "option_group": null,
+    "stated": {
+     "min": 15,
+     "max": 15
+    },
+    "courses": [
+     {
+      "code": "JAPA 2",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "JAPA 2A",
+        "units": 3,
+        "catalog_addition": false
+       },
+       {
+        "code": "JAPA 2B",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "JAPA 3",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "JAPA 3A",
+        "units": 3,
+        "catalog_addition": false
+       },
+       {
+        "code": "JAPA 3B",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "JAPA 4",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "JAPA 4A",
+        "units": 3,
+        "catalog_addition": false
+       },
+       {
+        "code": "JAPA 4B",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "JAPA 16",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "JAPA 10B",
-    "why": "Japanese A.A. section not in the text; listed only in an untitled multi-subject course list"
-   },
-   {
-    "code": "JAPA 10C",
-    "why": "Japanese A.A. section not in the text; listed only in an untitled multi-subject course list"
-   },
-   {
-    "code": "JAPA 16",
-    "why": "Japanese A.A. section not in the text; listed only in an untitled multi-subject course list"
-   },
-   {
-    "code": "JAPA 1A",
-    "why": "Japanese A.A. section not in the text; listed only in an untitled multi-subject course list"
-   },
-   {
-    "code": "JAPA 1B",
-    "why": "Japanese A.A. section not in the text; listed only in an untitled multi-subject course list"
-   },
-   {
-    "code": "JAPA 2",
-    "why": "Japanese A.A. section not in the text; listed only in an untitled multi-subject course list"
-   },
-   {
-    "code": "JAPA 2A",
-    "why": "Japanese A.A. section not in the text; listed only in an untitled multi-subject course list"
-   },
-   {
-    "code": "JAPA 2B",
-    "why": "Japanese A.A. section not in the text; listed only in an untitled multi-subject course list"
-   },
-   {
-    "code": "JAPA 3",
-    "why": "Japanese A.A. section not in the text; listed only in an untitled multi-subject course list"
-   },
-   {
-    "code": "JAPA 39",
-    "why": "Japanese A.A. section not in the text; listed only in an untitled multi-subject course list"
-   },
-   {
-    "code": "JAPA 3A",
-    "why": "Japanese A.A. section not in the text; listed only in an untitled multi-subject course list"
-   },
-   {
-    "code": "JAPA 4",
-    "why": "Japanese A.A. section not in the text; listed only in an untitled multi-subject course list"
-   },
-   {
-    "code": "JAPA 4A",
-    "why": "Japanese A.A. section not in the text; listed only in an untitled multi-subject course list"
-   },
-   {
-    "code": "JAPA 4B",
-    "why": "Japanese A.A. section not in the text; listed only in an untitled multi-subject course list"
+    "name": "Choose 3 units from the following",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "JAPA 1",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "JAPA 1A",
+        "units": 3,
+        "catalog_addition": false
+       },
+       {
+        "code": "JAPA 1B",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "JAPA 10B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "JAPA 10C",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "JAPA 39",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    }
   ],
+  "course_outcomes": [],
+  "missing_explained": [],
   "notes": [
-   "The supplied text (catalog page 111) does not contain the Japanese A.A. Degree section: no heading, description, requirements, totals, outcomes or careers for the Japanese program appear.",
-   "Page 111 is a continuation of an untitled multi-subject course list (ITAL, JAPA, LALS, LGBT, NAIS, PHIL, PHST, PIL, RUSS, SPAN), apparently an elective or area list belonging to another program (e.g., a humanities/cultural studies degree); its requirement rule and heading are on an earlier page. It was not used as the Japanese degree's requirements.",
-   "That list also names JAPA 3B, JAPA 10A, JAPA 17 and JAPA 18, which are not on the closed list.",
-   "Reviewer should locate the actual Japanese A.A. Degree section elsewhere in the 2026-27 CCSF catalog."
+   "Each level option is printed as 'JAPA N (5.0) OR Both of the following (6.0): JAPA NA AND JAPA NB'. Recorded as JAPA N with alternatives JAPA NA and JAPA NB; the alternative path requires both Part I and Part II together (6 units), not either one alone.",
+   "Each level option is printed with a range of 5.0-6.0 units (second-, third-, fourth-level options in the 15-unit block; first-level option in the 3-unit block).",
+   "JAPA 3B (Intermediate Japanese Part II, 3.0) is printed in the AA section but is not in the closed list; marked catalog_addition.",
+   "Total printed for the AA major: 18.0 units. No degree total or GE units are printed; the page refers to the Associate Degree Requirements chapter for general education.",
+   "The Certificate of Achievement section that follows (with JAPA 10A, 17, 18 and its own outcomes) was not used for this record."
   ]
  },
- "extracted_run": "39047128472"
+ "extracted_run": "39056434592"
 }

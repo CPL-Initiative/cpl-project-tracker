@@ -5,7 +5,7 @@
  "catalog_year": "2026-2027",
  "programs": 417,
  "with_closed_list": 371,
- "started": "2026-10-17T15:56:06Z",
+ "started": "2026-10-17T18:04:39Z",
  "pdf": {
   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf",
   "access": "hand_filed",
@@ -47,13 +47,14 @@
    {
     "control_number": "05429",
     "pages": [
+     299,
      300
     ],
-    "named": false,
+    "named": true,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 300] CCSF Catalog - 2026/27 for completion of an AA or AS degree is four semesters, depending on student preparation and the number of units completed per semester. R"
+    "opens": "[page 299] CCSF Catalog - 2026/27 Required Courses Course TITLE UNITS Required Units 6.0 ARCH 20 Architectural Graphics I 3.0 ARCH 22A Delineation and Rendering 3.0 C"
    },
    {
     "control_number": "05430",
@@ -167,16 +168,16 @@
    {
     "control_number": "05459",
     "pages": [
+     320,
+     321,
      322,
-     323,
-     324,
-     325
+     323
     ],
-    "named": false,
+    "named": true,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.875,
-    "opens": "[page 322] CCSF Catalog - 2026/27 Please meet with a counselor and read the Associate Degree Requirements chapter of the CCSF Catalog for complete information. Generally,"
+    "opens": "[page 320] Electronic Engineering Technology – AS Degree Program Summary The Associate of Science Degree in Electronic Engineering Technology offers students training for employment in industries utilizing analog and "
    },
    {
     "control_number": "05462",
@@ -297,13 +298,14 @@
    {
     "control_number": "05499",
     "pages": [
+     100,
      101
     ],
-    "named": false,
+    "named": true,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 101] 1. Arrange floral project proficiently and artistically. 2. Identify, select, and purchase plants and flowers appropriate for floral design products and retail busine"
+    "opens": "[page 100] Program Summary The Floral and Special Events Coordinator curriculum is designed to train floral design students to execute all details necessary to create a variety of eve"
    },
    {
     "control_number": "05503",
@@ -373,13 +375,14 @@
    {
     "control_number": "09172",
     "pages": [
+     424,
      425
     ],
-    "named": false,
+    "named": true,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.909,
-    "opens": "[page 425] CCSF Catalog - 2026/27 O H 77 Spring and Summer Plant Identification 4.0 Third semester Units 9.0 OR ESL 79 ESL Public Speaking and Advanced Pronunciation 3.0 OR"
+    "opens": "[page 424] Nursery and Garden-Center Operation – AS Degree Program Summary Students who complete the curriculum in Nursery and Garden-Center Operation satisfactorily are qualified for employment in the wholesale and r"
    },
    {
     "control_number": "09174",
@@ -433,13 +436,14 @@
    {
     "control_number": "09183",
     "pages": [
+     421,
      422
     ],
-    "named": false,
+    "named": true,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.923,
-    "opens": "[page 422] CCSF Catalog - 2026/27 Associate Degree Requirements chapter of the CCSF Catalog for complete information. Generally, minimum time for complet"
+    "opens": "[page 421] CCSF Catalog - 2026/27 Course TITLE UNITS Required Units 7.0 WELD 140 Manufacturing Processes 3.0 WELD 144A Survey of Welding Processes 2.0 WELD 144B Intermediate Welding Proces"
    },
    {
     "control_number": "09189",
@@ -647,14 +651,14 @@
    {
     "control_number": "12360",
     "pages": [
-     145,
-     146
+     142,
+     143
     ],
-    "named": false,
+    "named": true,
     "cn_printed": false,
     "titled": true,
-    "coverage": 0.842,
-    "opens": "[page 145] 2. Demonstrate respectful and professional communication skills, both written and verbal, to interact effectively in the hospitality industry. 3. Apply financial man"
+    "coverage": 0.895,
+    "opens": "[page 142] Food Service Management – AS Degree Program Summary The Associate of Sciene in Food Service Management prepares students for employment or career advancement in the food and beverage industry. The varied co"
    },
    {
     "control_number": "12361",
@@ -686,13 +690,15 @@
    {
     "control_number": "12364",
     "pages": [
-     312
+     348,
+     349,
+     350
     ],
-    "named": false,
+    "named": true,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 312] CCSF Catalog - 2026/27 Required Courses Course TITLE UNITS Core courses: Units 9.0 CNIT 103 Computer Hardware 3.0 CNIT 120 Ne"
+    "opens": "[page 348] Routing and Switching (Cisco) – Certificate of Achievement Program Summary This certificate includes instruction and practice in the theory, design, configuration, and operation of simple Local and Wide Are"
    },
    {
     "control_number": "12777",
@@ -760,14 +766,16 @@
    {
     "control_number": "16818",
     "pages": [
+     274,
+     275,
      276,
      277
     ],
-    "named": false,
+    "named": true,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 276] CCSF Catalog - 2026/27 HLTH 30 Drugs, Health, and Society 3.0 HLTH 54 Introduction to Public Health 3.0 HLTH 221 Health and Social Justice 3.0 SOC 1 Introductio"
+    "opens": "[page 274] CCSF Catalog - 2026/27 Required Units 21.0 BIO 134 Introduction to Nutrition for Health Sciences 3.0 PSYC C1000 CHEM 101A CHEM 101B BIO 120 Intro"
    },
    {
     "control_number": "16916",
@@ -808,27 +816,29 @@
    {
     "control_number": "16992",
     "pages": [
-     111
+     178,
+     179,
+     180
     ],
-    "named": false,
+    "named": true,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 111] ITAL 11A Continuation of Intermediate Conversational Italian 3.0 ITAL 11B Continuation of Intermediate C"
+    "opens": "[page 178] Japanese – AA Degree Program Summary The Japanese program provides instruction in developing a student’s ability to communicate in both written and oral Japanese through the intermediate level and to gain a"
    },
    {
     "control_number": "16993",
     "pages": [
+     183,
      184,
      185,
-     186,
-     187
+     186
     ],
-    "named": false,
+    "named": true,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 184] Choose a first-level option 5.0-6.0 SPAN 1 OR Elementary Spanish 5.0 Both of the following: 6.0 SPAN 1A AND Elementary Spanish 3.0 SPAN 1B Elementa"
+    "opens": "[page 183] Choose a first-level option 5.0-6.0 SPAN 1 Elementary Spanish 5.0 OR Both of the following: 6.0 SPAN 1A Elementary Spanish 3.0 AND SPAN 1B Elementary Spanish 3.0 SPAN"
    },
    {
     "control_number": "17043",
@@ -924,16 +934,16 @@
    {
     "control_number": "17951",
     "pages": [
+     303,
      304,
      305,
-     306,
-     307
+     306
     ],
-    "named": false,
+    "named": true,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.889,
-    "opens": "[page 304] CCSF Catalog - 2026/27 STAT C1000 Introduction to Statistics 5.0 OR MATH 90 Precalculus Algebra 5.0 Required math courses can be r"
+    "opens": "[page 303] Biotechnology – AS Degree Program Summary The Associate of Science Degree in Biotechnology offers students specialized training for employment as biotechnicians engaged in research and development, as well "
    },
    {
     "control_number": "17952",
@@ -1030,14 +1040,15 @@
    {
     "control_number": "19621",
     "pages": [
+     372,
      373,
      374
     ],
-    "named": false,
+    "named": true,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 373] CCSF Catalog - 2026/27 2. Examine the political, social, cultural and economic realities of Latin America and its people. 3. Evaluate the intersection"
+    "opens": "[page 372] CCSF Catalog - 2026/27 toward careers in: 1. Apply leadership skills to the work of labor and community organizations. 2. Analyze historical and current tre"
    },
    {
     "control_number": "19622",
@@ -1054,13 +1065,14 @@
    {
     "control_number": "19664",
     "pages": [
+     397,
      398
     ],
-    "named": false,
+    "named": true,
     "cn_printed": false,
     "titled": true,
-    "coverage": 0.909,
-    "opens": "[page 398] CCSF Catalog - 2026/27 PSYC 25 Psychology of Gender 3.0 SOC 25 Sex and Gender in the U.S. 3.0 Choose three units from the follo"
+    "coverage": 0.97,
+    "opens": "[page 397] CCSF Catalog - 2026/27 OR IDST 37 Introduction to Ethnic Studies 3.0 SOC 11 Intro to Social Work and Human Services 3.0 SOC 21 Introduction to Research Methods 3.0 "
    },
    {
     "control_number": "19800",
@@ -1448,16 +1460,14 @@
    {
     "control_number": "30298",
     "pages": [
-     196,
-     197,
      198,
      199
     ],
-    "named": false,
+    "named": true,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 196] Required Courses Course TITLE UNITS Required Units 6.0 CDEV 53 Child Growth and Development 3.0 CDEV 67 Child, Family, and Community 3.0 Choose 6 unit"
+    "opens": "[page 198] 4. Analyze child development and how various factors affect children and families. 5. Evaluate early childhood practices that promote positive development in young childre"
    },
    {
     "control_number": "30419",
@@ -1476,15 +1486,16 @@
    {
     "control_number": "30513",
     "pages": [
+     235,
      236,
      237,
      238
     ],
-    "named": false,
+    "named": true,
     "cn_printed": false,
     "titled": true,
-    "coverage": 0.725,
-    "opens": "[page 236] CCSF Catalog - 2026/27 Choose six units from the following Units 6.0 HLTH 10 HLTH 30 HLTH 38 HLTH 48 Health and Aging Drugs, He"
+    "coverage": 0.975,
+    "opens": "[page 235] The Associate of Science Degree in Community and Public Health prepares students to address the health needs of our diverse communities. The coursework covers a breadth of health topics, an analysis of the ma"
    },
    {
     "control_number": "30517",
@@ -1513,14 +1524,15 @@
    {
     "control_number": "30665",
     "pages": [
+     384,
      385,
      386
     ],
-    "named": false,
+    "named": true,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.958,
-    "opens": "[page 385] CCSF Catalog - 2026/27 Required Units 9.0 PSYC C1000 Introduction to Psychology 3.0 PSYC 1B Biological Psychology 3.0 PSYC 2 Research Metho"
+    "opens": "[page 384] CCSF Catalog - 2026/27 Required Units 12.0 POLS 3 POLS 5 Political Theory International Relations 3.0 3.0 POLS 2 POLS C1000 Comparative Government American"
    },
    {
     "control_number": "30687",
@@ -1536,14 +1548,15 @@
    {
     "control_number": "30870",
     "pages": [
+     292,
      293,
      294
     ],
-    "named": false,
+    "named": true,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 293] CCSF Catalog - 2026/27 Each course must be completed with a final grade of \"C\" or \"P\" or higher. The minimum time for completion of this ce"
+    "opens": "[page 292] CCSF Catalog - 2026/27 ANTH 20 ANTH 25 HLTH 38 HLTH 48 Queer Anthropology Culture, Gender and Sexuality Trauma, Resilience and Recovery Vio"
    },
    {
     "control_number": "30871",
@@ -1587,14 +1600,15 @@
    {
     "control_number": "31395",
     "pages": [
+     400,
      401,
      402
     ],
-    "named": false,
+    "named": true,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 401] CCSF Catalog - 2026/27 Program Requirements and Completion Time Students must complete each course with a grade of \"C\" or higher. Students may apply for certificate if t"
+    "opens": "[page 400] CCSF Catalog - 2026/27 Program Summary The Auto Body Repair and Refinishing Certificate of Achievement prepares students to enter the auto body repair field with a"
    },
    {
     "control_number": "31413",
@@ -1661,14 +1675,15 @@
    {
     "control_number": "31726",
     "pages": [
+     353,
      354,
      355
     ],
-    "named": false,
+    "named": true,
     "cn_printed": false,
     "titled": true,
-    "coverage": 0.75,
-    "opens": "[page 354] CCSF Catalog - 2026/27 PSYC 5 Statistics for Behavioral Sciences 5.0 LALS 5 Introduction to Statistical Methods in Latin American and Latino/a Stu"
+    "coverage": 1.0,
+    "opens": "[page 353] Anthropology – AA-T Degree Program Summary Associate in Arts in Anthropology for Transfer. The program is designed to prepare students who wish to transfer to pursue further studies in anthropology. It is a"
    },
    {
     "control_number": "31727",
@@ -1782,13 +1797,14 @@
    {
     "control_number": "32837",
     "pages": [
+     67,
      68
     ],
-    "named": false,
+    "named": true,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 68] Program Requirements and Completion Time This certificate requires successful completion of the Visual Design Foundation Certificate or demonstration of equivalent kno"
+    "opens": "[page 67] expertise with a working understanding of design fundamentals, typography, and color. Students will refine their skills with hands-on experience in Emerge Studio, our "
    },
    {
     "control_number": "32838",
@@ -1826,27 +1842,28 @@
    {
     "control_number": "33208",
     "pages": [
+     183,
      184,
      185,
-     186,
-     187
+     186
     ],
-    "named": false,
+    "named": true,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.974,
-    "opens": "[page 184] Choose a first-level option 5.0-6.0 SPAN 1 OR Elementary Spanish 5.0 Both of the following: 6.0 SPAN 1A AND Elementary Spanish 3.0 SPAN 1B Elementa"
+    "opens": "[page 183] Choose a first-level option 5.0-6.0 SPAN 1 Elementary Spanish 5.0 OR Both of the following: 6.0 SPAN 1A Elementary Spanish 3.0 AND SPAN 1B Elementary Spanish 3.0 SPAN"
    },
    {
     "control_number": "33298",
     "pages": [
+     98,
      99
     ],
-    "named": false,
+    "named": true,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 99] 5. Demonstrate standards of professional conduct in a media context. Program Requirements and Completion Time Degree Requirements: Students who wish t"
+    "opens": "[page 98] Required Units 6.0 CINE 18 American Cinema 3.0 CINE 21 Introduction to Film Studies 3.0 Choose two courses from the following Units 6.0 CIN"
    },
    {
     "control_number": "33299",
@@ -1901,26 +1918,29 @@
    {
     "control_number": "35205",
     "pages": [
+     331,
      332,
      333
     ],
-    "named": false,
+    "named": true,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 332] CCSF Catalog - 2026/27 The minimum time for completion is 4 semesters; completion time will vary based on student preparation and number of units completed per semeste"
+    "opens": "[page 331] CCSF Catalog - 2026/27 2. Locate, assess, and retrieve spatial data and knowledge across the GIS technical community to design solutions for GIS projects. 3. Distinguish from among u"
    },
    {
     "control_number": "35455",
     "pages": [
+     324,
+     325,
      326,
      327
     ],
-    "named": false,
+    "named": true,
     "cn_printed": false,
     "titled": true,
-    "coverage": 0.829,
-    "opens": "[page 326] CCSF Catalog - 2026/27 GEOG 1L Physical Geography Laboratory 1.0 Physical Geology 5.0 GEOL 10 AND Physical Geology 3.0 GEOL 10"
+    "coverage": 0.951,
+    "opens": "[page 324] CCSF Catalog - 2026/27 4.0 PHYC 4B Electromagnetism for Scientists and Engineers 3.0 AND PHYC 4BL Electromagnetism Laboratory for Scientis"
    },
    {
     "control_number": "35545",
@@ -1936,16 +1956,16 @@
    {
     "control_number": "35690",
     "pages": [
-     389,
-     390,
-     391,
-     392
+     386,
+     387,
+     388,
+     389
     ],
-    "named": false,
+    "named": true,
     "cn_printed": false,
     "titled": true,
-    "coverage": 0.556,
-    "opens": "[page 389] CCSF Catalog - 2026/27 AFAM 42 ANTH 3C ANTH 12 ASAM 8 ASAM 20 ASAM 22 ASAM 27 The Origins and History of Race Theory and Modern Racism In"
+    "coverage": 0.981,
+    "opens": "[page 386] CCSF Catalog - 2026/27 3. Analyze the intersections of race, gender, class, ethnicity, and sexuality within the Black and African American experience. 4"
    },
    {
     "control_number": "35708",
@@ -1983,13 +2003,14 @@
    {
     "control_number": "35712",
     "pages": [
+     72,
      73
     ],
-    "named": false,
+    "named": true,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 73] 1. Plan and execute a production set-up for voice, acoustic, and electronic instruments. 2. Produce content working in a variety of professional roles in the context o"
+    "opens": "[page 72] Audio and Video for the Web – Certificate of Accomplishment Program Summary The Audio and Video for the Web Certificate of Accomplishment combines the study of media conte"
    },
    {
     "control_number": "35713",
@@ -2055,16 +2076,16 @@
    {
     "control_number": "36297",
     "pages": [
+     389,
      390,
      391,
-     392,
-     393
+     392
     ],
-    "named": false,
+    "named": true,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 390] CCSF Catalog - 2026/27 include the units required for full completion of the Cal-GETC curriculum and the units for the major as specified"
+    "opens": "[page 389] CCSF Catalog - 2026/27 AFAM 42 ANTH 3C ANTH 12 ASAM 8 ASAM 20 ASAM 22 ASAM 27 The Origins and History of Race Theory and Modern Racism In"
    },
    {
     "control_number": "36368",
@@ -2335,16 +2356,16 @@
    {
     "control_number": "37037",
     "pages": [
+     322,
+     323,
      324,
-     325,
-     326,
-     327
+     325
     ],
-    "named": false,
+    "named": true,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.931,
-    "opens": "[page 324] CCSF Catalog - 2026/27 4.0 PHYC 4B Electromagnetism for Scientists and Engineers 3.0 AND PHYC 4BL Electromagnetism Laboratory for Scientis"
+    "opens": "[page 322] CCSF Catalog - 2026/27 Please meet with a counselor and read the Associate Degree Requirements chapter of the CCSF Catalog for complete information. Generally,"
    },
    {
     "control_number": "37038",
@@ -2458,16 +2479,15 @@
    {
     "control_number": "37513",
     "pages": [
-     375,
-     376,
-     377,
-     378
+     391,
+     392,
+     393
     ],
-    "named": false,
+    "named": true,
     "cn_printed": false,
     "titled": true,
-    "coverage": 0.737,
-    "opens": "[page 375] CCSF Catalog - 2026/27 3. Examine gender identities, gender expressions, and sexual orientation across cultures historically and/or in a contemporary context. "
+    "coverage": 0.553,
+    "opens": "[page 391] Social Justice Studies: General, Labor and Community Studies – AA-T Degree Program Summary The Associate of Arts in Social Justice Studies: General in Labor and Community Studies for Transfer (AA-T) is des"
    },
    {
     "control_number": "37561",
@@ -2523,13 +2543,14 @@
    {
     "control_number": "37602",
     "pages": [
+     329,
      330
     ],
-    "named": false,
+    "named": true,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 330] CCSF Catalog - 2026/27 3. Utilize the Unity game engine and integrated development environment (IDE) to the creation of games. 4. Simulate real-world situations and beh"
+    "opens": "[page 329] CCSF Catalog - 2026/27 CNIT 103 Computer Hardware 3.0 CNIT 104 Operating Systems Technologies 3.0 CNIT 106 Introduction to Networks 3.0 CNIT 131 Internet Basics and B"
    },
    {
     "control_number": "37607",
@@ -2721,14 +2742,16 @@
    {
     "control_number": "37900",
     "pages": [
+     96,
+     97,
      98,
      99
     ],
-    "named": false,
+    "named": true,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.947,
-    "opens": "[page 98] Required Units 6.0 CINE 18 American Cinema 3.0 CINE 21 Introduction to Film Studies 3.0 Choose two courses from the following Units 6.0 CIN"
+    "opens": "[page 96] Film Studies – AA Degree Program Summary The Film Studies major provides students with critical thinking skills and various perspectives on historical and contemporary media forms. The major focuses on close"
    },
    {
     "control_number": "38072",
@@ -2745,14 +2768,15 @@
    {
     "control_number": "38223",
     "pages": [
+     408,
      409,
      410
     ],
-    "named": false,
+    "named": true,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 409] CCSF Catalog - 2026/27 CNST 77 OSHA 30 2.5 CNST 103 Residential Plumbing 3.0 CNST 107 Blueprint Reading 3.0 CNST 108 Contractor License Prep"
+    "opens": "[page 408] Construction – AS Degree Program Summary This Construction Associate in Science Degree prepares students to enter the construction field with all the necessary skills to perform entry-level work as well as "
    },
    {
     "control_number": "38225",
@@ -3093,16 +3117,16 @@
    {
     "control_number": "39335",
     "pages": [
+     260,
      261,
      262,
-     263,
-     264
+     263
     ],
-    "named": false,
+    "named": true,
     "cn_printed": false,
     "titled": true,
-    "coverage": 0.73,
-    "opens": "[page 261] CCSF Catalog - 2026/27 One of the following: 4.0-6.0 CHEM 32 Introduction to Medical Chemistry 4.0 OR SOC 1 Introduction to So"
+    "coverage": 0.754,
+    "opens": "[page 260] Kinesiology – AA-T Degree Program Summary The Associate Degree for Transfer in Kinesiology offers students comprehensive lower division course work in kinesiology, basic human anatomy, physiology, principle"
    },
    {
     "control_number": "39647",
@@ -3141,13 +3165,14 @@
    {
     "control_number": "39728",
     "pages": [
-     111
+     179,
+     180
     ],
-    "named": false,
+    "named": true,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 111] ITAL 11A Continuation of Intermediate Conversational Italian 3.0 ITAL 11B Continuation of Intermediate C"
+    "opens": "[page 179] JAPA 4A Continuation of Intermediate Japanese Part I 3.0 AND JAPA 4B Continuation of Intermediate Japanese Part II 3.0 JAPA 16 Beginning Kanji for Reading and Writing 3.0 "
    },
    {
     "control_number": "39913",
@@ -3211,16 +3236,16 @@
    {
     "control_number": "40075",
     "pages": [
+     393,
      394,
      395,
-     396,
-     397
+     396
     ],
-    "named": false,
+    "named": true,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.786,
-    "opens": "[page 394] CCSF Catalog - 2026/27 1. Critique major theories related to the understanding of social problems and social welfare policy. 2. Apply various methods of inquiry "
+    "opens": "[page 393] CCSF Catalog - 2026/27 The minimum time for completion is 4 semesters. Completion time will vary based on student preparation and number of "
    },
    {
     "control_number": "40151",
@@ -3251,13 +3276,14 @@
    {
     "control_number": "40167",
     "pages": [
+     343,
      344
     ],
-    "named": false,
+    "named": true,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 344] CCSF Catalog - 2026/27 2. Protect the IT environment using hacking techniques. 3. Assess confidentiality, integrity, availability, and non-repudiation (ClAN). 4. Apply strate"
+    "opens": "[page 343] CCSF Catalog - 2026/27 CNIT 401 Windows Technical Support 3.0 CNIT 416 Installing and Configuring Windows Server 2016 3.0 CNIT 417 Administering Windows Server 201"
    },
    {
     "control_number": "40168",
@@ -3652,13 +3678,14 @@
    {
     "control_number": "40817",
     "pages": [
+     295,
      296
     ],
-    "named": false,
+    "named": true,
     "cn_printed": false,
     "titled": true,
-    "coverage": 0.842,
-    "opens": "[page 296] CCSF Catalog - 2026/27 PE 220 Intensive Yoga 2.0 DANC 173 Yoga Movement 1.0 Choose 1 course from the following Units 4.0 BIO 106 Introduction to Human Anato"
+    "coverage": 1.0,
+    "opens": "[page 295] Yoga – Certificate of Achievement Program Summary The Certificate of Achievement in Yoga is comprehensive in nature, reflecting a commitment to benefit local populations by offering lifelong learning opport"
    },
    {
     "control_number": "40876",
@@ -3701,14 +3728,15 @@
    {
     "control_number": "41048",
     "pages": [
+     380,
      381,
      382
     ],
-    "named": false,
+    "named": true,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 381] CCSF Catalog - 2026/27 HIST 37 History of the Philippines 3.0 PHST 40 Contemporary Issues in the Filipino Diaspora 3.0 PHST 20 The Filipino Family 3.0 Choose "
+    "opens": "[page 380] CCSF Catalog - 2026/27 PHST 50 POLS C1000 Filipinx LGBTQ+ Identities and Culture American Government and Politics 3.0 3.0 POLS 2 POLS 3 POLS 4 Comparative G"
    },
    {
     "control_number": "41049",
@@ -3807,13 +3835,14 @@
    {
     "control_number": "41439",
     "pages": [
+     169,
      170
     ],
-    "named": false,
+    "named": true,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 170] computer, and collaboration skills. This certificate provides students, prospective employers, and others with documented evidence of persistence and accomplishment in"
+    "opens": "[page 169] Course TITLE HOURS Choose one course from the following HOURS 87.5-175.0 ESLN 3500 Intermediate Low 5 175.0 ESLN 3505 Intermediate Low 5 Abridged 87.5 ESLN 3"
    },
    {
     "control_number": "41637",
@@ -3855,14 +3884,15 @@
    {
     "control_number": "42228",
     "pages": [
+     318,
      319,
      320
     ],
-    "named": false,
+    "named": true,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 319] CCSF Catalog - 2026/27 across a range of industries, from technology and healthcare to finance, retail, and government. Graduates of this degree will be well-prepared to enter roles su"
+    "opens": "[page 318] CCSF Catalog - 2026/27 Course TITLE UNITS Required courses: Units 13.0 CNIT 120 Network Security 3.0 CNIT 121 Computer Forensics 3.0 CNIT 122 Firewalls 3.0 CNI"
    },
    {
     "control_number": "42318",
@@ -3901,15 +3931,16 @@
    {
     "control_number": "42742",
     "pages": [
+     77,
      78,
      79,
      80
     ],
-    "named": false,
+    "named": true,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 78] CINE 75A Introduction to Screenwriting 3.0 JOUR 22 Feature Writing 3.0 JOUR 29A Introduction to Magazine Editing and Production 3.0 "
+    "opens": "[page 77] The Associate of Arts Degree in Creative Writing offers a wide variety of creative writing, humanities, and arts classes to serve students with diverse goals, including transfer to UC, CSU, or other four-year "
    },
    {
     "control_number": "42908",
@@ -4116,14 +4147,15 @@
    {
     "control_number": "45925",
     "pages": [
+     308,
      309,
      310
     ],
-    "named": false,
+    "named": true,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.909,
-    "opens": "[page 309] CCSF Catalog - 2026/27 Choose 8-10 units from the following Units 8.0-10.0 MATH 110A Calculus I 5.0 MATH 110B Calculus II 5.0 The following Physics options are paired l"
+    "opens": "[page 308] Chemistry – AS Degree Program Summary Chemistry is the investigation of matter and the transformations it undergoes. Grappling with the difficult problems students will face during their lifetimes – such as"
    },
    {
     "control_number": "45951",
@@ -4142,13 +4174,13 @@
    {
     "control_number": "46300",
     "pages": [
-     734
+     208
     ],
     "named": false,
     "cn_printed": false,
     "titled": true,
-    "coverage": 0.727,
-    "opens": "[page 734] CCSF Catalog - 2026/27 MATH 115 - Discrete Mathematics (3.0) Credit (Degree Applicable) Hours: Lecture - 52.5 Grading: Only Letter Prerequisite: Precalculus or higher Recommended Prep: (MATH 1"
+    "coverage": 0.636,
+    "opens": "[page 208] CCSF Catalog - 2026/27 ENRG 3 ENVS 31 Introduction to Clean and Renewable Energy Introduction to Environment"
    },
    {
     "control_number": "46308",
@@ -4217,13 +4249,14 @@
    {
     "control_number": "46324",
     "pages": [
-     375
+     392,
+     393
     ],
-    "named": false,
+    "named": true,
     "cn_printed": false,
     "titled": true,
-    "coverage": 0.625,
-    "opens": "[page 375] CCSF Catalog - 2026/27 3. Examine gender identities, gender expressions, and sexual orientation across cultures historically and/or in a contemporary context. "
+    "coverage": 0.958,
+    "opens": "[page 392] CCSF Catalog - 2026/27 Select one course from the following LGBT 5 Introduction to Lesbian, Gay, Bisexual, and Transgender Studies SOC 25 Sex and Gender in th"
    },
    {
     "control_number": "46326",
@@ -4254,7 +4287,7 @@
   "unproven": []
  },
  "loads": 0,
- "seconds": 231.3,
+ "seconds": 318.4,
  "found": 349,
  "by_method": {
   "no_closed_list": 46,
@@ -4262,9 +4295,9 @@
   "pdf_pages": 349
  },
  "shared_pages": {
-  "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=145": [
-   "05441",
-   "12360"
+  "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=299": [
+   "05429",
+   "40433"
   ],
   "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=133": [
    "05445",
@@ -4288,6 +4321,10 @@
    "05455",
    "12363"
   ],
+  "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=320": [
+   "05459",
+   "05462"
+  ],
   "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=119": [
    "05481",
    "38446"
@@ -4299,6 +4336,10 @@
   "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=242": [
    "05493",
    "19585"
+  ],
+  "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=100": [
+   "05499",
+   "40434"
   ],
   "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=755": [
    "05503",
@@ -4312,14 +4353,14 @@
    "05523",
    "37731"
   ],
-  "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=425": [
-   "09172",
-   "22720"
-  ],
   "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=561": [
    "09175",
    "17842",
    "40432"
+  ],
+  "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=295": [
+   "09189",
+   "40817"
   ],
   "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=253": [
    "09193",
@@ -4330,9 +4371,9 @@
    "09203",
    "35115"
   ],
-  "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=401": [
-   "11384",
-   "31395"
+  "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=67": [
+   "11355",
+   "32837"
   ],
   "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=87": [
    "11817",
@@ -4346,16 +4387,6 @@
    "12361",
    "40207"
   ],
-  "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=312": [
-   "12364",
-   "17614",
-   "17615",
-   "17616",
-   "17617",
-   "17618",
-   "17619",
-   "40262"
-  ],
   "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=174": [
    "16990",
    "38267"
@@ -4364,11 +4395,7 @@
    "16991",
    "45920"
   ],
-  "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=111": [
-   "16992",
-   "39728"
-  ],
-  "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=184": [
+  "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=183": [
    "16993",
    "33208"
   ],
@@ -4376,9 +4403,14 @@
    "17043",
    "19583"
   ],
-  "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=304": [
-   "17951",
-   "40157"
+  "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=312": [
+   "17614",
+   "17615",
+   "17616",
+   "17617",
+   "17618",
+   "17619",
+   "40262"
   ],
   "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=237": [
    "19040",
@@ -4386,9 +4418,9 @@
    "36958",
    "36959"
   ],
-  "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=373": [
+  "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=372": [
    "19621",
-   "19622"
+   "40305"
   ],
   "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=92": [
    "21324",
@@ -4417,6 +4449,10 @@
    "36980",
    "37561"
   ],
+  "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=169": [
+   "24202",
+   "41439"
+  ],
   "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=168": [
    "24203",
    "36405"
@@ -4424,10 +4460,6 @@
   "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=163": [
    "24254",
    "36398"
-  ],
-  "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=409": [
-   "24289",
-   "38223"
   ],
   "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=166": [
    "24291",
@@ -4439,27 +4471,21 @@
    "31074",
    "36284"
   ],
-  "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=196": [
-   "30298",
-   "45951",
-   "46326"
-  ],
-  "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=236": [
+  "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=235": [
    "30513",
-   "32682"
+   "44751"
   ],
-  "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=385": [
+  "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=384": [
    "30665",
-   "36452"
-  ],
-  "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=375": [
-   "30897",
-   "37513",
-   "46324"
+   "32286"
   ],
   "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=347": [
    "31625",
    "44108"
+  ],
+  "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=208": [
+   "32079",
+   "46300"
   ],
   "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=131": [
    "32838",
@@ -4469,10 +4495,13 @@
    "32869",
    "46360"
   ],
+  "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=386": [
+   "35690",
+   "41637"
+  ],
   "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=73": [
    "35708",
    "35709",
-   "35712",
    "35714",
    "37160"
   ],
@@ -4492,10 +4521,6 @@
    "36715",
    "40168"
   ],
-  "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=309": [
-   "36730",
-   "45925"
-  ],
   "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=643": [
    "36964",
    "42318"
@@ -4512,6 +4537,14 @@
    "37231",
    "37737"
   ],
+  "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=318": [
+   "37480",
+   "42228"
+  ],
+  "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=391": [
+   "37513",
+   "46322"
+  ],
   "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=297": [
    "37600",
    "37738"
@@ -4523,6 +4556,10 @@
   "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=121": [
    "37777",
    "43578"
+  ],
+  "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=343": [
+   "37845",
+   "40167"
   ],
   "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=234": [
    "38225",
@@ -4537,10 +4574,6 @@
    "38445",
    "40435",
    "40590"
-  ],
-  "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=78": [
-   "39100",
-   "42742"
   ],
   "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=399": [
    "39153",
@@ -4562,10 +4595,6 @@
    "40151",
    "40169"
   ],
-  "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=344": [
-   "40167",
-   "40778"
-  ],
   "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=91": [
    "40170",
    "41353"
@@ -4586,10 +4615,6 @@
    "40705",
    "40706"
   ],
-  "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=381": [
-   "41047",
-   "41048"
-  ],
   "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=359": [
    "41310",
    "41314"
@@ -4597,6 +4622,10 @@
   "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=355": [
    "41315",
    "46308"
+  ],
+  "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=196": [
+   "45951",
+   "46326"
   ]
  },
  "not_found": [
@@ -4759,3506 +4788,15 @@
  ],
  "page_claimed": [],
  "coverage_bands": {
-  "0.5-0.8": 42,
-  "0.8-1.0": 87,
-  "1.0": 220
+  "0.5-0.8": 38,
+  "0.8-1.0": 89,
+  "1.0": 222
  },
  "would_extract": {
-  "against": null,
-  "kept": 0,
-  "programs": 349,
-  "list": [
-   {
-    "control_number": "05428",
-    "title": "Landscape Gardening and Contracting",
-    "award": "A.S. Degree",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=418",
-    "coverage": 0.929,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "05429",
-    "title": "Architecture",
-    "award": "A.S. Degree",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=300",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "05430",
-    "title": "Interior Design",
-    "award": "A.S. Degree",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=334",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "05441",
-    "title": "Hospitality Management",
-    "award": "A.S. Degree",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=145",
-    "coverage": 0.882,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "05443",
-    "title": "Marketing",
-    "award": "A.S. Degree",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=147",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "05445",
-    "title": "California Real Estate",
-    "award": "A.S. Degree",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=133",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "05449",
-    "title": "Journalism",
-    "award": "A.A. Degree",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=104",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "05450",
-    "title": "Cinema Production",
-    "award": "A.S. Degree",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=75",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "05453",
-    "title": "Computer Science",
-    "award": "A.S. Degree",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=314",
-    "coverage": 0.917,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "05454",
-    "title": "Computer Technical Support",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=315",
-    "coverage": 0.9,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "05455",
-    "title": "Computer Programming: C++",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=313",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "05459",
-    "title": "Engineering",
-    "award": "A.S. Degree",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=322",
-    "coverage": 0.875,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "05462",
-    "title": "Electronic Engineering Technology",
-    "award": "A.S. Degree",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=320",
-    "coverage": 0.938,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "05474",
-    "title": "Construction Management",
-    "award": "A.S. Degree",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=135",
-    "coverage": 0.864,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "05481",
-    "title": "Photography",
-    "award": "A.S. Degree",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=119",
-    "coverage": 0.706,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "05482",
-    "title": "Graphic Design",
-    "award": "A.A. Degree",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=103",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "05491",
-    "title": "Registered Nursing",
-    "award": "A.S. Degree",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=290",
-    "coverage": 0.895,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "05492",
-    "title": "Medical Assisting",
-    "award": "A.S. Degree",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=264",
-    "coverage": 0.958,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "05493",
-    "title": "Dental Assisting",
-    "award": "A.S. Degree",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=242",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "05495",
-    "title": "Health Information Technology",
-    "award": "A.S. Degree",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=254",
-    "coverage": 0.933,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "05496",
-    "title": "Diagnostic Medical Imaging",
-    "award": "A.S. Degree",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=246",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "05499",
-    "title": "Floristry",
-    "award": "A.S. Degree",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=101",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "05503",
-    "title": "Paralegal/Legal Studies",
-    "award": "A.A. Degree",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=755",
-    "coverage": 0.857,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "05511",
-    "title": "Library Information Technology",
-    "award": "A.S. Degree",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=339",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "05520",
-    "title": "Administration of Justice",
-    "award": "A.S. Degree",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=229",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "05521",
-    "title": "Child Development and Family Studies",
-    "award": "A.S. Degree",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=189",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "05523",
-    "title": "Fire Science Technology",
-    "award": "A.S. Degree",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=250",
-    "coverage": 0.933,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "09172",
-    "title": "Nursery and Garden-Center Operation",
-    "award": "A.S. Degree",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=425",
-    "coverage": 0.909,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "09174",
-    "title": "Commercial Cut-Flower and Greenhouse Production",
-    "award": "A.S. Degree",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=405",
-    "coverage": 0.923,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "09175",
-    "title": "Computer Accounting",
-    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=561",
-    "coverage": 0.5,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "09178",
-    "title": "Data Journalism",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=104",
-    "coverage": 0.75,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "09179",
-    "title": "Editorial Management and Design",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=104",
-    "coverage": 0.9,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "09183",
-    "title": "Mechanical Engineering Technology",
-    "award": "A.S. Degree",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=422",
-    "coverage": 0.923,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "09189",
-    "title": "Vocational Nursing",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=295",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "09191",
-    "title": "Medical Administrative Assisting",
-    "award": "A.S. Degree",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=264",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "09193",
-    "title": "Health Information Clerk II",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=253",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "09194",
-    "title": "Health Information Coding Specialist",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=253",
-    "coverage": 0.929,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "09195",
-    "title": "Health Information Technology",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=256",
-    "coverage": 0.933,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "09197",
-    "title": "Pharmacy Technician",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=281",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "09203",
-    "title": "Diagnostic Cardiac Sonography",
-    "award": "Certificate of Achievement requiring 60+S/90+Q units",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=244",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "10974",
-    "title": "Paralegal/Legal Studies",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=755",
-    "coverage": 0.857,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "11355",
-    "title": "Advanced Digital Skills",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=67",
-    "coverage": 0.846,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "11384",
-    "title": "Automotive Technician",
-    "award": "A.S. Degree",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=401",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "11515",
-    "title": "Medical Biller",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=267",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "11817",
-    "title": "Multimedia Studies: Performance Arts",
-    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=87",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "11818",
-    "title": "Web Application Programming",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=352",
-    "coverage": 0.857,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "12355",
-    "title": "Child Development: Infant/Toddler Care",
-    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=191",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "12356",
-    "title": "Child Development: School-Age Care",
-    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=192",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "12357",
-    "title": "Child Development: Administration",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=190",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "12360",
-    "title": "Food Service Management",
-    "award": "A.S. Degree",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=145",
-    "coverage": 0.842,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "12361",
-    "title": "Culinary Arts Management",
-    "award": "A.S. Degree",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=410",
-    "coverage": 0.957,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "12363",
-    "title": "Computer Programming: Java",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=313",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "12364",
-    "title": "Routing and Switching (Cisco)",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=312",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "12777",
-    "title": "Addiction and Recovery Counseling",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=227",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "14245",
-    "title": "Fashion Merchandising",
-    "award": "A.S. Degree",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=94",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "15488",
-    "title": "Landscape Construction",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=416",
-    "coverage": 0.889,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "15489",
-    "title": "Landscape Maintenance",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=419",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "15490",
-    "title": "Landscape Design",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=417",
-    "coverage": 0.889,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "16818",
-    "title": "Paramedic",
-    "award": "A.S. Degree",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=276",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "16916",
-    "title": "General Business",
-    "award": "A.S. Degree",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=143",
-    "coverage": 0.75,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "16990",
-    "title": "French",
-    "award": "A.A. Degree",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=174",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "16991",
-    "title": "Italian",
-    "award": "A.A. Degree",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=176",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "16992",
-    "title": "Japanese",
-    "award": "A.A. Degree",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=111",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "16993",
-    "title": "Spanish",
-    "award": "A.A. Degree",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=184",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "17043",
-    "title": "Motorcycle Technician",
-    "award": "A.S. Degree",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=423",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "17614",
-    "title": "CNIT: Computer Technical Support",
-    "award": "A.S. Degree",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=312",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "17615",
-    "title": "CNIT: Front End Web Development",
-    "award": "A.S. Degree",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=312",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "17616",
-    "title": "CNIT: Cybersecurity",
-    "award": "A.S. Degree",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=312",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "17617",
-    "title": "CNIT: Wireless Networks",
-    "award": "A.S. Degree",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=312",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "17618",
-    "title": "CNIT: Cisco Networking",
-    "award": "A.S. Degree",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=312",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "17619",
-    "title": "CNIT: Microsoft Windows",
-    "award": "A.S. Degree",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=312",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "17842",
-    "title": "Office Technology",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=561",
-    "coverage": 0.889,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "17951",
-    "title": "Biotechnology",
-    "award": "A.S. Degree",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=304",
-    "coverage": 0.889,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "17952",
-    "title": "Liberal Arts and Sciences Emphasis in Arts and Humanities",
-    "award": "A.A. Degree",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=475",
-    "coverage": 0.5,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "17953",
-    "title": "Liberal Arts and Sciences Emphasis in Communication",
-    "award": "A.A. Degree",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=206",
-    "coverage": 0.571,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "19037",
-    "title": "Biological Sciences",
-    "award": "A.S. Degree",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=207",
-    "coverage": 0.8,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "19038",
-    "title": "Foundations in Biological Sciences",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=327",
-    "coverage": 0.889,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "19040",
-    "title": "Community Health Worker, Youth Advocate Specialist",
-    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=237",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "19445",
-    "title": "Databases for Developers",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=352",
-    "coverage": 0.727,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "19583",
-    "title": "Motorcycle Technician",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=423",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "19585",
-    "title": "Dental Assisting",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=242",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "19621",
-    "title": "Latin American & Latino/a Studies",
-    "award": "A.A. Degree",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=373",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "19622",
-    "title": "Latin American & Latino/a Studies",
-    "award": "Certificate of Achievement: 12 to fewer than 18 semester(or 18 to fewer than 27 ",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=373",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "19664",
-    "title": "Women's and Gender Studies",
-    "award": "A.A. Degree",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=398",
-    "coverage": 0.909,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "19800",
-    "title": "Construction Management: Advanced Skills",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=136",
-    "coverage": 0.857,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "19806",
-    "title": "Firefighter 1 Academy",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=251",
-    "coverage": 0.889,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "19855",
-    "title": "Community Health Worker, Re-Entry Specialist",
-    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=237",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "21324",
-    "title": "Fashion Design",
-    "award": "A.S. Degree",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=92",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "21325",
-    "title": "Fashion Design",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=92",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "21413",
-    "title": "Medical Receptionist",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=270",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "21414",
-    "title": "Medical Evaluation Assistant",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=269",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "22719",
-    "title": "Commercial Cut-Flower Greenhouse Production",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=406",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "22720",
-    "title": "Nursery and Garden-Center Operation",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=425",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "22722",
-    "title": "Marketing",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=148",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "22723",
-    "title": "California Real Estate Broker",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=133",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "22724",
-    "title": "Child Development: Practitioner",
-    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=194",
-    "coverage": 0.9,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "22727",
-    "title": "Medical Assisting",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=265",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "22729",
-    "title": "Paramedic",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=275",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "22730",
-    "title": "Fashion Merchandising",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=95",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "24084",
-    "title": "Baking and Pastry",
-    "award": "Noncredit program",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=403",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "24120",
-    "title": "Administrative Assistant",
-    "award": null,
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=564",
-    "coverage": 0.667,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "24202",
-    "title": "ESL Intermediate Low Oral Communication Skills",
-    "award": "Noncredit program",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=169",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "24203",
-    "title": "ESL Intermediate Low",
-    "award": "Noncredit program",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=168",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "24254",
-    "title": "ESL Beginning Low",
-    "award": "Noncredit program",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=163",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "24259",
-    "title": "Construction Administrative Assistant",
-    "award": null,
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=564",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "24260",
-    "title": "Business Information Worker (BIW)",
-    "award": "Noncredit program",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=564",
-    "coverage": 0.667,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "24263",
-    "title": "Microsoft Office Specialist",
-    "award": "Noncredit program",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=564",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "24289",
-    "title": "Construction",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=409",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "24291",
-    "title": "ESL Intermediate High Focus Skills",
-    "award": "Noncredit program",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=166",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "24299",
-    "title": "Clerical Accounting",
-    "award": null,
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=564",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "24304",
-    "title": "Clerical Support Specialist",
-    "award": null,
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=564",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "24318",
-    "title": "ESL Vocational Training",
-    "award": "Noncredit program",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=172",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "24323",
-    "title": "ESL Intermediate High",
-    "award": "Noncredit program",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=166",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "24331",
-    "title": "Beginning VESL for Janitorial Workers",
-    "award": null,
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=644",
-    "coverage": 0.5,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "24393",
-    "title": "Computerized Accounting",
-    "award": null,
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=565",
-    "coverage": 0.5,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "24449",
-    "title": "Computer Applications for Business",
-    "award": "Noncredit program",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=564",
-    "coverage": 0.8,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "30298",
-    "title": "Inclusive Education",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=196",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "30419",
-    "title": "Dance - Performance Art",
-    "award": "A.A. Degree",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=83",
-    "coverage": 0.769,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "30513",
-    "title": "Community and Public Health",
-    "award": "A.S. Degree",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=236",
-    "coverage": 0.725,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "30517",
-    "title": "Oceanography",
-    "award": "A.S. Degree",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=346",
-    "coverage": 0.933,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "30539",
-    "title": "Business Office Support Skills, Phase II",
-    "award": null,
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=565",
-    "coverage": 0.5,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "30665",
-    "title": "Psychology",
-    "award": "A.A- T Degree",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=385",
-    "coverage": 0.958,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "30687",
-    "title": "Introduction to Child Development Careers",
-    "award": null,
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=532",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "30870",
-    "title": "Trauma Prevention and Recovery",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=293",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "30871",
-    "title": "Sexual Health Educator",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=291",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "30897",
-    "title": "LGBTQ Studies",
-    "award": "A.A. Degree",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=375",
-    "coverage": 0.906,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "31074",
-    "title": "Digital Literacy and Core Skills",
-    "award": "Noncredit program",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=565",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "31395",
-    "title": "Automotive Hybrid and EV Technology",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=401",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "31413",
-    "title": "PowerPoint Specialist",
-    "award": null,
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=564",
-    "coverage": 0.75,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "31414",
-    "title": "Office Receptionist",
-    "award": null,
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=564",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "31602",
-    "title": "CCSF High School Diploma",
-    "award": "Noncredit program",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=824",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "31611",
-    "title": "English",
-    "award": "A.A- T Degree",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=158",
-    "coverage": 0.963,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "31625",
-    "title": "Physics",
-    "award": "A.S. Degree",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=347",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "31726",
-    "title": "Anthropology",
-    "award": "A.A- T Degree",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=354",
-    "coverage": 0.75,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "31727",
-    "title": "Sociology",
-    "award": "A.A- T Degree",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=396",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "32079",
-    "title": "Mathematics",
-    "award": "A.S. T Degree",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=208",
-    "coverage": 0.727,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "32080",
-    "title": "Early Childhood Education",
-    "award": "A.S. T Degree",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=193",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "32129",
-    "title": "History",
-    "award": "A.A- T Degree",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=370",
-    "coverage": 0.882,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "32286",
-    "title": "Political Science",
-    "award": "A.A- T Degree",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=384",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "32401",
-    "title": "Studio Arts",
-    "award": "A.A- T Degree",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=126",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "32615",
-    "title": "Administration of Justice",
-    "award": "A.S. T Degree",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=230",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "32682",
-    "title": "Community Health Worker",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=236",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "32793",
-    "title": "Geology",
-    "award": "A.S. T Degree",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=333",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "32837",
-    "title": "Advanced Visual Design",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=68",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "32838",
-    "title": "Visual Design Foundation",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=131",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "32840",
-    "title": "Digital Illustration",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=88",
-    "coverage": 0.833,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "32869",
-    "title": "Economics",
-    "award": "A.A- T Degree",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=139",
-    "coverage": 0.905,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "33208",
-    "title": "Spanish",
-    "award": "A.A- T Degree",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=184",
-    "coverage": 0.974,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "33298",
-    "title": "Film, Television, and Electronic Media",
-    "award": "A.S. T Degree",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=99",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "33299",
-    "title": "Journalism",
-    "award": "A.A- T Degree",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=105",
-    "coverage": 0.833,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "33623",
-    "title": "Biology",
-    "award": "A.S. T Degree",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=302",
-    "coverage": 0.917,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "33652",
-    "title": "Theatre Arts",
-    "award": "A.A- T Degree",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=821",
-    "coverage": 0.632,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "35115",
-    "title": "Diagnostic Cardiac Sonography",
-    "award": "A.S. Degree",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=244",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "35205",
-    "title": "Geography",
-    "award": "A.A- T Degree",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=332",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "35455",
-    "title": "Environmental Studies",
-    "award": "A.S. Degree",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=326",
-    "coverage": 0.829,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "35545",
-    "title": "Foundations in Broadcast Electronic Media Arts",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=102",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "35690",
-    "title": "Social Justice Studies: Ethnic Studies",
-    "award": "A.A- T Degree",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=389",
-    "coverage": 0.556,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "35708",
-    "title": "Sound Design",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=73",
-    "coverage": 0.8,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "35709",
-    "title": "Broadcast Motion Graphics",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=73",
-    "coverage": 0.667,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "35711",
-    "title": "Television Production",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=128",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "35712",
-    "title": "Audio Production and Post-Production",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=73",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "35713",
-    "title": "Video Editing and Post-Production",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=130",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "35714",
-    "title": "Sound Recording Arts",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=73",
-    "coverage": 0.75,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "35978",
-    "title": "Medical Clinic Assisting",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=268",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "36081",
-    "title": "Critical Pacific Islands & Oceania",
-    "award": "A.A. Degree",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=365",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "36284",
-    "title": "Cloud-Based Electronic Communication",
-    "award": "Noncredit program",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=565",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "36297",
-    "title": "Social Justice Studies: Gender Studies",
-    "award": "A.A- T Degree",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=390",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "36368",
-    "title": "ESL Advanced Low",
-    "award": "Noncredit program",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=159",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "36386",
-    "title": "ESL Beginning Low Conversation",
-    "award": "Noncredit program",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=564",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "36398",
-    "title": "ESL Beginning Low Focus Skills",
-    "award": "Noncredit program",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=163",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "36402",
-    "title": "ESL Beginning Workplace Skills",
-    "award": "Noncredit program",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=165",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "36404",
-    "title": "ESL Beginning High Focus Skills",
-    "award": "Noncredit program",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=161",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "36405",
-    "title": "ESL Intermediate Low Focus Skills",
-    "award": "Noncredit program",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=168",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "36407",
-    "title": "ESL Literacy",
-    "award": "Noncredit program",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=171",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "36409",
-    "title": "ESL Beginning High",
-    "award": "Noncredit program",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=161",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "36451",
-    "title": "Art History",
-    "award": "A.A- T Degree",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=70",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "36452",
-    "title": "Child and Adolescent Development",
-    "award": "A.A- T Degree",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=385",
-    "coverage": 0.667,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "36464",
-    "title": "ESL for Digital Learning",
-    "award": "Noncredit program",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=165",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "36558",
-    "title": "Custodial Training",
-    "award": "Noncredit program",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=412",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "36672",
-    "title": "QuickBooks & Spreadsheets for Accounting",
-    "award": "Noncredit program",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=564",
-    "coverage": 0.667,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "36715",
-    "title": "Multimedia Broadcast Journalism",
-    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=113",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "36730",
-    "title": "Chemistry",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=309",
-    "coverage": 0.857,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "36742",
-    "title": "Pre-Production/Producing",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=122",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "36827",
-    "title": "ESL Beginning Low Oral Communication Skills",
-    "award": "Noncredit program",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=164",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "36849",
-    "title": "Digital Art Foundation",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=87",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "36958",
-    "title": "Community Health Worker, HIV and Hepatitis Navigation Specialist",
-    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=237",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "36959",
-    "title": "Community Health Worker, Elder Advocate Specialist",
-    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=237",
-    "coverage": 0.8,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "36963",
-    "title": "Custodian for Health Care Industry",
-    "award": "Noncredit program",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=413",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "36964",
-    "title": "ESL Beginning High Oral Communication Skills",
-    "award": "Noncredit program",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=643",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "36980",
-    "title": "Medisoft for Business",
-    "award": "Noncredit program",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=564",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37037",
-    "title": "Environmental Science",
-    "award": "A.S. Degree",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=324",
-    "coverage": 0.931,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37038",
-    "title": "Construction Management: Core Skills",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=137",
-    "coverage": 0.889,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37060",
-    "title": "ECE Practitioner",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=194",
-    "coverage": 0.957,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37116",
-    "title": "Critical South West Asia and North Africa (Middle East) Studies",
-    "award": "A.A. Degree",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=367",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37160",
-    "title": "AV Technologist",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=73",
-    "coverage": 0.571,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37167",
-    "title": "Critical Pacific Islands & Oceania Studies",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=365",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37231",
-    "title": "Homeland Security",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=259",
-    "coverage": 0.833,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37479",
-    "title": "Critical Middle East /South West Asia and North Africa Studies",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=367",
-    "coverage": 0.8,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37480",
-    "title": "Data Analytics Fundamentals",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=318",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37499",
-    "title": "Black and White Darkroom Photography",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=74",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37513",
-    "title": "Social Justice Studies: General",
-    "award": "A.A- T Degree",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=375",
-    "coverage": 0.737,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37561",
-    "title": "Accounting Assistant & Core Skills",
-    "award": "Noncredit program",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=564",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37597",
-    "title": "Photography Studio Practice",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=120",
-    "coverage": 0.875,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37600",
-    "title": "Android App Programming",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=297",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37601",
-    "title": "iPhone App Programming",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=314",
-    "coverage": 0.875,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37602",
-    "title": "Game and Simulation Programming",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=330",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37607",
-    "title": "Crime Scene Investigation",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=239",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37731",
-    "title": "Fire Protection",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=250",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37732",
-    "title": "Studio Lighting",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=127",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37733",
-    "title": "Community Mental Health Worker",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=238",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37734",
-    "title": "Criminal and Constitutional Law",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=240",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37735",
-    "title": "Architectural Photography",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=69",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37737",
-    "title": "Healthcare Interpreting",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=259",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37738",
-    "title": "Advanced Web Development Techniques",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=297",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37739",
-    "title": "Fashion Styling and Personal Styling",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=95",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37777",
-    "title": "Portrait Lighting",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=121",
-    "coverage": 0.857,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37778",
-    "title": "Reportage Photography",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=123",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37779",
-    "title": "Digital Photography",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=89",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37780",
-    "title": "Multimedia Content Creation for the Internet",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=114",
-    "coverage": 0.933,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37781",
-    "title": "Health Information Clerk I",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=253",
-    "coverage": 0.833,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37782",
-    "title": "Administration of Justice",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=231",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37845",
-    "title": "Mobile Web App Development",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=343",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37900",
-    "title": "Film Studies",
-    "award": "A.A. Degree",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=98",
-    "coverage": 0.947,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "38072",
-    "title": "Library Information Technology",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=339",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "38223",
-    "title": "Construction",
-    "award": "A.S. Degree",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=409",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "38225",
-    "title": "Basic Fire Academy (Accredited Local Academy)",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=234",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "38227",
-    "title": "Science Core for Nursing",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=349",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "38238",
-    "title": "Automotive Technician",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=402",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "38266",
-    "title": "Film Studies",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=97",
-    "coverage": 0.9,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "38267",
-    "title": "French",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=174",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "38443",
-    "title": "General Business",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=144",
-    "coverage": 0.75,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "38444",
-    "title": "Supervision and Management Program",
-    "award": "A.S. Degree",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=150",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "38445",
-    "title": "Supervision and Management",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=150",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "38446",
-    "title": "Photography Digital Technician",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=119",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "38447",
-    "title": "Basic Police Officer",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=234",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "38448",
-    "title": "Cinema Foundations",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=75",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "38449",
-    "title": "Cinematography",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=76",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "38450",
-    "title": "Directing",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=90",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "38451",
-    "title": "Screenwriting",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=125",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "38905",
-    "title": "Acting",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=66",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "38907",
-    "title": "Spanish",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=186",
-    "coverage": 0.952,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "38908",
-    "title": "Spanish for Heritage Speakers",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=187",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "38909",
-    "title": "Music",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=115",
-    "coverage": 0.886,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "38940",
-    "title": "Philosophy",
-    "award": "A.A- T Degree",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=382",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "39072",
-    "title": "Biological Sciences (Emphasis Health Science)",
-    "award": "A.S. Degree",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=301",
-    "coverage": 0.8,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "39099",
-    "title": "Sustainability",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=351",
-    "coverage": 0.963,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "39100",
-    "title": "Creative Writing",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=78",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "39153",
-    "title": "Auto Body Repair and Refinishing",
-    "award": "A.S. Degree",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=399",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "39154",
-    "title": "Auto Body Repair and Refinishing",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=399",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "39219",
-    "title": "Retail Floristry",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=124",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "39221",
-    "title": "Fashion Illustration",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=93",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "39223",
-    "title": "Motion Photography",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=112",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "39231",
-    "title": "Company Officer",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=663",
-    "coverage": 0.667,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "39335",
-    "title": "Kinesiology",
-    "award": "A.A- T Degree",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=261",
-    "coverage": 0.73,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "39647",
-    "title": "Oriental Floral Design",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=117",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "39685",
-    "title": "Apparel Construction",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=69",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "39727",
-    "title": "Chinese (Mandarin)",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=154",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "39728",
-    "title": "Japanese",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=111",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "39913",
-    "title": "Cannabis Studies",
-    "award": "A.A. Degree",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=361",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "39959",
-    "title": "Patternmaking",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=117",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "39960",
-    "title": "Peer Health Educator",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=277",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "40025",
-    "title": "ESL and Child Development Milestone",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=197",
-    "coverage": 0.9,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "40074",
-    "title": "Nutrition and Dietetics",
-    "award": "A.S. T Degree",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=273",
-    "coverage": 0.875,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "40075",
-    "title": "Social Work and Human Services",
-    "award": "A.A- T Degree",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=394",
-    "coverage": 0.786,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "40151",
-    "title": "Entrepreneurship and Innovation in Business",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=140",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "40157",
-    "title": "Biotechnology",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=304",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "40167",
-    "title": "Network Security",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=344",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "40168",
-    "title": "Entrepreneurship and Innovation in Broadcast Media",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=113",
-    "coverage": 0.667,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "40169",
-    "title": "Entrepreneurship and Innovation in Hospitality Management",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=140",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "40170",
-    "title": "Entrepreneurship and Innovation in Fashion Design and Merchandising",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=91",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "40171",
-    "title": "Technical Theater Production - Costume and Makeup",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=129",
-    "coverage": 0.667,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "40174",
-    "title": "Biotechnology Lab Assistant",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=305",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "40175",
-    "title": "Biotechnology Work Experience",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=307",
-    "coverage": 0.867,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "40177",
-    "title": "Entrepreneurship in Visual Media Design",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=131",
-    "coverage": 0.7,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "40205",
-    "title": "Pharmacy Technician",
-    "award": "A.S. Degree",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=280",
-    "coverage": 0.9,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "40206",
-    "title": "Electrocardiography Technician",
-    "award": "A.S. Degree",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=248",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "40207",
-    "title": "Culinary Arts and Hospitality",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=410",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "40262",
-    "title": "Cybersecurity",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=312",
-    "coverage": 0.857,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "40305",
-    "title": "Labor and Community Organizing",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=372",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "40407",
-    "title": "Technical Theater Production - Stagecraft",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=129",
-    "coverage": 0.667,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "40408",
-    "title": "Core Skills Interior Design",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=317",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "40432",
-    "title": "Microsoft Office Specialist",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=561",
-    "coverage": 0.833,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "40433",
-    "title": "Architectural Drafting Technology",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=299",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "40434",
-    "title": "Floral and Special Events Coordinator",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=100",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "40435",
-    "title": "Human Resources Management",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=150",
-    "coverage": 0.714,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "40460",
-    "title": "Microsoft Windows Networking",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=342",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "40590",
-    "title": "Human Resources Management",
-    "award": "A.S. Degree",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=150",
-    "coverage": 0.714,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "40695",
-    "title": "Public Safety LGBTQ+ Awareness",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=284",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "40704",
-    "title": "Internet of Things",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=335",
-    "coverage": 0.857,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "40705",
-    "title": "Build Automation for DevOps & QA",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=578",
-    "coverage": 0.833,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "40706",
-    "title": "Database Administration",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=578",
-    "coverage": 0.667,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "40750",
-    "title": "ESL and Business Milestone",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=141",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "40751",
-    "title": "ESL and Math Milestone",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=160",
-    "coverage": 0.923,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "40774",
-    "title": "Humanities: Ideas, Religions, and the Arts",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=371",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "40778",
-    "title": "NextGen Automotive and IT Technician",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=344",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "40800",
-    "title": "Dance--African Heritage Dance Performance",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=80",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "40801",
-    "title": "Dance--Classical Dance Performance",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=81",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "40802",
-    "title": "Dance Group Fitness and Conditioning",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=82",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "40804",
-    "title": "Dance--Social Dance Forms",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=85",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "40817",
-    "title": "Yoga",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=296",
-    "coverage": 0.842,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "40876",
-    "title": "JavaScript Specialist",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=335",
-    "coverage": 0.857,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "40913",
-    "title": "Personal Training",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=279",
-    "coverage": 0.958,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "41047",
-    "title": "Philippine Studies",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=381",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "41048",
-    "title": "Philippine Studies",
-    "award": "A.A. Degree",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=381",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "41049",
-    "title": "Hospitality Management",
-    "award": "A.S. T Degree",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=146",
-    "coverage": 0.9,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "41249",
-    "title": "ECG Technician",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=247",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "41310",
-    "title": "Black/African American Studies",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=359",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "41314",
-    "title": "Black/African American Studies",
-    "award": "A.A. Degree",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=359",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "41315",
-    "title": "Asian American Studies",
-    "award": "A.A. Degree",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=355",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "41353",
-    "title": "Entrepreneurship and Innovation in Journalism",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=91",
-    "coverage": 0.5,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "41354",
-    "title": "Emergency Medical Technician",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=249",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "41361",
-    "title": "Athletic Coaching",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=232",
-    "coverage": 0.97,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "41439",
-    "title": "ESL Intermediate Workplace Skills",
-    "award": "Noncredit program",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=170",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "41637",
-    "title": "Social Justice Studies: African American Studies",
-    "award": "A.A- T Degree",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=386",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "42024",
-    "title": "Asian Art and Culture",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=71",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "42025",
-    "title": "Asian American Studies",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=356",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "42228",
-    "title": "Data Science",
-    "award": "A.S. Degree",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=319",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "42318",
-    "title": "ESL Intermediate High Oral Communication Skills",
-    "award": "Noncredit program",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=643",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "42499",
-    "title": "Nurse Assistant/Home Health Aide",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=273",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "42693",
-    "title": "Conversational Cantonese",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=157",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "42742",
-    "title": "Creative Writing",
-    "award": "A.A. Degree",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=78",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "42908",
-    "title": "Emergency Department Technician",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=248",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "43116",
-    "title": "Communication Studies 2.0",
-    "award": "A.A- T Degree",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=545",
-    "coverage": 0.6,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "43525",
-    "title": "E-Business Entrepreneurial Apps and Tools",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=137",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "43536",
-    "title": "Addiction Studies",
-    "award": "A.S. Degree",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=228",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "43576",
-    "title": "Law Enforcement Career Preparation",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=263",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "43577",
-    "title": "Cloud Computing Administration",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=311",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "43578",
-    "title": "Photojournalism",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=121",
-    "coverage": 0.857,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "43860",
-    "title": "Office Skills for Construction Management",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=149",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "44108",
-    "title": "Physics",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=347",
-    "coverage": 0.714,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "44501",
-    "title": "Security for Web App Development",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=349",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "44502",
-    "title": "Gardener Trainee",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=414",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "44633",
-    "title": "California Real Estate Salesperson",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=134",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "44751",
-    "title": "Public Health",
-    "award": "A.S. T Degree",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=235",
-    "coverage": 0.842,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "44944",
-    "title": "Computer Science",
-    "award": "A.S. T Degree",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=314",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "45270",
-    "title": "Climate Change and Response",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=362",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "45543",
-    "title": "Modern Policing",
-    "award": "A.S. Degree",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=271",
-    "coverage": 0.909,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "45920",
-    "title": "Italian",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=176",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "45925",
-    "title": "Chemistry",
-    "award": "A.S. Degree",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=309",
-    "coverage": 0.909,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "45951",
-    "title": "Educator Careers I",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=196",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "46300",
-    "title": "Mathematics 2.0",
-    "award": "A.S. T Degree",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=734",
-    "coverage": 0.727,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "46308",
-    "title": "Asian American Studies",
-    "award": "A.A- T Degree",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=355",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "46320",
-    "title": "Social Work and Human Services",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=395",
-    "coverage": 0.933,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "46321",
-    "title": "Physics 2.0",
-    "award": "A.S. T Degree",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=795",
-    "coverage": 0.923,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "46322",
-    "title": "Social Justice Studies: General",
-    "award": "A.A- T Degree",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=391",
-    "coverage": 0.938,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "46323",
-    "title": "Chicana/o Studies, Latina/o Studies",
-    "award": "A.A- T Degree",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=361",
-    "coverage": 0.95,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "46324",
-    "title": "Social Justice Studies: LGBTQ Studies",
-    "award": "A.A- T Degree",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=375",
-    "coverage": 0.625,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "46326",
-    "title": "Educator Careers II",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=196",
-    "coverage": 0.967,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "46360",
-    "title": "Economics",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=139",
-    "coverage": 0.778,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   }
-  ]
+  "against": "kb/program_requirements_college/city_of_san_francisco",
+  "kept": 349,
+  "programs": 0,
+  "list": []
  },
- "run": "39047128472"
+ "run": "39056434592"
 }

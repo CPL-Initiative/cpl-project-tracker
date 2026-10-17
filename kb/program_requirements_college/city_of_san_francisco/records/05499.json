@@ -4,12 +4,12 @@
  "shape": "degree",
  "title": "Floristry",
  "award": "A.S. Degree",
- "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=101",
+ "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=100",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 7018,
+  "input_tokens": 8056,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 7018,
-    "output_tokens": 2262,
+    "input_tokens": 8056,
+    "output_tokens": 2382,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 2262,
+  "output_tokens": 2382,
   "output_tokens_details": {
-   "thinking_tokens": 620
+   "thinking_tokens": 783
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.07331,
- "ms": 18454,
- "seconds": 19.0,
+ "cost_usd": 0.07986,
+ "ms": 19684,
+ "seconds": 20.1,
  "parts": null,
  "error": null,
  "score": {
@@ -84,12 +84,12 @@
    "count": 3,
    "not_verbatim": [],
    "why": [],
-   "heading_printed": false,
+   "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
   },
   "careers": {
-   "count": 0,
+   "count": 2,
    "not_verbatim": [],
    "pass": true
   },
@@ -103,7 +103,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "Required Courses",
+   "section_heading": "Floristry – AS Degree",
    "measure": "units",
    "total_units": {
     "min": 39,
@@ -129,7 +129,10 @@
     "Identify, select, and purchase plants and flowers appropriate for floral design products and retail business",
     "Apply management practices necessary to operate a floral business."
    ],
-   "careers": []
+   "careers": [
+    "designers",
+    "salespersons"
+   ]
   },
   "blocks": [
    {
@@ -293,38 +296,23 @@
       "units_max": 6,
       "alternatives": [],
       "catalog_addition": false
-     }
-    ]
-   },
-   {
-    "name": "One of the following",
-    "rule": "choose_courses",
-    "minimum": 1,
-    "option_group": null,
-    "stated": {
-     "min": 3,
-     "max": 3
-    },
-    "courses": [
+     },
      {
       "code": "MRKT 122",
       "units": 3,
       "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "MRKT 140",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "MRKT 170",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
+      "alternatives": [
+       {
+        "code": "MRKT 140",
+        "units": 3,
+        "catalog_addition": false
+       },
+       {
+        "code": "MRKT 170",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
       "catalog_addition": false
      }
     ]
@@ -333,12 +321,14 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The excerpt begins mid-section on page 101; no Floristry A.S. heading is printed in the text, so section_heading uses the 'Required Courses' heading. The outcomes list at the top of the page is assumed to belong to Floristry; reviewer should confirm against the preceding page.",
-   "The 'Fourth Semester Units 8.0-12.0' stated total includes the 3-unit MRKT choice, which is recorded as its own choose_courses block; the 'First Semester Units 7.0' total covers R F 80A and R F 81A/81B only, with the R F 85A-D choice (2 units) separate. 7+2+13+9+8-12 = 39-43, matching the printed total.",
-   "R F 98 Retail Floristry Work Experience appears twice: 3.0 units in Third Semester and 2.0-6.0 units in Fourth Semester; the state file stores 1 unit.",
-   "Catalog title for R F 81A ('Fall and Winter Flower and Foliage Identification/Culture and Care') differs from the state file title ('Environmental Horticulture and Floristry').",
-   "The text following the total begins a different program (Foundations in Broadcast Electronic Media Arts – Certificate of Achievement) and was not read."
+   "The section preceding the A.S. (Floral and Special Events Coordinator certificate) was ignored; it names CAHS 208, ENTR 101, MRKT 180 and R F 88, which are not part of this award.",
+   "R F 98 (Retail Floristry Work Experience) appears in both the Third Semester (3.0 units) and Fourth Semester (2.0-6.0 units) blocks as printed; the closed list stores it as 1 unit.",
+   "The 'Choose one of the following' R F 85A-D block (2 units) is printed after the First Semester R F courses but is not included in the First Semester 7.0 units; semester totals 7+2+13+9+8-12 sum to the printed Total 39.0-43.0.",
+   "The Fourth Semester 8.0-12.0 total includes the 'One of the following' MRKT 122/140/170 choice (3.0), recorded as one entry with alternatives.",
+   "Catalog titles R F 81A 'Fall and Winter Flower and Foliage Identification/Culture and Care' differs from the closed list title 'Environmental Horticulture and Floristry'; R F 80A, R F 86A titles also differ slightly.",
+   "The catalog says general education is required but names no GE pattern or degree total on this page.",
+   "Outcome 2 is printed without a terminal period; copied as printed."
   ]
  },
- "extracted_run": "39047128472"
+ "extracted_run": "39056434592"
 }

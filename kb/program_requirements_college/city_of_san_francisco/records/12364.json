@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "Routing and Switching (Cisco)",
  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
- "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=312",
+ "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=348",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 6862,
+  "input_tokens": 8139,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 6862,
-    "output_tokens": 3329,
+    "input_tokens": 8139,
+    "output_tokens": 1015,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 3329,
+  "output_tokens": 1015,
   "output_tokens_details": {
-   "thinking_tokens": 1139
+   "thinking_tokens": 245
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.09403,
- "ms": 27743,
- "seconds": 28.1,
+ "cost_usd": 0.05286,
+ "ms": 9172,
+ "seconds": 9.4,
  "parts": null,
  "error": null,
  "score": {
@@ -55,100 +55,60 @@
    "pass": true
   },
   "invented": {
-   "count": 20,
+   "count": 1,
    "codes": [
-    "CNIT103L",
-    "CNIT104",
-    "CNIT105",
-    "CNIT105L",
-    "CNIT106",
-    "CNIT107",
-    "CNIT108",
-    "CNIT113",
-    "CNIT121",
-    "CNIT122",
-    "CNIT123",
-    "CNIT131",
-    "CNIT132",
-    "CNIT133",
-    "CNIT134",
-    "CNIT204C",
-    "CNIT401",
-    "CNIT415",
-    "CNIT416",
-    "CNIT420"
+    "CNIT204C"
    ],
    "flagged": [
-    "CNIT103L",
-    "CNIT104",
-    "CNIT105",
-    "CNIT105L",
-    "CNIT106",
-    "CNIT107",
-    "CNIT108",
-    "CNIT113",
-    "CNIT121",
-    "CNIT122",
-    "CNIT123",
-    "CNIT131",
-    "CNIT132",
-    "CNIT133",
-    "CNIT134",
-    "CNIT204C",
-    "CNIT401",
-    "CNIT415",
-    "CNIT416",
-    "CNIT420"
+    "CNIT204C"
    ],
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    18.0,
-    22.0
+    21.0,
+    21.0
    ],
    "stated": [
     21.0,
-    22.0
+    21.0
    ],
    "against": "program",
-   "why": [
-    "the blocks sum to 18.0-22.0; the catalog states 21.0-22.0"
-   ]
+   "why": []
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 6,
    "courses": 0,
-   "count": 0,
+   "count": 6,
    "not_verbatim": [],
    "why": [],
-   "heading_printed": false,
+   "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
   },
   "careers": {
-   "count": 0,
+   "count": 1,
    "not_verbatim": [],
    "pass": true
   },
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "Required Courses",
+   "section_heading": "Routing and Switching (Cisco) – Certificate of Achievement",
    "measure": "units",
    "total_units": {
     "min": 21,
-    "max": 22
+    "max": 21
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -165,18 +125,27 @@
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [],
-   "careers": []
+   "outcomes": [
+    "Compare OSI and TCP/IP networking models and their related protocols",
+    "Explain the importance of addressing and naming schemes of various layers of data",
+    "Compare and configure various internal routing protocols",
+    "Analyze, configure, and troubleshoot switch configurations including LANs and VLANs",
+    "Describe and configure a variety of WAN protocols in routers",
+    "Define basic network security issues and possible solutions"
+   ],
+   "careers": [
+    "network administration"
+   ]
   },
   "blocks": [
    {
-    "name": "Core courses",
+    "name": "Required courses",
     "rule": "all",
     "minimum": null,
     "option_group": null,
     "stated": {
-     "min": 9,
-     "max": 9
+     "min": 21,
+     "max": 21
     },
     "courses": [
      {
@@ -187,202 +156,12 @@
       "catalog_addition": false
      },
      {
-      "code": "CNIT 120",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "CNIT 131",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     }
-    ]
-   },
-   {
-    "name": "Choose one of the following network courses",
-    "rule": "choose_courses",
-    "minimum": 1,
-    "option_group": null,
-    "stated": {
-     "min": 3,
-     "max": 3
-    },
-    "courses": [
-     {
-      "code": "CNIT 106",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
       "code": "CNIT 201C",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
-     }
-    ]
-   },
-   {
-    "name": "OPTION 1: COMPUTER TECHNICAL SUPPORT",
-    "rule": "all",
-    "minimum": null,
-    "option_group": "Options 1-6",
-    "stated": {
-     "min": null,
-     "max": null
-    },
-    "courses": [
-     {
-      "code": "CNIT 103L",
-      "units": 1,
-      "units_max": null,
-      "alternatives": [
-       {
-        "code": "CNIT 105L",
-        "units": 1,
-        "catalog_addition": true
-       }
-      ],
-      "catalog_addition": true
      },
-     {
-      "code": "CNIT 104",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "CNIT 105",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "CNIT 401",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     }
-    ]
-   },
-   {
-    "name": "OPTION 2: FRONT END WEB DEVELOPMENT",
-    "rule": "all",
-    "minimum": null,
-    "option_group": "Options 1-6",
-    "stated": {
-     "min": null,
-     "max": null
-    },
-    "courses": [
-     {
-      "code": "CNIT 132",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "CNIT 133",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "CNIT 134",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     }
-    ]
-   },
-   {
-    "name": "OPTION 3. CYBERSECURITY",
-    "rule": "all",
-    "minimum": null,
-    "option_group": "Options 1-6",
-    "stated": {
-     "min": null,
-     "max": null
-    },
-    "courses": [
-     {
-      "code": "CNIT 121",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "CNIT 122",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "CNIT 123",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     }
-    ]
-   },
-   {
-    "name": "OPTION 4: WIRELESS NETWORKS",
-    "rule": "all",
-    "minimum": null,
-    "option_group": "Options 1-6",
-    "stated": {
-     "min": null,
-     "max": null
-    },
-    "courses": [
-     {
-      "code": "CNIT 107",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "CNIT 108",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "CNIT 113",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     }
-    ]
-   },
-   {
-    "name": "OPTION 5: CISCO NETWORKING",
-    "rule": "all",
-    "minimum": null,
-    "option_group": "Options 1-6",
-    "stated": {
-     "min": null,
-     "max": null
-    },
-    "courses": [
      {
       "code": "CNIT 202C",
       "units": 3,
@@ -403,43 +182,20 @@
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
-     }
-    ]
-   },
-   {
-    "name": "OPTION 6: MICROSOFT WINDOWS",
-    "rule": "all",
-    "minimum": null,
-    "option_group": "Options 1-6",
-    "stated": {
-     "min": null,
-     "max": null
-    },
-    "courses": [
+     },
      {
-      "code": "CNIT 416",
+      "code": "CNIT 120",
       "units": 3,
       "units_max": null,
       "alternatives": [],
-      "catalog_addition": true
+      "catalog_addition": false
      },
      {
-      "code": "CNIT 415",
+      "code": "CNIT 417",
       "units": 3,
       "units_max": null,
-      "alternatives": [
-       {
-        "code": "CNIT 420",
-        "units": 3,
-        "catalog_addition": true
-       },
-       {
-        "code": "CNIT 417",
-        "units": 3,
-        "catalog_addition": false
-       }
-      ],
-      "catalog_addition": true
+      "alternatives": [],
+      "catalog_addition": false
      }
     ]
    }
@@ -447,13 +203,10 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The text prints no program title heading; it begins at 'Required Courses'. The course structure (core, network choice, six options incl. Computer Technical Support, Web, Cybersecurity, Wireless, Cisco, Microsoft) looks like a broader CNIT certificate rather than one titled 'Routing and Switching (Cisco)'; reviewer should confirm this page section is the named award.",
-   "The choice among Options 1-6 is printed with 'Units 9.0-10.0'; no per-option totals are printed, so each option block's stated is null.",
-   "Option 1 prints a '1.0' line before 'CNIT 103L ... OR CNIT 105L', read as a one-unit choice between those labs, recorded as one entry with an alternative.",
-   "Option 6: CNIT 416 is required, plus a choice printed as '3.0-6.0': CNIT 415 (3) OR CNIT 420 (3) OR CNIT 417 AND CNIT 401 (6.0 together). The CNIT 417 path requires CNIT 401 as well; recorded CNIT 417 as an alternative to CNIT 415 and the CNIT 401 pairing only here in notes. The PDF layout separates codes, titles and units; units assigned by order (CNIT 420 Azure 3.0, 417+401 pair 6.0, CNIT 417 3.0, CNIT 401 3.0).",
-   "Option 6 totals 6-9 units, which does not match the printed 9.0-10.0 for the options; possible layout or catalog inconsistency.",
-   "No program learning outcomes or careers are printed in the text."
+   "The required-courses table breaks across pages 348-349; CNIT 103's 3.0 units appear after the page footer on page 348, and the list continues on page 349 through 'Total: 21.0'.",
+   "CNIT 204C Connecting Networks is printed as required but is not in the closed list; recorded as a catalog addition.",
+   "Career recorded from 'qualified for employment in entry-level positions in network administration'."
   ]
  },
- "extracted_run": "39047128472"
+ "extracted_run": "39056434592"
 }
