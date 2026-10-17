@@ -5,19 +5,21 @@
   "award": "A.A. Degree",
   "shape": "degree",
   "method": "pdf_pages",
-  "coverage": 0.5,
+  "coverage": 0.667,
   "codes_found": [
    "ARC110",
    "ARC132",
    "ARC133",
    "ARC161",
    "ARC164",
-   "ARC223"
+   "ARC201",
+   "ARC223",
+   "ARC261"
   ],
   "source": {
    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=102",
-   "title": "(Academic Plan E002430C)",
-   "h1": "(Academic Plan E002430C)",
+   "title": "Architecture Department",
+   "h1": "Architecture Department",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -28,7 +30,7 @@
    "heading_named": false
   },
   "listed": 12,
-  "text_chars": 8060
+  "text_chars": 10813
  },
  {
   "control_number": "02433",
@@ -591,7 +593,7 @@
    "heading_named": false
   },
   "listed": 5,
-  "text_chars": 14866
+  "text_chars": 15905
  },
  {
   "control_number": "13341",
@@ -716,10 +718,11 @@
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
   "method": "pdf_pages",
-  "coverage": 0.75,
+  "coverage": 1.0,
   "codes_found": [
    "TECTHTR348",
    "THEATER100",
+   "THEATER200",
    "THEATER260"
   ],
   "source": {
@@ -738,7 +741,7 @@
    "heading_named": false
   },
   "listed": 4,
-  "text_chars": 12279
+  "text_chars": 16000
  },
  {
   "control_number": "14872",
@@ -1155,8 +1158,8 @@
   ],
   "source": {
    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=197",
-   "title": "(Academic Plan E021174C)",
-   "h1": "(Academic Plan E021174C)",
+   "title": "Engineering and Technologies Department",
+   "h1": "Engineering and Technologies Department",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -1168,7 +1171,7 @@
    "heading_named": false
   },
   "listed": 38,
-  "text_chars": 14731
+  "text_chars": 16000
  },
  {
   "control_number": "21175",
@@ -1279,7 +1282,7 @@
    "heading_named": false
   },
   "listed": 3,
-  "text_chars": 2360
+  "text_chars": 3332
  },
  {
   "control_number": "24129",
@@ -1422,7 +1425,7 @@
    "heading_named": true
   },
   "listed": 71,
-  "text_chars": 13061
+  "text_chars": 16000
  },
  {
   "control_number": "32154",
@@ -1458,7 +1461,7 @@
    "heading_named": true
   },
   "listed": 11,
-  "text_chars": 8745
+  "text_chars": 8884
  },
  {
   "control_number": "32170",
@@ -1492,8 +1495,8 @@
   ],
   "source": {
    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=359",
-   "title": "(Academic Plan E032170G)",
-   "h1": "(Academic Plan E032170G)",
+   "title": "Social Sciences Department",
+   "h1": "Social Sciences Department",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -1504,7 +1507,7 @@
    "heading_named": true
   },
   "listed": 21,
-  "text_chars": 6607
+  "text_chars": 10670
  },
  {
   "control_number": "32193",
@@ -1544,7 +1547,7 @@
    "heading_named": false
   },
   "listed": 15,
-  "text_chars": 9047
+  "text_chars": 9502
  },
  {
   "control_number": "32194",
@@ -1577,7 +1580,7 @@
    "heading_named": true
   },
   "listed": 6,
-  "text_chars": 13233
+  "text_chars": 16000
  },
  {
   "control_number": "32902",
@@ -1615,7 +1618,7 @@
    "heading_named": false
   },
   "listed": 13,
-  "text_chars": 7167
+  "text_chars": 10952
  },
  {
   "control_number": "32980",
@@ -1643,7 +1646,7 @@
    "heading_named": true
   },
   "listed": 4,
-  "text_chars": 4124
+  "text_chars": 4702
  },
  {
   "control_number": "33013",
@@ -1771,8 +1774,8 @@
   ],
   "source": {
    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=375",
-   "title": "(Academic Plan E033641G)",
-   "h1": "(Academic Plan E033641G)",
+   "title": "Theater Arts Department",
+   "h1": "Theater Arts Department",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -1783,7 +1786,7 @@
    "heading_named": false
   },
   "listed": 16,
-  "text_chars": 6172
+  "text_chars": 12547
  },
  {
   "control_number": "33681",
@@ -1791,18 +1794,20 @@
   "award": "A.S. T Degree",
   "shape": "adt",
   "method": "pdf_pages",
-  "coverage": 0.714,
+  "coverage": 1.0,
   "codes_found": [
    "MATH261",
    "MATH262",
    "MATH263",
    "MATH270",
-   "MATH275"
+   "MATH275",
+   "STATC1000",
+   "STATC1000E"
   ],
   "source": {
    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=265",
-   "title": "Mathematics 2.0 for Transfer",
-   "h1": "Mathematics 2.0 for Transfer",
+   "title": "Mathematics Department",
+   "h1": "Mathematics Department",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -1812,7 +1817,7 @@
    "heading_named": true
   },
   "listed": 7,
-  "text_chars": 3882
+  "text_chars": 5345
  },
  {
   "control_number": "33915",
@@ -1828,8 +1833,8 @@
   ],
   "source": {
    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=78",
-   "title": "(Academic Plan E033915D)",
-   "h1": "(Academic Plan E033915D)",
+   "title": "Allied Health Department",
+   "h1": "Allied Health Department",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -1840,19 +1845,53 @@
    "heading_named": false
   },
   "listed": 3,
-  "text_chars": 3192
+  "text_chars": 11811
  },
  {
   "control_number": "35087",
   "title": "Environmental Studies: Social and Public Policy",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ECON11",
+   "ECON20",
+   "ECON60",
+   "ECONC2001",
+   "ECONC2002",
+   "ENVSCI1",
+   "GEOG1",
+   "HISTC1002",
+   "HISTORY2",
+   "HISTORY20",
+   "HISTORY78",
+   "HISTORY87",
+   "HISTORY97",
+   "LAW60",
+   "PHILOS20",
+   "PHILOS28",
+   "POLSC1000",
+   "SOC1",
+   "SOC2"
+  ],
+  "source": {
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=353",
+   "title": "Social Sciences Department",
+   "h1": "Social Sciences Department",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    353,
+    354,
+    355,
+    356
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
   "listed": 19,
-  "text_chars": 0
+  "text_chars": 16000
  },
  {
   "control_number": "35088",
@@ -1892,7 +1931,7 @@
    "heading_named": false
   },
   "listed": 19,
-  "text_chars": 11690
+  "text_chars": 15322
  },
  {
   "control_number": "35309",
@@ -1916,8 +1955,8 @@
   ],
   "source": {
    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=257",
-   "title": "(Academic Plan E035309C)",
-   "h1": "(Academic Plan E035309C)",
+   "title": "Life Sciences Department",
+   "h1": "Life Sciences Department",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -1930,31 +1969,74 @@
    "heading_named": false
   },
   "listed": 11,
-  "text_chars": 15657
+  "text_chars": 16000
  },
  {
   "control_number": "35397",
   "title": "Business Administration",
   "award": "A.S. T Degree",
   "shape": "adt",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "pdf_pages",
+  "coverage": 0.833,
+  "codes_found": [
+   "ECONC2001",
+   "ECONC2002",
+   "MATH235",
+   "MATH236",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=130",
+   "title": "Business Administration Department",
+   "h1": "Business Administration Department",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    130
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
   "listed": 6,
-  "text_chars": 0
+  "text_chars": 5575
  },
  {
   "control_number": "35720",
   "title": "Nutrition and Dietetics",
   "award": "A.S. T Degree",
   "shape": "adt",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANATOMY1",
+   "BIOLOGY20",
+   "BUS15",
+   "CHEM101",
+   "CHEM65",
+   "ECON20",
+   "MATH245",
+   "MICRO20",
+   "PHYSIOL1",
+   "PSYCC1000",
+   "PSYCH91",
+   "SOC1",
+   "STATC1000",
+   "STATC1000E"
+  ],
+  "source": {
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=161",
+   "title": "Child, Family, and Education Studies Department",
+   "h1": "Child, Family, and Education Studies Department",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    161
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
   "listed": 14,
-  "text_chars": 0
+  "text_chars": 5336
  },
  {
   "control_number": "35752",
@@ -2078,7 +2160,7 @@
    "heading_named": false
   },
   "listed": 1,
-  "text_chars": 2080
+  "text_chars": 2531
  },
  {
   "control_number": "35771",
@@ -2104,7 +2186,7 @@
    "heading_named": false
   },
   "listed": 1,
-  "text_chars": 7339
+  "text_chars": 10476
  },
  {
   "control_number": "35798",
@@ -2120,8 +2202,8 @@
   ],
   "source": {
    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=172",
-   "title": "(Academic Plan E035798D)",
-   "h1": "(Academic Plan E035798D)",
+   "title": "Computer\tApplications \tand\tOffice\tTechnologies\tDepartment",
+   "h1": "Computer\tApplications \tand\tOffice\tTechnologies\tDepartment",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -2132,7 +2214,7 @@
    "heading_named": true
   },
   "listed": 3,
-  "text_chars": 6651
+  "text_chars": 11155
  },
  {
   "control_number": "35888",
@@ -2189,8 +2271,8 @@
   ],
   "source": {
    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=81",
-   "title": "(Academic Plan E035902D)",
-   "h1": "(Academic Plan E035902D)",
+   "title": "Allied Health Department",
+   "h1": "Allied Health Department",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -2203,7 +2285,7 @@
    "heading_named": false
   },
   "listed": 7,
-  "text_chars": 12866
+  "text_chars": 16000
  },
  {
   "control_number": "36177",
@@ -2222,8 +2304,8 @@
   ],
   "source": {
    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=94",
-   "title": "(Academic Plan E036177H)",
-   "h1": "(Academic Plan E036177H)",
+   "title": "Anthropology, Geography and Geology Department",
+   "h1": "Anthropology, Geography and Geology Department",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -2234,7 +2316,7 @@
    "heading_named": true
   },
   "listed": 6,
-  "text_chars": 4156
+  "text_chars": 10868
  },
  {
   "control_number": "36345",
@@ -2264,8 +2346,8 @@
   ],
   "source": {
    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=354",
-   "title": "(Academic Plan E036345G)",
-   "h1": "(Academic Plan E036345G)",
+   "title": "Social Sciences Department",
+   "h1": "Social Sciences Department",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -2278,7 +2360,7 @@
    "heading_named": true
   },
   "listed": 17,
-  "text_chars": 15105
+  "text_chars": 16000
  },
  {
   "control_number": "36377",
@@ -2331,7 +2413,7 @@
    "heading_named": true
   },
   "listed": 4,
-  "text_chars": 2683
+  "text_chars": 4114
  },
  {
   "control_number": "36534",
@@ -2369,7 +2451,7 @@
    "heading_named": false
   },
   "listed": 1,
-  "text_chars": 5537
+  "text_chars": 7052
  },
  {
   "control_number": "37510",
@@ -2396,7 +2478,7 @@
    "heading_named": false
   },
   "listed": 3,
-  "text_chars": 5642
+  "text_chars": 7543
  },
  {
   "control_number": "37765",
@@ -2446,19 +2528,47 @@
    "heading_named": true
   },
   "listed": 11,
-  "text_chars": 14997
+  "text_chars": 16000
  },
  {
   "control_number": "37924",
   "title": "Public Health Science",
   "award": "A.S. T Degree",
   "shape": "adt",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "pdf_pages",
+  "coverage": 0.875,
+  "codes_found": [
+   "ANATOMY1",
+   "BIOLOGY20",
+   "BIOLOGY3",
+   "BUS15",
+   "CHEM101",
+   "CHEM65",
+   "ECON20",
+   "HEALTH11",
+   "PHYSIOL1",
+   "PSYCC1000",
+   "PSYCH91",
+   "SOC1",
+   "STATC1000",
+   "STATC1000E"
+  ],
+  "source": {
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=259",
+   "title": "Life Sciences Department",
+   "h1": "Life Sciences Department",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    259,
+    260,
+    261
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
   "listed": 16,
-  "text_chars": 0
+  "text_chars": 16000
  },
  {
   "control_number": "37956",
@@ -2489,7 +2599,7 @@
    "heading_named": false
   },
   "listed": 6,
-  "text_chars": 8986
+  "text_chars": 9928
  },
  {
   "control_number": "37965",
@@ -2520,8 +2630,8 @@
   ],
   "source": {
    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=289",
-   "title": "(Academic Plan E037965C)",
-   "h1": "(Academic Plan E037965C)",
+   "title": "Music Department",
+   "h1": "Music Department",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -2533,7 +2643,7 @@
    "heading_named": false
   },
   "listed": 19,
-  "text_chars": 12646
+  "text_chars": 16000
  },
  {
   "control_number": "37969",
@@ -2613,7 +2723,7 @@
    "heading_named": true
   },
   "listed": 6,
-  "text_chars": 13665
+  "text_chars": 13909
  },
  {
   "control_number": "38159",
@@ -2723,12 +2833,64 @@
   "title": "Commercial Music: Instrumental/Vocal Performer",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "pdf_pages",
+  "coverage": 0.949,
+  "codes_found": [
+   "MUSIC111",
+   "MUSIC116",
+   "MUSIC118",
+   "MUSIC121",
+   "MUSIC122",
+   "MUSIC141",
+   "MUSIC161",
+   "MUSIC165",
+   "MUSIC200",
+   "MUSIC201",
+   "MUSIC202",
+   "MUSIC203",
+   "MUSIC211",
+   "MUSIC212",
+   "MUSIC248",
+   "MUSIC321",
+   "MUSIC322",
+   "MUSIC323",
+   "MUSIC324",
+   "MUSIC411",
+   "MUSIC412",
+   "MUSIC413",
+   "MUSIC414",
+   "MUSIC501",
+   "MUSIC531",
+   "MUSIC561",
+   "MUSIC611",
+   "MUSIC612",
+   "MUSIC613",
+   "MUSIC614",
+   "MUSIC651",
+   "MUSIC652",
+   "MUSIC653",
+   "MUSIC654",
+   "MUSIC721",
+   "MUSIC745",
+   "MUSIC775"
+  ],
+  "source": {
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=288",
+   "title": "Music Department",
+   "h1": "Music Department",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    288,
+    289,
+    290,
+    291
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
   "listed": 39,
-  "text_chars": 0
+  "text_chars": 16000
  },
  {
   "control_number": "38169",
@@ -2817,8 +2979,8 @@
   ],
   "source": {
    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=289",
-   "title": "(Academic Plan E038205D)",
-   "h1": "(Academic Plan E038205D)",
+   "title": "Music Department",
+   "h1": "Music Department",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -2831,7 +2993,7 @@
    "heading_named": false
   },
   "listed": 12,
-  "text_chars": 15987
+  "text_chars": 16000
  },
  {
   "control_number": "38206",
@@ -2850,8 +3012,8 @@
   ],
   "source": {
    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=288",
-   "title": "(Academic Plan E038206D)",
-   "h1": "(Academic Plan E038206D)",
+   "title": "Music Department",
+   "h1": "Music Department",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -2864,7 +3026,7 @@
    "heading_named": false
   },
   "listed": 7,
-  "text_chars": 13102
+  "text_chars": 16000
  },
  {
   "control_number": "38234",
@@ -2909,12 +3071,32 @@
   "title": "Geo-Spatial Engineering and Technologies",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ENGGEN185",
+   "ENGSUP121",
+   "ENGSUP200",
+   "ENGSUP201",
+   "ENGSUP202",
+   "ENGSUP224",
+   "ENGSUP225"
+  ],
+  "source": {
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=198",
+   "title": "Engineering and Technologies Department",
+   "h1": "Engineering and Technologies Department",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    198,
+    199
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
   "listed": 7,
-  "text_chars": 0
+  "text_chars": 11959
  },
  {
   "control_number": "38333",
@@ -3000,19 +3182,48 @@
    "heading_named": false
   },
   "listed": 6,
-  "text_chars": 10422
+  "text_chars": 11364
  },
  {
   "control_number": "38337",
   "title": "Geo-Spatial Engineering and Technologies",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ARC164",
+   "CHEM65",
+   "ENGGEN101",
+   "ENGGEN185",
+   "ENGGEN212",
+   "ENGSUP121",
+   "ENGSUP200",
+   "ENGSUP201",
+   "ENGSUP202",
+   "ENGSUP224",
+   "ENGSUP225",
+   "GEOG25",
+   "GIS25",
+   "MATH241",
+   "MATH241S",
+   "PHYSICS11"
+  ],
+  "source": {
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=198",
+   "title": "Engineering and Technologies Department",
+   "h1": "Engineering and Technologies Department",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    198,
+    199
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
   "listed": 16,
-  "text_chars": 0
+  "text_chars": 11959
  },
  {
   "control_number": "38340",
@@ -3043,8 +3254,8 @@
   ],
   "source": {
    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=373",
-   "title": "(Academic Plan E038373D)",
-   "h1": "(Academic Plan E038373D)",
+   "title": "Theater Arts Department",
+   "h1": "Theater Arts Department",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -3094,12 +3305,29 @@
   "title": "Basic Training Academy",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "PUBSERV422",
+   "PUBSERV90"
+  ],
+  "source": {
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=320",
+   "title": "Public\tSafety\tAffiliation\tDepartment",
+   "h1": "Public\tSafety\tAffiliation\tDepartment",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    320,
+    321,
+    322,
+    323
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
   "listed": 2,
-  "text_chars": 0
+  "text_chars": 16000
  },
  {
   "control_number": "38507",
@@ -3131,7 +3359,7 @@
    "heading_named": false
   },
   "listed": 5,
-  "text_chars": 13205
+  "text_chars": 16000
  },
  {
   "control_number": "38704",
@@ -3148,8 +3376,8 @@
   ],
   "source": {
    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=235",
-   "title": "(Academic Plan E038704D)",
-   "h1": "(Academic Plan E038704D)",
+   "title": "Kinesiology Department",
+   "h1": "Kinesiology Department",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -3245,7 +3473,7 @@
    "heading_named": false
   },
   "listed": 2,
-  "text_chars": 2519
+  "text_chars": 4883
  },
  {
   "control_number": "39608",
@@ -3260,8 +3488,8 @@
   ],
   "source": {
    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=322",
-   "title": "(Academic Plan E039608D)",
-   "h1": "(Academic Plan E039608D)",
+   "title": "Public\tSafety\tAffiliation\tDepartment",
+   "h1": "Public\tSafety\tAffiliation\tDepartment",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -3272,7 +3500,7 @@
    "heading_named": false
   },
   "listed": 2,
-  "text_chars": 2630
+  "text_chars": 9998
  },
  {
   "control_number": "39649",
@@ -3299,7 +3527,7 @@
    "heading_named": false
   },
   "listed": 2,
-  "text_chars": 6018
+  "text_chars": 8697
  },
  {
   "control_number": "39711",
@@ -3327,7 +3555,7 @@
    "heading_named": false
   },
   "listed": 2,
-  "text_chars": 9776
+  "text_chars": 12455
  },
  {
   "control_number": "39795",
@@ -3335,9 +3563,10 @@
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
   "method": "pdf_pages",
-  "coverage": 0.714,
+  "coverage": 0.857,
   "codes_found": [
    "ENGGEN101",
+   "ENGTEK111",
    "INDTEK103",
    "INDTEK106",
    "MIT101",
@@ -3393,19 +3622,43 @@
    "heading_named": false
   },
   "listed": 9,
-  "text_chars": 6281
+  "text_chars": 8416
  },
  {
   "control_number": "39800",
   "title": "Engineering Technology: Mechanical",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "pdf_pages",
+  "coverage": 0.9,
+  "codes_found": [
+   "EGDTEK221",
+   "ENGGEN101",
+   "ENGTEK101",
+   "ENGTEK151",
+   "INDTEK103",
+   "INDTEK106",
+   "MATH260",
+   "MIT101",
+   "MIT201"
+  ],
+  "source": {
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=195",
+   "title": "Engineering and Technologies Department",
+   "h1": "Engineering and Technologies Department",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    195,
+    196,
+    197,
+    198
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
   "listed": 10,
-  "text_chars": 0
+  "text_chars": 16000
  },
  {
   "control_number": "39801",
@@ -3491,7 +3744,7 @@
    "heading_named": false
   },
   "listed": 12,
-  "text_chars": 8576
+  "text_chars": 16000
  },
  {
   "control_number": "39881",
@@ -3526,7 +3779,7 @@
    "heading_named": false
   },
   "listed": 8,
-  "text_chars": 11139
+  "text_chars": 16000
  },
  {
   "control_number": "39970",
@@ -3557,7 +3810,7 @@
    "heading_named": false
   },
   "listed": 6,
-  "text_chars": 6997
+  "text_chars": 7554
  },
  {
   "control_number": "40042",
@@ -3590,7 +3843,7 @@
    "heading_named": false
   },
   "listed": 11,
-  "text_chars": 9485
+  "text_chars": 9544
  },
  {
   "control_number": "40598",
@@ -3675,7 +3928,7 @@
    "heading_named": false
   },
   "listed": 4,
-  "text_chars": 3612
+  "text_chars": 4912
  },
  {
   "control_number": "40602",
@@ -3703,7 +3956,7 @@
    "heading_named": false
   },
   "listed": 4,
-  "text_chars": 2595
+  "text_chars": 3895
  },
  {
   "control_number": "40637",
@@ -3761,19 +4014,44 @@
    "heading_named": false
   },
   "listed": 10,
-  "text_chars": 3560
+  "text_chars": 5695
  },
  {
   "control_number": "41097",
   "title": "Business Administration 2.0",
   "award": "A.S. T Degree",
   "shape": "adt",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS15",
+   "ECON20",
+   "ECONC2001",
+   "ECONC2002",
+   "MATH235",
+   "MATH236",
+   "MATH261",
+   "PSYCH91",
+   "STATC1000",
+   "STATC1000E"
+  ],
+  "source": {
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=130",
+   "title": "Business Administration Department",
+   "h1": "Business Administration Department",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    130,
+    131,
+    132,
+    133
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
   "listed": 10,
-  "text_chars": 0
+  "text_chars": 16000
  },
  {
   "control_number": "41132",
@@ -3806,7 +4084,7 @@
    "heading_named": false
   },
   "listed": 8,
-  "text_chars": 7078
+  "text_chars": 8117
  },
  {
   "control_number": "41139",
@@ -3834,7 +4112,7 @@
    "heading_named": false
   },
   "listed": 2,
-  "text_chars": 11905
+  "text_chars": 14584
  },
  {
   "control_number": "41218",
@@ -3931,7 +4209,7 @@
    "heading_named": false
   },
   "listed": 1,
-  "text_chars": 1998
+  "text_chars": 2811
  },
  {
   "control_number": "42014",
@@ -3987,7 +4265,7 @@
    "heading_named": false
   },
   "listed": 6,
-  "text_chars": 2602
+  "text_chars": 3727
  },
  {
   "control_number": "42065",
@@ -4053,7 +4331,7 @@
    "heading_named": true
   },
   "listed": 11,
-  "text_chars": 15419
+  "text_chars": 16000
  },
  {
   "control_number": "42672",
@@ -4093,7 +4371,7 @@
    "heading_named": true
   },
   "listed": 15,
-  "text_chars": 8618
+  "text_chars": 8757
  },
  {
   "control_number": "43039",
@@ -4151,19 +4429,58 @@
    "heading_named": false
   },
   "listed": 2,
-  "text_chars": 2450
+  "text_chars": 3047
  },
  {
   "control_number": "43632",
   "title": "Social Work and Human Services",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANATOMY1",
+   "ANTHRO102",
+   "BIOLOGY20",
+   "BUS15",
+   "CHDEV11",
+   "CHICANO4",
+   "COMM122",
+   "ECON20",
+   "ECONC2001",
+   "ECONC2002",
+   "ENGLC1001",
+   "HISTC1001",
+   "HISTC1002",
+   "PHYSIOL1",
+   "PSYCC1000",
+   "PSYCH14",
+   "PSYCH41",
+   "PSYCH91",
+   "SOC1",
+   "SOC11",
+   "SOC19",
+   "SOC2",
+   "SOC20",
+   "STATC1000",
+   "STATC1000E"
+  ],
+  "source": {
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=358",
+   "title": "Social Sciences Department",
+   "h1": "Social Sciences Department",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    358,
+    359,
+    360
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
   "listed": 25,
-  "text_chars": 0
+  "text_chars": 16000
  },
  {
   "control_number": "43634",
@@ -4181,8 +4498,8 @@
   ],
   "source": {
    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=155",
-   "title": "(Academic Plan E043634D)",
-   "h1": "(Academic Plan E043634D)",
+   "title": "Child, Family, and Education Studies Department",
+   "h1": "Child, Family, and Education Studies Department",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -4193,7 +4510,7 @@
    "heading_named": false
   },
   "listed": 5,
-  "text_chars": 5690
+  "text_chars": 10915
  },
  {
   "control_number": "43649",
@@ -4237,12 +4554,52 @@
   "title": "Recreation and Leisure Studies",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "HEALTH11",
+   "HEALTH12",
+   "HEALTH13",
+   "HEALTH15",
+   "HEALTH2",
+   "HEALTH43",
+   "HEALTH5",
+   "HEALTH7",
+   "HEALTH8",
+   "KINMAJ100",
+   "KINMAJ103",
+   "KINMAJ106",
+   "KINMAJ109",
+   "KINMAJ110",
+   "KINMAJ111",
+   "KINMAJ112",
+   "KINMAJ116",
+   "KINMAJ121",
+   "KINMAJ122",
+   "KINMAJ135",
+   "RECR100",
+   "RECR131",
+   "RECR132",
+   "RECR133",
+   "RECR134"
+  ],
+  "source": {
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=238",
+   "title": "Kinesiology Department",
+   "h1": "Kinesiology Department",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    238,
+    239,
+    240,
+    241
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
   "listed": 25,
-  "text_chars": 0
+  "text_chars": 16000
  },
  {
   "control_number": "44329",
@@ -4264,8 +4621,8 @@
   ],
   "source": {
    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=371",
-   "title": "(Academic Plan E044329D)",
-   "h1": "(Academic Plan E044329D)",
+   "title": "Theater Arts Department",
+   "h1": "Theater Arts Department",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -4343,7 +4700,7 @@
    "heading_named": true
   },
   "listed": 5,
-  "text_chars": 2677
+  "text_chars": 3737
  },
  {
   "control_number": "44539",
@@ -4399,7 +4756,7 @@
    "heading_named": false
   },
   "listed": 3,
-  "text_chars": 2539
+  "text_chars": 5520
  },
  {
   "control_number": "44541",
@@ -4447,8 +4804,8 @@
   ],
   "source": {
    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=372",
-   "title": "(Academic Plan E044541D)",
-   "h1": "(Academic Plan E044541D)",
+   "title": "Theater Arts Department",
+   "h1": "Theater Arts Department",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -4468,12 +4825,49 @@
   "title": "Public Health",
   "award": "A.S. T Degree",
   "shape": "adt",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "pdf_pages",
+  "coverage": 0.96,
+  "codes_found": [
+   "ALDHTH102",
+   "ANATOMY1",
+   "ANTHRO102",
+   "BIOLOGY3",
+   "BIOLOGY6",
+   "BUS15",
+   "CHEM101",
+   "CHEM65",
+   "ECON20",
+   "HEALTH101",
+   "HEALTH11",
+   "HEALTH13",
+   "HEALTH15",
+   "HEALTH8",
+   "MICRO20",
+   "PHYSIOL1",
+   "PSYCC1000",
+   "PSYCH41",
+   "PSYCH52",
+   "PSYCH91",
+   "SOC1",
+   "SOC2",
+   "STATC1000",
+   "STATC1000E"
+  ],
+  "source": {
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=241",
+   "title": "Kinesiology Department",
+   "h1": "Kinesiology Department",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    241,
+    242
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
   "listed": 25,
-  "text_chars": 0
+  "text_chars": 11014
  },
  {
   "control_number": "44624",
@@ -4516,7 +4910,7 @@
    "heading_named": false
   },
   "listed": 17,
-  "text_chars": 15537
+  "text_chars": 16000
  },
  {
   "control_number": "44840",
@@ -4535,8 +4929,8 @@
   ],
   "source": {
    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=128",
-   "title": "(Academic Plan E044840D)",
-   "h1": "(Academic Plan E044840D)",
+   "title": "Business Administration Department",
+   "h1": "Business Administration Department",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -4576,31 +4970,221 @@
    "heading_named": false
   },
   "listed": 3,
-  "text_chars": 2571
+  "text_chars": 4930
  },
  {
   "control_number": "45028",
   "title": "Cal-GETC",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "pdf_pages",
+  "coverage": 0.565,
+  "codes_found": [
+   "ADMJUS1",
+   "ADMJUS2",
+   "AFROAM19",
+   "AFROAM4",
+   "AFROAM5",
+   "ANATOMY1",
+   "ANTHRO101",
+   "ANTHRO102",
+   "ANTHRO103",
+   "ANTHRO104",
+   "ANTHRO109",
+   "ANTHRO111",
+   "ANTHRO121",
+   "ANTHRO132",
+   "ASIAN1",
+   "ASIAN11",
+   "ASIAN2",
+   "ASIAN3",
+   "ASL40",
+   "ASTRON1",
+   "ASTRON5",
+   "BIOLOGY20",
+   "BIOLOGY22",
+   "BIOLOGY25",
+   "BIOLOGY3",
+   "BIOLOGY46",
+   "BIOLOGY51",
+   "BIOLOGY6",
+   "BIOLOGY7",
+   "BIOLOGY9",
+   "CHDEV11",
+   "CHEM101",
+   "CHEM102",
+   "CHEM201",
+   "CHEM51",
+   "CHEM65",
+   "CHICANO19",
+   "CHICANO2",
+   "CHICANO20",
+   "CHICANO25",
+   "CHICANO26",
+   "CHICANO3",
+   "CHICANO31",
+   "CHICANO33",
+   "CHICANO4",
+   "CHICANO44",
+   "CHICANO47",
+   "CHICANO50",
+   "CHICANO7",
+   "CHICANO8",
+   "COMM100",
+   "COMM121",
+   "COMM122",
+   "COMM190",
+   "EARTH1",
+   "EARTH2",
+   "ECON11",
+   "ECON30",
+   "ECON60",
+   "ECONC2001",
+   "ECONC2002",
+   "ENVSCI1",
+   "ENVSCI17",
+   "ENVSCI22",
+   "FAM&CS31",
+   "GEOG1",
+   "GEOG14",
+   "GEOG15",
+   "GEOG2",
+   "GEOG3",
+   "GEOG7",
+   "GEOLOGY1",
+   "GEOLOGY15",
+   "GEOLOGY2",
+   "GEOLOGY4",
+   "GEOLOGY6",
+   "GEOLOGY7",
+   "HEALTH5",
+   "HISTC1001",
+   "HISTC1002",
+   "HISTORY1",
+   "HISTORY2",
+   "HISTORY20",
+   "HISTORY23",
+   "HISTORY5",
+   "HISTORY52",
+   "HISTORY6",
+   "HISTORY78",
+   "HISTORY81",
+   "HISTORY82",
+   "HISTORY83",
+   "HISTORY86",
+   "HISTORY87",
+   "HISTORY97",
+   "JAPAN9",
+   "JOURNAL105",
+   "KINMAJ111",
+   "LAW3",
+   "LAW8",
+   "METEOR3",
+   "MICRO20",
+   "OCEANO1",
+   "OCEANO10",
+   "PHOTO122",
+   "PHOTO123",
+   "PHYSICS101",
+   "PHYSICS102",
+   "PHYSICS103",
+   "PHYSICS11",
+   "PHYSICS21",
+   "PHYSICS22",
+   "PHYSICS6",
+   "PHYSICS7",
+   "PHYSIOL1",
+   "POLSC1000",
+   "POLSCI19",
+   "POLSCI2",
+   "POLSCI40",
+   "POLSCI5",
+   "POLSCI50",
+   "POLSCI7",
+   "PSYCC1000",
+   "PSYCH13",
+   "PSYCH14",
+   "PSYCH2",
+   "PSYCH29",
+   "PSYCH32",
+   "PSYCH41",
+   "PSYCH52",
+   "PSYCH92",
+   "SOC1",
+   "SOC11",
+   "SOC12",
+   "SOC13",
+   "SOC14",
+   "SOC2",
+   "SOC21",
+   "SOC22",
+   "SOC23",
+   "SOC3",
+   "SOC4",
+   "SOC7",
+   "SOC86",
+   "SPANISH10",
+   "SPANISH12",
+   "SPANISH16",
+   "SPANISH26",
+   "SPANISH3",
+   "SPANISH36",
+   "SPANISH4",
+   "SPANISH9",
+   "TECTHTR367",
+   "THEATER100",
+   "THEATER101",
+   "THEATER110",
+   "THEATER121",
+   "THEATER505"
+  ],
+  "source": {
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=64",
+   "title": "General Studies Degrees",
+   "h1": "General Studies Degrees",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    64,
+    65,
+    66,
+    67
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
   "listed": 278,
-  "text_chars": 0
+  "text_chars": 16000
  },
  {
   "control_number": "45051",
   "title": "Japanese",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "JAPAN1",
+   "JAPAN2",
+   "JAPAN3",
+   "JAPAN4",
+   "JAPAN7",
+   "JAPAN9"
+  ],
+  "source": {
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=220",
+   "title": "Global Languages and Cultures Department",
+   "h1": "Global Languages and Cultures Department",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    220
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
   "listed": 6,
-  "text_chars": 0
+  "text_chars": 5958
  },
  {
   "control_number": "45406",
@@ -4631,7 +5215,7 @@
    "heading_named": false
   },
   "listed": 5,
-  "text_chars": 13904
+  "text_chars": 16000
  },
  {
   "control_number": "45413",
@@ -4664,7 +5248,7 @@
    "heading_named": false
   },
   "listed": 6,
-  "text_chars": 12898
+  "text_chars": 16000
  },
  {
   "control_number": "45414",
@@ -4705,7 +5289,7 @@
    "heading_named": true
   },
   "listed": 14,
-  "text_chars": 14354
+  "text_chars": 16000
  },
  {
   "control_number": "45491",
@@ -4737,19 +5321,61 @@
    "heading_named": false
   },
   "listed": 8,
-  "text_chars": 2863
+  "text_chars": 4290
  },
  {
   "control_number": "45540",
   "title": "Respiratory Therapy",
   "award": "Baccalaureate of Science (B.S.) Degree.",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "pdf_pages",
+  "coverage": 0.625,
+  "codes_found": [
+   "ANATOMY1",
+   "BIOLOGY20",
+   "CHEM51",
+   "CHEM65",
+   "COMM121",
+   "COMMC1000",
+   "HTHTEK133",
+   "MATH245",
+   "PHYSIOL1",
+   "RESPTH101",
+   "RESPTH110",
+   "RESPTH112",
+   "RESPTH114",
+   "RESPTH116",
+   "RESPTH120",
+   "RESPTH122",
+   "RESPTH124",
+   "RESPTH126",
+   "RESPTH128",
+   "RESPTH130",
+   "RESPTH201",
+   "RESPTH210",
+   "RESPTH212",
+   "RESPTH214",
+   "RESPTH216",
+   "RESPTH220",
+   "RESPTH222",
+   "RESPTH224",
+   "STATC1000",
+   "STATC1000E"
+  ],
+  "source": {
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=345",
+   "title": "Respiratory Therapy Department",
+   "h1": "Respiratory Therapy Department",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    345
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
   "listed": 48,
-  "text_chars": 0
+  "text_chars": 5123
  },
  {
   "control_number": "45587",
@@ -4816,7 +5442,7 @@
    "heading_named": false
   },
   "listed": 6,
-  "text_chars": 13056
+  "text_chars": 15527
  },
  {
   "control_number": "45589",
@@ -4845,7 +5471,7 @@
    "heading_named": false
   },
   "listed": 4,
-  "text_chars": 5517
+  "text_chars": 7643
  },
  {
   "control_number": "45591",
@@ -4875,7 +5501,7 @@
    "heading_named": false
   },
   "listed": 5,
-  "text_chars": 7435
+  "text_chars": 9272
  },
  {
   "control_number": "45602",
@@ -4910,7 +5536,7 @@
    "heading_named": false
   },
   "listed": 9,
-  "text_chars": 7763
+  "text_chars": 16000
  },
  {
   "control_number": "45715",
@@ -4942,7 +5568,7 @@
    "heading_named": false
   },
   "listed": 8,
-  "text_chars": 2953
+  "text_chars": 3050
  },
  {
   "control_number": "45716",
@@ -4971,7 +5597,7 @@
    "heading_named": false
   },
   "listed": 3,
-  "text_chars": 10417
+  "text_chars": 11297
  },
  {
   "control_number": "45717",
@@ -5030,7 +5656,7 @@
    "heading_named": false
   },
   "listed": 2,
-  "text_chars": 5528
+  "text_chars": 6408
  },
  {
   "control_number": "45752",
@@ -5056,7 +5682,7 @@
    "heading_named": false
   },
   "listed": 2,
-  "text_chars": 3163
+  "text_chars": 4043
  },
  {
   "control_number": "45753",
@@ -5085,19 +5711,43 @@
    "heading_named": false
   },
   "listed": 5,
-  "text_chars": 2419
+  "text_chars": 3057
  },
  {
   "control_number": "45935",
   "title": "Computer Science",
   "award": "A.S. T Degree",
   "shape": "adt",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOLOGY6",
+   "CHEM101",
+   "CS113",
+   "CS116",
+   "CS130",
+   "CS131",
+   "CS136",
+   "MATH261",
+   "MATH262",
+   "PHYSICS101",
+   "PHYSICS102"
+  ],
+  "source": {
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=130",
+   "title": "Business Administration Department",
+   "h1": "Business Administration Department",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    130,
+    131
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
   "listed": 11,
-  "text_chars": 0
+  "text_chars": 11075
  },
  {
   "control_number": "45986",
@@ -5105,14 +5755,15 @@
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
   "method": "pdf_pages",
-  "coverage": 0.857,
+  "coverage": 1.0,
   "codes_found": [
    "HEALTH49",
    "KINMAJ100",
    "KINMAJ102",
    "KINMAJ116",
    "KINMAJ128",
-   "KINMAJ129"
+   "KINMAJ129",
+   "KINMAJ130"
   ],
   "source": {
    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=235",
@@ -5130,7 +5781,7 @@
    "heading_named": true
   },
   "listed": 7,
-  "text_chars": 13692
+  "text_chars": 16000
  },
  {
   "control_number": "45987",
@@ -5164,8 +5815,8 @@
   ],
   "source": {
    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=239",
-   "title": "(Academic Plan E045987C)",
-   "h1": "(Academic Plan E045987C)",
+   "title": "Kinesiology Department",
+   "h1": "Kinesiology Department",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -5204,7 +5855,7 @@
    "heading_named": true
   },
   "listed": 2,
-  "text_chars": 2419
+  "text_chars": 3293
  },
  {
   "control_number": "46328",
@@ -5234,7 +5885,7 @@
    "heading_named": false
   },
   "listed": 4,
-  "text_chars": 11300
+  "text_chars": 13137
  },
  {
   "control_number": "46343",
@@ -5316,7 +5967,7 @@
    "heading_named": true
   },
   "listed": 17,
-  "text_chars": 13653
+  "text_chars": 13807
  },
  {
   "control_number": "46461",
@@ -5354,8 +6005,8 @@
   ],
   "source": {
    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=277",
-   "title": "(Academic Plan E046461C)",
-   "h1": "(Academic Plan E046461C)",
+   "title": "Media Arts and Technologies Department",
+   "h1": "Media Arts and Technologies Department",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [

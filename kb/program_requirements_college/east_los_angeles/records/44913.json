@@ -61,13 +61,13 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": true,
+   "pass": false,
    "status": "unstated",
    "computed": null,
    "stated": null,
    "against": null,
    "why": [
-    "the catalog prints no total, no hours and no units"
+    "the record states no figure, but the catalog text names 1.5 HOURS, 1.5 HOURS, 1.5 HOURS, 1.5 HOURS"
    ]
   },
   "repeated": {
@@ -92,7 +92,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": true
+  "pass": false
  },
  "record": {
   "program": {
@@ -168,5 +168,6 @@
    "The description names institutions (education, government, workplace, social gatherings), not careers, so careers is left empty."
   ]
  },
- "extracted_run": "39011319511"
+ "extracted_run": 39054401773,
+ "read_run": "39011319511"
 }

@@ -79,8 +79,8 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
     55.0,
     55.0
@@ -94,8 +94,10 @@
     34.0,
     34.0
    ],
-   "why": [
-    "the record says electives fill the degree total, but the catalog text names no electives"
+   "why": [],
+   "fill": [
+    5.0,
+    5.0
    ]
   },
   "repeated": {
@@ -120,7 +122,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -470,5 +472,6 @@
    "Catalog year printed on page is 2026-2027."
   ]
  },
- "extracted_run": "39011319511"
+ "extracted_run": 39054401773,
+ "read_run": "39011319511"
 }

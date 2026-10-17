@@ -69,8 +69,8 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
     54.0,
     59.0
@@ -84,8 +84,10 @@
     34.0,
     34.0
    ],
-   "why": [
-    "the record says electives fill the degree total, but the catalog text names no electives"
+   "why": [],
+   "fill": [
+    1.0,
+    6.0
    ]
   },
   "repeated": {
@@ -110,7 +112,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -327,5 +329,6 @@
    "ACCTG 001, ACCTG 002 and CIS 101 are not in the closed list and are marked as catalog additions."
   ]
  },
- "extracted_run": "39011319511"
+ "extracted_run": 39054401773,
+ "read_run": "39011319511"
 }

@@ -71,7 +71,7 @@
    "stated": null,
    "against": null,
    "why": [
-    "the record states no figure, but the catalog text names 1.5 HOURS, 1.5 HOURS"
+    "the record states no figure, but the catalog text names 1.5 HOURS, 1.5 HOURS, 1.5 HOURS, 1.5 HOURS"
    ]
   },
   "repeated": {
@@ -211,5 +211,6 @@
    "The single program learning outcome is copied as printed, though it is phrased as a description rather than as a student ability."
   ]
  },
- "extracted_run": "39011319511"
+ "extracted_run": 39054401773,
+ "read_run": "39011319511"
 }
