@@ -1,0 +1,25 @@
+{
+ "_readme": "S409 SkyOcotillo, 2026-10-17. The S408 read of canadacollege.edu/catalogschedule/ (run 39066951859) linked no catalog PDF: its catalog links go to catalog.canadacollege.edu, which robots.txt refuses. The page sends readers to the Catalog Archives page for past catalogs and has a How to Get a Schedule/Catalog page. This read opens both, on canadacollege.edu, to see whether either links the 2026-2027 catalog as a PDF a procedure catalog step could follow. Pages only, no model call, no table write.",
+ "college": "Cañada College",
+ "questions": {
+  "catalog_pdf": "Whether canadacollege.edu links a 2026-2027 catalog as a PDF, its address and the words on its link, and on which host the file sits."
+ },
+ "keywords": [
+  "\\.pdf",
+  "[Cc]atalog",
+  "2026\\s*[-–/]\\s*(20)?27",
+  "2025\\s*[-–/]\\s*(20)?26"
+ ],
+ "pages": [
+  {
+   "answers": ["catalog_pdf"],
+   "url": "https://canadacollege.edu/catalogschedule/catalogarchive.php",
+   "links": "\\.pdf|catalog|Catalog"
+  },
+  {
+   "answers": ["catalog_pdf"],
+   "url": "https://canadacollege.edu/catalogschedule/howtoget.php",
+   "links": "\\.pdf|catalog|Catalog"
+  }
+ ]
+}
