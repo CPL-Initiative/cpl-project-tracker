@@ -1,0 +1,331 @@
+{
+ "college": "Glendale Community College",
+ "control_number": "31597",
+ "shape": "noncredit",
+ "title": "Adult High School Diploma",
+ "award": "Noncredit program",
+ "source_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=275",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 13331,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 13331,
+    "output_tokens": 1759,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1759,
+  "output_tokens_details": {
+   "thinking_tokens": 349
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.0885,
+ "ms": 14048,
+ "seconds": 14.6,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 0,
+   "listed": 39,
+   "share": 0.0,
+   "missing": [
+    "ABSE110",
+    "ABSE111",
+    "ABSE112",
+    "ABSE113",
+    "ABSE114",
+    "ABSE115",
+    "ABSE116",
+    "ABSE117",
+    "ABSE146",
+    "ABSE147",
+    "ABSE148",
+    "ABSE149",
+    "ABSE15",
+    "ABSE150",
+    "ABSE18",
+    "ABSE19",
+    "ABSE23",
+    "ABSE24",
+    "ABSE25",
+    "ABSE26",
+    "ABSE28",
+    "ABSE29",
+    "ABSE30",
+    "ABSE31",
+    "ABSE32",
+    "ABSE33",
+    "ABSE34",
+    "ABSE35",
+    "ABSE36",
+    "ABSE37",
+    "ABSE38",
+    "ABSE40",
+    "ABSE41",
+    "ABSE42",
+    "ABSE43",
+    "ABSE44",
+    "ABSE45",
+    "OBT14",
+    "OBT140"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unstated",
+   "computed": null,
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record states no figure, but the catalog text names 0 Units, 100 hours, 0 Units, 100 \nhours"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "ADULT BASIC AND SECONDARY EDUCATION Noncredit Continuing Education",
+   "measure": "hours",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ABSE 110",
+    "why": "not in the text"
+   },
+   {
+    "code": "ABSE 111",
+    "why": "not in the text"
+   },
+   {
+    "code": "ABSE 112",
+    "why": "not in the text"
+   },
+   {
+    "code": "ABSE 113",
+    "why": "not in the text"
+   },
+   {
+    "code": "ABSE 114",
+    "why": "not in the text"
+   },
+   {
+    "code": "ABSE 115",
+    "why": "not in the text"
+   },
+   {
+    "code": "ABSE 116",
+    "why": "not in the text"
+   },
+   {
+    "code": "ABSE 117",
+    "why": "not in the text"
+   },
+   {
+    "code": "ABSE 147",
+    "why": "not in the text"
+   },
+   {
+    "code": "ABSE 148",
+    "why": "not in the text"
+   },
+   {
+    "code": "ABSE 149",
+    "why": "not in the text"
+   },
+   {
+    "code": "ABSE 15",
+    "why": "not in the text"
+   },
+   {
+    "code": "ABSE 150",
+    "why": "not in the text"
+   },
+   {
+    "code": "ABSE 18",
+    "why": "not in the text"
+   },
+   {
+    "code": "ABSE 19",
+    "why": "not in the text"
+   },
+   {
+    "code": "ABSE 23",
+    "why": "not in the text"
+   },
+   {
+    "code": "ABSE 24",
+    "why": "not in the text"
+   },
+   {
+    "code": "ABSE 25",
+    "why": "not in the text"
+   },
+   {
+    "code": "ABSE 26",
+    "why": "not in the text"
+   },
+   {
+    "code": "ABSE 28",
+    "why": "only a course description in the text; no program requirements printed"
+   },
+   {
+    "code": "ABSE 29",
+    "why": "only a course description in the text; no program requirements printed"
+   },
+   {
+    "code": "ABSE 30",
+    "why": "only a course description in the text; no program requirements printed"
+   },
+   {
+    "code": "ABSE 31",
+    "why": "only a course description in the text; no program requirements printed"
+   },
+   {
+    "code": "ABSE 32",
+    "why": "only a course description in the text; no program requirements printed"
+   },
+   {
+    "code": "ABSE 33",
+    "why": "only a course description in the text; no program requirements printed"
+   },
+   {
+    "code": "ABSE 34",
+    "why": "only a course description in the text; no program requirements printed"
+   },
+   {
+    "code": "ABSE 35",
+    "why": "only a course description in the text; no program requirements printed"
+   },
+   {
+    "code": "ABSE 36",
+    "why": "only a course description in the text; no program requirements printed"
+   },
+   {
+    "code": "ABSE 37",
+    "why": "only a course description in the text; no program requirements printed"
+   },
+   {
+    "code": "ABSE 38",
+    "why": "only a course description in the text; no program requirements printed"
+   },
+   {
+    "code": "ABSE 40",
+    "why": "only a course description in the text; no program requirements printed"
+   },
+   {
+    "code": "ABSE 41",
+    "why": "only a course description in the text; no program requirements printed"
+   },
+   {
+    "code": "ABSE 42",
+    "why": "only a course description in the text; no program requirements printed"
+   },
+   {
+    "code": "ABSE 43",
+    "why": "only a course description in the text; no program requirements printed"
+   },
+   {
+    "code": "ABSE 44",
+    "why": "only a course description in the text; no program requirements printed"
+   },
+   {
+    "code": "ABSE 45",
+    "why": "only a course description in the text; no program requirements printed"
+   },
+   {
+    "code": "ABSE146",
+    "why": "not in the text"
+   },
+   {
+    "code": "OBT 14",
+    "why": "not in the text"
+   },
+   {
+    "code": "OBT 140",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "The supplied text (catalog pages 275-277) contains only ABSE course descriptions, not the Adult High School Diploma program section; no requirements, totals, outcomes or careers for the award are printed, so no blocks were recorded. The program requirements page should be located elsewhere in the catalog and reviewed.",
+   "Course descriptions show each ABSE diploma course (e.g., ABSE 28-45) as Laboratory 100 hours and 5 high school credits; these are not recorded as requirements because the text does not state how they count toward the diploma.",
+   "Measure set to hours because the program is noncredit and courses are described in hours; no total hours for the award are printed.",
+   "Text is cut off at the end of page 277 (ABSE 64 description)."
+  ]
+ },
+ "extracted_run": "39063367252"
+}

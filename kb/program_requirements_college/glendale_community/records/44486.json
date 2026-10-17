@@ -1,0 +1,327 @@
+{
+ "college": "Glendale Community College",
+ "control_number": "44486",
+ "shape": "certificate",
+ "title": "Advanced ESL: Language & Communication Pathway",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=102",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 12896,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 12896,
+    "output_tokens": 2414,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2414,
+  "output_tokens_details": {
+   "thinking_tokens": 866
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.09986,
+ "ms": 19254,
+ "seconds": 19.7,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 13,
+   "listed": 17,
+   "share": 0.765,
+   "missing": [
+    "COMMC1000",
+    "ENGLC1000",
+    "ENGLC1000E",
+    "ENGLC1000H"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 5,
+   "codes": [
+    "ENGL101",
+    "ENGL101+",
+    "ENGL101H",
+    "ESL156",
+    "SPCH101"
+   ],
+   "flagged": [
+    "ENGL101",
+    "ENGL101+",
+    "ENGL101H",
+    "ESL156",
+    "SPCH101"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    5.0,
+    5.0
+   ],
+   "stated": [
+    16.0,
+    18.5
+   ],
+   "against": "program",
+   "why": [
+    "a required course in 'Required Courses' has no units"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 2,
+   "courses": 0,
+   "count": 2,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "ADVANCED ESL: LANGUAGE & COMMUNICATION PATHWAY",
+   "measure": "units",
+   "total_units": {
+    "min": 16,
+    "max": 18.5
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "use English reading, writing, listening, and speaking skills at an advanced level of academic proficiency",
+    "apply content knowledge of chosen electives in order to select a degree and/or career pathway ."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ESL 151",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ESL 155",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ESL 156",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ESL 159",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select one or two courses from the following (minimum 5 units)",
+    "rule": "choose_units",
+    "minimum": 5,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ARMEN 101",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ASL 101",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHIN 101",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL 101",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ENGL 101+",
+        "units": null,
+        "catalog_addition": true
+       },
+       {
+        "code": "ENGL 101H",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "FREN 101",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ITAL 101",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "JAPAN 101",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KOREA 101",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "LIB 100",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "LING 101",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPAN 101",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPCH 101",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ENGL C1000",
+    "why": "not in the text; catalog prints ENGL 101 (likely the pre-common-numbering code)"
+   },
+   {
+    "code": "ENGL C1000E",
+    "why": "not in the text; catalog prints ENGL 101+ (likely the pre-common-numbering code)"
+   },
+   {
+    "code": "ENGL C1000H",
+    "why": "not in the text; catalog prints ENGL 101H (likely the pre-common-numbering code)"
+   },
+   {
+    "code": "COMM C1000",
+    "why": "not in the text; catalog prints SPCH 101 (likely the pre-common-numbering code)"
+   }
+  ],
+  "notes": [
+   "The catalog prints no units beside any course; units are left null.",
+   "ESL 155 in the catalog is matched to closed-list entry 'ESL155' (printed without a space).",
+   "ESL 156 is required by the catalog but absent from the closed list.",
+   "Elective list is 'Select one or two courses from the following (minimum 5 units)'; recorded as choose_units with minimum 5.",
+   "Program learning outcomes are printed inline, separated by a semicolon after the lead-in 'Upon completion of this program, the student will'; split into two outcomes. The same outcomes text is shared by all four Advanced ESL pathway certificates. PDF ligature spacing ('proﬁ ciency') normalized to 'proficiency'.",
+   "Catalog uses older codes ENGL 101/101+/101H and SPCH 101 where the closed list has ENGL C1000/C1000E/C1000H and COMM C1000; reviewer should confirm equivalence."
+  ]
+ },
+ "extracted_run": "39063367252"
+}

@@ -1,0 +1,232 @@
+{
+ "college": "Glendale Community College",
+ "control_number": "19576",
+ "shape": "certificate",
+ "title": "Child Development: School-Age Care",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=69",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7868,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7868,
+    "output_tokens": 2688,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2688,
+  "output_tokens_details": {
+   "thinking_tokens": 1386
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.08523,
+ "ms": 22713,
+ "seconds": 23.3,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 10,
+   "listed": 10,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    27.0,
+    27.0
+   ],
+   "stated": [
+    27.0,
+    27.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 1,
+   "courses": 0,
+   "count": 1,
+   "not_verbatim": [
+    "Upon completion of this program, students will develop an understanding of young children, and of the multiple interacting influences on children’s development and learning in order to create environments that are healthy, respectful, supportive and challenging for all children; understand and value the importance and complex characteristics of children’s families and communities; use this understanding to create respectful, reciprocal relationships that support and empower families and involve families in their children’s learning and development; articulate and understand the goals, benefits, and uses of observation and assessment, develop competence in the use of observation, documentation and assessment techniques and tools to support teaching and learning in partnership with families and other professionals; plan and implement developmentally appropriate, culturally and linguistically relevant experiences that promote and/or support development and learning for all young children; and identify as a member of the early childhood profession, understand and use ethical guidelines and other professional standards related to early childhood practice."
+   ],
+   "why": [
+    "not in the catalog text as printed: Upon completion of this program, students will develop an understanding of young"
+   ],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": false
+  },
+  "careers": {
+   "count": 2,
+   "not_verbatim": [
+    "teaching in a school-age child care setting"
+   ],
+   "pass": false
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "SCHOOL-AGE CARE",
+   "measure": "units",
+   "total_units": {
+    "min": 27,
+    "max": 27
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Glendale College Associate Degree General Education area 9A-D",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": 16,
+    "max": 16
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Upon completion of this program, students will develop an understanding of young children, and of the multiple interacting influences on children’s development and learning in order to create environments that are healthy, respectful, supportive and challenging for all children; understand and value the importance and complex characteristics of children’s families and communities; use this understanding to create respectful, reciprocal relationships that support and empower families and involve families in their children’s learning and development; articulate and understand the goals, benefits, and uses of observation and assessment, develop competence in the use of observation, documentation and assessment techniques and tools to support teaching and learning in partnership with families and other professionals; plan and implement developmentally appropriate, culturally and linguistically relevant experiences that promote and/or support development and learning for all young children; and identify as a member of the early childhood profession, understand and use ethical guidelines and other professional standards related to early childhood practice."
+   ],
+   "careers": [
+    "teaching in a school-age child care setting",
+    "School Age Child Care"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 27,
+     "max": 27
+    },
+    "courses": [
+     {
+      "code": "CHLDV 133",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHLDV 135",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHLDV 137",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHLDV 138",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHLDV 140",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHLDV 141",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHLDV 142",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHLDV 150",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHLDV 156",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHLDV 182",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The catalog prints required courses as a compressed list ('CHLDV 133, 135, 137, ...') with no units beside each course; units left null. The section states 27 units of Child Development courses, recorded as total_units and as the block's stated total.",
+   "The certificate also requires 16 units of General Education (Glendale College Associate Degree GE area 9A-D, at least one course from 9a/9d.(2), 9b, 9c and 9d.(1)); recorded as ge_pattern and ge_units, not as a block. No combined total (27 + 16) is printed, so degree_total is null.",
+   "Program Learning Outcomes are printed once for the Child Development program as a whole (shared by all degree/certificate options) as a single run-on paragraph; recorded as one entry as printed, with ligatures, letter-spacing and line-break hyphenation normalized.",
+   "Careers: 'School Age Child Care' is taken from the overall program introduction, which also names Infant, Toddler, and/or Preschool Education and Early Childhood Administration and Supervision for other options."
+  ]
+ },
+ "extracted_run": "39063367252"
+}

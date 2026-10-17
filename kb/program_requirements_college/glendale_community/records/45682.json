@@ -1,0 +1,153 @@
+{
+ "college": "Glendale Community College",
+ "control_number": "45682",
+ "shape": "certificate",
+ "title": "International Business I",
+ "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+ "source_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=68",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7103,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7103,
+    "output_tokens": 841,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 841,
+  "output_tokens_details": {
+   "thinking_tokens": 350
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.04523,
+ "ms": 9532,
+ "seconds": 10.0,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 3,
+   "share": 0.0,
+   "missing": [
+    "BUSAD101",
+    "BUSAD170",
+    "BUSAD178"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": true,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "INTERNATIONAL BUSINESS (degree section; no International Business I certificate section in the text)",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "BUSAD 101",
+    "why": "named only in the International Business degree section; certificate section not in text"
+   },
+   {
+    "code": "BUSAD 170",
+    "why": "named only in the International Business degree section; certificate section not in text"
+   },
+   {
+    "code": "BUSAD 178",
+    "why": "named only in the International Business degree section; certificate section not in text"
+   }
+  ],
+  "notes": [
+   "The excerpt (page 68) prints the International Business degree program, not the International Business I Certificate of Achievement (8 to fewer than 16 units). The degree's requirements are ACCTG 101; BUSAD 101, 170; one writing course; one computer course; and three courses (9 units) from BUSAD 120, 158, 162, 178. Its total is clearly larger than the certificate's range, so these requirements were not recorded as the certificate's.",
+   "The certificate's section is probably on another catalog page; a reviewer should locate it.",
+   "The International Business degree prints Program Learning Outcomes, but they were not recorded because it is unclear whether the certificate shares them."
+  ]
+ },
+ "extracted_run": "39063367252"
+}
